@@ -1,0 +1,505 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" width="100%" height="100%" class="a12p3-root" data-active-anchor="sinfise" data-svg-tokenized="true" role="img" aria-label="Assoalho Pélvico - Base Osteo-Referencial">
+  <defs>
+    <!-- Color definitions and styles -->
+    <style type="text/css">
+      /* <![CDATA[ */
+      .a12p3-root {
+        --a12p3-tinta: #F7F1F5;
+        --a12p3-osso: #DCC7B4;
+        --a12p3-osso-stroke: #B89B82;
+        --a12p3-fantasma: #A993A466;
+        --a12p3-fantasma-stroke: #C2B0C088;
+        --a12p3-sinfise: #F07A83;
+        --a12p3-promontorio: #D6A552;
+        --a12p3-espinhas: #4DB9B0;
+        --a12p3-guia: #B9AEB6;
+        --a12p3-bg: #161219;
+        --a12p3-panel-bg: #1E1823E0;
+        --a12p3-panel-border: #F7F1F526;
+        --a12p3-subtext: #C0B0C4;
+        --a12p3-grid: #F7F1F50D;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      [data-theme="light"] .a12p3-root {
+        --a12p3-tinta: #241B28;
+        --a12p3-osso: #876C55;
+        --a12p3-osso-stroke: #5E4937;
+        --a12p3-fantasma: #70586D44;
+        --a12p3-fantasma-stroke: #66506377;
+        --a12p3-sinfise: #D93B47;
+        --a12p3-promontorio: #B37D19;
+        --a12p3-espinhas: #1B8C83;
+        --a12p3-guia: #736573;
+        --a12p3-bg: #FAF6F8;
+        --a12p3-panel-bg: #F5EEF4EA;
+        --a12p3-panel-border: #241B2826;
+        --a12p3-subtext: #59495C;
+        --a12p3-grid: #241B280D;
+      }
+
+      /* Base styles scoped to .a12p3-root */
+      .a12p3-root .a12p3-bg-rect {
+        fill: var(--a12p3-bg, #161219);
+        transition: fill 0.3s ease;
+      }
+
+      .a12p3-root .a12p3-text-title {
+        fill: var(--a12-tinta, var(--a12p3-tinta, #F7F1F5));
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .a12p3-root .a12p3-text-sub {
+        fill: var(--a12p3-subtext, #C0B0C4);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .a12p3-root .a12p3-legend-text {
+        fill: var(--a12-tinta, var(--a12p3-tinta, #F7F1F5));
+        font-size: 11px;
+        line-height: 1.4;
+      }
+
+      /* Bone and Viscera styling */
+      .a12p3-root .a12p3-bone-fill {
+        fill: var(--a12-osso, var(--a12p3-osso, #DCC7B4));
+        stroke: var(--a12p3-osso-stroke, #B89B82);
+        stroke-width: 1.5;
+      }
+
+      .a12p3-root .a12p3-phantom-fill {
+        fill: var(--a12-viscera-fantasma, var(--a12p3-fantasma, #A993A466));
+        stroke: var(--a12p3-fantasma-stroke, #C2B0C088);
+        stroke-width: 1.2;
+        stroke-dasharray: 4 3;
+      }
+
+      /* Guide Lines State Machine */
+      .a12p3-root .a12p3-guia-group {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .a12p3-root[data-active-anchor="sinfise"] #a12p3-guia-sinfise,
+      .a12p3-root[data-active-anchor="promontorio"] #a12p3-guia-promontorio,
+      .a12p3-root[data-active-anchor="espinhas"] #a12p3-guia-espinhas {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Side Card State Machine */
+      .a12p3-root .a12p3-detail-card {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .a12p3-root[data-active-anchor="sinfise"] #a12p3-card-sinfise,
+      .a12p3-root[data-active-anchor="promontorio"] #a12p3-card-promontorio,
+      .a12p3-root[data-active-anchor="espinhas"] #a12p3-card-espinhas {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Interactive Markers and Buttons */
+      .a12p3-root .a12p3-ancora-btn {
+        cursor: pointer;
+        outline: none;
+      }
+
+      .a12p3-root .a12p3-marker-shape {
+        transition: transform 0.25s ease, filter 0.25s ease;
+        transform-origin: center;
+      }
+
+      .a12p3-root .a12p3-ancora-btn:hover .a12p3-marker-shape,
+      .a12p3-root .a12p3-ancora-btn:focus .a12p3-marker-shape {
+        transform: scale(1.25);
+      }
+
+      .a12p3-root[data-active-anchor="sinfise"] #a12p3-btn-sinfise .a12p3-marker-shape {
+        transform: scale(1.3);
+        filter: drop-shadow(0 0 8px var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83)));
+      }
+
+      .a12p3-root[data-active-anchor="promontorio"] #a12p3-btn-promontorio .a12p3-marker-shape {
+        transform: scale(1.3);
+        filter: drop-shadow(0 0 8px var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552)));
+      }
+
+      .a12p3-root[data-active-anchor="espinhas"] #a12p3-btn-espinhas .a12p3-marker-shape {
+        transform: scale(1.3);
+        filter: drop-shadow(0 0 8px var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0)));
+      }
+
+      /* Selection Ring Indicator */
+      .a12p3-root .a12p3-ring-pulse {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .a12p3-root[data-active-anchor="sinfise"] #a12p3-btn-sinfise .a12p3-ring-pulse,
+      .a12p3-root[data-active-anchor="promontorio"] #a12p3-btn-promontorio .a12p3-ring-pulse,
+      .a12p3-root[data-active-anchor="espinhas"] #a12p3-btn-espinhas .a12p3-ring-pulse {
+        opacity: 1;
+      }
+      /* ]]> */
+    </style>
+
+    <!-- Markers for leader lines -->
+    <marker id="a12p3-arrow-sinfise" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" />
+    </marker>
+    <marker id="a12p3-arrow-promontorio" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" />
+    </marker>
+    <marker id="a12p3-arrow-espinhas" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" />
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect class="a12p3-bg-rect" width="920" height="640" rx="8" />
+
+  <!-- Background Reference Grid -->
+  <g opacity="0.4">
+    <path d="M 40 180 L 580 180 M 40 280 L 580 280 M 40 380 L 580 380 M 40 480 L 580 480" stroke="var(--a12p3-grid, #F7F1F50D)" stroke-width="1" stroke-dasharray="2 4" />
+    <path d="M 140 100 L 140 560 M 240 100 L 240 560 M 340 100 L 340 560 M 440 100 L 440 560 M 540 100 L 540 560" stroke="var(--a12p3-grid, #F7F1F50D)" stroke-width="1" stroke-dasharray="2 4" />
+  </g>
+
+  <!-- HEADER CORRIDOR: Title and Orientation Declaration -->
+  <g id="a12p3-header" transform="translate(30, 25)">
+    <text class="a12p3-text-title" x="0" y="20">ASSOALHO PÉLVICO · BASE OSTEO-REFERENCIAL</text>
+    <text class="a12p3-text-sub" x="0" y="40">Corte sagital mediano, de perfil · Frente da paciente à esquerda</text>
+    
+    <!-- Directional Vector Indicator -->
+    <g transform="translate(620, 8)">
+      <rect x="0" y="0" width="240" height="34" rx="6" fill="var(--a12p3-panel-bg, #1E1823E0)" stroke="var(--a12p3-panel-border, #F7F1F526)" stroke-width="1" />
+      <text x="120" y="21" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="600" text-anchor="middle">
+        ◄ ANTERIOR (Frente) | POSTERIOR (Atrás) ►
+      </text>
+    </g>
+  </g>
+
+  <!-- LEGENDA DE INTERPRETAÇÃO (Contract requirement 1 and 4) -->
+  <g id="a12p3-legenda-painel" transform="translate(30, 80)">
+    <rect x="0" y="0" width="860" height="42" rx="6" fill="var(--a12p3-panel-bg, #1E1823E0)" stroke="var(--a12p3-panel-border, #F7F1F526)" stroke-width="1" />
+    <text class="a12p3-legend-text" x="15" y="18" font-weight="700" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))">LEGENDA DE INTERPRETAÇÃO:</text>
+    <text class="a12p3-legend-text" x="180" y="18" fill="var(--a12p3-subtext, #C0B0C4)">
+      Três acidentes ósseos instalam as coordenadas fixas do assoalho pélvico. A Sínfise Púbica marca o limite anterior-inferior,
+    </text>
+    <text class="a12p3-legend-text" x="15" y="34" fill="var(--a12p3-subtext, #C0B0C4)">
+      o Promontório Sacral o limite posterior-superior, e as Espinhas Isquiáticas o nível médio interespinhoso de referência pélvica.
+    </text>
+  </g>
+
+  <!-- GROUP 6: ORIENTAÇÃO (a12p3-orientacao) -->
+  <g id="a12p3-orientacao" class="a12p3-orientacao" transform="translate(45, 140)">
+    <!-- Compass Rose / Axes Widget -->
+    <circle cx="28" cy="28" r="24" fill="var(--a12p3-panel-bg, #1E1823E0)" stroke="var(--a12p3-panel-border, #F7F1F526)" stroke-width="1" />
+    <path d="M 28 8 L 28 48 M 8 28 L 48 28" stroke="var(--a12-linha-guia, var(--a12p3-guia, #B9AEB6))" stroke-width="1.2" stroke-dasharray="2 2" />
+    <!-- Arrows -->
+    <path d="M 28 8 L 25 14 L 31 14 Z" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" />
+    <path d="M 8 28 L 14 25 L 14 31 Z" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" />
+    <path d="M 48 28 L 42 25 L 42 31 Z" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" />
+    
+    <text x="28" y="5" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="9" font-weight="700" text-anchor="middle">S</text>
+    <text x="28" y="57" fill="var(--a12p3-subtext, #C0B0C4)" font-size="9" font-weight="700" text-anchor="middle">I</text>
+    <text x="3" y="31" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" font-size="9" font-weight="700" text-anchor="end">ANT</text>
+    <text x="53" y="31" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" font-size="9" font-weight="700" text-anchor="start">POST</text>
+  </g>
+
+  <!-- DYNAMIC COORDINATE GUIDES (Revealed per active anchor) -->
+  <g id="a12p3-guias-camada">
+    <!-- Guides for Sínfise Púbica -->
+    <g id="a12p3-guia-sinfise" class="a12p3-guia-group">
+      <!-- Anterior Limit Line (Vertical) -->
+      <line x1="180" y1="135" x2="180" y2="540" stroke="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.85" />
+      <!-- Inferior Plane Line (Horizontal) -->
+      <line x1="40" y1="455" x2="570" y2="455" stroke="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.85" />
+      <!-- Vector Arrow -->
+      <line x1="180" y1="455" x2="100" y2="455" stroke="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" stroke-width="2.5" marker-end="url(#a12p3-arrow-sinfise)" />
+      <text x="140" y="445" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" font-size="11" font-weight="700" text-anchor="middle">Plano Anterior [0 cm]</text>
+    </g>
+
+    <!-- Guides for Promontório Sacral -->
+    <g id="a12p3-guia-promontorio" class="a12p3-guia-group">
+      <!-- Superior Plane Line (Horizontal) -->
+      <line x1="40" y1="170" x2="570" y2="170" stroke="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.85" />
+      <!-- Pelvic Inlet Line / Linha Terminal / Conjugada Obstétrica -->
+      <line x1="430" y1="170" x2="180" y2="455" stroke="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" stroke-width="2.2" stroke-dasharray="8 4" opacity="0.9" />
+      <!-- Vector Arrow -->
+      <line x1="430" y1="170" x2="485" y2="125" stroke="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" stroke-width="2.5" marker-end="url(#a12p3-arrow-promontorio)" />
+      <text x="325" y="300" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" font-size="11" font-weight="700" transform="rotate(-48 305 300)" text-anchor="middle">Linha Terminal (Conjugada Obstétrica)</text>
+      <text x="430" y="160" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" font-size="11" font-weight="700" text-anchor="end">Estreito Superior (L5/S1)</text>
+    </g>
+
+    <!-- Guides for Espinha Isquiática -->
+    <g id="a12p3-guia-espinhas" class="a12p3-guia-group">
+      <!-- Mid-Pelvic Plane (Plano Interespinhoso - Nível 0 DeLee) -->
+      <rect x="40" y="355" width="530" height="30" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" opacity="0.12" rx="4" />
+      <line x1="40" y1="370" x2="570" y2="370" stroke="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke-width="2" stroke-dasharray="6 4" />
+      <!-- Lateral Projection Grid -->
+      <line x1="360" y1="135" x2="360" y2="540" stroke="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.75" />
+      <!-- Vector Arrow -->
+      <line x1="360" y1="370" x2="420" y2="370" stroke="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke-width="2.5" marker-end="url(#a12p3-arrow-espinhas)" />
+      <text x="210" y="365" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" font-size="11" font-weight="700" text-anchor="middle">Plano Interespinhoso (Nível 0 cm - DeLee)</text>
+    </g>
+  </g>
+
+  <!-- GROUP 2: VÍSCERAS FANTASMA (a12p3-visceras-fantasma) -->
+  <g id="a12p3-visceras-fantasma" class="a12p3-visceras-fantasma">
+    <!-- Urinary Bladder Contour (Anteriorly resting behind pubic symphysis) -->
+    <path class="a12p3-phantom-fill" d="M 195 430 C 190 385 220 365 265 375 C 295 385 290 435 255 450 C 220 455 198 448 195 430 Z" />
+    
+    <!-- Uterus and Cervix Contour (Anteverted over bladder) -->
+    <path class="a12p3-phantom-fill" d="M 270 370 C 250 325 270 275 315 275 C 345 285 345 330 320 375 L 295 375 Z" />
+    
+    <!-- Vaginal Canal Contour (Extending from cervix down to introitus) -->
+    <path class="a12p3-phantom-fill" d="M 295 375 L 220 480 L 238 488 L 312 385 Z" />
+    
+    <!-- Rectum and Anal Canal Contour (Posterior wall in front of sacrum) -->
+    <path class="a12p3-phantom-fill" d="M 405 230 C 420 280 410 350 380 405 C 355 445 315 480 275 495 L 260 485 C 295 470 335 435 360 395 C 385 345 390 280 380 230 Z" />
+  </g>
+
+  <!-- GROUP 1: BASE ÓSSEA (a12p3-base-ossea) -->
+  <g id="a12p3-base-ossea" class="a12p3-base-ossea">
+    <!-- Sacrum and Coccyx (Posterior wall) -->
+    <path class="a12p3-bone-fill" d="M 425 145 L 430 170 C 455 225 465 285 450 345 C 440 375 425 400 415 415 L 428 422 C 442 402 460 372 470 335 C 485 275 475 210 448 145 Z" />
+    <!-- Sacral Vertebral Joint Lines (S1-S5 ridges) -->
+    <path d="M 430 170 L 452 178 M 442 220 L 464 228 M 450 270 L 470 275 M 448 320 L 465 322" stroke="var(--a12p3-osso-stroke, #B89B82)" stroke-width="1.2" stroke-dasharray="2 2" opacity="0.7" />
+
+    <!-- Iliac Blade / Crest (Superior boundary) -->
+    <path class="a12p3-bone-fill" d="M 425 145 C 380 120 310 125 270 155 C 240 180 235 215 250 250 C 265 285 295 320 330 345 L 340 330 C 310 310 282 278 270 248 C 258 220 262 192 285 172 C 318 145 375 140 415 160 Z" />
+
+    <!-- Pubic Symphysis and Ramus (Anterior wall) -->
+    <path class="a12p3-bone-fill" d="M 170 415 C 158 430 158 458 172 475 C 188 488 208 480 215 462 C 218 450 212 435 200 425 L 290 355 L 280 340 L 185 418 Z" />
+    <!-- Symphysial Cartilage Joint Line -->
+    <path d="M 172 418 C 165 435 165 455 176 470" stroke="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" stroke-width="2.5" stroke-linecap="round" opacity="0.85" />
+
+    <!-- Ischium and Ischial Spine (Lateral wall projection) -->
+    <path class="a12p3-bone-fill" d="M 290 355 C 315 362 342 365 360 370 C 352 385 338 410 325 440 C 310 475 290 495 260 500 L 265 515 C 300 510 325 485 342 448 C 358 415 372 388 375 372 C 378 368 375 362 360 358 C 340 352 310 345 290 340 Z" />
+    <!-- Ischial Spine Projection Landmark (Dashed outline indicating lateral position) -->
+    <path d="M 360 370 C 370 368 375 375 365 382" stroke="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke-width="1.8" stroke-dasharray="3 2" fill="none" />
+  </g>
+
+  <!-- GROUP 3: ÂNCORA SÍNFISE PÚBICA (a12p3-ancora-sinfise) -->
+  <g id="a12p3-ancora-sinfise" class="a12p3-ancora-sinfise">
+    <!-- Leader Line to External Corridor -->
+    <polyline points="180,445 130,445 110,445" stroke="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" stroke-width="1.8" fill="none" />
+    <circle cx="110" cy="445" r="3" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" />
+
+    <!-- External Label Box Corridor (Anterior Corridor) -->
+    <g transform="translate(10, 420)">
+      <rect x="0" y="0" width="135" height="50" rx="6" fill="var(--a12p3-panel-bg, #1E1823E0)" stroke="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" stroke-width="1.5" />
+      <text x="10" y="18" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" font-size="11" font-weight="700">SÍNFISE PÚBICA</text>
+      <text x="10" y="34" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10" font-weight="600">Anterior / Inferior</text>
+    </g>
+
+    <!-- Interactive Button Target -->
+    <g class="a12p3-ancora-btn" id="a12p3-btn-sinfise" role="button" aria-label="Âncora Sínfise Púbica: Limite Anterior e Inferior" aria-selected="true" tabindex="0" data-anchor="sinfise" transform="translate(180, 445)">
+      <!-- Selection Ring Pulse -->
+      <circle class="a12p3-ring-pulse" cx="0" cy="0" r="18" fill="none" stroke="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" stroke-width="1.5" stroke-dasharray="3 3" />
+      <!-- Marker Shape: Diamond / Square rotated -->
+      <rect class="a12p3-marker-shape" id="a12p3-marker-sinfise" x="-8" y="-8" width="16" height="16" rx="3" transform="rotate(45)" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" stroke="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" stroke-width="2" />
+      <!-- Accessible Touch Hit Area (min 24px requirement -> 56px diameter) -->
+      <circle cx="0" cy="0" r="28" fill="transparent" pointer-events="all" />
+    </g>
+  </g>
+
+  <!-- GROUP 4: ÂNCORA PROMONTÓRIO SACRAL (a12p3-ancora-promontorio) -->
+  <g id="a12p3-ancora-promontorio" class="a12p3-ancora-promontorio">
+    <!-- Leader Line to External Corridor -->
+    <polyline points="430,170 470,170 490,170" stroke="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" stroke-width="1.8" fill="none" />
+    <circle cx="490" cy="170" r="3" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" />
+
+    <!-- External Label Box Corridor (Posterior Superior Corridor) -->
+    <g transform="translate(440, 145)">
+      <rect x="0" y="0" width="145" height="50" rx="6" fill="var(--a12p3-panel-bg, #1E1823E0)" stroke="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" stroke-width="1.5" />
+      <text x="10" y="18" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" font-size="11" font-weight="700">PROMONTÓRIO SACRAL</text>
+      <text x="10" y="34" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10" font-weight="600">Posterior / Superior</text>
+    </g>
+
+    <!-- Interactive Button Target -->
+    <g class="a12p3-ancora-btn" id="a12p3-btn-promontorio" role="button" aria-label="Âncora Promontório Sacral: Limite Posterior e Superior" aria-selected="false" tabindex="0" data-anchor="promontorio" transform="translate(430, 170)">
+      <!-- Selection Ring Pulse -->
+      <circle class="a12p3-ring-pulse" cx="0" cy="0" r="18" fill="none" stroke="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" stroke-width="1.5" stroke-dasharray="3 3" />
+      <!-- Marker Shape: Triangle pointing down-left -->
+      <polygon class="a12p3-marker-shape" id="a12p3-marker-promontorio" points="0,-10 -9,8 9,8" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" stroke="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" stroke-width="2" />
+      <!-- Accessible Touch Hit Area -->
+      <circle cx="0" cy="0" r="28" fill="transparent" pointer-events="all" />
+    </g>
+  </g>
+
+  <!-- GROUP 5: ÂNCORA ESPINHA ISQUIÁTICA (a12p3-ancora-espinhas) -->
+  <g id="a12p3-ancora-espinhas" class="a12p3-ancora-espinhas">
+    <!-- Leader Line to External Corridor -->
+    <polyline points="360,370 410,370 440,370" stroke="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke-width="1.8" fill="none" />
+    <circle cx="440" cy="370" r="3" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" />
+
+    <!-- External Label Box Corridor (Mid-Pelvic Corridor) -->
+    <g transform="translate(440, 345)">
+      <rect x="0" y="0" width="145" height="50" rx="6" fill="var(--a12p3-panel-bg, #1E1823E0)" stroke="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke-width="1.5" />
+      <text x="10" y="18" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" font-size="11" font-weight="700">ESPINHA ISQUIÁTICA</text>
+      <text x="10" y="34" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10" font-weight="600">Lateral / Nível Médio</text>
+    </g>
+
+    <!-- Interactive Button Target -->
+    <g class="a12p3-ancora-btn" id="a12p3-btn-espinhas" role="button" aria-label="Âncora Espinha Isquiática: Nível Médio Interespinhoso" aria-selected="false" tabindex="0" data-anchor="espinhas" transform="translate(360, 370)">
+      <!-- Selection Ring Pulse -->
+      <circle class="a12p3-ring-pulse" cx="0" cy="0" r="18" fill="none" stroke="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke-width="1.5" stroke-dasharray="3 3" />
+      <!-- Marker Shape: Concentric Target Circle -->
+      <g class="a12p3-marker-shape" id="a12p3-marker-espinhas">
+        <circle cx="0" cy="0" r="9" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" stroke-width="2" />
+        <circle cx="0" cy="0" r="3" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" />
+      </g>
+      <!-- Accessible Touch Hit Area -->
+      <circle cx="0" cy="0" r="28" fill="transparent" pointer-events="all" />
+    </g>
+  </g>
+
+  <!-- SIDE READOUT PANEL: Coordenadas e Aplicação Clínica (Contract requirement 4) -->
+  <g id="a12p3-painel-leitura" transform="translate(605, 140)">
+    <!-- Outer Card Background -->
+    <rect x="0" y="0" width="285" height="465" rx="10" fill="var(--a12p3-panel-bg, #1E1823E0)" stroke="var(--a12p3-panel-border, #F7F1F526)" stroke-width="1.5" />
+
+    <!-- Panel Header -->
+    <path d="M 0 10 C 0 4 4 0 10 0 L 275 0 C 281 0 285 4 285 10 L 285 48 L 0 48 Z" fill="#0000002E" />
+    <text x="18" y="28" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="12" font-weight="700" letter-spacing="0.5px">SISTEMA DE COORDENADAS</text>
+    <text x="18" y="42" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10">Selecione uma âncora para ativar seus eixos</text>
+
+    <!-- CARD 1: Sínfise Púbica (Active default) -->
+    <g id="a12p3-card-sinfise" class="a12p3-detail-card" transform="translate(18, 65)">
+      <!-- Badge -->
+      <rect x="0" y="0" width="249" height="28" rx="4" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" opacity="0.2" />
+      <text x="10" y="19" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" font-size="12" font-weight="700">ÂNCORA 1: SÍNFISE PÚBICA</text>
+
+      <!-- Position and Vector -->
+      <text x="0" y="50" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Topografia:</text>
+      <text x="0" y="66" fill="var(--a12p3-subtext, #C0B0C4)" font-size="11">Anterior e Inferior (Frente / Embaixo)</text>
+
+      <text x="0" y="95" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Eixo Espacial de Referência:</text>
+      <text x="0" y="111" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" font-size="11" font-weight="600">Plano Limite Anterior [X: 0 cm]</text>
+
+      <text x="0" y="140" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Reaproveitamento na Trilha:</text>
+      <text x="0" y="158" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P4: Parede Vaginal Anterior</text>
+      <text x="0" y="174" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P12: Reancoragem Púbica</text>
+      <text x="0" y="190" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P22: Angulação Uretrovesical</text>
+
+      <!-- Clinical Value Box -->
+      <rect x="0" y="215" width="249" height="155" rx="6" fill="#F07A8314" stroke="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" stroke-width="1" />
+      <text x="12" y="235" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" font-size="11" font-weight="700">PAPEL DIDÁTICO-CLÍNICO:</text>
+      <text x="12" y="254" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">Funciona como o ponto zero para</text>
+      <text x="12" y="270" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">vetores de distropia anterior e apoio</text>
+      <text x="12" y="286" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">do arco tendíneo. Fixa a margem</text>
+      <text x="12" y="302" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">ventral de todo o assoalho pélvico,</text>
+      <text x="12" y="318" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">impedindo o desvio em báscula.</text>
+      <text x="12" y="348" fill="var(--a12-ancora-anterior, var(--a12p3-sinfise, #F07A83))" font-size="10" font-weight="700">VETOR: ÂNTERO-INFERIOR</text>
+    </g>
+
+    <!-- CARD 2: Promontório Sacral -->
+    <g id="a12p3-card-promontorio" class="a12p3-detail-card" transform="translate(18, 65)">
+      <!-- Badge -->
+      <rect x="0" y="0" width="249" height="28" rx="4" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" opacity="0.2" />
+      <text x="10" y="19" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" font-size="12" font-weight="700">ÂNCORA 2: PROMONTÓRIO SACRAL</text>
+
+      <!-- Position and Vector -->
+      <text x="0" y="50" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Topografia:</text>
+      <text x="0" y="66" fill="var(--a12p3-subtext, #C0B0C4)" font-size="11">Posterior e Superior (Atrás / Em Cima)</text>
+
+      <text x="0" y="95" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Eixo Espacial de Referência:</text>
+      <text x="0" y="111" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" font-size="11" font-weight="600">Plano do Estreito Superior [L5/S1]</text>
+
+      <text x="0" y="140" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Reaproveitamento na Trilha:</text>
+      <text x="0" y="158" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P5: Eixo de Tração Sacra</text>
+      <text x="0" y="174" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P14: Promontofixação / Promontório</text>
+      <text x="0" y="190" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P20: Vetor Aponeurótico Superior</text>
+
+      <!-- Clinical Value Box -->
+      <rect x="0" y="215" width="249" height="155" rx="6" fill="#D6A55214" stroke="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" stroke-width="1" />
+      <text x="12" y="235" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" font-size="11" font-weight="700">PAPEL DIDÁTICO-CLÍNICO:</text>
+      <text x="12" y="254" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">Constitui o teto anatômico rígido.</text>
+      <text x="12" y="270" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">Origem da linha terminal e vetor de</text>
+      <text x="12" y="286" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">suspensão apical (Sacrocolpopexia).</text>
+      <text x="12" y="302" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">Define a conjugada obstétrica e a</text>
+      <text x="12" y="318" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">inclinação pélvica fisiológica.</text>
+      <text x="12" y="348" fill="var(--a12-ancora-posterior, var(--a12p3-promontorio, #D6A552))" font-size="10" font-weight="700">VETOR: PÓSTERO-SUPERIOR</text>
+    </g>
+
+    <!-- CARD 3: Espinha Isquiática -->
+    <g id="a12p3-card-espinhas" class="a12p3-detail-card" transform="translate(18, 65)">
+      <!-- Badge -->
+      <rect x="0" y="0" width="249" height="28" rx="4" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" opacity="0.2" />
+      <text x="10" y="19" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" font-size="12" font-weight="700">ÂNCORA 3: ESPINHA ISQUIÁTICA</text>
+
+      <!-- Position and Vector -->
+      <text x="0" y="50" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Topografia:</text>
+      <text x="0" y="66" fill="var(--a12p3-subtext, #C0B0C4)" font-size="11">Lateral / Nível Médio (Projeção Canal)</text>
+
+      <text x="0" y="95" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Eixo Espacial de Referência:</text>
+      <text x="0" y="111" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" font-size="11" font-weight="600">Plano Interespinhoso [Nível 0 cm]</text>
+
+      <text x="0" y="140" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="11" font-weight="700">Reaproveitamento na Trilha:</text>
+      <text x="0" y="158" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P12: Nível Zero de Estação Pélvica</text>
+      <text x="0" y="174" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P17: Fixação Sacroespinhosa</text>
+      <text x="0" y="190" fill="var(--a12p3-subtext, #C0B0C4)" font-size="10.5">• P20: Marcador de Profundidade POP-Q</text>
+
+      <!-- Clinical Value Box -->
+      <rect x="0" y="215" width="249" height="155" rx="6" fill="#4DB9B014" stroke="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" stroke-width="1" />
+      <text x="12" y="235" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" font-size="11" font-weight="700">PAPEL DIDÁTICO-CLÍNICO:</text>
+      <text x="12" y="254" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">É o divisor anatômico central do</text>
+      <text x="12" y="270" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">estreito médio. Ponto de ancoragem</text>
+      <text x="12" y="286" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">do ligamento sacroespinhoso e zero</text>
+      <text x="12" y="302" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">de DeLee. Projeta-se lateralmente no</text>
+      <text x="12" y="318" fill="var(--a12-tinta, var(--a12p3-tinta, #F7F1F5))" font-size="10.5">corte sagital mediano.</text>
+      <text x="12" y="348" fill="var(--a12-ancora-lateral, var(--a12p3-espinhas, #4DB9B0))" font-size="10" font-weight="700">VETOR: LATERAL / PROFUNDIDADE</text>
+    </g>
+  </g>
+
+  <!-- SELF-CONTAINED INTERACTIVE ENGINE (Contract requirement: JS inside SVG) -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    (function() {
+      function initEngine() {
+        var root = document.querySelector('.a12p3-root');
+        if (!root) return;
+        var btns = root.querySelectorAll('.a12p3-ancora-btn');
+
+        function setActive(anchor) {
+          root.setAttribute('data-active-anchor', anchor);
+          btns.forEach(function(btn) {
+            var isSelected = btn.getAttribute('data-anchor') === anchor;
+            btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+          });
+        }
+
+        btns.forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var anchor = btn.getAttribute('data-anchor');
+            if (anchor) setActive(anchor);
+          });
+
+          btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              var anchor = btn.getAttribute('data-anchor');
+              if (anchor) setActive(anchor);
+            }
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initEngine);
+      } else {
+        initEngine();
+      }
+    })();
+    /* ]]> */
+  </script>
+</svg>

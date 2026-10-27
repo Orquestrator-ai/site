@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="100%" height="100%" class="a12p6h-root" id="a12p6h-svg" data-theme="dark">
+  <defs>
+    <!-- Filters & Gradients -->
+    <linearGradient id="a12p6h-grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p6h-bg-stop1, #140611)" />
+      <stop offset="100%" stop-color="var(--a12p6h-bg-stop2, #260c20)" />
+    </linearGradient>
+
+    <linearGradient id="a12p6h-grad-ilio" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p6h-ilio-light, #f472b6)" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="var(--a12p6h-ilio-dark, #9d174d)" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="a12p6h-grad-isquio" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="var(--a12p6h-isquio-light, #fb923c)" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="var(--a12p6h-isquio-dark, #c2410c)" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="a12p6h-grad-pubis" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p6h-pubis-light, #38bdf8)" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="var(--a12p6h-pubis-dark, #0369a1)" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="a12p6h-grad-fossa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p6h-fossa-1, #2d1226)" />
+      <stop offset="100%" stop-color="var(--a12p6h-fossa-2, #140510)" />
+    </linearGradient>
+
+    <filter id="a12p6h-glow-t" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComponentTransfer in="blur" result="glow">
+        <feFuncA type="linear" slope="1.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="a12p6h-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <style>
+    .a12p6h-root {
+      --a12p6h-bg-stop1: var(--bg-1, #140611);
+      --a12p6h-bg-stop2: var(--bg-2, #260c20);
+      --a12p6h-panel-bg: var(--bg-card, #250f21);
+      --a12p6h-panel-border: var(--ink-20, #522347);
+      --a12p6h-text-main: var(--ink-100, #fce8f3);
+      --a12p6h-text-muted: var(--ink-70, #d4a5c7);
+      --a12p6h-text-dim: #9e6d92;
+
+      --a12p6h-ilio-light: #f472b6;
+      --a12p6h-ilio-dark: #9d174d;
+      --a12p6h-isquio-light: #fb923c;
+      --a12p6h-isquio-dark: #c2410c;
+      --a12p6h-pubis-light: #38bdf8;
+      --a12p6h-pubis-dark: #0369a1;
+
+      --a12p6h-t-line: #facc15;
+      --a12p6h-normal: #34d399;
+      --a12p6h-alert: #f87171;
+      --a12p6h-warning: #fbbf24;
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      user-select: none;
+    }
+
+    [data-theme="light"] .a12p6h-root {
+      --a12p6h-bg-stop1: var(--bg-1, #fff2f7);
+      --a12p6h-bg-stop2: var(--bg-2, #fbe3ef);
+      --a12p6h-panel-bg: var(--bg-card, #ffffff);
+      --a12p6h-panel-border: var(--ink-20, #eab0d0);
+      --a12p6h-text-main: var(--ink-100, #2c0920);
+      --a12p6h-text-muted: var(--ink-70, #692451);
+      --a12p6h-text-dim: #995583;
+
+      --a12p6h-ilio-light: #db2777;
+      --a12p6h-ilio-dark: #831843;
+      --a12p6h-isquio-light: #ea580c;
+      --a12p6h-isquio-dark: #7c2d12;
+      --a12p6h-pubis-light: #0284c7;
+      --a12p6h-pubis-dark: #075985;
+
+      --a12p6h-t-line: #b45309;
+      --a12p6h-normal: #059669;
+      --a12p6h-alert: #dc2626;
+      --a12p6h-warning: #d97706;
+    }
+
+    .a12p6h-bg-canvas { fill: url(#a12p6h-grad-bg); }
+    .a12p6h-panel { fill: var(--a12p6h-panel-bg, #250f21); stroke: var(--a12p6h-panel-border, #522347); stroke-width: 1.5px; rx: 12px; }
+    
+    .a12p6h-title { fill: var(--a12p6h-text-main, #fce8f3); font-size: 20px; font-weight: 800; letter-spacing: 0.5px; }
+    .a12p6h-subtitle { fill: var(--a12p6h-text-muted, #d4a5c7); font-size: 13px; font-weight: 400; }
+
+    .a12p6h-tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .a12p6h-tab-bg { fill: var(--a12p6h-panel-bg, #250f21); stroke: var(--a12p6h-panel-border, #522347); stroke-width: 1px; rx: 8px; }
+    .a12p6h-tab-btn:hover .a12p6h-tab-bg { fill: var(--a12p6h-panel-border, #522347); }
+    .a12p6h-tab-btn.a12p6h-active .a12p6h-tab-bg { fill: var(--a12p6h-ilio-dark, #9d174d); stroke: var(--a12p6h-ilio-light, #f472b6); stroke-width: 1.5px; }
+    .a12p6h-tab-text { fill: var(--a12p6h-text-muted, #d4a5c7); font-size: 12px; font-weight: 600; pointer-events: none; }
+    .a12p6h-tab-btn.a12p6h-active .a12p6h-tab-text { fill: #ffffff; font-weight: 700; }
+
+    .a12p6h-bone { cursor: pointer; transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease, filter 0.25s ease; }
+    .a12p6h-bone-ilio { fill: url(#a12p6h-grad-ilio); stroke: var(--a12p6h-ilio-light, #f472b6); stroke-width: 2px; }
+    .a12p6h-bone-isquio { fill: url(#a12p6h-grad-isquio); stroke: var(--a12p6h-isquio-light, #fb923c); stroke-width: 2px; }
+    .a12p6h-bone-pubis { fill: url(#a12p6h-grad-pubis); stroke: var(--a12p6h-pubis-light, #38bdf8); stroke-width: 2px; }
+
+    .a12p6h-bone:hover { filter: drop-shadow(0 0 10px rgba(244,114,182,0.4)); opacity: 0.95; }
+    .a12p6h-bone.a12p6h-selected { stroke-width: 3.5px; filter: drop-shadow(0 0 14px rgba(255,255,255,0.6)); opacity: 1; }
+    .a12p6h-bone.a12p6h-dimmed { opacity: 0.35; filter: grayscale(40%); }
+
+    .a12p6h-t-branch { stroke: var(--a12p6h-t-line, #facc15); stroke-width: 5px; stroke-linecap: round; filter: url(#a12p6h-glow-t); transition: all 0.3s ease; }
+    .a12p6h-t-branch.a12p6h-highlight { stroke-width: 8px; stroke: #ffffff; }
+
+    .a12p6h-label-line { stroke: var(--a12p6h-text-dim, #9e6d92); stroke-width: 1.2px; stroke-dasharray: 3 3; }
+    .a12p6h-label-badge { fill: var(--a12p6h-panel-bg, #250f21); stroke: var(--a12p6h-panel-border, #522347); stroke-width: 1px; rx: 4px; }
+    .a12p6h-label-txt { fill: var(--a12p6h-text-main, #fce8f3); font-size: 11px; font-weight: 600; }
+
+    .a12p6h-compass-ring { fill: none; stroke: var(--a12p6h-panel-border, #522347); stroke-width: 1.5px; stroke-dasharray: 4 4; }
+    .a12p6h-compass-axis { stroke: var(--a12p6h-panel-border, #522347); stroke-width: 1px; }
+    .a12p6h-compass-lbl { fill: var(--a12p6h-text-muted, #d4a5c7); font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .a12p6h-compass-accent { fill: var(--a12p6h-warning, #fbbf24); font-weight: 900; font-size: 12px; }
+
+    .a12p6h-panel-header { fill: var(--a12p6h-text-main, #fce8f3); font-size: 16px; font-weight: 800; }
+    .a12p6h-panel-sub { fill: var(--a12p6h-text-muted, #d4a5c7); font-size: 12px; font-weight: 600; }
+    .a12p6h-panel-body { fill: var(--a12p6h-text-muted, #d4a5c7); font-size: 12px; line-height: 1.5; }
+    
+    .a12p6h-badge-lio { fill: rgba(244,114,182,0.15); stroke: var(--a12p6h-ilio-light, #f472b6); stroke-width: 1px; rx: 6px; }
+    .a12p6h-badge-isquio { fill: rgba(251,146,60,0.15); stroke: var(--a12p6h-isquio-light, #fb923c); stroke-width: 1px; rx: 6px; }
+    .a12p6h-badge-pubis { fill: rgba(56,189,248,0.15); stroke: var(--a12p6h-pubis-light, #38bdf8); stroke-width: 1px; rx: 6px; }
+
+    .a12p6h-flip-btn { cursor: pointer; transition: transform 0.2s ease; }
+    .a12p6h-flip-btn:hover { transform: scale(1.03); }
+    .a12p6h-flip-bg { fill: var(--a12p6h-warning, #fbbf24); rx: 8px; }
+    .a12p6h-flip-txt { fill: #1c0a18; font-size: 12px; font-weight: 800; text-anchor: middle; pointer-events: none; }
+  </style>
+
+  <!-- BACKGROUND CANVAS -->
+  <rect width="1100" height="720" class="a12p6h-bg-canvas" />
+
+  <!-- TOP HEADER -->
+  <g transform="translate(30, 20)">
+    <text x="0" y="24" class="a12p6h-title">O "T" DO ACETÁBULO — ANATOMIA DA HEMIPELVE E ORIENTAÇÃO ESPACIAL</text>
+    <text x="0" y="46" class="a12p6h-subtitle">Determinação inconfundível dos 3 territórios ósseos e colunas anatômicas sem erro de espelhamento radiológico</text>
+  </g>
+
+  <!-- INTERACTIVE TABS (MODE SELECTOR) -->
+  <g transform="translate(680, 25)">
+    <g class="a12p6h-tab-btn a12p6h-active" id="a12p6h-tab-1" data-mode="territories" role="button" aria-label="Modo Territórios Ósseos">
+      <rect x="0" y="0" width="125" height="34" class="a12p6h-tab-bg" />
+      <text x="62" y="21" text-anchor="middle" class="a12p6h-tab-text">1. Territórios</text>
+    </g>
+    <g class="a12p6h-tab-btn" id="a12p6h-tab-2" data-mode="columns" role="button" aria-label="Modo Colunas de Judet">
+      <rect x="133" y="0" width="125" height="34" class="a12p6h-tab-bg" />
+      <text x="195" y="21" text-anchor="middle" class="a12p6h-tab-text">2. Colunas Judet</text>
+    </g>
+    <g class="a12p6h-tab-btn" id="a12p6h-tab-3" data-mode="mirror" role="button" aria-label="Modo Trava Anti-Espelhamento">
+      <rect x="266" y="0" width="125" height="34" class="a12p6h-tab-bg" />
+      <text x="328" y="21" text-anchor="middle" class="a12p6h-tab-text">3. Anti-Espelho</text>
+    </g>
+  </g>
+
+  <!-- MAIN GRAPHIC STAGE CARD -->
+  <rect x="30" y="80" width="650" height="610" class="a12p6h-panel" filter="url(#a12p6h-shadow)" />
+
+  <!-- ORIENTATION COMPASS (ROSA DOS VENTOS ANATÔMICA) -->
+  <g transform="translate(110, 160)" id="a12p6h-compass-group">
+    <circle cx="0" cy="0" r="50" class="a12p6h-compass-ring" />
+    <line x1="0" y1="-55" x2="0" y2="55" class="a12p6h-compass-axis" />
+    <line x1="-55" y1="0" x2="55" y2="0" class="a12p6h-compass-axis" />
+    
+    <!-- Compass Labels -->
+    <text x="0" y="-62" class="a12p6h-compass-lbl a12p6h-compass-accent">SUPERIOR (Ílio)</text>
+    <text x="0" y="74" class="a12p6h-compass-lbl">INFERIOR</text>
+    
+    <!-- Dynamic Anterior/Posterior Labels (swapped on flip) -->
+    <g id="a12p6h-compass-dir-labels">
+      <text x="75" y="4" class="a12p6h-compass-lbl a12p6h-compass-accent" id="a12p6h-lbl-right">ANTERIOR (Púbis)</text>
+      <text x="-75" y="4" class="a12p6h-compass-lbl a12p6h-compass-accent" id="a12p6h-lbl-left">POSTERIOR (Ísquio)</text>
+    </g>
+    
+    <text x="0" y="94" class="a12p6h-compass-lbl" style="font-size: 9px; fill: var(--a12p6h-text-dim, #9e6d92);" id="a12p6h-view-side-txt">Hemipelve Direita — Visão Lateral Externa</text>
+  </g>
+
+  <!-- FLIP VIEW BUTTON (STANDALONE INTERACTION) -->
+  <g class="a12p6h-flip-btn" id="a12p6h-btn-flip" transform="translate(490, 100)" role="button" aria-label="Alternar Lado da Pelve (Direita / Esquerda)">
+    <rect x="0" y="0" width="170" height="34" class="a12p6h-flip-bg" />
+    <text x="85" y="21" class="a12p6h-flip-txt">Alternar Lado (Dir / Esq)</text>
+  </g>
+
+  <!-- BONE STAGE CONTAINER (Center of Acetabulum at X: 350, Y: 400) -->
+  <g id="a12p6h-pelvis-stage" transform="translate(0,0)">
+    <g id="a12p6h-pelvis-transform-group" transform="translate(0, 0) scale(1, 1)">
+      
+      <!-- 1. ÍLIO (Superior Territory) -->
+      <path d="M 350 400 L 350 320 C 410 315 440 280 460 255 L 485 205 C 455 165 405 135 350 135 C 275 135 225 175 195 215 C 220 250 230 285 260 325 C 280 345 295 380 295 445 L 350 400 Z" 
+            class="a12p6h-bone a12p6h-bone-ilio" id="a12p6h-shape-ilio" data-territory="ilio" role="button" aria-label="Território do Ílio" />
+
+      <!-- 2. ÍSQUIO (Posterior & Inferior Territory) -->
+      <path d="M 350 400 L 295 445 C 280 445 250 415 235 405 C 230 430 240 455 245 460 C 240 490 245 530 265 560 C 295 585 340 580 365 550 C 380 525 390 490 410 445 L 350 400 Z" 
+            class="a12p6h-bone a12p6h-bone-isquio" id="a12p6h-shape-isquio" data-territory="isquio" role="button" aria-label="Território do Ísquio" />
+
+      <!-- 3. PÚBIS (Anterior & Inferior Territory) -->
+      <path d="M 350 400 L 410 445 C 435 430 475 440 515 460 C 535 470 540 495 515 520 C 465 545 420 545 385 535 C 395 495 405 465 410 445 L 350 400 Z" 
+            class="a12p6h-bone a12p6h-bone-pubis" id="a12p6h-shape-pubis" data-territory="pubis" role="button" aria-label="Território do Púbis" />
+
+      <!-- FORAME OBTURADO (OBTURATOR FORAMEN) -->
+      <path d="M 370 470 C 425 470 440 505 400 530 C 365 530 355 495 370 470 Z" 
+            fill="url(#a12p6h-grad-fossa)" stroke="var(--a12p6h-panel-border, #522347)" stroke-width="2px" id="a12p6h-foramen" />
+
+      <!-- ACETABULUM RIM & LUNATE ARTICULAR CARTILAGE (CUP) -->
+      <g id="a12p6h-acetabulum-cup" transform="translate(350, 400)">
+        <!-- Outer Acetabular Rim (Limbus) -->
+        <circle cx="0" cy="0" r="75" fill="none" stroke="var(--a12p6h-text-main, #fce8f3)" stroke-width="3px" opacity="0.4" />
+        <circle cx="0" cy="0" r="72" fill="url(#a12p6h-grad-fossa)" stroke="var(--a12p6h-panel-border, #522347)" stroke-width="1.5px" />
+        
+        <!-- Articular Lunate Surface (Superfície Semilunar - Crescent Cartilage) -->
+        <path d="M -52 42 A 66 66 0 1 1 52 42 A 42 42 0 1 0 -35 28 Z" fill="rgba(255,255,255,0.12)" stroke="var(--a12p6h-text-muted, #d4a5c7)" stroke-width="1px" />
+        
+        <!-- Central Acetabular Fossa (Fossa Acetabular) -->
+        <circle cx="0" cy="5" r="32" fill="var(--a12p6h-bg-stop1, #140611)" stroke="var(--a12p6h-panel-border, #522347)" stroke-width="1px" />
+
+        <!-- TRIRADIATE CARTILAGE / THE 'T' LINES (GLOWING SUTURES) -->
+        <g id="a12p6h-t-lines-group">
+          <!-- Branch 1: Superior (Ílio) -->
+          <line x1="0" y1="5" x2="0" y2="-72" class="a12p6h-t-branch" id="a12p6h-t-stem-sup" data-branch="sup" />
+          <!-- Branch 2: Anterior (Púbis) -->
+          <line x1="0" y1="5" x2="62" y2="42" class="a12p6h-t-branch" id="a12p6h-t-stem-ant" data-branch="ant" />
+          <!-- Branch 3: Posterior (Ísquio) -->
+          <line x1="0" y1="5" x2="-62" y2="42" class="a12p6h-t-branch" id="a12p6h-t-stem-post" data-branch="post" />
+
+          <!-- Center Junction Marker -->
+          <circle cx="0" cy="5" r="7" fill="var(--a12p6h-t-line, #facc15)" stroke="#ffffff" stroke-width="2px" filter="url(#a12p6h-glow-t)" />
+        </g>
+      </g>
+
+      <!-- ANATOMICAL CALLOUT LABELS & LEADER LINES -->
+      <g id="a12p6h-callouts">
+        <!-- Crista Ilíaca -->
+        <line x1="350" y1="135" x2="350" y2="105" class="a12p6h-label-line" />
+        <rect x="290" y="85" width="120" height="22" class="a12p6h-label-badge" />
+        <text x="350" y="100" text-anchor="middle" class="a12p6h-label-txt">Crista Ilíaca</text>
+
+        <!-- EIAS (Anterior Superior Iliac Spine) -->
+        <line x1="485" y1="205" x2="550" y2="175" class="a12p6h-label-line" />
+        <rect x="545" y="160" width="80" height="22" class="a12p6h-label-badge" />
+        <text x="585" y="175" text-anchor="middle" class="a12p6h-label-txt">EIAS (Anterior)</text>
+
+        <!-- Espinha Isquiática (Posterior) -->
+        <line x1="235" y1="405" x2="140" y2="405" class="a12p6h-label-line" />
+        <rect x="50" y="394" width="105" height="22" class="a12p6h-label-badge" />
+        <text x="102" y="409" text-anchor="middle" class="a12p6h-label-txt" style="fill: var(--a12p6h-isquio-light, #fb923c);">Espinha Isquiática</text>
+
+        <!-- Túber Isquiático -->
+        <line x1="285" y1="570" x2="200" y2="615" class="a12p6h-label-line" />
+        <rect x="135" y="605" width="115" height="22" class="a12p6h-label-badge" />
+        <text x="192" y="620" text-anchor="middle" class="a12p6h-label-txt" style="fill: var(--a12p6h-isquio-light, #fb923c);">Túber Isquiático</text>
+
+        <!-- Sínfise / Púbis -->
+        <line x1="530" y1="490" x2="590" y2="530" class="a12p6h-label-line" />
+        <rect x="560" y="525" width="110" height="22" class="a12p6h-label-badge" />
+        <text x="615" y="540" text-anchor="middle" class="a12p6h-label-txt" style="fill: var(--a12p6h-pubis-light, #38bdf8);">Ramo Púbico (Ant)</text>
+
+        <!-- Forame Obturado -->
+        <line x1="380" y1="520" x2="380" y2="640" class="a12p6h-label-line" />
+        <rect x="315" y="630" width="130" height="22" class="a12p6h-label-badge" />
+        <text x="380" y="645" text-anchor="middle" class="a12p6h-label-txt">Forame Obturado</text>
+
+        <!-- Central 'T' Marker Callout -->
+        <line x1="350" y1="400" x2="480" y2="330" class="a12p6h-label-line" style="stroke: var(--a12p6h-t-line, #facc15); stroke-width: 1.8px;" />
+        <rect x="475" y="315" width="155" height="26" class="a12p6h-label-badge" style="stroke: var(--a12p6h-t-line, #facc15);" />
+        <text x="552" y="332" text-anchor="middle" class="a12p6h-label-txt" style="fill: var(--a12p6h-t-line, #facc15); font-weight: 800;">'T' / Cartilagem Trirrradiada</text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- RIGHT SIDE INFORMATION & INTERPRETATION PANEL -->
+  <g transform="translate(705, 80)">
+    <!-- Panel Background Card -->
+    <rect x="0" y="0" width="365" height="610" class="a12p6h-panel" filter="url(#a12p6h-shadow)" />
+
+    <!-- DYNAMIC TITLE / STATUS BADGE -->
+    <g transform="translate(20, 25)">
+      <rect x="0" y="0" width="325" height="36" class="a12p6h-badge-lio" id="a12p6h-panel-badge-bg" />
+      <text x="15" y="23" class="a12p6h-panel-header" id="a12p6h-panel-title">1. ÍLIO (Território Superior)</text>
+    </g>
+
+    <!-- ANATOMICAL SUMMARY & DESCRIPTION -->
+    <g transform="translate(20, 80)">
+      <text x="0" y="0" class="a12p6h-panel-sub">Posição &amp; Função na Hemipelve:</text>
+      <foreignObject x="0" y="10" width="325" height="90">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="a12p6h-panel-body" id="a12p6h-panel-desc">
+          O Ílio forma a porção <b>superior (teto)</b> do acetábulo e a asa ilíaca. Suporta a carga axial transmitida da coluna e do sacro para o fêmur.
+        </div>
+      </foreignObject>
+    </g>
+
+    <!-- KEY LANDMARKS LIST BOX -->
+    <g transform="translate(20, 190)">
+      <rect x="0" y="0" width="325" height="120" fill="rgba(0,0,0,0.2)" stroke="var(--a12p6h-panel-border, #522347)" stroke-width="1px" rx="8px" />
+      <text x="15" y="24" class="a12p6h-panel-sub" style="fill: var(--a12p6h-warning, #fbbf24);">Acidentes Ósseos Chave:</text>
+      <text x="15" y="48" class="a12p6h-panel-body" id="a12p6h-lm-1">• Teto Acetabular (Dome / Cúpula articular)</text>
+      <text x="15" y="68" class="a12p6h-panel-body" id="a12p6h-lm-2">• Crista Ilíaca e EIAS / EIAI (Anteriores)</text>
+      <text x="15" y="88" class="a12p6h-panel-body" id="a12p6h-lm-3">• Porção Superior da Incisura Isquiática Maior</text>
+      <text x="15" y="108" class="a12p6h-panel-body" id="a12p6h-lm-4">• Integra a Coluna Anterior e Posterior de Judet</text>
+    </g>
+
+    <!-- JUDET FRACTURE COLUMN CORRELATION -->
+    <g transform="translate(20, 325)">
+      <rect x="0" y="0" width="325" height="110" fill="rgba(0,0,0,0.25)" stroke="var(--a12p6h-panel-border, #522347)" stroke-width="1px" rx="8px" />
+      <text x="15" y="24" class="a12p6h-panel-sub" style="fill: var(--a12p6h-normal, #34d399);">Classificação de Judet-Letournel:</text>
+      <foreignObject x="15" y="32" width="295" height="70">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="a12p6h-panel-body" id="a12p6h-panel-judet">
+          <b>Coluna Anterior:</b> Púbis + Metade Anterior do Ílio (Linha Iliopúbica).<br/>
+          <b>Coluna Posterior:</b> Ísquio + Metade Posterior do Ílio (Linha Ilioisquiática).
+        </div>
+      </foreignObject>
+    </g>
+
+    <!-- ANTI-MIRROR GOLDEN RULE (LEGENDA DE INTERPRETAÇÃO) -->
+    <g transform="translate(20, 450)">
+      <rect x="0" y="0" width="325" height="140" fill="rgba(251,191,36,0.08)" stroke="var(--a12p6h-warning, #fbbf24)" stroke-width="1.5px" rx="8px" />
+      <text x="15" y="24" class="a12p6h-panel-sub" style="fill: var(--a12p6h-warning, #fbbf24); font-weight: 800;">TRAVA ANTI-ESPELHAMENTO:</text>
+      
+      <text x="15" y="48" class="a12p6h-panel-body" style="font-weight: 700; fill: var(--a12p6h-pubis-light, #38bdf8);">1. ANTERIOR = PÚBIS (FRENTE)</text>
+      <text x="15" y="68" class="a12p6h-panel-body" style="font-weight: 700; fill: var(--a12p6h-isquio-light, #fb923c);">2. POSTERIOR = ÍSQUIO (TRÁS / ESPINHA)</text>
+      <text x="15" y="88" class="a12p6h-panel-body" style="font-weight: 700; fill: var(--a12p6h-ilio-light, #f472b6);">3. SUPERIOR = ÍLIO (TETO / ASA)</text>
+      
+      <text x="15" y="114" class="a12p6h-panel-body" style="font-size: 11px; fill: var(--a12p6h-text-main, #fce8f3);">
+        <i>Regra de Ouro:</i> O Púbis aponta SEMPRE para a frente (ventral). Identifique o ramo púbico para travar a orientação instantaneamente!
+      </text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED ENGINE (JS INLINE) -->
+  <script>//<![CDATA[
+    (function() {
+      'use strict';
+      
+      var state = {
+        mode: 'territories',
+        selectedTerritory: 'ilio',
+        isFlipped: false
+      };
+
+      var territoryData = {
+        ilio: {
+          title: "1. ÍLIO (Território Superior)",
+          badgeClass: "a12p6h-badge-lio",
+          color: "var(--a12p6h-ilio-light, #f472b6)",
+          desc: "O <b>Ílio</b> forma a porção <b>superior (teto acetabular)</b> e a asa ilíaca. Suporta a carga axial transmitida da coluna e do sacro para o fêmur.",
+          lm: [
+            "• Teto Acetabular (Dome / Cúpula articular)",
+            "• Crista Ilíaca e EIAS / EIAI (Anteriores)",
+            "• Porção Superior da Incisura Isquiática Maior",
+            "• Integra a Coluna Anterior e Posterior de Judet"
+          ],
+          judet: "<b>Participação nas Colunas:</b> Fornece a porção superior e o teto para a <b>Coluna Anterior</b> (Linha Iliopúbica) e para a <b>Coluna Posterior</b> (Linha Ilioisquiática)."
+        },
+        isquio: {
+          title: "2. ÍSQUIO (Território Posterior)",
+          badgeClass: "a12p6h-badge-isquio",
+          color: "var(--a12p6h-isquio-light, #fb923c)",
+          desc: "O <b>Ísquio</b> forma a porção <b>posterior e inferior</b> do acetábulo. Caracteriza-se pela proeminente Espinha Isquiática e pelo robusto Túber Isquiático.",
+          lm: [
+            "• Parede Posterior e Coluna Posterior",
+            "• Espinha Isquiática (Ponto de referência posterior)",
+            "• Incisura Isquiática Menor (Inferior à espinha)",
+            "• Túber Isquiático (Apoio ao sentar)"
+          ],
+          judet: "<b>Coluna Posterior de Judet:</b> Formada pelo Ísquio + porção ilíaca posterior + parede posterior. Trajetórias de fratura afetam a estabilidade posterior da cabeça femoral."
+        },
+        pubis: {
+          title: "3. PÚBIS (Território Anterior)",
+          badgeClass: "a12p6h-badge-pubis",
+          color: "var(--a12p6h-pubis-light, #38bdf8)",
+          desc: "O <b>Púbis</b> forma a porção <b>anterior e inferior</b>. Seus ramos delimitam a parede anterior do acetábulo e a margem anterior do Forame Obturado.",
+          lm: [
+            "• Ramo Superior do Púbis (Coluna Anterior)",
+            "• Ramo Inferior do Púbis (Arco Púbico)",
+            "• Corpo do Púbis e Sínfise Púbica (Anterior)",
+            "• Pecten do Púbis e Crista Púbica"
+          ],
+          judet: "<b>Coluna Anterior de Judet:</b> Formada pelo Ramo Superior do Púbis + metade anterior do Ílio (Linha Iliopúbica). Fundamental para a contenção anterior da cabeça femoral."
+        },
+        't-junction': {
+          title: "O 'T' / Cartilagem Trirrradiada",
+          badgeClass: "a12p6h-badge-lio",
+          color: "var(--a12p6h-t-line, #facc15)",
+          desc: "A <b>Cartilagem Trirrradiada</b> em forma de 'Y' ou 'T' une os 3 ossos na infância e se funde na puberdade, formando o centro da fossa acetabular.",
+          lm: [
+            "• Haste Superior: Separa Ílio e Púbis/Ísquio",
+            "• Haste Anterior: Divisão Ilio-Púbica",
+            "• Haste Posterior: Divisão Ilio-Isquiática",
+            "• Fossa Acetabular Central (Não-articular)"
+          ],
+          judet: "<b>Centro Radiológico de Judet:</b> As linhas do 'T' correspondem aos eixos anatômicos que dividem as fraturas elementares (transversas, 'T-shaped', coluna dupla)."
+        }
+      };
+
+      var svgRoot = document.getElementById('a12p6h-svg');
+      var shapeIlio = document.getElementById('a12p6h-shape-ilio');
+      var shapeIsquio = document.getElementById('a12p6h-shape-isquio');
+      var shapePubis = document.getElementById('a12p6h-shape-pubis');
+      var tStems = [
+        document.getElementById('a12p6h-t-stem-sup'),
+        document.getElementById('a12p6h-t-stem-ant'),
+        document.getElementById('a12p6h-t-stem-post')
+      ];
+
+      var panelTitle = document.getElementById('a12p6h-panel-title');
+      var panelDesc = document.getElementById('a12p6h-panel-desc');
+      var panelJudet = document.getElementById('a12p6h-panel-judet');
+      var lmElements = [
+        document.getElementById('a12p6h-lm-1'),
+        document.getElementById('a12p6h-lm-2'),
+        document.getElementById('a12p6h-lm-3'),
+        document.getElementById('a12p6h-lm-4')
+      ];
+
+      var transformGroup = document.getElementById('a12p6h-pelvis-transform-group');
+      var lblRight = document.getElementById('a12p6h-lbl-right');
+      var lblLeft = document.getElementById('a12p6h-lbl-left');
+      var viewSideTxt = document.getElementById('a12p6h-view-side-txt');
+
+      var tabs = [
+        document.getElementById('a12p6h-tab-1'),
+        document.getElementById('a12p6h-tab-2'),
+        document.getElementById('a12p6h-tab-3')
+      ];
+
+      var btnFlip = document.getElementById('a12p6h-btn-flip');
+
+      function updatePanelContent(key) {
+        var data = territoryData[key] || territoryData['ilio'];
+        panelTitle.textContent = data.title;
+        panelTitle.style.fill = data.color;
+        panelDesc.innerHTML = data.desc;
+        panelJudet.innerHTML = data.judet;
+
+        for (var i = 0; i < 4; i++) {
+          if (lmElements[i]) {
+            lmElements[i].textContent = data.lm[i] || '';
+          }
+        }
+      }
+
+      function highlightTerritory(key) {
+        state.selectedTerritory = key;
+        
+        [shapeIlio, shapeIsquio, shapePubis].forEach(function(el) {
+          if (el) {
+            el.classList.remove('a12p6h-selected', 'a12p6h-dimmed');
+          }
+        });
+
+        tStems.forEach(function(stem) {
+          if (stem) stem.classList.remove('a12p6h-highlight');
+        });
+
+        if (key === 'ilio' && shapeIlio) {
+          shapeIlio.classList.add('a12p6h-selected');
+          if (shapeIsquio) shapeIsquio.classList.add('a12p6h-dimmed');
+          if (shapePubis) shapePubis.classList.add('a12p6h-dimmed');
+        } else if (key === 'isquio' && shapeIsquio) {
+          shapeIsquio.classList.add('a12p6h-selected');
+          if (shapeIlio) shapeIlio.classList.add('a12p6h-dimmed');
+          if (shapePubis) shapePubis.classList.add('a12p6h-dimmed');
+        } else if (key === 'pubis' && shapePubis) {
+          shapePubis.classList.add('a12p6h-selected');
+          if (shapeIlio) shapeIlio.classList.add('a12p6h-dimmed');
+          if (shapeIsquio) shapeIsquio.classList.add('a12p6h-dimmed');
+        } else if (key === 't-junction') {
+          tStems.forEach(function(stem) {
+            if (stem) stem.classList.add('a12p6h-highlight');
+          });
+        }
+
+        updatePanelContent(key);
+      }
+
+      function toggleFlip() {
+        state.isFlipped = !state.isFlipped;
+        
+        if (state.isFlipped) {
+          transformGroup.setAttribute('transform', 'translate(700, 0) scale(-1, 1)');
+          lblRight.textContent = "POSTERIOR (Ísquio)";
+          lblLeft.textContent = "ANTERIOR (Púbis)";
+          viewSideTxt.textContent = "Hemipelve Esquerda — Visão Lateral Externa";
+        } else {
+          transformGroup.setAttribute('transform', 'translate(0, 0) scale(1, 1)');
+          lblRight.textContent = "ANTERIOR (Púbis)";
+          lblLeft.textContent = "POSTERIOR (Ísquio)";
+          viewSideTxt.textContent = "Hemipelve Direita — Visão Lateral Externa";
+        }
+      }
+
+      function setMode(modeName) {
+        state.mode = modeName;
+        tabs.forEach(function(tab) {
+          if (tab) {
+            if (tab.getAttribute('data-mode') === modeName) {
+              tab.classList.add('a12p6h-active');
+            } else {
+              tab.classList.remove('a12p6h-active');
+            }
+          }
+        });
+
+        if (modeName === 'columns') {
+          highlightTerritory('ilio');
+          panelTitle.textContent = "Colunas Anatômicas de Judet";
+          panelDesc.innerHTML = "As <b>Colunas de Judet</b> dividem o acetábulo em dois pilares principais em formato de 'V' invertido com vértice na asa do ílio.";
+        } else if (modeName === 'mirror') {
+          highlightTerritory('t-junction');
+          panelTitle.textContent = "Modo Anti-Espelhamento";
+          panelDesc.innerHTML = "Clique no botão <b>'Alternar Lado'</b> para verificar como a regra se mantém em qualquer hemipelve: <b>Púbis é SEMPRE Anterior</b>.";
+        } else {
+          highlightTerritory('ilio');
+        }
+      }
+
+      if (shapeIlio) {
+        shapeIlio.addEventListener('click', function() { highlightTerritory('ilio'); });
+      }
+      if (shapeIsquio) {
+        shapeIsquio.addEventListener('click', function() { highlightTerritory('isquio'); });
+      }
+      if (shapePubis) {
+        shapePubis.addEventListener('click', function() { highlightTerritory('pubis'); });
+      }
+
+      var acetabulumCup = document.getElementById('a12p6h-acetabulum-cup');
+      if (acetabulumCup) {
+        acetabulumCup.style.cursor = 'pointer';
+        acetabulumCup.addEventListener('click', function() { highlightTerritory('t-junction'); });
+      }
+
+      if (btnFlip) {
+        btnFlip.addEventListener('click', toggleFlip);
+      }
+
+      tabs.forEach(function(tab) {
+        if (tab) {
+          tab.addEventListener('click', function() {
+            var mode = this.getAttribute('data-mode');
+            setMode(mode);
+          });
+        }
+      });
+
+      highlightTerritory('ilio');
+
+    })();
+  //]]></script>
+</svg>

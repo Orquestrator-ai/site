@@ -1,0 +1,526 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" class="a12p21-2h-root" id="a12p21-2h-svg">
+  <defs>
+    <style>
+      .a12p21-2h-root {
+        --a12p21-2h-bg: #1a0817;
+        --a12p21-2h-card: #2c1027;
+        --a12p21-2h-card-border: #4a1d42;
+        --a12p21-2h-text: #fce8f5;
+        --a12p21-2h-muted: #cf9ec0;
+        --a12p21-2h-pink: #e05297;
+        --a12p21-2h-pink-glow: rgba(224, 82, 151, 0.25);
+        --a12p21-2h-burgundy: #7a1848;
+        --a12p21-2h-green: #22c55e;
+        --a12p21-2h-green-bg: rgba(34, 197, 94, 0.15);
+        --a12p21-2h-red: #ef4444;
+        --a12p21-2h-red-bg: rgba(239, 68, 68, 0.15);
+        --a12p21-2h-amber: #f59e0b;
+        --a12p21-2h-amber-bg: rgba(245, 158, 11, 0.15);
+        --a12p21-2h-blue-fluid: #38bdf8;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a12p21-2h-bg, #1a0817);
+      }
+
+      [data-theme="light"] .a12p21-2h-root {
+        --a12p21-2h-bg: #fdf5f9;
+        --a12p21-2h-card: #ffffff;
+        --a12p21-2h-card-border: #f0cce2;
+        --a12p21-2h-text: #2b0821;
+        --a12p21-2h-muted: #6b355a;
+        --a12p21-2h-pink: #c2185b;
+        --a12p21-2h-pink-glow: rgba(194, 24, 91, 0.15);
+        --a12p21-2h-burgundy: #880e4f;
+        --a12p21-2h-green: #15803d;
+        --a12p21-2h-green-bg: rgba(21, 128, 61, 0.12);
+        --a12p21-2h-red: #b91c1c;
+        --a12p21-2h-red-bg: rgba(185, 28, 28, 0.12);
+        --a12p21-2h-amber: #b45309;
+        --a12p21-2h-amber-bg: rgba(180, 83, 9, 0.12);
+        --a12p21-2h-blue-fluid: #0284c7;
+      }
+
+      .a12p21-2h-title {
+        font-size: 20px;
+        font-weight: 700;
+        fill: var(--a12p21-2h-text, #fce8f5);
+        letter-spacing: 0.5px;
+      }
+
+      .a12p21-2h-subtitle {
+        font-size: 13px;
+        fill: var(--a12p21-2h-muted, #cf9ec0);
+      }
+
+      .a12p21-2h-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .a12p21-2h-btn-bg {
+        fill: var(--a12p21-2h-card, #2c1027);
+        stroke: var(--a12p21-2h-card-border, #4a1d42);
+        stroke-width: 1.5px;
+        rx: 6px;
+      }
+
+      .a12p21-2h-btn:hover .a12p21-2h-btn-bg {
+        stroke: var(--a12p21-2h-pink, #e05297);
+        fill: var(--a12p21-2h-pink-glow, rgba(224, 82, 151, 0.25));
+      }
+
+      .a12p21-2h-btn.a12p21-2h-active .a12p21-2h-btn-bg {
+        fill: var(--a12p21-2h-burgundy, #7a1848);
+        stroke: var(--a12p21-2h-pink, #e05297);
+        stroke-width: 2px;
+      }
+
+      .a12p21-2h-btn-text {
+        font-size: 12px;
+        font-weight: 600;
+        fill: var(--a12p21-2h-text, #fce8f5);
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .a12p21-2h-panel-rect {
+        fill: var(--a12p21-2h-card, #2c1027);
+        stroke: var(--a12p21-2h-card-border, #4a1d42);
+        stroke-width: 1.5px;
+        rx: 10px;
+      }
+
+      .a12p21-2h-panel-title {
+        font-size: 14px;
+        font-weight: 700;
+        fill: var(--a12p21-2h-pink, #e05297);
+      }
+
+      .a12p21-2h-badge {
+        rx: 4px;
+      }
+
+      .a12p21-2h-badge-text {
+        font-size: 11px;
+        font-weight: 700;
+        text-anchor: middle;
+      }
+
+      .a12p21-2h-label {
+        font-size: 12px;
+        font-weight: 600;
+        fill: var(--a12p21-2h-text, #fce8f5);
+      }
+
+      .a12p21-2h-sublabel {
+        font-size: 11px;
+        fill: var(--a12p21-2h-muted, #cf9ec0);
+      }
+
+      .a12p21-2h-hotspot {
+        cursor: pointer;
+      }
+
+      .a12p21-2h-hotspot-circle {
+        fill: var(--a12p21-2h-card, #2c1027);
+        stroke: var(--a12p21-2h-pink, #e05297);
+        stroke-width: 2px;
+        transition: transform 0.2s ease, fill 0.2s ease;
+      }
+
+      .a12p21-2h-hotspot:hover .a12p21-2h-hotspot-circle {
+        transform: scale(1.25);
+        fill: var(--a12p21-2h-pink, #e05297);
+      }
+
+      .a12p21-2h-hotspot-text {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--a12p21-2h-text, #fce8f5);
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .a12p21-2h-flow-arrow {
+        stroke-dasharray: 6,4;
+        animation: a12p21-2h-dash 1.5s linear infinite;
+      }
+
+      @keyframes a12p21-2h-dash {
+        to {
+          stroke-dashoffset: -20;
+        }
+      }
+
+      .a12p21-2h-hidden {
+        display: none;
+      }
+
+      .a12p21-2h-pointer {
+        stroke: var(--a12p21-2h-muted, #cf9ec0);
+        stroke-width: 1px;
+        stroke-dasharray: 2,2;
+      }
+    </style>
+
+    <linearGradient id="a12p21-2h-grad-tissue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#801b4c" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3d0a24" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="a12p21-2h-grad-hymen-normal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e05297"/>
+      <stop offset="100%" stop-color="#9d2260"/>
+    </linearGradient>
+
+    <linearGradient id="a12p21-2h-grad-hymen-imperf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="50%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+
+    <linearGradient id="a12p21-2h-grad-retention" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#701a75" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#9333ea" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <filter id="a12p21-2h-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- HEADER -->
+  <g transform="translate(40, 35)">
+    <text x="0" y="0" class="a12p21-2h-title">DIFERENCIAÇÃO MORFOLÓGICA E MECÂNICA DO HÍMEN</text>
+    <text x="0" y="22" class="a12p21-2h-subtitle">A integridade membranosa determina o livre escoamento fisiológico (pérvio) ou a retenção retrógrada obstrutiva (imperfurado).</text>
+  </g>
+
+  <!-- CONTROLS / TABS -->
+  <g transform="translate(40, 80)">
+    <g class="a12p21-2h-btn a12p21-2h-active" id="a12p21-2h-tab-both" onclick="a12p212hSetView('both')" role="button" aria-label="Ver Ambas Morfologias">
+      <rect class="a12p21-2h-btn-bg" x="0" y="0" width="180" height="34" />
+      <text class="a12p21-2h-btn-text" x="90" y="21">VISÃO COMPARATIVA</text>
+    </g>
+    <g class="a12p21-2h-btn" id="a12p21-2h-tab-perv" onclick="a12p212hSetView('perv')" role="button" aria-label="Morfologia Pérvia">
+      <rect class="a12p21-2h-btn-bg" x="190" y="0" width="180" height="34" />
+      <text class="a12p21-2h-btn-text" x="280" y="21">HÍMEN PÉRVIO (NORMAL)</text>
+    </g>
+    <g class="a12p21-2h-btn" id="a12p21-2h-tab-imperf" onclick="a12p212hSetView('imperf')" role="button" aria-label="Morfologia Imperfurada">
+      <rect class="a12p21-2h-btn-bg" x="380" y="0" width="200" height="34" />
+      <text class="a12p21-2h-btn-text" x="480" y="21">HÍMEN IMPERFURADO (BLOQUEIO)</text>
+    </g>
+  </g>
+
+  <!-- STAGE / ANATOMICAL VISUALIZATION -->
+
+  <!-- MORPHOLOGY A: HÍMEN PÉRVIO (LEFT / VIEW A) -->
+  <g id="a12p21-2h-view-perv" transform="translate(40, 135)">
+    <!-- Stage Box -->
+    <rect class="a12p21-2h-panel-rect" x="0" y="0" width="280" height="510" />
+
+    <text x="140" y="28" class="a12p21-2h-label" text-anchor="middle" style="fill: var(--a12p21-2h-green, #22c55e); font-size:14px; font-weight:700;">HÍMEN PÉRVIO</text>
+    <text x="140" y="45" class="a12p21-2h-sublabel" text-anchor="middle">Passagem Presente (Fisiológico)</text>
+
+    <!-- SAGITTAL SCHEMATIC: VAGINAL CANAL + PERVIO HYMEN -->
+    <g transform="translate(20, 60)">
+      <!-- Surrounding Soft Tissue -->
+      <path d="M 30,20 L 210,20 L 210,50 L 30,50 Z" fill="url(#a12p21-2h-grad-tissue)" opacity="0.6" />
+      <path d="M 30,190 L 210,190 L 210,220 L 30,220 Z" fill="url(#a12p21-2h-grad-tissue)" opacity="0.6" />
+
+      <!-- Vaginal Wall Contour (Complacente, Normal) -->
+      <path d="M 30,50 Q 120,45 210,50 L 210,190 Q 120,195 30,190" fill="none" stroke="var(--a12p21-2h-pink, #e05297)" stroke-width="2.5" />
+
+      <!-- Vaginal Lumen Background -->
+      <path d="M 30,52 Q 120,47 210,52 L 210,188 Q 120,193 30,188 Z" fill="var(--a12p21-2h-card, #2c1027)" opacity="0.5" />
+
+      <!-- Hymenal Ring - Upper and Lower Lip (Aperture in Middle) -->
+      <!-- Upper Lip -->
+      <path d="M 205,50 C 215,50 220,65 210,90 C 205,85 200,60 205,50 Z" fill="url(#a12p21-2h-grad-hymen-normal)" stroke="var(--a12p21-2h-pink, #e05297)" stroke-width="1.5" />
+      <!-- Lower Lip -->
+      <path d="M 205,190 C 215,190 220,175 210,150 C 205,155 200,180 205,190 Z" fill="url(#a12p21-2h-grad-hymen-normal)" stroke="var(--a12p21-2h-pink, #e05297)" stroke-width="1.5" />
+
+      <!-- FREE FLOW VECTORS (NEUTRAL MARKERS) -->
+      <g>
+        <!-- Flow Arrow Lines -->
+        <path class="a12p21-2h-flow-arrow" d="M 50,120 L 235,120" stroke="var(--a12p21-2h-green, #22c55e)" stroke-width="2.5" fill="none" />
+        <path class="a12p21-2h-flow-arrow" d="M 70,95 Q 150,105 230,110" stroke="var(--a12p21-2h-green, #22c55e)" stroke-width="1.5" fill="none" opacity="0.8" />
+        <path class="a12p21-2h-flow-arrow" d="M 70,145 Q 150,135 230,130" stroke="var(--a12p21-2h-green, #22c55e)" stroke-width="1.5" fill="none" opacity="0.8" />
+        
+        <!-- Arrowhead -->
+        <polygon points="235,115 245,120 235,125" fill="var(--a12p21-2h-green, #22c55e)" />
+        <polygon points="230,107 238,110 230,113" fill="var(--a12p21-2h-green, #22c55e)" />
+        <polygon points="230,127 238,130 230,133" fill="var(--a12p21-2h-green, #22c55e)" />
+      </g>
+
+      <!-- INTROITAL FRONT VIEW INSET (CIRCULAR ORATIVE) -->
+      <g transform="translate(70, 245)">
+        <rect x="0" y="0" width="100" height="100" rx="50" fill="var(--a12p21-2h-bg, #1a0817)" stroke="var(--a12p21-2h-card-border, #4a1d42)" stroke-width="1.5" />
+        <!-- Vulvar/Hymenal Ring -->
+        <circle cx="50" cy="50" r="40" fill="url(#a12p21-2h-grad-tissue)" stroke="var(--a12p21-2h-pink, #e05297)" stroke-width="2" />
+        <!-- Central Orifice (Patent / Free) -->
+        <ellipse cx="50" cy="50" rx="20" ry="24" fill="var(--a12p21-2h-card, #2c1027)" stroke="var(--a12p21-2h-green, #22c55e)" stroke-width="2" stroke-dasharray="3,2" />
+        <text x="50" y="53" class="a12p21-2h-sublabel" text-anchor="middle" style="font-size:9px; fill:var(--a12p21-2h-green, #22c55e);">ÓSTIO LIVRE</text>
+      </g>
+
+      <!-- ANATOMICAL LABELS & POINTERS -->
+      <line x1="210" y1="70" x2="245" y2="50" class="a12p21-2h-pointer" />
+      <text x="248" y="48" class="a12p21-2h-sublabel" style="font-size:10px;">Anel Himenal</text>
+
+      <line x1="210" y1="120" x2="250" y2="175" class="a12p21-2h-pointer" />
+      <text x="175" y="190" class="a12p21-2h-sublabel" style="font-size:10px; fill:var(--a12p21-2h-green, #22c55e);">Orifício de Drenagem</text>
+
+      <line x1="100" y1="50" x2="100" y2="30" class="a12p21-2h-pointer" />
+      <text x="100" y="25" class="a12p21-2h-sublabel" text-anchor="middle" style="font-size:10px;">Lúmen Vaginal Complacente</text>
+    </g>
+
+    <!-- INTERACTIVE HOTSPOTS FOR MORPH A -->
+    <g class="a12p21-2h-hotspot" onclick="a12p212hShowInfo('perv-hymen')" transform="translate(225, 175)">
+      <circle class="a12p21-2h-hotspot-circle" cx="0" cy="0" r="11" />
+      <text class="a12p21-2h-hotspot-text" x="0" y="4">1</text>
+    </g>
+
+    <g class="a12p21-2h-hotspot" onclick="a12p212hShowInfo('perv-flow')" transform="translate(160, 180)">
+      <circle class="a12p21-2h-hotspot-circle" cx="0" cy="0" r="11" />
+      <text class="a12p21-2h-hotspot-text" x="0" y="4">2</text>
+    </g>
+  </g>
+
+  <!-- MORPHOLOGY B: HÍMEN IMPERFURADO (RIGHT / VIEW B) -->
+  <g id="a12p21-2h-view-imperf" transform="translate(340, 135)">
+    <!-- Stage Box -->
+    <rect class="a12p21-2h-panel-rect" x="0" y="0" width="280" height="510" />
+
+    <text x="140" y="28" class="a12p21-2h-label" text-anchor="middle" style="fill: var(--a12p21-2h-red, #ef4444); font-size:14px; font-weight:700;">HÍMEN IMPERFURADO</text>
+    <text x="140" y="45" class="a12p21-2h-sublabel" text-anchor="middle">Saída Bloqueada (Obstrutivo / Patológico)</text>
+
+    <!-- SAGITTAL SCHEMATIC: EXPANDED VAGINAL CANAL + CONTINUOUS BULGING HYMEN -->
+    <g transform="translate(20, 60)">
+      <!-- Surrounding Soft Tissue -->
+      <path d="M 30,20 L 210,20 L 210,40 L 30,40 Z" fill="url(#a12p21-2h-grad-tissue)" opacity="0.6" />
+      <path d="M 30,200 L 210,200 L 210,220 L 30,220 Z" fill="url(#a12p21-2h-grad-tissue)" opacity="0.6" />
+
+      <!-- Retrograde Distended Vaginal Wall (Hematocolpos/Mucocolpos) -->
+      <path d="M 30,40 Q 110,20 210,45 L 210,195 Q 110,220 30,200 Z" fill="url(#a12p21-2h-grad-retention)" filter="url(#a12p21-2h-glow)" opacity="0.85" />
+      <path d="M 30,40 Q 110,20 210,45 L 210,195 Q 110,220 30,200" fill="none" stroke="var(--a12p21-2h-red, #ef4444)" stroke-width="2.5" />
+
+      <!-- CONTINUOUS BULGING HYMENAL MEMBRANE (NO ORIFICE) -->
+      <!-- Bulging membrane convex towards exterior (rightwards) -->
+      <path d="M 210,45 C 235,70 245,120 238,135 C 230,150 235,175 210,195 Z" fill="url(#a12p21-2h-grad-hymen-imperf)" stroke="var(--a12p21-2h-red, #ef4444)" stroke-width="3" filter="url(#a12p21-2h-glow)" />
+
+      <!-- BLOCKED / REFLECTED FLOW VECTORS -->
+      <g>
+        <!-- Flow Arrow Lines Bouncing Back -->
+        <path d="M 50,120 L 215,120 C 225,120 225,100 210,95 L 130,85" stroke="var(--a12p21-2h-red, #ef4444)" stroke-width="2.5" fill="none" stroke-dasharray="5,3" />
+        <path d="M 70,145 L 215,145 C 225,145 225,165 210,170 L 130,175" stroke="var(--a12p21-2h-red, #ef4444)" stroke-width="2" fill="none" stroke-dasharray="5,3" opacity="0.8" />
+        
+        <!-- Reflection Arrowheads (Pointing backwards/retrograde) -->
+        <polygon points="135,80 125,85 133,90" fill="var(--a12p21-2h-red, #ef4444)" />
+        <polygon points="135,170 125,175 133,180" fill="var(--a12p21-2h-red, #ef4444)" />
+
+        <!-- High Pressure Vectors (Radial Expansion) -->
+        <path d="M 120,70 L 120,45" stroke="var(--a12p21-2h-amber, #f59e0b)" stroke-width="1.5" marker-end="url(#a12p21-2h-amber)" />
+        <path d="M 120,170 L 120,195" stroke="var(--a12p21-2h-amber, #f59e0b)" stroke-width="1.5" />
+      </g>
+
+      <!-- INTROITAL FRONT VIEW INSET (BULGING BLUE/PURPLE MEMBRANE) -->
+      <g transform="translate(70, 245)">
+        <rect x="0" y="0" width="100" height="100" rx="50" fill="var(--a12p21-2h-bg, #1a0817)" stroke="var(--a12p21-2h-card-border, #4a1d42)" stroke-width="1.5" />
+        <!-- Vulvar Ring -->
+        <circle cx="50" cy="50" r="40" fill="url(#a12p21-2h-grad-tissue)" stroke="var(--a12p21-2h-pink, #e05297)" stroke-width="2" />
+        <!-- Continuous Bulging Membrane (Violaceous/Intact) -->
+        <circle cx="50" cy="50" r="32" fill="url(#a12p21-2h-grad-retention)" stroke="var(--a12p21-2h-red, #ef4444)" stroke-width="2.5" />
+        <!-- Concentric bulge lines -->
+        <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="4,2" />
+        <text x="50" y="52" class="a12p21-2h-sublabel" text-anchor="middle" style="font-size:8px; font-weight:700; fill:var(--a12p21-2h-red, #ef4444);">MEMBRANA</text>
+        <text x="50" y="61" class="a12p21-2h-sublabel" text-anchor="middle" style="font-size:7px; fill:var(--a12p21-2h-text, #fce8f5);">ABAULADA</text>
+      </g>
+
+      <!-- ANATOMICAL LABELS & POINTERS -->
+      <line x1="230" y1="110" x2="255" y2="45" class="a12p21-2h-pointer" />
+      <text x="200" y="35" class="a12p21-2h-sublabel" style="font-size:10px; fill:var(--a12p21-2h-red, #ef4444); font-weight:700;">Membrana Contínua Abaulada</text>
+
+      <line x1="180" y1="145" x2="255" y2="180" class="a12p21-2h-pointer" />
+      <text x="170" y="195" class="a12p21-2h-sublabel" style="font-size:10px; fill:var(--a12p21-2h-amber, #f59e0b);">Vetor de Barreira Obstrutiva</text>
+
+      <line x1="110" y1="35" x2="110" y2="15" class="a12p21-2h-pointer" />
+      <text x="110" y="10" class="a12p21-2h-sublabel" text-anchor="middle" style="font-size:10px; fill:var(--a12p21-2h-red, #ef4444);">Distensão Retrógrada (Coleção Fluida)</text>
+    </g>
+
+    <!-- INTERACTIVE HOTSPOTS FOR MORPH B -->
+    <g class="a12p21-2h-hotspot" onclick="a12p212hShowInfo('imperf-hymen')" transform="translate(250, 180)">
+      <circle class="a12p21-2h-hotspot-circle" cx="0" cy="0" r="11" />
+      <text class="a12p21-2h-hotspot-text" x="0" y="4">3</text>
+    </g>
+
+    <g class="a12p21-2h-hotspot" onclick="a12p212hShowInfo('imperf-retention')" transform="translate(130, 150)">
+      <circle class="a12p21-2h-hotspot-circle" cx="0" cy="0" r="11" />
+      <text class="a12p21-2h-hotspot-text" x="0" y="4">4</text>
+    </g>
+  </g>
+
+  <!-- READOUT & CLINICAL INTERPRETATION PANEL (RIGHT SIDE) -->
+  <g transform="translate(640, 135)">
+    <!-- Panel Box -->
+    <rect class="a12p21-2h-panel-rect" x="0" y="0" width="320" height="510" />
+
+    <!-- Panel Header -->
+    <g transform="translate(20, 25)">
+      <text class="a12p21-2h-panel-title" x="0" y="0" id="a12p21-2h-panel-head">ANÁLISE DE CONSEQUÊNCIA MECÂNICA</text>
+      <text class="a12p21-2h-sublabel" x="0" y="16" id="a12p21-2h-panel-subhead">Selecione uma morfologia ou toque nos pontos (1-4)</text>
+    </g>
+
+    <line x1="20" y1="55" x2="300" y2="55" stroke="var(--a12p21-2h-card-border, #4a1d42)" stroke-width="1" />
+
+    <!-- DYNAMIC STATUS BADGE -->
+    <g transform="translate(20, 70)" id="a12p21-2h-badge-group">
+      <rect class="a12p21-2h-badge" id="a12p21-2h-badge-bg" x="0" y="0" width="280" height="28" fill="var(--a12p21-2h-green-bg, rgba(34, 197, 94, 0.15))" stroke="var(--a12p21-2h-green, #22c55e)" stroke-width="1" />
+      <text class="a12p21-2h-badge-text" id="a12p21-2h-badge-txt" x="140" y="18" fill="var(--a12p21-2h-green, #22c55e)">STATUS: ESCOAMENTO FISIOLÓGICO ATIVO</text>
+    </g>
+
+    <!-- DATA METRICS LIST -->
+    <g transform="translate(20, 120)" id="a12p21-2h-metrics-group">
+      <!-- Metric 1: Integridade Membranosa -->
+      <g transform="translate(0, 0)">
+        <text class="a12p21-2h-sublabel" x="0" y="0">INTEGRIDADE MEMBRANOSA</text>
+        <text class="a12p21-2h-label" x="0" y="18" id="a12p21-2h-m1-val">Fenestrada / Pérvia com Óstio Central</text>
+      </g>
+
+      <!-- Metric 2: Consequência Mecânica -->
+      <g transform="translate(0, 50)">
+        <text class="a12p21-2h-sublabel" x="0" y="0">DINÂMICA DE FLUXO &amp; PRESSÃO</text>
+        <text class="a12p21-2h-label" x="0" y="18" id="a12p21-2h-m2-val" style="fill:var(--a12p21-2h-green, #22c55e)">Escoamento Desimpedido (P &lt; 5 mmHg)</text>
+      </g>
+
+      <!-- Metric 3: Impacto Luminal -->
+      <g transform="translate(0, 100)">
+        <text class="a12p21-2h-sublabel" x="0" y="0">EFEITO ANATÔMICO PROXIMAL</text>
+        <text class="a12p21-2h-label" x="0" y="18" id="a12p21-2h-m3-val">Canal Vaginal sem Distensão / Fisiológico</text>
+      </g>
+
+      <!-- Metric 4: Achado ao Exame Físico -->
+      <g transform="translate(0, 150)">
+        <text class="a12p21-2h-sublabel" x="0" y="0">INSPEÇÃO AO EXAME FÍSICO</text>
+
+        <!-- Description Box -->
+        <rect x="0" y="10" width="280" height="95" rx="6" fill="var(--a12p21-2h-bg, #1a0817)" stroke="var(--a12p21-2h-card-border, #4a1d42)" stroke-width="1" />
+        <text class="a12p21-2h-sublabel" x="12" y="30" id="a12p21-2h-desc-line1" style="fill:var(--a12p21-2h-text, #fce8f5); font-weight:600;">Membrana himenal complacente com</text>
+        <text class="a12p21-2h-sublabel" x="12" y="48" id="a12p21-2h-desc-line2">abertura anatômica preservada. Permite</text>
+        <text class="a12p21-2h-sublabel" x="12" y="66" id="a12p21-2h-desc-line3">passagem contínua de secreções</text>
+        <text class="a12p21-2h-sublabel" x="12" y="84" id="a12p21-2h-desc-line4">glandulares e fluxo sem resistência.</text>
+      </g>
+    </g>
+
+    <!-- FOOTER NOTE / AFFORDANCE -->
+    <g transform="translate(20, 465)">
+      <rect x="0" y="0" width="280" height="30" rx="4" fill="var(--a12p21-2h-bg, #1a0817)" opacity="0.6" />
+      <text class="a12p21-2h-sublabel" x="140" y="19" text-anchor="middle" style="font-size:10px; fill:var(--a12p21-2h-muted, #cf9ec0);">Toque nas abas ou nos marcadores para alternar</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED ENGINE (SELF-CONTAINED) -->
+  <script type="text/javascript">
+    //<![CDATA[
+    function a12p212hSetView(mode) {
+      var viewPerv = document.getElementById('a12p21-2h-view-perv');
+      var viewImperf = document.getElementById('a12p21-2h-view-imperf');
+      var tabBoth = document.getElementById('a12p21-2h-tab-both');
+      var tabPerv = document.getElementById('a12p21-2h-tab-perv');
+      var tabImperf = document.getElementById('a12p21-2h-tab-imperf');
+
+      // Reset Active Tabs
+      tabBoth.classList.remove('a12p21-2h-active');
+      tabPerv.classList.remove('a12p21-2h-active');
+      tabImperf.classList.remove('a12p21-2h-active');
+
+      if (mode === 'both') {
+        tabBoth.classList.add('a12p21-2h-active');
+        viewPerv.setAttribute('transform', 'translate(40, 135)');
+        viewImperf.setAttribute('transform', 'translate(340, 135)');
+        viewPerv.classList.remove('a12p21-2h-hidden');
+        viewImperf.classList.remove('a12p21-2h-hidden');
+        a12p212hUpdateReadout('both');
+      } else if (mode === 'perv') {
+        tabPerv.classList.add('a12p21-2h-active');
+        viewPerv.setAttribute('transform', 'translate(180, 135)');
+        viewPerv.classList.remove('a12p21-2h-hidden');
+        viewImperf.classList.add('a12p21-2h-hidden');
+        a12p212hUpdateReadout('perv');
+      } else if (mode === 'imperf') {
+        tabImperf.classList.add('a12p21-2h-active');
+        viewImperf.setAttribute('transform', 'translate(180, 135)');
+        viewImperf.classList.remove('a12p21-2h-hidden');
+        viewPerv.classList.add('a12p21-2h-hidden');
+        a12p212hUpdateReadout('imperf');
+      }
+    }
+
+    function a12p212hUpdateReadout(type) {
+      var badgeBg = document.getElementById('a12p21-2h-badge-bg');
+      var badgeTxt = document.getElementById('a12p21-2h-badge-txt');
+      var m1 = document.getElementById('a12p21-2h-m1-val');
+      var m2 = document.getElementById('a12p21-2h-m2-val');
+      var m3 = document.getElementById('a12p21-2h-m3-val');
+      var l1 = document.getElementById('a12p21-2h-desc-line1');
+      var l2 = document.getElementById('a12p21-2h-desc-line2');
+      var l3 = document.getElementById('a12p21-2h-desc-line3');
+      var l4 = document.getElementById('a12p21-2h-desc-line4');
+
+      if (type === 'perv') {
+        badgeBg.setAttribute('fill', 'var(--a12p21-2h-green-bg, rgba(34, 197, 94, 0.15))');
+        badgeBg.setAttribute('stroke', 'var(--a12p21-2h-green, #22c55e)');
+        badgeTxt.setAttribute('fill', 'var(--a12p21-2h-green, #22c55e)');
+        badgeTxt.textContent = 'STATUS: ESCOAMENTO FISIOLÓGICO ATIVO';
+
+        m1.textContent = 'Fenestrada / Pérvia com Óstio Central';
+        m2.textContent = 'Escoamento Desimpedido (P < 5 mmHg)';
+        m2.setAttribute('style', 'fill:var(--a12p21-2h-green, #22c55e)');
+        m3.textContent = 'Canal Vaginal sem Distensão / Fisiológico';
+
+        l1.textContent = 'Membrana himenal complacente com';
+        l2.textContent = 'abertura anatômica preservada. Permite';
+        l3.textContent = 'passagem contínua de secreções';
+        l4.textContent = 'glandulares e fluxo sem resistência.';
+      } else if (type === 'imperf') {
+        badgeBg.setAttribute('fill', 'var(--a12p21-2h-red-bg, rgba(239, 68, 68, 0.15))');
+        badgeBg.setAttribute('stroke', 'var(--a12p21-2h-red, #ef4444)');
+        badgeTxt.setAttribute('fill', 'var(--a12p21-2h-red, #ef4444)');
+        badgeTxt.textContent = 'STATUS: SAÍDA BLOQUEADA / RETENÇÃO';
+
+        m1.textContent = 'Membrana Contínua Sem Óstio (Oclusiva)';
+        m2.textContent = 'Hiperpressão Retrógrada (> 35 mmHg)';
+        m2.setAttribute('style', 'fill:var(--a12p21-2h-red, #ef4444)');
+        m3.textContent = 'Distensão de Lúmen / Acúmulo Fluido';
+
+        l1.textContent = 'Membrana integra e oclusiva que impede';
+        l2.textContent = 'a saída do fluxo. Causa acúmulo';
+        l3.textContent = 'retrogrado de secreção (mucocolpos /';
+        l4.textContent = 'hematocolpos) e abaulamento vulvar.';
+      } else {
+        badgeBg.setAttribute('fill', 'var(--a12p21-2h-amber-bg, rgba(245, 158, 11, 0.15))');
+        badgeBg.setAttribute('stroke', 'var(--a12p21-2h-amber, #f59e0b)');
+        badgeTxt.setAttribute('fill', 'var(--a12p21-2h-amber, #f59e0b)');
+        badgeTxt.textContent = 'STATUS: ANÁLISE COMPARATIVA DE FLUXO';
+
+        m1.textContent = 'Pérvio (Apertura) vs Imperfurado (Bloqueio)';
+        m2.textContent = 'Fluxo Livre vs Estase com Hiperpressão';
+        m2.setAttribute('style', 'fill:var(--a12p21-2h-amber, #f59e0b)');
+        m3.textContent = 'Vagina Complacente vs Distensão Luminal';
+
+        l1.textContent = 'Compare a transição mecânica: no hímen';
+        l2.textContent = 'pérvio, o vetor atravessa o óstio; no';
+        l3.textContent = 'imperfurado, a membrana contínua reflete';
+        l4.textContent = 'o vetor e gera expansão retrógrada.';
+      }
+    }
+
+    function a12p212hShowInfo(target) {
+      if (target === 'perv-hymen' || target === 'perv-flow') {
+        a12p212hSetView('perv');
+      } else if (target === 'imperf-hymen' || target === 'imperf-retention') {
+        a12p212hSetView('imperf');
+      }
+    }
+    //]]>
+  </script>
+</svg>

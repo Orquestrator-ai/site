@@ -1,0 +1,498 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="auto" class="a16-inline-svg a16p2-root" id="a16p2-svg-main">
+  <defs>
+    <style>
+      .a16p2-root {
+        --a16p2-bg: #0f172a;
+        --a16p2-card: #1e293b;
+        --a16p2-card-hi: #334155;
+        --a16p2-border: #334155;
+        --a16p2-ink-main: #f8fafc;
+        --a16p2-ink-muted: #94a3b8;
+        --a16p2-teal: #14b8a6;
+        --a16p2-teal-bg: rgba(20, 184, 166, 0.12);
+        --a16p2-coral: #f43f5e;
+        --a16p2-coral-bg: rgba(244, 63, 94, 0.12);
+        --a16p2-amber: #f59e0b;
+        --a16p2-amber-bg: rgba(245, 158, 11, 0.12);
+        --a16p2-emerald: #10b981;
+        --a16p2-emerald-bg: rgba(16, 185, 129, 0.12);
+        --a16p2-blue: #3b82f6;
+        --a16p2-panel-bg: #0b1329;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      [data-theme="light"] .a16p2-root {
+        --a16p2-bg: #f8fafc;
+        --a16p2-card: #ffffff;
+        --a16p2-card-hi: #e2e8f0;
+        --a16p2-border: #cbd5e1;
+        --a16p2-ink-main: #0f172a;
+        --a16p2-ink-muted: #475569;
+        --a16p2-teal: #0d9488;
+        --a16p2-teal-bg: rgba(13, 148, 136, 0.1);
+        --a16p2-coral: #e11d48;
+        --a16p2-coral-bg: rgba(225, 29, 72, 0.1);
+        --a16p2-amber: #d97706;
+        --a16p2-amber-bg: rgba(217, 119, 6, 0.1);
+        --a16p2-emerald: #059669;
+        --a16p2-emerald-bg: rgba(5, 150, 105, 0.1);
+        --a16p2-blue: #2563eb;
+        --a16p2-panel-bg: #f1f5f9;
+      }
+      #a16p2-svg-main .a16p2-title { font-size: 19px; font-weight: 800; fill: var(--a16p2-ink-main, #f8fafc); letter-spacing: -0.2px; }
+      #a16p2-svg-main .a16p2-subtitle { font-size: 12px; fill: var(--a16p2-ink-muted, #94a3b8); }
+      #a16p2-svg-main .a16p2-tab-btn { cursor: pointer; transition: all 0.2s ease; }
+      #a16p2-svg-main .a16p2-tab-btn:hover rect { filter: brightness(1.15); }
+      #a16p2-svg-main .a16p2-sim-btn { cursor: pointer; transition: all 0.2s ease; }
+      #a16p2-svg-main .a16p2-sim-btn:hover { filter: brightness(1.1); }
+      #a16p2-svg-main .a16p2-text-title { font-size: 13px; font-weight: 700; fill: var(--a16p2-ink-main, #f8fafc); }
+      #a16p2-svg-main .a16p2-text-body { font-size: 11px; fill: var(--a16p2-ink-muted, #94a3b8); }
+      #a16p2-svg-main .a16p2-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; }
+      #a16p2-svg-main .a16p2-node-glow { transition: all 0.3s ease; }
+    </style>
+
+    <linearGradient id="a16p2-grad-teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--a16p2-teal, #14b8a6)"/>
+      <stop offset="100%" stop-color="var(--a16p2-emerald, #10b981)"/>
+    </linearGradient>
+    <linearGradient id="a16p2-grad-coral" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--a16p2-coral, #f43f5e)"/>
+      <stop offset="100%" stop-color="var(--a16p2-amber, #f59e0b)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="640" rx="16" fill="var(--a16p2-bg, #0f172a)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+
+  <!-- HEADER -->
+  <g id="a16p2-header" transform="translate(30, 22)">
+    <rect x="0" y="0" width="36" height="36" rx="8" fill="var(--a16p2-teal-bg, rgba(20, 184, 166, 0.12))" stroke="var(--a16p2-teal, #14b8a6)" stroke-width="1.5"/>
+    <path d="M12 18h12M18 12v12M14 14l8 8" stroke="var(--a16p2-teal, #14b8a6)" stroke-width="2" stroke-linecap="round"/>
+    <text x="48" y="20" class="a16-inline-svg a16p2-root">MANEJO DO FERRO NA GESTAÇÃO E PUERPÉRIO</text>
+    <text x="48" y="36" class="a16-inline-svg a16p2-root">Linha do Tempo Obstétrica • Rastreio no 1ºT (Hb ≥11 vs &lt;11) • Profilaxia no 2º/3ºT • Absorção &amp; Dose Elementar</text>
+  </g>
+
+  <!-- STAGE SELECTOR TABS (Y: 70..105) -->
+  <g id="a16p2-tabs" transform="translate(30, 70)">
+    <!-- Tab 1: 1ºT -->
+    <g class="a16-inline-svg a16p2-root" id="a16p2-tab-1" role="button" tabindex="0" aria-label="Ver 1º Trimestre">
+      <rect x="0" y="0" width="138" height="32" rx="6" fill="var(--a16p2-teal-bg, rgba(20, 184, 166, 0.12))" stroke="var(--a16p2-teal, #14b8a6)" stroke-width="1.5"/>
+      <circle cx="16" cy="16" r="5" fill="var(--a16p2-teal, #14b8a6)"/>
+      <text x="28" y="20" font-size="11" font-weight="700" fill="var(--a16p2-teal, #14b8a6)">1º Trimestre (0–12w)</text>
+    </g>
+
+    <!-- Tab 2: 2º/3ºT -->
+    <g class="a16-inline-svg a16p2-root" id="a16p2-tab-2" role="button" tabindex="0" aria-label="Ver 2º e 3º Trimestres">
+      <rect x="146" y="0" width="148" height="32" rx="6" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+      <circle cx="162" cy="16" r="5" fill="var(--a16p2-ink-muted, #94a3b8)"/>
+      <text x="174" y="20" font-size="11" font-weight="600" fill="var(--a16p2-ink-main, #f8fafc)">2º e 3ºT (13–40w)</text>
+    </g>
+
+    <!-- Tab 3: Puerpério -->
+    <g class="a16-inline-svg a16p2-root" id="a16p2-tab-3" role="button" tabindex="0" aria-label="Ver Puerpério e Lactação">
+      <rect x="302" y="0" width="138" height="32" rx="6" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+      <circle cx="318" cy="16" r="5" fill="var(--a16p2-ink-muted, #94a3b8)"/>
+      <text x="330" y="20" font-size="11" font-weight="600" fill="var(--a16p2-ink-main, #f8fafc)">Puerpério &amp; Lactação</text>
+    </g>
+
+    <!-- Tab 4: Absorção & Dose -->
+    <g class="a16-inline-svg a16p2-root" id="a16p2-tab-4" role="button" tabindex="0" aria-label="Ver Regras de Absorção e Posologia">
+      <rect x="448" y="0" width="142" height="32" rx="6" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+      <circle cx="464" cy="16" r="5" fill="var(--a16p2-ink-muted, #94a3b8)"/>
+      <text x="476" y="20" font-size="11" font-weight="600" fill="var(--a16p2-ink-main, #f8fafc)">Absorção &amp; Doses</text>
+    </g>
+  </g>
+
+  <!-- MAIN TIMELINE CARD (X: 30..590, Y: 115..410) -->
+  <g id="a16p2-timeline-card" transform="translate(30, 115)">
+    <rect width="560" height="295" rx="10" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+
+    <!-- Timeline Title & Subtitle -->
+    <text x="20" y="28" font-size="13" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)">LINHA DO TEMPO DA SUPLEMENTAÇÃO DE FERRO</text>
+    <text x="20" y="44" font-size="11" fill="var(--a16p2-ink-muted, #94a3b8)">Evolução temporal, pontes de rastreio e pontos de corte por trimestre</text>
+
+    <!-- Timeline Graphic Base Axis -->
+    <!-- 1st T (0-12w): X=30..150 -->
+    <rect x="30" y="65" width="120" height="135" rx="6" fill="var(--a16p2-teal-bg, rgba(20, 184, 166, 0.12))" opacity="0.6"/>
+    <text x="90" y="82" font-size="10" font-weight="700" fill="var(--a16p2-teal, #14b8a6)" text-anchor="middle">1º TRIMESTRE</text>
+    <text x="90" y="95" font-size="9" fill="var(--a16p2-ink-muted, #94a3b8)" text-anchor="middle">(0 a 12 semanas)</text>
+
+    <!-- 2nd/3rd T (13-40w): X=155..395 -->
+    <rect x="155" y="65" width="240" height="135" rx="6" fill="rgba(59, 130, 246, 0.08)" stroke="var(--a16p2-blue, #3b82f6)" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="275" y="82" font-size="10" font-weight="700" fill="var(--a16p2-blue, #3b82f6)" text-anchor="middle">2º E 3º TRIMESTRES</text>
+    <text x="275" y="95" font-size="9" fill="var(--a16p2-ink-muted, #94a3b8)" text-anchor="middle">(13 a 40 semanas • Profilaxia Universal)</text>
+
+    <!-- Postpartum (Parto..): X=400..530 -->
+    <rect x="400" y="65" width="130" height="135" rx="6" fill="var(--a16p2-emerald-bg, rgba(16, 185, 129, 0.12))" opacity="0.6"/>
+    <text x="465" y="82" font-size="10" font-weight="700" fill="var(--a16p2-emerald, #10b981)" text-anchor="middle">PUERPÉRIO</text>
+    <text x="465" y="95" font-size="9" fill="var(--a16p2-ink-muted, #94a3b8)" text-anchor="middle">(Parto → Lactação/3m)</text>
+
+    <!-- Horizontal Axis Line -->
+    <line x1="30" y1="135" x2="530" y2="135" stroke="var(--a16p2-border, #334155)" stroke-width="3"/>
+    <!-- Active flow path line -->
+    <line id="a16p2-flow-line" x1="155" y1="135" x2="530" y2="135" stroke="var(--a16p2-teal, #14b8a6)" stroke-width="3"/>
+
+    <!-- Key Node 1: 1st T Screening (X: 90, Y: 135) -->
+    <g id="a16p2-node-1t" transform="translate(90, 135)">
+      <circle r="14" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-teal, #14b8a6)" stroke-width="2.5" class="a16-inline-svg a16p2-root"/>
+      <circle r="6" fill="var(--a16p2-teal, #14b8a6)"/>
+      <text x="0" y="-20" font-size="10" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)" text-anchor="middle">Rastreio Hb</text>
+      <text x="0" y="28" font-size="9" font-weight="600" fill="var(--a16p2-teal, #14b8a6)" text-anchor="middle">Cutoff: 11,0 g/dL</text>
+    </g>
+
+    <!-- Key Node 2: 2nd T Start (20w / 13w) (X: 200, Y: 135) -->
+    <g id="a16p2-node-2t" transform="translate(200, 135)">
+      <circle r="12" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-blue, #3b82f6)" stroke-width="2.5"/>
+      <circle r="5" fill="var(--a16p2-blue, #3b82f6)"/>
+      <text x="0" y="-18" font-size="10" font-weight="700" fill="var(--a16p2-blue, #3b82f6)" text-anchor="middle">Início Profilaxia</text>
+      <text x="0" y="26" font-size="9" fill="var(--a16p2-ink-muted, #94a3b8)" text-anchor="middle">20ª sem (2ºT)</text>
+    </g>
+
+    <!-- Key Node 3: Hemodilution Cutoff (28w) (X: 320, Y: 135) -->
+    <g id="a16p2-node-hemo" transform="translate(320, 135)">
+      <circle r="10" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-amber, #f59e0b)" stroke-width="2"/>
+      <circle r="4" fill="var(--a16p2-amber, #f59e0b)"/>
+      <text x="0" y="-16" font-size="9" font-weight="700" fill="var(--a16p2-amber, #f59e0b)" text-anchor="middle">Nadir Hemodiluição</text>
+      <text x="0" y="24" font-size="9" fill="var(--a16p2-ink-muted, #94a3b8)" text-anchor="middle">Cutoff 2ºT: 10,5 g/dL</text>
+    </g>
+
+    <!-- Key Node 4: Parto & Puerpério (X: 465, Y: 135) -->
+    <g id="a16p2-node-puerp" transform="translate(465, 135)">
+      <circle r="12" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-emerald, #10b981)" stroke-width="2.5"/>
+      <circle r="5" fill="var(--a16p2-emerald, #10b981)"/>
+      <text x="0" y="-18" font-size="10" font-weight="700" fill="var(--a16p2-emerald, #10b981)" text-anchor="middle">Parto / Lactação</text>
+      <text x="0" y="26" font-size="9" fill="var(--a16p2-ink-muted, #94a3b8)" text-anchor="middle">Até o fim da amamentação</text>
+    </g>
+
+    <!-- Summary Box inside Timeline Card (Y: 210..280) -->
+    <g id="a16p2-timeline-summary" transform="translate(20, 210)">
+      <rect width="520" height="70" rx="8" fill="var(--a16p2-panel-bg, #0b1329)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+      <path d="M15 15h4v40h-4z" fill="var(--a16p2-teal, #14b8a6)" id="a16p2-summary-strip"/>
+      <text x="32" y="28" font-size="11" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)" id="a16p2-summary-title">REGRA DE OURO DO 1º TRIMESTRE</text>
+      <text x="32" y="46" font-size="11" fill="var(--a16p2-ink-muted, #94a3b8)" id="a16p2-summary-desc">Se Hb ≥ 11,0 g/dL no 1ºT: SEM profilaxia com ferro! A profilaxia só inicia a partir do 2ºT (40-60 mg Fe elem/dia).</text>
+      <text x="32" y="60" font-size="10" font-weight="600" fill="var(--a16p2-coral, #f43f5e)" id="a16p2-summary-alert">Exceção: Se Hb &lt; 11,0 g/dL no 1ºT → Anemia! Iniciar Reposição imediata (120–200 mg Fe elem/dia).</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE SIMULATOR CARD: 1ºT HEMOGLOBIN BRANCH (X: 30..590, Y: 420..615) -->
+  <g id="a16p2-sim-card" transform="translate(30, 420)">
+    <rect width="560" height="195" rx="10" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+
+    <!-- Title & Prompt -->
+    <text x="20" y="26" font-size="12" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)">SIMULADOR INTERATIVO: DECISÃO DE CONDUTA NO 1º TRIMESTRE</text>
+    <text x="20" y="42" font-size="11" fill="var(--a16p2-ink-muted, #94a3b8)">Toque nos botões para simular o resultado do Hemograma do 1º Trimestre:</text>
+
+    <!-- Option A: Hb >= 11 (Normal) -->
+    <g class="a16-inline-svg a16p2-root" id="a16p2-btn-hb-normal" role="button" tabindex="0" aria-label="Simular Hemoglobina maior ou igual a 11 (Normal)">
+      <rect x="20" y="54" width="250" height="42" rx="8" fill="var(--a16p2-teal-bg, rgba(20, 184, 166, 0.12))" stroke="var(--a16p2-teal, #14b8a6)" stroke-width="2" id="a16p2-rect-hb-normal"/>
+      <circle cx="40" cy="75" r="8" fill="var(--a16p2-teal, #14b8a6)"/>
+      <path d="M36 75l3 3 5-5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="56" y="72" font-size="11" font-weight="700" fill="var(--a16p2-teal, #14b8a6)">Hb ≥ 11,0 g/dL (Sem Anemia)</text>
+      <text x="56" y="86" font-size="10" fill="var(--a16p2-ink-muted, #94a3b8)">Conduta: Aguardar 2º Trimestre</text>
+    </g>
+
+    <!-- Option B: Hb < 11 (Anemia) -->
+    <g class="a16-inline-svg a16p2-root" id="a16p2-btn-hb-anemia" role="button" tabindex="0" aria-label="Simular Hemoglobina menor que 11 (Anemia)">
+      <rect x="290" y="54" width="250" height="42" rx="8" fill="var(--a16p2-card-hi, #334155)" stroke="var(--a16p2-border, #334155)" stroke-width="1" id="a16p2-rect-hb-anemia"/>
+      <circle cx="310" cy="75" r="8" fill="var(--a16p2-ink-muted, #94a3b8)" id="a16p2-icon-hb-anemia"/>
+      <text x="310" y="78" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">!</text>
+      <text x="326" y="72" font-size="11" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)" id="a16p2-text-hb-anemia">Hb &lt; 11,0 g/dL (Anemia)</text>
+      <text x="326" y="86" font-size="10" fill="var(--a16p2-ink-muted, #94a3b8)">Conduta: REPOSIÇÃO Imediata</text>
+    </g>
+
+    <!-- Output Feedback Box inside Simulator -->
+    <g id="a16p2-sim-output" transform="translate(20, 106)">
+      <rect width="520" height="75" rx="8" fill="var(--a16p2-panel-bg, #0b1329)" stroke="var(--a16p2-teal, #14b8a6)" stroke-width="1" id="a16p2-out-box"/>
+      <text x="16" y="24" font-size="11" font-weight="700" fill="var(--a16p2-teal, #14b8a6)" id="a16p2-out-title">DIAGNÓSTICO: 1ºT SEM ANEMIA (Hb ≥ 11,0 g/dL)</text>
+      <text x="16" y="42" font-size="11" fill="var(--a16p2-ink-main, #f8fafc)" id="a16p2-out-line1">• PROFILAXIA NÃO INDICADA no 1º Trimestre. Não prescrever ferro de rotina agora.</text>
+      <text x="16" y="58" font-size="11" fill="var(--a16p2-ink-muted, #94a3b8)" id="a16p2-out-line2">• Próximo passo: Iniciar 40–60 mg de ferro elementar/dia a partir da 20ª semana (2ºT).</text>
+    </g>
+  </g>
+
+  <!-- RIGHT SIDE PANELS (X: 610..930, Y: 70..615) -->
+
+  <!-- CARD 1: PAINEL DE CONDUTA DETALHADA (Y: 70..275) -->
+  <g id="a16p2-panel-conduta" transform="translate(610, 70)">
+    <rect width="320" height="205" rx="10" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="320" height="34" rx="10" fill="var(--a16p2-teal-bg, rgba(20, 184, 166, 0.12))"/>
+    <path d="M0 10Q0 0 10 0h300Q320 0 320 10v24H0z" fill="var(--a16p2-teal-bg, rgba(20, 184, 166, 0.12))"/>
+    <text x="14" y="22" font-size="11" font-weight="800" fill="var(--a16p2-teal, #14b8a6)" letter-spacing="0.5px">PAINEL DE CONDUTA CLÍNICA</text>
+    <rect x="235" y="8" width="72" height="18" rx="4" fill="var(--a16p2-teal, #14b8a6)"/>
+    <text x="271" y="21" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle" id="a16p2-badge-conduta">PROFILAXIA</text>
+
+    <!-- Body Info -->
+    <g transform="translate(14, 45)">
+      <text x="0" y="14" font-size="11" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)" id="a16p2-info-tit">PROFILAXIA UNIVERSAL (2ºT EM DIANTE)</text>
+
+      <g transform="translate(0, 24)">
+        <text x="0" y="12" font-size="10" font-weight="700" fill="var(--a16p2-amber, #f59e0b)">DOSE RECOMENDADA:</text>
+        <text x="0" y="26" font-size="12" font-weight="800" fill="var(--a16p2-ink-main, #f8fafc)" id="a16p2-info-dose">40 a 60 mg de Ferro Elementar / dia</text>
+        <text x="0" y="40" font-size="10" fill="var(--a16p2-ink-muted, #94a3b8)" id="a16p2-info-sal">(= 1 drágea de Sulfato Ferroso 200 mg/dia)</text>
+      </g>
+
+      <g transform="translate(0, 80)">
+        <text x="0" y="12" font-size="10" font-weight="700" fill="var(--a16p2-teal, #14b8a6)">DURAÇÃO &amp; SEGUIMENTO:</text>
+        <text x="0" y="26" font-size="10" fill="var(--a16p2-ink-main, #f8fafc)" id="a16p2-info-dur1">• Manter diariamente do 2º Trimestre até o parto.</text>
+        <text x="0" y="40" font-size="10" fill="var(--a16p2-ink-main, #f8fafc)" id="a16p2-info-dur2">• Puerpério: Continuar durante toda a LACTAÇÃO</text>
+        <text x="0" y="52" font-size="10" fill="var(--a16p2-ink-muted, #94a3b8)" id="a16p2-info-dur3">  (ou por 3 meses pós-parto se não amamentar).</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- CARD 2: EQUIVALÊNCIA SAL VS FERRO ELEMENTAR (Y: 285..440) -->
+  <g id="a16p2-panel-sal" transform="translate(610, 285)">
+    <rect width="320" height="155" rx="10" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+
+    <!-- Header -->
+    <text x="14" y="22" font-size="11" font-weight="700" fill="var(--a16p2-amber, #f59e0b)">EQUIVALÊNCIA: SAL VS. FERRO ELEMENTAR</text>
+    <text x="14" y="36" font-size="10" fill="var(--a16p2-ink-muted, #94a3b8)">Pegadinha frequente em provas de residência!</text>
+
+    <!-- Formula Box -->
+    <g transform="translate(14, 46)">
+      <rect width="292" height="42" rx="6" fill="var(--a16p2-amber-bg, rgba(245, 158, 11, 0.12))" stroke="var(--a16p2-amber, #f59e0b)" stroke-width="1"/>
+      <text x="146" y="18" font-size="11" font-weight="800" fill="var(--a16p2-amber, #f59e0b)" text-anchor="middle">Sulfato Ferroso 200 mg (Sal)</text>
+      <text x="146" y="33" font-size="12" font-weight="800" fill="var(--a16p2-ink-main, #f8fafc)" text-anchor="middle">= ~40 mg de Ferro Elementar (Fe²⁺)</text>
+    </g>
+
+    <!-- Breakdown Table -->
+    <g transform="translate(14, 98)">
+      <!-- Line 1: Profilaxia -->
+      <rect x="0" y="0" width="292" height="20" rx="4" fill="var(--a16p2-panel-bg, #0b1329)"/>
+      <text x="8" y="14" font-size="10" font-weight="700" fill="var(--a16p2-teal, #14b8a6)">PROFILAXIA (40-60mg):</text>
+      <text x="284" y="14" font-size="10" font-weight="600" fill="var(--a16p2-ink-main, #f8fafc)" text-anchor="end">1 drágea 200 mg / dia</text>
+
+      <!-- Line 2: Reposição -->
+      <rect x="0" y="24" width="292" height="20" rx="4" fill="var(--a16p2-panel-bg, #0b1329)"/>
+      <text x="8" y="38" font-size="10" font-weight="700" fill="var(--a16p2-coral, #f43f5e)">TRATAMENTO (120-200mg):</text>
+      <text x="284" y="38" font-size="10" font-weight="600" fill="var(--a16p2-ink-main, #f8fafc)" text-anchor="end">3 a 5 drágeas 200 mg / dia</text>
+    </g>
+  </g>
+
+  <!-- CARD 3: REGRAS DE ABSORÇÃO & INTERAÇÕES (Y: 450..615) -->
+  <g id="a16p2-panel-absorcao" transform="translate(610, 450)">
+    <rect width="320" height="165" rx="10" fill="var(--a16p2-card, #1e293b)" stroke="var(--a16p2-border, #334155)" stroke-width="1"/>
+
+    <!-- Header -->
+    <text x="14" y="22" font-size="11" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)">BIODISPONIBILIDADE &amp; REGRAS DE INGESTÃO</text>
+    <text x="14" y="36" font-size="10" fill="var(--a16p2-ink-muted, #94a3b8)">Como otimizar a absorção intestinal do ferro oral</text>
+
+    <!-- Two Columns: Potentializers vs Inhibitors -->
+    <g transform="translate(14, 46)">
+      <!-- Left Column: Vit C (+) -->
+      <rect x="0" y="0" width="141" height="68" rx="6" fill="var(--a16p2-emerald-bg, rgba(16, 185, 129, 0.12))" stroke="var(--a16p2-emerald, #10b981)" stroke-width="1"/>
+      <text x="8" y="16" font-size="10" font-weight="800" fill="var(--a16p2-emerald, #10b981)">AUMENTAM ABSORÇÃO (+)</text>
+      <text x="8" y="32" font-size="10" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)">• Vitamina C / Ácido Cítrico</text>
+      <text x="8" y="45" font-size="9" fill="var(--a16p2-ink-muted, #94a3b8)">  Suco de laranja, limão.</text>
+      <text x="8" y="58" font-size="9" fill="var(--a16p2-emerald, #10b981)">  Mantém Fe²⁺ (solúvel)</text>
+
+      <!-- Right Column: Calcium (-) -->
+      <rect x="151" y="0" width="141" height="68" rx="6" fill="var(--a16p2-coral-bg, rgba(244, 63, 94, 0.12))" stroke="var(--a16p2-coral, #f43f5e)" stroke-width="1"/>
+      <text x="159" y="16" font-size="10" font-weight="800" fill="var(--a16p2-coral, #f43f5e)">INIBEM ABSORÇÃO (-)</text>
+      <text x="159" y="32" font-size="10" font-weight="700" fill="var(--a16p2-ink-main, #f8fafc)">• Cálcio / Leite / Queijos</text>
+      <text x="159" y="45" font-size="9" fill="var(--a16p2-ink-muted, #94a3b8)">• Café, chás, antiácidos</text>
+      <text x="159" y="58" font-size="9" fill="var(--a16p2-coral, #f43f5e)">  NÃO tomar juntos!</text>
+    </g>
+
+    <!-- Bottom Advisory Note -->
+    <g transform="translate(14, 122)">
+      <rect x="0" y="0" width="292" height="32" rx="4" fill="var(--a16p2-panel-bg, #0b1329)"/>
+      <text x="10" y="15" font-size="10" font-weight="700" fill="var(--a16p2-amber, #f59e0b)">HORÁRIO IDEAL:</text>
+      <text x="10" y="27" font-size="9" fill="var(--a16p2-ink-main, #f8fafc)">Em jejum ou 1 hora antes das refeições (com suco ácido).</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED SCRIPT (CDATA) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // Elements
+      var tab1 = document.getElementById('a16p2-tab-1');
+      var tab2 = document.getElementById('a16p2-tab-2');
+      var tab3 = document.getElementById('a16p2-tab-3');
+      var tab4 = document.getElementById('a16p2-tab-4');
+
+      var btnHbNormal = document.getElementById('a16p2-btn-hb-normal');
+      var btnHbAnemia = document.getElementById('a16p2-btn-hb-anemia');
+
+      var rectNormal = document.getElementById('a16p2-rect-hb-normal');
+      var rectAnemia = document.getElementById('a16p2-rect-hb-anemia');
+      var iconAnemia = document.getElementById('a16p2-icon-hb-anemia');
+      var textAnemia = document.getElementById('a16p2-text-hb-anemia');
+
+      var outBox = document.getElementById('a16p2-out-box');
+      var outTitle = document.getElementById('a16p2-out-title');
+      var outLine1 = document.getElementById('a16p2-out-line1');
+      var outLine2 = document.getElementById('a16p2-out-line2');
+
+      var summaryStrip = document.getElementById('a16p2-summary-strip');
+      var summaryTitle = document.getElementById('a16p2-summary-title');
+      var summaryDesc = document.getElementById('a16p2-summary-desc');
+      var summaryAlert = document.getElementById('a16p2-summary-alert');
+
+      var badgeConduta = document.getElementById('a16p2-badge-conduta');
+      var infoTit = document.getElementById('a16p2-info-tit');
+      var infoDose = document.getElementById('a16p2-info-dose');
+      var infoSal = document.getElementById('a16p2-info-sal');
+      var infoDur1 = document.getElementById('a16p2-info-dur1');
+      var infoDur2 = document.getElementById('a16p2-info-dur2');
+      var infoDur3 = document.getElementById('a16p2-info-dur3');
+
+      var flowLine = document.getElementById('a16p2-flow-line');
+
+      // State
+      var currentHb = 'normal'; // 'normal' | 'anemia'
+      var currentTab = 1; // 1, 2, 3, 4
+
+      function setTab(num) {
+        currentTab = num;
+        var tabs = [tab1, tab2, tab3, tab4];
+        tabs.forEach(function(t, idx) {
+          if (!t) return;
+          var rect = t.querySelector('rect');
+          var circle = t.querySelector('circle');
+          var text = t.querySelector('text');
+          if (idx + 1 === num) {
+            rect.setAttribute('fill', 'var(--a16p2-teal-bg, rgba(20, 184, 166, 0.12))');
+            rect.setAttribute('stroke', 'var(--a16p2-teal, #14b8a6)');
+            rect.setAttribute('stroke-width', '1.5');
+            circle.setAttribute('fill', 'var(--a16p2-teal, #14b8a6)');
+            text.setAttribute('fill', 'var(--a16p2-teal, #14b8a6)');
+            text.setAttribute('font-weight', '700');
+          } else {
+            rect.setAttribute('fill', 'var(--a16p2-card, #1e293b)');
+            rect.setAttribute('stroke', 'var(--a16p2-border, #334155)');
+            rect.setAttribute('stroke-width', '1');
+            circle.setAttribute('fill', 'var(--a16p2-ink-muted, #94a3b8)');
+            text.setAttribute('fill', 'var(--a16p2-ink-main, #f8fafc)');
+            text.setAttribute('font-weight', '600');
+          }
+        });
+
+        if (num === 1) {
+          updateHbDisplay(currentHb);
+        } else if (num === 2) {
+          badgeConduta.textContent = 'PROFILAXIA';
+          badgeConduta.setAttribute('fill', '#ffffff');
+          infoTit.textContent = 'PROFILAXIA 2º E 3º TRIMESTRES';
+          infoDose.textContent = '40 a 60 mg de Ferro Elementar / dia';
+          infoSal.textContent = '(= 1 drágea de Sulfato Ferroso 200 mg/dia)';
+          infoDur1.textContent = '• Início: a partir da 20ª semana de gestação.';
+          infoDur2.textContent = '• Cutoff de Anemia 2ºT: Hb < 10,5 g/dL (hemodiluição).';
+          infoDur3.textContent = '  (Se Hb < 10,5 g/dL no 2ºT → mudar para Reposição!)';
+        } else if (num === 3) {
+          badgeConduta.textContent = 'PUERPÉRIO';
+          badgeConduta.setAttribute('fill', '#ffffff');
+          infoTit.textContent = 'MANUTENÇÃO NO PUERPÉRIO';
+          infoDose.textContent = '40 a 60 mg de Ferro Elementar / dia';
+          infoSal.textContent = '(= Suplementação pós-parto de rotina)';
+          infoDur1.textContent = '• Com Amamentação: Manter até o FIM DA LACTAÇÃO.';
+          infoDur2.textContent = '• Sem Amamentação: Manter por 3 MESES pós-parto.';
+          infoDur3.textContent = '  Garante a recomposição dos estoques maternos de ferro.';
+        } else if (num === 4) {
+          badgeConduta.textContent = 'REGRAS';
+          badgeConduta.setAttribute('fill', '#ffffff');
+          infoTit.textContent = 'BOAS PRÁTICAS DE PRESCRIÇÃO';
+          infoDose.textContent = 'Vitamina C (+); Cálcio (-)';
+          infoSal.textContent = '(Sulfato Ferroso 200mg sal = 40mg Fe elem)';
+          infoDur1.textContent = '• Ingerir com suco cítrico (laranja/limão) em jejum.';
+          infoDur2.textContent = '• NUNCA ingerir junto com leite ou derivados (cálcio).';
+          infoDur3.textContent = '  Efeitos adversos GI: diarreia, constipação, epigastralgia.';
+        }
+      }
+
+      function updateHbDisplay(mode) {
+        currentHb = mode;
+        if (mode === 'normal') {
+          // Normal state (Green / Teal)
+          rectNormal.setAttribute('fill', 'var(--a16p2-teal-bg, rgba(20, 184, 166, 0.12))');
+          rectNormal.setAttribute('stroke', 'var(--a16p2-teal, #14b8a6)');
+          rectNormal.setAttribute('stroke-width', '2');
+
+          rectAnemia.setAttribute('fill', 'var(--a16p2-card-hi, #334155)');
+          rectAnemia.setAttribute('stroke', 'var(--a16p2-border, #334155)');
+          rectAnemia.setAttribute('stroke-width', '1');
+          iconAnemia.setAttribute('fill', 'var(--a16p2-ink-muted, #94a3b8)');
+          textAnemia.setAttribute('fill', 'var(--a16p2-ink-main, #f8fafc)');
+
+          outBox.setAttribute('stroke', 'var(--a16p2-teal, #14b8a6)');
+          outTitle.setAttribute('fill', 'var(--a16p2-teal, #14b8a6)');
+          outTitle.textContent = 'DIAGNÓSTICO: 1ºT SEM ANEMIA (Hb ≥ 11,0 g/dL)';
+          outLine1.textContent = '• PROFILAXIA NÃO INDICADA no 1º Trimestre. Não prescrever ferro de rotina agora.';
+          outLine2.textContent = '• Próximo passo: Iniciar 40–60 mg de ferro elementar/dia a partir da 20ª semana (2ºT).';
+
+          summaryStrip.setAttribute('fill', 'var(--a16p2-teal, #14b8a6)');
+          summaryTitle.textContent = 'REGRA DE OURO DO 1º TRIMESTRE';
+          summaryDesc.textContent = 'Se Hb ≥ 11,0 g/dL no 1ºT: SEM profilaxia com ferro! A profilaxia só inicia no 2ºT (40-60 mg Fe elem/d).';
+          summaryAlert.textContent = 'Exceção: Se Hb < 11,0 g/dL no 1ºT → Anemia! Iniciar Reposição imediata (120–200 mg Fe elem/dia).';
+
+          badgeConduta.textContent = 'PROFILAXIA';
+          infoTit.textContent = 'PROFILAXIA UNIVERSAL (2ºT EM DIANTE)';
+          infoDose.textContent = '40 a 60 mg de Ferro Elementar / dia';
+          infoSal.textContent = '(= 1 drágea de Sulfato Ferroso 200 mg/dia)';
+          infoDur1.textContent = '• Manter diariamente do 2º Trimestre até o parto.';
+          infoDur2.textContent = '• Puerpério: Continuar durante toda a LACTAÇÃO';
+          infoDur3.textContent = '  (ou por 3 meses pós-parto se não amamentar).';
+
+          flowLine.setAttribute('stroke', 'var(--a16p2-teal, #14b8a6)');
+        } else {
+          // Anemia state (Red / Coral Alert)
+          rectNormal.setAttribute('fill', 'var(--a16p2-card-hi, #334155)');
+          rectNormal.setAttribute('stroke', 'var(--a16p2-border, #334155)');
+          rectNormal.setAttribute('stroke-width', '1');
+
+          rectAnemia.setAttribute('fill', 'var(--a16p2-coral-bg, rgba(244, 63, 94, 0.12))');
+          rectAnemia.setAttribute('stroke', 'var(--a16p2-coral, #f43f5e)');
+          rectAnemia.setAttribute('stroke-width', '2');
+          iconAnemia.setAttribute('fill', 'var(--a16p2-coral, #f43f5e)');
+          textAnemia.setAttribute('fill', 'var(--a16p2-coral, #f43f5e)');
+
+          outBox.setAttribute('stroke', 'var(--a16p2-coral, #f43f5e)');
+          outTitle.setAttribute('fill', 'var(--a16p2-coral, #f43f5e)');
+          outTitle.textContent = 'ALERTA: 1ºT COM ANEMIA DETECTADA (Hb < 11,0 g/dL)';
+          outLine1.textContent = '• REPOSIÇÃO IMEDIATA INDICADA! Tratar a anemia sem aguardar o 2º trimestre.';
+          outLine2.textContent = '• Prescrever 120 a 200 mg de Ferro Elementar/dia (3 a 5 drágeas de Sulfato Ferroso 200 mg/d).';
+
+          summaryStrip.setAttribute('fill', 'var(--a16p2-coral, #f43f5e)');
+          summaryTitle.textContent = 'ALERTA CLÍNICO: CONDUTA DE REPOSIÇÃO NO 1ºT';
+          summaryDesc.textContent = 'Hb < 11,0 g/dL no 1ºT confirma ANEMIA GESTACIONAL. Iniciar TRATAMENTO IMEDIATO!';
+          summaryAlert.textContent = 'Dose de Tratamento: 120 a 200 mg de Ferro Elementar/dia (fracionado 1h antes das refeições).';
+
+          badgeConduta.textContent = 'TRATAMENTO';
+          infoTit.textContent = 'REPOSIÇÃO IMEDIATA (ANEMIA NO 1ºT)';
+          infoDose.textContent = '120 a 200 mg de Ferro Elementar / dia';
+          infoSal.textContent = '(= 3 a 5 drágeas de Sulfato Ferroso 200 mg/dia)';
+          infoDur1.textContent = '• Iniciar IMEDIATAMENTE no 1º Trimestre.';
+          infoDur2.textContent = '• Repetir Hemograma em 30–60 dias para avaliar resposta.';
+          infoDur3.textContent = '  Alvo: Elevação de Hb ≥ 1 g/dL em 3 a 4 semanas de tratamento.';
+
+          flowLine.setAttribute('stroke', 'var(--a16p2-coral, #f43f5e)');
+        }
+      }
+
+      // Event Listeners
+      if (tab1) tab1.addEventListener('click', function() { setTab(1); });
+      if (tab2) tab2.addEventListener('click', function() { setTab(2); });
+      if (tab3) tab3.addEventListener('click', function() { setTab(3); });
+      if (tab4) tab4.addEventListener('click', function() { setTab(4); });
+
+      if (btnHbNormal) btnHbNormal.addEventListener('click', function() { updateHbDisplay('normal'); });
+      if (btnHbAnemia) btnHbAnemia.addEventListener('click', function() { updateHbDisplay('anemia'); });
+
+      // Keyboard Accessibility
+      [tab1, tab2, tab3, tab4, btnHbNormal, btnHbAnemia].forEach(function(el) {
+        if (!el) return;
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            el.click();
+          }
+        });
+      });
+
+      // Init
+      setTab(1);
+    })();
+    ]]>
+  </script>
+</svg>

@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ABORDAGENS AVALIADAS:
+1. Diagrama esquemático geométrico puro (losangos e vetores secos): Boa clareza de eixos, mas perde a relação morfológica real do assoalho pélvico.
+2. Prancha anatômica com duplo painel de observação simultânea (inferior + lateral): Ocupa muita altura morta no mobile e dispersa o foco.
+3. Prancha de síntese morfológica em vista inferior com anatomia estruturada, linha bituberosa funcional e inset sagital de orientação (ESCOLHIDA).
+JUSTIFICATIVA: Permite ao aluno identificar instantaneamente a divisão dos trígonos, a anatomia das 4 massas musculares e a convergência central no corpo perineal em um único relance.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" width="100%" height="100%" class="a12p18-hero-root" data-svg-tokenized="true" data-mode="study" data-active="pb">
+  <defs>
+    <style>
+      .a12p18-hero-root {
+        /* Standard theme tokens with solid hex fallbacks */
+        --a12p18-hero-bg: #121116;
+        --a12p18-hero-panel: #1D1B24;
+        --a12p18-hero-card: #25222E;
+        --a12p18-hero-border: #383344;
+        --a12p18-hero-tinta: #F7F1F5;
+        --a12p18-hero-subtinta: #A8A2B5;
+        --a12p18-hero-muted: #6E677B;
+        
+        /* Specific anatomical tokens */
+        --a12p18-hero-urogenital: #EF7582;
+        --a12p18-hero-anal: #6FA8D6;
+        --a12p18-hero-isquiocavernoso: #A978C7;
+        --a12p18-hero-bulboesponjoso: #F08A65;
+        --a12p18-hero-transverso: #55B889;
+        --a12p18-hero-esfincter-anal: #D85C6A;
+        --a12p18-hero-corpo-perineal: #F3BE5B;
+        --a12p18-hero-membrana: #CDBB67;
+        --a12p18-hero-ossea: #8E8A99;
+
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--bg-1, var(--a12p18-hero-bg, #121116));
+        color: var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5));
+        user-select: none;
+      }
+
+      /* Light Theme Override */
+      :root[data-theme="light"] .a12p18-hero-root,
+      .a12p18-hero-root[data-theme="light"] {
+        --a12p18-hero-bg: #FAF8F9;
+        --a12p18-hero-panel: #FFFFFF;
+        --a12p18-hero-card: #F2EEF5;
+        --a12p18-hero-border: #E0D8E3;
+        --a12p18-hero-tinta: #1C1921;
+        --a12p18-hero-subtinta: #5C5566;
+        --a12p18-hero-muted: #8A8194;
+        --a12p18-hero-ossea: #656070;
+      }
+
+      /* Layout Components */
+      .a12p18-hero-title-text { fill: var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5)); font-size: 17px; font-weight: 700; letter-spacing: 0.5px; }
+      .a12p18-hero-subtitle-text { fill: var(--a12p18-hero-subtinta, #A8A2B5); font-size: 12px; font-weight: 400; }
+      .a12p18-hero-label { font-size: 11px; font-weight: 600; fill: var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5)); pointer-events: none; }
+      .a12p18-hero-sublabel { font-size: 10px; fill: var(--a12p18-hero-subtinta, #A8A2B5); pointer-events: none; }
+      
+      /* Interactive Shapes and Base States */
+      .a12p18-hero-interactive {
+        cursor: pointer;
+        transition: transform 0.15s ease, fill 0.2s ease, stroke 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+        outline: none;
+      }
+      .a12p18-hero-interactive:hover {
+        filter: brightness(1.18);
+      }
+      .a12p18-hero-interactive:focus-visible {
+        stroke: var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5)) !important;
+        stroke-width: 2.5px !important;
+      }
+
+      /* Bone and Frame */
+      .a12p18-hero-bone { fill: var(--a12p18-hero-card, #25222E); stroke: var(--a12p18-hero-ossea, #8E8A99); stroke-width: 1.5; }
+      .a12p18-hero-ligament { stroke: var(--a12p18-hero-muted, #6E677B); stroke-width: 2; stroke-dasharray: 4 3; fill: none; }
+
+      /* Triangles Shading */
+      .a12p18-hero-tri-ug {
+        fill: var(--a12-trigono-urogenital, var(--a12p18-hero-urogenital, #EF7582));
+        fill-opacity: 0.08;
+        stroke: var(--a12-trigono-urogenital, var(--a12p18-hero-urogenital, #EF7582));
+        stroke-width: 1.5;
+        stroke-dasharray: 5 4;
+        transition: fill-opacity 0.25s ease, stroke-width 0.25s ease;
+      }
+      .a12p18-hero-tri-an {
+        fill: var(--a12-trigono-anal, var(--a12p18-hero-anal, #6FA8D6));
+        fill-opacity: 0.08;
+        stroke: var(--a12-trigono-anal, var(--a12p18-hero-anal, #6FA8D6));
+        stroke-width: 1.5;
+        stroke-dasharray: 5 4;
+        transition: fill-opacity 0.25s ease, stroke-width 0.25s ease;
+      }
+
+      .a12p18-hero-root[data-active-tri="ug"] .a12p18-hero-tri-ug {
+        fill-opacity: 0.18;
+        stroke-width: 2.5;
+        stroke-dasharray: none;
+      }
+      .a12p18-hero-root[data-active-tri="an"] .a12p18-hero-tri-an {
+        fill-opacity: 0.18;
+        stroke-width: 2.5;
+        stroke-dasharray: none;
+      }
+      .a12p18-hero-root[data-active-tri="both"] .a12p18-hero-tri-ug,
+      .a12p18-hero-root[data-active-tri="both"] .a12p18-hero-tri-an {
+        fill-opacity: 0.16;
+        stroke-width: 2.5;
+        stroke-dasharray: none;
+      }
+
+      /* Perineal Membrane */
+      .a12p18-hero-membrane-bg {
+        fill: var(--a12-membrana-perineal, var(--a12p18-hero-membrana, #CDBB67));
+        fill-opacity: 0.15;
+        stroke: var(--a12-membrana-perineal, var(--a12p18-hero-membrana, #CDBB67));
+        stroke-width: 1;
+      }
+
+      /* Muscles Styling */
+      .a12p18-hero-m-isq {
+        fill: var(--a12-isquiocavernoso, var(--a12p18-hero-isquiocavernoso, #A978C7));
+        stroke: var(--a12-isquiocavernoso, var(--a12p18-hero-isquiocavernoso, #A978C7));
+        stroke-width: 1;
+        fill-opacity: 0.75;
+      }
+      .a12p18-hero-m-bulbo {
+        fill: var(--a12-bulboesponjoso, var(--a12p18-hero-bulboesponjoso, #F08A65));
+        stroke: var(--a12-bulboesponjoso, var(--a12p18-hero-bulboesponjoso, #F08A65));
+        stroke-width: 1;
+        fill-opacity: 0.75;
+      }
+      .a12p18-hero-m-trans {
+        fill: var(--a12-transverso-superficial, var(--a12p18-hero-transverso, #55B889));
+        stroke: var(--a12-transverso-superficial, var(--a12p18-hero-transverso, #55B889));
+        stroke-width: 1;
+        fill-opacity: 0.75;
+      }
+      .a12p18-hero-m-esf {
+        fill: var(--a12-esfincter-anal, var(--a12p18-hero-esfincter-anal, #D85C6A));
+        stroke: var(--a12-esfincter-anal, var(--a12p18-hero-esfincter-anal, #D85C6A));
+        stroke-width: 1;
+        fill-opacity: 0.75;
+      }
+
+      /* Active Muscle Highlighting */
+      .a12p18-hero-root[data-active="isquiocavernoso"] .a12p18-hero-m-isq,
+      .a12p18-hero-root[data-active="bulboesponjoso"] .a12p18-hero-m-bulbo,
+      .a12p18-hero-root[data-active="transverso"] .a12p18-hero-m-trans,
+      .a12p18-hero-root[data-active="esfincter"] .a12p18-hero-m-esf,
+      .a12p18-hero-root[data-active="pb"] .a12p18-hero-m-isq,
+      .a12p18-hero-root[data-active="pb"] .a12p18-hero-m-bulbo,
+      .a12p18-hero-root[data-active="pb"] .a12p18-hero-m-trans,
+      .a12p18-hero-root[data-active="pb"] .a12p18-hero-m-esf {
+        fill-opacity: 0.98;
+        stroke: var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5));
+        stroke-width: 2px;
+        filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
+      }
+
+      /* Dimmed state when another muscle is focused */
+      .a12p18-hero-root[data-active="isquiocavernoso"] .a12p18-hero-muscle:not(.a12p18-hero-m-isq),
+      .a12p18-hero-root[data-active="bulboesponjoso"] .a12p18-hero-muscle:not(.a12p18-hero-m-bulbo),
+      .a12p18-hero-root[data-active="transverso"] .a12p18-hero-muscle:not(.a12p18-hero-m-trans),
+      .a12p18-hero-root[data-active="esfincter"] .a12p18-hero-muscle:not(.a12p18-hero-m-esf) {
+        opacity: 0.35;
+      }
+
+      /* Perineal Body Hub */
+      .a12p18-hero-pb-node {
+        fill: var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B));
+        stroke: var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5));
+        stroke-width: 2.5;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+      .a12p18-hero-root[data-active="pb"] .a12p18-hero-pb-node {
+        filter: drop-shadow(0 0 10px #F3BE5B);
+        transform: scale(1.15);
+        transform-origin: 275px 335px;
+      }
+
+      /* Convergence Vectors */
+      .a12p18-hero-vector {
+        stroke-dasharray: 4 4;
+        stroke-width: 2;
+        opacity: 0.25;
+        transition: opacity 0.3s ease, stroke-width 0.3s ease, stroke-dasharray 0.3s ease;
+      }
+      .a12p18-hero-root[data-active="isquiocavernoso"] #a12p18-hero-v-isq,
+      .a12p18-hero-root[data-active="bulboesponjoso"] #a12p18-hero-v-bulbo,
+      .a12p18-hero-root[data-active="transverso"] #a12p18-hero-v-trans,
+      .a12p18-hero-root[data-active="esfincter"] #a12p18-hero-v-esf,
+      .a12p18-hero-root[data-active="pb"] .a12p18-hero-vector {
+        opacity: 1;
+        stroke-width: 3.5;
+        stroke-dasharray: none;
+        filter: drop-shadow(0 0 4px currentColor);
+      }
+
+      /* Buttons and Controls */
+      .a12p18-hero-btn {
+        fill: var(--a12p18-hero-card, #25222E);
+        stroke: var(--a12p18-hero-border, #383344);
+        stroke-width: 1.2;
+        rx: 6;
+        cursor: pointer;
+        transition: fill 0.2s ease, stroke 0.2s ease;
+      }
+      .a12p18-hero-btn:hover {
+        fill: var(--a12p18-hero-border, #383344);
+      }
+      .a12p18-hero-btn-text {
+        fill: var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5));
+        font-size: 11px;
+        font-weight: 600;
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      /* Mode Specific Hiding */
+      .a12p18-hero-root[data-mode="quiz"] .a12p18-hero-diagram-labels {
+        display: none;
+      }
+
+      /* Leader Lines */
+      .a12p18-hero-leader {
+        stroke: var(--a12p18-hero-subtinta, #A8A2B5);
+        stroke-width: 1;
+        stroke-dasharray: 2 2;
+        opacity: 0.7;
+        fill: none;
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND & MAIN CONTAINER -->
+  <rect width="900" height="640" fill="var(--bg-1, var(--a12p18-hero-bg, #121116))" rx="12" />
+
+  <!-- HEADER BAR -->
+  <g transform="translate(30, 24)">
+    <text class="a12p18-hero-title-text" x="0" y="16">MAPA TOPOGRÁFICO DO PERÍNEO (VISTA INFERIOR)</text>
+    <text class="a12p18-hero-subtitle-text" x="0" y="34">Convergência Muscular no Corpo Perineal e Divisão dos Trígonos Urogenital e Anal</text>
+    
+    <!-- Controls (Top Right) -->
+    <g transform="translate(560, 2)">
+      <g class="a12p18-hero-interactive" id="a12p18-hero-btn-mode" tabindex="0" role="button" aria-label="Alternar modo de estudo e reconhecimento">
+        <rect class="a12p18-hero-btn" width="160" height="30" x="0" y="0" />
+        <text class="a12p18-hero-btn-text" id="a12p18-hero-mode-text" x="80" y="19">Modo: Anatomia (Rótulos)</text>
+      </g>
+      <g class="a12p18-hero-interactive" id="a12p18-hero-btn-reset" transform="translate(170, 0)" tabindex="0" role="button" aria-label="Redefinir seleção para visão geral">
+        <rect class="a12p18-hero-btn" width="90" height="30" x="0" y="0" />
+        <text class="a12p18-hero-btn-text" x="45" y="19">Visão Geral</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- LEFT STAGE: PERINEAL OUTLET DIAGRAM (Center: 247.5, y: 335) -->
+  <g id="a12p18-hero-stage" transform="translate(25, 75)">
+    <!-- Stage Backdrop Card -->
+    <rect width="495" height="470" fill="var(--a12p18-hero-panel, #1D1B24)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1" rx="10" />
+
+    <!-- ORIENTATION AXES LABELS -->
+    <text class="a12p18-hero-sublabel" x="247.5" y="25" text-anchor="middle" font-weight="700">ANTERIOR (Sínfise Púbica)</text>
+    <text class="a12p18-hero-sublabel" x="247.5" y="452" text-anchor="middle" font-weight="700">POSTERIOR (Cóccix)</text>
+    <text class="a12p18-hero-sublabel" x="18" y="235" text-anchor="start" font-weight="700">DIREITA</text>
+    <text class="a12p18-hero-sublabel" x="477" y="235" text-anchor="end" font-weight="700">ESQUERDA</text>
+
+    <!-- OSTEOPELVIC FRAMEWORK -->
+    <!-- Sínfise Púbica (Anterior Arch) -->
+    <path class="a12p18-hero-bone" d="M 215,50 C 240,40 255,40 280,50 L 295,65 C 265,60 230,60 200,65 Z" />
+    
+    <!-- Ischiopubic Rami (Ramos Isquiopúbicos) -->
+    <path class="a12p18-hero-bone" d="M 200,65 C 150,140 100,240 85,290 L 125,305 C 140,265 175,175 215,110 Z" />
+    <path class="a12p18-hero-bone" d="M 295,65 C 345,140 395,240 410,290 L 370,305 C 355,265 320,175 280,110 Z" />
+
+    <!-- Ischial Tuberosities (Tuberosidades Isquiáticas - Base Common Points) -->
+    <!-- Right Tuberosity (Left in viewer's anatomical position) -->
+    <path class="a12p18-hero-bone" d="M 75,290 C 65,320 70,355 95,365 C 120,365 130,335 125,305 Z" />
+    <!-- Left Tuberosity -->
+    <path class="a12p18-hero-bone" d="M 420,290 C 430,320 425,355 400,365 C 375,365 365,335 370,305 Z" />
+
+    <!-- Sacrotuberous Ligaments and Coccyx -->
+    <path class="a12p18-hero-ligament" d="M 95,365 C 130,410 180,440 230,445" />
+    <path class="a12p18-hero-ligament" d="M 400,365 C 365,410 315,440 265,445" />
+    <!-- Coccyx -->
+    <path class="a12p18-hero-bone" d="M 230,440 C 240,430 255,430 265,440 L 255,462 C 250,466 245,466 240,462 Z" />
+
+    <!-- TRIANGLES SHADING AND BOUNDARIES -->
+    <!-- 1. Trígono Urogenital (Anterior: Sínfise 247.5, 55 -> Tuberosidade R 95,335 -> Tuberosidade L 400,335) -->
+    <polygon class="a12p18-hero-tri-ug a12p18-hero-interactive" id="a12p18-hero-target-tri-ug" points="247.5,55 95,335 400,335" tabindex="0" role="button" aria-label="Trígono Urogenital (Anterior)" />
+    
+    <!-- 2. Trígono Anal (Posterior: Tuberosidade R 95,335 -> Tuberosidade L 400,335 -> Cóccix 247.5,445) -->
+    <polygon class="a12p18-hero-tri-an a12p18-hero-interactive" id="a12p18-hero-target-tri-an" points="95,335 400,335 247.5,445" tabindex="0" role="button" aria-label="Trígono Anal (Posterior)" />
+
+    <!-- Linha Bituberosa (Base Comum Dividindo os Trígonos) -->
+    <line x1="85" y1="335" x2="410" y2="335" stroke="var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5))" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.6" />
+
+    <!-- MEMBRANA PERINEAL (Camada Profunda no Trígono Urogenital) -->
+    <polygon class="a12p18-hero-membrane-bg" points="247.5,95 130,325 365,325" />
+
+    <!-- ANATOMICAL ORIFICES (Vaginal/Urethral and Anal openings for spatial context) -->
+    <!-- Urogenital Aperture / Vaginal Introitus -->
+    <ellipse cx="247.5" cy="225" rx="16" ry="28" fill="var(--a12p18-hero-card, #25222E)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1.5" opacity="0.8" />
+    <!-- Urethral orifice -->
+    <circle cx="247.5" cy="170" r="5" fill="var(--a12p18-hero-card, #25222E)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1" />
+    <!-- Anal Orifice -->
+    <circle cx="247.5" cy="390" r="15" fill="var(--a12p18-hero-card, #25222E)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1.5" opacity="0.8" />
+
+    <!-- CONVERGENCE VECTORS (Lines from Muscles to Perineal Body) -->
+    <!-- Vector 1: Bulboesponjoso (from anterior midline down to PB) -->
+    <line id="a12p18-hero-v-bulbo" class="a12p18-hero-vector" x1="247.5" y1="260" x2="247.5" y2="330" stroke="var(--a12-bulboesponjoso, var(--a12p18-hero-bulboesponjoso, #F08A65))" />
+    <!-- Vector 2: Isquiocavernoso (from lateral rami down-inward to PB) -->
+    <line id="a12p18-hero-v-isq" class="a12p18-hero-vector" x1="160" y1="250" x2="240" y2="330" stroke="var(--a12-isquiocavernoso, var(--a12p18-hero-isquiocavernoso, #A978C7))" />
+    <!-- Vector 3: Transverso Superficial (horizontal from tuberosities to PB) -->
+    <line id="a12p18-hero-v-trans" class="a12p18-hero-vector" x1="125" y1="335" x2="240" y2="335" stroke="var(--a12-transverso-superficial, var(--a12p18-hero-transverso, #55B889))" />
+    <!-- Vector 4: Esfíncter Anal (from coccyx/anal canal up to PB) -->
+    <line id="a12p18-hero-v-esf" class="a12p18-hero-vector" x1="247.5" y1="410" x2="247.5" y2="340" stroke="var(--a12-esfincter-anal, var(--a12p18-hero-esfincter-anal, #D85C6A))" />
+
+    <!-- 4 MUSCLES (3 Urogenital + 1 Anal) -->
+    <!-- 1. M. ISQUIOCAVERNOSO (Pair running along Ischiopubic Rami) -->
+    <g class="a12p18-hero-interactive a12p18-hero-muscle a12p18-hero-m-isq" id="a12p18-hero-m-isquiocavernoso" tabindex="0" role="button" aria-label="Músculo Isquiocavernoso (Trígono Urogenital)">
+      <!-- Right Ischiocavernosus -->
+      <path d="M 195,85 C 160,145 125,225 110,285 L 138,295 C 152,240 185,160 215,100 Z" />
+      <!-- Left Ischiocavernosus -->
+      <path d="M 300,85 C 335,145 370,225 385,285 L 357,295 C 343,240 310,160 280,100 Z" />
+    </g>
+
+    <!-- 2. M. BULBOESPONJOSO (Surrounding Urogenital Aperture, converging on PB) -->
+    <g class="a12p18-hero-interactive a12p18-hero-muscle a12p18-hero-m-bulbo" id="a12p18-hero-m-bulboesponjoso" tabindex="0" role="button" aria-label="Músculo Bulboesponjoso (Trígono Urogenital)">
+      <!-- Right arch -->
+      <path d="M 244,145 C 218,175 214,245 235,315 C 240,328 246,332 246,335 C 243,320 232,245 236,175 Z" />
+      <!-- Left arch -->
+      <path d="M 251,145 C 277,175 281,245 260,315 C 255,328 249,332 249,335 C 252,320 263,245 259,175 Z" />
+    </g>
+
+    <!-- 3. M. TRANSVERSO SUPERFICIAL DO PERÍNEO (Horizontal band along Bituberous line) -->
+    <g class="a12p18-hero-interactive a12p18-hero-muscle a12p18-hero-m-trans" id="a12p18-hero-m-transverso" tabindex="0" role="button" aria-label="Músculo Transverso Superficial do Períneo (Trígono Urogenital)">
+      <!-- Right band -->
+      <path d="M 125,327 L 235,329 C 238,333 238,337 235,341 L 125,343 C 115,338 115,332 125,327 Z" />
+      <!-- Left band -->
+      <path d="M 370,327 L 260,329 C 257,333 257,337 260,341 L 370,343 C 380,338 380,332 370,327 Z" />
+    </g>
+
+    <!-- 4. M. ESFÍNCTER EXTERNO DO ÂNUS (In Anal Triangle, surrounding anus, attaching to Coccyx and PB) -->
+    <g class="a12p18-hero-interactive a12p18-hero-muscle a12p18-hero-m-esf" id="a12p18-hero-m-esfincter" tabindex="0" role="button" aria-label="Esfíncter Externo do Ânus (Trígono Anal)">
+      <!-- Elliptical muscle loop around anus extending to PB anteriorly and Coccyx posteriorly -->
+      <path d="M 247.5,345 C 215,365 215,415 247.5,435 C 280,415 280,365 247.5,345 Z M 247.5,365 C 265,380 265,400 247.5,415 C 230,400 230,380 247.5,365 Z" fill-rule="evenodd" />
+    </g>
+
+    <!-- CENTRAL CONVERGENCE POINT: CORPO PERINEAL (Perineal Body Node) -->
+    <g class="a12p18-hero-interactive" id="a12p18-hero-target-pb" transform="translate(247.5, 335)" tabindex="0" role="button" aria-label="Corpo Perineal (Ponto de Convergência Central dos 4 Músculos)">
+      <circle class="a12p18-hero-pb-node" r="14" />
+      <!-- Inner star/core icon -->
+      <circle r="4" fill="var(--a12p18-hero-card, #25222E)" />
+    </g>
+
+    <!-- DIAGRAM ANATOMICAL LABELS (With Leader Lines) -->
+    <g class="a12p18-hero-diagram-labels">
+      <!-- 1. Trígono Urogenital Label (Top Left) -->
+      <path class="a12p18-hero-leader" d="M 70,140 L 160,170" />
+      <text class="a12p18-hero-label" x="65" y="132" text-anchor="end" fill="var(--a12-trigono-urogenital, var(--a12p18-hero-urogenital, #EF7582))">TRÍGONO UROGENITAL</text>
+      <text class="a12p18-hero-sublabel" x="65" y="144" text-anchor="end">Território Anterior (3 Músculos)</text>
+
+      <!-- 2. Isquiocavernoso Label (Mid Left) -->
+      <path class="a12p18-hero-leader" d="M 45,210 L 140,210" />
+      <text class="a12p18-hero-label" x="40" y="206" text-anchor="end" fill="var(--a12-isquiocavernoso, var(--a12p18-hero-isquiocavernoso, #A978C7))">M. Isquiocavernoso</text>
+      <text class="a12p18-hero-sublabel" x="40" y="218" text-anchor="end">Fixa aos Ramos Isquiopúbicos</text>
+
+      <!-- 3. Bulboesponjoso Label (Top Right) -->
+      <path class="a12p18-hero-leader" d="M 425,190 L 275,210" />
+      <text class="a12p18-hero-label" x="430" y="186" text-anchor="start" fill="var(--a12-bulboesponjoso, var(--a12p18-hero-bulboesponjoso, #F08A65))">M. Bulboesponjoso</text>
+      <text class="a12p18-hero-sublabel" x="430" y="198" text-anchor="start">Envolve o Hímen / Vulva</text>
+
+      <!-- 4. Transverso Superficial Label (Mid Right) -->
+      <path class="a12p18-hero-leader" d="M 440,305 L 340,332" />
+      <text class="a12p18-hero-label" x="445" y="301" text-anchor="start" fill="var(--a12-transverso-superficial, var(--a12p18-hero-transverso, #55B889))">M. Transverso Superficial</text>
+      <text class="a12p18-hero-sublabel" x="445" y="313" text-anchor="start">Estabiliza a Linha Bituberosa</text>
+
+      <!-- 5. Linha Bituberosa (Far Left) -->
+      <path class="a12p18-hero-leader" d="M 50,335 L 85,335" />
+      <text class="a12p18-hero-label" x="45" y="331" text-anchor="end">Linha Bituberosa</text>
+      <text class="a12p18-hero-sublabel" x="45" y="343" text-anchor="end">Divisa Anatômica</text>
+
+      <!-- 6. CORPO PERINEAL (Central Highlight Callout) -->
+      <path class="a12p18-hero-leader" d="M 170,275 L 236,328" stroke="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))" stroke-width="1.5" />
+      <rect x="55" y="255" width="125" height="34" fill="var(--a12p18-hero-card, #25222E)" stroke="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))" stroke-width="1" rx="4" />
+      <text class="a12p18-hero-label" x="117.5" y="269" text-anchor="middle" fill="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))">CORPO PERINEAL</text>
+      <text class="a12p18-hero-sublabel" x="117.5" y="282" text-anchor="middle">Âncora Fibrosa Central</text>
+
+      <!-- 7. Esfíncter Externo do Ânus Label (Bottom Left) -->
+      <path class="a12p18-hero-leader" d="M 95,415 L 220,400" />
+      <text class="a12p18-hero-label" x="90" y="411" text-anchor="end" fill="var(--a12-esfincter-anal, var(--a12p18-hero-esfincter-anal, #D85C6A))">Esfíncter Externo do Ânus</text>
+      <text class="a12p18-hero-sublabel" x="90" y="423" text-anchor="end">Músculo do Trígono Anal</text>
+
+      <!-- 8. Trígono Anal Label (Bottom Right) -->
+      <path class="a12p18-hero-leader" d="M 410,415 L 320,410" />
+      <text class="a12p18-hero-label" x="415" y="411" text-anchor="start" fill="var(--a12-trigono-anal, var(--a12p18-hero-anal, #6FA8D6))">TRÍGONO ANAL</text>
+      <text class="a12p18-hero-sublabel" x="415" y="423" text-anchor="start">Território Posterior (1 Músculo)</text>
+
+      <!-- 9. Membrana Perineal Callout -->
+      <path class="a12p18-hero-leader" d="M 330,105 L 290,130" stroke="var(--a12-membrana-perineal, var(--a12p18-hero-membrana, #CDBB67))" />
+      <text class="a12p18-hero-label" x="335" y="103" text-anchor="start" fill="var(--a12-membrana-perineal, var(--a12p18-hero-membrana, #CDBB67))">Membrana Perineal</text>
+      <text class="a12p18-hero-sublabel" x="335" y="115" text-anchor="start">Marco do Andar Profundo</text>
+    </g>
+  </g>
+
+  <!-- RIGHT SIDE: REORIENTATION INSET AND INTERACTIVE READING PANEL -->
+  
+  <!-- 1. REORIENTATION SAGITTAL INSET (Top Right: x: 540, y: 75, w: 335, h: 145) -->
+  <g transform="translate(540, 75)">
+    <rect width="335" height="145" fill="var(--a12p18-hero-panel, #1D1B24)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1" rx="10" />
+    <text class="a12p18-hero-label" x="15" y="24" fill="var(--a12p18-hero-subtinta, #A8A2B5)">INSET DE REORIENTAÇÃO PLANAR</text>
+    <text class="a12p18-hero-sublabel" x="15" y="38">Visão Sagital vs. Ângulo Inferior da Prancha</text>
+
+    <!-- Sagittal Pelvic Silhouette Drawing -->
+    <g transform="translate(25, 45)">
+      <!-- Spine and Sacrum -->
+      <path d="M 40,15 C 45,35 48,55 42,75 C 38,88 28,95 20,98" fill="none" stroke="var(--a12p18-hero-ossea, #8E8A99)" stroke-width="2" />
+      <!-- Pubic Symphysis (Anterior) -->
+      <path d="M 120,60 C 122,70 120,80 115,85" fill="none" stroke="var(--a12p18-hero-ossea, #8E8A99)" stroke-width="3" />
+      <!-- Pelvic Floor Slope (Perineal outline) -->
+      <path d="M 20,98 C 45,95 80,95 115,85" fill="none" stroke="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))" stroke-width="2" stroke-dasharray="3 2" />
+      <!-- Eye Icon and Vector Arrow pointing from below UPWARD into pelvic outlet -->
+      <g transform="translate(60, 82)">
+        <line x1="0" y1="20" x2="0" y2="2" stroke="var(--a12-trigono-urogenital, var(--a12p18-hero-urogenital, #EF7582))" stroke-width="2.5" />
+        <polygon points="-4,6 0,-2 4,6" fill="var(--a12-trigono-urogenital, var(--a12p18-hero-urogenital, #EF7582))" />
+        <!-- Eye shape -->
+        <path d="M -12,20 Q 0,12 12,20 Q 0,28 -12,20 Z" fill="none" stroke="var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5))" stroke-width="1.2" />
+        <circle cx="0" cy="20" r="3" fill="var(--a12-tinta, var(--a12p18-hero-tinta, #F7F1F5))" />
+      </g>
+      <text class="a12p18-hero-sublabel" x="140" y="70" text-anchor="start">Sínfise Púbica</text>
+      <text class="a12p18-hero-sublabel" x="10" y="60" text-anchor="end">Sacro/Cóccix</text>
+      <text class="a12p18-hero-label" x="140" y="98" fill="var(--a12-trigono-urogenital, var(--a12p18-hero-urogenital, #EF7582))">VISTA INFERIOR (Prancha Principal)</text>
+    </g>
+  </g>
+
+  <!-- 2. INTERACTIVE READING PANEL (Right Side: x: 540, y: 235, w: 335, h: 310) -->
+  <g transform="translate(540, 235)">
+    <rect width="335" height="310" fill="var(--a12p18-hero-panel, #1D1B24)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1" rx="10" />
+
+    <!-- Panel Header / Active Structure Name -->
+    <g transform="translate(18, 20)">
+      <rect width="4" height="28" fill="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))" rx="2" id="a12p18-hero-panel-indicator" />
+      <text class="a12p18-hero-label" x="14" y="14" font-size="14px" id="a12p18-hero-panel-title">CORPO PERINEAL (CENTRO TENDÍNEO)</text>
+      <text class="a12p18-hero-sublabel" x="14" y="28" id="a12p18-hero-panel-territory">Ponto de Convergência Central dos 4 Músculos Perineais</text>
+    </g>
+
+    <!-- Convergence Status Grid (The 4 muscles status at perineal body) -->
+    <g transform="translate(18, 65)">
+      <rect width="299" height="60" fill="var(--a12p18-hero-card, #25222E)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1" rx="6" />
+      <text class="a12p18-hero-sublabel" x="10" y="16" font-weight="700">MATRIZ DE CONVERGÊNCIA MUSCULAR:</text>
+      
+      <!-- 4 Badges -->
+      <g transform="translate(10, 26)">
+        <!-- Badge 1: Bulboesponjoso -->
+        <g id="a12p18-hero-badge-bulbo">
+          <rect width="66" height="22" fill="var(--a12-bulboesponjoso, var(--a12p18-hero-bulboesponjoso, #F08A65))" fill-opacity="0.2" stroke="var(--a12-bulboesponjoso, var(--a12p18-hero-bulboesponjoso, #F08A65))" rx="4" />
+          <text class="a12p18-hero-sublabel" x="33" y="15" text-anchor="middle" font-weight="600" fill="var(--a12-bulboesponjoso, var(--a12p18-hero-bulboesponjoso, #F08A65))">Bulboesp.</text>
+        </g>
+
+        <!-- Badge 2: Isquiocavernoso -->
+        <g transform="translate(71, 0)" id="a12p18-hero-badge-isq">
+          <rect width="66" height="22" fill="var(--a12-isquiocavernoso, var(--a12p18-hero-isquiocavernoso, #A978C7))" fill-opacity="0.2" stroke="var(--a12-isquiocavernoso, var(--a12p18-hero-isquiocavernoso, #A978C7))" rx="4" />
+          <text class="a12p18-hero-sublabel" x="33" y="15" text-anchor="middle" font-weight="600" fill="var(--a12-isquiocavernoso, var(--a12p18-hero-isquiocavernoso, #A978C7))">Isquiocav.</text>
+        </g>
+
+        <!-- Badge 3: Transverso -->
+        <g transform="translate(142, 0)" id="a12p18-hero-badge-trans">
+          <rect width="66" height="22" fill="var(--a12-transverso-superficial, var(--a12p18-hero-transverso, #55B889))" fill-opacity="0.2" stroke="var(--a12-transverso-superficial, var(--a12p18-hero-transverso, #55B889))" rx="4" />
+          <text class="a12p18-hero-sublabel" x="33" y="15" text-anchor="middle" font-weight="600" fill="var(--a12-transverso-superficial, var(--a12p18-hero-transverso, #55B889))">Transverso</text>
+        </g>
+
+        <!-- Badge 4: Esfíncter Anal -->
+        <g transform="translate(213, 0)" id="a12p18-hero-badge-esf">
+          <rect width="66" height="22" fill="var(--a12-esfincter-anal, var(--a12p18-hero-esfincter-anal, #D85C6A))" fill-opacity="0.2" stroke="var(--a12-esfincter-anal, var(--a12p18-hero-esfincter-anal, #D85C6A))" rx="4" />
+          <text class="a12p18-hero-sublabel" x="33" y="15" text-anchor="middle" font-weight="600" fill="var(--a12-esfincter-anal, var(--a12p18-hero-esfincter-anal, #D85C6A))">Esf. Anal</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Detailed Anatomical Description Body -->
+    <g transform="translate(18, 140)">
+      <text class="a12p18-hero-sublabel" x="0" y="12" font-weight="700" fill="var(--a12p18-hero-subtinta, #A8A2B5)">RELAÇÃO TOPOGRÁFICA &amp; FUNÇÃO:</text>
+      
+      <!-- Dynamic Paragraph Lines -->
+      <text class="a12p18-hero-label" x="0" y="32" font-weight="400" id="a12p18-hero-panel-desc-1">O Corpo Perineal é o nódulo fibromuscular central situado</text>
+      <text class="a12p18-hero-label" x="0" y="48" font-weight="400" id="a12p18-hero-panel-desc-2">na divisa entre o Trígono Urogenital (anterior) e Anal (posterior).</text>
+      <text class="a12p18-hero-label" x="0" y="64" font-weight="400" id="a12p18-hero-panel-desc-3">Recebe a inserção direta de 3 músculos urogenitais e 1 músculo</text>
+      <text class="a12p18-hero-label" x="0" y="80" font-weight="400" id="a12p18-hero-panel-desc-4">anal, fornecendo sustentação estática ao assoalho pélvico.</text>
+
+      <!-- Clinical Highlight Card -->
+      <g transform="translate(0, 95)">
+        <rect width="299" height="55" fill="var(--a12p18-hero-card, #25222E)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1" rx="6" />
+        <text class="a12p18-hero-sublabel" x="12" y="18" font-weight="700" fill="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))">CORRELAÇÃO CLÍNICA (EPISIOTOMIA / LACERAÇÃO):</text>
+        <text class="a12p18-hero-sublabel" x="12" y="34" id="a12p18-hero-panel-clinical-1">Lacerações de 3º/4º grau ou episiotomia mediana seccionam este ponto,</text>
+        <text class="a12p18-hero-sublabel" x="12" y="46" id="a12p18-hero-panel-clinical-2">comprometendo a convergência e predispondo a prolapso e incontinência.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- BOTTOM FOOTER: LEGENDA DE INTERPRETAÇÃO (Bauer Contract 1) -->
+  <g transform="translate(25, 555)">
+    <rect width="850" height="60" fill="var(--a12p18-hero-panel, #1D1B24)" stroke="var(--a12p18-hero-border, #383344)" stroke-width="1" rx="8" />
+    <circle cx="24" cy="30" r="10" fill="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))" opacity="0.2" />
+    <text class="a12p18-hero-label" x="24" y="34" text-anchor="middle" font-weight="700" fill="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))">i</text>
+    <text class="a12p18-hero-label" x="45" y="24" font-weight="700" fill="var(--a12-ouro, var(--a12p18-hero-corpo-perineal, #F3BE5B))">LEGENDA DE INTERPRETAÇÃO ANATÔMICA:</text>
+    <text class="a12p18-hero-sublabel" x="45" y="42">Três músculos (isquiocavernoso, bulboesponjoso e transverso superficial) ocupam o trígono urogenital anterior, enquanto o esfíncter externo do ânus ocupa o trígono anal posterior. Todos os quatro convergem no Corpo Perineal central, tornando-o o pilar fundamental de sustentação do assoalho pélvico inferior.</text>
+  </g>
+
+  <!-- EMBEDDED INTERACTION ENGINE (Pulsing state and determinism) -->
+  <script><![CDATA[
+  (function() {
+    var root = document.querySelector('.a12p18-hero-root');
+    if (!root) return;
+
+    var mode = 'study'; // 'study' or 'quiz'
+    var activeId = 'pb';
+
+    // Data dictionary for anatomical structures
+    var dataMap = {
+      'pb': {
+        title: 'CORPO PERINEAL (CENTRO TENDÍNEO)',
+        territory: 'Ponto de Convergência Central dos 4 Músculos Perineais',
+        tri: 'both',
+        color: 'var(--a12-ouro, #F3BE5B)',
+        badges: [true, true, true, true],
+        desc: [
+          'O Corpo Perineal é o nódulo fibromuscular central situado',
+          'na divisa entre o Trígono Urogenital (anterior) e Anal (posterior).',
+          'Recebe a inserção direta de 3 músculos urogenitais e 1 músculo',
+          'anal, fornecendo sustentação estática ao assoalho pélvico.'
+        ],
+        clinical: [
+          'Lacerações de 3º/4º grau ou episiotomia mediana seccionam este ponto,',
+          'comprometendo a convergência e predispondo a prolapso e incontinência.'
+        ]
+      },
+      'isquiocavernoso': {
+        title: 'M. ISQUIOCAVERNOSO',
+        territory: 'Trígono Urogenital (Território Anterior)',
+        tri: 'ug',
+        color: 'var(--a12-isquiocavernoso, #A978C7)',
+        badges: [false, true, false, false],
+        desc: [
+          'Fixa-se às tuberosidades isquiáticas e ramos isquiopúbicos,',
+          'envolvendo os crura do clitóris/pênis.',
+          'Emite fibras mediais que convergem para a fáscia e corpo perineal,',
+          'auxiliando na manutenção da ereção e estabilização lateral.'
+        ],
+        clinical: [
+          'Mantém o ingurgitamento erétil ao comprimir a drenagem venosa.',
+          'Raramente seccionado na episiotomia mediolateral.'
+        ]
+      },
+      'bulboesponjoso': {
+        title: 'M. BULBOESPONJOSO',
+        territory: 'Trígono Urogenital (Território Anterior)',
+        tri: 'ug',
+        color: 'var(--a12-bulboesponjoso, #F08A65)',
+        badges: [true, false, false, false],
+        desc: [
+          'Cobre o bulbo do vestíbulo / bulbo peniano na linha média.',
+          'Suas fibras posteriores convergem diretamente para o Corpo Perineal.',
+          'Atua na contração do introitus vaginal e esvaziamento uretral.'
+        ],
+        clinical: [
+          'Envolvido diretamente nas episiotomias medianas e mediolaterais.',
+          'Sua reconstituição adequada é vital para a função sexual e continência.'
+        ]
+      },
+      'transverso': {
+        title: 'M. TRANSVERSO SUPERFICIAL',
+        territory: 'Trígono Urogenital (Limite com Trígono Anal)',
+        tri: 'ug',
+        color: 'var(--a12-transverso-superficial, #55B889)',
+        badges: [false, false, true, false],
+        desc: [
+          'Corre horizontalmente da tuberosidade isquiática ao Corpo Perineal.',
+          'Forma a margem posterior livre da Membrana Perineal.',
+          'Fixa o Corpo Perineal no plano transversal da linha bituberosa.'
+        ],
+        clinical: [
+          'Músculo chave seccionado na episiotomia mediolateral.',
+          'Sua sutura correta restabelece a tensão transversal do períneo.'
+        ]
+      },
+      'esfincter': {
+        title: 'M. ESFÍNCTER EXTERNO DO ÂNUS',
+        territory: 'Trígono Anal (Território Posterior)',
+        tri: 'an',
+        color: 'var(--a12-esfincter-anal, #D85C6A)',
+        badges: [false, false, false, true],
+        desc: [
+          'Único músculo superficial situado no Trígono Anal posterior.',
+          'Envolve o canal anal; suas fibras anteriores fixam-se no Corpo Perineal,',
+          'e as posteriores anco-ram-se no ligamento anocóccigeo / cóccix.'
+        ],
+        clinical: [
+          'Lacerações perineais de 3º grau atingem este esfíncter.',
+          'A lesão não reparada leva à incontinência fecal e de flatos.'
+        ]
+      },
+      'tri-ug': {
+        title: 'TRÍGONO UROGENITAL',
+        territory: 'Região Anterior do Períneo (Sínfise a Linha Bituberosa)',
+        tri: 'ug',
+        color: 'var(--a12-trigono-urogenital, #EF7582)',
+        badges: [true, true, true, false],
+        desc: [
+          'Compreende a metade anterior do diamante perineal.',
+          'Contém a Membrana Perineal e 3 músculos superficiais:',
+          'M. Isquiocavernoso, M. Bulboesponjoso e M. Transverso Superficial.',
+          'Atravessado pela uretra e vagina / estrutura erétil.'
+        ],
+        clinical: [
+          'Área de maior estiramento e intervenção obstétrica intraparto.'
+        ]
+      },
+      'tri-an': {
+        title: 'TRÍGONO ANAL',
+        territory: 'Região Posterior do Períneo (Linha Bituberosa ao Cóccix)',
+        tri: 'an',
+        color: 'var(--a12-trigono-anal, #6FA8D6)',
+        badges: [false, false, false, true],
+        desc: [
+          'Compreende a metade posterior do diamante perineal.',
+          'Contém o Canal Anal, Fossa Isquioanal e 1 músculo principal:',
+          'Esfíncter Externo do Ânus, além do complexo elevador do ânus profundo.'
+        ],
+        clinical: [
+          'Sua integridade evita o surgimento de fístulas anorretais e prolapsos.'
+        ]
+      }
+    };
+
+    function updatePanel(key) {
+      var item = dataMap[key] || dataMap['pb'];
+      root.setAttribute('data-active', key);
+      root.setAttribute('data-active-tri', item.tri);
+
+      var titleEl = document.getElementById('a12p18-hero-panel-title');
+      var territoryEl = document.getElementById('a12p18-hero-panel-territory');
+      var indicatorEl = document.getElementById('a12p18-hero-panel-indicator');
+
+      if (mode === 'quiz' && key !== 'pb' && key !== 'tri-ug' && key !== 'tri-an') {
+        titleEl.textContent = 'ESTRUTURA SELECIONADA (MODO QUIZ)';
+        territoryEl.textContent = 'Identifique a estrutura e sua convergência';
+        indicatorEl.style.fill = '#A8A2B5';
+      } else {
+        titleEl.textContent = item.title;
+        territoryEl.textContent = item.territory;
+        indicatorEl.style.fill = item.color;
+      }
+
+      // Update descriptions
+      for (var i = 1; i <= 4; i++) {
+        var descEl = document.getElementById('a12p18-hero-panel-desc-' + i);
+        if (descEl) {
+          descEl.textContent = item.desc[i - 1] || '';
+        }
+      }
+
+      // Update clinical
+      var clin1 = document.getElementById('a12p18-hero-panel-clinical-1');
+      var clin2 = document.getElementById('a12p18-hero-panel-clinical-2');
+      if (clin1) clin1.textContent = item.clinical[0] || '';
+      if (clin2) clin2.textContent = item.clinical[1] || '';
+
+      // Update badges
+      var badgeIds = ['bulbo', 'isq', 'trans', 'esf'];
+      badgeIds.forEach(function(bId, idx) {
+        var badgeEl = document.getElementById('a12p18-hero-badge-' + bId);
+        if (badgeEl) {
+          badgeEl.style.opacity = item.badges[idx] ? '1' : '0.25';
+        }
+      });
+    }
+
+    // Attach click listeners
+    var targets = [
+      { id: 'a12p18-hero-target-pb', key: 'pb' },
+      { id: 'a12p18-hero-m-isquiocavernoso', key: 'isquiocavernoso' },
+      { id: 'a12p18-hero-m-bulboesponjoso', key: 'bulboesponjoso' },
+      { id: 'a12p18-hero-m-transverso', key: 'transverso' },
+      { id: 'a12p18-hero-m-esfincter', key: 'esfincter' },
+      { id: 'a12p18-hero-target-tri-ug', key: 'tri-ug' },
+      { id: 'a12p18-hero-target-tri-an', key: 'tri-an' }
+    ];
+
+    targets.forEach(function(t) {
+      var el = document.getElementById(t.id);
+      if (el) {
+        el.addEventListener('click', function() {
+          updatePanel(t.key);
+        });
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            updatePanel(t.key);
+          }
+        });
+      }
+    });
+
+    // Mode Toggle Button
+    var btnMode = document.getElementById('a12p18-hero-btn-mode');
+    var modeText = document.getElementById('a12p18-hero-mode-text');
+    if (btnMode) {
+      btnMode.addEventListener('click', function() {
+        mode = (mode === 'study') ? 'quiz' : 'study';
+        root.setAttribute('data-mode', mode);
+        if (modeText) {
+          modeText.textContent = (mode === 'study') ? 'Modo: Anatomia (Rótulos)' : 'Modo: Reconhecimento';
+        }
+        updatePanel(root.getAttribute('data-active') || 'pb');
+      });
+    }
+
+    // Reset Button
+    var btnReset = document.getElementById('a12p18-hero-btn-reset');
+    if (btnReset) {
+      btnReset.addEventListener('click', function() {
+        updatePanel('pb');
+      });
+    }
+
+    // Initial panel setup
+    updatePanel('pb');
+  })();
+  ]]></script>
+</svg>

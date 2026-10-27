@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Cefaleia (cf1). Idade, súbito e trovoada — red flags temporais e vasculares; idade 50·55·60.">
+<title>Idade, súbito e trovoada · cf1 · Neurologia</title>
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="cf1-cara">
+/* cf1 — identidade e componentes; a moldura vem do chassi compartilhado.
+   Ajuste 02-08: --ink-mute apontava para --ink-60 (o tom de NOTA/carimbo da casa)
+   e virou a cor de parágrafos de abertura, legendas e respostas — a página inteira
+   ficou cinza e ilegível. Agora --ink-mute aponta para --ink-legenda (texto que se LÊ,
+   nos dois temas). Os poucos usos que SÃO mesmo metadado/carimbo recebem --ink-60
+   direto. Os cards ganham borda visível e inset-highlight (voltam a ser objetos);
+   os alarmes de coral ganham halo próprio (saltam do fundo). */
+:root {
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+  --violet: #a78bfa;
+  --teal: var(--ciano);
+  --gold: var(--amber);
+  --green: var(--verde);
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --r: var(--radius-sm);
+  --r-lg: var(--radius);
+  --font: var(--font-sans);
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  /* membrana do card: borda que se vê + Highlight interno de glass + sombra da casa. */
+  --card-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.035);
+  /* halo dos alarmes: coral suave вокруг do card, sem virar neon. */
+  --alarm-glow: 0 0 30px -12px color-mix(in srgb, var(--coral) 50%, transparent);
+}
+body[data-theme="light"] { --violet: #7c3aed; }
+/* Guarda local: resolve os apelidos da aula no mesmo elemento que recebe os tokens
+   do tema manual, impedindo que card e texto herdem esquemas diferentes. */
+body[data-theme="light"], body[data-theme="dark"] {
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+}
+.page__eyebrow { color: var(--ink-60); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 .5rem; }
+/* Openers */
+.opener {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg);
+  background: var(--card); padding: 1.15rem 1.2rem 1.25rem; margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .opener, .exec-card, .fig, .quiz, .op-summary, .why-matters, .trap, .dont-confuse, .case-card, .gap-box, .hero-figure, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge { background: var(--card-solid); }
+}
+.opener__eyebrow { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); margin-bottom: .35rem; }
+.opener h1, #page-title {
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem); line-height: 1.25; margin: 0 0 .55rem; font-weight: 700;
+}
+.opener__lead, .opener__mnemonic, .opener__bust, .opener__case { margin: 0; color: var(--ink-mute); font-size: 1.02rem; }
+.opener--question { border-left: 4px solid var(--indigo); }
+.opener--case { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 8%, var(--card)); }
+.opener--trap { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.opener--checklist { border-left: 4px solid var(--teal); }
+.opener--mnemonic {
+  border-left: 4px solid var(--gold);
+  background: color-mix(in srgb, var(--gold) 7%, var(--card));
+}
+.opener--mnemonic .opener__mnemonic { font-family: Georgia, "Times New Roman", serif; font-size: 1.18rem; color: var(--ink); }
+.opener--vs { border-left: 4px solid var(--teal); }
+.opener--bust { border-left: 4px solid var(--coral); }
+.strike-wrong { text-decoration: line-through; color: var(--ink-60); }
+.chipset { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.1rem; }
+.chip--topic, .chip, .chip--ok, .chip--no, .chip--series {
+  display: inline-flex; align-items: center; border-radius: 999px; padding: .28rem .7rem;
+  font-size: .78rem; border: 1px solid var(--border); background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+  color: var(--ink); cursor: default;
+}
+.chip--topic { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 35%, var(--border)); }
+.chip--ok { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+.chip--no { color: var(--coral); border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.chip--series { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 35%, var(--border)); cursor: not-allowed; }
+button.chip { cursor: pointer; min-height: 36px; }
+/* Prosa usa a tipografia editorial do chassi. */
+.no-indent { text-indent: 0 !important; }
+.prose-list { margin: 0 0 1em 1.1rem; padding: 0; }
+.prose-list li { margin: .3rem 0; }
+.topic-h { font-size: 1.12rem; margin: 1.35rem 0 .55rem; color: var(--ink); }
+.term { color: var(--indigo); font-weight: 650; }
+[data-theme="light"] .term { color: var(--indigo); }
+.hl-good { color: var(--green); font-weight: 650; }
+.hl-bad { color: var(--coral); font-weight: 650; }
+.hl-warn { color: var(--gold); font-weight: 650; }
+/* Cards */
+.exec-card, .trap, .dont-confuse, .op-summary, .why-matters, .continuity, .gap-box, .hero-figure, .case-card, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge {
+  border: 1px solid var(--border-strong); border-radius: var(--r); background: var(--card);
+  padding: 1rem 1.05rem; margin: 1.1rem 0; box-shadow: var(--card-shadow);
+}
+.exec-card__title, .trap__title, .op-summary__title, .why-matters__title, .flip-deck__title, .ctx-grid__title, .alarm-mini__title, .flow-raias__title, .mantra-row__title, .tabelao__title, .series-bridge__title {
+  margin: 0 0 .65rem; font-size: 1rem; color: var(--teal);
+}
+/* Fecho: corpo em tom legenda (lê confortável nos dois temas); strong segue ink-100 pelo chassi. */
+.op-summary .prosa { color: var(--ink-legenda); }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.checklist label { display: flex; gap: .55rem; align-items: flex-start; cursor: pointer; min-height: 44px; }
+.checklist input { width: 18px; height: 18px; margin-top: .2rem; accent-color: var(--indigo); }
+/* split grave × simples (P1) */
+.split-board { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media (max-width: 560px) { .split-board { grid-template-columns: 1fr; } }
+.split-board__bad, .split-board__good {
+  border-radius: 10px; padding: .8rem .85rem; border: 1px solid var(--border);
+}
+.split-board__bad { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--alarm-glow); }
+.split-board__good { border-color: color-mix(in srgb, var(--green) 45%, var(--border)); background: color-mix(in srgb, var(--green) 6%, var(--card)); }
+.split-board h4 { margin: 0 0 .4rem; font-size: .9rem; }
+.split-board__bad h4 { color: var(--coral); }
+.split-board__good h4 { color: var(--green); }
+.split-board ul { margin: .2rem 0 0; padding-left: 1.1rem; }
+.split-board li { margin: .25rem 0; font-size: .92rem; }
+/* funil-PS toggle (P1/P8) */
+.funil-toggle { display: flex; gap: .5rem; flex-wrap: wrap; margin: .6rem 0 .2rem; }
+.funil-btn {
+  min-height: 44px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .45rem 1rem; cursor: pointer; font: inherit;
+}
+.funil-btn[aria-pressed="true"] { border-color: var(--indigo); color: var(--indigo); background: color-mix(in srgb, var(--indigo) 12%, var(--card-solid)); }
+.funil-btn.funil-btn--alarm[aria-pressed="true"] { border-color: var(--coral); color: var(--coral); background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); }
+.funil-out { font-size: .94rem; color: var(--ink-mute); margin: .5rem 0 0; text-indent: 0; }
+/* flip-cards (P2) */
+.flip-deck { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .flip-deck { grid-template-columns: 1fr; } }
+.flip-card { perspective: 1000px; min-height: 120px; cursor: pointer; }
+.flip-card__inner { position: relative; width: 100%; min-height: 120px; transition: transform .5s; transform-style: preserve-3d; }
+.flip-card[aria-pressed="true"] .flip-card__inner { transform: rotateY(180deg); }
+.flip-card__face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 10px; border: 1px solid var(--border-strong); padding: .8rem .85rem; display: flex; flex-direction: column; gap: .25rem; background: var(--card-solid); }
+.flip-card__face--front { color: var(--ink); }
+.flip-card__face--front .ff-tag { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); }
+.flip-card__face--back { transform: rotateY(180deg); color: var(--ink-mute); font-size: .9rem; }
+.flip-card--primary .flip-card__face--front { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.flip-card--secondary .flip-card__face--front { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.flip-card:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 10px; }
+/* board comparativo (P2) */
+.cmp-board { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .cmp-board { grid-template-columns: 1fr; } }
+.cmp-col { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.cmp-col--p { border-color: color-mix(in srgb, var(--indigo) 40%, var(--border)); }
+.cmp-col--s { border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.cmp-col h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.cmp-col--p h4 { color: var(--indigo); }
+.cmp-col--s h4 { color: var(--coral); }
+.cmp-col .chip { margin: .2rem .2rem .2rem 0; }
+/* timeline crises (P3) — texto simples no DOM reforça o SVG */
+.reopen-banner { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); border-radius: 0 10px 10px 0; padding: .65rem .85rem; margin: .8rem 0; box-shadow: var(--alarm-glow); }
+.reopen-banner b { color: var(--coral); }
+/* mini-tabela 3 alarmes (P4) */
+.alarm-mini { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.alarm-mini__table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.alarm-mini__table th, .alarm-mini__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.alarm-mini__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); }
+.nuance {
+  border-left: 3px solid var(--gold); padding: .7rem .9rem; margin: 1rem 0;
+  background: color-mix(in srgb, var(--gold) 8%, transparent); border-radius: 0 10px 10px 0;
+}
+.nuance__tag { display: inline-block; font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); font-weight: 700; margin-bottom: .25rem; }
+/* curva trovoada toggle (P4) */
+.curve-toggle { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .55rem; }
+.curve-btn {
+  min-height: 40px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .4rem .85rem; cursor: pointer; font: inherit;
+}
+.curve-btn.is-active { border-color: var(--coral); color: var(--coral); }
+.curve-btn.is-active[data-curve="prog"] { border-color: var(--amber); color: var(--amber); }
+.curve-out { font-size: .94rem; color: var(--ink-mute); margin: .4rem 0 0; text-indent: 0; }
+/* herói (P5) */
+.hero-figure { border-left: 4px solid var(--violet); }
+.hero-figure__cap { font-size: .82rem; color: var(--ink-legenda); margin: .5rem 0 0; }
+/* cards sistêmicos (P6) */
+.sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .8rem 0; }
+@media (max-width: 560px) { .sys-grid { grid-template-columns: 1fr; } }
+.sys-card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.sys-card--men { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.sys-card--sys { border-color: color-mix(in srgb, var(--amber) 45%, var(--border)); }
+.sys-card h4 { margin: 0 0 .3rem; font-size: .9rem; }
+.sys-card--men h4 { color: var(--coral); }
+.sys-card--sys h4 { color: var(--amber); }
+.trap { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.trap--despertar { border-left-color: var(--gold); box-shadow: var(--card-shadow); }
+.trap__pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .6rem 0; }
+@media (max-width: 560px) { .trap__pair { grid-template-columns: 1fr; } }
+.trap__phrase { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem .8rem; font-size: .92rem; }
+.trap__phrase--no { border-color: color-mix(in srgb, var(--ink-60) 40%, var(--border)); color: var(--ink-60); }
+.trap__phrase--yes { border-color: color-mix(in srgb, var(--coral) 50%, var(--border)); background: color-mix(in srgb, var(--coral) 8%, var(--card)); }
+.trap__phrase b { color: var(--coral); }
+/* context grid (P7) */
+.ctx-grid { }
+.ctx-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin: .5rem 0; }
+@media (max-width: 640px) { .ctx-cards { grid-template-columns: 1fr; } }
+.ctx-item { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; cursor: pointer; background: var(--card-solid); }
+.ctx-item[aria-expanded="true"] { border-color: var(--violet); }
+.ctx-item__ctx { font-size: .78rem; color: var(--violet); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.ctx-item__q { font-size: .95rem; font-weight: 600; margin: .2rem 0; }
+.ctx-item__a { font-size: .9rem; color: var(--ink-mute); display: none; margin-top: .3rem; }
+.ctx-item[aria-expanded="true"] .ctx-item__a { display: block; }
+.ctx-item:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+/* checklist porta (P8) */
+.checklist--porta .checklist__hint { font-size: .82rem; color: var(--ink-mute); margin-top: .4rem; }
+/* fluxo 4 raias (P9) */
+.flow-raias { }
+.rai { border: 1px solid var(--border-strong); border-radius: 10px; padding: .7rem .85rem; margin: .5rem 0; cursor: pointer; background: var(--card-solid); }
+.rai[aria-pressed="true"] { border-color: var(--indigo); box-shadow: 0 0 0 1px color-mix(in srgb, var(--indigo) 45%, transparent); }
+.rai__top { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.rai__sus { font-weight: 700; color: var(--coral); }
+.rai__arr { color: var(--teal); font-weight: 700; }
+.rai__ex { font-weight: 700; color: var(--indigo); }
+.rai__why { font-size: .9rem; color: var(--ink-mute); margin-top: .35rem; display: none; }
+.rai[aria-pressed="true"] .rai__why { display: block; }
+.rai:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+/* tabelão P10 */
+.tabelao { }
+.tabelao__filters { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .7rem; }
+.filter-btn { min-height: 36px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-solid); color: var(--ink); padding: .3rem .8rem; cursor: pointer; font: inherit; font-size: .82rem; }
+.filter-btn.is-active { border-color: var(--indigo); color: var(--indigo); }
+.tabelao__cards { display: none; flex-direction: column; gap: .5rem; }
+@media (max-width: 640px) { .tabelao__cards { display: flex; } .tabelao__table-wrap { display: none; } }
+.tabelao__card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .6rem .75rem; border-left: 4px solid var(--coral); box-shadow: var(--alarm-glow); }
+.tabelao__card .tc-alarm { font-weight: 700; color: var(--coral); }
+.tabelao__card .tc-row { font-size: .88rem; color: var(--ink-mute); margin-top: .2rem; }
+.tabelao__table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabelao__table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 560px; }
+.tabelao__table th, .tabelao__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.tabelao__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); position: sticky; top: 0; }
+.tabelao__table td.alarme-cell { font-weight: 650; color: var(--coral); }
+/* mantras (P10) */
+.mantra-row { border-left: 4px solid var(--gold); }
+.mantra-row ol { margin: .2rem 0 0; padding-left: 1.3rem; }
+.mantra-row li { margin: .4rem 0; font-weight: 600; }
+.mantra-row li .m-gold { color: var(--gold); }
+/* series bridge chips */
+.series-bridge { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 6%, var(--card)); }
+.series-bridge .chip-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+.dont-confuse__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+.dont-confuse__grid--2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .dont-confuse__grid { grid-template-columns: 1fr; } }
+.dont-confuse__grid > div { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem; }
+.dont-confuse__warn { border-color: color-mix(in srgb, var(--gold) 50%, var(--border)) !important; }
+.dont-confuse h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.gap-box { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 11%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.gap-box h4 { margin: 0 0 .4rem; color: var(--coral); }
+/* Figures */
+.fig { margin: 1.25rem 0; border: 1px solid var(--border-strong); border-radius: var(--r-lg); overflow: hidden; background: var(--card); box-shadow: var(--card-shadow); }
+.fig__frame { width: 100%; display: block; background: var(--bg-1); }
+.fig__frame img {
+  display: block; width: 100%; height: auto; max-width: 100%;
+  object-fit: contain; background: #0a0f18;
+}
+[data-theme="light"] .fig__frame img { background: #e8eef5; }
+.fig__frame--svg { padding: .35rem; }
+.cf1-inline-svg { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; }
+.fig__cap {
+  padding: .7rem .95rem .85rem; font-size: .78rem; color: var(--ink-legenda); line-height: 1.45;
+  border-top: 1px solid var(--border);
+}
+.fig__label {
+  display: inline-block; font-family: var(--mono); font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--gold); margin-right: .4rem;
+}
+.fig__attr { display: block; margin-top: .4rem; padding-top: .35rem; border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent); font-size: .74rem; color: var(--ink-fonte); }
+/* Quiz */
+.quiz {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg); padding: 1.1rem 1rem 1.25rem;
+  background: var(--card); margin: 1.5rem 0 1rem; box-shadow: var(--card-shadow);
+}
+.quiz h2 { margin: 0 0 .85rem; font-size: 1.1rem; }
+.quiz__questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.quiz__stem { margin: 0 0 .55rem; font-weight: 600; text-indent: 0; }
+.quiz__alternatives { display: grid; gap: .4rem; }
+.quiz__alt {
+  text-align: left; border: 1px solid var(--border-strong); border-radius: 10px;
+  background: var(--card-solid); color: var(--ink); padding: .7rem .8rem; cursor: pointer;
+  min-height: 44px; font: inherit;
+}
+.quiz__alt:hover { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.quiz__alt:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.quiz__alt[aria-checked="true"] { border-color: var(--indigo); }
+.quiz__alt.is-correct { border-color: var(--green); background: color-mix(in srgb, var(--green) 12%, var(--card-solid)); }
+.quiz__alt.is-wrong { border-color: var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card-solid)); }
+.quiz__feedback { margin-top: .55rem; padding: .7rem .75rem; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--bg-2); }
+.quiz__feedback[hidden] { display: none; }
+.quiz__verdict { margin: 0 0 .35rem; font-weight: 700; }
+.quiz__verdict.is-ok { color: var(--green); }
+.quiz__verdict.is-bad { color: var(--coral); }
+.quiz__justification, .quiz__distractor { margin: .25rem 0 0; font-size: .92rem; text-indent: 0; }
+.quiz__distractor { color: var(--ink-mute); }
+.page-nav__btn.is-disabled { opacity: .4; pointer-events: none; }
+.page-nav__pos { font-family: var(--mono); font-size: .85rem; color: var(--ink-60); }
+.continuity { border-left: 3px solid var(--teal); }
+</style>
+</head>
+<body data-theme="dark" data-page-id="p4" data-layout="cf1-p04" data-source-ids="026,027,028,029,030,031,032,033,034,035,036,037,038,039,106,110,111,114,115">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <div class="site-header__brand">
+      <span class="site-header__logo">NN</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Cefaleia: abordagem</span>
+        <span class="site-header__subtitle">Neurologia · Cefaleia</span>
+      </span>
+    </div>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress" id="progress">4/10</span>
+    <div class="site-header__actions">
+      <button type="button" class="icon-btn" id="home-btn" aria-label="Página inicial" title="Início" onclick="location.href='index.html'">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" data-theme-btn aria-label="Alternar tema" aria-pressed="false" title="Tema">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">Cefaleia: abordagem sindrômica</p>
+    <ul class="menu-panel__list">
+<li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>A cefaleia que não se erra</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>A dor é a doença</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>Crises que se parecem</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link is-current" href="p4.html"><span class="menu-panel__index">04</span><span>Idade, súbito e trovoada</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Progressão e o crânio</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Acordou por causa da dor</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Contexto que muda o jogo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Anamnese e fundo de olho</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html"><span class="menu-panel__index">09</span><span>O exame pela suspeita</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html"><span class="menu-panel__index">10</span><span>Tabelão e mantras</span></a></li>
+    </ul>
+  </nav>
+</div>
+<main id="main">
+  <div class="coluna">
+    <article class="page" data-page="p4" data-layout="cf1-p04" data-source-ids="026,027,028,029,030,031,032,033,034,035,036,037,038,039,106,110,111,114,115">
+      <p class="page__eyebrow">Página 4 · E4</p>
+      <section class="opener opener--mnemonic" data-opener="E4">
+        <span class="opener__eyebrow">Achado típico / pegadinha</span>
+        <h1 id="page-title">Idade, súbito e trovoada</h1>
+        <p class="opener__mnemonic no-indent">Cefaleia nova aos 55–60 anos. Por que isso já é estranho para primária?</p>
+      </section>
+      <div class="chipset"><span class="chip--topic">P04</span><span class="chip--topic">E4</span><span class="chip--no">súbito = vaso</span><span class="chip--no">trovoada</span></div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose prosa">
+          <h4 class="topic-h">Alarme → secundária</h4>
+          <p>Diante de sinal de alarme, a hipótese dominante vira <strong class="hl-bad">cefaleia secundária</strong> e é preciso <strong class="term">investigar</strong> o que está causando a dor. Os eixos essenciais são tempo e padrão vascular, despertar pela dor, sinais sistêmicos e contexto clínico.</p>
+
+          <h4 class="topic-h">Idade 50 · 55 · 60</h4>
+          <p><strong class="term">Idade avançada</strong> como alarme: acima de <strong class="hl-warn">50–55</strong> anos, incluindo o cenário clínico aos <strong class="hl-warn">60</strong>. Cefaleias primárias costumam <strong class="term">surgir em pessoas jovens</strong>. Um idoso <strong class="term">pode</strong> abrir enxaqueca aos <strong class="term">60</strong> anos — <strong class="term">pode</strong>, mas <strong class="term">não é o padrão</strong>. Cefaleia <strong class="hl-bad">nova</strong> que abre em paciente de <strong class="hl-warn">55–60</strong> anos fica <strong class="term">estranha</strong> para primária: investigar outras causas (<strong class="hl-bad">secundária até prova em contrário</strong>). A partir dessa faixa, condições mais graves (ex.: <strong class="hl-bad">tumor</strong>) passam a ser mais prevalentes.</p>
+
+          <div class="nuance">
+            <span class="nuance__tag">⚠ Nuance etária · SNOOP / ABN / SBCe 2018</span>
+            <p class="no-indent" style="margin:0;">O corte formal de red flag etária nas diretrizes brasileiras consultadas é <strong>“após os 50 anos”</strong> (Older do SNOOP). As idades de <strong>55</strong> e <strong>60</strong> permanecem na mesma <strong>zona de alarme</strong>; elas reforçam o risco sem substituir nem competir com o corte formal.</p>
+          </div>
+
+          <h4 class="topic-h">Súbito = vascular</h4>
+          <p><strong class="term">Cefaleia de início súbito</strong> é sinal de alarme. Toda vez que se vê <strong class="term">súbito</strong> em neurologia, o raciocínio remete a <strong class="hl-bad">fenômeno vascular</strong> — e na cefaleia não é diferente. Causas vasculares no eixo súbito: <strong class="hl-bad">hemorragia subaracnoide</strong>; <strong class="hl-bad">hemorragia intraparenquimatosa</strong>; <strong class="hl-bad">trombose de seio venoso</strong>. O raciocínio do súbito <strong class="term">não</strong> se esgota na HSA: intraparenquimatosa e <strong class="term">TSV</strong> entram na mesma família mental.</p>
+
+          <h4 class="topic-h">Trovoada = duas propriedades</h4>
+          <p><strong class="term">Cefaleia em trovoada:</strong> surge de maneira <strong class="hl-bad">súbita</strong> e <strong class="hl-bad">rapidamente atinge o seu pico</strong>. Não basta “dor forte”. HSA <strong class="term">pode</strong> produzir trovoada. Trovoada <strong class="term">é</strong> sinal de alarme.</p>
+        </div>
+      </section>
+
+      <aside class="alarm-mini" aria-label="Mini-tabela três alarmes">
+        <h3 class="alarm-mini__title">Três alarmes temporais e vasculares</h3>
+        <div class="table-wrap" role="region" aria-label="Tabela de alarmes temporais" tabindex="0" style="max-width:100%;overflow-x:auto;">
+          <table class="alarm-mini__table" style="width:100%;max-width:100%;table-layout:fixed;overflow-wrap:anywhere;">
+            <thead><tr><th>Alarme</th><th>Raciocínio</th><th>Exemplo clínico</th></tr></thead>
+            <tbody>
+              <tr><td>Idade avançada / cefaleia <strong>nova</strong></td><td>Primária costuma em jovens; graves sobem</td><td>Faixa <strong>50–55</strong> e cenário <strong>60</strong>; pin formal SNOOP <strong>após 50</strong></td></tr>
+              <tr><td>Início <strong>súbito</strong></td><td>Súbito em neuro ≈ <strong>vascular</strong></td><td>HSA · intraparenquimatosa · <strong>TSV</strong></td></tr>
+              <tr><td><strong>Trovoada</strong></td><td>Súbita <strong>+</strong> pico rápido</td><td>HSA pode fazer</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </aside>
+
+      <figure class="fig fig--real">
+        <div class="fig__frame">
+          <img src="media/B04-hsa-trovoada-tc-sem-contraste-prepontina-e-intraventricular.png" alt="Composição de duas tomografias de crânio sem contraste da mesma paciente: à esquerda, corte axial com seta azul sobre sangue hiperdenso na cisterna prepontina e extensão às cisternas basais; à direita, corte sagital com setas vermelhas sobre sangue no terceiro e quarto ventrículos, com discreta dilatação ventricular." loading="lazy" decoding="async" width="3000" height="1394">
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Imagem real</span> TC sem contraste após cefaleia em trovoada: HSA prepontina/basal no axial (seta azul), com extensão ao terceiro e quarto ventrículos no sagital (setas vermelhas). O início em trovoada ganha correlato objetivo — <strong>súbito ≈ vaso</strong>.
+          <span class="fig__attr">Bondy J, Altaf M, Murad Y, Patel N, Roshan SK. “Ruptured Vertebral-Anterior Spinal Artery Junction Aneurysm Presenting With Diffuse Subarachnoid Hemorrhage…”, Figure 1. <em>Cureus</em>. 2025;17(12):e99170. https://doi.org/10.7759/cureus.99170. CC BY 4.0.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="fig fig--svg">
+        <div class="fig__frame fig__frame--svg">
+          <svg class="cf1-inline-svg cf1p4-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" id="cf1p4-svg" role="group" aria-labelledby="cf1p4-title cf1p4-desc">
+  <title id="cf1p4-title">Curva temporal da cefaleia em trovoada</title>
+  <desc id="cf1p4-desc">A curva diferencia início súbito com pico rápido, típico da cefaleia em trovoada, de uma dor progressiva, relacionando os padrões temporais aos respectivos sinais de alarme.</desc>
+  <defs>
+    <style>
+      .cf1p4-root {
+        --cf1p4-bg: var(--bg-1, #0f172a);
+        --cf1p4-panel: var(--bg-2, #1e293b);
+        --cf1p4-panel-sub: var(--bg-3, #334155);
+        --cf1p4-border: var(--ink-20, rgba(255, 255, 255, 0.12));
+        --cf1p4-border-light: var(--ink-10, rgba(255, 255, 255, 0.06));
+        --cf1p4-text-main: var(--ink-100, #f8fafc);
+        --cf1p4-text-sub: var(--ink-70, #94a3b8);
+        --cf1p4-text-muted: var(--ink-50, #64748b);
+
+        --cf1p4-coral: var(--kw-red, #f43f5e);
+        --cf1p4-coral-bg: rgba(244, 63, 94, 0.12);
+        --cf1p4-coral-glow: rgba(244, 63, 94, 0.35);
+
+        --cf1p4-teal: var(--kw-teal, #14b8a6);
+        --cf1p4-teal-bg: rgba(20, 184, 166, 0.12);
+        --cf1p4-teal-glow: rgba(20, 184, 166, 0.35);
+
+        --cf1p4-gold: var(--kw-gold, #eab308);
+        --cf1p4-gold-bg: rgba(234, 179, 8, 0.12);
+
+        --cf1p4-gray: #64748b;
+        --cf1p4-gray-bg: rgba(100, 116, 139, 0.1);
+
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--cf1p4-bg);
+        color: var(--cf1p4-text-main);
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      :root[data-theme="light"] .cf1p4-root {
+        --cf1p4-bg: #ffffff;
+        --cf1p4-panel: #f8fafc;
+        --cf1p4-panel-sub: #e2e8f0;
+        --cf1p4-border: #cbd5e1;
+        --cf1p4-border-light: #f1f5f9;
+        --cf1p4-text-main: #0f172a;
+        --cf1p4-text-sub: #334155;
+        --cf1p4-text-muted: #64748b;
+
+        --cf1p4-coral: #e11d48;
+        --cf1p4-coral-bg: rgba(225, 29, 72, 0.08);
+        --cf1p4-coral-glow: rgba(225, 29, 72, 0.2);
+
+        --cf1p4-teal: #0d9488;
+        --cf1p4-teal-bg: rgba(13, 148, 136, 0.08);
+        --cf1p4-teal-glow: rgba(13, 148, 136, 0.2);
+
+        --cf1p4-gold: #d97706;
+        --cf1p4-gold-bg: rgba(217, 119, 6, 0.08);
+      }
+
+      .cf1p4-title { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; fill: var(--cf1p4-text-main); }
+      .cf1p4-subtitle { font-size: 12px; font-weight: 500; fill: var(--cf1p4-text-sub); }
+      .cf1p4-axis-label { font-size: 11px; font-weight: 600; fill: var(--cf1p4-text-sub); }
+      .cf1p4-grid-line { stroke: var(--cf1p4-border-light); stroke-width: 1; stroke-dasharray: 4,4; }
+      .cf1p4-axis-line { stroke: var(--cf1p4-border); stroke-width: 1.5; }
+      .cf1p4-tick-text { font-size: 10px; font-weight: 500; fill: var(--cf1p4-text-muted); }
+
+      .cf1p4-curve-thunder { fill: none; stroke: var(--cf1p4-coral); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+      .cf1p4-curve-progressive { fill: none; stroke: var(--cf1p4-teal); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+      .cf1p4-curve-baseline { fill: none; stroke: var(--cf1p4-gray); stroke-width: 2; stroke-dasharray: 5,5; opacity: 0.7; }
+
+      .cf1p4-area-thunder { fill: var(--cf1p4-coral-bg); opacity: 0.6; }
+      .cf1p4-area-progressive { fill: var(--cf1p4-teal-bg); opacity: 0.6; }
+
+      .cf1p4-panel-card { fill: var(--cf1p4-panel); stroke: var(--cf1p4-border); stroke-width: 1.5; rx: 10px; }
+      .cf1p4-tab-btn { cursor: pointer; transition: all 0.2s ease; }
+      .cf1p4-tab-btn rect { fill: var(--cf1p4-panel-sub); stroke: var(--cf1p4-border); stroke-width: 1; rx: 6px; }
+      .cf1p4-tab-btn text { font-size: 11px; font-weight: 600; fill: var(--cf1p4-text-sub); text-anchor: middle; }
+      .cf1p4-tab-btn:hover rect { fill: var(--cf1p4-border); }
+      .cf1p4-tab-btn.cf1p4-active-thunder rect { fill: var(--cf1p4-coral-bg); stroke: var(--cf1p4-coral); }
+      .cf1p4-tab-btn.cf1p4-active-thunder text { fill: var(--cf1p4-coral); }
+      .cf1p4-tab-btn.cf1p4-active-progressive rect { fill: var(--cf1p4-teal-bg); stroke: var(--cf1p4-teal); }
+      .cf1p4-tab-btn.cf1p4-active-progressive text { fill: var(--cf1p4-teal); }
+      .cf1p4-tab-btn.cf1p4-active-compare rect { fill: var(--cf1p4-gold-bg); stroke: var(--cf1p4-gold); }
+      .cf1p4-tab-btn.cf1p4-active-compare text { fill: var(--cf1p4-gold); }
+
+      .cf1p4-badge-coral { fill: var(--cf1p4-coral-bg); stroke: var(--cf1p4-coral); stroke-width: 1; rx: 4px; }
+      .cf1p4-badge-teal { fill: var(--cf1p4-teal-bg); stroke: var(--cf1p4-teal); stroke-width: 1; rx: 4px; }
+      .cf1p4-badge-gold { fill: var(--cf1p4-gold-bg); stroke: var(--cf1p4-gold); stroke-width: 1; rx: 4px; }
+
+      .cf1p4-hotspot { cursor: pointer; transition: transform 0.15s ease; }
+      .cf1p4-hotspot:hover circle { transform: scale(1.3); transform-origin: center; }
+
+      .cf1p4-scrubber-track { fill: var(--cf1p4-panel-sub); stroke: var(--cf1p4-border); stroke-width: 1; rx: 8px; }
+      .cf1p4-scrubber-node { cursor: pointer; transition: all 0.2s ease; }
+      .cf1p4-scrubber-node circle { fill: var(--cf1p4-panel); stroke: var(--cf1p4-text-sub); stroke-width: 2; }
+      .cf1p4-scrubber-node:hover circle { stroke: var(--cf1p4-gold); fill: var(--cf1p4-gold-bg); }
+      .cf1p4-scrubber-node.cf1p4-node-active circle { fill: var(--cf1p4-gold); stroke: var(--cf1p4-text-main); stroke-width: 3; }
+      .cf1p4-scrubber-node text { font-size: 10px; font-weight: 600; fill: var(--cf1p4-text-sub); text-anchor: middle; }
+
+      .cf1p4-tooltip { pointer-events: none; opacity: 0; transition: opacity 0.15s ease; }
+      .cf1p4-tooltip-bg { fill: var(--cf1p4-panel); stroke: var(--cf1p4-gold); stroke-width: 1.5; rx: 6px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+      .cf1p4-tooltip-text { font-size: 11px; fill: var(--cf1p4-text-main); font-weight: 500; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cf1p4-tab-btn, .cf1p4-hotspot, .cf1p4-scrubber-node, .cf1p4-tooltip { transition: none !important; }
+      }
+    </style>
+
+    <linearGradient id="cf1p4-grad-coral" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--cf1p4-coral)" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="var(--cf1p4-coral)" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <linearGradient id="cf1p4-grad-teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--cf1p4-teal)" stop-opacity="0.0"/>
+      <stop offset="100%" stop-color="var(--cf1p4-teal)" stop-opacity="0.35"/>
+    </linearGradient>
+
+    <filter id="cf1p4-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1000" height="680" fill="var(--cf1p4-bg)" rx="12"/>
+
+  <!-- HEADER -->
+  <g transform="translate(40, 35)">
+    <text class="cf1p4-title" x="0" y="0">CURVA TROVOADA vs PROGRESSIVA · RELÓGIO DA DOR</text>
+    <text class="cf1p4-subtitle" x="0" y="20">
+      Emergência Vascular (Pico &lt; 60s) vs Processo Expansivo (Ascensão em Semanas/Meses) · Δt define a conduta
+    </text>
+  </g>
+
+  <!-- MAIN GRAPH AREA -->
+  <g id="cf1p4-graph-group" transform="translate(70, 90)">
+    <line x1="0" y1="0" x2="520" y2="0" class="cf1p4-grid-line"/>
+    <line x1="0" y1="70" x2="520" y2="70" class="cf1p4-grid-line"/>
+    <line x1="0" y1="140" x2="520" y2="140" class="cf1p4-grid-line"/>
+    <line x1="0" y1="210" x2="520" y2="210" class="cf1p4-grid-line"/>
+    <line x1="0" y1="280" x2="520" y2="280" class="cf1p4-grid-line"/>
+    <line x1="0" y1="350" x2="520" y2="350" class="cf1p4-axis-line"/>
+
+    <text class="cf1p4-tick-text" x="-12" y="5" text-anchor="end">10 (Insuportável)</text>
+    <text class="cf1p4-tick-text" x="-12" y="75" text-anchor="end">8 (Intensa)</text>
+    <text class="cf1p4-tick-text" x="-12" y="145" text-anchor="end">6 (Moderada)</text>
+    <text class="cf1p4-tick-text" x="-12" y="215" text-anchor="end">4 (Leve/Mod)</text>
+    <text class="cf1p4-tick-text" x="-12" y="285" text-anchor="end">2 (Leve)</text>
+    <text class="cf1p4-tick-text" x="-12" y="355" text-anchor="end">0</text>
+
+    <text class="cf1p4-axis-label" x="-260" y="-45" transform="rotate(-90)" text-anchor="middle">
+      INTENSIDADE DA DOR (Escala 0 a 10)
+    </text>
+
+    <rect x="0" y="0" width="130" height="350" fill="var(--cf1p4-coral-bg)" opacity="0.15" />
+    <line x1="130" y1="0" x2="130" y2="350" stroke="var(--cf1p4-coral)" stroke-dasharray="3,3" opacity="0.6"/>
+    <text class="cf1p4-tick-text" x="65" y="368" text-anchor="middle" fill="var(--cf1p4-coral)" font-weight="700">&lt; 1 MINUTO</text>
+    <text class="cf1p4-tick-text" x="65" y="382" text-anchor="middle" fill="var(--cf1p4-coral)">(Pico Imediato)</text>
+
+    <text class="cf1p4-tick-text" x="215" y="368" text-anchor="middle">Minutos a Horas</text>
+    <text class="cf1p4-tick-text" x="215" y="382" text-anchor="middle">(Cefaleia Primária)</text>
+
+    <rect x="300" y="0" width="220" height="350" fill="var(--cf1p4-teal-bg)" opacity="0.15" />
+    <line x1="300" y1="0" x2="300" y2="350" stroke="var(--cf1p4-teal)" stroke-dasharray="3,3" opacity="0.6"/>
+    <text class="cf1p4-tick-text" x="410" y="368" text-anchor="middle" fill="var(--cf1p4-teal)" font-weight="700">Semanas a Meses</text>
+    <text class="cf1p4-tick-text" x="410" y="382" text-anchor="middle" fill="var(--cf1p4-teal)">(Ascensão Progressiva)</text>
+
+    <text class="cf1p4-axis-label" x="260" y="405" text-anchor="middle">
+      TEMPO DE INSTALAÇÃO DA DOR (Δt)
+    </text>
+
+    <path d="M 0,350 L 25,10 L 520,20 L 520,350 Z" fill="url(#cf1p4-grad-coral)" />
+    <path d="M 0,330 Q 150,320 300,250 T 520,35 L 520,350 L 0,350 Z" fill="url(#cf1p4-grad-teal)" />
+
+    <path class="cf1p4-curve-baseline" d="M 0,340 C 50,335 120,280 200,100 C 250,70 300,180 380,220" />
+    <text x="210" y="115" class="cf1p4-tick-text" fill="var(--cf1p4-text-muted)" transform="rotate(-35, 210, 115)">
+      Padrão Primário (Horas)
+    </text>
+
+    <path id="cf1p4-path-progressive" class="cf1p4-curve-progressive" d="M 0,330 Q 150,325 300,250 T 520,35" />
+
+    <path id="cf1p4-path-thunder" class="cf1p4-curve-thunder" filter="url(#cf1p4-glow-coral)" d="M 0,350 L 20,10 L 520,25" />
+
+    <g transform="translate(15, 30)">
+      <line x1="0" y1="0" x2="0" y2="300" stroke="var(--cf1p4-gold)" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <rect x="-10" y="100" width="130" height="24" class="cf1p4-badge-gold"/>
+      <text x="55" y="116" font-size="10" font-weight="700" fill="var(--cf1p4-gold)" text-anchor="middle">
+        Δt &lt; 60s = VASCULAR
+      </text>
+    </g>
+
+    <g class="cf1p4-hotspot" id="cf1p4-hs-hsa" transform="translate(20, 10)" data-title="HSA / TSV / Dissecção" data-desc="Pico de dor 10/10 em menos de 1 minuto. Ruptura de aneurisma ou oclusão venosa aguda.">
+      <circle r="9" fill="var(--cf1p4-coral)" opacity="0.3"/>
+      <circle r="5" fill="var(--cf1p4-coral)" stroke="#ffffff" stroke-width="1.5"/>
+      <rect x="15" y="-12" width="150" height="26" class="cf1p4-badge-coral" />
+      <text x="22" y="5" font-size="11" font-weight="700" fill="var(--cf1p4-coral)">⚡ TROVOADA (Pico &lt; 60s)</text>
+    </g>
+
+    <g class="cf1p4-hotspot" id="cf1p4-hs-tumor" transform="translate(520, 35)" data-title="Lesão Expansiva (Tumor/Abscesso)" data-desc="Crescimento contínuo e progressivo ao longo de semanas/meses. Hipertensão intracraniana.">
+      <circle r="9" fill="var(--cf1p4-teal)" opacity="0.3"/>
+      <circle r="5" fill="var(--cf1p4-teal)" stroke="#ffffff" stroke-width="1.5"/>
+      <rect x="-165" y="-12" width="150" height="26" class="cf1p4-badge-teal" />
+      <text x="-157" y="5" font-size="11" font-weight="700" fill="var(--cf1p4-teal)">📈 PROGRESSIVA (Meses)</text>
+    </g>
+
+    <g id="cf1p4-tracer-group" transform="translate(20, 10)">
+      <circle r="12" fill="none" stroke="var(--cf1p4-gold)" stroke-width="2" stroke-dasharray="3,3"/>
+      <circle r="6" fill="var(--cf1p4-gold)"/>
+    </g>
+  </g>
+
+  <!-- RIGHT SIDE PANEL -->
+  <g transform="translate(620, 90)">
+    <rect width="340" height="400" class="cf1p4-panel-card" />
+
+    <g transform="translate(15, 15)">
+      <g id="cf1p4-btn-thunder" class="cf1p4-tab-btn cf1p4-active-thunder" transform="translate(0,0)">
+        <rect width="100" height="32" />
+        <text x="50" y="20">⚡ Trovoada</text>
+      </g>
+      <g id="cf1p4-btn-progressive" class="cf1p4-tab-btn" transform="translate(105,0)">
+        <rect width="100" height="32" />
+        <text x="50" y="20">📈 Progressiva</text>
+      </g>
+      <g id="cf1p4-btn-compare" class="cf1p4-tab-btn" transform="translate(210,0)">
+        <rect width="100" height="32" />
+        <text x="50" y="20">⚖️ Comparativo</text>
+      </g>
+    </g>
+
+    <g id="cf1p4-panel-content" transform="translate(20, 65)">
+      <rect id="cf1p4-card-badge" x="0" y="0" width="300" height="28" class="cf1p4-badge-coral" />
+      <text id="cf1p4-card-title" x="15" y="18" font-size="12" font-weight="700" fill="var(--cf1p4-coral)">
+        SÍNDROME DA CEFALEIA EM TROVOADA
+      </text>
+
+      <g transform="translate(0, 42)">
+        <text font-size="10" font-weight="700" fill="var(--cf1p4-text-muted)">TEMPO DE INSTALAÇÃO (Δt)</text>
+        <text id="cf1p4-card-dt" x="0" y="18" font-size="13" font-weight="700" fill="var(--cf1p4-coral)">
+          Súbita · Pico em &lt; 1 minuto (estouro)
+        </text>
+      </g>
+
+      <g transform="translate(0, 95)">
+        <text font-size="10" font-weight="700" fill="var(--cf1p4-text-muted)">MECANISMO FISIOPATOLÓGICO</text>
+        <text id="cf1p4-card-physio" x="0" y="18" font-size="11" font-weight="500" fill="var(--cf1p4-text-sub)" width="300">
+          Ruptura vascular com extravasamento de sangue no espaço subaracnóideo (híper-irritação) ou oclusão venosa aguda / vasoconstrição focal.
+        </text>
+      </g>
+
+      <g transform="translate(0, 160)">
+        <text font-size="10" font-weight="700" fill="var(--cf1p4-text-muted)">PRINCIPAIS ETIOLOGIAS (INVESTIGAR!)</text>
+        <rect id="cf1p4-card-etiology-bg" x="0" y="8" width="300" height="52" fill="var(--cf1p4-panel-sub)" rx="6" />
+        <text id="cf1p4-card-etiologies" x="10" y="26" font-size="11" font-weight="600" fill="var(--cf1p4-text-main)">
+          • HSA Aneurismática (Emergência #1)&#10;• Trombose Venosa Cerebral (TSV)&#10;• Dissecção Arterial / SVCR
+        </text>
+      </g>
+
+      <g transform="translate(0, 235)">
+        <text font-size="10" font-weight="700" fill="var(--cf1p4-text-muted)">CONDUTA DE EMERGÊNCIA</text>
+        <text id="cf1p4-card-action" x="0" y="18" font-size="11" font-weight="600" fill="var(--cf1p4-gold)">
+          TC de crânio sem contraste IMEDIATA. Se TC normal e suspeita mantida → Punção Lombar (Xantocromia).
+        </text>
+      </g>
+
+      <g transform="translate(0, 290)">
+        <rect x="0" y="0" width="300" height="36" fill="var(--cf1p4-gold-bg)" stroke="var(--cf1p4-gold)" stroke-width="1" rx="6" />
+        <text x="10" y="15" font-size="10" font-weight="700" fill="var(--cf1p4-gold)">ARMADILHA DA PROVA:</text>
+        <text id="cf1p4-card-pitfall" x="10" y="28" font-size="10" font-weight="500" fill="var(--cf1p4-text-main)">
+          "Dor forte 10/10" isolada NÃO é trovoada! O divisor é o PICO &lt; 60s.
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- BOTTOM SCRUBBER -->
+  <g transform="translate(40, 515)">
+    <rect width="920" height="135" class="cf1p4-panel-card" />
+
+    <text x="20" y="25" font-size="12" font-weight="700" fill="var(--cf1p4-text-main)">
+      SIMULADOR DE LINHA DO TEMPO · SELECIONE O PONTO TEMPORAL (Δt)
+    </text>
+    <text x="20" y="40" font-size="11" font-weight="500" fill="var(--cf1p4-text-sub)">
+      Clique nos nós abaixo para observar a taxa de subida da dor (dI/dt) e a mudança de hipótese diagnóstica:
+    </text>
+
+    <rect x="50" y="70" width="820" height="8" class="cf1p4-scrubber-track" />
+
+    <g id="cf1p4-node-1" class="cf1p4-scrubber-node cf1p4-node-active" transform="translate(60, 74)">
+      <circle r="14" />
+      <text y="4">⚡</text>
+      <text y="-20" fill="var(--cf1p4-coral)" font-weight="700">t = 10 seg</text>
+      <text y="32">HSA / Aneurisma</text>
+    </g>
+
+    <g id="cf1p4-node-2" class="cf1p4-scrubber-node" transform="translate(150, 74)">
+      <circle r="14" />
+      <text y="4">⚡</text>
+      <text y="-20" fill="var(--cf1p4-coral)" font-weight="700">t = 45 seg</text>
+      <text y="32">TSV / Dissecção</text>
+    </g>
+
+    <g id="cf1p4-node-3" class="cf1p4-scrubber-node" transform="translate(380, 74)">
+      <circle r="14" />
+      <text y="4">⏱️</text>
+      <text y="-20">t = 2 horas</text>
+      <text y="32">Enxaqueca / Primária</text>
+    </g>
+
+    <g id="cf1p4-node-4" class="cf1p4-scrubber-node" transform="translate(800, 74)">
+      <circle r="14" />
+      <text y="4">📈</text>
+      <text y="-20" fill="var(--cf1p4-teal)" font-weight="700">t = 60 dias</text>
+      <text y="32">Tumor / HIC</text>
+    </g>
+  </g>
+
+  <!-- FLOATING TOOLTIP -->
+  <g id="cf1p4-tooltip" class="cf1p4-tooltip" transform="translate(0,0)">
+    <rect id="cf1p4-tooltip-bg" class="cf1p4-tooltip-bg" width="220" height="50" x="0" y="0"/>
+    <text id="cf1p4-tooltip-title" class="cf1p4-tooltip-text" font-weight="700" x="10" y="20" fill="var(--cf1p4-gold)">Título</text>
+    <text id="cf1p4-tooltip-desc" class="cf1p4-tooltip-text" font-weight="400" x="10" y="36" fill="var(--cf1p4-text-sub)">Descrição do item...</text>
+  </g>
+
+  <script>//<![CDATA[
+    (function() {
+      const svg = document.getElementById('cf1p4-svg');
+      if (!svg) return;
+
+      const dataset = {
+        thunder: {
+          title: "SÍNDROME DA CEFALEIA EM TROVOADA",
+          badgeClass: "cf1p4-badge-coral",
+          titleColor: "var(--cf1p4-coral)",
+          dt: "Súbita · Pico máximo em < 1 minuto (estouro)",
+          dtColor: "var(--cf1p4-coral)",
+          physio: "Ruptura vascular com sangue no espaço subaracnóideo, oclusão venosa aguda ou vasoconstrição arterial reversível.",
+          etiologies: "• HSA Aneurismática (Emergência #1)\n• Trombose Venosa Cerebral (TSV)\n• Dissecção Arterial / SVCR",
+          action: "TC de crânio sem contraste IMEDIATA. Se TC normal e alta suspeita -> Punção Lombar (Xantocromia).",
+          pitfall: "'Dor forte 10/10' isolada NÃO é trovoada! O divisor de águas é o PICO < 60s.",
+          tracerPos: { x: 20, y: 10 }
+        },
+        progressive: {
+          title: "SÍNDROME DA CEFALEIA PROGRESSIVA",
+          badgeClass: "cf1p4-badge-teal",
+          titleColor: "var(--cf1p4-teal)",
+          dt: "Gradual · Ascensão contínua em Semanas a Meses",
+          dtColor: "var(--cf1p4-teal)",
+          physio: "Expansão de lesão ocupadora de espaço (efeito de massa) levando a hipertensão intracraniana ou estiramento dural.",
+          etiologies: "• Neoplasia Primária / Metástase\n• Abscesso Cerebral / Empiema\n• Hematoma Subdural Crônico / HIC",
+          action: "Exame de imagem (RM de crânio com contraste ou TC) eletivo/urgente. Avaliar papiledema.",
+          pitfall: "Dor que piora progressivamente ao longo dos dias/semanas exige neuroimagem, mesmo sem déficit focal!",
+          tracerPos: { x: 520, y: 35 }
+        },
+        compare: {
+          title: "COMPARATIVO DIRETO: RELÓGIO DA DOR",
+          badgeClass: "cf1p4-badge-gold",
+          titleColor: "var(--cf1p4-gold)",
+          dt: "Velocidade de Elevação (dI/dt) = Chave Diagnóstica",
+          dtColor: "var(--cf1p4-gold)",
+          physio: "Trovoada (Vascular Aguda) explode em < 60s. Progressiva (Massa/HIC) constrói rampa em semanas.",
+          etiologies: "⚡ Trovoada: HSA, TSV, Dissecção\n📈 Progressiva: Tumor, Abscesso, HSDC\n⏱️ Habitual: Enxaqueca (Horas)",
+          action: "Identificar se o início foi 'um estalo em 30s' ou 'uma piora lentificada'. Direciona o fluxo no PS.",
+          pitfall: "Nunca julgue a gravidade apenas pela pontuação de 0 a 10; observe a LINHA DO TEMPO!",
+          tracerPos: { x: 215, y: 180 }
+        }
+      };
+
+      const nodesData = [
+        { x: 20, y: 10, key: 'thunder', textDt: "t = 10 seg", name: "Pico de Trovoada (HSA Aneurismática)" },
+        { x: 50, y: 12, key: 'thunder', textDt: "t = 45 seg", name: "Pico de Trovoada (TSV / Dissecção)" },
+        { x: 210, y: 110, key: 'compare', textDt: "t = 2 horas", name: "Cefaleia Primária Habitual (Enxaqueca)" },
+        { x: 520, y: 35, key: 'progressive', textDt: "t = 60 dias", name: "Cefaleia Progressiva (Tumor / HIC)" }
+      ];
+
+      const btnThunder = document.getElementById('cf1p4-btn-thunder');
+      const btnProgressive = document.getElementById('cf1p4-btn-progressive');
+      const btnCompare = document.getElementById('cf1p4-btn-compare');
+
+      const cardBadge = document.getElementById('cf1p4-card-badge');
+      const cardTitle = document.getElementById('cf1p4-card-title');
+      const cardDt = document.getElementById('cf1p4-card-dt');
+      const cardPhysio = document.getElementById('cf1p4-card-physio');
+      const cardEtiologies = document.getElementById('cf1p4-card-etiologies');
+      const cardAction = document.getElementById('cf1p4-card-action');
+      const cardPitfall = document.getElementById('cf1p4-card-pitfall');
+      const tracerGroup = document.getElementById('cf1p4-tracer-group');
+
+      const pathThunder = document.getElementById('cf1p4-path-thunder');
+      const pathProgressive = document.getElementById('cf1p4-path-progressive');
+
+      function setMode(modeKey) {
+        const data = dataset[modeKey];
+        if (!data) return;
+
+        btnThunder.classList.remove('cf1p4-active-thunder');
+        btnProgressive.classList.remove('cf1p4-active-progressive');
+        btnCompare.classList.remove('cf1p4-active-compare');
+
+        if (modeKey === 'thunder') btnThunder.classList.add('cf1p4-active-thunder');
+        if (modeKey === 'progressive') btnProgressive.classList.add('cf1p4-active-progressive');
+        if (modeKey === 'compare') btnCompare.classList.add('cf1p4-active-compare');
+
+        cardBadge.setAttribute('class', data.badgeClass);
+        cardTitle.textContent = data.title;
+        cardTitle.setAttribute('fill', data.titleColor);
+        cardDt.textContent = data.dt;
+        cardDt.setAttribute('fill', data.dtColor);
+        cardPhysio.textContent = data.physio;
+
+        const etLines = data.etiologies.split('\n');
+        cardEtiologies.innerHTML = '';
+        etLines.forEach((line, idx) => {
+          const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+          tspan.setAttribute('x', '10');
+          tspan.setAttribute('dy', idx === 0 ? '0' : '15');
+          tspan.textContent = line;
+          cardEtiologies.appendChild(tspan);
+        });
+
+        cardAction.textContent = data.action;
+        cardPitfall.textContent = data.pitfall;
+
+        if (modeKey === 'thunder') {
+          pathThunder.style.opacity = '1.0';
+          pathThunder.style.strokeWidth = '4.5px';
+          pathProgressive.style.opacity = '0.35';
+          pathProgressive.style.strokeWidth = '2px';
+        } else if (modeKey === 'progressive') {
+          pathThunder.style.opacity = '0.35';
+          pathThunder.style.strokeWidth = '2px';
+          pathProgressive.style.opacity = '1.0';
+          pathProgressive.style.strokeWidth = '4.5px';
+        } else {
+          pathThunder.style.opacity = '0.9';
+          pathThunder.style.strokeWidth = '3.5px';
+          pathProgressive.style.opacity = '0.9';
+          pathProgressive.style.strokeWidth = '3.5px';
+        }
+
+        tracerGroup.setAttribute('transform', `translate(${data.tracerPos.x}, ${data.tracerPos.y})`);
+      }
+
+      btnThunder.addEventListener('click', () => setMode('thunder'));
+      btnProgressive.addEventListener('click', () => setMode('progressive'));
+      btnCompare.addEventListener('click', () => setMode('compare'));
+
+      const nodeElements = [
+        document.getElementById('cf1p4-node-1'),
+        document.getElementById('cf1p4-node-2'),
+        document.getElementById('cf1p4-node-3'),
+        document.getElementById('cf1p4-node-4')
+      ];
+
+      nodeElements.forEach((node, idx) => {
+        if (!node) return;
+        node.addEventListener('click', () => {
+          nodeElements.forEach(n => n.classList.remove('cf1p4-node-active'));
+          node.classList.add('cf1p4-node-active');
+
+          const nData = nodesData[idx];
+          setMode(nData.key);
+          tracerGroup.setAttribute('transform', `translate(${nData.x}, ${nData.y})`);
+        });
+      });
+
+      const tooltip = document.getElementById('cf1p4-tooltip');
+      const tooltipBg = document.getElementById('cf1p4-tooltip-bg');
+      const tooltipTitle = document.getElementById('cf1p4-tooltip-title');
+      const tooltipDesc = document.getElementById('cf1p4-tooltip-desc');
+      const hotspots = document.querySelectorAll('.cf1p4-hotspot');
+
+      function showTooltip(evt, title, desc) {
+        const ctm = svg.getScreenCTM();
+        if (!ctm) return;
+
+        const pt = svg.createSVGPoint();
+        pt.x = evt.clientX;
+        pt.y = evt.clientY;
+        const loc = pt.matrixTransform(ctm.inverse());
+
+        tooltipTitle.textContent = title;
+        tooltipDesc.textContent = desc;
+
+        const maxLen = Math.max(title.length, desc.length);
+        const calcWidth = Math.min(Math.max(maxLen * 7 + 20, 180), 280);
+        tooltipBg.setAttribute('width', calcWidth);
+
+        tooltip.setAttribute('transform', `translate(${loc.x + 12}, ${loc.y - 45})`);
+        tooltip.style.opacity = '1';
+      }
+
+      function hideTooltip() {
+        tooltip.style.opacity = '0';
+      }
+
+      hotspots.forEach(hs => {
+        hs.addEventListener('mousemove', (e) => {
+          const title = hs.getAttribute('data-title') || '';
+          const desc = hs.getAttribute('data-desc') || '';
+          showTooltip(e, title, desc);
+        });
+        hs.addEventListener('mouseleave', hideTooltip);
+      });
+
+      setMode('thunder');
+    })();
+  //]]></script>
+</svg>
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Ilustração</span> Curva trovoada (pico &lt; 60 s) vs progressiva (semanas/meses). Toque nas abas e nos nós da linha do tempo.</figcaption>
+      </figure>
+
+      <aside class="op-summary" aria-label="Resumo operacional">
+        <h2 class="op-summary__title">Resumo operacional</h2>
+        <div class="prose prosa"><p class="no-indent"><strong class="hl-bad">Súbito</strong> em neuro cheira a <strong>vaso</strong>; <strong class="hl-bad">trovoada</strong> = súbita <strong>e</strong> pico rápido; dor nova <strong class="hl-warn">50–55–60</strong> → investigar.</p></div>
+      </aside>
+
+      <aside class="why-matters">
+        <h2 class="why-matters__title">Por que importa</h2>
+        <div class="prose prosa"><p>“Forte” sem tempo de instalação <strong class="term">não</strong> é o mesmo que trovoada; idade nova no idoso <strong class="term">não</strong> é “enxaqueca tardia padrão”.</p></div>
+      </aside>
+
+      <aside class="continuity"><div class="prose prosa"><p class="no-indent">Além do tempo, a <strong>progressão</strong> e o <strong>substrato</strong> que dói no crânio explicam o tumor que “cresce a dor”.</p></div></aside>
+
+<section class="quiz" data-quiz-id="cf1-cefaleia-p04" aria-labelledby="quiz-p04-title">
+  <h2 id="quiz-p04-title">Quiz — fixação</h2>
+  <ol class="quiz__questions">
+<li class="quiz__question" data-q="1">
+  <p class="quiz__stem" id="quiz-p04-q1-label">Cefaleia em trovoada exige:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p04-q1-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Apenas dor 10/10</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Início súbito e pico rápido</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Sempre febre</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Sempre déficit focal</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> trovoada é <strong class="term">tempo</strong> (súbita + pico rápido), não sinônimo de “forte”.</p>
+    <p class="quiz__distractor">(A) intensidade sem cronologia <strong class="term">não</strong> fecha o conceito. (C)(D) são outros alarmes, não a definição de trovoada. Cai na A porque a banca e o leito usam “pior dor” sem olhar o <strong>relógio de instalação</strong>.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="2">
+  <p class="quiz__stem" id="quiz-p04-q2-label">Cefaleia <strong>nova</strong> que abre aos 55–60 anos:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p04-q2-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — É o padrão clássico de enxaqueca</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Fica estranha para primária — investigar (secundária até prova em contrário)</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Dispensa exame porque o paciente é idoso</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Fecha tensional</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> primária <strong class="term">costuma</strong> nascer em jovens; abertura tardia é <strong class="hl-bad">red flag</strong>, mesmo se enxaqueca “pode” existir.</p>
+    <p class="quiz__distractor">(A) invertido. (C) idade <strong>aumenta</strong> a chance de grave, não dispensa. (D) nome de primária sem triagem. Cai em (A) porque “pode ter enxaqueca aos 60” vira “é padrão”.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="3">
+  <p class="quiz__stem" id="quiz-p04-q3-label">“Súbito em neuro” na cefaleia puxa o eixo:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p04-q3-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Só enxaqueca</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Vascular: HSA, intraparenquimatosa, trombose de seio venoso</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Só sinusite</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Só tensional</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> súbito ≈ <strong>vaso</strong> — e o eixo vascular inclui <strong>três</strong> entidades, não só HSA.</p>
+    <p class="quiz__distractor">(A)(C)(D) não são o eixo do súbito vascular. Cai por memorizar só HSA e esquecer <strong>TSV</strong>/parenquimatosa.</p>
+  </div>
+</li>
+  </ol>
+</section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="page-nav__btn" href="p3.html" rel="prev">← Anterior</a><span class="page-nav__pos">4/10</span><a class="page-nav__btn" href="p5.html" rel="next">Próxima →</a></nav>
+    </article>
+  </div>
+</main>
+<script src="../_assets/app.js" defer></script>
+<script src="cf1.js" defer></script>
+</body>
+</html>

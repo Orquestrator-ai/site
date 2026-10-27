@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>Dose, teto e o medo de intubar — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Manejo da Crise / Status Epiléptico</span>
+        <span class="site-header__subtitle">Neurologia · Aula 9</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">6/11</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<style>
+.a9-l6{--i:#818CF8;--c:#38BDF8;--r:#F87171;--g:#FBBF24;--t:#2DD4BF;--gr:#4ADE80;--ink:var(--ink,#F4F7FB);--mu:var(--muted,#94A3B8);--ca:var(--card-bg,rgba(17,26,43,0.72));--c2:var(--card-bg2,rgba(21,32,51,0.65));--b:var(--border,rgba(148,163,184,0.14));max-width:820px;margin:0 auto;padding:0 20px;}
+[data-theme="light"] .a9-l6{--ink:#0F172A;--mu:#64748B;--ca:rgba(255,255,255,0.82);--c2:rgba(241,245,249,0.78);--b:rgba(15,23,42,0.10);}
+.a9-l6 h1{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;color:var(--ink);margin:32px 0 6px;line-height:1.2;}
+.a9-l6 .a9-sub{font-size:.9rem;color:var(--mu);margin-bottom:20px;}
+.a9-l6 .a9-prose{text-align:justify;text-indent:1.5em;hyphens:auto;color:var(--ink);line-height:1.75;font-size:.95rem;}
+.a9-l6 .a9-prose p{margin:0 0 12px;}
+.a9-l6 .a9-prose h3{text-indent:0;font-size:1.1rem;font-weight:700;color:var(--i);margin:24px 0 8px;}
+.a9-l6 .a9-prose strong{color:var(--r);}
+.a9-l6 .a9-stepper{display:flex;align-items:center;gap:0;margin:20px 0;flex-wrap:wrap;justify-content:center;}
+.a9-l6 .a9-step{background:var(--ca);border:1px solid var(--b);border-radius:14px;padding:16px 20px;text-align:center;min-width:120px;}
+.a9-l6 .a9-step .a9-step-num{font-size:1.8rem;font-weight:800;color:var(--i);}
+.a9-l6 .a9-step .a9-step-label{font-size:.82rem;color:var(--ink);margin-top:4px;}
+.a9-l6 .a9-step-arr{font-size:1.5rem;color:var(--c);padding:0 8px;font-weight:700;}
+.a9-l6 .a9-step.teto{border-color:var(--r);}
+.a9-l6 .a9-step.teto .a9-step-num{color:var(--r);}
+.a9-l6 .a9-nuance{background:var(--c2);border:1px solid var(--g);border-radius:12px;padding:16px 20px;margin:14px 0;}
+.a9-l6 .a9-nuance .a9-nu-l{font-size:.78rem;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.a9-l6 .a9-nuance p{font-size:.88rem;color:var(--ink);text-indent:0;margin:0;line-height:1.6;}
+.a9-l6 .a9-box-dig{background:var(--c2);border:1px solid var(--c);border-radius:10px;padding:14px 18px;margin:14px 0;font-size:.85rem;color:var(--mu);}
+.a9-l6 .a9-box-dig .a9-dig-l{font-size:.75rem;font-weight:700;color:var(--c);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l6 .a9-dual{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
+@media(max-width:600px){.a9-l6 .a9-dual{grid-template-columns:1fr;}.a9-l6 h1{font-size:1.4rem;}}
+.a9-l6 .a9-dual-card{background:var(--c2);border:1px solid var(--b);border-radius:12px;padding:18px;text-align:center;}
+.a9-l6 .a9-dual-card h4{font-size:.9rem;font-weight:700;margin:0 0 8px;color:var(--g);}
+.a9-l6 .a9-dual-card p{margin:0;font-size:.88rem;color:var(--ink);text-indent:0;}
+.a9-l6 .a9-svg-wrap,.a9-l6 .a9-img-wrap{margin:24px 0;border-radius:16px;overflow:hidden;background:var(--ca);border:1px solid var(--b);}
+.a9-l6 .a9-svg-wrap svg,.a9-l6 .a9-img-wrap img{display:block;width:100%;height:auto;}
+.a9-l6 .a9-img-wrap .a9-cap{padding:10px 16px;font-size:.78rem;color:var(--mu);line-height:1.5;border-top:1px solid var(--b);}
+.a9-l6 .a9-err{background:var(--ca);border:1px solid var(--r);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.a9-l6 .a9-err .a9-err-l{font-size:.78rem;font-weight:700;color:var(--r);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l6 .a9-err p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l6 .a9-why{background:var(--c2);border-radius:12px;padding:16px 20px;margin:18px 0;border-left:3px solid var(--t);}
+.a9-l6 .a9-why .a9-why-l{font-size:.78rem;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l6 .a9-why p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l6 .a9-resumo{background:var(--ca);border:1px solid var(--t);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.a9-l6 .a9-resumo .a9-res-l{font-size:.78rem;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l6 .a9-resumo p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l6 .a9-quiz{margin:28px 0;}
+.a9-l6 .a9-quiz h3{font-size:1.05rem;font-weight:700;color:var(--g);margin:0 0 16px;}
+.a9-l6 .a9-qb{background:var(--ca);border:1px solid var(--b);border-radius:14px;padding:20px;margin-bottom:16px;}
+.a9-l6 .a9-qb .a9-qe{font-weight:700;color:var(--ink);margin-bottom:12px;font-size:.92rem;}
+.a9-l6 .a9-qb .a9-qo{display:flex;flex-direction:column;gap:8px;}
+.a9-l6 .a9-qb .a9-opt{padding:10px 14px;border-radius:10px;background:var(--c2);border:1px solid var(--b);cursor:pointer;font-size:.88rem;color:var(--ink);transition:all .2s;min-height:44px;display:flex;align-items:center;}
+.a9-l6 .a9-qb .a9-opt:hover{border-color:var(--i);}
+.a9-l6 .a9-qb .a9-opt.chosen{border-color:var(--i);background:rgba(129,140,248,0.12);}
+.a9-l6 .a9-qb .a9-opt.correct{border-color:var(--gr);background:rgba(74,222,128,0.15);}
+.a9-l6 .a9-qb .a9-opt.wrong{border-color:var(--r);background:rgba(248,113,113,0.12);}
+.a9-l6 .a9-qfb{margin-top:12px;padding:14px 16px;border-radius:10px;font-size:.85rem;line-height:1.6;display:none;}
+.a9-l6 .a9-qfb.show{display:block;}
+.a9-l6 .a9-qfb.cok{background:rgba(74,222,128,0.1);border:1px solid var(--gr);color:var(--ink);}
+.a9-l6 .a9-qfb.er{background:rgba(248,113,113,0.1);border:1px solid var(--r);color:var(--ink);}
+</style>
+<div class="a9-l6" data-layout="a9-p06">
+<h1>Dose, teto e o medo de intubar</h1>
+<p class="a9-sub">Onset · intervalo · tetos 20/10 · subdosagem por medo de IOT</p>
+
+<div class="a9-prose">
+<h3>1. Onset: menos de 1 minuto</h3>
+<p>O benzo chega no neurônio em <strong>menos de 1 minuto</strong>. Em menos de 1 minuto, diazepam ou midazolam <strong>podem parar</strong> a crise — funcionam muito bem se dose plena.</p>
+
+<h3>2. Esperar e repetir até o teto</h3>
+<p>Após a dose: aguardar <strong>3 a 5 minutos</strong>. Se não melhorar: <strong>repetir</strong> a dose necessária — repetir <strong>até a dose máxima (teto)</strong>.</p>
+</div>
+
+<div class="a9-nuance"><div class="a9-nu-l">📋 CAIXA-NUANÇA · [056]</div><p>Fonte: faixa <strong>3–5 min</strong>. Protocolos BR institucionais (HC-UFMG, Einstein) tendem a cravar <strong>~5 min</strong> como intervalo de reavaliação/repetição. Não reescreve a faixa; afina a prova/protocolo.</p></div>
+
+<div class="a9-prose">
+<h3>3. Tetos</h3>
+</div>
+
+<div class="a9-stepper" aria-label="Stepper de doses">
+  <div class="a9-step"><div class="a9-step-num">10 mg</div><div class="a9-step-label">DZP 1º bolus</div></div>
+  <div class="a9-step-arr">→</div>
+  <div class="a9-step"><div class="a9-step-num">3–5′</div><div class="a9-step-label">espera</div></div>
+  <div class="a9-step-arr">→</div>
+  <div class="a9-step"><div class="a9-step-num">+10 mg</div><div class="a9-step-label">DZP 2º bolus</div></div>
+  <div class="a9-step-arr">→</div>
+  <div class="a9-step teto"><div class="a9-step-num">20 mg</div><div class="a9-step-label">TETO DZP</div></div>
+</div>
+<div class="a9-stepper">
+  <div class="a9-step teto"><div class="a9-step-num">10 mg</div><div class="a9-step-label">MDZ amp → TETO</div></div>
+</div>
+
+<div class="a9-nuance"><div class="a9-nu-l">📋 CAIXA-NUANÇA · [059]</div><p>Em adultos o primeiro bolus costuma ser <strong>10 mg</strong>; o <strong>20</strong> é o <strong>teto cumulativo</strong> (ou via retal). Lê-se como teto, não como dose única inicial obrigatória de 20.</p></div>
+
+<div class="a9-prose">
+<h3>4. Pegadinha dual de prova</h3>
+<p>A questão pode mandar <strong>repetir</strong> (ainda abaixo do teto) <strong>ou não repetir</strong> (já no teto). Lê o que já foi dado.</p>
+
+<h3>5. O medo de intubar</h3>
+<p>Na maioria absoluta, com <strong>dose adequada</strong>, o paciente <strong>sai da crise</strong> com benzodiazepínico. Motivo frequente de falha: <strong>medo de rebaixar</strong> demais e ter que <strong>intubar</strong> → <strong>subdosagem</strong>. Em doses altas e forma rápida na veia, a <strong>via aérea</strong> é preocupação real — material de VA deve estar <strong>pronto</strong>.</p>
+</div>
+
+<div class="a9-box-dig"><div class="a9-dig-l">📦 Box digressão [068]</div>Já se viu paciente rebaixar e precisar de IOT com <strong>apenas 5 mg</strong> de diazepam — <strong>não é o padrão</strong>, mas situações não-padrão existem. Por isso VA pronta ≠ "dar dose homeopática".</div>
+
+<div class="a9-dual">
+  <div class="a9-dual-card"><h4>🔄 Repetir</h4><p>Abaixo do teto → pode repetir</p></div>
+  <div class="a9-dual-card"><h4>⛔ Não repetir</h4><p>Já no teto → seguir escada (2º fármaco)</p></div>
+</div>
+
+<div class="a9-svg-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 740" role="img" aria-labelledby="a9p6-title a9p6-desc" class="a9-inline-svg a9p6-root">
+  <title id="a9p6-title">Tetos 20/10: repetir até o teto sem medo de IOT</title>
+  <desc id="a9p6-desc">Stepper de benzodiazepínico em status. Diazepam sobe em bolos até teto cumulativo de 20 mg. Midazolam tem teto de 10 mg na primeira linha, amp típica igual ao teto. Onset no neurônio menor que 1 minuto. Espera 3 a 5 minutos e repete até o teto. Medo de intubação que vira dose homeopática é armadilha coral. Via aérea pronta não autoriza subdosagem.</desc>
+  <defs>
+    <linearGradient id="a9p6-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a9p6-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a9p6-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a9p6-auroraL" cx="14%" cy="18%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p6-teal, #2DD4BF)" stop-opacity="0.26"/>
+      <stop offset="55%" stop-color="var(--a9p6-cyan, #22D3EE)" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="var(--a9p6-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p6-auroraR" cx="88%" cy="16%" r="48%">
+      <stop offset="0%" stop-color="var(--a9p6-gold, #FBBF24)" stop-opacity="0.24"/>
+      <stop offset="50%" stop-color="var(--a9p6-coral, #F87171)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p6-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a9p6-cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p6-card, #111A2B)"/>
+      <stop offset="100%" stop-color="var(--a9p6-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p6-tealFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p6-tealDeepCard, #0F2926)"/>
+      <stop offset="100%" stop-color="var(--a9p6-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p6-goldFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p6-goldDeepCard, #2A2410)"/>
+      <stop offset="100%" stop-color="var(--a9p6-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p6-coralFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p6-coralDeepCard, #2A1518)"/>
+      <stop offset="100%" stop-color="var(--a9p6-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p6-cyanFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p6-cyanDeepCard, #0C2430)"/>
+      <stop offset="100%" stop-color="var(--a9p6-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p6-fillTeal" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="var(--a9p6-tealDeep, #0F766E)"/>
+      <stop offset="55%" stop-color="var(--a9p6-teal, #2DD4BF)"/>
+      <stop offset="100%" stop-color="var(--a9p6-cyan, #22D3EE)"/>
+    </linearGradient>
+    <linearGradient id="a9p6-fillWeak" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="var(--a9p6-coralDeep, #B91C1C)"/>
+      <stop offset="100%" stop-color="var(--a9p6-coral, #F87171)"/>
+    </linearGradient>
+    <radialGradient id="a9p6-glowGold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p6-gold, #FBBF24)" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="var(--a9p6-gold, #FBBF24)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p6-gold, #FBBF24)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p6-glowCoral" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p6-coral, #F87171)" stop-opacity="0.50"/>
+      <stop offset="70%" stop-color="var(--a9p6-coral, #F87171)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p6-coral, #F87171)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p6-glowTeal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p6-teal, #2DD4BF)" stop-opacity="0.48"/>
+      <stop offset="70%" stop-color="var(--a9p6-teal, #2DD4BF)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p6-teal, #2DD4BF)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="a9p6-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a9p6-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a9p6-arrTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p6-teal, #2DD4BF)"/>
+    </marker>
+    <marker id="a9p6-arrCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p6-cyan, #22D3EE)"/>
+    </marker>
+    <marker id="a9p6-arrGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p6-gold, #FBBF24)"/>
+    </marker>
+    <marker id="a9p6-arrCoral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p6-coral, #F87171)"/>
+    </marker>
+    <clipPath id="a9p6-clipDzp">
+      <rect x="0" y="0" width="56" height="220" rx="10"/>
+    </clipPath>
+    <clipPath id="a9p6-clipMdz">
+      <rect x="0" y="0" width="56" height="220" rx="10"/>
+    </clipPath>
+    <clipPath id="a9p6-clipWeak">
+      <rect x="0" y="0" width="40" height="120" rx="8"/>
+    </clipPath>
+    <style>
+      .a9p6-root {
+        --a9p6-bg0: #0B1220;
+        --a9p6-bg1: #07111F;
+        --a9p6-card: #111A2B;
+        --a9p6-card2: #152033;
+        --a9p6-cardDeep: #0E1A2A;
+        --a9p6-tealDeepCard: #0F2926;
+        --a9p6-goldDeepCard: #2A2410;
+        --a9p6-coralDeepCard: #2A1518;
+        --a9p6-cyanDeepCard: #0C2430;
+        --a9p6-border: rgba(148,163,184,0.18);
+        --a9p6-ink: #F4F7FB;
+        --a9p6-muted: #94A3B8;
+        --a9p6-soft: #B8C0CC;
+        --a9p6-teal: #2DD4BF;
+        --a9p6-tealHi: #99F6E4;
+        --a9p6-tealDeep: #0F766E;
+        --a9p6-cyan: #22D3EE;
+        --a9p6-cyanHi: #A5F3FC;
+        --a9p6-cyanDim: #0891B2;
+        --a9p6-gold: #FBBF24;
+        --a9p6-goldHi: #FDE68A;
+        --a9p6-goldDeep: #B45309;
+        --a9p6-coral: #F87171;
+        --a9p6-coralHi: #FECACA;
+        --a9p6-coralDeep: #B91C1C;
+        --a9p6-indigo: #818CF8;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a9p6-root {
+        --a9p6-bg0: #F8F6F2;
+        --a9p6-bg1: #EEF2F7;
+        --a9p6-card: #FFFFFF;
+        --a9p6-card2: #F1F5F9;
+        --a9p6-cardDeep: #F8FAFC;
+        --a9p6-tealDeepCard: #ECFDF8;
+        --a9p6-goldDeepCard: #FFFBEB;
+        --a9p6-coralDeepCard: #FEF2F2;
+        --a9p6-cyanDeepCard: #ECFEFF;
+        --a9p6-border: rgba(15,23,42,0.10);
+        --a9p6-ink: #0F172A;
+        --a9p6-muted: #64748B;
+        --a9p6-soft: #475569;
+        --a9p6-teal: #0D9488;
+        --a9p6-tealHi: #CCFBF1;
+        --a9p6-tealDeep: #115E59;
+        --a9p6-cyan: #0891B2;
+        --a9p6-cyanHi: #CFFAFE;
+        --a9p6-cyanDim: #0E7490;
+        --a9p6-gold: #D97706;
+        --a9p6-goldHi: #FEF3C7;
+        --a9p6-goldDeep: #92400E;
+        --a9p6-coral: #DC2626;
+        --a9p6-coralHi: #FEE2E2;
+        --a9p6-coralDeep: #991B1B;
+        --a9p6-indigo: #4F46E5;
+      }
+      .a9p6-root .a9p6-hs,
+      .a9p6-root .a9p6-chip {
+        cursor: pointer;
+      }
+      .a9p6-root .a9p6-hs:focus,
+      .a9p6-root .a9p6-chip:focus {
+        outline: none;
+      }
+      .a9p6-root .a9p6-hs:focus .a9p6-hs-ring,
+      .a9p6-root .a9p6-chip:focus .a9p6-chip-ring {
+        opacity: 1;
+      }
+      .a9p6-root .a9p6-panel,
+      .a9p6-root .a9p6-step,
+      .a9p6-root .a9p6-cycle,
+      .a9p6-root .a9p6-chip-fill {
+        transition: opacity 0.22s ease, filter 0.22s ease;
+      }
+      .a9p6-root .a9p6-tip {
+        pointer-events: none;
+      }
+      .a9p6-root .a9p6-chip-fill {
+        opacity: 0.78;
+      }
+      .a9p6-root .a9p6-fill {
+        transition: y 0.45s ease, height 0.45s ease;
+      }
+      .a9p6-root[data-phase="overview"] .a9p6-chip-overview .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="dzp"] .a9p6-panel-dzp,
+      .a9p6-root[data-phase="dzp10"] .a9p6-panel-dzp,
+      .a9p6-root[data-phase="dzp20"] .a9p6-panel-dzp {
+        filter: url(#a9p6-glow);
+      }
+      .a9p6-root[data-phase="dzp"] .a9p6-panel-mdz,
+      .a9p6-root[data-phase="dzp10"] .a9p6-panel-mdz,
+      .a9p6-root[data-phase="dzp20"] .a9p6-panel-mdz,
+      .a9p6-root[data-phase="dzp"] .a9p6-panel-trap,
+      .a9p6-root[data-phase="dzp10"] .a9p6-panel-trap,
+      .a9p6-root[data-phase="dzp20"] .a9p6-panel-trap { opacity: 0.42; }
+      .a9p6-root[data-phase="dzp"] .a9p6-chip-dzp .a9p6-chip-fill,
+      .a9p6-root[data-phase="dzp10"] .a9p6-chip-dzp .a9p6-chip-fill,
+      .a9p6-root[data-phase="dzp20"] .a9p6-chip-dzp .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="mdz"] .a9p6-panel-mdz,
+      .a9p6-root[data-phase="mdz10"] .a9p6-panel-mdz {
+        filter: url(#a9p6-glow);
+      }
+      .a9p6-root[data-phase="mdz"] .a9p6-panel-dzp,
+      .a9p6-root[data-phase="mdz10"] .a9p6-panel-dzp,
+      .a9p6-root[data-phase="mdz"] .a9p6-panel-trap,
+      .a9p6-root[data-phase="mdz10"] .a9p6-panel-trap { opacity: 0.42; }
+      .a9p6-root[data-phase="mdz"] .a9p6-chip-mdz .a9p6-chip-fill,
+      .a9p6-root[data-phase="mdz10"] .a9p6-chip-mdz .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="wait"] .a9p6-cycle-wait {
+        filter: url(#a9p6-glow);
+      }
+      .a9p6-root[data-phase="wait"] .a9p6-chip-wait .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="onset"] .a9p6-cycle-onset {
+        filter: url(#a9p6-glow);
+      }
+      .a9p6-root[data-phase="onset"] .a9p6-chip-onset .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="repeat"] .a9p6-cycle-repeat {
+        filter: url(#a9p6-glow);
+      }
+      .a9p6-root[data-phase="repeat"] .a9p6-chip-repeat .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="trap"] .a9p6-panel-trap,
+      .a9p6-root[data-phase="under"] .a9p6-panel-trap {
+        filter: url(#a9p6-glow);
+      }
+      .a9p6-root[data-phase="trap"] .a9p6-panel-dzp,
+      .a9p6-root[data-phase="under"] .a9p6-panel-dzp,
+      .a9p6-root[data-phase="trap"] .a9p6-panel-mdz,
+      .a9p6-root[data-phase="under"] .a9p6-panel-mdz { opacity: 0.40; }
+      .a9p6-root[data-phase="trap"] .a9p6-chip-trap .a9p6-chip-fill,
+      .a9p6-root[data-phase="under"] .a9p6-chip-trap .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="va"] .a9p6-chip-va .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="amp"] .a9p6-chip-amp .a9p6-chip-fill { opacity: 1; }
+      .a9p6-root[data-phase="ceil"] .a9p6-ceil-dzp,
+      .a9p6-root[data-phase="ceil"] .a9p6-ceil-mdz {
+        filter: url(#a9p6-glow);
+      }
+      .a9p6-root[data-phase="ceil"] .a9p6-chip-ceil .a9p6-chip-fill { opacity: 1; }
+    </style>
+  </defs>
+
+  <rect width="840" height="740" fill="url(#a9p6-bg)"/>
+  <rect width="840" height="740" fill="url(#a9p6-auroraL)"/>
+  <rect width="840" height="740" fill="url(#a9p6-auroraR)"/>
+
+  <g id="a9p6-header" transform="translate(28,18)">
+    <text x="0" y="22" fill="var(--a9p6-ink, #F4F7FB)" font-size="20" font-weight="700" letter-spacing="-0.3">Tetos 20 / 10 · repetir até o teto</text>
+    <text x="0" y="44" fill="var(--a9p6-muted, #94A3B8)" font-size="13" font-weight="500">Onset &lt; 1 min · espera 3–5 min · medo de IOT não autoriza dose homeopática</text>
+    <g id="a9p6-chip-overview" class="a9p6-chip a9p6-chip-overview" transform="translate(620,2)" tabindex="0" role="button" aria-label="Visão geral: repetir até o teto">
+      <rect class="a9p6-chip-ring" x="-3" y="-3" width="168" height="42" rx="12" fill="none" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p6-chip-fill" width="162" height="36" rx="10" fill="var(--a9p6-goldDeepCard, #2A2410)" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.6"/>
+      <circle cx="18" cy="18" r="7" fill="var(--a9p6-gold, #FBBF24)"/>
+      <text x="18" y="22" text-anchor="middle" fill="var(--a9p6-bg0, #0B1220)" font-size="10" font-weight="800">20</text>
+      <text x="34" y="22" fill="var(--a9p6-goldHi, #FDE68A)" font-size="12.5" font-weight="700">Até o teto</text>
+    </g>
+  </g>
+
+  <g id="a9p6-steppers" transform="translate(28,78)">
+    <g id="a9p6-panel-dzp" class="a9p6-panel a9p6-panel-dzp a9p6-hs" tabindex="0" role="button" aria-label="Diazepam: bolos até teto cumulativo de 20 mg">
+      <rect class="a9p6-hs-ring" x="-4" y="-4" width="292" height="318" rx="18" fill="none" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="2.2" opacity="0"/>
+      <rect class="a9p6-panel-face" width="284" height="310" rx="16" fill="url(#a9p6-tealFace)" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="1.5"/>
+      <circle cx="28" cy="28" r="14" fill="url(#a9p6-glowTeal)"/>
+      <circle cx="28" cy="28" r="11" fill="var(--a9p6-teal, #2DD4BF)"/>
+      <text x="28" y="32" text-anchor="middle" fill="var(--a9p6-bg0, #0B1220)" font-size="11" font-weight="800">D</text>
+      <text x="48" y="24" fill="var(--a9p6-ink, #F4F7FB)" font-size="16" font-weight="700">Diazepam</text>
+      <text x="48" y="42" fill="var(--a9p6-muted, #94A3B8)" font-size="12" font-weight="500">bolos · teto cumulativo</text>
+
+      <g transform="translate(36,62)">
+        <rect width="56" height="220" rx="10" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.3"/>
+        <g clip-path="url(#a9p6-clipDzp)">
+          <rect id="a9p6-dzp-fill" class="a9p6-fill" x="0" y="110" width="56" height="110" fill="url(#a9p6-fillTeal)" opacity="0.92"/>
+        </g>
+        <line x1="-6" y1="0" x2="62" y2="0" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="2.4"/>
+        <rect class="a9p6-ceil-dzp" x="66" y="-14" width="72" height="28" rx="8" fill="url(#a9p6-goldFace)" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.5"/>
+        <text x="102" y="5" text-anchor="middle" fill="var(--a9p6-gold, #FBBF24)" font-size="12" font-weight="800">TETO</text>
+        <text x="74" y="12" fill="var(--a9p6-goldHi, #FDE68A)" font-size="18" font-weight="800">20</text>
+        <text x="108" y="12" fill="var(--a9p6-gold, #FBBF24)" font-size="12" font-weight="700">mg</text>
+        <line x1="-4" y1="110" x2="60" y2="110" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.85"/>
+        <text x="74" y="114" fill="var(--a9p6-tealHi, #99F6E4)" font-size="12" font-weight="700">10 mg</text>
+        <text x="74" y="130" fill="var(--a9p6-muted, #94A3B8)" font-size="11" font-weight="500">1º bolus típico</text>
+        <text x="10" y="244" fill="var(--a9p6-muted, #94A3B8)" font-size="11" font-weight="600">0</text>
+      </g>
+
+      <g id="a9p6-dzp-b10" class="a9p6-hs a9p6-step" transform="translate(158,88)" tabindex="0" role="button" aria-label="Primeiro bolus diazepam 10 mg">
+        <rect class="a9p6-hs-ring" x="-3" y="-3" width="114" height="48" rx="12" fill="none" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+        <rect width="108" height="42" rx="10" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="1.4"/>
+        <text x="54" y="18" text-anchor="middle" fill="var(--a9p6-tealHi, #99F6E4)" font-size="13" font-weight="700">Bolus 1</text>
+        <text x="54" y="34" text-anchor="middle" fill="var(--a9p6-teal, #2DD4BF)" font-size="12" font-weight="600">+10 mg</text>
+      </g>
+      <g id="a9p6-dzp-b20" class="a9p6-hs a9p6-step" transform="translate(158,142)" tabindex="0" role="button" aria-label="Segundo bolus diazepam até 20 mg">
+        <rect class="a9p6-hs-ring" x="-3" y="-3" width="114" height="48" rx="12" fill="none" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+        <rect width="108" height="42" rx="10" fill="var(--a9p6-goldDeepCard, #2A2410)" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.5"/>
+        <text x="54" y="18" text-anchor="middle" fill="var(--a9p6-goldHi, #FDE68A)" font-size="13" font-weight="700">Bolus 2</text>
+        <text x="54" y="34" text-anchor="middle" fill="var(--a9p6-gold, #FBBF24)" font-size="12" font-weight="600">→ 20 mg</text>
+      </g>
+      <g transform="translate(158,210)">
+        <rect width="108" height="56" rx="10" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+        <text x="12" y="22" fill="var(--a9p6-soft, #B8C0CC)" font-size="11.5" font-weight="500">Cumulativo</text>
+        <text id="a9p6-dzp-readout" x="12" y="44" fill="var(--a9p6-teal, #2DD4BF)" font-size="18" font-weight="800">10 mg</text>
+      </g>
+    </g>
+
+    <g id="a9p6-panel-mdz" class="a9p6-panel a9p6-panel-mdz a9p6-hs" transform="translate(300,0)" tabindex="0" role="button" aria-label="Midazolam: teto 10 mg na primeira linha">
+      <rect class="a9p6-hs-ring" x="-4" y="-4" width="292" height="318" rx="18" fill="none" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="2.2" opacity="0"/>
+      <rect class="a9p6-panel-face" width="284" height="310" rx="16" fill="url(#a9p6-cyanFace)" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="1.5"/>
+      <circle cx="28" cy="28" r="14" fill="url(#a9p6-glowTeal)"/>
+      <circle cx="28" cy="28" r="11" fill="var(--a9p6-cyan, #22D3EE)"/>
+      <text x="28" y="32" text-anchor="middle" fill="var(--a9p6-bg0, #0B1220)" font-size="11" font-weight="800">M</text>
+      <text x="48" y="24" fill="var(--a9p6-ink, #F4F7FB)" font-size="16" font-weight="700">Midazolam</text>
+      <text x="48" y="42" fill="var(--a9p6-muted, #94A3B8)" font-size="12" font-weight="500">1ª linha · amp = teto</text>
+
+      <g transform="translate(36,62)">
+        <rect width="56" height="220" rx="10" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.3"/>
+        <g clip-path="url(#a9p6-clipMdz)">
+          <rect id="a9p6-mdz-fill" class="a9p6-fill" x="0" y="0" width="56" height="220" fill="url(#a9p6-fillTeal)" opacity="0.92"/>
+        </g>
+        <line x1="-6" y1="0" x2="62" y2="0" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="2.4"/>
+        <rect class="a9p6-ceil-mdz" x="66" y="-14" width="72" height="28" rx="8" fill="url(#a9p6-goldFace)" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.5"/>
+        <text x="102" y="5" text-anchor="middle" fill="var(--a9p6-gold, #FBBF24)" font-size="12" font-weight="800">TETO</text>
+        <text x="74" y="12" fill="var(--a9p6-goldHi, #FDE68A)" font-size="18" font-weight="800">10</text>
+        <text x="108" y="12" fill="var(--a9p6-gold, #FBBF24)" font-size="12" font-weight="700">mg</text>
+        <text x="74" y="48" fill="var(--a9p6-cyanHi, #A5F3FC)" font-size="12" font-weight="700">Amp típica</text>
+        <text x="74" y="66" fill="var(--a9p6-muted, #94A3B8)" font-size="11" font-weight="500">= teto de cara</text>
+        <text x="10" y="244" fill="var(--a9p6-muted, #94A3B8)" font-size="11" font-weight="600">0</text>
+      </g>
+
+      <g id="a9p6-mdz-b10" class="a9p6-hs a9p6-step" transform="translate(158,88)" tabindex="0" role="button" aria-label="Midazolam até teto 10 mg">
+        <rect class="a9p6-hs-ring" x="-3" y="-3" width="114" height="48" rx="12" fill="none" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+        <rect width="108" height="42" rx="10" fill="var(--a9p6-goldDeepCard, #2A2410)" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.5"/>
+        <text x="54" y="18" text-anchor="middle" fill="var(--a9p6-goldHi, #FDE68A)" font-size="13" font-weight="700">Até o teto</text>
+        <text x="54" y="34" text-anchor="middle" fill="var(--a9p6-gold, #FBBF24)" font-size="12" font-weight="600">10 mg</text>
+      </g>
+      <g transform="translate(158,150)">
+        <rect width="108" height="72" rx="10" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="1.3"/>
+        <text x="12" y="22" fill="var(--a9p6-cyanHi, #A5F3FC)" font-size="12" font-weight="700">Amp = 10</text>
+        <text x="12" y="42" fill="var(--a9p6-soft, #B8C0CC)" font-size="11" font-weight="500">Na 1ª linha o teto</text>
+        <text x="12" y="58" fill="var(--a9p6-soft, #B8C0CC)" font-size="11" font-weight="500">já está na amp.</text>
+      </g>
+      <g transform="translate(158,236)">
+        <rect width="108" height="34" rx="8" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+        <text id="a9p6-mdz-readout" x="12" y="22" fill="var(--a9p6-cyan, #22D3EE)" font-size="15" font-weight="800">10 mg</text>
+      </g>
+    </g>
+
+    <g id="a9p6-panel-trap" class="a9p6-panel a9p6-panel-trap a9p6-hs" transform="translate(600,0)" tabindex="0" role="button" aria-label="Armadilha: medo de intubação leva a subdosagem">
+      <rect class="a9p6-hs-ring" x="-4" y="-4" width="192" height="318" rx="18" fill="none" stroke="var(--a9p6-coral, #F87171)" stroke-width="2.2" opacity="0"/>
+      <rect class="a9p6-panel-face" width="184" height="310" rx="16" fill="url(#a9p6-coralFace)" stroke="var(--a9p6-coral, #F87171)" stroke-width="1.7"/>
+      <circle cx="24" cy="28" r="14" fill="url(#a9p6-glowCoral)"/>
+      <circle cx="24" cy="28" r="11" fill="var(--a9p6-coral, #F87171)"/>
+      <text x="24" y="32" text-anchor="middle" fill="var(--a9p6-bg0, #0B1220)" font-size="12" font-weight="800">!</text>
+      <text x="42" y="24" fill="var(--a9p6-coralHi, #FECACA)" font-size="14" font-weight="700">Armadilha</text>
+      <text x="42" y="42" fill="var(--a9p6-coral, #F87171)" font-size="11.5" font-weight="600">Medo de IOT</text>
+
+      <g transform="translate(22,64)">
+        <rect width="140" height="96" rx="12" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-coral, #F87171)" stroke-width="1.4"/>
+        <text x="12" y="24" fill="var(--a9p6-coralHi, #FECACA)" font-size="12.5" font-weight="700">VA pronta ≠</text>
+        <text x="12" y="44" fill="var(--a9p6-coralHi, #FECACA)" font-size="12.5" font-weight="700">dose fraca</text>
+        <text x="12" y="68" fill="var(--a9p6-soft, #B8C0CC)" font-size="11" font-weight="500">Preparar via aérea</text>
+        <text x="12" y="84" fill="var(--a9p6-soft, #B8C0CC)" font-size="11" font-weight="500">não reduz o teto.</text>
+      </g>
+
+      <g id="a9p6-under" class="a9p6-hs" transform="translate(22,176)" tabindex="0" role="button" aria-label="Subdosagem homeopática por medo">
+        <rect class="a9p6-hs-ring" x="-3" y="-3" width="146" height="108" rx="12" fill="none" stroke="var(--a9p6-coral, #F87171)" stroke-width="2" opacity="0"/>
+        <rect width="140" height="102" rx="10" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-coral, #F87171)" stroke-width="1.3"/>
+        <text x="12" y="20" fill="var(--a9p6-coral, #F87171)" font-size="12" font-weight="700">Subdosagem</text>
+        <rect x="50" y="34" width="40" height="120" rx="8" transform="scale(1,0.45) translate(0,40)" fill="var(--a9p6-card, #111A2B)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+        <g transform="translate(50,34)">
+          <rect width="40" height="54" rx="8" fill="var(--a9p6-card, #111A2B)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+          <g clip-path="url(#a9p6-clipWeak)">
+            <rect x="0" y="36" width="40" height="18" fill="url(#a9p6-fillWeak)" opacity="0.9"/>
+          </g>
+          <line x1="-4" y1="0" x2="44" y2="0" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.6" opacity="0.7"/>
+          <path d="M8 12 L32 42 M32 12 L8 42" stroke="var(--a9p6-coral, #F87171)" stroke-width="2.2" stroke-linecap="round"/>
+        </g>
+        <text x="12" y="96" fill="var(--a9p6-coralHi, #FECACA)" font-size="11" font-weight="600">Para cedo · falha</text>
+      </g>
+    </g>
+  </g>
+
+  <g id="a9p6-cycle" transform="translate(28,408)">
+    <rect width="784" height="108" rx="16" fill="var(--a9p6-card, #111A2B)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.3"/>
+    <text x="20" y="24" fill="var(--a9p6-soft, #B8C0CC)" font-size="12.5" font-weight="600">Ritmo de dose · o loop que a banca testa</text>
+
+    <g id="a9p6-cycle-bolus" class="a9p6-cycle a9p6-hs" transform="translate(20,40)" tabindex="0" role="button" aria-label="Bolus de benzodiazepínico">
+      <rect class="a9p6-hs-ring" x="-3" y="-3" width="138" height="54" rx="12" fill="none" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+      <rect width="132" height="48" rx="10" fill="url(#a9p6-tealFace)" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="1.5"/>
+      <text x="66" y="20" text-anchor="middle" fill="var(--a9p6-tealHi, #99F6E4)" font-size="13" font-weight="700">Bolus</text>
+      <text x="66" y="36" text-anchor="middle" fill="var(--a9p6-teal, #2DD4BF)" font-size="11.5" font-weight="600">dose cheia</text>
+    </g>
+    <path d="M158 64 L178 64" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="2" marker-end="url(#a9p6-arrTeal)"/>
+
+    <g id="a9p6-cycle-onset" class="a9p6-cycle a9p6-cycle-onset a9p6-hs" transform="translate(186,40)" tabindex="0" role="button" aria-label="Onset no neurônio menor que 1 minuto">
+      <rect class="a9p6-hs-ring" x="-3" y="-3" width="138" height="54" rx="12" fill="none" stroke="var(--a9p6-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect width="132" height="48" rx="10" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-indigo, #818CF8)" stroke-width="1.5"/>
+      <text x="66" y="20" text-anchor="middle" fill="var(--a9p6-ink, #F4F7FB)" font-size="13" font-weight="700">Onset</text>
+      <text x="66" y="36" text-anchor="middle" fill="var(--a9p6-indigo, #818CF8)" font-size="12" font-weight="700">&lt; 1 min</text>
+    </g>
+    <path d="M324 64 L344 64" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="2" marker-end="url(#a9p6-arrCyan)"/>
+
+    <g id="a9p6-cycle-wait" class="a9p6-cycle a9p6-cycle-wait a9p6-hs" transform="translate(352,40)" tabindex="0" role="button" aria-label="Espera de 3 a 5 minutos entre bolos">
+      <rect class="a9p6-hs-ring" x="-3" y="-3" width="150" height="54" rx="12" fill="none" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect width="144" height="48" rx="10" fill="url(#a9p6-cyanFace)" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="1.5"/>
+      <text x="72" y="20" text-anchor="middle" fill="var(--a9p6-cyanHi, #A5F3FC)" font-size="13" font-weight="700">Espera</text>
+      <text x="72" y="36" text-anchor="middle" fill="var(--a9p6-cyan, #22D3EE)" font-size="12" font-weight="700">3–5 min</text>
+    </g>
+    <path d="M502 64 L522 64" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="2" marker-end="url(#a9p6-arrGold)"/>
+
+    <g id="a9p6-cycle-repeat" class="a9p6-cycle a9p6-cycle-repeat a9p6-hs" transform="translate(530,40)" tabindex="0" role="button" aria-label="Repetir bolus até o teto">
+      <rect class="a9p6-hs-ring" x="-3" y="-3" width="150" height="54" rx="12" fill="none" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect width="144" height="48" rx="10" fill="url(#a9p6-goldFace)" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.6"/>
+      <text x="72" y="20" text-anchor="middle" fill="var(--a9p6-goldHi, #FDE68A)" font-size="13" font-weight="700">Repete</text>
+      <text x="72" y="36" text-anchor="middle" fill="var(--a9p6-gold, #FBBF24)" font-size="12" font-weight="700">até o teto</text>
+    </g>
+
+    <g transform="translate(692,46)">
+      <circle cx="22" cy="18" r="20" fill="none" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/>
+      <path d="M22 4 A14 14 0 1 1 12 28" fill="none" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="2.2" marker-end="url(#a9p6-arrTeal)"/>
+      <text x="48" y="14" fill="var(--a9p6-tealHi, #99F6E4)" font-size="11" font-weight="700">loop</text>
+      <text x="48" y="28" fill="var(--a9p6-muted, #94A3B8)" font-size="10.5" font-weight="500">não 1× só</text>
+    </g>
+  </g>
+
+  <g id="a9p6-chips" transform="translate(28,532)">
+    <g id="a9p6-chip-dzp" class="a9p6-chip a9p6-chip-dzp" tabindex="0" role="button" aria-label="Foco diazepam 20 mg">
+      <rect class="a9p6-chip-ring" x="-3" y="-3" width="98" height="40" rx="12" fill="none" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+      <rect class="a9p6-chip-fill" width="92" height="34" rx="9" fill="var(--a9p6-tealDeepCard, #0F2926)" stroke="var(--a9p6-teal, #2DD4BF)" stroke-width="1.4"/>
+      <text x="46" y="22" text-anchor="middle" fill="var(--a9p6-tealHi, #99F6E4)" font-size="12" font-weight="700">DZP 20</text>
+    </g>
+    <g id="a9p6-chip-mdz" class="a9p6-chip a9p6-chip-mdz" transform="translate(102,0)" tabindex="0" role="button" aria-label="Foco midazolam 10 mg">
+      <rect class="a9p6-chip-ring" x="-3" y="-3" width="98" height="40" rx="12" fill="none" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect class="a9p6-chip-fill" width="92" height="34" rx="9" fill="var(--a9p6-cyanDeepCard, #0C2430)" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="1.4"/>
+      <text x="46" y="22" text-anchor="middle" fill="var(--a9p6-cyanHi, #A5F3FC)" font-size="12" font-weight="700">MDZ 10</text>
+    </g>
+    <g id="a9p6-chip-wait" class="a9p6-chip a9p6-chip-wait" transform="translate(204,0)" tabindex="0" role="button" aria-label="Espera 3 a 5 minutos">
+      <rect class="a9p6-chip-ring" x="-3" y="-3" width="110" height="40" rx="12" fill="none" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect class="a9p6-chip-fill" width="104" height="34" rx="9" fill="var(--a9p6-cyanDeepCard, #0C2430)" stroke="var(--a9p6-cyan, #22D3EE)" stroke-width="1.4"/>
+      <text x="52" y="22" text-anchor="middle" fill="var(--a9p6-cyanHi, #A5F3FC)" font-size="12" font-weight="700">3–5 min</text>
+    </g>
+    <g id="a9p6-chip-onset" class="a9p6-chip a9p6-chip-onset" transform="translate(318,0)" tabindex="0" role="button" aria-label="Onset menor que 1 minuto">
+      <rect class="a9p6-chip-ring" x="-3" y="-3" width="104" height="40" rx="12" fill="none" stroke="var(--a9p6-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect class="a9p6-chip-fill" width="98" height="34" rx="9" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-indigo, #818CF8)" stroke-width="1.4"/>
+      <text x="49" y="22" text-anchor="middle" fill="var(--a9p6-ink, #F4F7FB)" font-size="12" font-weight="700">&lt; 1 min</text>
+    </g>
+    <g id="a9p6-chip-repeat" class="a9p6-chip a9p6-chip-repeat" transform="translate(432,0)" tabindex="0" role="button" aria-label="Repetir até o teto">
+      <rect class="a9p6-chip-ring" x="-3" y="-3" width="118" height="40" rx="12" fill="none" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p6-chip-fill" width="112" height="34" rx="9" fill="var(--a9p6-goldDeepCard, #2A2410)" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.4"/>
+      <text x="56" y="22" text-anchor="middle" fill="var(--a9p6-goldHi, #FDE68A)" font-size="12" font-weight="700">Repete</text>
+    </g>
+    <g id="a9p6-chip-trap" class="a9p6-chip a9p6-chip-trap" transform="translate(560,0)" tabindex="0" role="button" aria-label="Armadilha medo de IOT">
+      <rect class="a9p6-chip-ring" x="-3" y="-3" width="118" height="40" rx="12" fill="none" stroke="var(--a9p6-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect class="a9p6-chip-fill" width="112" height="34" rx="9" fill="var(--a9p6-coralDeepCard, #2A1518)" stroke="var(--a9p6-coral, #F87171)" stroke-width="1.4"/>
+      <text x="56" y="22" text-anchor="middle" fill="var(--a9p6-coralHi, #FECACA)" font-size="12" font-weight="700">Medo IOT</text>
+    </g>
+    <g id="a9p6-chip-va" class="a9p6-chip a9p6-chip-va" transform="translate(688,0)" tabindex="0" role="button" aria-label="Via aérea pronta não autoriza dose fraca">
+      <rect class="a9p6-chip-ring" x="-3" y="-3" width="100" height="40" rx="12" fill="none" stroke="var(--a9p6-soft, #B8C0CC)" stroke-width="2" opacity="0"/>
+      <rect class="a9p6-chip-fill" width="94" height="34" rx="9" fill="var(--a9p6-card2, #152033)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.4"/>
+      <text x="47" y="22" text-anchor="middle" fill="var(--a9p6-soft, #B8C0CC)" font-size="12" font-weight="700">VA pronta</text>
+    </g>
+  </g>
+
+  <g id="a9p6-status" transform="translate(28,584)">
+    <rect width="784" height="72" rx="14" fill="var(--a9p6-card, #111A2B)" stroke="var(--a9p6-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <circle cx="28" cy="36" r="10" fill="url(#a9p6-glowGold)"/>
+    <circle cx="28" cy="36" r="7" fill="var(--a9p6-gold, #FBBF24)"/>
+    <text id="a9p6-status-text" x="48" y="28" fill="var(--a9p6-gold, #FBBF24)" font-size="14" font-weight="700">DZP 20 · MDZ 10 · repete até o teto</text>
+    <text id="a9p6-live" x="48" y="50" fill="var(--a9p6-soft, #B8C0CC)" font-size="12.5" font-weight="500">Toque nos steppers, no loop 3–5 min ou na armadilha coral. 20 e 10 se leem sem legenda.</text>
+  </g>
+
+  <g id="a9p6-tip" class="a9p6-tip" opacity="0" aria-hidden="true" transform="translate(0,0)">
+    <rect id="a9p6-tip-bg" x="0" y="0" width="268" height="56" rx="10" fill="var(--a9p6-card, #111A2B)" stroke="var(--a9p6-gold, #FBBF24)" stroke-width="1.6" opacity="0.97"/>
+    <text id="a9p6-tip-t1" x="14" y="22" fill="var(--a9p6-ink, #F4F7FB)" font-size="13" font-weight="700"> </text>
+    <text id="a9p6-tip-t2" x="14" y="42" fill="var(--a9p6-muted, #94A3B8)" font-size="12" font-weight="500"> </text>
+  </g>
+
+  <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a9p6-root');
+  if(!root) return;
+  var Q = function(s){ return root.querySelector(s); };
+  var tip = Q('#a9p6-tip');
+  var tipBg = Q('#a9p6-tip-bg');
+  var tipT1 = Q('#a9p6-tip-t1');
+  var tipT2 = Q('#a9p6-tip-t2');
+  var statusEl = Q('#a9p6-status-text');
+  var liveEl = Q('#a9p6-live');
+  var dzpFill = Q('#a9p6-dzp-fill');
+  var mdzFill = Q('#a9p6-mdz-fill');
+  var dzpRead = Q('#a9p6-dzp-readout');
+  var mdzRead = Q('#a9p6-mdz-readout');
+
+  var BAR = 220;
+  var dzpMg = 10;
+  var mdzMg = 10;
+
+  function setDzp(mg){
+    dzpMg = Math.max(0, Math.min(20, mg));
+    if(!dzpFill) return;
+    var h = (dzpMg / 20) * BAR;
+    dzpFill.setAttribute('height', String(h));
+    dzpFill.setAttribute('y', String(BAR - h));
+    if(dzpRead){
+      dzpRead.textContent = dzpMg + ' mg';
+      dzpRead.setAttribute('fill', dzpMg >= 20 ? 'var(--a9p6-gold, #FBBF24)' : 'var(--a9p6-teal, #2DD4BF)');
+    }
+  }
+
+  function setMdz(mg){
+    mdzMg = Math.max(0, Math.min(10, mg));
+    if(!mdzFill) return;
+    var h = (mdzMg / 10) * BAR;
+    mdzFill.setAttribute('height', String(h));
+    mdzFill.setAttribute('y', String(BAR - h));
+    if(mdzRead){
+      mdzRead.textContent = mdzMg + ' mg';
+      mdzRead.setAttribute('fill', mdzMg >= 10 ? 'var(--a9p6-gold, #FBBF24)' : 'var(--a9p6-cyan, #22D3EE)');
+    }
+  }
+
+  var labels = {
+    overview: {
+      tip1: 'Repetir até o teto',
+      tip2: 'DZP 20 · MDZ 10 · não desiste',
+      status: 'DZP 20 · MDZ 10 · repete até o teto',
+      live: 'Uma dose e parar é o erro. Onset rápido, espera 3–5 min, sobe até o teto.',
+      stroke: 'var(--a9p6-gold, #FBBF24)',
+      fill: 'var(--a9p6-gold, #FBBF24)',
+      phase: 'overview'
+    },
+    dzp: {
+      tip1: 'Diazepam · teto 20 mg',
+      tip2: 'Cumulativo em bolos',
+      status: 'DZP: 1º bolus ~10 · sobe até 20 mg',
+      live: 'O stepper teal enche até a linha ouro 20. Não existe “já dei 10, chega”.',
+      stroke: 'var(--a9p6-teal, #2DD4BF)',
+      fill: 'var(--a9p6-teal, #2DD4BF)',
+      phase: 'dzp',
+      dzp: 10
+    },
+    dzp10: {
+      tip1: 'Bolus 1 · +10 mg',
+      tip2: 'Meio caminho do teto',
+      status: 'DZP 10 mg · ainda falta o teto',
+      live: 'Primeiro bolo típico. Espera 3–5 min. Se crise segue, repete até 20.',
+      stroke: 'var(--a9p6-teal, #2DD4BF)',
+      fill: 'var(--a9p6-teal, #2DD4BF)',
+      phase: 'dzp10',
+      dzp: 10
+    },
+    dzp20: {
+      tip1: 'Bolus 2 · teto 20 mg',
+      tip2: 'Cumulativo completo',
+      status: 'DZP no teto: 20 mg cumulativo',
+      live: 'Linha ouro. Aí sim o teto de 1ª linha do DZP. Antes disso, repete.',
+      stroke: 'var(--a9p6-gold, #FBBF24)',
+      fill: 'var(--a9p6-gold, #FBBF24)',
+      phase: 'dzp20',
+      dzp: 20
+    },
+    mdz: {
+      tip1: 'Midazolam · teto 10 mg',
+      tip2: 'Amp típica = teto',
+      status: 'MDZ 10 mg: teto de cara na 1ª linha',
+      live: 'Contraste com DZP: no MDZ a amp típica já é o teto. Não confunda 10 com 20.',
+      stroke: 'var(--a9p6-cyan, #22D3EE)',
+      fill: 'var(--a9p6-cyan, #22D3EE)',
+      phase: 'mdz',
+      mdz: 10
+    },
+    mdz10: {
+      tip1: 'MDZ no teto',
+      tip2: '10 mg cumulativo 1ª linha',
+      status: 'MDZ: teto 10 mg na 1ª linha',
+      live: 'Amp = 10. Não invente “só metade por medo”. Boot/anestesia é outro capítulo.',
+      stroke: 'var(--a9p6-gold, #FBBF24)',
+      fill: 'var(--a9p6-gold, #FBBF24)',
+      phase: 'mdz10',
+      mdz: 10
+    },
+    wait: {
+      tip1: 'Espera 3–5 min',
+      tip2: 'Entre bolos · não desiste',
+      status: 'Espera 3–5 min e reavalia · depois repete',
+      live: 'Onset é rápido; o intervalo é o tempo de ver efeito. Protocolos BR cravam ~5 min com frequência.',
+      stroke: 'var(--a9p6-cyan, #22D3EE)',
+      fill: 'var(--a9p6-cyan, #22D3EE)',
+      phase: 'wait'
+    },
+    onset: {
+      tip1: 'Onset no neurônio',
+      tip2: 'Ordem < 1 min',
+      status: 'Onset benzo no neurônio: < 1 min',
+      live: 'Rápido no SNC. Por isso a lógica é bolo → espera curta → repete, não “uma dose e desiste”.',
+      stroke: 'var(--a9p6-indigo, #818CF8)',
+      fill: 'var(--a9p6-indigo, #818CF8)',
+      phase: 'onset'
+    },
+    repeat: {
+      tip1: 'Repete até o teto',
+      tip2: 'Não é dose única',
+      status: 'Loop: bolus → espera → repete até teto',
+      live: 'A pegadinha é achar que benzo “não se repete”. Repete até DZP 20 ou MDZ 10.',
+      stroke: 'var(--a9p6-gold, #FBBF24)',
+      fill: 'var(--a9p6-gold, #FBBF24)',
+      phase: 'repeat'
+    },
+    bolus: {
+      tip1: 'Bolus cheio',
+      tip2: 'Sem dose homeopática',
+      status: 'Bolus de benzo · dose cheia do protocolo',
+      live: 'Começa o loop. Dose fraca por medo de IOT é falha terapêutica, não prudência.',
+      stroke: 'var(--a9p6-teal, #2DD4BF)',
+      fill: 'var(--a9p6-teal, #2DD4BF)',
+      phase: 'repeat'
+    },
+    trap: {
+      tip1: 'Medo de IOT',
+      tip2: 'Armadilha · não virtude',
+      status: 'Medo de intubar → subdosagem = erro',
+      live: 'VA pronta é obrigatória. Dose fraca por medo de precisar intubar é a pegadinha coral.',
+      stroke: 'var(--a9p6-coral, #F87171)',
+      fill: 'var(--a9p6-coral, #F87171)',
+      phase: 'trap'
+    },
+    under: {
+      tip1: 'Subdosagem',
+      tip2: 'Para cedo · barra coral',
+      status: 'Dose homeopática: para antes do teto',
+      live: 'O X coral no stepper curto: medo vira dose insuficiente. Crise segue.',
+      stroke: 'var(--a9p6-coral, #F87171)',
+      fill: 'var(--a9p6-coral, #F87171)',
+      phase: 'under'
+    },
+    va: {
+      tip1: 'VA pronta',
+      tip2: 'Âncora real · não desculpa',
+      status: 'Via aérea pronta não autoriza dose fraca',
+      live: 'Ter material de IOT à mão protege o paciente. Não troca o teto de DZP/MDZ por meia dose.',
+      stroke: 'var(--a9p6-soft, #B8C0CC)',
+      fill: 'var(--a9p6-soft, #B8C0CC)',
+      phase: 'va'
+    },
+    ceil: {
+      tip1: 'Tetos ouro',
+      tip2: '20 DZP · 10 MDZ',
+      status: 'Linhas ouro: 20 mg DZP · 10 mg MDZ',
+      live: 'Se a legenda sumisse, 20 e 10 ainda se leem. Contraste de tetos é o núcleo da peça.',
+      stroke: 'var(--a9p6-gold, #FBBF24)',
+      fill: 'var(--a9p6-gold, #FBBF24)',
+      phase: 'ceil'
+    }
+  };
+
+  function setPhase(key){
+    root.setAttribute('data-phase', key || 'overview');
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx;
+    pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x: 40, y: 40};
+    var p = pt.matrixTransform(m.inverse());
+    return {x: p.x, y: p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip || !tipT1 || !tipT2 || !tipBg) return;
+    tipT1.textContent = t1 || '';
+    tipT2.textContent = t2 || '';
+    tipBg.setAttribute('stroke', stroke || 'var(--a9p6-gold, #FBBF24)');
+    var w = 268;
+    if(t2 && t2.length > 34) w = 300;
+    tipBg.setAttribute('width', String(w));
+    var p = clientToSvg(cx, cy);
+    var x = p.x + 16;
+    var y = p.y - 64;
+    if(x + w > 820) x = p.x - w - 12;
+    if(x < 8) x = 8;
+    if(y < 8) y = p.y + 18;
+    if(y > 680) y = 680;
+    tip.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+    tip.setAttribute('opacity', '1');
+    tip.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity', '0');
+    tip.setAttribute('aria-hidden', 'true');
+  }
+
+  function applyLabel(key, cx, cy){
+    var L = labels[key];
+    if(!L) return;
+    setPhase(L.phase || key);
+    if(typeof L.dzp === 'number') setDzp(L.dzp);
+    if(typeof L.mdz === 'number') setMdz(L.mdz);
+    if(statusEl){
+      statusEl.textContent = L.status;
+      statusEl.setAttribute('fill', L.fill || 'var(--a9p6-gold, #FBBF24)');
+    }
+    if(liveEl) liveEl.textContent = L.live;
+    if(cx != null && cy != null) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+  }
+
+  function bind(el, key){
+    if(!el) return;
+    var L = labels[key];
+    function go(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      applyLabel(key, cx, cy);
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      applyLabel(key, ev.clientX, ev.clientY);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      if(tip && tip.getAttribute('opacity') === '1' && L){
+        showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+      }
+    });
+    el.addEventListener('mouseleave', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      hideTip();
+    });
+    el.addEventListener('click', go);
+    el.addEventListener('focus', function(){
+      var b = el.getBoundingClientRect();
+      applyLabel(key, b.left + b.width/2, b.top + b.height/2);
+    });
+    el.addEventListener('blur', function(){ hideTip(); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        go(ev);
+      }
+    });
+  }
+
+  bind(Q('#a9p6-chip-overview'), 'overview');
+  bind(Q('#a9p6-panel-dzp'), 'dzp');
+  bind(Q('#a9p6-panel-mdz'), 'mdz');
+  bind(Q('#a9p6-panel-trap'), 'trap');
+  bind(Q('#a9p6-dzp-b10'), 'dzp10');
+  bind(Q('#a9p6-dzp-b20'), 'dzp20');
+  bind(Q('#a9p6-mdz-b10'), 'mdz10');
+  bind(Q('#a9p6-under'), 'under');
+  bind(Q('#a9p6-cycle-bolus'), 'bolus');
+  bind(Q('#a9p6-cycle-onset'), 'onset');
+  bind(Q('#a9p6-cycle-wait'), 'wait');
+  bind(Q('#a9p6-cycle-repeat'), 'repeat');
+  bind(Q('#a9p6-chip-dzp'), 'dzp');
+  bind(Q('#a9p6-chip-mdz'), 'mdz');
+  bind(Q('#a9p6-chip-wait'), 'wait');
+  bind(Q('#a9p6-chip-onset'), 'onset');
+  bind(Q('#a9p6-chip-repeat'), 'repeat');
+  bind(Q('#a9p6-chip-trap'), 'trap');
+  bind(Q('#a9p6-chip-va'), 'va');
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    if(!t) return;
+    var keep = false;
+    var nodes = root.querySelectorAll('.a9p6-hs, .a9p6-chip');
+    for(var i = 0; i < nodes.length; i++){
+      if(nodes[i].contains(t) || nodes[i] === t){ keep = true; break; }
+    }
+    if(!keep) hideTip();
+  });
+
+  setDzp(10);
+  setMdz(10);
+  setPhase('overview');
+  if(statusEl){
+    statusEl.textContent = 'DZP 20 · MDZ 10 · repete até o teto';
+    statusEl.setAttribute('fill', 'var(--a9p6-gold, #FBBF24)');
+  }
+  if(liveEl){
+    liveEl.textContent = 'Toque nos steppers, no loop 3–5 min ou na armadilha coral. 20 e 10 se leem sem legenda.';
+  }
+})();
+  ]]></script>
+</svg>
+</div>
+
+<div class="a9-img-wrap">
+  <img src="media/B06-bag-valve-mask-ambu-hospital.jpg" alt="Bolsa-válvula-máscara (AMBU) azul e transparente sobre fundo branco, usada para ventilação manual de emergência." loading="lazy">
+  <div class="a9-cap">VA pronta · dose plena — BVM/AMBU (Hospital, 2009 · CC BY-SA 3.0). Wikimedia Commons. <strong>VA pronta · dose plena</strong></div>
+</div>
+
+<div class="a9-err"><div class="a9-err-l">⚠️ Erro comum</div><p>"Vou dar só 2–3 mg pra não intubar" — e a crise não para.</p></div>
+
+<div class="a9-why"><div class="a9-why-l">Por que importa</div><p>Subdosagem por medo de intubar = crise que não para.</p></div>
+
+<div class="a9-resumo"><div class="a9-res-l">📌 Resumo operacional</div><p>Efeito em <strong><1 min</strong>. Espera <strong>3–5 min</strong>. Repete até teto: <strong>DZP 20 mg</strong> · <strong>MDZ 10 mg</strong>. Medo de IOT não autoriza dose pífia; VA <strong>pronta</strong>.</p></div>
+
+<div class="a9-quiz" id="quiz-p6"><h3>🧠 Quiz</h3>
+<div class="a9-qb" data-q="0"><div class="a9-qe">Q1. Paciente recebeu <strong>20 mg</strong> de diazepam IV no total; crise persiste. Conduta sobre mais diazepam:</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) Mais 10 mg — sempre se repete</button>
+<button class="a9-opt" data-opt="B">B) Não repetir DZP — teto atingido; seguir escada (2º fármaco)</button>
+<button class="a9-opt" data-opt="C">C) Trocar para DZP IM</button>
+<button class="a9-opt" data-opt="D">D) Esperar 30 min sem nova droga</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+<div class="a9-qb" data-q="1"><div class="a9-qe">Q2. Após 10 mg de DZP e 5 min, crise continua. Melhor leitura:</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) Teto já batido</button>
+<button class="a9-opt" data-opt="B">B) Pode repetir até completar 20 mg (se ainda abaixo do teto)</button>
+<button class="a9-opt" data-opt="C">C) Ir direto a propofol</button>
+<button class="a9-opt" data-opt="D">D) Suspender qualquer sedação por medo de IOT</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+</div>
+</div>
+<script>
+(function(){
+var A={'0':{c:'B',f:'<strong>Gabarito: B.</strong><br><br><strong>A:</strong> estoura teto. <em>Por que cair:</em> generaliza "sempre repetir".<br><strong>C:</strong> via errada. <em>Por que cair:</em> P5 não consolidado.<br><strong>D:</strong> viola status. <em>Por que cair:</em> confunde com T2.'},'1':{c:'B',f:'<strong>Gabarito: B.</strong><br><br><strong>A:</strong> confunde 10 com 20. <em>Por que cair:</em> não leu o teto.<br><strong>C:</strong> salta escada. <em>Por que cair:</em> refratário precoce.<br><strong>D:</strong> subdosagem clássica. <em>Por que cair:</em> medo de VA.'}};
+var S='p2-status:a9:p06:quiz:v1',s=null;
+try{var r=localStorage.getItem(S);if(r)s=JSON.parse(r);}catch(e){}
+document.querySelectorAll('.a9-qb').forEach(function(b){
+var i=b.getAttribute('data-q'),a=A[i];if(!a)return;
+var f=b.querySelector('.a9-qfb'),o=b.querySelectorAll('.a9-opt');
+function F(c,ch){
+o.forEach(function(x){x.classList.remove('chosen','correct','wrong');if(x.getAttribute('data-opt')===c)x.classList.add('correct');if(x.getAttribute('data-opt')===ch&&ch!==c)x.classList.add('wrong');if(x.getAttribute('data-opt')===ch)x.classList.add('chosen');x.disabled=true;});
+f.className='a9-qfb show '+(ch===c?'cok':'er');f.innerHTML=a.f;
+}
+if(s&&s[i]!==undefined)F(a.c,s[i]);
+o.forEach(function(x){x.addEventListener('click',function(){if(x.disabled)return;var ch=x.getAttribute('data-opt');F(a.c,ch);var st=s?JSON.parse(JSON.stringify(s)):{};st[i]=ch;try{localStorage.setItem(S,JSON.stringify(st));}catch(e){}});});
+});
+})();
+</script>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p5.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Benzo: o 1º, as vias, o Brasil</span></a><a class="next" href="p7.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Segundo fármaco: parar ou não deixar voltar</span></a></nav>
+</main>
+<footer class="rodape">Manejo da Crise / Status Epiléptico · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas desta aula"><p class="menu-panel__title">Aula 9 · 11 páginas</p><ul class="menu-panel__list"><li><a href="index.html">1 · Cláudio Honor</a></li><li><a href="p2.html">2 · Cinco age, trinta lesa</a></li><li><a href="p3.html">3 · Status convulsivo × não convulsivo</a></li><li><a href="p4.html">4 · Estabiliza e mede glicose</a></li><li><a href="p5.html">5 · Benzo: o 1º, as vias, o Brasil</a></li><li><a href="p6.html">6 · Dose, teto e o medo de intubar</a></li><li><a href="p7.html">7 · Segundo fármaco</a></li><li><a href="p8.html">8 · Fenitoína: 20 mg/kg, 50 mg/min</a></li><li><a href="p9.html">9 · Status refratário</a></li><li><a href="p10.html">10 · Exceções que matam gabarito</a></li><li><a href="p11.html">11 · Prova, fecho e escada final</a></li></ul></nav></div>
+<script>(function(){var btn=document.getElementById('menu-toggle'),ov=document.getElementById('menu-overlay');if(!btn||!ov)return;function fecha(){ov.setAttribute('aria-hidden','true');btn.setAttribute('aria-expanded','false');document.body.style.overflow='';}function abre(){ov.setAttribute('aria-hidden','false');btn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}btn.addEventListener('click',function(){ov.getAttribute('aria-hidden')==='false'?fecha():abre();});document.addEventListener('click',function(e){var p=ov.querySelector('.menu-panel');if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target))fecha();});document.addEventListener('keydown',function(e){if(e.key==='Escape')fecha();});})();</script>
+</body>
+</html>

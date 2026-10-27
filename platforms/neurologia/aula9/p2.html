@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>Cinco age, trinta lesa: a dualidade do status — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Manejo da Crise / Status Epiléptico</span>
+        <span class="site-header__subtitle">Neurologia · Aula 9</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">2/11</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<style>
+.a9-l2 { --a9-indigo:#818CF8;--a9-cyan:#38BDF8;--a9-coral:#F87171;--a9-gold:#FBBF24;--a9-teal:#2DD4BF;--a9-green:#4ADE80;--a9-ink:var(--ink,#F4F7FB);--a9-muted:var(--muted,#94A3B8);--a9-card:var(--card-bg,rgba(17,26,43,0.72));--a9-card2:var(--card-bg2,rgba(21,32,51,0.65));--a9-border:var(--border,rgba(148,163,184,0.14));max-width:820px;margin:0 auto;padding:0 20px; }
+[data-theme="light"] .a9-l2 { --a9-ink:#0F172A;--a9-muted:#64748B;--a9-card:rgba(255,255,255,0.82);--a9-card2:rgba(241,245,249,0.78);--a9-border:rgba(15,23,42,0.10); }
+.a9-l2 h1 { font-size:1.9rem;font-weight:800;letter-spacing:-0.5px;color:var(--a9-ink);margin:32px 0 6px;line-height:1.2; }
+.a9-l2 .a9-sub { font-size:.9rem;color:var(--a9-muted);margin-bottom:20px; }
+.a9-l2 .a9-prose { text-align:justify;text-indent:1.5em;hyphens:auto;color:var(--a9-ink);line-height:1.75;font-size:.95rem; }
+.a9-l2 .a9-prose p { margin:0 0 12px; }
+.a9-l2 .a9-prose h3 { text-indent:0;font-size:1.1rem;font-weight:700;color:var(--a9-indigo);margin:24px 0 8px; }
+.a9-l2 .a9-prose strong { color:var(--a9-coral); }
+.a9-l2 .a9-card { background:var(--a9-card);border:1px solid var(--a9-border);border-radius:16px;padding:24px;margin:20px 0;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px); }
+.a9-l2 .a9-card h2 { font-size:1.1rem;font-weight:700;color:var(--a9-gold);margin:0 0 14px; }
+.a9-l2 .a9-timeline { display:flex;gap:0;margin:16px 0;border-radius:12px;overflow:hidden; }
+.a9-l2 .a9-tl-zone { flex:1;padding:16px 12px;text-align:center;font-weight:700;font-size:.85rem; }
+.a9-l2 .a9-tl-wait { background:rgba(45,212,191,0.12);color:var(--a9-teal);border-right:1px solid var(--a9-border); }
+.a9-l2 .a9-tl-act { background:rgba(251,191,36,0.12);color:var(--a9-gold);border-right:1px solid var(--a9-border); }
+.a9-l2 .a9-tl-harm { background:rgba(248,113,113,0.12);color:var(--a9-coral); }
+.a9-l2 .a9-tl-zone .a9-tl-num { font-size:1.6rem;font-weight:800;display:block; }
+.a9-l2 .a9-dual { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0; }
+@media(max-width:600px){ .a9-l2 .a9-dual { grid-template-columns:1fr; } .a9-l2 h1 { font-size:1.4rem; } }
+.a9-l2 .a9-dual-card { background:var(--a9-card2);border:1px solid var(--a9-border);border-radius:12px;padding:18px; }
+.a9-l2 .a9-dual-card h4 { font-size:.9rem;font-weight:700;margin:0 0 8px; }
+.a9-l2 .a9-dual-card.trad h4 { color:var(--a9-muted); }
+.a9-l2 .a9-dual-card.op h4 { color:var(--a9-gold); }
+.a9-l2 .a9-dual-card p { margin:0;font-size:.88rem;color:var(--a9-ink);text-indent:0; }
+.a9-l2 .a9-mnemo { text-align:center;font-size:1.3rem;font-weight:800;color:var(--a9-gold);margin:20px 0;letter-spacing:1px; }
+.a9-l2 .a9-svg-wrap, .a9-l2 .a9-img-wrap { margin:24px 0;border-radius:16px;overflow:hidden;background:var(--a9-card);border:1px solid var(--a9-border); }
+.a9-l2 .a9-svg-wrap svg, .a9-l2 .a9-img-wrap img { display:block;width:100%;height:auto; }
+.a9-l2 .a9-img-wrap .a9-caption { padding:10px 16px;font-size:.78rem;color:var(--a9-muted);line-height:1.5;border-top:1px solid var(--a9-border); }
+.a9-l2 .a9-peg { background:var(--a9-card);border:1px solid var(--a9-gold);border-radius:12px;padding:16px 20px;margin:18px 0; }
+.a9-l2 .a9-peg .a9-peg-l { font-size:.78rem;font-weight:700;color:var(--a9-gold);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px; }
+.a9-l2 .a9-peg p { margin:0;font-size:.9rem;color:var(--a9-ink);text-indent:0; }
+.a9-l2 .a9-why { background:var(--a9-card2);border-radius:12px;padding:16px 20px;margin:18px 0;border-left:3px solid var(--a9-teal); }
+.a9-l2 .a9-why .a9-why-l { font-size:.78rem;font-weight:700;color:var(--a9-teal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px; }
+.a9-l2 .a9-why p { margin:0;font-size:.9rem;color:var(--a9-ink);text-indent:0; }
+.a9-l2 .a9-resumo { background:var(--a9-card);border:1px solid var(--a9-teal);border-radius:12px;padding:16px 20px;margin:18px 0; }
+.a9-l2 .a9-resumo .a9-res-l { font-size:.78rem;font-weight:700;color:var(--a9-teal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px; }
+.a9-l2 .a9-resumo p { margin:0;font-size:.9rem;color:var(--a9-ink);text-indent:0; }
+.a9-l2 .a9-quiz { margin:28px 0; }
+.a9-l2 .a9-quiz h3 { font-size:1.05rem;font-weight:700;color:var(--a9-gold);margin:0 0 16px; }
+.a9-l2 .a9-qb { background:var(--a9-card);border:1px solid var(--a9-border);border-radius:14px;padding:20px;margin-bottom:16px; }
+.a9-l2 .a9-qb .a9-qe { font-weight:700;color:var(--a9-ink);margin-bottom:12px;font-size:.92rem; }
+.a9-l2 .a9-qb .a9-qo { display:flex;flex-direction:column;gap:8px; }
+.a9-l2 .a9-qb .a9-opt { padding:10px 14px;border-radius:10px;background:var(--a9-card2);border:1px solid var(--a9-border);cursor:pointer;font-size:.88rem;color:var(--a9-ink);transition:all .2s;min-height:44px;display:flex;align-items:center; }
+.a9-l2 .a9-qb .a9-opt:hover { border-color:var(--a9-indigo); }
+.a9-l2 .a9-qb .a9-opt.chosen { border-color:var(--a9-indigo);background:rgba(129,140,248,0.12); }
+.a9-l2 .a9-qb .a9-opt.correct { border-color:var(--a9-green);background:rgba(74,222,128,0.15); }
+.a9-l2 .a9-qb .a9-opt.wrong { border-color:var(--a9-coral);background:rgba(248,113,113,0.12); }
+.a9-l2 .a9-qfb { margin-top:12px;padding:14px 16px;border-radius:10px;font-size:.85rem;line-height:1.6;display:none; }
+.a9-l2 .a9-qfb.show { display:block; }
+.a9-l2 .a9-qfb.cok { background:rgba(74,222,128,0.1);border:1px solid var(--a9-green);color:var(--a9-ink); }
+.a9-l2 .a9-qfb.er { background:rgba(248,113,113,0.1);border:1px solid var(--a9-coral);color:var(--a9-ink); }
+</style>
+<div class="a9-l2" data-layout="a9-p02">
+<h1>Cinco age, trinta lesa: a dualidade do status</h1>
+<p class="a9-sub">Tempos operacionais · definição tradicional vs operacional · T1=5 · T2=30</p>
+
+<div class="a9-prose">
+<h3>1. O foco: tônico-clônica generalizada</h3>
+<p>O cenário mais comum e mais estudado que leva a status é a crise <strong>tônico-clônica generalizada (TCG)</strong>.</p>
+
+<h3>2. Tempo 1 = 5 minutos — parada espontânea</h3>
+<p>Essa crise tem <strong>dois tempos</strong>. <strong>Tempo 1 = 5 minutos</strong>: tempo da <strong>parada espontânea</strong>. Na imensa maioria das vezes, as crises <strong>param até 5 minutos</strong>.</p>
+<p>Se a crise <strong>passar de 5 minutos</strong>, a chance de cessação espontânea <strong>cai muito</strong> — torna-se <strong>difícil</strong> parar sem intervenção.</p>
+
+<h3>3. Tempo 2 = 30 minutos — lesão neuronal</h3>
+<p><strong>Tempo 2 = 30 minutos</strong>: tempo da <strong>lesão cerebral / lesão neuronal</strong>. A partir de <strong>30 minutos</strong> de crise, estatisticamente, o cérebro começa a ser "machucado".</p>
+
+<h3>4. Lógica operacional</h3>
+<p>Até 5 min <strong>não se intervém</strong> na crise (espera parar sozinha). <strong>A partir de 5 min</strong> atua-se para <strong>não cruzar 30 min</strong>.</p>
+<p>O tempo <strong>5</strong> determina <strong>se se atua</strong>; o tempo <strong>30</strong> é o da <strong>lesão</strong>. Atuar <strong>depois de 30</strong>? Não — atuar <strong>depois de 5</strong>. Agir só aos 30 min é dar <strong>muita chance ao azar</strong>.</p>
+
+<h3>5. Tradicional vs operacional</h3>
+</div>
+
+<div class="a9-timeline" role="region" aria-label="Timeline 0 a 30 minutos">
+  <div class="a9-tl-zone a9-tl-wait"><span class="a9-tl-num">0–5′</span>ESPERA<br><small>para sozinha</small></div>
+  <div class="a9-tl-zone a9-tl-act"><span class="a9-tl-num">5–30′</span>AGE<br><small>atuar p/ não cruzar 30</small></div>
+  <div class="a9-tl-zone a9-tl-harm"><span class="a9-tl-num">≥30′</span>LESÃO<br><small>risco neuronal</small></div>
+</div>
+
+<div class="a9-dual">
+  <div class="a9-dual-card trad"><h4>📜 Tradicional</h4><p>Estado de mal = crise com <strong>mais de 30 minutos</strong>.</p></div>
+  <div class="a9-dual-card op"><h4>⚡ Operacional</h4><p>Crise <strong>> 5 minutos</strong> <strong>ou</strong> <strong>≥ 2 crises sem recuperação da consciência</strong> entre elas = status a tratar.</p></div>
+</div>
+
+<div class="a9-card"><p style="margin:0;text-indent:0;font-size:.92rem;color:var(--a9-ink);">Qualquer momento em que se atua com medicamento, <strong>por definição</strong>, é status epiléptico. Só se a crise tiver <strong>menos de 5 minutos</strong> (e não se atue) é que não se chama de status no raciocínio operacional. O tradicional (<strong>≥ 30 min</strong>) permanece verdadeiro como marco histórico/clássico; o que se <strong>marca e opera</strong> é o operacional.</p></div>
+
+<div class="a9-mnemo" aria-label="Mnemônico">5 age · 30 lesa</div>
+
+<div class="a9-svg-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 640" role="img" aria-labelledby="a9p2-title a9p2-desc" class="a9-inline-svg a9p2-root">
+  <title id="a9p2-title">Cinco age, trinta lesa: dualidade do status</title>
+  <desc id="a9p2-desc">Timeline de status epiléptico em TCG. Até 5 minutos a crise ainda pode parar sozinha. Entre 5 e 30 minutos é a zona de atuar para não cruzar lesão. A partir de 30 minutos pesa o risco de lesão neuronal. Contraste entre definição operacional maior que 5 minutos ou duas crises sem recovery e a tradicional maior que 30 minutos.</desc>
+  <defs>
+    <linearGradient id="a9p2-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a9p2-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a9p2-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a9p2-auroraL" cx="16%" cy="18%" r="48%">
+      <stop offset="0%" stop-color="var(--a9p2-cyan, #22D3EE)" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="var(--a9p2-teal, #2DD4BF)" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="var(--a9p2-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p2-auroraR" cx="86%" cy="28%" r="46%">
+      <stop offset="0%" stop-color="var(--a9p2-coral, #F87171)" stop-opacity="0.20"/>
+      <stop offset="50%" stop-color="var(--a9p2-gold, #FBBF24)" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="var(--a9p2-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a9p2-zoneWait" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--a9p2-teal, #2DD4BF)" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="var(--a9p2-cyan, #22D3EE)" stop-opacity="0.28"/>
+    </linearGradient>
+    <linearGradient id="a9p2-zoneAct" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--a9p2-cyan, #22D3EE)" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="var(--a9p2-gold, #FBBF24)" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="var(--a9p2-gold, #FBBF24)" stop-opacity="0.22"/>
+    </linearGradient>
+    <linearGradient id="a9p2-zoneLes" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--a9p2-coral, #F87171)" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="var(--a9p2-coralDeep, #B91C1C)" stop-opacity="0.42"/>
+    </linearGradient>
+    <linearGradient id="a9p2-rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--a9p2-teal, #2DD4BF)"/>
+      <stop offset="45%" stop-color="var(--a9p2-cyan, #22D3EE)"/>
+      <stop offset="72%" stop-color="var(--a9p2-gold, #FBBF24)"/>
+      <stop offset="100%" stop-color="var(--a9p2-coral, #F87171)"/>
+    </linearGradient>
+    <radialGradient id="a9p2-mark5Glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p2-gold, #FBBF24)" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="var(--a9p2-gold, #FBBF24)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p2-gold, #FBBF24)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p2-mark30Glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p2-coral, #F87171)" stop-opacity="0.50"/>
+      <stop offset="70%" stop-color="var(--a9p2-coral, #F87171)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p2-coral, #F87171)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="a9p2-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a9p2-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .a9p2-root {
+        --a9p2-bg0: #0B1220;
+        --a9p2-bg1: #07111F;
+        --a9p2-card: #111A2B;
+        --a9p2-card2: #152033;
+        --a9p2-border: rgba(148,163,184,0.18);
+        --a9p2-ink: #F4F7FB;
+        --a9p2-muted: #94A3B8;
+        --a9p2-soft: #B8C0CC;
+        --a9p2-cyan: #22D3EE;
+        --a9p2-cyanDim: #0891B2;
+        --a9p2-teal: #2DD4BF;
+        --a9p2-tealDeep: #0F766E;
+        --a9p2-gold: #FBBF24;
+        --a9p2-goldHi: #FDE68A;
+        --a9p2-goldDeep: #B45309;
+        --a9p2-coral: #F87171;
+        --a9p2-coralHi: #FECACA;
+        --a9p2-coralDeep: #B91C1C;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a9p2-root {
+        --a9p2-bg0: #F8F6F2;
+        --a9p2-bg1: #EEF2F7;
+        --a9p2-card: #FFFFFF;
+        --a9p2-card2: #F1F5F9;
+        --a9p2-border: rgba(15,23,42,0.10);
+        --a9p2-ink: #0F172A;
+        --a9p2-muted: #64748B;
+        --a9p2-soft: #475569;
+        --a9p2-cyan: #0891B2;
+        --a9p2-cyanDim: #0E7490;
+        --a9p2-teal: #0D9488;
+        --a9p2-tealDeep: #115E59;
+        --a9p2-gold: #D97706;
+        --a9p2-goldHi: #FDE68A;
+        --a9p2-goldDeep: #92400E;
+        --a9p2-coral: #DC2626;
+        --a9p2-coralHi: #FEE2E2;
+        --a9p2-coralDeep: #991B1B;
+      }
+      .a9p2-root .a9p2-hs,
+      .a9p2-root .a9p2-chip {
+        cursor: pointer;
+      }
+      .a9p2-root .a9p2-hs:focus,
+      .a9p2-root .a9p2-chip:focus {
+        outline: none;
+      }
+      .a9p2-root .a9p2-hs:focus .a9p2-hs-ring,
+      .a9p2-root .a9p2-chip:focus .a9p2-chip-ring {
+        opacity: 1;
+      }
+      .a9p2-root .a9p2-zone,
+      .a9p2-root .a9p2-mark,
+      .a9p2-root .a9p2-def,
+      .a9p2-root .a9p2-chip-fill {
+        transition: opacity 0.32s ease, stroke 0.32s ease, filter 0.32s ease;
+      }
+      .a9p2-root .a9p2-tip {
+        pointer-events: none;
+      }
+      .a9p2-root .a9p2-chip-fill {
+        opacity: 0.72;
+      }
+      .a9p2-root .a9p2-zone {
+        opacity: 0.92;
+      }
+      .a9p2-root[data-phase="wait"] .a9p2-zone-wait {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="wait"] .a9p2-zone-wait .a9p2-zone-face {
+        stroke: var(--a9p2-teal, #2DD4BF);
+        stroke-width: 2.2;
+      }
+      .a9p2-root[data-phase="wait"] .a9p2-zone-act,
+      .a9p2-root[data-phase="wait"] .a9p2-zone-les {
+        opacity: 0.38;
+      }
+      .a9p2-root[data-phase="wait"] .a9p2-chip-wait .a9p2-chip-fill {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="act"] .a9p2-zone-act {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="act"] .a9p2-zone-act .a9p2-zone-face {
+        stroke: var(--a9p2-gold, #FBBF24);
+        stroke-width: 2.2;
+      }
+      .a9p2-root[data-phase="act"] .a9p2-zone-wait,
+      .a9p2-root[data-phase="act"] .a9p2-zone-les {
+        opacity: 0.38;
+      }
+      .a9p2-root[data-phase="act"] .a9p2-chip-act .a9p2-chip-fill {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="act"] .a9p2-mark-5 .a9p2-mark-face {
+        stroke: var(--a9p2-gold, #FBBF24);
+        stroke-width: 2.4;
+      }
+      .a9p2-root[data-phase="les"] .a9p2-zone-les {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="les"] .a9p2-zone-les .a9p2-zone-face {
+        stroke: var(--a9p2-coral, #F87171);
+        stroke-width: 2.2;
+      }
+      .a9p2-root[data-phase="les"] .a9p2-zone-wait,
+      .a9p2-root[data-phase="les"] .a9p2-zone-act {
+        opacity: 0.38;
+      }
+      .a9p2-root[data-phase="les"] .a9p2-chip-les .a9p2-chip-fill {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="les"] .a9p2-mark-30 .a9p2-mark-face {
+        stroke: var(--a9p2-coral, #F87171);
+        stroke-width: 2.4;
+      }
+      .a9p2-root[data-phase="dual"] .a9p2-mark-5 .a9p2-mark-face,
+      .a9p2-root[data-phase="dual"] .a9p2-mark-30 .a9p2-mark-face {
+        stroke-width: 2.4;
+      }
+      .a9p2-root[data-phase="dual"] .a9p2-mark-5 .a9p2-mark-face {
+        stroke: var(--a9p2-gold, #FBBF24);
+      }
+      .a9p2-root[data-phase="dual"] .a9p2-mark-30 .a9p2-mark-face {
+        stroke: var(--a9p2-coral, #F87171);
+      }
+      .a9p2-root[data-phase="dual"] .a9p2-chip-dual .a9p2-chip-fill {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="dual"] .a9p2-bridge {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="defs"] .a9p2-def-op .a9p2-def-face {
+        stroke: var(--a9p2-cyan, #22D3EE);
+        stroke-width: 2.1;
+      }
+      .a9p2-root[data-phase="defs"] .a9p2-def-tr .a9p2-def-face {
+        stroke: var(--a9p2-gold, #FBBF24);
+        stroke-width: 2.1;
+      }
+      .a9p2-root[data-phase="defs"] .a9p2-chip-defs .a9p2-chip-fill {
+        opacity: 1;
+      }
+      .a9p2-root .a9p2-bridge {
+        opacity: 0.55;
+      }
+      .a9p2-root[data-phase="act"] .a9p2-mark-5-glow,
+      .a9p2-root[data-phase="dual"] .a9p2-mark-5-glow {
+        opacity: 1;
+      }
+      .a9p2-root[data-phase="les"] .a9p2-mark-30-glow,
+      .a9p2-root[data-phase="dual"] .a9p2-mark-30-glow {
+        opacity: 1;
+      }
+      .a9p2-root .a9p2-mark-5-glow,
+      .a9p2-root .a9p2-mark-30-glow {
+        opacity: 0.45;
+      }
+      @keyframes a9p2-pulse {
+        0%, 100% { opacity: 0.45; }
+        50% { opacity: 0.95; }
+      }
+      .a9p2-root[data-phase="act"] .a9p2-mark-5-glow,
+      .a9p2-root[data-phase="dual"] .a9p2-mark-5-glow,
+      .a9p2-root[data-phase="les"] .a9p2-mark-30-glow,
+      .a9p2-root[data-phase="dual"] .a9p2-mark-30-glow {
+        animation: a9p2-pulse 1.7s ease-in-out infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .a9p2-root[data-phase="act"] .a9p2-mark-5-glow,
+        .a9p2-root[data-phase="dual"] .a9p2-mark-5-glow,
+        .a9p2-root[data-phase="les"] .a9p2-mark-30-glow,
+        .a9p2-root[data-phase="dual"] .a9p2-mark-30-glow {
+          animation: none;
+        }
+        .a9p2-root .a9p2-zone,
+        .a9p2-root .a9p2-mark,
+        .a9p2-root .a9p2-def,
+        .a9p2-root .a9p2-chip-fill {
+          transition: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="840" height="640" rx="18" fill="url(#a9p2-bg)"/>
+  <rect width="840" height="640" rx="18" fill="url(#a9p2-auroraL)"/>
+  <rect width="840" height="640" rx="18" fill="url(#a9p2-auroraR)"/>
+
+  <text x="28" y="36" fill="var(--a9p2-ink, #F4F7FB)" font-size="20" font-weight="700" letter-spacing="-0.3">Cinco age · trinta lesa</text>
+  <text x="28" y="58" fill="var(--a9p2-soft, #B8C0CC)" font-size="13" font-weight="500">Dualidade do status ·</text>
+  <text x="178" y="58" fill="var(--a9p2-gold, #FBBF24)" font-size="13" font-weight="700">T1 = 5′ atuar</text>
+  <text x="292" y="58" fill="var(--a9p2-muted, #94A3B8)" font-size="13" font-weight="500">·</text>
+  <text x="308" y="58" fill="var(--a9p2-coral, #F87171)" font-size="13" font-weight="700">T2 = 30′ lesão</text>
+
+  <g id="a9p2-badge" transform="translate(620,18)">
+    <rect width="192" height="34" rx="17" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="1.5"/>
+    <circle cx="18" cy="17" r="5" fill="var(--a9p2-gold, #FBBF24)"/>
+    <text x="34" y="21" fill="var(--a9p2-gold, #FBBF24)" font-size="12" font-weight="700" letter-spacing="0.3">DOIS TEMPOS · NÃO UM</text>
+  </g>
+
+  <g id="a9p2-chips" transform="translate(28,74)">
+    <g class="a9p2-chip a9p2-chip-wait" id="a9p2-chip-wait" tabindex="0" role="button" aria-label="Zona espera: até 5 minutos a crise ainda pode parar sozinha" data-key="wait">
+      <rect class="a9p2-chip-ring" x="-2" y="-2" width="96" height="34" rx="12" fill="none" stroke="var(--a9p2-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-chip-fill" width="92" height="30" rx="10" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-teal, #2DD4BF)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p2-teal, #2DD4BF)"/>
+      <text x="26" y="19" fill="var(--a9p2-teal, #2DD4BF)" font-size="12" font-weight="700">Espera</text>
+    </g>
+    <g class="a9p2-chip a9p2-chip-act" id="a9p2-chip-act" tabindex="0" role="button" aria-label="Zona age: entre 5 e 30 minutos atuar para não cruzar lesão" data-key="act" transform="translate(100,0)">
+      <rect class="a9p2-chip-ring" x="-2" y="-2" width="84" height="34" rx="12" fill="none" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-chip-fill" width="80" height="30" rx="10" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p2-gold, #FBBF24)"/>
+      <text x="26" y="19" fill="var(--a9p2-gold, #FBBF24)" font-size="12" font-weight="700">Age</text>
+    </g>
+    <g class="a9p2-chip a9p2-chip-les" id="a9p2-chip-les" tabindex="0" role="button" aria-label="Zona lesão: a partir de 30 minutos risco de lesão neuronal" data-key="les" transform="translate(188,0)">
+      <rect class="a9p2-chip-ring" x="-2" y="-2" width="96" height="34" rx="12" fill="none" stroke="var(--a9p2-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-chip-fill" width="92" height="30" rx="10" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-coral, #F87171)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p2-coral, #F87171)"/>
+      <text x="26" y="19" fill="var(--a9p2-coral, #F87171)" font-size="12" font-weight="700">Lesão</text>
+    </g>
+    <g class="a9p2-chip a9p2-chip-dual" id="a9p2-chip-dual" tabindex="0" role="button" aria-label="Dualidade: 5 atuar e 30 lesão" data-key="dual" transform="translate(288,0)">
+      <rect class="a9p2-chip-ring" x="-2" y="-2" width="112" height="34" rx="12" fill="none" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-chip-fill" width="108" height="30" rx="10" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p2-gold, #FBBF24)"/>
+      <text x="26" y="19" fill="var(--a9p2-gold, #FBBF24)" font-size="12" font-weight="700">5′ · 30′</text>
+    </g>
+    <g class="a9p2-chip a9p2-chip-defs" id="a9p2-chip-defs" tabindex="0" role="button" aria-label="Operacional versus tradicional" data-key="defs" transform="translate(408,0)">
+      <rect class="a9p2-chip-ring" x="-2" y="-2" width="168" height="34" rx="12" fill="none" stroke="var(--a9p2-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-chip-fill" width="164" height="30" rx="10" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-cyan, #22D3EE)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p2-cyan, #22D3EE)"/>
+      <text x="26" y="19" fill="var(--a9p2-cyan, #22D3EE)" font-size="12" font-weight="700">Op. × tradicional</text>
+    </g>
+  </g>
+
+  <g id="a9p2-timeline" transform="translate(0,118)">
+    <rect x="28" y="0" width="784" height="268" rx="18" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-border, rgba(148,163,184,0.18))" stroke-width="1.3"/>
+    <text x="48" y="32" fill="var(--a9p2-teal, #2DD4BF)" font-size="13" font-weight="700">Relógio do status · território em minutos</text>
+    <text x="48" y="52" fill="var(--a9p2-muted, #94A3B8)" font-size="12" font-weight="500">TCG · até 5′ espera · a partir de 5′ age · a partir de 30′ lesão</text>
+
+    <g class="a9p2-zone a9p2-zone-wait a9p2-hs" id="a9p2-hs-wait" tabindex="0" role="button" aria-label="Zona espera: zero a cinco minutos, a crise ainda pode parar sozinha" data-key="wait" transform="translate(48,72)">
+      <rect class="a9p2-hs-ring" x="-4" y="-4" width="168" height="120" rx="16" fill="none" stroke="var(--a9p2-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-zone-face" x="0" y="0" width="160" height="112" rx="14" fill="url(#a9p2-zoneWait)" stroke="var(--a9p2-teal, #2DD4BF)" stroke-width="1.4"/>
+      <text x="16" y="28" fill="var(--a9p2-teal, #2DD4BF)" font-size="13" font-weight="700">Espera</text>
+      <text x="16" y="50" fill="var(--a9p2-ink, #F4F7FB)" font-size="18" font-weight="800">0 – 5′</text>
+      <text x="16" y="74" fill="var(--a9p2-soft, #B8C0CC)" font-size="11.5" font-weight="500">Maioria cessa</text>
+      <text x="16" y="92" fill="var(--a9p2-muted, #94A3B8)" font-size="11" font-weight="500">ainda pode parar</text>
+    </g>
+
+    <g class="a9p2-zone a9p2-zone-act a9p2-hs" id="a9p2-hs-act" tabindex="0" role="button" aria-label="Zona age: cinco a trinta minutos, atuar para não cruzar lesão" data-key="act" transform="translate(220,72)">
+      <rect class="a9p2-hs-ring" x="-4" y="-4" width="288" height="120" rx="16" fill="none" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-zone-face" x="0" y="0" width="280" height="112" rx="14" fill="url(#a9p2-zoneAct)" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="1.4"/>
+      <text x="16" y="28" fill="var(--a9p2-gold, #FBBF24)" font-size="13" font-weight="700">Age</text>
+      <text x="16" y="50" fill="var(--a9p2-ink, #F4F7FB)" font-size="18" font-weight="800">5 – 30′</text>
+      <text x="16" y="74" fill="var(--a9p2-soft, #B8C0CC)" font-size="11.5" font-weight="500">Chance de parar sozinha cai</text>
+      <text x="16" y="92" fill="var(--a9p2-muted, #94A3B8)" font-size="11" font-weight="500">atuar para não cruzar 30′</text>
+    </g>
+
+    <g class="a9p2-zone a9p2-zone-les a9p2-hs" id="a9p2-hs-les" tabindex="0" role="button" aria-label="Zona lesão: a partir de trinta minutos, risco de lesão neuronal" data-key="les" transform="translate(512,72)">
+      <rect class="a9p2-hs-ring" x="-4" y="-4" width="268" height="120" rx="16" fill="none" stroke="var(--a9p2-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-zone-face" x="0" y="0" width="260" height="112" rx="14" fill="url(#a9p2-zoneLes)" stroke="var(--a9p2-coral, #F87171)" stroke-width="1.4"/>
+      <text x="16" y="28" fill="var(--a9p2-coral, #F87171)" font-size="13" font-weight="700">Lesão</text>
+      <text x="16" y="50" fill="var(--a9p2-ink, #F4F7FB)" font-size="18" font-weight="800">≥ 30′</text>
+      <text x="16" y="74" fill="var(--a9p2-coralHi, #FECACA)" font-size="11.5" font-weight="500">Lesão neuronal pesa</text>
+      <text x="16" y="92" fill="var(--a9p2-muted, #94A3B8)" font-size="11" font-weight="500">consequência · não é o gatilho</text>
+    </g>
+
+    <g transform="translate(48,204)">
+      <rect x="0" y="14" width="724" height="10" rx="5" fill="var(--a9p2-card2, #152033)"/>
+      <rect x="0" y="14" width="724" height="10" rx="5" fill="url(#a9p2-rail)" opacity="0.85"/>
+      <line x1="0" y1="36" x2="724" y2="36" stroke="var(--a9p2-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+      <text x="0" y="52" fill="var(--a9p2-muted, #94A3B8)" font-size="11" font-weight="600">0′</text>
+      <text x="160" y="52" text-anchor="middle" fill="var(--a9p2-gold, #FBBF24)" font-size="11" font-weight="700">5′</text>
+      <text x="452" y="52" text-anchor="middle" fill="var(--a9p2-coral, #F87171)" font-size="11" font-weight="700">30′</text>
+      <text x="724" y="52" text-anchor="end" fill="var(--a9p2-muted, #94A3B8)" font-size="11" font-weight="600">40′+</text>
+    </g>
+
+    <g class="a9p2-mark a9p2-mark-5 a9p2-hs" id="a9p2-hs-mark5" tabindex="0" role="button" aria-label="Marco 5 minutos: status operacional, atuar" data-key="act" transform="translate(172,188)">
+      <ellipse class="a9p2-mark-5-glow" cx="36" cy="28" rx="48" ry="30" fill="url(#a9p2-mark5Glow)" filter="url(#a9p2-glow)"/>
+      <rect class="a9p2-hs-ring" x="-4" y="-4" width="80" height="64" rx="18" fill="none" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-mark-face" x="0" y="0" width="72" height="56" rx="14" fill="var(--a9p2-card2, #152033)" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="1.8"/>
+      <text x="36" y="24" text-anchor="middle" fill="var(--a9p2-gold, #FBBF24)" font-size="16" font-weight="800">5′</text>
+      <text x="36" y="42" text-anchor="middle" fill="var(--a9p2-goldHi, #FDE68A)" font-size="11" font-weight="700">atuar</text>
+    </g>
+
+    <g class="a9p2-mark a9p2-mark-30 a9p2-hs" id="a9p2-hs-mark30" tabindex="0" role="button" aria-label="Marco 30 minutos: risco de lesão neuronal" data-key="les" transform="translate(464,188)">
+      <ellipse class="a9p2-mark-30-glow" cx="36" cy="28" rx="48" ry="30" fill="url(#a9p2-mark30Glow)" filter="url(#a9p2-glow)"/>
+      <rect class="a9p2-hs-ring" x="-4" y="-4" width="80" height="64" rx="18" fill="none" stroke="var(--a9p2-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect class="a9p2-mark-face" x="0" y="0" width="72" height="56" rx="14" fill="var(--a9p2-card2, #152033)" stroke="var(--a9p2-coral, #F87171)" stroke-width="1.8"/>
+      <text x="36" y="24" text-anchor="middle" fill="var(--a9p2-coral, #F87171)" font-size="16" font-weight="800">30′</text>
+      <text x="36" y="42" text-anchor="middle" fill="var(--a9p2-coralHi, #FECACA)" font-size="11" font-weight="700">lesão</text>
+    </g>
+
+    <g class="a9p2-bridge" id="a9p2-bridge" transform="translate(248,210)">
+      <path d="M0 8 H208" fill="none" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="1.6" stroke-dasharray="4 4" opacity="0.75"/>
+      <text x="104" y="0" text-anchor="middle" fill="var(--a9p2-gold, #FBBF24)" font-size="11" font-weight="700">dualidade</text>
+    </g>
+  </g>
+
+  <g class="a9p2-def a9p2-def-op a9p2-hs" id="a9p2-hs-def-op" tabindex="0" role="button" aria-label="Definição operacional: maior que 5 minutos ou duas crises sem recovery" data-key="defs" transform="translate(28,408)">
+    <rect class="a9p2-hs-ring" x="-4" y="-4" width="392" height="148" rx="20" fill="none" stroke="var(--a9p2-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+    <rect class="a9p2-def-face" x="0" y="0" width="384" height="140" rx="16" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-cyan, #22D3EE)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="6" height="140" rx="3" fill="var(--a9p2-cyan, #22D3EE)"/>
+    <text x="24" y="30" fill="var(--a9p2-cyan, #22D3EE)" font-size="13" font-weight="700">Operacional · marcar e operar</text>
+    <text x="24" y="56" fill="var(--a9p2-ink, #F4F7FB)" font-size="15" font-weight="700">&gt; 5′ de crise</text>
+    <text x="24" y="78" fill="var(--a9p2-soft, #B8C0CC)" font-size="12.5" font-weight="500">ou ≥ 2 crises sem recovery da consciência</text>
+    <text x="24" y="104" fill="var(--a9p2-gold, #FBBF24)" font-size="12.5" font-weight="700">= status a tratar</text>
+    <text x="24" y="124" fill="var(--a9p2-muted, #94A3B8)" font-size="11.5" font-weight="500">Atuar com fármaco = status operacional</text>
+  </g>
+
+  <g class="a9p2-def a9p2-def-tr a9p2-hs" id="a9p2-hs-def-tr" tabindex="0" role="button" aria-label="Definição tradicional: status aproximadamente maior que 30 minutos" data-key="defs" transform="translate(428,408)">
+    <rect class="a9p2-hs-ring" x="-4" y="-4" width="392" height="148" rx="20" fill="none" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+    <rect class="a9p2-def-face" x="0" y="0" width="384" height="140" rx="16" fill="var(--a9p2-card, #111A2B)" stroke="var(--a9p2-border, rgba(148,163,184,0.18))" stroke-width="1.5"/>
+    <rect x="0" y="0" width="6" height="140" rx="3" fill="var(--a9p2-gold, #FBBF24)"/>
+    <text x="24" y="30" fill="var(--a9p2-gold, #FBBF24)" font-size="13" font-weight="700">Tradicional · âncora ILAE</text>
+    <text x="24" y="56" fill="var(--a9p2-ink, #F4F7FB)" font-size="15" font-weight="700">status ≈ crise &gt; 30′</text>
+    <text x="24" y="78" fill="var(--a9p2-soft, #B8C0CC)" font-size="12.5" font-weight="500">marco de lesão / consequência</text>
+    <text x="24" y="104" fill="var(--a9p2-coral, #F87171)" font-size="12.5" font-weight="700">não é o único número</text>
+    <text x="24" y="124" fill="var(--a9p2-muted, #94A3B8)" font-size="11.5" font-weight="500">Tratar aos 30′ chega tarde na dualidade</text>
+  </g>
+
+  <g transform="translate(28,566)">
+    <rect width="784" height="40" rx="12" fill="var(--a9p2-card2, #152033)" stroke="var(--a9p2-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+    <circle cx="22" cy="20" r="5" fill="var(--a9p2-gold, #FBBF24)"/>
+    <text x="38" y="17" fill="var(--a9p2-ink, #F4F7FB)" font-size="12.5" font-weight="700">Memória</text>
+    <text x="38" y="32" fill="var(--a9p2-soft, #B8C0CC)" font-size="11.5" font-weight="500">cinco age · trinta lesa · dois tempos, uma dualidade</text>
+    <text x="520" y="25" fill="var(--a9p2-muted, #94A3B8)" font-size="11" font-weight="500">sem fundir com 10/40 do NCSE</text>
+  </g>
+
+  <text id="a9p2-status" x="28" y="628" fill="var(--a9p2-muted, #94A3B8)" font-size="12" font-weight="500">Toque as zonas · os marcos 5′ e 30′ · ou as definições</text>
+  <text id="a9p2-live" aria-live="polite" x="-9999" y="-9999" font-size="1" fill="var(--a9p2-bg0, #0B1220)">Cinco age, trinta lesa: dualidade do status em TCG.</text>
+
+  <g id="a9p2-tip" class="a9p2-tip" opacity="0" aria-hidden="true" transform="translate(0,0)">
+    <rect id="a9p2-tip-bg" x="0" y="0" width="260" height="52" rx="10" fill="var(--a9p2-card2, #152033)" stroke="var(--a9p2-gold, #FBBF24)" stroke-width="1.4"/>
+    <text id="a9p2-tip-t1" x="12" y="20" fill="var(--a9p2-ink, #F4F7FB)" font-size="12.5" font-weight="700">—</text>
+    <text id="a9p2-tip-t2" x="12" y="38" fill="var(--a9p2-soft, #B8C0CC)" font-size="11.5" font-weight="500">—</text>
+  </g>
+
+  <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.currentScript && document.currentScript.ownerSVGElement
+    ? document.currentScript.ownerSVGElement
+    : null;
+  if(!root){
+    var nodes = document.getElementsByClassName('a9p2-root');
+    root = nodes && nodes.length ? nodes[nodes.length - 1] : null;
+  }
+  if(!root) return;
+
+  function Q(sel){ return root.querySelector(sel); }
+
+  var tip = Q('#a9p2-tip');
+  var tipBg = Q('#a9p2-tip-bg');
+  var tipT1 = Q('#a9p2-tip-t1');
+  var tipT2 = Q('#a9p2-tip-t2');
+  var statusEl = Q('#a9p2-status');
+  var liveEl = Q('#a9p2-live');
+  var phase = 'dual';
+
+  var labels = {
+    wait: {
+      tip1: 'Espera · 0–5′',
+      tip2: 'Ainda pode parar sozinha',
+      status: 'Até 5′: maioria cessa · ainda é território de espera',
+      live: 'Zona espera: zero a cinco minutos. Em TCG, a crise ainda pode parar sozinha.',
+      stroke: 'var(--a9p2-teal, #2DD4BF)'
+    },
+    act: {
+      tip1: 'Age · T1 = 5′',
+      tip2: 'Atuar para não cruzar 30′',
+      status: 'A partir de 5′: status operacional · age para não cruzar lesão',
+      live: 'Marco de atuar: após cinco minutos a chance de cessar sozinha cai. Age entre 5 e 30.',
+      stroke: 'var(--a9p2-gold, #FBBF24)'
+    },
+    les: {
+      tip1: 'Lesão · T2 = 30′',
+      tip2: 'Risco de lesão neuronal',
+      status: 'A partir de 30′: lesão pesa · consequência, não o único gatilho de tratar',
+      live: 'Marco de lesão: trinta minutos. Risco de lesão neuronal. Não espere 30 para agir.',
+      stroke: 'var(--a9p2-coral, #F87171)'
+    },
+    dual: {
+      tip1: 'Dualidade 5′ · 30′',
+      tip2: 'Cinco age · trinta lesa',
+      status: 'Dois tempos: 5′ atuar · 30′ lesão · não um número mágico',
+      live: 'Dualidade do status: tempo 1 de cinco minutos para atuar; tempo 2 de trinta minutos para lesão.',
+      stroke: 'var(--a9p2-gold, #FBBF24)'
+    },
+    defs: {
+      tip1: 'Op. × tradicional',
+      tip2: '>5′ tratar · >30′ lesão',
+      status: 'Operacional >5′ ou 2 crises sem recovery · tradicional ≈ >30′',
+      live: 'Operacional: maior que cinco minutos ou duas crises sem recovery. Tradicional: aproximadamente maior que trinta minutos.',
+      stroke: 'var(--a9p2-cyan, #22D3EE)'
+    }
+  };
+
+  function setPhase(key){
+    phase = key || 'dual';
+    root.setAttribute('data-phase', phase);
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx; pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x: 40, y: 40};
+    var p = pt.matrixTransform(m.inverse());
+    return {x: p.x, y: p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip || !tipT1 || !tipT2 || !tipBg) return;
+    tipT1.textContent = t1 || '';
+    tipT2.textContent = t2 || '';
+    tipBg.setAttribute('stroke', stroke || 'var(--a9p2-gold, #FBBF24)');
+    var w = 250;
+    if(t2 && t2.length > 32) w = 278;
+    tipBg.setAttribute('width', String(w));
+    var p = clientToSvg(cx, cy);
+    var x = p.x + 16;
+    var y = p.y - 62;
+    if(x + w > 820) x = p.x - w - 12;
+    if(x < 8) x = 8;
+    if(y < 8) y = p.y + 18;
+    if(y > 580) y = 580;
+    tip.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+    tip.setAttribute('opacity', '1');
+    tip.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity', '0');
+    tip.setAttribute('aria-hidden', 'true');
+  }
+
+  function applyLabel(key, cx, cy){
+    var L = labels[key];
+    if(!L) return;
+    setPhase(key);
+    if(statusEl){
+      statusEl.textContent = L.status;
+      var fill = 'var(--a9p2-cyan, #22D3EE)';
+      if(key === 'les') fill = 'var(--a9p2-coral, #F87171)';
+      else if(key === 'act' || key === 'dual') fill = 'var(--a9p2-gold, #FBBF24)';
+      else if(key === 'wait') fill = 'var(--a9p2-teal, #2DD4BF)';
+      statusEl.setAttribute('fill', fill);
+    }
+    if(liveEl) liveEl.textContent = L.live;
+    if(cx != null && cy != null) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+  }
+
+  function bind(el, key){
+    if(!el) return;
+    var L = labels[key];
+    function go(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      applyLabel(key, cx, cy);
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      applyLabel(key, ev.clientX, ev.clientY);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      if(tip && tip.getAttribute('opacity') === '1' && L){
+        showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+      }
+    });
+    el.addEventListener('mouseleave', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      hideTip();
+    });
+    el.addEventListener('click', go);
+    el.addEventListener('focus', function(){
+      var b = el.getBoundingClientRect();
+      applyLabel(key, b.left + b.width/2, b.top + b.height/2);
+    });
+    el.addEventListener('blur', function(){ hideTip(); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        go(ev);
+      }
+    });
+  }
+
+  bind(Q('#a9p2-hs-wait'), 'wait');
+  bind(Q('#a9p2-hs-act'), 'act');
+  bind(Q('#a9p2-hs-les'), 'les');
+  bind(Q('#a9p2-hs-mark5'), 'act');
+  bind(Q('#a9p2-hs-mark30'), 'les');
+  bind(Q('#a9p2-hs-def-op'), 'defs');
+  bind(Q('#a9p2-hs-def-tr'), 'defs');
+  bind(Q('#a9p2-chip-wait'), 'wait');
+  bind(Q('#a9p2-chip-act'), 'act');
+  bind(Q('#a9p2-chip-les'), 'les');
+  bind(Q('#a9p2-chip-dual'), 'dual');
+  bind(Q('#a9p2-chip-defs'), 'defs');
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    if(!t) return;
+    var keep = false;
+    var nodes = root.querySelectorAll('.a9p2-hs, .a9p2-chip');
+    for(var i = 0; i < nodes.length; i++){
+      if(nodes[i].contains(t) || nodes[i] === t){ keep = true; break; }
+    }
+    if(!keep) hideTip();
+  });
+
+  setPhase('dual');
+  if(statusEl){
+    statusEl.textContent = 'Dois tempos: 5′ atuar · 30′ lesão · não um número mágico';
+    statusEl.setAttribute('fill', 'var(--a9p2-gold, #FBBF24)');
+  }
+  if(liveEl){
+    liveEl.textContent = 'Cinco age, trinta lesa: dualidade do status em TCG. Operacional a partir de 5; lesão a partir de 30.';
+  }
+})();
+  ]]></script>
+</svg>
+</div>
+
+<div class="a9-img-wrap">
+  <img src="media/B02-ilae-t1-t2-convulsive-se-caboclo2025.jpg" alt="Tabela de tempos t1 e t2 no status epilepticus: no status convulsivo, t1 é 5 minutos (início do tratamento) e t2 é 30 minutos (risco de sequela de longo prazo); no focal, 10 minutos e mais de 60 minutos; no de ausência, 10 a 15 minutos e t2 desconhecido. Adaptada da ILAE 2015." loading="lazy">
+  <div class="a9-caption">Tempos operacionais t1/t2 no SE (linha TCG: 5 min / 30 min). Caboclo 2025 · <em>Arq. Neuro-Psiquiatr.</em> · CC BY 4.0 · PMC11813736 · (adaptado de Trinka/ILAE 2015). <strong>t1=5 · t2=30</strong></div>
+</div>
+
+<div class="a9-peg"><div class="a9-peg-l">⚡ Pegadinha de prova</div><p>Banca que pergunta "quando tratar" quer <strong>5</strong>, não <strong>30</strong>. Trinta é lesão, não "hora de começar a se preocupar".</p></div>
+
+<div class="a9-why"><div class="a9-why-l">Por que importa</div><p>Agir só aos 30 min é entrar na zona de lesão; a prova cobra atuar <strong>depois de 5</strong>.</p></div>
+
+<div class="a9-resumo"><div class="a9-res-l">📌 Resumo operacional</div><p><strong>5</strong> = se atua · <strong>30</strong> = lesão. Operacional: <strong>>5 min</strong> ou <strong>≥2 crises sem recuperação</strong> = status a tratar. Atuar com fármaco, por definição, é status.</p></div>
+
+<div class="a9-quiz" id="quiz-p2"><h3>🧠 Quiz</h3>
+<div class="a9-qb" data-q="0"><div class="a9-qe">Q1. Em TCG, o marco que determina <strong>atuar com medicamento</strong> (definição operacional) é:</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) 30 min — só então vira status</button>
+<button class="a9-opt" data-opt="B">B) > 5 min (ou ≥2 crises sem recovery)</button>
+<button class="a9-opt" data-opt="C">C) 1 min — toda crise se trata de cara</button>
+<button class="a9-opt" data-opt="D">D) 60 min — tempo de lesão canônico</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+<div class="a9-qb" data-q="1"><div class="a9-qe">Q2. Crise de 3 min que cessa sozinha, sem fármaco. No raciocínio operacional:</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) Já é status porque houve perda de consciência</button>
+<button class="a9-opt" data-opt="B">B) Não se chama status se <5 min e não se atuou</button>
+<button class="a9-opt" data-opt="C">C) É status tradicional</button>
+<button class="a9-opt" data-opt="D">D) Exige fenitoína profilática obrigatória</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+</div>
+</div>
+
+<script>
+(function(){
+var A={'0':{c:'B',f:'<strong>Gabarito: B.</strong> <strong>5</strong> decide intervenção; <strong>30</strong> é lesão.<br><br><strong>A:</strong> confunde tradicional com operacional. <em>Por que cair:</em> decorou só "status = 30".<br><strong>C:</strong> apaga a janela de parada espontânea. <em>Por que cair:</em> supertrata o ictal curto.<br><strong>D:</strong> inventa t2. <em>Por que cair:</em> confunde com não-convulsivo.'},'1':{c:'B',f:'<strong>Gabarito: B.</strong><br><br><strong>A:</strong> confunde ictal com status. <em>Por que cair:</em> generaliza "crise = status".<br><strong>C:</strong> tradicional exige >30. <em>Por que cair:</em> mistura critérios.<br><strong>D:</strong> inventa 2ª linha. <em>Por que cair:</em> pula protocolo.'}};
+var S='p2-status:a9:p02:quiz:v1',s=null;
+try{var r=localStorage.getItem(S);if(r)s=JSON.parse(r);}catch(e){}
+document.querySelectorAll('.a9-qb').forEach(function(b){
+var i=b.getAttribute('data-q'),a=A[i];if(!a)return;
+var f=b.querySelector('.a9-qfb'),o=b.querySelectorAll('.a9-opt');
+function F(c,ch){
+o.forEach(function(x){x.classList.remove('chosen','correct','wrong');if(x.getAttribute('data-opt')===c)x.classList.add('correct');if(x.getAttribute('data-opt')===ch&&ch!==c)x.classList.add('wrong');if(x.getAttribute('data-opt')===ch)x.classList.add('chosen');x.disabled=true;});
+f.className='a9-qfb show '+(ch===c?'cok':'er');f.innerHTML=a.f;
+}
+if(s&&s[i]!==undefined)F(a.c,s[i]);
+o.forEach(function(x){x.addEventListener('click',function(){if(x.disabled)return;var ch=x.getAttribute('data-opt');F(a.c,ch);var st=s?JSON.parse(JSON.stringify(s)):{};st[i]=ch;try{localStorage.setItem(S,JSON.stringify(st));}catch(e){}});});
+});
+})();
+</script>
+
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="index.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Cláudio Honor: 40 minutos e a pergunta errada</span></a><a class="next" href="p3.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Status convulsivo × não convulsivo</span></a></nav>
+</main>
+<footer class="rodape">Manejo da Crise / Status Epiléptico · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Aula 9 · 11 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a href="index.html">1 · Cláudio Honor: 40 minutos e a pergunta errada</a></li>
+      <li><a href="p2.html">2 · Cinco age, trinta lesa: a dualidade do status</a></li>
+      <li><a href="p3.html">3 · Status convulsivo × não convulsivo</a></li>
+      <li><a href="p4.html">4 · Estabiliza e mede glicose</a></li>
+      <li><a href="p5.html">5 · Benzo: o 1º, as vias, o Brasil</a></li>
+      <li><a href="p6.html">6 · Dose, teto e o medo de intubar</a></li>
+      <li><a href="p7.html">7 · Segundo fármaco: parar ou não deixar voltar</a></li>
+      <li><a href="p8.html">8 · Fenitoína: 20 mg/kg, 50 mg/min, coração primeiro</a></li>
+      <li><a href="p9.html">9 · Status refratário: anestesia e "boot"</a></li>
+      <li><a href="p10.html">10 · Exceções que matam gabarito</a></li>
+      <li><a href="p11.html">11 · Prova, fecho e escada final</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){
+    var p=ov.querySelector('.menu-panel');
+    if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha();
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

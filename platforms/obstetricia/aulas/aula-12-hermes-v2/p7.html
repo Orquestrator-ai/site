@@ -1,0 +1,509 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CHASSI DA PLATAFORMA GO — copie VERBATIM e troque SÓ o que está em {{ }}.
+
+     ⛔ NÃO invente header, footer, menu, CSS nem JS. NÃO crie arquivo .css novo.
+     ⛔ NÃO mexa nos caminhos ../../assets/ — eles apontam para o chassi compartilhado
+        (tokens.css, base.css, components.css) que dá a identidade da plataforma inteira.
+
+     O QUE É SEU: o conteúdo dentro de <main id="main"><div class="reading"> … </div></main>.
+     Ali dentro você decide a cara da página — paleta interna, ritmo, componentes,
+     como monta o card, que interação inventa. O resto é contrato.
+
+     Placeholders:
+       p7        p1, p2, … p22          (index.html é p1)
+       7       1, 2, … 22
+       22          22
+       A maior janela do osso  título curto desta página
+       O forame obturatório é o maior forame do esqueleto — e está quase todo fechado pela membrana obturatória, com uma única passagem no canto.      uma frase, para o <meta description>
+       <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7" aria-current="page"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li>     os 22 <li> do menu — repita o padrão de menu-panel__item
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<!doctype html>
+<html lang="pt-BR" data-page="p7">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#171219">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="O forame obturatório é o maior forame do esqueleto — e está quase todo fechado pela membrana obturatória, com uma única passagem no canto.">
+  <title>A maior janela do osso · Anatomia da pelve feminina (parte 1) — GO Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/img/icon.svg" type="image/svg+xml">
+  <style id="critical-nav-fouc">#home-btn{display:grid;place-items:center;width:40px;height:40px;color:#ecdde6;border-bottom:0}#home-btn svg{display:block;width:20px;height:20px}</style>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/aula-12.css">
+</head>
+<body data-page-id="p7" data-a12-page="p07">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="page-orb" aria-hidden="true"></div><div class="page-orb page-orb--rose" aria-hidden="true"></div>
+  <header class="site-header" id="site-header"><div class="site-header__row">
+    <a class="site-header__brand" href="../../index.html"><span class="site-header__logo">GO</span><span class="site-header__titles"><span class="site-header__title">Anatomia da pelve feminina (parte 1)</span><span class="site-header__subtitle">Ginecologia e Obstetrícia · Aula 12</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress" id="progress">7/22</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub do módulo" title="Hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header>
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas da aula"><p class="menu-panel__title">Aula 12 — Anatomia da pelve feminina (parte 1)</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7" aria-current="page"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li></ul><p class="menu-panel__title">Módulo</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="../../index.html"><span class="menu-panel__index">⌂</span><span>Voltar ao hub do módulo</span></a></li></ul></nav></div>
+  <main id="main"><div class="reading">
+
+  <!-- ▼▼▼ AQUI DENTRO É SEU. O conteúdo da página, com a peça SVG da tabela
+       copiada byte a byte, o quiz, e a didática que você decidir. ▼▼▼ -->
+
+  <article class="page is-active" data-page="p7" data-layout="a12-p07" data-item-range="076–094"><p class="page__eyebrow">Página 7 · Parte A · Paredes</p>
+<header class="a12-dado-impactante" data-opener="E2">
+<span class="a12-dado-impactante__eyebrow">Dado impactante</span>
+<h2 id="p07-title">A maior janela do esqueleto — e ela é quase toda fechada</h2>
+<p class="no-indent">É o maior forame do esqueleto humano. E quase nada passa por ele.</p>
+</header>
+<div class="chipset"><span class="a12-modmark">Obstetrícia</span><span class="chip--topic">Parte A · Paredes</span><span class="chip--topic">Itens 076–094</span><span class="chip--topic">Dado impactante</span></div>
+<div class="a12-topic" data-topic="1">
+<div class="a12-topic__kicker">Tópico 1</div>
+<h4 class="topic-h">Uma janela enorme no osso, e ela está fechada</h4>
+<div class="prose">
+<p style="text-align: justify;"> Continue olhando o mesmo osso do quadril, no mesmo ângulo — de fora, com o acetábulo no centro. <strong class="term">Abaixo e à frente</strong> do acetábulo há uma abertura oval grande, delimitada pelos <strong class="term">ramos do púbis</strong> acima e à frente e pelos <strong class="term">ramos do ísquio</strong> abaixo e atrás. É o <strong class="term">forame obturatório</strong>, e ele é o <strong class="term">maior forame do esqueleto humano</strong>. Um de cada lado.</p>
+<p style="text-align: justify;"> E agora a reviravolta, que é o que a página existe para instalar: <strong class="term">ele é quase todo fechado.</strong> Apesar do tamanho, está ocluído em praticamente toda a extensão por uma lâmina fibrosa densa — a <strong class="term">membrana obturatória</strong>. Não é uma passagem aberta; é uma <strong class="term">janela emparedada</strong>. Quem imagina um buraco vazio no osso constrói a topografia errada e não entende nada do que vem depois.</p>
+<p style="text-align: justify;"> Vale registrar uma coisa antes de seguir, com honestidade: daqui em diante a explicação se apoia diretamente na <strong class="term">literatura obstétrica e anatômica de referência</strong> — Rezende, Zugaib, Moore, Gray's e a Terminologia Anatômica. É o miolo do assunto, é o que mais cai, e nada disso pode ficar de fora. O forame obturatório é o primeiro desses pontos, e ele aparece adiante numa questão de banca como se fosse estrutura já conhecida. Ele é apresentado <strong class="term">aqui</strong>, na origem, e não no vencimento — porque gabarito com premissa faltando é exatamente o padrão que faz a matéria travar.</p>
+</div></div>
+<div class="a12-topic" data-topic="2">
+<div class="a12-topic__kicker">Tópico 2</div>
+<h4 class="topic-h">A única passagem: o canal obturatório</h4>
+<div class="prose">
+<p style="text-align: justify;"> A membrana obturatória deixa <strong class="term">uma única abertura</strong>, no alto e para fora: o <strong class="term">canal obturatório</strong>. Por ele passam, saindo da pelve em direção à <strong class="term">face medial da coxa</strong>, três estruturas — o <strong class="term">nervo obturatório</strong>, a <strong class="term">artéria obturatória</strong> e a <strong class="term">veia obturatória</strong>. Só isso. O restante do forame, que é a maior parte da área, é membrana.</p>
+<p style="text-align: justify;"> Fixe a geometria, porque é dela que sai a segurança de um trajeto cirúrgico: <strong class="term">o buraco é enorme, a passagem é minúscula, e a passagem está no canto de cima e de fora.</strong> Logo, <strong class="term">a parte de baixo e de fora do forame é membrana pura</strong> — território sem vaso e sem nervo.</p>
+</div></div>
+<div class="a12-topic" data-topic="3">
+<div class="a12-topic__kicker">Tópico 3</div>
+<h4 class="topic-h">Quem nasce ali: o obturador interno forra a parede, não o chão</h4>
+<div class="prose">
+<p style="text-align: justify;"> Dois músculos se originam nas margens desse forame e na própria membrana: o <strong class="term">obturador interno</strong>, na <strong class="term">face pélvica</strong> — isto é, do lado de dentro —, e o <strong class="term">obturador externo</strong>, na face de fora.</p>
+<p style="text-align: justify;"> O que interessa aqui é o <strong class="term">obturador interno</strong>, e por uma razão que vai cobrar juro adiante: ele <strong class="term">forra a parede lateral da pelve</strong>. Ele reveste a parede, de dentro; <strong class="term">ele não é chão</strong>. Guarde essa frase com o peso de uma regra, porque ela é a chave de uma questão de banca que aparece muito mais adiante: <strong class="term">o obturador interno é parede, não é assoalho</strong> — e por isso ele nunca compõe o diafragma pélvico, por mais que o nome soe pélvico e por mais que ele apareça em todas as figuras de pelve.</p>
+</div></div>
+<div class="a12-topic" data-topic="4">
+<div class="a12-topic__kicker">Tópico 4</div>
+<h4 class="topic-h">Por que uma tela cirúrgica passa por ali</h4>
+<div class="prose">
+<p style="text-align: justify;"> Agora a aplicação, que é onde o forame reaparece em prova. Existe uma técnica de correção de incontinência urinária de esforço em que uma tela é passada <strong class="term">através do forame obturatório</strong> <a class="a12-link-forward" href="#">↗A7</a>. E a pergunta que o leitor deve conseguir responder é: <strong class="term">por que passar uma agulha por ali é seguro?</strong></p>
+<p style="text-align: justify;"> A resposta está inteira na geometria desta página. O forame obturatório é uma janela de osso <strong class="term">lateral, longe da linha média</strong>. Ele está fechado por uma membrana, com <strong class="term">uma só passagem</strong> no canto de cima, por onde correm o nervo e os vasos obturatórios. A agulha atravessa a <strong class="term">membrana</strong>, na parte de <strong class="term">baixo e de fora</strong> — <strong class="term">longe do canal</strong> onde estão as estruturas nobres, e sobretudo <strong class="term">longe da bexiga</strong>, que fica <strong class="term">na frente e no meio</strong>. É a lateralidade do forame que torna esse trajeto seguro. O trajeto detalhado, a comparação entre técnicas e as regras de conferência intraoperatória são território da correção da incontinência <a class="a12-link-forward" href="#">↗A7</a>; o que se entrega aqui é <strong class="term">o buraco no osso e a razão geométrica</strong>.</p>
+<p style="text-align: justify;"> E há uma clínica de brinde, rara mas elegante, que prova que o canal existe de verdade: a <strong class="term">hérnia obturatória</strong> — mais frequente em mulheres idosas e magras, em que uma alça intestinal se insinua pelo canal obturatório e comprime o nervo obturatório, produzindo dor referida na <strong class="term">face medial da coxa e no joelho</strong>. Chama-se <strong class="term">sinal de Howship-Romberg</strong>, e é a demonstração clínica de que aquela abertura de canto é uma passagem real.</p>
+</div></div>
+<aside class="a12-nao-confunda" aria-label="Não confunda">
+<h3>Não confunda</h3>
+<ul>
+<li><strong class="term">Forame obturatório</strong> (a janela óssea, enorme) ≠ <strong class="term">canal obturatório</strong> (a única abertura da membrana, minúscula, no canto súpero-lateral, por onde passam nervo, artéria e veia obturatórios). O primeiro é osso; o segundo é a passagem.</li>
+<li><strong class="term">Obturador interno</strong> = forra a <strong class="term">parede lateral</strong> da pelve, por dentro. ⚠️ <strong class="term">Não é chão, não é assoalho, não compõe o diafragma pélvico.</strong> Essa distinção vale ponto em prova.</li>
+</ul>
+</aside>
+<figure class="a12-fig">
+<figcaption>A janela emparedada e o canto por onde se passa — forame obturatório com a membrana obturatória e o canal no canto súpero-lateral.</figcaption>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%" id="a12p7b-svg" class="a12-inline-svg a12p07-root" data-state="integra" data-svg-tokenized="true">
+  <title>Anatomia da Pelve: Forame Obturado, Canal Obturatório e Parede Lateral</title>
+  <desc role="img">Ilustração médica interativa em vista lateral do osso do quadril demonstrando a membrana obturatória, o canal obturatório súpero-lateral com o feixe neurovascular, a zona ínfero-lateral segura e a vinheta do músculo obturador interno na parede pélvica lateral.</desc>
+
+  <defs>
+    <style>
+      /* CSS Namespeado com suporte a fallback duplo e tema claro por atributo */
+      .a12p7b-root {
+        --a12p7b-bg: var(--bg-1, #121014);
+        --a12p7b-card: var(--bg-2, #1A161E);
+        --a12p7b-tinta: var(--a12-tinta, #F7F1F5);
+        --a12p7b-muted: var(--ink-50, #9E93A3);
+        --a12p7b-border: var(--ink-20, #332B38);
+        --a12p7b-osso: var(--a12-osso, #DCC7B4);
+        --a12p7b-osso-stroke: var(--a12-osso-stroke, #9E836A);
+        --a12p7b-membrana: var(--a12-membrana-obturatoria, #8DA9B7);
+        --a12p7b-canal: var(--a12-ouro, #F3BE5B);
+        --a12p7b-feixe: var(--a12-alerta, #E45F70);
+        --a12p7b-segura: var(--a12-verde, #55B889);
+        --a12p7b-parede: var(--a12-petroleo-claro, #4CB7B0);
+
+        background-color: var(--a12p7b-bg);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--a12p7b-tinta);
+        user-select: none;
+      }
+
+      [data-theme="light"] .a12p7b-root,
+      .a12p7b-root[data-theme="light"] {
+        --a12p7b-bg: var(--bg-1, #F9F6F8);
+        --a12p7b-card: var(--bg-2, #FFFFFF);
+        --a12p7b-tinta: var(--a12-tinta, #1C171E);
+        --a12p7b-muted: var(--ink-50, #665C6B);
+        --a12p7b-border: var(--ink-20, #E0D6DF);
+        --a12p7b-osso: var(--a12-osso, #C2A993);
+        --a12p7b-osso-stroke: var(--a12-osso-stroke, #7A614A);
+        --a12p7b-membrana: var(--a12-membrana-obturatoria, #56788A);
+        --a12p7b-canal: var(--a12-ouro, #D99014);
+        --a12p7b-feixe: var(--a12-alerta, #D32F2F);
+        --a12p7b-segura: var(--a12-verde, #2E7D32);
+        --a12p7b-parede: var(--a12-petroleo-claro, #00796B);
+      }
+
+      /* Tipografia e Estrutura */
+      .a12p7b-root .a12p7b-title { font-size: 16px; font-weight: 700; fill: var(--a12p7b-tinta); letter-spacing: 0.5px; }
+      .a12p7b-root .a12p7b-subtitle { font-size: 12px; font-weight: 500; fill: var(--a12p7b-muted); }
+      .a12p7b-root .a12p7b-label { font-size: 11px; font-weight: 600; fill: var(--a12p7b-tinta); }
+      .a12p7b-root .a12p7b-sublabel { font-size: 10px; font-weight: 400; fill: var(--a12p7b-muted); }
+      
+      /* Elementos Anatômicos */
+      .a12p7b-root .a12p7b-bone { fill: var(--a12p7b-osso); stroke: var(--a12p7b-osso-stroke); stroke-width: 2; stroke-linejoin: round; }
+      .a12p7b-root .a12p7b-acetabulum { fill: none; stroke: var(--a12p7b-osso-stroke); stroke-width: 2.5; stroke-dasharray: 4,3; }
+      .a12p7b-root .a12p7b-membrana-body { fill: var(--a12p7b-membrana); fill-opacity: 0.85; stroke: var(--a12p7b-membrana); stroke-width: 1.5; transition: fill-opacity 0.4s ease, opacity 0.4s ease; }
+      .a12p7b-root .a12p7b-hachura { stroke: var(--a12p7b-bg); stroke-width: 1; opacity: 0.4; }
+      .a12p7b-root .a12p7b-canal-zone { fill: var(--a12p7b-canal); fill-opacity: 0.25; stroke: var(--a12p7b-canal); stroke-width: 2; stroke-dasharray: 3,2; }
+      .a12p7b-root .a12p7b-feixe-path { stroke: var(--a12p7b-feixe); stroke-width: 3; fill: none; stroke-linecap: round; }
+      .a12p7b-root .a12p7b-segura-zone { fill: var(--a12p7b-segura); fill-opacity: 0.15; stroke: var(--a12p7b-segura); stroke-width: 2; stroke-dasharray: 4,3; transition: fill-opacity 0.4s ease, stroke-width 0.4s ease; }
+
+      /* Líderes e Conectores */
+      .a12p7b-root .a12p7b-leader { stroke: var(--a12p7b-muted); stroke-width: 1.2; fill: none; opacity: 0.7; }
+      .a12p7b-root .a12p7b-leader-dot { fill: var(--a12p7b-tinta); }
+
+      /* Botões de Controle de Estado */
+      .a12p7b-root .a12p7b-btn { cursor: pointer; transition: transform 0.15s ease, opacity 0.2s ease; }
+      .a12p7b-root .a12p7b-btn:hover { opacity: 0.9; }
+      .a12p7b-root .a12p7b-btn:focus-visible { outline: 2px solid var(--a12p7b-canal); outline-offset: 2px; }
+      .a12p7b-root .a12p7b-btn-bg { fill: var(--a12p7b-card); stroke: var(--a12p7b-border); stroke-width: 1.5; rx: 6px; }
+      .a12p7b-root .a12p7b-btn-text { font-size: 11px; font-weight: 600; fill: var(--a12p7b-muted); text-anchor: middle; }
+      
+      .a12p7b-root[data-state="integra"] #a12p7b-btn-integra .a12p7b-btn-bg,
+      .a12p7b-root[data-state="canal"] #a12p7b-btn-canal .a12p7b-btn-bg,
+      .a12p7b-root[data-state="segura"] #a12p7b-btn-segura .a12p7b-btn-bg,
+      .a12p7b-root[data-state="parede"] #a12p7b-btn-parede .a12p7b-btn-bg {
+        stroke: var(--a12p7b-canal);
+        stroke-width: 2;
+        fill: var(--a12p7b-card);
+      }
+
+      .a12p7b-root[data-state="integra"] #a12p7b-btn-integra .a12p7b-btn-text,
+      .a12p7b-root[data-state="canal"] #a12p7b-btn-canal .a12p7b-btn-text,
+      .a12p7b-root[data-state="segura"] #a12p7b-btn-segura .a12p7b-btn-text,
+      .a12p7b-root[data-state="parede"] #a12p7b-btn-parede .a12p7b-btn-text {
+        fill: var(--a12p7b-tinta);
+        font-weight: 700;
+      }
+
+      /* Modificadores Dinâmicos de Estado */
+      .a12p7b-root[data-state="canal"] .a12p7b-membrana-body { fill-opacity: 0.35; }
+      .a12p7b-root[data-state="canal"] .a12p7b-canal-highlight { fill-opacity: 0.5; stroke-width: 3; stroke: var(--a12p7b-canal); }
+      .a12p7b-root[data-state="canal"] .a12p7b-feixe-path { stroke-width: 4.5; filter: drop-shadow(0 0 3px var(--a12p7b-feixe)); }
+
+      .a12p7b-root[data-state="segura"] .a12p7b-segura-zone { fill-opacity: 0.45; stroke-width: 3; stroke: var(--a12p7b-segura); }
+      .a12p7b-root[data-state="segura"] .a12p7b-segura-pulse { animation: a12p7b-pulse 2s infinite ease-in-out; }
+
+      .a12p7b-root[data-state="parede"] #a12p7b-vinheta-group { stroke-width: 3.5; stroke: var(--a12p7b-parede); }
+      .a12p7b-root[data-state="parede"] .a12p7b-obturador-int { fill-opacity: 0.9; stroke: var(--a12p7b-parede); }
+
+      /* Transição do Painel Dinâmico */
+      .a12p7b-root .a12p7b-panel-card { fill: var(--a12p7b-card); stroke: var(--a12p7b-border); stroke-width: 1.5; rx: 8px; }
+      .a12p7b-root .a12p7b-panel-text { opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
+      
+      .a12p7b-root[data-state="integra"] #a12p7b-text-integra,
+      .a12p7b-root[data-state="canal"] #a12p7b-text-canal,
+      .a12p7b-root[data-state="segura"] #a12p7b-text-segura,
+      .a12p7b-root[data-state="parede"] #a12p7b-text-parede {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    </style>
+
+    <!-- Padronização de Hachura Fibrosa da Membrana -->
+    <pattern id="a12p7b-pattern-fibra" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="var(--a12p7b-bg)" stroke-width="1.2" opacity="0.35" />
+    </pattern>
+  </defs>
+
+  <!-- CABEÇALHO (Layout Bauer: Título + Subtítulo) -->
+  <g id="a12p7b-header" transform="translate(24, 28)">
+    <text class="a12p7b-title" x="0" y="0">ANATOMIA DA PELVE: FORAME OBTURADO E CANAL OBTURATÓRIO</text>
+    <text class="a12p7b-subtitle" x="0" y="18">Vista lateral (ântero-lateral) do osso do quadril direito · Membrana, canal e vinheta de parede</text>
+  </g>
+
+  <!-- PALCO PRINCIPAL DE DESENHO (Visão Lateral do Quadril) -->
+  <g id="a12p7b-stage" transform="translate(20, 60)">
+
+    <!-- ESTRUTURA ÓSSEA (Púbis e Ísquio delimitando o Forame Obturado) -->
+    <g id="a12p7b-ossos">
+      <!-- Fossa do Acetábulo (Esquema superior) -->
+      <path class="a12p7b-bone" d="M 140,50 C 180,30 250,30 280,60 C 310,90 310,140 280,170 C 260,190 220,200 190,190 C 150,180 130,130 140,50 Z" />
+      <path class="a12p7b-acetabulum" d="M 160,70 C 190,55 240,55 265,80 C 285,105 285,135 265,155" />
+      <text class="a12p7b-sublabel" x="210" y="115" text-anchor="middle">Acetábulo</text>
+
+      <!-- Ramo Superior do Púbis (Anterior / Súpero-Medial) -->
+      <path class="a12p7b-bone" d="M 270,140 L 360,180 C 370,185 375,195 370,210 L 330,230 L 260,175 Z" />
+      
+      <!-- Corpo e Sínfise Pubiana (Anterior) -->
+      <path class="a12p7b-bone" d="M 370,210 L 385,250 C 388,260 380,270 370,275 L 340,340 C 330,355 315,360 305,350 L 290,320 L 330,230 Z" />
+      
+      <!-- Ramo Inferior do Púbis e Ramo do Ísquio (Ínfero-Medial) -->
+      <path class="a12p7b-bone" d="M 290,320 L 230,375 C 215,388 190,388 175,375 L 140,330 L 195,300 L 245,310 Z" />
+
+      <!-- Corpo e Tuber Isquiático (Posterior / Ínfero-Lateral) -->
+      <path class="a12p7b-bone" d="M 140,330 C 120,310 100,280 110,240 L 140,160 L 190,190 L 165,250 L 180,310 Z" />
+      
+      <!-- Rótulos Ósseos Fixos -->
+      <text class="a12p7b-label" x="375" y="175" text-anchor="start">Púbis (Ramo superior)</text>
+
+      <text class="a12p7b-label" x="100" y="365" text-anchor="middle">Ísquio (Tuber isquiático)</text>
+
+    </g>
+
+    <!-- FORAME OBTURADO E MEMBRANA OBTURATÓRIA -->
+    <g id="a12p7b-forame-group">
+      
+      <!-- Contorno Interno do Forame Obturado (Borda Óssea Limítrofe) -->
+      <path id="a12p7b-forame-border" d="M 255,180 C 310,215 330,240 325,285 C 320,325 275,355 220,355 C 175,355 150,320 155,270 C 160,220 205,175 255,180 Z" fill="none" stroke="var(--a12p7b-osso-stroke)" stroke-width="2.5" />
+
+      <!-- Corpo Principal da Membrana Obturatória (Preenche ~90-95% do Forame) -->
+      <!-- O canto súpero-lateral é escavado para formar a abertura do canal obturatório -->
+      <path id="a12p7b-membrana-el" class="a12p7b-membrana-body" d="M 235,198 C 215,210 162,230 157,270 C 152,318 175,352 220,352 C 272,352 316,322 322,285 C 326,245 305,222 265,208 C 255,205 245,202 235,198 Z" />
+      
+      <!-- Hachura Overlay Fibrosa -->
+      <path d="M 235,198 C 215,210 162,230 157,270 C 152,318 175,352 220,352 C 272,352 316,322 322,285 C 326,245 305,222 265,208 C 255,205 245,202 235,198 Z" fill="url(#a12p7b-pattern-fibra)" pointer-events="none" />
+
+      <!-- CANAL OBTURATÓRIO (No canto Súpero-Lateral) -->
+      <!-- Túnel/Passagem delimitado superiormente pela goteira pubiana e inferiormente pela borda superior da membrana -->
+      <g id="a12p7b-canal-group">
+        <path id="a12p7b-canal-shape" class="a12p7b-canal-zone a12p7b-canal-highlight" d="M 235,198 C 245,202 255,205 265,208 C 275,198 268,188 255,180 C 242,185 235,190 235,198 Z" />
+        
+        <!-- Feixe Neurovascular Obturatório (NAV) emergindo do canal -->
+        <g id="a12p7b-feixe-nav">
+          <!-- Nervo Obturatório (Amarelo) -->
+          <path class="a12p7b-feixe-path" d="M 238,184 Q 252,198 272,225" stroke="var(--a12p7b-canal)" />
+          <!-- Artéria Obturatória (Vermelha) -->
+          <path class="a12p7b-feixe-path" d="M 243,186 Q 256,200 278,228" stroke="var(--a12p7b-feixe)" />
+          <!-- Veia Obturatória (Azul/Púrpura) -->
+          <path class="a12p7b-feixe-path" d="M 248,188 Q 260,202 284,231" stroke="var(--a12p7b-parede)" />
+        </g>
+      </g>
+
+      <!-- ZONA ÍNFERO-LATERAL SEGURA (Destaque em Verde no Estado 3) -->
+      <path id="a12p7b-segura-shape" class="a12p7b-segura-zone a12p7b-segura-pulse" d="M 162,280 C 160,320 185,348 220,348 C 245,348 265,338 275,320 C 230,320 180,300 162,280 Z" />
+
+    </g> <!-- Fim do Forame Group -->
+
+    <!-- LÍDERES E RÓTULOS ATIVOS (Máximo 4 por visão para clareza) -->
+    <g id="a12p7b-rotulos">
+      <!-- Rótulo 1: Canal Obturatório (Súpero-Lateral) -->
+      <polyline class="a12p7b-leader" points="250,190 220,150 160,150" />
+      <circle class="a12p7b-leader-dot" cx="250" cy="190" r="3" />
+      <text class="a12p7b-label" x="152" y="146" text-anchor="end">Canal obturatório</text>
+      <text class="a12p7b-sublabel" x="152" y="158" text-anchor="end">Canto súpero-lateral (Feixe NAV)</text>
+
+      <!-- Rótulo 2: Membrana Obturatória -->
+      <polyline class="a12p7b-leader" points="230,260 170,230 110,230" />
+      <circle class="a12p7b-leader-dot" cx="230" cy="260" r="3" />
+      <text class="a12p7b-label" x="102" y="226" text-anchor="end">Membrana obturatória</text>
+      <text class="a12p7b-sublabel" x="102" y="238" text-anchor="end">Lâmina fibrosa oclusiva</text>
+
+      <!-- Rótulo 3: Zona Segura Ínfero-Lateral -->
+      <polyline class="a12p7b-leader" points="210,335 250,390 320,390" />
+      <circle class="a12p7b-leader-dot" cx="210" cy="335" r="3" />
+      <text class="a12p7b-label" x="328" y="386" text-anchor="start">Território ínfero-lateral seguro</text>
+      <text class="a12p7b-sublabel" x="328" y="398" text-anchor="start">Livre de estruturas nobres (Avascular)</text>
+    </g>
+
+    <!-- VINHETA: PAREDE PÉLVICA LATERAL (M. Obturador Interno) -->
+    <!-- Localizada no canto direito do palco principal (X: 420, Y: 180) -->
+    <g id="a12p7b-vinheta-group" transform="translate(415, 230)">
+      <!-- Moldura circular da vinheta -->
+      <circle cx="65" cy="55" r="60" fill="var(--a12p7b-card)" stroke="var(--a12p7b-border)" stroke-width="2" />
+      
+      <!-- Seção do Osso e Membrana na Vinheta (Corte esquemático parietal) -->
+      <path d="M 25,15 C 45,10 85,10 105,15 L 100,30 C 80,25 45,25 30,30 Z" fill="var(--a12p7b-osso)" stroke="var(--a12p7b-osso-stroke)" stroke-width="1.5" />
+      <path d="M 30,30 L 100,30 L 100,38 L 30,38 Z" fill="var(--a12p7b-membrana)" opacity="0.7" />
+      
+      <!-- Músculo Obturador Interno (Forra a face pélvica/interna da parede) -->
+      <path class="a12p7b-obturador-int" d="M 20,38 C 50,38 80,38 110,38 C 115,65 110,85 95,95 C 65,100 35,90 15,65 Z" fill="var(--a12p7b-parede)" fill-opacity="0.6" stroke="var(--a12p7b-parede)" stroke-width="1.5" />
+      
+      <!-- Estriações musculares -->
+      <path d="M 30,45 C 50,55 80,55 100,45 M 25,60 C 50,72 75,72 95,60 M 30,75 C 55,85 75,85 90,75" stroke="var(--a12p7b-bg)" stroke-width="1" opacity="0.5" fill="none" />
+
+      <!-- Rótulo Verbatim da Vinheta: "Parede lateral (não é chão)" -->
+      <rect x="-10" y="122" width="150" height="22" rx="4" fill="var(--a12p7b-card)" stroke="var(--a12p7b-parede)" stroke-width="1.2" />
+      <text class="a12p7b-label" x="65" y="137" text-anchor="middle" fill="var(--a12p7b-parede)">Parede lateral (não é chão)</text>
+      <text class="a12p7b-sublabel" x="65" y="156" text-anchor="middle">M. obturador interno forra a parede</text>
+    </g>
+
+  </g> <!-- Fim do Palco Principal -->
+
+  <!-- PAINEL LATERAL DE LEITURA & INTERPRETAÇÃO (Contrato Bauer: Análise Ancorada) -->
+  <g id="a12p7b-reading-panel" transform="translate(600, 60)">
+    <rect class="a12p7b-panel-card" x="0" y="0" width="336" height="360" />
+    
+    <!-- Título do Painel -->
+    <text class="a12p7b-title" x="18" y="32" font-size="14px">PAINEL DE LEITURA ANATÔMICA</text>
+    <line x1="18" y1="44" x2="318" y2="44" stroke="var(--a12p7b-border)" stroke-width="1" />
+
+    <!-- CONTEÚDO DINÂMICO DOS ESTADOS -->
+    
+    <!-- Estado 1: Visão Geral (Membrana Íntegra) -->
+    <g id="a12p7b-text-integra" class="a12p7b-panel-text">
+      <text class="a12p7b-label" x="18" y="70" fill="var(--a12p7b-membrana)">MODO 1: MEMBRANA OBTURATÓRIA ÍNTEGRA</text>
+      
+      <text class="a12p7b-sublabel" x="18" y="96" font-size="12px" fill="var(--a12p7b-tinta)">• Oclusão Quase Total (90-95%):</text>
+      <text class="a12p7b-sublabel" x="28" y="114" font-size="11px">Diferente do mito do "buraco livre", o forame</text>
+      <text class="a12p7b-sublabel" x="28" y="128" font-size="11px">obturado é quase inteiramente fechado por uma</text>
+      <text class="a12p7b-sublabel" x="28" y="142" font-size="11px">resistente lâmina fibrosa aponeurótica.</text>
+
+      <text class="a12p7b-sublabel" x="18" y="172" font-size="12px" fill="var(--a12p7b-tinta)">• Delimitação Óssea:</text>
+      <text class="a12p7b-sublabel" x="28" y="190" font-size="11px">Circundado pelos ramos do púbis e do ísquio,</text>
+      <text class="a12p7b-sublabel" x="28" y="204" font-size="11px">fornecendo ancoragem rígida para os músculos</text>
+      <text class="a12p7b-sublabel" x="28" y="218" font-size="11px">obturadores interno e externo.</text>
+
+      <rect x="18" y="244" width="300" height="92" rx="6" fill="var(--a12p7b-bg)" stroke="var(--a12p7b-border)" />
+      <text class="a12p7b-label" x="28" y="264" font-size="11px" fill="var(--a12p7b-canal)">LEGENDA DE INTERPRETAÇÃO:</text>
+      <text class="a12p7b-sublabel" x="28" y="282" font-size="10.5px">A membrana obturatória transforma o grande</text>
+      <text class="a12p7b-sublabel" x="28" y="296" font-size="10.5px">forame ósseo em um compartimento fechado,</text>
+      <text class="a12p7b-sublabel" x="28" y="310" font-size="10.5px">restringindo a passagem de vasos e nervos.</text>
+    </g>
+
+    <!-- Estado 2: Canal e Feixe NAV -->
+    <g id="a12p7b-text-canal" class="a12p7b-panel-text">
+      <text class="a12p7b-label" x="18" y="70" fill="var(--a12p7b-canal)">MODO 2: CANAL OBTURATÓRIO &amp; FEIXE NAV</text>
+      
+      <text class="a12p7b-sublabel" x="18" y="96" font-size="12px" fill="var(--a12p7b-feixe)">• Concentração Súpero-Lateral (Alerta):</text>
+      <text class="a12p7b-sublabel" x="28" y="114" font-size="11px">A única passagem nobre fica no canto superior</text>
+      <text class="a12p7b-sublabel" x="28" y="128" font-size="11px">e lateral (sulco obturatório do púbis).</text>
+
+      <text class="a12p7b-sublabel" x="18" y="158" font-size="12px" fill="var(--a12p7b-tinta)">• Conteúdo do Feixe (NAV):</text>
+      <text class="a12p7b-sublabel" x="28" y="176" font-size="11px">- Nervo obturatório (motor p/ adutores)</text>
+      <text class="a12p7b-sublabel" x="28" y="190" font-size="11px">- Artéria obturatória (ramo ilíaco)</text>
+      <text class="a12p7b-sublabel" x="28" y="204" font-size="11px">- Veia obturatória</text>
+
+      <rect x="18" y="244" width="300" height="92" rx="6" fill="var(--a12p7b-bg)" stroke="var(--a12p7b-feixe)" stroke-dasharray="3,2" />
+      <text class="a12p7b-label" x="28" y="264" font-size="11px" fill="var(--a12p7b-feixe)">RISCO ANATÔMICO CRÍTICO:</text>
+      <text class="a12p7b-sublabel" x="28" y="282" font-size="10.5px">Qualquer agulhamento ou incisão na borda</text>
+      <text class="a12p7b-sublabel" x="28" y="296" font-size="10.5px">súpero-lateral traz alto risco de hemorragia e</text>
+      <text class="a12p7b-sublabel" x="28" y="310" font-size="10.5px">parestesia/paralisia dos adutores da coxa.</text>
+    </g>
+
+    <!-- Estado 3: Zona Segura Ínfero-Lateral -->
+    <g id="a12p7b-text-segura" class="a12p7b-panel-text">
+      <text class="a12p7b-label" x="18" y="70" fill="var(--a12p7b-segura)">MODO 3: ZONA ÍNFERO-LATERAL SEGURA</text>
+      
+      <text class="a12p7b-sublabel" x="18" y="96" font-size="12px" fill="var(--a12p7b-segura)">• Território Avascular &amp; Anervoso:</text>
+      <text class="a12p7b-sublabel" x="28" y="114" font-size="11px">A porção inferior e lateral da membrana é livre</text>
+      <text class="a12p7b-sublabel" x="28" y="128" font-size="11px">de grandes troncos vasculares ou nervosos.</text>
+
+      <text class="a12p7b-sublabel" x="18" y="158" font-size="12px" fill="var(--a12p7b-tinta)">• Aplicação Cirúrgica / Prática:</text>
+      <text class="a12p7b-sublabel" x="28" y="176" font-size="11px">É o alvo anatômico ideal para transfixação em</text>
+      <text class="a12p7b-sublabel" x="28" y="190" font-size="11px">procedimentos como Slings Transobturatórios (TOT)</text>
+      <text class="a12p7b-sublabel" x="28" y="204" font-size="11px">e abordagens da região inguinofemoral.</text>
+
+      <rect x="18" y="244" width="300" height="92" rx="6" fill="var(--a12p7b-bg)" stroke="var(--a12p7b-segura)" />
+      <text class="a12p7b-label" x="28" y="264" font-size="11px" fill="var(--a12p7b-segura)">DIRETRIZ DE SEGURANÇA:</text>
+      <text class="a12p7b-sublabel" x="28" y="282" font-size="10.5px">Mantenha a passagem de agulhas e guias na</text>
+      <text class="a12p7b-sublabel" x="28" y="296" font-size="10.5px">região ínfero-lateral, tangenciando o ramo</text>
+      <text class="a12p7b-sublabel" x="28" y="310" font-size="10.5px">isquiopúbico para evitar o canal obturatório.</text>
+    </g>
+
+    <!-- Estado 4: Vinheta Parede Lateral -->
+    <g id="a12p7b-text-parede" class="a12p7b-panel-text">
+      <text class="a12p7b-label" x="18" y="70" fill="var(--a12p7b-parede)">MODO 4: VINHETA - PAREDE LATERAL</text>
+      
+      <text class="a12p7b-sublabel" x="18" y="96" font-size="12px" fill="var(--a12p7b-parede)">• Parede vs Chão (Distrator Frequente):</text>
+      <text class="a12p7b-sublabel" x="28" y="114" font-size="11px">O Músculo Obturador Interno forra a face</text>
+      <text class="a12p7b-sublabel" x="28" y="128" font-size="11px">interna da membrana e da PAREDE LATERAL</text>
+      <text class="a12p7b-sublabel" x="28" y="142" font-size="11px">da pelve menor (não constitui o assoalho).</text>
+
+      <text class="a12p7b-sublabel" x="18" y="172" font-size="12px" fill="var(--a12p7b-tinta)">• Relação com o Diafragma Pélvico:</text>
+      <text class="a12p7b-sublabel" x="28" y="190" font-size="11px">O chão da pelve (Levantador do Ânus) fixa-se</text>
+      <text class="a12p7b-sublabel" x="28" y="204" font-size="11px">no arco tendíneo da fáscia do obturador interno.</text>
+
+      <rect x="18" y="244" width="300" height="92" rx="6" fill="var(--a12p7b-bg)" stroke="var(--a12p7b-parede)" />
+      <text class="a12p7b-label" x="28" y="264" font-size="11px" fill="var(--a12p7b-parede)">CORREÇÃO CONCEITUAL:</text>
+      <text class="a12p7b-sublabel" x="28" y="282" font-size="10.5px">Obturador interno = PAREDE pélvica lateral.</text>
+      <text class="a12p7b-sublabel" x="28" y="296" font-size="10.5px">Levantador do ânus / Coccígeo = CHÃO pélvico.</text>
+      <text class="a12p7b-sublabel" x="28" y="310" font-size="10.5px">Não confunda a parede com o assoalho!</text>
+    </g>
+
+  </g> <!-- Fim do Reading Panel -->
+
+  <!-- BARRA DE CONTROLE INTERATIVO (Seleção de Estado via Clique/Teclado) -->
+  <g id="a12p7b-controls" transform="translate(24, 450)">
+    
+    <!-- Texto indicativo de affordance neutro -->
+    <text class="a12p7b-sublabel" x="0" y="-10" font-size="11px">Seleção de estado anatômico (toque para alternar o modo de análise):</text>
+
+    <!-- Botão 1: Visão Geral (Membrana Íntegra) -->
+    <g id="a12p7b-btn-integra" class="a12p7b-btn" role="button" tabindex="0" aria-label="Modo 1: Visão Geral da Membrana Íntegra" aria-pressed="true" onclick="a12p7bSetState('integra')" onkeydown="if(event.key==='Enter'||event.key===' '){a12p7bSetState('integra');event.preventDefault();}">
+      <rect class="a12p7b-btn-bg" x="0" y="0" width="215" height="38" />
+      <text class="a12p7b-btn-text" x="107" y="23">1. Membrana Íntegra</text>
+    </g>
+
+    <!-- Botão 2: Canal & Feixe NAV -->
+    <g id="a12p7b-btn-canal" class="a12p7b-btn" transform="translate(225, 0)" role="button" tabindex="0" aria-label="Modo 2: Canal Obturatório e Feixe NAV" aria-pressed="false" onclick="a12p7bSetState('canal')" onkeydown="if(event.key==='Enter'||event.key===' '){a12p7bSetState('canal');event.preventDefault();}">
+      <rect class="a12p7b-btn-bg" x="0" y="0" width="215" height="38" />
+      <text class="a12p7b-btn-text" x="107" y="23">2. Canal &amp; Feixe NAV</text>
+    </g>
+
+    <!-- Botão 3: Zona Segura Ínfero-Lateral -->
+    <g id="a12p7b-btn-segura" class="a12p7b-btn" transform="translate(450, 0)" role="button" tabindex="0" aria-label="Modo 3: Zona Ínfero-Lateral Segura" aria-pressed="false" onclick="a12p7bSetState('segura')" onkeydown="if(event.key==='Enter'||event.key===' '){a12p7bSetState('segura');event.preventDefault();}">
+      <rect class="a12p7b-btn-bg" x="0" y="0" width="215" height="38" />
+      <text class="a12p7b-btn-text" x="107" y="23">3. Zona Ínfero-Lateral Segura</text>
+    </g>
+
+    <!-- Botão 4: Vinheta Parede Lateral -->
+    <g id="a12p7b-btn-parede" class="a12p7b-btn" transform="translate(675, 0)" role="button" tabindex="0" aria-label="Modo 4: Vinheta Parede Lateral vs Chão" aria-pressed="false" onclick="a12p7bSetState('parede')" onkeydown="if(event.key==='Enter'||event.key===' '){a12p7bSetState('parede');event.preventDefault();}">
+      <rect class="a12p7b-btn-bg" x="0" y="0" width="235" height="38" />
+      <text class="a12p7b-btn-text" x="117" y="23">4. Vinheta: Parede vs Chão</text>
+    </g>
+
+  </g> <!-- Fim da Barra de Controle -->
+
+  <!-- ENGINE JS INLINE (Determinístico / Self-Contained) -->
+  <script>
+    /*<![CDATA[*/
+    function a12p7bSetState(newState) {
+      var svg = document.getElementById('a12p7b-svg');
+      if (!svg) return;
+      
+      // Atualiza atributo de estado na raiz
+      svg.setAttribute('data-state', newState);
+      
+      // Atualiza aria-pressed nos botões
+      var states = ['integra', 'canal', 'segura', 'parede'];
+      states.forEach(function(st) {
+        var btn = document.getElementById('a12p7b-btn-' + st);
+        if (btn) {
+          btn.setAttribute('aria-pressed', st === newState ? 'true' : 'false');
+        }
+      });
+    }
+    /*]]>*/
+  </script>
+
+</svg>
+
+</figure>
+<section class="quiz" data-quiz-id="a12-p07" aria-labelledby="quiz-p07-title">
+<h2 id="quiz-p07-title">Quiz — fixação</h2>
+<ol class="quiz__questions" style="list-style:none;padding:0;margin:0">
+<li class="quiz__q" data-q="1"><p class="quiz__stem">O forame obturatório é o maior forame do esqueleto humano. O que atravessa a sua área?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>o feixe vasculonervoso obturatório, ocupando toda a extensão do forame.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>praticamente nada: ele é ocluído pela membrana obturatória, exceto por uma abertura no canto súpero-lateral.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>o ureter, em seu trajeto da pelve para a coxa.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>o nervo pudendo, antes de contornar a espinha isquiática.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why">O contraste entre <strong class="term">tamanho da janela</strong> e <strong class="term">tamanho da passagem</strong> é o conteúdo da página: o forame é enorme e está quase todo emparedado pela membrana obturatória; a única passagem é o <strong class="term">canal obturatório</strong>, no canto de cima e de fora, por onde saem nervo, artéria e veia obturatórios rumo à face medial da coxa.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">acerta quem passa e erra a proporção — e é a proporção que decide a segurança do trajeto cirúrgico; se o feixe ocupasse tudo, não haveria por onde atravessar.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">é anatomicamente falso: o ureter desce <strong class="term">dentro da pelve</strong> em direção à bexiga, não sai para a coxa; ele não tem nenhuma relação com o forame.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">também é falso e troca a referência: o pudendo contorna a <strong class="term">espinha isquiática</strong> e o ligamento sacroespinhal, num trajeto posterior — nada a ver com o forame anterior.</span></li><li class="is-wrong"><b>Por que cair na (A):</b> <span class="why">o nome do feixe é obturatório, o forame é obturatório, e a associação nominal sugere ocupação total. A imagem correta é a inversa: <strong class="term">janela grande, fresta pequena</strong> — e é a fresta que carrega o feixe.</span></li></ul></div></li>
+<li class="quiz__q" data-q="2"><p class="quiz__stem">O músculo obturador interno, que se origina na face pélvica da membrana obturatória, tem qual relação topográfica com a pelve?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">A</span><span>forra a parede lateral da pelve, por dentro.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">B</span><span>compõe o assoalho pélvico junto ao levantador do ânus.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>forma o teto da pelve, separando-a da cavidade abdominal.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>integra o espaço superficial do períneo.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito A.</b> <span class="why">O obturador interno <strong class="term">reveste a parede lateral</strong> da pelve pela face interna. Essa é a informação que separa parede de chão, e é uma das mais rentáveis do assunto: <strong class="term">o que forra a lateral não sustenta nada por baixo</strong>.</span></li><li class="is-wrong"><b>(B)</b> <span class="why">é o erro que a página existe para prevenir, e ele é cobrado literalmente em prova — o assoalho é formado por outros músculos, e o obturador interno <strong class="term">não participa dele</strong>, apesar de aparecer em quase toda figura de pelve.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">inventa um teto muscular que não existe: a pelve não é separada do abdome por músculo; a passagem entre os dois compartimentos é contínua, delimitada por uma borda óssea.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">o coloca duas camadas abaixo do seu lugar real — o espaço superficial do períneo é território de outros músculos, todos externos ao anel ósseo.</span></li><li class="is-wrong"><b>Por que cair na (B):</b> <span class="why">o músculo é grande, é pélvico, aparece em toda ilustração de pelve e tem inserções vizinhas às do levantador do ânus — inclusive a fáscia dele dá origem a um espessamento de onde parte um dos feixes do levantador. Vizinhança, porém, não é pertencimento: <strong class="term">parede e chão se tocam e não se confundem.</strong></span></li></ul></div></li>
+</ol></section>
+<section class="a12-resumo" aria-label="Resumo operacional">
+<h3>Resumo operacional</h3>
+<p style="text-align: justify;"><strong class="term">Forame obturatório</strong> = maior forame do esqueleto, na porção ântero-inferior do osso do quadril, entre os ramos do púbis e do ísquio. <strong class="term">Está quase todo fechado</strong> pela <strong class="term">membrana obturatória</strong>; a única passagem é o <strong class="term">canal obturatório</strong>, no canto <strong class="term">súpero-lateral</strong>, por onde saem <strong class="term">nervo, artéria e veia obturatórios</strong> para a coxa medial. Dele se originam o <strong class="term">obturador interno</strong> (forra a <strong class="term">parede lateral</strong> — ⚠️ não é chão) e o obturador externo. Uma tela transobturatória <a class="a12-link-forward" href="#">↗A7</a> atravessa a <strong class="term">membrana</strong>, na parte <strong class="term">ínfero-lateral</strong> — longe do canal e longe da bexiga, que está na frente e no meio.</p>
+</section>
+</article>
+  
+
+  <!-- ▲▲▲ FIM DO SEU CONTEÚDO ▲▲▲ -->
+
+  </div></main>
+  <footer class="site-footer"><div class="container"><span>Anatomia da pelve feminina (parte 1) · Aula 12 — conteúdo educacional para residência.</span><span>7 / 22</span></div></footer>
+  <script src="../../assets/js/pwa-bootstrap.js" defer></script>
+  <script src="../../assets/js/app-a12.js" defer></script>
+  <script src="../../assets/js/quiz-a12.js" defer></script>
+  <script src="../../assets/js/aula-12.js" defer></script>
+</body>
+</html>
+
+<!-- Padrão de UM item do menu, para montar <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7" aria-current="page"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li> (22 deles):
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>Título curto</span></a></li>
+     O primeiro aponta para index.html com data-page-id="p1".
+-->

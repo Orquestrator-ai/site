@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="GO Premium · Doenças Clínicas na Gravidez: hipertensão, pré-eclâmpsia, diabetes, hiperêmese e gemelaridade ensinadas por raciocínio clínico, mapas visuais, simuladores de conduta e revisão ativa para residência médica.">
+<meta name="theme-color" content="#1f2a55">
+<title>GO Premium · Doenças Clínicas na Gravidez</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="./styles.css">
+<!-- PWA BEGIN -->
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="application-name" content="GO Premium">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="GO Premium">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="./assets/icons/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon-180.png">
+<link rel="apple-touch-icon" sizes="192x192" href="./assets/icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="./assets/icons/icon-512.png">
+<!-- PWA END -->
+</head>
+<body data-platform="go-doencas-clinicas">
+<div class="scrim" id="scrim"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="content-shell">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="topbar-copy" id="topbarCopy"></div>
+      <div class="trilha-pill desktop-only" aria-label="Trilha materno-fetal" title="Hipertensão & PE → Hiperêmese → Diabetes → Gemelaridade → Revisão final">
+        <div class="trilha-pill__head">
+          <span class="trilha-pill__label">Trilha materno-fetal</span>
+          <span class="trilha-pill__count" id="progCount">1 / 34</span>
+        </div>
+        <div class="trilha-pill__steps">Hipertensão & PE → Hiperêmese → Diabetes → Gemelaridade → Revisão</div>
+        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progFill" style="width:3%"></div></div>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn desktop-only" id="topCollapseBtn" aria-label="Expandir/recolher menu" title="Recolher menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 0111.2 3a7 7 0 109.8 9.8z"/></svg>
+        </button>
+      </div>
+    </header>
+    <main class="page-host" id="pageHost"></main>
+  </div>
+</div>
+
+<!--
+  =====================================================================
+  GO PREMIUM · DOENÇAS CLÍNICAS NA GRAVIDEZ — TEMPLATES DE PÁGINAS
+  Cada <section data-id="X"> é injetada pelo router em scripts.js.
+  As 34 seções são distribuídas em sections-1.js (Bloco 1: Hipertensão
+  e Pré-eclâmpsia · 12 páginas), sections-2.js (Blocos 2 e 3: Hiperêmese
+  · 3 páginas + Diabetes · 10 páginas) e sections-3.js (Bloco 4:
+  Gemelaridade · 6 páginas + Revisão final · 1 página).
+  Esta capa (#hero) e o caso integrador (#caso-integrador) ficam no
+  HTML para garantir que carreguem mesmo se algum bundle de section
+  falhar — é o estado seguro da plataforma.
+  =====================================================================
+-->
+<div id="sectionRoot" hidden>
+
+<!-- ============================ 00 · HERO ============================ -->
+<section class="section" data-id="hero">
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker">Ginecologia & Obstetrícia · doenças clínicas na gravidez</span>
+        <h1>Da pressão<br>ao pós-parto.</h1>
+        <p class="lead">Hipertensão, pré-eclâmpsia, diabetes, hiperêmese e gemelaridade ensinadas por raciocínio clínico, mapas decisórios, simuladores de conduta e revisão ativa de prova.</p>
+        <div class="hero-tags">
+          <span class="tag t-info">Hipertensão & PE → Hiperêmese → Diabetes → Gemelaridade → Revisão</span>
+          <span class="tag t-ok">34 páginas didáticas</span>
+          <span class="tag">Light + Dark</span>
+        </div>
+        <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="#caso-integrador">Começar pelo enunciado →</a>
+          <a class="btn ghost" href="#simulador-final">Ir direto ao simulador final</a>
+        </div>
+      </div>
+      <div class="svg-card" aria-label="Hero materno-fetal: gestante → pressão/glicose/vômitos/gêmeos → diagnóstico → gravidade → conduta → parto/puerpério → gabarito">
+        <svg viewBox="0 0 520 380" role="img" aria-labelledby="heroT heroD">
+          <title id="heroT">Fluxo do raciocínio das doenças clínicas na gravidez</title>
+          <desc id="heroD">Sete etapas em sequência: gestante, pistas (pressão, glicose, vômitos, gêmeos), diagnóstico, gravidade, conduta, parto e puerpério, gabarito.</desc>
+          <defs>
+            <linearGradient id="goG1" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#2d3a78"/><stop offset="1" stop-color="#5b3bd1"/>
+            </linearGradient>
+            <linearGradient id="goG2" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#0eb88f"/><stop offset="1" stop-color="#1d57bb"/>
+            </linearGradient>
+            <linearGradient id="goG3" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#e69b1a"/><stop offset="1" stop-color="#d6234c"/>
+            </linearGradient>
+            <linearGradient id="goG4" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#d6406b"/><stop offset="1" stop-color="#7a1f3d"/>
+            </linearGradient>
+            <marker id="goArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="#7282a0"/>
+            </marker>
+          </defs>
+
+          <!-- gestante -->
+          <g transform="translate(20,38)">
+            <rect width="118" height="62" rx="12" fill="url(#goG1)" opacity=".18" stroke="#2d3a78" stroke-width="1.6"/>
+            <circle cx="34" cy="26" r="9" fill="none" stroke="#2d3a78" stroke-width="1.8"/>
+            <path d="M30 35 c0 8 -2 14 -6 18 M38 35 c4 6 10 10 18 12" stroke="#2d3a78" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <ellipse cx="64" cy="44" rx="14" ry="10" fill="#d6406b" fill-opacity=".22" stroke="#d6406b" stroke-width="1.4"/>
+            <text x="59" y="78" text-anchor="middle" font-size="10.5" fill="#1d2a44" font-weight="700">Gestante</text>
+          </g>
+          <path d="M142 70 L168 70" stroke="#7282a0" stroke-width="2" marker-end="url(#goArr)"/>
+
+          <!-- pistas (PA, glicose, vômitos, gêmeos) -->
+          <g transform="translate(170,30)">
+            <rect width="112" height="80" rx="10" fill="#fff" fill-opacity=".88" stroke="#5b3bd1" stroke-width="1.6"/>
+            <g font-size="10.5" fill="#3a2a8a" font-weight="700">
+              <circle cx="16" cy="20" r="4" fill="#d6406b"/><text x="26" y="23">PA 160/110</text>
+              <circle cx="16" cy="38" r="4" fill="#0eb88f"/><text x="26" y="41">Glicemia</text>
+              <circle cx="16" cy="56" r="4" fill="#1d57bb"/><text x="26" y="59">Vômitos</text>
+              <circle cx="16" cy="74" r="4" fill="#5b3bd1"/><text x="26" y="77">Gêmeos</text>
+            </g>
+            <text x="56" y="98" text-anchor="middle" font-size="10.5" fill="#1d2a44" font-weight="700">Pistas</text>
+          </g>
+          <path d="M286 70 L312 70" stroke="#7282a0" stroke-width="2" marker-end="url(#goArr)"/>
+
+          <!-- diagnóstico -->
+          <g transform="translate(316,42)">
+            <rect width="98" height="56" rx="10" fill="url(#goG2)" opacity=".22" stroke="#0eb88f" stroke-width="1.6"/>
+            <text x="49" y="32" text-anchor="middle" font-size="11.5" fill="#0a8a6b" font-weight="800">Diagnóstico</text>
+            <text x="49" y="46" text-anchor="middle" font-size="9.5" fill="#0a8a6b">e classificação</text>
+            <text x="49" y="74" text-anchor="middle" font-size="10.5" fill="#1d2a44" font-weight="700">Diagnóstico</text>
+          </g>
+          <path d="M418 70 L444 70" stroke="#7282a0" stroke-width="2" marker-end="url(#goArr)"/>
+
+          <!-- gravidade -->
+          <g transform="translate(446,42)">
+            <rect width="60" height="56" rx="10" fill="url(#goG4)" opacity=".22" stroke="#d6406b" stroke-width="1.6"/>
+            <path d="M30 14 L42 38 L18 38 z" fill="#d6406b" fill-opacity=".7"/>
+            <circle cx="30" cy="46" r="2" fill="#7a1f3d"/>
+            <text x="30" y="74" text-anchor="middle" font-size="10.5" fill="#1d2a44" font-weight="700">Gravidade</text>
+          </g>
+
+          <!-- segunda linha · seta para baixo -->
+          <path d="M476 110 L476 138" stroke="#7282a0" stroke-width="2" marker-end="url(#goArr)"/>
+
+          <!-- conduta -->
+          <g transform="translate(360,150)">
+            <rect width="146" height="60" rx="10" fill="#5b3bd1" opacity=".18" stroke="#5b3bd1" stroke-width="1.6"/>
+            <text x="73" y="32" text-anchor="middle" font-size="11.5" fill="#3a2a8a" font-weight="800">Sulfato · AAS · Insulina</text>
+            <text x="73" y="48" text-anchor="middle" font-size="10" fill="#3a2a8a">Crise · Hidratação · Tiamina</text>
+            <text x="73" y="80" text-anchor="middle" font-size="10.5" fill="#1d2a44" font-weight="700">Conduta</text>
+          </g>
+          <path d="M356 180 L320 180" stroke="#7282a0" stroke-width="2" marker-end="url(#goArr)"/>
+
+          <!-- parto / puerpério -->
+          <g transform="translate(190,150)">
+            <rect width="128" height="60" rx="10" fill="#0eb88f" opacity=".18" stroke="#0eb88f" stroke-width="1.6"/>
+            <text x="64" y="32" text-anchor="middle" font-size="11.5" fill="#0a8a6b" font-weight="800">Momento do parto</text>
+            <text x="64" y="48" text-anchor="middle" font-size="10" fill="#0a8a6b">e puerpério (12 sem)</text>
+            <text x="64" y="80" text-anchor="middle" font-size="10.5" fill="#1d2a44" font-weight="700">Parto</text>
+          </g>
+          <path d="M186 180 L160 180" stroke="#7282a0" stroke-width="2" marker-end="url(#goArr)"/>
+
+          <!-- gabarito -->
+          <g transform="translate(30,150)">
+            <rect width="128" height="60" rx="10" fill="url(#goG3)" opacity=".22" stroke="#d6234c" stroke-width="1.6"/>
+            <text x="64" y="38" text-anchor="middle" font-size="20" fill="#9a1238" font-weight="800" font-family="serif">A B C D E</text>
+            <text x="64" y="80" text-anchor="middle" font-size="10.5" fill="#1d2a44" font-weight="700">Gabarito</text>
+          </g>
+
+          <!-- legenda -->
+          <g font-size="10" fill="#44546f">
+            <rect x="36" y="246" width="450" height="74" rx="8" fill="#ffffff" fill-opacity=".0" stroke="#cdd5e0" stroke-dasharray="3 3"/>
+            <text x="56" y="268" font-weight="700" fill="#2d3a78">Eixo da plataforma</text>
+            <text x="56" y="284">A banca esconde no enunciado a pista (PA, glicemia, vômito, dois sacos) — quem decifra</text>
+            <text x="56" y="298">faz o diagnóstico, mede a gravidade, escolhe a conduta e decide o momento do parto.</text>
+            <text x="56" y="312" font-style="italic" opacity=".85">Pré-eclâmpsia · DMG · hiperêmese · gêmeos · puerpério até 12 semanas.</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin:18px 4px 8px">Cinco portas de entrada</h3>
+  <div class="entry-cards">
+    <a class="entry-card" href="#mapa-hipertensivo"><span class="ec-num">01 · HIPERTENSÃO & PE</span><h4>Antes ou depois de 20 semanas?</h4><p>Crônica, gestacional, pré-eclâmpsia, sobreposta, gravidade, sulfato e momento do parto.</p></a>
+    <a class="entry-card" href="#hiperemese-vs-nausea"><span class="ec-num">02 · HIPERÊMESE</span><h4>Vômito esperado ou internação?</h4><p>Perda de peso, cetonúria, tiamina, HCG/tireoide e diferenciais (mola, gemelar, pancreatite).</p></a>
+    <a class="entry-card" href="#diabetes-rastreio"><span class="ec-num">03 · DIABETES</span><h4>Gestacional ou prévio?</h4><p>Glicemia de jejum, TOTG, perfil glicêmico, regra dos 30%, insulina, parto e complicações fetais.</p></a>
+    <a class="entry-card" href="#gemelar-classificacao"><span class="ec-num">04 · GEMELARIDADE</span><h4>Quantos zigotos? Quantas placentas?</h4><p>Mono × dizigótica, di × monocoriônica, lambda × T, transfusão feto-fetal, via de parto.</p></a>
+    <a class="entry-card" href="#simulador-final"><span class="ec-num">05 · SIMULADOR</span><h4>Como amarrar tudo no enunciado?</h4><p>Cockpit clínico que devolve diagnóstico, gravidade, exame-chave, conduta e momento do parto.</p></a>
+  </div>
+
+  <div class="page-dock">
+    <span></span>
+    <a class="dock-link next" href="#caso-integrador"><small>Próximo</small><span>Caso integrador →</span></a>
+  </div>
+</section>
+
+<!-- ============================ 01 · CASO INTEGRADOR ============================ -->
+<section class="section" data-id="caso-integrador">
+  <div class="page-header">
+    <div class="ph-meta">
+      <span class="kicker k-rose">Caso integrador</span>
+      <h1>Quatro gestantes, quatro raciocínios</h1>
+      <p class="lead">Comece por aqui: cada vinheta carrega o detalhe que muda o gabarito. Conecte cada gestante ao raciocínio certo antes de mergulhar nos blocos.</p>
+    </div>
+  </div>
+
+  <div class="q-central"><span class="q-icon">?</span><p>O que muda quando o mesmo pré-natal vira alto risco — a semana, a pressão, a glicose, o vômito ou o segundo saco gestacional?</p></div>
+
+  <div class="grid cols-2" data-component="case-match">
+    <div class="grid gap-sm">
+      <div class="card patient-card" data-key="hipertensao">
+        <span class="kicker k-rose">Caso A</span>
+        <h4>Hipertensa de 8 semanas</h4>
+        <p>Gestante de <b>8 semanas</b>, primigesta, traz aferição de <b>148 × 96 mmHg</b> repetida na consulta. Pediu remédio para "dor de cabeça". Sem proteinúria na fita.</p>
+        <small class="muted">Pista: hipertensão antes de 20 semanas.</small>
+      </div>
+      <div class="card patient-card" data-key="hiperemese">
+        <span class="kicker k-info">Caso B</span>
+        <h4>Vômitos incoercíveis no 1º trimestre</h4>
+        <p>Gestante de <b>10 semanas</b>, com vômitos desde a 6ª semana, sem tolerar via oral, perdeu <b>6% do peso</b>, fita urinária com <b>cetona ++</b>, mucosas secas.</p>
+        <small class="muted">Pista: HCG alto pode estar explicando mais do que o vômito.</small>
+      </div>
+      <div class="card patient-card" data-key="diabetes">
+        <span class="kicker k-emerald">Caso C</span>
+        <h4>Macrossomia e óbito fetal prévios</h4>
+        <p>Gestante de <b>12 semanas</b>, IMC 33, com <b>RN anterior de 4.450 g</b> e óbito fetal tardio na gestação anterior. Mãe diabética. Glicemia de jejum hoje: <b>104 mg/dL</b>.</p>
+        <small class="muted">Pista: diagnóstico depende do valor exato e do momento.</small>
+      </div>
+      <div class="card patient-card" data-key="gemelar">
+        <span class="kicker k-violet">Caso D</span>
+        <h4>Pós-FIV com dois sacos gestacionais</h4>
+        <p>Gestante de <b>7 semanas</b> pós-FIV com transferência de <b>dois embriões</b>. USG mostra <b>dois sacos gestacionais</b> distintos.</p>
+        <small class="muted">Pista: dois sacos respondem a uma só pergunta — corionicidade.</small>
+      </div>
+    </div>
+    <div class="card glass">
+      <h3>Conecte enunciado → raciocínio</h3>
+      <p class="text-sm muted">Clique no caso e depois no raciocínio. O acerto destrava a "palavra que mata a questão".</p>
+      <div class="grid gap-sm" id="caseTargets" style="margin-top:8px">
+        <button class="btn target" data-target="hipertensao">Hipertensão crônica (antes de 20 semanas · sem proteinúria)</button>
+        <button class="btn target" data-target="hiperemese">Hiperêmese gravídica (perda de peso ≥5% · cetonúria · tiamina obrigatória)</button>
+        <button class="btn target" data-target="diabetes">Diabetes gestacional (jejum 92–125 antes de 20 semanas)</button>
+        <button class="btn target" data-target="gemelar">Gemelar dicoriônica (dois sacos = duas placentas → diamniótica)</button>
+      </div>
+      <div class="quiz-feedback" id="caseFeedback"></div>
+    </div>
+  </div>
+
+  <div class="callouts" style="margin-top:18px">
+    <div class="callout c-info"><span class="c-icon">🎯</span><div><strong>O detalhe que mata a questão.</strong> Antes de 20 semanas → crônica. Vômito + perda de peso + cetonúria → hiperêmese. Jejum 92–125 antes de 20 semanas → DMG. Dois sacos → dicoriônica e diamniótica. <em>Esses gatilhos voltam em todos os blocos.</em></div></div>
+  </div>
+
+  <div class="page-dock">
+    <a class="dock-link" href="#hero"><small>Anterior</small>← Capa</a>
+    <a class="dock-link next" href="#mapa-hipertensivo"><small>Próximo</small>Mapa diagnóstico dos distúrbios hipertensivos →</a>
+  </div>
+</section>
+
+</div><!-- /sectionRoot -->
+
+<script src="./content-data.js"></script>
+<script src="./scripts.js"></script>
+<script src="./sections-1.js"></script>
+<script src="./sections-2.js"></script>
+<script src="./sections-3.js"></script>
+<!-- PWA REGISTER BEGIN -->
+<script src="./pwa-register.js" defer></script>
+<!-- PWA REGISTER END -->
+</body>
+</html>

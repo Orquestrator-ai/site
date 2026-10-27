@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="ELA (fm4). Atrofia e Babinski no mesmo corpo — um neurônio sozinho não explica. Motor puro, topografia 1º+2º.">
+<title>Um neurônio sozinho não basta · ELA · Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm4-cara">
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ciano);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.5}
+.opener--question{border-left:4px solid var(--ciano)}
+.opener--question .opener__eyebrow{color:var(--ciano)}
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip,.chip--topic,.chip--ok,.chip--no,.chip--gold,.chip--series,.chip--1,.chip--2{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ink-60)}
+.chip--ok{color:var(--verde);border-color:color-mix(in srgb,var(--verde) 45%,var(--border))}
+.chip--no{color:var(--coral);border-color:color-mix(in srgb,var(--coral) 45%,var(--border))}
+.chip--gold{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--border))}
+.chip--series{color:var(--indigo);border-color:color-mix(in srgb,var(--indigo) 45%,var(--border))}
+.chip--1{color:var(--indigo);border-color:color-mix(in srgb,var(--indigo) 45%,var(--border))}
+.chip--2{color:var(--ciano);border-color:color-mix(in srgb,var(--ciano) 45%,var(--border))}
+button.chip{cursor:pointer;min-height:36px}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}
+.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose ul,.prose-list{margin:0 0 1em 1.1rem;padding:0}
+.prose ul li,.prose-list li{margin:.3rem 0}
+.prose strong,.term{color:var(--ink-100)}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.hl-1{color:var(--indigo);font-weight:700}.hl-2{color:var(--ciano);font-weight:700}
+.hl-good{color:var(--verde);font-weight:700}.hl-bad{color:var(--coral);font-weight:700}.hl-warn{color:var(--amber);font-weight:700}
+.exec-card,.trap,.dont-confuse,.case-card,.nuance,.continuity,.board,.cmp{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.exec-card__title,.case-card__title,.board__title{margin:0 0 .65rem;font-size:1rem;color:var(--ink-100)}
+.exec-card__title{color:var(--ciano)}
+.continuity{border-left:3px solid var(--indigo)}
+.nms-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:.7rem 0}
+.nms-cell{border:1px solid var(--border);border-radius:10px;padding:.7rem .8rem;background:var(--bg-3)}
+.nms-cell--1{border-color:color-mix(in srgb,var(--indigo) 42%,var(--border))}
+.nms-cell--2{border-color:color-mix(in srgb,var(--ciano) 42%,var(--border))}
+.nms-cell h4{margin:0 0 .35rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.nms-cell--1 h4{color:var(--indigo)}.nms-cell--2 h4{color:var(--ciano)}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.75rem 0}
+.topo{width:100%;border-collapse:collapse;font-size:.92rem;min-width:320px}
+.topo th,.topo td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}
+.topo th{background:var(--bg-3);color:var(--ink-100)}
+.topo__row--hit{background:color-mix(in srgb,var(--indigo) 14%,var(--bg-3))}
+.topo__row--hit td{border-color:color-mix(in srgb,var(--indigo) 40%,var(--border))}
+.topo__1{color:var(--indigo);font-weight:700}
+.topo__2{color:var(--ciano);font-weight:700}
+.topo__off{color:var(--ink-40)}
+.fig{margin:1.25rem 0}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ciano);margin-bottom:.3rem;font-weight:800}
+.fig__svg-frame{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-1);box-shadow:var(--shadow)}
+.fm4-inline-svg{display:block;width:100%;height:auto;border-radius:var(--radius-sm)}
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.quiz h2{margin:0 0 .85rem;font-size:1.1rem;color:var(--ink-100)}
+.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}
+.quiz__stem{margin:0 0 .55rem;font-weight:600;color:var(--ink-100);line-height:1.45}
+.quiz__alternatives{display:grid;gap:.4rem}
+.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit;line-height:1.4}
+.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}
+.quiz__alt.is-correct{border-color:var(--verde);background:color-mix(in srgb,var(--verde) 14%,var(--bg-3))}
+.quiz__alt.is-wrong{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 12%,var(--bg-3))}
+.quiz__feedback{margin-top:.6rem;padding:.75rem .8rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}
+.quiz__feedback[hidden]{display:none}
+.quiz__verdict{margin:0 0 .4rem;font-weight:800}
+.quiz__verdict.is-ok{color:var(--verde)}.quiz__verdict.is-bad{color:var(--coral)}
+.quiz__justification,.quiz__distractor{margin:.3rem 0 0;font-size:.92rem;line-height:1.5;color:var(--ink-80)}
+.page-nav{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.page-nav a{display:inline-flex;flex-direction:column;min-height:44px;padding:.5rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);text-decoration:none;color:var(--ink-100)}
+.page-nav a:hover{background:var(--bg-4)}
+.page-nav .nav-dir{font-size:.72rem;color:var(--ink-60)}.page-nav .nav-ttl{font-size:.86rem}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:640px){.nms-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p2" data-layout="fm4-p02" data-source-ids="019,020,021,022,023,024,025,026">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html"><span class="site-header__logo" aria-hidden="true">NE</span><span class="site-header__titles"><span class="site-header__title">ELA: esclerose lateral amiotrófica</span><span class="site-header__subtitle">Neurologia · esclerose lateral amiotrófica</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress">2/8</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+  <div class="reading">
+    <article class="page" data-page="p2" data-layout="fm4-p02" data-source-ids="019,020,021,022,023,024,025,026">
+      <p class="page__eyebrow">Página 2 · Pergunta central</p>
+
+      <section class="opener opener--question" data-opener="E1">
+        <span class="opener__eyebrow">Pergunta central</span>
+        <h1 id="page-title">Um neurônio sozinho não basta</h1>
+        <p class="opener__lead no-indent">“Atrofia e Babinski no mesmo corpo — um neurônio sozinho explica?” Antes de nomear a doença, convém topografar.</p>
+      </section>
+
+      <div class="chipset">
+        <span class="chip--1">1º NMS</span><span class="chip--2">2º NMS</span>
+        <span class="chip--ok">motor puro</span>
+      </div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h2 class="topic-h">Pé que arrasta = fraqueza</h2>
+          <p>Arrastar o pé = <strong class="term">não consegue levantar o pé</strong> = <strong class="term">não tem força</strong> = <strong class="term">fraqueza</strong> — não “cansaço vago”.</p>
+
+          <h2 class="topic-h">Sinais de 2º e de 1º no caso</h2>
+          <p><strong class="hl-2">Segundo neurônio motor:</strong> miofasciculações e início de atrofia muscular (cãibras no mesmo contexto de desnervação).</p>
+          <p><strong class="hl-1">Primeiro neurônio motor:</strong> hiperreflexia, Babinski e espasticidade.</p>
+
+          <h2 class="topic-h">Motor puro</h2>
+          <p>E <strong class="term">mais nada</strong>: sem alteração <strong>sensitiva</strong> e sem os demais eixos citáveis (ocular, esfíncter). O quadro de Jairo é <strong class="term">puramente motor</strong>.</p>
+
+          <h2 class="topic-h">Topografia: 1º e 2º juntos</h2>
+          <p>No raciocínio da parte motora, o diagnóstico <strong class="term">sindrômico</strong> percorre os andares: <strong class="hl-1">primeiro neurônio</strong>, <strong class="hl-2">segundo neurônio</strong>, <strong>placa motora</strong>, <strong>músculo</strong>.</p>
+          <p>Este paciente se apresenta com problema ligado <strong class="term">tanto ao primeiro quanto ao segundo</strong> neurônio motor — <strong class="term">1º + 2º juntos</strong>. A topografia pede doença que ataca <strong>especificamente esses dois neurônios</strong>, com quadro <strong>só</strong> nesses dois andares e <strong>mais nada</strong>.</p>
+        </div>
+      </section>
+
+      <aside class="exec-card" aria-label="Tabela dos andares da força — 1º e 2º atingidos">
+        <h3 class="exec-card__title">Os andares da força</h3>
+        <div class="table-wrap">
+          <table class="topo" aria-label="Quatro andares da via motora: 1º e 2º atingidos no caso">
+            <thead><tr><th scope="col">Andar</th><th scope="col">Sinais no caso</th><th scope="col">Estado</th></tr></thead>
+            <tbody>
+              <tr class="topo__row--hit"><td><span class="topo__1">1º NMS</span></td><td>Babinski · espasticidade · hiperreflexia</td><td><span class="hl-1">Atingido</span></td></tr>
+              <tr class="topo__row--hit"><td><span class="topo__2">2º NMS</span></td><td>Fasciculação · atrofia · cãibras</td><td><span class="hl-2">Atingido</span></td></tr>
+              <tr><td class="topo__off">Placa</td><td class="topo__off">—</td><td><span class="topo__off">fora do foco deste bloco</span></td></tr>
+              <tr><td class="topo__off">Músculo</td><td class="topo__off">—</td><td><span class="topo__off">fora do foco deste bloco</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="no-indent" style="margin-top:.6rem">Chip: <strong>“ELA = e”</strong> (1º <strong>e</strong> 2º) — o nome vem em seguida; a topografia já está fechada.</p>
+      </aside>
+
+      <!-- FIGURA REAL — R2 Babinski -->
+      <div class="figura-ancorada">
+        <figure class="figura-ancorada__media">
+          <img src="media/B02-lawrence-babinski-plantar-reflex.png" alt="Diagrama em dois painéis do reflexo plantar: acima, resposta normal com flexão dos dedos; abaixo, sinal de Babinski positivo com extensão (dorsiflexão) do hálux e abertura dos demais dedos sob estímulo plantar." loading="lazy" decoding="async">
+          <figcaption class="figura-ancorada__legenda"><b>Sinal de Babinski</b> — painel inferior: extensão do hálux ao estímulo plantar. Achado de 1º neurônio.</figcaption>
+          <p class="figura-ancorada__fonte">By Jmarchn, via Wikimedia Commons · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Lawrence_1960_20.4-en.svg" rel="noopener">fonte</a></p>
+        </figure>
+        <div class="figura-ancorada__ancora">
+          <h4>O lado que falta</h4>
+          <p>A fasciculação e a atrofia já falavam 2º. O Babinski (com hiperreflexia e espasticidade) é a peça que <strong>instala o 1º no mesmo corpo</strong> — e que transforma “doença de um andar” em “doença dos dois”. Ler o plantar é não parar no 2º.</p>
+        </div>
+      </div>
+
+      <!-- Figura: topografia dos neurônios motores -->
+      <figure class="fig">
+        <span class="fig__label">Topografia dos neurônios motores</span>
+        <div class="fig__svg-frame">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" class="fm4-inline-svg fm4p2-root" data-theme="dark" aria-label="Topografia 1º e 2º neurônio motor no mesmo corpo">
+  <title>Topografia 1º e 2º neurônio motor no mesmo corpo</title>
+  <desc>Compara achados de primeiro neurônio motor (Babinski, espasticidade, hiperreflexia) com achados de segundo (fasciculação, atrofia, cãibras) e o quadro misto em que ambos coexistem sem acometimento sensitivo.</desc>
+
+  <defs>
+    <style type="text/css">
+      /*<![CDATA[*/
+      /* RESET E VARS LOCALES NAMESPEADAS */
+      .fm4p2-root {
+        --fm4p2-bg: var(--bg-1, #0f172a);
+        --fm4p2-card-bg: var(--bg-2, #1e293b);
+        --fm4p2-card-border: var(--ink-20, #334155);
+        --fm4p2-text-main: var(--ink-100, #f8fafc);
+        --fm4p2-text-muted: var(--ink-70, #94a3b8);
+        
+        /* 1º NMS - INDIGO ("GRITA") */
+        --fm4p2-nms-main: #818cf8;
+        --fm4p2-nms-dark: #4338ca;
+        --fm4p2-nms-bg: rgba(99, 102, 241, 0.12);
+        --fm4p2-nms-border: rgba(129, 140, 248, 0.4);
+        --fm4p2-nms-glow: rgba(99, 102, 241, 0.35);
+
+        /* 2º NMI - TEAL ("COSPE") */
+        --fm4p2-nmi-main: #2dd4bf;
+        --fm4p2-nmi-dark: #0d9488;
+        --fm4p2-nmi-bg: rgba(45, 212, 191, 0.12);
+        --fm4p2-nmi-border: rgba(45, 212, 191, 0.4);
+        --fm4p2-nmi-glow: rgba(45, 212, 191, 0.35);
+
+        /* SELO CENTRAL E DUALIDADE - CORAL / OURO */
+        --fm4p2-selo-main: #fbbf24;
+        --fm4p2-selo-alert: #f87171;
+        --fm4p2-selo-bg: rgba(251, 191, 36, 0.15);
+        --fm4p2-selo-border: rgba(251, 191, 36, 0.5);
+
+        /* MOTOR PURO - VERDE */
+        --fm4p2-motor-main: #4ade80;
+        --fm4p2-motor-bg: rgba(74, 222, 128, 0.12);
+        --fm4p2-motor-border: rgba(74, 222, 128, 0.4);
+
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--fm4p2-bg);
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      /* TEMATIZAÇÃO CLARA (GATILHADA APENAS POR [data-theme="light"]) */
+      [data-theme="light"] .fm4p2-root {
+        --fm4p2-bg: var(--bg-1, #f8fafc);
+        --fm4p2-card-bg: var(--bg-2, #ffffff);
+        --fm4p2-card-border: var(--ink-20, #cbd5e1);
+        --fm4p2-text-main: var(--ink-100, #0f172a);
+        --fm4p2-text-muted: var(--ink-70, #475569);
+
+        --fm4p2-nms-main: #4338ca;
+        --fm4p2-nms-dark: #312e81;
+        --fm4p2-nms-bg: rgba(67, 56, 202, 0.08);
+        --fm4p2-nms-border: rgba(67, 56, 202, 0.3);
+
+        --fm4p2-nmi-main: #0d9488;
+        --fm4p2-nmi-dark: #115e59;
+        --fm4p2-nmi-bg: rgba(13, 148, 136, 0.08);
+        --fm4p2-nmi-border: rgba(13, 148, 136, 0.3);
+
+        --fm4p2-selo-main: #d97706;
+        --fm4p2-selo-alert: #dc2626;
+        --fm4p2-selo-bg: rgba(217, 119, 6, 0.1);
+        --fm4p2-selo-border: rgba(217, 119, 6, 0.4);
+
+        --fm4p2-motor-main: #16a34a;
+        --fm4p2-motor-bg: rgba(22, 163, 74, 0.08);
+        --fm4p2-motor-border: rgba(22, 163, 74, 0.3);
+      }
+
+      /* ELEMENTOS DE ESTILO GERAL */
+      .fm4p2-bg-rect { fill: var(--fm4p2-bg); }
+      .fm4p2-card { fill: var(--fm4p2-card-bg); stroke: var(--fm4p2-card-border); stroke-width: 1.5; rx: 12px; }
+      .fm4p2-title-main { fill: var(--fm4p2-text-main); font-size: 18px; font-weight: 800; letter-spacing: 0.5px; }
+      .fm4p2-subtitle { fill: var(--fm4p2-text-muted); font-size: 12px; font-weight: 500; }
+      .fm4p2-label-bold { font-weight: 700; font-size: 13px; }
+      .fm4p2-label-sub { font-size: 11px; font-weight: 500; }
+      .fm4p2-txt-nms { fill: var(--fm4p2-nms-main); }
+      .fm4p2-txt-nmi { fill: var(--fm4p2-nmi-main); }
+      .fm4p2-txt-selo { fill: var(--fm4p2-selo-main); }
+      .fm4p2-txt-motor { fill: var(--fm4p2-motor-main); }
+      
+      /* PAINÉIS LATERAIS */
+      .fm4p2-panel-nms { fill: var(--fm4p2-nms-bg); stroke: var(--fm4p2-nms-border); stroke-width: 1.5; rx: 10px; }
+      .fm4p2-panel-nmi { fill: var(--fm4p2-nmi-bg); stroke: var(--fm4p2-nmi-border); stroke-width: 1.5; rx: 10px; }
+      .fm4p2-panel-selo { fill: var(--fm4p2-selo-bg); stroke: var(--fm4p2-selo-border); stroke-width: 2; rx: 10px; }
+      .fm4p2-panel-motor { fill: var(--fm4p2-motor-bg); stroke: var(--fm4p2-motor-border); stroke-width: 1.5; rx: 8px; }
+
+      /* BOTÕES DE INTERAÇÃO DO SIMULADOR */
+      .fm4p2-btn { cursor: pointer; transition: all 0.2s ease; }
+      .fm4p2-btn-bg { fill: var(--fm4p2-card-bg); stroke: var(--fm4p2-card-border); stroke-width: 1.5; rx: 8px; }
+      .fm4p2-btn:hover .fm4p2-btn-bg { stroke-width: 2px; filter: brightness(1.15); }
+      .fm4p2-btn-txt { fill: var(--fm4p2-text-main); font-size: 12px; font-weight: 700; text-anchor: middle; }
+
+      .fm4p2-btn[data-active="true"] .fm4p2-btn-bg-nms { fill: var(--fm4p2-nms-bg); stroke: var(--fm4p2-nms-main); stroke-width: 2.5px; }
+      .fm4p2-btn[data-active="true"] .fm4p2-btn-bg-nmi { fill: var(--fm4p2-nmi-bg); stroke: var(--fm4p2-nmi-main); stroke-width: 2.5px; }
+      .fm4p2-btn[data-active="true"] .fm4p2-btn-bg-misto { fill: var(--fm4p2-selo-bg); stroke: var(--fm4p2-selo-main); stroke-width: 2.5px; }
+      
+      /* HOTSPOTS E ANIMAÇÕES DIDÁTICAS */
+      .fm4p2-hotspot { cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease; }
+      .fm4p2-hotspot:hover { filter: drop-shadow(0 0 6px rgba(255,255,255,0.4)); }
+      .fm4p2-hotspot:focus-visible { outline: 2px solid var(--fm4p2-selo-main); outline-offset: 2px; }
+
+      /* PULSAÇÃO PARA ANIMAÇÕES RELEVANTES */
+      @keyframes fm4p2-pulse-nmi {
+        0%, 100% { stroke-dashoffset: 0; }
+        50% { stroke-dashoffset: 12; }
+      }
+      @keyframes fm4p2-fasciculation {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        25% { transform: translate(1px, -1px) scale(1.03); }
+        75% { transform: translate(-1px, 1px) scale(0.97); }
+      }
+
+      .fm4p2-pulse-path-nms { stroke: var(--fm4p2-nms-main); stroke-dasharray: 6 4; animation: fm4p2-pulse-nmi 2s linear infinite; }
+      .fm4p2-pulse-path-nmi { stroke: var(--fm4p2-nmi-main); stroke-dasharray: 4 4; animation: fm4p2-pulse-nmi 1.5s linear infinite; }
+      .fm4p2-fasciculating { animation: fm4p2-fasciculation 0.4s ease-in-out infinite; }
+
+      /* MÁQUINA DE ESTADOS VISÍVEL/OCULTA */
+      .fm4p2-root[data-mode="nms"] .fm4p2-state-nmi { opacity: 0.25; filter: grayscale(0.8); }
+      .fm4p2-root[data-mode="nms"] .fm4p2-state-nms { opacity: 1; filter: none; }
+      
+      .fm4p2-root[data-mode="nmi"] .fm4p2-state-nms { opacity: 0.25; filter: grayscale(0.8); }
+      .fm4p2-root[data-mode="nmi"] .fm4p2-state-nmi { opacity: 1; filter: none; }
+
+      .fm4p2-root[data-mode="misto"] .fm4p2-state-nms,
+      .fm4p2-root[data-mode="misto"] .fm4p2-state-nmi { opacity: 1; filter: none; }
+
+      /* TOOLTIP SEGUINDO MOUSE */
+      #fm4p2-tooltip {
+        position: absolute;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+        fill: var(--fm4p2-card-bg);
+        stroke: var(--fm4p2-card-border);
+        stroke-width: 1.5;
+        rx: 6px;
+      }
+      #fm4p2-tooltip-txt {
+        fill: var(--fm4p2-text-main);
+        font-size: 11px;
+        font-weight: 600;
+        text-anchor: middle;
+      }
+      /*]]>*/
+    </style>
+
+    <!-- GRADIENTES E FILTROS DE BRILHO -->
+    <linearGradient id="fm4p2-grad-nms" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="fm4p2-grad-nmi" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0d9488" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="fm4p2-glow-nms" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm4p2-glow-nmi" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- RECT DE FUNDO PARA GARANTIR CONTRASTE COMPLETO -->
+  <rect width="1000" height="700" class="fm4p2-bg-rect" />
+
+  <!-- ==================== TOP BAR / HEADER ==================== -->
+  <g transform="translate(20, 20)">
+    <!-- TÍTULO PRINCIPAL DE TOPOGRAFIA -->
+    <text x="0" y="20" class="fm4p2-title-main">TOPOGRAFIA: 1º E 2º NO MESMO CORPO</text>
+    <text x="0" y="38" class="fm4p2-subtitle">1º grita (Babinski / espasticidade / hiperreflexia) e 2º cospe (fasciculação / atrofia / cãibras). Um neurônio sozinho não basta.</text>
+
+    <!-- CHIP: MOTOR PURO -->
+    <g transform="translate(680, 0)">
+      <rect width="280" height="42" class="fm4p2-panel-motor" />
+      <circle cx="20" cy="21" r="6" fill="var(--fm4p2-motor-main)" />
+      <text x="34" y="18" class="fm4p2-label-bold fm4p2-txt-motor">CHIP CLÍNICO: MOTOR PURO</text>
+      <text x="34" y="32" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Sensibilidade, Visão e Esfíncteres PRESERVADOS</text>
+    </g>
+  </g>
+
+  <!-- ==================== COLUNA ESQUERDA: 1º NMS ("GRITA") ==================== -->
+  <g transform="translate(20, 85)" class="fm4p2-state-nms">
+    <rect width="270" height="395" class="fm4p2-panel-nms" />
+    
+    <!-- CABEÇALHO NMS -->
+    <rect x="12" y="12" width="246" height="38" rx="6" fill="var(--fm4p2-nms-dark)" opacity="0.2" />
+    <text x="24" y="36" class="fm4p2-label-bold fm4p2-txt-nms" font-size="14">1º NEURÔNIO MOTOR (NMS)</text>
+    <text x="24" y="48" class="fm4p2-label-sub fm4p2-txt-nms" opacity="0.8">SÍNDROME PIRAMIDAL ("GRITA")</text>
+
+    <!-- ANCORAGEM DE ACHADOS CLÍNICOS CRÍTICOS -->
+    <g transform="translate(15, 65)">
+      <!-- ITEM 1: BABINSKI -->
+      <g class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Babinski: sinal de 1º neurônio motor">
+        <rect width="240" height="68" class="fm4p2-card" />
+        <circle cx="20" cy="34" r="12" fill="var(--fm4p2-nms-bg)" stroke="var(--fm4p2-nms-main)" stroke-width="1.5" />
+        <text x="20" y="38" text-anchor="middle" class="fm4p2-txt-nms" font-weight="900" font-size="12">🩴</text>
+        <text x="42" y="26" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">Sinal de Babinski</text>
+        <text x="42" y="42" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Achado de 1º neurônio motor</text>
+        <text x="42" y="55" class="fm4p2-label-sub fm4p2-txt-nms" font-weight="700">O 1º “grita” piramidal</text>
+      </g>
+
+      <!-- ITEM 2: ESPASTICIDADE -->
+      <g transform="translate(0, 76)" class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Espasticidade: sinal de 1º neurônio motor">
+        <rect width="240" height="68" class="fm4p2-card" />
+        <circle cx="20" cy="34" r="12" fill="var(--fm4p2-nms-bg)" stroke="var(--fm4p2-nms-main)" stroke-width="1.5" />
+        <text x="20" y="38" text-anchor="middle" class="fm4p2-txt-nms" font-weight="900" font-size="12">⚡</text>
+        <text x="42" y="26" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">Espasticidade</text>
+        <text x="42" y="42" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Achado de 1º neurônio motor</text>
+        <text x="42" y="55" class="fm4p2-label-sub fm4p2-txt-nms" font-weight="700">Com Babinski e hiperreflexia</text>
+      </g>
+
+      <!-- ITEM 3: HIPERREFLEXIA -->
+      <g transform="translate(0, 152)" class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Hiperreflexia: sinal de 1º neurônio motor">
+        <rect width="240" height="68" class="fm4p2-card" />
+        <circle cx="20" cy="34" r="12" fill="var(--fm4p2-nms-bg)" stroke="var(--fm4p2-nms-main)" stroke-width="1.5" />
+        <text x="20" y="38" text-anchor="middle" class="fm4p2-txt-nms" font-weight="900" font-size="12">🔨</text>
+        <text x="42" y="26" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">Hiperreflexia</text>
+        <text x="42" y="42" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Reflexos vivos / exagerados</text>
+        <text x="42" y="55" class="fm4p2-label-sub fm4p2-txt-nms" font-weight="700">No misto, o 1º eleva o reflexo</text>
+      </g>
+
+      <!-- ITEM 4: PACOTE DO 1º -->
+      <g transform="translate(0, 228)" class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Pacote do 1º: Babinski, espasticidade e hiperreflexia">
+        <rect width="240" height="68" class="fm4p2-card" />
+        <circle cx="20" cy="34" r="12" fill="var(--fm4p2-nms-bg)" stroke="var(--fm4p2-nms-main)" stroke-width="1.5" />
+        <text x="20" y="38" text-anchor="middle" class="fm4p2-txt-nms" font-weight="900" font-size="12">🎯</text>
+        <text x="42" y="26" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">Pacote do 1º</text>
+        <text x="42" y="42" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Babinski · espasticidade · hiperreflexia</text>
+        <text x="42" y="55" class="fm4p2-label-sub fm4p2-txt-nms" font-weight="700">Instala o 1º no exame misto</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== CENTRO: ESQUEMA ANATÔMICO E CORPO ==================== -->
+  <g transform="translate(305, 85)">
+    <!-- PAINEL CENTRAL DE SUPORTE -->
+    <rect width="390" height="395" class="fm4p2-card" rx="10" />
+
+    <!-- TÍTULO DA ESTRUTURA NEURAL -->
+    <text x="195" y="25" text-anchor="middle" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">EIXO MOTOR CENTRAL vs PERIFÉRICO</text>
+
+    <!-- CORTE ANATÔMICO: CÓRTEX E TRATO CORTICOSPINAL (NMS) -->
+    <g transform="translate(195, 45)" class="fm4p2-state-nms">
+      <!-- CÓRTEX MOTOR -->
+      <path d="M -40,-5 C -40,-20 40,-20 40,-5 C 50,10 30,25 0,25 C -30,25 -50,10 -40,-5 Z" fill="var(--fm4p2-nms-bg)" stroke="var(--fm4p2-nms-main)" stroke-width="2" />
+      <circle cx="0" cy="5" r="4" fill="var(--fm4p2-nms-main)" />
+      <text x="0" y="-8" text-anchor="middle" class="fm4p2-label-sub fm4p2-txt-nms" font-weight="700">Córtex Motor (Gyrus Pré-Central)</text>
+
+      <!-- TRATO CORTICOSPINAL DESCENTE (LINHA ILUMINADA) -->
+      <path d="M 0,9 L 0,110" class="fm4p2-pulse-path-nms" stroke-width="3" filter="url(#fm4p2-glow-nms)" />
+      <polyline points="-4,105 0,113 4,105" fill="none" stroke="var(--fm4p2-nms-main)" stroke-width="2" />
+      <text x="-12" y="65" text-anchor="end" class="fm4p2-label-sub fm4p2-txt-nms" font-weight="700">1º Neurônio (NMS)</text>
+      <text x="-12" y="77" text-anchor="end" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Trato Corticospinal</text>
+    </g>
+
+    <!-- SINAPSE NO CORNO ANTERIOR DA MEDULA (TRANSIÇÃO CRÍTICA) -->
+    <g transform="translate(195, 165)" class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Corno Anterior da Medula: Onde o 1º NMS faz sinapse com o corpo celular do 2º NMI">
+      <!-- MEDULA EM BORBOLETA -->
+      <rect x="-45" y="-18" width="90" height="36" rx="18" fill="var(--fm4p2-card-bg)" stroke="var(--fm4p2-card-border)" stroke-width="2" />
+      <!-- H SHAPE DA SUBSTÂNCIA CINZENTA -->
+      <path d="M -20,-8 C -10,-4 -10,4 -20,8 M 20,-8 C 10,-4 10,4 20,8 M -12,0 L 12,0" fill="none" stroke="var(--fm4p2-selo-main)" stroke-width="2" />
+      <circle cx="0" cy="0" r="5" fill="var(--fm4p2-nmi-main)" />
+      <text x="55" y="4" class="fm4p2-label-sub fm4p2-txt-nmi" font-weight="700">Corno Anterior da Medula</text>
+      <text x="55" y="16" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">(Soma do 2º NMI)</text>
+    </g>
+
+    <!-- AXÔNIO PERIFÉRICO E MÚSCULO (NMI) -->
+    <g transform="translate(195, 185)" class="fm4p2-state-nmi">
+      <path d="M 0,0 L 0,85" class="fm4p2-pulse-path-nmi" stroke-width="3" filter="url(#fm4p2-glow-nmi)" />
+      <polyline points="-4,80 0,88 4,80" fill="none" stroke="var(--fm4p2-nmi-main)" stroke-width="2" />
+      <text x="12" y="45" class="fm4p2-label-sub fm4p2-txt-nmi" font-weight="700">2º Neurônio (NMI)</text>
+      <text x="12" y="57" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Corpo no corno anterior</text>
+    </g>
+
+    <!-- SILHUETA DO CORPO HUMANO (DUALIDADE INTEGRADA) -->
+    <g transform="translate(195, 270)">
+      <!-- CABEÇA E TRONCO SCHEMATIC -->
+      <circle cx="0" cy="-5" r="14" fill="none" stroke="var(--fm4p2-card-border)" stroke-width="2" />
+      <!-- TRONCO COM DIVISÃO NMS (ESQUERDA) E NMI (DIREITA) -->
+      <path d="M -16,10 L -25,50 L -12,100 L 0,100 L 0,10 Z" class="fm4p2-state-nms" fill="var(--fm4p2-nms-bg)" stroke="var(--fm4p2-nms-main)" stroke-width="1.5" />
+      <path d="M 0,10 L 0,100 L 12,100 L 25,50 L 16,10 Z" class="fm4p2-state-nmi" fill="var(--fm4p2-nmi-bg)" stroke="var(--fm4p2-nmi-main)" stroke-width="1.5" />
+
+      <!-- MEMBRO INFERIOR COM "PÉ QUE ARRASTA = FRAQUEZA" -->
+      <g transform="translate(-6, 100)" class="fm4p2-state-nms">
+        <path d="M 0,0 L -8,50 L -18,52" fill="none" stroke="var(--fm4p2-nms-main)" stroke-width="2" />
+        <circle cx="-18" cy="52" r="3" fill="var(--fm4p2-nms-main)" />
+        <text x="-25" y="45" text-anchor="end" class="fm4p2-label-sub fm4p2-txt-nms" font-weight="700">Espástico / Babinski</text>
+      </g>
+      
+      <g transform="translate(6, 100)" class="fm4p2-state-nmi">
+        <!-- PERNA ATROFIADA (LINHA FINA COM FASCICULAÇÕES) -->
+        <path d="M 0,0 L 8,45 L 2,52 L -6,52" class="fm4p2-fasciculating" fill="none" stroke="var(--fm4p2-nmi-main)" stroke-width="1.5" stroke-dasharray="3 2" />
+        <circle cx="2" cy="52" r="3" fill="var(--fm4p2-nmi-main)" />
+        <!-- Destaque: PÉ CAÍDO -->
+        <text x="25" y="45" text-anchor="start" class="fm4p2-label-sub fm4p2-txt-nmi" font-weight="700">Pé Caído (Fraqueza)</text>
+        <text x="25" y="57" text-anchor="start" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Atrofia / Fasciculação</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== COLUNA DIREITA: 2º NMI ("COSPE") ==================== -->
+  <g transform="translate(710, 85)" class="fm4p2-state-nmi">
+    <rect width="270" height="395" class="fm4p2-panel-nmi" />
+    
+    <!-- CABEÇALHO NMI -->
+    <rect x="12" y="12" width="246" height="38" rx="6" fill="var(--fm4p2-nmi-dark)" opacity="0.2" />
+    <text x="24" y="36" class="fm4p2-label-bold fm4p2-txt-nmi" font-size="14">2º NEURÔNIO MOTOR (NMI)</text>
+    <text x="24" y="48" class="fm4p2-label-sub fm4p2-txt-nmi" opacity="0.8">UNIDADE MOTORA ("COSPE")</text>
+
+    <!-- ANCORAGEM DE ACHADOS CLÍNICOS CRÍTICOS -->
+    <g transform="translate(15, 65)">
+      <!-- ITEM 1: FASCICULAÇÕES -->
+      <g class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Fasciculações: miofasciculações — achado de 2º neurônio motor no quadro misto">
+        <rect width="240" height="68" class="fm4p2-card" />
+        <circle cx="20" cy="34" r="12" fill="var(--fm4p2-nmi-bg)" stroke="var(--fm4p2-nmi-main)" stroke-width="1.5" />
+        <text x="20" y="38" text-anchor="middle" class="fm4p2-txt-nmi" font-weight="900" font-size="12">〰️</text>
+        <text x="42" y="26" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">Fasciculações</text>
+        <text x="42" y="42" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Miofasciculações visíveis</text>
+        <text x="42" y="55" class="fm4p2-label-sub fm4p2-txt-nmi" font-weight="700">Sinal de 2º neurônio motor</text>
+      </g>
+
+      <!-- ITEM 2: ATROFIA MUSCULAR -->
+      <g transform="translate(0, 76)" class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Atrofia muscular: início de atrofia — achado de 2º no mesmo corpo">
+        <rect width="240" height="68" class="fm4p2-card" />
+        <circle cx="20" cy="34" r="12" fill="var(--fm4p2-nmi-bg)" stroke="var(--fm4p2-nmi-main)" stroke-width="1.5" />
+        <text x="20" y="38" text-anchor="middle" class="fm4p2-txt-nmi" font-weight="900" font-size="12">📉</text>
+        <text x="42" y="26" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">Atrofia muscular</text>
+        <text x="42" y="42" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Perda de massa no membro</text>
+        <text x="42" y="55" class="fm4p2-label-sub fm4p2-txt-nmi" font-weight="700">Sinal de 2º neurônio motor</text>
+      </g>
+
+      <!-- ITEM 3: CÃIBRAS (recorte da aula — não hiporreflexia) -->
+      <g transform="translate(0, 152)" class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Cãibras no mesmo contexto de desnervação / perda de inervação (2º)">
+        <rect width="240" height="68" class="fm4p2-card" />
+        <circle cx="20" cy="34" r="12" fill="var(--fm4p2-nmi-bg)" stroke="var(--fm4p2-nmi-main)" stroke-width="1.5" />
+        <text x="20" y="38" text-anchor="middle" class="fm4p2-txt-nmi" font-weight="900" font-size="12">⚡</text>
+        <text x="42" y="26" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">Cãibras</text>
+        <text x="42" y="42" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">No contexto de desnervação</text>
+        <text x="42" y="55" class="fm4p2-label-sub fm4p2-txt-nmi" font-weight="700">Mesmo saco do 2º neurônio</text>
+      </g>
+
+      <!-- ITEM 4: FRAQUEZA / PÉ CAÍDO -->
+      <g transform="translate(0, 228)" class="fm4p2-hotspot" tabindex="0" role="button" data-tooltip="Pé que arrasta = não consegue levantar o pé = fraqueza">
+        <rect width="240" height="68" class="fm4p2-card" />
+        <circle cx="20" cy="34" r="12" fill="var(--fm4p2-nmi-bg)" stroke="var(--fm4p2-nmi-main)" stroke-width="1.5" />
+        <text x="20" y="38" text-anchor="middle" class="fm4p2-txt-nmi" font-weight="900" font-size="12">🦵</text>
+        <text x="42" y="26" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">Fraqueza · pé caído</text>
+        <text x="42" y="42" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">Arrastar o pé = não tem força</text>
+        <text x="42" y="55" class="fm4p2-label-sub fm4p2-txt-nmi" font-weight="700">Eixo motor, não “cansaço”</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== BANNER CENTRAL DE INTEGRALIDADE (SELO) ==================== -->
+  <g transform="translate(305, 430)">
+    <rect width="390" height="50" class="fm4p2-panel-selo" />
+    <text x="195" y="22" text-anchor="middle" class="fm4p2-label-bold fm4p2-txt-selo" font-size="14">⚡ UM NEURÔNIO SOZINHO NÃO BASTA!</text>
+    <text x="195" y="38" text-anchor="middle" class="fm4p2-label-sub" fill="var(--fm4p2-text-main)">Topografia mista: 1º e 2º no mesmo corpo — um neurônio sozinho não basta.</text>
+  </g>
+
+  <!-- ==================== BANCO SIMULADOR E PAINEL INTERATIVO DE RACIOCÍNIO ==================== -->
+  <g transform="translate(20, 495)">
+    <rect width="960" height="185" class="fm4p2-card" />
+
+    <!-- SELETOR DE MODO DO SIMULADOR (BOTÕES SVG INTERATIVOS) -->
+    <g transform="translate(20, 18)">
+      <text x="0" y="-2" class="fm4p2-label-bold" fill="var(--fm4p2-text-main)">SIMULADOR CLÍNICO DE TOPOGRAFIA (Selecione para raciocinar):</text>
+
+      <!-- BOTÃO MODO 1: NMS PURO -->
+      <g transform="translate(0, 10)" id="fm4p2-btn-nms" class="fm4p2-btn" data-active="false" role="button" tabindex="0">
+        <rect width="290" height="36" class="fm4p2-btn-bg fm4p2-btn-bg-nms" />
+        <text x="145" y="22" class="fm4p2-btn-txt">1. Testar Apenas 1º NMS (Grita)</text>
+      </g>
+
+      <!-- BOTÃO MODO 2: NMI PURO -->
+      <g transform="translate(305, 10)" id="fm4p2-btn-nmi" class="fm4p2-btn" data-active="false" role="button" tabindex="0">
+        <rect width="290" height="36" class="fm4p2-btn-bg fm4p2-btn-bg-nmi" />
+        <text x="145" y="22" class="fm4p2-btn-txt">2. Testar Apenas 2º NMI (Cospe)</text>
+      </g>
+
+      <!-- BOTÃO MODO 3: MISTO NMS+NMI (DEFAULT ACTIVED) -->
+      <g transform="translate(610, 10)" id="fm4p2-btn-misto" class="fm4p2-btn" data-active="true" role="button" tabindex="0">
+        <rect width="310" height="36" class="fm4p2-btn-bg fm4p2-btn-bg-misto" />
+        <text x="155" y="22" class="fm4p2-btn-txt">3. Testar Coexistência Mista (NMS + NMI)</text>
+      </g>
+    </g>
+
+    <!-- CAIXA DE LEITURA DO RACIOCÍNIO CLÍNICO DENSAMENTE ILUSTRADO -->
+    <g transform="translate(20, 75)">
+      <rect width="920" height="92" rx="8" fill="var(--fm4p2-bg)" stroke="var(--fm4p2-card-border)" stroke-width="1" />
+      
+      <!-- STATUS EM DESTAQUE -->
+      <text x="20" y="25" id="fm4p2-res-title" class="fm4p2-label-bold fm4p2-txt-selo" font-size="14">TOPOGRAFIA MISTA: 1º E 2º NO MESMO CORPO</text>
+      
+      <!-- DETALHES TOPOGRÁFICOS -->
+      <text x="20" y="48" id="fm4p2-res-achado" class="fm4p2-label-sub" fill="var(--fm4p2-text-main)">• Achado: hiperreflexia / Babinski / espasticidade (1º) + fasciculação / atrofia / cãibras (2º) no mesmo paciente.</text>
+      <text x="20" y="65" id="fm4p2-res-topografia" class="fm4p2-label-sub" fill="var(--fm4p2-text-muted)">• Leitura sindrômica: problema ligado tanto ao 1º quanto ao 2º neurônio motor — motor puro (sensitivo preservado).</text>
+      <text x="20" y="80" id="fm4p2-res-regra" class="fm4p2-label-sub fm4p2-txt-motor" font-weight="700">• Chip: “ELA = e” (1º e 2º). Um neurônio sozinho não basta. O nome da doença vem depois.</text>
+    </g>
+  </g>
+
+  <!-- ==================== TOOLTIP FLUTUANTE SEGUINDO O MOUSE ==================== -->
+  <g id="fm4p2-tooltip-group" style="display: none;">
+    <rect id="fm4p2-tooltip-bg" width="220" height="32" class="fm4p2-card" fill="var(--fm4p2-card-bg)" stroke="var(--fm4p2-selo-main)" stroke-width="1.5" />
+    <text id="fm4p2-tooltip-txt" x="110" y="20" class="fm4p2-label-sub" fill="var(--fm4p2-text-main)" text-anchor="middle">Tooltip Info</text>
+  </g>
+
+  <!-- ==================== SCRIPT INTERATIVO SELF-CONTAINED ==================== -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // GARANTE QUE O SVG LEIA E EXECUTE SELF-CONTAINED
+      const root = document.querySelector('.fm4p2-root');
+      if (!root) return;
+
+      // ENGINE DE SIMULAÇÃO DE ESTADOS
+      const btnNms = document.getElementById('fm4p2-btn-nms');
+      const btnNmi = document.getElementById('fm4p2-btn-nmi');
+      const btnMisto = document.getElementById('fm4p2-btn-misto');
+
+      const resTitle = document.getElementById('fm4p2-res-title');
+      const resAchado = document.getElementById('fm4p2-res-achado');
+      const resTopografia = document.getElementById('fm4p2-res-topografia');
+      const resRegra = document.getElementById('fm4p2-res-regra');
+
+      const modeData = {
+        nms: {
+          title: "SÓ 1º: BABINSKI · ESPASTICIDADE · HIPERREFLEXIA",
+          achado: "• Achado: hiperreflexia, Babinski e espasticidade — o 1º “grita” sozinho.",
+          topografia: "• Topografia: só primeiro neurônio motor. Não explica fasciculação nem atrofia no mesmo corpo.",
+          regra: "• Um neurônio sozinho não basta: falta o 2º (fasciculação / atrofia / cãibras).",
+          colorClass: "fm4p2-txt-nms"
+        },
+        nmi: {
+          title: "SÓ 2º: FASCICULAÇÃO · ATROFIA · CÃIBRAS",
+          achado: "• Achado: fasciculações, atrofia e cãibras (no contexto de desnervação) — o 2º “cospe” sozinho.",
+          topografia: "• Topografia: só segundo neurônio motor. Não instala o 1º (Babinski / espasticidade / hiperreflexia).",
+          regra: "• Um neurônio sozinho não basta: falta o 1º no mesmo corpo. No quadro misto, o reflexo costuma ser HIPER (1º), não hiporreflexia isolada.",
+          colorClass: "fm4p2-txt-nmi"
+        },
+        misto: {
+          title: "TOPOGRAFIA MISTA: 1º E 2º NO MESMO CORPO",
+          achado: "• Achado: Babinski / hiperreflexia / espasticidade (1º) + atrofia / fasciculação / cãibras (2º) no mesmo paciente.",
+          topografia: "• Leitura: 1º e 2º juntos, quadro puramente motor (sensitivo preservado). Isso pede doença que ataca esses dois andares.",
+          regra: "• Chip: “ELA = e”. Achado misto fecha topografia — o diagnóstico da doença é clínica + exclusão (próximas páginas).",
+          colorClass: "fm4p2-txt-selo"
+        }
+      };
+
+      function setMode(mode) {
+        root.setAttribute('data-mode', mode);
+        
+        btnNms.setAttribute('data-active', mode === 'nms');
+        btnNmi.setAttribute('data-active', mode === 'nmi');
+        btnMisto.setAttribute('data-active', mode === 'misto');
+
+        const data = modeData[mode];
+        resTitle.textContent = data.title;
+        resTitle.className = 'fm4p2-label-bold ' + data.colorClass;
+        resAchado.textContent = data.achado;
+        resTopografia.textContent = data.topografia;
+        resRegra.textContent = data.regra;
+      }
+
+      if (btnNms) btnNms.addEventListener('click', function() { setMode('nms'); });
+      if (btnNmi) btnNmi.addEventListener('click', function() { setMode('nmi'); });
+      if (btnMisto) btnMisto.addEventListener('click', function() { setMode('misto'); });
+
+      // TOOLTIP ENGINE COM MOUSE-FOLLOW DETERMINÍSTICO
+      const tooltipGroup = document.getElementById('fm4p2-tooltip-group');
+      const tooltipBg = document.getElementById('fm4p2-tooltip-bg');
+      const tooltipTxt = document.getElementById('fm4p2-tooltip-txt');
+
+      const hotspots = document.querySelectorAll('.fm4p2-hotspot');
+
+      hotspots.forEach(function(el) {
+        el.addEventListener('mouseenter', function(e) {
+          const text = el.getAttribute('data-tooltip');
+          if (!text || !tooltipGroup) return;
+
+          tooltipTxt.textContent = text;
+          const textWidth = Math.max(180, text.length * 6.5 + 24);
+          tooltipBg.setAttribute('width', textWidth);
+          tooltipTxt.setAttribute('x', textWidth / 2);
+
+          tooltipGroup.style.display = 'block';
+          updateTooltipPos(e);
+        });
+
+        el.addEventListener('mousemove', function(e) {
+          updateTooltipPos(e);
+        });
+
+        el.addEventListener('mouseleave', function() {
+          if (tooltipGroup) tooltipGroup.style.display = 'none';
+        });
+
+        // ACESSIBILIDADE TECLADO
+        el.addEventListener('focus', function(e) {
+          const text = el.getAttribute('data-tooltip');
+          if (!text || !tooltipGroup) return;
+          tooltipTxt.textContent = text;
+          const textWidth = Math.max(180, text.length * 6.5 + 24);
+          tooltipBg.setAttribute('width', textWidth);
+          tooltipTxt.setAttribute('x', textWidth / 2);
+
+          const bbox = el.getBBox();
+          const ctm = el.getScreenCTM();
+          if (ctm) {
+            const pt = root.createSVGPoint();
+            pt.x = bbox.x + bbox.width / 2;
+            pt.y = bbox.y;
+            const globalPt = pt.matrixTransform(ctm);
+            const rootCtm = root.getScreenCTM().inverse();
+            const localPt = globalPt.matrixTransform(rootCtm);
+            tooltipGroup.setAttribute('transform', `translate(${localPt.x - textWidth/2}, ${localPt.y - 40})`);
+          }
+          tooltipGroup.style.display = 'block';
+        });
+
+        el.addEventListener('blur', function() {
+          if (tooltipGroup) tooltipGroup.style.display = 'none';
+        });
+      });
+
+      function updateTooltipPos(e) {
+        if (!tooltipGroup || !root.getScreenCTM) return;
+        const pt = root.createSVGPoint();
+        pt.x = e.clientX;
+        pt.y = e.clientY;
+        const localPt = pt.matrixTransform(root.getScreenCTM().inverse());
+        const width = parseFloat(tooltipBg.getAttribute('width')) || 200;
+        
+        let targetX = localPt.x - width / 2;
+        let targetY = localPt.y - 45;
+
+        // BOUNDARY CHECKING
+        if (targetX < 10) targetX = 10;
+        if (targetX + width > 990) targetX = 990 - width;
+        if (targetY < 10) targetY = localPt.y + 20;
+
+        tooltipGroup.setAttribute('transform', `translate(${targetX}, ${targetY})`);
+      }
+
+      // ESTADO INICIAL
+      setMode('misto');
+    })();
+    ]]>
+  </script>
+</svg>
+
+        </div>
+        <p class="figura-ancorada__fonte" style="margin:.5rem .9rem .7rem">1º grita piramidal, 2º cospe fasciculação e atrofia — um neurônio sozinho não explica os dois.</p>
+      </figure>
+
+      <aside class="continuity">
+        <div class="prose">
+          <p class="no-indent"><strong>Por que importa na prática:</strong> confundir “pé caído” com cansaço ou achar que um único andar explica o exame misto atrasa o diagnóstico sindrômico.</p>
+          <p class="no-indent"><strong>Resumo operacional:</strong> motor puro + <strong>1º e 2º no mesmo corpo</strong> = topografia mista dos neurônios motores.</p>
+          <p class="no-indent">Idoso, assimétrico, só 1º e 2º — o nome da doença.</p>
+        </div>
+      </aside>
+
+      <!-- QUIZ P2 -->
+      <section class="quiz" data-quiz-id="fm4-ela-p02" aria-labelledby="quiz-p02-title">
+        <h2 id="quiz-p02-title">Quiz — fixação</h2>
+        <ol class="quiz__questions">
+          <li class="quiz__question" data-q="1">
+            <p class="quiz__stem">Atrofia + fasciculação <strong>e</strong> Babinski + espasticidade no mesmo paciente apontam para:</p>
+            <div role="radiogroup" aria-label="Q1" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Só 2º NMS</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="false" aria-checked="false">B — Só 1º NMS</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="true" aria-checked="false">C — 1º e 2º NMS juntos</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Só placa motora</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito C.</strong> Um andar sozinho não produz o par atrofia/fasciculação <strong>e</strong> Babinski/espasticidade.</p>
+              <p class="quiz__distractor">(A) esquece o piramidal. (B) esquece o 2º. (D) placa não gera Babinski clássico nem o pacote completo do caso. Cai em A porque fasciculação hipnotiza; o Babinski some do radar.</p>
+            </div>
+          </li>
+          <li class="quiz__question" data-q="2">
+            <p class="quiz__stem">“Arrastar o pé” no raciocínio motor significa, primeiro:</p>
+            <div role="radiogroup" aria-label="Q2" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Cansaço inespecífico</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Fraqueza (não levanta o pé)</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Ataxia sensitiva</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Rigidez extrapiramidal</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> Pé caído = déficit de força — ancora o eixo motor antes de nomear doença.</p>
+              <p class="quiz__distractor">(A) dilui. (C) pediria propriocepção/Romberg, não o recorte do caso. (D) não é o padrão descrito. Cai em A porque a linguagem do paciente (“cansaço”) vaza para o raciocínio médico.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="index.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Jairo: do “estresse” ao pé que arrasta</span></a><a class="next" href="p3.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">ELA: a neurodegenerativa dos dois neurônios</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="rodape">ELA: esclerose lateral amiotrófica.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm4.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">ELA · 8 páginas</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>Jairo: do “estresse” ao pé que arrasta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" aria-current="page"><span class="menu-panel__index">02</span><span>Um neurônio sozinho não basta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>ELA: a neurodegenerativa dos dois neurônios</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Fasciculação: inespecífica na vida, ímã na prova</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Três anos, o motor e a mente intacta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Clínica manda · não é GBS · DFT</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Suporte no chão; riluzole e edaravone compram meses</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Mantra + vignette 72 a: tenar, clonos, bulbar</span></a></li></ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

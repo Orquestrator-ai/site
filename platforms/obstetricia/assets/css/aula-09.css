@@ -1,0 +1,243 @@
+/* aula-09.css — componentes-Executor da Aula 9 (Ginecologia · Módulo III, sub-bloco III.b):
+   Revisão do ciclo menstrual. ADITIVO e element-scoped: prefixo .a9- para nunca colidir com
+   base.css / components.css nem regredir as Aulas 1–8. Herda os tokens da casa (rosa-vinho) —
+   NÃO reskin; só declara tokens NOVOS (--a9-*). Carrega só nas páginas da Aula 9.
+   Interação-âncora = a LINHA DO CICLO (P7): 4–5 curvas sincronizadas com scrub; o marcador do
+   limiar ≥200 pg/mL ancora na curva do ESTRADIOL. */
+
+:root {
+  /* cor por curva hormonal — distinguível ALÉM da cor (o JS aplica também dash pattern) */
+  --a9-fsh:  #5ec8d8;   /* FSH  — teal */
+  --a9-lh:   #ff5c8a;   /* LH   — rosa da casa (o pico é o divisor) */
+  --a9-e2:   #ffc24a;   /* estradiol — âmbar (é a curva do limiar ≥200; a banca inverte) */
+  --a9-prog: #b79ce8;   /* progesterona — violeta */
+  --a9-inh:  #37d6a0;   /* inibina B→A — verde suave, tracejada */
+  --a9-axis: rgba(255, 135, 171, 0.28);
+  --a9-band-mens: rgba(255, 91, 112, 0.12);   /* fase menstrual (sangue) */
+  --a9-band-foli: rgba(94, 200, 216, 0.10);   /* folicular/proliferativa */
+  --a9-band-ovu:  rgba(255, 194, 74, 0.16);   /* ovulação */
+  --a9-band-lut:  rgba(183, 156, 232, 0.12);  /* lútea/secretora */
+  --a9-empty: rgba(250, 244, 248, 0.05);
+}
+:root[data-theme="light"] {
+  --a9-fsh:  #2b93a4;
+  --a9-lh:   #d63b78;
+  --a9-e2:   #b7770a;
+  --a9-prog: #7c56c4;
+  --a9-inh:  #17976a;
+  --a9-axis: rgba(176, 42, 95, 0.22);
+  --a9-band-mens: rgba(207, 52, 80, 0.10);
+  --a9-band-foli: rgba(43, 147, 164, 0.10);
+  --a9-band-ovu:  rgba(183, 119, 10, 0.14);
+  --a9-band-lut:  rgba(124, 86, 196, 0.12);
+  --a9-empty: rgba(34, 16, 25, 0.045);
+}
+
+/* ============ BLINDAGEM contra vazamento de <style>/<script> dos SVG (defensiva, idem A8) ==== */
+.site-header svg, .icon-btn svg, .menu-panel svg, .page-nav svg,
+figure.fig svg > style, figure.fig svg > script, figure.fig svg style, figure.fig svg script {
+  /* garante que folhas/roteiros internos aos SVG inline nunca rendam como texto */
+}
+figure.fig svg style, figure.fig svg script { display: none !important; }
+
+/* ============ Opener E2 — dado impactante (não existe em components.css; aditivo a9-only) ==== */
+.opener--stat { background: radial-gradient(120% 120% at 0% 0%, var(--wine-soft), transparent 68%);
+  border: 1px solid var(--border-mid); border-radius: var(--r-lg); padding: var(--sp-6) var(--sp-5);
+  display: flex; gap: var(--sp-5); align-items: center; flex-wrap: wrap; }
+.opener--stat .opener__big { font-family: var(--font-mono); font-size: var(--fs-display); color: var(--rose);
+  font-weight: 700; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+.opener--stat .opener__ctx { font-family: var(--font-serif); font-size: var(--fs-lg); color: var(--ink-90);
+  flex: 1; min-width: 240px; text-align: justify; line-height: 1.4; }
+.opener--stat .opener__ctx strong { color: var(--ink-100); }
+
+/* ============ Opener E7 variante 3-tempos (P8, distinto do opener--vs de P4) ============ */
+.opener--tri { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: var(--sp-2); align-items: stretch;
+  border-radius: var(--r-lg); }
+.opener--tri .tri-card { padding: var(--sp-4); border-radius: var(--r-md); border: 1px solid var(--border-mid);
+  background: var(--bg-glass); text-align: center; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
+.opener--tri .tri-card h5 { margin: 0; color: var(--rose-hi); }
+.opener--tri .tri-card p { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); text-indent: 0; text-align: center; }
+.opener--tri .tri-card.mid { border-color: var(--kw-amber); background: var(--kw-amber-dim); }
+.opener--tri .tri-card.mid h5 { color: var(--kw-amber); }
+.opener--tri .tri-sep { display: grid; place-items: center; color: var(--rose); font-size: var(--fs-lg); font-weight: 700; }
+@media (max-width: 640px) { .opener--tri { grid-template-columns: 1fr; } .opener--tri .tri-sep { padding: 2px; transform: rotate(90deg); } }
+
+/* ============ Par de USG (P8 — trilaminar × secretor lado a lado) ============ */
+.a9-usg-pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin: var(--sp-6) 0; }
+.a9-usg-pair figure.real { margin: 0; }
+@media (max-width: 620px) { .a9-usg-pair { grid-template-columns: 1fr; } }
+
+/* ============ Selo de módulo + REVISÃO/BASE (chipset do topo) ============ */
+.a9-modmark { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono);
+  font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.04em; padding: 5px 12px;
+  border-radius: var(--r-pill); background: var(--wine-soft); color: var(--rose-hi); border: 1px solid var(--rose-soft); }
+.a9-modmark::before { content: "III·b"; font-size: 0.78em; opacity: 0.85; }
+.a9-selo { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono);
+  font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: var(--r-pill); background: var(--kw-green-dim); color: var(--kw-green);
+  border: 1px solid var(--kw-green); }
+.a9-selo::before { content: "◆"; font-size: 0.8em; }
+
+/* ============ Atribuição + nota honesta das imagens reais ============ */
+.a9-attr { font-size: var(--fs-xs); color: var(--ink-70); text-indent: 0; text-align: left; }
+.a9-attr a { color: var(--ink-70); }
+.a9-note-honest { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-xs); font-family: var(--font-mono);
+  color: var(--ink-70); margin-top: var(--sp-2); padding: 3px 10px; border-radius: var(--r-pill);
+  background: var(--a9-empty); border: 1px solid var(--border-soft); }
+.a9-note-honest::before { content: "⌖"; color: var(--rose); }
+
+/* ============ Corredor de Casos gineco — Caso 2 · Rafaela (ABRE P1 · FECHA P9) ============ */
+.a9-caso { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg);
+  overflow: hidden; background: var(--bg-glass); box-shadow: var(--shadow-md); }
+.a9-caso__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; }
+.a9-caso__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); font-family: var(--font-serif); }
+.a9-caso__badge { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--rose-hi);
+  border: 1px solid var(--rose); border-radius: var(--r-pill); padding: 2px 10px; white-space: nowrap; }
+.a9-caso__body { display: grid; grid-template-columns: max-content 1fr; gap: var(--sp-3) var(--sp-4); padding: var(--sp-5); }
+.a9-caso__body dt { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--rose-hi); }
+.a9-caso__body dd { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; text-indent: 0; }
+.a9-caso__body dd strong { color: var(--ink-100); }
+.a9-caso__foot { padding: var(--sp-3) var(--sp-5); border-top: 1px solid var(--border-soft);
+  display: flex; align-items: center; gap: var(--sp-3); font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono); }
+.a9-caso__foot .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rose); flex-shrink: 0; box-shadow: 0 0 8px var(--rose); }
+.a9-caso.is-resolved { border-color: var(--kw-green); box-shadow: 0 0 0 1px rgba(55,214,160,0.28), 0 10px 40px rgba(23,151,106,0.4); }
+.a9-caso.is-resolved .a9-caso__head { background: var(--kw-green-dim); }
+.a9-caso.is-resolved .a9-caso__head h4 { color: var(--kw-green); }
+.a9-caso.is-resolved .a9-caso__badge { color: var(--kw-green); border-color: var(--kw-green); }
+.a9-caso.is-resolved .a9-caso__foot .dot { background: var(--kw-green); box-shadow: 0 0 8px var(--kw-green); }
+@media (max-width: 520px) { .a9-caso__body { grid-template-columns: 1fr; gap: 2px var(--sp-4); } .a9-caso__body dd { margin-bottom: var(--sp-2); } }
+
+/* ============ P1 — Mini-simulado DDx "pensa comigo" (recuperação ativa, revelação progressiva) === */
+.a9-ddx { margin: var(--sp-6) 0; border: 1px solid var(--border-mid); border-radius: var(--r-lg);
+  background: var(--bg-glass); padding: var(--sp-5); box-shadow: var(--shadow-sm); }
+.a9-ddx__q { font-family: var(--font-serif); font-size: var(--fs-lg); color: var(--ink-100);
+  border-left: 3px solid var(--rose); padding-left: var(--sp-4); margin-bottom: var(--sp-2); }
+.a9-ddx__hint { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--rose); margin-bottom: var(--sp-4); }
+.a9-ddx__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--sp-3); }
+.a9-ramo { text-align: left; border: 1px solid var(--border-mid); border-radius: var(--r-md);
+  background: var(--bg-1); padding: var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-2);
+  transition: border-color var(--dur-fast), transform var(--dur-fast), background var(--dur-fast); cursor: pointer; }
+.a9-ramo:hover, .a9-ramo:focus-visible { border-color: var(--rose); transform: translateY(-2px); }
+.a9-ramo__head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2); }
+.a9-ramo__name { font-weight: 700; color: var(--ink-100); }
+.a9-ramo__tag { font-family: var(--font-mono); font-size: var(--fs-xs); padding: 2px 8px; border-radius: var(--r-pill);
+  border: 1px solid var(--border-mid); color: var(--ink-70); white-space: nowrap; }
+.a9-ramo__tag.is-trap { color: var(--kw-amber); border-color: var(--kw-amber); background: var(--kw-amber-dim); }
+.a9-ramo__tag.is-main { color: var(--rose); border-color: var(--rose); background: var(--wine-soft); }
+.a9-ramo__prompt { font-size: var(--fs-xs); color: var(--rose); font-family: var(--font-mono); }
+.a9-ramo__reveal { display: none; font-size: var(--fs-sm); color: var(--ink-90); text-align: justify;
+  border-top: 1px dashed var(--border-mid); padding-top: var(--sp-2); }
+.a9-ramo.is-open .a9-ramo__reveal { display: block; animation: pageIn var(--dur-mid) var(--ease-out); }
+.a9-ramo.is-open .a9-ramo__prompt { display: none; }
+.a9-ramo.is-trap-card.is-open { border-color: var(--kw-amber); }
+.a9-ramo.is-main-card.is-open { border-color: var(--rose); background: var(--wine-soft); }
+
+/* ============ P6 — Régua dos 14 dias (folicular VARIA · lútea FIXA) ============ */
+.a9-regua { margin: var(--sp-6) 0; border: 1px solid var(--border-mid); border-radius: var(--r-lg);
+  background: var(--bg-glass); padding: var(--sp-5); }
+.a9-regua__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-4); }
+.a9-regua__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); }
+.a9-regua__read { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); }
+.a9-regua__bar { display: grid; grid-template-columns: var(--a9-foli-fr, 3fr) auto var(--a9-lut-fr, 2fr);
+  gap: var(--sp-1); align-items: stretch; }
+.a9-regua__seg { padding: var(--sp-4) var(--sp-3); border-radius: var(--r-sm); text-align: center;
+  font-size: var(--fs-sm); border: 1px solid var(--border-mid); display: flex; flex-direction: column; gap: 2px; justify-content: center; }
+.a9-regua__seg .lbl { font-weight: 700; color: var(--ink-100); }
+.a9-regua__seg .sub { font-family: var(--font-mono); font-size: var(--fs-xs); }
+.a9-regua__seg.foli { background: var(--a9-band-foli); border-color: var(--a9-fsh); }
+.a9-regua__seg.foli .sub { color: var(--a9-fsh); }
+.a9-regua__seg.ovu { background: var(--a9-band-ovu); border-color: var(--a9-e2); min-width: 68px; }
+.a9-regua__seg.ovu .sub { color: var(--a9-e2); }
+.a9-regua__seg.lut { background: var(--a9-band-lut); border-color: var(--a9-prog); }
+.a9-regua__seg.lut .sub { color: var(--a9-prog); }
+.a9-regua__ctl { margin-top: var(--sp-4); display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+.a9-regua__ctl label { font-size: var(--fs-sm); color: var(--ink-90); }
+.a9-regua__ctl input[type="range"] { flex: 1; min-width: 160px; accent-color: var(--rose); }
+.a9-regua__back { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--kw-amber); text-align: center; font-family: var(--font-mono); }
+@media (max-width: 560px) { .a9-regua__bar { grid-template-columns: 1fr; } .a9-regua__seg.ovu { min-width: 0; } }
+
+/* ============ P7 — A LINHA DO CICLO (interação-âncora · herói-síntese) ============ */
+.a9-ciclo { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg);
+  background: var(--bg-1); padding: var(--sp-4) var(--sp-4) var(--sp-5); box-shadow: var(--glow-rose); }
+.a9-ciclo__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-3); }
+.a9-ciclo__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); font-family: var(--font-serif); }
+.a9-ciclo__hint { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--rose); }
+.a9-ciclo__plot { position: relative; background: var(--bg-glass); border-radius: var(--r-md); border: 1px solid var(--border-soft); overflow: hidden; }
+.a9-ciclo__svg { width: 100%; height: auto; display: block; touch-action: pan-y; cursor: ew-resize; }
+.a9-ciclo__legend { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); margin-top: var(--sp-3); }
+.a9-ciclo__lg { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-xs); color: var(--ink-90); }
+.a9-ciclo__lg .sw { width: 26px; height: 0; border-top-width: 3px; border-top-style: solid; border-radius: 2px; }
+.a9-ciclo__lg[data-h="fsh"]  .sw { border-color: var(--a9-fsh); }
+.a9-ciclo__lg[data-h="lh"]   .sw { border-color: var(--a9-lh); }
+.a9-ciclo__lg[data-h="e2"]   .sw { border-color: var(--a9-e2); }
+.a9-ciclo__lg[data-h="prog"] .sw { border-color: var(--a9-prog); }
+.a9-ciclo__lg[data-h="inh"]  .sw { border-top-style: dashed; border-color: var(--a9-inh); }
+.a9-ciclo__readout { margin-top: var(--sp-4); border: 1px solid var(--border-mid); border-radius: var(--r-md);
+  background: var(--bg-glass-strong); padding: var(--sp-4); }
+.a9-ciclo__day { display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-3); }
+.a9-ciclo__day .d { font-family: var(--font-mono); font-size: var(--fs-xl); color: var(--rose); font-weight: 700; }
+.a9-ciclo__day .ph { font-size: var(--fs-sm); }
+.a9-ciclo__day .ph b { color: var(--ink-100); }
+.a9-ciclo__phases { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-2) var(--sp-4); margin-bottom: var(--sp-3); font-size: var(--fs-sm); }
+.a9-ciclo__phases .k { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--rose-hi); }
+.a9-ciclo__phases .v { color: var(--ink-90); }
+.a9-ciclo__hormones { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--sp-2); }
+.a9-ciclo__h { padding: var(--sp-2) var(--sp-3); border-radius: var(--r-sm); background: var(--bg-1); border-left: 3px solid var(--border-mid); font-size: var(--fs-xs); }
+.a9-ciclo__h .hn { font-weight: 700; }
+.a9-ciclo__h .hv { color: var(--ink-90); }
+.a9-ciclo__h[data-h="fsh"]  { border-left-color: var(--a9-fsh); }
+.a9-ciclo__h[data-h="fsh"]  .hn { color: var(--a9-fsh); }
+.a9-ciclo__h[data-h="lh"]   { border-left-color: var(--a9-lh); }
+.a9-ciclo__h[data-h="lh"]   .hn { color: var(--a9-lh); }
+.a9-ciclo__h[data-h="e2"]   { border-left-color: var(--a9-e2); }
+.a9-ciclo__h[data-h="e2"]   .hn { color: var(--a9-e2); }
+.a9-ciclo__h[data-h="prog"] { border-left-color: var(--a9-prog); }
+.a9-ciclo__h[data-h="prog"] .hn { color: var(--a9-prog); }
+.a9-ciclo__note { margin-top: var(--sp-3); font-size: var(--fs-xs); color: var(--kw-amber); font-family: var(--font-mono);
+  border: 1px solid var(--kw-amber); background: var(--kw-amber-dim); border-radius: var(--r-sm); padding: var(--sp-2) var(--sp-3); }
+@media (max-width: 560px) { .a9-ciclo__phases { grid-template-columns: 1fr; } }
+
+/* ============ P9 — Card-conduta da Rafaela (árvore de decisão · forma+texto, não só cor) ==== */
+.a9-conduta { margin: var(--sp-5) 0; }
+.a9-conduta__tree { display: flex; flex-direction: column; gap: var(--sp-2); }
+.a9-conduta__node { display: flex; align-items: flex-start; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-md); border: 1px solid var(--border-mid); background: var(--bg-1); }
+.a9-conduta__node .ic { font-family: var(--font-mono); font-weight: 700; flex-shrink: 0; width: 26px; text-align: center; }
+.a9-conduta__node .tx { font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; text-indent: 0; }
+.a9-conduta__node .tx b { color: var(--ink-100); }
+.a9-conduta__node.q { border-color: var(--rose); background: var(--wine-soft); }
+.a9-conduta__node.q .ic { color: var(--rose); }
+.a9-conduta__node.go { border-left: 4px solid var(--kw-green); }
+.a9-conduta__node.go .ic { color: var(--kw-green); }
+.a9-conduta__node.opt { border-left: 4px solid var(--kw-amber); }
+.a9-conduta__node.opt .ic { color: var(--kw-amber); }
+.a9-conduta__node.no { border-left: 4px solid var(--kw-red); }
+.a9-conduta__node.no .ic { color: var(--kw-red); }
+.a9-conduta__conn { text-align: center; color: var(--rose); font-size: 1.1rem; line-height: 1; }
+
+/* ============ Ponte declarada (link-back nomeado Gineco 4/5) ============ */
+.a9-bridge { margin: var(--sp-6) 0; border: 1px dashed var(--rose); border-radius: var(--r-md);
+  background: var(--wine-soft); padding: var(--sp-4) var(--sp-5); }
+.a9-bridge__lbl { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--rose); margin-bottom: var(--sp-2); }
+.a9-bridge p { margin: 0; text-align: justify; text-indent: 0; color: var(--ink-90); font-size: var(--fs-sm); }
+.a9-bridge a { color: var(--rose-hi); }
+
+/* ============ Mapa de pares (P10 — os 4 pares que a banca troca) ============ */
+.a9-pares { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--sp-3); margin: var(--sp-5) 0; }
+.a9-par { border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-1); padding: var(--sp-4);
+  border-left: 4px solid var(--kw-amber); }
+.a9-par h5 { margin: 0 0 var(--sp-2); color: var(--kw-amber); font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+.a9-par .par-row { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-sm); color: var(--ink-90); }
+.a9-par .par-row b { color: var(--ink-100); }
+.a9-par .par-vs { color: var(--ink-50); font-family: var(--font-mono); font-size: var(--fs-xs); padding: 2px 0; }
+
+/* ============ Números-âncora (P10 — dono certo) ============ */
+.a9-nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--sp-3); margin: var(--sp-5) 0; }
+.a9-num { border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-glass); padding: var(--sp-4); text-align: center; }
+.a9-num .big { display: block; font-family: var(--font-mono); font-size: var(--fs-xl); color: var(--ink-100); font-weight: 700; }
+.a9-num .own { display: block; font-size: var(--fs-xs); color: var(--rose-hi); margin-top: 2px; }
+.a9-num.e2 { border-color: var(--a9-e2); }
+.a9-num.e2 .big { color: var(--a9-e2); }
+.a9-num.e2 .own { color: var(--a9-e2); }

@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ABORDAGENS VISUAIS AVALIADAS:
+1. Diagrama de vetores flutuantes com pelve isolada em 3D: alta complexidade geométrica, porém desconectada do corpo inteiro do paciente.
+2. Silhueta dupla de corpo inteiro (frente e perfil) com percurso de carga contínuo e anel pélvico saturado: conecta instantaneamente o tronco aos membros e evidencia a bifurcação de forças. [ESCOLHIDA]
+3. Diagrama esquemático em blocos funcionais (caixa supra-pélvica e sub-pélvica): excessivamente abstrato, perde o reconhecimento anatômico direto.
+JUSTIFICATIVA: A abordagem 2 (Silhueta Dupla Frente/Perfil) revela sem necessidade de texto prévio como a pelve recebe a massa superior e a divide 50/50 nos fêmures.
+-->
+<svg class="a12p2-root" id="a12p2-svg-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" data-svg-tokenized="true" data-step="all" aria-labelledby="a12p2-title a12p2-desc">
+  <title id="a12p2-title">Anatomia Funcional da Pelve: Biomecânica de Transferência de Carga</title>
+  <desc id="a12p2-desc">Ilustração funcional de silhuetas corporais em vista anterior e perfil, destacando a pelve na transição tronco-membros e a bifurcação da carga mecânica axial.</desc>
+  <style>
+    /*<![CDATA[*/
+    .a12p2-root {
+      --a12p2-tinta: #F6F1F4;
+      --a12p2-bg: #141018;
+      --a12p2-card: #1E1828;
+      --a12p2-card-border: #342A40;
+      --a12p2-corpo: #8F8390;
+      --a12p2-pelve: #F06A78;
+      --a12p2-carga: #F3BE5B;
+      --a12p2-construida: #55B889;
+      --a12p2-linha: #A79AA4;
+      --a12p2-dim: rgba(255, 255, 255, 0.12);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--a12-bg, var(--a12p2-bg, #141018));
+      color: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+      box-sizing: border-box;
+    }
+
+    [data-theme="light"] .a12p2-root {
+      --a12p2-tinta: #1F1A24;
+      --a12p2-bg: #FAFAF9;
+      --a12p2-card: #F0EBF2;
+      --a12p2-card-border: #D8CFDD;
+      --a12p2-corpo: #6B5E6D;
+      --a12p2-pelve: #D94354;
+      --a12p2-carga: #D99B26;
+      --a12p2-construida: #2E8B5E;
+      --a12p2-linha: #7E707D;
+      --a12p2-dim: rgba(0, 0, 0, 0.08);
+    }
+
+    @media (prefers-color-scheme: light) {
+      .a12p2-root:not([data-theme="dark"]) {
+        --a12p2-tinta: #1F1A24;
+        --a12p2-bg: #FAFAF9;
+        --a12p2-card: #F0EBF2;
+        --a12p2-card-border: #D8CFDD;
+        --a12p2-corpo: #6B5E6D;
+        --a12p2-pelve: #D94354;
+        --a12p2-carga: #D99B26;
+        --a12p2-construida: #2E8B5E;
+        --a12p2-linha: #7E707D;
+        --a12p2-dim: rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    .a12p2-bg-rect {
+      fill: var(--a12-bg, var(--a12p2-bg, #141018));
+    }
+    .a12p2-header-title {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-header-legend {
+      font-size: 12px;
+      font-weight: 400;
+      fill: var(--a12-linha, var(--a12p2-linha, #A79AA4));
+    }
+    .a12p2-silhouette {
+      fill: none;
+      stroke: var(--a12-corpo, var(--a12p2-corpo, #8F8390));
+      stroke-width: 1.6;
+      stroke-dasharray: 4 3;
+      opacity: 0.65;
+    }
+    .a12p2-silhouette-fill {
+      fill: var(--a12-corpo, var(--a12p2-corpo, #8F8390));
+      opacity: 0.05;
+    }
+    .a12p2-pelvis-highlight {
+      fill: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      fill-opacity: 0.22;
+      stroke: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      stroke-width: 2.2;
+      transition: all 0.3s ease;
+    }
+    .a12p2-pelvis-core {
+      fill: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      fill-opacity: 0.85;
+    }
+    .a12p2-spine-path {
+      fill: none;
+      stroke: var(--a12-corpo, var(--a12p2-corpo, #8F8390));
+      stroke-width: 2;
+      stroke-dasharray: 2 2;
+    }
+    .a12p2-femur-path {
+      fill: none;
+      stroke: var(--a12-corpo, var(--a12p2-corpo, #8F8390));
+      stroke-width: 2;
+      stroke-dasharray: 2 2;
+    }
+    
+    /* Dynamic Vector Streams */
+    .a12p2-vector-1 {
+      fill: none;
+      stroke: var(--a12-carga, var(--a12p2-carga, #F3BE5B));
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: opacity 0.35s ease, stroke-width 0.35s ease;
+    }
+    .a12p2-vector-2 {
+      fill: none;
+      stroke: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: opacity 0.35s ease, stroke-width 0.35s ease;
+    }
+    .a12p2-vector-3 {
+      fill: none;
+      stroke: var(--a12-construida, var(--a12p2-construida, #55B889));
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: opacity 0.35s ease, stroke-width 0.35s ease;
+    }
+    .a12p2-arrow-1 {
+      fill: var(--a12-carga, var(--a12p2-carga, #F3BE5B));
+      transition: opacity 0.35s ease;
+    }
+    .a12p2-arrow-2 {
+      fill: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      transition: opacity 0.35s ease;
+    }
+    .a12p2-arrow-3 {
+      fill: var(--a12-construida, var(--a12p2-construida, #55B889));
+      transition: opacity 0.35s ease;
+    }
+
+    /* Labels & Guides */
+    .a12p2-guide-line {
+      stroke: var(--a12-linha, var(--a12p2-linha, #A79AA4));
+      stroke-width: 1.2;
+      stroke-dasharray: 3 3;
+      opacity: 0.7;
+    }
+    .a12p2-guide-node {
+      fill: var(--a12-linha, var(--a12p2-linha, #A79AA4));
+    }
+    .a12p2-label-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-label-desc {
+      font-size: 11px;
+      fill: var(--a12-linha, var(--a12p2-linha, #A79AA4));
+    }
+    .a12p2-verb-tag {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .a12p2-tag-v1 { fill: var(--a12-carga, var(--a12p2-carga, #F3BE5B)); }
+    .a12p2-tag-v2 { fill: var(--a12-pelve, var(--a12p2-pelve, #F06A78)); }
+    .a12p2-tag-v3 { fill: var(--a12-construida, var(--a12p2-construida, #55B889)); }
+
+    /* Interactive Side Panel */
+    .a12p2-panel-bg {
+      fill: var(--a12-card, var(--a12p2-card, #1E1828));
+      stroke: var(--a12-card-border, var(--a12p2-card-border, #342A40));
+      stroke-width: 1.2;
+      rx: 10px;
+    }
+    .a12p2-panel-heading {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-btn {
+      cursor: pointer;
+      outline: none;
+    }
+    .a12p2-btn-box {
+      fill: var(--a12-bg, var(--a12p2-bg, #141018));
+      stroke: var(--a12-card-border, var(--a12p2-card-border, #342A40));
+      stroke-width: 1.2;
+      rx: 6px;
+      transition: all 0.2s ease;
+    }
+    .a12p2-btn:hover .a12p2-btn-box,
+    .a12p2-btn:focus .a12p2-btn-box {
+      stroke: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-btn[aria-pressed="true"] .a12p2-btn-box {
+      stroke-width: 2px;
+    }
+    .a12p2-btn-b1[aria-pressed="true"] .a12p2-btn-box {
+      stroke: var(--a12-carga, var(--a12p2-carga, #F3BE5B));
+      fill: rgba(243, 190, 91, 0.14);
+    }
+    .a12p2-btn-b2[aria-pressed="true"] .a12p2-btn-box {
+      stroke: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      fill: rgba(240, 106, 120, 0.14);
+    }
+    .a12p2-btn-b3[aria-pressed="true"] .a12p2-btn-box {
+      stroke: var(--a12-construida, var(--a12p2-construida, #55B889));
+      fill: rgba(85, 184, 137, 0.14);
+    }
+    .a12p2-btn-ball[aria-pressed="true"] .a12p2-btn-box {
+      stroke: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+      fill: var(--a12-card-border, var(--a12p2-card-border, #342A40));
+    }
+    .a12p2-btn-lbl {
+      font-size: 11.5px;
+      font-weight: 700;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-info-box {
+      fill: var(--a12-bg, var(--a12p2-bg, #141018));
+      stroke: var(--a12-card-border, var(--a12p2-card-border, #342A40));
+      stroke-width: 1;
+      rx: 8px;
+    }
+    .a12p2-info-title {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    .a12p2-info-text {
+      font-size: 11px;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    
+    /* Metrics section */
+    .a12p2-metric-track {
+      fill: var(--a12-bg, var(--a12p2-bg, #141018));
+      rx: 3px;
+    }
+    .a12p2-metric-bar {
+      rx: 3px;
+      transition: width 0.4s ease;
+    }
+
+    /* State visibility rules */
+    .a12p2-root[data-step="1"] .a12p2-vector-2,
+    .a12p2-root[data-step="1"] .a12p2-vector-3,
+    .a12p2-root[data-step="1"] .a12p2-arrow-2,
+    .a12p2-root[data-step="1"] .a12p2-arrow-3 {
+      opacity: 0.12;
+    }
+    .a12p2-root[data-step="1"] .a12p2-info-s2,
+    .a12p2-root[data-step="1"] .a12p2-info-s3,
+    .a12p2-root[data-step="1"] .a12p2-info-sall {
+      display: none;
+    }
+
+    .a12p2-root[data-step="2"] .a12p2-vector-1 { opacity: 0.35; }
+    .a12p2-root[data-step="2"] .a12p2-vector-3,
+    .a12p2-root[data-step="2"] .a12p2-arrow-3 { opacity: 0.12; }
+    .a12p2-root[data-step="2"] .a12p2-info-s1,
+    .a12p2-root[data-step="2"] .a12p2-info-s3,
+    .a12p2-root[data-step="2"] .a12p2-info-sall {
+      display: none;
+    }
+
+    .a12p2-root[data-step="3"] .a12p2-vector-1,
+    .a12p2-root[data-step="3"] .a12p2-vector-2 { opacity: 0.35; }
+    .a12p2-root[data-step="3"] .a12p2-info-s1,
+    .a12p2-root[data-step="3"] .a12p2-info-s2,
+    .a12p2-root[data-step="3"] .a12p2-info-sall {
+      display: none;
+    }
+
+    .a12p2-root[data-step="all"] .a12p2-info-s1,
+    .a12p2-root[data-step="all"] .a12p2-info-s2,
+    .a12p2-root[data-step="all"] .a12p2-info-s3 {
+      display: none;
+    }
+    /*]]>*/
+  </style>
+
+  <!-- Markers -->
+  <defs>
+    <marker id="a12p2-m1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" class="a12p2-arrow-1"/>
+    </marker>
+    <marker id="a12p2-m2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" class="a12p2-arrow-2"/>
+    </marker>
+    <marker id="a12p2-m3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" class="a12p2-arrow-3"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect class="a12p2-bg-rect" width="960" height="640"/>
+
+  <!-- Top Title &amp; Interpretation Banner -->
+  <g transform="translate(30, 32)">
+    <text class="a12p2-header-title" x="0" y="0">ANATOMIA FUNCIONAL DA PELVE: BIOMECÂNICA DE TRANSFERÊNCIA DE CARGA</text>
+    <text class="a12p2-header-legend" x="0" y="20">A pelve atua como ponte osteoarticular central: recebe a carga axial do tronco (100%), estabiliza no anel pélvico e transmite 50%/50% aos membros inferiores.</text>
+  </g>
+
+  <!-- Graphic Stage: Dual Silhouettes &amp; Vectors -->
+  <!-- Silhueta 1: VISTA ANTERIOR (FRENTE) Center X=200 -->
+  <g id="a12p2-stage-anterior" transform="translate(60, 75)">
+    <!-- View Subtitle -->
+    <text class="a12p2-label-desc" x="140" y="25" text-anchor="middle" font-weight="700">VISTA ANTERIOR (FRENTE)</text>
+    
+    <!-- Full Body Silhouette Path (Anterior) -->
+    <path class="a12p2-silhouette-fill" d="M 140 40 C 122 40 115 52 115 68 C 115 84 124 94 130 96 L 130 105 L 120 110 C 95 118 80 135 75 160 L 70 240 C 68 250 64 270 60 300 L 56 340 L 68 340 L 74 280 L 80 230 C 82 245 84 275 84 310 L 86 350 C 90 350 96 340 100 310 L 105 260 L 105 310 L 110 430 L 105 500 L 112 550 L 130 550 L 135 480 L 135 340 L 140 330 L 145 340 L 145 480 L 150 550 L 168 550 L 175 500 L 170 430 L 175 310 L 175 260 L 180 310 C 184 340 190 350 194 350 L 196 310 C 196 275 198 245 200 230 L 206 280 L 212 340 L 224 340 L 220 300 C 216 270 212 250 210 240 L 205 160 C 200 135 185 118 160 110 L 150 105 L 150 96 C 156 94 165 84 165 68 C 165 52 158 40 140 40 Z"/>
+    <path class="a12p2-silhouette" d="M 140 40 C 122 40 115 52 115 68 C 115 84 124 94 130 96 L 130 105 L 120 110 C 95 118 80 135 75 160 L 70 240 C 68 250 64 270 60 300 L 56 340 L 68 340 L 74 280 L 80 230 L 84 310 L 86 350 L 100 310 L 105 260 L 105 310 L 110 430 L 105 500 L 112 550 L 130 550 L 135 480 L 135 330 L 140 320 L 145 330 L 145 480 L 150 550 L 168 550 L 175 500 L 170 430 L 175 310 L 175 260 L 180 310 L 194 350 L 196 310 L 200 230 L 206 280 L 212 340 L 224 340 L 220 300 C 216 270 212 250 210 240 L 205 160 C 200 135 185 118 160 110 L 150 105 L 150 96 C 156 94 165 84 165 68 C 165 52 158 40 140 40 Z"/>
+
+    <!-- Spine Trajectory (Anterior center line) -->
+    <path class="a12p2-spine-path" d="M 140 105 L 140 270"/>
+
+    <!-- Femur Shaft Pathways -->
+    <path class="a12p2-femur-path" d="M 115 310 L 122 430 L 120 540"/>
+    <path class="a12p2-femur-path" d="M 165 310 L 158 430 L 160 540"/>
+
+    <!-- Pelvis Highlighted Structure (Anterior) -->
+    <g id="a12p2-pelvis-anterior">
+      <!-- Iliac Wings &amp; Pelvic Ring -->
+      <path class="a12p2-pelvis-highlight" d="M 140 268 C 122 268 102 265 96 275 C 90 286 92 305 106 315 C 114 320 120 325 125 325 C 130 325 136 322 140 320 C 144 322 150 325 155 325 C 160 325 166 320 174 315 C 188 305 190 286 184 275 C 178 265 158 268 140 268 Z"/>
+      <!-- Sacrum Central Core -->
+      <path class="a12p2-pelvis-core" d="M 132 268 L 148 268 L 144 300 L 136 300 Z" opacity="0.9"/>
+      <!-- Acetabular Sockets D/E -->
+      <circle cx="112" cy="310" r="9" class="a12p2-pelvis-highlight"/>
+      <circle cx="168" cy="310" r="9" class="a12p2-pelvis-highlight"/>
+    </g>
+
+    <!-- Dynamic Force Vectors (Anterior View) -->
+    <!-- Tempo 1: Recebe (Spine to S1) -->
+    <path class="a12p2-vector-1" d="M 140 140 L 140 265" marker-end="url(#a12p2-m1)"/>
+    
+    <!-- Tempo 2: Estabiliza (Sacroiliac &amp; Pelvic Ring Arc) -->
+    <path class="a12p2-vector-2" d="M 140 270 Q 125 278 114 302" marker-end="url(#a12p2-m2)"/>
+    <path class="a12p2-vector-2" d="M 140 270 Q 155 278 166 302" marker-end="url(#a12p2-m2)"/>
+
+    <!-- Tempo 3: Transmite (Femoral Shafts) -->
+    <path class="a12p2-vector-3" d="M 112 314 L 122 430" marker-end="url(#a12p2-m3)"/>
+    <path class="a12p2-vector-3" d="M 168 314 L 158 430" marker-end="url(#a12p2-m3)"/>
+  </g>
+
+  <!-- Silhueta 2: VISTA SAGITAL (PERFIL) Center X=410 -->
+  <g id="a12p2-stage-sagittal" transform="translate(320, 75)">
+    <!-- View Subtitle -->
+    <text class="a12p2-label-desc" x="90" y="25" text-anchor="middle" font-weight="700">VISTA SAGITAL (PERFIL)</text>
+    
+    <!-- Full Body Silhouette Path (Sagittal) -->
+    <path class="a12p2-silhouette-fill" d="M 85 40 C 70 40 60 52 60 68 C 60 82 70 94 75 96 L 75 105 C 65 115 50 135 48 160 C 45 190 52 230 55 260 C 58 275 62 285 70 310 L 75 350 L 70 430 L 65 500 L 65 550 L 95 550 L 90 500 L 95 430 L 105 350 C 115 315 120 290 115 270 C 110 245 95 230 92 210 C 88 185 95 160 98 140 C 100 125 95 110 88 105 L 88 96 C 94 94 100 82 100 68 C 100 52 95 40 85 40 Z"/>
+    <path class="a12p2-silhouette" d="M 85 40 C 70 40 60 52 60 68 C 60 82 70 94 75 96 L 75 105 C 65 115 50 135 48 160 C 45 190 52 230 55 260 C 58 275 62 285 70 310 L 75 350 L 70 430 L 65 500 L 65 550 L 95 550 L 90 500 L 95 430 L 105 350 C 115 315 120 290 115 270 C 110 245 95 230 92 210 C 88 185 95 160 98 140 C 100 125 95 110 88 105 L 88 96 C 94 94 100 82 100 68 C 100 52 95 40 85 40 Z"/>
+
+    <!-- Spine Curvature (Sagittal - Cervical/Thoracic/Lumbar/Sacral) -->
+    <path class="a12p2-spine-path" d="M 80 105 C 75 125 82 155 78 190 C 74 225 82 250 82 270"/>
+
+    <!-- Femur Shaft Pathway (Sagittal) -->
+    <path class="a12p2-femur-path" d="M 82 310 L 85 430 L 80 540"/>
+
+    <!-- Pelvis Highlighted Structure (Sagittal) -->
+    <g id="a12p2-pelvis-sagittal">
+      <path class="a12p2-pelvis-highlight" d="M 82 265 C 65 268 56 280 62 295 C 68 310 82 325 95 320 C 105 315 112 298 104 280 C 98 268 90 265 82 265 Z"/>
+      <path class="a12p2-pelvis-core" d="M 78 268 C 72 275 75 290 82 298 C 88 290 88 278 78 268 Z" opacity="0.9"/>
+      <circle cx="84" cy="310" r="9" class="a12p2-pelvis-highlight"/>
+    </g>
+
+    <!-- Dynamic Force Vectors (Sagittal View) -->
+    <!-- Tempo 1: Recebe (Lumbar lordosis vector) -->
+    <path class="a12p2-vector-1" d="M 76 150 C 72 185 82 230 82 263" marker-end="url(#a12p2-m1)"/>
+
+    <!-- Tempo 2: Estabiliza (Promontory &amp; Sacral tilt ring) -->
+    <path class="a12p2-vector-2" d="M 82 266 Q 90 282 84 302" marker-end="url(#a12p2-m2)"/>
+
+    <!-- Tempo 3: Transmite (Femoral line of weight-bearing) -->
+    <path class="a12p2-vector-3" d="M 84 314 L 86 430" marker-end="url(#a12p2-m3)"/>
+  </g>
+
+  <!-- ANATOMICAL MARGIN LABELS &amp; ACTION VERBS (Outer Margins &amp; Guides) -->
+  <!-- Left Outer Margin Labels -->
+  <g id="a12p2-margin-labels-left" transform="translate(25, 140)">
+    <!-- Label 1: abdome (Above) -->
+    <g transform="translate(0, 75)">
+      <line class="a12p2-guide-line" x1="68" y1="0" x2="175" y2="0"/>
+      <circle class="a12p2-guide-node" cx="175" cy="0" r="3"/>
+      <text class="a12p2-label-title" x="0" y="-4">ABDOME</text>
+      <text class="a12p2-label-desc" x="0" y="11">Cavidade superior / tronco</text>
+      <text class="a12p2-verb-tag a12p2-tag-v1" x="0" y="27">RECEBE</text>
+    </g>
+
+    <!-- Label 2: pelve (Middle) -->
+    <g transform="translate(0, 205)">
+      <line class="a12p2-guide-line" x1="58" y1="0" x2="171" y2="0"/>
+      <circle class="a12p2-guide-node" cx="171" cy="0" r="3"/>
+      <text class="a12p2-label-title" x="0" y="-4">PELVE</text>
+      <text class="a12p2-label-desc" x="0" y="11">Cinto osteoarticular central</text>
+      <text class="a12p2-verb-tag a12p2-tag-v2" x="0" y="27">ESTABILIZA</text>
+    </g>
+
+    <!-- Label 3: membros inferiores (Below) -->
+    <g transform="translate(0, 335)">
+      <line class="a12p2-guide-line" x1="135" y1="0" x2="197" y2="0"/>
+      <circle class="a12p2-guide-node" cx="197" cy="0" r="3"/>
+      <text class="a12p2-label-title" x="0" y="-4">MEMBROS INFERIORES</text>
+      <text class="a12p2-label-desc" x="0" y="11">Segmentos locomotores / base</text>
+      <text class="a12p2-verb-tag a12p2-tag-v3" x="0" y="27">TRANSMITE</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE RIGHT PANEL / READING CONSOLE (X=545 to 930) -->
+  <g id="a12p2-console" transform="translate(545, 90)">
+    <!-- Panel Background -->
+    <rect class="a12p2-panel-bg" width="385" height="520"/>
+
+    <!-- Panel Header -->
+    <text class="a12p2-panel-heading" x="20" y="32">PAINEL BIOMECÂNICO DE CARGA</text>
+
+    <!-- Step Buttons (Accessible touch targets: height 44px) -->
+    <g id="a12p2-step-buttons" transform="translate(20, 48)">
+      <!-- Button 1: Recebe -->
+      <g class="a12p2-btn a12p2-btn-b1" id="a12p2-btn-step1" role="button" tabindex="0" aria-pressed="false" aria-label="Tempo 1: Recebe carga axial">
+        <rect class="a12p2-btn-box" width="166" height="44" x="0" y="0"/>
+        <circle class="a12p2-btn-indicator" cx="16" cy="22" r="5" fill="var(--a12-carga, var(--a12p2-carga, #F3BE5B))"/>
+        <text class="a12p2-btn-lbl" x="30" y="20">1. RECEBE</text>
+        <text class="a12p2-label-desc" x="30" y="33">Carga axial (100%)</text>
+      </g>
+
+      <!-- Button 2: Estabiliza -->
+      <g class="a12p2-btn a12p2-btn-b2" id="a12p2-btn-step2" role="button" tabindex="0" aria-pressed="false" aria-label="Tempo 2: Estabiliza no anel pélvico">
+        <rect class="a12p2-btn-box" width="166" height="44" x="178" y="0"/>
+        <circle class="a12p2-btn-indicator" cx="194" cy="22" r="5" fill="var(--a12-pelve, var(--a12p2-pelve, #F06A78))"/>
+        <text class="a12p2-btn-lbl" x="208" y="20">2. ESTABILIZA</text>
+        <text class="a12p2-label-desc" x="208" y="33">Anel pélvico sacroilíaco</text>
+      </g>
+
+      <!-- Button 3: Transmite -->
+      <g class="a12p2-btn a12p2-btn-b3" id="a12p2-btn-step3" role="button" tabindex="0" aria-pressed="false" aria-label="Tempo 3: Transmite aos fêmures">
+        <rect class="a12p2-btn-box" width="166" height="44" x="0" y="52"/>
+        <circle class="a12p2-btn-indicator" cx="16" cy="74" r="5" fill="var(--a12-construida, var(--a12p2-construida, #55B889))"/>
+        <text class="a12p2-btn-lbl" x="30" y="72">3. TRANSMITE</text>
+        <text class="a12p2-label-desc" x="30" y="85">Bifurcação 50% / 50%</text>
+      </g>
+
+      <!-- Button All: Visão Completa -->
+      <g class="a12p2-btn a12p2-btn-ball" id="a12p2-btn-stepall" role="button" tabindex="0" aria-pressed="true" aria-label="Visão Completa do fluxo de carga">
+        <rect class="a12p2-btn-box" width="166" height="44" x="178" y="52"/>
+        <circle class="a12p2-btn-indicator" cx="194" cy="74" r="5" fill="var(--a12-tinta, var(--a12p2-tinta, #F6F1F4))"/>
+        <text class="a12p2-btn-lbl" x="208" y="72">FLUXO COMPLETO</text>
+        <text class="a12p2-label-desc" x="208" y="85">Percurso contínuo</text>
+      </g>
+    </g>
+
+    <!-- Reading Box / Clinical Interpretation Card -->
+    <g transform="translate(20, 160)">
+      <rect class="a12p2-info-box" width="345" height="185"/>
+
+      <!-- Dynamic Content for Step 1 -->
+      <g class="a12p2-info-s1" transform="translate(16, 24)">
+        <text class="a12p2-info-title" fill="var(--a12-carga, var(--a12p2-carga, #F3BE5B))" x="0" y="0">TEMPO 1 — TRONCO → COLUNA LOMBAR (RECEBE)</text>
+        <text class="a12p2-info-text" x="0" y="24">O peso corporal da supraestrutura (cabeça, tórax,</text>
+        <text class="a12p2-info-text" x="0" y="40">abdome e membros superiores) canaliza-se como um</text>
+        <text class="a12p2-info-text" x="0" y="56">vetor de força axial gravitacional contínuo.</text>
+        <text class="a12p2-info-text" x="0" y="84" font-weight="700">Ponto de Entrada:</text>
+        <text class="a12p2-info-text" x="110" y="84">Promontório Sacro / L5-S1</text>
+        <text class="a12p2-info-text" x="0" y="104" font-weight="700">Magnitude relativa:</text>
+        <text class="a12p2-info-text" x="110" y="104">100% da carga supra-pélvica</text>
+      </g>
+
+      <!-- Dynamic Content for Step 2 -->
+      <g class="a12p2-info-s2" transform="translate(16, 24)">
+        <text class="a12p2-info-title" fill="var(--a12-pelve, var(--a12p2-pelve, #F06A78))" x="0" y="0">TEMPO 2 — SACRO → ANEL PÉLVICO (ESTABILIZA)</text>
+        <text class="a12p2-info-text" x="0" y="24">Ao atingir o sacro, a força vetorial axial abre-se</text>
+        <text class="a12p2-info-text" x="0" y="40">lateralmente através das articulações sacroilíacas</text>
+        <text class="a12p2-info-text" x="0" y="56">e arcos íleopectíneos do cinto osteoarticular.</text>
+        <text class="a12p2-info-text" x="0" y="84" font-weight="700">Função Mecânica:</text>
+        <text class="a12p2-info-text" x="110" y="84">Amortecimento e estabilização</text>
+        <text class="a12p2-info-text" x="0" y="104" font-weight="700">Mecanismo:</text>
+        <text class="a12p2-info-text" x="110" y="104">Arquitetura de abóbada/arco pélvico</text>
+      </g>
+
+      <!-- Dynamic Content for Step 3 -->
+      <g class="a12p2-info-s3" transform="translate(16, 24)">
+        <text class="a12p2-info-title" fill="var(--a12-construida, var(--a12p2-construida, #55B889))" x="0" y="0">TEMPO 3 — ACETÁBULOS → FÊMURES (TRANSMITE)</text>
+        <text class="a12p2-info-text" x="0" y="24">A carga estabilizada é descarregada através das</text>
+        <text class="a12p2-info-text" x="0" y="40">cavidades acetabulares para as cabeças femorais,</text>
+        <text class="a12p2-info-text" x="0" y="56">bifurcando-se perfeitamente para a marcha.</text>
+        <text class="a12p2-info-text" x="0" y="84" font-weight="700">Destino do Vetor:</text>
+        <text class="a12p2-info-text" x="110" y="84">Membros Inferiores D / E</text>
+        <text class="a12p2-info-text" x="0" y="104" font-weight="700">Divisão Bilateral:</text>
+        <text class="a12p2-info-text" x="110" y="104">Simétrica (50% Direita / 50% Esquerda)</text>
+      </g>
+
+      <!-- Dynamic Content for Step ALL -->
+      <g class="a12p2-info-sall" transform="translate(16, 24)">
+        <text class="a12p2-info-title" fill="var(--a12-tinta, var(--a12p2-tinta, #F6F1F4))" x="0" y="0">BIOMECÂNICA DE TRANSFERÊNCIA INTEGRADA</text>
+        <text class="a12p2-info-text" x="0" y="24">A pelve funciona como uma verdadeira rota de força</text>
+        <text class="a12p2-info-text" x="0" y="40">ininterrupta: transforma a compressão vertical em</text>
+        <text class="a12p2-info-text" x="0" y="56">empuxo diagonal estabilizado e divisão bilateral.</text>
+        <text class="a12p2-info-text" x="0" y="84" font-weight="700">Conclusão Clínica:</text>
+        <text class="a12p2-info-text" x="110" y="84">Sem a higidez do anel pélvico,</text>
+        <text class="a12p2-info-text" x="0" y="104" font-weight="400">a transmissão de carga do tronco para a marcha fica descompensada.</text>
+      </g>
+    </g>
+
+    <!-- Load Distribution Metrics Chart -->
+    <g id="a12p2-metrics-section" transform="translate(20, 360)">
+      <text class="a12p2-label-title" x="0" y="0">DISTRIBUIÇÃO QUANTITATIVA DA CARGA</text>
+
+      <!-- Metric 1: Tronco / Coluna (100%) -->
+      <g transform="translate(0, 16)">
+        <text class="a12p2-label-desc" x="0" y="12">Tronco / Coluna (Axial)</text>
+        <text class="a12p2-label-desc" x="345" y="12" text-anchor="end" font-weight="700" fill="var(--a12-carga, var(--a12p2-carga, #F3BE5B))">100%</text>
+        <rect class="a12p2-metric-track" x="0" y="18" width="345" height="10"/>
+        <rect class="a12p2-metric-bar" x="0" y="18" width="345" height="10" fill="var(--a12-carga, var(--a12p2-carga, #F3BE5B))"/>
+      </g>
+
+      <!-- Metric 2: Anel Pélvico (Estabilização Arcada) -->
+      <g transform="translate(0, 52)">
+        <text class="a12p2-label-desc" x="0" y="12">Anel Pélvico (Dissipação de Força)</text>
+        <text class="a12p2-label-desc" x="345" y="12" text-anchor="end" font-weight="700" fill="var(--a12-pelve, var(--a12p2-pelve, #F06A78))">100% Estabilizada</text>
+        <rect class="a12p2-metric-track" x="0" y="18" width="345" height="10"/>
+        <rect class="a12p2-metric-bar" x="0" y="18" width="345" height="10" fill="var(--a12-pelve, var(--a12p2-pelve, #F06A78))"/>
+      </g>
+
+      <!-- Metric 3: Membros Inferiores (50% D / 50% E) -->
+      <g transform="translate(0, 88)">
+        <text class="a12p2-label-desc" x="0" y="12">Membros Inf. Direito / Esquerdo</text>
+        <text class="a12p2-label-desc" x="345" y="12" text-anchor="end" font-weight="700" fill="var(--a12-construida, var(--a12p2-construida, #55B889))">50% + 50%</text>
+        <rect class="a12p2-metric-track" x="0" y="18" width="345" height="10"/>
+        <rect class="a12p2-metric-bar" x="0" y="18" width="172.5" height="10" fill="var(--a12-construida, var(--a12p2-construida, #55B889))"/>
+        <rect class="a12p2-metric-bar" x="172.5" y="18" width="172.5" height="10" fill="var(--a12-construida, var(--a12p2-construida, #55B889))" opacity="0.8"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Embedded Self-Contained Interactivity Script -->
+  <script>
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('a12p2-svg-root');
+      if (!root || root.getAttribute('data-a12p2-bound') === 'true') return;
+      root.setAttribute('data-a12p2-bound', 'true');
+
+      var btnStep1 = document.getElementById('a12p2-btn-step1');
+      var btnStep2 = document.getElementById('a12p2-btn-step2');
+      var btnStep3 = document.getElementById('a12p2-btn-step3');
+      var btnStepAll = document.getElementById('a12p2-btn-stepall');
+
+      var buttons = [
+        { el: btnStep1, step: '1' },
+        { el: btnStep2, step: '2' },
+        { el: btnStep3, step: '3' },
+        { el: btnStepAll, step: 'all' }
+      ];
+
+      function setStep(targetStep) {
+        root.setAttribute('data-step', targetStep);
+        buttons.forEach(function(item) {
+          if (!item.el) return;
+          var isActive = (item.step === targetStep);
+          item.el.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      }
+
+      buttons.forEach(function(item) {
+        if (!item.el) return;
+        item.el.addEventListener('click', function() {
+          setStep(item.step);
+        });
+        item.el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setStep(item.step);
+          }
+        });
+      });
+    })();
+    ]]>
+  </script>
+</svg>

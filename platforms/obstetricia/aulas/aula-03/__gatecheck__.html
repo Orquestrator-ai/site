@@ -1,0 +1,803 @@
+<!DOCTYPE html><html lang="pt-BR" data-platform="ginecologia-obstetricia"><head><meta charset="UTF-8"><script>window.__GATEERR=[];addEventListener('error',function(e){__GATEERR.push((e.message||String(e.error||''))+' @'+(e.filename||'')+':'+(e.lineno||''));});addEventListener('unhandledrejection',function(e){__GATEERR.push('promise:'+e.reason);});</script><link rel="stylesheet" href="../../assets/css/tokens.css"><link rel="stylesheet" href="../../assets/css/base.css"><link rel="stylesheet" href="../../assets/css/components.css"><link rel="stylesheet" href="../../assets/css/aula-03.css"></head><body><main id="main"><article class="page" data-active="true"><div class="page__container page__container--wide"><figure class="figure-svg figure-svg__embed"><div class="figure-svg__frame figure-svg__stage"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" id="il1-svg-root" width="100%" height="100%">
+  <title>Pegada Biparietomalomentoniana do F&#243;rceps</title>
+  <desc>Cr&#226;nio fetal com as colheres do f&#243;rceps na pegada biparietomalomentoniana, apoiando regi&#227;o parietal e malar-mentoniana.</desc>
+
+  <defs>
+    <!-- Drop Shadow Filter -->
+    <filter id="il1-shadow-filter" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+
+    <!-- Bone Shading Gradients -->
+    <radialGradient id="il1-bone-grad-frontal" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="var(--il1-bone-light)" />
+      <stop offset="70%" stop-color="var(--il1-bone-fill)" />
+      <stop offset="100%" stop-color="var(--il1-bone-shadow)" />
+    </radialGradient>
+
+    <radialGradient id="il1-bone-grad-parietal" cx="40%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="var(--il1-bone-light)" />
+      <stop offset="70%" stop-color="var(--il1-bone-fill)" />
+      <stop offset="100%" stop-color="var(--il1-bone-shadow)" />
+    </radialGradient>
+
+    <radialGradient id="il1-bone-grad-occipital" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="var(--il1-bone-light)" />
+      <stop offset="70%" stop-color="var(--il1-bone-fill)" />
+      <stop offset="100%" stop-color="var(--il1-bone-shadow)" />
+    </radialGradient>
+
+    <radialGradient id="il1-bone-grad-temporal" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="var(--il1-bone-light)" />
+      <stop offset="70%" stop-color="var(--il1-bone-fill)" />
+      <stop offset="100%" stop-color="var(--il1-bone-shadow)" />
+    </radialGradient>
+  </defs>
+
+  <style type="text/css">
+    /*<![CDATA[*/
+    :root {
+      --il1-bg: #f8fafc;
+      --il1-card-bg: #ffffff;
+      --il1-card-inner: #f1f5f9;
+      --il1-text: #0f172a;
+      --il1-text-secondary: #475569;
+      --il1-text-light: #64748b;
+      --il1-border: #e2e8f0;
+      
+      --il1-bone-light: #ffffff;
+      --il1-bone-fill: #fdfbf7;
+      --il1-bone-shadow: #eddcb9;
+      --il1-bone-stroke: #94a3b8;
+      
+      --il1-color-correct: #10b981;
+      --il1-color-correct-bg: #ecfdf5;
+      --il1-color-incorrect: #ef4444;
+      --il1-color-incorrect-bg: #fef2f2;
+      --il1-color-warning: #f59e0b;
+      
+      --il1-suture-fill: #272121;
+      --il1-suture-stroke: #8c7b70;
+      
+      --il1-ear-fill: #fcc9b9;
+      --il1-ear-stroke: #cf846e;
+      
+      --il1-steel: #78909c;
+      --il1-steel-glow: #b0bec5;
+      --il1-steel-dark: #455a64;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --il1-bg: #0b0f19;
+        --il1-card-bg: #151f32;
+        --il1-card-inner: #1e293b;
+        --il1-text: #f9fafb;
+        --il1-text-secondary: #9ca3af;
+        --il1-text-light: #6b7280;
+        --il1-border: #374151;
+        
+        --il1-bone-light: #1f2937;
+        --il1-bone-fill: #111827;
+        --il1-bone-shadow: #030712;
+        --il1-bone-stroke: #4b5563;
+        
+        --il1-color-correct: #34d399;
+        --il1-color-correct-bg: #064e3b;
+        --il1-color-incorrect: #f87171;
+        --il1-color-incorrect-bg: #7f1d1d;
+        --il1-color-warning: #fbbf24;
+        
+        --il1-suture-fill: #0c0808;
+        --il1-suture-stroke: #4b5563;
+        
+        --il1-ear-fill: #4c3029;
+        --il1-ear-stroke: #8c584c;
+        
+        --il1-steel: #90a4ae;
+        --il1-steel-glow: #37474f;
+        --il1-steel-dark: #cfd8dc;
+      }
+    }
+
+    text {
+      user-select: none;
+    }
+
+    /* Skull & Bones */
+    .il1-skull-underlay {
+      fill: var(--il1-suture-fill);
+      stroke: none;
+    }
+
+    .il1-bone {
+      stroke: var(--il1-bone-stroke);
+      stroke-width: 1.5;
+      stroke-linejoin: round;
+    }
+
+    .il1-suture-line {
+      stroke: var(--il1-suture-stroke);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .il1-ear {
+      fill: var(--il1-ear-fill);
+      stroke: var(--il1-ear-stroke);
+      stroke-width: 1.5;
+      transition: fill 0.3s, stroke 0.3s;
+    }
+
+    .il1-ear-detail {
+      fill: none;
+      stroke: var(--il1-ear-stroke);
+      stroke-width: 1.2;
+      stroke-linecap: round;
+    }
+
+    /* Forceps Elements */
+    .il1-forceps-blade {
+      fill: var(--il1-steel);
+      fill-opacity: 0.15;
+      stroke: var(--il1-steel);
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+      transition: stroke 0.3s, fill-opacity 0.3s;
+    }
+
+    .il1-forceps-shank {
+      stroke: var(--il1-steel);
+      stroke-width: 4;
+      stroke-linecap: round;
+      fill: none;
+    }
+
+    .il1-forceps-handle {
+      fill: var(--il1-steel-dark);
+      stroke: var(--il1-steel);
+      stroke-width: 1.5;
+    }
+
+    /* Interactive state styles */
+    .il1-forceps-group {
+      transition: opacity 0.3s ease;
+    }
+
+    .il1-forceps-group.il1-correct .il1-forceps-blade {
+      stroke: var(--il1-color-correct);
+      fill: var(--il1-color-correct);
+      fill-opacity: 0.1;
+      filter: drop-shadow(0 0 4px var(--il1-color-correct));
+    }
+
+    .il1-forceps-group.il1-incorrect .il1-forceps-blade {
+      stroke: var(--il1-color-incorrect);
+      fill: var(--il1-color-incorrect);
+      fill-opacity: 0.1;
+      filter: drop-shadow(0 0 4px var(--il1-color-incorrect));
+    }
+
+    /* Tabs Styling */
+    .il1-tab {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .il1-tab rect {
+      fill: var(--il1-card-inner);
+      stroke: var(--il1-border);
+      stroke-width: 1.5;
+      transition: all 0.3s;
+    }
+
+    .il1-tab text {
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      fill: var(--il1-text-secondary);
+      transition: all 0.3s;
+    }
+
+    .il1-tab.il1-active-correct rect {
+      fill: var(--il1-color-correct-bg);
+      stroke: var(--il1-color-correct);
+      stroke-width: 2;
+    }
+
+    .il1-tab.il1-active-correct text {
+      fill: var(--il1-color-correct);
+    }
+
+    .il1-tab.il1-active-incorrect rect {
+      fill: var(--il1-color-incorrect-bg);
+      stroke: var(--il1-color-incorrect);
+      stroke-width: 2;
+    }
+
+    .il1-tab.il1-active-incorrect text {
+      fill: var(--il1-color-incorrect);
+    }
+
+    .il1-tab:focus-visible rect {
+      stroke: var(--il1-text);
+      stroke-dasharray: 4 4;
+    }
+
+    /* Hotspots and interactive overlay */
+    .il1-hotspot {
+      fill: transparent;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .il1-hotspot-circle {
+      pointer-events: none;
+      transition: transform 0.3s;
+    }
+
+    .il1-warning-ring {
+      pointer-events: none;
+    }
+
+    /* Tooltip */
+    #il1-tooltip {
+      transition: opacity 0.15s ease;
+    }
+    /*]]>*/
+  </style>
+
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    let currentPega = 'correct';
+    let pinnedLandmark = null;
+
+    function setPega(pegaType) {
+      currentPega = pegaType;
+      pinnedLandmark = null;
+      
+      // Update Tabs
+      const tabCorrect = document.getElementById('il1-tab-correct');
+      const tabIncorrect = document.getElementById('il1-tab-incorrect');
+      if (pegaType === 'correct') {
+        tabCorrect.classList.add('il1-active-correct');
+        tabIncorrect.classList.remove('il1-active-incorrect');
+      } else {
+        tabCorrect.classList.remove('il1-active-correct');
+        tabIncorrect.classList.add('il1-active-incorrect');
+      }
+
+      // Update Forceps groups
+      document.getElementById('il1-group-correct').style.display = pegaType === 'correct' ? 'block' : 'none';
+      document.getElementById('il1-group-incorrect').style.display = pegaType === 'incorrect' ? 'block' : 'none';
+
+      // Update interactive landmarks / highlights
+      document.getElementById('il1-highlights-correct').style.display = pegaType === 'correct' ? 'block' : 'none';
+      document.getElementById('il1-highlights-incorrect').style.display = pegaType === 'incorrect' ? 'block' : 'none';
+
+      // Update info panel text
+      updateInfoPanel();
+    }
+
+    function showTooltip(title, desc, evt) {
+      if (pinnedLandmark) return;
+      const tooltip = document.getElementById('il1-tooltip');
+      const titleEl = document.getElementById('il1-tooltip-title');
+      const descEl = document.getElementById('il1-tooltip-desc');
+      const bgEl = document.getElementById('il1-tooltip-bg');
+      
+      titleEl.textContent = title;
+      descEl.textContent = desc;
+
+      // Adjust border color based on status
+      let color = 'var(--il1-border)';
+      if (title.includes('CORRETA') || title.includes('Ideal')) {
+        color = 'var(--il1-color-correct)';
+      } else if (title.includes('INCORRETA') || title.includes('Risco') || title.includes('Erro')) {
+        color = 'var(--il1-color-incorrect)';
+      }
+      bgEl.setAttribute('stroke', color);
+
+      const svg = document.getElementById('il1-svg-root');
+      if (svg && evt) {
+        const pt = svg.createSVGPoint();
+        pt.x = evt.clientX;
+        pt.y = evt.clientY;
+        const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+        tooltip.setAttribute('transform', `translate(${svgP.x + 15}, ${svgP.y + 15})`);
+        tooltip.setAttribute('opacity', '1');
+      }
+    }
+
+    function moveTooltip(evt) {
+      if (pinnedLandmark) return;
+      const tooltip = document.getElementById('il1-tooltip');
+      const svg = document.getElementById('il1-svg-root');
+      if (svg && tooltip && tooltip.getAttribute('opacity') === '1') {
+        const pt = svg.createSVGPoint();
+        pt.x = evt.clientX;
+        pt.y = evt.clientY;
+        const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+        tooltip.setAttribute('transform', `translate(${svgP.x + 15}, ${svgP.y + 15})`);
+      }
+    }
+
+    function hideTooltip() {
+      if (pinnedLandmark) return;
+      const tooltip = document.getElementById('il1-tooltip');
+      if (tooltip) {
+        tooltip.setAttribute('opacity', '0');
+      }
+    }
+
+    function selectLandmark(landmarkId) {
+      if (pinnedLandmark === landmarkId) {
+        pinnedLandmark = null;
+        updateInfoPanel();
+        hideTooltip();
+      } else {
+        pinnedLandmark = landmarkId;
+        updateInfoPanel();
+        // Hide tooltip when pinned to prevent overlap
+        const tooltip = document.getElementById('il1-tooltip');
+        if (tooltip) tooltip.setAttribute('opacity', '0');
+      }
+    }
+
+    function updateInfoPanel() {
+      // Hide all states
+      const states = ['default-correct', 'default-incorrect', 'parietal', 'malar', 'mentum', 'ear-safe', 'ear-danger', 'orbit-danger'];
+      states.forEach(s => {
+        const el = document.getElementById(`il1-state-${s}`);
+        if (el) el.style.display = 'none';
+      });
+
+      if (pinnedLandmark) {
+        // Show specific landmark state
+        let stateToShow = pinnedLandmark;
+        if (pinnedLandmark === 'ear') {
+          stateToShow = currentPega === 'correct' ? 'ear-safe' : 'ear-danger';
+        } else if (pinnedLandmark === 'orbit' && currentPega === 'correct') {
+          // If correct and user clicks eye/orbit, explain it is safe/free
+          stateToShow = 'default-correct'; // Or we can make a specific one if needed
+        }
+        
+        const targetEl = document.getElementById(`il1-state-${stateToShow}`);
+        if (targetEl) {
+          targetEl.style.display = 'block';
+        }
+      } else {
+        // Show default active pega state
+        const targetEl = document.getElementById(`il1-state-default-${currentPega}`);
+        if (targetEl) {
+          targetEl.style.display = 'block';
+        }
+      }
+    }
+
+    function resetView() {
+      pinnedLandmark = null;
+      updateInfoPanel();
+      hideTooltip();
+    }
+    /*]]>*/
+  </script>
+
+  <!-- Background Click Target to Reset -->
+  <rect x="0" y="0" width="960" height="600" fill="transparent" onclick="resetView()" />
+
+  <!-- Main Card Container -->
+  <rect x="15" y="15" width="930" height="570" rx="20" fill="var(--il1-bg)" stroke="var(--il1-border)" stroke-width="1.5" pointer-events="none" />
+
+  <!-- Layout Header -->
+  <g transform="translate(50, 60)" font-family="system-ui, sans-serif">
+    <text x="0" y="0" font-size="20" font-weight="bold" fill="var(--il1-text)">F&#211;RCEPS: TOPOGRAFIA DA PEGA IDEAL</text>
+    <text x="0" y="22" font-size="12" fill="var(--il1-text-secondary)">Pegada Biparietomalomentoniana no Cr&#226;nio Fetal (Vista Lateral)</text>
+  </g>
+
+  <!-- Interactive Tabs (Toggles between Correct and Incorrect) -->
+  <g id="il1-tab-correct" class="il1-tab il1-active-correct" tabindex="0" role="button" onclick="setPega('correct')" onkeydown="if(event.key==='Enter'||event.key===' ')setPega('correct')">
+    <rect x="50" y="105" width="220" height="38" rx="8" />
+    <text x="160" y="129" text-anchor="middle">PEGA IDEAL (CORRETA)</text>
+  </g>
+
+  <g id="il1-tab-incorrect" class="il1-tab" tabindex="0" role="button" onclick="setPega('incorrect')" onkeydown="if(event.key==='Enter'||event.key===' ')setPega('incorrect')">
+    <rect x="285" y="105" width="245" height="38" rx="8" />
+    <text x="407" y="129" text-anchor="middle">PEGA DESALINHADA (INCORRETA)</text>
+  </g>
+
+  <!-- GRAPHICS LAYER CONTAINER (Left Column) -->
+  <g id="il1-graphics-container">
+    <!-- 1. Background elements (Background forceps blade for 3D realism) -->
+    <!-- Correct Pega: Dimmed background blade behind the skull -->
+    <g id="il1-group-correct" class="il1-forceps-group il1-correct">
+      <!-- Background blade (contralateral) -->
+      <g opacity="0.25">
+        <path d="M 165,435 C 185,355 220,265 265,210 C 290,175 315,195 320,225 C 325,255 305,305 265,355 C 235,410 205,435 165,435 Z" fill="none" stroke="var(--il1-steel)" stroke-width="3" stroke-dasharray="3 3" />
+        <path d="M 165,435 L 110,515" stroke="var(--il1-steel)" stroke-width="4" stroke-linecap="round" />
+      </g>
+    </g>
+    
+    <!-- Incorrect Pega: Dimmed background blade behind the skull -->
+    <g id="il1-group-incorrect" class="il1-forceps-group il1-incorrect" style="display: none;">
+      <!-- Background blade (contralateral) -->
+      <g opacity="0.25">
+        <path d="M 205,445 C 220,365 223,285 210,245 C 220,225 245,245 250,310 C 265,345 270,395 230,445 Z" fill="none" stroke="var(--il1-steel)" stroke-width="3" stroke-dasharray="3 3" />
+        <path d="M 205,445 L 140,525" stroke="var(--il1-steel)" stroke-width="4" stroke-linecap="round" />
+      </g>
+    </g>
+
+    <!-- 2. Fetal Skull (Underlay + Bones + Facial structures) -->
+    <g id="il1-fetal-skull" transform="translate(0, 0)">
+      <!-- Silhouette Underlay to create dark gaps for sutures -->
+      <path class="il1-skull-underlay" d="M 320,200 C 250,200 215,225 205,260 C 197,290 199,315 197,320 L 185,328 C 177,336 177,340 192,344 L 195,348 C 195,354 190,366 193,376 C 197,386 189,398 193,406 C 197,414 209,422 227,422 C 245,422 253,418 261,414 C 269,402 277,386 277,374 L 285,374 C 293,386 301,402 325,410 C 341,414 370,410 380,392 C 400,358 410,315 395,280 C 380,245 360,200 320,200 Z" />
+
+      <!-- Individual Cranial Bones (layered with shading gradients) -->
+      <!-- Frontal Bone -->
+      <path class="il1-bone" d="M 315,202 C 265,205 233,235 223,265 C 215,290 217,302 217,305 L 257,305 C 260,302 270,290 275,270 C 280,250 290,230 320,220 Z" fill="url(#il1-bone-grad-frontal)" />
+      
+      <!-- Parietal Bone -->
+      <path class="il1-bone" d="M 325,202 C 345,202 375,215 388,238 C 400,260 408,290 400,320 L 340,330 C 325,320 312,290 308,250 Z" fill="url(#il1-bone-grad-parietal)" />
+      
+      <!-- Occipital Bone -->
+      <path class="il1-bone" d="M 392,242 C 412,265 418,300 402,330 C 392,350 378,362 362,368 L 345,332 C 360,320 375,290 372,260 Z" fill="url(#il1-bone-grad-occipital)" />
+      
+      <!-- Temporal Bone -->
+      <path class="il1-bone" d="M 302,275 L 338,332 L 360,368 C 340,380 320,380 300,375 C 285,365 280,340 282,320 Z" fill="url(#il1-bone-grad-temporal)" />
+
+      <!-- Face Structures -->
+      <!-- Maxilla (Upper Jaw) and Nose -->
+      <path class="il1-bone" d="M 217,305 L 200,320 L 210,330 L 207,345 L 235,345 L 250,318 Z" fill="url(#il1-bone-grad-frontal)" />
+      <!-- Mandible (Lower Jaw) -->
+      <path class="il1-bone" d="M 215,355 C 210,368 207,385 213,395 C 217,405 230,410 250,405 C 270,400 275,390 277,370 L 277,350 L 250,350 Z" fill="url(#il1-bone-grad-frontal)" />
+
+      <!-- Orbit (Eye Socket) -->
+      <ellipse cx="245" cy="300" rx="14" ry="16" fill="var(--il1-suture-fill)" stroke="var(--il1-bone-stroke)" stroke-width="1.2" />
+      <circle cx="245" cy="300" r="6" fill="var(--il1-bone-stroke)" opacity="0.3" />
+
+      <!-- Zygomatic / Malar Bone (Cheekbone Highlight) -->
+      <path class="il1-bone" d="M 250,318 C 240,330 240,340 255,350 C 270,360 285,355 287,340 C 285,328 270,320 250,318 Z" fill="url(#il1-bone-light)" fill-opacity="0.3" />
+
+      <!-- Sutures (Anatomical detailing) -->
+      <path class="il1-suture-line" d="M 320,200 C 315,210 318,220 313,230 C 316,240 310,250 308,260" /> <!-- Coronal -->
+      <path class="il1-suture-line" d="M 390,240 C 395,260 390,280 398,300 C 392,320 380,340 376,355 L 360,370" /> <!-- Lambdoid -->
+      <path class="il1-suture-line" d="M 308,260 C 315,275 322,290 320,305 C 325,315 335,325 340,330" /> <!-- Squamosal -->
+
+      <!-- Fontanelles (Bregma and Lambda) -->
+      <polygon points="320,200 325,206 320,212 315,206" fill="var(--il1-suture-fill)" stroke="var(--il1-suture-stroke)" stroke-width="1" /> <!-- Bregma -->
+      <polygon points="388,238 392,246 384,244" fill="var(--il1-suture-fill)" stroke="var(--il1-suture-stroke)" stroke-width="1" /> <!-- Lambda -->
+
+      <!-- Ear (Fetal auricle) -->
+      <path class="il1-ear" d="M 310,335 C 330,325 340,365 330,375 C 323,382 313,375 313,365 C 313,358 305,358 305,350 Z" />
+      <path class="il1-ear-detail" d="M 317,345 C 325,340 327,360 323,365 M 313,355 C 318,355 320,362 317,365" />
+    </g>
+
+    <!-- 3. Foreground Forceps Blades -->
+    <!-- CORRECT Forceps (Biparietomalomentoniana) -->
+    <g id="il1-group-correct-fg" class="il1-forceps-group il1-correct">
+      <g stroke-linecap="round">
+        <!-- Shank and Lock -->
+        <path class="il1-forceps-shank" d="M 190,450 L 120,535" />
+        <!-- Handle -->
+        <path class="il1-forceps-handle" d="M 120,535 L 75,590 A 6,6 0 0,1 67,585 L 67,580 L 112,525 Z" />
+        <!-- Cephalic curve / Blade (with Fenestra) -->
+        <path class="il1-forceps-blade" d="M 190,450 C 210,370 245,280 290,225 C 315,220 330,245 298,350 C 245,430 190,450 190,450 Z
+                                         M 215,420 C 230,360 260,285 295,248 C 305,262 285,340 215,420 Z" fill-rule="evenodd" />
+      </g>
+    </g>
+
+    <!-- INCORRECT Forceps (Fronto-malar / Tilted) -->
+    <g id="il1-group-incorrect-fg" class="il1-forceps-group il1-incorrect" style="display: none;">
+      <g stroke-linecap="round">
+        <!-- Shank -->
+        <path class="il1-forceps-shank" d="M 230,460 L 160,545" />
+        <!-- Handle -->
+        <path class="il1-forceps-handle" d="M 160,545 L 115,600 A 6,6 0 0,1 107,595 L 107,590 L 152,535 Z" />
+        <!-- Tilted blade compressing the eye and pinching the ear -->
+        <path class="il1-forceps-blade" d="M 230,460 C 245,380 248,300 235,260 C 280,280 335,345 295,420 C 255,450 230,460 230,460 Z
+                                         M 250,435 C 260,370 258,305 245,280 C 270,295 310,350 250,435 Z" fill-rule="evenodd" />
+      </g>
+    </g>
+
+    <!-- 4. Interactive Highlights / Hotspots Circles -->
+    <!-- Correct Highlights -->
+    <g id="il1-highlights-correct">
+      <!-- Parietal eminence support highlight -->
+      <circle cx="300" cy="260" r="10" fill="none" stroke="var(--il1-color-correct)" stroke-width="2" />
+      <circle cx="300" cy="260" r="18" fill="none" stroke="var(--il1-color-correct)" stroke-width="1" opacity="0.6">
+        <animate attributeName="r" values="10;22;10" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Zygomatic/Malar support highlight -->
+      <circle cx="265" cy="345" r="10" fill="none" stroke="var(--il1-color-correct)" stroke-width="2" />
+      <circle cx="265" cy="345" r="18" fill="none" stroke="var(--il1-color-correct)" stroke-width="1" opacity="0.6">
+        <animate attributeName="r" values="10;22;10" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Mentum support highlight -->
+      <circle cx="215" cy="395" r="10" fill="none" stroke="var(--il1-color-correct)" stroke-width="2" />
+      <circle cx="215" cy="395" r="18" fill="none" stroke="var(--il1-color-correct)" stroke-width="1" opacity="0.6">
+        <animate attributeName="r" values="10;22;10" dur="2.5s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.5s" begin="1s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Incorrect Highlights (Eye compression and Ear crushing) -->
+    <g id="il1-highlights-incorrect" style="display: none;">
+      <!-- Orbit compression warning -->
+      <circle cx="245" cy="300" r="12" fill="none" stroke="var(--il1-color-incorrect)" stroke-width="2" stroke-dasharray="3 3" />
+      <circle cx="245" cy="300" r="22" fill="none" stroke="var(--il1-color-incorrect)" stroke-width="1" opacity="0.8">
+        <animate attributeName="r" values="12;26;12" dur="1.8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;0.1;0.9" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Ear crushing warning -->
+      <circle cx="315" cy="350" r="15" fill="none" stroke="var(--il1-color-incorrect)" stroke-width="2" stroke-dasharray="3 3" />
+      <circle cx="315" cy="350" r="28" fill="none" stroke="var(--il1-color-incorrect)" stroke-width="1" opacity="0.8">
+        <animate attributeName="r" values="15;32;15" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;0.1;0.9" dur="1.8s" begin="0.4s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- 5. Mouse Interaction Zones (Hotspots) -->
+    <!-- Parietal Hotspot -->
+    <circle cx="300" cy="260" r="25" class="il1-hotspot" tabindex="0" role="button" aria-label="Emin&#234;ncia Parietal"
+            onmouseover="showTooltip('Emin&#234;ncia Parietal', 'Ponto de apoio lateral da colher.', event)"
+            onmousemove="moveTooltip(event)"
+            onmouseout="hideTooltip()"
+            onclick="selectLandmark('parietal'); event.stopPropagation();"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { selectLandmark('parietal'); event.stopPropagation(); }" />
+
+    <!-- Malar Hotspot -->
+    <circle cx="265" cy="345" r="25" class="il1-hotspot" tabindex="0" role="button" aria-label="Regi&#227;o Malar"
+            onmouseover="showTooltip('Regi&#227;o Malar', 'Ponto de apoio firme na ma&#231;&#227; do rosto.', event)"
+            onmousemove="moveTooltip(event)"
+            onmouseout="hideTooltip()"
+            onclick="selectLandmark('malar'); event.stopPropagation();"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { selectLandmark('malar'); event.stopPropagation(); }" />
+
+    <!-- Mentum Hotspot -->
+    <circle cx="215" cy="395" r="20" class="il1-hotspot" tabindex="0" role="button" aria-label="Mento (Queixo)"
+            onmouseover="showTooltip('Mento (Queixo)', 'Estabiliza a ponta da colher.', event)"
+            onmousemove="moveTooltip(event)"
+            onmouseout="hideTooltip()"
+            onclick="selectLandmark('mentum'); event.stopPropagation();"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { selectLandmark('mentum'); event.stopPropagation(); }" />
+
+    <!-- Ear Hotspot -->
+    <circle cx="315" cy="350" r="25" class="il1-hotspot" tabindex="0" role="button" aria-label="Orelha Fetal"
+            onmouseover="showTooltip(currentPega === 'correct' ? 'Orelha Livre (CORRETA)' : 'Orelha Comprimida (INCORRETA)', currentPega === 'correct' ? 'A orelha fica atr&#225;s da colher, totalmente livre.' : 'A orelha est&#225; espremida sob o metal!', event)"
+            onmousemove="moveTooltip(event)"
+            onmouseout="hideTooltip()"
+            onclick="selectLandmark('ear'); event.stopPropagation();"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { selectLandmark('ear'); event.stopPropagation(); }" />
+
+    <!-- Orbit Hotspot (specifically interesting in incorrect state) -->
+    <circle cx="245" cy="300" r="20" class="il1-hotspot" tabindex="0" role="button" aria-label="&#211;rbita Ocular"
+            onmouseover="showTooltip(currentPega === 'correct' ? '&#211;rbita Livre' : 'Compress&#227;o Ocular (INCORRETA)', currentPega === 'correct' ? 'Olho preservado, sem press&#227;o.' : 'Risco severo de trauma ocular!', event)"
+            onmousemove="moveTooltip(event)"
+            onmouseout="hideTooltip()"
+            onclick="selectLandmark('orbit'); event.stopPropagation();"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { selectLandmark('orbit'); event.stopPropagation(); }" />
+  </g>
+
+  <!-- INFO PANEL (Right Column) -->
+  <g transform="translate(580, 60)">
+    <!-- Base Card -->
+    <rect x="0" y="0" width="340" height="480" rx="16" fill="var(--il1-card-bg)" stroke="var(--il1-border)" stroke-width="1.5" filter="url(#il1-shadow-filter)" />
+    
+    <!-- Title -->
+    <text x="25" y="40" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="var(--il1-text)" letter-spacing="0.5">AN&#193;LISE CL&#205;NICA</text>
+    <text x="25" y="60" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">Pega biparietomalomentoniana do f&#243;rceps</text>
+    <line x1="25" y1="75" x2="315" y2="75" stroke="var(--il1-border)" stroke-width="1" />
+
+    <!-- STATE: DEFAULT CORRECT (Pega Ideal) -->
+    <g id="il1-state-default-correct">
+      <!-- Status Badge -->
+      <rect x="25" y="95" width="165" height="24" rx="12" fill="var(--il1-color-correct-bg)" stroke="var(--il1-color-correct)" stroke-width="1" />
+      <text x="107" y="111" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--il1-color-correct)" text-anchor="middle">PEGA CORRETA (IDEAL)</text>
+
+      <text x="25" y="150" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="var(--il1-color-correct)">Biparietomalomentoniana</text>
+      <text x="25" y="170" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">A pega sim&#233;trica que protege a orelha</text>
+
+      <!-- Briefing Box -->
+      <rect x="25" y="190" width="290" height="70" rx="8" fill="var(--il1-color-correct-bg)" fill-opacity="0.3" stroke="var(--il1-color-correct)" stroke-width="0.5" />
+      <text x="40" y="210" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--il1-color-correct)">REGRA CL&#205;NICA DE OURO:</text>
+      <text x="40" y="230" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="var(--il1-text)">A Orelha Fica FORA da Fenestra</text>
+      <text x="40" y="246" font-family="system-ui, sans-serif" font-size="10" fill="var(--il1-text-secondary)">A fenestra n&#227;o serve para alojar a orelha.</text>
+
+      <g transform="translate(25, 280)" font-family="system-ui, sans-serif" font-size="12" fill="var(--il1-text)">
+        <!-- Point 1 -->
+        <circle cx="5" cy="15" r="3.5" fill="var(--il1-color-correct)" />
+        <text x="18" y="19" font-weight="bold">Apoio Biparietal</text>
+        <text x="18" y="34" font-size="11" fill="var(--il1-text-secondary)">Abra&#231;a uniformemente as emin&#234;ncias parietais.</text>
+        
+        <!-- Point 2 -->
+        <circle cx="5" cy="60" r="3.5" fill="var(--il1-color-correct)" />
+        <text x="18" y="64" font-weight="bold">Apoio Malar-Mentoniano</text>
+        <text x="18" y="79" font-size="11" fill="var(--il1-text-secondary)">Distribui&#231;&#227;o segura nas ma&#231;&#227;s do rosto e mento.</text>
+        
+        <!-- Point 3 -->
+        <circle cx="5" cy="105" r="3.5" fill="var(--il1-color-correct)" />
+        <text x="18" y="109" font-weight="bold">Vetor de Tra&#231;&#227;o Fisiol&#243;gico</text>
+        <text x="18" y="124" font-size="11" fill="var(--il1-text-secondary)">Perpendicular aos di&#226;metros do canal vaginal.</text>
+      </g>
+    </g>
+
+    <!-- STATE: DEFAULT INCORRECT (Pega Desalinhada) -->
+    <g id="il1-state-default-incorrect" style="display: none;">
+      <!-- Status Badge -->
+      <rect x="25" y="95" width="180" height="24" rx="12" fill="var(--il1-color-incorrect-bg)" stroke="var(--il1-color-incorrect)" stroke-width="1" />
+      <text x="115" y="111" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--il1-color-incorrect)" text-anchor="middle">PEGA DESALINHADA (ERRO)</text>
+
+      <text x="25" y="150" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="var(--il1-color-incorrect)">Fronto-malar / Assim&#233;trica</text>
+      <text x="25" y="170" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">Perigo ao olho e orelha do feto</text>
+
+      <!-- Warning Box -->
+      <rect x="25" y="190" width="290" height="70" rx="8" fill="var(--il1-color-incorrect-bg)" fill-opacity="0.3" stroke="var(--il1-color-incorrect)" stroke-width="0.5" />
+      <text x="40" y="210" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--il1-color-incorrect)">GRAVE RISCO DE LES&#195;O:</text>
+      <text x="40" y="230" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="var(--il1-text)">Compress&#227;o Ocular e de Orelha</text>
+      <text x="40" y="246" font-family="system-ui, sans-serif" font-size="10" fill="var(--il1-text-secondary)">A colher esmaga tecidos moles vulner&#225;veis.</text>
+
+      <g transform="translate(25, 280)" font-family="system-ui, sans-serif" font-size="12" fill="var(--il1-text)">
+        <!-- Point 1 -->
+        <circle cx="5" cy="15" r="3.5" fill="var(--il1-color-incorrect)" />
+        <text x="18" y="19" font-weight="bold">Risco de Cegueira / Hifema</text>
+        <text x="18" y="34" font-size="11" fill="var(--il1-text-secondary)">A ponta da colher comprime a cavidade orbit&#225;ria.</text>
+        
+        <!-- Point 2 -->
+        <circle cx="5" cy="60" r="3.5" fill="var(--il1-color-incorrect)" />
+        <text x="18" y="64" font-weight="bold">Paralisia Facial Perif&#233;rica</text>
+        <text x="18" y="79" font-size="11" fill="var(--il1-text-secondary)">Esmagamento do nervo facial perto do mast&#243;ide.</text>
+        
+        <!-- Point 3 -->
+        <circle cx="5" cy="105" r="3.5" fill="var(--il1-color-incorrect)" />
+        <text x="18" y="109" font-weight="bold">Deslizamento (Escorregamento)</text>
+        <text x="18" y="124" font-size="11" fill="var(--il1-text-secondary)">A pega assim&#233;trica desliza na hora de tracionar.</text>
+      </g>
+    </g>
+
+    <!-- STATE: LANDMARK PARIETAL -->
+    <g id="il1-state-parietal" style="display: none;">
+      <rect x="25" y="95" width="130" height="24" rx="12" fill="var(--il1-color-correct-bg)" stroke="var(--il1-color-correct)" stroke-width="1" />
+      <text x="90" y="111" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--il1-color-correct)" text-anchor="middle">APOIO SUPERIOR</text>
+
+      <text x="25" y="150" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="var(--il1-text)">Emin&#234;ncia Parietal</text>
+      <text x="25" y="170" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">Estrutura do cr&#226;nio fetal lateral</text>
+
+      <g transform="translate(25, 200)" font-family="system-ui, sans-serif" font-size="12" fill="var(--il1-text)">
+        <text x="0" y="15" font-weight="bold" fill="var(--il1-color-correct)">Por que apoiar aqui?</text>
+        <text x="0" y="32" font-size="11" fill="var(--il1-text-secondary)">As emin&#234;ncias parietais s&#227;o as partes mais</text>
+        <text x="0" y="47" font-size="11" fill="var(--il1-text-secondary)">proeminentes dos ossos parietais planos. O f&#243;rceps</text>
+        <text x="0" y="62" font-size="11" fill="var(--il1-text-secondary)">distribui a press&#227;o homogeneamente sobre elas.</text>
+
+        <text x="0" y="95" font-weight="bold" fill="var(--il1-color-correct)">Evita les&#245;es cerebrais</text>
+        <text x="0" y="112" font-size="11" fill="var(--il1-text-secondary)">A press&#227;o em ossos n&#227;o-parietais (como frontal</text>
+        <text x="0" y="127" font-size="11" fill="var(--il1-text-secondary)">ou base do cr&#226;nio) pode causar afundamento ou</text>
+        <text x="0" y="142" font-size="11" fill="var(--il1-text-secondary)">trauma intracraniano grave no feto.</text>
+      </g>
+    </g>
+
+    <!-- STATE: LANDMARK MALAR -->
+    <g id="il1-state-malar" style="display: none;">
+      <rect x="25" y="95" width="130" height="24" rx="12" fill="var(--il1-color-correct-bg)" stroke="var(--il1-color-correct)" stroke-width="1" />
+      <text x="90" y="111" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--il1-color-correct)" text-anchor="middle">APOIO FACIAL</text>
+
+      <text x="25" y="150" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="var(--il1-text)">Regi&#227;o Malar (Zigom&#225;tica)</text>
+      <text x="25" y="170" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">A ma&#231;&#227; do rosto do rec&#233;m-nascido</text>
+
+      <g transform="translate(25, 200)" font-family="system-ui, sans-serif" font-size="12" fill="var(--il1-text)">
+        <text x="0" y="15" font-weight="bold" fill="var(--il1-color-correct)">Estabiliza&#231;&#227;o anat&#244;mica</text>
+        <text x="0" y="32" font-size="11" fill="var(--il1-text-secondary)">A colher do f&#243;rceps passa por cima da arcada</text>
+        <text x="0" y="47" font-size="11" fill="var(--il1-text-secondary)">zigom&#225;tica. Esse apoio &#243;sseo impede que a</text>
+        <text x="0" y="62" font-size="11" fill="var(--il1-text-secondary)">colher escorregue em dire&#227;o aos olhos.</text>
+
+        <text x="0" y="95" font-weight="bold" fill="var(--il1-color-correct)">Onde fica a fenestra?</text>
+        <text x="0" y="112" font-size="11" fill="var(--il1-text-secondary)">A fenestra da colher fica posicionada exatamente</text>
+        <text x="0" y="127" font-size="11" fill="var(--il1-text-secondary)">sobre a regi&#227;o malar, permitindo o encaixe</text>
+        <text x="0" y="142" font-size="11" fill="var(--il1-text-secondary)">confort&#225;vel da pele e do relevo ósseo.</text>
+      </g>
+    </g>
+
+    <!-- STATE: LANDMARK MENTUM -->
+    <g id="il1-state-mentum" style="display: none;">
+      <rect x="25" y="95" width="130" height="24" rx="12" fill="var(--il1-color-correct-bg)" stroke="var(--il1-color-correct)" stroke-width="1" />
+      <text x="90" y="111" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--il1-color-correct)" text-anchor="middle">APOIO DE TRA&#199;&#195;O</text>
+
+      <text x="25" y="150" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="var(--il1-text)">Mento (Queixo Fetal)</text>
+      <text x="25" y="170" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">Ponto de fixa&#231;&#227;o terminal</text>
+
+      <g transform="translate(25, 200)" font-family="system-ui, sans-serif" font-size="12" fill="var(--il1-text)">
+        <text x="0" y="15" font-weight="bold" fill="var(--il1-color-correct)">O queixo do feto como guia</text>
+        <text x="0" y="32" font-size="11" fill="var(--il1-text-secondary)">A ponta final da colher deve estender-se</text>
+        <text x="0" y="47" font-size="11" fill="var(--il1-text-secondary)">at&#233; a mand&#237;bula, pr&#243;xima ao queixo. Isso garante</text>
+        <text x="0" y="62" font-size="11" fill="var(--il1-text-secondary)">que a pega envolva toda a face de forma sim&#233;trica.</text>
+
+        <text x="0" y="95" font-weight="bold" fill="var(--il1-color-correct)">Alinhamento f&#237;sico</text>
+        <text x="0" y="112" font-size="11" fill="var(--il1-text-secondary)">Se a colher n&#227;o alcançar a regi&#227;o mentoniana,</text>
+        <text x="0" y="127" font-size="11" fill="var(--il1-text-secondary)">a pegada fica curta e o f&#243;rceps pode soltar-se</text>
+        <text x="0" y="142" font-size="11" fill="var(--il1-text-secondary)">(descal&#231;amento) sob a for&#231;a de tra&#231;&#227;o.</text>
+      </g>
+    </g>
+
+    <!-- STATE: LANDMARK EAR SAFE (Correct) -->
+    <g id="il1-state-ear-safe" style="display: none;">
+      <rect x="25" y="95" width="130" height="24" rx="12" fill="var(--il1-color-correct-bg)" stroke="var(--il1-color-correct)" stroke-width="1" />
+      <text x="90" y="111" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--il1-color-correct)" text-anchor="middle">ORELHA PRESERVADA</text>
+
+      <text x="25" y="150" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="var(--il1-color-correct)">Orelha Posterior Livre</text>
+      <text x="25" y="170" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">Fora da área sob press&#227;o</text>
+
+      <g transform="translate(25, 200)" font-family="system-ui, sans-serif" font-size="12" fill="var(--il1-text)">
+        <text x="0" y="15" font-weight="bold" fill="var(--il1-color-correct)">Desmistificando a fenestra</text>
+        <text x="0" y="32" font-size="11" fill="var(--il1-text-secondary)">Muitos acreditam erroneamente que a orelha do</text>
+        <text x="0" y="47" font-size="11" fill="var(--il1-text-secondary)">beb&#234; deve ser alojada dentro da fenestra da colher.</text>
+        <text x="0" y="62" font-weight="bold" fill="var(--il1-color-incorrect)">Isso &#233; um mito obst&#233;trico perigoso!</text>
+
+        <text x="0" y="95" font-weight="bold" fill="var(--il1-color-correct)">Posi&#231;&#227;o anat&#244;mica real</text>
+        <text x="0" y="112" font-size="11" fill="var(--il1-text-secondary)">Na pega biparietomalomentoniana ideal, a orelha</text>
+        <text x="0" y="127" font-size="11" fill="var(--il1-text-secondary)">fica inteiramente POSTERIOR (para tr&#225;s) ao metal</text>
+        <text x="0" y="142" font-size="11" fill="var(--il1-text-secondary)">da colher, sem sofrer compress&#227;o alguma.</text>
+      </g>
+    </g>
+
+    <!-- STATE: LANDMARK EAR DANGER (Incorrect) -->
+    <g id="il1-state-ear-danger" style="display: none;">
+      <rect x="25" y="95" width="130" height="24" rx="12" fill="var(--il1-color-incorrect-bg)" stroke="var(--il1-color-incorrect)" stroke-width="1" />
+      <text x="90" y="111" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--il1-color-incorrect)" text-anchor="middle">ORELHA EM PERIGO</text>
+
+      <text x="25" y="150" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="var(--il1-color-incorrect)">Aprisionamento de Orelha</text>
+      <text x="25" y="170" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">Risco de les&#227;o e lacera&#231;&#227;o severa</text>
+
+      <g transform="translate(25, 200)" font-family="system-ui, sans-serif" font-size="12" fill="var(--il1-text)">
+        <text x="0" y="15" font-weight="bold" fill="var(--il1-color-incorrect)">O perigo da orelha na fenestra</text>
+        <text x="0" y="32" font-size="11" fill="var(--il1-text-secondary)">Na pega incorreta (toda deslocada para tr&#225;s</text>
+        <text x="0" y="47" font-size="11" fill="var(--il1-text-secondary)">ou desalinhada), a orelha acaba ficando presa</text>
+        <text x="0" y="62" font-size="11" fill="var(--il1-text-secondary)">por baixo do aro de a&#231;o ou dentro da fenestra.</text>
+
+        <text x="0" y="95" font-weight="bold" fill="var(--il1-color-incorrect)">Les&#227;o do Nervo Facial (VII par)</text>
+        <text x="0" y="112" font-size="11" fill="var(--il1-text-secondary)">Al&#233;m de rasgar a orelha, a press&#227;o do aro sobre</text>
+        <text x="0" y="127" font-size="11" fill="var(--il1-text-secondary)">a regi&#227;o mast&#243;idea esmaga o nervo facial, que</text>
+        <text x="0" y="142" font-size="11" fill="var(--il1-text-secondary)">emerge ali, causando paralisia facial tempor&#225;ria.</text>
+      </g>
+    </g>
+
+    <!-- STATE: LANDMARK ORBIT DANGER (Incorrect) -->
+    <g id="il1-state-orbit-danger" style="display: none;">
+      <rect x="25" y="95" width="130" height="24" rx="12" fill="var(--il1-color-incorrect-bg)" stroke="var(--il1-color-incorrect)" stroke-width="1" />
+      <text x="90" y="111" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--il1-color-incorrect)" text-anchor="middle">TRAUMA GRAVE</text>
+
+      <text x="25" y="150" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="var(--il1-color-incorrect)">Compress&#227;o Ocular</text>
+      <text x="25" y="170" font-family="system-ui, sans-serif" font-size="11" fill="var(--il1-text-secondary)">Risco para a vis&#227;o do rec&#233;m-nascido</text>
+
+      <g transform="translate(25, 200)" font-family="system-ui, sans-serif" font-size="12" fill="var(--il1-text)">
+        <text x="0" y="15" font-weight="bold" fill="var(--il1-color-incorrect)">Esmagamento do globo ocular</text>
+        <text x="0" y="32" font-size="11" fill="var(--il1-text-secondary)">Quando a pega &#233; fronto-malar (incorreta), a</text>
+        <text x="0" y="47" font-size="11" fill="var(--il1-text-secondary)">colher fica inclinada para a frente, apoiando-se</text>
+        <text x="0" y="62" font-size="11" fill="var(--il1-text-secondary)">diretamente sobre a &#243;rbita do olho do beb&#234;.</text>
+
+        <text x="0" y="95" font-weight="bold" fill="var(--il1-color-incorrect)">Complica&#231;&#245;es cl&#237;nicas oculares</text>
+        <text x="0" y="112" font-size="11" fill="var(--il1-text-secondary)">Pode desencadear hemorragias retiniana ou</text>
+        <text x="0" y="127" font-size="11" fill="var(--il1-text-secondary)">retrobulbar, fraturas da &#243;rbita, hifema ou</text>
+        <text x="0" y="142" font-size="11" fill="var(--il1-text-secondary)">mesmo perda permanente da vis&#227;o.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- DYNAMIC INTERACTIVE TOOLTIP -->
+  <g id="il1-tooltip" opacity="0" pointer-events="none">
+    <rect id="il1-tooltip-bg" x="0" y="0" width="260" height="52" rx="6" fill="var(--il1-card-bg)" stroke="var(--il1-border)" stroke-width="1.5" filter="url(#il1-shadow-filter)" />
+    <text id="il1-tooltip-title" x="12" y="20" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--il1-text)">T&#237;tulo</text>
+    <text id="il1-tooltip-desc" x="12" y="36" font-family="system-ui, sans-serif" font-size="10" fill="var(--il1-text-secondary)">Descri&#231;&#227;o</text>
+  </g>
+</svg></div></figure></div></article></main><script>
+window.addEventListener('load', function(){ setTimeout(function(){
+  var d=document.createElement('div'); d.id='__GATE__';
+  d.setAttribute('data-err', JSON.stringify((window.__GATEERR||[]).slice(0,40)));
+  document.body.appendChild(d);
+}, 1200); });
+</script></body></html>

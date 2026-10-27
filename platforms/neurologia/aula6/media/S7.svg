@@ -1,0 +1,532 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 620" role="img" aria-labelledby="a6p7-title a6p7-desc" class="a6p7-root">
+  <title id="a6p7-title">Linha etária até o NÃO da febril</title>
+  <desc id="a6p7-desc">Eixo etário de etiologia da crise. No neonato a crise não é fisiológica e exige investigação de causa metabólica, infecção congênita, malformação ou anóxia periparto. Entre 6 meses e 5 anos a crise febril lidera e não é epilepsia. Recorte conceitual sem algoritmo simples versus complexa.</desc>
+  <defs>
+    <linearGradient id="a6p7-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a6p7-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a6p7-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a6p7-auroraL" cx="18%" cy="28%" r="52%">
+      <stop offset="0%" stop-color="var(--a6p7-coral, #F87171)" stop-opacity="0.28"/>
+      <stop offset="55%" stop-color="var(--a6p7-indigo, #818CF8)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a6p7-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a6p7-auroraR" cx="78%" cy="36%" r="50%">
+      <stop offset="0%" stop-color="var(--a6p7-gold, #FBBF24)" stop-opacity="0.24"/>
+      <stop offset="60%" stop-color="var(--a6p7-indigo, #818CF8)" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="var(--a6p7-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a6p7-rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--a6p7-coral, #F87171)"/>
+      <stop offset="28%" stop-color="var(--a6p7-indigo, #818CF8)"/>
+      <stop offset="62%" stop-color="var(--a6p7-gold, #FBBF24)"/>
+      <stop offset="100%" stop-color="var(--a6p7-indigoDeep, #4F46E5)"/>
+    </linearGradient>
+    <linearGradient id="a6p7-neoFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a6p7-coralSoft, #7F1D1D)" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="var(--a6p7-card, #111A2B)" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="a6p7-febFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a6p7-goldSoft, #78350F)" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="var(--a6p7-card, #111A2B)" stop-opacity="0.92"/>
+    </linearGradient>
+    <radialGradient id="a6p7-sealGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a6p7-gold, #FBBF24)" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="var(--a6p7-gold, #FBBF24)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a6p7-alarmGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a6p7-coral, #F87171)" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="var(--a6p7-coral, #F87171)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="a6p7-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a6p7-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a6p7-arrInd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a6p7-indigo, #818CF8)"/>
+    </marker>
+    <style>
+      .a6p7-root {
+        --a6p7-bg0: #0B1220;
+        --a6p7-bg1: #07111F;
+        --a6p7-card: #111A2B;
+        --a6p7-card2: #152033;
+        --a6p7-border: rgba(148,163,184,0.18);
+        --a6p7-ink: #F4F7FB;
+        --a6p7-muted: #94A3B8;
+        --a6p7-soft: #B8C0CC;
+        --a6p7-indigo: #818CF8;
+        --a6p7-indigoDeep: #4F46E5;
+        --a6p7-coral: #F87171;
+        --a6p7-coralDim: #B91C1C;
+        --a6p7-coralSoft: #7F1D1D;
+        --a6p7-gold: #FBBF24;
+        --a6p7-goldDim: #B45309;
+        --a6p7-goldSoft: #78350F;
+        --a6p7-ok: #34D399;
+        --a6p7-railTrack: #1E293B;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a6p7-root {
+        --a6p7-bg0: #F8F6F2;
+        --a6p7-bg1: #EEF2F7;
+        --a6p7-card: #FFFFFF;
+        --a6p7-card2: #F1F5F9;
+        --a6p7-border: rgba(15,23,42,0.10);
+        --a6p7-ink: #0F172A;
+        --a6p7-muted: #64748B;
+        --a6p7-soft: #475569;
+        --a6p7-indigo: #4F46E5;
+        --a6p7-indigoDeep: #3730A3;
+        --a6p7-coral: #DC2626;
+        --a6p7-coralDim: #991B1B;
+        --a6p7-coralSoft: #FECACA;
+        --a6p7-gold: #D97706;
+        --a6p7-goldDim: #92400E;
+        --a6p7-goldSoft: #FDE68A;
+        --a6p7-ok: #059669;
+        --a6p7-railTrack: #E2E8F0;
+      }
+      .a6p7-root .a6p7-hs,
+      .a6p7-root .a6p7-chip,
+      .a6p7-root .a6p7-btn {
+        cursor: pointer;
+      }
+      .a6p7-root .a6p7-hs:focus,
+      .a6p7-root .a6p7-chip:focus,
+      .a6p7-root .a6p7-btn:focus {
+        outline: none;
+      }
+      .a6p7-root .a6p7-hs:focus .a6p7-hs-ring,
+      .a6p7-root .a6p7-chip:focus .a6p7-chip-ring,
+      .a6p7-root .a6p7-btn:focus .a6p7-btn-ring {
+        opacity: 1;
+      }
+      .a6p7-root .a6p7-tip {
+        pointer-events: none;
+      }
+      .a6p7-root .a6p7-panel,
+      .a6p7-root .a6p7-seal,
+      .a6p7-root .a6p7-alarm,
+      .a6p7-root .a6p7-cause,
+      .a6p7-root .a6p7-chip-fill,
+      .a6p7-root .a6p7-zone-glow,
+      .a6p7-root .a6p7-mid {
+        transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1), stroke-width 0.3s ease, filter 0.35s ease;
+      }
+      .a6p7-root .a6p7-chip-fill { opacity: 0.72; }
+      .a6p7-root .a6p7-zone-glow { opacity: 0.22; }
+      .a6p7-root .a6p7-mid { opacity: 0.55; }
+      .a6p7-root .a6p7-cause { opacity: 0.78; }
+      .a6p7-root .a6p7-alarm-pulse {
+        transform-origin: 148px 268px;
+      }
+      .a6p7-root[data-mode="neo"] .a6p7-panel-neo {
+        stroke-width: 2.4;
+      }
+      .a6p7-root[data-mode="neo"] .a6p7-zone-glow-neo { opacity: 0.9; }
+      .a6p7-root[data-mode="neo"] .a6p7-alarm {
+        transform: scale(1.06);
+      }
+      .a6p7-root[data-mode="neo"] .a6p7-cause { opacity: 1; }
+      .a6p7-root[data-mode="neo"] .a6p7-chip-neo .a6p7-chip-fill { opacity: 1; }
+      .a6p7-root[data-mode="neo"] .a6p7-mid { opacity: 0.28; }
+      .a6p7-root[data-mode="neo"] .a6p7-panel-feb { opacity: 0.55; }
+      .a6p7-root[data-mode="neo"] .a6p7-seal { opacity: 0.45; }
+      .a6p7-root[data-mode="feb"] .a6p7-panel-feb {
+        stroke-width: 2.4;
+      }
+      .a6p7-root[data-mode="feb"] .a6p7-zone-glow-feb { opacity: 0.95; }
+      .a6p7-root[data-mode="feb"] .a6p7-seal {
+        transform: scale(1.05);
+      }
+      .a6p7-root[data-mode="feb"] .a6p7-chip-feb .a6p7-chip-fill { opacity: 1; }
+      .a6p7-root[data-mode="feb"] .a6p7-mid { opacity: 0.28; }
+      .a6p7-root[data-mode="feb"] .a6p7-panel-neo { opacity: 0.55; }
+      .a6p7-root[data-mode="feb"] .a6p7-alarm { opacity: 0.55; }
+      .a6p7-root[data-mode="feb"] .a6p7-cause { opacity: 0.35; }
+      .a6p7-root[data-mode="eixo"] .a6p7-chip-eixo .a6p7-chip-fill { opacity: 1; }
+      .a6p7-root[data-mode="eixo"] .a6p7-rail-hi { opacity: 1; }
+      .a6p7-root[data-playing="1"] .a6p7-alarm-pulse {
+        animation: a6p7-pulse 1.6s ease-in-out infinite;
+      }
+      .a6p7-root[data-playing="1"] .a6p7-seal-ring {
+        animation: a6p7-seal 2s ease-in-out infinite;
+      }
+      @keyframes a6p7-pulse {
+        0%, 100% { opacity: 0.55; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.08); }
+      }
+      @keyframes a6p7-seal {
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 0.85; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .a6p7-root[data-playing="1"] .a6p7-alarm-pulse,
+        .a6p7-root[data-playing="1"] .a6p7-seal-ring {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="840" height="620" fill="url(#a6p7-bg)"/>
+  <rect width="840" height="620" fill="url(#a6p7-auroraL)"/>
+  <rect width="840" height="620" fill="url(#a6p7-auroraR)"/>
+
+  <text x="40" y="42" fill="var(--a6p7-ink, #F4F7FB)" font-size="22" font-weight="700" letter-spacing="-0.3">Linha etária · etiologia da crise</text>
+  <text x="40" y="66" fill="var(--a6p7-muted, #94A3B8)" font-size="13" font-weight="500">Idade muda a hipótese — o recorte para no limiar conceitual</text>
+
+  <g class="a6p7-chip a6p7-chip-eixo" id="a6p7-chip-eixo" tabindex="0" role="button" aria-label="Eixo preferencial: idade decide a etiologia" transform="translate(40,86)">
+    <rect class="a6p7-chip-fill" x="0" y="0" width="128" height="30" rx="15" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-indigo, #818CF8)" stroke-width="1.4"/>
+    <rect class="a6p7-chip-ring" x="-2" y="-2" width="132" height="34" rx="17" fill="none" stroke="var(--a6p7-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+    <text x="64" y="20" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="12" font-weight="600">Eixo = idade</text>
+  </g>
+  <g class="a6p7-chip a6p7-chip-neo" id="a6p7-chip-neo" tabindex="0" role="button" aria-label="Neonato: crise não é normal, investigar" transform="translate(178,86)">
+    <rect class="a6p7-chip-fill" x="0" y="0" width="148" height="30" rx="15" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-coral, #F87171)" stroke-width="1.4"/>
+    <rect class="a6p7-chip-ring" x="-2" y="-2" width="152" height="34" rx="17" fill="none" stroke="var(--a6p7-coral, #F87171)" stroke-width="2" opacity="0"/>
+    <text x="74" y="20" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="12" font-weight="600">Neonato · alarme</text>
+  </g>
+  <g class="a6p7-chip a6p7-chip-feb" id="a6p7-chip-feb" tabindex="0" role="button" aria-label="6 meses a 5 anos: crise febril não é epilepsia" transform="translate(336,86)">
+    <rect class="a6p7-chip-fill" x="0" y="0" width="188" height="30" rx="15" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="1.4"/>
+    <rect class="a6p7-chip-ring" x="-2" y="-2" width="192" height="34" rx="17" fill="none" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+    <text x="94" y="20" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="12" font-weight="600">6 m – 5 a · febril</text>
+  </g>
+  <g class="a6p7-btn" id="a6p7-btn-reset" tabindex="0" role="button" aria-label="Resetar linha etária" transform="translate(720,86)">
+    <rect x="0" y="0" width="80" height="30" rx="15" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <rect class="a6p7-btn-ring" x="-2" y="-2" width="84" height="34" rx="17" fill="none" stroke="var(--a6p7-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+    <text x="40" y="20" text-anchor="middle" fill="var(--a6p7-soft, #B8C0CC)" font-size="12" font-weight="600">Reset</text>
+  </g>
+
+  <g id="a6p7-timeline" transform="translate(0,0)">
+    <rect x="48" y="196" width="744" height="14" rx="7" fill="var(--a6p7-railTrack, #1E293B)"/>
+    <rect class="a6p7-rail-hi" x="48" y="198" width="744" height="10" rx="5" fill="url(#a6p7-rail)" opacity="0.92"/>
+    <path d="M48 203 H792" fill="none" stroke="var(--a6p7-indigo, #818CF8)" stroke-width="0" marker-end="url(#a6p7-arrInd)" opacity="0"/>
+
+    <g aria-hidden="true">
+      <line x1="88" y1="188" x2="88" y2="218" stroke="var(--a6p7-coral, #F87171)" stroke-width="2.2"/>
+      <line x1="250" y1="190" x2="250" y2="216" stroke="var(--a6p7-indigo, #818CF8)" stroke-width="1.6" opacity="0.7"/>
+      <line x1="420" y1="188" x2="420" y2="218" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="2"/>
+      <line x1="720" y1="188" x2="720" y2="218" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="2"/>
+      <line x1="790" y1="190" x2="790" y2="216" stroke="var(--a6p7-indigo, #818CF8)" stroke-width="1.4" opacity="0.55"/>
+    </g>
+
+    <text x="88" y="178" text-anchor="middle" fill="var(--a6p7-coral, #F87171)" font-size="12" font-weight="700">Neonato</text>
+    <text x="250" y="178" text-anchor="middle" fill="var(--a6p7-muted, #94A3B8)" font-size="11" font-weight="500">~1–6 m</text>
+    <text x="420" y="178" text-anchor="middle" fill="var(--a6p7-gold, #FBBF24)" font-size="12" font-weight="700">6 meses</text>
+    <text x="720" y="178" text-anchor="middle" fill="var(--a6p7-gold, #FBBF24)" font-size="12" font-weight="700">5 anos</text>
+    <text x="790" y="178" text-anchor="end" fill="var(--a6p7-muted, #94A3B8)" font-size="11" font-weight="500">idade →</text>
+  </g>
+
+  <ellipse class="a6p7-zone-glow a6p7-zone-glow-neo" cx="148" cy="268" rx="88" ry="52" fill="url(#a6p7-alarmGlow)" filter="url(#a6p7-glow)"/>
+  <ellipse class="a6p7-zone-glow a6p7-zone-glow-feb" cx="570" cy="300" rx="150" ry="70" fill="url(#a6p7-sealGlow)" filter="url(#a6p7-glow)"/>
+
+  <g class="a6p7-hs a6p7-panel a6p7-panel-neo" id="a6p7-hs-neo" tabindex="0" role="button" aria-label="Neonato: crise não é fisiológica; investigar causa">
+    <rect class="a6p7-hs-ring" x="36" y="228" width="224" height="248" rx="20" fill="none" stroke="var(--a6p7-coral, #F87171)" stroke-width="2.5" opacity="0"/>
+    <rect x="40" y="232" width="216" height="240" rx="18" fill="url(#a6p7-neoFill)" stroke="var(--a6p7-coral, #F87171)" stroke-width="1.6"/>
+    <g class="a6p7-alarm a6p7-alarm-pulse" transform="translate(0,0)">
+      <circle cx="148" cy="278" r="34" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-coral, #F87171)" stroke-width="2.2"/>
+      <path d="M148 256 L148 282" stroke="var(--a6p7-coral, #F87171)" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="148" cy="292" r="2.8" fill="var(--a6p7-coral, #F87171)"/>
+      <path d="M128 302 Q148 314 168 302" fill="none" stroke="var(--a6p7-coral, #F87171)" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    </g>
+    <text x="148" y="340" text-anchor="middle" fill="var(--a6p7-coral, #F87171)" font-size="15" font-weight="700">NÃO é normal</text>
+    <text x="148" y="360" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="12.5" font-weight="600">Crise no neonato</text>
+    <text x="148" y="380" text-anchor="middle" fill="var(--a6p7-soft, #B8C0CC)" font-size="11.5" font-weight="500">Investigar causa</text>
+    <text x="148" y="404" text-anchor="middle" fill="var(--a6p7-muted, #94A3B8)" font-size="11" font-weight="500">Algo está errado</text>
+    <text x="148" y="444" text-anchor="middle" fill="var(--a6p7-muted, #94A3B8)" font-size="10.5" font-weight="500">Toque · hipóteses</text>
+  </g>
+
+  <g class="a6p7-mid" id="a6p7-mid-band" aria-hidden="true">
+    <rect x="268" y="248" width="96" height="200" rx="16" fill="var(--a6p7-card, #111A2B)" stroke="var(--a6p7-border, rgba(148,163,184,0.18))" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.85"/>
+    <text x="316" y="330" text-anchor="middle" fill="var(--a6p7-muted, #94A3B8)" font-size="11" font-weight="600">Ponte</text>
+    <text x="316" y="350" text-anchor="middle" fill="var(--a6p7-muted, #94A3B8)" font-size="10.5" font-weight="500">idade sobe</text>
+    <text x="316" y="370" text-anchor="middle" fill="var(--a6p7-muted, #94A3B8)" font-size="10.5" font-weight="500">hipótese</text>
+    <text x="316" y="390" text-anchor="middle" fill="var(--a6p7-muted, #94A3B8)" font-size="10.5" font-weight="500">muda</text>
+    <path d="M290 410 H342" stroke="var(--a6p7-indigo, #818CF8)" stroke-width="1.6" stroke-linecap="round" marker-end="url(#a6p7-arrInd)" opacity="0.7"/>
+  </g>
+
+  <g class="a6p7-hs a6p7-panel a6p7-panel-feb" id="a6p7-hs-feb" tabindex="0" role="button" aria-label="6 meses a 5 anos: crise febril lidera e não é epilepsia">
+    <rect class="a6p7-hs-ring" x="376" y="228" width="424" height="248" rx="20" fill="none" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="2.5" opacity="0"/>
+    <rect x="380" y="232" width="416" height="240" rx="18" fill="url(#a6p7-febFill)" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="1.6"/>
+    <text x="480" y="268" fill="var(--a6p7-ink, #F4F7FB)" font-size="15" font-weight="700">6 meses – 5 anos</text>
+    <text x="480" y="292" fill="var(--a6p7-soft, #B8C0CC)" font-size="12.5" font-weight="500">Grande motivo = crise febril</text>
+    <text x="480" y="316" fill="var(--a6p7-muted, #94A3B8)" font-size="11.5" font-weight="500">Convulsão febril · causa importante na infância</text>
+
+    <g class="a6p7-seal" id="a6p7-seal" transform="translate(620,250)">
+      <circle class="a6p7-seal-ring" cx="70" cy="70" r="62" fill="none" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="2" opacity="0.4"/>
+      <circle cx="70" cy="70" r="54" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="2.6"/>
+      <circle cx="70" cy="70" r="46" fill="none" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.7"/>
+      <text x="70" y="58" text-anchor="middle" fill="var(--a6p7-gold, #FBBF24)" font-size="18" font-weight="800" letter-spacing="1">NÃO</text>
+      <text x="70" y="80" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="12" font-weight="700">é epilepsia</text>
+      <text x="70" y="98" text-anchor="middle" fill="var(--a6p7-muted, #94A3B8)" font-size="10" font-weight="500">selo duro</text>
+    </g>
+
+    <text x="480" y="360" fill="var(--a6p7-gold, #FBBF24)" font-size="13" font-weight="700">Crise febril ≠ epilepsia</text>
+    <text x="480" y="384" fill="var(--a6p7-soft, #B8C0CC)" font-size="11.5" font-weight="500">Ainda é causa importante de crise na infância</text>
+    <text x="480" y="412" fill="var(--a6p7-muted, #94A3B8)" font-size="11" font-weight="500">Limiar conceitual · sem simples × complexa aqui</text>
+    <text x="480" y="444" fill="var(--a6p7-muted, #94A3B8)" font-size="10.5" font-weight="500">Toque · cravar o NÃO</text>
+  </g>
+
+  <g id="a6p7-causes" transform="translate(40,492)">
+    <text x="0" y="0" fill="var(--a6p7-muted, #94A3B8)" font-size="11" font-weight="600">Neonato · investigar (sem fisiológico)</text>
+    <g class="a6p7-hs a6p7-cause" id="a6p7-hs-metab" tabindex="0" role="button" aria-label="Metabólico: investigar no neonato com crise" transform="translate(0,14)">
+      <rect class="a6p7-hs-ring" x="-2" y="-2" width="156" height="36" rx="12" fill="none" stroke="var(--a6p7-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect x="0" y="0" width="152" height="32" rx="10" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-coral, #F87171)" stroke-width="1.2"/>
+      <text x="76" y="21" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="11.5" font-weight="600">Metabólico</text>
+    </g>
+    <g class="a6p7-hs a6p7-cause" id="a6p7-hs-inf" tabindex="0" role="button" aria-label="Infecção congênita: investigar no neonato com crise" transform="translate(164,14)">
+      <rect class="a6p7-hs-ring" x="-2" y="-2" width="176" height="36" rx="12" fill="none" stroke="var(--a6p7-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect x="0" y="0" width="172" height="32" rx="10" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-coral, #F87171)" stroke-width="1.2"/>
+      <text x="86" y="21" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="11.5" font-weight="600">Infecção congênita</text>
+    </g>
+    <g class="a6p7-hs a6p7-cause" id="a6p7-hs-mal" tabindex="0" role="button" aria-label="Malformação: investigar no neonato com crise" transform="translate(348,14)">
+      <rect class="a6p7-hs-ring" x="-2" y="-2" width="148" height="36" rx="12" fill="none" stroke="var(--a6p7-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect x="0" y="0" width="144" height="32" rx="10" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-coral, #F87171)" stroke-width="1.2"/>
+      <text x="72" y="21" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="11.5" font-weight="600">Malformação</text>
+    </g>
+    <g class="a6p7-hs a6p7-cause" id="a6p7-hs-anox" tabindex="0" role="button" aria-label="Anóxia periparto: investigar no neonato com crise" transform="translate(504,14)">
+      <rect class="a6p7-hs-ring" x="-2" y="-2" width="160" height="36" rx="12" fill="none" stroke="var(--a6p7-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect x="0" y="0" width="156" height="32" rx="10" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-coral, #F87171)" stroke-width="1.2"/>
+      <text x="78" y="21" text-anchor="middle" fill="var(--a6p7-ink, #F4F7FB)" font-size="11.5" font-weight="600">Anóxia periparto</text>
+    </g>
+    <g class="a6p7-hs a6p7-cause" id="a6p7-hs-nao" tabindex="0" role="button" aria-label="Selo: crise febril não é epilepsia" transform="translate(676,14)">
+      <rect class="a6p7-hs-ring" x="-2" y="-2" width="122" height="36" rx="12" fill="none" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect x="0" y="0" width="118" height="32" rx="10" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="1.4"/>
+      <text x="59" y="21" text-anchor="middle" fill="var(--a6p7-gold, #FBBF24)" font-size="11.5" font-weight="700">NÃO · epil.</text>
+    </g>
+  </g>
+
+  <text id="a6p7-status" x="40" y="574" fill="var(--a6p7-muted, #94A3B8)" font-size="12.5" font-weight="600">Toque o neonato · a faixa febril · ou o selo NÃO</text>
+  <text id="a6p7-live" x="40" y="596" fill="var(--a6p7-soft, #B8C0CC)" font-size="12" font-weight="500">Idade decide a hipótese: alarme no início da vida; febril no pré-escolar com selo duro.</text>
+
+  <g id="a6p7-tip" class="a6p7-tip" opacity="0" aria-hidden="true" transform="translate(0,0)">
+    <rect id="a6p7-tip-bg" x="0" y="0" width="310" height="58" rx="12" fill="var(--a6p7-card2, #152033)" stroke="var(--a6p7-gold, #FBBF24)" stroke-width="1.4" opacity="0.97"/>
+    <text id="a6p7-tip-t1" x="14" y="24" fill="var(--a6p7-ink, #F4F7FB)" font-size="12.5" font-weight="700">Título</text>
+    <text id="a6p7-tip-t2" x="14" y="44" fill="var(--a6p7-soft, #B8C0CC)" font-size="11.5" font-weight="500">Detalhe</text>
+  </g>
+
+  <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a6p7-root');
+  if(!root){
+    var scripts = document.getElementsByTagName('script');
+    var s = scripts[scripts.length-1];
+    root = s && s.ownerSVGElement ? s.ownerSVGElement : null;
+  }
+  if(!root) return;
+
+  function Q(sel){ return root.querySelector(sel); }
+  var tip = Q('#a6p7-tip');
+  var statusEl = Q('#a6p7-status');
+  var liveEl = Q('#a6p7-live');
+  var resetBtn = Q('#a6p7-btn-reset');
+  var reduce = false;
+  try {
+    reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch(e){ reduce = false; }
+
+  var labels = {
+    eixo: {
+      tip1: 'Eixo = idade',
+      tip2: 'Etiologia preferencial muda com a faixa etária',
+      stroke: 'var(--a6p7-indigo, #818CF8)',
+      status: 'Eixo etário · condutas diferentes',
+      live: 'Para o generalista e a prova, a idade é o eixo preferencial de etiologia da crise.',
+      mode: 'eixo'
+    },
+    neo: {
+      tip1: 'Neonato · alarme',
+      tip2: 'Crise NÃO é fisiológica — investigar',
+      stroke: 'var(--a6p7-coral, #F87171)',
+      status: 'Neonato · algo está errado',
+      live: 'No neonato, crise pede investigação: metabólico, infecção congênita, malformação, anóxia periparto.',
+      mode: 'neo'
+    },
+    feb: {
+      tip1: '6 meses – 5 anos',
+      tip2: 'Crise febril lidera · NÃO é epilepsia',
+      stroke: 'var(--a6p7-gold, #FBBF24)',
+      status: 'Febril · selo NÃO é epilepsia',
+      live: 'Nesta faixa a crise febril é o grande motivo. Continua sendo causa importante de crise na infância — sem virar epilepsia.',
+      mode: 'feb'
+    },
+    metab: {
+      tip1: 'Metabólico',
+      tip2: 'Causa a investigar no neonato com crise',
+      stroke: 'var(--a6p7-coral, #F87171)',
+      status: 'Investigar · metabólico',
+      live: 'Neonato com crise: erro metabólico entra no rol — não normalizar o evento.',
+      mode: 'neo'
+    },
+    inf: {
+      tip1: 'Infecção congênita',
+      tip2: 'Causa a investigar no neonato com crise',
+      stroke: 'var(--a6p7-coral, #F87171)',
+      status: 'Investigar · infecção congênita',
+      live: 'Infecção congênita é hipótese de trabalho no neonato com crise — alarme, não rotina.',
+      mode: 'neo'
+    },
+    mal: {
+      tip1: 'Malformação',
+      tip2: 'Causa a investigar no neonato com crise',
+      stroke: 'var(--a6p7-coral, #F87171)',
+      status: 'Investigar · malformação',
+      live: 'Malformação do SNC pode se apresentar com crise no período neonatal.',
+      mode: 'neo'
+    },
+    anox: {
+      tip1: 'Anóxia periparto',
+      tip2: 'Causa a investigar no neonato com crise',
+      stroke: 'var(--a6p7-coral, #F87171)',
+      status: 'Investigar · anóxia periparto',
+      live: 'Anóxia periparto compõe o alarme neonatal — crise aqui não é “coisa de nascença normal”.',
+      mode: 'neo'
+    },
+    nao: {
+      tip1: 'NÃO é epilepsia',
+      tip2: 'Crise febril carrega o selo duro',
+      stroke: 'var(--a6p7-gold, #FBBF24)',
+      status: 'Selo · febril ≠ epilepsia',
+      live: 'Crise febril não é epilepsia. O recorte para aqui — sem abrir simples × complexa.',
+      mode: 'feb'
+    }
+  };
+
+  function setMode(mode){
+    if(!mode){
+      root.removeAttribute('data-mode');
+      root.setAttribute('data-playing','0');
+      return;
+    }
+    root.setAttribute('data-mode', mode);
+    if(!reduce && (mode === 'neo' || mode === 'feb')){
+      root.setAttribute('data-playing','1');
+    } else {
+      root.setAttribute('data-playing','0');
+    }
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx; pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x:cx, y:cy};
+    var p = pt.matrixTransform(m.inverse());
+    return {x:p.x, y:p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip) return;
+    var t1el = Q('#a6p7-tip-t1');
+    var t2el = Q('#a6p7-tip-t2');
+    var bg = Q('#a6p7-tip-bg');
+    if(t1el) t1el.textContent = t1;
+    if(t2el) t2el.textContent = t2;
+    if(bg) bg.setAttribute('stroke', stroke || 'var(--a6p7-gold, #FBBF24)');
+    var p = clientToSvg(cx, cy);
+    var w = 310, h = 58, off = 14;
+    var x = p.x + off;
+    var y = p.y + off;
+    if(x + w > 820) x = p.x - w - off;
+    if(y + h > 600) y = p.y - h - off;
+    if(x < 8) x = 8;
+    if(y < 8) y = 8;
+    tip.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+    tip.setAttribute('opacity', '1');
+  }
+
+  function hideTip(){
+    if(tip) tip.setAttribute('opacity', '0');
+  }
+
+  function applyLabel(key, cx, cy){
+    var L = labels[key];
+    if(!L) return;
+    setMode(L.mode);
+    if(cx != null && cy != null) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+    if(statusEl){
+      statusEl.textContent = L.status;
+      statusEl.setAttribute('fill', L.stroke);
+    }
+    if(liveEl) liveEl.textContent = L.live;
+  }
+
+  function bindHotspot(el, key){
+    if(!el) return;
+    var L = labels[key];
+    function activate(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      applyLabel(key, cx, cy);
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      applyLabel(key, ev.clientX, ev.clientY);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      if(tip && tip.getAttribute('opacity') === '1' && L){
+        showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+      }
+    });
+    el.addEventListener('mouseleave', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      hideTip();
+    });
+    el.addEventListener('click', activate);
+    el.addEventListener('focus', function(){
+      var b = el.getBoundingClientRect();
+      applyLabel(key, b.left + b.width/2, b.top + b.height/2);
+    });
+    el.addEventListener('blur', function(){ hideTip(); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        activate(ev);
+      }
+    });
+  }
+
+  bindHotspot(Q('#a6p7-hs-neo'), 'neo');
+  bindHotspot(Q('#a6p7-hs-feb'), 'feb');
+  bindHotspot(Q('#a6p7-hs-metab'), 'metab');
+  bindHotspot(Q('#a6p7-hs-inf'), 'inf');
+  bindHotspot(Q('#a6p7-hs-mal'), 'mal');
+  bindHotspot(Q('#a6p7-hs-anox'), 'anox');
+  bindHotspot(Q('#a6p7-hs-nao'), 'nao');
+  bindHotspot(Q('#a6p7-chip-eixo'), 'eixo');
+  bindHotspot(Q('#a6p7-chip-neo'), 'neo');
+  bindHotspot(Q('#a6p7-chip-feb'), 'feb');
+  bindHotspot(Q('#a6p7-seal'), 'nao');
+
+  if(resetBtn){
+    function doReset(){
+      setMode(null);
+      hideTip();
+      if(statusEl){
+        statusEl.textContent = 'Toque o neonato · a faixa febril · ou o selo NÃO';
+        statusEl.setAttribute('fill', 'var(--a6p7-muted, #94A3B8)');
+      }
+      if(liveEl){
+        liveEl.textContent = 'Idade decide a hipótese: alarme no início da vida; febril no pré-escolar com selo duro.';
+      }
+    }
+    resetBtn.addEventListener('click', doReset);
+    resetBtn.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        doReset();
+      }
+    });
+  }
+
+  root.setAttribute('data-playing','0');
+})();
+]]></script>
+</svg>

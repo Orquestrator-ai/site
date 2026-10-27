@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Cefaleia: abordagem sindrômica (cf1). A cefaleia que não se pode errar — dilema grave × simples antes do nome.">
+<title>A cefaleia que não se pode errar · cf1 Cefaleia · Neurologia</title>
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="cf1-cara">
+/* cf1 — identidade e componentes; a moldura vem do chassi compartilhado.
+   Ajuste 02-08: --ink-mute apontava para --ink-60 (o tom de NOTA/carimbo da casa)
+   e virou a cor de parágrafos de abertura, legendas e respostas — a página inteira
+   ficou cinza e ilegível. Agora --ink-mute aponta para --ink-legenda (texto que se LÊ,
+   nos dois temas). Os poucos usos que SÃO mesmo metadado/carimbo recebem --ink-60
+   direto. Os cards ganham borda visível e inset-highlight (voltam a ser objetos);
+   os alarmes de coral ganham halo próprio (saltam do fundo). */
+:root {
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+  --violet: #a78bfa;
+  --teal: var(--ciano);
+  --gold: var(--amber);
+  --green: var(--verde);
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --r: var(--radius-sm);
+  --r-lg: var(--radius);
+  --font: var(--font-sans);
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  /* membrana do card: borda que se vê + Highlight interno de glass + sombra da casa. */
+  --card-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.035);
+  /* halo dos alarmes: coral suave вокруг do card, sem virar neon. */
+  --alarm-glow: 0 0 30px -12px color-mix(in srgb, var(--coral) 50%, transparent);
+}
+body[data-theme="light"] { --violet: #7c3aed; }
+/* Guarda local: resolve os apelidos da aula no mesmo elemento que recebe os tokens
+   do tema manual, impedindo que card e texto herdem esquemas diferentes. */
+body[data-theme="light"], body[data-theme="dark"] {
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+}
+.page__eyebrow { color: var(--ink-60); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 .5rem; }
+/* Openers */
+.opener {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg);
+  background: var(--card); padding: 1.15rem 1.2rem 1.25rem; margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .opener, .exec-card, .fig, .quiz, .op-summary, .why-matters, .trap, .dont-confuse, .case-card, .gap-box, .hero-figure, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge { background: var(--card-solid); }
+}
+.opener__eyebrow { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); margin-bottom: .35rem; }
+.opener h1, #page-title {
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem); line-height: 1.25; margin: 0 0 .55rem; font-weight: 700;
+}
+.opener__lead, .opener__mnemonic, .opener__bust, .opener__case { margin: 0; color: var(--ink-mute); font-size: 1.02rem; }
+.opener--question { border-left: 4px solid var(--indigo); }
+.opener--case { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 8%, var(--card)); }
+.opener--trap { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.opener--checklist { border-left: 4px solid var(--teal); }
+.opener--mnemonic {
+  border-left: 4px solid var(--gold);
+  background: color-mix(in srgb, var(--gold) 7%, var(--card));
+}
+.opener--mnemonic .opener__mnemonic { font-family: Georgia, "Times New Roman", serif; font-size: 1.18rem; color: var(--ink); }
+.opener--vs { border-left: 4px solid var(--teal); }
+.opener--bust { border-left: 4px solid var(--coral); }
+.strike-wrong { text-decoration: line-through; color: var(--ink-60); }
+.chipset { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.1rem; }
+.chip--topic, .chip, .chip--ok, .chip--no, .chip--series {
+  display: inline-flex; align-items: center; border-radius: 999px; padding: .28rem .7rem;
+  font-size: .78rem; border: 1px solid var(--border); background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+  color: var(--ink); cursor: default;
+}
+.chip--topic { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 35%, var(--border)); }
+.chip--ok { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+.chip--no { color: var(--coral); border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.chip--series { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 35%, var(--border)); cursor: not-allowed; }
+button.chip { cursor: pointer; min-height: 36px; }
+/* Prosa usa a tipografia editorial do chassi. */
+.no-indent { text-indent: 0 !important; }
+.prose-list { margin: 0 0 1em 1.1rem; padding: 0; }
+.prose-list li { margin: .3rem 0; }
+.topic-h { font-size: 1.12rem; margin: 1.35rem 0 .55rem; color: var(--ink); }
+.term { color: var(--indigo); font-weight: 650; }
+[data-theme="light"] .term { color: var(--indigo); }
+.hl-good { color: var(--green); font-weight: 650; }
+.hl-bad { color: var(--coral); font-weight: 650; }
+.hl-warn { color: var(--gold); font-weight: 650; }
+/* Cards */
+.exec-card, .trap, .dont-confuse, .op-summary, .why-matters, .continuity, .gap-box, .hero-figure, .case-card, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge {
+  border: 1px solid var(--border-strong); border-radius: var(--r); background: var(--card);
+  padding: 1rem 1.05rem; margin: 1.1rem 0; box-shadow: var(--card-shadow);
+}
+.exec-card__title, .trap__title, .op-summary__title, .why-matters__title, .flip-deck__title, .ctx-grid__title, .alarm-mini__title, .flow-raias__title, .mantra-row__title, .tabelao__title, .series-bridge__title {
+  margin: 0 0 .65rem; font-size: 1rem; color: var(--teal);
+}
+/* Fecho: corpo em tom legenda (lê confortável nos dois temas); strong segue ink-100 pelo chassi. */
+.op-summary .prosa { color: var(--ink-legenda); }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.checklist label { display: flex; gap: .55rem; align-items: flex-start; cursor: pointer; min-height: 44px; }
+.checklist input { width: 18px; height: 18px; margin-top: .2rem; accent-color: var(--indigo); }
+/* split grave × simples (P1) */
+.split-board { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media (max-width: 560px) { .split-board { grid-template-columns: 1fr; } }
+.split-board__bad, .split-board__good {
+  border-radius: 10px; padding: .8rem .85rem; border: 1px solid var(--border);
+}
+.split-board__bad { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--alarm-glow); }
+.split-board__good { border-color: color-mix(in srgb, var(--green) 45%, var(--border)); background: color-mix(in srgb, var(--green) 6%, var(--card)); }
+.split-board h4 { margin: 0 0 .4rem; font-size: .9rem; }
+.split-board__bad h4 { color: var(--coral); }
+.split-board__good h4 { color: var(--green); }
+.split-board ul { margin: .2rem 0 0; padding-left: 1.1rem; }
+.split-board li { margin: .25rem 0; font-size: .92rem; }
+/* funil-PS toggle (P1/P8) */
+.funil-toggle { display: flex; gap: .5rem; flex-wrap: wrap; margin: .6rem 0 .2rem; }
+.funil-btn {
+  min-height: 44px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .45rem 1rem; cursor: pointer; font: inherit;
+}
+.funil-btn[aria-pressed="true"] { border-color: var(--indigo); color: var(--indigo); background: color-mix(in srgb, var(--indigo) 12%, var(--card-solid)); }
+.funil-btn.funil-btn--alarm[aria-pressed="true"] { border-color: var(--coral); color: var(--coral); background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); }
+.funil-out { font-size: .94rem; color: var(--ink-mute); margin: .5rem 0 0; text-indent: 0; }
+/* flip-cards (P2) */
+.flip-deck { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .flip-deck { grid-template-columns: 1fr; } }
+.flip-card { perspective: 1000px; min-height: 120px; cursor: pointer; }
+.flip-card__inner { position: relative; width: 100%; min-height: 120px; transition: transform .5s; transform-style: preserve-3d; }
+.flip-card[aria-pressed="true"] .flip-card__inner { transform: rotateY(180deg); }
+.flip-card__face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 10px; border: 1px solid var(--border-strong); padding: .8rem .85rem; display: flex; flex-direction: column; gap: .25rem; background: var(--card-solid); }
+.flip-card__face--front { color: var(--ink); }
+.flip-card__face--front .ff-tag { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); }
+.flip-card__face--back { transform: rotateY(180deg); color: var(--ink-mute); font-size: .9rem; }
+.flip-card--primary .flip-card__face--front { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.flip-card--secondary .flip-card__face--front { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.flip-card:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 10px; }
+/* board comparativo (P2) */
+.cmp-board { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .cmp-board { grid-template-columns: 1fr; } }
+.cmp-col { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.cmp-col--p { border-color: color-mix(in srgb, var(--indigo) 40%, var(--border)); }
+.cmp-col--s { border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.cmp-col h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.cmp-col--p h4 { color: var(--indigo); }
+.cmp-col--s h4 { color: var(--coral); }
+.cmp-col .chip { margin: .2rem .2rem .2rem 0; }
+/* timeline crises (P3) — texto simples no DOM reforça o SVG */
+.reopen-banner { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); border-radius: 0 10px 10px 0; padding: .65rem .85rem; margin: .8rem 0; box-shadow: var(--alarm-glow); }
+.reopen-banner b { color: var(--coral); }
+/* mini-tabela 3 alarmes (P4) */
+.alarm-mini { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.alarm-mini__table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.alarm-mini__table th, .alarm-mini__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.alarm-mini__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); }
+.nuance {
+  border-left: 3px solid var(--gold); padding: .7rem .9rem; margin: 1rem 0;
+  background: color-mix(in srgb, var(--gold) 8%, transparent); border-radius: 0 10px 10px 0;
+}
+.nuance__tag { display: inline-block; font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); font-weight: 700; margin-bottom: .25rem; }
+/* curva trovoada toggle (P4) */
+.curve-toggle { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .55rem; }
+.curve-btn {
+  min-height: 40px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .4rem .85rem; cursor: pointer; font: inherit;
+}
+.curve-btn.is-active { border-color: var(--coral); color: var(--coral); }
+.curve-btn.is-active[data-curve="prog"] { border-color: var(--amber); color: var(--amber); }
+.curve-out { font-size: .94rem; color: var(--ink-mute); margin: .4rem 0 0; text-indent: 0; }
+/* herói (P5) */
+.hero-figure { border-left: 4px solid var(--violet); }
+.hero-figure__cap { font-size: .82rem; color: var(--ink-legenda); margin: .5rem 0 0; }
+/* cards sistêmicos (P6) */
+.sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .8rem 0; }
+@media (max-width: 560px) { .sys-grid { grid-template-columns: 1fr; } }
+.sys-card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.sys-card--men { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.sys-card--sys { border-color: color-mix(in srgb, var(--amber) 45%, var(--border)); }
+.sys-card h4 { margin: 0 0 .3rem; font-size: .9rem; }
+.sys-card--men h4 { color: var(--coral); }
+.sys-card--sys h4 { color: var(--amber); }
+.trap { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.trap--despertar { border-left-color: var(--gold); box-shadow: var(--card-shadow); }
+.trap__pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .6rem 0; }
+@media (max-width: 560px) { .trap__pair { grid-template-columns: 1fr; } }
+.trap__phrase { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem .8rem; font-size: .92rem; }
+.trap__phrase--no { border-color: color-mix(in srgb, var(--ink-60) 40%, var(--border)); color: var(--ink-60); }
+.trap__phrase--yes { border-color: color-mix(in srgb, var(--coral) 50%, var(--border)); background: color-mix(in srgb, var(--coral) 8%, var(--card)); }
+.trap__phrase b { color: var(--coral); }
+/* context grid (P7) */
+.ctx-grid { }
+.ctx-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin: .5rem 0; }
+@media (max-width: 640px) { .ctx-cards { grid-template-columns: 1fr; } }
+.ctx-item { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; cursor: pointer; background: var(--card-solid); }
+.ctx-item[aria-expanded="true"] { border-color: var(--violet); }
+.ctx-item__ctx { font-size: .78rem; color: var(--violet); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.ctx-item__q { font-size: .95rem; font-weight: 600; margin: .2rem 0; }
+.ctx-item__a { font-size: .9rem; color: var(--ink-mute); display: none; margin-top: .3rem; }
+.ctx-item[aria-expanded="true"] .ctx-item__a { display: block; }
+.ctx-item:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+/* checklist porta (P8) */
+.checklist--porta .checklist__hint { font-size: .82rem; color: var(--ink-mute); margin-top: .4rem; }
+/* fluxo 4 raias (P9) */
+.flow-raias { }
+.rai { border: 1px solid var(--border-strong); border-radius: 10px; padding: .7rem .85rem; margin: .5rem 0; cursor: pointer; background: var(--card-solid); }
+.rai[aria-pressed="true"] { border-color: var(--indigo); box-shadow: 0 0 0 1px color-mix(in srgb, var(--indigo) 45%, transparent); }
+.rai__top { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.rai__sus { font-weight: 700; color: var(--coral); }
+.rai__arr { color: var(--teal); font-weight: 700; }
+.rai__ex { font-weight: 700; color: var(--indigo); }
+.rai__why { font-size: .9rem; color: var(--ink-mute); margin-top: .35rem; display: none; }
+.rai[aria-pressed="true"] .rai__why { display: block; }
+.rai:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+/* tabelão P10 */
+.tabelao { }
+.tabelao__filters { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .7rem; }
+.filter-btn { min-height: 36px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-solid); color: var(--ink); padding: .3rem .8rem; cursor: pointer; font: inherit; font-size: .82rem; }
+.filter-btn.is-active { border-color: var(--indigo); color: var(--indigo); }
+.tabelao__cards { display: none; flex-direction: column; gap: .5rem; }
+@media (max-width: 640px) { .tabelao__cards { display: flex; } .tabelao__table-wrap { display: none; } }
+.tabelao__card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .6rem .75rem; border-left: 4px solid var(--coral); box-shadow: var(--alarm-glow); }
+.tabelao__card .tc-alarm { font-weight: 700; color: var(--coral); }
+.tabelao__card .tc-row { font-size: .88rem; color: var(--ink-mute); margin-top: .2rem; }
+.tabelao__table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabelao__table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 560px; }
+.tabelao__table th, .tabelao__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.tabelao__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); position: sticky; top: 0; }
+.tabelao__table td.alarme-cell { font-weight: 650; color: var(--coral); }
+/* mantras (P10) */
+.mantra-row { border-left: 4px solid var(--gold); }
+.mantra-row ol { margin: .2rem 0 0; padding-left: 1.3rem; }
+.mantra-row li { margin: .4rem 0; font-weight: 600; }
+.mantra-row li .m-gold { color: var(--gold); }
+/* series bridge chips */
+.series-bridge { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 6%, var(--card)); }
+.series-bridge .chip-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+.dont-confuse__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+.dont-confuse__grid--2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .dont-confuse__grid { grid-template-columns: 1fr; } }
+.dont-confuse__grid > div { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem; }
+.dont-confuse__warn { border-color: color-mix(in srgb, var(--gold) 50%, var(--border)) !important; }
+.dont-confuse h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.gap-box { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 11%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.gap-box h4 { margin: 0 0 .4rem; color: var(--coral); }
+/* Figures */
+.fig { margin: 1.25rem 0; border: 1px solid var(--border-strong); border-radius: var(--r-lg); overflow: hidden; background: var(--card); box-shadow: var(--card-shadow); }
+.fig__frame { width: 100%; display: block; background: var(--bg-1); }
+.fig__frame img {
+  display: block; width: 100%; height: auto; max-width: 100%;
+  object-fit: contain; background: #0a0f18;
+}
+[data-theme="light"] .fig__frame img { background: #e8eef5; }
+.fig__frame--svg { padding: .35rem; }
+.cf1-inline-svg { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; }
+.fig__cap {
+  padding: .7rem .95rem .85rem; font-size: .78rem; color: var(--ink-legenda); line-height: 1.45;
+  border-top: 1px solid var(--border);
+}
+.fig__label {
+  display: inline-block; font-family: var(--mono); font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--gold); margin-right: .4rem;
+}
+.fig__attr { display: block; margin-top: .4rem; padding-top: .35rem; border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent); font-size: .74rem; color: var(--ink-fonte); }
+/* Quiz */
+.quiz {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg); padding: 1.1rem 1rem 1.25rem;
+  background: var(--card); margin: 1.5rem 0 1rem; box-shadow: var(--card-shadow);
+}
+.quiz h2 { margin: 0 0 .85rem; font-size: 1.1rem; }
+.quiz__questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.quiz__stem { margin: 0 0 .55rem; font-weight: 600; text-indent: 0; }
+.quiz__alternatives { display: grid; gap: .4rem; }
+.quiz__alt {
+  text-align: left; border: 1px solid var(--border-strong); border-radius: 10px;
+  background: var(--card-solid); color: var(--ink); padding: .7rem .8rem; cursor: pointer;
+  min-height: 44px; font: inherit;
+}
+.quiz__alt:hover { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.quiz__alt:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.quiz__alt[aria-checked="true"] { border-color: var(--indigo); }
+.quiz__alt.is-correct { border-color: var(--green); background: color-mix(in srgb, var(--green) 12%, var(--card-solid)); }
+.quiz__alt.is-wrong { border-color: var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card-solid)); }
+.quiz__feedback { margin-top: .55rem; padding: .7rem .75rem; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--bg-2); }
+.quiz__feedback[hidden] { display: none; }
+.quiz__verdict { margin: 0 0 .35rem; font-weight: 700; }
+.quiz__verdict.is-ok { color: var(--green); }
+.quiz__verdict.is-bad { color: var(--coral); }
+.quiz__justification, .quiz__distractor { margin: .25rem 0 0; font-size: .92rem; text-indent: 0; }
+.quiz__distractor { color: var(--ink-mute); }
+.page-nav__btn.is-disabled { opacity: .4; pointer-events: none; }
+.page-nav__pos { font-family: var(--mono); font-size: .85rem; color: var(--ink-60); }
+.continuity { border-left: 3px solid var(--teal); }
+</style>
+</head>
+<body data-theme="dark" data-page-id="p1" data-layout="cf1-p01" data-source-ids="001,002,003,004,005,006,007,008">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <div class="site-header__brand">
+      <span class="site-header__logo">NN</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Cefaleia: abordagem</span>
+        <span class="site-header__subtitle">Neurologia · Cefaleia</span>
+      </span>
+    </div>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress" id="progress">1/10</span>
+    <div class="site-header__actions">
+      <button type="button" class="icon-btn" id="home-btn" aria-label="Página inicial" title="Início" onclick="location.href='index.html'">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" data-theme-btn aria-label="Alternar tema" aria-pressed="false" title="Tema">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">Cefaleia: abordagem sindrômica</p>
+    <ul class="menu-panel__list">
+<li class="menu-panel__item"><a class="menu-panel__link is-current" href="index.html"><span class="menu-panel__index">01</span><span>A cefaleia que não se erra</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>A dor é a doença</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>Crises que se parecem</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Idade, súbito e trovoada</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Progressão e o crânio</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Acordou por causa da dor</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Contexto que muda o jogo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Anamnese e fundo de olho</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html"><span class="menu-panel__index">09</span><span>O exame pela suspeita</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html"><span class="menu-panel__index">10</span><span>Tabelão e mantras</span></a></li>
+    </ul>
+  </nav>
+</div>
+<main id="main">
+  <div class="coluna">
+    <article class="page" data-page="p1" data-layout="cf1-p01" data-source-ids="001,002,003,004,005,006,007,008">
+      <p class="page__eyebrow">Página 1 · E1</p>
+      <section class="opener opener--question" data-opener="E1">
+        <span class="opener__eyebrow">Pergunta central</span>
+        <h1 id="page-title">A cefaleia que não se pode errar</h1>
+        <p class="opener__lead no-indent">“Essa dor de cabeça manda pra casa com analgésico — ou é a que não se pode errar?”</p>
+      </section>
+      <div class="chipset"><span class="chip--topic">P01</span><span class="chip--topic">E1</span><span class="chip--topic">cf1</span><span class="chip--topic">grave × simples</span></div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose prosa">
+          <h4 class="topic-h">Prevalência e prova</h4>
+          <p>Cefaleia é tema de <strong class="term">alta prevalência e incidência</strong> no consultório e no pronto-socorro: o atendimento a paciente com dor de cabeça é <strong class="term">constante</strong>. Também é tema <strong class="term">recorrente e importante</strong> em prova de residência. Em relação a enxaqueca, cefaleia tensional e meningite, o conteúdo de base costuma ser familiar — a maioria das questões <strong class="term">não</strong> é difícil; de vez em quando surge a capciosa. Enxaqueca é uma das que <strong class="term">mais caem</strong>, mas o primeiro dever clínico é reconhecer alarmes e separar cefaleia primária de secundária antes de aprofundar o diagnóstico específico.</p>
+
+          <h4 class="topic-h">Dilema grave × simples</h4>
+          <p>O primeiro passo <strong class="term">não</strong> precisa partir de um caso fechado: é preciso <strong class="term">organizar o raciocínio sindrômico</strong>. O dilema central: a dor acontece porque há <strong class="hl-bad">doença grave</strong> (ex.: tumor, hemorragia subaracnoide) — ou o problema é <strong class="hl-good">simples</strong> o bastante para analgésico, alta e seguimento <strong class="term">sem</strong> exame complementar?</p>
+
+          <h4 class="topic-h">Por que sindrômico antes do “nome”</h4>
+          <p>Na avaliação inicial da cefaleia, a <strong class="term">pergunta-mãe</strong> é: problema grave que <strong class="term">não se pode errar</strong> o diagnóstico × problema simples que <strong class="term">nem exame complementar exige</strong>. A triagem (grave vs simples; primária vs secundária; presença de alarme) <strong class="term">antecede</strong> o nome da cefaleia primária e a catalogação completa das secundárias.</p>
+
+          <h4 class="topic-h">Funil-semente</h4>
+          <p>Funil clínico: <strong class="term">alarme?</strong> → pensar em secundária e investigar · <strong class="term">sem alarme + padrão de primária</strong> → conduzir pelo eixo clínico. Essa bifurcação organiza todo o raciocínio inicial.</p>
+        </div>
+      </section>
+
+      <aside class="exec-card" aria-label="Card split grave × simples">
+        <h3 class="exec-card__title">Os dois polos da triagem</h3>
+        <div class="split-board">
+          <div class="split-board__bad">
+            <h4>Polo grave — não erra</h4>
+            <ul>
+              <li>A dor <strong class="term">denuncia</strong> doença (tumor, HSA).</li>
+              <li>Investigação dirigida pela suspeita.</li>
+              <li>Custo de errar é <strong class="hl-bad">desproporcional</strong>.</li>
+            </ul>
+          </div>
+          <div class="split-board__good">
+            <h4>Polo simples — alta segura</h4>
+            <ul>
+              <li>Analgésico, alta e seguimento.</li>
+              <li><strong class="term">Sem</strong> exame complementar.</li>
+              <li>É a maioria das consultas.</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <figure class="fig fig--real">
+        <div class="fig__frame">
+          <img src="media/B01-ehf-ean-red-flags-secondary-headache-table.png" alt="Tabela de consenso com red flags de cefaleia secundária divididas entre história e exame físico, relacionando cefaleia em trovoada, aura atípica, trauma, progressão, febre, rigidez de nuca e déficit focal às principais causas graves que exigem investigação." loading="lazy" decoding="async" width="1020" height="980">
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Imagem real</span> Red flags de cefaleia secundária na história e no exame: cada alerta muda o limiar para investigar hemorragia, meningite, lesão expansiva ou outra causa grave.
+          <span class="fig__attr">Eigenbrodt AK, Ashina H, Khan S, et al. “Diagnosis and management of migraine in ten steps”, Table 2. <em>Nature Reviews Neurology</em> 17, 501–514 (2021). https://doi.org/10.1038/s41582-021-00509-5. CC BY 4.0. Recorte da página 507; sem alteração de conteúdo.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="fig fig--svg">
+        <div class="fig__frame fig__frame--svg">
+          <svg class="cf1-inline-svg cf1p1-root" viewBox="0 0 960 620" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="group" aria-labelledby="cf1p1-title cf1p1-desc">
+  <title id="cf1p1-title">Funil interativo de triagem sindrômica da cefaleia</title>
+  <desc id="cf1p1-desc">O funil separa cefaleias com sinais de alarme, que exigem investigação de causa secundária, daquelas sem alarme e com padrão recorrente de cefaleia primária.</desc>
+  <defs>
+    <style type="text/css">
+      .cf1p1-root {
+        --cf1p1-bg: var(--bg-1, #0f172a);
+        --cf1p1-card: var(--bg-2, #1e293b);
+        --cf1p1-card-inner: var(--bg-3, #0f172a);
+        --cf1p1-border: var(--ink-20, #334155);
+        --cf1p1-text: var(--ink-100, #f8fafc);
+        --cf1p1-muted: var(--ink-70, #94a3b8);
+        --cf1p1-red: var(--kw-red, #f43f5e);
+        --cf1p1-red-bg: #3f121d;
+        --cf1p1-red-border: #9f1239;
+        --cf1p1-teal: var(--kw-teal, #14b8a6);
+        --cf1p1-teal-bg: #0d3836;
+        --cf1p1-teal-border: #0f766e;
+        --cf1p1-gold: var(--kw-amber, #f59e0b);
+        --cf1p1-gold-bg: #3b2506;
+        --cf1p1-gold-border: #b45309;
+        --cf1p1-indigo: #6366f1;
+        --cf1p1-indigo-bg: #1e1b4b;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color-scheme: dark light;
+      }
+
+      :root[data-theme="light"] .cf1p1-root, .cf1p1-root[data-theme="light"] {
+        --cf1p1-bg: var(--bg-1, #f8fafc);
+        --cf1p1-card: var(--bg-2, #ffffff);
+        --cf1p1-card-inner: var(--bg-3, #f1f5f9);
+        --cf1p1-border: var(--ink-20, #cbd5e1);
+        --cf1p1-text: var(--ink-100, #0f172a);
+        --cf1p1-muted: var(--ink-70, #475569);
+        --cf1p1-red: var(--kw-red, #e11d48);
+        --cf1p1-red-bg: #ffe4e6;
+        --cf1p1-red-border: #f43f5e;
+        --cf1p1-teal: var(--kw-teal, #0d9488);
+        --cf1p1-teal-bg: #ccfbf1;
+        --cf1p1-teal-border: #14b8a6;
+        --cf1p1-gold: var(--kw-amber, #d97706);
+        --cf1p1-gold-bg: #fef3c7;
+        --cf1p1-gold-border: #f59e0b;
+        --cf1p1-indigo: #4338ca;
+        --cf1p1-indigo-bg: #e0e7ff;
+      }
+
+      /* Estrutura Basica */
+      .cf1p1-bg-rect { fill: var(--cf1p1-bg, #0f172a); }
+      .cf1p1-card-box { fill: var(--cf1p1-card, #1e293b); stroke: var(--cf1p1-border, #334155); stroke-width: 1.5px; rx: 10px; }
+      .cf1p1-card-inner-box { fill: var(--cf1p1-card-inner, #0f172a); stroke: var(--cf1p1-border, #334155); stroke-width: 1px; rx: 6px; }
+
+      .cf1p1-title-text { fill: var(--cf1p1-text, #f8fafc); font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+      .cf1p1-subtitle-text { fill: var(--cf1p1-muted, #94a3b8); font-size: 12px; font-weight: 500; }
+      .cf1p1-tag-badge { fill: var(--cf1p1-indigo-bg, #1e1b4b); stroke: var(--cf1p1-indigo, #6366f1); stroke-width: 1px; rx: 4px; }
+      .cf1p1-tag-text { fill: var(--cf1p1-indigo, #6366f1); font-size: 10px; font-weight: 700; letter-spacing: 0.05em; }
+
+      /* Botoes Interativos */
+      .cf1p1-btn { cursor: pointer; transition: all 0.2s ease; }
+      .cf1p1-btn:hover { filter: brightness(1.15); }
+      .cf1p1-btn:focus { outline: 2px solid var(--cf1p1-gold, #f59e0b); }
+      .cf1p1-btn-bg { stroke-width: 1.5px; rx: 6px; }
+      .cf1p1-btn-text { font-size: 11px; font-weight: 700; text-anchor: middle; }
+
+      /* Geometria do Funil e Linhas de Fluxo */
+      .cf1p1-flow-line { fill: none; stroke-width: 3px; stroke-dasharray: 6 4; transition: all 0.3s ease; }
+      .cf1p1-flow-active { stroke-dasharray: none; stroke-width: 5px; filter: drop-shadow(0 0 6px currentColor); }
+
+      .cf1p1-funnel-body { fill: url(#cf1p1-grad-funnel); stroke: var(--cf1p1-border, #334155); stroke-width: 1.5px; }
+      .cf1p1-funnel-core { fill: var(--cf1p1-gold-bg, #3b2506); stroke: var(--cf1p1-gold, #f59e0b); stroke-width: 2px; rx: 8px; transition: all 0.3s ease; }
+
+      /* Nos Alvo */
+      .cf1p1-node { cursor: pointer; transition: transform 0.2s ease, filter 0.3s ease; }
+      .cf1p1-node:hover { transform: translateY(-2px); }
+
+      .cf1p1-node-red { fill: var(--cf1p1-red-bg, #3f121d); stroke: var(--cf1p1-red-border, #9f1239); stroke-width: 2px; rx: 10px; }
+      .cf1p1-node-teal { fill: var(--cf1p1-teal-bg, #0d3836); stroke: var(--cf1p1-teal-border, #0f766e); stroke-width: 2px; rx: 10px; }
+
+      .cf1p1-chip-red { fill: var(--cf1p1-red, #f43f5e); }
+      .cf1p1-chip-teal { fill: var(--cf1p1-teal, #14b8a6); }
+      .cf1p1-chip-gold { fill: var(--cf1p1-gold, #f59e0b); }
+
+      .cf1p1-chip-text { fill: #ffffff; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; text-anchor: middle; }
+
+      /* Painel de Conteudo */
+      .cf1p1-panel-header { font-size: 13px; font-weight: 800; fill: var(--cf1p1-text, #f8fafc); letter-spacing: 0.03em; }
+      .cf1p1-panel-label { font-size: 11px; font-weight: 700; fill: var(--cf1p1-muted, #94a3b8); }
+      .cf1p1-panel-val { font-size: 13px; font-weight: 700; fill: var(--cf1p1-text, #f8fafc); }
+
+      /* Destaques de Estado */
+      .cf1p1-dimmed { opacity: 0.35; filter: grayscale(0.5); }
+      .cf1p1-highlight-red { stroke: var(--cf1p1-red, #f43f5e) !important; stroke-width: 3px !important; filter: drop-shadow(0 0 8px rgba(244,63,94,0.4)); }
+      .cf1p1-highlight-teal { stroke: var(--cf1p1-teal, #14b8a6) !important; stroke-width: 3px !important; filter: drop-shadow(0 0 8px rgba(20,184,166,0.4)); }
+      .cf1p1-pulse { animation: cf1p1-glow 2s infinite alternate; }
+
+      @keyframes cf1p1-glow {
+        from { filter: drop-shadow(0 0 2px var(--cf1p1-gold, #f59e0b)); }
+        to { filter: drop-shadow(0 0 10px var(--cf1p1-gold, #f59e0b)); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cf1p1-pulse, .cf1p1-flow-line, .cf1p1-node { animation: none !important; transition: none !important; }
+      }
+    </style>
+
+    <linearGradient id="cf1p1-grad-funnel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--cf1p1-indigo, #6366f1)" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="var(--cf1p1-gold, #f59e0b)" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <marker id="cf1p1-arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--cf1p1-red, #f43f5e)"/>
+    </marker>
+    <marker id="cf1p1-arrow-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--cf1p1-teal, #14b8a6)"/>
+    </marker>
+  </defs>
+
+  <!-- Fundo Principal -->
+  <rect class="cf1p1-bg-rect" width="100%" height="100%"/>
+
+  <!-- Cabecalho da Figura -->
+  <g transform="translate(30, 24)">
+    <rect class="cf1p1-tag-badge" x="0" y="0" width="165" height="20"/>
+    <text class="cf1p1-tag-text" x="8" y="14">EMERGÊNCIA · POSTURA DE PORTA</text>
+    <text class="cf1p1-title-text" x="0" y="42">CEFALEIA NO PS: FUNIL DE TRIAGEM SIND RÔMICA</text>
+    <text class="cf1p1-subtitle-text" x="0" y="60">Regra de Ouro: Caça-se o SINAL DE ALARME antes de nomear a dor. Alarme? → Secundária : Primária.</text>
+  </g>
+
+  <!-- Barra de Controle do Simulador -->
+  <g transform="translate(30, 92)">
+    <text class="cf1p1-panel-label" x="0" y="-8">SIMULADOR DE TRIAGEM (SELECIONE O CENÁRIO OU INTERAJA NOS RAMOS):</text>
+
+    <!-- Botao A: Sinal de Alarme -->
+    <g id="cf1p1-btn-alarme" class="cf1p1-btn" role="button" aria-label="Simular Cenário com Sinal de Alarme Presente" tabindex="0">
+      <rect class="cf1p1-btn-bg" x="0" y="0" width="220" height="32" fill="var(--cf1p1-red-bg, #3f121d)" stroke="var(--cf1p1-red, #f43f5e)"/>
+      <circle cx="14" cy="16" r="5" fill="var(--cf1p1-red, #f43f5e)"/>
+      <text class="cf1p1-btn-text" x="122" y="20" fill="var(--cf1p1-text, #f8fafc)">CENÁRIO 1: SINAL DE ALARME (+)</text>
+    </g>
+
+    <!-- Botao B: Sem Alarme -->
+    <g id="cf1p1-btn-limpo" class="cf1p1-btn" role="button" aria-label="Simular Cenário Sem Alarme com Padrão Clínico Habitual" tabindex="0" transform="translate(232, 0)">
+      <rect class="cf1p1-btn-bg" x="0" y="0" width="220" height="32" fill="var(--cf1p1-teal-bg, #0d3836)" stroke="var(--cf1p1-teal, #14b8a6)"/>
+      <circle cx="14" cy="16" r="5" fill="var(--cf1p1-teal, #14b8a6)"/>
+      <text class="cf1p1-btn-text" x="122" y="20" fill="var(--cf1p1-text, #f8fafc)">CENÁRIO 2: SEM ALARME (−)</text>
+    </g>
+
+    <!-- Botao Recalibrar -->
+    <g id="cf1p1-btn-reset" class="cf1p1-btn" role="button" aria-label="Ver visão geral do funil" tabindex="0" transform="translate(464, 0)">
+      <rect class="cf1p1-btn-bg" x="0" y="0" width="100" height="32" fill="var(--cf1p1-card, #1e293b)" stroke="var(--cf1p1-border, #334155)"/>
+      <text class="cf1p1-btn-text" x="50" y="20" fill="var(--cf1p1-muted, #94a3b8)">RECALIBRAR</text>
+    </g>
+  </g>
+
+  <!-- PALCO ESQUERDO/CENTRO: FUNIL DE TRIAGEM (x: 30 a 570, y: 140 a 590) -->
+  <g transform="translate(30, 140)">
+    <!-- Caixa de Fundo do Palco -->
+    <rect class="cf1p1-card-box" width="540" height="455"/>
+
+    <!-- Entrada do PS -->
+    <g transform="translate(170, 20)">
+      <rect class="cf1p1-card-inner-box" width="200" height="40" stroke="var(--cf1p1-indigo, #6366f1)"/>
+      <text x="100" y="25" text-anchor="middle" font-size="12" font-weight="800" fill="var(--cf1p1-text, #f8fafc)">PACIENTE COM CEFALEIA</text>
+      <text x="100" y="35" text-anchor="middle" font-size="9" font-weight="600" fill="var(--cf1p1-indigo, #6366f1)">ADMISSÃO NO PRONTO-SOCORRO</text>
+    </g>
+
+    <!-- Corpo do Funil em Semente -->
+    <polygon points="120,70 420,70 340,170 200,170" class="cf1p1-funnel-body"/>
+
+    <!-- Linha de Conexao da Admissao -->
+    <path d="M 270,60 L 270,75" stroke="var(--cf1p1-indigo, #6366f1)" stroke-width="3" fill="none"/>
+
+    <!-- Gargalo do Funil: PERGUNTA-MAE -->
+    <g id="cf1p1-node-pergunta" class="cf1p1-pulse" transform="translate(150, 150)">
+      <rect class="cf1p1-funnel-core" x="0" y="0" width="240" height="54"/>
+      <text x="120" y="22" text-anchor="middle" font-size="10" font-weight="800" fill="var(--cf1p1-gold, #f59e0b)" letter-spacing="0.06em">PERGUNTA-MÃE OBRIGATÓRIA</text>
+      <text x="120" y="38" text-anchor="middle" font-size="13" font-weight="900" fill="var(--cf1p1-text, #f8fafc)">¿ HÁ SINAL DE ALARME / RED FLAGS ?</text>
+    </g>
+
+    <!-- Linhas de Fluxo de Bifurcacao -->
+    <!-- Ramo Esquerdo: ALARME (+) -->
+    <path id="cf1p1-flow-red" class="cf1p1-flow-line" d="M 220,204 Q 220,260 140,290" stroke="var(--cf1p1-red, #f43f5e)" marker-end="url(#cf1p1-arrow-red)"/>
+    <g transform="translate(125, 235)">
+      <rect class="cf1p1-chip-red" x="0" y="0" width="70" height="18" rx="9"/>
+      <text class="cf1p1-chip-text" x="35" y="12">SIM (+)</text>
+    </g>
+
+    <!-- Ramo Direito: SEM ALARME (-) -->
+    <path id="cf1p1-flow-teal" class="cf1p1-flow-line" d="M 320,204 Q 320,260 400,290" stroke="var(--cf1p1-teal, #14b8a6)" marker-end="url(#cf1p1-arrow-teal)"/>
+    <g transform="translate(345, 235)">
+      <rect class="cf1p1-chip-teal" x="0" y="0" width="70" height="18" rx="9"/>
+      <text class="cf1p1-chip-text" x="35" y="12">NÃO (−)</text>
+    </g>
+
+    <!-- NOS DE DESTINO (RAMOS DE DECISAO) -->
+
+    <!-- No Esquerdo: CEFALEIA SECUNDARIA (GRAVE) -->
+    <g id="cf1p1-node-red" class="cf1p1-node" transform="translate(20, 295)" role="button" aria-label="Ramo Secundário: Investigar Alarme e Lesão Estrutural" tabindex="0">
+      <rect class="cf1p1-node-red" width="235" height="140"/>
+      <rect class="cf1p1-chip-red" x="12" y="-10" width="150" height="20" rx="4"/>
+      <text class="cf1p1-chip-text" x="87" y="4">POLO GRAVE · INVESTIGA</text>
+
+      <text x="16" y="32" font-size="14" font-weight="800" fill="var(--cf1p1-red, #f43f5e)">CEFALEIA SECUNDÁRIA</text>
+      <text x="16" y="48" font-size="11" font-weight="600" fill="var(--cf1p1-text, #f8fafc)">Suspeita de Lesão / Emergência</text>
+
+      <line x1="16" y1="58" x2="219" y2="58" stroke="var(--cf1p1-red-border, #9f1239)" stroke-width="1"/>
+
+      <text x="16" y="74" font-size="10" font-weight="700" fill="var(--cf1p1-muted, #94a3b8)">• Postura: <tspan fill="var(--cf1p1-text, #f8fafc)" font-weight="800">INVESTIGAÇÃO IMEDIATA</tspan></text>
+      <text x="16" y="90" font-size="10" font-weight="700" fill="var(--cf1p1-muted, #94a3b8)">• Exames: Neuroimagem / Lab conforme suspeita</text>
+      <text x="16" y="106" font-size="10" font-weight="700" fill="var(--cf1p1-muted, #94a3b8)">• Risco: <tspan fill="var(--cf1p1-red, #f43f5e)" font-weight="800">Erro grave se der alta sem checar</tspan></text>
+
+      <rect x="16" y="116" width="203" height="16" fill="var(--cf1p1-red-bg, #3f121d)" stroke="var(--cf1p1-red, #f43f5e)" stroke-width="0.5" rx="3"/>
+      <text x="117" y="128" text-anchor="middle" font-size="9" font-weight="800" fill="var(--cf1p1-red, #f43f5e)">NÃO DAR ALTA SEM ESCLARECER</text>
+    </g>
+
+    <!-- No Direito: CEFALEIA PRIMARIA (SIMPLES) -->
+    <g id="cf1p1-node-teal" class="cf1p1-node" transform="translate(285, 295)" role="button" aria-label="Ramo Primário: Manejo Clínico Sintomático e Alta Orientada" tabindex="0">
+      <rect class="cf1p1-node-teal" width="235" height="140"/>
+      <rect class="cf1p1-chip-teal" x="12" y="-10" width="150" height="20" rx="4"/>
+      <text class="cf1p1-chip-text" x="87" y="4">POLO SIMPLES · EIXO CLÍNICO</text>
+
+      <text x="16" y="32" font-size="14" font-weight="800" fill="var(--cf1p1-teal, #14b8a6)">CEFALEIA PRIMÁRIA</text>
+      <text x="16" y="48" font-size="11" font-weight="600" fill="var(--cf1p1-text, #f8fafc)">Padrão Habitual sem Red Flags</text>
+
+      <line x1="16" y1="58" x2="219" y2="58" stroke="var(--cf1p1-teal-border, #0f766e)" stroke-width="1"/>
+
+      <text x="16" y="74" font-size="10" font-weight="700" fill="var(--cf1p1-muted, #94a3b8)">• Postura: <tspan fill="var(--cf1p1-text, #f8fafc)" font-weight="800">MANEJO SINTOMÁTICO</tspan></text>
+      <text x="16" y="90" font-size="10" font-weight="700" fill="var(--cf1p1-muted, #94a3b8)">• Exames: Dispensáveis na ausência de alarme</text>
+      <text x="16" y="106" font-size="10" font-weight="700" fill="var(--cf1p1-muted, #94a3b8)">• Risco: EVITAR tomografia desnecessária</text>
+
+      <rect x="16" y="116" width="203" height="16" fill="var(--cf1p1-teal-bg, #0d3836)" stroke="var(--cf1p1-teal, #14b8a6)" stroke-width="0.5" rx="3"/>
+      <text x="117" y="128" text-anchor="middle" font-size="9" font-weight="800" fill="var(--cf1p1-teal, #14b8a6)">ALÍVIO DA DOR + ALTA SEGURA</text>
+    </g>
+
+    <!-- Legenda Inferior do Palco -->
+    <text x="270" y="445" text-anchor="middle" font-size="10" font-weight="600" fill="var(--cf1p1-muted, #94a3b8)">
+      Toque nos ramos acima ou selecione os cenários no topo para simular a postura médica.
+    </text>
+  </g>
+
+  <!-- PAINEL DE DECISAO E LEITURA (x: 590 a 930, y: 140 a 590) -->
+  <g transform="translate(590, 140)">
+    <rect class="cf1p1-card-box" width="340" height="455"/>
+
+    <!-- Titulo do Painel -->
+    <text class="cf1p1-panel-header" x="18" y="28">PAINEL DE INTERPRETAÇÃO DA PORTA</text>
+    <line x1="18" y1="36" x2="322" y2="36" stroke="var(--cf1p1-border, #334155)" stroke-width="1"/>
+
+    <!-- Caixa Dinamica de Status -->
+    <g id="cf1p1-panel-status-box" transform="translate(18, 48)">
+      <rect id="cf1p1-status-bg" class="cf1p1-card-inner-box" width="304" height="68" stroke="var(--cf1p1-gold, #f59e0b)"/>
+      <text class="cf1p1-panel-label" x="12" y="18">ESTADO DE TRIAGEM ATIVO:</text>
+      <text id="cf1p1-status-title" class="cf1p1-panel-val" x="12" y="38" fill="var(--cf1p1-gold, #f59e0b)">FUNIL EM AGUARDO (VISÃO GERAL)</text>
+      <text id="cf1p1-status-sub" font-size="10" font-weight="600" fill="var(--cf1p1-muted, #94a3b8)" x="12" y="54">Selecione um cenário para avaliar o fluxo de conduta.</text>
+    </g>
+
+    <!-- Secao 1: Regra de Ouro -->
+    <g transform="translate(18, 134)">
+      <rect class="cf1p1-chip-gold" x="0" y="0" width="130" height="18" rx="3"/>
+      <text class="cf1p1-chip-text" x="65" y="12">REGRA DE OURO DA PORTA</text>
+
+      <text font-size="11" font-weight="700" fill="var(--cf1p1-text, #f8fafc)" x="0" y="34">Primeiro: Excluir Cefaleia Secundária.</text>
+      <text font-size="10" font-weight="500" fill="var(--cf1p1-muted, #94a3b8)" x="0" y="48">Nunca rotule enxaqueca antes de atestar</text>
+      <text font-size="10" font-weight="500" fill="var(--cf1p1-muted, #94a3b8)" x="0" y="60">a ausência de sinais de alarme na anamnese.</text>
+    </g>
+
+    <!-- Secao 2: Matriz de Destituicao de Erro -->
+    <g transform="translate(18, 218)">
+      <text font-size="11" font-weight="800" fill="var(--cf1p1-text, #f8fafc)" x="0" y="0">MATRIZ DE DESTITUIÇÃO DE ERRO:</text>
+
+      <!-- Erro 1 -->
+      <g transform="translate(0, 10)">
+        <rect fill="var(--cf1p1-red-bg, #3f121d)" stroke="var(--cf1p1-red-border, #9f1239)" stroke-width="0.8" width="304" height="42" rx="4"/>
+        <text font-size="10" font-weight="800" fill="var(--cf1p1-red, #f43f5e)" x="8" y="16">ERRO CATASTRÓFICO (FAIXA VERMELHA)</text>
+        <text font-size="9" font-weight="600" fill="var(--cf1p1-text, #f8fafc)" x="8" y="30">Dar alta sintomática para Cefaleia com Alarme sem investigar.</text>
+      </g>
+
+      <!-- Erro 2 -->
+      <g transform="translate(0, 58)">
+        <rect fill="var(--cf1p1-teal-bg, #0d3836)" stroke="var(--cf1p1-teal-border, #0f766e)" stroke-width="0.8" width="304" height="42" rx="4"/>
+        <text font-size="10" font-weight="800" fill="var(--cf1p1-teal, #14b8a6)" x="8" y="16">ERRO DE CONDUTA (FAIXA VERDE/TEAL)</text>
+        <text font-size="9" font-weight="600" fill="var(--cf1p1-text, #f8fafc)" x="8" y="30">Solicitar TC de crânio em cefaleia primária típica sem alarme.</text>
+      </g>
+    </g>
+
+    <!-- Secao 3: Sintese de Aprendizado -->
+    <g transform="translate(18, 338)">
+      <rect class="cf1p1-card-inner-box" width="304" height="96" stroke="var(--cf1p1-border, #334155)"/>
+      <text font-size="11" font-weight="800" fill="var(--cf1p1-text, #f8fafc)" x="10" y="20">SÍNTESE CLÍNICA:</text>
+
+      <circle cx="18" cy="38" r="4" fill="var(--cf1p1-gold, #f59e0b)"/>
+      <text font-size="10" font-weight="700" fill="var(--cf1p1-text, #f8fafc)" x="28" y="41">Funil de decisão: <tspan fill="var(--cf1p1-gold, #f59e0b)">Triagem Sindrômica Primeiro</tspan></text>
+
+      <circle cx="18" cy="56" r="4" fill="var(--cf1p1-red, #f43f5e)"/>
+      <text font-size="10" font-weight="700" fill="var(--cf1p1-text, #f8fafc)" x="28" y="59">Com Alarme: <tspan fill="var(--cf1p1-red, #f43f5e)">Investiga Secundária</tspan></text>
+
+      <circle cx="18" cy="74" r="4" fill="var(--cf1p1-teal, #14b8a6)"/>
+      <text font-size="10" font-weight="700" fill="var(--cf1p1-text, #f8fafc)" x="28" y="77">Sem Alarme: <tspan fill="var(--cf1p1-teal, #14b8a6)">Trata Primária + Alta</tspan></text>
+    </g>
+  </g>
+
+  <!-- Nota de Rodape Compliance -->
+  <text x="30" y="610" font-size="9" font-weight="500" fill="var(--cf1p1-muted, #94a3b8)">
+    Triagem sindrômica da cefaleia na emergência
+  </text>
+
+  <!-- Engine de Interatividade Self-contained -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    (function() {
+      'use strict';
+
+      function initTriageEngine() {
+        var btnAlarme = document.getElementById('cf1p1-btn-alarme');
+        var btnLimpo = document.getElementById('cf1p1-btn-limpo');
+        var btnReset = document.getElementById('cf1p1-btn-reset');
+
+        var nodeRed = document.getElementById('cf1p1-node-red');
+        var nodeTeal = document.getElementById('cf1p1-node-teal');
+
+        var flowRed = document.getElementById('cf1p1-flow-red');
+        var flowTeal = document.getElementById('cf1p1-flow-teal');
+
+        var statusBg = document.getElementById('cf1p1-status-bg');
+        var statusTitle = document.getElementById('cf1p1-status-title');
+        var statusSub = document.getElementById('cf1p1-status-sub');
+
+        if (!btnAlarme || !btnLimpo || !btnReset) return;
+
+        function setScenario(type) {
+          flowRed.classList.remove('cf1p1-flow-active');
+          flowTeal.classList.remove('cf1p1-flow-active');
+
+          nodeRed.classList.remove('cf1p1-dimmed', 'cf1p1-highlight-red');
+          nodeTeal.classList.remove('cf1p1-dimmed', 'cf1p1-highlight-teal');
+
+          if (type === 'alarme') {
+            flowRed.classList.add('cf1p1-flow-active');
+            nodeRed.classList.add('cf1p1-highlight-red');
+            nodeTeal.classList.add('cf1p1-dimmed');
+
+            statusBg.style.stroke = 'var(--cf1p1-red, #f43f5e)';
+            statusBg.style.fill = 'var(--cf1p1-red-bg, #3f121d)';
+            statusTitle.textContent = 'SINAL DE ALARME DETECTADO (+)';
+            statusTitle.style.fill = 'var(--cf1p1-red, #f43f5e)';
+            statusSub.textContent = 'Conduta: Encaminhar para investigação imediata (imagem/lab). Não dar alta!';
+          } else if (type === 'limpo') {
+            flowTeal.classList.add('cf1p1-flow-active');
+            nodeTeal.classList.add('cf1p1-highlight-teal');
+            nodeRed.classList.add('cf1p1-dimmed');
+
+            statusBg.style.stroke = 'var(--cf1p1-teal, #14b8a6)';
+            statusBg.style.fill = 'var(--cf1p1-teal-bg, #0d3836)';
+            statusTitle.textContent = 'SEM SINAL DE ALARME (−)';
+            statusTitle.style.fill = 'var(--cf1p1-teal, #14b8a6)';
+            statusSub.textContent = 'Conduta: Cefaleia Primária provável. Alívio sintomático + alta orientada.';
+          } else {
+            statusBg.style.stroke = 'var(--cf1p1-gold, #f59e0b)';
+            statusBg.style.fill = 'var(--cf1p1-card-inner, #0f172a)';
+            statusTitle.textContent = 'FUNIL EM AGUARDO (VISÃO GERAL)';
+            statusTitle.style.fill = 'var(--cf1p1-gold, #f59e0b)';
+            statusSub.textContent = 'Selecione um cenário para avaliar o fluxo de conduta.';
+          }
+        }
+
+        btnAlarme.addEventListener('click', function() { setScenario('alarme'); });
+        btnLimpo.addEventListener('click', function() { setScenario('limpo'); });
+        btnReset.addEventListener('click', function() { setScenario('reset'); });
+
+        btnAlarme.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setScenario('alarme'); e.preventDefault(); } });
+        btnLimpo.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setScenario('limpo'); e.preventDefault(); } });
+        btnReset.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setScenario('reset'); e.preventDefault(); } });
+
+        nodeRed.addEventListener('click', function() { setScenario('alarme'); });
+        nodeTeal.addEventListener('click', function() { setScenario('limpo'); });
+
+        nodeRed.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setScenario('alarme'); e.preventDefault(); } });
+        nodeTeal.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setScenario('limpo'); e.preventDefault(); } });
+
+        nodeRed.addEventListener('mouseenter', function() { setScenario('alarme'); });
+        nodeTeal.addEventListener('mouseenter', function() { setScenario('limpo'); });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTriageEngine);
+      } else {
+        initTriageEngine();
+      }
+    })();
+    /* ]]> */
+  </script>
+</svg>
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Ilustração</span> Funil de triagem da cefaleia no PS: alarme? → secundária e investiga : primária e eixo clínico. Toque nos cenários ou nos ramos.</figcaption>
+      </figure>
+
+      <aside class="op-summary" aria-label="Resumo operacional">
+        <h2 class="op-summary__title">Resumo operacional</h2>
+        <div class="prose prosa"><p class="no-indent">Na porta, a pergunta-mãe é <strong class="term">grave × simples</strong> — e o funil de alarme vem <strong class="term">antes</strong> do nome da cefaleia.</p></div>
+      </aside>
+
+      <aside class="why-matters">
+        <h2 class="why-matters__title">Por que importa</h2>
+        <div class="prose prosa"><p>A maioria das consultas de cefaleia é “simples” — o custo de errar a minoria grave é <strong class="term">desproporcional</strong>. Triagem sindrômica first protege o paciente e o raciocínio de prova.</p></div>
+      </aside>
+
+      <aside class="continuity"><div class="prose prosa"><p class="no-indent">Definidos os dois polos do dilema, falta o vocabulário que organiza o raciocínio: primária versus secundária.</p></div></aside>
+
+<section class="quiz" data-quiz-id="cf1-cefaleia-p01" aria-labelledby="quiz-p01-title">
+  <h2 id="quiz-p01-title">Quiz — fixação</h2>
+  <ol class="quiz__questions">
+<li class="quiz__question" data-q="1">
+  <p class="quiz__stem" id="quiz-p01-q1-label">Qual é a pergunta-mãe na porta da cefaleia?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p01-q1-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Qual triptano escolher</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Problema grave que não se pode errar × problema simples que nem exame exige</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Se a RM já foi feita</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Se há aura visual</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> a porta não começa no catálogo de primárias nem na farmacologia — começa no <strong class="term">risco de errar o diagnóstico grave</strong> versus a <strong class="term">simplicidade</strong> que dispensa complementar.</p>
+    <p class="quiz__distractor">(A) conduta de enxaqueca é downstream, não a abertura da triagem. (C) exame de imagem <strong class="term">depende da suspeita</strong>, não é o primeiro gesto mental. (D) aura ajuda a nomear uma primária depois — não resolve o dilema grave×simples. Cai em (A) quem estuda “enxaqueca primeiro” e puxa a resposta de tratamento; em (C) por ansiedade de “pedir exame”; em (D) por confundir semiologia de primária com triagem de gravidade.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="2">
+  <p class="quiz__stem" id="quiz-p01-q2-label">Por que a abordagem sindrômica antecede o “nome” da cefaleia?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p01-q2-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Porque toda cefaleia é secundária até prova em contrário</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Porque a triagem (alarme / primária vs secundária) organiza se o caso é simples ou exige investigação</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Porque a prova nunca cobra enxaqueca</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Porque o exame físico sempre está alterado</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> a abordagem sindrômica <strong class="term">ordena</strong> o raciocínio: primeiro se há alarme e se a dor é a doença ou a denúncia — depois se aprofunda a entidade.</p>
+    <p class="quiz__distractor">(A) falso: sem alarme e com padrão de primária o eixo é clínico, não “sempre secundária”. (C) enxaqueca <strong class="term">cai</strong> bastante; só não é a prioridade do raciocínio inicial. (D) na primária o exame é <strong class="term">normal</strong> na maioria absoluta. Cai em (A) por transformar hiperalarme em dogma; em (C) por confundir “não é a prioridade inicial” com “não cai”; em (D) por misturar com exame de secundária.</p>
+  </div>
+</li>
+  </ol>
+</section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><span class="page-nav__btn is-disabled" aria-disabled="true">← Anterior</span><span class="page-nav__pos">1/10</span><a class="page-nav__btn" href="p2.html" rel="next">Próxima →</a></nav>
+    </article>
+  </div>
+</main>
+<script src="../_assets/app.js" defer></script>
+<script src="cf1.js" defer></script>
+</body>
+</html>

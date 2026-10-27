@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Fraqueza muscular — guia sindrômico (fm1). A queixa é fraqueza: por onde começar?">
+<title>A queixa é fraqueza: por onde começar? · fm1 Fraqueza · Neurologia</title>
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm1-cara">
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+.opener,.exec-card,.trap,.dont-confuse,.hero-figure,.case-card,.gap-box,.continuity{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.opener{padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ciano);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead,.opener__mnemonic,.opener__bust{margin:0;color:var(--ink-60);font-size:1.02rem}
+.opener--question{border-left:4px solid var(--indigo)}.opener--case{border-left:4px solid #8b5cf6}.opener--trap{border-left:4px solid var(--amber)}.opener--checklist{border-left:4px solid var(--ciano)}.opener--mnemonic{border-left:4px solid var(--amber)}.opener--vs{border-left:4px solid var(--ciano)}.opener--bust{border-left:4px solid var(--coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip--topic,.chip,.chip--ok,.chip--no,.chip--series{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ciano);border-color:var(--ciano-line)}.chip--ok{color:var(--verde)}.chip--no{color:var(--coral)}.chip--series{color:var(--indigo)}
+button.chip{cursor:pointer;min-height:36px}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose-list{margin:0 0 1em 1.1rem;padding:0}.prose-list li{margin:.3rem 0}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.term{color:var(--indigo);font-weight:700}.hl-good,.hl-cell{color:var(--verde);font-weight:700}.hl-bad,.hl-cell-bad{color:var(--coral);font-weight:700}.hl-warn{color:var(--amber);font-weight:700}
+.exec-card__title,.trap__title{margin:0 0 .65rem;font-size:1rem;color:var(--ciano)}
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}.checklist label{display:flex;gap:.55rem;align-items:flex-start;cursor:pointer;min-height:44px}.checklist input{width:18px;height:18px;margin-top:.2rem;accent-color:var(--ciano)}
+.split-board,.chip-cols,.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.split-board__bad,.split-board__good,.posture-card{border-radius:10px;padding:.75rem;border:1px solid var(--border)}.split-board__bad{border-color:color-mix(in srgb,var(--coral) 45%,var(--border))}.split-board__good{border-color:color-mix(in srgb,var(--verde) 45%,var(--border))}
+.labs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:.85rem}.lab{border-radius:10px;border:1px solid var(--border);padding:.55rem .6rem;text-align:center;background:var(--bg-3)}.lab--key{border-color:var(--amber)}.lab__k{display:block;font-size:.68rem;color:var(--ink-60);text-transform:uppercase}.lab__v{display:block;font-size:1.05rem;font-weight:700;color:var(--amber)}
+.tendon-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.7rem}.dont-confuse__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}.dont-confuse__grid--2{grid-template-columns:1fr 1fr}.dont-confuse__grid>div{border:1px solid var(--border);border-radius:10px;padding:.65rem}.dont-confuse__warn{border-color:var(--amber)!important}.trap{border-left:4px solid var(--amber)}.trap--jo1{border-left-color:var(--amber)}
+.curve-toggle{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.55rem}.curve-btn{min-height:40px;border-radius:999px;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100);padding:.4rem .85rem;cursor:pointer}.curve-btn.is-active{border-color:var(--ciano);color:var(--ciano)}.curve-out{color:var(--ink-80)}
+.flow-nodes{margin:0;padding-left:1.2rem}.flow-nodes li{margin:.4rem 0}.case-card h4{margin:0 0 .4rem;color:var(--indigo)}.gap-box{border-left:4px solid var(--coral)}.gap-box h4{color:var(--coral)}.nuance{border-left:3px solid var(--amber);padding:.65rem .85rem;margin:1rem 0;background:rgba(245,158,11,.08);border-radius:0 10px 10px 0}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.75rem 0}.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:280px}.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}.comparison th{background:var(--bg-3)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}.fig__frame{width:100%;display:block;background:var(--bg-1)}.fig__frame img{display:block;width:100%;height:auto;object-fit:contain}.fig__frame--svg{padding:.35rem}.fm1-inline-svg{display:block;width:100%;height:auto;border-radius:10px}.fig__cap,.hero-figure__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--amber);margin-right:.4rem}
+.chain-hero{display:grid;gap:.35rem}.chain-hero__floor{text-align:left;border:1px solid var(--border);border-radius:12px;padding:.75rem .85rem;background:var(--bg-3);color:var(--ink-100);cursor:pointer;min-height:64px;display:grid;gap:.15rem}.chain-hero__floor[aria-pressed="true"]{border-color:var(--ciano)}.chain-hero__n{font-weight:700;color:var(--ciano)}.chain-hero__ex,.chain-hero__note{font-size:.78rem;color:var(--ink-60)}.chain-hero__arrow{text-align:center;color:var(--ciano);font-weight:700}
+.posture-split{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.75rem}.posture-card__t{display:block;font-weight:700;margin-bottom:.25rem}.posture-card--spastic{border-color:var(--indigo)}.posture-card--flaccid{border-color:var(--ciano)}.posture-card--warn{border-color:var(--amber)}
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow)}.quiz h2{margin:0 0 .85rem;font-size:1.1rem}.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}.quiz__stem{margin:0 0 .55rem;font-weight:600}.quiz__alternatives{display:grid;gap:.4rem}.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit}.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}.quiz__alt.is-correct{border-color:var(--verde);background:rgba(52,211,153,.12)}.quiz__alt.is-wrong{border-color:var(--coral);background:rgba(251,113,133,.10)}.quiz__feedback{margin-top:.55rem;padding:.7rem .75rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}.quiz__feedback[hidden]{display:none}.quiz__verdict{margin:0 0 .35rem;font-weight:700}.quiz__verdict.is-ok{color:var(--verde)}.quiz__verdict.is-bad{color:var(--coral)}.quiz__justification,.quiz__distractor{margin:.25rem 0 0;font-size:.92rem}
+.page-nav__btn.is-disabled{display:inline-flex;align-items:center;min-height:44px;padding:.55rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);opacity:.45}.page-nav__pos{align-self:center;font-size:.85rem;color:var(--ink-60)}.seal,.juvenile{margin-top:.65rem}.continuity{border-left:3px solid var(--ciano)}.menu-panel__link.is-current{background:rgba(34,211,238,.10);color:var(--ink-100);font-weight:600}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}@media(max-width:640px){.dont-confuse__grid,.posture-split{grid-template-columns:1fr}}@media(max-width:560px){.split-board,.chip-cols,.case-grid{grid-template-columns:1fr}.labs-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:420px){.page-nav{flex-wrap:wrap}.page-nav a{min-width:0;flex:1 1 calc(50% - 6px);padding:.7rem .65rem}.page-nav__pos{order:3;width:100%;text-align:center}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p1" data-layout="fm1-p01" data-source-ids="001,002,003,015,016">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <div class="site-header__brand">
+      <span class="site-header__logo">NN</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Fraqueza muscular: guia</span>
+        <span class="site-header__subtitle">Neurologia · fraqueza muscular</span>
+      </span>
+    </div>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress" id="progress">1/12</span>
+    <div class="site-header__actions">
+      <button type="button" class="icon-btn" id="home-btn" aria-label="Início do guia" title="Início" onclick="location.href='index.html'">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Alternar tema" aria-pressed="false" title="Tema">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas do guia">
+    <p class="menu-panel__title">Fraqueza muscular: guia</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link is-current" href="index.html"><span class="menu-panel__index">01</span><span>Porta da fraqueza</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>Caso Jussara</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>Quantidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>4 andares</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Reflexos</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Matriz 1º×2º</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Agudo flácido</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Placa</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html"><span class="menu-panel__index">09</span><span>Músculo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html"><span class="menu-panel__index">10</span><span>DM pele</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html"><span class="menu-panel__index">11</span><span>Neoplasia/ENMG</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html"><span class="menu-panel__index">12</span><span>Jo-1 / fecho</span></a></li></ul>
+  </nav>
+</div>
+<main class="coluna" id="main">
+  <div class="reading">
+    <!-- Página 1 — Estratégia: E1 -->
+    <article class="page" data-page="p1" data-layout="fm1-p01" data-source-ids="001,002,003,015,016">
+      <p class="page__eyebrow">Página 1 · E1</p>
+      <section class="opener opener--question" data-opener="E1">
+          <span class="opener__eyebrow">Pergunta central</span>
+          <h1 id="page-title">A queixa é fraqueza: por onde começar?</h1>
+          <p class="opener__lead no-indent">“Paciente sem força para manter a cabeça ereta — o que se topografa antes de nomear a doença?”</p>
+        </section>
+      <div class="chipset"><span class="chip--topic">P01</span><span class="chip--topic">E1</span><span class="chip--topic">fm1</span></div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h3 class="topic-h">Raciocínio sindrômico, não checklist solto</h3>
+<p>A queixa de <strong class="term">fraqueza</strong> exige raciocínio <strong class="term">sindrômico organizado</strong>. Checklist genérico de anamnese (início, curso, fatores de melhora/piora, sintomas associados, comorbidades) só vale se, frente às respostas, se <strong class="term">monta um diagnóstico</strong>. Sem isso, sobra narrativa — e falta topografia.</p>
+<p>O alvo inicial é a <strong class="term">abordagem sindrômica</strong> do paciente com fraqueza: identificar a queixa e topografar o elo comprometido. Catalogar doenças “incomuns no dia a dia” que pesam em prova vem <strong class="term">depois</strong> de saber <strong class="term">onde</strong> a cadeia da força quebrou.</p>
+<h3 class="topic-h">O desafio da cabeça que cai</h3>
+<p>Porta típica: paciente em ambulatório ou emergência que <strong class="term">segura a cabeça com as mãos</strong> porque não tem força para mantê-la reta. A pergunta útil não é “qual o nome da doença na primeira frase”, e sim: <strong class="term">por onde começar o raciocínio</strong> — e o que se topografa antes de rotular a entidade.</p>
+<h3 class="topic-h">Caso longo: mais informação, mais resposta</h3>
+<p>Quanto <strong class="term">maior</strong> o tamanho do caso, <strong class="term">mais informação</strong> ele entrega — e <strong class="term">mais resposta</strong> ele contém. A tendência errada é “enxergar o que não tem”. Método: anotar e <strong class="term">sublinhar os pontos positivos</strong> que o caso <strong class="term">apresentou</strong> — o que está escrito, não o que a imaginação completa.</p>
+        </div>
+      </section>
+
+      
+<aside class="exec-card exec-card--triage" aria-label="Triagem da queixa">
+  <h3 class="exec-card__title">Queixa principal = fraqueza</h3>
+  <ul class="checklist" id="fm1-p01-checklist">
+    <li><label><input type="checkbox" data-ui="m1"> Sublinhar só os <strong class="term">positivos escritos</strong></label></li>
+    <li><label><input type="checkbox" data-ui="m2"> Não inventar achado “que costuma vir junto”</label></li>
+    <li><label><input type="checkbox" data-ui="m3"> Caso longo = <strong class="term">mais resposta</strong> no texto</label></li>
+  </ul>
+</aside>
+
+      <figure class="fig fig--real">
+        <div class="fig__frame">
+          <img src="media/B01-RESERVE-taniguchi2018-fig1-ab-full.jpg" loading="lazy" decoding="async" width="1200" height="800" alt="Fotografia clínica de paciente com cabeça caída em flexão cervical extrema (dropped head), em postura chin-on-chest.">
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Imagem real</span> Dropped head em postura chin-on-chest, Fig. 1a. Taniguchi S et al., BMC Research Notes 2018;11:500. CC BY 4.0; recorte do painel pré-operatório. Fonte.</figcaption>
+      </figure>
+
+      <figure class="fig fig--svg">
+        <div class="fig__frame fig__frame--svg">
+          <svg class="fm1-inline-svg fm1p1-root" id="fm1p1-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="100%" height="100%" role="img" aria-label="Ilustração médica interativa do Método S.T.E. na abordagem da Síndrome da Cabeça Caída (Head-Drop)">
+  <defs>
+    <style>
+      .fm1p1-root {
+        --fm1p1-bg: var(--bg-1, #0f172a);
+        --fm1p1-panel-bg: var(--bg-2, #1e293b);
+        --fm1p1-card-bg: var(--bg-3, #334155);
+        --fm1p1-ink-main: var(--ink-100, #f8fafc);
+        --fm1p1-ink-sub: var(--ink-70, #94a3b8);
+        --fm1p1-ink-muted: var(--ink-50, #64748b);
+        --fm1p1-border: var(--ink-20, #334155);
+        --fm1p1-border-bright: var(--ink-30, #475569);
+        
+        --fm1p1-green: var(--kw-green, #10b981);
+        --fm1p1-green-bg: rgba(16, 185, 129, 0.15);
+        --fm1p1-red: var(--kw-red, #f43f5e);
+        --fm1p1-red-bg: rgba(244, 63, 94, 0.15);
+        --fm1p1-amber: var(--kw-amber, #f59e0b);
+        --fm1p1-amber-bg: rgba(245, 158, 11, 0.15);
+        --fm1p1-indigo: var(--kw-indigo, #6366f1);
+        --fm1p1-indigo-bg: rgba(99, 102, 241, 0.15);
+        --fm1p1-teal: var(--kw-teal, #14b8a6);
+        --fm1p1-teal-bg: rgba(20, 184, 166, 0.15);
+
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--fm1p1-bg, #0f172a);
+        color: var(--fm1p1-ink-main, #f8fafc);
+        user-select: none;
+        box-sizing: border-box;
+      }
+
+      [data-theme="light"] .fm1p1-root {
+        --fm1p1-bg: var(--bg-1, #f8fafc);
+        --fm1p1-panel-bg: var(--bg-2, #ffffff);
+        --fm1p1-card-bg: var(--bg-3, #f1f5f9);
+        --fm1p1-ink-main: var(--ink-100, #0f172a);
+        --fm1p1-ink-sub: var(--ink-70, #475569);
+        --fm1p1-ink-muted: var(--ink-50, #94a3b8);
+        --fm1p1-border: var(--ink-20, #e2e8f0);
+        --fm1p1-border-bright: var(--ink-30, #cbd5e1);
+
+        --fm1p1-green: var(--kw-green, #059669);
+        --fm1p1-green-bg: rgba(5, 150, 105, 0.12);
+        --fm1p1-red: var(--kw-red, #e11d48);
+        --fm1p1-red-bg: rgba(225, 29, 72, 0.12);
+        --fm1p1-amber: var(--kw-amber, #d97706);
+        --fm1p1-amber-bg: rgba(217, 119, 6, 0.12);
+        --fm1p1-indigo: var(--kw-indigo, #4f46e5);
+        --fm1p1-indigo-bg: rgba(79, 70, 229, 0.12);
+        --fm1p1-teal: var(--kw-teal, #0d9488);
+        --fm1p1-teal-bg: rgba(13, 148, 136, 0.12);
+      }
+
+      .fm1p1-title-main {
+        font-size: 18px;
+        font-weight: 700;
+        fill: var(--fm1p1-ink-main, #f8fafc);
+        letter-spacing: 0.5px;
+      }
+
+      .fm1p1-title-sub {
+        font-size: 13px;
+        font-weight: 400;
+        fill: var(--fm1p1-ink-sub, #94a3b8);
+      }
+
+      .fm1p1-badge-hdr {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--fm1p1-teal, #14b8a6);
+        letter-spacing: 1px;
+      }
+
+      .fm1p1-box-panel {
+        fill: var(--fm1p1-panel-bg, #1e293b);
+        stroke: var(--fm1p1-border, #334155);
+        stroke-width: 1px;
+        rx: 12px;
+      }
+
+      .fm1p1-box-card {
+        fill: var(--fm1p1-card-bg, #334155);
+        stroke: var(--fm1p1-border-bright, #475569);
+        stroke-width: 1px;
+        rx: 8px;
+      }
+
+      /* Silhueta Anatômica */
+      .fm1p1-body-base {
+        fill: none;
+        stroke: var(--fm1p1-ink-muted, #64748b);
+        stroke-width: 2.5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.6;
+      }
+
+      .fm1p1-body-fill {
+        fill: var(--fm1p1-indigo-bg, rgba(99, 102, 241, 0.15));
+        stroke: var(--fm1p1-indigo, #6366f1);
+        stroke-width: 1.5px;
+        opacity: 0.4;
+      }
+
+      .fm1p1-neck-weakness {
+        fill: url(#fm1p1-grad-coral);
+        stroke: var(--fm1p1-red, #f43f5e);
+        stroke-width: 2px;
+        filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.4));
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .fm1p1-neck-weakness:hover {
+        filter: drop-shadow(0 0 12px rgba(244, 63, 94, 0.8));
+        stroke-width: 3px;
+      }
+
+      .fm1p1-vector-drop {
+        stroke: var(--fm1p1-red, #f43f5e);
+        stroke-width: 2.5px;
+        stroke-dasharray: 4 3;
+        animation: fm1p1-pulse-arrow 2s infinite linear;
+      }
+
+      /* Funil STE */
+      .fm1p1-funnel-stage {
+        cursor: pointer;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        stroke-width: 1.5px;
+      }
+
+      .fm1p1-funnel-stage[data-active="true"] {
+        stroke-width: 3px;
+        filter: drop-shadow(0 0 8px currentColor);
+      }
+
+      .fm1p1-stage-s {
+        fill: var(--fm1p1-indigo-bg, rgba(99, 102, 241, 0.15));
+        stroke: var(--fm1p1-indigo, #6366f1);
+        color: var(--fm1p1-indigo, #6366f1);
+      }
+
+      .fm1p1-stage-t {
+        fill: var(--fm1p1-amber-bg, rgba(245, 158, 11, 0.15));
+        stroke: var(--fm1p1-amber, #f59e0b);
+        color: var(--fm1p1-amber, #f59e0b);
+      }
+
+      .fm1p1-stage-e {
+        fill: rgba(100, 116, 139, 0.12);
+        stroke: var(--fm1p1-ink-muted, #64748b);
+        color: var(--fm1p1-ink-muted, #64748b);
+      }
+
+      .fm1p1-stage-e[data-active="true"] {
+        fill: var(--fm1p1-teal-bg, rgba(20, 184, 166, 0.15));
+        stroke: var(--fm1p1-teal, #14b8a6);
+        color: var(--fm1p1-teal, #14b8a6);
+      }
+
+      .fm1p1-funnel-label-title {
+        font-size: 13px;
+        font-weight: 700;
+        fill: var(--fm1p1-ink-main, #f8fafc);
+        pointer-events: none;
+      }
+
+      .fm1p1-funnel-label-sub {
+        font-size: 11px;
+        font-weight: 500;
+        fill: var(--fm1p1-ink-sub, #94a3b8);
+        pointer-events: none;
+      }
+
+      /* Controles de Aba / Modo */
+      .fm1p1-tab-btn {
+        cursor: pointer;
+        rx: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .fm1p1-tab-btn-bg {
+        fill: var(--fm1p1-card-bg, #334155);
+        stroke: var(--fm1p1-border, #334155);
+        stroke-width: 1px;
+      }
+
+      .fm1p1-tab-btn[data-active="true"] .fm1p1-tab-btn-bg {
+        fill: var(--fm1p1-indigo-bg, rgba(99, 102, 241, 0.2));
+        stroke: var(--fm1p1-indigo, #6366f1);
+        stroke-width: 2px;
+      }
+
+      .fm1p1-tab-btn-text {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--fm1p1-ink-sub, #94a3b8);
+        text-anchor: middle;
+      }
+
+      .fm1p1-tab-btn[data-active="true"] .fm1p1-tab-btn-text {
+        fill: var(--fm1p1-ink-main, #f8fafc);
+      }
+
+      .fm1p1-tab-btn-err[data-active="true"] .fm1p1-tab-btn-bg {
+        fill: var(--fm1p1-red-bg, rgba(244, 63, 94, 0.2));
+        stroke: var(--fm1p1-red, #f43f5e);
+      }
+
+      /* Painel Informativo Dinâmico */
+      .fm1p1-pnl-tag {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+        padding: 4px 8px;
+      }
+
+      .fm1p1-pnl-title {
+        font-size: 15px;
+        font-weight: 700;
+        fill: var(--fm1p1-ink-main, #f8fafc);
+      }
+
+      .fm1p1-pnl-desc {
+        font-size: 12px;
+        font-weight: 400;
+        fill: var(--fm1p1-ink-sub, #94a3b8);
+        line-height: 1.4;
+      }
+
+      .fm1p1-bullet-title {
+        font-size: 12px;
+        font-weight: 700;
+        fill: var(--fm1p1-ink-main, #f8fafc);
+      }
+
+      .fm1p1-bullet-desc {
+        font-size: 11px;
+        fill: var(--fm1p1-ink-sub, #94a3b8);
+      }
+
+      /* Animações e Foco */
+      @keyframes fm1p1-pulse-arrow {
+        0% { stroke-dashoffset: 14; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      .fm1p1-focus-ring:focus {
+        outline: 2px solid var(--fm1p1-indigo, #6366f1);
+        outline-offset: 2px;
+      }
+
+      /* Legenda Inferior */
+      .fm1p1-leg-dot {
+        r: 5px;
+      }
+      .fm1p1-leg-text {
+        font-size: 11px;
+        font-weight: 500;
+        fill: var(--fm1p1-ink-sub, #94a3b8);
+      }
+    </style>
+
+    <!-- Gradientes -->
+    <linearGradient id="fm1p1-grad-coral" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p1-red, #f43f5e)" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="var(--fm1p1-amber, #f59e0b)" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <linearGradient id="fm1p1-grad-funnel-seed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p1-amber, #f59e0b)" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="var(--fm1p1-teal, #14b8a6)" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Marker Seta -->
+    <marker id="fm1p1-arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--fm1p1-red, #f43f5e)"/>
+    </marker>
+    <marker id="fm1p1-arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--fm1p1-indigo, #6366f1)"/>
+    </marker>
+  </defs>
+
+  <!-- ==================== TOP BAR: TITULO E LEGENDA ==================== -->
+  <g id="fm1p1-header" transform="translate(30, 25)">
+    <text class="fm1p1-badge-hdr" x="0" y="10">ABORDAGEM SINDRÔMICA · FRAQUEZA</text>
+    <text class="fm1p1-title-main" x="0" y="32">MÉTODO S.T.E. NA ABORDAGEM DA FRAQUEZA CERVICAL (HEAD-DROP)</text>
+    <text class="fm1p1-title-sub" x="0" y="50">Raciocínio Diagnóstico Estruturado: Por que topografar a lesão axial antes de buscar a etiologia nosológica?</text>
+  </g>
+
+  <!-- ==================== ÁREA ESQUERDA: ANATOMIA E FUNIL S.T.E. ==================== -->
+  <!-- Quadros de Fundo do Palco -->
+  <rect class="fm1p1-box-panel" x="30" y="90" width="480" height="490"/>
+
+  <!-- 1. SILHUETA ANATÔMICA DE HEAD-DROP -->
+  <g id="fm1p1-anatomy-group" transform="translate(45, 110)">
+    <!-- Subtítulo Anatômico -->
+    <text x="15" y="25" font-size="12" font-weight="700" fill="var(--fm1p1-ink-main, #f8fafc)">1. QUEIXA ANCORADA (APRECIAÇÃO CLÍNICA)</text>
+    <text x="15" y="42" font-size="10" fill="var(--fm1p1-ink-sub, #94a3b8)">Apoio manual pelo paciente: incapacidade extensora cervical</text>
+
+    <!-- Tronco/Ombros -->
+    <path class="fm1p1-body-fill" d="M 40 330 C 50 280, 70 250, 110 240 C 130 235, 150 245, 170 260 C 190 275, 210 290, 220 330 Z"/>
+    <path class="fm1p1-body-base" d="M 35 340 L 50 280 C 65 255, 95 240, 120 238"/>
+    
+    <!-- Coluna Cervical e Torácica Superior (Linha Esquelética) -->
+    <path d="M 115 155 Q 120 180, 118 200 Q 116 220, 130 250" fill="none" stroke="var(--fm1p1-indigo, #6366f1)" stroke-width="2" stroke-dasharray="3 3"/>
+    
+    <!-- Região Extensora Cervical Afetada (Musculatura Paravertebral/Trapézio) - HOTSPOT ANATÔMICO -->
+    <path id="fm1p1-hs-neck" class="fm1p1-neck-weakness fm1p1-focus-ring" role="button" tabindex="0" aria-label="Ver detalhes da fraqueza axial cervical"
+          d="M 100 135 C 115 145, 125 165, 122 195 C 112 190, 95 170, 92 145 Z"/>
+
+    <!-- Cabeça Caída (Flexão Cervical Exagerada) -->
+    <!-- Crânio -->
+    <path class="fm1p1-body-fill" d="M 60 120 C 50 90, 70 60, 100 65 C 125 70, 135 95, 125 125 C 115 140, 85 145, 60 120 Z"/>
+    <path class="fm1p1-body-base" d="M 60 120 C 50 90, 70 60, 100 65 C 125 70, 135 95, 125 125 C 115 140, 85 145, 60 120 Z"/>
+
+    <!-- Mão Apoiando o Queixo/Testa (Mecânica do Head-Drop) -->
+    <!-- Braço/Antebraço Fletido -->
+    <path class="fm1p1-body-base" d="M 170 260 L 140 180 L 95 130"/>
+    <path class="fm1p1-body-base" d="M 180 270 L 155 195 L 105 135"/>
+    <!-- Mão Espalmada na Mandíbula/Face -->
+    <path d="M 90 125 Q 82 115, 92 110 Q 102 115, 98 130 Z" fill="var(--fm1p1-indigo, #6366f1)" opacity="0.6"/>
+
+    <!-- Vetor Gravitacional de Queda -->
+    <path class="fm1p1-vector-drop" d="M 85 80 L 85 120" marker-end="url(#fm1p1-arrow-red)"/>
+    <text x="45" y="100" font-size="10" font-weight="700" fill="var(--fm1p1-red, #f43f5e)">QUEDA (G)</text>
+
+    <!-- Chamada Visual no Pescoço -->
+    <g transform="translate(130, 150)">
+      <line x1="0" y1="0" x2="35" y2="-15" stroke="var(--fm1p1-red, #f43f5e)" stroke-width="1.5"/>
+      <circle cx="35" cy="-15" r="3" fill="var(--fm1p1-red, #f43f5e)"/>
+      <rect x="40" y="-30" width="85" height="28" rx="4" fill="var(--fm1p1-red-bg, rgba(244,63,94,0.15))" stroke="var(--fm1p1-red, #f43f5e)" stroke-width="1"/>
+      <text x="45" y="-18" font-size="9" font-weight="700" fill="var(--fm1p1-red, #f43f5e)">FRAQUEZA AXIAL</text>
+      <text x="45" y="-8" font-size="8" fill="var(--fm1p1-ink-main, #f8fafc)">Extensores Cervicais</text>
+    </g>
+  </g>
+
+  <!-- Connectores Anatômicos -> Funil -->
+  <path d="M 270 260 L 300 220" stroke="var(--fm1p1-indigo, #6366f1)" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#fm1p1-arrow-indigo)"/>
+
+  <!-- 2. FUNIL S.T.E. (ESTÁGIOS DIAGNÓSTICOS) -->
+  <g id="fm1p1-funnel-group" transform="translate(300, 110)">
+    <text x="10" y="25" font-size="12" font-weight="700" fill="var(--fm1p1-ink-main, #f8fafc)">2. FUNIL DIAGNÓSTICO S.T.E.</text>
+    <text x="10" y="42" font-size="10" fill="var(--fm1p1-ink-sub, #94a3b8)">Toque nos estágios para navegar o raciocínio</text>
+
+    <!-- ESTÁGIO 1: SINDRÔMICO (S) -->
+    <g id="fm1p1-stage-s" class="fm1p1-funnel-stage fm1p1-stage-s fm1p1-focus-ring" data-active="true" role="button" tabindex="0" aria-label="Estágio Sindrômico">
+      <polygon points="10,60 190,60 165,140 35,140"/>
+      <text class="fm1p1-funnel-label-title" x="100" y="90" text-anchor="middle">1. SINDRÔMICO (S)</text>
+      <text class="fm1p1-funnel-label-sub" x="100" y="110" text-anchor="middle">Síndrome da Cabeça Caída</text>
+      <rect x="25" y="70" width="22" height="16" rx="4" fill="var(--fm1p1-indigo, #6366f1)"/>
+      <text x="36" y="82" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">S</text>
+    </g>
+
+    <!-- ESTÁGIO 2: TOPOGRÁFICO (T) -->
+    <g id="fm1p1-stage-t" class="fm1p1-funnel-stage fm1p1-stage-t fm1p1-focus-ring" data-active="false" role="button" tabindex="0" aria-label="Estágio Topográfico">
+      <polygon points="37,146 163,146 142,226 58,226"/>
+      <text class="fm1p1-funnel-label-title" x="100" y="178" text-anchor="middle">2. TOPOGRÁFICO (T)</text>
+      <text class="fm1p1-funnel-label-sub" x="100" y="196" text-anchor="middle">Ancoragem Anatômica / Nível</text>
+      <rect x="45" y="156" width="22" height="16" rx="4" fill="var(--fm1p1-amber, #f59e0b)"/>
+      <text x="56" y="168" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">T</text>
+    </g>
+
+    <!-- ESTÁGIO 3: ETIOLÓGICO (E) - SEMENTE DO FUNIL -->
+    <g id="fm1p1-stage-e" class="fm1p1-funnel-stage fm1p1-stage-e fm1p1-focus-ring" data-active="false" role="button" tabindex="0" aria-label="Estágio Etiológico (Semente)">
+      <polygon points="60,232 140,232 118,320 82,320"/>
+      <text class="fm1p1-funnel-label-title" x="100" y="265" text-anchor="middle">3. ETIOLÓGICO (E)</text>
+      <text class="fm1p1-funnel-label-sub" x="100" y="283" text-anchor="middle">Semente / Investigação</text>
+      <rect x="68" y="242" width="22" height="16" rx="4" fill="var(--fm1p1-ink-muted, #64748b)" id="fm1p1-badge-e-bg"/>
+      <text x="79" y="254" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">E</text>
+    </g>
+
+    <!-- Broto / Semente Aguardando Ativação -->
+    <g id="fm1p1-seed-icon" transform="translate(100, 345)">
+      <circle cx="0" cy="0" r="14" fill="var(--fm1p1-card-bg, #334155)" stroke="var(--fm1p1-border-bright, #475569)" stroke-width="1.5"/>
+      <path d="M -4 2 C -4 -4, 0 -8, 4 -2 C 4 4, 0 6, -4 2 Z" fill="var(--fm1p1-teal, #14b8a6)"/>
+      <path d="M 0 4 L 0 9" stroke="var(--fm1p1-teal, #14b8a6)" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="25" font-size="9" font-weight="700" fill="var(--fm1p1-ink-sub, #94a3b8)" text-anchor="middle">SEMENTE STE</text>
+    </g>
+  </g>
+
+
+  <!-- ==================== ÁREA DIREITA: PAINEL DE LEITURA E INTERAÇÃO ==================== -->
+  <g id="fm1p1-panel-right" transform="translate(530, 90)">
+    <!-- Fundo do Painel -->
+    <rect class="fm1p1-box-panel" x="0" y="0" width="440" height="490"/>
+
+    <!-- CONTROLES DE ABA (POSTURA DIAGNÓSTICA) -->
+    <g transform="translate(15, 15)">
+      <g id="fm1p1-tab-ste" class="fm1p1-tab-btn fm1p1-focus-ring" data-active="true" role="button" tabindex="0" aria-label="Ver Abordagem Correta STE">
+        <rect class="fm1p1-tab-btn-bg" x="0" y="0" width="200" height="36"/>
+        <text class="fm1p1-tab-btn-text" x="100" y="22">MÉTODO S.T.E. (PASSO A PASSO)</text>
+      </g>
+      
+      <g id="fm1p1-tab-err" class="fm1p1-tab-btn fm1p1-tab-btn-err fm1p1-focus-ring" data-active="false" role="button" tabindex="0" aria-label="Ver Erro Frequente por Atalho">
+        <rect class="fm1p1-tab-btn-bg" x="210" y="0" width="200" height="36"/>
+        <text class="fm1p1-tab-btn-text" x="310" y="22">ATALHO PRECOCE (ERRO)</text>
+      </g>
+    </g>
+
+    <!-- CONTEÚDO DINÂMICO DO PAINEL -->
+    <g id="fm1p1-panel-content" transform="translate(20, 70)">
+      
+      <!-- Cabeçalho do Estágio Selecionado -->
+      <g transform="translate(0, 0)">
+        <rect id="fm1p1-pnl-badge-bg" x="0" y="0" width="130" height="22" rx="4" fill="var(--fm1p1-indigo-bg, rgba(99,102,241,0.2))"/>
+        <text id="fm1p1-pnl-badge-txt" class="fm1p1-pnl-tag" x="8" y="15" fill="var(--fm1p1-indigo, #6366f1)">PASSO 1 · SINDRÔMICO</text>
+        <text id="fm1p1-pnl-main-title" class="fm1p1-pnl-title" x="0" y="45">Reconhecer a Síndrome da Cabeça Caída</text>
+        <text id="fm1p1-pnl-main-desc" class="fm1p1-pnl-desc" x="0" y="65">Incapacidade focal de manter a sustentação cefálica por fraqueza dos extensores.</text>
+      </g>
+
+      <!-- Cartão de Detalhamento Diagnóstico -->
+      <g transform="translate(0, 95)">
+        <rect class="fm1p1-box-card" x="0" y="0" width="400" height="215"/>
+
+        <!-- Bloco 1 -->
+        <g id="fm1p1-blk-1" transform="translate(15, 18)">
+          <circle cx="6" cy="6" r="4" fill="var(--fm1p1-indigo, #6366f1)" id="fm1p1-blk1-dot"/>
+          <text id="fm1p1-blk1-t" class="fm1p1-bullet-title" x="18" y="10">Pergunta-Chave do Estágio:</text>
+          <text id="fm1p1-blk1-d" class="fm1p1-bullet-desc" x="18" y="28">"Qual é a manifestação funcional motora predominante?"</text>
+        </g>
+
+        <!-- Bloco 2 -->
+        <g id="fm1p1-blk-2" transform="translate(15, 78)">
+          <circle cx="6" cy="6" r="4" fill="var(--fm1p1-amber, #f59e0b)" id="fm1p1-blk2-dot"/>
+          <text id="fm1p1-blk2-t" class="fm1p1-bullet-title" x="18" y="10">Achado de Exame Físico / Âncora:</text>
+          <text id="fm1p1-blk2-d" class="fm1p1-bullet-desc" x="18" y="28">Flexão cervical passiva sem resistência motor-extensora.</text>
+          <text id="fm1p1-blk2-d2" class="fm1p1-bullet-desc" x="18" y="44">Paciente necessita de apoio manual constante do queixo.</text>
+        </g>
+
+        <!-- Bloco 3 -->
+        <g id="fm1p1-blk-3" transform="translate(15, 148)">
+          <circle cx="6" cy="6" r="4" fill="var(--fm1p1-green, #10b981)" id="fm1p1-blk3-dot"/>
+          <text id="fm1p1-blk3-t" class="fm1p1-bullet-title" x="18" y="10">Regra de ouro da fraqueza:</text>
+          <text id="fm1p1-blk3-d" class="fm1p1-bullet-desc" x="18" y="28">Não rotular doenças sem antes delimitar o compartimento neuromuscular.</text>
+        </g>
+      </g>
+
+      <!-- Caixa de Alerta / Comparativo de Conduta -->
+      <g transform="translate(0, 325)">
+        <rect id="fm1p1-alert-bg" class="fm1p1-box-card" x="0" y="0" width="400" height="80" fill="var(--fm1p1-green-bg, rgba(16,185,129,0.15))" stroke="var(--fm1p1-green, #10b981)"/>
+        <text id="fm1p1-alert-tag" font-size="11" font-weight="800" fill="var(--fm1p1-green, #10b981)" x="15" y="22">POSTURA RACIONAL STE</text>
+        <text id="fm1p1-alert-txt1" font-size="11" font-weight="600" fill="var(--fm1p1-ink-main, #f8fafc)" x="15" y="42">Topografar primeiro guia exames de imagem e ENMG específicos.</text>
+        <text id="fm1p1-alert-txt2" font-size="10" fill="var(--fm1p1-ink-sub, #94a3b8)" x="15" y="58">Evita solicitação aleatória de TC/RM de crânio e exames de alto custo.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== RODAPÉ: BARRA DE LEGENDA E AJUDA ==================== -->
+  <g id="fm1p1-footer" transform="translate(30, 595)">
+    <line x1="0" y1="0" x2="940" y2="0" stroke="var(--fm1p1-border, #334155)" stroke-width="1"/>
+    
+    <!-- Convenção de Cores Medica -->
+    <g transform="translate(10, 20)">
+      <circle class="fm1p1-leg-dot" cx="0" cy="0" fill="var(--fm1p1-green, #10b981)"/>
+      <text class="fm1p1-leg-text" x="10" y="4">Verde: Conduta Correta STE</text>
+
+      <circle class="fm1p1-leg-dot" cx="190" cy="0" fill="var(--fm1p1-amber, #f59e0b)"/>
+      <text class="fm1p1-leg-text" x="200" y="4">Amarelo: Limiar Anatômico / Alerta</text>
+
+      <circle class="fm1p1-leg-dot" cx="420" cy="0" fill="var(--fm1p1-red, #f43f5e)"/>
+      <text class="fm1p1-leg-text" x="430" y="4">Vermelho: Atalho Precoce / Erro</text>
+    </g>
+
+    <!-- Orientação da Interação -->
+    <text font-size="11" font-weight="600" fill="var(--fm1p1-teal, #14b8a6)" x="930" y="24" text-anchor="end">Toque nos botões do funil ou alterne os modos acima para explorar o raciocínio</text>
+  </g>
+
+  <!-- ==================== ENGINE INTERATIVO SELF-CONTAINED ==================== -->
+  <script>//<![CDATA[
+    (function() {
+      'use strict';
+
+      // Dados dos Estágios no Método STE
+      var STE_DATA = {
+        s: {
+          badge: 'PASSO 1 · SINDRÔMICO',
+          badgeColor: 'var(--fm1p1-indigo, #6366f1)',
+          badgeBg: 'var(--fm1p1-indigo-bg, rgba(99,102,241,0.2))',
+          title: 'Reconhecer a Síndrome da Cabeça Caída',
+          desc: 'Incapacidade focal de manter a sustentação cefálica por fraqueza dos extensores.',
+          b1_t: 'Pergunta-Chave do Estágio:',
+          b1_d: '"Qual é a manifestação funcional motora predominante?"',
+          b2_t: 'Achado de Exame Físico / Âncora:',
+          b2_d: 'Flexão cervical passiva sem resistência motor-extensora.',
+          b2_d2: 'Paciente necessita de apoio manual constante do queixo.',
+          b3_t: 'Regra de ouro da fraqueza:',
+          b3_d: 'Não rotular doenças sem antes delimitar o compartimento axial.',
+          alertTag: 'POSTURA RACIONAL STE',
+          alertT1: 'Topografar primeiro guia exames direcionados.',
+          alertT2: 'Evita solicitação aleatória de TC/RM de crânio e exames desnecessários.',
+          alertStyle: 'green'
+        },
+        t: {
+          badge: 'PASSO 2 · TOPOGRÁFICO',
+          badgeColor: 'var(--fm1p1-amber, #f59e0b)',
+          badgeBg: 'var(--fm1p1-amber-bg, rgba(245,158,11,0.2))',
+          title: 'Mapear a Topografia Neuromuscular',
+          desc: 'Localizar o nível lesionado: músculo vs placa vs 2º NMS vs 1º NMS.',
+          b1_t: 'Pergunta-Chave do Estágio:',
+          b1_d: '"Onde está a lesão na via motora que causa a fraqueza?"',
+          b2_t: 'Subcompartimentos em Disputa:',
+          b2_d: 'A. Músculo (padrão proximal ou axial)',
+          b2_d2: 'B. Placa neuromuscular | C. 2º NMS | D. 1º NMS',
+          b3_t: 'Decisão Estratégica:',
+          b3_d: 'O exame clínico organiza o próximo passo da investigação.',
+          alertTag: 'ANCORAGEM ANATÔMICA CRÍTICA',
+          alertT1: 'A topografia reduz o campo diagnóstico antes da etiologia.',
+          alertT2: 'Evita nomear doença antes de comprovar o andar lesionado.',
+          alertStyle: 'amber'
+        },
+        e: {
+          badge: 'PASSO 3 · ETIOLÓGICO (SEMENTE)',
+          badgeColor: 'var(--fm1p1-teal, #14b8a6)',
+          badgeBg: 'var(--fm1p1-teal-bg, rgba(20,184,166,0.2))',
+          title: 'Semente Etiológica (Investigação Nosológica)',
+          desc: 'A etiologia é a consequência do funil, não o ponto de partida.',
+          b1_t: 'Pergunta-Chave do Estágio:',
+          b1_d: '"Qual a etiologia específica para a topografia confirmada?"',
+          b2_t: 'Exemplos Etiológicos Específicos:',
+          b2_d: 'Se JNM → Miastenia Gravis / Síndrome Miastênica',
+          b2_d2: 'Se Músculo → Miopatia nemalínica / Miopatia axial isolada',
+          b3_t: 'Status da Semente:',
+          b3_d: 'Aguardando confirmação topográfica para desabrochar a conduta.',
+          alertTag: 'ETAPA EM SEMENTE (AGUARDANDO T)',
+          alertT1: 'A etiologia só acende após o afunilamento topográfico.',
+          alertT2: 'Garante o diagnóstico etiológico definitivo com segurança.',
+          alertStyle: 'green'
+        }
+      };
+
+      var ERR_DATA = {
+        badge: 'ERRO CRÍTICO · ATALHO PRECOCE',
+        badgeColor: 'var(--fm1p1-red, #f43f5e)',
+        badgeBg: 'var(--fm1p1-red-bg, rgba(244,63,94,0.2))',
+        title: 'Chutar Etiologia Rara na Primeira Frase',
+        desc: 'Tentar adivinhar a doença (ex: ELA, Miastenia) direto da queixa sem topografar.',
+        b1_t: 'Vício Frequente na Prova / Ambulatório:',
+        b1_d: 'Pedir RM de crânio de rotina para queixa estritamente cervical/axial.',
+        b2_t: 'Consequência Diagnóstica:',
+        b2_d: 'Desperdício de tempo, exames de imagem normais (encéfalo sem lesão)',
+        b2_d2: 'e ansiedade desnecessária ao paciente por falta de método.',
+        b3_t: 'Como Corrigir:',
+        b3_d: 'Recuar ao Estágio S (Sindrômico) e obrigatoriamente passar pelo T (Topográfico).',
+        alertTag: 'ALERTA DE CONDUTA INADEQUADA',
+        alertT1: 'Não pule a topografia em exames práticos ou simulados.',
+        alertT2: 'A banca avalia o MÉTODO de raciocínio, não o chute de doenças raras.',
+        alertStyle: 'red'
+      };
+
+      // Estado Atual
+      var state = {
+        mode: 'ste', // 'ste' ou 'err'
+        stage: 's'   // 's', 't', 'e'
+      };
+
+      // Elementos do DOM
+      var stageS = document.getElementById('fm1p1-stage-s');
+      var stageT = document.getElementById('fm1p1-stage-t');
+      var stageE = document.getElementById('fm1p1-stage-e');
+      var hsNeck = document.getElementById('fm1p1-hs-neck');
+
+      var tabSte = document.getElementById('fm1p1-tab-ste');
+      var tabErr = document.getElementById('fm1p1-tab-err');
+
+      var badgeBg = document.getElementById('fm1p1-pnl-badge-bg');
+      var badgeTxt = document.getElementById('fm1p1-pnl-badge-txt');
+      var mainTitle = document.getElementById('fm1p1-pnl-main-title');
+      var mainDesc = document.getElementById('fm1p1-pnl-main-desc');
+
+      var blk1Dot = document.getElementById('fm1p1-blk1-dot');
+      var blk1T = document.getElementById('fm1p1-blk1-t');
+      var blk1D = document.getElementById('fm1p1-blk1-d');
+
+      var blk2Dot = document.getElementById('fm1p1-blk2-dot');
+      var blk2T = document.getElementById('fm1p1-blk2-t');
+      var blk2D = document.getElementById('fm1p1-blk2-d');
+      var blk2D2 = document.getElementById('fm1p1-blk2-d2');
+
+      var blk3Dot = document.getElementById('fm1p1-blk3-dot');
+      var blk3T = document.getElementById('fm1p1-blk3-t');
+      var blk3D = document.getElementById('fm1p1-blk3-d');
+
+      var alertBg = document.getElementById('fm1p1-alert-bg');
+      var alertTag = document.getElementById('fm1p1-alert-tag');
+      var alertTxt1 = document.getElementById('fm1p1-alert-txt1');
+      var alertTxt2 = document.getElementById('fm1p1-alert-txt2');
+      var badgeEBg = document.getElementById('fm1p1-badge-e-bg');
+
+      // Atualiza a Interface
+      function updateUI() {
+        // Estágios
+        stageS.setAttribute('data-active', (state.mode === 'ste' && state.stage === 's') ? 'true' : 'false');
+        stageT.setAttribute('data-active', (state.mode === 'ste' && state.stage === 't') ? 'true' : 'false');
+        stageE.setAttribute('data-active', (state.mode === 'ste' && state.stage === 'e') ? 'true' : 'false');
+
+        // Ativação da Semente no Estágio E
+        if (state.mode === 'ste' && state.stage === 'e') {
+          badgeEBg.setAttribute('fill', 'var(--fm1p1-teal, #14b8a6)');
+        } else {
+          badgeEBg.setAttribute('fill', 'var(--fm1p1-ink-muted, #64748b)');
+        }
+
+        // Abas
+        tabSte.setAttribute('data-active', state.mode === 'ste' ? 'true' : 'false');
+        tabErr.setAttribute('data-active', state.mode === 'err' ? 'true' : 'false');
+
+        // Conteúdo do Painel
+        var data = (state.mode === 'err') ? ERR_DATA : STE_DATA[state.stage];
+
+        badgeBg.setAttribute('fill', data.badgeBg);
+        badgeTxt.setAttribute('fill', data.badgeColor);
+        badgeTxt.textContent = data.badge;
+
+        mainTitle.textContent = data.title;
+        mainDesc.textContent = data.desc;
+
+        blk1T.textContent = data.b1_t;
+        blk1D.textContent = data.b1_d;
+
+        blk2T.textContent = data.b2_t;
+        blk2D.textContent = data.b2_d;
+        blk2D2.textContent = data.b2_d2 || '';
+
+        blk3T.textContent = data.b3_t;
+        blk3D.textContent = data.b3_d;
+
+        // Estilização da caixa de alerta
+        alertTag.textContent = data.alertTag;
+        alertTxt1.textContent = data.alertT1;
+        alertTxt2.textContent = data.alertT2;
+
+        if (data.alertStyle === 'red') {
+          alertBg.setAttribute('fill', 'var(--fm1p1-red-bg, rgba(244,63,94,0.15))');
+          alertBg.setAttribute('stroke', 'var(--fm1p1-red, #f43f5e)');
+          alertTag.setAttribute('fill', 'var(--fm1p1-red, #f43f5e)');
+        } else if (data.alertStyle === 'amber') {
+          alertBg.setAttribute('fill', 'var(--fm1p1-amber-bg, rgba(245,158,11,0.15))');
+          alertBg.setAttribute('stroke', 'var(--fm1p1-amber, #f59e0b)');
+          alertTag.setAttribute('fill', 'var(--fm1p1-amber, #f59e0b)');
+        } else {
+          alertBg.setAttribute('fill', 'var(--fm1p1-green-bg, rgba(16,185,129,0.15))');
+          alertBg.setAttribute('stroke', 'var(--fm1p1-green, #10b981)');
+          alertTag.setAttribute('fill', 'var(--fm1p1-green, #10b981)');
+        }
+      }
+
+      // Listeners de Eventos
+      function setStage(stg) {
+        state.mode = 'ste';
+        state.stage = stg;
+        updateUI();
+      }
+
+      function setMode(md) {
+        state.mode = md;
+        updateUI();
+      }
+
+      stageS.addEventListener('click', function() { setStage('s'); });
+      stageT.addEventListener('click', function() { setStage('t'); });
+      stageE.addEventListener('click', function() { setStage('e'); });
+
+      hsNeck.addEventListener('click', function() { setStage('s'); });
+
+      tabSte.addEventListener('click', function() { setMode('ste'); });
+      tabErr.addEventListener('click', function() { setMode('err'); });
+
+      // Suporte a Teclado (Acessibilidade)
+      var handleKey = function(evt, action) {
+        if (evt.key === 'Enter' || evt.key === ' ') {
+          evt.preventDefault();
+          action();
+        }
+      };
+
+      stageS.addEventListener('keydown', function(e) { handleKey(e, function() { setStage('s'); }); });
+      stageT.addEventListener('keydown', function(e) { handleKey(e, function() { setStage('t'); }); });
+      stageE.addEventListener('keydown', function(e) { handleKey(e, function() { setStage('e'); }); });
+      hsNeck.addEventListener('keydown', function(e) { handleKey(e, function() { setStage('s'); }); });
+      tabSte.addEventListener('keydown', function(e) { handleKey(e, function() { setMode('ste'); }); });
+      tabErr.addEventListener('keydown', function(e) { handleKey(e, function() { setMode('err'); }); });
+
+      // Inicialização
+      updateUI();
+    })();
+  //]]></script>
+</svg>
+
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Ilustração</span> Head drop e funil sindrômico → topográfico → etiológico: primeiro confirmar fraqueza, depois localizar o andar.</figcaption>
+      </figure>
+
+      
+
+      <aside class="op-summary" aria-label="Resumo operacional">
+        <h2 class="op-summary__title">Resumo operacional</h2>
+        <div class="prose"><p class="no-indent"><strong class="term">Fraqueza pede mapa sindrômico; caso longo pede sublinhado do que existe — não do que se inventa.</strong></p></div>
+      </aside>
+
+      <aside class="why-matters">
+        <h2 class="why-matters__title">Por que importa</h2>
+        <div class="prose"><p>Na porta e na prova, fraqueza mal topografada gera pedido de exame errado (RM de crânio para miopatia; ENMG para AVE agudo) e condutas que não batem no andar lesado.</p></div>
+      </aside>
+
+      <aside class="continuity"><div class="prose"><p>O método se aplica a um caso com isca de ICC: Dona Jussara.</p></div></aside>
+
+      
+<section class="quiz" data-quiz-id="fm1-fraqueza-p01" aria-labelledby="quiz-p01-title">
+  <h2 id="quiz-p01-title">Quiz — fixação</h2>
+  <ol class="quiz__questions">
+<li class="quiz__question" data-q="1">
+  <p class="quiz__stem" id="quiz-p01-q1-label">Paciente segura a cabeça com as mãos por fraqueza cervical. Qual a melhor postura cognitiva inicial?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p01-q1-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Nomear logo miastenia porque o pescoço é clássico  </button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Montar raciocínio sindrômico/topográfico da fraqueza antes de fechar a entidade  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Tratar como descompensação cardíaca se houver ICC no receituário  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Pedir RM de crânio de rotina antes de qualquer exame  </button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> a primeira decisão é <strong class="term">abordar a queixa</strong>, não catalogar doença rara na primeira linha.</p>
+    <p class="quiz__distractor">(A) pula topografia e pode acertar por sorte; (C) é a isca que o caso seguinte desmonta; (D) RM de crânio serve sobretudo ao <strong class="term">1º NMS</strong>, não é default de toda fraqueza. sedução do “nome de prova” (A); âncora em comorbidade escrita (C); automatismo de neuroimagem (D).</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="2">
+  <p class="quiz__stem" id="quiz-p01-q2-label">Em caso clínico longo de prova, qual atitude reduz erro?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p01-q2-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Completar mentalmente achados “que costumam vir junto”  </button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Sublinhar só o que o enunciado de fato apresentou  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Ignorar dermatologia e mama se a queixa for neurológica  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Tratar todo cansaço como descompensação da comorbidade listada  </button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> caso longo <strong class="term">entrega</strong> a resposta; inventar achado é o erro clássico.</p>
+    <p class="quiz__distractor">(A) e (D) inventam ou ancoram em isca; (C) descarta pistas (pele/neoplasia) que fecham miopatia inflamatória. o cérebro “fecha o padrão” com o que estudou — e falha no que <strong class="term">não</strong> está escrito.</p>
+  </div>
+</li></ol>
+</section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><span class="page-nav__btn is-disabled" aria-disabled="true">← Anterior</span><span class="page-nav__pos">1/12</span><a class="page-nav__btn" href="p2.html" rel="next">Próxima →</a></nav>
+    </article>
+  </div>
+</main>
+<script src="fm1.js" defer></script>
+</body>
+</html>

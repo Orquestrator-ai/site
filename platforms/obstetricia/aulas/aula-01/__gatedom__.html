@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-platform="ginecologia-obstetricia"><head><meta charset="UTF-8"><script>window.__GATEERR=[];addEventListener('error',function(e){__GATEERR.push((e.message||String(e.error||''))+' @'+(e.filename||'')+':'+(e.lineno||''));});addEventListener('unhandledrejection',function(e){__GATEERR.push('promise:'+e.reason);});</script><link rel="stylesheet" href="../../assets/css/tokens.css"><link rel="stylesheet" href="../../assets/css/base.css"><link rel="stylesheet" href="../../assets/css/components.css"><link rel="stylesheet" href="../../assets/css/aula-01.css"></head><body><main id="main"><article class="page" data-active="true"><div class="page__container page__container--wide"><figure class="figure-svg figure-svg__embed"><div class="figure-svg__frame figure-svg__stage"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="100%" height="100%" data-svg-tokenized="true" id="p14-svg-root" aria-label="Dois medidores mostrando a resistência da umbilical dividida pela da cerebral média: quando a razão cruza o valor 1, indica centralização.">
+  <defs>
+    <!-- Filtros de Glow e Sombra -->
+    <filter id="p14-glow-rose" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+    </filter>
+    <filter id="p14-glow-red" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"></feGaussianBlur>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+    </filter>
+    <filter id="p14-shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.5"></feDropShadow>
+    </filter>
+  </defs>
+
+  <style>/**/
+
+    :root {
+      --p14-bg-0: #130d14;
+      --p14-bg-1: #1e1322;
+      --p14-wine: #671127;
+      --p14-rose: #ff2a7f;
+      --p14-rose-soft: rgba(255, 42, 127, 0.15);
+      --p14-ink-100: #fcfafc;
+      --p14-ink-90: #ebddeb;
+      --p14-ink-70: #b8a6b9;
+      --p14-kw-red: #ff3b5f;
+      --p14-kw-amber: #ffa600;
+      --p14-kw-green: #05d97d;
+      --p14-kw-white: #ffffff;
+    }
+
+    #p14-svg-root {
+      background-color: var(--bg-0, var(--p14-bg-0));
+      font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Tipografia e Títulos */
+    .p14-title {
+      fill: var(--ink-100, var(--p14-ink-100));
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .p14-subtitle {
+      fill: var(--ink-70, var(--p14-ink-70));
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Cards e Containers */
+    .p14-card {
+      fill: var(--bg-1, var(--p14-bg-1));
+      stroke: var(--rose-soft, var(--p14-rose-soft));
+      stroke-width: 1.5;
+      rx: 16px;
+    }
+
+    .p14-card-header {
+      fill: var(--ink-100, var(--p14-ink-100));
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Controles dos Medidores (Sliders) */
+    .p14-slider-track {
+      fill: #2c1a30;
+      rx: 5px;
+    }
+
+    .p14-slider-fill-umb {
+      fill: var(--kw-red, var(--p14-kw-red));
+      rx: 5px;
+    }
+
+    .p14-slider-fill-cer {
+      fill: var(--ink-90, var(--p14-ink-90));
+      rx: 5px;
+    }
+
+    .p14-slider-handle {
+      fill: var(--kw-white, var(--p14-kw-white));
+      stroke: var(--rose, var(--p14-rose));
+      stroke-width: 3;
+      cursor: ew-resize;
+      transition: transform 0.1s ease, stroke-width 0.1s ease;
+    }
+
+    .p14-slider-handle:hover,
+    .p14-slider-handle:focus {
+      outline: none;
+      stroke-width: 4.5;
+      transform: scale(1.2);
+    }
+
+    .p14-slider-label {
+      fill: var(--ink-70, var(--p14-ink-70));
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .p14-slider-value {
+      font-size: 20px;
+      font-weight: 800;
+      text-anchor: end;
+    }
+
+    .p14-slider-value-umb {
+      fill: var(--kw-red, var(--p14-kw-red));
+    }
+
+    .p14-slider-value-cer {
+      fill: var(--ink-100, var(--p14-ink-100));
+    }
+
+    .p14-tick-text {
+      fill: var(--ink-70, var(--p14-ink-70));
+      font-size: 10px;
+      font-weight: 500;
+      text-anchor: middle;
+    }
+
+    /* Doppler Curves Grid &amp; Envelope */
+    .p14-curve-bg {
+      fill: #0c070d;
+      stroke: #25162a;
+      stroke-width: 1.5;
+      rx: 12px;
+    }
+
+    .p14-curve-grid {
+      stroke: #1c1020;
+      stroke-width: 1;
+      stroke-dasharray: 2 3;
+    }
+
+    .p14-curve-baseline {
+      stroke: #3c2443;
+      stroke-width: 1.5;
+    }
+
+    .p14-curve-line {
+      fill: none;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .p14-curve-line-umb {
+      stroke: var(--kw-red, var(--p14-kw-red));
+    }
+
+    .p14-curve-line-cer {
+      stroke: var(--ink-90, var(--p14-ink-90));
+    }
+
+    .p14-curve-fill-umb {
+      fill: url(#p14-grad-umb);
+      opacity: 0.15;
+    }
+
+    .p14-curve-fill-cer {
+      fill: url(#p14-grad-cer);
+      opacity: 0.12;
+    }
+
+    /* Calcs e Fração */
+    .p14-math-label {
+      fill: var(--ink-70, var(--p14-ink-70));
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .p14-math-val {
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    .p14-math-val-umb {
+      fill: var(--kw-red, var(--p14-kw-red));
+    }
+
+    .p14-math-val-cer {
+      fill: var(--ink-90, var(--p14-ink-90));
+    }
+
+    .p14-fraction-line {
+      stroke: var(--ink-70, var(--p14-ink-70));
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+
+    .p14-equals {
+      fill: var(--ink-100, var(--p14-ink-100));
+      font-size: 36px;
+      font-weight: 700;
+      text-anchor: middle;
+    }
+
+    .p14-result-lbl {
+      fill: var(--ink-70, var(--p14-ink-70));
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-anchor: middle;
+    }
+
+    .p14-result-val {
+      font-size: 56px;
+      font-weight: 900;
+      text-anchor: middle;
+      transition: fill 0.2s ease;
+    }
+
+    /* Alert / Status Card */
+    .p14-alert-box {
+      rx: 12px;
+      transition: fill 0.3s ease, stroke 0.3s ease;
+    }
+
+    .p14-alert-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-anchor: middle;
+    }
+
+    .p14-alert-subtitle {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-anchor: middle;
+    }
+
+    /* Atalho Informativo */
+    .p14-shortcut-title {
+      fill: var(--rose, var(--p14-rose));
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+
+    .p14-shortcut-text {
+      fill: var(--ink-70, var(--p14-ink-70));
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .p14-shortcut-live {
+      font-size: 16px;
+      font-weight: 800;
+      text-anchor: middle;
+    }
+
+    /* Tooltip */
+    .p14-tooltip-bg {
+      fill: #000000;
+      stroke: var(--rose, var(--p14-rose));
+      stroke-width: 1.5;
+      rx: 6px;
+    }
+
+    .p14-tooltip-text {
+      fill: var(--ink-100, var(--p14-ink-100));
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* Acessibilidade */
+    .p14-focusable:focus {
+      outline: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .p14-animated {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  
+/**/</style>
+
+  <!-- Gradientes de Preenchimento das Curvas -->
+  <defs>
+    <linearGradient id="p14-grad-umb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--p14-kw-red)" stop-opacity="0.8"></stop>
+      <stop offset="100%" stop-color="var(--p14-kw-red)" stop-opacity="0"></stop>
+    </linearGradient>
+    <linearGradient id="p14-grad-cer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--p14-ink-90)" stop-opacity="0.8"></stop>
+      <stop offset="100%" stop-color="var(--p14-ink-90)" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Cabeçalho Principal -->
+  <g transform="translate(40, 50)">
+    <text class="p14-title" x="0" y="0">Razão Umbílico-Cerebral (RUC)</text>
+    <text class="p14-subtitle" x="0" y="24">Piso de Ginecologia/Obstetrícia — Aula 1: Sofrimento Fetal Crônico</text>
+  </g>
+
+  <!-- PAINEL ESQUERDO: Medidores & Doppler (x=40, y=100, w=380, h=510) -->
+  <g transform="translate(40, 100)">
+    <!-- Fundo do Painel Esquerdo -->
+    <rect class="p14-card" x="0" y="0" width="380" height="510" filter="url(#p14-shadow)"></rect>
+    <text class="p14-card-header" x="20" y="32">MEDIDORES DE RESISTÊNCIA (S/D)</text>
+
+    <!-- ================= CONTROLE UMBILICAL ================= -->
+    <g transform="translate(20, 55)">
+      <text class="p14-slider-label" x="0" y="0">ARTÉRIA UMBILICAL (RESISTÊNCIA PLACENTÁRIA)</text>
+      <text id="p14-val-umb" class="p14-slider-value p14-slider-value-umb" x="340" y="2">3.0</text>
+      
+      <!-- Linha do Medidor / Slider -->
+      <rect class="p14-slider-track" x="0" y="14" width="340" height="10"></rect>
+      <rect id="p14-fill-umb" class="p14-slider-fill-umb" x="0" y="14" width="170" height="10"></rect>
+      
+      <!-- Ticks de Escala -->
+      <text class="p14-tick-text" x="0" y="38">1.5 (Baixa)</text>
+      <text class="p14-tick-text" x="170" y="38">3.0</text>
+      <text class="p14-tick-text" x="340" y="38">4.5 (Alta)</text>
+      
+      <!-- Doppler Curve Container -->
+      <g transform="translate(0, 50)">
+        <rect class="p14-curve-bg" x="0" y="0" width="340" height="100"></rect>
+        <!-- Linhas de Grade Internas -->
+        <line class="p14-curve-grid" x1="0" y1="25" x2="340" y2="25"></line>
+        <line class="p14-curve-grid" x1="0" y1="50" x2="340" y2="50"></line>
+        <line class="p14-curve-grid" x1="0" y1="75" x2="340" y2="75"></line>
+        <line class="p14-curve-baseline" x1="0" y1="90" x2="340" y2="90"></line>
+        
+        <!-- Curva e Área -->
+        <path id="p14-curve-fill-path-umb" class="p14-curve-fill-umb" d="M 35 65 C 41 65, 48 15, 53 15 C 61 15, 70 37.5, 75 37.5 C 81 40.5, 90 65, 100 65 C 112 65, 119 65, 125 65 C 131 65, 138 15, 143 15 C 151 15, 160 37.5, 165 37.5 C 171 40.5, 180 65, 190 65 C 202 65, 209 65, 215 65 C 221 65, 228 15, 233 15 C 241 15, 250 37.5, 255 37.5 C 261 40.5, 270 65, 280 65 C 292 65, 299 65, 305 65  L 305 90 L 35 90 Z"></path>
+        <path id="p14-curve-path-umb" class="p14-curve-line p14-curve-line-umb" d="M 35 65 C 41 65, 48 15, 53 15 C 61 15, 70 37.5, 75 37.5 C 81 40.5, 90 65, 100 65 C 112 65, 119 65, 125 65 C 131 65, 138 15, 143 15 C 151 15, 160 37.5, 165 37.5 C 171 40.5, 180 65, 190 65 C 202 65, 209 65, 215 65 C 221 65, 228 15, 233 15 C 241 15, 250 37.5, 255 37.5 C 261 40.5, 270 65, 280 65 C 292 65, 299 65, 305 65 "></path>
+        
+        <text x="10" y="20" fill="var(--p14-kw-red)" font-size="9" font-weight="800" opacity="0.8">SÍSTOLE (S)</text>
+        <text x="10" y="83" fill="var(--p14-kw-red)" font-size="9" font-weight="800" opacity="0.8">DIÁSTOLE (D)</text>
+      </g>
+
+      <!-- Handle Interativo (Posicionado no topo para capturar eventos de forma limpa) -->
+      <circle id="p14-handle-umb" class="p14-slider-handle p14-focusable" cx="170" cy="19" r="11" tabindex="0" role="slider" aria-valuemin="1.5" aria-valuemax="4.5" aria-valuenow="3.0" aria-label="Ajustar resistência da Artéria Umbilical" onmouseover="showTooltip(event, 'Arraste para alterar a resistência (S/D) da Umbilical')" onmousemove="moveTooltip(event)" onmouseout="hideTooltip()" onmousedown="onStart(event, 'umb')" ontouchstart="onStart(event, 'umb')" onkeydown="onKeyDown(event, 'umb')"></circle>
+    </g>
+
+    <!-- ================= CONTROLE CEREBRAL MÉDIA ================= -->
+    <g transform="translate(20, 275)">
+      <text class="p14-slider-label" x="0" y="0">ARTÉRIA CEREBRAL MÉDIA (FLUXO CEREBRAL)</text>
+      <text id="p14-val-cer" class="p14-slider-value p14-slider-value-cer" x="340" y="2">4.0</text>
+      
+      <!-- Linha do Medidor / Slider -->
+      <rect class="p14-slider-track" x="0" y="14" width="340" height="10"></rect>
+      <rect id="p14-fill-cer" class="p14-slider-fill-cer" x="0" y="14" width="212.5" height="10"></rect>
+      
+      <!-- Ticks de Escala -->
+      <text class="p14-tick-text" x="0" y="38">1.5 (Baixa)</text>
+      <text class="p14-tick-text" x="170" y="38">3.5</text>
+      <text class="p14-tick-text" x="340" y="38">5.5 (Alta)</text>
+      
+      <!-- Doppler Curve Container -->
+      <g transform="translate(0, 50)">
+        <rect class="p14-curve-bg" x="0" y="0" width="340" height="100"></rect>
+        <!-- Linhas de Grade Internas -->
+        <line class="p14-curve-grid" x1="0" y1="25" x2="340" y2="25"></line>
+        <line class="p14-curve-grid" x1="0" y1="50" x2="340" y2="50"></line>
+        <line class="p14-curve-grid" x1="0" y1="75" x2="340" y2="75"></line>
+        <line class="p14-curve-baseline" x1="0" y1="90" x2="340" y2="90"></line>
+        
+        <!-- Curva e Área -->
+        <path id="p14-curve-fill-path-cer" class="p14-curve-fill-cer" d="M 35 71.25 C 41 71.25, 48 15, 53 15 C 61 15, 70 40.3125, 75 40.3125 C 81 43.3125, 90 71.25, 100 71.25 C 112 71.25, 119 71.25, 125 71.25 C 131 71.25, 138 15, 143 15 C 151 15, 160 40.3125, 165 40.3125 C 171 43.3125, 180 71.25, 190 71.25 C 202 71.25, 209 71.25, 215 71.25 C 221 71.25, 228 15, 233 15 C 241 15, 250 40.3125, 255 40.3125 C 261 43.3125, 270 71.25, 280 71.25 C 292 71.25, 299 71.25, 305 71.25  L 305 90 L 35 90 Z"></path>
+        <path id="p14-curve-path-cer" class="p14-curve-line p14-curve-line-cer" d="M 35 71.25 C 41 71.25, 48 15, 53 15 C 61 15, 70 40.3125, 75 40.3125 C 81 43.3125, 90 71.25, 100 71.25 C 112 71.25, 119 71.25, 125 71.25 C 131 71.25, 138 15, 143 15 C 151 15, 160 40.3125, 165 40.3125 C 171 43.3125, 180 71.25, 190 71.25 C 202 71.25, 209 71.25, 215 71.25 C 221 71.25, 228 15, 233 15 C 241 15, 250 40.3125, 255 40.3125 C 261 43.3125, 270 71.25, 280 71.25 C 292 71.25, 299 71.25, 305 71.25 "></path>
+        
+        <text x="10" y="20" fill="var(--p14-ink-90)" font-size="9" font-weight="800" opacity="0.8">SÍSTOLE (S)</text>
+        <text x="10" y="83" fill="var(--p14-ink-90)" font-size="9" font-weight="800" opacity="0.8">DIÁSTOLE (D)</text>
+      </g>
+
+      <!-- Handle Interativo -->
+      <circle id="p14-handle-cer" class="p14-slider-handle p14-focusable" cx="212.5" cy="19" r="11" tabindex="0" role="slider" aria-valuemin="1.5" aria-valuemax="5.5" aria-valuenow="4.0" aria-label="Ajustar resistência da Artéria Cerebral Média" onmouseover="showTooltip(event, 'Arraste para alterar a resistência (S/D) da Cerebral Média')" onmousemove="moveTooltip(event)" onmouseout="hideTooltip()" onmousedown="onStart(event, 'cer')" ontouchstart="onStart(event, 'cer')" onkeydown="onKeyDown(event, 'cer')"></circle>
+    </g>
+  </g>
+
+  <!-- PAINEL DIREITO: Razão & Resultado (x=440, y=100, w=320, h=510) -->
+  <g transform="translate(440, 100)">
+    <!-- Fundo do Painel Direito -->
+    <rect class="p14-card" x="0" y="0" width="320" height="510" filter="url(#p14-shadow)"></rect>
+    <text class="p14-card-header" x="160" y="32" text-anchor="middle">RELAÇÃO QUANTITATIVA (RUC)</text>
+
+    <!-- ================= DISPLAY DA FRAÇÃO ================= -->
+    <g transform="translate(20, 60)">
+      <!-- Box do divisor (Umbilical) -->
+      <g transform="translate(10, 15)">
+        <rect x="0" y="0" width="100" height="60" fill="#231728" rx="8" stroke="rgba(255, 59, 95, 0.2)" stroke-width="1"></rect>
+        <text class="p14-math-label" x="50" y="16" text-anchor="middle">UMBILICAL</text>
+        <text id="p14-math-umb" class="p14-math-val p14-math-val-umb" x="50" y="48" text-anchor="middle">3.0</text>
+      </g>
+      
+      <!-- Linha da Fração -->
+      <line class="p14-fraction-line" x1="10" y1="90" x2="110" y2="90"></line>
+
+      <!-- Box do dividendo (Cerebral) -->
+      <g transform="translate(10, 105)">
+        <rect x="0" y="0" width="100" height="60" fill="#231728" rx="8" stroke="rgba(235, 221, 235, 0.15)" stroke-width="1"></rect>
+        <text class="p14-math-label" x="50" y="16" text-anchor="middle">CEREBRAL M.</text>
+        <text id="p14-math-cer" class="p14-math-val p14-math-val-cer" x="50" y="48" text-anchor="middle">4.0</text>
+      </g>
+
+      <!-- Sinal de Igualdade -->
+      <text class="p14-equals" x="145" y="98">=</text>
+
+      <!-- Resultado da Razão -->
+      <g transform="translate(180, 25)" onmouseover="showTooltip(event, 'RUC = Resistência da Umbilical / Resistência da Cerebral Média')" onmousemove="moveTooltip(event)" onmouseout="hideTooltip()">
+        <text class="p14-result-lbl" x="50" y="10">RAZÃO (RUC)</text>
+        <text id="p14-ratio-val" class="p14-result-val" x="50" y="75" fill="var(--ink-100, var(--p14-ink-100))">0.75</text>
+        
+        <!-- Mini meta indicando corte >= 1.0 -->
+        <rect x="15" y="90" width="70" height="18" fill="#1b1220" rx="4" stroke="#35203a" stroke-width="1"></rect>
+        <text x="50" y="102" fill="var(--p14-ink-70)" font-size="9" font-weight="700" text-anchor="middle">CORTE: ≥ 1.00</text>
+      </g>
+    </g>
+
+    <!-- ================= STATUS CARD (ALERTA DE CENTRALIZAÇÃO) ================= -->
+    <g transform="translate(20, 275)">
+      <!-- Moldura Dinâmica de Alerta -->
+      <rect id="p14-alert-box" class="p14-alert-box" x="0" y="0" width="280" height="85" fill="#091c13" stroke="var(--kw-green, var(--p14-kw-green))" stroke-width="2"></rect>
+      <!-- Textos Dinâmicos -->
+      <text id="p14-alert-title" class="p14-alert-title" x="140" y="38" fill="var(--kw-green, var(--p14-kw-green))">HEMODINÂMICA PRESERVADA</text>
+      <text id="p14-alert-sub" class="p14-alert-subtitle" x="140" y="58" fill="var(--ink-70, var(--p14-ink-70))">Relação Umbílico-Cerebral &lt; 1.00</text>
+    </g>
+
+    <!-- ================= CARD INFORMATIVO: O ATALHO ================= -->
+    <g transform="translate(20, 380)">
+      <rect x="0" y="0" width="280" height="110" fill="#17101a" rx="10" stroke="#2a1b2d" stroke-width="1"></rect>
+      <text class="p14-shortcut-title" x="15" y="22">O ATALHO CLÍNICO VISUAL</text>
+      <text class="p14-shortcut-text" x="15" y="42">Se a resistência da <tspan fill="var(--p14-kw-red)" font-weight="bold">Umbilical</tspan> supera ou iguala a</text>
+      <text class="p14-shortcut-text" x="15" y="58">da <tspan fill="var(--p14-ink-100)" font-weight="bold">Cerebral</tspan>, a razão é automaticamente <tspan fill="var(--p14-kw-red)" font-weight="bold">≥ 1.0</tspan>,</text>
+      <text class="p14-shortcut-text" x="15" y="74">caracterizando a <tspan fill="var(--p14-kw-red)" font-weight="bold">Centralização Fetal</tspan>.</text>
+      
+      <!-- Live Feedback do Atalho -->
+      <text id="p14-shortcut-example" class="p14-shortcut-live" x="140" y="98" fill="var(--ink-70, var(--p14-ink-70))">3.0 ≥ 4.0 ? Não</text>
+    </g>
+  </g>
+
+  <!-- TOOLTIP INTERATIVO MOUSE-FOLLOW -->
+  <g id="p14-tooltip" class="p14-tooltip" transform="translate(0,0)" style="visibility: hidden; pointer-events: none;">
+    <rect id="p14-tooltip-rect" class="p14-tooltip-bg" x="-110" y="-35" width="220" height="26"></rect>
+    <text id="p14-tooltip-text" class="p14-tooltip-text" x="0" y="-18" text-anchor="middle">Ajuste de Valor</text>
+  </g>
+
+  <!-- ================= CÓDIGO INTERATIVO (JS) ================= -->
+  <script type="text/javascript">
+    
+    const state = {
+      umbSD: 3.0,
+      cerSD: 4.0,
+      dragging: null
+    };
+
+    // Configuração dos Sliders
+    const sliderWidth = 340;
+    const startX = 0;
+    const endX = 340;
+
+    // Conversores de Escala
+    // Umbilical: 1.5 a 4.5
+    function umbSDToX(val) {
+      return ((val - 1.5) / 3.0) * sliderWidth;
+    }
+    function xToUmbSD(x) {
+      return 1.5 + (x / sliderWidth) * 3.0;
+    }
+
+    // Cerebral Média: 1.5 a 5.5
+    function cerSDToX(val) {
+      return ((val - 1.5) / 4.0) * sliderWidth;
+    }
+    function xToCerSD(x) {
+      return 1.5 + (x / sliderWidth) * 4.0;
+    }
+
+    // Geradores de Curva Doppler Clínica
+    // Sístole fixada em y=15 (relação ao topo do box da curva, que tem h=100)
+    // Diastole variável com base em S/D
+    function generateDopplerPath(sd, baselineY, peakY) {
+      const height = baselineY - peakY;
+      const h_dia = height / sd;
+      const y_dia = baselineY - h_dia;
+      
+      let path = "";
+      // 3 Ciclos Cardíacos
+      for (let i = 0; i &lt; 3; i++) {
+        const x0 = 35 + i * 90;
+        if (i === 0) path += `M ${x0} ${y_dia} `;
+        
+        const xp = x0 + 18;
+        const x_notch = x0 + 40;
+        const y_notch = peakY + (y_dia - peakY) * 0.45;
+        const x_dia = x0 + 65;
+        const x_end = x0 + 90;
+        
+        path += `C ${x0+6} ${y_dia}, ${xp-5} ${peakY}, ${xp} ${peakY} ` + // Rápida subida sistólica
+                `C ${xp+8} ${peakY}, ${x_notch-5} ${y_notch}, ${x_notch} ${y_notch} ` + // Incisura dicrota
+                `C ${x_notch+6} ${y_notch+3}, ${x_dia-10} ${y_dia}, ${x_dia} ${y_dia} ` + // Descida para diástole
+                `C ${x_dia+12} ${y_dia}, ${x_end-6} ${y_dia}, ${x_end} ${y_dia} `; // Fluxo diastólico final
+      }
+      return path;
+    }
+
+    // Atualização Geral da Interface
+    function update() {
+      // 1. Atualizar Umbilical
+      const umbX = umbSDToX(state.umbSD);
+      document.getElementById("p14-handle-umb").setAttribute("cx", umbX);
+      document.getElementById("p14-fill-umb").setAttribute("width", umbX);
+      document.getElementById("p14-val-umb").textContent = state.umbSD.toFixed(1);
+      document.getElementById("p14-math-umb").textContent = state.umbSD.toFixed(1);
+      
+      const umbCurveStr = generateDopplerPath(state.umbSD, 90, 15);
+      document.getElementById("p14-curve-path-umb").setAttribute("d", umbCurveStr);
+      document.getElementById("p14-curve-fill-path-umb").setAttribute("d", umbCurveStr + " L 305 90 L 35 90 Z");
+
+      // 2. Atualizar Cerebral Média
+      const cerX = cerSDToX(state.cerSD);
+      document.getElementById("p14-handle-cer").setAttribute("cx", cerX);
+      document.getElementById("p14-fill-cer").setAttribute("width", cerX);
+      document.getElementById("p14-val-cer").textContent = state.cerSD.toFixed(1);
+      document.getElementById("p14-math-cer").textContent = state.cerSD.toFixed(1);
+      
+      const cerCurveStr = generateDopplerPath(state.cerSD, 90, 15);
+      document.getElementById("p14-curve-path-cer").setAttribute("d", cerCurveStr);
+      document.getElementById("p14-curve-fill-path-cer").setAttribute("d", cerCurveStr + " L 305 90 L 35 90 Z");
+
+      // 3. Cálculo da Razão
+      const ratio = state.umbSD / state.cerSD;
+      const ratioEl = document.getElementById("p14-ratio-val");
+      ratioEl.textContent = ratio.toFixed(2);
+
+      // Atualizar ARIA attributes
+      document.getElementById("p14-handle-umb").setAttribute("aria-valuenow", state.umbSD.toFixed(1));
+      document.getElementById("p14-handle-cer").setAttribute("aria-valuenow", state.cerSD.toFixed(1));
+
+      // 4. Status de Centralização
+      const isCentralized = ratio &gt;= 1.0;
+      const alertBox = document.getElementById("p14-alert-box");
+      const alertTitle = document.getElementById("p14-alert-title");
+      const alertSub = document.getElementById("p14-alert-sub");
+      const shortcutLive = document.getElementById("p14-shortcut-example");
+
+      if (isCentralized) {
+        alertBox.setAttribute("fill", "var(--wine, var(--p14-wine))");
+        alertBox.setAttribute("stroke", "var(--kw-red, var(--p14-kw-red))");
+        alertTitle.textContent = "CENTRALIZAÇÃO DETECTADA";
+        alertTitle.setAttribute("fill", "var(--kw-red, var(--p14-kw-red))");
+        alertSub.textContent = "Relação Umbílico-Cerebral \u2265 1.00";
+        alertSub.setAttribute("fill", "var(--rose, var(--p14-rose))");
+        ratioEl.setAttribute("fill", "var(--kw-red, var(--p14-kw-red))");
+        
+        shortcutLive.textContent = `${state.umbSD.toFixed(1)} \u2265 ${state.cerSD.toFixed(1)} ? Sim (Centralizado)`;
+        shortcutLive.setAttribute("fill", "var(--kw-red, var(--p14-kw-red))");
+      } else {
+        alertBox.setAttribute("fill", "#091c13");
+        alertBox.setAttribute("stroke", "var(--kw-green, var(--p14-kw-green))");
+        alertTitle.textContent = "HEMODINÂMICA PRESERVADA";
+        alertTitle.setAttribute("fill", "var(--kw-green, var(--p14-kw-green))");
+        alertSub.textContent = "Relação Umbílico-Cerebral &lt; 1.00";
+        alertSub.setAttribute("fill", "var(--ink-70, var(--p14-ink-70))");
+        ratioEl.setAttribute("fill", "var(--ink-100, var(--p14-ink-100))");
+        
+        shortcutLive.textContent = `${state.umbSD.toFixed(1)} \u2265 ${state.cerSD.toFixed(1)} ? Não`;
+        shortcutLive.setAttribute("fill", "var(--ink-70, var(--p14-ink-70))");
+      }
+    }
+
+    // Gerenciador de Coordenadas Locais SVG
+    function getLocalX(evt) {
+      const svg = document.getElementById("p14-svg-root");
+      const rect = svg.getBoundingClientRect();
+      const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
+      // Obter x proporcional dentro do viewBox de 800
+      const localX = (clientX - rect.left) * (800 / rect.width);
+      // Descontar a translação do painel esquerdo (40) e do slider (20)
+      return localX - 60;
+    }
+
+    // Manipuladores de Arrasto (Pointer/Touch)
+    function onStart(evt, type) {
+      state.dragging = type;
+      evt.preventDefault();
+      
+      // Adicionar ouvintes globais para continuidade do arrasto fora do elemento
+      document.addEventListener("mousemove", onMove);
+      document.addEventListener("mouseup", onEnd);
+      document.addEventListener("touchmove", onMove, { passive: false });
+      document.addEventListener("touchend", onEnd);
+      document.addEventListener("touchcancel", onEnd);
+    }
+
+    function onMove(evt) {
+      if (!state.dragging) return;
+      evt.preventDefault();
+      
+      const x = getLocalX(evt);
+      const clampedX = Math.max(startX, Math.min(endX, x));
+
+      if (state.dragging === 'umb') {
+        let val = xToUmbSD(clampedX);
+        state.umbSD = Math.round(val * 10) / 10; // Arredondar para o 0.1 mais próximo
+      } else if (state.dragging === 'cer') {
+        let val = xToCerSD(clampedX);
+        state.cerSD = Math.round(val * 10) / 10;
+      }
+      update();
+    }
+
+    function onEnd() {
+      state.dragging = null;
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseup", onEnd);
+      document.removeEventListener("touchmove", onMove);
+      document.removeEventListener("touchend", onEnd);
+      document.removeEventListener("touchcancel", onEnd);
+    }
+
+    // Acessibilidade por Teclado
+    function onKeyDown(evt, type) {
+      const key = evt.key;
+      let step = 0.1;
+      
+      if (key === 'ArrowRight' || key === 'ArrowUp') {
+        if (type === 'umb') {
+          state.umbSD = Math.min(4.5, state.umbSD + step);
+        } else if (type === 'cer') {
+          state.cerSD = Math.min(5.5, state.cerSD + step);
+        }
+        update();
+        evt.preventDefault();
+      } else if (key === 'ArrowLeft' || key === 'ArrowDown') {
+        if (type === 'umb') {
+          state.umbSD = Math.max(1.5, state.umbSD - step);
+        } else if (type === 'cer') {
+          state.cerSD = Math.max(1.5, state.cerSD - step);
+        }
+        update();
+        evt.preventDefault();
+      }
+    }
+
+    // Tooltip Mouse-Follow
+    const tooltip = document.getElementById("p14-tooltip");
+    const tooltipText = document.getElementById("p14-tooltip-text");
+    const tooltipRect = document.getElementById("p14-tooltip-rect");
+
+    function showTooltip(evt, text) {
+      tooltipText.textContent = text;
+      tooltip.style.visibility = "visible";
+      
+      // Ajustar dinamicamente a largura do tooltip com base no texto
+      const textLen = text.length;
+      const width = textLen * 6.5 + 20;
+      tooltipRect.setAttribute("width", width);
+      tooltipRect.setAttribute("x", -width / 2);
+      
+      moveTooltip(evt);
+    }
+
+    function moveTooltip(evt) {
+      const svg = document.getElementById("p14-svg-root");
+      const rect = svg.getBoundingClientRect();
+      const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
+      const clientY = evt.touches ? evt.touches[0].clientY : evt.clientY;
+      
+      const localX = (clientX - rect.left) * (800 / rect.width);
+      const localY = (clientY - rect.top) * (650 / rect.height);
+      
+      tooltip.setAttribute("transform", `translate(${localX}, ${localY - 25})`);
+    }
+
+    function hideTooltip() {
+      tooltip.style.visibility = "hidden";
+    }
+
+    // Inicialização da interface
+    window.addEventListener("DOMContentLoaded", () =&gt; {
+      update();
+    });
+    // Fallback caso DOMContentLoaded já tenha disparado
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+      update();
+    }
+    
+  </script>
+</svg></div></figure></div></article></main><script>
+window.addEventListener('load', function(){ setTimeout(function(){
+  var d=document.createElement('div'); d.id='__GATE__';
+  d.setAttribute('data-err', JSON.stringify((window.__GATEERR||[]).slice(0,40)));
+  document.body.appendChild(d);
+}, 1200); });
+</script><div id="__GATE__" data-err="[]"></div></body></html>

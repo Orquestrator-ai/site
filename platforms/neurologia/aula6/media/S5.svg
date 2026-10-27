@@ -1,0 +1,888 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 640" role="img" aria-labelledby="a6p5-title a6p5-desc" class="a6p5-root">
+  <title id="a6p5-title">Cluster em fogo que se apaga</title>
+  <desc id="a6p5-desc">Grupamento neuronal cortical em hiperexcitação excessiva, por excitação direta ou falha inibitória. A atividade acende, manifesta a crise e se apaga de forma autolimitada e paroxística. O destino final é o mesmo excesso, que cede.</desc>
+  <defs>
+    <linearGradient id="a6p5-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a6p5-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a6p5-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a6p5-aurora" cx="38%" cy="36%" r="52%">
+      <stop offset="0%" stop-color="var(--a6p5-indigo, #818CF8)" stop-opacity="0.28"/>
+      <stop offset="45%" stop-color="var(--a6p5-cyan, #22D3EE)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a6p5-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a6p5-fireGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a6p5-coral, #F87171)" stop-opacity="0.72"/>
+      <stop offset="42%" stop-color="var(--a6p5-coral, #F87171)" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="var(--a6p5-coral, #F87171)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a6p5-quietGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a6p5-indigo, #818CF8)" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="var(--a6p5-indigo, #818CF8)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a6p5-blockGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a6p5-teal, #2DD4BF)" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="var(--a6p5-teal, #2DD4BF)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a6p5-cortexFill" cx="42%" cy="38%" r="68%">
+      <stop offset="0%" stop-color="var(--a6p5-cortexHi, #2A3550)"/>
+      <stop offset="100%" stop-color="var(--a6p5-cortexLo, #151E32)"/>
+    </radialGradient>
+    <radialGradient id="a6p5-soma" cx="38%" cy="34%" r="62%">
+      <stop offset="0%" stop-color="var(--a6p5-somaHi, #C7D2FE)"/>
+      <stop offset="100%" stop-color="var(--a6p5-somaLo, #6366F1)"/>
+    </radialGradient>
+    <radialGradient id="a6p5-somaHot" cx="38%" cy="34%" r="62%">
+      <stop offset="0%" stop-color="var(--a6p5-hotHi, #FECACA)"/>
+      <stop offset="55%" stop-color="var(--a6p5-coral, #F87171)"/>
+      <stop offset="100%" stop-color="var(--a6p5-hotLo, #991B1B)"/>
+    </radialGradient>
+    <radialGradient id="a6p5-somaCool" cx="38%" cy="34%" r="62%">
+      <stop offset="0%" stop-color="var(--a6p5-coolHi, #99F6E4)"/>
+      <stop offset="100%" stop-color="var(--a6p5-tealDim, #0F766E)"/>
+    </radialGradient>
+    <filter id="a6p5-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a6p5-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a6p5-glowHot" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="11" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="a6p5-patchClip">
+      <ellipse cx="320" cy="300" rx="168" ry="148"/>
+    </clipPath>
+    <marker id="a6p5-arrCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a6p5-cyan, #22D3EE)"/>
+    </marker>
+    <marker id="a6p5-arrCoral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a6p5-coral, #F87171)"/>
+    </marker>
+    <marker id="a6p5-arrTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a6p5-teal, #2DD4BF)"/>
+    </marker>
+    <marker id="a6p5-arrGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a6p5-gold, #FBBF24)"/>
+    </marker>
+    <style>
+      .a6p5-root {
+        --a6p5-bg0: #0B1220;
+        --a6p5-bg1: #07111F;
+        --a6p5-card: #111A2B;
+        --a6p5-card2: #152033;
+        --a6p5-border: rgba(148,163,184,0.18);
+        --a6p5-ink: #F4F7FB;
+        --a6p5-muted: #94A3B8;
+        --a6p5-soft: #B8C0CC;
+        --a6p5-indigo: #818CF8;
+        --a6p5-indigoDeep: #4F46E5;
+        --a6p5-cyan: #22D3EE;
+        --a6p5-cyanDim: #0891B2;
+        --a6p5-coral: #F87171;
+        --a6p5-coralDim: #B91C1C;
+        --a6p5-gold: #FBBF24;
+        --a6p5-goldDim: #B45309;
+        --a6p5-teal: #2DD4BF;
+        --a6p5-tealDim: #0F766E;
+        --a6p5-ok: #34D399;
+        --a6p5-cortexHi: #2A3550;
+        --a6p5-cortexLo: #151E32;
+        --a6p5-sulcus: rgba(148,163,184,0.20);
+        --a6p5-somaHi: #C7D2FE;
+        --a6p5-somaLo: #6366F1;
+        --a6p5-hotHi: #FECACA;
+        --a6p5-hotLo: #991B1B;
+        --a6p5-coolHi: #99F6E4;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a6p5-root {
+        --a6p5-bg0: #F8F6F2;
+        --a6p5-bg1: #EEF2F7;
+        --a6p5-card: #FFFFFF;
+        --a6p5-card2: #F1F5F9;
+        --a6p5-border: rgba(15,23,42,0.10);
+        --a6p5-ink: #0F172A;
+        --a6p5-muted: #64748B;
+        --a6p5-soft: #475569;
+        --a6p5-indigo: #4F46E5;
+        --a6p5-indigoDeep: #3730A3;
+        --a6p5-cyan: #0891B2;
+        --a6p5-cyanDim: #0E7490;
+        --a6p5-coral: #DC2626;
+        --a6p5-coralDim: #991B1B;
+        --a6p5-gold: #D97706;
+        --a6p5-goldDim: #92400E;
+        --a6p5-teal: #0D9488;
+        --a6p5-tealDim: #115E59;
+        --a6p5-ok: #059669;
+        --a6p5-cortexHi: #E2E8F0;
+        --a6p5-cortexLo: #CBD5E1;
+        --a6p5-sulcus: rgba(71,85,105,0.28);
+        --a6p5-somaHi: #E0E7FF;
+        --a6p5-somaLo: #6366F1;
+        --a6p5-hotHi: #FEE2E2;
+        --a6p5-hotLo: #B91C1C;
+        --a6p5-coolHi: #CCFBF1;
+      }
+      .a6p5-root .a6p5-hs,
+      .a6p5-root .a6p5-phase,
+      .a6p5-root .a6p5-btn,
+      .a6p5-root .a6p5-chip {
+        cursor: pointer;
+      }
+      .a6p5-root .a6p5-hs:focus,
+      .a6p5-root .a6p5-phase:focus,
+      .a6p5-root .a6p5-btn:focus,
+      .a6p5-root .a6p5-chip:focus {
+        outline: none;
+      }
+      .a6p5-root .a6p5-hs:focus .a6p5-hs-ring,
+      .a6p5-root .a6p5-phase:focus .a6p5-phase-ring,
+      .a6p5-root .a6p5-btn:focus .a6p5-btn-ring,
+      .a6p5-root .a6p5-chip:focus .a6p5-chip-ring {
+        opacity: 1;
+      }
+      .a6p5-root .a6p5-fire,
+      .a6p5-root .a6p5-quiet,
+      .a6p5-root .a6p5-block,
+      .a6p5-root .a6p5-sparks,
+      .a6p5-root .a6p5-wave,
+      .a6p5-root .a6p5-soma-n,
+      .a6p5-root .a6p5-soma-h,
+      .a6p5-root .a6p5-soma-c,
+      .a6p5-root .a6p5-path-exc,
+      .a6p5-root .a6p5-path-inh,
+      .a6p5-root .a6p5-path-out,
+      .a6p5-root .a6p5-phase-fill,
+      .a6p5-root .a6p5-phase-dot,
+      .a6p5-root .a6p5-manif,
+      .a6p5-root .a6p5-exc-badge,
+      .a6p5-root .a6p5-inh-badge {
+        transition: opacity 0.35s ease, fill 0.35s ease, stroke 0.35s ease, stroke-width 0.35s ease, transform 0.35s ease;
+      }
+      .a6p5-root .a6p5-tip {
+        pointer-events: none;
+      }
+      .a6p5-root .a6p5-fire { opacity: 0; }
+      .a6p5-root .a6p5-block { opacity: 0; }
+      .a6p5-root .a6p5-sparks { opacity: 0; }
+      .a6p5-root .a6p5-wave { opacity: 0; }
+      .a6p5-root .a6p5-quiet { opacity: 1; }
+      .a6p5-root .a6p5-soma-n { opacity: 1; }
+      .a6p5-root .a6p5-soma-h { opacity: 0; }
+      .a6p5-root .a6p5-soma-c { opacity: 0; }
+      .a6p5-root .a6p5-path-exc { opacity: 0.45; }
+      .a6p5-root .a6p5-path-inh { opacity: 0.45; }
+      .a6p5-root .a6p5-path-out { opacity: 0.25; }
+      .a6p5-root .a6p5-manif { opacity: 0; }
+      .a6p5-root .a6p5-exc-badge { opacity: 0.55; }
+      .a6p5-root .a6p5-inh-badge { opacity: 0.55; }
+      .a6p5-root .a6p5-phase-fill { opacity: 0.55; }
+      .a6p5-root .a6p5-phase-dot { opacity: 0.45; }
+
+      .a6p5-root[data-phase="basal"] .a6p5-p-basal .a6p5-phase-fill,
+      .a6p5-root[data-phase="excesso"] .a6p5-p-excesso .a6p5-phase-fill,
+      .a6p5-root[data-phase="manif"] .a6p5-p-manif .a6p5-phase-fill,
+      .a6p5-root[data-phase="apaga"] .a6p5-p-apaga .a6p5-phase-fill {
+        opacity: 1;
+      }
+      .a6p5-root[data-phase="basal"] .a6p5-p-basal .a6p5-phase-dot,
+      .a6p5-root[data-phase="excesso"] .a6p5-p-excesso .a6p5-phase-dot,
+      .a6p5-root[data-phase="manif"] .a6p5-p-manif .a6p5-phase-dot,
+      .a6p5-root[data-phase="apaga"] .a6p5-p-apaga .a6p5-phase-dot {
+        opacity: 1;
+      }
+
+      .a6p5-root[data-phase="excesso"] .a6p5-fire,
+      .a6p5-root[data-phase="manif"] .a6p5-fire {
+        opacity: 1;
+      }
+      .a6p5-root[data-phase="excesso"] .a6p5-sparks,
+      .a6p5-root[data-phase="manif"] .a6p5-sparks {
+        opacity: 1;
+      }
+      .a6p5-root[data-phase="excesso"] .a6p5-quiet,
+      .a6p5-root[data-phase="manif"] .a6p5-quiet {
+        opacity: 0.12;
+      }
+      .a6p5-root[data-phase="excesso"] .a6p5-soma-n,
+      .a6p5-root[data-phase="manif"] .a6p5-soma-n {
+        opacity: 0;
+      }
+      .a6p5-root[data-phase="excesso"] .a6p5-soma-h,
+      .a6p5-root[data-phase="manif"] .a6p5-soma-h {
+        opacity: 1;
+      }
+      .a6p5-root[data-phase="excesso"] .a6p5-path-exc,
+      .a6p5-root[data-phase="excesso"] .a6p5-path-inh,
+      .a6p5-root[data-phase="manif"] .a6p5-path-exc,
+      .a6p5-root[data-phase="manif"] .a6p5-path-inh {
+        opacity: 1;
+      }
+      .a6p5-root[data-phase="manif"] .a6p5-wave,
+      .a6p5-root[data-phase="manif"] .a6p5-path-out,
+      .a6p5-root[data-phase="manif"] .a6p5-manif {
+        opacity: 1;
+      }
+
+      .a6p5-root[data-phase="apaga"] .a6p5-block { opacity: 1; }
+      .a6p5-root[data-phase="apaga"] .a6p5-fire { opacity: 0.18; }
+      .a6p5-root[data-phase="apaga"] .a6p5-sparks { opacity: 0.1; }
+      .a6p5-root[data-phase="apaga"] .a6p5-quiet { opacity: 0.35; }
+      .a6p5-root[data-phase="apaga"] .a6p5-soma-n { opacity: 0; }
+      .a6p5-root[data-phase="apaga"] .a6p5-soma-h { opacity: 0.15; }
+      .a6p5-root[data-phase="apaga"] .a6p5-soma-c { opacity: 1; }
+      .a6p5-root[data-phase="apaga"] .a6p5-path-out { opacity: 0.35; }
+
+      .a6p5-root[data-route="exc"] .a6p5-path-exc { opacity: 1; }
+      .a6p5-root[data-route="exc"] .a6p5-exc-badge { opacity: 1; }
+      .a6p5-root[data-route="exc"] .a6p5-path-inh { opacity: 0.22; }
+      .a6p5-root[data-route="exc"] .a6p5-inh-badge { opacity: 0.28; }
+      .a6p5-root[data-route="inh"] .a6p5-path-inh { opacity: 1; }
+      .a6p5-root[data-route="inh"] .a6p5-inh-badge { opacity: 1; }
+      .a6p5-root[data-route="inh"] .a6p5-path-exc { opacity: 0.22; }
+      .a6p5-root[data-route="inh"] .a6p5-exc-badge { opacity: 0.28; }
+      .a6p5-root[data-route="both"] .a6p5-path-exc,
+      .a6p5-root[data-route="both"] .a6p5-path-inh,
+      .a6p5-root[data-route="both"] .a6p5-exc-badge,
+      .a6p5-root[data-route="both"] .a6p5-inh-badge {
+        opacity: 1;
+      }
+
+      .a6p5-root[data-playing="1"] .a6p5-fire {
+        animation: a6p5-pulse 1.1s ease-in-out infinite;
+      }
+      .a6p5-root[data-playing="1"] .a6p5-sparks {
+        animation: a6p5-spark 0.9s ease-in-out infinite;
+      }
+      @keyframes a6p5-pulse {
+        0%, 100% { opacity: 0.72; }
+        50% { opacity: 1; }
+      }
+      @keyframes a6p5-spark {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <rect width="840" height="640" fill="url(#a6p5-bg)"/>
+  <rect width="840" height="640" fill="url(#a6p5-aurora)"/>
+
+  <text x="28" y="36" fill="var(--a6p5-ink, #F4F7FB)" font-size="20" font-weight="700" letter-spacing="-0.3">Cluster em fogo que se apaga</text>
+  <text x="28" y="58" fill="var(--a6p5-soft, #B8C0CC)" font-size="13" font-weight="500">Atividade neuronal anormal</text>
+  <text x="214" y="58" fill="var(--a6p5-gold, #FBBF24)" font-size="13" font-weight="700">excessiva</text>
+  <text x="288" y="58" fill="var(--a6p5-soft, #B8C0CC)" font-size="13" font-weight="500">· acende, manifesta e cede</text>
+
+  <g id="a6p5-chips" transform="translate(560,18)">
+    <g class="a6p5-chip" id="a6p5-chip-exc" tabindex="0" role="button" aria-label="Excitação direta">
+      <rect class="a6p5-chip-ring" x="-2" y="-2" width="128" height="34" rx="12" fill="none" stroke="var(--a6p5-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect width="124" height="30" rx="10" fill="var(--a6p5-card, #111A2B)" stroke="var(--a6p5-cyan, #22D3EE)" stroke-width="1.2"/>
+      <circle cx="16" cy="15" r="5" fill="var(--a6p5-cyan, #22D3EE)"/>
+      <text x="28" y="19" fill="var(--a6p5-cyan, #22D3EE)" font-size="12" font-weight="700">Excitação</text>
+    </g>
+    <g class="a6p5-chip" id="a6p5-chip-inh" tabindex="0" role="button" aria-label="Falha inibitória" transform="translate(132,0)">
+      <rect class="a6p5-chip-ring" x="-2" y="-2" width="128" height="34" rx="12" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect width="124" height="30" rx="10" fill="var(--a6p5-card, #111A2B)" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.2"/>
+      <circle cx="16" cy="15" r="5" fill="var(--a6p5-coral, #F87171)"/>
+      <text x="28" y="19" fill="var(--a6p5-coral, #F87171)" font-size="12" font-weight="700">Falha inibição</text>
+    </g>
+  </g>
+
+  <g id="a6p5-stage" transform="translate(0,72)">
+    <rect x="20" y="8" width="520" height="430" rx="22" fill="var(--a6p5-card, #111A2B)" stroke="var(--a6p5-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+
+    <text x="40" y="40" fill="var(--a6p5-muted, #94A3B8)" font-size="11" font-weight="600" letter-spacing="0.8">CÓRTEX · FOCO LOCAL</text>
+
+    <ellipse cx="300" cy="228" rx="168" ry="148" fill="url(#a6p5-cortexFill)" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="1.4" opacity="0.95"/>
+    <g opacity="0.55" stroke="var(--a6p5-sulcus, rgba(148,163,184,0.20))" stroke-width="1.2" fill="none">
+      <path d="M180 160 C220 148 250 170 280 156 C310 142 340 168 370 152 C400 138 420 170 450 158"/>
+      <path d="M170 210 C210 198 240 224 275 208 C310 192 345 222 380 206 C410 194 430 220 460 210"/>
+      <path d="M175 268 C215 256 250 284 290 266 C330 248 360 278 400 262 C430 250 450 276 470 264"/>
+      <path d="M190 320 C230 308 260 334 300 316 C340 298 370 328 410 312"/>
+    </g>
+
+    <ellipse class="a6p5-quiet" cx="300" cy="228" rx="92" ry="78" fill="url(#a6p5-quietGlow)" filter="url(#a6p5-glow)"/>
+    <ellipse class="a6p5-fire" cx="300" cy="228" rx="110" ry="94" fill="url(#a6p5-fireGlow)" filter="url(#a6p5-glowHot)"/>
+    <ellipse class="a6p5-block" cx="300" cy="228" rx="100" ry="86" fill="url(#a6p5-blockGlow)" filter="url(#a6p5-glow)"/>
+
+    <g id="a6p5-cluster">
+      <g class="a6p5-soma-n">
+        <circle cx="268" cy="200" r="14" fill="url(#a6p5-soma)" filter="url(#a6p5-soft)"/>
+        <circle cx="304" cy="188" r="16" fill="url(#a6p5-soma)" filter="url(#a6p5-soft)"/>
+        <circle cx="338" cy="208" r="13" fill="url(#a6p5-soma)" filter="url(#a6p5-soft)"/>
+        <circle cx="286" cy="236" r="15" fill="url(#a6p5-soma)" filter="url(#a6p5-soft)"/>
+        <circle cx="324" cy="246" r="14" fill="url(#a6p5-soma)" filter="url(#a6p5-soft)"/>
+        <circle cx="300" cy="268" r="12" fill="url(#a6p5-soma)" filter="url(#a6p5-soft)"/>
+        <circle cx="256" cy="248" r="11" fill="url(#a6p5-soma)" filter="url(#a6p5-soft)"/>
+        <path d="M268 200 C250 180 240 170 228 158" fill="none" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="1.4" opacity="0.55"/>
+        <path d="M304 188 C310 164 318 148 330 132" fill="none" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="1.4" opacity="0.55"/>
+        <path d="M338 208 C360 200 378 196 398 188" fill="none" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="1.4" opacity="0.55"/>
+        <path d="M286 236 C270 256 258 276 248 296" fill="none" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="1.4" opacity="0.5"/>
+        <path d="M324 246 C342 266 356 284 372 304" fill="none" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="1.4" opacity="0.5"/>
+      </g>
+      <g class="a6p5-soma-h">
+        <circle cx="268" cy="200" r="15" fill="url(#a6p5-somaHot)" filter="url(#a6p5-soft)"/>
+        <circle cx="304" cy="188" r="17" fill="url(#a6p5-somaHot)" filter="url(#a6p5-soft)"/>
+        <circle cx="338" cy="208" r="14" fill="url(#a6p5-somaHot)" filter="url(#a6p5-soft)"/>
+        <circle cx="286" cy="236" r="16" fill="url(#a6p5-somaHot)" filter="url(#a6p5-soft)"/>
+        <circle cx="324" cy="246" r="15" fill="url(#a6p5-somaHot)" filter="url(#a6p5-soft)"/>
+        <circle cx="300" cy="268" r="13" fill="url(#a6p5-somaHot)" filter="url(#a6p5-soft)"/>
+        <circle cx="256" cy="248" r="12" fill="url(#a6p5-somaHot)" filter="url(#a6p5-soft)"/>
+        <path d="M268 200 C250 180 240 170 228 158" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.8" opacity="0.85"/>
+        <path d="M304 188 C310 164 318 148 330 132" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.8" opacity="0.85"/>
+        <path d="M338 208 C360 200 378 196 398 188" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.8" opacity="0.85"/>
+        <path d="M286 236 C270 256 258 276 248 296" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.7" opacity="0.8"/>
+        <path d="M324 246 C342 266 356 284 372 304" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.7" opacity="0.8"/>
+      </g>
+      <g class="a6p5-soma-c">
+        <circle cx="268" cy="200" r="14" fill="url(#a6p5-somaCool)" filter="url(#a6p5-soft)"/>
+        <circle cx="304" cy="188" r="16" fill="url(#a6p5-somaCool)" filter="url(#a6p5-soft)"/>
+        <circle cx="338" cy="208" r="13" fill="url(#a6p5-somaCool)" filter="url(#a6p5-soft)"/>
+        <circle cx="286" cy="236" r="15" fill="url(#a6p5-somaCool)" filter="url(#a6p5-soft)"/>
+        <circle cx="324" cy="246" r="14" fill="url(#a6p5-somaCool)" filter="url(#a6p5-soft)"/>
+        <circle cx="300" cy="268" r="12" fill="url(#a6p5-somaCool)" filter="url(#a6p5-soft)"/>
+        <circle cx="256" cy="248" r="11" fill="url(#a6p5-somaCool)" filter="url(#a6p5-soft)"/>
+      </g>
+      <g class="a6p5-sparks" fill="var(--a6p5-coral, #F87171)">
+        <circle cx="242" cy="176" r="2.4"/>
+        <circle cx="356" cy="172" r="2.2"/>
+        <circle cx="370" cy="236" r="2.6"/>
+        <circle cx="238" cy="270" r="2.1"/>
+        <circle cx="318" cy="300" r="2.3"/>
+        <circle cx="280" cy="160" r="1.8"/>
+        <circle cx="340" cy="280" r="2"/>
+      </g>
+    </g>
+
+    <g class="a6p5-hs" id="a6p5-hs-cluster" tabindex="0" role="button" aria-label="Cluster hiperexcitável" data-key="cluster">
+      <ellipse class="a6p5-hs-ring" cx="300" cy="228" rx="96" ry="82" fill="none" stroke="var(--a6p5-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <ellipse cx="300" cy="228" rx="92" ry="78" fill="transparent"/>
+    </g>
+
+    <g class="a6p5-path-exc">
+      <path d="M58 120 C120 120 170 150 220 190" fill="none" stroke="var(--a6p5-cyan, #22D3EE)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#a6p5-arrCyan)"/>
+      <path d="M58 148 C110 148 150 170 205 205" fill="none" stroke="var(--a6p5-cyan, #22D3EE)" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
+    </g>
+    <g class="a6p5-hs" id="a6p5-hs-exc" tabindex="0" role="button" aria-label="Excitação direta" data-key="exc" transform="translate(40,88)">
+      <rect class="a6p5-hs-ring" x="-4" y="-4" width="132" height="72" rx="14" fill="none" stroke="var(--a6p5-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect class="a6p5-exc-badge" width="124" height="64" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-cyan, #22D3EE)" stroke-width="1.4"/>
+      <text x="14" y="26" fill="var(--a6p5-cyan, #22D3EE)" font-size="13" font-weight="700">Excitação</text>
+      <text x="14" y="46" fill="var(--a6p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">drive direto ↑</text>
+    </g>
+
+    <g class="a6p5-path-inh">
+      <path d="M58 340 C120 340 168 300 220 262" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#a6p5-arrCoral)" stroke-dasharray="6 5"/>
+      <path d="M58 368 C118 360 160 320 210 280" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.4" stroke-linecap="round" opacity="0.5" stroke-dasharray="4 4"/>
+    </g>
+    <g class="a6p5-hs" id="a6p5-hs-inh" tabindex="0" role="button" aria-label="Falha do freio inibitório" data-key="inh" transform="translate(40,318)">
+      <rect class="a6p5-hs-ring" x="-4" y="-4" width="148" height="72" rx="14" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect class="a6p5-inh-badge" width="140" height="64" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.4"/>
+      <text x="14" y="26" fill="var(--a6p5-coral, #F87171)" font-size="13" font-weight="700">Falha inibição</text>
+      <text x="14" y="46" fill="var(--a6p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">freio cede ↓</text>
+    </g>
+
+    <g class="a6p5-path-out">
+      <path d="M388 228 C450 228 480 200 500 170" fill="none" stroke="var(--a6p5-gold, #FBBF24)" stroke-width="2.2" stroke-linecap="round" marker-end="url(#a6p5-arrGold)"/>
+    </g>
+    <g class="a6p5-manif" transform="translate(410,100)">
+      <rect width="112" height="58" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-gold, #FBBF24)" stroke-width="1.3"/>
+      <text x="14" y="24" fill="var(--a6p5-gold, #FBBF24)" font-size="12" font-weight="700">Manifestação</text>
+      <text x="14" y="42" fill="var(--a6p5-soft, #B8C0CC)" font-size="11" font-weight="500">fenótipo clínico</text>
+    </g>
+
+    <g class="a6p5-wave" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.8" stroke-linecap="round" opacity="0.9">
+      <path d="M430 250 C442 236 450 264 462 248 C474 232 482 260 494 246"/>
+      <path d="M430 270 C442 256 450 284 462 268 C474 252 482 280 494 266"/>
+      <path d="M430 290 C442 276 450 304 462 288 C474 272 482 300 494 286"/>
+    </g>
+
+    <g transform="translate(40,400)">
+      <text x="0" y="14" fill="var(--a6p5-muted, #94A3B8)" font-size="11" font-weight="600">DESTINO COMUM</text>
+      <text x="0" y="34" fill="var(--a6p5-ink, #F4F7FB)" font-size="14" font-weight="700">Hiperexcitação</text>
+      <text x="124" y="34" fill="var(--a6p5-gold, #FBBF24)" font-size="14" font-weight="700">excessiva</text>
+      <text x="0" y="54" fill="var(--a6p5-soft, #B8C0CC)" font-size="12" font-weight="500">duas portas · um fogo · autolimitado</text>
+    </g>
+  </g>
+
+  <g id="a6p5-panel" transform="translate(556,80)">
+    <rect width="264" height="422" rx="22" fill="var(--a6p5-card, #111A2B)" stroke="var(--a6p5-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+    <text x="20" y="34" fill="var(--a6p5-ink, #F4F7FB)" font-size="14" font-weight="700">Ciclo paroxístico</text>
+    <text x="20" y="54" fill="var(--a6p5-muted, #94A3B8)" font-size="11.5" font-weight="500">surge · manifesta · apaga</text>
+
+    <g class="a6p5-phase a6p5-p-basal" id="a6p5-phase-basal" tabindex="0" role="button" aria-label="Fase basal" data-phase="basal" transform="translate(18,74)">
+      <rect class="a6p5-phase-ring" x="-2" y="-2" width="232" height="58" rx="14" fill="none" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect class="a6p5-phase-fill" width="228" height="54" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="1.2"/>
+      <circle class="a6p5-phase-dot" cx="22" cy="27" r="7" fill="var(--a6p5-indigo, #818CF8)"/>
+      <text x="42" y="24" fill="var(--a6p5-ink, #F4F7FB)" font-size="13" font-weight="700">Basal</text>
+      <text x="42" y="42" fill="var(--a6p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">cluster em equilíbrio</text>
+    </g>
+
+    <g class="a6p5-phase a6p5-p-excesso" id="a6p5-phase-excesso" tabindex="0" role="button" aria-label="Fase excesso" data-phase="excesso" transform="translate(18,138)">
+      <rect class="a6p5-phase-ring" x="-2" y="-2" width="232" height="58" rx="14" fill="none" stroke="var(--a6p5-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect class="a6p5-phase-fill" width="228" height="54" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-coral, #F87171)" stroke-width="1.2"/>
+      <circle class="a6p5-phase-dot" cx="22" cy="27" r="7" fill="var(--a6p5-coral, #F87171)"/>
+      <text x="42" y="24" fill="var(--a6p5-coral, #F87171)" font-size="13" font-weight="700">Excesso</text>
+      <text x="42" y="42" fill="var(--a6p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">fogo cortical · hiperexcitação</text>
+    </g>
+
+    <g class="a6p5-phase a6p5-p-manif" id="a6p5-phase-manif" tabindex="0" role="button" aria-label="Fase manifestação" data-phase="manif" transform="translate(18,202)">
+      <rect class="a6p5-phase-ring" x="-2" y="-2" width="232" height="58" rx="14" fill="none" stroke="var(--a6p5-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a6p5-phase-fill" width="228" height="54" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-gold, #FBBF24)" stroke-width="1.2"/>
+      <circle class="a6p5-phase-dot" cx="22" cy="27" r="7" fill="var(--a6p5-gold, #FBBF24)"/>
+      <text x="42" y="24" fill="var(--a6p5-gold, #FBBF24)" font-size="13" font-weight="700">Manifestação</text>
+      <text x="42" y="42" fill="var(--a6p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">o excesso vira clínica</text>
+    </g>
+
+    <g class="a6p5-phase a6p5-p-apaga" id="a6p5-phase-apaga" tabindex="0" role="button" aria-label="Fase bloqueio e apagar" data-phase="apaga" transform="translate(18,266)">
+      <rect class="a6p5-phase-ring" x="-2" y="-2" width="232" height="58" rx="14" fill="none" stroke="var(--a6p5-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+      <rect class="a6p5-phase-fill" width="228" height="54" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-teal, #2DD4BF)" stroke-width="1.2"/>
+      <circle class="a6p5-phase-dot" cx="22" cy="27" r="7" fill="var(--a6p5-teal, #2DD4BF)"/>
+      <text x="42" y="24" fill="var(--a6p5-teal, #2DD4BF)" font-size="13" font-weight="700">Bloqueio · apaga</text>
+      <text x="42" y="42" fill="var(--a6p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">autolimitada · melhora</text>
+    </g>
+
+    <g transform="translate(18,340)">
+      <rect width="228" height="64" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+      <text x="14" y="24" fill="var(--a6p5-ink, #F4F7FB)" font-size="12.5" font-weight="700">Paroxística</text>
+      <text x="14" y="44" fill="var(--a6p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">não é déficit fixo — vai e volta</text>
+    </g>
+  </g>
+
+  <g id="a6p5-controls" transform="translate(28,536)">
+    <g class="a6p5-btn" id="a6p5-btn-play" tabindex="0" role="button" aria-label="Rodar ciclo do fogo que se apaga">
+      <rect class="a6p5-btn-ring" x="-2" y="-2" width="148" height="40" rx="14" fill="none" stroke="var(--a6p5-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect width="144" height="36" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-gold, #FBBF24)" stroke-width="1.3"/>
+      <text x="72" y="23" text-anchor="middle" fill="var(--a6p5-gold, #FBBF24)" font-size="13" font-weight="700">Rodar ciclo</text>
+    </g>
+    <g class="a6p5-btn" id="a6p5-btn-reset" tabindex="0" role="button" aria-label="Resetar para basal" transform="translate(156,0)">
+      <rect class="a6p5-btn-ring" x="-2" y="-2" width="88" height="40" rx="14" fill="none" stroke="var(--a6p5-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect width="84" height="36" rx="12" fill="var(--a6p5-card, #111A2B)" stroke="var(--a6p5-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+      <text x="42" y="23" text-anchor="middle" fill="var(--a6p5-soft, #B8C0CC)" font-size="13" font-weight="600">Reset</text>
+    </g>
+    <g class="a6p5-btn" id="a6p5-btn-both" tabindex="0" role="button" aria-label="Mostrar as duas rotas ao excesso" transform="translate(252,0)">
+      <rect class="a6p5-btn-ring" x="-2" y="-2" width="148" height="40" rx="14" fill="none" stroke="var(--a6p5-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect width="144" height="36" rx="12" fill="var(--a6p5-card, #111A2B)" stroke="var(--a6p5-cyan, #22D3EE)" stroke-width="1.2"/>
+      <text x="72" y="23" text-anchor="middle" fill="var(--a6p5-cyan, #22D3EE)" font-size="12.5" font-weight="700">Duas portas</text>
+    </g>
+  </g>
+
+  <text id="a6p5-status" x="28" y="604" fill="var(--a6p5-muted, #94A3B8)" font-size="12" font-weight="500">Toque o cluster · as duas portas · ou rode o ciclo</text>
+  <text id="a6p5-live" x="420" y="628" fill="var(--a6p5-muted, #94A3B8)" font-size="11" font-weight="500" text-anchor="middle" opacity="0" aria-live="polite">Pronto</text>
+
+  <g id="a6p5-tip" class="a6p5-tip" opacity="0" aria-hidden="true" transform="translate(0,0)">
+    <rect id="a6p5-tip-bg" x="0" y="0" width="300" height="58" rx="12" fill="var(--a6p5-card2, #152033)" stroke="var(--a6p5-gold, #FBBF24)" stroke-width="1.4" opacity="0.97"/>
+    <text id="a6p5-tip-t1" x="14" y="24" fill="var(--a6p5-ink, #F4F7FB)" font-size="12.5" font-weight="700">Título</text>
+    <text id="a6p5-tip-t2" x="14" y="44" fill="var(--a6p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">Detalhe</text>
+  </g>
+
+  <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a6p5-root');
+  if(!root){
+    var scripts = document.getElementsByTagName('script');
+    var s = scripts[scripts.length-1];
+    root = s && s.ownerSVGElement ? s.ownerSVGElement : null;
+  }
+  if(!root) return;
+
+  function Q(sel){ return root.querySelector(sel); }
+  var tip = Q('#a6p5-tip');
+  var statusEl = Q('#a6p5-status');
+  var liveEl = Q('#a6p5-live');
+  var playBtn = Q('#a6p5-btn-play');
+  var resetBtn = Q('#a6p5-btn-reset');
+  var bothBtn = Q('#a6p5-btn-both');
+  var reduce = false;
+  try {
+    reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch(e){ reduce = false; }
+
+  var timers = [];
+  var playing = false;
+  var phaseOrder = ['basal','excesso','manif','apaga'];
+  var phaseIdx = 0;
+
+  var labels = {
+    basal: {
+      tip1: 'Basal',
+      tip2: 'Cluster em equilíbrio — ainda sem excesso',
+      stroke: 'var(--a6p5-indigo, #818CF8)',
+      status: 'Basal · equilíbrio local',
+      live: 'Sem hiperexcitação. O cluster não está em fogo.'
+    },
+    excesso: {
+      tip1: 'Excesso',
+      tip2: 'Atividade neuronal anormal excessiva',
+      stroke: 'var(--a6p5-coral, #F87171)',
+      status: 'Excesso · o fogo acende',
+      live: 'Hiperexcitação excessiva: excitação direta ou freio que cede — mesmo destino.'
+    },
+    manif: {
+      tip1: 'Manifestação',
+      tip2: 'O excesso vira fenótipo clínico',
+      stroke: 'var(--a6p5-gold, #FBBF24)',
+      status: 'Manifestação · excesso visível',
+      live: 'O fogo cortical produz a crise. Não é déficit fixo: é paroxismo.'
+    },
+    apaga: {
+      tip1: 'Bloqueio · apaga',
+      tip2: 'Autolimitada — a atividade cede e melhora',
+      stroke: 'var(--a6p5-teal, #2DD4BF)',
+      status: 'Apaga · crise autolimitada',
+      live: 'O excesso é bloqueado. Surge e vai embora — clássico das paroxísticas.'
+    },
+    exc: {
+      tip1: 'Excitação direta',
+      tip2: 'Drive excitatório eleva o cluster ao excesso',
+      stroke: 'var(--a6p5-cyan, #22D3EE)',
+      status: 'Porta 1 · excitação ↑',
+      live: 'Excitação direta empurra o grupamento para hiperexcitação excessiva.'
+    },
+    inh: {
+      tip1: 'Falha inibitória',
+      tip2: 'O freio cede — mesmo destino de excesso',
+      stroke: 'var(--a6p5-coral, #F87171)',
+      status: 'Porta 2 · freio ↓',
+      live: 'Sem inibição adequada o cluster dispara em excesso — mesmo fogo.'
+    },
+    cluster: {
+      tip1: 'Cluster em fogo',
+      tip2: 'Grupamento local: excesso que se apaga',
+      stroke: 'var(--a6p5-gold, #FBBF24)',
+      status: 'Foco · alma da crise',
+      live: 'Crise = atividade neuronal anormal excessiva, autolimitada e paroxística.'
+    },
+    both: {
+      tip1: 'Duas portas',
+      tip2: 'Excitação ou falha de freio → mesmo excesso',
+      stroke: 'var(--a6p5-gold, #FBBF24)',
+      status: 'Duas portas · um destino',
+      live: 'Não importa a porta: o destino é hiperexcitação excessiva que cede.'
+    }
+  };
+
+  function clearTimers(){
+    for(var i=0;i<timers.length;i++) clearTimeout(timers[i]);
+    timers = [];
+    playing = false;
+    root.setAttribute('data-playing','0');
+  }
+
+  function setPhase(phase, keepRoute){
+    if(!phase){
+      root.setAttribute('data-phase','basal');
+      phase = 'basal';
+    } else {
+      root.setAttribute('data-phase', phase);
+    }
+    if(!keepRoute){
+      /* route may stay if exploring */
+    }
+    var L = labels[phase];
+    if(statusEl && L){
+      statusEl.textContent = L.status;
+      statusEl.setAttribute('fill', L.stroke);
+    }
+    if(liveEl && L) liveEl.textContent = L.live;
+    phaseIdx = phaseOrder.indexOf(phase);
+    if(phaseIdx < 0) phaseIdx = 0;
+  }
+
+  function setRoute(route){
+    if(!route){
+      root.removeAttribute('data-route');
+      return;
+    }
+    root.setAttribute('data-route', route);
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx; pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x:cx, y:cy};
+    var p = pt.matrixTransform(m.inverse());
+    return {x:p.x, y:p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip) return;
+    var t1el = Q('#a6p5-tip-t1');
+    var t2el = Q('#a6p5-tip-t2');
+    var bg = Q('#a6p5-tip-bg');
+    if(t1el) t1el.textContent = t1;
+    if(t2el) t2el.textContent = t2;
+    if(bg) bg.setAttribute('stroke', stroke || 'var(--a6p5-gold, #FBBF24)');
+    var p = clientToSvg(cx, cy);
+    var w = 300, h = 58, off = 14;
+    var x = p.x + off, y = p.y + off;
+    if(x + w > 820) x = p.x - w - off;
+    if(y + h > 620) y = p.y - h - off;
+    if(x < 8) x = 8;
+    if(y < 8) y = 8;
+    tip.setAttribute('transform','translate('+x.toFixed(1)+','+y.toFixed(1)+')');
+    tip.setAttribute('opacity','1');
+    tip.setAttribute('aria-hidden','false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity','0');
+    tip.setAttribute('aria-hidden','true');
+  }
+
+  function runCycle(){
+    clearTimers();
+    playing = true;
+    root.setAttribute('data-playing','1');
+    setRoute('both');
+    var seq = ['basal','excesso','manif','apaga','basal'];
+    var i = 0;
+    var stepOn = reduce ? 650 : 950;
+    var stepOff = reduce ? 120 : 180;
+    function next(){
+      if(i >= seq.length){
+        timers.push(setTimeout(function(){
+          setPhase('basal', true);
+          setRoute(null);
+          playing = false;
+          root.setAttribute('data-playing','0');
+          if(statusEl){
+            statusEl.textContent = 'Ciclo completo · excesso que cede';
+            statusEl.setAttribute('fill','var(--a6p5-gold, #FBBF24)');
+          }
+          if(liveEl) liveEl.textContent = 'Excitação ou falha de freio → fogo excessivo → manifestação → apaga.';
+        }, stepOff));
+        return;
+      }
+      var ph = seq[i];
+      setPhase(ph, true);
+      if(ph === 'excesso' || ph === 'manif') setRoute('both');
+      if(ph === 'apaga') setRoute(null);
+      i++;
+      timers.push(setTimeout(function(){
+        timers.push(setTimeout(next, stepOff));
+      }, stepOn));
+    }
+    next();
+  }
+
+  function bindPhase(el){
+    if(!el) return;
+    var ph = el.getAttribute('data-phase');
+    var L = labels[ph];
+    function activate(ev){
+      clearTimers();
+      setPhase(ph, true);
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 80;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 24;
+      if(L) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(playing) return;
+      setPhase(ph, true);
+      if(L) showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(playing) return;
+      if(tip && tip.getAttribute('opacity')==='1' && L) showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('mouseleave', function(){
+      if(playing) return;
+      hideTip();
+    });
+    el.addEventListener('click', activate);
+    el.addEventListener('focus', function(){
+      if(playing) return;
+      setPhase(ph, true);
+      var b = el.getBoundingClientRect();
+      if(L) showTip(b.left + b.width/2, b.top + b.height/2, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('blur', function(){ if(!playing) hideTip(); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){
+        ev.preventDefault();
+        activate(ev);
+      }
+    });
+  }
+
+  function bindHotspot(el, key, route){
+    if(!el) return;
+    var L = labels[key];
+    function activate(ev){
+      clearTimers();
+      if(route) setRoute(route);
+      if(key === 'cluster'){
+        setPhase('excesso', true);
+        setRoute('both');
+      } else if(key === 'exc' || key === 'inh'){
+        setPhase('excesso', true);
+      }
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      if(L) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+      if(statusEl && L){
+        statusEl.textContent = L.status;
+        statusEl.setAttribute('fill', L.stroke);
+      }
+      if(liveEl && L) liveEl.textContent = L.live;
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(playing) return;
+      if(route) setRoute(route);
+      if(key === 'cluster') setRoute('both');
+      if(L) showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(playing) return;
+      if(tip && tip.getAttribute('opacity')==='1' && L) showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('mouseleave', function(){
+      if(playing) return;
+      hideTip();
+      if(!playing) setRoute(null);
+    });
+    el.addEventListener('click', activate);
+    el.addEventListener('focus', function(){
+      if(playing) return;
+      if(route) setRoute(route);
+      var b = el.getBoundingClientRect();
+      if(L) showTip(b.left + b.width/2, b.top + b.height/2, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('blur', function(){ if(!playing){ hideTip(); setRoute(null); } });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){
+        ev.preventDefault();
+        activate(ev);
+      }
+    });
+  }
+
+  bindPhase(Q('#a6p5-phase-basal'));
+  bindPhase(Q('#a6p5-phase-excesso'));
+  bindPhase(Q('#a6p5-phase-manif'));
+  bindPhase(Q('#a6p5-phase-apaga'));
+
+  bindHotspot(Q('#a6p5-hs-exc'), 'exc', 'exc');
+  bindHotspot(Q('#a6p5-hs-inh'), 'inh', 'inh');
+  bindHotspot(Q('#a6p5-hs-cluster'), 'cluster', null);
+
+  function bindChip(el, key, route){
+    if(!el) return;
+    var L = labels[key];
+    function go(ev){
+      clearTimers();
+      setRoute(route);
+      setPhase('excesso', true);
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 14;
+      if(L) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+      if(statusEl && L){
+        statusEl.textContent = L.status;
+        statusEl.setAttribute('fill', L.stroke);
+      }
+      if(liveEl && L) liveEl.textContent = L.live;
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(playing) return;
+      setRoute(route);
+      if(L) showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(playing) return;
+      if(tip && tip.getAttribute('opacity')==='1' && L) showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('mouseleave', function(){
+      if(playing) return;
+      hideTip();
+      setRoute(null);
+    });
+    el.addEventListener('click', go);
+    el.addEventListener('focus', function(){
+      if(playing) return;
+      setRoute(route);
+      var b = el.getBoundingClientRect();
+      if(L) showTip(b.left + b.width/2, b.top + b.height/2, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('blur', function(){ if(!playing){ hideTip(); setRoute(null); } });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); go(ev); }
+    });
+  }
+
+  bindChip(Q('#a6p5-chip-exc'), 'exc', 'exc');
+  bindChip(Q('#a6p5-chip-inh'), 'inh', 'inh');
+
+  if(playBtn){
+    playBtn.addEventListener('click', runCycle);
+    playBtn.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); runCycle(); }
+    });
+  }
+  if(resetBtn){
+    resetBtn.addEventListener('click', function(){
+      clearTimers();
+      setRoute(null);
+      setPhase('basal', false);
+      hideTip();
+      if(statusEl){
+        statusEl.textContent = 'Toque o cluster · as duas portas · ou rode o ciclo';
+        statusEl.setAttribute('fill','var(--a6p5-muted, #94A3B8)');
+      }
+    });
+    resetBtn.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){
+        ev.preventDefault();
+        clearTimers();
+        setRoute(null);
+        setPhase('basal', false);
+        hideTip();
+      }
+    });
+  }
+  if(bothBtn){
+    bothBtn.addEventListener('click', function(ev){
+      clearTimers();
+      setRoute('both');
+      setPhase('excesso', true);
+      var L = labels.both;
+      var b = bothBtn.getBoundingClientRect();
+      var cx = (ev && ev.clientX != null) ? ev.clientX : b.left + b.width/2;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : b.top + b.height/2;
+      showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+      if(statusEl){
+        statusEl.textContent = L.status;
+        statusEl.setAttribute('fill', L.stroke);
+      }
+      if(liveEl) liveEl.textContent = L.live;
+    });
+    bothBtn.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){
+        ev.preventDefault();
+        bothBtn.dispatchEvent(new Event('click'));
+      }
+    });
+  }
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    if(!t) return;
+    var keep = false;
+    var nodes = root.querySelectorAll('.a6p5-hs, .a6p5-phase, .a6p5-btn, .a6p5-chip');
+    for(var i=0;i<nodes.length;i++){
+      if(nodes[i].contains(t) || nodes[i] === t){ keep = true; break; }
+    }
+    if(!keep) hideTip();
+  });
+
+  setPhase('basal', false);
+  setRoute(null);
+})();
+  ]]></script>
+</svg>

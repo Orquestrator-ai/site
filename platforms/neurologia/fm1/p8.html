@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Fraqueza muscular — guia sindrômico (fm1). Placa: a força que muda com o uso">
+<title>Placa: a força que muda com o uso · fm1 Fraqueza · Neurologia</title>
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm1-cara">
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+.opener,.exec-card,.trap,.dont-confuse,.hero-figure,.case-card,.gap-box,.continuity{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.opener{padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ciano);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead,.opener__mnemonic,.opener__bust{margin:0;color:var(--ink-60);font-size:1.02rem}
+.opener--question{border-left:4px solid var(--indigo)}.opener--case{border-left:4px solid #8b5cf6}.opener--trap{border-left:4px solid var(--amber)}.opener--checklist{border-left:4px solid var(--ciano)}.opener--mnemonic{border-left:4px solid var(--amber)}.opener--vs{border-left:4px solid var(--ciano)}.opener--bust{border-left:4px solid var(--coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip--topic,.chip,.chip--ok,.chip--no,.chip--series{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ciano);border-color:var(--ciano-line)}.chip--ok{color:var(--verde)}.chip--no{color:var(--coral)}.chip--series{color:var(--indigo)}
+button.chip{cursor:pointer;min-height:36px}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose-list{margin:0 0 1em 1.1rem;padding:0}.prose-list li{margin:.3rem 0}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.term{color:var(--indigo);font-weight:700}.hl-good,.hl-cell{color:var(--verde);font-weight:700}.hl-bad,.hl-cell-bad{color:var(--coral);font-weight:700}.hl-warn{color:var(--amber);font-weight:700}
+.exec-card__title,.trap__title{margin:0 0 .65rem;font-size:1rem;color:var(--ciano)}
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}.checklist label{display:flex;gap:.55rem;align-items:flex-start;cursor:pointer;min-height:44px}.checklist input{width:18px;height:18px;margin-top:.2rem;accent-color:var(--ciano)}
+.split-board,.chip-cols,.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.split-board__bad,.split-board__good,.posture-card{border-radius:10px;padding:.75rem;border:1px solid var(--border)}.split-board__bad{border-color:color-mix(in srgb,var(--coral) 45%,var(--border))}.split-board__good{border-color:color-mix(in srgb,var(--verde) 45%,var(--border))}
+.labs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:.85rem}.lab{border-radius:10px;border:1px solid var(--border);padding:.55rem .6rem;text-align:center;background:var(--bg-3)}.lab--key{border-color:var(--amber)}.lab__k{display:block;font-size:.68rem;color:var(--ink-60);text-transform:uppercase}.lab__v{display:block;font-size:1.05rem;font-weight:700;color:var(--amber)}
+.tendon-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.7rem}.dont-confuse__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}.dont-confuse__grid--2{grid-template-columns:1fr 1fr}.dont-confuse__grid>div{border:1px solid var(--border);border-radius:10px;padding:.65rem}.dont-confuse__warn{border-color:var(--amber)!important}.trap{border-left:4px solid var(--amber)}.trap--jo1{border-left-color:var(--amber)}
+.curve-toggle{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.55rem}.curve-btn{min-height:40px;border-radius:999px;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100);padding:.4rem .85rem;cursor:pointer}.curve-btn.is-active{border-color:var(--ciano);color:var(--ciano)}.curve-out{color:var(--ink-80)}
+.flow-nodes{margin:0;padding-left:1.2rem}.flow-nodes li{margin:.4rem 0}.case-card h4{margin:0 0 .4rem;color:var(--indigo)}.gap-box{border-left:4px solid var(--coral)}.gap-box h4{color:var(--coral)}.nuance{border-left:3px solid var(--amber);padding:.65rem .85rem;margin:1rem 0;background:rgba(245,158,11,.08);border-radius:0 10px 10px 0}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.75rem 0}.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:280px}.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}.comparison th{background:var(--bg-3)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}.fig__frame{width:100%;display:block;background:var(--bg-1)}.fig__frame img{display:block;width:100%;height:auto;object-fit:contain}.fig__frame--svg{padding:.35rem}.fm1-inline-svg{display:block;width:100%;height:auto;border-radius:10px}.fig__cap,.hero-figure__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--amber);margin-right:.4rem}
+.chain-hero{display:grid;gap:.35rem}.chain-hero__floor{text-align:left;border:1px solid var(--border);border-radius:12px;padding:.75rem .85rem;background:var(--bg-3);color:var(--ink-100);cursor:pointer;min-height:64px;display:grid;gap:.15rem}.chain-hero__floor[aria-pressed="true"]{border-color:var(--ciano)}.chain-hero__n{font-weight:700;color:var(--ciano)}.chain-hero__ex,.chain-hero__note{font-size:.78rem;color:var(--ink-60)}.chain-hero__arrow{text-align:center;color:var(--ciano);font-weight:700}
+.posture-split{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.75rem}.posture-card__t{display:block;font-weight:700;margin-bottom:.25rem}.posture-card--spastic{border-color:var(--indigo)}.posture-card--flaccid{border-color:var(--ciano)}.posture-card--warn{border-color:var(--amber)}
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow)}.quiz h2{margin:0 0 .85rem;font-size:1.1rem}.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}.quiz__stem{margin:0 0 .55rem;font-weight:600}.quiz__alternatives{display:grid;gap:.4rem}.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit}.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}.quiz__alt.is-correct{border-color:var(--verde);background:rgba(52,211,153,.12)}.quiz__alt.is-wrong{border-color:var(--coral);background:rgba(251,113,133,.10)}.quiz__feedback{margin-top:.55rem;padding:.7rem .75rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}.quiz__feedback[hidden]{display:none}.quiz__verdict{margin:0 0 .35rem;font-weight:700}.quiz__verdict.is-ok{color:var(--verde)}.quiz__verdict.is-bad{color:var(--coral)}.quiz__justification,.quiz__distractor{margin:.25rem 0 0;font-size:.92rem}
+.page-nav__btn.is-disabled{display:inline-flex;align-items:center;min-height:44px;padding:.55rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);opacity:.45}.page-nav__pos{align-self:center;font-size:.85rem;color:var(--ink-60)}.seal,.juvenile{margin-top:.65rem}.continuity{border-left:3px solid var(--ciano)}.menu-panel__link.is-current{background:rgba(34,211,238,.10);color:var(--ink-100);font-weight:600}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}@media(max-width:640px){.dont-confuse__grid,.posture-split{grid-template-columns:1fr}}@media(max-width:560px){.split-board,.chip-cols,.case-grid{grid-template-columns:1fr}.labs-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:420px){.page-nav{flex-wrap:wrap}.page-nav a{min-width:0;flex:1 1 calc(50% - 6px);padding:.7rem .65rem}.page-nav__pos{order:3;width:100%;text-align:center}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p8" data-layout="fm1-p08" data-source-ids="094,095,096,097,098,099,100,101,102,103">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <div class="site-header__brand">
+      <span class="site-header__logo">NN</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Fraqueza muscular: guia</span>
+        <span class="site-header__subtitle">Neurologia · fraqueza muscular</span>
+      </span>
+    </div>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress" id="progress">8/12</span>
+    <div class="site-header__actions">
+      <button type="button" class="icon-btn" id="home-btn" aria-label="Início do guia" title="Início" onclick="location.href='index.html'">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Alternar tema" aria-pressed="false" title="Tema">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas do guia">
+    <p class="menu-panel__title">Fraqueza muscular: guia</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>Porta da fraqueza</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>Caso Jussara</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>Quantidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>4 andares</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Reflexos</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Matriz 1º×2º</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Agudo flácido</span></a></li><li class="menu-panel__item"><a class="menu-panel__link is-current" href="p8.html"><span class="menu-panel__index">08</span><span>Placa</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html"><span class="menu-panel__index">09</span><span>Músculo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html"><span class="menu-panel__index">10</span><span>DM pele</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html"><span class="menu-panel__index">11</span><span>Neoplasia/ENMG</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html"><span class="menu-panel__index">12</span><span>Jo-1 / fecho</span></a></li></ul>
+  </nav>
+</div>
+<main class="coluna" id="main">
+  <div class="reading">
+    <!-- Página 8 — Estratégia: E7 -->
+    <article class="page" data-page="p8" data-layout="fm1-p08" data-source-ids="094,095,096,097,098,099,100,101,102,103">
+      <p class="page__eyebrow">Página 8 · E7</p>
+      <section class="opener opener--vs" data-opener="E7">
+          <span class="opener__eyebrow">Comparação</span>
+          <h1 id="page-title">Placa: a força que muda com o uso</h1>
+          <p class="opener__lead no-indent">“A fraqueza piora ou melhora quanto mais o músculo trabalha?”</p>
+        </section>
+      <div class="chipset"><span class="chip--topic">P08</span><span class="chip--topic">E7</span><span class="chip--topic">fm1</span></div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h3 class="topic-h">A marca da placa</h3>
+<p>A marca da doença de <strong class="term">placa motora</strong> é a fraqueza que <strong class="term">varia com o movimento/uso</strong>.   <strong class="term">Fatigabilidade:</strong> quanto mais usa, <strong class="term">mais fraco</strong> fica.   <strong class="term">Facilitação:</strong> quanto mais usa, <strong class="term">mais forte</strong> fica — também existe em doença de placa (menos o “default” prático).</p>
+<p>Na prática, a doença de placa mais comum leva a <strong class="term">fatigabilidade</strong>; <strong class="term">miastenia gravis</strong> é a representante <strong class="term">até prova em contrário</strong>.</p>
+<h3 class="topic-h">História e o falso “cansaço”</h3>
+<p>História típica: acorda bem (escova dentes, penteia cabelo); após o dia/esforço (pós-almoço, após cozinhar) não consegue levantar o braço / escovar de novo. O paciente frequentemente relata <strong class="term">“cansaço”</strong> — o que está em jogo pode ser <strong class="term">fraqueza</strong> que ele não nomeia.</p>
+<h3 class="topic-h">Exame: cansar o músculo</h3>
+<p>O exame pontual (“empurra / puxa” uma vez) pode <strong class="term">errar</strong> doença de placa; é preciso <strong class="term">cansar</strong> o músculo.   Manobras: braços estendidos durante a conversa — observar se o membro <strong class="term">cai</strong> com o tempo; manter o olhar no teto — observar <strong class="term">ptose</strong> que surge com a manutenção.</p>
+<p class="no-indent"><strong class="term">Se a força varia com o uso → pensar placa;</strong> se permanece constante no padrão do andar → outros andares.</p>
+        </div>
+      </section>
+
+      
+<aside class="exec-card">
+  <h3 class="exec-card__title">Força × tempo na placa</h3>
+  <div class="curve-toggle" role="group" aria-label="Curvas de força">
+    <button type="button" class="curve-btn is-active" data-curve="fatig">Fatigabilidade ↓</button>
+    <button type="button" class="curve-btn" data-curve="facil">Facilitação ↑</button>
+  </div>
+  <p class="curve-out no-indent" id="fm1-p08-curve" aria-live="polite">Quanto mais usa, <strong class="term">mais fraco</strong> — marca prática da placa (MG até prova em contrário).</p>
+  <p class="seal no-indent">Selo: <strong class="hl-warn">MG até prova em contrário</strong> · ponte <span class="chip chip--series">fm5</span></p>
+</aside>
+
+      <figure class="fig fig--real">
+        <div class="fig__frame">
+          <img src="media/B08-mangrio2025-mg-left-ptosis-written-consent.jpg" loading="lazy" decoding="async" width="1200" height="800" alt="Paciente com ptose marcada da pálpebra superior esquerda em contexto de miastenia gravis.">
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Imagem real</span> Ptose marcada da pálpebra superior esquerda em miastenia gravis anti-AChR positiva. Mangrio SM et al., Cureus, 2025, Figure 1. CC BY 4.0; consentimento escrito documentado. Fonte.</figcaption>
+      </figure>
+
+      <figure class="fig fig--svg">
+        <div class="fig__frame fig__frame--svg">
+          <svg class="fm1-inline-svg fm1p8-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" data-time="0" role="img" aria-label="Manobras de Placa Motora: Braços Estendidos e Olhar ao Teto - Fatigabilidade Temporal">
+  <defs>
+    <style>
+      /* BASE & TOKENIZATION (PREFIXED STRICTLY WITH .fm1p8-root) */
+      .fm1p8-root {
+        --fm1p8-bg-1: var(--bg-1, #0f172a);
+        --fm1p8-bg-2: var(--bg-2, #1e293b);
+        --fm1p8-bg-3: var(--bg-3, #334155);
+        --fm1p8-border: var(--ink-20, #334155);
+        --fm1p8-ink-100: var(--ink-100, #f8fafc);
+        --fm1p8-ink-80: var(--ink-80, #cbd5e1);
+        --fm1p8-ink-60: var(--ink-60, #94a3b8);
+        --fm1p8-teal-main: #14b8a6;
+        --fm1p8-teal-bg: rgba(20, 184, 166, 0.12);
+        --fm1p8-coral-main: #f43f5e;
+        --fm1p8-coral-bg: rgba(244, 63, 94, 0.12);
+        --fm1p8-gold-main: #eab308;
+        --fm1p8-gold-bg: rgba(234, 179, 8, 0.12);
+        --fm1p8-green-main: #10b981;
+        --fm1p8-green-bg: rgba(16, 185, 129, 0.12);
+        --fm1p8-indigo-main: #6366f1;
+        --fm1p8-indigo-bg: rgba(99, 102, 241, 0.12);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--fm1p8-bg-1);
+        color: var(--fm1p8-ink-100);
+      }
+
+      /* LIGHT THEME OVERRIDES (BY [data-theme="light"]) */
+      [data-theme="light"] .fm1p8-root {
+        --fm1p8-bg-1: var(--bg-1, #f8fafc);
+        --fm1p8-bg-2: var(--bg-2, #ffffff);
+        --fm1p8-bg-3: var(--bg-3, #e2e8f0);
+        --fm1p8-border: var(--ink-20, #cbd5e1);
+        --fm1p8-ink-100: var(--ink-100, #0f172a);
+        --fm1p8-ink-80: var(--ink-80, #334155);
+        --fm1p8-ink-60: var(--ink-60, #64748b);
+        --fm1p8-teal-bg: rgba(20, 184, 166, 0.08);
+        --fm1p8-coral-bg: rgba(244, 63, 94, 0.08);
+        --fm1p8-gold-bg: rgba(234, 179, 8, 0.08);
+        --fm1p8-green-bg: rgba(16, 185, 129, 0.08);
+        --fm1p8-indigo-bg: rgba(99, 102, 241, 0.08);
+      }
+
+      /* STRUCTURAL CONTAINERS */
+      .fm1p8-root .fm1p8-card {
+        fill: var(--fm1p8-bg-2);
+        stroke: var(--fm1p8-border);
+        stroke-width: 1.5px;
+        rx: 10px;
+      }
+      .fm1p8-root .fm1p8-card-header {
+        fill: var(--fm1p8-bg-3);
+        stroke: var(--fm1p8-border);
+        stroke-width: 1px;
+      }
+
+      /* TYPOGRAPHY */
+      .fm1p8-root .fm1p8-title {
+        font-size: 17px;
+        font-weight: 700;
+        fill: var(--fm1p8-ink-100);
+        letter-spacing: 0.3px;
+      }
+      .fm1p8-root .fm1p8-subtitle {
+        font-size: 12px;
+        font-weight: 500;
+        fill: var(--fm1p8-ink-60);
+      }
+      .fm1p8-root .fm1p8-label {
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--fm1p8-ink-80);
+      }
+      .fm1p8-root .fm1p8-text-sm {
+        font-size: 10px;
+        fill: var(--fm1p8-ink-60);
+      }
+
+      /* COLOR SEMANTICS */
+      .fm1p8-root .fm1p8-c-normal { fill: var(--fm1p8-green-main); stroke: var(--fm1p8-green-main); }
+      .fm1p8-root .fm1p8-c-warning { fill: var(--fm1p8-gold-main); stroke: var(--fm1p8-gold-main); }
+      .fm1p8-root .fm1p8-c-critical { fill: var(--fm1p8-coral-main); stroke: var(--fm1p8-coral-main); }
+      .fm1p8-root .fm1p8-c-info { fill: var(--fm1p8-indigo-main); stroke: var(--fm1p8-indigo-main); }
+      .fm1p8-root .fm1p8-c-teal { fill: var(--fm1p8-teal-main); stroke: var(--fm1p8-teal-main); }
+
+      /* ANATOMICAL & DYNAMIC CUES */
+      .fm1p8-root .fm1p8-arm-path {
+        stroke-width: 10px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        transition: transform 0.4s ease, stroke 0.4s ease, opacity 0.4s ease;
+      }
+      .fm1p8-root .fm1p8-eyelid-path {
+        fill: var(--fm1p8-coral-main);
+        transition: d 0.4s ease, opacity 0.4s ease;
+      }
+      .fm1p8-root .fm1p8-vector-arrow {
+        stroke-width: 2px;
+        stroke-dasharray: 4, 3;
+        fill: none;
+        transition: opacity 0.3s ease;
+      }
+
+      /* TIME CONTROLLER BUTTONS */
+      .fm1p8-root .fm1p8-btn {
+        cursor: pointer;
+        transition: transform 0.15s ease, fill 0.2s ease, stroke 0.2s ease;
+      }
+      .fm1p8-root .fm1p8-btn:hover {
+        transform: translateY(-1px);
+      }
+      .fm1p8-root .fm1p8-btn-bg {
+        fill: var(--fm1p8-bg-3);
+        stroke: var(--fm1p8-border);
+        stroke-width: 1.5px;
+        rx: 8px;
+      }
+      .fm1p8-root .fm1p8-btn-text {
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--fm1p8-ink-80);
+        text-anchor: middle;
+        dominant-baseline: central;
+        pointer-events: none;
+      }
+
+      /* ACTIVE STATE BUTTON HIGHLIGHTS BASED ON data-time */
+      .fm1p8-root[data-time="0"] .fm1p8-btn-t0 .fm1p8-btn-bg {
+        fill: var(--fm1p8-green-bg);
+        stroke: var(--fm1p8-green-main);
+      }
+      .fm1p8-root[data-time="0"] .fm1p8-btn-t0 .fm1p8-btn-text {
+        fill: var(--fm1p8-green-main);
+        font-weight: 700;
+      }
+
+      .fm1p8-root[data-time="30"] .fm1p8-btn-t30 .fm1p8-btn-bg {
+        fill: var(--fm1p8-gold-bg);
+        stroke: var(--fm1p8-gold-main);
+      }
+      .fm1p8-root[data-time="30"] .fm1p8-btn-t30 .fm1p8-btn-text {
+        fill: var(--fm1p8-gold-main);
+        font-weight: 700;
+      }
+
+      .fm1p8-root[data-time="60"] .fm1p8-btn-t60 .fm1p8-btn-bg {
+        fill: var(--fm1p8-coral-bg);
+        stroke: var(--fm1p8-coral-main);
+      }
+      .fm1p8-root[data-time="60"] .fm1p8-btn-t60 .fm1p8-btn-text {
+        fill: var(--fm1p8-coral-main);
+        font-weight: 700;
+      }
+
+      /* DYNAMIC ANATOMY POSITIONS PER TIME STATE */
+      /* t = 0s */
+      .fm1p8-root[data-time="0"] .fm1p8-arm-t0 { opacity: 1; stroke: var(--fm1p8-green-main); transform: rotate(0deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="0"] .fm1p8-arm-t30 { opacity: 0.15; stroke: var(--fm1p8-ink-60); transform: rotate(25deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="0"] .fm1p8-arm-t60 { opacity: 0.15; stroke: var(--fm1p8-ink-60); transform: rotate(55deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="0"] .fm1p8-vector-fall { opacity: 0; }
+      .fm1p8-root[data-time="0"] .fm1p8-eyelid { transform: translateY(0px); }
+
+      /* t = 30s */
+      .fm1p8-root[data-time="30"] .fm1p8-arm-t0 { opacity: 0.2; stroke: var(--fm1p8-ink-60); transform: rotate(0deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="30"] .fm1p8-arm-t30 { opacity: 1; stroke: var(--fm1p8-gold-main); transform: rotate(25deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="30"] .fm1p8-arm-t60 { opacity: 0.15; stroke: var(--fm1p8-ink-60); transform: rotate(55deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="30"] .fm1p8-vector-fall { opacity: 0.6; stroke: var(--fm1p8-gold-main); }
+      .fm1p8-root[data-time="30"] .fm1p8-eyelid { transform: translateY(4px); }
+
+      /* t = 60s */
+      .fm1p8-root[data-time="60"] .fm1p8-arm-t0 { opacity: 0.2; stroke: var(--fm1p8-ink-60); transform: rotate(0deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="60"] .fm1p8-arm-t30 { opacity: 0.2; stroke: var(--fm1p8-ink-60); transform: rotate(25deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="60"] .fm1p8-arm-t60 { opacity: 1; stroke: var(--fm1p8-coral-main); transform: rotate(55deg); transform-origin: 155px 290px; }
+      .fm1p8-root[data-time="60"] .fm1p8-vector-fall { opacity: 1; stroke: var(--fm1p8-coral-main); }
+      .fm1p8-root[data-time="60"] .fm1p8-eyelid { transform: translateY(9px); }
+
+      /* DYNAMIC GRAPH & TEXT PANELS PER TIME STATE */
+      .fm1p8-root .fm1p8-state-panel { display: none; }
+      .fm1p8-root[data-time="0"] .fm1p8-panel-t0 { display: block; }
+      .fm1p8-root[data-time="30"] .fm1p8-panel-t30 { display: block; }
+      .fm1p8-root[data-time="60"] .fm1p8-panel-t60 { display: block; }
+
+      .fm1p8-root .fm1p8-graph-wave {
+        fill: none;
+        stroke-width: 2.5px;
+        transition: stroke-dashoffset 0.4s ease, opacity 0.3s ease;
+      }
+      .fm1p8-root[data-time="0"] .fm1p8-wave-t0 { stroke: var(--fm1p8-green-main); opacity: 1; }
+      .fm1p8-root[data-time="0"] .fm1p8-wave-t30 { opacity: 0.25; stroke: var(--fm1p8-ink-60); }
+      .fm1p8-root[data-time="0"] .fm1p8-wave-t60 { opacity: 0.15; stroke: var(--fm1p8-ink-60); }
+
+      .fm1p8-root[data-time="30"] .fm1p8-wave-t0 { opacity: 0.25; stroke: var(--fm1p8-ink-60); }
+      .fm1p8-root[data-time="30"] .fm1p8-wave-t30 { stroke: var(--fm1p8-gold-main); opacity: 1; }
+      .fm1p8-root[data-time="30"] .fm1p8-wave-t60 { opacity: 0.2; stroke: var(--fm1p8-ink-60); }
+
+      .fm1p8-root[data-time="60"] .fm1p8-wave-t0 { opacity: 0.15; stroke: var(--fm1p8-ink-60); }
+      .fm1p8-root[data-time="60"] .fm1p8-wave-t30 { opacity: 0.25; stroke: var(--fm1p8-ink-60); }
+      .fm1p8-root[data-time="60"] .fm1p8-wave-t60 { stroke: var(--fm1p8-coral-main); opacity: 1; }
+
+      /* HOTSPOTS & TOOLTIP */
+      .fm1p8-root .fm1p8-hotspot {
+        cursor: pointer;
+        outline: none;
+      }
+      .fm1p8-root .fm1p8-hotspot:focus .fm1p8-hs-shape,
+      .fm1p8-root .fm1p8-hotspot:hover .fm1p8-hs-shape {
+        stroke-width: 2.5px;
+        filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.4));
+      }
+
+      .fm1p8-root .fm1p8-tooltip {
+        position: absolute;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      .fm1p8-root .fm1p8-tooltip-box {
+        fill: var(--fm1p8-bg-2);
+        stroke: var(--fm1p8-indigo-main);
+        stroke-width: 1.5px;
+        rx: 6px;
+        filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+      }
+      .fm1p8-root .fm1p8-tooltip-title {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--fm1p8-indigo-main);
+      }
+      .fm1p8-root .fm1p8-tooltip-desc {
+        font-size: 10px;
+        fill: var(--fm1p8-ink-80);
+      }
+    </style>
+
+    <!-- ARROW MARKERS -->
+    <marker id="fm1p8-arrow-coral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f43f5e" />
+    </marker>
+    <marker id="fm1p8-arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#eab308" />
+    </marker>
+    <marker id="fm1p8-arrow-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#14b8a6" />
+    </marker>
+  </defs>
+
+  <!-- HEADER TITLE & LEGENDA DE INTERPRETAÇÃO -->
+  <g transform="translate(20, 20)">
+    <rect class="fm1p8-card" x="0" y="0" width="920" height="52" />
+    <text class="fm1p8-title" x="20" y="24">SEMIOLOGIA DA JUNÇÃO NEUROMUSCULAR: FATIGABILIDADE FLUTUANTE</text>
+    <text class="fm1p8-subtitle" x="20" y="42">
+      <tspan font-weight="700" fill="var(--fm1p8-coral-main)">LEGENDA DE INTERPRETAÇÃO:</tspan>
+      A fraqueza de placa varia com o uso sustentado. Uma avaliação breve pode não expor a queda.
+    </text>
+    <rect class="fm1p8-card-header" x="780" y="10" width="125" height="32" rx="6" />
+    <text class="fm1p8-label" x="842" y="30" text-anchor="middle" fill="var(--fm1p8-gold-main)">Placa vs Miopatia</text>
+  </g>
+
+  <!-- LEFT PANEL: MANOBRAS ANATÔMICAS & SELETOR TEMPORAL -->
+  <g transform="translate(20, 85)">
+    <rect class="fm1p8-card" x="0" y="0" width="440" height="435" />
+    
+    <!-- PANEL SUBTITLE -->
+    <text class="fm1p8-label" x="18" y="24" fill="var(--fm1p8-teal-main)">MANOBRAS CLÍNICAS SUSTENTADAS</text>
+    <text class="fm1p8-text-sm" x="18" y="40">Observe o surgimento da queda palpebral e de membros superiores</text>
+
+    <!-- TETO TARGET INDICATOR (Olhar ao teto) -->
+    <g transform="translate(140, 50)" class="fm1p8-hotspot" tabindex="0" role="button" aria-label="Alvo do olhar sustentado ao teto" data-title="Fixação do olhar ao teto" data-desc="Manter o olhar no teto pode expor ptose fatigável que não aparece numa avaliação breve.">
+      <rect class="fm1p8-hs-shape" x="0" y="0" width="160" height="26" rx="13" fill="var(--fm1p8-indigo-bg)" stroke="var(--fm1p8-indigo-main)" stroke-width="1" />
+      <text class="fm1p8-label" x="80" y="17" text-anchor="middle" fill="var(--fm1p8-indigo-main)">⬆ TETO (Olhar Sustentado)</text>
+    </g>
+
+    <!-- PATIENT ANATOMICAL SILHOUETTE (HEAD & TORSO) -->
+    <g transform="translate(30, 85)">
+      <!-- GAZE VECTOR LINE -->
+      <line x1="160" y1="95" x2="190" y2="10" stroke="var(--fm1p8-indigo-main)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#fm1p8-arrow-teal)" />
+      <text class="fm1p8-text-sm" x="200" y="30" fill="var(--fm1p8-indigo-main)">Vetor de Fixação</text>
+
+      <!-- HEAD & NECK OUTLINE -->
+      <!-- Skull/Face Contour -->
+      <path d="M 120 120 C 110 80 130 50 160 50 C 190 50 205 75 200 100 C 198 115 190 130 175 140 C 160 148 145 148 135 145 Z" fill="none" stroke="var(--fm1p8-ink-80)" stroke-width="2" />
+      <!-- Ear -->
+      <path d="M 122 95 C 117 95 117 110 123 112" fill="none" stroke="var(--fm1p8-ink-60)" stroke-width="1.5" />
+      <!-- Nose & Mouth contour -->
+      <path d="M 196 92 Q 206 96 198 106 Q 192 110 186 114" fill="none" stroke="var(--fm1p8-ink-60)" stroke-width="1.5" />
+      <!-- Neck & Torso -->
+      <path d="M 135 145 L 130 180 L 80 200 L 80 300 L 190 300 L 190 200 L 160 180 L 158 145" fill="none" stroke="var(--fm1p8-ink-80)" stroke-width="2" />
+      <!-- Shoulder Joint Anchor (Left arm origin x=155, y=200) -->
+      <circle cx="155" cy="200" r="7" fill="var(--fm1p8-bg-3)" stroke="var(--fm1p8-ink-80)" stroke-width="1.5" />
+
+      <!-- EYE & EYELID DETAIL (HOTSPOT 1: PTOSE) -->
+      <g class="fm1p8-hotspot" tabindex="0" role="button" aria-label="Avaliação palpebral: olhar ao teto induz ptose fatigável" data-title="Olhar ao teto: ptose palpebral fatigável" data-desc="No início a fenda está aberta; com uso sustentado, a pálpebra cai e a ptose fica evidente.">
+        <rect class="fm1p8-hs-shape" x="155" y="70" width="48" height="40" rx="4" fill="transparent" stroke="transparent" />
+        <!-- Eyeball background -->
+        <ellipse cx="175" cy="90" rx="12" ry="8" fill="#ffffff" stroke="var(--fm1p8-ink-80)" stroke-width="1.2" />
+        <!-- Iris & Pupil (Gaze pointing up-right) -->
+        <circle cx="180" cy="86" r="4.5" fill="#1e293b" />
+        <circle cx="181" cy="85" r="1.5" fill="#ffffff" />
+        <!-- Eyebrow -->
+        <path d="M 160 76 Q 175 72 190 77" fill="none" stroke="var(--fm1p8-ink-100)" stroke-width="2.5" stroke-linecap="round" />
+        <!-- Upper Eyelid Droop Path (Dynamic via transform) -->
+        <path class="fm1p8-eyelid-path fm1p8-eyelid" d="M 162 82 Q 175 82 188 84 Q 188 94 175 95 Q 162 92 162 82 Z" opacity="0.85" />
+      </g>
+      <text class="fm1p8-label" x="215" y="88" fill="var(--fm1p8-coral-main)">Manobra 1: Olhar ao Teto</text>
+      <text class="fm1p8-text-sm" x="215" y="102" fill="var(--fm1p8-ink-60)">Ptose Palpebral Fatigável</text>
+
+      <!-- ARMS EXTENSION (HOTSPOT 2: BRAÇOS ESTENDIDOS) -->
+      <g class="fm1p8-hotspot" tabindex="0" role="button" aria-label="Manobra dos braços estendidos: queda sustentada" data-title="Braços estendidos" data-desc="O paciente mantém os braços estendidos durante a conversa; a fatigabilidade de placa causa queda progressiva.">
+        <!-- Ghost Arm Path 0s (Horizontal) -->
+        <path class="fm1p8-arm-path fm1p8-arm-t0" d="M 155 200 L 290 200" />
+        <!-- Ghost Arm Path 30s (Drooping 25 deg) -->
+        <path class="fm1p8-arm-path fm1p8-arm-t30" d="M 155 200 L 280 250" />
+        <!-- Ghost Arm Path 60s (Drooping 55 deg) -->
+        <path class="fm1p8-arm-path fm1p8-arm-t60" d="M 155 200 L 235 295" />
+
+        <!-- Gravity Fall Vector Arrows -->
+        <path class="fm1p8-vector-arrow fm1p8-vector-fall" d="M 285 205 Q 285 240 245 290" marker-end="url(#fm1p8-arrow-coral)" />
+      </g>
+
+      <!-- ANATOMICAL LABELS FOR ARMS -->
+      <text class="fm1p8-label" x="298" y="196" fill="var(--fm1p8-green-main)">INÍCIO: braços sustentados</text>
+      <text class="fm1p8-label" x="288" y="254" fill="var(--fm1p8-gold-main)">USO: queda incipiente</text>
+      <text class="fm1p8-label" x="242" y="308" fill="var(--fm1p8-coral-main)">FADIGA: queda evidente</text>
+    </g>
+
+    <!-- TIME CONTROLLER SLIDER BAR (INTERACTIVE BUTTONS) -->
+    <g transform="translate(20, 370)">
+      <rect class="fm1p8-card-header" x="0" y="0" width="400" height="50" rx="8" />
+      <text class="fm1p8-label" x="15" y="18" fill="var(--fm1p8-ink-80)">TEMPO DE SUSTENTAÇÃO DA MANOBRA:</text>
+      
+      <!-- BUTTON 0s -->
+      <g class="fm1p8-btn fm1p8-btn-t0" transform="translate(15, 24)" tabindex="0" role="button" aria-label="Selecionar início" data-time-set="0">
+        <rect class="fm1p8-btn-bg" x="0" y="0" width="110" height="20" />
+        <text class="fm1p8-btn-text" x="55" y="10">INÍCIO</text>
+      </g>
+
+      <!-- BUTTON 30s -->
+      <g class="fm1p8-btn fm1p8-btn-t30" transform="translate(145, 24)" tabindex="0" role="button" aria-label="Selecionar uso sustentado" data-time-set="30">
+        <rect class="fm1p8-btn-bg" x="0" y="0" width="110" height="20" />
+        <text class="fm1p8-btn-text" x="55" y="10">USO SUSTENTADO</text>
+      </g>
+
+      <!-- BUTTON 60s -->
+      <g class="fm1p8-btn fm1p8-btn-t60" transform="translate(275, 24)" tabindex="0" role="button" aria-label="Selecionar fadiga evidente" data-time-set="60">
+        <rect class="fm1p8-btn-bg" x="0" y="0" width="110" height="20" />
+        <text class="fm1p8-btn-text" x="55" y="10">FADIGA</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL TOP: FISIOPATOLOGIA DA PLACA & DEPLEÇÃO DE ACh -->
+  <g transform="translate(480, 85)">
+    <rect class="fm1p8-card" x="0" y="0" width="460" height="210" />
+    
+    <text class="fm1p8-label" x="18" y="22" fill="var(--fm1p8-indigo-main)">MECANISMO SINÁPTICO: DEPLEÇÃO DE QUANTA DE ACh</text>
+    <text class="fm1p8-text-sm" x="18" y="36">Potencial de Placa Motora (EPP) vs Limiar de Disparo Muscular</text>
+
+    <!-- SYNAPSE MICRO-SCHEMATIC (HOTSPOT 3) -->
+    <g transform="translate(18, 48)" class="fm1p8-hotspot" tabindex="0" role="button" aria-label="Fenda sináptica e acetilcolina" data-title="Fenda sináptica: uso e fatigabilidade" data-desc="Com o uso continuado, a falha de transmissão fica mais evidente e a força cai.">
+      <rect class="fm1p8-hs-shape" x="0" y="0" width="200" height="145" rx="6" fill="var(--fm1p8-bg-3)" stroke="var(--fm1p8-border)" stroke-width="1" />
+      
+      <!-- Presynaptic Terminal (Axon Button) -->
+      <path d="M 30 10 Q 100 10 100 45 C 100 60 20 60 20 10 Z" fill="var(--fm1p8-indigo-bg)" stroke="var(--fm1p8-indigo-main)" stroke-width="1.5" />
+      <text class="fm1p8-text-sm" x="35" y="28" fill="var(--fm1p8-indigo-main)">Terminal Pré-Sináptico</text>
+
+      <!-- ACh Vesicles (Dots inside axon) -->
+      <circle cx="45" cy="42" r="3" fill="var(--fm1p8-teal-main)" />
+      <circle cx="60" cy="45" r="3" fill="var(--fm1p8-teal-main)" />
+      <circle cx="75" cy="40" r="3" fill="var(--fm1p8-teal-main)" />
+
+      <!-- Synaptic Cleft (Fenda) -->
+      <text class="fm1p8-text-sm" x="110" y="70" fill="var(--fm1p8-ink-60)">Fenda Sináptica</text>
+
+      <!-- Postsynaptic Muscle Membrane (Folded Membrane) -->
+      <path d="M 10 90 L 30 90 L 30 120 L 45 120 L 45 90 L 65 90 L 65 120 L 80 120 L 80 90 L 100 90 L 100 120 L 115 120 L 115 90 L 190 90" fill="none" stroke="var(--fm1p8-coral-main)" stroke-width="2" />
+      <text class="fm1p8-text-sm" x="20" y="138" fill="var(--fm1p8-coral-main)">Membrana Pós-Sináptica (AChR)</text>
+    </g>
+
+    <!-- EPP AMPLITUDE GRAPH (POTENCIAL DE PLACA MOTORA) -->
+    <g transform="translate(230, 48)">
+      <rect class="fm1p8-card-header" x="0" y="0" width="215" height="145" rx="6" />
+      <text class="fm1p8-label" x="12" y="18" fill="var(--fm1p8-ink-80)">Força ao longo do uso</text>
+
+      <!-- GRAPH AXES -->
+      <line x1="30" y1="30" x2="30" y2="125" stroke="var(--fm1p8-ink-60)" stroke-width="1" />
+      <line x1="30" y1="125" x2="200" y2="125" stroke="var(--fm1p8-ink-60)" stroke-width="1" />
+      <text class="fm1p8-text-sm" x="190" y="138">uso</text>
+      <text class="fm1p8-text-sm" x="8" y="35">força</text>
+
+      <!-- DISPARO THRESHOLD LINE (LIMIAR = 7mV) -->
+      <line x1="30" y1="75" x2="200" y2="75" stroke="var(--fm1p8-gold-main)" stroke-width="1.5" stroke-dasharray="4,3" />
+      <text class="fm1p8-text-sm" x="125" y="70" fill="var(--fm1p8-gold-main)">queda observável</text>
+
+      <!-- WAVEFORM t=0s (HIGH PEAK > 15mV) -->
+      <path class="fm1p8-graph-wave fm1p8-wave-t0" d="M 30 125 Q 50 30 70 125 T 110 125 T 150 125 T 190 125" />
+      
+      <!-- WAVEFORM t=30s (MODERATE PEAK ~ 9mV) -->
+      <path class="fm1p8-graph-wave fm1p8-wave-t30" d="M 30 125 Q 50 60 70 125 T 110 125 T 150 125 T 190 125" />
+
+      <!-- WAVEFORM t=60s (EXHAUSTED PEAK < 5mV - BELOW THRESHOLD!) -->
+      <path class="fm1p8-graph-wave fm1p8-wave-t60" d="M 30 125 Q 50 95 70 125 T 110 125 T 150 125 T 190 125" />
+
+      <text class="fm1p8-text-sm" x="35" y="115" fill="var(--fm1p8-coral-main)">Falha se EPP &lt; Limiar</text>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL BOTTOM: PAINEL DE LEITURA & CONTRASTE DIAGNÓSTICO -->
+  <g transform="translate(480, 305)">
+    <rect class="fm1p8-card" x="0" y="0" width="460" height="215" />
+    
+    <text class="fm1p8-label" x="18" y="22" fill="var(--fm1p8-teal-main)">PAINEL DE LEITURA CLÍNICA INTEGRADA</text>
+
+    <!-- DYNAMIC STATUS BOXES PER TIME STATE -->
+    <!-- STATE t = 0s -->
+    <g class="fm1p8-state-panel fm1p8-panel-t0" transform="translate(18, 35)">
+      <rect class="fm1p8-card-header" x="0" y="0" width="424" height="60" rx="6" stroke="var(--fm1p8-green-main)" stroke-width="1" />
+      <text class="fm1p8-label" x="12" y="20" fill="var(--fm1p8-green-main)">ESTADO: INÍCIO DA MANOBRA</text>
+      <text class="fm1p8-text-sm" x="12" y="36" fill="var(--fm1p8-ink-100)">• Braços sustentados e fenda palpebral inicialmente aberta.</text>
+      <text class="fm1p8-text-sm" x="12" y="50" fill="var(--fm1p8-gold-main)">• RISCO: avaliação breve pode não expor a fatigabilidade.</text>
+    </g>
+
+    <!-- STATE t = 30s -->
+    <g class="fm1p8-state-panel fm1p8-panel-t30" transform="translate(18, 35)">
+      <rect class="fm1p8-card-header" x="0" y="0" width="424" height="60" rx="6" stroke="var(--fm1p8-gold-main)" stroke-width="1" />
+      <text class="fm1p8-label" x="12" y="20" fill="var(--fm1p8-gold-main)">ESTADO: USO SUSTENTADO</text>
+      <text class="fm1p8-text-sm" x="12" y="36" fill="var(--fm1p8-ink-100)">• Queda incipiente dos braços e início de ptose palpebral.</text>
+      <text class="fm1p8-text-sm" x="12" y="50" fill="var(--fm1p8-teal-main)">• A força começa a cair conforme o uso continua.</text>
+    </g>
+
+    <!-- STATE t = 60s -->
+    <g class="fm1p8-state-panel fm1p8-panel-t60" transform="translate(18, 35)">
+      <rect class="fm1p8-card-header" x="0" y="0" width="424" height="60" rx="6" stroke="var(--fm1p8-coral-main)" stroke-width="1" />
+      <text class="fm1p8-label" x="12" y="20" fill="var(--fm1p8-coral-main)">ESTADO: FADIGA EVIDENTE</text>
+      <text class="fm1p8-text-sm" x="12" y="36" fill="var(--fm1p8-ink-100)">• Queda acentuada dos braços e ptose evidente.</text>
+      <text class="fm1p8-text-sm" x="12" y="50" fill="var(--fm1p8-coral-main)">• PADRÃO: fatigabilidade temporal → placa até prova em contrário.</text>
+    </g>
+
+    <!-- DIAGNOSTIC COMPARISON TABLE: PLACA VS MIOPATIA PROXIMAL -->
+    <g transform="translate(18, 105)">
+      <rect class="fm1p8-card-header" x="0" y="0" width="424" height="95" rx="6" />
+      
+      <!-- TABLE HEADER -->
+      <text class="fm1p8-label" x="10" y="18" fill="var(--fm1p8-indigo-main)">COMPARAÇÃO CRÍTICA (PROVA DE RESIDÊNCIA)</text>
+      <line x1="10" y1="25" x2="414" y2="25" stroke="var(--fm1p8-border)" stroke-width="1" />
+
+      <!-- ROW 1: JUNÇÃO NEUROMUSCULAR (PLACA) -->
+      <text class="fm1p8-label" x="10" y="42" fill="var(--fm1p8-coral-main)">Placa Motora (ex: MG)</text>
+      <text class="fm1p8-text-sm" x="150" y="42" fill="var(--fm1p8-ink-100)">FLUTUANTE / FATIGÁVEL com o uso sustentado.</text>
+      <text class="fm1p8-text-sm" x="150" y="55" fill="var(--fm1p8-green-main)">✓ Uso sustentado revela ptose e queda temporal.</text>
+
+      <line x1="10" y1="62" x2="414" y2="62" stroke="var(--fm1p8-border)" stroke-width="1" stroke-dasharray="2,2" />
+
+      <!-- ROW 2: MIOPATIA PROXIMAL (MÚSCULO / P9) -->
+      <text class="fm1p8-label" x="10" y="78" fill="var(--fm1p8-gold-main)">Miopatia proximal</text>
+      <text class="fm1p8-text-sm" x="150" y="78" fill="var(--fm1p8-ink-100)">FIXA / CONSTANTE (não piora com uso sustentado).</text>
+      <text class="fm1p8-text-sm" x="150" y="90" fill="var(--fm1p8-coral-main)">✗ Sem ptose flutuante; fraqueza já presente no t0.</text>
+    </g>
+  </g>
+
+  <!-- FOOTER / ANCORAGEM DE REGRAS DE OURO -->
+  <g transform="translate(20, 530)">
+    <!-- BADGE 1: REGRA DOS 60S -->
+    <g transform="translate(0, 0)">
+      <rect class="fm1p8-card" x="0" y="0" width="295" height="90" stroke="var(--fm1p8-teal-main)" stroke-width="1.5" />
+      <rect class="fm1p8-card-header" x="10" y="10" width="135" height="22" rx="4" fill="var(--fm1p8-teal-bg)" stroke="var(--fm1p8-teal-main)" stroke-width="1" />
+      <text class="fm1p8-label" x="77" y="24" text-anchor="middle" fill="var(--fm1p8-teal-main)">✓ MANOBRA SUSTENTADA</text>
+      <text class="fm1p8-text-sm" x="12" y="48" fill="var(--fm1p8-ink-100)">• Braços estendidos durante a conversa.</text>
+      <text class="fm1p8-text-sm" x="12" y="64" fill="var(--fm1p8-ink-100)">• Manter o olhar no teto.</text>
+      <text class="fm1p8-text-sm" x="12" y="78" fill="var(--fm1p8-teal-main)">Evita o Falso-Negativo estático!</text>
+    </g>
+
+    <!-- BADGE 2: MIASTENIA GRAVIS -->
+    <g transform="translate(310, 0)">
+      <rect class="fm1p8-card" x="0" y="0" width="295" height="90" stroke="var(--fm1p8-coral-main)" stroke-width="1.5" />
+      <rect class="fm1p8-card-header" x="10" y="10" width="155" height="22" rx="4" fill="var(--fm1p8-coral-bg)" stroke="var(--fm1p8-coral-main)" stroke-width="1" />
+      <text class="fm1p8-label" x="87" y="24" text-anchor="middle" fill="var(--fm1p8-coral-main)">! MG ATÉ PROVA EM CONTRÁRIO</text>
+      <text class="fm1p8-text-sm" x="12" y="48" fill="var(--fm1p8-ink-100)">• Ptose palpebral fatigável.</text>
+      <text class="fm1p8-text-sm" x="12" y="64" fill="var(--fm1p8-ink-100)">• Flutuação diurna (pior ao final do dia).</text>
+      <text class="fm1p8-text-sm" x="12" y="78" fill="var(--fm1p8-coral-main)">Foco: separar placa de músculo pela variação com o uso.</text>
+    </g>
+
+    <!-- BADGE 3: DIFERENCIAL P9 -->
+    <g transform="translate(620, 0)">
+      <rect class="fm1p8-card" x="0" y="0" width="300" height="90" stroke="var(--fm1p8-gold-main)" stroke-width="1.5" />
+      <rect class="fm1p8-card-header" x="10" y="10" width="145" height="22" rx="4" fill="var(--fm1p8-gold-bg)" stroke="var(--fm1p8-gold-main)" stroke-width="1" />
+      <text class="fm1p8-label" x="82" y="24" text-anchor="middle" fill="var(--fm1p8-gold-main)">⚡ DIVISOR COM MIOPATIA</text>
+      <text class="fm1p8-text-sm" x="12" y="48" fill="var(--fm1p8-ink-100)">• Um único 'empurra/puxa' NÃO exclui placa!</text>
+      <text class="fm1p8-text-sm" x="12" y="64" fill="var(--fm1p8-ink-100)">• Miopatia: fraqueza simétrica FIXA.</text>
+      <text class="fm1p8-text-sm" x="12" y="78" fill="var(--fm1p8-gold-main)">Placa VARIA; Músculo é FIXO.</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE TOOLTIP CONTAINER -->
+  <g class="fm1p8-tooltip" id="fm1p8-tooltip-el">
+    <rect class="fm1p8-tooltip-box" x="0" y="0" width="220" height="54" />
+    <text class="fm1p8-tooltip-title" x="10" y="18" id="fm1p8-tt-title">Tooltip Title</text>
+    <text class="fm1p8-tooltip-desc" x="10" y="34" id="fm1p8-tt-desc">Tooltip Description Text</text>
+  </g>
+
+  <!-- INLINE INTERACTIVE SCRIPT (SELF-CONTAINED) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var root = document.querySelector('.fm1p8-root');
+      if (!root) return;
+
+      // TIME CONTROLLER LOGIC
+      var timeBtns = root.querySelectorAll('[data-time-set]');
+      timeBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          var tVal = btn.getAttribute('data-time-set');
+          root.setAttribute('data-time', tVal);
+        });
+        btn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            var tVal = btn.getAttribute('data-time-set');
+            root.setAttribute('data-time', tVal);
+          }
+        });
+      });
+
+      // TOOLTIP ENGINE
+      var tooltip = root.querySelector('#fm1p8-tooltip-el');
+      var ttTitle = root.querySelector('#fm1p8-tt-title');
+      var ttDesc = root.querySelector('#fm1p8-tt-desc');
+      var hotspots = root.querySelectorAll('.fm1p8-hotspot');
+
+      function showTooltip(evt, el) {
+        var title = el.getAttribute('data-title') || '';
+        var desc = el.getAttribute('data-desc') || '';
+        if (!title) return;
+
+        ttTitle.textContent = title;
+        ttDesc.textContent = desc;
+
+        var ctm = root.getScreenCTM();
+        if (!ctm) return;
+
+        var pt = root.createSVGPoint();
+        pt.x = evt.clientX || (evt.touches && evt.touches[0].clientX) || 0;
+        pt.y = evt.clientY || (evt.touches && evt.touches[0].clientY) || 0;
+        var svgPt = pt.matrixTransform(ctm.inverse());
+
+        var x = svgPt.x + 12;
+        var y = svgPt.y + 12;
+
+        if (x + 220 > 940) x = svgPt.x - 230;
+        if (y + 54 > 620) y = svgPt.y - 60;
+
+        tooltip.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+        tooltip.style.opacity = '1';
+      }
+
+      function hideTooltip() {
+        tooltip.style.opacity = '0';
+      }
+
+      hotspots.forEach(function(hs) {
+        hs.addEventListener('mousemove', function(e) { showTooltip(e, hs); });
+        hs.addEventListener('mouseenter', function(e) { showTooltip(e, hs); });
+        hs.addEventListener('mouseleave', hideTooltip);
+        hs.addEventListener('focus', function(e) { showTooltip(e, hs); });
+        hs.addEventListener('blur', hideTooltip);
+      });
+    })();
+    ]]>
+  </script>
+</svg>
+
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Ilustração</span> Manobras deficitárias sustentadas: braços estendidos e olhar ao teto expõem a queda progressiva da força na placa.</figcaption>
+      </figure>
+
+      
+
+      <aside class="op-summary" aria-label="Resumo operacional">
+        <h2 class="op-summary__title">Resumo operacional</h2>
+        <div class="prose"><p class="no-indent"><strong class="term">Placa = variação com o uso. Canse o músculo. “Cansaço” pode ser fraqueza. MG até prova em contrário.</strong></p></div>
+      </aside>
+
+      <aside class="why-matters">
+        <h2 class="why-matters__title">Por que importa</h2>
+        <div class="prose"><p>Placa “normal” no exame de 2 segundos é falso negativo clássico.</p></div>
+      </aside>
+
+      <aside class="continuity"><div class="prose"><p>O andar do músculo: <strong class="term">proximal simétrico + CPK</strong> — e o retorno ao caso Jussara.</p></div></aside>
+
+      
+<section class="quiz" data-quiz-id="fm1-fraqueza-p08" aria-labelledby="quiz-p08-title">
+  <h2 id="quiz-p08-title">Quiz — fixação</h2>
+  <ol class="quiz__questions">
+<li class="quiz__question" data-q="1">
+  <p class="quiz__stem" id="quiz-p08-q1-label">Qual achado mais empurra para <strong class="term">placa</strong>?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p08-q1-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Babinski bilateral  </button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Fraqueza que piora com o uso repetido  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — CPK 10× o LSN com proximal simétrico fixo  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Atrofia “pele e osso” de um ano  </button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> variação/fatigabilidade = marca da placa.</p>
+    <p class="quiz__distractor">A = 1º; C = músculo; D = 2º crônico. tudo que “cansa” vira “ansiedade”.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="2">
+  <p class="quiz__stem" id="quiz-p08-q2-label">Por que um único “empurra aqui” pode falhar na placa?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p08-q2-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Porque a placa não gera fraqueza  </button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Porque a fraqueza pode aparecer só após fatigar o músculo  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Porque sempre há Babinski  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Porque CPK sempre está altíssima  </button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> manobra deficitária = tempo de uso.</p>
+    <p class="quiz__distractor">A/C/D são falsos. exame neurológico “rápido demais”.</p>
+  </div>
+</li></ol>
+</section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="page-nav__btn" href="p7.html" rel="prev">← Anterior</a><span class="page-nav__pos">8/12</span><a class="page-nav__btn" href="p9.html" rel="next">Próxima →</a></nav>
+    </article>
+  </div>
+</main>
+<script src="fm1.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* aula-12.css — Anatomia da pelve feminina (parte 1) */
+.a12-modmark{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .7rem;border-radius:var(--r-pill);border:1px solid color-mix(in srgb,var(--rose) 45%,transparent);background:color-mix(in srgb,var(--rose) 12%,transparent);color:var(--rose-hi);font:700 var(--fs-xs)/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase}
+.a12-compass{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.25rem}
+.a12-compass__band{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:var(--r-pill);border:1px solid var(--border-mid);background:var(--bg-glass);font:700 var(--fs-xs)/1 var(--font-mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-70)}
+.a12-compass__band[data-state="active"]{border-color:var(--rose);color:var(--rose-hi);background:var(--wine-soft)}
+.a12-compass__band[data-state="done"]{border-color:var(--kw-green);color:var(--kw-green)}
+.a12-compass__band[data-state="cont"]{opacity:.72}
+.a12-linkback{color:var(--rose-hi);text-decoration:underline;text-underline-offset:2px;font-weight:700}
+.a12-linkback:hover{color:var(--kw-amber)}
+
+/* Openers E1–E10 */
+.a12-question-stage,.a12-evidence-burst,.a12-case-intake,.a12-finding-trap,.a12-checkpoint-board,.a12-mnemonic-lock,.a12-contrast-engine,.a12-misconception-teardown,.a12-subtraction-lab,.a12-plane-turn{
+  position:relative;isolation:isolate;margin:0 0 clamp(1.8rem,5vw,3.2rem);padding:clamp(1.1rem,3vw,1.8rem);
+  border:1px solid var(--border-mid);border-radius:1.25rem;background:var(--bg-glass);box-shadow:var(--shadow-md)
+}
+.a12-question-stage{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.7fr);gap:1.2rem}
+.a12-question-stage__eyebrow,.a12-opener-kicker{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:.75rem;color:var(--rose);font:750 var(--fs-xs)/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
+.a12-question-stage h1,.a12-evidence-burst h1,.a12-case-intake h1,.a12-finding-trap h1,.a12-checkpoint-board h1,.a12-mnemonic-lock h1,.a12-contrast-engine h1,.a12-misconception-teardown h1,.a12-subtraction-lab h1,.a12-plane-turn h1{
+  margin:0 0 .75rem;font-family:var(--font-serif);font-weight:650;line-height:1.05;letter-spacing:-.03em;font-size:clamp(1.7rem,4.2vw,2.8rem)
+}
+.a12-question-stage__lead,.a12-opener-lead{margin:0;color:var(--ink-90);font-size:var(--fs-lg);text-indent:0}
+.a12-open-question-debt{padding:1rem 1.1rem;border:1px solid var(--rose);border-radius:1rem;background:var(--bg-1)}
+.a12-open-question-debt__stamp{display:inline-block;padding:.28rem .6rem;border:1px solid var(--kw-amber);border-radius:var(--r-pill);color:var(--kw-amber);font:800 var(--fs-xs)/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+.a12-evidence-burst__stat{font-family:var(--font-mono);font-size:clamp(2.4rem,7vw,4.2rem);font-weight:800;color:var(--rose-hi);line-height:1;margin:0 0 .6rem}
+.a12-case-intake{border-left:4px solid var(--rose)}
+.a12-finding-trap{border-color:color-mix(in srgb,var(--kw-amber) 55%,var(--border-mid))}
+.a12-misconception-teardown .strike{text-decoration:line-through;color:var(--ink-50)}
+.a12-misconception-teardown .fix{margin-top:.75rem;padding:.85rem 1rem;border-left:3px solid var(--kw-green);background:var(--kw-green-dim);border-radius:0 var(--r-sm) var(--r-sm) 0}
+.a12-checkpoint-board ol{margin:.8rem 0 0;padding-left:1.2rem}
+.a12-checkpoint-board li{margin:.35rem 0}
+.a12-mnemonic-lock{background:color-mix(in srgb,var(--kw-amber) 8%,var(--bg-glass))}
+.a12-mnemonic-lock__lock{font-family:var(--font-mono);font-weight:800;letter-spacing:.04em;color:var(--kw-amber);margin:.5rem 0}
+.a12-contrast-engine{display:grid;grid-template-columns:1fr auto 1fr;gap:.8rem;align-items:stretch}
+.a12-contrast-engine__vs{align-self:center;font:800 var(--fs-sm)/1 var(--font-mono);color:var(--rose)}
+.a12-contrast-engine__side{padding:.9rem;border:1px solid var(--border-mid);border-radius:1rem;background:var(--bg-1)}
+.a12-subtraction-lab[data-floor="off"] .before-with-floor{opacity:.35}
+.a12-subtraction-lab[data-floor="on"] .after-without-floor{opacity:.35}
+.a12-plane-turn{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:1rem;align-items:center}
+.a12-plane-turn__arrow{font-size:1.6rem;color:var(--rose)}
+
+/* Content components */
+.a12-topic{margin:clamp(1.8rem,4vw,3rem) 0}
+.a12-topic__kicker{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;color:var(--rose);font:800 var(--fs-xs)/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
+.a12-topic__kicker::after{content:"";flex:1;height:1px;background:var(--border-soft)}
+.a12-clinical-hook-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:.85rem;margin:1.2rem 0 1.6rem}
+.a12-hook{min-height:7.5rem;padding:1rem;text-align:left;border:1px solid var(--border-mid);border-radius:1rem;background:var(--bg-glass);cursor:pointer}
+.a12-hook[aria-pressed="true"],.a12-hook:hover,.a12-hook:focus-visible{border-color:var(--rose);background:var(--wine-soft)}
+.a12-hook__n{display:block;color:var(--rose);font:800 var(--fs-xs)/1 var(--font-mono)}
+.a12-anchor-cardset{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:.85rem;margin:1.1rem 0}
+.a12-anchor-card{padding:1rem;border:1px solid var(--border-mid);border-radius:1rem;background:var(--bg-1)}
+.a12-load-chain{list-style:none;padding:0;margin:1rem 0;display:grid;gap:.55rem}
+.a12-load-chain li{padding:.75rem 1rem;border-left:3px solid var(--rose);background:var(--bg-glass);border-radius:0 var(--r-sm) var(--r-sm) 0}
+.a12-house-stage-map{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.a12-house-stage-map button{min-height:44px}
+.a12-scope-boundary,.a12-reading-contract,.a12-false-name-correction,.a12-elimination-rule,.a12-synonymy-note,.a12-absolute-adverb-rule,.a12-advanced-insight,.a12-evidence-card,.a12-impact-fact,.a12-terminology-divergence{margin:1.1rem 0}
+.a12-count-table,.a12-major-minor-comparison,.a12-three-rings-table,.a12-spine-tuberosity-table,.a12-three-cords,.a12-perineal-map{width:100%;border-collapse:collapse;margin:1rem 0;font-size:var(--fs-sm)}
+.a12-count-table th,.a12-count-table td,.a12-major-minor-comparison th,.a12-major-minor-comparison td,.a12-three-rings-table th,.a12-three-rings-table td,.a12-spine-tuberosity-table th,.a12-spine-tuberosity-table td,.a12-three-cords th,.a12-three-cords td,.a12-perineal-map th,.a12-perineal-map td{padding:.55rem .65rem;border:1px solid var(--border-mid);text-align:left;vertical-align:top}
+.a12-count-table th,.a12-major-minor-comparison th,.a12-three-rings-table th,.a12-spine-tuberosity-table th,.a12-three-cords th,.a12-perineal-map th{background:var(--bg-2);color:var(--rose-hi);font-weight:700}
+.a12-two-ends-card,.a12-obturator-channel-card,.a12-two-level-hierarchy,.a12-two-level-decoder,.a12-biischiatic-decoder,.a12-station-reader,.a12-smellie-calculator,.a12-layer-controller,.a12-failure-mechanism,.a12-plane-toggle,.a12-incision-tracer,.a12-five-step-causal-chain,.a12-dual-mode-sheet,.a12-memory-reconstructor,.a12-clinical-pattern,.a12-viewpoint-mnemonic-grid,.a12-entry-mechanism,.a12-load-mechanism{margin:1.2rem 0;padding:1rem;border:1px solid var(--border-mid);border-radius:1rem;background:var(--bg-glass)}
+.a12-toolbar{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}
+.a12-toolbar button,.a12-btn{min-height:40px;padding:.55rem .9rem;border:1px solid var(--border-mid);border-radius:var(--r-sm);background:var(--bg-1);color:var(--ink-100);cursor:pointer;font-weight:600}
+.a12-toolbar button[aria-pressed="true"],.a12-btn[aria-pressed="true"]{border-color:var(--rose);background:var(--wine-soft);color:var(--rose-hi)}
+.a12-inline-svg{width:100%;height:auto;display:block}
+.fig .fig__frame svg,.a12-hero-frame svg{width:100%;height:auto;display:block}
+.a12-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.1rem;align-items:start;margin:1.2rem 0}
+.a12-foundation-links{display:flex;flex-wrap:wrap;gap:.55rem;margin:1rem 0}
+.a12-foundation-links a{min-height:40px;display:inline-flex;align-items:center;padding:.45rem .8rem;border:1px solid var(--border-mid);border-radius:var(--r-pill);background:var(--bg-glass);color:var(--ink-100);text-decoration:none;font-weight:600}
+.a12-foundation-links a:hover{border-color:var(--rose);color:var(--rose-hi)}
+.prose p{text-align:justify;text-indent:1.25em;hyphens:auto;width:100%;max-width:none}
+.prose p.no-indent,.prose p:first-child{text-indent:0}
+.prose strong.term{color:var(--rose-hi);font-weight:700}
+.prose strong.hl-good{color:var(--kw-green)}
+.prose strong.hl-bad{color:var(--kw-red)}
+.prose strong.hl-warn{color:var(--kw-amber)}
+.a12-bank-question{margin:1rem 0;padding:1rem 1.1rem;border-left:4px solid var(--kw-amber);background:color-mix(in srgb,var(--kw-amber) 8%,var(--bg-glass));border-radius:0 var(--r-md) var(--r-md) 0}
+.a12-deduction-note{margin:.6rem 0 0;font-size:var(--fs-sm);color:var(--ink-70);font-style:italic}
+.a12-part-banner{margin:0 0 1rem;padding:.7rem 1rem;border-radius:var(--r-md);border:1px dashed var(--border-mid);color:var(--ink-70);font:700 var(--fs-xs)/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+
+@media (max-width:860px){
+  .a12-question-stage,.a12-contrast-engine,.a12-plane-turn,.a12-split{grid-template-columns:1fr}
+  .a12-contrast-engine__vs,.a12-plane-turn__arrow{justify-self:center}
+}
+@media (max-width:390px){
+  .a12-toolbar button,.a12-btn,.quiz__alt{min-height:44px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}

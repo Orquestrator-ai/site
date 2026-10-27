@@ -1,0 +1,529 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" id="a16p3-svg" class="a16-inline-svg a16p3-root" role="img" aria-label="Ilustração médica interativa: Ácido Fólico na Janela do Tubo Neural">
+  <defs>
+    <style>
+      /* BASE ESCOPADA E TEMATIZAÇÃO (MODO ESCURO DEFAULT / MODO CLARO VIA [data-theme="light"]) */
+      .a16p3-root {
+        --a16p3-bg: var(--bg-1, #0f172a);
+        --a16p3-card-bg: var(--bg-2, #1e293b);
+        --a16p3-card-border: var(--border-1, #334155);
+        --a16p3-text-main: var(--ink-100, #f8fafc);
+        --a16p3-text-sub: var(--ink-70, #94a3b8);
+        --a16p3-text-muted: var(--ink-50, #64748b);
+        
+        --a16p3-teal-main: #14b8a6;
+        --a16p3-teal-light: #2dd4bf;
+        --a16p3-teal-bg: rgba(20, 184, 166, 0.12);
+        
+        --a16p3-gold-main: #f59e0b;
+        --a16p3-gold-light: #fbbf24;
+        --a16p3-gold-bg: rgba(245, 158, 11, 0.15);
+        
+        --a16p3-red-main: #ef4444;
+        --a16p3-red-light: #f87171;
+        --a16p3-red-bg: rgba(239, 68, 68, 0.12);
+        
+        --a16p3-green-main: #10b981;
+        --a16p3-green-light: #34d399;
+        --a16p3-green-bg: rgba(16, 185, 129, 0.12);
+        
+        --a16p3-blue-main: #3b82f6;
+        --a16p3-blue-light: #60a5fa;
+
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a16p3-bg, #0f172a);
+        color: var(--a16p3-text-main, #f8fafc);
+        user-select: none;
+      }
+
+      /* MODO CLARO OVERRIDE */
+      [data-theme="light"] .a16p3-root {
+        --a16p3-bg: var(--bg-1, #f8fafc);
+        --a16p3-card-bg: var(--bg-2, #ffffff);
+        --a16p3-card-border: var(--border-1, #cbd5e1);
+        --a16p3-text-main: var(--ink-100, #0f172a);
+        --a16p3-text-sub: var(--ink-70, #334155);
+        --a16p3-text-muted: var(--ink-50, #64748b);
+        
+        --a16p3-teal-main: #0d9488;
+        --a16p3-teal-light: #14b8a6;
+        --a16p3-teal-bg: rgba(13, 148, 136, 0.08);
+        
+        --a16p3-gold-main: #d97706;
+        --a16p3-gold-light: #f59e0b;
+        --a16p3-gold-bg: rgba(217, 119, 6, 0.1);
+        
+        --a16p3-red-main: #dc2626;
+        --a16p3-red-light: #ef4444;
+        --a16p3-red-bg: rgba(220, 38, 38, 0.08);
+        
+        --a16p3-green-main: #059669;
+        --a16p3-green-light: #10b981;
+        --a16p3-green-bg: rgba(5, 150, 105, 0.08);
+        
+        --a16p3-blue-main: #2563eb;
+        --a16p3-blue-light: #3b82f6;
+      }
+
+      /* ELEMENTOS TIPOGRÁFICOS E BOTÕES */
+      .a16p3-title { font-size: 17px; font-weight: 700; fill: var(--a16p3-text-main, #f8fafc); }
+      .a16p3-subtitle { font-size: 12.5px; font-weight: 400; fill: var(--a16p3-text-sub, #94a3b8); }
+      .a16p3-section-head { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; fill: var(--a16p3-text-sub, #94a3b8); }
+      .a16p3-label { font-size: 11px; fill: var(--a16p3-text-sub, #94a3b8); }
+      .a16p3-label-bold { font-size: 11.5px; font-weight: 600; fill: var(--a16p3-text-main, #f8fafc); }
+      
+      /* CONTROLES E INTERATIVIDADE */
+      .a16p3-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .a16p3-btn-bg {
+        fill: var(--a16p3-card-bg, #1e293b);
+        stroke: var(--a16p3-card-border, #334155);
+        stroke-width: 1.5;
+        rx: 6px;
+      }
+      .a16p3-btn:hover .a16p3-btn-bg {
+        stroke: var(--a16p3-teal-main, #14b8a6);
+      }
+      .a16p3-btn.a16p3-active .a16p3-btn-bg {
+        fill: var(--a16p3-teal-bg, rgba(20, 184, 166, 0.12));
+        stroke: var(--a16p3-teal-main, #14b8a6);
+        stroke-width: 2;
+      }
+      .a16p3-btn-gold.a16p3-active .a16p3-btn-bg {
+        fill: var(--a16p3-gold-bg, rgba(245, 158, 11, 0.15));
+        stroke: var(--a16p3-gold-main, #f59e0b);
+        stroke-width: 2;
+      }
+      .a16p3-btn-text {
+        font-size: 12px;
+        font-weight: 600;
+        fill: var(--a16p3-text-sub, #94a3b8);
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      .a16p3-btn.a16p3-active .a16p3-btn-text {
+        fill: var(--a16p3-teal-light, #2dd4bf);
+      }
+      .a16p3-btn-gold.a16p3-active .a16p3-btn-text {
+        fill: var(--a16p3-gold-light, #fbbf24);
+      }
+
+      /* CARDS E PAINÉIS */
+      .a16p3-panel-box {
+        fill: var(--a16p3-card-bg, #1e293b);
+        stroke: var(--a16p3-card-border, #334155);
+        stroke-width: 1.5;
+        rx: 10px;
+      }
+      .a16p3-alert-box {
+        fill: var(--a16p3-gold-bg, rgba(245, 158, 11, 0.15));
+        stroke: var(--a16p3-gold-main, #f59e0b);
+        stroke-width: 1.5;
+        rx: 8px;
+      }
+      .a16p3-danger-box {
+        fill: var(--a16p3-red-bg, rgba(239, 68, 68, 0.12));
+        stroke: var(--a16p3-red-main, #ef4444);
+        stroke-width: 1.5;
+        rx: 8px;
+      }
+      .a16p3-success-box {
+        fill: var(--a16p3-green-bg, rgba(16, 185, 129, 0.12));
+        stroke: var(--a16p3-green-main, #10b981);
+        stroke-width: 1.5;
+        rx: 8px;
+      }
+
+      /* INDICADORES E ANIMAÇÕES */
+      .a16p3-glow-window {
+        fill: var(--a16p3-teal-bg, rgba(20, 184, 166, 0.12));
+        stroke: var(--a16p3-teal-main, #14b8a6);
+        stroke-dasharray: 4 3;
+        stroke-width: 1.5;
+        rx: 6px;
+      }
+      .a16p3-pulse-dot {
+        animation: a16p3-pulse 2s infinite;
+      }
+      @keyframes a16p3-pulse {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; }
+        100% { opacity: 0.4; }
+      }
+
+      /* ELEMENTOS EMBRIOLÓGICOS */
+      .a16p3-ectoderm { fill: #38bdf8; stroke: #0284c7; stroke-width: 1.5; }
+      .a16p3-neural-plate { fill: #f59e0b; stroke: #d97706; stroke-width: 2; }
+      .a16p3-mesoderm { fill: #f43f5e; opacity: 0.7; }
+      .a16p3-notochord { fill: #a855f7; stroke: #7e22ce; stroke-width: 1.5; }
+      .a16p3-tube-closed { fill: #10b981; stroke: #047857; stroke-width: 2; }
+    </style>
+
+    <!-- GRADIENTES E FILTROS -->
+    <linearGradient id="a16p3-grad-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="a16p3-grad-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="a16p3-grad-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.9"/>
+      <stop offset="35%" stop-color="#10b981" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ef4444" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- CABEÇALHO -->
+  <g id="a16p3-header" transform="translate(25, 20)">
+    <text class="a16-inline-svg a16p3-root" x="0" y="16">JANELA DE SUPLEMENTAÇÃO DO ÁCIDO FÓLICO &amp; PREVENÇÃO DE NTD</text>
+    <text class="a16-inline-svg a16p3-root" x="0" y="36">O tubo neural fecha entre a 3ª e 4ª sem pós-concepção (5ª-6ª sem amenorreia). Fora desta janela, fólico NÃO previne NTD.</text>
+  </g>
+
+  <!-- BARRA DE CONTROLE / SELEÇÃO DE PERFIL E FASE -->
+  <g id="a16p3-controls" transform="translate(25, 68)">
+    <!-- SELETOR DE PERFIL DE RISCO -->
+    <text class="a16-inline-svg a16p3-root" x="0" y="12">1. Perfil do Paciente (Dose):</text>
+    
+    <g id="a16p3-btn-low" class="a16-inline-svg a16p3-root" transform="translate(0, 20)" role="button" tabindex="0" aria-label="População Geral 0.4mg por dia">
+      <rect class="a16-inline-svg a16p3-root" x="0" y="0" width="230" height="34"/>
+      <circle cx="16" cy="17" r="6" fill="var(--a16p3-teal-main, #14b8a6)"/>
+      <text class="a16-inline-svg a16p3-root" x="124" y="17">População Geral (0,4 mg/dia)</text>
+    </g>
+
+    <g id="a16p3-btn-high" class="a16-inline-svg a16p3-root" transform="translate(240, 20)" role="button" tabindex="0" aria-label="Alto Risco 4 a 5mg por dia">
+      <rect class="a16-inline-svg a16p3-root" x="0" y="0" width="250" height="34"/>
+      <circle cx="16" cy="17" r="6" fill="var(--a16p3-gold-main, #f59e0b)"/>
+      <text class="a16-inline-svg a16p3-root" x="134" y="17">Alto Risco (4,0 a 5,0 mg/dia) [10×]</text>
+    </g>
+
+    <!-- SELETOR DE FASE TEMPORAL -->
+    <text class="a16-inline-svg a16p3-root" x="510" y="12">2. Fase da Suplementação:</text>
+
+    <g id="a16p3-step-pre" class="a16-inline-svg a16p3-root" transform="translate(510, 20)" role="button" tabindex="0" aria-label="Pré-concepção 1 a 3 meses antes">
+      <rect class="a16-inline-svg a16p3-root" x="0" y="0" width="135" height="34"/>
+      <text class="a16-inline-svg a16p3-root" x="67" y="17">Pré-Concepção</text>
+    </g>
+
+    <g id="a16p3-step-t1" class="a16-inline-svg a16p3-root" transform="translate(650, 20)" role="button" tabindex="0" aria-label="Primeiro Trimestre Janela Crítica">
+      <rect class="a16-inline-svg a16p3-root" x="0" y="0" width="135" height="34"/>
+      <text class="a16-inline-svg a16p3-root" x="67" y="17">1º Trimestre</text>
+    </g>
+
+    <g id="a16p3-step-t23" class="a16-inline-svg a16p3-root" transform="translate(790, 20)" role="button" tabindex="0" aria-label="Segundo e Terceiro Trimestres">
+      <rect class="a16-inline-svg a16p3-root" x="0" y="0" width="145" height="34"/>
+      <text class="a16-inline-svg a16p3-root" x="72" y="17">2º / 3º Trimestres</text>
+    </g>
+  </g>
+
+  <!-- ÁREA PRINCIPAL DA ILUSTRAÇÃO (ESQUERDA: CRONOGRAMA & EMBRIOLOGIA) -->
+  <g id="a16p3-main-left" transform="translate(25, 140)">
+    <rect class="a16-inline-svg a16p3-root" x="0" y="0" width="580" height="325"/>
+
+    <!-- LINHA DO TEMPO GESTACIONAL & CRÍTICA DO TUBO NEURAL -->
+    <text class="a16-inline-svg a16p3-root" x="20" y="25">Cronograma Gestacional vs Fechamento Embriológico</text>
+
+    <!-- FAIXAS DE TEMPO -->
+    <g transform="translate(20, 40)">
+      <!-- Pré-concepção (-12w a 0w) -->
+      <rect x="0" y="0" width="120" height="30" fill="rgba(59, 130, 246, 0.15)" stroke="var(--a16p3-blue-main, #3b82f6)" rx="4"/>
+      <text class="a16-inline-svg a16p3-root" x="60" y="15" text-anchor="middle" fill="var(--a16p3-blue-light, #60a5fa)">Pré-Concepção</text>
+      <text class="a16-inline-svg a16p3-root" x="60" y="26" text-anchor="middle" font-size="9.5">-12w a 0w (1-3 meses)</text>
+
+      <!-- 1º Trimestre (0w a 12w) -->
+      <rect x="125" y="0" width="220" height="30" fill="var(--a16p3-teal-bg, rgba(20, 184, 166, 0.12))" stroke="var(--a16p3-teal-main, #14b8a6)" rx="4"/>
+      <text class="a16-inline-svg a16p3-root" x="235" y="15" text-anchor="middle" fill="var(--a16p3-teal-light, #2dd4bf)">1º Trimestre (0 a 12 semanas)</text>
+
+      <!-- 2º e 3º Trimestres (12w a 40w) -->
+      <rect x="350" y="0" width="190" height="30" fill="rgba(100, 116, 139, 0.12)" stroke="var(--a16p3-card-border, #334155)" rx="4"/>
+      <text class="a16-inline-svg a16p3-root" x="445" y="15" text-anchor="middle" fill="var(--a16p3-text-muted, #64748b)">2º e 3º Trimestres (12-40w)</text>
+    </g>
+
+    <!-- HIGHLIGHT DA JANELA CRÍTICA DE FECHAMENTO DO TUBO NEURAL (Semana 3 a 6 de Amenorreia / 1 a 4 pós-concepção) -->
+    <g transform="translate(20, 78)">
+      <rect class="a16-inline-svg a16p3-root" x="165" y="0" width="90" height="42"/>
+      <text class="a16-inline-svg a16p3-root" x="210" y="16" text-anchor="middle" fill="var(--a16p3-gold-light, #fbbf24)" font-size="10.5">JANELA DO TUBO</text>
+      <text class="a16-inline-svg a16p3-root" x="210" y="30" text-anchor="middle" fill="var(--a16p3-gold-main, #f59e0b)" font-size="9.5">S3-S6 Amenorreia</text>
+
+      <!-- Indicador dinâmico de fase selecionada -->
+      <line id="a16p3-phase-marker" x1="60" y1="-5" x2="60" y2="45" stroke="var(--a16p3-teal-light, #2dd4bf)" stroke-width="2.5" stroke-dasharray="3 2"/>
+    </g>
+
+    <!-- CURVA DE EFETIVIDADE DA SUPLEMENTAÇÃO NA PREVENÇÃO DE NTD -->
+    <g transform="translate(20, 135)">
+      <text class="a16-inline-svg a16p3-root" x="0" y="0" font-size="11">Efetividade na Prevenção de Espinha Bífida / Anencefalia:</text>
+      
+      <!-- Eixos -->
+      <line x1="40" y1="20" x2="530" y2="20" stroke="var(--a16p3-card-border, #334155)" stroke-width="1"/>
+      <line x1="40" y1="65" x2="530" y2="65" stroke="var(--a16p3-card-border, #334155)" stroke-width="1"/>
+      
+      <!-- Efetividade % labels -->
+      <text class="a16-inline-svg a16p3-root" x="35" y="24" text-anchor="end" font-size="9.5" fill="var(--a16p3-green-light, #34d399)">100%</text>
+      <text class="a16-inline-svg a16p3-root" x="35" y="69" text-anchor="end" font-size="9.5" fill="var(--a16p3-red-light, #f87171)">0%</text>
+
+      <!-- Curva Visual de Proteção -->
+      <path d="M 40 20 L 140 20 C 180 20, 210 20, 250 65 L 530 65" fill="none" stroke="url(#a16p3-grad-fade)" stroke-width="4"/>
+
+      <!-- Região sombreada de proteção máxima -->
+      <path d="M 40 20 L 140 20 C 180 20, 210 20, 250 65 L 40 65 Z" fill="var(--a16p3-green-bg, rgba(16, 185, 129, 0.12))" opacity="0.6"/>
+
+      <!-- Rótulo Efetividade Zero -->
+      <rect x="360" y="42" width="165" height="20" fill="var(--a16p3-red-bg, rgba(239, 68, 68, 0.12))" rx="4" stroke="var(--a16p3-red-main, #ef4444)" stroke-width="1"/>
+      <text class="a16-inline-svg a16p3-root" x="442" y="55" text-anchor="middle" fill="var(--a16p3-red-light, #f87171)" font-size="10">Efetividade NTD = ZERO</text>
+    </g>
+
+    <!-- EMBRIOLOGIA EM 3 ETAPAS: PLACA -> SULCO -> TUBO FECHADO -->
+    <g transform="translate(20, 220)">
+      <text class="a16-inline-svg a16p3-root" x="0" y="0">Embriogênese do Tubo Neural (Fechamento dos Neuroporos)</text>
+      
+      <!-- ETAPA 1: Placa Neural (Dia 18) -->
+      <g transform="translate(20, 15)">
+        <rect x="0" y="0" width="150" height="75" fill="var(--a16p3-bg, #0f172a)" stroke="var(--a16p3-card-border, #334155)" rx="6"/>
+        <text class="a16-inline-svg a16p3-root" x="75" y="16" text-anchor="middle" font-size="10">1. Placa Neural (Dia 18)</text>
+
+        <!-- Ectoderma & Placa -->
+        <path d="M 15 45 Q 75 40 135 45" fill="none" stroke="#38bdf8" stroke-width="4"/>
+        <path d="M 45 42 Q 75 38 105 42" fill="none" stroke="#f59e0b" stroke-width="6"/>
+        <circle cx="75" cy="58" r="5" fill="#a855f7"/> <!-- Notocorda -->
+        <text class="a16-inline-svg a16p3-root" x="75" y="70" text-anchor="middle" font-size="8.5">Notocorda induz ectoderma</text>
+      </g>
+
+      <!-- ETAPA 2: Sulco & Dobras Neurais (Dia 22) -->
+      <g transform="translate(195, 15)">
+        <rect x="0" y="0" width="160" height="75" fill="var(--a16p3-bg, #0f172a)" stroke="var(--a16p3-card-border, #334155)" rx="6"/>
+        <text class="a16-inline-svg a16p3-root" x="80" y="16" text-anchor="middle" font-size="10">2. Sulco Neural (Dia 22)</text>
+
+        <!-- Dobras Neurais curvando -->
+        <path d="M 15 38 C 45 38 55 60 80 60 C 105 60 115 38 145 38" fill="none" stroke="#f59e0b" stroke-width="5"/>
+        <circle cx="50" cy="38" r="3" fill="#ec4899"/> <!-- Crista neural -->
+        <circle cx="110" cy="38" r="3" fill="#ec4899"/>
+        <text class="a16-inline-svg a16p3-root" x="80" y="70" text-anchor="middle" font-size="8.5">Fólico atua na síntese de DNA</text>
+      </g>
+
+      <!-- ETAPA 3: Tubo Fechado & Neuroporos (Dia 28) -->
+      <g transform="translate(375, 15)">
+        <rect id="a16p3-emb-box3" x="0" y="0" width="170" height="75" fill="var(--a16p3-bg, #0f172a)" stroke="var(--a16p3-teal-main, #14b8a6)" rx="6"/>
+        <text class="a16-inline-svg a16p3-root" x="85" y="16" text-anchor="middle" font-size="10" fill="var(--a16p3-teal-light, #2dd4bf)">3. Tubo Fechado (Dia 28)</text>
+
+        <!-- Ectoderma de superfície fundido + Tubo isolado -->
+        <path d="M 15 35 L 155 35" fill="none" stroke="#38bdf8" stroke-width="3"/>
+        <circle cx="85" cy="52" r="11" fill="#10b981" stroke="#047857" stroke-width="2"/>
+        <circle cx="85" cy="52" r="5" fill="var(--a16p3-bg, #0f172a)"/>
+        <text class="a16-inline-svg a16p3-root" x="85" y="70" text-anchor="middle" font-size="8.5" fill="var(--a16p3-green-light, #34d399)">Neuroporos Fechados!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ÁREA PRINCIPAL DA ILUSTRAÇÃO (DIREITA: PAINEL CLÍNICO E REGRAS DE PROVA) -->
+  <g id="a16p3-main-right" transform="translate(620, 140)">
+    <rect class="a16-inline-svg a16p3-root" x="0" y="0" width="315" height="325"/>
+
+    <!-- PAINEL DINÂMICO DE RECOMENDAÇÃO CLÍNICA -->
+    <g transform="translate(15, 20)">
+      <text class="a16-inline-svg a16p3-root" x="0" y="0">Conduta &amp; Posologia Selecionada</text>
+
+      <!-- DOSE DESTACADA EM BADGE -->
+      <g transform="translate(0, 12)">
+        <rect id="a16p3-badge-dose-bg" x="0" y="0" width="285" height="42" fill="var(--a16p3-teal-bg, rgba(20, 184, 166, 0.12))" stroke="var(--a16p3-teal-main, #14b8a6)" rx="6"/>
+        <text class="a16-inline-svg a16p3-root" x="12" y="16" font-size="10">DOSE RECOMENDADA:</text>
+        <text id="a16p3-txt-dose" class="a16-inline-svg a16p3-root" x="12" y="33" font-size="16" fill="var(--a16p3-teal-light, #2dd4bf)">0,4 mg / dia (400 µg)</text>
+        <text id="a16p3-txt-target" class="a16-inline-svg a16p3-root" x="273" y="26" text-anchor="end" font-size="11" fill="var(--a16p3-text-sub, #94a3b8)">População Geral</text>
+      </g>
+
+      <!-- STATUS DA JANELA TEMPORAL -->
+      <g transform="translate(0, 64)">
+        <rect id="a16p3-badge-status-bg" x="0" y="0" width="285" height="32" fill="var(--a16p3-green-bg, rgba(16, 185, 129, 0.12))" stroke="var(--a16p3-green-main, #10b981)" rx="6"/>
+        <text id="a16p3-txt-status-title" class="a16-inline-svg a16p3-root" x="12" y="20" font-size="11" fill="var(--a16p3-green-light, #34d399)">✓ JANELA EFETIVA (Pré-Concepção)</text>
+      </g>
+
+      <!-- MECANISMO DE AÇÃO / EXPLICAÇÃO DE ENSINO -->
+      <g transform="translate(0, 106)">
+        <text class="a16-inline-svg a16p3-root" x="0" y="10" font-size="11" fill="var(--a16p3-text-main, #f8fafc)">Mecanismo &amp; Impacto Embriológico:</text>
+        <text id="a16p3-txt-desc-1" class="a16-inline-svg a16p3-root" x="0" y="26" font-size="10.5" fill="var(--a16p3-text-sub, #94a3b8)">Garante estoques maternos foláticos prévios ao</text>
+        <text id="a16p3-txt-desc-2" class="a16-inline-svg a16p3-root" x="0" y="40" font-size="10.5" fill="var(--a16p3-text-sub, #94a3b8)">fechamento do neuroporo posterior (dia 27-28).</text>
+        <text id="a16p3-txt-desc-3" class="a16-inline-svg a16p3-root" x="0" y="54" font-size="10.5" fill="var(--a16p3-text-sub, #94a3b8)">Reduz incidência de anencefalia e mielo/espinha bífida.</text>
+      </g>
+
+      <!-- CAIXA DE ALERTA: PEGADINHA DE PROVA DE RESIDÊNCIA -->
+      <g transform="translate(0, 175)">
+        <rect id="a16p3-trap-box" class="a16-inline-svg a16p3-root" x="0" y="0" width="285" height="110"/>
+        <path d="M 15 15 L 25 32 L 5 32 Z" fill="var(--a16p3-gold-main, #f59e0b)"/>
+        <text class="a16-inline-svg a16p3-root" x="15" y="27" text-anchor="middle" font-size="10" fill="var(--a16p3-bg, #0f172a)">!</text>
+        
+        <text class="a16-inline-svg a16p3-root" x="32" y="22" font-size="11" fill="var(--a16p3-gold-light, #fbbf24)">PEGADINHA DE PROVA (PEGADINHA #1):</text>
+        
+        <text id="a16p3-trap-txt1" class="a16-inline-svg a16p3-root" x="12" y="42" font-size="10" fill="var(--a16p3-text-main, #f8fafc)">• Fólico no 2º/3º Trimestre NÃO previne defeito de</text>
+        <text id="a16p3-trap-txt2" class="a16-inline-svg a16p3-root" x="19" y="56" font-size="10" fill="var(--a16p3-text-main, #f8fafc)">tubo neural (o tubo já está totalmente fechado!).</text>
+        <text id="a16p3-trap-txt3" class="a16-inline-svg a16p3-root" x="12" y="72" font-size="10" fill="var(--a16p3-text-main, #f8fafc)">• Alto Risco (NTD prévio ou anticonvulsivante) EXIGE</text>
+        <text id="a16p3-trap-txt4" class="a16-inline-svg a16p3-root" x="19" y="86" font-size="10" stroke="none" fill="var(--a16p3-gold-light, #fbbf24)" font-weight="700">dose 10× maior (4,0 a 5,0 mg/dia)!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- SEÇÃO INFERIOR: RESUMO EXPANDIDO DE CRITÉRIOS DE ALTO RISCO & TABELA DE REFERÊNCIA -->
+  <g id="a16p3-footer-table" transform="translate(25, 480)">
+    <rect class="a16-inline-svg a16p3-root" x="0" y="0" width="910" height="135"/>
+
+    <text class="a16-inline-svg a16p3-root" x="20" y="22">Quadro Síntese: Fatores de Alto Risco para Defeito do Tubo Neural (Indicação de 4,0 a 5,0 mg/dia)</text>
+
+    <!-- CRITÉRIO 1: ANTECEDENTE DE NTD -->
+    <g transform="translate(20, 35)">
+      <rect x="0" y="0" width="205" height="80" fill="var(--a16p3-gold-bg, rgba(245, 158, 11, 0.15))" stroke="var(--a16p3-gold-main, #f59e0b)" rx="6"/>
+      <text class="a16-inline-svg a16p3-root" x="12" y="20" font-size="11" fill="var(--a16p3-gold-light, #fbbf24)">1. Antecedente de NTD</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="38" font-size="10">• Filho anterior afetado por NTD</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="52" font-size="10">• Gestante ou pai com NTD</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="68" font-size="9.5" fill="var(--a16p3-gold-main, #f59e0b)">Risco de recorrência = 2% a 5%</text>
+    </g>
+
+    <!-- CRITÉRIO 2: ANTICONVULSIVANTES -->
+    <g transform="translate(240, 35)">
+      <rect x="0" y="0" width="215" height="80" fill="var(--a16p3-red-bg, rgba(239, 68, 68, 0.12))" stroke="var(--a16p3-red-main, #ef4444)" rx="6"/>
+      <text class="a16-inline-svg a16p3-root" x="12" y="20" font-size="11" fill="var(--a16p3-red-light, #f87171)">2. Anticonvulsivantes</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="38" font-size="10">• Uso de Ácido Valproico</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="52" font-size="10">• Uso de Carbamazepina</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="68" font-size="9.5" fill="var(--a16p3-red-light, #f87171)">Antagonistas do Folato</text>
+    </g>
+
+    <!-- CRITÉRIO 3: COMORBIDADES & MÁ-ABSORÇÃO -->
+    <g transform="translate(470, 35)">
+      <rect x="0" y="0" width="210" height="80" fill="rgba(59, 130, 246, 0.12)" stroke="var(--a16p3-blue-main, #3b82f6)" rx="6"/>
+      <text class="a16-inline-svg a16p3-root" x="12" y="20" font-size="11" fill="var(--a16p3-blue-light, #60a5fa)">3. Outras Indicações</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="38" font-size="10">• Diabetes Pré-Gestacional</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="52" font-size="10">• Obesidade (IMC ≥ 35 kg/m²)</text>
+      <text class="a16-inline-svg a16p3-root" x="12" y="66" font-size="10">• Doença Celíaca / Bariatrica</text>
+    </g>
+
+    <!-- REGRAS DE OURO EM BOX -->
+    <g transform="translate(695, 35)">
+      <rect x="0" y="0" width="195" height="80" fill="var(--a16p3-bg, #0f172a)" stroke="var(--a16p3-card-border, #334155)" rx="6"/>
+      <text class="a16-inline-svg a16p3-root" x="10" y="18" font-size="10.5" fill="var(--a16p3-teal-light, #2dd4bf)">REGRAS DA BANCA:</text>
+      <text class="a16-inline-svg a16p3-root" x="10" y="34" font-size="9.5">• Início ideal: 1-3 m pré-concepção</text>
+      <text class="a16-inline-svg a16p3-root" x="10" y="48" font-size="9.5">• Manter até final do 1º Trimestre</text>
+      <text class="a16-inline-svg a16p3-root" x="10" y="62" font-size="9.5">• 2º/3ºT: fólico é p/ anemia materno-fetal</text>
+      <text class="a16-inline-svg a16p3-root" x="10" y="74" font-size="9" fill="var(--a16p3-gold-light, #fbbf24)">NÃO CONFUNDA AS DOSES (0.4 vs 4-5mg)</text>
+    </g>
+  </g>
+
+  <!-- MOTOR DE INTERATIVIDADE PURE-SVG (SELF-CONTAINED) -->
+  <script>//<![CDATA[
+    (function() {
+      // ESTADO DA ILUSTRAÇÃO
+      var state = {
+        risk: 'low',  // 'low' (0.4mg) ou 'high' (4-5mg)
+        phase: 'pre'  // 'pre', 't1', 't23'
+      };
+
+      // REFERÊNCIAS DOS BOTÕES
+      var btnLow = document.getElementById('a16p3-btn-low');
+      var btnHigh = document.getElementById('a16p3-btn-high');
+      var stepPre = document.getElementById('a16p3-step-pre');
+      var stepT1 = document.getElementById('a16p3-step-t1');
+      var stepT23 = document.getElementById('a16p3-step-t23');
+
+      // ELEMENTOS REATIVOS DO PAINEL
+      var phaseMarker = document.getElementById('a16p3-phase-marker');
+      var txtDose = document.getElementById('a16p3-txt-dose');
+      var txtTarget = document.getElementById('a16p3-txt-target');
+      var badgeDoseBg = document.getElementById('a16p3-badge-dose-bg');
+      var badgeStatusBg = document.getElementById('a16p3-badge-status-bg');
+      var txtStatusTitle = document.getElementById('a16p3-txt-status-title');
+      var txtDesc1 = document.getElementById('a16p3-txt-desc-1');
+      var txtDesc2 = document.getElementById('a16p3-txt-desc-2');
+      var txtDesc3 = document.getElementById('a16p3-txt-desc-3');
+      var trapTxt1 = document.getElementById('a16p3-trap-txt1');
+      var trapTxt2 = document.getElementById('a16p3-trap-txt2');
+
+      function updateUI() {
+        // 1. ATUALIZAR BOTÕES DE RISCO
+        if (state.risk === 'low') {
+          btnLow.classList.add('a16p3-active');
+          btnHigh.classList.remove('a16p3-active');
+          txtDose.textContent = '0,4 mg / dia (400 µg)';
+          txtDose.setAttribute('fill', 'var(--a16p3-teal-light, #2dd4bf)');
+          txtTarget.textContent = 'População Geral';
+          badgeDoseBg.setAttribute('fill', 'var(--a16p3-teal-bg, rgba(20, 184, 166, 0.12))');
+          badgeDoseBg.setAttribute('stroke', 'var(--a16p3-teal-main, #14b8a6)');
+        } else {
+          btnLow.classList.remove('a16p3-active');
+          btnHigh.classList.add('a16p3-active');
+          txtDose.textContent = '4,0 a 5,0 mg / dia (10×)';
+          txtDose.setAttribute('fill', 'var(--a16p3-gold-light, #fbbf24)');
+          txtTarget.textContent = 'Alto Risco (NTD/Fármaco)';
+          badgeDoseBg.setAttribute('fill', 'var(--a16p3-gold-bg, rgba(245, 158, 11, 0.15))');
+          badgeDoseBg.setAttribute('stroke', 'var(--a16p3-gold-main, #f59e0b)');
+        }
+
+        // 2. ATUALIZAR BOTÕES DE FASE E MARCADOR NA LINHA DO TEMPO
+        stepPre.classList.remove('a16p3-active');
+        stepT1.classList.remove('a16p3-active');
+        stepT23.classList.remove('a16p3-active');
+
+        if (state.phase === 'pre') {
+          stepPre.classList.add('a16p3-active');
+          phaseMarker.setAttribute('x1', '60');
+          phaseMarker.setAttribute('x2', '60');
+          
+          badgeStatusBg.setAttribute('fill', 'var(--a16p3-green-bg, rgba(16, 185, 129, 0.12))');
+          badgeStatusBg.setAttribute('stroke', 'var(--a16p3-green-main, #10b981)');
+          txtStatusTitle.textContent = '✓ JANELA IDEAL (Pré-Concepção)';
+          txtStatusTitle.setAttribute('fill', 'var(--a16p3-green-light, #34d399)');
+
+          txtDesc1.textContent = 'Saturação ideal dos estoques foláticos teciduais';
+          txtDesc2.textContent = '1 a 3 meses antes da fecundação. Previne falha de';
+          txtDesc3.textContent = 'fechamento primário do neuroporo rostral e caudal.';
+        } else if (state.phase === 't1') {
+          stepT1.classList.add('a16p3-active');
+          phaseMarker.setAttribute('x1', '210');
+          phaseMarker.setAttribute('x2', '210');
+          
+          badgeStatusBg.setAttribute('fill', 'var(--a16p3-teal-bg, rgba(20, 184, 166, 0.12))');
+          badgeStatusBg.setAttribute('stroke', 'var(--a16p3-teal-main, #14b8a6)');
+          txtStatusTitle.textContent = '⚡ JANELA CRÍTICA EM ANDAMENTO (1ºT)';
+          txtStatusTitle.setAttribute('fill', 'var(--a16p3-teal-light, #2dd4bf)');
+
+          txtDesc1.textContent = 'O tubo neural fecha totalmente no dia 28 pós-concepção';
+          txtDesc2.textContent = '(6ª semana de amenorreia). Manter o ácido fólico';
+          txtDesc3.textContent = 'indispensável até o final do 1º Trimestre (12 semanas).';
+        } else {
+          stepT23.classList.add('a16p3-active');
+          phaseMarker.setAttribute('x1', '445');
+          phaseMarker.setAttribute('x2', '445');
+          
+          badgeStatusBg.setAttribute('fill', 'var(--a16p3-red-bg, rgba(239, 68, 68, 0.12))');
+          badgeStatusBg.setAttribute('stroke', 'var(--a16p3-red-main, #ef4444)');
+          txtStatusTitle.textContent = '⚠ FORA DA JANELA DO TUBO (2º/3ºT)';
+          txtStatusTitle.setAttribute('fill', 'var(--a16p3-red-light, #f87171)');
+
+          txtDesc1.textContent = 'O tubo neural JÁ ESTÁ FECHADO. Iniciar fólico agora';
+          txtDesc2.textContent = 'NÃO previne mais anencefalia ou espinha bífida.';
+          txtDesc3.textContent = 'Uso atual visa prevenção de anemia e eritropoiese.';
+        }
+      }
+
+      // EVENT LISTENERS COM SUPORTE A TOUCH & TECLADO
+      btnLow.addEventListener('click', function() { state.risk = 'low'; updateUI(); });
+      btnHigh.addEventListener('click', function() { state.risk = 'high'; updateUI(); });
+
+      stepPre.addEventListener('click', function() { state.phase = 'pre'; updateUI(); });
+      stepT1.addEventListener('click', function() { state.phase = 't1'; updateUI(); });
+      stepT23.addEventListener('click', function() { state.phase = 't23'; updateUI(); });
+
+      // ACESSIBILIDADE VIA TECLADO (ENTER / SPACE)
+      var interactiveElems = [btnLow, btnHigh, stepPre, stepT1, stepT23];
+      interactiveElems.forEach(function(elem) {
+        elem.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            elem.click();
+          }
+        });
+      });
+
+      // INICIALIZAR ESTADO INICIAL
+      updateUI();
+    })();
+  //]]></script>
+</svg>

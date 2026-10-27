@@ -1,0 +1,254 @@
+/* Aula 08 — Câncer de Próstata: tokens, orbs, grid, componentes específicos */
+
+    [data-aula="08-ca-prostata"]{
+      --pr-orange:#F97316; --pr-orange-dim:rgba(249,115,22,.16);
+      --pr-violet:#A855F7; --pr-violet-dim:rgba(168,85,247,.16);
+      --pr-amber:#FBBF24; --pr-coral:#FB7185;
+      --pr-green:#34D399; --pr-red:#F87171; --pr-blue:#60A5FA;
+      --pr-ink:#F4F7FB; --pr-muted:#B8C0CC;
+    }
+
+    /* livestrip variante uro/próstata (cor laranja da aula) */
+    .livestrip--uro .livestrip__trace{stroke:var(--pr-orange);
+      filter:drop-shadow(0 0 5px rgba(249,115,22,0.55));stroke-dasharray:30 760;
+      animation:livestrip-uro 3.4s ease-in-out infinite}
+    .livestrip--uro .livestrip__label::before{background:var(--pr-orange);box-shadow:0 0 8px var(--pr-orange)}
+    @keyframes livestrip-uro{0%{stroke-dashoffset:790}100%{stroke-dashoffset:0}}
+    @media (prefers-reduced-motion: reduce){.livestrip--uro .livestrip__trace{animation:none;stroke-dasharray:none}}
+
+    /* dash métricas usam acento laranja/violeta da aula */
+    [data-aula="08-ca-prostata"] .dash__metric--orange .dash__metric-num{color:var(--pr-orange)}
+    [data-aula="08-ca-prostata"] .dash__metric--violet .dash__metric-num{color:var(--pr-violet)}
+    [data-aula="08-ca-prostata"] .dash__metric--amber .dash__metric-num{color:var(--pr-amber)}
+
+    /* acento dos openers/cards desta aula (sobrepõe o teal padrão pontualmente) */
+    [data-aula="08-ca-prostata"] .opener--question .opener__question-mark{color:var(--pr-orange)}
+    [data-aula="08-ca-prostata"] .board-wants__target{background:var(--pr-orange)}
+    [data-aula="08-ca-prostata"] .finding__label{color:var(--pr-orange)}
+
+    /* ---- STEP-THROUGH (reusa contrato; acento laranja) ---- */
+    .stepper{margin:var(--sp-5) 0}
+    .stepper__frame{border:1px solid var(--border-soft);border-radius:var(--r-lg);
+      background:var(--bg-glass);padding:var(--sp-3);overflow:hidden}
+    .stepper__stage svg{width:100%;height:auto;display:block}
+    .stepper [data-step]{opacity:.4;transition:opacity .42s var(--ease-out)}
+    .stepper [data-step].is-on{opacity:1}
+    @media (prefers-reduced-motion: reduce){.stepper [data-step]{transition:none}}
+    .stepper__live{margin:var(--sp-3) 0 0;min-height:1.4em;font-size:var(--fs-sm);color:var(--ink-90);font-weight:600}
+    .stepper__controls{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-3)}
+    .step-btn{appearance:none;border:1px solid var(--border-mid);border-radius:var(--r-pill);
+      background:var(--bg-elevated);color:var(--ink-100);padding:.5em 1.1em;font-weight:600;
+      font-size:var(--fs-sm);cursor:pointer;transition:border-color .2s,background .2s}
+    .step-btn:hover{border-color:var(--pr-orange)}
+    .step-btn:focus-visible{outline:2px solid var(--pr-orange);outline-offset:2px}
+    .step-btn:disabled{opacity:.4;cursor:not-allowed}
+    .step-btn--primary{background:var(--pr-orange-dim);border-color:var(--pr-orange)}
+    /* card-veredito (pg14) */
+    .step-verdict{margin-top:var(--sp-3);border:1px solid rgba(249,115,22,.4);border-radius:var(--r-md);
+      background:var(--pr-orange-dim);padding:var(--sp-3) var(--sp-4)}
+    .step-verdict__label{font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;
+      color:var(--pr-orange);font-weight:700;margin-bottom:.3em}
+    .step-verdict p{margin:0;font-size:var(--fs-sm);color:var(--ink-90);line-height:var(--lh-base)}
+
+    /* ---- TABELA DINÂMICA (achado→decisão / mecanismo→sintoma) ---- */
+    .bauer-tabela{border-radius:var(--r-lg);overflow:hidden;background:var(--bg-glass);
+      border:1px solid rgba(249,115,22,.18);margin:var(--sp-5) 0}
+    .bt-head{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;padding:12px 18px;font-size:var(--fs-xs);
+      font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-50);background:rgba(249,115,22,.08)}
+    .bt-head--3{grid-template-columns:1fr 1.4fr}
+    .bt-row{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;width:100%;padding:14px 18px;text-align:left;
+      background:transparent;border:0;border-top:1px solid var(--border-soft);color:var(--ink-100);
+      font-size:var(--fs-sm);cursor:pointer}
+    .bt-row.bt-row--3{grid-template-columns:1fr 1.4fr}
+    .bt-row:hover,.bt-row:focus-visible{background:rgba(249,115,22,.07);outline:2px solid var(--pr-orange);outline-offset:-2px}
+    .bt-cell{color:var(--ink-100)}
+    .bt-tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:var(--fs-xs);font-weight:700}
+    .bt-tag--go{background:rgba(52,211,153,.16);color:var(--pr-green)}
+    .bt-tag--wait{background:rgba(154,166,184,.14);color:var(--ink-50)}
+    .bt-why{grid-column:1/-1;max-height:0;overflow:hidden;opacity:0;transition:max-height .25s,opacity .2s;
+      color:var(--ink-80);font-size:var(--fs-sm);line-height:var(--lh-base)}
+    .bt-row[aria-expanded="true"] .bt-why{max-height:320px;opacity:1;margin-top:10px}
+    .bt-row[aria-expanded="true"][data-veredito="positivo"]{border-left:3px solid var(--pr-green)}
+    .bt-row[aria-expanded="true"][data-veredito="alerta"]{border-left:3px solid var(--pr-red)}
+    @media(prefers-reduced-motion:reduce){.bt-why{transition:none}}
+    @media(max-width:540px){.bt-head,.bt-row{grid-template-columns:1fr}.bt-head--3,.bt-row--3{grid-template-columns:1fr}}
+    /* mini-painel blástica × lítica (pg4) */
+    .bt-painel{padding:0}
+    .bt-row[aria-expanded="true"] .bt-painel{max-height:340px}
+    .bp-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 4px}
+    .bp-col{padding:12px;border-radius:var(--r-md);text-align:center;color:var(--ink-100)}
+    .bp-col--bla{background:rgba(232,236,242,.06);border:1px solid rgba(232,236,242,.25)}
+    .bp-col--lit{background:rgba(11,18,32,.6);border:1px solid rgba(154,166,184,.25)}
+    .bp-col strong{display:block;margin-top:6px}
+    .bp-osso{display:block;width:46px;height:46px;margin:0 auto 8px;border-radius:50%}
+    .bp-osso--bla{background:radial-gradient(circle,#F4F6FA 0%,#C7CDD8 70%);box-shadow:0 0 14px rgba(244,246,250,.6)}
+    .bp-osso--lit{background:#0B1220;border:3px solid #5A6477;box-shadow:inset 0 0 10px #000}
+    .bp-col small{display:block;margin-top:4px;color:var(--ink-50);font-size:var(--fs-xs)}
+    .bp-regra{margin:8px 0 0;padding:10px;border-radius:8px;background:rgba(248,113,113,.12);color:#FCA5A5;
+      font-size:var(--fs-sm);text-align:center}
+
+    /* ---- TABELA DINÂMICA COMPARATIVA (pg6 MS/INCA × SBU) ---- */
+    .bauer-compare{margin:var(--sp-5) 0}
+    .bc-table{width:100%;border-collapse:collapse;border-radius:var(--r-md);overflow:hidden}
+    .bc-table th[scope="row"]{text-align:left;padding:12px 14px;font-size:var(--fs-xs);color:var(--ink-50);
+      font-weight:600;background:var(--bg-glass)}
+    .bc-th{padding:12px;font-size:var(--fs-sm);font-weight:700}
+    .bc-th--inca{background:rgba(96,165,250,.14);color:var(--pr-blue)}
+    .bc-th--sbu{background:rgba(249,115,22,.14);color:var(--pr-orange)}
+    .bc-cell{padding:12px 14px;text-align:center;font-size:var(--fs-sm);background:var(--bg-elevated);
+      border:1px solid var(--border-soft);cursor:pointer;color:var(--ink-100)}
+    .bc-cell:hover,.bc-cell:focus-visible,.bc-cell.is-active{background:rgba(249,115,22,.08);
+      outline:2px solid var(--pr-orange);outline-offset:-2px}
+    .bauer-compare.show-common .bc-common{background:rgba(52,211,153,.16);box-shadow:inset 0 0 0 2px var(--pr-green)}
+    .bc-toggle{display:inline-flex;align-items:center;gap:10px;margin:14px 0;padding:8px 14px;border-radius:999px;
+      border:1px solid rgba(52,211,153,.4);background:transparent;color:var(--ink-100);font-size:var(--fs-sm);cursor:pointer}
+    .bc-toggle-knob{width:34px;height:18px;border-radius:999px;background:rgba(154,166,184,.4);position:relative;transition:background .2s}
+    .bc-toggle-knob::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .2s}
+    .bc-toggle[aria-pressed="true"] .bc-toggle-knob{background:var(--pr-green)}
+    .bc-toggle[aria-pressed="true"] .bc-toggle-knob::after{left:18px}
+    @media(prefers-reduced-motion:reduce){.bc-toggle-knob,.bc-toggle-knob::after{transition:none}}
+    .bc-quemquando{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px;border-radius:var(--r-md);
+      background:var(--bg-glass);font-size:var(--fs-sm);color:var(--ink-90)}
+    .bc-chip{padding:4px 10px;border-radius:999px;background:rgba(249,115,22,.16);color:var(--pr-orange);
+      font-size:var(--fs-xs);font-weight:700}
+    .bc-chip--soft{background:rgba(154,166,184,.14);color:var(--ink-50);font-weight:500}
+    .bc-detail-box{margin-top:10px;padding:10px 14px;border-radius:8px;background:rgba(249,115,22,.1);
+      color:var(--ink-80);font-size:var(--fs-sm)}
+    @media(max-width:600px){.bc-table,.bc-table tbody,.bc-table tr,.bc-table th,.bc-table td{display:block;width:100%}
+      .bc-table thead{display:none}.bc-cell{text-align:left;border-radius:var(--r-sm);margin-top:4px}}
+
+    /* ---- SLIDER (pg2 idade · pg7 PSA · pg9 PI-RADS) ---- */
+    .bauer-slider-prev,.bauer-psa,.bauer-pirads{margin:var(--sp-5) 0;border:1px solid var(--border-soft);
+      border-radius:var(--r-lg);background:var(--bg-glass);padding:var(--sp-4)}
+    .bauer-slider-prev svg,.bauer-psa svg{width:100%;height:auto;display:block}
+    input[type="range"].prev-range,input[type="range"].psa-range,input[type="range"].bp-range{
+      width:100%;margin-top:8px;accent-color:var(--pr-orange);cursor:pointer}
+    input[type="range"]:focus-visible{outline:2px solid var(--pr-amber);outline-offset:3px}
+    #prev-marker,#psa-marker{transition:transform .25s var(--ease-out)}
+    #psa-limiar{transition:x1 .2s,x2 .2s}
+    @media(prefers-reduced-motion:reduce){#prev-marker,#psa-marker{transition:none}}
+    .prev-readout,.psa-readout{margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .prev-age,.psa-val{font-size:var(--fs-lg);font-weight:700;color:var(--ink-100)}
+    .prev-label,.psa-verdict{padding:5px 12px;border-radius:999px;font-size:var(--fs-xs);font-weight:700}
+    .prev-label--low,.psa-verdict--low{background:rgba(52,211,153,.16);color:var(--pr-green)}
+    .prev-label--mid,.psa-verdict--mid{background:rgba(251,191,36,.16);color:var(--pr-amber)}
+    .prev-label--high,.psa-verdict--high{background:rgba(248,113,113,.16);color:var(--pr-red)}
+    .psa-verdict--gray{background:rgba(249,115,22,.16);color:var(--pr-orange)}
+    .prev-fixed{margin-top:12px;font-size:var(--fs-sm);color:var(--ink-80);line-height:var(--lh-base)}
+    .psa-jovem{display:inline-flex;align-items:center;gap:10px;margin-top:12px;padding:8px 14px;border-radius:999px;
+      border:1px solid rgba(168,85,247,.45);background:transparent;color:var(--ink-100);font-size:var(--fs-sm);cursor:pointer}
+    .psa-jovem[aria-pressed="true"] .bc-toggle-knob{background:var(--pr-violet)}
+    .psa-note{margin-top:10px;padding:10px 14px;border-radius:8px;background:rgba(168,85,247,.12);
+      color:#D6BCFA;font-size:var(--fs-sm)}
+    /* PI-RADS */
+    .bp-scale{display:grid;gap:6px}
+    .bp-rail{display:flex;gap:3px;height:14px;border-radius:8px;overflow:hidden}
+    .bp-seg{flex:1;background:rgba(154,166,184,.2);transition:background .25s}
+    .bp-seg.is-on[data-r="1"],.bp-seg.is-on[data-r="2"]{background:var(--pr-green)}
+    .bp-seg.is-on[data-r="3"]{background:var(--pr-amber)}
+    .bp-seg.is-on[data-r="4"]{background:var(--pr-orange)}
+    .bp-seg.is-on[data-r="5"]{background:var(--pr-red)}
+    @media(prefers-reduced-motion:reduce){.bp-seg{transition:none}}
+    .bp-ticks{display:flex;justify-content:space-between;font-size:var(--fs-xs);color:var(--ink-50)}
+    .bp-ticks span{flex:1;text-align:center}
+    .bp-panels{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin-top:14px}
+    @media(max-width:560px){.bp-panels{grid-template-columns:1fr}}
+    .bp-main,.bp-mirror{border:1px solid var(--border-mid);border-radius:var(--r-md);padding:12px 14px;background:var(--bg-elevated)}
+    .bp-mirror{background:var(--pr-violet-dim);border-color:rgba(168,85,247,.35)}
+    .bp-tag{display:inline-block;padding:4px 10px;border-radius:8px;font-weight:700;font-size:var(--fs-sm);
+      background:rgba(249,115,22,.16);color:var(--pr-orange)}
+    .bp-tag--ti{background:rgba(168,85,247,.2);color:var(--pr-violet)}
+    .bp-num,.bp-num-ti{font-size:1.2em}
+    .bp-risk{margin:8px 0 0;font-size:var(--fs-sm);color:var(--ink-90);line-height:var(--lh-base)}
+    .bp-risk--1,.bp-risk--2{color:var(--pr-green)}.bp-risk--3{color:var(--pr-amber)}
+    .bp-risk--4{color:var(--pr-orange)}.bp-risk--5{color:var(--pr-red)}
+    .bp-mirror-h{display:block;font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--pr-violet);font-weight:700;margin-bottom:6px}
+    .bp-mirror-t{margin:8px 0 0;font-size:var(--fs-sm);color:var(--ink-80);line-height:var(--lh-base)}
+
+    /* ---- HOTSPOT anatômico (pg3) — reusa .figure-svg__stage + .hs-shape ---- */
+    [data-aula="08-ca-prostata"] .hs-shape{cursor:pointer;transition:filter .2s,fill .2s}
+    [data-aula="08-ca-prostata"] .hs-shape:hover,[data-aula="08-ca-prostata"] .hs-shape:focus-visible{
+      filter:drop-shadow(0 0 10px rgba(249,115,22,.7));outline:none}
+    [data-aula="08-ca-prostata"] .hs-shape[data-active="true"]{filter:drop-shadow(0 0 14px rgba(249,115,22,.95))}
+    @media(prefers-reduced-motion:reduce){[data-aula="08-ca-prostata"] .hs-shape{transition:none}}
+    #hz-nodulo{transition:opacity .3s}
+    .figure-svg__stage.is-periferica #hz-nodulo{opacity:1}
+
+    /* ---- CALCULADORA (pg8 refino · pg10 risco · pg11 gleason) ---- */
+    .bauer-calc{border:1px solid var(--border-soft);border-radius:var(--r-lg);background:var(--bg-glass);
+      padding:var(--sp-4);margin:var(--sp-5) 0;display:grid;gap:var(--sp-3)}
+    .bc-factor{border:1px solid rgba(249,115,22,.2);border-radius:var(--r-md);padding:14px 16px;background:var(--bg-elevated);margin:0}
+    .bc-factor legend{padding:0 6px;font-size:var(--fs-sm);font-weight:700;color:var(--pr-orange)}
+    .bc-factor label{display:block;font-size:var(--fs-sm);color:var(--ink-70);margin:6px 0}
+    .bc-in{display:block;margin-top:4px;width:160px;max-width:70%;padding:8px 10px;border-radius:var(--r-sm);
+      border:1px solid var(--border-mid);background:var(--bg-glass);color:var(--ink-100);font:inherit;font-size:var(--fs-sm)}
+    .bc-in:focus-visible{outline:2px solid var(--pr-orange);outline-offset:1px}
+    .bc-cut{display:block;font-size:var(--fs-xs);color:var(--ink-50);margin-top:4px}
+    .bc-out{display:inline-block;margin-top:8px;padding:5px 12px;border-radius:999px;font-size:var(--fs-sm);font-weight:700}
+    .bc-out--ok{background:rgba(52,211,153,.16);color:var(--pr-green)}
+    .bc-out--bad{background:rgba(248,113,113,.16);color:var(--pr-red)}
+    .bc-sintese{padding:14px 16px;border-radius:var(--r-md);background:rgba(249,115,22,.1);
+      border:1px solid rgba(249,115,22,.3);font-size:var(--fs-sm);color:var(--ink-90);line-height:var(--lh-base)}
+    /* calculadora de risco/gleason — selects + output tonalizado */
+    .calc-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--sp-3)}
+    .calc-fields label{display:flex;flex-direction:column;gap:.35em;font-size:var(--fs-sm);color:var(--ink-90);font-weight:600}
+    .calc-fields select,.calc-fields input{appearance:none;background:var(--bg-elevated);color:var(--ink-100);
+      border:1px solid var(--border-mid);border-radius:var(--r-sm);padding:.55em .7em;font:inherit;font-size:var(--fs-sm)}
+    .calc-fields select:focus-visible,.calc-fields input:focus-visible{outline:2px solid var(--pr-orange);outline-offset:2px}
+    .risk-rules{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2);font-size:var(--fs-xs)}
+    @media(max-width:520px){.risk-rules{grid-template-columns:1fr}}
+    .risk-rule{padding:10px 12px;border-radius:var(--r-md);border:1px solid var(--border-mid);background:var(--bg-elevated);color:var(--ink-80)}
+    .risk-rule b{color:var(--ink-100)}
+    .risk-rule.is-hot{border-color:var(--pr-orange);box-shadow:0 0 0 1px rgba(249,115,22,.4);background:rgba(249,115,22,.08)}
+    .risk-out,.gl-out{border-radius:var(--r-md);padding:var(--sp-3) var(--sp-4);border:1px solid var(--border-mid);
+      background:var(--bg-elevated);display:grid;gap:.35em}
+    .risk-out__verdict,.gl-out__verdict{font-size:var(--fs-md);font-weight:700;color:var(--ink-100)}
+    .risk-out__why,.gl-out__why{font-size:var(--fs-sm);color:var(--ink-70);line-height:var(--lh-snug)}
+    .risk-out[data-tone="err"],.gl-out[data-tone="err"]{border-color:rgba(248,113,113,.5);background:rgba(248,113,113,.08)}
+    .risk-out[data-tone="err"] .risk-out__verdict,.gl-out[data-tone="err"] .gl-out__verdict{color:var(--pr-red)}
+    .risk-out[data-tone="ok"],.gl-out[data-tone="ok"]{border-color:rgba(52,211,153,.5);background:rgba(52,211,153,.08)}
+    .risk-out[data-tone="ok"] .risk-out__verdict,.gl-out[data-tone="ok"] .gl-out__verdict{color:var(--pr-green)}
+    .risk-out[data-tone="accent"],.gl-out[data-tone="accent"]{border-color:rgba(249,115,22,.5);background:rgba(249,115,22,.08)}
+    .risk-out[data-tone="accent"] .risk-out__verdict,.gl-out[data-tone="accent"] .gl-out__verdict{color:var(--pr-orange)}
+    .gl-sum{font-family:var(--font-mono);font-size:var(--fs-lg);font-weight:700;color:var(--ink-100)}
+
+    /* ---- dyn-card (pg12 risco→conduta · pg13 cirúrgica×química) ---- */
+    .dyn{margin:var(--sp-5) 0;display:grid;gap:var(--sp-3)}
+    .dyn__cards{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2)}
+    @media(max-width:560px){.dyn__cards{grid-template-columns:1fr}}
+    .dyn-card{text-align:left;border:1px solid var(--border-mid);border-radius:var(--r-md);background:var(--bg-elevated);
+      padding:var(--sp-3);cursor:pointer;color:var(--ink-100);display:grid;gap:.4em;transition:border-color .2s}
+    .dyn-card:hover{border-color:var(--pr-orange)}
+    .dyn-card:focus-visible{outline:2px solid var(--pr-orange);outline-offset:2px}
+    .dyn-card__head{display:flex;align-items:center;gap:.6em}
+    .dyn-card__n{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;border-radius:8px;
+      font-weight:800;font-size:var(--fs-sm);color:#0B1220;background:var(--c,#8F9BAD)}
+    .dyn-card__name{font-weight:700;font-size:var(--fs-sm)}
+    .dyn-card__chev{margin-left:auto;color:var(--ink-50);transition:transform .2s}
+    .dyn-card[aria-expanded="true"] .dyn-card__chev{transform:rotate(180deg)}
+    .dyn-card[aria-expanded="true"]{border-color:var(--pr-orange);background:var(--bg-elevated-2)}
+    .dyn-card__body{font-size:var(--fs-sm);color:var(--ink-80);line-height:var(--lh-base);
+      border-top:1px dashed var(--border-soft);padding-top:.5em}
+
+    /* nota lateral discreta (acento laranja) */
+    .sidenote{border-left:3px solid var(--pr-orange);background:var(--pr-orange-dim);
+      border-radius:0 var(--r-md) var(--r-md) 0;padding:var(--sp-3) var(--sp-4);margin:var(--sp-4) 0;
+      font-size:var(--fs-sm);color:var(--ink-80);line-height:var(--lh-base)}
+    .sidenote__label{display:block;font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;
+      color:var(--pr-orange);font-weight:700;margin-bottom:.3em}
+
+    /* ---- revisão ativa (campo adaptativo) ---- */
+    .active-review{margin:var(--sp-5) 0;border:1px solid var(--border-soft);border-radius:var(--r-md);
+      background:var(--bg-glass);padding:var(--sp-3) var(--sp-4)}
+    .active-review .finding__label{color:var(--pr-orange)}
+    .active-review ol{margin:.4em 0 0;padding-left:1.2em;display:grid;gap:.55em}
+    .active-review li{font-family:var(--font-serif);font-style:italic;font-size:var(--fs-md);
+      color:var(--ink-90);line-height:var(--lh-snug)}
+
+    /* hotspot card (pg3) */
+    .hz-card{margin-top:14px;padding:14px 18px;border-radius:var(--r-md);background:var(--bg-elevated);
+      border:1px solid rgba(249,115,22,.3)}
+    .hz-card-title{margin:0 0 6px;font-size:var(--fs-md);color:var(--pr-orange)}
+    .hz-card-body{margin:0;font-size:var(--fs-sm);line-height:var(--lh-base);color:var(--ink-80)}
+    .hz-hint{margin-top:8px;font-size:var(--fs-xs);color:var(--ink-50);text-align:center}
+  

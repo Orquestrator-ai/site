@@ -1,0 +1,111 @@
+/* aula-02.css — interatividade dos SVGs autorais da Aula 2 (câncer gástrico).
+   Espelha o padrão scoped de aula-01.css. Só estados visuais; o JS muda atributos/classes.
+   ZERO hex — herda tokens do repo. prefers-reduced-motion desliga transições e animações.
+   Extraído para folha própria para passar o GATE-DRIFT (0 <style> nas aulas) e alinhar com as aulas gold. */
+
+.figure-svg .gast-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* alvos clicáveis (o elemento desenhado é o alvo) */
+.il-gast2 .gast2-clue,
+.il-gast3 .gast3-via,
+.il-gast6 .gast6-sign,
+.il-gast10 .gast10-row,
+.il-gast14 .gast14-case { cursor: pointer; }
+.il-gast3 .gast3-hit,
+.il-gast6 .gast6-hit { cursor: pointer; }
+
+/* foco de teclado visível */
+.figure-svg [tabindex]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+
+/* ===== gast1 (p1) — linha do tempo da praga (step-through 1→4) ===== */
+.il-gast1 .gast1-disease,
+.il-gast1 .gast1-dot-d,
+.il-gast1 .gast1-symptom,
+.il-gast1 .gast1-note,
+.il-gast1 .gast1-meet { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast1 .gast1-disease.is-on { opacity: 1; }
+.il-gast1 .gast1-dot-d.is-on { opacity: 1; }
+.il-gast1 .gast1-symptom.is-on { opacity: 0.9; }
+.il-gast1 .gast1-note.is-on { opacity: 1; }
+.il-gast1 .gast1-meet.is-on { opacity: 1; }
+
+/* ===== gast2 (p2) — mapa do caso (hotspot exclusivo por pista) ===== */
+.il-gast2 .gast2-link,
+.il-gast2 .gast2-target { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast2 .gast2-clue[aria-pressed="true"] > rect:first-of-type { stroke-width: 2.8; }
+.il-gast2 .gast2-clue[aria-pressed="true"] { filter: drop-shadow(0 0 7px var(--coral-50)); }
+
+/* ===== gast3 (p3) — três vias (hotspot exclusivo por trajeto) ===== */
+.il-gast3 .gast3-track,
+.il-gast3 .gast3-dest,
+.il-gast3 .gast3-glow { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast3 .gast3-via:not(.is-on) .gast3-track,
+.il-gast3 .gast3-via:not(.is-on) .gast3-dest { opacity: 0.32; }
+.il-gast3 .gast3-via:not(.is-on) .gast3-glow { opacity: 0; }
+.il-gast3 .gast3-via.is-on .gast3-track { stroke-width: 3; }
+
+/* ===== gast4 (p4) — dois grupos de risco (toggle de coluna) ===== */
+.il-gast4 .gast4-col { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast4 .gast4-col.is-dim { opacity: 0.32; }
+
+/* ===== gast5 (p5) — duas camadas da clínica (toggle de camada) ===== */
+.il-gast5 .gast5-layer,
+.il-gast5 .gast5-alarm { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast5 .gast5-layer.is-dim,
+.il-gast5 .gast5-alarm.is-dim { opacity: 0.32; }
+
+/* ===== gast6 (p6) — 5 sinais sobre o corpo (hotspot exclusivo por marcador) ===== */
+.il-gast6 .gast6-dot,
+.il-gast6 .gast6-lead,
+.il-gast6 .gast6-card { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast6 .gast6-sign:not(.is-on) .gast6-lead,
+.il-gast6 .gast6-sign:not(.is-on) .gast6-card { opacity: 0.32; }
+.il-gast6 .gast6-sign.is-on[data-tone="teal"] .gast6-dot { filter: drop-shadow(0 0 9px var(--teal-glow, var(--teal-60))); }
+.il-gast6 .gast6-sign.is-on[data-tone="amber"] .gast6-dot { filter: drop-shadow(0 0 9px var(--amber-glow, var(--warn-amber))); }
+.il-gast6 .gast6-sign.is-on[data-tone="coral"] .gast6-dot { filter: drop-shadow(0 0 9px var(--coral-glow, var(--coral-60))); }
+
+/* ===== gast7 (p7) — EDA + biópsia das bordas (step-through 1→4) ===== */
+.il-gast7 .gast7-node { opacity: 0.28; transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast7 .gast7-node.is-on { opacity: 1; }
+
+/* ===== gast10 (p10) — matriz esôfago × gástrico (linha clicável) ===== */
+.il-gast10 .gast10-bg { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast10 .gast10-row.is-active .gast10-bg { opacity: 0.14; }
+.il-gast10 .gast10-row[aria-pressed="true"] > rect:nth-of-type(2) { stroke-width: 2; }
+
+/* ===== gast14 (p14) — decisão por extensão (hotspot exclusivo por cenário) ===== */
+.il-gast14 .gast14-band,
+.il-gast14 .gast14-verdict { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-gast14 .gast14-case:not(.is-on) .gast14-verdict { opacity: 0.4; }
+.il-gast14 .gast14-case.is-on[data-tone="green"] .gast14-band { filter: drop-shadow(0 0 7px var(--ok-green)); }
+.il-gast14 .gast14-case.is-on[data-tone="teal"] .gast14-band { filter: drop-shadow(0 0 7px var(--teal-60)); }
+.il-gast14 .gast14-case.is-on[data-tone="red"] .gast14-band { filter: drop-shadow(0 0 7px var(--err-red)); }
+
+/* step-ctl genérico (gast1/gast7 step-through) — reusa o padrão da aula-01 */
+.step-ctl { display: flex; gap: var(--sp-2); justify-content: center; align-items: center; margin-top: var(--sp-3); flex-wrap: wrap; }
+.step-ctl button {
+  appearance: none; border: 1px solid var(--border-mid); background: var(--bg-elevated-2);
+  color: var(--ink-90); font: 600 var(--fs-sm)/1 inherit; padding: 0.5rem 0.9rem;
+  border-radius: var(--r-md, 10px); cursor: pointer; transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.step-ctl button:hover:not(:disabled) { border-color: var(--teal-60); }
+.step-ctl button:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+.step-ctl button:disabled { opacity: 0.4; cursor: default; }
+.step-ctl [data-step-count] { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-50); }
+
+/* segmented control (gast4/gast5 toggle) — espelho do .rim-toggle */
+.gast-toggle { display: flex; gap: var(--sp-2); justify-content: center; align-items: center; margin-top: var(--sp-3); flex-wrap: wrap; }
+.gast-toggle button {
+  appearance: none; border: 1px solid var(--border-mid); background: var(--bg-elevated-2);
+  color: var(--ink-90); font: 600 var(--fs-sm)/1 inherit; padding: 0.5rem 0.9rem;
+  border-radius: var(--r-md, 10px); cursor: pointer; transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.gast-toggle button:hover { border-color: var(--teal-60); }
+.gast-toggle button:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+.gast-toggle button[aria-pressed="true"] { border-color: var(--teal-60); background: var(--teal-05, var(--bg-elevated)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .il-gast1 *, .il-gast2 *, .il-gast3 *, .il-gast4 *, .il-gast5 *,
+  .il-gast6 *, .il-gast7 *, .il-gast10 *, .il-gast14 *,
+  .step-ctl button, .gast-toggle button { transition: none !important; animation: none !important; }
+}

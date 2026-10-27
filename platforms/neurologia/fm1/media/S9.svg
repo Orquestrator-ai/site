@@ -1,0 +1,619 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="100%" height="auto" class="fm1p9-root" id="fm1p9-svg-main" data-active-tab="muscular" data-theme="dark" aria-label="Ilustração Interativa do Padrão Topográfico Miopático">
+  <defs>
+    <!-- Filtros de Glow para destaque anatômico -->
+    <filter id="fm1p9-glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm1p9-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm1p9-glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Gradientes da Enzima CPK e Cinturas -->
+    <linearGradient id="fm1p9-grad-cpk" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--fm1p9-c-green, #10b981)" />
+      <stop offset="35%" stop-color="var(--fm1p9-c-amber, #f59e0b)" />
+      <stop offset="100%" stop-color="var(--fm1p9-c-coral, #f43f5e)" />
+    </linearGradient>
+    
+    <radialGradient id="fm1p9-grad-girdle-escapular" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm1p9-c-amber, #f59e0b)" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="var(--fm1p9-c-coral, #f43f5e)" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="var(--fm1p9-c-coral, #f43f5e)" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="fm1p9-grad-girdle-pelvica" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm1p9-c-amber, #f59e0b)" stop-opacity="0.85" />
+      <stop offset="70%" stop-color="var(--fm1p9-c-coral, #f43f5e)" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="var(--fm1p9-c-coral, #f43f5e)" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* Reset &amp; Variáveis com Fallback Hexadecimal Rígido */
+    .fm1p9-root {
+      --fm1p9-bg-base: var(--bg-1, #0b0f19);
+      --fm1p9-bg-card: var(--bg-2, #131b2e);
+      --fm1p9-bg-card-alt: var(--bg-3, #1e293b);
+      --fm1p9-border: var(--ink-20, #233253);
+      --fm1p9-border-focus: var(--ink-40, #3b82f6);
+      --fm1p9-txt-main: var(--ink-100, #f8fafc);
+      --fm1p9-txt-muted: var(--ink-60, #94a3b8);
+      --fm1p9-c-green: var(--kw-green, #10b981);
+      --fm1p9-c-amber: var(--kw-amber, #f59e0b);
+      --fm1p9-c-coral: var(--kw-red, #f43f5e);
+      --fm1p9-c-blue: var(--kw-blue, #3b82f6);
+      --fm1p9-c-indigo: var(--kw-indigo, #6366f1);
+      --fm1p9-c-gray: var(--ink-40, #475569);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    /* Suporte a Tema Claro via data-theme="light" */
+    :root[data-theme="light"] .fm1p9-root,
+    .fm1p9-root[data-theme="light"] {
+      --fm1p9-bg-base: #f8fafc;
+      --fm1p9-bg-card: #ffffff;
+      --fm1p9-bg-card-alt: #f1f5f9;
+      --fm1p9-border: #cbd5e1;
+      --fm1p9-border-focus: #2563eb;
+      --fm1p9-txt-main: #0f172a;
+      --fm1p9-txt-muted: #475569;
+      --fm1p9-c-green: #059669;
+      --fm1p9-c-amber: #d97706;
+      --fm1p9-c-coral: #e11d48;
+      --fm1p9-c-blue: #2563eb;
+      --fm1p9-c-indigo: #4f46e5;
+      --fm1p9-c-gray: #94a3b8;
+    }
+
+    /* Regras de Visibilidade de Estado (Máquina de Estados CSS) */
+    .fm1p9-root .fm1p9-state-muscular,
+    .fm1p9-root .fm1p9-state-placa,
+    .fm1p9-root .fm1p9-state-neuronio {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .fm1p9-root[data-active-tab="muscular"] .fm1p9-state-muscular { display: block; opacity: 1; }
+    .fm1p9-root[data-active-tab="placa"] .fm1p9-state-placa { display: block; opacity: 1; }
+    .fm1p9-root[data-active-tab="neuronio"] .fm1p9-state-neuronio { display: block; opacity: 1; }
+
+    /* Efeitos de Botão de Tab Interativa */
+    .fm1p9-root .fm1p9-tab-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .fm1p9-root .fm1p9-tab-btn:hover {
+      filter: brightness(1.15);
+    }
+    .fm1p9-root .fm1p9-tab-btn:focus-visible {
+      outline: 2px solid var(--fm1p9-c-blue, #3b82f6);
+    }
+
+    /* Estilos Ativos dos Botões */
+    .fm1p9-root[data-active-tab="muscular"] #fm1p9-btn-muscular rect {
+      fill: var(--fm1p9-c-green, #10b981);
+      stroke: var(--fm1p9-c-green, #10b981);
+    }
+    .fm1p9-root[data-active-tab="muscular"] #fm1p9-btn-muscular text {
+      fill: #ffffff;
+      font-weight: 700;
+    }
+
+    .fm1p9-root[data-active-tab="placa"] #fm1p9-btn-placa rect {
+      fill: var(--fm1p9-c-amber, #f59e0b);
+      stroke: var(--fm1p9-c-amber, #f59e0b);
+    }
+    .fm1p9-root[data-active-tab="placa"] #fm1p9-btn-placa text {
+      fill: #ffffff;
+      font-weight: 700;
+    }
+
+    .fm1p9-root[data-active-tab="neuronio"] #fm1p9-btn-neuronio rect {
+      fill: var(--fm1p9-c-coral, #f43f5e);
+      stroke: var(--fm1p9-c-coral, #f43f5e);
+    }
+    .fm1p9-root[data-active-tab="neuronio"] #fm1p9-btn-neuronio text {
+      fill: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Interatividade de Hotspots Anatômicos */
+    .fm1p9-root .fm1p9-hotspot {
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .fm1p9-root .fm1p9-hotspot:hover {
+      transform: scale(1.04);
+    }
+
+    /* Animação suave para agulha do medidor */
+    .fm1p9-root .fm1p9-needle {
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  </style>
+
+  <!-- Fundo Principal da Peça -->
+  <rect width="960" height="620" rx="16" fill="var(--fm1p9-bg-base, #0b0f19)" stroke="var(--fm1p9-border, #233253)" stroke-width="2"/>
+
+  <!-- ==================== HEADER (CONTRATO REGRA 1) ==================== -->
+  <g class="fm1p9-header" transform="translate(24, 20)">
+    <!-- Insígnia do Nível Topográfico -->
+    <rect x="0" y="0" width="168" height="22" rx="11" fill="var(--fm1p9-c-green, #10b981)" fill-opacity="0.15" stroke="var(--fm1p9-c-green, #10b981)" stroke-width="1"/>
+    <text x="84" y="15" text-anchor="middle" fill="var(--fm1p9-c-green, #10b981)" font-size="11" font-weight="700" letter-spacing="0.5">NÍVEL 4: MÚSCULO</text>
+    
+    <!-- Título Principal -->
+    <text x="180" y="17" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="18" font-weight="800" letter-spacing="-0.3">PADRÃO MIOPÁTICO: FRAQUEZA PROXIMAL SIMÉTRICA + MARTELO CPK</text>
+    
+    <!-- Legenda de Interpretação Clinica (Regra 1: O que o aluno conclui) -->
+    <text x="0" y="42" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="12" font-weight="400">
+      <tspan font-weight="700" fill="var(--fm1p9-c-green, #10b981)">Conclusão Diagnóstica:</tspan> Comprometimento isolado de cinturas (escapular/pélvica) simétrico + CPK elevada sela lesão muscular (refuta ptose/placa e 2º/1º NM).
+    </text>
+    <line x1="0" y1="52" x2="912" y2="52" stroke="var(--fm1p9-border, #233253)" stroke-width="1"/>
+  </g>
+
+  <!-- ==================== COLUNA 1: CORPO &amp; CINTURAS (ANATOMIA PROXIMAL) ==================== -->
+  <g class="fm1p9-col-body" transform="translate(24, 85)">
+    <!-- Card Container Body -->
+    <rect x="0" y="0" width="340" height="465" rx="12" fill="var(--fm1p9-bg-card, #131b2e)" stroke="var(--fm1p9-border, #233253)" stroke-width="1.5"/>
+    <text x="16" y="24" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="13" font-weight="700">DISTRIBUIÇÃO TOPOGRÁFICA</text>
+    <text x="16" y="40" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="11">Silhueta corporal e simetria de acometimento</text>
+
+    <!-- Silhueta Humana Estilizada (Vetor Anatômico) -->
+    <g class="fm1p9-silhouette" transform="translate(85, 55)">
+      <!-- Sombra / Eixo de Simetria Axial -->
+      <line x1="85" y1="10" x2="85" y2="380" stroke="var(--fm1p9-border, #233253)" stroke-width="1" stroke-dasharray="4,4"/>
+      
+      <!-- Corpo Base (Silhueta Neutra em Índigo) -->
+      <!-- Cabeça &amp; Pescoço -->
+      <circle cx="85" cy="30" r="18" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="1.5"/>
+      <path d="M 78 47 L 92 47 L 94 60 L 76 60 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="1.5"/>
+      
+      <!-- Tronco &amp; Cintura Escapular (Tórax e Ombros) -->
+      <path d="M 50 62 L 120 62 Q 135 65 130 95 L 115 170 Q 110 185 85 185 Q 60 185 55 170 L 40 95 Q 35 65 50 62 Z" 
+            fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="1.5"/>
+      
+      <!-- Braços (Proximais e Distais) -->
+      <!-- Braço Esquerdo (Anatômico Direito) -->
+      <path d="M 42 66 L 25 120 L 33 123 L 48 78 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="1.5"/>
+      <path d="M 25 122 L 15 180 L 23 182 L 33 125 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1"/>
+      <!-- Mão Esquerda -->
+      <circle cx="17" cy="190" r="6" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1"/>
+
+      <!-- Braço Direito (Anatômico Esquerdo) -->
+      <path d="M 128 66 L 145 120 L 137 123 L 122 78 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="1.5"/>
+      <path d="M 145 122 L 155 180 L 147 182 L 137 125 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1"/>
+      <!-- Mão Direita -->
+      <circle cx="153" cy="190" r="6" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1"/>
+
+      <!-- Bacia &amp; Pelve -->
+      <path d="M 55 175 L 115 175 L 125 220 L 45 220 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="1.5"/>
+
+      <!-- Membros Inferiores (Coxas Proximais &amp; Pernas Distais) -->
+      <!-- Perna Esquerda -->
+      <path d="M 48 222 L 78 222 L 74 300 L 52 300 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="1.5"/>
+      <path d="M 54 302 L 72 302 L 68 375 L 56 375 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1"/>
+      <ellipse cx="60" cy="382" rx="8" ry="4" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1"/>
+
+      <!-- Perna Direita -->
+      <path d="M 92 222 L 122 222 L 118 300 L 96 300 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="1.5"/>
+      <path d="M 98 302 L 116 302 L 112 375 L 100 375 Z" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1"/>
+      <ellipse cx="110" cy="382" rx="8" ry="4" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1"/>
+
+      <!-- ================= REGISTRO DE ESTADO: MÚSCULO (PROXIMAL SIMÉTRICO ACESO) ================= -->
+      <g class="fm1p9-state-muscular">
+        <!-- Brilho Destaque Cintura Escapular (Ombros &amp; Peitorais) -->
+        <path d="M 40 64 Q 85 58 130 64 Q 140 90 125 110 Q 85 115 45 110 Q 30 90 40 64 Z" 
+              fill="url(#fm1p9-grad-girdle-escapular)" filter="url(#fm1p9-glow-orange)" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="2"/>
+        
+        <!-- Indicadores de Simetria Escapular -->
+        <circle cx="48" cy="78" r="10" fill="var(--fm1p9-c-coral, #f43f5e)" fill-opacity="0.8"/>
+        <circle cx="122" cy="78" r="10" fill="var(--fm1p9-c-coral, #f43f5e)" fill-opacity="0.8"/>
+        <line x1="48" y1="78" x2="122" y2="78" stroke="var(--fm1p9-c-coral, #f43f5e)" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <text x="85" y="74" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="800">SIMÉTRICO</text>
+
+        <!-- Brilho Destaque Cintura Pélvica (Quadríceps &amp; Glúteos/Iliopsoas) -->
+        <path d="M 45 200 Q 85 190 125 200 Q 128 275 115 295 Q 85 305 55 295 Q 42 275 45 200 Z" 
+              fill="url(#fm1p9-grad-girdle-pelvica)" filter="url(#fm1p9-glow-orange)" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="2"/>
+        
+        <!-- Indicadores de Simetria Pélvica -->
+        <circle cx="62" cy="250" r="12" fill="var(--fm1p9-c-coral, #f43f5e)" fill-opacity="0.8"/>
+        <circle cx="108" cy="250" r="12" fill="var(--fm1p9-c-coral, #f43f5e)" fill-opacity="0.8"/>
+        <line x1="62" y1="250" x2="108" y2="250" stroke="var(--fm1p9-c-coral, #f43f5e)" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <text x="85" y="246" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="800">SIMÉTRICO</text>
+
+        <!-- Rótulo de Distal Preservado -->
+        <rect x="25" y="340" width="120" height="18" rx="4" fill="var(--fm1p9-bg-base, #0b0f19)" stroke="var(--fm1p9-c-green, #10b981)" stroke-width="1"/>
+        <text x="85" y="353" text-anchor="middle" fill="var(--fm1p9-c-green, #10b981)" font-size="9" font-weight="700">DISTAL PRESERVADO</text>
+      </g>
+
+      <!-- ================= REGISTRO DE ESTADO: PLACA (OCULOBULBAR ACESO) ================= -->
+      <g class="fm1p9-state-placa">
+        <!-- Destaque na Face / Olhos (Ptose Flutuante) -->
+        <circle cx="85" cy="30" r="22" fill="var(--fm1p9-c-amber, #f59e0b)" fill-opacity="0.4" filter="url(#fm1p9-glow-orange)" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="2"/>
+        <path d="M 76 26 Q 80 22 84 26" stroke="var(--fm1p9-txt-main, #f8fafc)" stroke-width="2" fill="none"/>
+        <path d="M 86 26 Q 90 31 94 26" stroke="var(--fm1p9-txt-main, #f8fafc)" stroke-width="2" fill="none"/>
+        <rect x="40" y="5" width="90" height="16" rx="4" fill="var(--fm1p9-c-amber, #f59e0b)"/>
+        <text x="85" y="16" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="800">PTOSE / OCULOBULBAR</text>
+      </g>
+
+      <!-- ================= REGISTRO DE ESTADO: NEURÔNIO MOTOR (DISTAL ACESO) ================= -->
+      <g class="fm1p9-state-neuronio">
+        <!-- Destaque Distal nas Mãos e Pés (Assimétrico/Distal) -->
+        <circle cx="17" cy="190" r="12" fill="var(--fm1p9-c-coral, #f43f5e)" fill-opacity="0.6" filter="url(#fm1p9-glow-coral)"/>
+        <circle cx="60" cy="382" r="14" fill="var(--fm1p9-c-coral, #f43f5e)" fill-opacity="0.6" filter="url(#fm1p9-glow-coral)"/>
+        <rect x="10" y="340" width="150" height="18" rx="4" fill="var(--fm1p9-c-coral, #f43f5e)"/>
+        <text x="85" y="353" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="800">ATROFIA / DISTAL ATINGIDO</text>
+      </g>
+    </g>
+
+    <!-- Chamadas laterais e ponteiros (Rotulagem externa sem cruzar forma) -->
+    <!-- Callout Escapular (Esquerda) -->
+    <g class="fm1p9-hotspot" transform="translate(14, 115)" data-fm1p9-tooltip="Cintura Escapular: Deltoides, Peitorais, Bíceps Proximal. Dificuldade para elevar braços e pentear cabelo.">
+      <rect x="0" y="0" width="105" height="42" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="1"/>
+      <text x="8" y="16" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="10" font-weight="700">Cintura Escapular</text>
+      <text x="8" y="32" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Deltoide / Peitoral</text>
+      <path d="M 105 21 L 130 21" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <circle cx="130" cy="21" r="3" fill="var(--fm1p9-c-amber, #f59e0b)"/>
+    </g>
+
+    <!-- Callout Pélvica (Esquerda) -->
+    <g class="fm1p9-hotspot" transform="translate(14, 290)" data-fm1p9-tooltip="Cintura Pélvica: Iliopsoas, Glúteo Máximo, Quadríceps. Dificuldade para subir escadas e levantar da cadeira.">
+      <rect x="0" y="0" width="105" height="42" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="1"/>
+      <text x="8" y="16" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="10" font-weight="700">Cintura Pélvica</text>
+      <text x="8" y="32" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Iliopsoas / Quadríceps</text>
+      <path d="M 105 21 L 140 21" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <circle cx="140" cy="21" r="3" fill="var(--fm1p9-c-amber, #f59e0b)"/>
+    </g>
+  </g>
+
+  <!-- ==================== COLUNA 2: MARTELO CPK &amp; SINAL CLINICO ==================== -->
+  <g class="fm1p9-col-cpk" transform="translate(380, 85)">
+    <!-- CARD 1: MARTELO ENZIMÁTICO CPK -->
+    <g class="fm1p9-card-cpk-box">
+      <rect x="0" y="0" width="260" height="225" rx="12" fill="var(--fm1p9-bg-card, #131b2e)" stroke="var(--fm1p9-border, #233253)" stroke-width="1.5"/>
+      
+      <!-- Cabeçalho do Card Enzimático -->
+      <text x="16" y="24" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="13" font-weight="700">O MARTELO ENZIMÁTICO (CPK)</text>
+      <text x="16" y="40" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="11">Marcador direto de lesão/necrose muscular</text>
+
+      <!-- Painel Dinâmico de Valor CPK (Estático + Dinâmico via JS) -->
+      <!-- ESTADO MÚSCULO: CPK MUITO ELEVADA -->
+      <g class="fm1p9-state-muscular">
+        <rect x="16" y="52" width="228" height="64" rx="8" fill="var(--fm1p9-c-coral, #f43f5e)" fill-opacity="0.12" stroke="var(--fm1p9-c-coral, #f43f5e)" stroke-width="1.5"/>
+        <text x="30" y="76" fill="var(--fm1p9-c-coral, #f43f5e)" font-size="10" font-weight="800" letter-spacing="0.5">DOSAGEM DE SERO-CPK (CK TOTAL)</text>
+        <text x="30" y="104" fill="var(--fm1p9-c-coral, #f43f5e)" font-size="26" font-weight="900">3.450 U/L</text>
+        <rect x="155" y="82" width="80" height="22" rx="4" fill="var(--fm1p9-c-coral, #f43f5e)"/>
+        <text x="195" y="96" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="800">ELEVADA (20x)</text>
+      </g>
+
+      <!-- ESTADO PLACA: CPK NORMAL -->
+      <g class="fm1p9-state-placa">
+        <rect x="16" y="52" width="228" height="64" rx="8" fill="var(--fm1p9-c-green, #10b981)" fill-opacity="0.12" stroke="var(--fm1p9-c-green, #10b981)" stroke-width="1.5"/>
+        <text x="30" y="76" fill="var(--fm1p9-c-green, #10b981)" font-size="10" font-weight="800" letter-spacing="0.5">DOSAGEM DE SERO-CPK (CK TOTAL)</text>
+        <text x="30" y="104" fill="var(--fm1p9-c-green, #10b981)" font-size="26" font-weight="900">95 U/L</text>
+        <rect x="155" y="82" width="80" height="22" rx="4" fill="var(--fm1p9-c-green, #10b981)"/>
+        <text x="195" y="96" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="800">NORMAL</text>
+      </g>
+
+      <!-- ESTADO NEURÔNIO MOTOR: CPK NORMAL / DISCRETA -->
+      <g class="fm1p9-state-neuronio">
+        <rect x="16" y="52" width="228" height="64" rx="8" fill="var(--fm1p9-c-amber, #f59e0b)" fill-opacity="0.12" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="1.5"/>
+        <text x="30" y="76" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="10" font-weight="800" letter-spacing="0.5">DOSAGEM DE SERO-CPK (CK TOTAL)</text>
+        <text x="30" y="104" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="26" font-weight="900">210 U/L</text>
+        <rect x="155" y="82" width="80" height="22" rx="4" fill="var(--fm1p9-c-amber, #f59e0b)"/>
+        <text x="195" y="96" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="800">LEVE/NORMAL</text>
+      </g>
+
+      <!-- Barra de Escala de Normalidade vs Patológico -->
+      <g transform="translate(16, 130)">
+        <text x="0" y="10" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9" font-weight="600">Escala de Referência Enzimática</text>
+        
+        <!-- Trilho do Gradiente -->
+        <rect x="0" y="16" width="228" height="10" rx="5" fill="url(#fm1p9-grad-cpk)"/>
+        
+        <!-- Marcadores da Escala -->
+        <line x1="30" y1="16" x2="30" y2="30" stroke="var(--fm1p9-txt-main, #f8fafc)" stroke-width="1.5"/>
+        <text x="30" y="39" text-anchor="middle" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="8">170 (VR)</text>
+
+        <line x1="100" y1="16" x2="100" y2="30" stroke="var(--fm1p9-txt-main, #f8fafc)" stroke-width="1"/>
+        <text x="100" y="39" text-anchor="middle" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="8">1.000</text>
+
+        <line x1="190" y1="16" x2="190" y2="30" stroke="var(--fm1p9-txt-main, #f8fafc)" stroke-width="1.5"/>
+        <text x="190" y="39" text-anchor="middle" fill="var(--fm1p9-c-coral, #f43f5e)" font-size="8" font-weight="700">&gt;3.000</text>
+
+        <!-- Indicador de Posição da Agulha (Dinâmico por Estado) -->
+        <g class="fm1p9-state-muscular">
+          <polygon points="190,14 185,4 195,4" fill="var(--fm1p9-c-coral, #f43f5e)"/>
+        </g>
+        <g class="fm1p9-state-placa">
+          <polygon points="18,14 13,4 23,4" fill="var(--fm1p9-c-green, #10b981)"/>
+        </g>
+        <g class="fm1p9-state-neuronio">
+          <polygon points="42,14 37,4 47,4" fill="var(--fm1p9-c-amber, #f59e0b)"/>
+        </g>
+      </g>
+
+      <!-- Nota de Raciocínio Clínico Enzimático -->
+      <g transform="translate(16, 180)">
+        <rect x="0" y="0" width="228" height="35" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+        <text x="10" y="14" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="9" font-weight="700">FISIOPATOLOGIA DA ENZIMA:</text>
+        <text x="10" y="27" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="8.5">Lesão da membrana do miócito extravasa CPK/TGO pro sangue.</text>
+      </g>
+    </g>
+
+    <!-- CARD 2: ANCORAGEM CLINICA / SINAL DE GOWERS -->
+    <g class="fm1p9-card-gowers" transform="translate(0, 240)">
+      <rect x="0" y="0" width="260" height="225" rx="12" fill="var(--fm1p9-bg-card, #131b2e)" stroke="var(--fm1p9-border, #233253)" stroke-width="1.5"/>
+      <text x="16" y="24" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="13" font-weight="700">SINAL DE GOWERS &amp; RACIOCÍNIO</text>
+      <text x="16" y="40" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="11">Ancoragem funcional do déficit pélvico</text>
+
+      <!-- Esquema Ilustrado da Manobra de Gowers ("Trepar em si mesmo") -->
+      <g transform="translate(16, 52)">
+        <rect x="0" y="0" width="228" height="90" rx="8" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-border, #233253)" stroke-width="1"/>
+        
+        <!-- Vetor Esquemático: Homem curvado apoiando mãos nas pernas para levantar -->
+        <g transform="translate(15, 10)">
+          <!-- Chão -->
+          <line x1="0" y1="68" x2="80" y2="68" stroke="var(--fm1p9-c-gray, #475569)" stroke-width="1.5"/>
+          <!-- Pernas dobradas -->
+          <path d="M 20 68 L 30 45 L 22 25" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="2.5" fill="none"/>
+          <!-- Tronco inclinado -->
+          <path d="M 22 25 L 50 18" stroke="var(--fm1p9-c-indigo, #6366f1)" stroke-width="3" fill="none"/>
+          <!-- Cabeça -->
+          <circle cx="56" cy="14" r="6" fill="var(--fm1p9-c-indigo, #6366f1)"/>
+          <!-- Braço apoiado no próprio joelho/coxa (O Gowers!) -->
+          <path d="M 48 20 L 32 40" stroke="var(--fm1p9-c-coral, #f43f5e)" stroke-width="2.5" fill="none"/>
+          <circle cx="32" cy="40" r="3" fill="var(--fm1p9-c-coral, #f43f5e)"/>
+          <!-- Seta de Força Escalada -->
+          <path d="M 38 48 L 46 32" stroke="var(--fm1p9-c-coral, #f43f5e)" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <polygon points="46,32 40,33 44,38" fill="var(--fm1p9-c-coral, #f43f5e)"/>
+        </g>
+
+        <!-- Texto Explicativo do Sinal -->
+        <text x="100" y="24" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="10" font-weight="800">MANOBRA DE GOWERS</text>
+        <text x="100" y="40" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="9" font-weight="600">"Trepar-se em si mesmo"</text>
+        <text x="100" y="54" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="8.5">Uso dos braços nas pernas</text>
+        <text x="100" y="66" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="8.5">pra compensar quadríceps.</text>
+      </g>
+
+      <!-- Checklist de Confirmação Miopática -->
+      <g transform="translate(16, 150)">
+        <circle cx="8" cy="8" r="4" fill="var(--fm1p9-c-green, #10b981)"/>
+        <text x="18" y="11" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="9.5" font-weight="600">Fraqueza Constante (sem flutuação diurna)</text>
+
+        <circle cx="8" cy="26" r="4" fill="var(--fm1p9-c-green, #10b981)"/>
+        <text x="18" y="29" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="9.5" font-weight="600">Sensibilidade 100% Preservada</text>
+
+        <circle cx="8" cy="44" r="4" fill="var(--fm1p9-c-green, #10b981)"/>
+        <text x="18" y="47" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="9.5" font-weight="600">Reflexos Normais ou Hipo (Sem Babinski)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== COLUNA 3: DADOS COMPARATIVOS &amp; LAUDO (PAINEL SELETOR) ==================== -->
+  <g class="fm1p9-col-panel" transform="translate(664, 85)">
+    <!-- Container Geral do Painel -->
+    <rect x="0" y="0" width="272" height="465" rx="12" fill="var(--fm1p9-bg-card, #131b2e)" stroke="var(--fm1p9-border, #233253)" stroke-width="1.5"/>
+
+    <!-- Título do Seletor Topográfico -->
+    <text x="16" y="24" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="13" font-weight="700">TESTE TOPOGRÁFICO GUIA</text>
+    <text x="16" y="40" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="11">Clique para alternar e comparar com outros níveis</text>
+
+    <!-- BOTÕES DE SELEÇÃO DE TAB (INTERATIVOS REAL / DETERMINÍSTICOS) -->
+    <!-- Tab 1: Músculo -->
+    <g class="fm1p9-tab-btn" id="fm1p9-btn-muscular" transform="translate(16, 52)" role="button" tabindex="0" aria-label="Selecionar Padrão Muscular">
+      <rect x="0" y="0" width="240" height="32" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-border, #233253)" stroke-width="1"/>
+      <text x="12" y="20" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="11" font-weight="700">1. MÚSCULO (Miopático)</text>
+      <circle cx="222" cy="16" r="5" fill="var(--fm1p9-c-green, #10b981)"/>
+    </g>
+
+    <!-- Tab 2: Placa Neuromuscular -->
+    <g class="fm1p9-tab-btn" id="fm1p9-btn-placa" transform="translate(16, 90)" role="button" tabindex="0" aria-label="Selecionar Padrão de Placa Neuromuscular">
+      <rect x="0" y="0" width="240" height="32" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-border, #233253)" stroke-width="1"/>
+      <text x="12" y="20" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="11" font-weight="600">2. PLACA (Miastenia gravis)</text>
+      <circle cx="222" cy="16" r="5" fill="var(--fm1p9-c-gray, #475569)"/>
+    </g>
+
+    <!-- Tab 3: Neurônio Motor -->
+    <g class="fm1p9-tab-btn" id="fm1p9-btn-neuronio" transform="translate(16, 128)" role="button" tabindex="0" aria-label="Selecionar Padrão de Neurônio Motor">
+      <rect x="0" y="0" width="240" height="32" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-border, #233253)" stroke-width="1"/>
+      <text x="12" y="20" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="11" font-weight="600">3. NEURÔNIO MOTOR (ELA / 2º NM)</text>
+      <circle cx="222" cy="16" r="5" fill="var(--fm1p9-c-gray, #475569)"/>
+    </g>
+
+    <line x1="16" y1="172" x2="256" y2="172" stroke="var(--fm1p9-border, #233253)" stroke-width="1"/>
+
+    <!-- DADOS COMPARATIVOS DO PAINEL DE LEITURA (DINÂMICO CONFORME A TAB) -->
+    
+    <!-- CONTEÚDO MÚSCULO -->
+    <g class="fm1p9-state-muscular" transform="translate(16, 182)">
+      <text x="0" y="15" fill="var(--fm1p9-c-green, #10b981)" font-size="12" font-weight="800">ACHADOS DO NÍVEL MUSCULAR:</text>
+      
+      <!-- Linha 1: Predomínio Topográfico -->
+      <rect x="0" y="26" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="42" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Distribuição da Fraqueza:</text>
+      <text x="10" y="57" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="10.5" font-weight="700">PROXIMAL &amp; SIMÉTRICA</text>
+
+      <!-- Linha 2: Enzima de Extravasamento -->
+      <rect x="0" y="72" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="88" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Enzima Muscular (CPK / TGO):</text>
+      <text x="10" y="103" fill="var(--fm1p9-c-coral, #f43f5e)" font-size="10.5" font-weight="800">MUITO ELEVADA (&gt; 20x Normal)</text>
+
+      <!-- Linha 3: Fatigabilidade -->
+      <rect x="0" y="118" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="134" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Fatigabilidade Diurna (Flutuação):</text>
+      <text x="10" y="149" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="10.5" font-weight="700">AUSENTE (Fraqueza Fixa/Contínua)</text>
+
+      <!-- Linha 4: Reflexos e Sensibilidade -->
+      <rect x="0" y="164" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="180" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Reflexos / Sensibilidade:</text>
+      <text x="10" y="195" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="10.5" font-weight="700">Normorreflexia / Sem Nível Sensitivo</text>
+
+      <!-- CAIXA DE LAUDO CONFIRMADO -->
+      <rect x="0" y="215" width="240" height="55" rx="8" fill="var(--fm1p9-c-green, #10b981)" fill-opacity="0.15" stroke="var(--fm1p9-c-green, #10b981)" stroke-width="1.5"/>
+      <text x="12" y="233" fill="var(--fm1p9-c-green, #10b981)" font-size="11" font-weight="800">LAUDO: SÍNDROME MIOPÁTICA</text>
+      <text x="12" y="248" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="9.5">Confirmado! Cinturas + Martelo CPK selam a topografia muscular no caso clínico.</text>
+    </g>
+
+    <!-- CONTEÚDO PLACA NEUROMUSCULAR -->
+    <g class="fm1p9-state-placa" transform="translate(16, 182)">
+      <text x="0" y="15" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="12" font-weight="800">ACHADOS DA PLACA (MIASTENIA):</text>
+
+      <rect x="0" y="26" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="42" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Distribuição da Fraqueza:</text>
+      <text x="10" y="57" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="10.5" font-weight="700">OCULOBULBAR (Ptose, Diplopia)</text>
+
+      <rect x="0" y="72" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="88" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Enzima Muscular (CPK):</text>
+      <text x="10" y="103" fill="var(--fm1p9-c-green, #10b981)" font-size="10.5" font-weight="700">ESTRITAMENTE NORMAL</text>
+
+      <rect x="0" y="118" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="134" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Fatigabilidade (Variação com uso):</text>
+      <text x="10" y="149" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="10.5" font-weight="800">MARCADA (Piora ao longo do dia)</text>
+
+      <rect x="0" y="164" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="180" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Reflexos &amp; Atrofia:</text>
+      <text x="10" y="195" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="10.5" font-weight="700">Preservados / Sem Atrofia Muscular</text>
+
+      <rect x="0" y="215" width="240" height="55" rx="8" fill="var(--fm1p9-c-amber, #f59e0b)" fill-opacity="0.15" stroke="var(--fm1p9-c-amber, #f59e0b)" stroke-width="1.5"/>
+      <text x="12" y="233" fill="var(--fm1p9-c-amber, #f59e0b)" font-size="11" font-weight="800">DIFERENCIAL: SÍNDROME MIASTÊNICA</text>
+      <text x="12" y="248" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="9.5">Incompatível com o caso! Miastenia cursa com ptose flutuante e CPK normal.</text>
+    </g>
+
+    <!-- CONTEÚDO NEURÔNIO MOTOR -->
+    <g class="fm1p9-state-neuronio" transform="translate(16, 182)">
+      <text x="0" y="15" fill="var(--fm1p9-c-coral, #f43f5e)" font-size="12" font-weight="800">ACHADOS DO NEURÔNIO MOTOR:</text>
+
+      <rect x="0" y="26" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="42" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Distribuição da Fraqueza:</text>
+      <text x="10" y="57" fill="var(--fm1p9-c-coral, #f43f5e)" font-size="10.5" font-weight="700">DISTAL / ASSIMÉTRICA</text>
+
+      <rect x="0" y="72" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="88" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Enzima Muscular (CPK):</text>
+      <text x="10" y="103" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="10.5" font-weight="700">NORMAL OU LEVE AUMENTO (&lt; 2x)</text>
+
+      <rect x="0" y="118" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="134" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Sinais Clínicos Característicos:</text>
+      <text x="10" y="149" fill="var(--fm1p9-c-coral, #f43f5e)" font-size="10.5" font-weight="800">Fasciculações + Babinski + Atrofia</text>
+
+      <rect x="0" y="164" width="240" height="40" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)"/>
+      <text x="10" y="180" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9">Eletroneuromiografia (ENMG):</text>
+      <text x="10" y="195" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="10.5" font-weight="700">Padrão Denervatório (Fibrilações)</text>
+
+      <rect x="0" y="215" width="240" height="55" rx="8" fill="var(--fm1p9-c-coral, #f43f5e)" fill-opacity="0.15" stroke="var(--fm1p9-c-coral, #f43f5e)" stroke-width="1.5"/>
+      <text x="12" y="233" fill="var(--fm1p9-c-coral, #f43f5e)" font-size="11" font-weight="800">DIFERENCIAL: NEURÔNIO MOTOR</text>
+      <text x="12" y="248" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="9.5">Incompatível! 1º/2º NM geram fasciculações e Babinski, sem elevação maciça de CPK.</text>
+    </g>
+  </g>
+
+  <!-- ==================== FOOTER (CONVENÇÃO DE CORES &amp; GUIA DE INTERAÇÃO) ==================== -->
+  <g class="fm1p9-footer" transform="translate(24, 565)">
+    <!-- Barra Guia de Interação -->
+    <rect x="0" y="0" width="912" height="38" rx="8" fill="var(--fm1p9-bg-card, #131b2e)" stroke="var(--fm1p9-border, #233253)" stroke-width="1"/>
+    
+    <text x="16" y="23" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="11" font-weight="600">
+      <tspan font-weight="700" fill="var(--fm1p9-c-blue, #3b82f6)">DICA INTERATIVA:</tspan> Clique nos botões 1, 2 e 3 acima para simular a diferenciação topográfica.
+    </text>
+
+    <!-- Legenda de Convenção de Cores Bauer -->
+    <g transform="translate(560, 12)">
+      <circle cx="8" cy="8" r="5" fill="var(--fm1p9-c-green, #10b981)"/>
+      <text x="17" y="11" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9.5" font-weight="600">Miópático Confirmado</text>
+
+      <circle cx="130" cy="8" r="5" fill="var(--fm1p9-c-coral, #f43f5e)"/>
+      <text x="139" y="11" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9.5" font-weight="600">CPK Crítico</text>
+
+      <circle cx="230" cy="8" r="5" fill="var(--fm1p9-c-amber, #f59e0b)"/>
+      <text x="239" y="11" fill="var(--fm1p9-txt-muted, #94a3b8)" font-size="9.5" font-weight="600">Atenção / Cintura</text>
+    </g>
+  </g>
+
+  <!-- ==================== ELEMENTO TOOLTIP DINÂMICO ==================== -->
+  <g class="fm1p9-tooltip" id="fm1p9-tooltip" opacity="0" pointer-events="none" transform="translate(0,0)">
+    <rect id="fm1p9-tip-bg" x="0" y="0" width="220" height="42" rx="6" fill="var(--fm1p9-bg-card-alt, #1e293b)" stroke="var(--fm1p9-c-blue, #3b82f6)" stroke-width="1.5" filter="url(#fm1p9-glow-green)"/>
+    <text id="fm1p9-tip-text" x="10" y="18" fill="var(--fm1p9-txt-main, #f8fafc)" font-size="10" font-weight="600">Tooltip info</text>
+  </g>
+
+  <!-- ==================== ENGINE JAVASCRIPT INLINE (SELF-CONTAINED) ==================== -->
+  <script>
+    /* <![CDATA[ */
+    (function() {
+      const svg = document.getElementById('fm1p9-svg-main');
+      if (!svg) return;
+
+      // Troca de Tabs (Máquina de Estados)
+      function setActiveTab(tabName) {
+        svg.setAttribute('data-active-tab', tabName);
+      }
+
+      const btnMuscular = document.getElementById('fm1p9-btn-muscular');
+      const btnPlaca = document.getElementById('fm1p9-btn-placa');
+      const btnNeuronio = document.getElementById('fm1p9-btn-neuronio');
+
+      if (btnMuscular) {
+        btnMuscular.addEventListener('click', function() { setActiveTab('muscular'); });
+        btnMuscular.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveTab('muscular'); e.preventDefault(); } });
+      }
+
+      if (btnPlaca) {
+        btnPlaca.addEventListener('click', function() { setActiveTab('placa'); });
+        btnPlaca.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveTab('placa'); e.preventDefault(); } });
+      }
+
+      if (btnNeuronio) {
+        btnNeuronio.addEventListener('click', function() { setActiveTab('neuronio'); });
+        btnNeuronio.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveTab('neuronio'); e.preventDefault(); } });
+      }
+
+      // Tooltip Mouse-Follow Engine
+      const tooltip = document.getElementById('fm1p9-tooltip');
+      const tipBg = document.getElementById('fm1p9-tip-bg');
+      const tipText = document.getElementById('fm1p9-tip-text');
+      const hotspots = svg.querySelectorAll('[data-fm1p9-tooltip]');
+
+      hotspots.forEach(function(hs) {
+        hs.addEventListener('mousemove', function(e) {
+          const msg = hs.getAttribute('data-fm1p9-tooltip');
+          if (!msg || !tooltip) return;
+
+          // Converter coordenadas de mouse para SVG
+          const pt = svg.createSVGPoint();
+          pt.x = e.clientX;
+          pt.y = e.clientY;
+          const svgPt = pt.matrixTransform(svg.getScreenCTM().inverse());
+
+          tipText.textContent = msg;
+          
+          // Ajustar largura dinâmica da caixa de tooltip
+          const textWidth = Math.max(140, msg.length * 5.8);
+          if (tipBg) tipBg.setAttribute('width', textWidth + 20);
+
+          let posX = svgPt.x + 12;
+          let posY = svgPt.y + 12;
+
+          // Evitar estravasamento da borda direita do viewBox (960px)
+          if (posX + textWidth + 30 > 960) {
+            posX = svgPt.x - textWidth - 25;
+          }
+
+          tooltip.setAttribute('transform', 'translate(' + posX + ',' + posY + ')');
+          tooltip.setAttribute('opacity', '1');
+        });
+
+        hs.addEventListener('mouseleave', function() {
+          if (tooltip) tooltip.setAttribute('opacity', '0');
+        });
+      });
+    })();
+    /* ]]> */
+  </script>
+</svg>

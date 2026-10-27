@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="ELA (fm4). Fasciculação: inespecífica na vida clínica, ímã de gabarito na prova — a dualidade que a banca ama.">
+<title>Fasciculação: inespecífica na vida, ímã na prova · Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm4-cara">
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.5}
+.opener--trap{border-left:4px solid var(--amber)}.opener--trap .opener__eyebrow{color:var(--amber)}
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip,.chip--topic,.chip--gold,.chip--no{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ink-60)}
+.chip--gold{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--border))}
+.chip--no{color:var(--coral);border-color:color-mix(in srgb,var(--coral) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}
+.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose strong,.term{color:var(--ink-100)}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.hl-warn{color:var(--amber);font-weight:700}
+.exec-card,.trap,.continuity{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.trap{border-left:4px solid var(--amber)}
+.trap__title{margin:0 0 .65rem;font-size:1rem;color:var(--amber);font-weight:800}
+.trap__grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:.55rem 0 0}
+.trap__col{border:1px solid var(--border);border-radius:10px;padding:.7rem .8rem;background:var(--bg-3)}
+.trap__col h4{margin:0 0 .35rem;font-size:.84rem}
+.trap__col--vida h4{color:var(--ink-60)}
+.trap__col--prova h4{color:var(--amber)}
+.trap__col p{margin:0;font-size:.9rem;line-height:1.5;color:var(--ink-80)}
+.trap__reveal{margin-top:.7rem;min-height:44px;border-radius:999px;border:1px solid var(--amber);background:var(--bg-3);color:var(--ink-100);padding:.5rem 1.1rem;cursor:pointer;font:inherit;font-weight:700}
+.trap__reveal:hover{background:var(--bg-4)}
+.trap__chip{margin-top:.6rem;padding:.55rem .75rem;border-radius:10px;background:color-mix(in srgb,var(--amber) 12%,var(--bg-3));border:1px solid color-mix(in srgb,var(--amber) 40%,var(--border));font-weight:700;color:var(--amber)}
+.trap__chip[hidden]{display:none}
+.continuity{border-left:3px solid var(--indigo)}
+.fig{margin:1.25rem 0}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ciano);margin-bottom:.3rem;font-weight:800}
+.fig__svg-frame{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-1);box-shadow:var(--shadow)}
+.fm4-inline-svg{display:block;width:100%;height:auto;border-radius:var(--radius-sm)}
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.quiz h2{margin:0 0 .85rem;font-size:1.1rem;color:var(--ink-100)}
+.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}
+.quiz__stem{margin:0 0 .55rem;font-weight:600;color:var(--ink-100);line-height:1.45}
+.quiz__alternatives{display:grid;gap:.4rem}
+.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit;line-height:1.4}
+.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}
+.quiz__alt.is-correct{border-color:var(--verde);background:color-mix(in srgb,var(--verde) 14%,var(--bg-3))}
+.quiz__alt.is-wrong{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 12%,var(--bg-3))}
+.quiz__feedback{margin-top:.6rem;padding:.75rem .8rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}
+.quiz__feedback[hidden]{display:none}
+.quiz__verdict{margin:0 0 .4rem;font-weight:800}
+.quiz__verdict.is-ok{color:var(--verde)}.quiz__verdict.is-bad{color:var(--coral)}
+.quiz__justification,.quiz__distractor{margin:.3rem 0 0;font-size:.92rem;line-height:1.5;color:var(--ink-80)}
+.page-nav{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.page-nav a{display:inline-flex;flex-direction:column;min-height:44px;padding:.5rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);text-decoration:none;color:var(--ink-100)}
+.page-nav a:hover{background:var(--bg-4)}
+.page-nav .nav-dir{font-size:.72rem;color:var(--ink-60)}.page-nav .nav-ttl{font-size:.86rem}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:640px){.trap__grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p4" data-layout="fm4-p04" data-source-ids="035,036,037,038,039">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html"><span class="site-header__logo" aria-hidden="true">NE</span><span class="site-header__titles"><span class="site-header__title">ELA: esclerose lateral amiotrófica</span><span class="site-header__subtitle">Neurologia · esclerose lateral amiotrófica</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress">4/8</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+  <div class="reading">
+    <article class="page" data-page="p4" data-layout="fm4-p04" data-source-ids="035,036,037,038,039">
+      <p class="page__eyebrow">Página 4 · Erro comum desmontado</p>
+
+      <section class="opener opener--trap" data-opener="E8">
+        <span class="opener__eyebrow">Erro comum desmontado</span>
+        <h1 id="page-title">Fasciculação: inespecífica na vida, ímã na prova</h1>
+        <p class="opener__lead no-indent">Muitos acham que fasciculação “fecha” ELA na vida — e na prova tratam como irrelevante. Os dois erros.</p>
+      </section>
+
+      <div class="chipset">
+        <span class="chip--gold">fasciculação</span><span class="chip--no">inespecífica ≠ irrelevante</span>
+      </div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h2 class="topic-h">Palavra-chave de prova</h2>
+          <p><strong class="term">Miofasciculação / fasciculação</strong> é a <strong class="term">grande palavra-chave</strong> da ELA <strong class="term">na hora da prova</strong>.</p>
+
+          <h2 class="topic-h">Inespecífica na vida</h2>
+          <p>Fasciculação <strong class="term">não é específica de nada</strong> na clínica real. Ainda assim, é <strong class="term">grande manifestação clínica</strong> da esclerose lateral amiotrófica <strong>na prática</strong>.</p>
+
+          <h2 class="topic-h">Inespecífica ≠ irrelevante na banca</h2>
+          <p>Questões de prova <strong class="term">adoram</strong> colocar fasciculação — porque a prática é assim; a palavra que <strong>não</strong> é específica na vida, <strong>na prova</strong>, puxa <strong>ELA</strong>.</p>
+          <p class="no-indent">Cuidado: <strong class="hl-warn">inespecífica ≠ irrelevante na prova</strong>.</p>
+        </div>
+      </section>
+
+      <aside class="trap" aria-label="Trap vida × prova">
+        <h3 class="trap__title">A dualidade que a banca explora</h3>
+        <div class="trap__grid">
+          <div class="trap__col trap__col--vida">
+            <h4>Na vida clínica</h4>
+            <p>Fasciculação <strong>não é específica</strong>. Pode aparecer em vários contextos; isolada, não fecha diagnóstico.</p>
+          </div>
+          <div class="trap__col trap__col--prova">
+            <h4>Na prova</h4>
+            <p>Banca ama fasciculação → no pacote certo, o gabarito puxa <strong>ELA</strong>. Palavra-chave da doença.</p>
+          </div>
+        </div>
+        <button class="trap__reveal" type="button" aria-expanded="false" aria-controls="trap-p04-chip">Revelar o ponto-chave</button>
+        <div class="trap__chip" id="trap-p04-chip" hidden>“inespecífica ≠ irrelevante na prova”</div>
+      </aside>
+
+      <!-- FIGURA REAL — R4 fasciculação (GIF) -->
+      <div class="figura-ancorada">
+        <figure class="figura-ancorada__media">
+          <img src="media/B04-bfs-eyelid-fasciculation-source-160x120.gif" alt="GIF clínico de fasciculação muscular de superfície na pálpebra de adulto — contrações involuntárias intermitentes de feixes musculares sob a pele (contexto de fasciculação benigna; o achado sozinho não fecha diagnóstico de ELA)." loading="lazy" decoding="async">
+          <figcaption class="figura-ancorada__legenda"><b>Fasciculação</b> — contração involuntária de feixes sob a pele. O movimento é o achado; o contexto é o que decide.</figcaption>
+          <p class="figura-ancorada__fonte">By Leitz31337, via Wikimedia Commons · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Bfs_spasm.gif" rel="noopener">fonte</a></p>
+        </figure>
+        <div class="figura-ancorada__ancora">
+          <h4>O movimento, não o rótulo</h4>
+          <p>O GIF mostra a fasciculação pela única forma que ela se ensina: em movimento. Sozinha, no contexto benigno da pálpebra, ela não é ELA — é o exemplo vivo de “inespecífica na vida”. O que a transforma em ímã de prova é o pacote em volta: 1º + 2º + progressão + mais nada.</p>
+        </div>
+      </div>
+
+      <!-- Figura: fasciculação vida × prova -->
+      <figure class="fig">
+        <span class="fig__label">Fasciculação: vida × prova</span>
+        <div class="fig__svg-frame">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" width="100%" height="100%" class="fm4-inline-svg fm4p4-root" id="fm4p4-svg-root" aria-label="Fasciculação: inespecífica na vida, ímã na prova" data-mode="all">
+  <title>Fasciculação: inespecífica na vida, ímã na prova</title>
+  <desc>Contrasta fasciculação isolada na vida real (inespecífica) com fasciculação no conjunto de prova junto a 1º e 2º neurônio e progressão, onde pesa como ímã diagnóstico.</desc>
+
+  <defs>
+    <!-- Scoped Filters -->
+    <filter id="fm4p4-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm4p4-glow-amber" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm4p4-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="fm4p4-grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p4-bg-stop1, #0B0F17)" />
+      <stop offset="100%" stop-color="var(--fm4p4-bg-stop2, #111827)" />
+    </linearGradient>
+
+    <linearGradient id="fm4p4-grad-header" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--fm4p4-hdr-stop1, #0F2942)" />
+      <stop offset="50%" stop-color="var(--fm4p4-hdr-stop2, #1E3A5F)" />
+      <stop offset="100%" stop-color="var(--fm4p4-hdr-stop3, #0F2942)" />
+    </linearGradient>
+
+    <linearGradient id="fm4p4-grad-vida" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p4-vida-stop1, #2A1713)" />
+      <stop offset="100%" stop-color="var(--fm4p4-vida-stop2, #1E1210)" />
+    </linearGradient>
+
+    <linearGradient id="fm4p4-grad-prova" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p4-prova-stop1, #2D240B)" />
+      <stop offset="100%" stop-color="var(--fm4p4-prova-stop2, #1C1708)" />
+    </linearGradient>
+
+    <linearGradient id="fm4p4-grad-chip-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--fm4p4-chip-stop1, #D97706)" />
+      <stop offset="50%" stop-color="var(--fm4p4-chip-stop2, #F59E0B)" />
+      <stop offset="100%" stop-color="var(--fm4p4-chip-stop3, #B45309)" />
+    </linearGradient>
+
+    <linearGradient id="fm4p4-grad-anatomy" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--fm4p4-anat-stop1, #0D1F33)" />
+      <stop offset="100%" stop-color="var(--fm4p4-anat-stop2, #132A45)" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Scoped Base Styling - Strictly scoped to #fm4p4-svg-root */
+    #fm4p4-svg-root {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--fm4p4-bg, var(--bg-1, #0B0F17));
+      color: var(--fm4p4-text-main, var(--ink-100, #F8FAFC));
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* CSS Color Tokens with Fallbacks */
+    #fm4p4-svg-root {
+      --fm4p4-c-bg: var(--bg-1, #0B0F17);
+      --fm4p4-c-card-bg: var(--bg-2, #161F30);
+      --fm4p4-c-border: var(--ink-20, #334155);
+      --fm4p4-c-text-primary: var(--ink-100, #F8FAFC);
+      --fm4p4-c-text-muted: var(--ink-70, #94A3B8);
+      --fm4p4-c-teal: var(--kw-cyan, #2DD4BF);
+      --fm4p4-c-teal-dark: #0F766E;
+      --fm4p4-c-gold: var(--kw-gold, #FACC15);
+      --fm4p4-c-gold-dark: #B45309;
+      --fm4p4-c-amber: var(--kw-orange, #FB923C);
+      --fm4p4-c-amber-dark: #C2410C;
+      --fm4p4-c-red: var(--kw-red, #F87171);
+      --fm4p4-c-green: var(--kw-green, #4ADE80);
+    }
+
+    /* Light Theme Adjustments via attribute on root */
+    [data-theme="light"] #fm4p4-svg-root {
+      --fm4p4-c-bg: #F8FAFC;
+      --fm4p4-c-card-bg: #FFFFFF;
+      --fm4p4-c-border: #CBD5E1;
+      --fm4p4-c-text-primary: #0F172A;
+      --fm4p4-c-text-muted: #475569;
+      --fm4p4-c-teal: #0D9488;
+      --fm4p4-c-gold: #D97706;
+      --fm4p4-c-amber: #EA580C;
+      --fm4p4-c-red: #DC2626;
+      --fm4p4-c-green: #16A34A;
+      --fm4p4-bg-stop1: #F1F5F9;
+      --fm4p4-bg-stop2: #E2E8F0;
+      --fm4p4-hdr-stop1: #E0F2FE;
+      --fm4p4-hdr-stop2: #BAE6FD;
+      --fm4p4-hdr-stop3: #E0F2FE;
+      --fm4p4-vida-stop1: #FFEDD5;
+      --fm4p4-vida-stop2: #FEE2E2;
+      --fm4p4-prova-stop1: #FEF9C3;
+      --fm4p4-prova-stop2: #FEF08A;
+      --fm4p4-anat-stop1: #F0F9FF;
+      --fm4p4-anat-stop2: #E0F2FE;
+    }
+
+    /* Card &amp; Element States */
+    #fm4p4-svg-root .fm4p4-card {
+      transition: opacity 0.3s ease, transform 0.3s ease, stroke 0.3s ease;
+    }
+    #fm4p4-svg-root .fm4p4-interactive-item {
+      cursor: pointer;
+      transition: transform 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+    }
+    #fm4p4-svg-root .fm4p4-interactive-item:hover {
+      transform: translateY(-2px);
+    }
+    #fm4p4-svg-root .fm4p4-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    #fm4p4-svg-root .fm4p4-btn:hover {
+      filter: brightness(1.15);
+    }
+    #fm4p4-svg-root .fm4p4-btn.fm4p4-active {
+      stroke: var(--fm4p4-c-gold);
+      stroke-width: 2px;
+      filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.4));
+    }
+
+    /* Mode Dimming Logic */
+    #fm4p4-svg-root[data-mode="vida"] .fm4p4-card-prova {
+      opacity: 0.35;
+      filter: grayscale(0.5);
+    }
+    #fm4p4-svg-root[data-mode="prova"] .fm4p4-card-vida {
+      opacity: 0.35;
+      filter: grayscale(0.5);
+    }
+    #fm4p4-svg-root[data-mode="chip"] .fm4p4-card-vida,
+    #fm4p4-svg-root[data-mode="chip"] .fm4p4-card-prova,
+    #fm4p4-svg-root[data-mode="chip"] .fm4p4-anatomy-box {
+      opacity: 0.45;
+    }
+    #fm4p4-svg-root[data-mode="chip"] .fm4p4-chip-container {
+      animation: fm4p4-pulse 1.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes fm4p4-pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.015); }
+    }
+
+    /* Muscle Wave Animation */
+    @keyframes fm4p4-wave {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+    #fm4p4-svg-root .fm4p4-pulse-line {
+      stroke-dasharray: 8 6;
+      animation: fm4p4-wave 1.8s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #fm4p4-svg-root .fm4p4-pulse-line { animation: none; }
+      #fm4p4-svg-root .fm4p4-chip-container { animation: none; }
+      #fm4p4-svg-root .fm4p4-card { transition: none; }
+    }
+
+    /* Tooltip styling inside SVG */
+    #fm4p4-svg-root .fm4p4-tooltip-box {
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    #fm4p4-svg-root .fm4p4-tooltip-box.fm4p4-visible {
+      opacity: 1;
+    }
+  </style>
+
+  <!-- Background Rect -->
+  <rect width="960" height="760" rx="16" fill="url(#fm4p4-grad-bg)" />
+
+  <!-- Outer Border Frame -->
+  <rect x="8" y="8" width="944" height="744" rx="12" fill="none" stroke="var(--fm4p4-c-border)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4" />
+
+  <!-- ==================== 1. HEADER &amp; LEGENDA (Contract Rule 1) ==================== -->
+  <g class="fm4p4-header-group" transform="translate(25, 20)">
+    <!-- Header Banner Background -->
+    <rect width="910" height="85" rx="10" fill="url(#fm4p4-grad-header)" stroke="var(--fm4p4-c-teal)" stroke-width="1.5" />
+    
+    <!-- Category Badge -->
+    <rect x="18" y="12" width="280" height="22" rx="4" fill="var(--fm4p4-c-teal-dark)" opacity="0.8" />
+    <text x="28" y="27" fill="var(--fm4p4-c-teal)" font-size="11" font-weight="700" letter-spacing="1">NEUROLOGIA · SÍNDROMES DO NEURÔNIO MOTOR</text>
+
+    <!-- Main Title -->
+    <text x="18" y="54" fill="var(--fm4p4-c-text-primary)" font-size="20" font-weight="800" letter-spacing="0.5">FASCICULAÇÃO NA ELA: A ARMADILHA DE PROVA (VIDA × PROVA)</text>
+    
+    <!-- Interpretation Subtitle / Legenda (Bauer Contract 1) -->
+    <text x="18" y="74" fill="var(--fm4p4-c-teal)" font-size="12.5" font-weight="600">
+      <tspan font-weight="700" fill="var(--fm4p4-c-amber)">[VIDA]</tspan> Achado isolado é inespecífico e não patognomônico. 
+      <tspan font-weight="700" fill="var(--fm4p4-c-gold)">[PROVA]</tspan> No pacote motor misto (1º+2º NM), é o ímã imbatível da banca para ELA.
+    </text>
+  </g>
+
+  <!-- ==================== 2. CENTRAL ANATOMICAL ANCHOR ==================== -->
+  <!-- Motor Unit &amp; Muscle Fasciculation Mechanism -->
+  <g class="fm4p4-anatomy-box fm4p4-card" transform="translate(25, 115)">
+    <rect width="910" height="135" rx="10" fill="url(#fm4p4-grad-anatomy)" stroke="var(--fm4p4-c-teal)" stroke-width="1" opacity="0.95" />
+    
+    <!-- Section Title -->
+    <text x="18" y="24" fill="var(--fm4p4-c-teal)" font-size="12" font-weight="700" letter-spacing="0.8">FASCICULAÇÃO NO CONTEXTO DE 2º NEURÔNIO</text>
+    
+    <!-- Spinal Cord Ventral Horn (2º NM) -->
+    <g transform="translate(30, 35)">
+      <!-- Ventral Horn Schematic Diagram -->
+      <path d="M 10 20 C 10 5, 40 5, 40 20 C 40 35, 70 35, 70 50 C 70 65, 40 75, 25 75 C 10 75, 10 35, 10 20 Z" fill="#1E293B" stroke="var(--fm4p4-c-teal)" stroke-width="1.5" />
+      <!-- Motor Neuron Soma -->
+      <circle cx="35" cy="40" r="10" fill="var(--fm4p4-c-teal)" />
+      <circle cx="35" cy="40" r="4" fill="#FFFFFF" />
+      <text x="35" y="66" fill="var(--fm4p4-c-text-primary)" font-size="10" font-weight="700" text-anchor="middle">2º NM (Medula)</text>
+      <text x="35" y="78" fill="var(--fm4p4-c-text-muted)" font-size="9" text-anchor="middle">Corno Anterior</text>
+    </g>
+
+    <!-- Axon Fiber with Nerve Impulse -->
+    <g transform="translate(115, 75)">
+      <!-- Axon Line -->
+      <line x1="0" y1="0" x2="160" y2="0" stroke="var(--fm4p4-c-teal)" stroke-width="3" />
+      <!-- Myelin Sheaths -->
+      <rect x="20" y="-5" width="25" height="10" rx="3" fill="#0EA5E9" opacity="0.7" />
+      <rect x="55" y="-5" width="25" height="10" rx="3" fill="#0EA5E9" opacity="0.7" />
+      <rect x="90" y="-5" width="25" height="10" rx="3" fill="#0EA5E9" opacity="0.7" />
+      <rect x="125" y="-5" width="25" height="10" rx="3" fill="#0EA5E9" opacity="0.7" />
+      
+      <!-- Spontaneous Impulse Arrow -->
+      <path d="M 0 -15 L 140 -15" stroke="var(--fm4p4-c-gold)" stroke-width="2" class="fm4p4-pulse-line" />
+      <polygon points="145,-15 137,-19 137,-11" fill="var(--fm4p4-c-gold)" />
+      <text x="70" y="-22" fill="var(--fm4p4-c-gold)" font-size="10" font-weight="700" text-anchor="middle">Miofasciculação visível</text>
+    </g>
+
+    <!-- Motor Endplate &amp; Muscle Fascicle -->
+    <g transform="translate(300, 35)">
+      <!-- Muscle Body Background -->
+      <rect x="0" y="5" width="280" height="75" rx="8" fill="#1E1B2E" stroke="var(--fm4p4-c-amber)" stroke-width="1.5" />
+      <!-- Muscle Fiber Striations -->
+      <line x1="20" y1="15" x2="20" y2="70" stroke="#334155" stroke-width="2" />
+      <line x1="50" y1="15" x2="50" y2="70" stroke="#334155" stroke-width="2" />
+      <line x1="80" y1="15" x2="80" y2="70" stroke="#334155" stroke-width="2" />
+      <line x1="110" y1="15" x2="110" y2="70" stroke="#334155" stroke-width="2" />
+      <line x1="140" y1="15" x2="140" y2="70" stroke="#334155" stroke-width="2" />
+      <line x1="170" y1="15" x2="170" y2="70" stroke="#334155" stroke-width="2" />
+      <line x1="200" y1="15" x2="200" y2="70" stroke="#334155" stroke-width="2" />
+      <line x1="230" y1="15" x2="230" y2="70" stroke="#334155" stroke-width="2" />
+      <line x1="260" y1="15" x2="260" y2="70" stroke="#334155" stroke-width="2" />
+
+      <!-- Axon Terminals / Endplates -->
+      <circle cx="20" cy="40" r="5" fill="var(--fm4p4-c-gold)" />
+      <circle cx="80" cy="30" r="5" fill="var(--fm4p4-c-gold)" />
+      <circle cx="140" cy="50" r="5" fill="var(--fm4p4-c-gold)" />
+      <circle cx="200" cy="35" r="5" fill="var(--fm4p4-c-gold)" />
+
+      <!-- Fasciculation Wave in Muscle -->
+      <path d="M 10 40 Q 40 15, 80 40 T 150 40 T 220 40 T 270 40" fill="none" stroke="var(--fm4p4-c-gold)" stroke-width="3" filter="url(#fm4p4-glow-gold)" />
+      
+      <text x="140" y="95" fill="var(--fm4p4-c-text-primary)" font-size="11" font-weight="700" text-anchor="middle">Fascículo Muscular em Contração Rápida (Subcutânea)</text>
+    </g>
+
+    <!-- Key Concept Badge Box (Right side of Anatomy) -->
+    <g transform="translate(605, 30)">
+      <rect width="285" height="85" rx="8" fill="var(--fm4p4-c-card-bg)" stroke="var(--fm4p4-c-border)" stroke-width="1" />
+      <text x="14" y="22" fill="var(--fm4p4-c-gold)" font-size="11" font-weight="800">📌 O QUE É FASCICULAÇÃO</text>
+      <text x="14" y="42" fill="var(--fm4p4-c-text-primary)" font-size="11" font-weight="600">• Tremor muscular visível sob a pele.</text>
+      <text x="14" y="58" fill="var(--fm4p4-c-text-primary)" font-size="11" font-weight="600">• Grande palavra-chave da ELA na prova.</text>
+      <text x="14" y="74" fill="var(--fm4p4-c-amber)" font-size="11" font-weight="700">• Na vida, não é específica de nada.</text>
+    </g>
+  </g>
+
+  <!-- ==================== 3. TWO COLUMNS: VIDA vs PROVA ==================== -->
+  
+  <!-- LEFT COLUMN: VIDA REAL (PRÁTICA CLÍNICA) -->
+  <g class="fm4p4-card-vida fm4p4-card" transform="translate(25, 265)">
+    <!-- Card Background -->
+    <rect width="440" height="310" rx="12" fill="url(#fm4p4-grad-vida)" stroke="var(--fm4p4-c-amber)" stroke-width="1.5" filter="url(#fm4p4-shadow)" />
+
+    <!-- Column Header -->
+    <g transform="translate(18, 16)">
+      <rect width="404" height="36" rx="6" fill="var(--fm4p4-c-amber-dark)" opacity="0.3" stroke="var(--fm4p4-c-amber)" stroke-width="1" />
+      <text x="14" y="23" fill="var(--fm4p4-c-amber)" font-size="14" font-weight="800" letter-spacing="0.5">⚠️ VIDA REAL · PRÁTICA CLÍNICA</text>
+    </g>
+
+    <!-- Big Alert Badge -->
+    <g transform="translate(18, 62)">
+      <rect width="404" height="42" rx="6" fill="#7C2D12" stroke="var(--fm4p4-c-amber)" stroke-width="1.5" />
+      <text x="202" y="26" fill="#FFEDD5" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="0.5">ACHADO NÃO PATOGNOMÔNICO!</text>
+    </g>
+
+    <!-- Clinical Facts List -->
+    <g transform="translate(24, 120)">
+      <!-- Fact 1: Inespecífica na vida -->
+      <g class="fm4p4-interactive-item" data-tooltip="Fasciculação não é específica de nada na clínica real — pode aparecer em vários contextos.">
+        <circle cx="10" cy="14" r="10" fill="var(--fm4p4-c-green)" />
+        <text x="10" y="18" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">✓</text>
+        <text x="28" y="14" fill="var(--fm4p4-c-text-primary)" font-size="12" font-weight="700">Inespecífica na vida clínica</text>
+        <text x="28" y="28" fill="var(--fm4p4-c-text-muted)" font-size="11">Não é específica de nenhuma doença sozinha.</text>
+      </g>
+
+      <!-- Fact 2: Ainda assim grande achado da ELA -->
+      <g class="fm4p4-interactive-item" transform="translate(0, 44)" data-tooltip="Ainda assim, fasciculação é grande manifestação clínica da ELA na prática.">
+        <circle cx="10" cy="14" r="10" fill="var(--fm4p4-c-amber)" />
+        <text x="10" y="18" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">!</text>
+        <text x="28" y="14" fill="var(--fm4p4-c-text-primary)" font-size="12" font-weight="700">Ainda assim, achado importante na ELA</text>
+        <text x="28" y="28" fill="var(--fm4p4-c-text-muted)" font-size="11">Grande manifestação clínica — sem ser patognomônica.</text>
+      </g>
+
+      <!-- Fact 3: Isolada não fecha -->
+      <g class="fm4p4-interactive-item" transform="translate(0, 88)" data-tooltip="Fasciculação isolada não fecha o diagnóstico de ELA na vida clínica.">
+        <circle cx="10" cy="14" r="10" fill="var(--fm4p4-c-red)" />
+        <text x="10" y="18" fill="#FFFFFF" font-size="11" font-weight="900" text-anchor="middle">✕</text>
+        <text x="28" y="14" fill="var(--fm4p4-c-red)" font-size="12" font-weight="800">Fasciculação isolada NÃO fecha ELA</text>
+        <text x="28" y="28" fill="var(--fm4p4-c-text-muted)" font-size="11">Inespecífica ≠ irrelevante — mas sozinha não fecha.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Clinical Warning Box -->
+    <g transform="translate(18, 256)">
+      <rect width="404" height="42" rx="6" fill="#1E1926" stroke="var(--fm4p4-c-border)" stroke-width="1" />
+      <text x="14" y="18" fill="var(--fm4p4-c-amber)" font-size="11" font-weight="800">💡 CHIP OURO:</text>
+      <text x="14" y="34" fill="var(--fm4p4-c-text-primary)" font-size="11">Inespecífica na vida ≠ irrelevante na prova.</text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: PROVA DE RESIDÊNCIA (A BANCA) -->
+  <g class="fm4p4-card-prova fm4p4-card" transform="translate(495, 265)">
+    <!-- Card Background -->
+    <rect width="440" height="310" rx="12" fill="url(#fm4p4-grad-prova)" stroke="var(--fm4p4-c-gold)" stroke-width="1.5" filter="url(#fm4p4-shadow)" />
+
+    <!-- Column Header -->
+    <g transform="translate(18, 16)">
+      <rect width="404" height="36" rx="6" fill="var(--fm4p4-c-gold-dark)" opacity="0.4" stroke="var(--fm4p4-c-gold)" stroke-width="1" />
+      <text x="14" y="23" fill="var(--fm4p4-c-gold)" font-size="14" font-weight="800" letter-spacing="0.5">🧲 PROVA DE RESIDÊNCIA · A BANCA</text>
+    </g>
+
+    <!-- Big Magnet Box -->
+    <g transform="translate(18, 62)">
+      <rect width="404" height="42" rx="6" fill="#78350F" stroke="var(--fm4p4-c-gold)" stroke-width="1.5" filter="url(#fm4p4-glow-gold)" />
+      <!-- Magnet Icon -->
+      <path d="M 28 14 C 28 8, 38 8, 38 14 L 38 24 C 38 28, 28 28, 28 24 Z" fill="none" stroke="var(--fm4p4-c-gold)" stroke-width="2" />
+      <text x="202" y="26" fill="#FEF08A" font-size="13" font-weight="900" text-anchor="middle" letter-spacing="0.5">ÍMÃ DE BANCA → PUXAR ELA!</text>
+    </g>
+
+    <!-- Exam Facts List -->
+    <g transform="translate(24, 120)">
+      <!-- Fact 1: Trigger Word in Vignettes -->
+      <g class="fm4p4-interactive-item" data-tooltip="Nas questões de residência, a palavra 'fasciculações' no enunciado é inserida intencionalmente como a grande dica para você marcar ELA.">
+        <circle cx="10" cy="14" r="10" fill="var(--fm4p4-c-gold)" />
+        <text x="10" y="18" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">🧲</text>
+        <text x="28" y="14" fill="var(--fm4p4-c-gold)" font-size="12" font-weight="800">Gatilho Clássico de Enunciado</text>
+        <text x="28" y="28" fill="var(--fm4p4-c-text-muted)" font-size="11">Citação de "fasciculações na língua/coxa" = sinal forte de ELA.</text>
+      </g>
+
+      <!-- Fact 2: The Inseparable Package -->
+      <g class="fm4p4-interactive-item" transform="translate(0, 44)" data-tooltip="O pacote perfeito de prova: Sinais de 1º NM (Hiperreflexia/Babinski) + 2º NM (Atrofia/Fasciculação) + Sensibilidade PRESERVADA.">
+        <circle cx="10" cy="14" r="10" fill="var(--fm4p4-c-teal)" />
+        <text x="10" y="18" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">📦</text>
+        <text x="28" y="14" fill="var(--fm4p4-c-text-primary)" font-size="12" font-weight="700">O Pacote Inseparável de Prova</text>
+        <text x="28" y="28" fill="var(--fm4p4-c-text-muted)" font-size="11">1º NM (Hiperreflexia) + 2º NM (Atrofia/Fasciculação) + Motor puro.</text>
+      </g>
+
+      <!-- Fact 3: Exam Strategy Rule -->
+      <g class="fm4p4-interactive-item" transform="translate(0, 88)" data-tooltip="Na prova, no pacote certo, fasciculação puxa ELA — inespecífica na vida ≠ irrelevante na banca.">
+        <circle cx="10" cy="14" r="10" fill="var(--fm4p4-c-green)" />
+        <text x="10" y="18" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">🎯</text>
+        <text x="28" y="14" fill="var(--fm4p4-c-green)" font-size="12" font-weight="800">Na Prova: Não Hesite!</text>
+        <text x="28" y="28" fill="var(--fm4p4-c-text-muted)" font-size="11">Viu o conjunto mista + fasciculação? Marque ELA com segurança.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Exam Strategy Box -->
+    <g transform="translate(18, 256)">
+      <rect width="404" height="42" rx="6" fill="#2A2010" stroke="var(--fm4p4-c-gold)" stroke-width="1" />
+      <text x="14" y="18" fill="var(--fm4p4-c-gold)" font-size="11" font-weight="800">🏆 REGRA DA BANCA:</text>
+      <text x="14" y="34" fill="var(--fm4p4-c-text-primary)" font-size="11">A banca não coloca fasciculação à toa — ela aponta pra ELA!</text>
+    </g>
+  </g>
+
+  <!-- ==================== 4. INTERACTIVE CONTROLS ==================== -->
+  <g class="fm4p4-controls-group" transform="translate(25, 585)">
+    <rect width="910" height="40" rx="8" fill="var(--fm4p4-c-card-bg)" stroke="var(--fm4p4-c-border)" stroke-width="1" />
+    
+    <text x="15" y="25" fill="var(--fm4p4-c-text-muted)" font-size="11" font-weight="700">INTERAÇÃO DIDÁTICA:</text>
+
+    <!-- Button 1: Visão Geral (All) -->
+    <g class="fm4p4-btn fm4p4-active" id="fm4p4-btn-all" transform="translate(140, 7)" role="button" tabindex="0" aria-label="Mostrar Visão Geral Ambos os Lados">
+      <rect width="160" height="26" rx="6" fill="#1E293B" stroke="var(--fm4p4-c-teal)" stroke-width="1" />
+      <text x="80" y="17" fill="var(--fm4p4-c-text-primary)" font-size="11" font-weight="700" text-anchor="middle">🔍 Visão Geral (Ambos)</text>
+    </g>
+
+    <!-- Button 2: Foco Vida -->
+    <g class="fm4p4-btn" id="fm4p4-btn-vida" transform="translate(315, 7)" role="button" tabindex="0" aria-label="Focar Lado Vida Real Alerta">
+      <rect width="170" height="26" rx="6" fill="#2A1713" stroke="var(--fm4p4-c-amber)" stroke-width="1" />
+      <text x="85" y="17" fill="var(--fm4p4-c-amber)" font-size="11" font-weight="700" text-anchor="middle">⚠️ Foco VIDA (Inespecífica)</text>
+    </g>
+
+    <!-- Button 3: Foco Prova -->
+    <g class="fm4p4-btn" id="fm4p4-btn-prova" transform="translate(500, 7)" role="button" tabindex="0" aria-label="Focar Lado Prova Ímã ELA">
+      <rect width="170" height="26" rx="6" fill="#2D240B" stroke="var(--fm4p4-c-gold)" stroke-width="1" />
+      <text x="85" y="17" fill="var(--fm4p4-c-gold)" font-size="11" font-weight="700" text-anchor="middle">🧲 Foco PROVA (Ímã ELA)</text>
+    </g>
+
+    <!-- Button 4: Ponto-chave -->
+    <g class="fm4p4-btn" id="fm4p4-btn-chip" transform="translate(685, 7)" role="button" tabindex="0" aria-label="Destacar ponto-chave da fasciculação">
+      <rect width="210" height="26" rx="6" fill="#78350F" stroke="var(--fm4p4-c-gold)" stroke-width="1" />
+      <text x="105" y="17" fill="#FEF08A" font-size="11" font-weight="800" text-anchor="middle">🏆 Ponto-chave (fasciculação)</text>
+    </g>
+  </g>
+
+  <!-- ==================== 5. MASTER GOLD CHIP (PONTO-CHAVE) ==================== -->
+  <g class="fm4p4-chip-container fm4p4-card" transform="translate(25, 635)">
+    <!-- Main Gold Chip Banner -->
+    <rect width="910" height="105" rx="12" fill="url(#fm4p4-grad-chip-gold)" stroke="var(--fm4p4-c-gold)" stroke-width="2" filter="url(#fm4p4-shadow)" />
+
+    <!-- Inner Glow Border -->
+    <rect x="6" y="6" width="898" height="93" rx="8" fill="none" stroke="#FEF08A" stroke-width="1" stroke-dasharray="4 2" opacity="0.6" />
+
+    <!-- Master Statement Title -->
+    <g transform="translate(20, 26)">
+      <rect x="0" y="-14" width="220" height="22" rx="4" fill="#78350F" />
+      <text x="10" y="2" fill="#FEF08A" font-size="11" font-weight="900" letter-spacing="1">PONTO-CHAVE</text>
+    </g>
+
+    <!-- Main Equation Statement -->
+    <text x="455" y="55" fill="#FFFFFF" font-size="18" font-weight="900" text-anchor="middle" letter-spacing="0.5" filter="url(#fm4p4-shadow)">
+      "INESPECÍFICA NA VIDA  ≠  IRRELEVANTE NA PROVA"
+    </text>
+
+    <!-- Sub-explanation -->
+    <text x="455" y="82" fill="#FEF3C7" font-size="12" font-weight="700" text-anchor="middle">
+      Na vida real: Fasciculação isolada não fecha diagnóstico (tranquilize). Na prova: Associada ao pacote motor (1º+2º NM), PUXA ELA!
+    </text>
+  </g>
+
+  <!-- Dynamic Tooltip Element -->
+  <g id="fm4p4-tooltip" class="fm4p4-tooltip-box" transform="translate(0, 0)">
+    <rect id="fm4p4-tooltip-bg" width="280" height="60" rx="6" fill="#0F172A" stroke="var(--fm4p4-c-gold)" stroke-width="1.5" filter="url(#fm4p4-shadow)" />
+    <text id="fm4p4-tooltip-text" x="14" y="22" fill="#F8FAFC" font-size="11" font-weight="600">
+      <tspan x="14" dy="0" id="fm4p4-tt-line1"></tspan>
+      <tspan x="14" dy="16" id="fm4p4-tt-line2" fill="var(--fm4p4-c-text-muted)"></tspan>
+    </text>
+  </g>
+
+  <!-- ==================== 6. INLINE JAVASCRIPT ENGINE ==================== -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    (function() {
+      var root = document.getElementById('fm4p4-svg-root');
+      if (!root) return;
+
+      var btnAll = document.getElementById('fm4p4-btn-all');
+      var btnVida = document.getElementById('fm4p4-btn-vida');
+      var btnProva = document.getElementById('fm4p4-btn-prova');
+      var btnChip = document.getElementById('fm4p4-btn-chip');
+      var buttons = [btnAll, btnVida, btnProva, btnChip];
+
+      function setMode(modeName) {
+        root.setAttribute('data-mode', modeName);
+        buttons.forEach(function(btn) {
+          if (btn) btn.classList.remove('fm4p4-active');
+        });
+        if (modeName === 'all' && btnAll) btnAll.classList.add('fm4p4-active');
+        if (modeName === 'vida' && btnVida) btnVida.classList.add('fm4p4-active');
+        if (modeName === 'prova' && btnProva) btnProva.classList.add('fm4p4-active');
+        if (modeName === 'chip' && btnChip) btnChip.classList.add('fm4p4-active');
+      }
+
+      if (btnAll) btnAll.addEventListener('click', function() { setMode('all'); });
+      if (btnVida) btnVida.addEventListener('click', function() { setMode('vida'); });
+      if (btnProva) btnProva.addEventListener('click', function() { setMode('prova'); });
+      if (btnChip) btnChip.addEventListener('click', function() { setMode('chip'); });
+
+      // Keyboard accessibility for buttons
+      buttons.forEach(function(btn) {
+        if (!btn) return;
+        btn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+
+      // Tooltip Engine
+      var tooltip = document.getElementById('fm4p4-tooltip');
+      var ttLine1 = document.getElementById('fm4p4-tt-line1');
+      var ttLine2 = document.getElementById('fm4p4-tt-line2');
+      var interactiveItems = root.querySelectorAll('.fm4p4-interactive-item');
+
+      interactiveItems.forEach(function(item) {
+        item.addEventListener('mouseenter', function(e) {
+          var text = item.getAttribute('data-tooltip');
+          if (!text || !tooltip) return;
+
+          // Split into two lines if long
+          if (text.length > 45) {
+            var mid = Math.floor(text.length / 2);
+            var spaceIdx = text.indexOf(' ', mid);
+            if (spaceIdx === -1) spaceIdx = mid;
+            ttLine1.textContent = text.substring(0, spaceIdx);
+            ttLine2.textContent = text.substring(spaceIdx + 1);
+          } else {
+            ttLine1.textContent = text;
+            ttLine2.textContent = '';
+          }
+
+          tooltip.classList.add('fm4p4-visible');
+        });
+
+        item.addEventListener('mousemove', function(e) {
+          if (!tooltip) return;
+          var ctm = root.getScreenCTM();
+          if (!ctm) return;
+          var x = (e.clientX - ctm.e) / ctm.a;
+          var y = (e.clientY - ctm.f) / ctm.d;
+          
+          // Position tooltip near cursor with boundary check
+          x = Math.min(Math.max(x + 15, 10), 660);
+          y = Math.min(Math.max(y + 15, 10), 680);
+          
+          tooltip.setAttribute('transform', 'translate(' + x + ', ' + y + ')');
+        });
+
+        item.addEventListener('mouseleave', function() {
+          if (tooltip) tooltip.classList.remove('fm4p4-visible');
+        });
+      });
+    })();
+    /* ]]> */
+  </script>
+</svg>
+
+        </div>
+        <p class="figura-ancorada__fonte" style="margin:.5rem .9rem .7rem">Diagrama vida × prova: o lado “prova” puxa ELA; o lado “vida” carrega o ícone “não patognomônica”.</p>
+      </figure>
+
+      <aside class="continuity">
+        <div class="prose">
+          <p class="no-indent"><strong>Por que importa na prática:</strong> na vida, fasciculação isolada <strong>não</strong> fecha diagnóstico; no gabarito, no pacote certo, ela <strong>ancora</strong> ELA.</p>
+          <p class="no-indent"><strong>Resumo operacional:</strong> fasciculação = ímã de prova; não patognomônica na vida.</p>
+          <p class="no-indent">Se o motor morre em ~3 anos — o que resta?</p>
+        </div>
+      </aside>
+
+      <!-- QUIZ P4 -->
+      <section class="quiz" data-quiz-id="fm4-ela-p04" aria-labelledby="quiz-p04-title">
+        <h2 id="quiz-p04-title">Quiz — fixação</h2>
+        <ol class="quiz__questions">
+          <li class="quiz__question" data-q="1">
+            <p class="quiz__stem">Sobre fasciculação na ELA, a leitura correta é:</p>
+            <div role="radiogroup" aria-label="Q1" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Específica e patognomônica na vida e na prova</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Inespecífica na vida; na prova, costuma puxar ELA no pacote certo</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Irrelevante em qualquer contexto</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Exclui ELA</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> Dualidade vida × banca — o mesmo achado muda de peso conforme o contexto.</p>
+              <p class="quiz__distractor">(A) superestima na vida. (C)/(D) apagam o ímã de prova e a clínica real. Cai em A porque confunde “muito cobrada” com “específica”.</p>
+            </div>
+          </li>
+          <li class="quiz__question" data-q="2">
+            <p class="quiz__stem">“Inespecífica na vida” implica:</p>
+            <div role="radiogroup" aria-label="Q2" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — A banca nunca cobra</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Não fecha sozinha o diagnóstico clínico, mas permanece achado importante</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Deve ser ignorada no exame</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Só existe em ansiedade</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> Inespecífico ≠ inútil; no conjunto 1º+2º+progressão, pesa.</p>
+              <p class="quiz__distractor">(A) falso — a banca ama. (C)/(D) empobrecem o exame. Cai em D porque a isca do “estresse” da P1 volta disfarçada.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p3.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">ELA: a neurodegenerativa dos dois neurônios</span></a><a class="next" href="p5.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Três anos, o motor e a mente intacta</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="rodape">ELA: esclerose lateral amiotrófica.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm4.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">ELA · 8 páginas</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>Jairo: do “estresse” ao pé que arrasta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>Um neurônio sozinho não basta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>ELA: a neurodegenerativa dos dois neurônios</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" aria-current="page"><span class="menu-panel__index">04</span><span>Fasciculação: inespecífica na vida, ímã na prova</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Três anos, o motor e a mente intacta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Clínica manda · não é GBS · DFT</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Suporte no chão; riluzole e edaravone compram meses</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Mantra + vignette 72 a: tenar, clonos, bulbar</span></a></li></ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

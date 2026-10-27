@@ -1,0 +1,563 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" class="a12p10-root" id="a12p10-svg" data-svg-tokenized="true" role="img" aria-labelledby="a12p10-title a12p10-desc" data-scene="cues" data-active-target="espinha">
+  <title id="a12p10-title">Assoalho Pélvico · Espinha e Tuberosidade Isquiáticas</title>
+  <desc id="a12p10-desc">Prancha anatômico-clínica comparativa entre a espinha isquiática (bico medial, plano médio) e a tuberosidade isquiática (bloco inferior, plano de saída).</desc>
+
+  <defs>
+    <!-- Shadow & Glow Filters -->
+    <filter id="a12p10-glow-espinha" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p10-glow-tuberosidade" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p10-card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25" />
+    </filter>
+
+    <!-- Linear Gradients for Bone & Anatomical Texture -->
+    <linearGradient id="a12p10-grad-osso" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12-osso, var(--a12p10-osso, #DCC7B4))" />
+      <stop offset="100%" stop-color="var(--a12p10-osso-dark, #A68B74)" />
+    </linearGradient>
+
+    <linearGradient id="a12p10-grad-sacro" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p10-osso-dark, #A68B74)" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="var(--a12p10-osso-dark, #8A7360)" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Gradient for Ligaments -->
+    <linearGradient id="a12p10-grad-lig-espinhal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <linearGradient id="a12p10-grad-lig-tuberal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12-coral, var(--a12p10-sacrotuberal, #EF7582))" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+
+    <!-- Marker Arrows for Lead Lines -->
+    <marker id="a12p10-arrow-espinha" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" />
+    </marker>
+    <marker id="a12p10-arrow-tuberosidade" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" />
+    </marker>
+    <marker id="a12p10-arrow-pista" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-linha-guia, var(--a12p10-pista, #B8ACB5))" />
+    </marker>
+  </defs>
+
+  <style>
+    .a12p10-root {
+      --a12p10-bg: #120E16;
+      --a12p10-card-bg: #1D1726;
+      --a12p10-border: #3A2F4E;
+      --a12p10-tinta: #F7F1F5;
+      --a12p10-muted: #B8ACB5;
+      --a12p10-osso: #DCC7B4;
+      --a12p10-osso-dark: #A68B74;
+      --a12p10-osso-stroke: #735C49;
+      --a12p10-espinha: #4DB9B0;
+      --a12p10-espinha-bg: rgba(77, 185, 176, 0.12);
+      --a12p10-tuberosidade: #A978C7;
+      --a12p10-tuberosidade-bg: rgba(169, 120, 199, 0.12);
+      --a12p10-sacroespinhal: #F3BE5B;
+      --a12p10-sacrotuberal: #EF7582;
+      --a12p10-pista: #B8ACB5;
+      --a12p10-btn-bg: #261E33;
+      --a12p10-btn-border: #44375A;
+      --a12p10-btn-active: #4DB9B0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-1, var(--a12p10-bg, #120E16));
+      color: var(--a12-tinta, var(--a12p10-tinta, #F7F1F5));
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    [data-theme="light"] .a12p10-root {
+      --a12p10-bg: #FAF8F5;
+      --a12p10-card-bg: #FFFFFF;
+      --a12p10-border: #E2D9CF;
+      --a12p10-tinta: #1C1917;
+      --a12p10-muted: #57504B;
+      --a12p10-osso: #CBB098;
+      --a12p10-osso-dark: #9A7C64;
+      --a12p10-osso-stroke: #5C4634;
+      --a12p10-espinha: #0D9488;
+      --a12p10-espinha-bg: rgba(13, 148, 136, 0.08);
+      --a12p10-tuberosidade: #7E22CE;
+      --a12p10-tuberosidade-bg: rgba(126, 34, 206, 0.08);
+      --a12p10-sacroespinhal: #D97706;
+      --a12p10-sacrotuberal: #E11D48;
+      --a12p10-pista: #78716C;
+      --a12p10-btn-bg: #EFECE6;
+      --a12p10-btn-border: #D5CEC4;
+      --a12p10-btn-active: #0D9488;
+    }
+
+    /* Mode-dependent cue visibility */
+    .a12p10-root[data-scene="nocues"] .a12p10-cue-element {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .a12p10-root[data-scene="cues"] .a12p10-cue-element {
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+
+    /* Hotspot interactions */
+    .a12p10-hotspot {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .a12p10-hotspot:focus-visible .a12p10-focus-ring {
+      stroke: var(--a12-tinta, var(--a12p10-tinta, #F7F1F5));
+      stroke-dasharray: 4 4;
+      stroke-width: 2px;
+    }
+
+    .a12p10-hotspot-espinha .a12p10-target-shape {
+      fill: var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0));
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .a12p10-hotspot-tuberosidade .a12p10-target-shape {
+      fill: var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7));
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .a12p10-root[data-active-target="espinha"] #a12p10-hs-espinha .a12p10-target-shape,
+    .a12p10-hotspot-espinha:hover .a12p10-target-shape {
+      filter: drop-shadow(0 0 10px var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0)));
+    }
+
+    .a12p10-root[data-active-target="tuberosidade"] #a12p10-hs-tuberosidade .a12p10-target-shape,
+    .a12p10-hotspot-tuberosidade:hover .a12p10-target-shape {
+      filter: drop-shadow(0 0 10px var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7)));
+    }
+
+    /* Detail Card Switching */
+    .a12p10-card-content {
+      display: none;
+    }
+
+    .a12p10-root[data-active-target="espinha"] #a12p10-card-espinha {
+      display: block;
+    }
+
+    .a12p10-root[data-active-target="tuberosidade"] #a12p10-card-tuberosidade {
+      display: block;
+    }
+
+    /* Mode Buttons */
+    .a12p10-btn {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .a12p10-btn rect {
+      fill: var(--bg-2, var(--a12p10-btn-bg, #261E33));
+      stroke: var(--ink-20, var(--a12p10-btn-border, #44375A));
+      stroke-width: 1.5px;
+      transition: all 0.2s ease;
+    }
+
+    .a12p10-btn text {
+      fill: var(--ink-70, var(--a12p10-muted, #B8ACB5));
+      font-size: 12px;
+      font-weight: 700;
+      text-anchor: middle;
+      letter-spacing: 0.5px;
+    }
+
+    .a12p10-root[data-scene="cues"] #a12p10-btn-cues rect,
+    .a12p10-root[data-scene="nocues"] #a12p10-btn-nocues rect {
+      fill: var(--a12-ancora-lateral, var(--a12p10-btn-active, #4DB9B0));
+      stroke: var(--a12-ancora-lateral, var(--a12p10-btn-active, #4DB9B0));
+    }
+
+    .a12p10-root[data-scene="cues"] #a12p10-btn-cues text,
+    .a12p10-root[data-scene="nocues"] #a12p10-btn-nocues text {
+      fill: #FFFFFF;
+    }
+  </style>
+
+  <!-- HEADER BLOCK -->
+  <g id="a12p10-header" transform="translate(30, 25)">
+    <!-- Main Title -->
+    <text x="0" y="20" font-size="20" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))" letter-spacing="0.5">
+      ESPINHA vs TUBEROSIDADE ISQUIÁTICA
+    </text>
+    <!-- Subtitle / Legenda de Interpretação -->
+    <text x="0" y="42" font-size="13" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">
+      Prancha Tátil: Espinha é bico interno (Plano Médio · 10,5 cm); Tuberosidade é bloco externo (Plano de Saída · 11 cm).
+    </text>
+
+    <!-- Mode Toggle Buttons (Com Pistas vs Sem Pistas) -->
+    <g id="a12p10-btn-cues" class="a12p10-btn" transform="translate(680, 5)" role="button" tabindex="0" aria-label="Modo Com Pistas" aria-pressed="true">
+      <rect x="0" y="0" width="105" height="34" rx="8" />
+      <text x="52.5" y="21">COM PISTAS</text>
+    </g>
+    <g id="a12p10-btn-nocues" class="a12p10-btn" transform="translate(795, 5)" role="button" tabindex="0" aria-label="Modo Sem Pistas" aria-pressed="false">
+      <rect x="0" y="0" width="105" height="34" rx="8" />
+      <text x="52.5" y="21">SEM PISTAS</text>
+    </g>
+  </g>
+
+  <!-- LEFT / CENTER CANVAS: MEDIAL PELVIC BONE & LIGAMENTS (X: 30 to 520, Y: 80 to 590) -->
+  <g id="a12p10-anatomy-stage" transform="translate(30, 80)">
+
+    <!-- Background Framing Card for Anatomy -->
+    <rect x="0" y="0" width="510" height="510" rx="16" fill="var(--bg-2, var(--a12p10-card-bg, #1D1726))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1.5" filter="url(#a12p10-card-shadow)" />
+
+    <!-- Orientation Badge -->
+    <rect x="18" y="16" width="160" height="24" rx="6" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+    <text x="98" y="32" font-size="11" font-weight="700" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))" text-anchor="middle">
+      VISTA MEDIAL (HEMI-PÉLVIS)
+    </text>
+
+    <!-- Sacrum Outline (Posterior backdrop) -->
+    <path id="a12p10-sacrum" d="M 65 100 C 50 140 45 200 55 270 C 65 330 75 370 95 400 L 110 390 C 95 365 85 325 78 270 C 70 205 75 150 85 105 Z" fill="url(#a12p10-grad-sacro)" stroke="var(--a12p10-osso-stroke, #735C49)" stroke-width="1.5" stroke-dasharray="3 2" />
+    <text class="a12p10-cue-element" x="50" y="90" font-size="11" font-weight="600" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">SÁCRO</text>
+
+    <!-- OS COXAE (HIP BONE MEDIAL VIEW) MAIN BODY -->
+    <path id="a12p10-hip-bone" d="
+      M 340 85
+      C 280 65 200 70 135 105
+      C 105 125 90 150 100 175
+      C 115 210 140 230 150 250
+      C 160 270 140 290 145 310
+      C 148 320 162 332 170 338
+      C 152 355 148 375 160 395
+      C 175 420 180 440 185 455
+      C 192 485 210 508 245 515
+      C 285 520 310 495 305 455
+      C 300 425 285 400 270 380
+      L 340 370
+      C 385 365 430 350 445 320
+      C 455 300 440 270 410 260
+      C 370 250 320 255 275 230
+      C 230 205 200 165 240 135
+      C 275 110 320 100 340 85 Z"
+      fill="url(#a12p10-grad-osso)" stroke="var(--a12p10-osso-stroke, #735C49)" stroke-width="2.5" />
+
+    <!-- Bone Structural Relief & Arcuate Line -->
+    <path d="M 125 170 C 170 195 220 220 270 235 C 330 255 385 270 425 295" fill="none" stroke="var(--a12p10-osso-stroke, #735C49)" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6" />
+    <text class="a12p10-cue-element" x="250" y="160" font-size="11" font-weight="600" fill="var(--a12p10-osso-dark, #A68B74)">FOSSA ILÍACA</text>
+    <text class="a12p10-cue-element" x="400" y="340" font-size="11" font-weight="600" fill="var(--a12p10-osso-dark, #A68B74)">PÚBIS</text>
+
+    <!-- LIGAMENTS (Sacrospinous & Sacrotuberous) -->
+    <!-- 1. Sacrospinous Ligament (Gold) -->
+    <path id="a12p10-lig-espinhal" d="M 80 290 L 168 337 L 85 330 Z" fill="url(#a12p10-grad-lig-espinhal)" opacity="0.9" stroke="#D97706" stroke-width="1" />
+    <path d="M 82 295 L 165 337 M 83 310 L 160 337 M 84 322 L 155 337" stroke="#FFFFFF" stroke-width="0.75" opacity="0.4" />
+
+    <!-- 2. Sacrotuberous Ligament (Coral) -->
+    <path id="a12p10-lig-tuberal" d="M 75 190 C 70 250 80 320 85 365 L 245 490 C 230 495 210 490 200 480 L 80 320 Z" fill="url(#a12p10-grad-lig-tuberal)" opacity="0.85" stroke="#BE123C" stroke-width="1" />
+    <path d="M 77 210 L 235 488 M 80 250 L 220 485 M 83 290 L 210 482" stroke="#FFFFFF" stroke-width="0.75" opacity="0.4" />
+
+    <!-- FORAMINA ANNOTATIONS (Cue elements) -->
+    <g class="a12p10-cue-element">
+      <text x="110" y="270" font-size="10" font-weight="700" fill="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))">Forame Isquiático Maior</text>
+      <text x="125" y="375" font-size="10" font-weight="700" fill="var(--a12-coral, var(--a12p10-sacrotuberal, #EF7582))">Forame Isquiático Menor</text>
+    </g>
+
+    <!-- ESTREITOS & MEASUREMENT GUIDELINES -->
+    <!-- Estreito Médio Line (Biespinhal 10,5 cm) -->
+    <g transform="translate(0, 0)">
+      <line class="a12p10-dim-line" x1="170" y1="338" x2="440" y2="338" stroke="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" stroke-width="2" />
+      <circle cx="170" cy="338" r="4" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" />
+      <circle cx="440" cy="338" r="4" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" />
+
+      <g transform="translate(260, 323)">
+        <rect x="0" y="0" width="165" height="24" rx="12" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" stroke-width="1.5" />
+        <text x="82.5" y="16" font-size="11" font-weight="800" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" text-anchor="middle">
+          BIESPINHAL: 10,5 cm
+        </text>
+      </g>
+    </g>
+
+    <!-- Estreito Inferior Line (Bituberoso 11,0 cm) -->
+    <g transform="translate(0, 0)">
+      <line class="a12p10-dim-line" x1="245" y1="490" x2="470" y2="490" stroke="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" stroke-width="2" />
+      <circle cx="245" cy="490" r="4" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" />
+      <circle cx="470" cy="490" r="4" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" />
+
+      <g transform="translate(290, 475)">
+        <rect x="0" y="0" width="165" height="24" rx="12" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" stroke-width="1.5" />
+        <text x="82.5" y="16" font-size="11" font-weight="800" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" text-anchor="middle">
+          BITUBEROSO: 11,0 cm
+        </text>
+      </g>
+    </g>
+
+    <!-- ANATOMICAL LANDMARK HOTSPOTS (INTERACTIVE TARGETS) -->
+
+    <!-- Hotspot 1: ESPINHA ISQUIÁTICA (Bico) -->
+    <g id="a12p10-hs-espinha" class="a12p10-hotspot a12p10-hotspot-espinha hs-shape" transform="translate(170, 338)" role="button" tabindex="0" aria-label="Espinha Isquiática - Bico e Plano Médio" aria-selected="true">
+      <circle class="a12p10-focus-ring" cx="0" cy="0" r="28" fill="none" />
+      <!-- Touch Hit-Area (Min 48px) -->
+      <circle cx="0" cy="0" r="26" fill="var(--a12p10-espinha-bg)" />
+      <!-- Sharp Beak Shape Highlight -->
+      <path class="a12p10-target-shape" d="M -15 -8 L 8 0 L -15 8 L -8 0 Z" stroke="#FFFFFF" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="5" fill="#FFFFFF" />
+
+      <!-- Cue Leader & Label for Espinha -->
+      <g class="a12p10-cue-element" transform="translate(-150, -45)">
+        <rect x="0" y="0" width="135" height="38" rx="6" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" stroke-width="1.5" />
+        <text x="67.5" y="16" font-size="12" font-weight="800" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" text-anchor="middle">ESPINHA (BICO)</text>
+        <text x="67.5" y="30" font-size="10" font-weight="600" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))" text-anchor="middle">Plano Médio · DeLee 0</text>
+        <line x1="135" y1="19" x2="148" y2="40" stroke="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" stroke-width="1.5" marker-end="url(#a12p10-arrow-espinha)" />
+      </g>
+    </g>
+
+    <!-- Hotspot 2: TUBEROSIDADE ISQUIÁTICA (Bloco) -->
+    <g id="a12p10-hs-tuberosidade" class="a12p10-hotspot a12p10-hotspot-tuberosidade hs-shape" transform="translate(245, 490)" role="button" tabindex="0" aria-label="Tuberosidade Isquiática - Bloco e Plano de Saída" aria-selected="false">
+      <circle class="a12p10-focus-ring" cx="0" cy="0" r="32" fill="none" />
+      <!-- Touch Hit-Area (Min 48px) -->
+      <circle cx="0" cy="0" r="30" fill="var(--a12p10-tuberosidade-bg)" />
+      <!-- Thick Blunt Rugose Block Shape Highlight -->
+      <rect class="a12p10-target-shape" x="-18" y="-12" width="36" height="24" rx="8" stroke="#FFFFFF" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="5" fill="#FFFFFF" />
+
+      <!-- Cue Leader & Label for Tuberosidade -->
+      <g class="a12p10-cue-element" transform="translate(-165, 10)">
+        <rect x="0" y="0" width="150" height="38" rx="6" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" stroke-width="1.5" />
+        <text x="75" y="16" font-size="12" font-weight="800" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" text-anchor="middle">TUBEROSIDADE (BLOCO)</text>
+        <text x="75" y="30" font-size="10" font-weight="600" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))" text-anchor="middle">Plano de Saída · 11 cm</text>
+        <line x1="150" y1="19" x2="162" y2="-8" stroke="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" stroke-width="1.5" marker-end="url(#a12p10-arrow-tuberosidade)" />
+      </g>
+    </g>
+
+    <!-- LIGAMENT LABELS (Cues) -->
+    <g class="a12p10-cue-element" transform="translate(15, 305)">
+      <line x1="0" y1="0" x2="65" y2="10" stroke="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))" stroke-width="1.2" marker-end="url(#a12p10-arrow-pista)" />
+      <text x="-5" y="-4" font-size="10" font-weight="700" fill="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))">Lig. Sacroespinhal</text>
+    </g>
+    <g class="a12p10-cue-element" transform="translate(15, 205)">
+      <line x1="0" y1="0" x2="55" y2="35" stroke="var(--a12-coral, var(--a12p10-sacrotuberal, #EF7582))" stroke-width="1.2" marker-end="url(#a12p10-arrow-pista)" />
+      <text x="-5" y="-4" font-size="10" font-weight="700" fill="var(--a12-coral, var(--a12p10-sacrotuberal, #EF7582))">Lig. Sacrotuberal</text>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: CLINICAL & TACTILE COMPARISON CARDS (X: 560 to 930, Y: 80 to 590) -->
+  <g id="a12p10-right-panel" transform="translate(560, 80)">
+
+    <!-- FIXED GOLDEN RULE BANNER AT TOP -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="370" height="54" rx="12" fill="var(--bg-2, var(--a12p10-card-bg, #1D1726))" stroke="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))" stroke-width="1.5" filter="url(#a12p10-card-shadow)" />
+      <text x="185" y="22" font-size="11" font-weight="800" fill="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))" text-anchor="middle" letter-spacing="1">
+        REGRA DE OURO OBSTÉTRICA
+      </text>
+      <rect x="25" y="29" width="320" height="18" rx="9" fill="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))" opacity="0.15" />
+      <text x="185" y="42" font-size="12" font-weight="800" fill="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))" text-anchor="middle">
+        ESPINHA É MEIO · TUBEROSIDADE É SAÍDA
+      </text>
+    </g>
+
+    <!-- DYNAMIC CLINICAL DETAIL CONTAINER -->
+    <g transform="translate(0, 66)">
+
+      <!-- CARD 1: ESPINHA ISQUIÁTICA (ACTIVE WHEN TARGET = ESPINHA) -->
+      <g id="a12p10-card-espinha" class="a12p10-card-content">
+        <rect x="0" y="0" width="370" height="444" rx="14" fill="var(--bg-2, var(--a12p10-card-bg, #1D1726))" stroke="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" stroke-width="2" filter="url(#a12p10-card-shadow)" />
+
+        <!-- Card Header Badge -->
+        <path d="M 0 14 C 0 6.2 6.2 0 14 0 L 356 0 C 363.8 0 370 6.2 370 14 L 370 48 L 0 48 Z" fill="var(--a12p10-espinha-bg)" />
+        <text x="20" y="30" font-size="15" font-weight="800" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))">
+          ESPINHA ISQUIÁTICA
+        </text>
+        <rect x="250" y="14" width="100" height="22" rx="11" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" />
+        <text x="300" y="29" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">BICO INTERNO</text>
+
+        <!-- Tactile Character Box -->
+        <g transform="translate(16, 60)">
+          <rect x="0" y="0" width="338" height="42" rx="8" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+          <text x="12" y="18" font-size="11" font-weight="700" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))">Forma Tátil:</text>
+          <text x="85" y="18" font-size="11" font-weight="500" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Saliência pontiaguda, pequena, para dentro.</text>
+          <text x="12" y="33" font-size="10" font-weight="600" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Identificação: Palpação vaginal profunda no toque obstétrico.</text>
+        </g>
+
+        <!-- 4 ANCHORED VIGNETTE BOXES FOR ESPINHA -->
+        <g transform="translate(16, 114)">
+
+          <!-- Vignette 1: Zero de DeLee -->
+          <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="338" height="68" rx="10" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+            <circle cx="24" cy="34" r="14" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" opacity="0.2" />
+            <text x="24" y="39" font-size="12" font-weight="900" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" text-anchor="middle">0</text>
+            <text x="48" y="24" font-size="12" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Zero da Descida (DeLee 0)</text>
+            <text x="48" y="42" font-size="11" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">O plano biespinhal é o nível zero da bacia.</text>
+            <text x="48" y="56" font-size="10" font-weight="600" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))">Maior diâmetro cefálico (biparietal) atingiu o plano médio.</text>
+          </g>
+
+          <!-- Vignette 2: Extremo Biespinhal 10,5 cm -->
+          <g transform="translate(0, 76)">
+            <rect x="0" y="0" width="338" height="68" rx="10" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+            <rect x="10" y="20" width="28" height="28" rx="6" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" opacity="0.2" />
+            <text x="24" y="38" font-size="10" font-weight="900" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" text-anchor="middle">10.5</text>
+            <text x="48" y="24" font-size="12" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Extremo Biespinhal (10,5 cm)</text>
+            <text x="48" y="42" font-size="11" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Menor diâmetro transversal da bacia obstétrica.</text>
+            <text x="48" y="56" font-size="10" font-weight="600" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))">Estrreitamento crítico durante a rotação interna da cabeça.</text>
+          </g>
+
+          <!-- Vignette 3: Bloqueio do Pudendo -->
+          <g transform="translate(0, 152)">
+            <rect x="0" y="0" width="338" height="68" rx="10" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+            <circle cx="24" cy="34" r="14" fill="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))" opacity="0.2" />
+            <text x="24" y="39" font-size="11" font-weight="900" fill="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))" text-anchor="middle">Rx</text>
+            <text x="48" y="24" font-size="12" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Referência de Bloqueio do Pudendo</text>
+            <text x="48" y="42" font-size="11" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Guia anatômico indispensável para anestesia perineal.</text>
+            <text x="48" y="56" font-size="10" font-weight="600" fill="var(--a12-ouro, var(--a12p10-sacroespinhal, #F3BE5B))">Agulha inserida a 1 cm póstero-inferior à espinha.</text>
+          </g>
+
+          <!-- Vignette 4: Proeminência = Plano Médio -->
+          <g transform="translate(0, 228)">
+            <rect x="0" y="0" width="338" height="68" rx="10" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+            <circle cx="24" cy="34" r="14" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" opacity="0.2" />
+            <text x="24" y="38" font-size="11" font-weight="900" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))" text-anchor="middle">PM</text>
+            <text x="48" y="24" font-size="12" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Proeminência = Plano Médio Estreito</text>
+            <text x="48" y="42" font-size="11" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Espinhas salientes reduzem a área do plano médio.</text>
+            <text x="48" y="56" font-size="10" font-weight="600" fill="var(--a12-ancora-lateral, var(--a12p10-espinha, #4DB9B0))">Parâmetro de prognóstico da bacia ginecoide vs androide.</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- CARD 2: TUBEROSIDADE ISQUIÁTICA (ACTIVE WHEN TARGET = TUBEROSIDADE) -->
+      <g id="a12p10-card-tuberosidade" class="a12p10-card-content">
+        <rect x="0" y="0" width="370" height="444" rx="14" fill="var(--bg-2, var(--a12p10-card-bg, #1D1726))" stroke="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" stroke-width="2" filter="url(#a12p10-card-shadow)" />
+
+        <!-- Card Header Badge -->
+        <path d="M 0 14 C 0 6.2 6.2 0 14 0 L 356 0 C 363.8 0 370 6.2 370 14 L 370 48 L 0 48 Z" fill="var(--a12p10-tuberosidade-bg)" />
+        <text x="20" y="30" font-size="15" font-weight="800" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))">
+          TUBEROSIDADE ISQUIÁTICA
+        </text>
+        <rect x="240" y="14" width="110" height="22" rx="11" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" />
+        <text x="295" y="29" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">BLOCO EXTERNO</text>
+
+        <!-- Tactile Character Box -->
+        <g transform="translate(16, 60)">
+          <rect x="0" y="0" width="338" height="42" rx="8" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+          <text x="12" y="18" font-size="11" font-weight="700" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))">Forma Tátil:</text>
+          <text x="85" y="18" font-size="11" font-weight="500" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Bloco rombo, espesso, rugoso, abaixo/atrás.</text>
+          <text x="12" y="33" font-size="10" font-weight="600" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Identificação: Palpação perineal externa direta / apoio ao sentar.</text>
+        </g>
+
+        <!-- 4 ANCHORED VIGNETTE BOXES FOR TUBEROSIDADE -->
+        <g transform="translate(16, 114)">
+
+          <!-- Vignette 1: Plano de Saída -->
+          <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="338" height="68" rx="10" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+            <circle cx="24" cy="34" r="14" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" opacity="0.2" />
+            <text x="24" y="39" font-size="11" font-weight="900" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" text-anchor="middle">PS</text>
+            <text x="48" y="24" font-size="12" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Estreito Inferior / Plano de Saída</text>
+            <text x="48" y="42" font-size="11" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Constitui o limite ósseo inferior do canal de parto.</text>
+            <text x="48" y="56" font-size="10" font-weight="600" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))">Determina a abertura final para o desprendimento fetal.</text>
+          </g>
+
+          <!-- Vignette 2: Medida Bituberoso 11,0 cm -->
+          <g transform="translate(0, 76)">
+            <rect x="0" y="0" width="338" height="68" rx="10" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+            <rect x="10" y="20" width="28" height="28" rx="6" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" opacity="0.2" />
+            <text x="24" y="38" font-size="10" font-weight="900" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" text-anchor="middle">11.0</text>
+            <text x="48" y="24" font-size="12" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Diâmetro Bituberoso (11,0 cm)</text>
+            <text x="48" y="42" font-size="11" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Distância transversal entre as faces internas das tuberosidades.</text>
+            <text x="48" y="56" font-size="10" font-weight="600" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))">Avaliável externamente com o pelvímetro de Thoms ou punho.</text>
+          </g>
+
+          <!-- Vignette 3: Ancoragem Sacrotuberal -->
+          <g transform="translate(0, 152)">
+            <rect x="0" y="0" width="338" height="68" rx="10" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+            <circle cx="24" cy="34" r="14" fill="var(--a12-coral, var(--a12p10-sacrotuberal, #EF7582))" opacity="0.2" />
+            <text x="24" y="38" font-size="11" font-weight="900" fill="var(--a12-coral, var(--a12p10-sacrotuberal, #EF7582))" text-anchor="middle">Lig</text>
+            <text x="48" y="24" font-size="12" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Inserção do Ligamento Sacrotuberal</text>
+            <text x="48" y="42" font-size="11" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Resistente feixe fibroso de estabilização pélvica posterior.</text>
+            <text x="48" y="56" font-size="10" font-weight="600" fill="var(--a12-coral, var(--a12p10-sacrotuberal, #EF7582))">Limita a nutação do sácro e delimita o forame menor.</text>
+          </g>
+
+          <!-- Vignette 4: Apoio Isquiático & Períneo -->
+          <g transform="translate(0, 228)">
+            <rect x="0" y="0" width="338" height="68" rx="10" fill="var(--bg-1, var(--a12p10-bg, #120E16))" stroke="var(--ink-20, var(--a12p10-border, #3A2F4E))" stroke-width="1" />
+            <circle cx="24" cy="34" r="14" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" opacity="0.2" />
+            <text x="24" y="38" font-size="11" font-weight="900" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))" text-anchor="middle">Per</text>
+            <text x="48" y="24" font-size="12" font-weight="800" fill="var(--a12-tinta, var(--a12p10-tinta, #F7F1F5))">Base do Triângulo Urogenital / Períneo</text>
+            <text x="48" y="42" font-size="11" font-weight="500" fill="var(--ink-70, var(--a12p10-muted, #B8ACB5))">Ponto de sustentação do peso corporal na sedestação.</text>
+            <text x="48" y="56" font-size="10" font-weight="600" fill="var(--a12-tuberosidade, var(--a12p10-tuberosidade, #A978C7))">Origem dos músculos isquiocavernoso e transverso do períneo.</text>
+          </g>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED ENGINE (SELF-CONTAINED JS) -->
+  <script>
+    /* <![CDATA[ */
+    (function() {
+      var svg = document.getElementById('a12p10-svg');
+      if (!svg) return;
+
+      var btnCues = document.getElementById('a12p10-btn-cues');
+      var btnNoCues = document.getElementById('a12p10-btn-nocues');
+      var hsEspinha = document.getElementById('a12p10-hs-espinha');
+      var hsTuberosidade = document.getElementById('a12p10-hs-tuberosidade');
+
+      function setScene(scene) {
+        svg.setAttribute('data-scene', scene);
+        if (scene === 'cues') {
+          btnCues.setAttribute('aria-pressed', 'true');
+          btnNoCues.setAttribute('aria-pressed', 'false');
+        } else {
+          btnCues.setAttribute('aria-pressed', 'false');
+          btnNoCues.setAttribute('aria-pressed', 'true');
+        }
+      }
+
+      function setActiveTarget(target) {
+        svg.setAttribute('data-active-target', target);
+        if (target === 'espinha') {
+          hsEspinha.setAttribute('aria-selected', 'true');
+          hsTuberosidade.setAttribute('aria-selected', 'false');
+        } else {
+          hsEspinha.setAttribute('aria-selected', 'false');
+          hsTuberosidade.setAttribute('aria-selected', 'true');
+        }
+      }
+
+      if (btnCues) {
+        btnCues.addEventListener('click', function() { setScene('cues'); });
+        btnCues.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setScene('cues'); }
+        });
+      }
+
+      if (btnNoCues) {
+        btnNoCues.addEventListener('click', function() { setScene('nocues'); });
+        btnNoCues.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setScene('nocues'); }
+        });
+      }
+
+      if (hsEspinha) {
+        hsEspinha.addEventListener('click', function() { setActiveTarget('espinha'); });
+        hsEspinha.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveTarget('espinha'); }
+        });
+      }
+
+      if (hsTuberosidade) {
+        hsTuberosidade.addEventListener('click', function() { setActiveTarget('tuberosidade'); });
+        hsTuberosidade.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveTarget('tuberosidade'); }
+        });
+      }
+    })();
+    /* ]]> */
+  </script>
+</svg>

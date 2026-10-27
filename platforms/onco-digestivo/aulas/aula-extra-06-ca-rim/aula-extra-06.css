@@ -1,0 +1,248 @@
+/* aula-extra-06.css — estilos específicos das interações bespoke da Aula Extra 6 (Câncer de Rim).
+   Herda 100% dos tokens da plataforma (tokens.css). NÃO redefine token canônico.
+   Só estados visuais dos 7 SVGs interativos que o components.css compartilhado não cobre.
+   Paleta semântica do bloco urologia: coral = patológico/achado · teal = saudável/normal ·
+   âmbar (--warn-amber) = decisão/zona técnica. Cor nunca é único portador (rótulo textual sempre). */
+
+/* Tokens locais de ESTADO (glows e verde-acerto que não existem no tokens.css canônico).
+   Variante [data-theme="light"] para o modo claro não quebrar. Tokens canônicos
+   (--teal-*, --coral-*, --warn-amber, --ink-*, --bg-*) vêm de tokens.css, NÃO redefinidos. */
+:root {
+  --state-correct: #5fdfa0;          /* verde "acertou/normal/favorável" */
+  --teal-glow: rgba(79, 214, 192, .45);
+  --teal-glow-soft: rgba(79, 214, 192, .30);
+  --coral-glow: rgba(244, 113, 90, .42);
+  --amber-glow: rgba(242, 181, 65, .42);
+  --correct-glow: rgba(95, 223, 160, .35);
+}
+:root[data-theme="light"] {
+  --state-correct: #1f9e6b;          /* verde acerto com contraste no creme */
+  --teal-glow: rgba(15, 125, 112, .40);
+  --teal-glow-soft: rgba(15, 125, 112, .26);
+  --coral-glow: rgba(200, 69, 58, .36);
+  --amber-glow: rgba(173, 124, 20, .36);
+  --correct-glow: rgba(31, 158, 107, .30);
+}
+
+/* ---- controles de slider/step embaixo dos SVGs (reuso do padrão da casa) ---- */
+.rim-ctl {
+  display: flex; align-items: center; gap: var(--sp-3);
+  flex-wrap: wrap; margin-top: var(--sp-3);
+}
+.rim-ctl__btn {
+  font: inherit; cursor: pointer;
+  background: var(--bg-elevated-2); color: var(--ink-100);
+  border: 1px solid var(--teal-40); border-radius: var(--r-sm);
+  padding: var(--sp-2) var(--sp-4); min-width: 44px; min-height: 40px;
+  transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.rim-ctl__btn:hover { background: var(--bg-elevated); border-color: var(--teal-60); }
+.rim-ctl__btn:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+.rim-ctl__count {
+  font-family: var(--font-mono); font-size: var(--fs-sm);
+  color: var(--ink-70); flex: 1; min-width: 200px;
+}
+
+.rim-slider { display: flex; flex-direction: column; gap: var(--sp-2); margin-top: var(--sp-3); }
+.rim-slider label { font-size: var(--fs-sm); color: var(--ink-70); font-family: var(--font-mono); }
+.rim-slider input[type="range"] { width: 100%; accent-color: var(--warn-amber); height: 28px; cursor: pointer; }
+.rim-slider input[type="range"]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 3px; border-radius: var(--r-sm); }
+
+/* segmented control p/ toggle sólido × cístico (SVG-5) */
+.rim-toggle { display: inline-flex; gap: 0; margin-top: var(--sp-3); border: 1px solid var(--border-mid); border-radius: var(--r-pill); overflow: hidden; }
+.rim-toggle__btn {
+  font: inherit; cursor: pointer; background: var(--bg-elevated); color: var(--ink-70);
+  border: 0; padding: var(--sp-2) var(--sp-5); min-height: 40px;
+  transition: background var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+.rim-toggle__btn + .rim-toggle__btn { border-left: 1px solid var(--border-mid); }
+.rim-toggle__btn[aria-pressed="true"] { background: var(--teal-05); color: var(--teal-60); font-weight: 700; }
+.rim-toggle__btn:focus-visible { outline: 2px solid var(--teal-60); outline-offset: -2px; }
+
+/* ---- SVG-1 (P2) — tabela genética VHL × esclerose tuberosa ---- */
+.vhl-row { cursor: pointer; }
+.vhl-row .row-bg { transition: opacity var(--dur-mid) ease; }
+.vhl-row:hover .row-bg,
+.vhl-row:focus-visible .row-bg,
+.vhl-row.is-active .row-bg { opacity: .16; }
+.vhl-row:focus-visible { outline: 2px solid var(--teal-80); outline-offset: 2px; }
+.vhl-row:focus { outline: none; }
+
+/* ---- SVG-2 (P4) — âncora-vínculo varicocele → rim ---- */
+#svg2-card { cursor: pointer; }
+#svg2-badge { transition: opacity var(--dur-mid) ease; }
+#svg2-hint { transition: opacity var(--dur-fast) ease; }
+#svg2-card.is-revealed #svg2-badge { opacity: 1; }
+#svg2-card.is-revealed #svg2-hint { opacity: 0; }
+#svg2-card:focus-visible rect:first-of-type { outline: 2px solid var(--coral-60); outline-offset: 3px; }
+
+/* ---- SVG-3 (P5) — anatomia venosa gonadal/renal/cava (HOTSPOT) ---- */
+[data-vein] { cursor: pointer; }
+.vein-track { transition: opacity var(--dur-mid) ease; }
+[data-path].is-on, [data-thrombus].is-on { opacity: 1; }
+#svg3-tip-left, #svg3-tip-right { transition: opacity var(--dur-mid) ease; }
+#svg3-tip-left.is-on, #svg3-tip-right.is-on { opacity: 1; }
+[data-vein]:focus-visible { outline: 2px solid var(--teal-80); outline-offset: 2px; }
+
+/* ---- SVG-4 (P6) — diagrama causal Stauffer (step-through) ---- */
+.stf-node { opacity: .28; transition: opacity var(--dur-mid) ease; }
+.stf-edge { opacity: 0; transition: opacity var(--dur-mid) ease; }
+.stf-node.is-on { opacity: 1; }
+.stf-edge.is-on { opacity: 1; }
+
+/* ---- SVG-5 (P8) — contraste sólido × cístico (toggle) ---- */
+[data-state] { transition: opacity var(--dur-mid) ease; }
+[data-state].is-dim { opacity: .32; }
+/* o anel pulsante da massa sólida (SVG-5) é SMIL <animate>; prefers-reduced-motion
+   é honrado em JS (rim-interactive applyReducedMotion), pois animation:none não afeta SMIL. */
+
+/* ---- SVG-6 (P9) — escada de Bozniak (step/slider) ---- */
+[data-svg="svg6"] [data-step] rect { transition: opacity var(--dur-mid) ease, stroke-width var(--dur-mid) ease, filter var(--dur-mid) ease; }
+[data-svg="svg6"].has-active [data-step]:not(.is-on) { opacity: .45; }
+[data-svg="svg6"] [data-step].is-on rect { stroke-width: 3; }
+[data-svg="svg6"] [data-step].is-on[data-tone="teal"] rect { filter: drop-shadow(0 0 9px var(--teal-glow)); }
+[data-svg="svg6"] [data-step].is-on[data-tone="amber"] rect { filter: drop-shadow(0 0 9px var(--amber-glow)); }
+[data-svg="svg6"] [data-step].is-on[data-tone="coral"] rect { filter: drop-shadow(0 0 9px var(--coral-glow)); }
+
+/* painel de detalhe textual da escada (reforço screen-reader; cor não é único portador) */
+.boz-readout {
+  margin-top: var(--sp-3); padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-elevated); border-left: 3px solid var(--teal-50);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0; color: var(--ink-90); font-size: var(--fs-sm);
+}
+.boz-readout strong { color: var(--ink-100); }
+
+/* ---- SVG-7 (P10) — fluxograma decisão parcial × radical ---- */
+[data-decision] { cursor: pointer; }
+[data-decision] polygon { transition: stroke-width var(--dur-mid) ease, filter var(--dur-mid) ease; }
+[data-decision].is-on polygon { stroke-width: 3; filter: drop-shadow(0 0 9px var(--coral-glow)); }
+[data-decision]:focus-visible polygon { outline: 2px solid var(--teal-80); }
+[data-svg="svg7"] .flx-branch { transition: opacity var(--dur-mid) ease; }
+[data-svg="svg7"].path-radical .flx-parcial,
+[data-svg="svg7"].path-parcial .flx-radical { opacity: .35; }
+
+/* ---- quiz-caso textual P11 (tríptico) — usa o quiz universal padrão; nada extra ---- */
+
+/* ---- tríptico de miniaturas de referência (P11) ---- */
+.tryptich { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); margin: var(--sp-5) 0; }
+.tryptich__card { background: var(--bg-elevated); border: 1px solid var(--border-mid); border-radius: var(--r-md); padding: var(--sp-4); }
+.tryptich__tag { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--teal-60); margin-bottom: var(--sp-2); }
+.tryptich__card h4 { font-size: var(--fs-md); color: var(--ink-100); margin: 0 0 var(--sp-2); }
+.tryptich__card p { font-size: var(--fs-sm); color: var(--ink-90); margin: 0; }
+.tryptich__card--radical { border-left: 3px solid var(--coral-50); }
+.tryptich__card--boz { border-left: 3px solid var(--warn-amber); }
+.tryptich__card--stauffer { border-left: 3px solid var(--teal-50); }
+@media (max-width: 680px) { .tryptich { grid-template-columns: 1fr; } }
+
+/* ---- topic-h: cabeçalho de tópico real (anti-parede-de-prosa) ---- */
+.topic-h {
+  font-size: var(--fs-lg); color: var(--teal-60); font-weight: 700;
+  margin: var(--sp-6) 0 var(--sp-2); line-height: var(--lh-snug);
+}
+
+/* ---- SVG-8 (P1) — painel pesa-risco (toggle-acúmulo) ---- */
+[data-svg="svg8"] .bz-chip { cursor: pointer; }
+[data-svg="svg8"] .bz-chip rect { transition: fill var(--dur-mid) ease, stroke var(--dur-mid) ease; }
+[data-svg="svg8"] .bz-chip:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="svg8"] .bz-kidney-core { transition: opacity var(--dur-mid) var(--ease-lux); }
+[data-svg="svg8"] .bz-kidney-body { transition: fill var(--dur-mid) var(--ease-lux); }
+[data-svg="svg8"] .bz-load-bar { transition: width var(--dur-mid) var(--ease-lux); }
+
+/* ---- SVG-9 (P3) — tríade Venn (reveal + convergência) ---- */
+[data-svg="svg9"] .bz-ring, [data-svg="svg9"] .bz-core { cursor: pointer; }
+[data-svg="svg9"] .bz-ring circle { transition: stroke-width var(--dur-mid) ease, fill var(--dur-mid) ease; }
+[data-svg="svg9"] .bz-ring.is-on circle { stroke-width: 4; fill: var(--coral-50); }
+[data-svg="svg9"] .bz-ring:focus-visible, [data-svg="svg9"] .bz-core:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="svg9"] .bz-core-glow { transition: opacity var(--dur-mid) var(--ease-lux), filter var(--dur-mid) ease; }
+[data-svg="svg9"].all-on .bz-core-glow { opacity: 1; filter: drop-shadow(0 0 14px var(--amber-glow)); }
+
+/* ---- SVG-10 (P7) — trilha diagnóstica (percurso + bifurcação) ---- */
+[data-svg="svg10"] .bz-node { cursor: pointer; }
+[data-svg="svg10"] .bz-node rect { transition: stroke-width var(--dur-mid) ease, filter var(--dur-mid) ease; }
+[data-svg="svg10"] .bz-node.is-on rect { stroke-width: 3.4; filter: drop-shadow(0 0 9px var(--teal-glow)); }
+[data-svg="svg10"] .bz-node:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="svg10"] .bz-dest { opacity: .5; transition: opacity var(--dur-mid) var(--ease-lux); }
+[data-svg="svg10"] .bz-dest-arrow { opacity: .5; transition: opacity var(--dur-mid) ease; }
+[data-svg="svg10"].fork-open .bz-dest, [data-svg="svg10"].fork-open .bz-dest-arrow { opacity: 1; }
+
+/* ---- MC-2 (P5) — venografia step T3a→T3b→T4 ---- */
+[data-svg="mc2"] rect[data-step] { cursor: pointer; transition: stroke-width var(--dur-mid) ease, filter var(--dur-mid) ease; }
+[data-svg="mc2"] rect[data-step][aria-current="true"] { stroke-width: 3; filter: drop-shadow(0 0 8px var(--amber-glow)); }
+[data-svg="mc2"] rect[data-step]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="mc2"] .thr { transition: opacity var(--dur-mid) var(--ease-lux); }
+[data-svg="mc2"] .thr.is-on { opacity: 1; }
+[data-svg="mc2"] .thr-tip { transition: opacity var(--dur-mid) ease; }
+[data-svg="mc2"] .thr-tip.is-on { opacity: 1; }
+
+/* ---- SVG-11 (P11) — quiz-caso (decision-reveal por cartão) ---- */
+[data-svg="svg11"] .bz-opt { cursor: pointer; }
+[data-svg="svg11"] .bz-opt rect { transition: fill var(--dur-mid) ease, stroke var(--dur-mid) ease; }
+[data-svg="svg11"] .bz-opt:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="svg11"] .bz-opt[aria-pressed="true"] { cursor: default; }
+[data-svg="svg11"] .bz-opt-why { opacity: 0; transition: opacity var(--dur-mid) ease; }
+
+/* prefers-reduced-motion: zera as transições dos artefatos novos (cor/opacidade trocam direto) */
+@media (prefers-reduced-motion: reduce) {
+  [data-svg="svg8"] .bz-chip rect, [data-svg="svg8"] .bz-kidney-core, [data-svg="svg8"] .bz-kidney-body, [data-svg="svg8"] .bz-load-bar,
+  [data-svg="svg9"] .bz-ring circle, [data-svg="svg9"] .bz-core-glow,
+  [data-svg="svg10"] .bz-node rect, [data-svg="svg10"] .bz-dest, [data-svg="svg10"] .bz-dest-arrow,
+  [data-svg="mc2"] rect[data-step], [data-svg="mc2"] .thr, [data-svg="mc2"] .thr-tip,
+  [data-svg="svg11"] .bz-opt rect, [data-svg="svg11"] .bz-opt-why {
+    transition: none !important;
+  }
+}
+
+/* responsivo: SVGs grandes escalam sem estourar */
+.figure-svg__stage svg, .figure-svg__frame svg { max-width: 100%; height: auto; }
+
+/* ============================================================
+   FIX CONTRASTE — modo claro dentro dos SVGs interativos.
+   Os rótulos <text> dos SVGs usam tints pálidos (coral-100/80,
+   teal-100/80, warn-amber, ink-50) calibrados p/ FUNDO ESCURO.
+   No tema claro o painel do SVG vira creme/branco e esses tints
+   afundam (ratio < 4.5). Aqui re-derivamos os MESMOS tokens
+   APENAS dentro de [data-svg] no light, p/ versões escuras que
+   batem WCAG AA sobre painel claro — preservando o código
+   semântico (coral=patológico, teal=normal, âmbar=decisão).
+   Escopo [data-svg] não toca prosa, chips, quiz nem chassi.
+   Esses tints são usados nos SVGs só como TEXT/stroke decorativo
+   (0 como preenchimento de forma), então escurecer é seguro. */
+:root[data-theme="light"] [data-svg] {
+  --coral-100: #a8362a;   /* era #ffd9d0 — texto coral pálido sobre claro = invisível */
+  --coral-80:  #b03a2e;   /* era #ff9d8a */
+  --coral-60:  #b03a2e;   /* assinatura coral, legível no creme */
+  --teal-100:  #0b6157;   /* era #d4f5ec */
+  --teal-80:   #0c6a5f;   /* era #14988a (3.57) -> dark teal AA */
+  --warn-amber:#8a6410;   /* era #ad7c14 (3.70) -> âmbar escuro AA */
+  --ok-green:  #1f7d40;   /* era #2e8c4a (4.23) -> verde escuro AA p/ texto pequeno */
+  --ink-50:    #46585f;   /* slate de rótulo/estroke -> usa nível ink-70 (AA) */
+}
+
+/* ----- FIX CONTRASTE light em componentes do chassi que renderizam
+   nesta aula (escopo só desta aula via aula-extra-06.css carregado
+   apenas aqui — NÃO altera o assets/ compartilhado / outras aulas).
+   Alvos: caption de licença, contador de página, chip de tópico.
+   Todos estavam 3,6–4,4 (texto pequeno) no creme; sobem p/ AA ≥4,5. ----- */
+:root[data-theme="light"] figure.med .attr { color: var(--ink-70); }     /* 3,66 -> ~7,0 */
+:root[data-theme="light"] .page-nav__counter,
+:root[data-theme="light"] #progress-counter { color: var(--ink-70); }    /* 3,86 -> ~7,0 */
+:root[data-theme="light"] .chip--topic {
+  color: #0a655b;                /* teal escuro: 4,44 -> >4,5 sobre teal-05 creme */
+  border-color: var(--teal-30);
+}
+:root[data-theme="light"] .chip--topic.is-active,
+:root[data-theme="light"] .chip--topic:focus-visible { color: #094f47; }
+/* botão "próxima página" (teal-80 sobre teal-05) estava 3,15 -> escurece p/ AA */
+:root[data-theme="light"] .page-nav__btn--next { color: #0a655b; }
+:root[data-theme="light"] .page-nav__btn--next:hover,
+:root[data-theme="light"] .page-nav__btn--next:focus-visible { color: var(--ink-100); }
+/* caption de licença no DARK (ink-50 #8b897b sobre card = 4,18) -> ink-70 (AA) */
+:root:not([data-theme="light"]) figure.med .attr { color: var(--ink-70); }
+/* page-tag "Página N / 11" (teal-60 sobre teal-05 creme) 4,44 -> escurece */
+:root[data-theme="light"] .page-tag { color: #0a655b; border-color: var(--teal-30); }
+/* trap-tag âmbar do opener (warn-amber light sobre creme) 3,23 -> âmbar escuro AA */
+:root[data-theme="light"] .opener--trap .opener__trap-tag { color: #8a6410; }
+/* link "Ver fonte" dentro de caption/attr (teal-60 sobre creme) 4,14 -> escurece */
+:root[data-theme="light"] figure.med figcaption a,
+:root[data-theme="light"] figure.med .attr a,
+:root[data-theme="light"] .figure-svg figcaption a { color: #0a655b; }

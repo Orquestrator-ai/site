@@ -1,0 +1,774 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" class="fm1p5-root" id="fm1p5-svg-main" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="fm1p5-grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p5-bg-start, #0b0f19)"/>
+      <stop offset="100%" stop-color="var(--fm1p5-bg-end, #111827)"/>
+    </linearGradient>
+    
+    <linearGradient id="fm1p5-grad-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p5-card-start, #1e293b)"/>
+      <stop offset="100%" stop-color="var(--fm1p5-card-end, #0f172a)"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="fm1p5-glow-indigo" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm1p5-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm1p5-glow-teal" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Markers -->
+    <marker id="fm1p5-arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm1p5-indigo, #6366f1)"/>
+    </marker>
+    <marker id="fm1p5-arrow-coral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm1p5-coral, #f43f5e)"/>
+    </marker>
+    <marker id="fm1p5-arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm1p5-cyan, #06b6d4)"/>
+    </marker>
+    <marker id="fm1p5-arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm1p5-purple, #a855f7)"/>
+    </marker>
+  </defs>
+
+  <style>/*<![CDATA[*/
+    /* CSS Variables & Scoped Theming */
+    .fm1p5-root {
+      --fm1p5-bg-start: #0b0f19;
+      --fm1p5-bg-end: #111827;
+      --fm1p5-card-start: #1e293b;
+      --fm1p5-card-end: #0f172a;
+      --fm1p5-card-border: #334155;
+      --fm1p5-text-main: #f8fafc;
+      --fm1p5-text-sub: #94a3b8;
+      --fm1p5-text-muted: #64748b;
+      
+      --fm1p5-indigo: #6366f1;
+      --fm1p5-indigo-light: #818cf8;
+      --fm1p5-teal: #14b8a6;
+      --fm1p5-teal-light: #2dd4bf;
+      --fm1p5-coral: #f43f5e;
+      --fm1p5-coral-light: #fb7185;
+      --fm1p5-cyan: #06b6d4;
+      --fm1p5-cyan-light: #38bdf8;
+      --fm1p5-purple: #a855f7;
+      --fm1p5-purple-light: #c084fc;
+      
+      --fm1p5-green: #22c55e;
+      --fm1p5-amber: #f59e0b;
+      --fm1p5-red: #ef4444;
+      
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--fm1p5-bg-start, #0b0f19);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    [data-theme="light"] .fm1p5-root {
+      --fm1p5-bg-start: #f8fafc;
+      --fm1p5-bg-end: #f1f5f9;
+      --fm1p5-card-start: #ffffff;
+      --fm1p5-card-end: #f8fafc;
+      --fm1p5-card-border: #cbd5e1;
+      --fm1p5-text-main: #0f172a;
+      --fm1p5-text-sub: #334155;
+      --fm1p5-text-muted: #64748b;
+      
+      --fm1p5-indigo: #4f46e5;
+      --fm1p5-indigo-light: #6366f1;
+      --fm1p5-teal: #0d9488;
+      --fm1p5-teal-light: #14b8a6;
+      --fm1p5-coral: #e11d48;
+      --fm1p5-coral-light: #f43f5e;
+      --fm1p5-cyan: #0891b2;
+      --fm1p5-cyan-light: #06b6d4;
+      --fm1p5-purple: #9333ea;
+      --fm1p5-purple-light: #a855f7;
+      
+      --fm1p5-green: #16a34a;
+      --fm1p5-amber: #d97706;
+      --fm1p5-red: #dc2626;
+    }
+
+    /* Base Layout Elements */
+    .fm1p5-bg { fill: url(#fm1p5-grad-bg); }
+    .fm1p5-card { fill: url(#fm1p5-grad-card); stroke: var(--fm1p5-card-border, #334155); stroke-width: 1.5px; rx: 12px; }
+    .fm1p5-card-header { fill: var(--fm1p5-card-border, #334155); opacity: 0.3; }
+    
+    /* Typography */
+    .fm1p5-title { font-size: 17px; font-weight: 800; fill: var(--fm1p5-text-main, #f8fafc); letter-spacing: 0.3px; }
+    .fm1p5-subtitle { font-size: 12px; font-weight: 500; fill: var(--fm1p5-text-sub, #94a3b8); }
+    .fm1p5-section-hdr { font-size: 13px; font-weight: 700; fill: var(--fm1p5-text-main, #f8fafc); text-transform: uppercase; letter-spacing: 0.5px; }
+    .fm1p5-text-body { font-size: 12px; fill: var(--fm1p5-text-sub, #94a3b8); line-height: 1.4; }
+    .fm1p5-text-bold { font-weight: 700; fill: var(--fm1p5-text-main, #f8fafc); }
+    .fm1p5-badge-text { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Anatomical Shapes & Pathways */
+    .fm1p5-path-afferent { stroke: var(--fm1p5-indigo, #6366f1); stroke-width: 3.5; fill: none; stroke-linecap: round; }
+    .fm1p5-path-efferent { stroke: var(--fm1p5-coral, #f43f5e); stroke-width: 3.5; fill: none; stroke-linecap: round; }
+    .fm1p5-path-ascending { stroke: var(--fm1p5-cyan, #06b6d4); stroke-width: 2.5; stroke-dasharray: 5,4; fill: none; }
+    .fm1p5-path-descending { stroke: var(--fm1p5-purple, #a855f7); stroke-width: 2.5; stroke-dasharray: 5,4; fill: none; }
+    
+    /* Interactive States & Hotspots */
+    .fm1p5-hotspot { cursor: pointer; transition: all 0.2s ease; }
+    .fm1p5-hotspot:hover .fm1p5-hs-target { stroke-width: 3.5; filter: drop-shadow(0 0 6px var(--fm1p5-indigo, #6366f1)); }
+    .fm1p5-btn { cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease; }
+    .fm1p5-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .fm1p5-btn:active { transform: translateY(1px); }
+    
+    .fm1p5-pulse-dot {
+      r: 5;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    
+    /* Active State Highlights */
+    .fm1p5-active-hs { stroke: var(--fm1p5-cyan, #06b6d4) !important; stroke-width: 3px !important; }
+    .fm1p5-lesion-mark { stroke: var(--fm1p5-red, #ef4444); stroke-width: 4; stroke-linecap: round; }
+  /*]]>*/</style>
+
+  <!-- BACKGROUND -->
+  <rect width="1000" height="720" class="fm1p5-bg" />
+
+  <!-- HEADER BAR -->
+  <g transform="translate(20, 15)">
+    <rect width="960" height="70" class="fm1p5-card" />
+    <text x="25" y="30" class="fm1p5-title">ARCO-REFLEXO PATELAR: O MARTELO TESTA O NERVO, NÃO O CÉREBRO</text>
+    <text x="25" y="50" class="fm1p5-subtitle">Fisiologia do Circuito Monossináptico Medular (L2–L4) · Discriminador Clínico: 1º × 2º Motoneurônio</text>
+    
+    <!-- Theme Toggle Button -->
+    <g id="fm1p5-btn-theme" class="fm1p5-btn" transform="translate(850, 18)">
+      <rect width="90" height="34" rx="8" fill="var(--fm1p5-card-border, #334155)" />
+      <text x="45" y="22" font-size="11" font-weight="700" fill="var(--fm1p5-text-main, #f8fafc)" text-anchor="middle">🌓 TEMA</text>
+    </g>
+  </g>
+
+  <!-- MANTRA / INTERPRETATION BANNER -->
+  <g transform="translate(20, 95)">
+    <rect width="960" height="42" rx="8" fill="var(--fm1p5-card-start, #1e293b)" stroke="var(--fm1p5-indigo, #6366f1)" stroke-width="1" />
+    <text x="15" y="26" font-size="12" font-weight="800" fill="var(--fm1p5-indigo-light, #818cf8)">MANTRA MÉDICO:</text>
+    <text x="135" y="26" font-size="12" font-weight="600" fill="var(--fm1p5-text-main, #f8fafc)">
+      "Só tem reflexo quem tem nervo". O arco fecha localmente na medula (L2-L4). O córtex apenas sente a posteriori — não comanda o chute!
+    </text>
+  </g>
+
+  <!-- LEFT PANEL: DIAGRAM STAGE (Anatomical Anatomy &amp; Circuit) -->
+  <g transform="translate(20, 148)">
+    <rect width="570" height="442" class="fm1p5-card" />
+    
+    <!-- Panel Header -->
+    <path d="M 0 12 Q 0 0 12 0 L 558 0 Q 570 0 570 12 L 570 34 L 0 34 Z" class="fm1p5-card-header" />
+    <text x="20" y="22" class="fm1p5-section-hdr">ANATOMIA DO ARCO-REFLEXO &amp; VIAS PARALELAS</text>
+
+    <!-- 1. CEREBRAL CORTEX (Top Left) -->
+    <g id="fm1p5-hs-cortex" class="fm1p5-hotspot" transform="translate(30, 48)">
+      <rect width="170" height="95" rx="10" fill="var(--fm1p5-bg-start, #0b0f19)" stroke="var(--fm1p5-cyan, #06b6d4)" stroke-width="1.5" class="fm1p5-hs-target" />
+      <!-- Cortex Icon / Brain Outline -->
+      <path d="M 30 45 C 20 30, 35 15, 55 20 C 65 10, 85 10, 95 20 C 115 15, 130 30, 120 45 C 130 60, 115 75, 95 70 C 85 80, 65 80, 55 70 C 35 75, 20 60, 30 45 Z" fill="none" stroke="var(--fm1p5-cyan-light, #38bdf8)" stroke-width="2" />
+      <text x="85" y="38" font-size="11" font-weight="800" fill="var(--fm1p5-cyan-light, #38bdf8)" text-anchor="middle">CÓRTEX CEREBRAL</text>
+      <text x="85" y="52" font-size="9" font-weight="700" fill="var(--fm1p5-purple-light, #c084fc)" text-anchor="middle">S1 (Sensitivo) / M1 (Motor)</text>
+      <text x="85" y="68" font-size="9" fill="var(--fm1p5-text-sub, #94a3b8)" text-anchor="middle">Percepção Consciente</text>
+      <text x="85" y="80" font-size="9" font-weight="700" fill="var(--fm1p5-red, #ef4444)" text-anchor="middle">⚡ NÃO comanda o chute!</text>
+    </g>
+
+    <!-- 2. SPINAL CORD CROSS SECTION (Top Right / Center) -->
+    <g id="fm1p5-hs-medula" class="fm1p5-hotspot" transform="translate(310, 48)">
+      <rect width="230" height="150" rx="10" fill="var(--fm1p5-bg-start, #0b0f19)" stroke="var(--fm1p5-teal, #14b8a6)" stroke-width="1.5" class="fm1p5-hs-target" />
+      <text x="115" y="20" font-size="11" font-weight="800" fill="var(--fm1p5-teal-light, #2dd4bf)" text-anchor="middle">MEDULA ESPINHAL (NÍVEL L2–L4)</text>
+      
+      <!-- Spinal Cord Outline &amp; Grey Matter Butterfly -->
+      <g transform="translate(35, 30)">
+        <!-- Outer White Matter -->
+        <ellipse cx="80" cy="55" rx="70" ry="45" fill="var(--fm1p5-card-start, #1e293b)" stroke="var(--fm1p5-teal, #14b8a6)" stroke-width="1.5"/>
+        
+        <!-- Grey Matter (H Medular) -->
+        <path d="M 50 35 Q 65 55 50 75 Q 60 75 72 60 L 72 78 L 88 78 L 88 60 Q 100 75 110 75 Q 95 55 110 35 Q 95 42 88 48 L 88 38 L 72 38 L 72 48 Q 65 42 50 35 Z" fill="var(--fm1p5-teal, #14b8a6)" opacity="0.6"/>
+        
+        <!-- Dorsal Horn (Posterior - Top) &amp; Ventral Horn (Anterior - Bottom) -->
+        <circle cx="58" cy="40" r="4" fill="var(--fm1p5-indigo, #6366f1)" />
+        <text x="45" y="28" font-size="8" font-weight="700" fill="var(--fm1p5-indigo-light, #818cf8)">Corno Dorsal</text>
+        
+        <circle cx="58" cy="70" r="4" fill="var(--fm1p5-coral, #f43f5e)" />
+        <text x="45" y="85" font-size="8" font-weight="700" fill="var(--fm1p5-coral-light, #fb7185)">Corno Ventral (1º+2º MN)</text>
+        
+        <!-- Synapse Point -->
+        <circle cx="70" cy="55" r="5" fill="#f59e0b" filter="url(#fm1p5-glow-teal)"/>
+        <text x="80" y="58" font-size="8" font-weight="800" fill="#f59e0b">Sinapse Monossináptica</text>
+      </g>
+    </g>
+
+    <!-- PATHWAYS (Nerve Connections) -->
+    <!-- A. Sensory Afferent Path (Indigo) from Muscle Spindle (x:210, y:290) to Dorsal Horn (x:370, y:118) -->
+    <path id="fm1p5-path-aff" d="M 210 290 Q 230 200 370 118" class="fm1p5-path-afferent" marker-end="url(#fm1p5-arrow-indigo)" />
+    <!-- Dorsal Root Ganglion (Gânglio da Raiz Dorsal) -->
+    <g id="fm1p5-hs-drg" class="fm1p5-hotspot" transform="translate(270, 185)">
+      <circle cx="0" cy="0" r="10" fill="var(--fm1p5-indigo, #6366f1)" class="fm1p5-hs-target"/>
+      <text x="0" y="4" font-size="8" font-weight="800" fill="#ffffff" text-anchor="middle">GRD</text>
+      <text x="-15" y="-12" font-size="9" font-weight="700" fill="var(--fm1p5-indigo-light, #818cf8)">Gânglio Raiz Dorsal</text>
+    </g>
+
+    <!-- B. Motor Efferent Path (Coral) from Ventral Horn (x:370, y:148) to Quadriceps (x:190, y:270) -->
+    <path id="fm1p5-path-eff" d="M 370 148 Q 260 210 190 270" class="fm1p5-path-efferent" marker-end="url(#fm1p5-arrow-coral)" />
+
+    <!-- C. Ascending Cortical Parallel Path (Cyan Dashed) from Dorsal Column to Cortex -->
+    <path id="fm1p5-path-asc" d="M 370 100 Q 280 90 200 90" class="fm1p5-path-ascending" marker-end="url(#fm1p5-arrow-cyan)" />
+    <text x="285" y="82" font-size="9" font-weight="700" fill="var(--fm1p5-cyan-light, #38bdf8)" text-anchor="middle">Via Ascendente (Consciência)</text>
+
+    <!-- D. Descending Corticospinal Modulatory Path (Purple Dashed) from Cortex to Ventral Horn -->
+    <path id="fm1p5-path-desc" d="M 120 143 Q 160 170 365 145" class="fm1p5-path-descending" marker-end="url(#fm1p5-arrow-purple)" />
+    <text x="210" y="162" font-size="9" font-weight="700" fill="var(--fm1p5-purple-light, #c084fc)" text-anchor="middle">1º MN (Inibição Cortical)</text>
+
+    <!-- Lesion Marker Overlay (Dynamic) -->
+    <g id="fm1p5-lesion-overlay" opacity="0">
+      <line id="fm1p5-lesion-line-1" x1="0" y1="0" x2="0" y2="0" class="fm1p5-lesion-mark" />
+      <line id="fm1p5-lesion-line-2" x1="0" y1="0" x2="0" y2="0" class="fm1p5-lesion-mark" />
+      <text id="fm1p5-lesion-text" x="0" y="0" font-size="10" font-weight="800" fill="var(--fm1p5-red, #ef4444)" text-anchor="middle">⚡ BLOQUEIO / LESÃO</text>
+    </g>
+
+    <!-- Pulse Animation Dots -->
+    <circle id="fm1p5-pulse-aff" cx="0" cy="0" class="fm1p5-pulse-dot" fill="var(--fm1p5-indigo-light, #818cf8)" filter="url(#fm1p5-glow-indigo)"/>
+    <circle id="fm1p5-pulse-eff" cx="0" cy="0" class="fm1p5-pulse-dot" fill="var(--fm1p5-coral-light, #fb7185)" filter="url(#fm1p5-glow-coral)"/>
+
+    <!-- 3. PERIPHERAL LIMB &amp; KNEE JOINT (Bottom Left) -->
+    <g id="fm1p5-limb-group" transform="translate(40, 210)">
+      
+      <!-- Thigh / Femur Base (Stationary) -->
+      <path d="M 100 20 L 210 70 L 170 160 L 90 80 Z" fill="var(--fm1p5-card-start, #1e293b)" stroke="var(--fm1p5-card-border, #334155)" stroke-width="1.5" />
+      
+      <!-- Quadriceps Muscle (Rectus Femoris) -->
+      <g id="fm1p5-hs-quad" class="fm1p5-hotspot">
+        <path id="fm1p5-quad-muscle" d="M 115 35 Q 160 55 180 115 Q 140 110 105 50 Z" fill="var(--fm1p5-coral, #f43f5e)" opacity="0.75" class="fm1p5-hs-target" />
+        <text x="140" y="70" font-size="9" font-weight="800" fill="#ffffff">M. QUADRÍCEPS</text>
+        
+        <!-- Muscle Spindle (Fuso Neuromuscular) -->
+        <g id="fm1p5-hs-fuso" class="fm1p5-hotspot" transform="translate(155, 78)">
+          <ellipse cx="0" cy="0" rx="12" ry="6" fill="var(--fm1p5-indigo, #6366f1)" class="fm1p5-hs-target" />
+          <text x="0" y="3" font-size="7" font-weight="800" fill="#ffffff" text-anchor="middle">FUSO</text>
+        </g>
+      </g>
+
+      <!-- Knee Joint Pivot (Patella) &amp; Tendon -->
+      <g id="fm1p5-hs-tendon" class="fm1p5-hotspot" transform="translate(170, 155)">
+        <!-- Patella Bone -->
+        <path d="M -8 -12 L 8 -12 L 5 5 L -5 5 Z" fill="#cbd5e1" stroke="#64748b" stroke-width="1"/>
+        <!-- Patellar Tendon -->
+        <rect id="fm1p5-patellar-tendon" x="-4" y="5" width="8" height="25" fill="#f59e0b" rx="2" class="fm1p5-hs-target"/>
+        <text x="15" y="20" font-size="9" font-weight="800" fill="#f59e0b">Tendão Patelar (Estiramento)</text>
+      </g>
+
+      <!-- ROTATING LOWER LEG &amp; FOOT (Pivots around Knee x:170, y:180) -->
+      <g id="fm1p5-lower-leg" transform="rotate(0 170 180)">
+        <!-- Tibia / Calf -->
+        <path d="M 162 180 L 178 180 L 165 300 L 145 295 Z" fill="var(--fm1p5-card-start, #1e293b)" stroke="var(--fm1p5-card-border, #334155)" stroke-width="1.5" />
+        <!-- Calf Muscle (Gastrocnemius) -->
+        <path d="M 165 190 Q 185 230 168 270 Z" fill="#475569" />
+        <!-- Foot -->
+        <path d="M 145 295 L 165 300 L 205 305 L 200 318 L 135 310 Z" fill="var(--fm1p5-card-start, #1e293b)" stroke="var(--fm1p5-card-border, #334155)" stroke-width="1.5" />
+        <text x="130" y="250" font-size="9" font-weight="700" fill="var(--fm1p5-text-sub, #94a3b8)" transform="rotate(-85 130 250)">PERNA (EFERÊNCIA DISPARA O CHUTE)</text>
+      </g>
+
+      <!-- REFLEX HAMMER (Interactive Swing around Pivot x:80, y:120) -->
+      <g id="fm1p5-hammer-group" class="fm1p5-btn" transform="translate(100, 160)">
+        <g id="fm1p5-hammer-anim" transform="rotate(0 0 0)">
+          <!-- Handle -->
+          <rect x="-60" y="-3" width="60" height="6" fill="#94a3b8" rx="2" />
+          <!-- Head (Rubber Triangular Head) -->
+          <path d="M -60 -15 L -45 0 L -60 15 Z" fill="var(--fm1p5-coral, #f43f5e)" stroke="#ffffff" stroke-width="1" />
+          <text x="-52" y="-18" font-size="9" font-weight="800" fill="var(--fm1p5-coral-light, #fb7185)" text-anchor="middle">MARTELO</text>
+        </g>
+      </g>
+
+      <!-- Impact Burst Visual Effect -->
+      <circle id="fm1p5-impact-burst" cx="170" cy="175" r="0" fill="none" stroke="#f59e0b" stroke-width="3" opacity="0"/>
+
+    </g> <!-- End Limb Group -->
+
+  </g> <!-- End Left Panel Stage -->
+
+  <!-- BOTTOM ACTION &amp; SCENARIO CONTROL BAR -->
+  <g transform="translate(20, 600)">
+    <rect width="570" height="100" class="fm1p5-card" />
+    
+    <!-- 1. Primary Action Button: Disparar Martelo -->
+    <g id="fm1p5-btn-strike" class="fm1p5-btn" transform="translate(15, 15)">
+      <rect width="210" height="42" rx="8" fill="var(--fm1p5-coral, #f43f5e)" filter="url(#fm1p5-glow-coral)"/>
+      <text x="105" y="26" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">🔨 TESTAR REFLEXO (MARTELO)</text>
+    </g>
+
+    <!-- 2. Clinical Scenario Toggles -->
+    <text x="240" y="12" font-size="10" font-weight="700" fill="var(--fm1p5-text-muted, #64748b)">SELECIONE O CENÁRIO CLÍNICO:</text>
+
+    <!-- Scenario A: Normal 2+ -->
+    <g id="fm1p5-btn-scen-normal" class="fm1p5-btn" transform="translate(240, 20)">
+      <rect id="fm1p5-bg-scen-normal" width="95" height="36" rx="6" fill="var(--fm1p5-green, #22c55e)" />
+      <text x="47" y="22" class="fm1p5-badge-text" fill="#ffffff" text-anchor="middle">NORMAL (2+)</text>
+    </g>
+
+    <!-- Scenario B: 2º MN (Abolido 0) -->
+    <g id="fm1p5-btn-scen-2mn" class="fm1p5-btn" transform="translate(343, 20)">
+      <rect id="fm1p5-bg-scen-2mn" width="105" height="36" rx="6" fill="var(--fm1p5-card-start, #1e293b)" stroke="var(--fm1p5-red, #ef4444)" stroke-width="1.5" />
+      <text x="52" y="22" class="fm1p5-badge-text" fill="var(--fm1p5-red, #ef4444)" text-anchor="middle">2º MN (ABOLIDO)</text>
+    </g>
+
+    <!-- Scenario C: 1º MN (Exaltado 3+/4+) -->
+    <g id="fm1p5-btn-scen-1mn" class="fm1p5-btn" transform="translate(454, 20)">
+      <rect id="fm1p5-bg-scen-1mn" width="102" height="36" rx="6" fill="var(--fm1p5-card-start, #1e293b)" stroke="var(--fm1p5-amber, #f59e0b)" stroke-width="1.5" />
+      <text x="51" y="22" class="fm1p5-badge-text" fill="var(--fm1p5-amber, #f59e0b)" text-anchor="middle">1º MN (EXALTADO)</text>
+    </g>
+
+    <text x="285" y="78" font-size="10" font-weight="600" fill="var(--fm1p5-text-sub, #94a3b8)" text-anchor="middle">
+      💡 Dica: Clique nas estruturas anatômicas ou altere os botões de 1º/2º MN para ver a alteração no arco.
+    </text>
+  </g>
+
+  <!-- RIGHT PANEL: CLINICAL READOUT &amp; INTERACTIVE INSPECTOR -->
+  <g transform="translate(605, 148)">
+    <rect width="375" height="552" class="fm1p5-card" />
+    
+    <path d="M 0 12 Q 0 0 12 0 L 363 0 Q 375 0 375 12 L 375 34 L 0 34 Z" class="fm1p5-card-header" />
+    <text x="20" y="22" class="fm1p5-section-hdr">PAINEL DE LEITURA &amp; DIAGNÓSTICO</text>
+
+    <!-- CARD 1: ACTIVE SCENARIO DYNAMICS -->
+    <g transform="translate(15, 45)">
+      <rect width="345" height="135" rx="8" fill="var(--fm1p5-bg-start, #0b0f19)" stroke="var(--fm1p5-card-border, #334155)" stroke-width="1" />
+      <text x="15" y="22" font-size="10" font-weight="700" fill="var(--fm1p5-text-muted, #64748b)" text-transform="uppercase">ESTADO DO ARCO PATELAR</text>
+      
+      <!-- Status Badge -->
+      <g transform="translate(15, 30)">
+        <rect id="fm1p5-status-badge-bg" width="160" height="24" rx="4" fill="var(--fm1p5-green, #22c55e)" />
+        <text id="fm1p5-status-badge-txt" x="80" y="16" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">NORMO-REFLEXIA (2+)</text>
+      </g>
+
+      <!-- Reflex Kick Intensity Meter -->
+      <text x="190" y="44" font-size="9" font-weight="700" fill="var(--fm1p5-text-sub, #94a3b8)">RESPOSTA MOTORIZADA:</text>
+      <rect x="190" y="50" width="140" height="10" rx="5" fill="var(--fm1p5-card-start, #1e293b)" />
+      <rect id="fm1p5-meter-bar" x="190" y="50" width="70" height="10" rx="5" fill="var(--fm1p5-green, #22c55e)" />
+
+      <!-- Scenario Description Text -->
+      <text id="fm1p5-scen-desc-1" x="15" y="78" font-size="11" font-weight="700" fill="var(--fm1p5-text-main, #f8fafc)">Arco Monossináptico Íntegro (L2-L4)</text>
+      <text id="fm1p5-scen-desc-2" x="15" y="94" font-size="10" fill="var(--fm1p5-text-sub, #94a3b8)">• Estiramento do fuso -&gt; Aferência sensitiva Ia</text>
+      <text id="fm1p5-scen-desc-3" x="15" y="110" font-size="10" fill="var(--fm1p5-text-sub, #94a3b8)">• Sinapse direta com 2º MN -&gt; Contração de resposta</text>
+      <text id="fm1p5-scen-desc-4" x="15" y="124" font-size="10" font-weight="700" fill="var(--fm1p5-cyan-light, #38bdf8)">• Via ascendente envia sinal ao S1 (consciência posterior)</text>
+    </g>
+
+    <!-- CARD 2: STRUCTURE INSPECTOR (DYNAMIC DETAILS) -->
+    <g transform="translate(15, 192)">
+      <rect width="345" height="165" rx="8" fill="var(--fm1p5-bg-start, #0b0f19)" stroke="var(--fm1p5-indigo, #6366f1)" stroke-width="1" />
+      <text x="15" y="22" font-size="10" font-weight="700" fill="var(--fm1p5-indigo-light, #818cf8)" text-transform="uppercase">DETALHES DA ESTRUTURA SELECIONADA</text>
+      
+      <text id="fm1p5-inspector-title" x="15" y="42" font-size="13" font-weight="800" fill="var(--fm1p5-text-main, #f8fafc)">Clique em uma estrutura no mapa</text>
+      
+      <g transform="translate(15, 52)">
+        <text id="fm1p5-inspector-line-1" x="0" y="12" font-size="11" fill="var(--fm1p5-text-sub, #94a3b8)">Selecione o Martelo, Fuso, Gânglio, Medula</text>
+        <text id="fm1p5-inspector-line-2" x="0" y="28" font-size="11" fill="var(--fm1p5-text-sub, #94a3b8)">ou Córtex no diagrama ao lado para explorar</text>
+        <text id="fm1p5-inspector-line-3" x="0" y="44" font-size="11" fill="var(--fm1p5-text-sub, #94a3b8)">a fisiologia exata de cada componente do arco.</text>
+        <text id="fm1p5-inspector-line-4" x="0" y="66" font-size="10" font-weight="700" fill="var(--fm1p5-teal-light, #2dd4bf)"></text>
+        <text id="fm1p5-inspector-line-5" x="0" y="82" font-size="10" font-weight="700" fill="var(--fm1p5-coral-light, #fb7185)"></text>
+      </g>
+    </g>
+
+    <!-- CARD 3: DIFFERENTIAL DIAGNOSIS TABLE (1º MN vs 2º MN) -->
+    <g transform="translate(15, 368)">
+      <rect width="345" height="170" rx="8" fill="var(--fm1p5-bg-start, #0b0f19)" stroke="var(--fm1p5-card-border, #334155)" stroke-width="1" />
+      <text x="15" y="20" font-size="10" font-weight="800" fill="var(--fm1p5-text-main, #f8fafc)" text-transform="uppercase">DISCRIMINADOR: 1º × 2º MOTONEURÔNIO</text>
+      
+      <!-- Table Header -->
+      <g transform="translate(10, 30)">
+        <rect width="325" height="20" fill="var(--fm1p5-card-start, #1e293b)" rx="4"/>
+        <text x="10" y="14" font-size="9" font-weight="800" fill="var(--fm1p5-text-sub, #94a3b8)">ACHADO</text>
+        <text x="130" y="14" font-size="9" font-weight="800" fill="var(--fm1p5-amber, #f59e0b)">1º MN (CÓRTEX/TCE)</text>
+        <text x="240" y="14" font-size="9" font-weight="800" fill="var(--fm1p5-red, #ef4444)">2º MN (ARCO/NERVO)</text>
+      </g>
+
+      <!-- Row 1: Reflexos -->
+      <g transform="translate(10, 54)">
+        <text x="10" y="12" font-size="10" font-weight="700" fill="var(--fm1p5-text-main, #f8fafc)">Reflexos (OOT)</text>
+        <text x="130" y="12" font-size="10" font-weight="800" fill="var(--fm1p5-amber, #f59e0b)">Exaltados (3+/4+)</text>
+        <text x="240" y="12" font-size="10" font-weight="800" fill="var(--fm1p5-red, #ef4444)">Abolidos (0/1+)</text>
+      </g>
+      <line x1="20" y1="72" x2="335" y2="72" stroke="var(--fm1p5-card-border, #334155)" stroke-dasharray="2,2"/>
+
+      <!-- Row 2: Tônus -->
+      <g transform="translate(10, 76)">
+        <text x="10" y="12" font-size="10" font-weight="700" fill="var(--fm1p5-text-main, #f8fafc)">Tônus Muscular</text>
+        <text x="130" y="12" font-size="10" fill="var(--fm1p5-text-sub, #94a3b8)">Espástico (Canivete)</text>
+        <text x="240" y="12" font-size="10" fill="var(--fm1p5-text-sub, #94a3b8)">Flácido / Atonia</text>
+      </g>
+      <line x1="20" y1="94" x2="335" y2="94" stroke="var(--fm1p5-card-border, #334155)" stroke-dasharray="2,2"/>
+
+      <!-- Row 3: Babinski &amp; Atrofia -->
+      <g transform="translate(10, 98)">
+        <text x="10" y="12" font-size="10" font-weight="700" fill="var(--fm1p5-text-main, #f8fafc)">Babinski / Atrofia</text>
+        <text x="130" y="12" font-size="10" fill="var(--fm1p5-text-sub, #94a3b8)">Presente / Desuso</text>
+        <text x="240" y="12" font-size="10" fill="var(--fm1p5-text-sub, #94a3b8)">Ausente / Precoce</text>
+      </g>
+
+      <!-- Bottom Key Clinical Rule Box -->
+      <g transform="translate(10, 122)">
+        <rect width="325" height="38" rx="6" fill="var(--fm1p5-card-start, #1e293b)" stroke="var(--fm1p5-teal, #14b8a6)" stroke-width="1"/>
+        <text x="162" y="16" font-size="10" font-weight="800" fill="var(--fm1p5-teal-light, #2dd4bf)" text-anchor="middle">REGRA DE PROVA DE RESIDÊNCIA</text>
+        <text x="162" y="30" font-size="9" font-weight="600" fill="var(--fm1p5-text-main, #f8fafc)" text-anchor="middle">Arco lesado (2º MN) = Abolição | Perda da inibição (1º MN) = Exaltação</text>
+      </g>
+    </g>
+  </g> <!-- End Right Panel -->
+
+  <!-- JAVASCRIPT ENGINE (SELF-CONTAINED) -->
+  <script>//<![CDATA[
+    (function() {
+      // State Variables
+      var currentMode = 'normal'; // 'normal', '2mn', '1mn'
+      var selectedStructure = 'none';
+      var isAnimating = false;
+
+      // DOM Elements
+      var svgRoot = document.getElementById('fm1p5-svg-main');
+      var btnTheme = document.getElementById('fm1p5-btn-theme');
+      var btnStrike = document.getElementById('fm1p5-btn-strike');
+      
+      var btnScenNormal = document.getElementById('fm1p5-btn-scen-normal');
+      var btnScen2mn = document.getElementById('fm1p5-btn-scen-2mn');
+      var btnScen1mn = document.getElementById('fm1p5-btn-scen-1mn');
+
+      var bgNormal = document.getElementById('fm1p5-bg-scen-normal');
+      var bg2mn = document.getElementById('fm1p5-bg-scen-2mn');
+      var bg1mn = document.getElementById('fm1p5-bg-scen-1mn');
+
+      var hammerAnim = document.getElementById('fm1p5-hammer-anim');
+      var lowerLeg = document.getElementById('fm1p5-lower-leg');
+      var impactBurst = document.getElementById('fm1p5-impact-burst');
+
+      var pulseAff = document.getElementById('fm1p5-pulse-aff');
+      var pulseEff = document.getElementById('fm1p5-pulse-eff');
+
+      var pathAff = document.getElementById('fm1p5-path-aff');
+      var pathEff = document.getElementById('fm1p5-path-eff');
+
+      var lesionOverlay = document.getElementById('fm1p5-lesion-overlay');
+      var lesionLine1 = document.getElementById('fm1p5-lesion-line-1');
+      var lesionLine2 = document.getElementById('fm1p5-lesion-line-2');
+      var lesionText = document.getElementById('fm1p5-lesion-text');
+
+      var badgeBg = document.getElementById('fm1p5-status-badge-bg');
+      var badgeTxt = document.getElementById('fm1p5-status-badge-txt');
+      var meterBar = document.getElementById('fm1p5-meter-bar');
+
+      var desc1 = document.getElementById('fm1p5-scen-desc-1');
+      var desc2 = document.getElementById('fm1p5-scen-desc-2');
+      var desc3 = document.getElementById('fm1p5-scen-desc-3');
+      var desc4 = document.getElementById('fm1p5-scen-desc-4');
+
+      var inspectorTitle = document.getElementById('fm1p5-inspector-title');
+      var inspectorLine1 = document.getElementById('fm1p5-inspector-line-1');
+      var inspectorLine2 = document.getElementById('fm1p5-inspector-line-2');
+      var inspectorLine3 = document.getElementById('fm1p5-inspector-line-3');
+      var inspectorLine4 = document.getElementById('fm1p5-inspector-line-4');
+      var inspectorLine5 = document.getElementById('fm1p5-inspector-line-5');
+
+      // Theme Handler
+      btnTheme.addEventListener('click', function() {
+        var currentTheme = svgRoot.getAttribute('data-theme');
+        if (currentTheme === 'light') {
+          svgRoot.removeAttribute('data-theme');
+        } else {
+          svgRoot.setAttribute('data-theme', 'light');
+        }
+      });
+
+      // Scenario Switchers
+      function setScenario(mode) {
+        currentMode = mode;
+        
+        // Reset Button Styles
+        bgNormal.setAttribute('fill', 'var(--fm1p5-card-start, #1e293b)');
+        bgNormal.setAttribute('stroke', 'var(--fm1p5-green, #22c55e)');
+        bgNormal.setAttribute('stroke-width', '1.5');
+        
+        bg2mn.setAttribute('fill', 'var(--fm1p5-card-start, #1e293b)');
+        bg2mn.setAttribute('stroke', 'var(--fm1p5-red, #ef4444)');
+        bg2mn.setAttribute('stroke-width', '1.5');
+        
+        bg1mn.setAttribute('fill', 'var(--fm1p5-card-start, #1e293b)');
+        bg1mn.setAttribute('stroke', 'var(--fm1p5-amber, #f59e0b)');
+        bg1mn.setAttribute('stroke-width', '1.5');
+
+        lesionOverlay.setAttribute('opacity', '0');
+
+        if (mode === 'normal') {
+          bgNormal.setAttribute('fill', 'var(--fm1p5-green, #22c55e)');
+          badgeBg.setAttribute('fill', 'var(--fm1p5-green, #22c55e)');
+          badgeTxt.textContent = 'NORMO-REFLEXIA (2+)';
+          meterBar.setAttribute('width', '70');
+          meterBar.setAttribute('fill', 'var(--fm1p5-green, #22c55e)');
+
+          desc1.textContent = 'Arco Monossináptico Íntegro (L2-L4)';
+          desc2.textContent = '• Estiramento do fuso -> Aferência sensitiva Ia';
+          desc3.textContent = '• Sinapse direta com 2º MN -> Contração de resposta';
+          desc4.textContent = '• Modulação cortical preservada (Chute fisiológico)';
+          desc4.setAttribute('fill', 'var(--fm1p5-cyan-light, #38bdf8)');
+
+        } else if (mode === '2mn') {
+          bg2mn.setAttribute('fill', 'var(--fm1p5-red, #ef4444)');
+          badgeBg.setAttribute('fill', 'var(--fm1p5-red, #ef4444)');
+          badgeTxt.textContent = 'ARREFLEXIA / 2º MN (0)';
+          meterBar.setAttribute('width', '0');
+
+          desc1.textContent = 'Lesão de 2º MN ou Nervo Periférico';
+          desc2.textContent = '• Interrupção no arco local (raiz, gânglio ou motoneurônio)';
+          desc3.textContent = '• O martelo estira, mas o sinal NÃO chega/retorna!';
+          desc4.textContent = '• REGRA: "Só tem reflexo quem tem nervo!" (Abolido)';
+          desc4.setAttribute('fill', 'var(--fm1p5-red, #ef4444)');
+
+          // Draw Lesion Mark on Peripheral Nerve
+          lesionOverlay.setAttribute('opacity', '1');
+          lesionLine1.setAttribute('x1', '250'); lesionLine1.setAttribute('y1', '215');
+          lesionLine1.setAttribute('x2', '270'); lesionLine1.setAttribute('y2', '235');
+          lesionLine2.setAttribute('x1', '270'); lesionLine2.setAttribute('y1', '215');
+          lesionLine2.setAttribute('x2', '250'); lesionLine2.setAttribute('y2', '235');
+          lesionText.setAttribute('x', '260'); lesionText.setAttribute('y', '250');
+          lesionText.textContent = '⚡ LESÃO DE NERVO/RAIZ';
+
+        } else if (mode === '1mn') {
+          bg1mn.setAttribute('fill', 'var(--fm1p5-amber, #f59e0b)');
+          badgeBg.setAttribute('fill', 'var(--fm1p5-amber, #f59e0b)');
+          badgeTxt.textContent = 'HIPERREFLEXIA / 1º MN (3+/4+)';
+          meterBar.setAttribute('width', '140');
+          meterBar.setAttribute('fill', 'var(--fm1p5-amber, #f59e0b)');
+
+          desc1.textContent = 'Lesão de 1º MN / Trato Córtico-Espinal';
+          desc2.textContent = '• Perda da inibição descendente central';
+          desc3.textContent = '• O arco medular fica "solto" e hiper-exaltado';
+          desc4.textContent = '• Pode gerar Clonus e expansão de área reflexógena!';
+          desc4.setAttribute('fill', 'var(--fm1p5-amber, #f59e0b)');
+
+          // Draw Lesion Mark on Corticospinal Tract
+          lesionOverlay.setAttribute('opacity', '1');
+          lesionLine1.setAttribute('x1', '195'); lesionLine1.setAttribute('y1', '145');
+          lesionLine1.setAttribute('x2', '215'); lesionLine1.setAttribute('y2', '165');
+          lesionLine2.setAttribute('x1', '215'); lesionLine2.setAttribute('y1', '145');
+          lesionLine2.setAttribute('x2', '195'); lesionLine2.setAttribute('y2', '165');
+          lesionText.setAttribute('x', '205'); lesionText.setAttribute('y', '180');
+          lesionText.textContent = '⚡ LESÃO VIA PIRAMIDAL';
+        }
+      }
+
+      btnScenNormal.addEventListener('click', function() { setScenario('normal'); });
+      btnScen2mn.addEventListener('click', function() { setScenario('2mn'); });
+      btnScen1mn.addEventListener('click', function() { setScenario('1mn'); });
+
+      // Structure Inspector Content Map
+      var inspectorMap = {
+        'cortex': {
+          title: 'Córtex Cerebral (Via Ascendente)',
+          line1: '• Recebe colaterais que sobem pela coluna posterior.',
+          line2: '• Função: Proporcionar a consciência de que o joelho foi batido.',
+          line3: '• CRÍTICO: NÃO comanda nem inicia a resposta motora do chute!',
+          line4: '• 1º Motoneurônio envia eferência inibitória descendente.',
+          line5: ''
+        },
+        'medula': {
+          title: 'Medula Espinhal (Nível L2–L4)',
+          line1: '• Centro de integração do reflexo osteotendíneo patelar.',
+          line2: '• Sinapse MONOSSINÁPTICA entre o neurônio Ia e o Motoneurônio Alfa.',
+          line3: '• Interneurônio inibitório sincroniza o relaxamento do Isquiotibial.',
+          line4: '• O arco fecha totalmente aqui, independente do cérebro!',
+          line5: ''
+        },
+        'drg': {
+          title: 'Gânglio da Raiz Dorsal (GRD)',
+          line1: '• Contém o corpo celular do neurônio sensitivo pseudounipolar (Ia).',
+          line2: '• Conduz o estímulo de estiramento do fuso muscular à medula.',
+          line3: '• Lesões ganglionares/radiculares (2º MN) abolem o reflexo.',
+          line4: '',
+          line5: ''
+        },
+        'fuso': {
+          title: 'Fuso Neuromuscular (Receptor)',
+          line1: '• Mecanorreceptor intrafusal que detecta o estiramento rápido.',
+          line2: '• A batida do martelo no tendão patelar estira o quadríceps.',
+          line3: '• O fuso dispara potenciais de ação imediatos na fibra Ia.',
+          line4: '',
+          line5: ''
+        },
+        'tendon': {
+          title: 'Tendão Patelar & Martelo',
+          line1: '• O impacto súbito do martelo de reflexo deformará o tendão.',
+          line2: '• Gera o estiramento mecânico passivo do músculo Quadríceps.',
+          line3: '• Teste clássico de integridade do arco L2-L4 em provas.',
+          line4: '',
+          line5: ''
+        },
+        'quad': {
+          title: 'Músculo Quadríceps (Efetor)',
+          line1: '• Músculo efetor da extensão do joelho.',
+          line2: '• Recebe o disparo motor do Neurônio Motor Alfa (2º MN).',
+          line3: '• A contração rápida produz o "tranco/chute" involuntário.',
+          line4: '',
+          line5: ''
+        }
+      };
+
+      function updateInspector(key) {
+        selectedStructure = key;
+        var info = inspectorMap[key];
+        if (!info) return;
+
+        inspectorTitle.textContent = info.title;
+        inspectorLine1.textContent = info.line1;
+        inspectorLine2.textContent = info.line2;
+        inspectorLine3.textContent = info.line3;
+        inspectorLine4.textContent = info.line4;
+        inspectorLine5.textContent = info.line5;
+      }
+
+      // Attach Inspector Hotspot Click Handlers
+      var hsCortex = document.getElementById('fm1p5-hs-cortex');
+      var hsMedula = document.getElementById('fm1p5-hs-medula');
+      var hsDrg = document.getElementById('fm1p5-hs-drg');
+      var hsFuso = document.getElementById('fm1p5-hs-fuso');
+      var hsTendon = document.getElementById('fm1p5-hs-tendon');
+      var hsQuad = document.getElementById('fm1p5-hs-quad');
+
+      if (hsCortex) hsCortex.addEventListener('click', function() { updateInspector('cortex'); });
+      if (hsMedula) hsMedula.addEventListener('click', function() { updateInspector('medula'); });
+      if (hsDrg) hsDrg.addEventListener('click', function() { updateInspector('drg'); });
+      if (hsFuso) hsFuso.addEventListener('click', function() { updateInspector('fuso'); });
+      if (hsTendon) hsTendon.addEventListener('click', function() { updateInspector('tendon'); });
+      if (hsQuad) hsQuad.addEventListener('click', function() { updateInspector('quad'); });
+
+      // ANIMATION ENGINE (HAMMER STRIKE & LEG KICK)
+      function runHammerStrike() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        // 1. Hammer Swing Animation
+        var hammerAngle = 0;
+        var swingForward = true;
+
+        var swingInterval = setInterval(function() {
+          if (swingForward) {
+            hammerAngle += 6;
+            if (hammerAngle >= 35) {
+              swingForward = false;
+              // Impact Moment!
+              triggerImpactEffects();
+            }
+          } else {
+            hammerAngle -= 4;
+            if (hammerAngle <= 0) {
+              hammerAngle = 0;
+              clearInterval(swingInterval);
+            }
+          }
+          hammerAnim.setAttribute('transform', 'rotate(' + hammerAngle + ' 0 0)');
+        }, 16);
+      }
+
+      function triggerImpactEffects() {
+        // Visual Burst on Tendon
+        impactBurst.setAttribute('r', '5');
+        impactBurst.setAttribute('opacity', '1');
+        
+        var burstOpacity = 1;
+        var burstRadius = 5;
+        var burstInterval = setInterval(function() {
+          burstRadius += 3;
+          burstOpacity -= 0.1;
+          impactBurst.setAttribute('r', burstRadius);
+          impactBurst.setAttribute('opacity', Math.max(0, burstOpacity));
+          if (burstOpacity <= 0) clearInterval(burstInterval);
+        }, 30);
+
+        // Sensory Impulse Pulse Along Afferent Path
+        animatePulse(pulseAff, pathAff, 300, function() {
+          if (currentMode === '2mn') {
+            // Blocked at nerve! No kick!
+            isAnimating = false;
+            return;
+          }
+
+          // Spinal Synapse firing, then Efferent Pulse down Motor Path
+          animatePulse(pulseEff, pathEff, 250, function() {
+            // Leg Kick Reaction!
+            triggerLegKick();
+          });
+        });
+      }
+
+      function animatePulse(pulseElem, pathElem, duration, callback) {
+        var pathLen = pathElem.getTotalLength();
+        var startTime = null;
+
+        pulseElem.setAttribute('opacity', '1');
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = (timestamp - startTime) / duration;
+          if (progress > 1) progress = 1;
+
+          var pt = pathElem.getPointAtLength(progress * pathLen);
+          pulseElem.setAttribute('cx', pt.x);
+          pulseElem.setAttribute('cy', pt.y);
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            pulseElem.setAttribute('opacity', '0');
+            if (callback) callback();
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      function triggerLegKick() {
+        var maxKickAngle = 20; // Normal
+        if (currentMode === '1mn') maxKickAngle = 45; // Exalted / Hyperreflexia
+        if (currentMode === '2mn') maxKickAngle = 0;
+
+        var legAngle = 0;
+        var legRising = true;
+        var kickCount = (currentMode === '1mn') ? 3 : 1; // Clonus bounce for 1st MN!
+        var currentKick = 0;
+
+        var kickInterval = setInterval(function() {
+          if (legRising) {
+            legAngle -= 5;
+            if (legAngle <= -maxKickAngle) {
+              legRising = false;
+            }
+          } else {
+            legAngle += 3;
+            if (legAngle >= 0) {
+              legAngle = 0;
+              currentKick++;
+              if (currentKick >= kickCount) {
+                clearInterval(kickInterval);
+                isAnimating = false;
+              } else {
+                legRising = true;
+                maxKickAngle *= 0.6; // Dampened clonus bounce
+              }
+            }
+          }
+          lowerLeg.setAttribute('transform', 'rotate(' + legAngle + ' 170 180)');
+        }, 16);
+      }
+
+      btnStrike.addEventListener('click', runHammerStrike);
+      var hammerGroup = document.getElementById('fm1p5-hammer-group');
+      if (hammerGroup) hammerGroup.addEventListener('click', runHammerStrike);
+
+      // Default scenario initialization
+      setScenario('normal');
+
+    })();
+  //]]></script>
+</svg>

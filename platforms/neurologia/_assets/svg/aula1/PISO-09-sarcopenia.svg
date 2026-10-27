@@ -1,0 +1,785 @@
+<svg id="p9-sarcopenia-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="100%" height="100%" aria-labelledby="p9-svg-title p9-svg-desc" role="img" class="active-preservado">
+  <title id="p9-svg-title">Fragilidade e Sarcopenia: O Idoso-Porcelana</title>
+  <desc id="p9-svg-desc">Comparação esquemática entre muscle preservado e muscle sarcopênico, associando a perda de massa à fragilidade do idoso e ao risco de quedas.</desc>
+  
+  <style>
+    /* CSS Escopado para evitar vazamentos e garantir compatibilidade de temas */
+    #p9-sarcopenia-svg {
+      --bg-color: #0b0f19;
+      --text-color: #f8fafc;
+      --text-muted: #94a3b8;
+      
+      --card-bg: #111827;
+      --card-border: #374151;
+      --card-divider: #1f2937;
+      
+      --normal-green: #10b981;
+      --normal-green-bg: rgba(16, 185, 129, 0.08);
+      --normal-green-stroke: rgba(16, 185, 129, 0.3);
+      
+      --alert-red: #f43f5e;
+      --alert-red-bg: rgba(244, 63, 94, 0.08);
+      --alert-red-stroke: rgba(244, 63, 94, 0.3);
+      
+      --warn-orange: #f59e0b;
+      --warn-orange-bg: rgba(245, 158, 11, 0.08);
+      
+      --porcelain-cyan: #06b6d4;
+      --porcelain-bg: rgba(6, 182, 212, 0.05);
+      --porcelain-stroke: rgba(6, 182, 212, 0.4);
+      
+      --bone-color: #cbd5e1;
+      --bone-medulla: #ef4444;
+      --fat-color: #fbbf24;
+      --fat-bg: rgba(251, 191, 36, 0.1);
+      --skin-color: #fda4af;
+      
+      --toggle-bg: #1f2937;
+      --toggle-active: #374151;
+      --interactive-pulse: #3b82f6;
+      
+      background-color: var(--bg-color);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    @media (prefers-color-scheme: light) {
+      #p9-sarcopenia-svg {
+        --bg-color: #f8fafc;
+        --text-color: #0f172a;
+        --text-muted: #475569;
+        
+        --card-bg: #ffffff;
+        --card-border: #e2e8f0;
+        --card-divider: #f1f5f9;
+        
+        --normal-green: #059669;
+        --normal-green-bg: rgba(5, 150, 105, 0.06);
+        --normal-green-stroke: rgba(5, 150, 105, 0.25);
+        
+        --alert-red: #dc2626;
+        --alert-red-bg: rgba(220, 38, 38, 0.06);
+        --alert-red-stroke: rgba(220, 38, 38, 0.25);
+        
+        --warn-orange: #d97706;
+        --warn-orange-bg: rgba(217, 119, 6, 0.06);
+        
+        --porcelain-cyan: #0891b2;
+        --porcelain-bg: rgba(8, 145, 178, 0.05);
+        --porcelain-stroke: rgba(8, 145, 178, 0.3);
+        
+        --bone-color: #64748b;
+        --bone-medulla: #991b1b;
+        --fat-color: #d97706;
+        --fat-bg: rgba(217, 119, 6, 0.08);
+        --skin-color: #fca5a5;
+        
+        --toggle-bg: #e2e8f0;
+        --toggle-active: #ffffff;
+      }
+    }
+    
+    /* Efeitos Interativos e Transições */
+    #p9-sarcopenia-svg .clickable {
+      cursor: pointer;
+      pointer-events: all;
+    }
+    
+    #p9-sarcopenia-svg .transition-all {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #p9-sarcopenia-svg .hotspot-ring {
+      fill: none;
+      stroke-width: 2;
+    }
+    
+    #p9-sarcopenia-svg .hotspot-active {
+      stroke: var(--interactive-pulse);
+      stroke-width: 3.5;
+    }
+    
+    /* Controle de Opacidade das Cenas */
+    #p9-sarcopenia-svg .region-group {
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+    }
+    
+    #p9-sarcopenia-svg .state-inactive {
+      opacity: 0.35;
+      filter: grayscale(35%) blur(0.3px);
+    }
+    
+    #p9-sarcopenia-svg .state-active {
+      opacity: 1;
+      filter: grayscale(0%) blur(0px);
+    }
+    
+    /* Exibição condicional via classe de estado raiz */
+    #p9-sarcopenia-svg.active-preservado .only-sarcopenico {
+      display: none;
+    }
+    #p9-sarcopenia-svg.active-preservado .only-preservado {
+      display: block;
+    }
+    #p9-sarcopenia-svg.active-sarcopenico .only-sarcopenico {
+      display: block;
+    }
+    #p9-sarcopenia-svg.active-sarcopenico .only-preservado {
+      display: none;
+    }
+    
+    /* Micro-animações de pulso para hotspots */
+    #p9-sarcopenia-svg .pulse-glow {
+      animation: p9-pulse-anim 2.5s infinite;
+      transform-origin: center;
+    }
+    
+    @keyframes p9-pulse-anim {
+      0% { r: 10; opacity: 0.7; }
+      70% { r: 18; opacity: 0; }
+      100% { r: 10; opacity: 0; }
+    }
+    
+    /* Estilos de tipografia */
+    #p9-sarcopenia-svg .txt-title {
+      font-size: 20px;
+      font-weight: 800;
+      fill: var(--text-color);
+      letter-spacing: 0.5px;
+    }
+    #p9-sarcopenia-svg .txt-subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      fill: var(--porcelain-cyan);
+      letter-spacing: 1px;
+    }
+    #p9-sarcopenia-svg .txt-legend {
+      font-size: 12px;
+      fill: var(--text-muted);
+    }
+    #p9-sarcopenia-svg .txt-bold {
+      font-weight: 700;
+    }
+  </style>
+
+  <!-- Cabeçalho e Títulos -->
+  <g transform="translate(40, 35)">
+    <text class="txt-subtitle" y="0">SLOT P9: FRAGILIDADE CLÍNICA</text>
+    <text class="txt-title" y="24">MÚSCULO PRESERVADO vs MÚSCULO SARCOPÊNICO</text>
+    <text class="txt-legend" y="44">Menos músculo, menos força, menos reserva: o corpo da porcelana. É a sarcopenia que sustenta a fragilidade.</text>
+  </g>
+
+  <!-- Toggle Switch Superior (Centralizado) -->
+  <g transform="translate(340, 90)" class="clickable" id="p9-toggle-container" role="button" aria-label="Alternar entre Músculo Preservado e Músculo Sarcopênico">
+    <rect width="220" height="32" rx="16" fill="var(--toggle-bg)" class="transition-all" />
+    <!-- Slide Indicador Ativo -->
+    <rect id="p9-toggle-slide" x="2" y="2" width="106" height="28" rx="14" fill="var(--toggle-active)" class="transition-all" />
+    
+    <!-- Botão Preservado -->
+    <g id="p9-btn-preservado" class="clickable">
+      <rect x="0" y="0" width="110" height="32" fill="transparent" />
+      <text x="55" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text-color)" class="transition-all">Preservado</text>
+    </g>
+    
+    <!-- Botão Sarcopênico -->
+    <g id="p9-btn-sarcopenico" class="clickable">
+      <rect x="110" y="0" width="110" height="32" fill="transparent" />
+      <text x="165" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text-muted)" class="transition-all">Sarcopênico</text>
+    </g>
+  </g>
+
+  <!-- PAINEL DA ESQUERDA: MÚSCULO PRESERVADO -->
+  <g id="p9-region-preservada" class="region-group clickable state-active" transform="translate(40, 140)">
+    <rect width="330" height="270" rx="12" fill="var(--normal-green-bg)" stroke="var(--normal-green-stroke)" stroke-width="1.5" class="transition-all" />
+    <text x="165" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="var(--normal-green)">MÚSCULO PRESERVADO</text>
+    <text x="165" y="48" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-style="italic">Idoso Ativo / Saudável</text>
+
+    <!-- Corte Transversal do Membro (Coxa) -->
+    <g transform="translate(165, 155)">
+      <!-- Pele (Camada Externa) -->
+      <circle r="85" fill="none" stroke="var(--skin-color)" stroke-width="4" />
+      <!-- Gordura Subcutânea (Anel saudável e estreito) -->
+      <circle r="80" fill="none" stroke="var(--fat-color)" stroke-width="6" opacity="0.9" />
+      <!-- Fáscia Profunda Muscular (Limiar do compartimento) -->
+      <circle r="74" fill="var(--bg-color)" stroke="var(--text-muted)" stroke-width="1" opacity="0.4" />
+
+      <!-- Fáscias/Septos Intermusculares (Estrutura interna) -->
+      <line x1="0" y1="0" x2="0" y2="-74" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" />
+      <line x1="0" y1="0" x2="-64" y2="37" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" />
+      <line x1="0" y1="0" x2="64" y2="37" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" />
+
+      <!-- MÚSCULOS DENSOS (Fibras abundantes e agrupadas) -->
+      <!-- Quadríceps (Compartimento Superior) -->
+      <g fill="var(--normal-green)">
+        <circle cx="0" cy="-45" r="4.5" />
+        <circle cx="-15" cy="-40" r="4.5" />
+        <circle cx="15" cy="-40" r="4.5" />
+        <circle cx="-30" cy="-30" r="4.5" />
+        <circle cx="30" cy="-30" r="4.5" />
+        <circle cx="-10" cy="-25" r="4.5" />
+        <circle cx="10" cy="-25" r="4.5" />
+        <circle cx="-25" cy="-48" r="4.5" />
+        <circle cx="25" cy="-48" r="4.5" />
+        <circle cx="0" cy="-60" r="4.5" />
+        <circle cx="-15" cy="-56" r="4.5" />
+        <circle cx="15" cy="-56" r="4.5" />
+        <circle cx="-38" cy="-40" r="4.5" />
+        <circle cx="38" cy="-40" r="4.5" />
+      </g>
+      <!-- Isquiotibiais (Compartimento Lateral-Esquerdo) -->
+      <g fill="var(--normal-green)">
+        <circle cx="-45" cy="15" r="4.5" />
+        <circle cx="-35" cy="5" r="4.5" />
+        <circle cx="-35" cy="25" r="4.5" />
+        <circle cx="-55" cy="10" r="4.5" />
+        <circle cx="-50" cy="28" r="4.5" />
+        <circle cx="-25" cy="15" r="4.5" />
+        <circle cx="-20" cy="30" r="4.5" />
+        <circle cx="-42" cy="-5" r="4.5" />
+        <circle cx="-12" cy="42" r="4.5" />
+        <circle cx="-28" cy="45" r="4.5" />
+        <circle cx="-40" cy="38" r="4.5" />
+      </g>
+      <!-- Adutores (Compartimento Lateral-Direito) -->
+      <g fill="var(--normal-green)">
+        <circle cx="45" cy="15" r="4.5" />
+        <circle cx="35" cy="5" r="4.5" />
+        <circle cx="35" cy="25" r="4.5" />
+        <circle cx="55" cy="10" r="4.5" />
+        <circle cx="50" cy="28" r="4.5" />
+        <circle cx="25" cy="15" r="4.5" />
+        <circle cx="20" cy="30" r="4.5" />
+        <circle cx="42" cy="-5" r="4.5" />
+        <circle cx="12" cy="42" r="4.5" />
+        <circle cx="28" cy="45" r="4.5" />
+        <circle cx="40" cy="38" r="4.5" />
+      </g>
+
+      <!-- Fêmur (Osso Central Forte) -->
+      <path d="M-14,-10 C-22,-10 -22,10 -14,10 C-10,12 -5,8 0,8 C5,8 10,12 14,10 C22,10 22,-10 14,-10 C10,-12 5,-8 0,-8 C-5,-8 -10,-12 -14,-10 Z" fill="var(--bone-color)" />
+      <circle cx="0" cy="0" r="4" fill="var(--bone-medulla)" />
+    </g>
+
+    <!-- Hotspots do Músculo Preservado -->
+    <!-- Hotspot 1: Fibras Preservadas -->
+    <g class="p9-hotspot clickable" id="hs-1" transform="translate(110, 110)">
+      <circle r="12" fill="var(--normal-green)" opacity="0.2" class="pulse-glow" />
+      <circle r="8" fill="var(--normal-green)" stroke="var(--text-color)" stroke-width="1.5" class="hotspot-ring" />
+      <text y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="white">1</text>
+    </g>
+    <!-- Hotspot 2: Tecido Adiposo Normal -->
+    <g class="p9-hotspot clickable" id="hs-2" transform="translate(70, 155)">
+      <circle r="12" fill="var(--normal-green)" opacity="0.2" class="pulse-glow" />
+      <circle r="8" fill="var(--normal-green)" stroke="var(--text-color)" stroke-width="1.5" class="hotspot-ring" />
+      <text y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="white">2</text>
+    </g>
+    <!-- Hotspot 3: Osso Forte -->
+    <g class="p9-hotspot clickable" id="hs-3" transform="translate(180, 175)">
+      <circle r="12" fill="var(--normal-green)" opacity="0.2" class="pulse-glow" />
+      <circle r="8" fill="var(--normal-green)" stroke="var(--text-color)" stroke-width="1.5" class="hotspot-ring" />
+      <text y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="white">3</text>
+    </g>
+  </g>
+
+  <!-- METÁFORA CENTRAL: A PORCELANA -->
+  <g transform="translate(390, 140)" id="p9-center-porcelain">
+    <rect width="120" height="270" rx="8" fill="var(--porcelain-bg)" stroke="var(--porcelain-stroke)" stroke-width="1" stroke-dasharray="2,2" />
+    
+    <!-- Cúpula de Proteção (Preservado) -->
+    <path class="only-preservado transition-all" d="M 15,190 A 45,45 0 0,1 105,190" fill="none" stroke="var(--normal-green)" stroke-width="2" stroke-dasharray="4,4" opacity="0.8" />
+    <text class="only-preservado" x="60" y="130" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--normal-green)">RESERVA MANTIDA</text>
+    <text class="only-preservado" x="60" y="142" text-anchor="middle" font-size="8" fill="var(--text-muted)">Amortecimento biomecânico</text>
+
+    <!-- Força de Impacto Extrema (Sarcopênico) -->
+    <g class="only-sarcopenico transition-all">
+      <!-- Martelo/Impacto Simbólico -->
+      <path d="M 60,60 L 60,115" stroke="var(--alert-red)" stroke-width="1.5" stroke-dasharray="3,3" />
+      <polygon points="60,123 55,113 65,113" fill="var(--alert-red)" />
+      <!-- Vetor de queda -->
+      <circle cx="60" cy="50" r="10" fill="var(--alert-red)" opacity="0.2" class="pulse-glow" />
+      <text x="60" y="35" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--alert-red)">LEVE IMPACTO</text>
+      <text x="60" y="47" text-anchor="middle" font-size="8" fill="var(--text-muted)">(Instabilidade/Queda)</text>
+    </g>
+
+    <!-- A XÍCARA DE PORCELANA (Alvo de Fragilidade) -->
+    <g transform="translate(60, 185)">
+      <!-- Pires -->
+      <ellipse cx="0" cy="30" rx="30" ry="6" fill="var(--text-color)" stroke="var(--text-muted)" stroke-width="1.5" />
+      <!-- Asa da Xícara -->
+      <path d="M 20,-10 C 35,-10 35,15 20,15" fill="none" stroke="var(--text-color)" stroke-width="3" />
+      <!-- Corpo da Xícara -->
+      <path d="M -24,-15 C -24,15 -18,25 0,25 C 18,25 24,15 24,-15 Z" fill="var(--text-color)" stroke="var(--text-muted)" stroke-width="1" />
+      <!-- Detalhe decorativo clássico (ciano) -->
+      <path d="M -24,-5 C -12,0 12,0 24,-5" fill="none" stroke="var(--porcelain-cyan)" stroke-width="1.5" opacity="0.7" />
+      
+      <!-- Fissura / Trinca (Sarcopênico) -->
+      <path class="only-sarcopenico transition-all" d="M 0,-15 L -5,0 L 5,12 L 0,25" fill="none" stroke="var(--alert-red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+
+    <text x="60" y="240" text-anchor="middle" font-size="11" font-weight="bold" fill="var(--text-color)">PORCELANA</text>
+    <text x="60" y="254" text-anchor="middle" font-size="8" fill="var(--text-muted)">(Metáfora da Fragilidade)</text>
+
+    <!-- Hotspot 7: Conceito de Porcelana -->
+    <g class="p9-hotspot clickable" id="hs-7" transform="translate(60, 95)">
+      <circle r="12" fill="var(--porcelain-cyan)" opacity="0.2" class="pulse-glow" />
+      <circle r="8" fill="var(--porcelain-cyan)" stroke="var(--text-color)" stroke-width="1.5" class="hotspot-ring" />
+      <text y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="white">7</text>
+    </g>
+  </g>
+
+  <!-- PAINEL DA DIREITA: MÚSCULO SARCOPÊNICO -->
+  <g id="p9-region-sarcopenica" class="region-group clickable state-inactive" transform="translate(530, 140)">
+    <rect width="330" height="270" rx="12" fill="var(--alert-red-bg)" stroke="var(--alert-red-stroke)" stroke-width="1.5" class="transition-all" />
+    <text x="165" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="var(--alert-red)">MÚSCULO SARCOPÊNICO</text>
+    <text x="165" y="48" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-style="italic">Idoso Frágil / Sarcopênico</text>
+
+    <!-- Corte Transversal do Membro (Coxa com Atrofia e Infiltração) -->
+    <g transform="translate(165, 155)">
+      <!-- Pele (Camada Externa) -->
+      <circle r="85" fill="none" stroke="var(--skin-color)" stroke-width="4" />
+      <!-- Gordura Subcutânea Aumentada (Infiltração e perda de área muscular) -->
+      <circle r="78" fill="none" stroke="var(--fat-color)" stroke-width="12" opacity="0.9" />
+      
+      <!-- Fáscia Profunda Muscular Retraída (Área muscular diminuída) -->
+      <circle r="64" fill="var(--bg-color)" stroke="var(--text-muted)" stroke-width="1.2" opacity="0.5" />
+      
+      <!-- Fundo de Mioesteatose (Gordura intramuscular no tecido conjuntivo) -->
+      <circle r="64" fill="var(--fat-bg)" />
+
+      <!-- Fáscias/Septos Espessados e Infiltrados -->
+      <line x1="0" y1="0" x2="0" y2="-64" stroke="var(--fat-color)" stroke-width="2.5" opacity="0.7" />
+      <line x1="0" y1="0" x2="-55" y2="32" stroke="var(--fat-color)" stroke-width="2.5" opacity="0.7" />
+      <line x1="0" y1="0" x2="55" y2="32" stroke="var(--fat-color)" stroke-width="2.5" opacity="0.7" />
+
+      <!-- MÚSCULO ATRÓFICO (Fibras menores, ralas e dispersas) -->
+      <!-- Quadríceps Atrófico -->
+      <g fill="var(--alert-red)">
+        <circle cx="0" cy="-35" r="2.8" />
+        <circle cx="-12" cy="-30" r="2.8" />
+        <circle cx="12" cy="-30" r="2.8" />
+        <circle cx="-22" cy="-22" r="2.8" />
+        <circle cx="22" cy="-22" r="2.8" />
+        <circle cx="0" cy="-50" r="2.8" />
+        <circle cx="-12" cy="-45" r="2.8" />
+        <circle cx="12" cy="-45" r="2.8" />
+      </g>
+      <!-- Isquiotibiais Atróficos -->
+      <g fill="var(--alert-red)">
+        <circle cx="-35" cy="12" r="2.8" />
+        <circle cx="-28" cy="4" r="2.8" />
+        <circle cx="-28" cy="20" r="2.8" />
+        <circle cx="-42" cy="8" r="2.8" />
+        <circle cx="-38" cy="22" r="2.8" />
+        <circle cx="-18" cy="12" r="2.8" />
+        <circle cx="-32" cy="30" r="2.8" />
+      </g>
+      <!-- Adutores Atróficos -->
+      <g fill="var(--alert-red)">
+        <circle cx="35" cy="12" r="2.8" />
+        <circle cx="28" cy="4" r="2.8" />
+        <circle cx="28" cy="20" r="2.8" />
+        <circle cx="42" cy="8" r="2.8" />
+        <circle cx="38" cy="22" r="2.8" />
+        <circle cx="18" cy="12" r="2.8" />
+        <circle cx="32" cy="30" r="2.8" />
+      </g>
+
+      <!-- Depósito Lipídico Intramuscular (Gotículas amarelas) -->
+      <g fill="var(--fat-color)" opacity="0.8">
+        <circle cx="-8" cy="-22" r="2" />
+        <circle cx="8" cy="-22" r="2" />
+        <circle cx="-18" cy="-35" r="2" />
+        <circle cx="18" cy="-35" r="2" />
+        <circle cx="-20" cy="5" r="2" />
+        <circle cx="20" cy="5" r="2" />
+        <circle cx="-10" cy="25" r="2" />
+        <circle cx="10" cy="25" r="2" />
+        <circle cx="0" cy="40" r="2" />
+      </g>
+
+      <!-- Fêmur Osteopênico (Afilamento cortical e porosidade) -->
+      <!-- Redução do diâmetro e representação de poros na cortical -->
+      <path d="M-11,-8 C-17,-8 -17,8 -11,8 C-8,10 -4,6 0,6 C4,6 8,10 11,8 C17,8 17,-8 11,-8 C8,-10 4,-6 0,-6 C-4,-6 -8,-10 -11,-8 Z" fill="var(--bone-color)" opacity="0.85" />
+      <circle cx="0" cy="0" r="5.5" fill="var(--bone-medulla)" />
+      <!-- Pequenos poros no osso -->
+      <circle cx="-7" cy="-2" r="0.8" fill="var(--bg-color)" />
+      <circle cx="7" cy="2" r="0.8" fill="var(--bg-color)" />
+      <circle cx="4" cy="-3" r="0.8" fill="var(--bg-color)" />
+    </g>
+
+    <!-- Hotspots do Músculo Sarcopênico -->
+    <!-- Hotspot 4: Fibras Atróficas -->
+    <g class="p9-hotspot clickable" id="hs-4" transform="translate(190, 110)">
+      <circle r="12" fill="var(--alert-red)" opacity="0.2" class="pulse-glow" />
+      <circle r="8" fill="var(--alert-red)" stroke="var(--text-color)" stroke-width="1.5" class="hotspot-ring" />
+      <text y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="white">4</text>
+    </g>
+    <!-- Hotspot 5: Mioesteatose / Infiltração -->
+    <g class="p9-hotspot clickable" id="hs-5" transform="translate(255, 175)">
+      <circle r="12" fill="var(--alert-red)" opacity="0.2" class="pulse-glow" />
+      <circle r="8" fill="var(--alert-red)" stroke="var(--text-color)" stroke-width="1.5" class="hotspot-ring" />
+      <text y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="white">5</text>
+    </g>
+    <!-- Hotspot 6: Osteopenia -->
+    <g class="p9-hotspot clickable" id="hs-6" transform="translate(180, 205)">
+      <circle r="12" fill="var(--alert-red)" opacity="0.2" class="pulse-glow" />
+      <circle r="8" fill="var(--alert-red)" stroke="var(--text-color)" stroke-width="1.5" class="hotspot-ring" />
+      <text y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="white">6</text>
+    </g>
+  </g>
+
+  <!-- PAINEL DE LEITURA INFERIOR (RICO EM INFORMAÇÃO) -->
+  <g transform="translate(40, 430)" id="p9-reading-panel">
+    <!-- Fundo do Painel -->
+    <rect width="820" height="145" rx="12" fill="var(--card-bg)" stroke="var(--card-border)" stroke-width="1.5" />
+    
+    <!-- DIVISÓRIA VERTICAL 1 -->
+    <line x1="165" y1="12" x2="165" y2="133" stroke="var(--card-divider)" stroke-width="1.5" />
+    <!-- DIVISÓRIA VERTICAL 2 -->
+    <line x1="565" y1="12" x2="565" y2="133" stroke="var(--card-divider)" stroke-width="1.5" />
+
+    <!-- SEÇÃO 1 (ESQUERDA): INDICADOR DINÂMICO DE STATUS -->
+    <g transform="translate(0, 0)">
+      <!-- Indicador Preservado (Visual Verde) -->
+      <g class="only-preservado transition-all">
+        <circle cx="82" cy="62" r="32" fill="none" stroke="var(--normal-green)" stroke-width="3" />
+        <circle cx="82" cy="62" r="26" fill="var(--normal-green-bg)" />
+        <path d="M 72,62 L 79,69 L 94,54" fill="none" stroke="var(--normal-green)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+        <text x="82" y="114" text-anchor="middle" font-size="11" font-weight="bold" fill="var(--normal-green)" letter-spacing="1">PRESERVADO</text>
+      </g>
+      <!-- Indicador Sarcopênico (Visual Vermelho) -->
+      <g class="only-sarcopenico transition-all">
+        <circle cx="82" cy="62" r="32" fill="none" stroke="var(--alert-red)" stroke-width="3" />
+        <circle cx="82" cy="62" r="26" fill="var(--alert-red-bg)" />
+        <!-- Ícone de Alerta Exclamação -->
+        <path d="M 82,48 L 82,68" stroke="var(--alert-red)" stroke-width="5.5" stroke-linecap="round" />
+        <circle cx="82" cy="78" r="3.5" fill="var(--alert-red)" />
+        <text x="82" y="114" text-anchor="middle" font-size="11" font-weight="bold" fill="var(--alert-red)" letter-spacing="1">SARCOPENIA</text>
+      </g>
+    </g>
+
+    <!-- SEÇÃO 2 (CENTRO): TEXTO DINÂMICO DOS HOTSPOTS -->
+    <g transform="translate(185, 25)">
+      <!-- TÍTULO DINÂMICO -->
+      <text id="p9-panel-title" x="0" y="5" fill="var(--text-color)" font-size="13" font-weight="bold" letter-spacing="0.2">MÚSCULO PRESERVADO (VISÃO GERAL)</text>
+      
+      <!-- BADGE DE CRITÉRIO CLÍNICO -->
+      <g transform="translate(0, 15)">
+        <rect id="p9-panel-badge-rect" width="100" height="18" rx="4" fill="var(--normal-green)" />
+        <text id="p9-panel-badge-text" x="50" y="12" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="800" letter-spacing="0.5">SAUDÁVEL</text>
+      </g>
+
+      <!-- DESCRIÇÃO EM MULTILINHAS SEPARADAS (EVITA QUEBRA DO FOREIGNOBJECT) -->
+      <text font-size="11.5" fill="var(--text-muted)" y="50">
+        <tspan id="p9-desc-line-1" x="0" dy="0">Massa muscular e força conservadas em idoso ativo.</tspan>
+        <tspan id="p9-desc-line-2" x="0" dy="17">Apresenta alta reserva funcional e capacidade de suportar</tspan>
+        <tspan id="p9-desc-line-3" x="0" dy="17">estressores externos. Clique nos hotspots numerados (1, 2, 3)</tspan>
+        <tspan id="p9-desc-line-4" x="0" dy="17">para analisar as estruturas específicas deste estado.</tspan>
+      </text>
+    </g>
+
+    <!-- SEÇÃO 3 (DIREITA): AVALIAÇÃO CLÍNICA E CASO ANCORADO -->
+    <g transform="translate(585, 20)">
+      <text x="0" y="5" font-size="11" font-weight="bold" fill="var(--text-muted)" letter-spacing="0.5">AVALIAÇÃO FUNCIONAL</text>
+      
+      <!-- Ancoragem de Caso Clínico -->
+      <text x="0" y="20" font-size="10.5" fill="var(--text-color)" font-style="italic">
+        Caso Clínico: <tspan font-weight="700">D. Alzira, 78 anos</tspan> (Quedas recorrentes)
+      </text>
+
+      <!-- Tabela Dinâmica de Critérios (Normal vs Sarcopênico) -->
+      <!-- Linha 1: Força de Preensão -->
+      <g transform="translate(0, 42)">
+        <text x="0" y="0" font-size="10" fill="var(--text-muted)">Força Preensão (Manual)</text>
+        <text x="130" y="0" font-size="9" fill="var(--text-muted)">Ref: &gt;16 kg</text>
+        
+        <!-- Valor Preservado -->
+        <text class="only-preservado txt-bold" x="220" y="0" text-anchor="end" font-size="10.5" fill="var(--normal-green)">28 kg (Normal)</text>
+        <!-- Valor Sarcopênico (Abaixo do normal - Critério Clínico) -->
+        <text class="only-sarcopenico txt-bold" x="220" y="0" text-anchor="end" font-size="10.5" fill="var(--alert-red)">13 kg (Fraco)</text>
+      </g>
+
+      <!-- Linha 2: Velocidade da Marcha -->
+      <g transform="translate(0, 60)">
+        <text x="0" y="0" font-size="10" fill="var(--text-muted)">Velocidade da Marcha</text>
+        <text x="130" y="0" font-size="9" fill="var(--text-muted)">Ref: &gt;0.8 m/s</text>
+        
+        <!-- Valor Preservado -->
+        <text class="only-preservado txt-bold" x="220" y="0" text-anchor="end" font-size="10.5" fill="var(--normal-green)">1.1 m/s (Normal)</text>
+        <!-- Valor Sarcopênico (Critério de lentidão/fragilidade) -->
+        <text class="only-sarcopenico txt-bold" x="220" y="0" text-anchor="end" font-size="10.5" fill="var(--alert-red)">0.5 m/s (Lento)</text>
+      </g>
+
+      <!-- Linha 3: Massa Muscular Relativa -->
+      <g transform="translate(0, 78)">
+        <text x="0" y="0" font-size="10" fill="var(--text-muted)">Massa Muscular (Coxa)</text>
+        <text x="130" y="0" font-size="9" fill="var(--text-muted)">Ref: Adequada</text>
+        
+        <!-- Valor Preservado -->
+        <text class="only-preservado txt-bold" x="220" y="0" text-anchor="end" font-size="10.5" fill="var(--normal-green)">Preservada</text>
+        <!-- Valor Sarcopênico -->
+        <text class="only-sarcopenico txt-bold" x="220" y="0" text-anchor="end" font-size="10.5" fill="var(--alert-red)">Muito Reduzida</text>
+      </g>
+
+      <!-- Linha de Diagnóstico Final -->
+      <g transform="translate(0, 102)">
+        <rect width="220" height="20" rx="3" fill="var(--bg-color)" />
+        
+        <!-- Diagnóstico Preservado -->
+        <text class="only-preservado txt-bold" x="110" y="14" text-anchor="middle" font-size="10" fill="var(--normal-green)" letter-spacing="0.5">Diagnóstico: Idosa Robusta</text>
+        <!-- Diagnóstico Sarcopênico -->
+        <text class="only-sarcopenico txt-bold" x="110" y="14" text-anchor="middle" font-size="10" fill="var(--alert-red)" letter-spacing="0.5">Diagnóstico: Idosa Frágil</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Script Inline Auto-Suficiente para Controle de Interação -->
+  <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+      const svg = document.getElementById('p9-sarcopenia-svg');
+      if (!svg) return;
+      
+      const classPreservado = 'active-preservado';
+      const classSarcopenico = 'active-sarcopenico';
+      
+      // Elementos de Controle de Interface
+      const btnPreservado = svg.querySelector('#p9-btn-preservado');
+      const btnSarcopenico = svg.querySelector('#p9-btn-sarcopenico');
+      const toggleSlide = svg.querySelector('#p9-toggle-slide');
+      
+      // Regiões Clicáveis
+      const regPreservada = svg.querySelector('#p9-region-preservada');
+      const regSarcopenica = svg.querySelector('#p9-region-sarcopenica');
+      
+      // Elementos de atualização textual do painel
+      const textTitle = svg.querySelector('#p9-panel-title');
+      const badgeRect = svg.querySelector('#p9-panel-badge-rect');
+      const badgeText = svg.querySelector('#p9-panel-badge-text');
+      
+      const descL1 = svg.querySelector('#p9-desc-line-1');
+      const descL2 = svg.querySelector('#p9-desc-line-2');
+      const descL3 = svg.querySelector('#p9-desc-line-3');
+      const descL4 = svg.querySelector('#p9-desc-line-4');
+      
+      const hotspots = svg.querySelectorAll('.p9-hotspot');
+
+      // Base de dados clínicos e descritivos associados aos Hotspots
+      const dataMap = {
+        "hs-1": {
+          title: "1. FIBRAS PRESERVADAS (TIPO II E I)",
+          badge: "NORMAL",
+          badgeColor: "var(--normal-green)",
+          lines: [
+            "Massa muscular esquelética com volume íntegro.",
+            "As fibras musculares mantêm diâmetro ideal,",
+            "capacidade máxima de contratilidade e reserva funcional",
+            "para resposta imediata a sobrecargas motoras."
+          ]
+        },
+        "hs-2": {
+          title: "2. GORDURA SUBCUTÂNEA FISIOLÓGICA",
+          badge: "NORMAL",
+          badgeColor: "var(--normal-green)",
+          lines: [
+            "Camada adiposa subcutânea delgada e uniforme.",
+            "Ausência de infiltração gordurosa nos septos",
+            "intermusculares, mantendo o empacotamento das fáscias",
+            "e a tração biomecânica sem interferência lipotóxica."
+          ]
+        },
+        "hs-3": {
+          title: "3. CORTICAL ÓSSEA INTEGRA & DENSE",
+          badge: "NORMAL",
+          badgeColor: "var(--normal-green)",
+          lines: [
+            "Cortical óssea espessa e sem sinais de porosidade.",
+            "O estímulo mecânico e tensional de um músculo forte",
+            "ativa as vias de mecanotransdução osteoblástica,",
+            "garantindo densidade mineral óssea protetiva."
+          ]
+        },
+        "hs-4": {
+          title: "4. SARCOPENIA: ATROFIA & PERDA FIBRA",
+          badge: "ALERTA CRÍTICO",
+          badgeColor: "var(--alert-red)",
+          lines: [
+            "Atrofia severa e redução no número total de fibras.",
+            "A perda acomete principalmente fibras de contração rápida",
+            "(tipo II), levando à diminuição direta da velocidade de",
+            "reação e força de preensão manual (critério clínico)."
+          ]
+        },
+        "hs-5": {
+          title: "5. MIOESTATOSE (INFILTRAÇÃO LIPÍDICA)",
+          badge: "PATOLÓGICO",
+          badgeColor: "var(--alert-red)",
+          lines: [
+            "Acúmulo ectópico de gordura e tecido fibroso.",
+            "A gordura infiltra-se entre os feixes (mioesteatose),",
+            "gerando inflamação subclínica, estresse oxidativo,",
+            "e perda direta da qualidade de contração muscular."
+          ]
+        },
+        "hs-6": {
+          title: "6. OSTEOSARCOPENIA (OSSO POROSO)",
+          badge: "ATENÇÃO",
+          badgeColor: "var(--warn-orange)",
+          lines: [
+            "Cortical óssea afilada com microarquitetura porosa.",
+            "A ausência de tração muscular e carga biomecânica",
+            "desregula o remodelamento ósseo, acelerando a perda",
+            "mineral e aumentando a fragilidade a fraturas."
+          ]
+        },
+        "hs-7": {
+          title: "7. METÁFORA: O IDOSO-PORCELANA",
+          badge: "CONCEITO CHAVE",
+          badgeColor: "var(--porcelain-cyan)",
+          lines: [
+            "A sarcopenia é a base da fragilidade senil.",
+            "Como a porcelana, o idoso frágil parece íntegro mas,",
+            "sem amortecimento muscular e sem reserva de torque,",
+            "um leve impacto resulta em queda grave e fratura."
+          ]
+        }
+      };
+
+      const defaultTextPreservado = {
+        title: "MÚSCULO PRESERVADO (VISÃO GERAL)",
+        badge: "SAUDÁVEL",
+        badgeColor: "var(--normal-green)",
+        lines: [
+          "Massa muscular e força conservadas em idoso ativo.",
+          "Apresenta alta reserva funcional e capacidade de suportar",
+          "estressores externos. Clique nos hotspots numerados (1, 2, 3)",
+          "para analisar as estruturas específicas deste estado."
+        ]
+      };
+
+      const defaultTextSarcopenico = {
+        title: "MÚSCULO SARCOPÊNICO (VISÃO GERAL)",
+        badge: "FRAGILIDADE",
+        badgeColor: "var(--alert-red)",
+        lines: [
+          "Perda patológica de massa e força muscular associada à idade.",
+          "O idoso perde a capacidade de amortecer impactos e manter",
+          "o equilíbrio corporal. Clique nos hotspots (4, 5, 6, 7)",
+          "para entender os mecanismos fisiopatológicos."
+        ]
+      };
+
+      function updatePanelText(data) {
+        textTitle.textContent = data.title;
+        badgeRect.setAttribute('fill', data.badgeColor);
+        badgeText.textContent = data.badge;
+        
+        descL1.textContent = data.lines[0] || "";
+        descL2.textContent = data.lines[1] || "";
+        descL3.textContent = data.lines[2] || "";
+        descL4.textContent = data.lines[3] || "";
+      }
+
+      function switchState(state) {
+        // Remove destaques de hotspots ao alternar a visualização
+        hotspots.forEach(h => {
+          h.querySelector('.hotspot-ring').classList.remove('hotspot-active');
+        });
+
+        if (state === 'preservado') {
+          svg.className.baseVal = classPreservado;
+          toggleSlide.setAttribute('x', '2');
+          
+          btnPreservado.querySelector('text').setAttribute('fill', 'var(--text-color)');
+          btnSarcopenico.querySelector('text').setAttribute('fill', 'var(--text-muted)');
+          
+          regPreservada.className.baseVal = "region-group clickable state-active";
+          regSarcopenica.className.baseVal = "region-group clickable state-inactive";
+          
+          updatePanelText(defaultTextPreservado);
+        } else {
+          svg.className.baseVal = classSarcopenico;
+          toggleSlide.setAttribute('x', '112');
+          
+          btnPreservado.querySelector('text').setAttribute('fill', 'var(--text-muted)');
+          btnSarcopenico.querySelector('text').setAttribute('fill', 'var(--text-color)');
+          
+          regPreservada.className.baseVal = "region-group clickable state-inactive";
+          regSarcopenica.className.baseVal = "region-group clickable state-active";
+          
+          updatePanelText(defaultTextSarcopenico);
+        }
+      }
+
+      // Handlers para botões de toggle
+      btnPreservado.addEventListener('click', function(e) {
+        e.stopPropagation();
+        switchState('preservado');
+      });
+
+      btnSarcopenico.addEventListener('click', function(e) {
+        e.stopPropagation();
+        switchState('sarcopenico');
+      });
+
+      // Handlers de clique nas regiões (corte anatômico)
+      regPreservada.addEventListener('click', function(e) {
+        if (e.target.closest('.p9-hotspot')) return;
+        switchState('preservado');
+      });
+
+      regSarcopenica.addEventListener('click', function(e) {
+        if (e.target.closest('.p9-hotspot')) return;
+        switchState('sarcopenico');
+      });
+
+      // Handlers de clique nos Hotspots
+      hotspots.forEach(function(hotspot) {
+        hotspot.addEventListener('click', function(e) {
+          e.stopPropagation();
+          
+          // Limpa destaque de todos os hotspots
+          hotspots.forEach(h => {
+            h.querySelector('.hotspot-ring').classList.remove('hotspot-active');
+          });
+
+          // Adiciona destaque ao hotspot clicado
+          hotspot.querySelector('.hotspot-ring').classList.add('hotspot-active');
+
+          const hsId = hotspot.getAttribute('id');
+          const data = dataMap[hsId];
+          
+          if (data) {
+            // Se for hotspot sarcopênico (4, 5, 6, 7), garante que a cena sarcopênica está ativa
+            if (hsId === 'hs-4' || hsId === 'hs-5' || hsId === 'hs-6' || hsId === 'hs-7') {
+              if (svg.className.baseVal !== classSarcopenico) {
+                svg.className.baseVal = classSarcopenico;
+                toggleSlide.setAttribute('x', '112');
+                btnPreservado.querySelector('text').setAttribute('fill', 'var(--text-muted)');
+                btnSarcopenico.querySelector('text').setAttribute('fill', 'var(--text-color)');
+                regPreservada.className.baseVal = "region-group clickable state-inactive";
+                regSarcopenica.className.baseVal = "region-group clickable state-active";
+              }
+            } else {
+              // Hotspot preservado (1, 2, 3)
+              if (svg.className.baseVal !== classPreservado) {
+                svg.className.baseVal = classPreservado;
+                toggleSlide.setAttribute('x', '2');
+                btnPreservado.querySelector('text').setAttribute('fill', 'var(--text-color)');
+                btnSarcopenico.querySelector('text').setAttribute('fill', 'var(--text-muted)');
+                regPreservada.className.baseVal = "region-group clickable state-active";
+                regSarcopenica.className.baseVal = "region-group clickable state-inactive";
+              }
+            }
+            // Atualiza painel com os dados do hotspot
+            updatePanelText(data);
+          }
+        });
+      });
+
+      // Definir estado inicial ativo
+      switchState('preservado');
+    })();
+    //]]>
+  </script>
+</svg>

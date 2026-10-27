@@ -1,0 +1,563 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 820" width="100%" height="100%" id="a12p9h-svg-root" class="a12p9h-root">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="a12p9h-grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p9h-bg-stop1, #1e0a17)"/>
+      <stop offset="50%" stop-color="var(--a12p9h-bg-stop2, #14050f)"/>
+      <stop offset="100%" stop-color="var(--a12p9h-bg-stop3, #0a0207)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p9h-grad-panel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p9h-pnl-stop1, #2d1024)"/>
+      <stop offset="100%" stop-color="var(--a12p9h-pnl-stop2, #1b0916)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p9h-grad-sup" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p9h-sup-c1, #10b981)"/>
+      <stop offset="100%" stop-color="var(--a12p9h-sup-c2, #059669)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p9h-grad-med" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p9h-med-c1, #f43f5e)"/>
+      <stop offset="100%" stop-color="var(--a12p9h-med-c2, #be123c)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p9h-grad-inf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p9h-inf-c1, #f59e0b)"/>
+      <stop offset="100%" stop-color="var(--a12p9h-inf-c2, #d97706)"/>
+    </linearGradient>
+
+    <!-- Drop Shadows &amp; Glow Filters -->
+    <filter id="a12p9h-glow-red" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="a12p9h-glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="a12p9h-glow-amber" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="a12p9h-shadow-card" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <style>
+    .a12p9h-root {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--a12p9h-bg-main, #14050f);
+      color: var(--a12p9h-txt-main, #f3e8ee);
+      user-select: none;
+    }
+
+    /* Dual theme support */
+    .a12p9h-root {
+      --a12p9h-bg-main: #14050f;
+      --a12p9h-bg-stop1: #240b1b;
+      --a12p9h-bg-stop2: #160511;
+      --a12p9h-bg-stop3: #0a0207;
+      --a12p9h-pnl-bg: #220b1b;
+      --a12p9h-pnl-border: #4a1c3b;
+      --a12p9h-txt-main: #fce7f3;
+      --a12p9h-txt-muted: #f472b6;
+      --a12p9h-txt-sub: #cbd5e1;
+      --a12p9h-bone-fill: #341329;
+      --a12p9h-bone-stroke: #6b2654;
+      --a12p9h-bone-highlight: #4d1d3d;
+      --a12p9h-card-bg: #1c0816;
+      --a12p9h-card-border: #3b142d;
+    }
+
+    [data-theme="light"] .a12p9h-root {
+      --a12p9h-bg-main: #fdf2f8;
+      --a12p9h-bg-stop1: #fce7f3;
+      --a12p9h-bg-stop2: #fbcfe8;
+      --a12p9h-bg-stop3: #f472b6;
+      --a12p9h-pnl-bg: #ffffff;
+      --a12p9h-pnl-border: #f472b6;
+      --a12p9h-txt-main: #831843;
+      --a12p9h-txt-muted: #9d174d;
+      --a12p9h-txt-sub: #475569;
+      --a12p9h-bone-fill: #fbcfe8;
+      --a12p9h-bone-stroke: #db2777;
+      --a12p9h-bone-highlight: #f472b6;
+      --a12p9h-card-bg: #ffffff;
+      --a12p9h-card-border: #f472b6;
+    }
+
+    /* Structural Classes - scoped with a12p9h- */
+    .a12p9h-title-text {
+      font-size: 20px;
+      font-weight: 800;
+      fill: var(--a12p9h-txt-main, #fce7f3);
+      letter-spacing: 0.5px;
+    }
+
+    .a12p9h-subtitle-text {
+      font-size: 13px;
+      font-weight: 600;
+      fill: var(--a12p9h-txt-muted, #f472b6);
+    }
+
+    .a12p9h-legend-box {
+      fill: var(--a12p9h-card-bg, #1c0816);
+      stroke: var(--a12p9h-card-border, #3b142d);
+      stroke-width: 1.5px;
+      rx: 8px;
+    }
+
+    .a12p9h-legend-title {
+      font-size: 11px;
+      font-weight: 800;
+      fill: var(--a12p9h-txt-muted, #f472b6);
+      letter-spacing: 0.8px;
+    }
+
+    .a12p9h-legend-body {
+      font-size: 12.5px;
+      font-weight: 600;
+      fill: var(--a12p9h-txt-main, #fce7f3);
+    }
+
+    .a12p9h-ring-path {
+      fill: none;
+      stroke-width: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .a12p9h-ring-sup {
+      stroke: var(--a12p9h-sup-color, #10b981);
+    }
+
+    .a12p9h-ring-med {
+      stroke: var(--a12p9h-med-color, #f43f5e);
+    }
+
+    .a12p9h-ring-inf {
+      stroke: var(--a12p9h-inf-color, #f59e0b);
+    }
+
+    .a12p9h-ring-active {
+      stroke-width: 7px !important;
+      filter: url(#a12p9h-glow-red);
+    }
+
+    .a12p9h-btn {
+      cursor: pointer;
+      transition: transform 0.15s ease, fill 0.2s ease;
+    }
+
+    .a12p9h-btn:hover {
+      opacity: 0.9;
+    }
+
+    .a12p9h-btn-bg {
+      fill: var(--a12p9h-card-bg, #1c0816);
+      stroke: var(--a12p9h-card-border, #3b142d);
+      stroke-width: 1.5px;
+      rx: 6px;
+    }
+
+    .a12p9h-btn-active .a12p9h-btn-bg {
+      stroke-width: 2.5px;
+    }
+
+    .a12p9h-btn-sup.a12p9h-btn-active .a12p9h-btn-bg {
+      stroke: var(--a12p9h-sup-c1, #10b981);
+      fill: #064e3b;
+    }
+
+    .a12p9h-btn-med.a12p9h-btn-active .a12p9h-btn-bg {
+      stroke: var(--a12p9h-med-c1, #f43f5e);
+      fill: #881337;
+    }
+
+    .a12p9h-btn-inf.a12p9h-btn-active .a12p9h-btn-bg {
+      stroke: var(--a12p9h-inf-c1, #f59e0b);
+      fill: #78350f;
+    }
+
+    .a12p9h-btn-text {
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--a12p9h-txt-main, #fce7f3);
+    }
+
+    .a12p9h-badge-bottleneck {
+      fill: #be123c;
+      stroke: #fda4af;
+      stroke-width: 1.5px;
+      rx: 12px;
+    }
+
+    .a12p9h-spine-anchor {
+      fill: #f43f5e;
+      stroke: #ffffff;
+      stroke-width: 2px;
+      cursor: pointer;
+      transition: r 0.2s ease;
+    }
+
+    .a12p9h-spine-anchor:hover {
+      r: 9px;
+    }
+
+    .a12p9h-panel-card {
+      fill: var(--a12p9h-card-bg, #1c0816);
+      stroke: var(--a12p9h-card-border, #3b142d);
+      stroke-width: 1.5px;
+      rx: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .a12p9h-card-highlight {
+      stroke-width: 2.5px;
+    }
+
+    .a12p9h-card-sup.a12p9h-card-highlight {
+      stroke: var(--a12p9h-sup-c1, #10b981);
+    }
+
+    .a12p9h-card-med.a12p9h-card-highlight {
+      stroke: var(--a12p9h-med-c1, #f43f5e);
+    }
+
+    .a12p9h-card-inf.a12p9h-card-highlight {
+      stroke: var(--a12p9h-inf-c1, #f59e0b);
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="1150" height="820" fill="url(#a12p9h-grad-bg)"/>
+
+  <!-- HEADER CONTRACT #1: Title &amp; Interpretation Legend -->
+  <g id="a12p9h-header-group" transform="translate(30, 30)">
+    <text x="0" y="0" class="a12p9h-title-text">BACIA OBSTÉTRICA: OS TRÊS ESTREITOS E O GARGALO PELVIANO</text>
+    <text x="0" y="20" class="a12p9h-subtitle-text">Anatomia Biomecânica da Passagem Fetal · Diâmetros Dominantes e Ponto Crítico de Estreitamento</text>
+    
+    <!-- Legend Box -->
+    <rect x="0" y="32" width="1090" height="46" class="a12p9h-legend-box"/>
+    <text x="16" y="50" class="a12p9h-legend-title">LEGENDA DE INTERPRETAÇÃO (CONCLUSÃO PRÁTICA PARA A PROVA):</text>
+    <text x="16" y="68" class="a12p9h-legend-body">
+      O feto atravessa 3 aros em série. O trecho mais apertado <tspan fill="#f43f5e" font-weight="800">NÃO É A ENTRADA (13 cm)</tspan>, mas sim o <tspan fill="#f43f5e" font-weight="800">ESTREITO MÉDIO (10,5 cm)</tspan>, delimitado lateralmente pelas <tspan fill="#f43f5e" font-weight="800">Espinhas Isquiáticas (Âncora 3)</tspan>.
+    </text>
+  </g>
+
+  <!-- LEFT: Interactive Pelvis &amp; 3 Rings Stage (Width: 680, Height: 680) -->
+  <g id="a12p9h-stage-group" transform="translate(30, 110)">
+    <!-- Stage Background Card -->
+    <rect x="0" y="0" width="670" height="675" rx="14" fill="var(--a12p9h-pnl-bg, #220b1b)" stroke="var(--a12p9h-pnl-border, #4a1c3b)" stroke-width="1.5"/>
+    
+    <!-- Anatomical Pelvis Backdrop (Coronal 3D / Oblique Projection) -->
+    <g id="a12p9h-pelvis-anatomy" opacity="0.85">
+      <!-- Iliac Wings (Asas Ilíacas) -->
+      <!-- Left Iliac Wing -->
+      <path d="M 170,120 C 130,110 90,140 80,190 C 70,240 100,280 140,300 C 170,315 200,290 200,240 C 200,180 190,130 170,120 Z" fill="var(--a12p9h-bone-fill, #341329)" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="2"/>
+      <!-- Right Iliac Wing -->
+      <path d="M 500,120 C 540,110 580,140 590,190 C 600,240 570,280 530,300 C 500,315 470,290 470,240 C 470,180 480,130 500,120 Z" fill="var(--a12p9h-bone-fill, #341329)" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="2"/>
+
+      <!-- Sacrum &amp; Promontory (Sácro e Promontório) -->
+      <path d="M 280,110 Q 335,95 390,110 L 400,230 Q 335,270 270,230 Z" fill="var(--a12p9h-bone-highlight, #4d1d3d)" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="2"/>
+      <!-- Sacral Vertebrae Ridge lines -->
+      <line x1="300" y1="140" x2="370" y2="140" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <line x1="305" y1="170" x2="365" y2="170" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <line x1="310" y1="200" x2="360" y2="200" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="1.5" stroke-dasharray="3,3"/>
+      
+      <!-- Promontory Node Point -->
+      <circle cx="335" cy="115" r="4" fill="#f472b6"/>
+      <text x="335" y="105" text-anchor="middle" font-size="10" font-weight="700" fill="var(--a12p9h-txt-muted, #f472b6)">Promontório</text>
+
+      <!-- Ischial Bodies &amp; Spines (Espinhas Isquiáticas - ÂNCORA 3) -->
+      <!-- Left Ischial Body &amp; Spine -->
+      <path d="M 160,300 C 170,350 195,380 230,400 C 220,380 215,360 220,350 C 228,340 240,345 245,355 C 235,370 230,390 240,420" fill="none" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="3"/>
+      <!-- Right Ischial Body &amp; Spine -->
+      <path d="M 510,300 C 500,350 475,380 440,400 C 450,380 455,360 450,350 C 442,340 430,345 425,355 C 435,370 440,390 430,420" fill="none" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="3"/>
+
+      <!-- Prominent Ischial Spine Nodes (Anchor 3 Identity) -->
+      <!-- Left Spine (x=235, y=355) -->
+      <path d="M 215,355 L 240,355 L 235,348 Z" fill="#f43f5e" stroke="#ffffff" stroke-width="1.5"/>
+      <!-- Right Spine (x=435, y=355) -->
+      <path d="M 455,355 L 430,355 L 435,348 Z" fill="#f43f5e" stroke="#ffffff" stroke-width="1.5"/>
+
+      <!-- Ischial Tuberosities &amp; Pubic Arch (Tuberosidades &amp; Arco Púbico) -->
+      <!-- Left Tuberosity -->
+      <path d="M 230,480 C 230,520 260,540 290,520 C 310,500 320,460 325,440" fill="var(--a12p9h-bone-fill, #341329)" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="2"/>
+      <!-- Right Tuberosity -->
+      <path d="M 440,480 C 440,520 410,540 380,520 C 360,500 350,460 345,440" fill="var(--a12p9h-bone-fill, #341329)" stroke="var(--a12p9h-bone-stroke, #6b2654)" stroke-width="2"/>
+      
+      <!-- Pubic Symphysis (Sínfise Púbica) -->
+      <rect x="327" y="425" width="16" height="30" rx="3" fill="#ec4899" opacity="0.6"/>
+      <text x="335" y="470" text-anchor="middle" font-size="10" font-weight="700" fill="var(--a12p9h-txt-muted, #f472b6)">Sínfise Púbica</text>
+
+      <!-- Coccyx (Cóccix - Mobile at Outlet) -->
+      <path d="M 330,260 L 340,260 L 338,295 L 332,295 Z" fill="#f59e0b" opacity="0.7"/>
+      <text x="335" y="310" text-anchor="middle" font-size="9" font-weight="700" fill="#f59e0b">Cóccix (Móvel)</text>
+    </g>
+
+    <!-- THE THREE GEOMETRIC RINGS (THREE PROVES IN SERIES) -->
+    
+    <!-- 1. ESTREITO SUPERIOR (Entrada / Inlet) - Green / Teal -->
+    <g id="a12p9h-ring-sup-group" class="a12p9h-ring-grp" data-ring="sup">
+      <!-- Ellipse representing Inlet Ring -->
+      <ellipse id="a12p9h-ellipse-sup" cx="335" cy="200" rx="195" ry="75" class="a12p9h-ring-path a12p9h-ring-sup" fill="rgba(16, 185, 129, 0.08)"/>
+      
+      <!-- Transverse Diameter Line (13 cm) -->
+      <line id="a12p9h-line-sup" x1="140" y1="200" x2="530" y2="200" stroke="#10b981" stroke-width="2.5" stroke-dasharray="6,4"/>
+      <circle cx="140" cy="200" r="4" fill="#10b981"/>
+      <circle cx="530" cy="200" r="4" fill="#10b981"/>
+      
+      <!-- Callout / Badge for Superior Ring -->
+      <g transform="translate(540, 182)">
+        <rect width="115" height="36" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+        <text x="10" y="16" font-size="10" font-weight="800" fill="#a7f3d0">ESTREITO SUPERIOR</text>
+        <text x="10" y="30" font-size="13" font-weight="900" fill="#ffffff">13,0 cm <tspan font-size="9" font-weight="600">(Entrada)</tspan></text>
+      </g>
+    </g>
+
+    <!-- 2. ESTREITO MÉDIO (Meio / Mid-Pelvis - THE BOTTLENECK / GARGALO) - Red / Crimson -->
+    <g id="a12p9h-ring-med-group" class="a12p9h-ring-grp" data-ring="med">
+      <!-- Ellipse representing Mid-Pelvis Ring (Narrowest!) -->
+      <ellipse id="a12p9h-ellipse-med" cx="335" cy="355" rx="100" ry="45" class="a12p9h-ring-path a12p9h-ring-med a12p9h-ring-active" fill="rgba(244, 63, 94, 0.15)"/>
+      
+      <!-- Interspinous Diameter Line (10.5 cm) - Between Ischial Spines -->
+      <line id="a12p9h-line-med" x1="235" y1="355" x2="435" y2="355" stroke="#f43f5e" stroke-width="3.5"/>
+      <circle cx="235" cy="355" r="5" fill="#f43f5e" stroke="#ffffff" stroke-width="1.5"/>
+      <circle cx="435" cy="355" r="5" fill="#f43f5e" stroke="#ffffff" stroke-width="1.5"/>
+
+      <!-- Arrows pointing to Ischial Spines -->
+      <path d="M 160,340 L 225,352" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#a12p9h-arrow)"/>
+      <text x="75" y="338" font-size="11" font-weight="800" fill="#f43f5e">Espinha Isquiática L</text>
+      
+      <path d="M 510,340 L 445,352" stroke="#f43f5e" stroke-width="1.5"/>
+      <text x="515" y="338" font-size="11" font-weight="800" fill="#f43f5e">Espinha Isquiática R</text>
+
+      <!-- BOTTLENECK CRITICAL BADGE -->
+      <g transform="translate(230, 380)" filter="url(#a12p9h-glow-red)">
+        <rect width="210" height="42" class="a12p9h-badge-bottleneck"/>
+        <text x="105" y="17" text-anchor="middle" font-size="11" font-weight="900" fill="#ffffff" letter-spacing="0.5">⚠️ O GARGALO DA BACIA</text>
+        <text x="105" y="33" text-anchor="middle" font-size="14" font-weight="900" fill="#ffe4e6">10,5 cm <tspan font-size="10" font-weight="700">(Menor Diâmetro)</tspan></text>
+      </g>
+    </g>
+
+    <!-- 3. ESTREITO INFERIOR (Saída / Outlet) - Amber / Gold -->
+    <g id="a12p9h-ring-inf-group" class="a12p9h-ring-grp" data-ring="inf">
+      <!-- Rhomboid / Two Triangles representing Outlet Ring -->
+      <!-- Anterior Triangle (Pubic arch to tuberosities) &amp; Posterior Triangle (Sacrococcygeal to tuberosities) -->
+      <polygon id="a12p9h-poly-inf" points="335,430 440,490 335,530 230,490" class="a12p9h-ring-path a12p9h-ring-inf" fill="rgba(245, 158, 11, 0.08)"/>
+      
+      <!-- Bituberous / Anteroposterior Line (11 cm) -->
+      <line id="a12p9h-line-inf" x1="230" y1="490" x2="440" y2="490" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="5,4"/>
+      <line x1="335" y1="430" x2="335" y2="530" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <circle cx="230" cy="490" r="4" fill="#f59e0b"/>
+      <circle cx="440" cy="490" r="4" fill="#f59e0b"/>
+      <circle cx="335" cy="430" r="3" fill="#f59e0b"/>
+      <circle cx="335" cy="530" r="3" fill="#f59e0b"/>
+
+      <!-- Callout / Badge for Inferior Ring -->
+      <g transform="translate(540, 475)">
+        <rect width="115" height="36" rx="6" fill="#78350f" stroke="#f59e0b" stroke-width="1.5"/>
+        <text x="10" y="16" font-size="10" font-weight="800" fill="#fef3c7">ESTREITO INFERIOR</text>
+        <text x="10" y="30" font-size="13" font-weight="900" fill="#ffffff">11,0 cm <tspan font-size="9" font-weight="600">(Saída)</tspan></text>
+      </g>
+    </g>
+
+    <!-- DYNAMIC INTERACTIVE FETAL HEAD SIMULATOR PLANE -->
+    <g id="a12p9h-fetal-head-simulator" transform="translate(335, 355)" transition="transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)">
+      <!-- Fetal Biparietal Diameter Oval overlay -->
+      <ellipse cx="0" cy="0" rx="46" ry="32" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-dasharray="4,2"/>
+      <circle cx="0" cy="0" r="4" fill="#3b82f6"/>
+      <!-- Caliper dimension arrows -->
+      <line x1="-46" y1="0" x2="46" y2="0" stroke="#60a5fa" stroke-width="1.5"/>
+      <path d="M -46,-6 L -46,6 M 46,-6 L 46,6" stroke="#60a5fa" stroke-width="1.5"/>
+      <rect x="-40" y="-22" width="80" height="16" rx="4" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1"/>
+      <text id="a12p9h-fetal-caliper-text" x="0" y="-10" text-anchor="middle" font-size="10" font-weight="800" fill="#93c5fd">Parietal 9.5 cm</text>
+    </g>
+
+    <!-- INTERACTIVE CONTROLS BANNER (At bottom of Stage) -->
+    <g id="a12p9h-controls-group" transform="translate(20, 580)">
+      <rect width="630" height="80" rx="10" fill="var(--a12p9h-card-bg, #1c0816)" stroke="var(--a12p9h-card-border, #3b142d)" stroke-width="1.5"/>
+      <text x="15" y="22" font-size="11" font-weight="800" fill="var(--a12p9h-txt-muted, #f472b6)">SIMULADOR DE DESCIDA FETAL (CLIQUE PARA ALTERNAR O ESTREITO):</text>
+      
+      <!-- Button 1: Estreito Superior -->
+      <g id="a12p9h-btn-sup" class="a12p9h-btn a12p9h-btn-sup" transform="translate(15, 32)" role="button" aria-label="Selecionar Estreito Superior 13,0 cm">
+        <rect width="190" height="38" class="a12p9h-btn-bg"/>
+        <circle cx="20" cy="19" r="6" fill="#10b981"/>
+        <text x="34" y="18" class="a12p9h-btn-text">1. Superior (Entrada)</text>
+        <text x="34" y="30" font-size="11" font-weight="900" fill="#10b981">13,0 cm</text>
+      </g>
+
+      <!-- Button 2: Estreito Médio (GARGALO) -->
+      <g id="a12p9h-btn-med" class="a12p9h-btn a12p9h-btn-med a12p9h-btn-active" transform="translate(220, 32)" role="button" aria-label="Selecionar Estreito Médio Gargalo 10,5 cm">
+        <rect width="190" height="38" class="a12p9h-btn-bg"/>
+        <circle cx="20" cy="19" r="6" fill="#f43f5e"/>
+        <text x="34" y="18" class="a12p9h-btn-text">2. Médio (Gargalo)</text>
+        <text x="34" y="30" font-size="11" font-weight="900" fill="#f43f5e">10,5 cm ⚠️</text>
+      </g>
+
+      <!-- Button 3: Estreito Inferior -->
+      <g id="a12p9h-btn-inf" class="a12p9h-btn a12p9h-btn-inf" transform="translate(425, 32)" role="button" aria-label="Selecionar Estreito Inferior 11,0 cm">
+        <rect width="190" height="38" class="a12p9h-btn-bg"/>
+        <circle cx="20" cy="19" r="6" fill="#f59e0b"/>
+        <text x="34" y="18" class="a12p9h-btn-text">3. Inferior (Saída)</text>
+        <text x="34" y="30" font-size="11" font-weight="900" fill="#f59e0b">11,0 cm</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT: Clinical Interpretation Reading Panel (Width: 380, Height: 680) -->
+  <g id="a12p9h-panel-group" transform="translate(730, 110)">
+    <!-- Panel Header Card -->
+    <rect width="390" height="675" rx="14" fill="var(--a12p9h-pnl-bg, #220b1b)" stroke="var(--a12p9h-pnl-border, #4a1c3b)" stroke-width="1.5"/>
+    
+    <text x="20" y="32" font-size="15" font-weight="800" fill="var(--a12p9h-txt-main, #fce7f3)">PAINEL DE ANÁLISE OBSTÉTRICA</text>
+    <text x="20" y="48" font-size="11" font-weight="600" fill="var(--a12p9h-txt-muted, #f472b6)">Estudo Geométrico dos 3 Aros do Canal de Parto</text>
+    
+    <!-- CARD 1: ESTREITO SUPERIOR -->
+    <g id="a12p9h-card-sup" class="a12p9h-card-sup" transform="translate(15, 65)">
+      <rect width="360" height="175" class="a12p9h-panel-card"/>
+      <!-- Header bar -->
+      <rect width="360" height="30" rx="10" fill="#064e3b" opacity="0.6"/>
+      <circle cx="20" cy="15" r="5" fill="#10b981"/>
+      <text x="32" y="19" font-size="12" font-weight="800" fill="#a7f3d0">ESTREITO SUPERIOR (ENTRADA)</text>
+      <rect x="280" y="6" width="68" height="18" rx="9" fill="#10b981"/>
+      <text x="314" y="19" text-anchor="middle" font-size="11" font-weight="900" fill="#ffffff">13,0 cm</text>
+
+      <!-- Content -->
+      <text x="16" y="50" font-size="11.5" font-weight="700" fill="var(--a12p9h-txt-main, #fce7f3)">• Diâmetro Dominante: <tspan fill="#10b981">Transverso (13,0 cm)</tspan></text>
+      <text x="16" y="68" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• Geometria: Ovalada / Transversalmente ampla</text>
+      <text x="16" y="86" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• Limites: Promontório sacro até Borda Superior da Sínfise</text>
+      <text x="16" y="104" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• Diâmetro Útil (Obstétrico): 11,0 cm (Promonto-retropúbico)</text>
+
+      <!-- Status Pill -->
+      <rect x="16" y="125" width="328" height="36" rx="6" fill="#022c22" stroke="#059669" stroke-width="1"/>
+      <text x="26" y="142" font-size="11" font-weight="800" fill="#34d399">VERDICTO: ESPAÇOSO (ENTRADA SEM RESISTÊNCIA)</text>
+      <text x="26" y="154" font-size="10" font-weight="600" fill="#a7f3d0">Folga de +2,5 cm em relação ao diâmetro crítico interespinhoso.</text>
+    </g>
+
+    <!-- CARD 2: ESTREITO MÉDIO (GARGALO CRÍTICO) -->
+    <g id="a12p9h-card-med" class="a12p9h-card-med a12p9h-card-highlight" transform="translate(15, 255)">
+      <rect width="360" height="215" class="a12p9h-panel-card"/>
+      <!-- Header bar -->
+      <rect width="360" height="32" rx="10" fill="#881337" opacity="0.8"/>
+      <circle cx="20" cy="16" r="6" fill="#f43f5e"/>
+      <text x="32" y="20" font-size="12" font-weight="900" fill="#ffe4e6">ESTREITO MÉDIO (O GARGALO PELVIANO)</text>
+      <rect x="275" y="6" width="75" height="20" rx="10" fill="#f43f5e"/>
+      <text x="312.5" y="20" text-anchor="middle" font-size="11.5" font-weight="900" fill="#ffffff">10,5 cm ⚠️</text>
+
+      <!-- Content -->
+      <text x="16" y="52" font-size="12" font-weight="800" fill="#f43f5e">• MENOR DIÂMETRO DE TODA A BACIA: 10,5 cm</text>
+      <text x="16" y="70" font-size="11.5" font-weight="700" fill="var(--a12p9h-txt-main, #fce7f3)">• Limites Laterais: <tspan fill="#f43f5e" font-weight="800">Espinhas Isquiáticas (Âncora 3)</tspan></text>
+      <text x="16" y="88" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• Nome Clínico: Diâmetro Interespinhoso / Bispinhal</text>
+      <text x="16" y="106" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• Limite Anteroposterior: S4/S5 até Borda Inf. da Sínfise (12 cm)</text>
+      <text x="16" y="124" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• Ponto de Rotação Interna Fetal: Plano Zero (0 DE LEE)</text>
+
+      <!-- Alert Box -->
+      <rect x="16" y="138" width="328" height="64" rx="6" fill="#4c0519" stroke="#f43f5e" stroke-width="1.5"/>
+      <text x="26" y="156" font-size="11" font-weight="900" fill="#fda4af">⚠️ PEGADINHA DE PROVA (DECORAR ABSOLUTO):</text>
+      <text x="26" y="172" font-size="10.5" font-weight="700" fill="#ffffff">A menor dimensão do canal de parto é o ESTREITO MÉDIO.</text>
+      <text x="26" y="186" font-size="10" font-weight="600" fill="#fecdd3">Feto de diâmetro biparietal 9.5cm passa com margem justa (1.0cm).</text>
+    </g>
+
+    <!-- CARD 3: ESTREITO INFERIOR -->
+    <g id="a12p9h-card-inf" class="a12p9h-card-inf" transform="translate(15, 485)">
+      <rect width="360" height="175" class="a12p9h-panel-card"/>
+      <!-- Header bar -->
+      <rect width="360" height="30" rx="10" fill="#78350f" opacity="0.6"/>
+      <circle cx="20" cy="15" r="5" fill="#f59e0b"/>
+      <text x="32" y="19" font-size="12" font-weight="800" fill="#fef3c7">ESTREITO INFERIOR (SAÍDA)</text>
+      <rect x="280" y="6" width="68" height="18" rx="9" fill="#f59e0b"/>
+      <text x="314" y="19" text-anchor="middle" font-size="11" font-weight="900" fill="#ffffff">11,0 cm</text>
+
+      <!-- Content -->
+      <text x="16" y="50" font-size="11.5" font-weight="700" fill="var(--a12p9h-txt-main, #fce7f3)">• Diâmetro Dominante: <tspan fill="#f59e0b">Bi-isquiático / Transverso (11,0 cm)</tspan></text>
+      <text x="16" y="68" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• Geometria: 2 Triângulos (Anterior Púbico + Posterior Ciático)</text>
+      <text x="16" y="86" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• Limites: Arco Púbico, Tuberosidades Isquiáticas e Cóccix</text>
+      <text x="16" y="104" font-size="11" fill="var(--a12p9h-txt-sub, #cbd5e1)">• AP com Retropulsão do Cóccix: Expande de 9.5cm para 11.5cm</text>
+
+      <!-- Status Pill -->
+      <rect x="16" y="125" width="328" height="36" rx="6" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+      <text x="26" y="142" font-size="11" font-weight="800" fill="#fcd34d">VERDICTO: MOBILIDADE E DESPRENDIMENTO</text>
+      <text x="26" y="154" font-size="10" font-weight="600" fill="#fef3c7">O arco púbico e retropulsão coccígea facilitam a saída final.</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED ENGINE (SELF-CONTAINED JS) -->
+  <script>
+    /*<![CDATA[*/
+    (function() {
+      // Elements
+      var btnSup = document.getElementById('a12p9h-btn-sup');
+      var btnMed = document.getElementById('a12p9h-btn-med');
+      var btnInf = document.getElementById('a12p9h-btn-inf');
+      
+      var ringSupGrp = document.getElementById('a12p9h-ring-sup-group');
+      var ringMedGrp = document.getElementById('a12p9h-ring-med-group');
+      var ringInfGrp = document.getElementById('a12p9h-ring-inf-group');
+
+      var ellipseSup = document.getElementById('a12p9h-ellipse-sup');
+      var ellipseMed = document.getElementById('a12p9h-ellipse-med');
+      var polyInf = document.getElementById('a12p9h-poly-inf');
+
+      var cardSup = document.getElementById('a12p9h-card-sup');
+      var cardMed = document.getElementById('a12p9h-card-med');
+      var cardInf = document.getElementById('a12p9h-card-inf');
+
+      var fetalSim = document.getElementById('a12p9h-fetal-head-simulator');
+      var fetalCaliperText = document.getElementById('a12p9h-fetal-caliper-text');
+
+      function setActiveRing(ring) {
+        // Reset buttons
+        btnSup.classList.remove('a12p9h-btn-active');
+        btnMed.classList.remove('a12p9h-btn-active');
+        btnInf.classList.remove('a12p9h-btn-active');
+
+        // Reset ring paths
+        ellipseSup.classList.remove('a12p9h-ring-active');
+        ellipseMed.classList.remove('a12p9h-ring-active');
+        polyInf.classList.remove('a12p9h-ring-active');
+
+        // Reset cards
+        cardSup.classList.remove('a12p9h-card-highlight');
+        cardMed.classList.remove('a12p9h-card-highlight');
+        cardInf.classList.remove('a12p9h-card-highlight');
+
+        if (ring === 'sup') {
+          btnSup.classList.add('a12p9h-btn-active');
+          ellipseSup.classList.add('a12p9h-ring-active');
+          cardSup.classList.add('a12p9h-card-highlight');
+          fetalSim.setAttribute('transform', 'translate(335, 200)');
+          if (fetalCaliperText) fetalCaliperText.textContent = 'Superior 13.0cm';
+        } else if (ring === 'med') {
+          btnMed.classList.add('a12p9h-btn-active');
+          ellipseMed.classList.add('a12p9h-ring-active');
+          cardMed.classList.add('a12p9h-card-highlight');
+          fetalSim.setAttribute('transform', 'translate(335, 355)');
+          if (fetalCaliperText) fetalCaliperText.textContent = 'GARGALO 10.5cm';
+        } else if (ring === 'inf') {
+          btnInf.classList.add('a12p9h-btn-active');
+          polyInf.classList.add('a12p9h-ring-active');
+          cardInf.classList.add('a12p9h-card-highlight');
+          fetalSim.setAttribute('transform', 'translate(335, 490)');
+          if (fetalCaliperText) fetalCaliperText.textContent = 'Inferior 11.0cm';
+        }
+      }
+
+      // Event Listeners
+      if (btnSup) btnSup.addEventListener('click', function() { setActiveRing('sup'); });
+      if (btnMed) btnMed.addEventListener('click', function() { setActiveRing('med'); });
+      if (btnInf) btnInf.addEventListener('click', function() { setActiveRing('inf'); });
+
+      if (ringSupGrp) ringSupGrp.addEventListener('click', function() { setActiveRing('sup'); });
+      if (ringMedGrp) ringMedGrp.addEventListener('click', function() { setActiveRing('med'); });
+      if (ringInfGrp) ringInfGrp.addEventListener('click', function() { setActiveRing('inf'); });
+    })();
+    /*]]>*/
+  </script>
+</svg>

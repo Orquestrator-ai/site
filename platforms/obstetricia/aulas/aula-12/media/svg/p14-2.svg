@@ -1,0 +1,771 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" id="a12p14-hero-svg" class="a12p14-hero-root" data-svg-tokenized="true" role="img" aria-labelledby="a12p14-hero-title a12p14-hero-desc">
+<!-- 
+ABORDAGENS VISUAIS AVALIADAS:
+1. Corte coronal frontal em 3 degraus sobrepostos com janelas de transparência. (Desvantagem: esconde a relação com as vísceras bacias/útero/reto em perfil).
+2. Diagrama axométrico 3D explodido em fatias empilhadas. (Desvantagem: perde a clareza do vetor gravitacional sagital e exige rotação mental).
+3. Corte sagital paramediano anatômico com base óssea (púbis-sacro) + vísceras fantasma + adição ordinal de 3 assoalhos (fáscia->diafragma->períneo) com vetores dinâmicos de carga/suporte. (Vencedora).
+JUSTIFICATIVA DA ESCOLHA: A abordagem 3 (corte sagital paramediano com base óssea fixa) permite ver a descida gravitacional direta no estado 'sem chão' e a edificação cumulativa dos 3 planos de baixo para cima mantendo a coerência topográfica exata com as vísceras.
+-->
+  <title id="a12p14-hero-title">Assoalho Pélvico: Edificação Cumulativa em 3 Camadas</title>
+  <desc id="a12p14-hero-desc">Ilustração médica interativa do corte sagital pélvico demonstrando a construção progressiva da sustentação de dentro para fora: Fáscia Endopélvica, Diafragma Pélvico e Região Perineal.</desc>
+
+  <defs>
+    <style>
+      .a12p14-hero-root {
+        --a12p14-hero-tinta: #F7F1F5;
+        --a12p14-hero-osso: #DCC7B4;
+        --a12p14-hero-osso-fill: #3A3029;
+        --a12p14-hero-fantasma: #A993A4;
+        --a12p14-hero-fascia: #6FA8D6;
+        --a12p14-hero-diafragma: #55B889;
+        --a12p14-hero-perineo: #EF7582;
+        --a12p14-hero-eixo: #F3BE5B;
+        --a12p14-hero-falha: #D85C6A;
+        --a12p14-hero-bg: #141016;
+        --a12p14-hero-card-bg: #1E1822;
+        --a12p14-hero-border: #382C3D;
+        --a12p14-hero-text: #F7F1F5;
+        --a12p14-hero-subtext: #C4B5C3;
+        --a12p14-hero-hover: #2A2230;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+      [data-theme="light"] .a12p14-hero-root {
+        --a12p14-hero-tinta: #2D1A29;
+        --a12p14-hero-osso: #8C6D53;
+        --a12p14-hero-osso-fill: #EFE6DD;
+        --a12p14-hero-fantasma: #7A6278;
+        --a12p14-hero-fascia: #2B6CB0;
+        --a12p14-hero-diafragma: #276749;
+        --a12p14-hero-perineo: #C53030;
+        --a12p14-hero-eixo: #D69E2E;
+        --a12p14-hero-falha: #B91C1C;
+        --a12p14-hero-bg: #FBF8FA;
+        --a12p14-hero-card-bg: #FFFFFF;
+        --a12p14-hero-border: #E5D8E3;
+        --a12p14-hero-text: #1F1620;
+        --a12p14-hero-subtext: #5A4C5B;
+        --a12p14-hero-hover: #F0E6EE;
+      }
+
+      #a12p14-hero-svg {
+        background-color: var(--a12-bg, var(--a12p14-hero-bg, #141016));
+        color: var(--a12-tinta, var(--a12p14-hero-tinta, #F7F1F5));
+        user-select: none;
+      }
+
+      .a12p14-hero-card {
+        fill: var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822));
+        stroke: var(--a12-border, var(--a12p14-hero-border, #382C3D));
+        stroke-width: 1.5;
+      }
+
+      .a12p14-hero-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .a12p14-hero-btn rect {
+        fill: var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822));
+        stroke: var(--a12-border, var(--a12p14-hero-border, #382C3D));
+        stroke-width: 1.5;
+        transition: all 0.2s ease;
+      }
+      .a12p14-hero-btn:hover rect {
+        fill: var(--a12-hover, var(--a12p14-hero-hover, #2A2230));
+        stroke: var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B));
+      }
+      .a12p14-hero-btn text {
+        fill: var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3));
+        font-size: 11px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+      .a12p14-hero-btn:hover text {
+        fill: var(--a12-text, var(--a12p14-hero-text, #F7F1F5));
+      }
+      .a12p14-hero-btn.is-active rect {
+        fill: var(--a12-hover, var(--a12p14-hero-hover, #2A2230));
+        stroke: var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B));
+        stroke-width: 2.5;
+      }
+      .a12p14-hero-btn.is-active text {
+        fill: var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B));
+        font-weight: 700;
+      }
+
+      .a12p14-hero-viscera-group {
+        transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .a12p14-hero-layer {
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        cursor: pointer;
+      }
+      .a12p14-hero-layer:hover {
+        filter: drop-shadow(0 0 6px var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B)));
+      }
+      .a12p14-hero-layer.is-dimmed {
+        opacity: 0.22 !important;
+      }
+      .a12p14-hero-layer.is-hidden {
+        opacity: 0 !important;
+        pointer-events: none;
+      }
+
+      .a12p14-hero-vector {
+        transition: opacity 0.35s ease, stroke-dashoffset 0.5s ease;
+      }
+
+      .a12p14-hero-label-line {
+        stroke-dasharray: 2 2;
+        opacity: 0.7;
+      }
+      .a12p14-hero-step-dot {
+        transition: all 0.3s ease;
+      }
+    </style>
+
+    <marker id="a12p14-hero-arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))"/>
+    </marker>
+    <marker id="a12p14-hero-arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))"/>
+    </marker>
+    <marker id="a12p14-hero-arrow-fascia" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))"/>
+    </marker>
+    <marker id="a12p14-hero-arrow-diafragma" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))"/>
+    </marker>
+    <marker id="a12p14-hero-arrow-perineo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))"/>
+    </marker>
+    <marker id="a12p14-hero-arrow-axis" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))"/>
+    </marker>
+  </defs>
+
+  <!-- ==================== HEADER ==================== -->
+  <g id="a12p14-hero-header" transform="translate(40, 25)">
+    <text x="0" y="20" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="18" font-weight="800" letter-spacing="0.5">ASSOALHO PÉLVICO: EDIFICAÇÃO CUMULATIVA EM 3 CAMADAS</text>
+    <text x="0" y="40" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="12" font-weight="400">O chão pélvico é construído de dentro para fora. Cada camada soma sustentação sem anular a anterior.</text>
+    
+    <rect x="740" y="5" width="140" height="24" rx="12" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))" stroke-width="1.2"/>
+    <text x="810" y="21" fill="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))" font-size="10" font-weight="700" text-anchor="middle">CORTE SAGITAL H1</text>
+  </g>
+
+  <!-- ==================== MAIN ANATOMICAL STAGE ==================== -->
+  <g id="a12p14-hero-stage" transform="translate(40, 85)">
+    <!-- Stage Frame Box -->
+    <rect x="0" y="0" width="535" height="460" rx="12" class="a12p14-hero-card"/>
+    
+    <!-- Title inside stage -->
+    <text x="20" y="28" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="11" font-weight="700" letter-spacing="0.8">ANATOMIA TOPOGRÁFICA &amp; VETORES DE SUSTENTAÇÃO</text>
+
+    <!-- TOPOGRAPHY / DEPTH AXIS ARROW (Left margin) -->
+    <g id="a12p14-hero-axis" transform="translate(25, 55)">
+      <line x1="15" y1="20" x2="15" y2="370" stroke="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" stroke-width="1.5" stroke-dasharray="4 3" marker-start="url(#a12p14-hero-arrow-axis)" marker-end="url(#a12p14-hero-arrow-axis)"/>
+      
+      <!-- Top Axis Text -->
+      <g transform="translate(15, 10)">
+        <text x="0" y="0" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="9" font-weight="700" text-anchor="middle">PROFUNDO</text>
+        <text x="0" y="10" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8" text-anchor="middle">(Vísceras / Dentro)</text>
+      </g>
+
+      <!-- Ticks along depth axis -->
+      <g transform="translate(15, 90)">
+        <line x1="-4" y1="0" x2="4" y2="0" stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" stroke-width="2"/>
+        <text x="-8" y="3" fill="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" font-size="9" font-weight="700" text-anchor="end">C1: Fáscia</text>
+      </g>
+
+      <g transform="translate(15, 190)">
+        <line x1="-4" y1="0" x2="4" y2="0" stroke="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" stroke-width="2"/>
+        <text x="-8" y="3" fill="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" font-size="9" font-weight="700" text-anchor="end">C2: Diafragma</text>
+      </g>
+
+      <g transform="translate(15, 290)">
+        <line x1="-4" y1="0" x2="4" y2="0" stroke="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" stroke-width="2"/>
+        <text x="-8" y="3" fill="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" font-size="9" font-weight="700" text-anchor="end">C3: Períneo</text>
+      </g>
+
+      <!-- Bottom Axis Text -->
+      <g transform="translate(15, 385)">
+        <text x="0" y="0" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="9" font-weight="700" text-anchor="middle">SUPERFICIAL</text>
+        <text x="0" y="10" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8" text-anchor="middle">(Pele / Exame)</text>
+      </g>
+    </g>
+
+    <!-- FIXED BONE ANCHORS (Base Óssea Padrão P3) -->
+    <g id="a12p14-hero-bones" transform="translate(75, 40)">
+      <!-- Pubic Bone (Símfise Púbica - Anterior) -->
+      <g id="a12p14-hero-pubis">
+        <path d="M 80 270 C 70 270 55 285 55 310 C 55 340 70 365 90 365 C 105 365 115 350 115 330 C 115 300 100 270 80 270 Z" 
+              fill="var(--a12-osso-fill, var(--a12p14-hero-osso-fill, #3A3029))" 
+              stroke="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" 
+              stroke-width="2.5"/>
+        <!-- Trabecular bone detail -->
+        <path d="M 65 300 C 75 310 95 320 105 310 M 70 330 C 80 340 90 345 100 335" 
+              stroke="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" 
+              stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+        <!-- Callout Label -->
+        <line x1="85" y1="365" x2="85" y2="395" stroke="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" class="a12p14-hero-label-line"/>
+        <circle cx="85" cy="365" r="3" fill="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))"/>
+        <text x="85" y="407" fill="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" font-size="10" font-weight="700" text-anchor="middle">Símfise Púbica</text>
+        <text x="85" y="417" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8" text-anchor="middle">(Âncor. Ant.)</text>
+      </g>
+
+      <!-- Ischial Spine Landmark (Mid-Lateral Anchor) -->
+      <g id="a12p14-hero-ischial-spine">
+        <path d="M 330 250 L 345 260 L 335 275 Z" fill="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))"/>
+        <line x1="345" y1="260" x2="415" y2="260" stroke="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" class="a12p14-hero-label-line"/>
+        <circle cx="345" cy="260" r="3" fill="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))"/>
+        <text x="420" y="263" fill="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" font-size="9" font-weight="700" text-anchor="start">Espinha Isquiática</text>
+      </g>
+
+      <!-- Sacrum & Coccyx (Posterior Anchor) -->
+      <g id="a12p14-hero-sacrum">
+        <path d="M 380 70 C 370 110 365 160 360 210 C 358 235 352 260 345 280 L 335 310 C 330 325 330 335 335 340 C 340 342 348 335 352 320 L 365 285 C 375 250 385 190 395 120 C 400 90 405 70 380 70 Z" 
+              fill="var(--a12-osso-fill, var(--a12p14-hero-osso-fill, #3A3029))" 
+              stroke="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" 
+              stroke-width="2.5"/>
+        <!-- Sacral vertebrae segments S1-S5 + Coccyx lines -->
+        <path d="M 376 110 L 394 115 M 371 150 L 390 156 M 366 190 L 385 195 M 361 230 L 378 235 M 350 270 L 364 274 M 340 300 L 350 303" 
+              stroke="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" stroke-width="1.5"/>
+        <!-- Promontory dot -->
+        <circle cx="380" cy="75" r="3.5" fill="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))"/>
+        
+        <!-- Callout Label -->
+        <line x1="390" y1="150" x2="425" y2="150" stroke="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" class="a12p14-hero-label-line"/>
+        <circle cx="390" cy="150" r="3" fill="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))"/>
+        <text x="430" y="148" fill="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))" font-size="10" font-weight="700">Sacro &amp; Cóccix</text>
+        <text x="430" y="158" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8">(Âncor. Post.)</text>
+      </g>
+    </g>
+
+    <!-- MOBILE VISCERA GROUP (Responds to support vs sem chão) -->
+    <g id="a12p14-hero-viscera-grp" transform="translate(75, 40)" class="a12p14-hero-viscera-group">
+      <!-- Bladder (Bexiga Urinária - Anterior) -->
+      <g id="a12p14-hero-viscera-bladder">
+        <path d="M 105 285 C 105 240 145 220 185 235 C 215 250 225 285 205 315 C 185 335 135 340 115 320 C 105 305 105 295 105 285 Z" 
+              fill="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" 
+              fill-opacity="0.18" 
+              stroke="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" 
+              stroke-width="2" 
+              stroke-dasharray="6 3"/>
+        <text x="155" y="275" fill="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" font-size="10" font-weight="700" text-anchor="middle">Bexiga</text>
+        <!-- Urethral outlet line -->
+        <path d="M 130 330 L 122 375" stroke="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" stroke-width="1.5" stroke-dasharray="3 2"/>
+      </g>
+
+      <!-- Uterus & Vaginal Canal (Central) -->
+      <g id="a12p14-hero-viscera-uterus">
+        <!-- Anteflexed Uterus body -->
+        <path d="M 195 210 C 175 190 195 150 235 155 C 265 160 275 190 245 215 C 230 228 215 230 205 240 L 195 285 L 175 280 L 185 230 Z" 
+              fill="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" 
+              fill-opacity="0.22" 
+              stroke="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" 
+              stroke-width="2" 
+              stroke-dasharray="6 3"/>
+        <text x="225" y="185" fill="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" font-size="10" font-weight="700" text-anchor="middle">Útero</text>
+        
+        <!-- Vaginal Canal (downward & backward axis) -->
+        <path d="M 195 285 L 175 280 L 150 375 L 175 382 Z" 
+              fill="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" 
+              fill-opacity="0.15" 
+              stroke="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" 
+              stroke-width="1.8" 
+              stroke-dasharray="5 3"/>
+        <text x="182" y="335" fill="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" font-size="9" font-weight="600" transform="rotate(65 182 335)">Vagina</text>
+      </g>
+
+      <!-- Rectum & Anal Canal (Posterior) -->
+      <g id="a12p14-hero-viscera-rectum">
+        <path d="M 335 150 C 330 190 320 230 305 270 C 290 310 270 340 240 360 L 220 365 L 210 395 L 235 390 C 265 375 295 330 315 280 C 330 240 345 190 355 150 Z" 
+              fill="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" 
+              fill-opacity="0.2" 
+              stroke="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" 
+              stroke-width="2" 
+              stroke-dasharray="6 3"/>
+        <text x="310" y="220" fill="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" font-size="10" font-weight="700" transform="rotate(70 310 220)">Reto</text>
+      </g>
+
+      <!-- FAIL VECTORS (State 0: Sem Chão - Red downward arrows of prolapse) -->
+      <g id="a12p14-hero-fail-vectors" class="a12p14-hero-vector">
+        <line x1="160" y1="290" x2="150" y2="345" stroke="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))" stroke-width="2.5" marker-end="url(#a12p14-hero-arrow-red)"/>
+        <line x1="210" y1="230" x2="195" y2="295" stroke="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))" stroke-width="2.8" marker-end="url(#a12p14-hero-arrow-red)"/>
+        <line x1="310" y1="260" x2="280" y2="325" stroke="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))" stroke-width="2.5" marker-end="url(#a12p14-hero-arrow-red)"/>
+        <text x="210" y="275" fill="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))" font-size="10" font-weight="800" text-anchor="middle">COLAPSO GRAVITACIONAL</text>
+      </g>
+    </g>
+
+    <!-- ==================== CUMULATIVE LAYERS ==================== -->
+    <g id="a12p14-hero-layers-container" transform="translate(75, 40)">
+      
+      <!-- CAMADA 1: FÁSCIA ENDOPÉLVICA (#6FA8D6) -->
+      <g id="a12p14-hero-layer-1" class="a12p14-hero-layer" role="button" tabindex="0" aria-label="Camada 1: Fáscia Endopélvica">
+        <!-- Fascial sheets & ligaments under organs -->
+        <!-- Pubocervical & ATFP band -->
+        <path d="M 105 320 C 130 322 170 315 195 285 L 205 288 C 175 325 130 332 105 328 Z" 
+              fill="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" 
+              fill-opacity="0.75" 
+              stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" 
+              stroke-width="1.5"/>
+        
+        <!-- Rectovaginal fascia & Uterosacral lig. suspension -->
+        <path d="M 195 285 C 240 280 300 240 345 200 L 350 208 C 305 248 245 290 195 292 Z" 
+              fill="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" 
+              fill-opacity="0.75" 
+              stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" 
+              stroke-width="1.5"/>
+
+        <!-- Tendinous Arch ribbon line (ATFP) -->
+        <path d="M 95 310 C 180 315 270 290 335 255" 
+              stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" 
+              stroke-width="3" 
+              stroke-dasharray="5 3"/>
+
+        <!-- Fascial Suspension Vectors (Upward & Posterior) -->
+        <g id="a12p14-hero-vectors-layer-1" class="a12p14-hero-vector">
+          <line x1="195" y1="285" x2="225" y2="245" stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" stroke-width="2" marker-end="url(#a12p14-hero-arrow-fascia)"/>
+          <line x1="280" y1="260" x2="315" y2="220" stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" stroke-width="2" marker-end="url(#a12p14-hero-arrow-fascia)"/>
+        </g>
+
+        <!-- Callout Labels for Layer 1 -->
+        <g transform="translate(0, 0)">
+          <line x1="250" y1="275" x2="270" y2="305" stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" class="a12p14-hero-label-line"/>
+          <circle cx="250" cy="275" r="3" fill="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))"/>
+          <rect x="270" y="295" width="130" height="22" rx="4" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" stroke-width="1"/>
+          <text x="278" y="310" fill="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" font-size="9" font-weight="700">1. Fáscia Endopélvica (ATFP)</text>
+        </g>
+      </g>
+
+      <!-- CAMADA 2: DIAFRAGMA PÉLVICO (#55B889) -->
+      <g id="a12p14-hero-layer-2" class="a12p14-hero-layer" role="button" tabindex="0" aria-label="Camada 2: Diafragma Pélvico">
+        <!-- Muscular hammock (M. Levator Ani: Puborectalis, Pubococcygeus, Iliococcygeus) -->
+        <path d="M 90 350 C 110 355 140 375 160 380 C 185 385 220 375 250 355 C 285 330 315 310 335 305 L 340 317 C 315 325 280 348 245 372 C 215 392 180 400 155 394 C 130 388 105 368 85 360 Z" 
+              fill="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" 
+              fill-opacity="0.82" 
+              stroke="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" 
+              stroke-width="2"/>
+        
+        <!-- Muscle fiber striations texture -->
+        <path d="M 105 360 L 115 372 M 130 368 L 142 382 M 160 374 L 175 389 M 190 368 L 208 385 M 225 355 L 245 373 M 260 338 L 280 356 M 295 320 L 315 335" 
+              stroke="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke-width="1.2" opacity="0.6"/>
+
+        <!-- Active Muscle Shelf Vectors (Upward & Anterior Elevation) -->
+        <g id="a12p14-hero-vectors-layer-2" class="a12p14-hero-vector">
+          <line x1="165" y1="388" x2="165" y2="340" stroke="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" stroke-width="2.5" marker-end="url(#a12p14-hero-arrow-diafragma)"/>
+          <line x1="240" y1="365" x2="220" y2="320" stroke="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" stroke-width="2.5" marker-end="url(#a12p14-hero-arrow-diafragma)"/>
+        </g>
+
+        <!-- Callout Labels for Layer 2 -->
+        <g transform="translate(0, 0)">
+          <line x1="170" y1="385" x2="140" y2="425" stroke="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" class="a12p14-hero-label-line"/>
+          <circle cx="170" cy="385" r="3" fill="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))"/>
+          <rect x="70" y="420" width="135" height="22" rx="4" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" stroke-width="1"/>
+          <text x="137" y="435" fill="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" font-size="9" font-weight="700" text-anchor="middle">2. Diafragma Pélvico (Levantador)</text>
+        </g>
+      </g>
+
+      <!-- CAMADA 3: REGIÃO PERINEAL (#EF7582) -->
+      <g id="a12p14-hero-layer-3" class="a12p14-hero-layer" role="button" tabindex="0" aria-label="Camada 3: Região Perineal">
+        <!-- Perineal membrane & Perineal body / Sphincter complex -->
+        <path d="M 85 365 C 105 372 135 388 150 385 C 160 383 170 385 180 395 C 190 405 210 400 220 392 L 225 404 C 210 415 185 418 172 406 C 165 400 155 397 145 397 C 130 397 100 382 80 375 Z" 
+              fill="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" 
+              fill-opacity="0.88" 
+              stroke="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" 
+              stroke-width="2"/>
+
+        <!-- Perineal Body knot highlight (Corpo Perineal) -->
+        <ellipse cx="160" cy="392" rx="7" ry="5" fill="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))" stroke="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" stroke-width="1.5"/>
+
+        <!-- Active Sphincter & Closure Vectors -->
+        <g id="a12p14-hero-vectors-layer-3" class="a12p14-hero-vector">
+          <line x1="160" y1="410" x2="160" y2="390" stroke="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" stroke-width="2" marker-end="url(#a12p14-hero-arrow-perineo)"/>
+          <line x1="215" y1="408" x2="205" y2="392" stroke="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" stroke-width="2" marker-end="url(#a12p14-hero-arrow-perineo)"/>
+        </g>
+
+        <!-- Callout Labels for Layer 3 -->
+        <g transform="translate(0, 0)">
+          <line x1="160" y1="392" x2="220" y2="435" stroke="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" class="a12p14-hero-label-line"/>
+          <circle cx="160" cy="392" r="3" fill="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))"/>
+          <rect x="220" y="425" width="145" height="22" rx="4" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" stroke-width="1"/>
+          <text x="292" y="440" fill="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" font-size="9" font-weight="700" text-anchor="middle">3. Períneo &amp; Corpo Perineal</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- STEPPER CONTROLS BAR (Inside stage at bottom) -->
+    <g id="a12p14-hero-controls" transform="translate(20, 410)">
+      <rect x="0" y="0" width="495" height="40" rx="8" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-border, var(--a12p14-hero-border, #382C3D))" stroke-width="1"/>
+      
+      <!-- Button 0: Sem Chão -->
+      <g id="a12p14-hero-btn-0" class="a12p14-hero-btn" data-state="0" role="button" tabindex="0" aria-label="Estado 0: Sem Chão" transform="translate(8, 6)">
+        <rect x="0" y="0" width="82" height="28" rx="6"/>
+        <text x="41" y="18" text-anchor="middle">0. Sem Chão</text>
+      </g>
+
+      <!-- Button 1: Fáscia -->
+      <g id="a12p14-hero-btn-1" class="a12p14-hero-btn" data-state="1" role="button" tabindex="0" aria-label="Estado 1: Fáscia" transform="translate(96, 6)">
+        <rect x="0" y="0" width="88" height="28" rx="6"/>
+        <text x="44" y="18" text-anchor="middle">1. Fáscia</text>
+      </g>
+
+      <!-- Button 2: Diafragma -->
+      <g id="a12p14-hero-btn-2" class="a12p14-hero-btn" data-state="2" role="button" tabindex="0" aria-label="Estado 2: Diafragma" transform="translate(190, 6)">
+        <rect x="0" y="0" width="98" height="28" rx="6"/>
+        <text x="49" y="18" text-anchor="middle">2. Diafragma</text>
+      </g>
+
+      <!-- Button 3: Períneo -->
+      <g id="a12p14-hero-btn-3" class="a12p14-hero-btn" data-state="3" role="button" tabindex="0" aria-label="Estado 3: Períneo" transform="translate(294, 6)">
+        <rect x="0" y="0" width="92" height="28" rx="6"/>
+        <text x="46" y="18" text-anchor="middle">3. Períneo</text>
+      </g>
+
+      <!-- Button Full: Completo -->
+      <g id="a12p14-hero-btn-full" class="a12p14-hero-btn" data-state="full" role="button" tabindex="0" aria-label="Visão Completa" transform="translate(392, 6)">
+        <rect x="0" y="0" width="95" height="28" rx="6"/>
+        <text x="47.5" y="18" text-anchor="middle">Ver Completo</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== SIDE READOUT PANEL ==================== -->
+  <g id="a12p14-hero-panel" transform="translate(595, 85)">
+    <!-- Panel Background Card -->
+    <rect x="0" y="0" width="325" height="460" rx="12" class="a12p14-hero-card"/>
+
+    <!-- Panel Header -->
+    <g transform="translate(20, 25)">
+      <text x="0" y="0" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="10" font-weight="700" letter-spacing="0.8">PAINEL DE LEITURA ANATÔMICA</text>
+      <text x="0" y="20" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="15" font-weight="800" id="a12p14-hero-panel-state-title">ESTADO: SEM CHÃO</text>
+    </g>
+
+    <!-- Cumulative Stepper Progress Visualizer -->
+    <g id="a12p14-hero-stepper" transform="translate(20, 70)">
+      <line x1="15" y1="12" x2="265" y2="12" stroke="var(--a12-border, var(--a12p14-hero-border, #382C3D))" stroke-width="2"/>
+      <line x1="15" y1="12" x2="15" y2="12" stroke="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))" stroke-width="3" id="a12p14-hero-stepper-progress" class="a12p14-hero-vector"/>
+
+      <!-- Step 0 Dot -->
+      <g id="a12p14-hero-step-0" transform="translate(15, 12)">
+        <circle r="10" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))" stroke-width="2" class="a12p14-hero-step-dot"/>
+        <text y="3" fill="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))" font-size="9" font-weight="800" text-anchor="middle">0</text>
+      </g>
+
+      <!-- Step 1 Dot -->
+      <g id="a12p14-hero-step-1" transform="translate(98, 12)">
+        <circle r="10" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" stroke-width="2" class="a12p14-hero-step-dot"/>
+        <text y="3" fill="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))" font-size="9" font-weight="800" text-anchor="middle">1</text>
+      </g>
+
+      <!-- Step 2 Dot -->
+      <g id="a12p14-hero-step-2" transform="translate(181, 12)">
+        <circle r="10" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" stroke-width="2" class="a12p14-hero-step-dot"/>
+        <text y="3" fill="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))" font-size="9" font-weight="800" text-anchor="middle">2</text>
+      </g>
+
+      <!-- Step 3 Dot -->
+      <g id="a12p14-hero-step-3" transform="translate(265, 12)">
+        <circle r="10" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" stroke-width="2" class="a12p14-hero-step-dot"/>
+        <text y="3" fill="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))" font-size="9" font-weight="800" text-anchor="middle">3</text>
+      </g>
+    </g>
+
+    <!-- Dynamic Description Box -->
+    <g transform="translate(20, 110)">
+      <rect x="0" y="0" width="285" height="155" rx="8" fill="var(--a12-bg, var(--a12p14-hero-bg, #141016))" stroke="var(--a12-border, var(--a12p14-hero-border, #382C3D))" stroke-width="1"/>
+      
+      <text x="15" y="22" fill="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))" font-size="10" font-weight="700" id="a12p14-hero-panel-level-tag">MECÂNICA E VETORES</text>
+      
+      <!-- Multi-line description text -->
+      <text x="15" y="42" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="11" font-weight="400" id="a12p14-hero-panel-line-1">Sem o suporte das camadas pélvicas, as vísceras</text>
+      <text x="15" y="58" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="11" font-weight="400" id="a12p14-hero-panel-line-2">sofrem descida gravitacional direta (prolapso).</text>
+      <text x="15" y="74" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="11" font-weight="400" id="a12p14-hero-panel-line-3">Os vetores de falha (em vermelho) apontam para a</text>
+      <text x="15" y="90" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="11" font-weight="400" id="a12p14-hero-panel-line-4">exteriorização pelo hiato desprovido de chão.</text>
+
+      <line x1="15" y1="108" x2="270" y2="108" stroke="var(--a12-border, var(--a12p14-hero-border, #382C3D))" stroke-width="1"/>
+      
+      <text x="15" y="126" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="9" font-weight="700">DENSIDADE DA CAMADA:</text>
+      <text x="15" y="140" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="10" font-weight="600" id="a12p14-hero-panel-density">0 / 3 camadas ativas (Assoalho Ausente)</text>
+    </g>
+
+    <!-- Clinical Takeaway Box -->
+    <g transform="translate(20, 280)">
+      <rect x="0" y="0" width="285" height="85" rx="8" id="a12p14-hero-conclusion-bg" fill="var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))" stroke="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))" stroke-width="1.8"/>
+      
+      <text x="15" y="20" fill="var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))" font-size="10" font-weight="800" id="a12p14-hero-conclusion-header">INTERPRETAÇÃO CLÍNICA</text>
+      
+      <text x="15" y="40" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="10" font-weight="600" id="a12p14-hero-conclusion-line-1">Ausência total de sustentação passiva e ativa.</text>
+      <text x="15" y="55" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="10" font-weight="400" id="a12p14-hero-conclusion-line-2">Modelagem de risco máximo para disfunção do compartimento</text>
+      <text x="15" y="70" fill="var(--a12-text, var(--a12p14-hero-text, #F7F1F5))" font-size="10" font-weight="400" id="a12p14-hero-conclusion-line-3">anterior, médio e posterior (POP-Q estágio IV).</text>
+    </g>
+
+    <!-- Color Legend Box (Bottom of side panel) -->
+    <g transform="translate(20, 380)">
+      <rect x="0" y="0" width="285" height="65" rx="6" fill="var(--a12-bg, var(--a12p14-hero-bg, #141016))" stroke="var(--a12-border, var(--a12p14-hero-border, #382C3D))" stroke-width="1"/>
+      
+      <!-- Legend Grid -->
+      <g transform="translate(10, 15)">
+        <!-- Base Óssea -->
+        <rect x="0" y="0" width="10" height="10" rx="2" fill="var(--a12-osso-fill, var(--a12p14-hero-osso-fill, #3A3029))" stroke="var(--a12-osso, var(--a12p14-hero-osso, #DCC7B4))"/>
+        <text x="15" y="9" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8.5" font-weight="600">Base Óssea</text>
+
+        <!-- Fáscia Endopélvica -->
+        <rect x="90" y="0" width="10" height="10" rx="2" fill="var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))"/>
+        <text x="105" y="9" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8.5" font-weight="600">C1: Fáscia</text>
+
+        <!-- Diafragma Pélvico -->
+        <rect x="180" y="0" width="10" height="10" rx="2" fill="var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))"/>
+        <text x="195" y="9" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8.5" font-weight="600">C2: Diafragma</text>
+
+        <!-- Vísceras Fantasma -->
+        <rect x="0" y="25" width="10" height="10" rx="2" fill="none" stroke="var(--a12-viscera-fantasma, var(--a12p14-hero-fantasma, #A993A4))" stroke-dasharray="2 2"/>
+        <text x="15" y="34" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8.5" font-weight="600">Vísceras</text>
+
+        <!-- Região Perineal -->
+        <rect x="90" y="25" width="10" height="10" rx="2" fill="var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))"/>
+        <text x="105" y="34" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8.5" font-weight="600">C3: Períneo</text>
+
+        <!-- Vetor Sustentação -->
+        <line x1="180" y1="30" x2="190" y2="30" stroke="var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))" stroke-width="2" marker-end="url(#a12p14-hero-arrow-gold)"/>
+        <text x="195" y="34" fill="var(--a12-subtext, var(--a12p14-hero-subtext, #C4B5C3))" font-size="8.5" font-weight="600">Vetores</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== ENGINE DE INTERAÇÃO CDATA ==================== -->
+  <script>
+    /*<![CDATA[*/
+    (function() {
+      'use strict';
+      
+      var currentState = 0; // 0: Sem chão, 1: Fáscia, 2: Diafragma, 3: Períneo, 4: Full (3)
+      var currentFocus = null; // null or 1, 2, 3
+
+      var stateData = {
+        0: {
+          title: 'ESTADO 0: SEM CHÃO',
+          badge: 'FALHA DE SUPORTE',
+          l1: 'Sem o suporte das camadas pélvicas, as vísceras',
+          l2: 'sofrem descida gravitacional direta (prolapso).',
+          l3: 'Os vetores de falha (em vermelho) apontam para a',
+          l4: 'exteriorização pelo hiato desprovido de chão.',
+          density: '0 / 3 camadas ativas (Assoalho Ausente)',
+          cHeader: 'INTERPRETAÇÃO CLÍNICA',
+          cL1: 'Ausência total de sustentação passiva e ativa.',
+          cL2: 'Modelagem de risco máximo para disfunção do compartimento',
+          cL3: 'anterior, médio e posterior (POP-Q estágio IV).',
+          cColor: 'var(--a12-alerta, var(--a12p14-hero-falha, #D85C6A))',
+          visceraShift: 'translate(0, 32px)',
+          stepperWidth: '0px'
+        },
+        1: {
+          title: 'ESTADO 1: FÁSCIA ENDOPÉLVICA',
+          badge: 'CAMADA PROFUNDA (SUSPENSÃO)',
+          l1: 'A fáscia endopélvica (ATFP, lig. uterossacrais e',
+          l2: 'fáscia pubocervical/retovaginal) ancora a cúpula',
+          l3: 'e paredes vaginais às paredes pélvicas ósseas.',
+          l4: 'Primeiro nível de suspensão visceral passiva (Nível I/II DeLancey).',
+          density: '1 / 3 camadas ativas (Sustentação Fásica)',
+          cHeader: 'EFICIÊNCIA MECÂNICA C1',
+          cL1: 'Estabilização apical e suspensão fascial estabelecida.',
+          cL2: 'Impede o colapso visceral direto, mas ainda requer',
+          cL3: 'o suporte muscular dinâmico e fecho perineal.',
+          cColor: 'var(--a12-fascia-endopelvica, var(--a12p14-hero-fascia, #6FA8D6))',
+          visceraShift: 'translate(0, 0px)',
+          stepperWidth: '83px'
+        },
+        2: {
+          title: 'ESTADO 2: DIAFRAGMA PÉLVICO',
+          badge: 'CAMADA INTERMEDIÁRIA (SUSTENTAÇÃO)',
+          l1: 'O M. Levantador do Ânus (puborretal, pubococcígeo',
+          l2: 'e iliococcígeo) forma a prateleira muscular.',
+          l3: 'Mantém o hiato urogenital fechado e eleva as',
+          l4: 'vísceras em direção à símfise púbica (tração anterior).',
+          density: '2 / 3 camadas ativas (Sustentação Muscular)',
+          cHeader: 'EFICIÊNCIA MECÂNICA C1 + C2',
+          cL1: 'Tônus muscular ativo sustenta 70% da carga pélvica.',
+          cL2: 'A fáscia permanece íntegra sob menor tensão',
+          cL3: 'graças ao suporte em funil do diafragma pélvico.',
+          cColor: 'var(--a12-diafragma-pelvico, var(--a12p14-hero-diafragma, #55B889))',
+          visceraShift: 'translate(0, 0px)',
+          stepperWidth: '166px'
+        },
+        3: {
+          title: 'ESTADO 3: REGIÃO PERINEAL',
+          badge: 'CAMADA SUPERFICIAL (FECHO & ANCORAGEM)',
+          l1: 'A membrana do períneo, corpo perineal e esfíncteres',
+          l2: 'promovem o fechamento inferior do trígono UG.',
+          l3: 'Ancoram o plano distal na pele e centro tendíneo,',
+          l4: 'garantindo a continência e integridade do assoalho.',
+          density: '3 / 3 camadas ativas (Assoalho COMPLETO)',
+          cHeader: 'ASSOALHO PÉLVICO ÍNTEGRO (C1 + C2 + C3)',
+          cL1: 'Sustentação cumulativa tridimensional perfeita.',
+          cL2: 'As 3 camadas somam forças sem se anular:',
+          cL3: 'Suspensão (C1) + Prateleira (C2) + Fecho Distal (C3).',
+          cColor: 'var(--a12-regiao-perineal, var(--a12p14-hero-perineo, #EF7582))',
+          visceraShift: 'translate(0, 0px)',
+          stepperWidth: '250px'
+        }
+      };
+
+      function updateUI() {
+        // Update Viscera position & Fail Vectors
+        var visceraGrp = document.getElementById('a12p14-hero-viscera-grp');
+        var failVectors = document.getElementById('a12p14-hero-fail-vectors');
+        
+        var effectiveState = (currentState === 4) ? 3 : currentState;
+        var data = stateData[effectiveState];
+
+        if (visceraGrp) {
+          visceraGrp.style.transform = data.visceraShift;
+        }
+
+        if (failVectors) {
+          failVectors.style.opacity = (effectiveState === 0) ? '1' : '0';
+          failVectors.style.pointerEvents = (effectiveState === 0) ? 'auto' : 'none';
+        }
+
+        // Update Cumulative Layers Visibility
+        for (var l = 1; l <= 3; l++) {
+          var layerEl = document.getElementById('a12p14-hero-layer-' + l);
+          if (layerEl) {
+            var isBuilt = (effectiveState >= l);
+            if (!isBuilt) {
+              layerEl.classList.add('is-hidden');
+              layerEl.classList.remove('is-dimmed');
+            } else {
+              layerEl.classList.remove('is-hidden');
+              if (currentFocus !== null && currentFocus !== l) {
+                layerEl.classList.add('is-dimmed');
+              } else {
+                layerEl.classList.remove('is-dimmed');
+              }
+            }
+          }
+        }
+
+        // Update Stepper Progress Bar & Dots
+        var progressBar = document.getElementById('a12p14-hero-stepper-progress');
+        if (progressBar) {
+          progressBar.style.x2 = data.stepperWidth;
+        }
+
+        for (var s = 0; s <= 3; s++) {
+          var stepDot = document.getElementById('a12p14-hero-step-' + s);
+          if (stepDot) {
+            var circle = stepDot.querySelector('circle');
+            if (circle) {
+              if (s <= effectiveState) {
+                circle.setAttribute('fill', 'var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))');
+                circle.setAttribute('stroke', 'var(--a12-ouro, var(--a12p14-hero-eixo, #F3BE5B))');
+              } else {
+                circle.setAttribute('fill', 'var(--a12-card-bg, var(--a12p14-hero-card-bg, #1E1822))');
+                circle.setAttribute('stroke', 'var(--a12-border, var(--a12p14-hero-border, #382C3D))');
+              }
+            }
+          }
+        }
+
+        // Update Control Buttons Active State
+        var btns = document.querySelectorAll('.a12p14-hero-btn');
+        btns.forEach(function(btn) {
+          var st = btn.getAttribute('data-state');
+          if ((st === 'full' && currentState === 4) || (parseInt(st, 10) === currentState)) {
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-pressed', 'true');
+          } else {
+            btn.classList.remove('is-active');
+            btn.setAttribute('aria-pressed', 'false');
+          }
+        });
+
+        // Update Side Panel Texts
+        document.getElementById('a12p14-hero-panel-state-title').textContent = data.title;
+        document.getElementById('a12p14-hero-panel-level-tag').textContent = data.badge;
+        document.getElementById('a12p14-hero-panel-line-1').textContent = data.l1;
+        document.getElementById('a12p14-hero-panel-line-2').textContent = data.l2;
+        document.getElementById('a12p14-hero-panel-line-3').textContent = data.l3;
+        document.getElementById('a12p14-hero-panel-line-4').textContent = data.l4;
+        document.getElementById('a12p14-hero-panel-density').textContent = data.density;
+
+        document.getElementById('a12p14-hero-conclusion-header').textContent = data.cHeader;
+        document.getElementById('a12p14-hero-conclusion-header').style.fill = data.cColor;
+        document.getElementById('a12p14-hero-conclusion-line-1').textContent = data.cL1;
+        document.getElementById('a12p14-hero-conclusion-line-2').textContent = data.cL2;
+        document.getElementById('a12p14-hero-conclusion-line-3').textContent = data.cL3;
+
+        var concBg = document.getElementById('a12p14-hero-conclusion-bg');
+        if (concBg) {
+          concBg.style.stroke = data.cColor;
+        }
+      }
+
+      function setState(st) {
+        currentState = st;
+        currentFocus = null; // reset isolated focus on state change
+        updateUI();
+      }
+
+      function toggleFocus(layerNum) {
+        if (currentState < layerNum) {
+          // If layer not yet built, build up to this layer!
+          currentState = layerNum;
+          currentFocus = null;
+        } else {
+          // Toggle focus/isolate mode
+          if (currentFocus === layerNum) {
+            currentFocus = null;
+          } else {
+            currentFocus = layerNum;
+          }
+        }
+        updateUI();
+      }
+
+      // Attach Event Listeners to Buttons
+      var btns = document.querySelectorAll('.a12p14-hero-btn');
+      btns.forEach(function(btn) {
+        var handler = function(e) {
+          e.preventDefault();
+          var st = btn.getAttribute('data-state');
+          if (st === 'full') {
+            setState(4);
+          } else {
+            setState(parseInt(st, 10));
+          }
+        };
+        btn.addEventListener('click', handler);
+        btn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handler(e);
+          }
+        });
+      });
+
+      // Attach Event Listeners to Layer Shapes
+      for (var l = 1; l <= 3; l++) {
+        (function(layerNum) {
+          var layerEl = document.getElementById('a12p14-hero-layer-' + layerNum);
+          if (layerEl) {
+            var handler = function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleFocus(layerNum);
+            };
+            layerEl.addEventListener('click', handler);
+            layerEl.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                handler(e);
+              }
+            });
+          }
+        })(l);
+      }
+
+      // Initialize
+      setState(0);
+    })();
+    /*]]>*/
+  </script>
+</svg>

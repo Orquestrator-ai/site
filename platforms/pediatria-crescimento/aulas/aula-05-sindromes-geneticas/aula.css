@@ -1,0 +1,224 @@
+/* aula.css — Aula 05 "Síndromes genéticas" (Pediatria Bauer)
+   Camada por-aula: NÃO toca tokens/base/components globais.
+   Cobre: wrappers de SVG inline (S-01..S-11 + atlas B-15 + 2 figuras-herói self-contained),
+   figure.med + tarja de privacidade, nota-banca + nota-valor, e a DECLARAÇÃO dos tokens
+   que os SVGs desta aula consomem via var(--token,#fallback) — para seguirem o tema
+   (claro + escuro) em vez de travar no fallback. Marcador data-svg-tokenized preservado.
+   Eixo cromático da aula: trissomia/GANHO (coral) × monossomia/PERDA (sky) ×
+   pegadinha/atenção (âmbar) × normal/conduta correta (verde). */
+
+/* =========================================================================
+   TOKENS DOS SVGs — declarados aqui para seguirem o tema da aula (claro+escuro).
+   Os SVGs já trazem var(--token,#fallback); estes :root sobrepõem o fallback e
+   amarram a ilustração à paleta de pediatria. Namespeados sd05- onde o SVG pede.
+   ========================================================================= */
+:root {
+  /* --- superfícies internas dos SVGs (palco da ilustração) --- */
+  --svg-bg-0: #0a1826;
+  --svg-bg-1: #0f2336;
+  --svg-card: #15314c;
+  --svg-panel: #112a42;
+  --svg-ink: #eef4fb;
+  --svg-ink-dim: #aebccd;
+  --svg-ink-faint: #7d8b9c;
+  --svg-glow: rgba(98, 189, 243, 0.22);
+  --svg-shadow: rgba(0, 0, 0, 0.46);
+
+  /* --- realces semânticos com fundo (chips/cards de achado) --- */
+  --hl-bad: var(--err-red);
+  --hl-bad-bg: rgba(244, 113, 90, 0.14);
+  --hl-good: var(--ok-green);
+  --hl-good-bg: rgba(95, 223, 160, 0.14);
+  --hl-warn: var(--warn-amber);
+  --hl-warn-bg: rgba(242, 181, 65, 0.14);
+
+  /* --- secundário quente (coral suave) --- */
+  --coral-soft: #ffb9a8;
+
+  /* --- sangue/eixo do coração (S-05 DSAV) --- */
+  --blood-arterial: #f4715a;     /* arterial/oxigenado → coral (alarme/cardiopatia) */
+  --blood-venous: #62bdf3;       /* venoso → sky da casa */
+  --violet-mix: #b08ad6;         /* mistura AV (DSAV: sangue arterial+venoso no defeito) */
+
+  /* --- eixos de sistema do mapa de seguimento (S-06 / herói H-1) --- */
+  --sys-grow: #5fdfa0;           /* crescimento → verde */
+  --sys-thy: #62bdf3;            /* tireoide → sky */
+  --sys-blood: #f4715a;          /* sangue/hemograma → coral */
+  --sys-gi: #f2b541;             /* intestino/GI → âmbar */
+
+  /* --- gravidade (S-* / atlas: trissomias gravíssimas Edwards/Patau) --- */
+  --sd05-grave: #c9412e;
+  --sd05-grave-deep: #7a2418;
+  --sd05-grave-line: rgba(201, 65, 46, 0.45);
+
+  /* --- S-06 mapa de comorbidades (cartões dinâmicos) --- */
+  --sd05-s08-bg: #0f2336;
+  --sd05-s08-bg-hi: #15314c;
+  --sd05-s08-bg-lo: #0a1826;
+  --sd05-s08-panel: #112a42;
+  --sd05-s08-panel-deep: #0c2034;
+  --sd05-s08-stroke: rgba(231, 240, 250, 0.18);
+  --sd05-s08-tip-bg: #15314c;
+  --sd05-s08-tx: #eef4fb;
+  --sd05-s08-tx-dim: #aebccd;
+  --sd05-s08-neutral: #7d8b9c;
+  --sd05-s08-accent: #62bdf3;
+  --sd05-s08-accent-hi: #a6dbfb;
+  --sd05-s08-accent2: #5fdfa0;
+  --sd05-s08-bad: #f4715a;
+  --sd05-s08-bad-hi: #ff9d8a;
+  --sd05-s08-warn: #f2b541;
+
+  /* --- atlas B-15: cor por síndrome (pareamento síndrome ↔ achado) --- */
+  --sd05-b15-down: #62bdf3;        --sd05-b15-down-hi: #a6dbfb;     /* Down → sky */
+  --sd05-b15-turner: #5fdfa0;      --sd05-b15-turner-hi: #9fe9c5;   /* Turner → verde (monossomia) */
+  --sd05-b15-klf: #f2b541;         --sd05-b15-klf-hi: #f7cd78;      /* Klinefelter → âmbar */
+  --sd05-b15-edw: #f4715a;         --sd05-b15-edw-hi: #ff9d8a;      /* Edwards-18 → coral */
+  --sd05-b15-pat: #c9412e;         --sd05-b15-pat-hi: #e8543f;      /* Patau-13 → coral profundo (gravíssima) */
+}
+
+/* === Tema light: as superfícies internas dos SVGs acompanham o "céu claro" === */
+:root[data-theme="light"] {
+  --svg-bg-0: #eaf4fd;
+  --svg-bg-1: #ffffff;
+  --svg-card: #ffffff;
+  --svg-panel: #f1f8ff;
+  --svg-ink: #0f2438;
+  --svg-ink-dim: #44586c;
+  --svg-ink-faint: #6b7c8e;
+  --svg-glow: rgba(31, 127, 194, 0.18);
+  --svg-shadow: rgba(15, 40, 60, 0.12);
+
+  --hl-bad-bg: rgba(200, 69, 58, 0.12);
+  --hl-good-bg: rgba(46, 140, 74, 0.12);
+  --hl-warn-bg: rgba(173, 124, 20, 0.14);
+
+  --coral-soft: #d9745f;
+
+  --blood-arterial: #c8453a;
+  --blood-venous: #1f7fc2;
+  --violet-mix: #8a5fc0;
+
+  --sys-grow: #2e8c4a;
+  --sys-thy: #1f7fc2;
+  --sys-blood: #c8453a;
+  --sys-gi: #ad7c14;
+
+  --sd05-grave: #b23a28;
+  --sd05-grave-deep: #7a2418;
+  --sd05-grave-line: rgba(178, 58, 40, 0.40);
+
+  --sd05-s08-bg: #ffffff;
+  --sd05-s08-bg-hi: #f1f8ff;
+  --sd05-s08-bg-lo: #eaf4fd;
+  --sd05-s08-panel: #f1f8ff;
+  --sd05-s08-panel-deep: #e2eefb;
+  --sd05-s08-stroke: rgba(15, 36, 56, 0.18);
+  --sd05-s08-tip-bg: #ffffff;
+  --sd05-s08-tx: #0f2438;
+  --sd05-s08-tx-dim: #44586c;
+  --sd05-s08-neutral: #6b7c8e;
+  --sd05-s08-accent: #1f7fc2;
+  --sd05-s08-accent-hi: #2a93d6;
+  --sd05-s08-accent2: #2e8c4a;
+  --sd05-s08-bad: #c8453a;
+  --sd05-s08-bad-hi: #d9745f;
+  --sd05-s08-warn: #ad7c14;
+
+  --sd05-b15-down: #1f7fc2;        --sd05-b15-down-hi: #2a93d6;
+  --sd05-b15-turner: #2e8c4a;      --sd05-b15-turner-hi: #46a862;
+  --sd05-b15-klf: #ad7c14;         --sd05-b15-klf-hi: #c79428;
+  --sd05-b15-edw: #c8453a;         --sd05-b15-edw-hi: #d9745f;
+  --sd05-b15-pat: #9c3324;         --sd05-b15-pat-hi: #b23a28;
+}
+
+/* ===== Wrapper de SVG inline (piso, atlas e herói): frame de luxo da casa ===== */
+.figure-svg__embed { margin: var(--sp-6) 0; }
+.figure-svg__embed .figure-svg__frame { position: relative; }
+.figure-svg__embed svg { display: block; width: 100%; height: auto; }
+.figure-svg__embed figcaption { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.figure-svg__embed figcaption strong { color: var(--ink-100); }
+.figure-svg__embed .figure-svg__hint {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--teal-60); margin-top: var(--sp-2);
+}
+
+/* herói self-contained: o stage só dá o palco; a interação vive no <script> do SVG */
+.hero-stage { position: relative; width: 100%; }
+.hero-stage svg { display: block; width: 100%; height: auto; }
+
+/* ===== figure.med — tarja de privacidade (criança/paciente identificável) ===== */
+.med { position: relative; }
+.med .img-wrap { position: relative; }
+.med__tarja {
+  position: absolute;
+  background: rgba(8, 18, 30, 0.96);
+  border-radius: 3px;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+}
+.med__tarja::after {
+  content: attr(data-label);
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.55); text-transform: uppercase;
+}
+/* posição da tarja por imagem — apenas onde o manifesto pede.
+   p14b (Patau): tarja ORBITAL (sobre os olhos), foto de criança em DP — sem cobrir a fenda labiopalatina/achado. */
+.med__tarja--orbital { top: 12%; left: 16%; width: 68%; height: 12%; }
+
+/* ===== nota-banca — blindagem discreta (ledger §0): secundária, recuada, escudo ===== */
+.nota-banca {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--info-blue-dim);
+  border-left: 2px solid var(--info-blue);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-banca__shield { flex-shrink: 0; width: 18px; height: 18px; color: var(--info-blue); margin-top: 2px; }
+.nota-banca__body { flex: 1; }
+.nota-banca__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--info-blue); margin-right: var(--sp-2); }
+.nota-banca p { margin: 0; font-size: var(--fs-sm); }
+.nota-banca strong { color: var(--ink-90); }
+
+/* ===== nota-valor — número de prova (ledger §0): ícone "+", acento da casa ===== */
+.nota-valor {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--teal-05);
+  border-left: 2px solid var(--teal-50);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-valor__plus { flex-shrink: 0; width: 18px; height: 18px; color: var(--teal-60); margin-top: 2px; }
+.nota-valor__body { flex: 1; }
+.nota-valor__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-60); margin-right: var(--sp-2); }
+.nota-valor p { margin: 0; font-size: var(--fs-sm); }
+.nota-valor strong { color: var(--ink-90); }
+
+/* ===== identidade por página: ponto do page-tag conforme o eixo da aula =====
+   case = coral (clínica/vinheta), sys = âmbar (conceito/mecanismo/zona cinzenta),
+   gen = sky (genética/cariótipo/Down-Turner-Klinefelter), grave = vermelho (trissomias gravíssimas). */
+.page-tag--sys .page-tag__dot   { background: var(--warn-amber); box-shadow: 0 0 8px var(--warn-amber); }
+.page-tag--case .page-tag__dot  { background: var(--coral-60); box-shadow: 0 0 8px var(--coral-60); }
+.page-tag--gen .page-tag__dot   { background: var(--teal-60); box-shadow: 0 0 8px var(--teal-60); }
+.page-tag--grave .page-tag__dot { background: var(--err-red); box-shadow: 0 0 8px var(--err-red); }
+
+/* ===== lista de achados (face/mãos/pés, estigmas) — leitura limpa de bullets clínicos ===== */
+.find-list { list-style: none; margin: var(--sp-4) 0; padding: 0; display: grid; gap: var(--sp-2); }
+.find-list li {
+  position: relative; padding: var(--sp-3) var(--sp-4) var(--sp-3) var(--sp-6);
+  background: var(--bg-glass); border: 1px solid var(--border-soft);
+  border-radius: var(--r-sm); font-size: var(--fs-sm); color: var(--ink-90); line-height: var(--lh-snug);
+}
+.find-list li::before {
+  content: ""; position: absolute; left: var(--sp-4); top: 1.15em;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--teal-60);
+}

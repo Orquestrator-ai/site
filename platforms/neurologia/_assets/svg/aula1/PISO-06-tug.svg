@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" id="tug-svg" width="100%" height="100%">
+  <!-- SINALIZACAO: Arquivo excede 80 linhas devido a densidade visual e interatividade Javascript/SMIL requeridas -->
+  <style>
+    .tug-root {
+      --c-bg: #12131a; --c-card: #1a1c29; --c-ink: #f1f2f6; --c-ink-dim: #8b949e;
+      --c-cyan: #00d2d3; --c-cyan-dim: rgba(0, 210, 211, 0.15);
+      --c-green: #2ecc71; --c-amber: #f1c40f; --c-red: #ff7675; --c-border: #30363d;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    @media (prefers-color-scheme: light) {
+      .tug-root {
+        --c-bg: #f6f8fa; --c-card: #ffffff; --c-ink: #24292f; --c-ink-dim: #57606a;
+        --c-cyan: #008080; --c-cyan-dim: rgba(0, 128, 128, 0.1);
+        --c-green: #1a7f37; --c-amber: #b25900; --c-red: #cf222e; --c-border: #d0d7de;
+      }
+    }
+    .tug-bg { fill: var(--c-bg); }
+    .tug-card { fill: var(--c-card); stroke: var(--c-border); stroke-width: 1px; }
+    .tug-text { fill: var(--c-ink); }
+    .tug-text-dim { fill: var(--c-ink-dim); }
+    .tug-root .hotspot { cursor: pointer; }
+    .tug-root .hotspot:hover circle { stroke: var(--c-cyan); fill: var(--c-cyan-dim); }
+    .tug-root .hotspot.active circle { stroke: var(--c-cyan); fill: var(--c-cyan); }
+    .tug-root .hotspot.active text { fill: var(--c-bg); }
+    .tug-root .step-path { fill: none; stroke-width: 3; transition: all 0.3s ease; opacity: 0.3; }
+    .tug-root .step-path.active { stroke-width: 5; opacity: 1; filter: drop-shadow(0 0 4px var(--c-cyan)); }
+  </style>
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--c-cyan)" />
+    </marker>
+    <marker id="arrow-dim" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--c-ink-dim)" />
+    </marker>
+  </defs>
+  <g class="tug-root">
+    <rect width="920" height="540" class="tug-bg" rx="16" />
+    <text x="30" y="45" font-size="20" font-weight="bold" class="tug-text">TESTE TIMED UP AND GO (TUG)</text>
+    <text x="30" y="70" font-size="13" font-weight="500" fill="var(--c-amber)">LEGENDA: TUG avalia mobilidade funcional. Risco de queda elevado se tempo &gt; 20 segundos.</text>
+    <polygon points="30,320 530,320 500,450 50,450" fill="var(--c-cyan-dim)" opacity="0.3" />
+    <line x1="30" y1="320" x2="530" y2="320" stroke="var(--c-border)" stroke-width="1" />
+    <line x1="50" y1="450" x2="500" y2="450" stroke="var(--c-border)" stroke-width="1" />
+    <g stroke="var(--c-cyan)" stroke-width="2" fill="none" opacity="0.8">
+      <polygon points="90,370 120,355 140,365 110,380" fill="var(--c-cyan-dim)" />
+      <polyline points="90,370 90,320 120,305 120,355" />
+      <line x1="90" y1="340" x2="120" y2="325" />
+      <line x1="90" y1="370" x2="90" y2="400" /><line x1="120" y1="355" x2="120" y2="385" />
+      <line x1="140" y1="365" x2="140" y2="395" /><line x1="110" y1="380" x2="110" y2="410" />
+    </g>
+    <g stroke="var(--c-cyan)" stroke-width="2" fill="none" opacity="0.8">
+      <polygon points="440,385 460,385 450,350" fill="var(--c-cyan-dim)" />
+      <ellipse cx="450" cy="385" rx="10" ry="3" />
+    </g>
+    <line x1="115" y1="380" x2="450" y2="380" stroke="var(--c-ink-dim)" stroke-width="1.5" stroke-dasharray="4" />
+    <text x="115" y="405" font-size="12" text-anchor="middle" class="tug-text-dim">Partida (0 m)</text>
+    <text x="450" y="405" font-size="12" text-anchor="middle" class="tug-text-dim">Retorno (3 m)</text>
+    <path id="path-1" class="step-path" d="M 115 325 L 115 295" stroke="var(--c-ink-dim)" marker-end="url(#arrow-dim)" />
+    <path id="path-2" class="step-path" d="M 140 370 L 420 370" stroke="var(--c-ink-dim)" marker-end="url(#arrow-dim)" />
+    <path id="path-3" class="step-path" d="M 420 370 A 15 15 0 0 1 420 400" stroke="var(--c-ink-dim)" marker-end="url(#arrow-dim)" />
+    <path id="path-4" class="step-path" d="M 420 400 L 145 400" stroke="var(--c-ink-dim)" marker-end="url(#arrow-dim)" />
+    <g class="hotspot" id="hs-1" onclick="selectStep(0)" role="button" aria-label="Passo 1: Levantar">
+      <circle cx="115" cy="265" r="14" class="tug-card" />
+      <text x="115" y="270" font-size="14" font-weight="bold" text-anchor="middle" class="tug-text">1</text>
+    </g>
+    <g class="hotspot" id="hs-2" onclick="selectStep(1)" role="button" aria-label="Passo 2: Andar">
+      <circle cx="285" cy="340" r="14" class="tug-card" />
+      <text x="285" y="345" font-size="14" font-weight="bold" text-anchor="middle" class="tug-text">2</text>
+    </g>
+    <g class="hotspot" id="hs-3" onclick="selectStep(2)" role="button" aria-label="Passo 3: Girar">
+      <circle cx="485" cy="385" r="14" class="tug-card" />
+      <text x="485" y="390" font-size="14" font-weight="bold" text-anchor="middle" class="tug-text">3</text>
+    </g>
+    <g class="hotspot" id="hs-4" onclick="selectStep(3)" role="button" aria-label="Passo 4: Sentar">
+      <circle cx="115" cy="435" r="14" class="tug-card" />
+      <text x="115" y="440" font-size="14" font-weight="bold" text-anchor="middle" class="tug-text">4</text>
+    </g>
+    <rect x="30" y="460" width="500" height="65" rx="8" class="tug-card" />
+    <text id="step-title" x="45" y="485" font-size="15" font-weight="bold" class="tug-text">Etapa</text>
+    <text id="step-desc" x="45" y="508" font-size="12" class="tug-text-dim">Selecione uma das etapas numeradas no mapa.</text>
+    <rect x="550" y="90" width="340" height="435" rx="12" class="tug-card" />
+    <circle cx="720" cy="195" r="50" class="tug-card" stroke-width="2" />
+    <circle cx="720" cy="195" r="5" fill="var(--c-ink)" />
+    <path d="M 720 139 A 56 56 0 0 1 776 195" fill="none" stroke="var(--c-green)" stroke-width="4" />
+    <path d="M 776 195 A 56 56 0 0 1 720 251" fill="none" stroke="var(--c-amber)" stroke-width="4" />
+    <path d="M 720 251 A 56 56 0 0 1 720 139" fill="none" stroke="var(--c-red)" stroke-width="4" />
+    <text x="785" y="199" font-size="10" font-weight="bold" class="tug-text-dim">10s</text>
+    <text x="720" y="267" font-size="10" font-weight="bold" text-anchor="middle" class="tug-text-dim">20s</text>
+    <text x="645" y="199" font-size="10" font-weight="bold" class="tug-text-dim">30s</text>
+    <text x="720" y="129" font-size="10" font-weight="bold" text-anchor="middle" class="tug-text-dim">0s/40s</text>
+    <line id="stopwatch-needle" x1="720" y1="195" x2="720" y2="148" stroke="var(--c-ink)" stroke-width="3.5" stroke-linecap="round" />
+    <text id="time-value" x="720" y="280" font-size="24" font-weight="bold" text-anchor="middle" class="tug-text">0.0 s</text>
+    <line id="slider-track" x1="595" y1="315" x2="845" y2="315" stroke="var(--c-border)" stroke-width="4" stroke-linecap="round" />
+    <circle id="slider-handle" cx="720" cy="315" r="10" fill="var(--c-cyan)" stroke="var(--c-ink)" stroke-width="2" cursor="pointer" />
+    <rect id="slider-hitbox" x="585" y="300" width="270" height="30" fill="transparent" cursor="pointer" />
+    <rect id="risk-badge" x="575" y="355" width="290" height="35" rx="6" fill="var(--c-green)" />
+    <text id="risk-label" x="720" y="377" font-size="13" font-weight="bold" text-anchor="middle" fill="#12131a">Mobilidade Normal</text>
+    <text id="risk-desc-1" x="720" y="418" font-size="12" text-anchor="middle" class="tug-text-dim">Indivíduo independente,</text>
+    <text id="risk-desc-2" x="720" y="438" font-size="12" text-anchor="middle" class="tug-text-dim">mobilidade preservada.</text>
+    <text id="risk-desc-3" x="720" y="458" font-size="12" text-anchor="middle" class="tug-text-dim">Baixo risco de quedas.</text>
+    <text x="720" y="495" font-size="11" text-anchor="middle" fill="var(--c-amber)" font-weight="500">Arraste ou toque na barra para alterar o tempo</text>
+  </g>
+  <script>
+    <![CDATA[
+    const stepInfo=[
+      {name:'1. Levantar',desc:'Inicia sentado com as costas apoiadas na cadeira, levantando-se ao sinal.'},
+      {name:'2. Deslocamento (3m)',desc:'Caminha em linha reta por 3 metros em ritmo confortável e seguro.'},
+      {name:'3. Giro / Retorno',desc:'Contorna o cone/marcador físico posicionado a exatamente 3 metros.'},
+      {name:'4. Sentar',desc:'Retorna caminhando até a cadeira e senta-se, apoiando as costas.'}
+    ];
+    let isDragging=false;
+    const track=document.getElementById('slider-hitbox');
+    const handle=document.getElementById('slider-handle');
+    const needle=document.getElementById('stopwatch-needle');
+    const timeVal=document.getElementById('time-value');
+    const riskBadge=document.getElementById('risk-badge');
+    const riskLabel=document.getElementById('risk-label');
+    const desc1=document.getElementById('risk-desc-1');
+    const desc2=document.getElementById('risk-desc-2');
+    const desc3=document.getElementById('risk-desc-3');
+    function setTime(t){
+      t=Math.max(0,Math.min(40,t));
+      const x=595+(t/40)*250;
+      handle.setAttribute('cx',x);
+      const angle=(t/40)*360;
+      needle.setAttribute('transform',`rotate(${angle} 720 195)`);
+      timeVal.textContent=t.toFixed(1)+' s';
+      if(t<10){
+        riskBadge.setAttribute('fill','var(--c-green)');
+        riskLabel.setAttribute('fill','#ffffff');
+        riskLabel.textContent='Mobilidade Normal (< 10s)';
+        handle.setAttribute('fill','var(--c-green)');
+        desc1.textContent='Indivíduo totalmente independente,';
+        desc2.textContent='mobilidade preservada de forma ideal.';
+        desc3.textContent='Baixo risco de quedas.';
+      }else if(t<=20){
+        riskBadge.setAttribute('fill','var(--c-amber)');
+        riskLabel.setAttribute('fill','#12131a');
+        riskLabel.textContent='Independência Parcial (10-20s)';
+        handle.setAttribute('fill','var(--c-amber)');
+        desc1.textContent='Indivíduo com independência parcial,';
+        desc2.textContent='limitação física leve a moderada.';
+        desc3.textContent='Atenção: risco de quedas moderado.';
+      }else{
+        riskBadge.setAttribute('fill','var(--c-red)');
+        riskLabel.setAttribute('fill','#ffffff');
+        riskLabel.textContent='Alto Risco de Queda (> 20s)';
+        handle.setAttribute('fill','var(--c-red)');
+        desc1.textContent='Mobilidade gravemente comprometida,';
+        desc2.textContent='tempo limite crítico ultrapassado.';
+        desc3.textContent='Alto risco de quedas detectado!';
+      }
+    }
+    window.selectStep=function(idx){
+      for(let i=0;i<4;i++){
+        document.getElementById('hs-'+(i+1)).classList.toggle('active',i===idx);
+        document.getElementById('path-'+(i+1)).classList.toggle('active',i===idx);
+      }
+      document.getElementById('step-title').textContent=stepInfo[idx].name;
+      document.getElementById('step-desc').textContent=stepInfo[idx].desc;
+      const defaultTimes=[2.5,7.2,14.5,24.8];
+      setTime(defaultTimes[idx]);
+    };
+    function handleMove(e){
+      if(!isDragging)return;
+      const rect=document.getElementById('slider-track').getBoundingClientRect();
+      const clientX=e.touches?e.touches[0].clientX:e.clientX;
+      const pct=Math.max(0,Math.min(1,(clientX-rect.left)/rect.width));
+      setTime(pct*40);
+    }
+    track.addEventListener('mousedown',e=>{isDragging=true;handleMove(e);});
+    track.addEventListener('touchstart',e=>{isDragging=true;handleMove(e);});
+    window.addEventListener('mousemove',handleMove);
+    window.addEventListener('touchmove',handleMove);
+    window.addEventListener('mouseup',()=>isDragging=false);
+    window.addEventListener('touchend',()=>isDragging=false);
+    selectStep(0);
+    ]]>
+  </script>
+</svg>

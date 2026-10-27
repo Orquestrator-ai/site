@@ -1,0 +1,730 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="100%" height="100%" id="a12p20h-svg-root" class="a12p20h-root">
+  <defs>
+    <!-- Styles with strict scoping and zero bare element selectors -->
+    <style>
+      .a12p20h-root {
+        --a12p20h-bg-page: #180816;
+        --a12p20h-bg-card: #260e24;
+        --a12p20h-bg-card-hover: #381534;
+        --a12p20h-border: #4d1c47;
+        --a12p20h-border-bright: #8a347e;
+        --a12p20h-text-main: #f8ecf6;
+        --a12p20h-text-muted: #d4b2ce;
+        --a12p20h-text-dim: #9e7798;
+
+        --a12p20h-ant: #00d2ff;
+        --a12p20h-lat: #ffb703;
+        --a12p20h-pos: #e056fd;
+        --a12p20h-sust: #2ec4b6;
+        --a12p20h-alert: #ff4d6d;
+
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a12p20h-bg-page, #180816);
+        user-select: none;
+      }
+
+      [data-theme="light"] .a12p20h-root {
+        --a12p20h-bg-page: #fcf5fa;
+        --a12p20h-bg-card: #ffffff;
+        --a12p20h-bg-card-hover: #f5e6f3;
+        --a12p20h-border: #e6cadf;
+        --a12p20h-border-bright: #c78ab9;
+        --a12p20h-text-main: #2b0d28;
+        --a12p20h-text-muted: #5e2858;
+        --a12p20h-text-dim: #8a4f82;
+
+        --a12p20h-ant: #0077b6;
+        --a12p20h-lat: #d97706;
+        --a12p20h-pos: #9d4edd;
+        --a12p20h-sust: #059669;
+        --a12p20h-alert: #dc2626;
+      }
+
+      /* Transitions */
+      .a12p20h-trans {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Interactive Hotspot Cursor */
+      .a12p20h-btn, .a12p20h-cord-target {
+        cursor: pointer;
+      }
+
+      /* Glow and Active states */
+      .a12p20h-cord-active {
+        stroke-width: 6.5px !important;
+        filter: drop-shadow(0 0 8px currentColor);
+      }
+
+      .a12p20h-dimmed {
+        opacity: 0.25 !important;
+      }
+
+      .a12p20h-tab-active {
+        fill: var(--a12p20h-border-bright, #8a347e) !important;
+        stroke: var(--a12p20h-text-main, #f8ecf6) !important;
+      }
+
+      .a12p20h-card-shadow {
+        filter: drop-shadow(0 4px 12px rgba(0,0,0,0.35));
+      }
+    </style>
+
+    <!-- Gradients -->
+    <radialGradient id="a12p20h-grad-pelvis" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3d1437" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#180816" stop-opacity="0.95"/>
+    </radialGradient>
+
+    <linearGradient id="a12p20h-grad-card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p20h-bg-card, #260e24)"/>
+      <stop offset="100%" stop-color="var(--a12p20h-bg-page, #180816)"/>
+    </linearGradient>
+
+    <!-- Markers for Force Vectors -->
+    <marker id="a12p20h-arrow-ant" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12p20h-ant, #00d2ff)"/>
+    </marker>
+    <marker id="a12p20h-arrow-lat" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12p20h-lat, #ffb703)"/>
+    </marker>
+    <marker id="a12p20h-arrow-pos" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12p20h-pos, #e056fd)"/>
+    </marker>
+
+    <!-- Filters -->
+    <filter id="a12p20h-glow-ant" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="a12p20h-glow-lat" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="a12p20h-glow-pos" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND BASE -->
+  <rect x="0" y="0" width="1200" height="820" rx="16" fill="var(--a12p20h-bg-page, #180816)"/>
+
+  <!-- HEADER CONTRACT SECTION (CONTRATO DE LAYOUT #1) -->
+  <g id="a12p20h-header-group">
+    <rect x="30" y="20" width="1140" height="70" rx="12" fill="url(#a12p20h-grad-card-bg)" stroke="var(--a12p20h-border-bright, #8a347e)" stroke-width="1.5" class="a12p20h-card-shadow"/>
+    
+    <text x="50" y="48" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="20" font-weight="800" letter-spacing="0.5">SUSPENSÃO UTERINA: AS TRÊS CORDAS E A AUSÊNCIA DE PLANO</text>
+    <text x="50" y="68" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="13" font-weight="500">
+      Ginecologia &amp; Assoalho Pélvico · Aparelho de Suspensão (Ligamentar) vs. Sustentação (Diafragma Pélvico)
+    </text>
+
+    <!-- VIEW TABS INTERACTION -->
+    <g id="a12p20h-tabs" transform="translate(730, 32)">
+      <rect id="a12p20h-tab-dual" class="a12p20h-btn a12p20h-trans a12p20h-tab-active" x="0" y="0" width="130" height="34" rx="8" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1"/>
+      <text x="65" y="22" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="12" font-weight="700" text-anchor="middle" pointer-events="none">Painel Duplo</text>
+
+      <rect id="a12p20h-tab-axial" class="a12p20h-btn a12p20h-trans" x="140" y="0" width="140" height="34" rx="8" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1"/>
+      <text x="210" y="22" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="12" font-weight="600" text-anchor="middle" pointer-events="none">Vista Superior (Axial)</text>
+
+      <rect id="a12p20h-tab-sagittal" class="a12p20h-btn a12p20h-trans" x="290" y="0" width="140" height="34" rx="8" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1"/>
+      <text x="360" y="22" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="12" font-weight="600" text-anchor="middle" pointer-events="none">Corte Sagital Mediano</text>
+    </g>
+  </g>
+
+  <!-- MAIN GRAPHICS CONTAINER -->
+  <g id="a12p20h-main-stage" transform="translate(0, 100)">
+
+    <!-- ========================================================= -->
+    <!-- PANEL A: VISTA SUPERIOR (AXIAL) - AS 3 DIREÇÕES          -->
+    <!-- ========================================================= -->
+    <g id="a12p20h-panel-axial" class="a12p20h-trans" transform="translate(30, 0)">
+      <!-- Panel Frame -->
+      <rect x="0" y="0" width="375" height="425" rx="14" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1.5" class="a12p20h-card-shadow"/>
+      
+      <!-- Panel Header -->
+      <path d="M 0 14 Q 0 0 14 0 L 361 0 Q 375 0 375 14 L 375 36 L 0 36 Z" fill="var(--a12p20h-border, #4d1c47)" opacity="0.5"/>
+      <text x="15" y="23" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="13" font-weight="700">VISTA SUPERIOR (AXIAL) — 3 VETORES DIRECIONAIS</text>
+      <text x="360" y="23" fill="var(--a12p20h-text-dim, #9e7798)" font-size="11" font-weight="600" text-anchor="end">Visão 3D Completa</text>
+
+      <!-- Pelvic Ring Silhouette Background -->
+      <g transform="translate(187, 230)">
+        <!-- Pelvis Ring (Bacia Óssea Schema) -->
+        <ellipse cx="0" cy="0" rx="155" ry="145" fill="url(#a12p20h-grad-pelvis)" stroke="var(--a12p20h-border-bright, #8a347e)" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+
+        <!-- Orientation Axes -->
+        <g stroke="var(--a12p20h-text-dim, #9e7798)" stroke-width="1" stroke-dasharray="3,3" opacity="0.4">
+          <line x1="0" y1="-140" x2="0" y2="140"/>
+          <line x1="-150" y1="0" x2="150" y2="0"/>
+        </g>
+        <text x="0" y="-146" fill="var(--a12p20h-ant, #00d2ff)" font-size="11" font-weight="800" text-anchor="middle">ANTERIOR [A] (PÚBIS)</text>
+        <text x="0" y="158" fill="var(--a12p20h-pos, #e056fd)" font-size="11" font-weight="800" text-anchor="middle">POSTERIOR [P] (SACRO)</text>
+        <text x="-155" y="4" fill="var(--a12p20h-lat, #ffb703)" font-size="10" font-weight="800" text-anchor="end">LATERAL [R]</text>
+        <text x="155" y="4" fill="var(--a12p20h-lat, #ffb703)" font-size="10" font-weight="800" text-anchor="start">LATERAL [L]</text>
+
+        <!-- Pubic Symphysis (Anterior Anchor) -->
+        <path id="a12p20h-pubis-shape" d="M -35 -135 Q 0 -142 35 -135 Q 40 -120 20 -115 Q 0 -118 -20 -115 Q -40 -120 -35 -135 Z" fill="#4a1844" stroke="var(--a12p20h-text-muted, #d4b2ce)" stroke-width="1.5"/>
+        <text x="0" y="-123" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="700" text-anchor="middle">Sínfise Púbica</text>
+
+        <!-- Sacrum Bone (Posterior Anchor) -->
+        <path id="a12p20h-sacrum-shape" d="M -50 120 Q 0 105 50 120 Q 40 140 0 145 Q -40 140 -50 120 Z" fill="#4a1844" stroke="var(--a12p20h-text-muted, #d4b2ce)" stroke-width="1.5"/>
+        <text x="0" y="132" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="700" text-anchor="middle">Sacro (S2-S4)</text>
+
+        <!-- Lateral Pelvic Walls (Arcus Tendineus / Obturator Internus) -->
+        <path d="M -150 -40 Q -140 0 -145 50" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="3" fill="none" opacity="0.6"/>
+        <path d="M 150 -40 Q 140 0 145 50" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="3" fill="none" opacity="0.6"/>
+
+        <!-- Pelvic Floor (Diafragma Pélvico / Sustentação - Background Layer) -->
+        <g id="a12p20h-axial-floor-grp" class="a12p20h-trans">
+          <ellipse cx="0" cy="-5" rx="125" ry="105" fill="var(--a12p20h-sust, #2ec4b6)" opacity="0.12"/>
+          <path d="M -120 10 Q -60 70 0 75 Q 60 70 120 10 Q 90 95 0 100 Q -90 95 -120 10 Z" fill="var(--a12p20h-sust, #2ec4b6)" opacity="0.25" stroke="var(--a12p20h-sust, #2ec4b6)" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="-75" y="70" fill="var(--a12p20h-sust, #2ec4b6)" font-size="10" font-weight="700">m. Levantador do Ânus</text>
+          <text x="-75" y="82" fill="var(--a12p20h-sust, #2ec4b6)" font-size="9" font-weight="500">(Plano de Sustentação - "Chão")</text>
+        </g>
+
+        <!-- ORGAN VISCERA (Bexiga, Útero, Reto) -->
+        <!-- Bladder (Anterior) -->
+        <ellipse cx="0" cy="-65" rx="36" ry="22" fill="#5c1d53" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="1.5"/>
+        <text x="0" y="-61" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="600" text-anchor="middle">Bexiga</text>
+
+        <!-- Rectum (Posterior) -->
+        <circle cx="0" cy="65" r="20" fill="#42143c" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="1.5"/>
+        <text x="0" y="69" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="600" text-anchor="middle">Reto</text>
+
+        <!-- Central Target: UTERUS & CERVIX -->
+        <g id="a12p20h-axial-uterus">
+          <ellipse cx="0" cy="-5" rx="30" ry="38" fill="#7a246e" stroke="var(--a12p20h-text-main, #f8ecf6)" stroke-width="2"/>
+          <circle cx="0" cy="5" r="14" fill="#a13292" stroke="#ffffff" stroke-width="1.5"/>
+          <text x="0" y="-12" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">ÚTERO</text>
+          <text x="0" y="9" fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle">Colo</text>
+        </g>
+
+        <!-- ==================================== -->
+        <!-- THE THREE CORDS (SUSPENSION SYSTEM) -->
+        <!-- ==================================== -->
+
+        <!-- CORD 1: PUBOVESICOUTERINO (ANTERIOR) -->
+        <g id="a12p20h-axial-cord-ant" class="a12p20h-cord-target a12p20h-trans">
+          <!-- Left Branch -->
+          <path d="M -12 -115 Q -15 -90 -12 -42" fill="none" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="4.5" stroke-linecap="round" filter="url(#a12p20h-glow-ant)"/>
+          <!-- Right Branch -->
+          <path d="M 12 -115 Q 15 -90 12 -42" fill="none" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="4.5" stroke-linecap="round" filter="url(#a12p20h-glow-ant)"/>
+          <!-- Force Vector Arrows -->
+          <line x1="-12" y1="-50" x2="-12" y2="-100" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="2" marker-end="url(#a12p20h-arrow-ant)"/>
+          <line x1="12" y1="-50" x2="12" y2="-100" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="2" marker-end="url(#a12p20h-arrow-ant)"/>
+          
+          <!-- Label Callout -->
+          <rect x="-115" y="-105" width="95" height="24" rx="5" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="1"/>
+          <text x="-67" y="-89" fill="var(--a12p20h-ant, #00d2ff)" font-size="10" font-weight="800" text-anchor="middle">1. Pubovesicouterino</text>
+        </g>
+
+        <!-- CORD 2: CARDINAL / MACKENRODT (LATERAL BILATERAL) -->
+        <g id="a12p20h-axial-cord-lat" class="a12p20h-cord-target a12p20h-trans">
+          <!-- Left Cardinal Band -->
+          <path d="M -145 5 Q -80 5 -30 5" fill="none" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="5.5" stroke-linecap="round" filter="url(#a12p20h-glow-lat)"/>
+          <!-- Right Cardinal Band -->
+          <path d="M 145 5 Q 80 5 30 5" fill="none" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="5.5" stroke-linecap="round" filter="url(#a12p20h-glow-lat)"/>
+          
+          <!-- Transverse Force Vector Arrows -->
+          <line x1="-40" y1="5" x2="-130" y2="5" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="2" marker-end="url(#a12p20h-arrow-lat)"/>
+          <line x1="40" y1="5" x2="130" y2="5" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="2" marker-end="url(#a12p20h-arrow-lat)"/>
+
+          <!-- Label Callout (Lateral) -->
+          <rect x="-160" y="-22" width="105" height="24" rx="5" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="1"/>
+          <text x="-107" y="-6" fill="var(--a12p20h-lat, #ffb703)" font-size="10" font-weight="800" text-anchor="middle">2. Cardinal (Mackenrodt)</text>
+
+          <rect x="55" y="-22" width="105" height="24" rx="5" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="1"/>
+          <text x="107" y="-6" fill="var(--a12p20h-lat, #ffb703)" font-size="10" font-weight="800" text-anchor="middle">2. Cardinal (Mackenrodt)</text>
+        </g>
+
+        <!-- CORD 3: UTEROSSACRO (POSTERIOR) -->
+        <g id="a12p20h-axial-cord-pos" class="a12p20h-cord-target a12p20h-trans">
+          <!-- Left Uterosacral Arch -->
+          <path d="M -16 18 Q -30 65 -22 112" fill="none" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="4.5" stroke-linecap="round" filter="url(#a12p20h-glow-pos)"/>
+          <!-- Right Uterosacral Arch -->
+          <path d="M 16 18 Q 30 65 22 112" fill="none" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="4.5" stroke-linecap="round" filter="url(#a12p20h-glow-pos)"/>
+
+          <!-- Posterior Force Vectors -->
+          <line x1="-20" y1="30" x2="-22" y2="100" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="2" marker-end="url(#a12p20h-arrow-pos)"/>
+          <line x1="20" y1="30" x2="22" y2="100" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="2" marker-end="url(#a12p20h-arrow-pos)"/>
+
+          <!-- Label Callout -->
+          <rect x="35" y="80" width="95" height="24" rx="5" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="1"/>
+          <text x="82" y="96" fill="var(--a12p20h-pos, #e056fd)" font-size="10" font-weight="800" text-anchor="middle">3. Uterossacro</text>
+        </g>
+
+        <!-- MEDIAN SAGITTAL CUT PLANE INDICATOR (INDICADOR DO CORTE) -->
+        <g id="a12p20h-cut-line-grp">
+          <line x1="0" y1="-140" x2="0" y2="140" stroke="var(--a12p20h-alert, #ff4d6d)" stroke-width="2.5" stroke-dasharray="6,4"/>
+          <rect x="-65" y="32" width="130" height="20" rx="4" fill="var(--a12p20h-alert, #ff4d6d)"/>
+          <text x="0" y="46" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">PLANO DO CORTE SAGITAL</text>
+        </g>
+
+      </g>
+
+      <!-- Axial Legend Footer -->
+      <text x="15" y="410" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="600">
+        ★ Na vista axial, todos os 3 vetores ligamentares são visíveis simultaneamente.
+      </text>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- PANEL B: CORTE SAGITAL MEDIANO - A AUSÊNCIA DE PLANO      -->
+    <!-- ========================================================= -->
+    <g id="a12p20h-panel-sagittal" class="a12p20h-trans" transform="translate(420, 0)">
+      <!-- Panel Frame -->
+      <rect x="0" y="0" width="375" height="425" rx="14" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1.5" class="a12p20h-card-shadow"/>
+      
+      <!-- Panel Header -->
+      <path d="M 0 14 Q 0 0 14 0 L 361 0 Q 375 0 375 14 L 375 36 L 0 36 Z" fill="var(--a12p20h-border, #4d1c47)" opacity="0.5"/>
+      <text x="15" y="23" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="13" font-weight="700">CORTE SAGITAL MEDIANO — A ARMADILHA VISUAL</text>
+      <text x="360" y="23" fill="var(--a12p20h-alert, #ff4d6d)" font-size="11" font-weight="700" text-anchor="end">O Plano Oculto!</text>
+
+      <g transform="translate(25, 45)">
+        <!-- Orientation Indicators -->
+        <text x="10" y="20" fill="var(--a12p20h-ant, #00d2ff)" font-size="11" font-weight="800">← ANTERIOR (PÚBIS)</text>
+        <text x="315" y="20" fill="var(--a12p20h-pos, #e056fd)" font-size="11" font-weight="800" text-anchor="end">POSTERIOR (SACRO) →</text>
+
+        <!-- ANATOMICAL SAGITAL PROJECTION -->
+        <!-- Pubis Bone (Anterior) -->
+        <path d="M 15 150 C 10 130 30 110 45 125 C 55 135 45 170 30 180 C 20 185 15 170 15 150 Z" fill="#4a1844" stroke="var(--a12p20h-text-muted, #d4b2ce)" stroke-width="1.5"/>
+        <text x="28" y="152" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="700" text-anchor="middle">Púbis</text>
+
+        <!-- Sacrum & Coccyx (Posterior) -->
+        <path d="M 280 60 C 310 90 320 140 295 200 C 285 220 275 230 270 230 C 275 210 295 160 275 100 C 265 75 270 60 280 60 Z" fill="#4a1844" stroke="var(--a12p20h-text-muted, #d4b2ce)" stroke-width="1.5"/>
+        <text x="298" y="130" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="700" text-anchor="middle" transform="rotate(65, 298, 130)">Sacro / Coccix</text>
+
+        <!-- Pelvic Floor / Levator Ani Muscle (Sustentação - Floor) -->
+        <g id="a12p20h-sagittal-floor-grp" class="a12p20h-trans">
+          <path d="M 30 180 Q 150 250 270 230 L 265 245 Q 145 265 25 195 Z" fill="var(--a12p20h-sust, #2ec4b6)" opacity="0.3" stroke="var(--a12p20h-sust, #2ec4b6)" stroke-width="2"/>
+          <!-- Perineal Body / Assoalho -->
+          <circle cx="160" cy="235" r="8" fill="var(--a12p20h-sust, #2ec4b6)"/>
+          <text x="160" y="260" fill="var(--a12p20h-sust, #2ec4b6)" font-size="11" font-weight="800" text-anchor="middle">DIAFRAGMA PÉLVICO (SUSTENTAÇÃO / CHÃO)</text>
+        </g>
+
+        <!-- Bladder (Anterior to Uterus) -->
+        <path d="M 45 145 Q 70 130 95 150 Q 100 175 75 190 Q 50 185 45 145 Z" fill="#5c1d53" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="1.5" opacity="0.85"/>
+        <text x="70" y="165" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="600" text-anchor="middle">Bexiga</text>
+
+        <!-- Uterus & Cervix & Vagina (Sagittal Profile) -->
+        <g id="a12p20h-sagittal-uterus-body">
+          <!-- Uterine Corpus (Anteversofletido) -->
+          <path d="M 95 135 C 100 90 145 80 165 110 C 180 130 160 160 145 165 C 130 170 110 165 95 135 Z" fill="#7a246e" stroke="var(--a12p20h-text-main, #f8ecf6)" stroke-width="2"/>
+          <!-- Cervix -->
+          <path d="M 145 165 C 155 175 160 190 150 200 C 140 205 130 190 130 175 Z" fill="#a13292" stroke="#ffffff" stroke-width="1.5"/>
+          <!-- Vaginal Canal -->
+          <path d="M 130 195 L 120 235 L 140 238 L 150 198 Z" fill="#4d1646" opacity="0.7"/>
+          
+          <text x="135" y="125" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">ÚTERO</text>
+          <text x="156" y="185" fill="#ffffff" font-size="9" font-weight="700">Colo</text>
+        </g>
+
+        <!-- Rectum (Posterior to Uterus) -->
+        <path d="M 175 155 Q 210 150 235 180 Q 230 220 205 230 Q 170 210 175 155 Z" fill="#42143c" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="1.5" opacity="0.85"/>
+        <text x="205" y="190" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="600" text-anchor="middle">Reto</text>
+
+
+        <!-- SAGITTAL CORDS (SUSPENSION) -->
+
+        <!-- CORD 1: PUBOVESICOUTERINO (ANTERIOR SAGITTAL) -->
+        <g id="a12p20h-sag-cord-ant" class="a12p20h-cord-target a12p20h-trans">
+          <path d="M 40 135 Q 70 130 110 145" fill="none" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="4.5" stroke-linecap="round" filter="url(#a12p20h-glow-ant)"/>
+          <line x1="105" y1="145" x2="45" y2="135" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="2" marker-end="url(#a12p20h-arrow-ant)"/>
+          <text x="65" y="120" fill="var(--a12p20h-ant, #00d2ff)" font-size="10" font-weight="800" text-anchor="middle">1. Pubovesicouterino</text>
+        </g>
+
+        <!-- CORD 3: UTEROSSACRO (POSTERIOR SAGITTAL) -->
+        <g id="a12p20h-sag-cord-pos" class="a12p20h-cord-target a12p20h-trans">
+          <path d="M 150 180 Q 210 170 270 120" fill="none" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="4.5" stroke-linecap="round" filter="url(#a12p20h-glow-pos)"/>
+          <line x1="160" y1="178" x2="255" y2="130" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="2" marker-end="url(#a12p20h-arrow-pos)"/>
+          <text x="225" y="150" fill="var(--a12p20h-pos, #e056fd)" font-size="10" font-weight="800" text-anchor="middle">3. Uterossacro</text>
+        </g>
+
+        <!-- CORD 2: CARDINAL / MACKENRODT (THE HIDDEN / GHOSTED PLANE!) -->
+        <g id="a12p20h-sag-cord-lat" class="a12p20h-cord-target a12p20h-trans">
+          <!-- Ghosted 3D Projection Ribbon going OUT OF PLANE (toward viewer / away) -->
+          <ellipse cx="140" cy="180" rx="35" ry="18" fill="var(--a12p20h-lat, #ffb703)" opacity="0.35" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="2.5" stroke-dasharray="4,3" filter="url(#a12p20h-glow-lat)"/>
+          <path d="M 140 180 L 180 205" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="3" stroke-dasharray="3,3"/>
+          <circle cx="180" cy="205" r="5" fill="var(--a12p20h-lat, #ffb703)"/>
+          
+          <!-- Warning Badge Overlay -->
+          <g transform="translate(70, 42)">
+            <rect x="0" y="0" width="185" height="32" rx="6" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-alert, #ff4d6d)" stroke-width="1.5" class="a12p20h-card-shadow"/>
+            <text x="10" y="15" fill="var(--a12p20h-alert, #ff4d6d)" font-size="10" font-weight="800">⚠️ LIGAMENTO CARDINAL (LATERAL)</text>
+            <text x="10" y="27" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="9" font-weight="600">Desaparece no corte mediano!</text>
+          </g>
+        </g>
+
+        <!-- PLANE OF CUT ANNOTATION -->
+        <g transform="translate(10, 290)">
+          <rect x="0" y="0" width="305" height="34" rx="6" fill="var(--a12p20h-border, #4d1c47)" opacity="0.7"/>
+          <text x="10" y="15" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10" font-weight="700">POR QUE ELE DESAPARECE?</text>
+          <text x="10" y="27" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="9" font-weight="500">O Lig. Cardinal corre no plano CORONAL/TRANSVERSO (para as paredes laterais).</text>
+        </g>
+
+      </g>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- PANEL C: RIGHT SIDE - CLINICAL INTERPRETATION PANEL      -->
+    <!-- (CONTRATO DE LAYOUT #4 - PAINEL AO LADO EXPLICANDO)      -->
+    <!-- ========================================================= -->
+    <g id="a12p20h-panel-info" transform="translate(810, 0)">
+      <rect x="0" y="0" width="360" height="425" rx="14" fill="url(#a12p20h-grad-card-bg)" stroke="var(--a12p20h-border-bright, #8a347e)" stroke-width="1.5" class="a12p20h-card-shadow"/>
+
+      <!-- Card Title Section -->
+      <path d="M 0 14 Q 0 0 14 0 L 346 0 Q 360 0 360 14 L 360 42 L 0 42 Z" fill="var(--a12p20h-border-bright, #8a347e)" opacity="0.4"/>
+      <text id="a12p20h-info-header-tag" x="16" y="26" fill="var(--a12p20h-lat, #ffb703)" font-size="11" font-weight="800" letter-spacing="1">GUIA DE INTERPRETAÇÃO ANATÔMICA</text>
+      
+      <!-- Interactive Selector Buttons inside Side Panel -->
+      <g id="a12p20h-cord-selectors" transform="translate(14, 52)">
+        <!-- Button: All Cords -->
+        <g id="a12p20h-sel-all" class="a12p20h-btn a12p20h-trans" transform="translate(0,0)">
+          <rect width="78" height="26" rx="6" fill="var(--a12p20h-border-bright, #8a347e)" stroke="var(--a12p20h-text-main, #f8ecf6)" stroke-width="1"/>
+          <text x="39" y="17" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">Todas (3)</text>
+        </g>
+        <!-- Button: Anterior -->
+        <g id="a12p20h-sel-ant" class="a12p20h-btn a12p20h-trans" transform="translate(84,0)">
+          <rect width="82" height="26" rx="6" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-ant, #00d2ff)" stroke-width="1"/>
+          <text x="41" y="17" fill="var(--a12p20h-ant, #00d2ff)" font-size="10" font-weight="700" text-anchor="middle">Anterior</text>
+        </g>
+        <!-- Button: Cardinal (Lateral) -->
+        <g id="a12p20h-sel-lat" class="a12p20h-btn a12p20h-trans" transform="translate(172,0)">
+          <rect width="82" height="26" rx="6" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="1"/>
+          <text x="41" y="17" fill="var(--a12p20h-lat, #ffb703)" font-size="10" font-weight="700" text-anchor="middle">Lateral (Card)</text>
+        </g>
+        <!-- Button: Uterosacral (Posterior) -->
+        <g id="a12p20h-sel-pos" class="a12p20h-btn a12p20h-trans" transform="translate(260,0)">
+          <rect width="72" height="26" rx="6" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-pos, #e056fd)" stroke-width="1"/>
+          <text x="36" y="17" fill="var(--a12p20h-pos, #e056fd)" font-size="10" font-weight="700" text-anchor="middle">Posterior</text>
+        </g>
+      </g>
+
+      <!-- Dynamic Content Box -->
+      <g id="a12p20h-info-body" transform="translate(16, 92)">
+        
+        <!-- Feature Badge / Title -->
+        <text id="a12p20h-info-title" x="0" y="16" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="15" font-weight="800">
+          As Três Cordas de Suspensão Uterina
+        </text>
+
+        <!-- Trajectory Box -->
+        <rect x="0" y="28" width="328" height="58" rx="8" fill="var(--a12p20h-bg-page, #180816)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1"/>
+        <text x="12" y="46" fill="var(--a12p20h-text-dim, #9e7798)" font-size="10" font-weight="700">TRAJETÓRIA &amp; ANCORAGEM:</text>
+        <text id="a12p20h-info-origem" x="12" y="65" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="11" font-weight="600">
+          • Ant: Púbis → Bexiga → Útero | Lat: Parede Lateral | Pos: Sacro
+        </text>
+
+        <!-- Force Vector Box -->
+        <rect x="0" y="94" width="328" height="50" rx="8" fill="var(--a12p20h-bg-page, #180816)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1"/>
+        <text x="12" y="112" fill="var(--a12p20h-text-dim, #9e7798)" font-size="10" font-weight="700">VETOR DE FORÇA MENSURÁVEL:</text>
+        <text id="a12p20h-info-vetor" x="12" y="131" fill="var(--a12p20h-lat, #ffb703)" font-size="11" font-weight="700">
+          • Tração tridimensional equilibrada (Anterior, Transversa e Posterior)
+        </text>
+
+        <!-- Clinical Significance Box -->
+        <rect x="0" y="152" width="328" height="98" rx="8" fill="var(--a12p20h-bg-page, #180816)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1"/>
+        <text x="12" y="170" fill="var(--a12p20h-text-dim, #9e7798)" font-size="10" font-weight="700">APLICAÇÃO CLÍNICA &amp; CIRÚRGICA (PROVA):</text>
+        <text id="a12p20h-info-clinica1" x="12" y="188" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="500">
+          • Nível I de DeLancey (Suspensão Apical).
+        </text>
+        <text id="a12p20h-info-clinica2" x="12" y="206" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="500">
+          • Lig. Cardinal (Mackenrodt) é o principal suporte lateral do colo.
+        </text>
+        <text id="a12p20h-info-clinica3" x="12" y="224" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="500">
+          • Contém a Artéria Uterina cruzando por cima do Ureter!
+        </text>
+
+        <!-- Key Takeaway / Alert Box -->
+        <g transform="translate(0, 258)">
+          <rect width="328" height="64" rx="8" fill="var(--a12p20h-bg-card-hover, #381534)" stroke="var(--a12p20h-alert, #ff4d6d)" stroke-width="1.5"/>
+          <text x="12" y="18" fill="var(--a12p20h-alert, #ff4d6d)" font-size="11" font-weight="800">💡 REGRA DE OURO (NUNCA ERRE NA PROVA):</text>
+          <text id="a12p20h-info-takeaway1" x="12" y="36" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10.5" font-weight="700">
+            A ausência do ligamento cardinal no corte sagital é ILUSÃO
+          </text>
+          <text id="a12p20h-info-takeaway2" x="12" y="52" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="10.5" font-weight="600">
+            DE PLANO. Ele existe e fixa o colo lateralmente!
+          </text>
+        </g>
+
+      </g>
+    </g>
+
+  </g> <!-- END MAIN STAGE -->
+
+  <!-- ========================================================= -->
+  <!-- BOTTOM SECTION: CONCEPT STRIP & SUSTENTAÇÃO VS SUSPENSÃO  -->
+  <!-- ========================================================= -->
+  <g id="a12p20h-bottom-strip" transform="translate(30, 540)">
+    <rect x="0" y="0" width="1140" height="175" rx="14" fill="url(#a12p20h-grad-card-bg)" stroke="var(--a12p20h-border-bright, #8a347e)" stroke-width="1.5" class="a12p20h-card-shadow"/>
+
+    <!-- Title Badge -->
+    <path d="M 0 14 Q 0 0 14 0 L 1126 0 Q 1140 0 1140 14 L 1140 34 L 0 34 Z" fill="var(--a12p20h-border, #4d1c47)" opacity="0.6"/>
+    <text x="16" y="22" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="12" font-weight="800">DIFERENÇA ANATÔMICA FUNDAMENTAL: SUSPENSÃO vs. SUSTENTAÇÃO</text>
+    <text x="1124" y="22" fill="var(--a12p20h-text-dim, #9e7798)" font-size="11" font-weight="600" text-anchor="end">Clique nos cards abaixo para explorar</text>
+
+    <!-- Comparison Cards -->
+    <!-- CARD 1: APPAREL OF SUSPENSION (CORDAS) -->
+    <g id="a12p20h-card-suspensa" class="a12p20h-btn a12p20h-trans" transform="translate(16, 44)">
+      <rect width="545" height="115" rx="10" fill="var(--a12p20h-bg-page, #180816)" stroke="var(--a12p20h-lat, #ffb703)" stroke-width="1.5"/>
+      <circle cx="28" cy="26" r="14" fill="var(--a12p20h-lat, #ffb703)"/>
+      <text x="28" y="31" fill="#180816" font-size="13" font-weight="900" text-anchor="middle">1</text>
+
+      <text x="52" y="25" fill="var(--a12p20h-lat, #ffb703)" font-size="13" font-weight="800">APARELHO DE SUSPENSÃO = AS CORDAS (LIGAMENTOS)</text>
+      <text x="52" y="44" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="11" font-weight="600">• Função: Traciona e orienta o útero no espaço pélvico (Nível I de DeLancey).</text>
+      <text x="52" y="62" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="500">• Três direções: Pubovesicouterino (Ant), Cardinal (Lat), Uterossacro (Pos).</text>
+      <text x="52" y="80" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="500">• Anatomia 3D: O ligamento Cardinal vai para a lateral (oculto no corte sagital).</text>
+      <text x="52" y="98" fill="var(--a12p20h-alert, #ff4d6d)" font-size="10.5" font-weight="700">➜ Sem o chão (sustentação), as cordas sofrem sobrecarga e estiram com o tempo!</text>
+    </g>
+
+    <!-- CARD 2: APPAREL OF SUPPORT (CHÃO) -->
+    <g id="a12p20h-card-sustenta" class="a12p20h-btn a12p20h-trans" transform="translate(578, 44)">
+      <rect width="545" height="115" rx="10" fill="var(--a12p20h-bg-page, #180816)" stroke="var(--a12p20h-sust, #2ec4b6)" stroke-width="1.5"/>
+      <circle cx="28" cy="26" r="14" fill="var(--a12p20h-sust, #2ec4b6)"/>
+      <text x="28" y="31" fill="#180816" font-size="13" font-weight="900" text-anchor="middle">2</text>
+
+      <text x="52" y="25" fill="var(--a12p20h-sust, #2ec4b6)" font-size="13" font-weight="800">APARELHO DE SUSTENTAÇÃO = O CHÃO (DIAFRAGMA PÉLVICO)</text>
+      <text x="52" y="44" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="11" font-weight="600">• Função: Suporta o peso dos órgãos pélvicos de baixo para cima (Plano de Fundo).</text>
+      <text x="52" y="62" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="500">• Músculo principal: m. Levantador do Ânus (Puborretal, Pubocóccigeo, Iliocóccigeo).</text>
+      <text x="52" y="80" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="500">• Estrutura muscular ativa: Mantém o hiato urogenital fechado em repouso.</text>
+      <text x="52" y="98" fill="var(--a12p20h-sust, #2ec4b6)" font-size="10.5" font-weight="700">➜ É a base física real. A suspensão apenas guia; o assoalho segura a carga!</text>
+    </g>
+
+  </g> <!-- END BOTTOM STRIP -->
+
+  <!-- ========================================================= -->
+  <!-- FOOTER CONTRACT SECTION (CONTRATO DE LAYOUT #1 & #5)       -->
+  <!-- ========================================================= -->
+  <g id="a12p20h-footer-group" transform="translate(30, 730)">
+    <rect x="0" y="0" width="1140" height="70" rx="12" fill="var(--a12p20h-bg-card, #260e24)" stroke="var(--a12p20h-border, #4d1c47)" stroke-width="1.5"/>
+
+    <text x="20" y="24" fill="var(--a12p20h-text-main, #f8ecf6)" font-size="12" font-weight="800">LEGENDA DE INTERPRETAÇÃO CLÍNICA (O QUE CONCLUIR PARA A PROVA):</text>
+    <text x="20" y="46" fill="var(--a12p20h-text-muted, #d4b2ce)" font-size="11" font-weight="500">
+      1. A suspensão uterina ocorre em 3 direções (Anterior, Lateral e Posterior). 
+      2. O Ligamento Cardinal (Mackenrodt) é lateral e por isso NUNCA aparece no corte sagital mediano.
+      3. O erro de julgar a anatomia pélvica por uma única vista plana é a principal armadilha de prova nas questões de prolapso genital.
+    </text>
+
+    <!-- Color Legend Pills -->
+    <g transform="translate(730, 14)">
+      <!-- Ant Pill -->
+      <rect x="0" y="0" width="90" height="20" rx="4" fill="var(--a12p20h-ant, #00d2ff)" opacity="0.2"/>
+      <circle cx="10" cy="10" r="4" fill="var(--a12p20h-ant, #00d2ff)"/>
+      <text x="20" y="14" fill="var(--a12p20h-ant, #00d2ff)" font-size="10" font-weight="700">Anterior</text>
+
+      <!-- Lat Pill -->
+      <rect x="98" y="0" width="95" height="20" rx="4" fill="var(--a12p20h-lat, #ffb703)" opacity="0.2"/>
+      <circle cx="108" cy="10" r="4" fill="var(--a12p20h-lat, #ffb703)"/>
+      <text x="118" y="14" fill="var(--a12p20h-lat, #ffb703)" font-size="10" font-weight="700">Lateral (Card)</text>
+
+      <!-- Pos Pill -->
+      <rect x="200" y="0" width="95" height="20" rx="4" fill="var(--a12p20h-pos, #e056fd)" opacity="0.2"/>
+      <circle cx="210" cy="10" r="4" fill="var(--a12p20h-pos, #e056fd)"/>
+      <text x="220" y="14" fill="var(--a12p20h-pos, #e056fd)" font-size="10" font-weight="700">Posterior</text>
+
+      <!-- Sust Pill -->
+      <rect x="302" y="0" width="90" height="20" rx="4" fill="var(--a12p20h-sust, #2ec4b6)" opacity="0.2"/>
+      <circle cx="312" cy="10" r="4" fill="var(--a12p20h-sust, #2ec4b6)"/>
+      <text x="322" y="14" fill="var(--a12p20h-sust, #2ec4b6)" font-size="10" font-weight="700">Sustentação</text>
+    </g>
+  </g>
+
+  <!-- ========================================================= -->
+  <!-- INLINE INTERACTIVE JAVASCRIPT ENGINE                      -->
+  <!-- ========================================================= -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // Data dictionary for dynamic card update
+      var cordData = {
+        'all': {
+          title: "As Três Cordas de Suspensão Uterina",
+          origem: "• Ant: Púbis → Bexiga → Útero | Lat: Parede Lateral | Pos: Sacro",
+          vetor: "• Tração tridimensional equilibrada (Anterior, Transversa e Posterior)",
+          c1: "• Nível I de DeLancey (Suspensão Apical).",
+          c2: "• Lig. Cardinal (Mackenrodt) é o principal suporte lateral do colo.",
+          c3: "• Contém a Artéria Uterina cruzando por cima do Ureter!",
+          t1: "A ausência do ligamento cardinal no corte sagital é ILUSÃO",
+          t2: "DE PLANO. Ele existe e fixa o colo lateralmente!"
+        },
+        'ant': {
+          title: "1. Ligamento Pubovesicouterino (Anterior)",
+          origem: "• Da face posterior da Sínfise Púbica → Bexiga → Colo Uterino",
+          vetor: "• Vetor Anterior [A] (Traciona a bacia anterior)",
+          c1: "• Fixa o útero anteriorizadamente sobre a bexiga.",
+          c2: "• Auxilia na manutenção do ângulo de anteversoflexão (AVF).",
+          c3: "• Lesão isolada favorece retroversão e cistocele associada.",
+          t1: "Vetor Anterior: Evita o deslizamento posterior do colo",
+          t2: "e mantém o corpo uterino apoiado na bexiga."
+        },
+        'lat': {
+          title: "2. Ligamento Cardinal / Mackenrodt (Lateral)",
+          origem: "• Da parede pélvica lateral (fáscia do obturador) → Colo Uterino (Istmo)",
+          vetor: "• Vetor Transverso Bilateral [R / L] (Múltiplos eixos laterais)",
+          c1: "• É O PRINCIPAL LIGAMENTO DE SUSTENTAÇÃO APICAL DO ÚTERO!",
+          c2: "• Por ser lateral, DESAPARECE NO CORTE SAGITAL MEDIANO.",
+          c3: "• Ponto crítico na histerectomia: Ureter passa INFERIOR à artéria uterina.",
+          t1: "⚠️ ARMADILHA DE PROVA: Não o veja no corte sagital,",
+          t2: "mas saiba que ele é o pilar mais forte de suspensão apical!"
+        },
+        'pos': {
+          title: "3. Ligamento Uterossacro (Posterior)",
+          origem: "• Da face posterior do colo uterino / fórnice posterior → Vértebras S2-S4",
+          vetor: "• Vetor Posterossuperior [P] (Traciona o colo para trás/cima)",
+          c1: "• Mantém o colo tracionado para trás, mantendo a AVF do corpo.",
+          c2: "• Alvo principal da cirurgia de Fixação no Lig. Uterossacro.",
+          c3: "• Forma os limites laterais do Fundo de Saco de Douglas.",
+          t1: "Vetor Posterior: Mantém o colo em direção ao sacro,",
+          t2: "sendo fundamental na prevenção do prolapso de cúpula."
+        },
+        'sustentacao': {
+          title: "Aparelho de Sustentação (Diafragma Pélvico)",
+          origem: "• Músculo Levantador do Ânus + M. Cócceo + Fáscias Endopélvicas",
+          vetor: "• Vetor Ascendente Verticamente de Baixo para Cima (O Chão)",
+          c1: "• Não é corda! É o CHÃO neuromuscular onde os órgãos repousam.",
+          c2: "• Em repouso, fecha o hiato urogenital contra o aumento da PAI.",
+          c3: "• Se o assoalho falha, os ligamentos (cordas) sofrem estiramento.",
+          t1: "Sustentação é o CHÃO. Suspensão são as CORDAS.",
+          t2: "Sem chão firme, nenhuma corda segura a carga para sempre!"
+        }
+      };
+
+      // Helper to update elements safely
+      function setElementText(id, text) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = text;
+      }
+
+      function highlightCord(cordId) {
+        var antAxial = document.getElementById('a12p20h-axial-cord-ant');
+        var latAxial = document.getElementById('a12p20h-axial-cord-lat');
+        var posAxial = document.getElementById('a12p20h-axial-cord-pos');
+
+        var antSag = document.getElementById('a12p20h-sag-cord-ant');
+        var latSag = document.getElementById('a12p20h-sag-cord-lat');
+        var posSag = document.getElementById('a12p20h-sag-cord-pos');
+
+        var floorAxial = document.getElementById('a12p20h-axial-floor-grp');
+        var floorSag = document.getElementById('a12p20h-sagittal-floor-grp');
+
+        var allCords = [antAxial, latAxial, posAxial, antSag, latSag, posSag];
+        
+        // Reset styles
+        allCords.forEach(function(c) {
+          if (c) {
+            c.classList.remove('a12p20h-dimmed');
+            c.classList.remove('a12p20h-cord-active');
+          }
+        });
+        if (floorAxial) floorAxial.classList.remove('a12p20h-dimmed');
+        if (floorSag) floorSag.classList.remove('a12p20h-dimmed');
+
+        if (cordId === 'all') {
+          // Keep all bright
+        } else if (cordId === 'ant') {
+          [latAxial, posAxial, latSag, posSag].forEach(function(c) { if (c) c.classList.add('a12p20h-dimmed'); });
+          if (antAxial) antAxial.classList.add('a12p20h-cord-active');
+          if (antSag) antSag.classList.add('a12p20h-cord-active');
+        } else if (cordId === 'lat') {
+          [antAxial, posAxial, antSag, posSag].forEach(function(c) { if (c) c.classList.add('a12p20h-dimmed'); });
+          if (latAxial) latAxial.classList.add('a12p20h-cord-active');
+          if (latSag) latSag.classList.add('a12p20h-cord-active');
+        } else if (cordId === 'pos') {
+          [antAxial, latAxial, antSag, latSag].forEach(function(c) { if (c) c.classList.add('a12p20h-dimmed'); });
+          if (posAxial) posAxial.classList.add('a12p20h-cord-active');
+          if (posSag) posSag.classList.add('a12p20h-cord-active');
+        } else if (cordId === 'sustentacao') {
+          allCords.forEach(function(c) { if (c) c.classList.add('a12p20h-dimmed'); });
+        }
+
+        // Update Text Info Box
+        var data = cordData[cordId] || cordData['all'];
+        setElementText('a12p20h-info-title', data.title);
+        setElementText('a12p20h-info-origem', data.origem);
+        setElementText('a12p20h-info-vetor', data.vetor);
+        setElementText('a12p20h-info-clinica1', data.c1);
+        setElementText('a12p20h-info-clinica2', data.c2);
+        setElementText('a12p20h-info-clinica3', data.c3);
+        setElementText('a12p20h-info-takeaway1', data.t1);
+        setElementText('a12p20h-info-takeaway2', data.t2);
+      }
+
+      function switchView(viewMode) {
+        var panelAxial = document.getElementById('a12p20h-panel-axial');
+        var panelSagittal = document.getElementById('a12p20h-panel-sagittal');
+        var panelInfo = document.getElementById('a12p20h-panel-info');
+
+        var tabDual = document.getElementById('a12p20h-tab-dual');
+        var tabAxial = document.getElementById('a12p20h-tab-axial');
+        var tabSagittal = document.getElementById('a12p20h-tab-sagittal');
+
+        [tabDual, tabAxial, tabSagittal].forEach(function(t) {
+          if (t) t.classList.remove('a12p20h-tab-active');
+        });
+
+        if (viewMode === 'dual') {
+          if (tabDual) tabDual.classList.add('a12p20h-tab-active');
+          if (panelAxial) { panelAxial.setAttribute('transform', 'translate(30, 0)'); panelAxial.style.display = 'block'; }
+          if (panelSagittal) { panelSagittal.setAttribute('transform', 'translate(420, 0)'); panelSagittal.style.display = 'block'; }
+          if (panelInfo) { panelInfo.setAttribute('transform', 'translate(810, 0)'); panelInfo.style.display = 'block'; }
+        } else if (viewMode === 'axial') {
+          if (tabAxial) tabAxial.classList.add('a12p20h-tab-active');
+          if (panelAxial) { panelAxial.setAttribute('transform', 'translate(30, 0)'); panelAxial.style.display = 'block'; }
+          if (panelSagittal) { panelSagittal.style.display = 'none'; }
+          if (panelInfo) { panelInfo.setAttribute('transform', 'translate(420, 0)'); panelInfo.style.display = 'block'; }
+        } else if (viewMode === 'sagittal') {
+          if (tabSagittal) tabSagittal.classList.add('a12p20h-tab-active');
+          if (panelAxial) { panelAxial.style.display = 'none'; }
+          if (panelSagittal) { panelSagittal.setAttribute('transform', 'translate(30, 0)'); panelSagittal.style.display = 'block'; }
+          if (panelInfo) { panelInfo.setAttribute('transform', 'translate(420, 0)'); panelInfo.style.display = 'block'; }
+        }
+      }
+
+      // Event Binding
+      document.addEventListener("DOMContentLoaded", function() {
+        var selAll = document.getElementById('a12p20h-sel-all');
+        var selAnt = document.getElementById('a12p20h-sel-ant');
+        var selLat = document.getElementById('a12p20h-sel-lat');
+        var selPos = document.getElementById('a12p20h-sel-pos');
+
+        if (selAll) selAll.addEventListener('click', function() { highlightCord('all'); });
+        if (selAnt) selAnt.addEventListener('click', function() { highlightCord('ant'); });
+        if (selLat) selLat.addEventListener('click', function() { highlightCord('lat'); });
+        if (selPos) selPos.addEventListener('click', function() { highlightCord('pos'); });
+
+        // Direct Cord Targets
+        ['a12p20h-axial-cord-ant', 'a12p20h-sag-cord-ant'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.addEventListener('click', function() { highlightCord('ant'); });
+        });
+
+        ['a12p20h-axial-cord-lat', 'a12p20h-sag-cord-lat'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.addEventListener('click', function() { highlightCord('lat'); });
+        });
+
+        ['a12p20h-axial-cord-pos', 'a12p20h-sag-cord-pos'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.addEventListener('click', function() { highlightCord('pos'); });
+        });
+
+        // Tabs
+        var tabDual = document.getElementById('a12p20h-tab-dual');
+        var tabAxial = document.getElementById('a12p20h-tab-axial');
+        var tabSagittal = document.getElementById('a12p20h-tab-sagittal');
+
+        if (tabDual) tabDual.addEventListener('click', function() { switchView('dual'); });
+        if (tabAxial) tabAxial.addEventListener('click', function() { switchView('axial'); });
+        if (tabSagittal) tabSagittal.addEventListener('click', function() { switchView('sagittal'); });
+
+        // Cards
+        var cardSuspensa = document.getElementById('a12p20h-card-suspensa');
+        var cardSustenta = document.getElementById('a12p20h-card-sustenta');
+
+        if (cardSuspensa) cardSuspensa.addEventListener('click', function() { highlightCord('all'); });
+        if (cardSustenta) cardSustenta.addEventListener('click', function() { highlightCord('sustentacao'); });
+      });
+    })();
+    ]]>
+  </script>
+</svg>

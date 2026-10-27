@@ -1,0 +1,166 @@
+/* aula-04.css — componentes-Executor próprios da Aula 4 (Infecção puerperal).
+   ADITIVO e element-scoped: todas as classes usam prefixo .a4- para nunca colidir com
+   base.css / components.css (não regride Aula 1/2/3). Herda os tokens da casa (rosa-vinho).
+   Só declara tokens NOVOS (--a4-*) — nunca redefine os canônicos. Carrega apenas nas
+   páginas da Aula 4, então este :root é naturalmente escopado à aula. */
+
+:root {
+  --a4-coral: #ff9270;          /* regra-de-ouro (nunca parar o aleitamento) — coral quente */
+  --a4-coral-dim: rgba(255, 146, 112, 0.15);
+}
+:root[data-theme="light"] {
+  --a4-coral: #c25638;
+  --a4-coral-dim: rgba(194, 86, 56, 0.12);
+}
+
+/* Palavra-chave coral (regra-de-ouro) e patógeno (cor contextual = rose-hi) */
+.a4-coral { color: var(--a4-coral); font-weight: 700; }
+.a4-path  { color: var(--rose-hi); font-weight: 700; font-style: italic; }  /* patógeno / fármaco (cor contextual) */
+
+/* ============ Números-chave em linha (doses, janelas, cortes) ============ */
+.a4-numline { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-4) 0 var(--sp-5); padding: 0; list-style: none; }
+.a4-numline li { display: inline-flex; align-items: baseline; gap: 6px; margin: 0; padding: 6px 12px;
+  border: 1px solid var(--border-mid); border-radius: var(--r-pill); background: var(--bg-1); font-size: var(--fs-sm); }
+.a4-numline .n { font-family: var(--font-mono); font-weight: 700; color: var(--rose-hi); }
+.a4-numline .l { color: var(--ink-70); }
+
+/* ============ C1 — Linha do Tempo do Puerpério (timeline persistente) ============ */
+.a4-tl { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg); overflow: hidden; background: var(--bg-glass); }
+.a4-tl__head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid); }
+.a4-tl__head h3 { margin: 0; color: var(--rose); font-size: var(--fs-lg); }
+.a4-tl__meta { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); }
+.a4-tl.is-complete .a4-tl__meta { color: var(--kw-green); }
+.a4-tl__body { padding: var(--sp-4) var(--sp-5); }
+.a4-tl__axis { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--fs-xs);
+  color: var(--ink-50); padding: 0 2px var(--sp-2); border-bottom: 1px dashed var(--border-soft); margin-bottom: var(--sp-3); }
+.a4-tl__lane { display: grid; grid-template-columns: 92px 1fr; gap: var(--sp-3); align-items: center; margin-bottom: var(--sp-3); }
+.a4-tl__lane-name { font-size: var(--fs-sm); font-weight: 700; color: var(--rose-hi); }
+.a4-tl__segs { display: flex; gap: 4px; }
+.a4-tl__seg { flex: 1 1 auto; min-width: 0; text-align: center; padding: var(--sp-2) var(--sp-2);
+  border: 1px solid var(--border-mid); border-radius: var(--r-sm); background: var(--bg-1); color: var(--ink-90);
+  font-size: var(--fs-xs); line-height: 1.15; cursor: pointer; position: relative;
+  transition: border-color var(--dur-fast), transform var(--dur-fast), background var(--dur-fast); }
+.a4-tl__seg small { display: block; color: var(--ink-70); font-family: var(--font-mono); }
+.a4-tl__seg:hover, .a4-tl__seg:focus-visible { transform: translateY(-1px); border-color: var(--rose); }
+.a4-tl__seg.is-active { border-color: var(--rose); box-shadow: var(--glow-rose); }
+.a4-tl__seg.is-seen::after { content: "✓"; position: absolute; top: 2px; right: 4px; font-size: 0.65rem; color: var(--kw-green); }
+.a4-tl__seg.tl-white { border-left: 4px solid var(--ink-50); }
+.a4-tl__seg.tl-amber { border-left: 4px solid var(--kw-amber); }
+.a4-tl__seg.tl-red   { border-left: 4px solid var(--kw-red); }
+.a4-tl__seg.tl-green { border-left: 4px solid var(--kw-green); }
+.a4-tl__seg.tl-rose  { border-left: 4px solid var(--rose); }
+.a4-tl__seg.tl-mark  { background: var(--wine-soft); border-color: var(--rose); font-weight: 700; }
+.a4-tl__detail { margin-top: var(--sp-3); padding: var(--sp-4); border-radius: var(--r-md);
+  background: var(--bg-glass-strong); border: 1px solid var(--border-mid); border-left: 3px solid var(--rose); }
+.a4-tl__detail-t { font-weight: 700; color: var(--rose-hi); margin-bottom: var(--sp-1); }
+.a4-tl__detail-b { font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; margin: 0; }
+.a4-tl__hint { font-size: var(--fs-xs); color: var(--rose); font-family: var(--font-mono); margin: var(--sp-2) 0 0; }
+@media (max-width: 620px) {
+  .a4-tl__lane { grid-template-columns: 1fr; gap: var(--sp-1); }
+  .a4-tl__segs { flex-wrap: wrap; }
+  .a4-tl__seg { flex: 1 1 44%; }
+}
+
+/* ============ C2 — Grid FR modificáveis × não-modificáveis ============ */
+.a4-frgrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin: var(--sp-5) 0; }
+.a4-frcol { border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-glass); padding: var(--sp-4); }
+.a4-frcol.mod { border-left: 4px solid var(--kw-amber); }
+.a4-frcol.nao { border-left: 4px solid var(--ink-50); }
+.a4-frcol h5 { margin-bottom: var(--sp-3); font-size: var(--fs-md); }
+.a4-frcol.mod h5 { color: var(--kw-amber); }
+.a4-frcol.nao h5 { color: var(--ink-70); }
+.a4-frcol ul { list-style: none; margin: 0; padding: 0; }
+.a4-frcol li { padding: var(--sp-2) 0 var(--sp-2) var(--sp-4); position: relative; font-size: var(--fs-sm); color: var(--ink-90); border-top: 1px solid var(--border-soft); }
+.a4-frcol li:first-child { border-top: 0; }
+.a4-frcol.mod li::before { content: "↺"; position: absolute; left: 0; color: var(--kw-amber); font-weight: 700; }
+.a4-frcol.nao li::before { content: "⌂"; position: absolute; left: 0; color: var(--ink-50); }
+@media (max-width: 560px) { .a4-frgrid { grid-template-columns: 1fr; } }
+
+/* ============ C3 — Faixa de lóquios por dia (progressão de cores) ============ */
+.a4-loquios { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin: var(--sp-5) 0; }
+.a4-loq { flex: 1 1 150px; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--border-mid); display: flex; flex-direction: column; }
+.a4-loq__chip { height: 70px; }
+.a4-loq__chip.rubra { background: linear-gradient(135deg, #8e1230, #c0173e); }
+.a4-loq__chip.serosa { background: linear-gradient(135deg, #b76b7e, #d9a3ad); }
+.a4-loq__chip.alba { background: linear-gradient(135deg, #d9cdb0, #f2ead1); }
+.a4-loq__chip.pio { background: repeating-linear-gradient(45deg, #6b0f1a, #6b0f1a 8px, #8a5a12 8px, #8a5a12 16px); position: relative; }
+.a4-loq__body { padding: var(--sp-3); background: var(--bg-1); }
+.a4-loq__name { font-weight: 700; font-family: var(--font-serif); font-size: var(--fs-sm); display: block; margin-bottom: 2px; }
+.a4-loq.normal .a4-loq__name { color: var(--ink-90); }
+.a4-loq.anormal { border-color: var(--kw-red); }
+.a4-loq.anormal .a4-loq__name { color: var(--kw-red); }
+.a4-loq__day { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); }
+.a4-loq__note { font-size: var(--fs-xs); color: var(--ink-70); display: block; margin-top: 4px; }
+@media (max-width: 560px) { .a4-loq { flex: 1 1 44%; } }
+
+/* ============ C4 — Árvore de Antibioticoterapia ============ */
+.a4-atb { margin: var(--sp-5) 0; display: grid; gap: var(--sp-3); }
+.a4-atb__root { text-align: center; padding: var(--sp-3) var(--sp-5); border: 1px solid var(--rose); border-radius: var(--r-md);
+  background: var(--wine-soft); font-weight: 700; color: var(--rose-hi); }
+.a4-atb__branches { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
+.a4-atb__node { border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-glass); padding: var(--sp-4);
+  border-top: 3px solid var(--rose); }
+.a4-atb__node h5 { margin-bottom: var(--sp-2); font-size: var(--fs-sm); color: var(--rose-hi); }
+.a4-atb__node p { font-size: var(--fs-sm); margin: 0; text-align: justify; text-indent: 0; color: var(--ink-90); }
+.a4-atb__node.endo { border-top-color: var(--kw-green); } .a4-atb__node.endo h5 { color: var(--kw-green); }
+.a4-atb__node.amb  { border-top-color: var(--rose); }
+.a4-atb__node.grave { border-top-color: var(--kw-amber); } .a4-atb__node.grave h5 { color: var(--kw-amber); }
+.a4-atb__node.absc { border-top-color: var(--kw-red); } .a4-atb__node.absc h5 { color: var(--kw-red); }
+@media (max-width: 560px) { .a4-atb__branches { grid-template-columns: 1fr; } }
+
+/* ============ C7 — Cards "olho de banca" (regra-de-ouro / pegadinha / exceções) ============ */
+.a4-olho { display: grid; gap: var(--sp-3); margin: var(--sp-5) 0; }
+.a4-olho__card { border-radius: var(--r-md); padding: var(--sp-5); border: 1px solid var(--border-mid); }
+.a4-olho__lbl { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: var(--sp-2); display: flex; align-items: center; gap: var(--sp-2); font-weight: 700; }
+.a4-olho__card p { margin: 0; text-align: justify; text-indent: 0; }
+.a4-olho__card.gold { border-color: var(--a4-coral); background: var(--a4-coral-dim); border-left: 4px solid var(--a4-coral); }
+.a4-olho__card.gold .a4-olho__lbl { color: var(--a4-coral); }
+.a4-olho__card.trap { border-color: var(--kw-amber); background: var(--kw-amber-dim); border-left: 4px solid var(--kw-amber); }
+.a4-olho__card.trap .a4-olho__lbl { color: var(--kw-amber); }
+.a4-olho__card.exc { border-color: var(--border-mid); background: var(--bg-glass); border-left: 4px solid var(--kw-red); }
+.a4-olho__card.exc .a4-olho__lbl { color: var(--kw-red); }
+.a4-olho__card.exc ol { margin: var(--sp-2) 0 0; padding-left: var(--sp-5); }
+.a4-olho__card.exc li { font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; }
+
+/* ============ Composição de 2 imagens reais (par simétrico — P6, P8) ============ */
+.a4-pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin: 0 0 var(--sp-3); }
+.a4-pair__cell { display: flex; flex-direction: column; border: 1px solid var(--border-mid); border-radius: var(--r-md);
+  overflow: hidden; background: var(--bg-1); }
+.a4-pair__cell img { width: 100%; height: 230px; object-fit: cover; display: block; background: var(--bg-2); }
+.a4-pair__lbl { padding: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-90); border-top: 1px solid var(--border-soft); }
+.a4-pair__lbl b { display: block; color: var(--rose-hi); font-family: var(--font-serif); margin-bottom: 2px; }
+.a4-pair__cell.good { border-color: var(--kw-green); }
+.a4-pair__cell.good .a4-pair__lbl b { color: var(--kw-green); }
+.a4-pair__cell.bad { border-color: var(--kw-red); }
+.a4-pair__cell.bad .a4-pair__lbl b { color: var(--kw-red); }
+.a4-pair__disclaimer { font-size: var(--fs-xs); color: var(--kw-amber); font-weight: 600; text-align: center;
+  margin: 0 0 var(--sp-2); text-indent: 0; }
+.a4-pair__disclaimer::before { content: "⚠ "; }
+@media (max-width: 620px) { .a4-pair { grid-template-columns: 1fr; } .a4-pair__cell img { height: 260px; } }
+
+/* ============ Badge de licença não comercial (imagens CC BY-NC-*) ============ */
+.a4-nc-badge { display: inline-flex; align-items: center; gap: 5px; font-size: var(--fs-xs); font-family: var(--font-mono);
+  color: var(--kw-amber); border: 1px solid var(--kw-amber); border-radius: var(--r-pill); padding: 2px 10px;
+  background: var(--kw-amber-dim); margin-bottom: var(--sp-2); }
+.a4-nc-badge::before { content: "⛔"; font-size: 0.85em; }
+
+/* ============ Card de mini-caso próprio (P7) ============ */
+.a4-minicaso { border: 1px solid var(--wine); border-left: 4px solid var(--rose); border-radius: var(--r-md);
+  background: var(--bg-glass-strong); padding: var(--sp-4) var(--sp-5); margin: var(--sp-5) 0; }
+.a4-minicaso .a4-olho__lbl { color: var(--rose); }
+.a4-minicaso p { margin: 0; text-align: justify; text-indent: 0; color: var(--ink-90); }
+
+/* ============ Caveat / rótulo de rodapé de componente ============ */
+.a4-caveat { font-size: var(--fs-sm); color: var(--ink-70); font-style: italic; margin: var(--sp-2) 0 0; text-indent: 0; text-align: justify; }
+.a4-caveat b { color: var(--kw-amber); font-style: normal; }
+
+/* ============ Checklist de abertura (E5 — P9) reaproveita .opener--checklist ============ */
+.a4-syn { display: grid; gap: var(--sp-3); margin: var(--sp-5) 0; }
+.a4-syn__step { display: grid; grid-template-columns: 34px 1fr; gap: var(--sp-3); align-items: start;
+  padding: var(--sp-3) var(--sp-4); border: 1px solid var(--border-soft); border-radius: var(--r-md); background: var(--bg-1); }
+.a4-syn__n { font-family: var(--font-mono); font-weight: 700; color: var(--rose); text-align: center;
+  border-right: 1px solid var(--border-soft); }
+.a4-syn__t { font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; }
+.a4-syn__t b { color: var(--rose-hi); }

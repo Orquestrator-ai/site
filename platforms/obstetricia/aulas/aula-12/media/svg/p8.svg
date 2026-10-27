@@ -1,0 +1,661 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 630" width="100%" height="100%" class="a12p8-root" data-svg-tokenized="true" role="img" aria-labelledby="a12p8-title a12p8-desc">
+<!-- 
+ABORDAGENS VISUAIS AVALIADAS:
+1. Vista isolada 2D com diagramação textual estática: Sem relação volumétrica instantânea entre corte lateral e plano superior.
+2. Modelo 3D simulado por rotação contínua: Alto ruído visual que compromete a clareza anatômica dos 5 marcos e prejudica legibilidade em dispositivos móveis.
+3. Painel duplo sincronizado (Perfil Sagital + Estreito Superior) com cursor bidirecional determinístico e 5 marcos anatômicos integrados (VENCEDORA: demonstra com máxima precisão a equivalência entre a linha de nivelamento no perfil e o contorno anelar fechado superior).
+JUSTIFICATIVA DA ESCOLHA: A abordagem 3 conecta instantaneamente a altura do plano de corte no perfil à geometria do anel pélvico, permitindo ao aluno aprender deterministicamente a fronteira 3D entre a pelve maior e a pelve menor ao percorrer os 5 marcos.
+-->
+  <title id="a12p8-title">Anatomia Pélvica: A Linha Terminal (Linha Inominada)</title>
+  <desc id="a12p8-desc">Ilustração anatômica interativa demonstrando o plano inclinado da linha terminal em corte sagital (esquerda) e o contorno ring-like no estreito superior pélvico (direita), separando a pelve maior (falsa) da pelve menor (verdadeira/canal de parto).</desc>
+
+  <defs>
+    <style>
+      .a12p8-root {
+        --a12p8-tinta: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        --a12p8-bg: var(--a12-bg, var(--a12p8-bg-fallback, #141017));
+        --a12p8-panel-bg: var(--a12-panel-bg, var(--a12p8-panel-bg-fallback, #1D1722));
+        --a12p8-osso: var(--a12-osso, var(--a12p8-osso-fallback, #DCC7B4));
+        --a12p8-osso-dark: var(--a12-osso-dark, var(--a12p8-osso-dark-fallback, #8C7561));
+        --a12p8-linha-terminal: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        --a12p8-maior: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        --a12p8-menor: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        --a12p8-cursor: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        --a12p8-divisor: var(--a12-linha, var(--a12p8-divisor-fallback, #A99DA6));
+        --a12p8-muted: #9E909B;
+        --a12p8-border: #332938;
+        --a12p8-card: #251E2B;
+        --a12p8-focus-ring: #F3BE5B;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a12p8-bg);
+        color: var(--a12p8-tinta);
+      }
+
+      [data-theme="light"] .a12p8-root {
+        --a12p8-tinta-fallback: #1F1A24;
+        --a12p8-bg-fallback: #FAF7F9;
+        --a12p8-panel-bg-fallback: #FFFFFF;
+        --a12p8-osso-fallback: #8A7058;
+        --a12p8-osso-dark-fallback: #5C4736;
+        --a12p8-linha-terminal-fallback: #D9901A;
+        --a12p8-maior-fallback: #2B6CB0;
+        --a12p8-menor-fallback: #C53030;
+        --a12p8-cursor-fallback: #2F855A;
+        --a12p8-divisor-fallback: #718096;
+        --a12p8-muted: #6B5D68;
+        --a12p8-border: #E5DDE3;
+        --a12p8-card: #F3EFF2;
+        --a12p8-focus-ring: #D9901A;
+      }
+
+      .a12p8-panel {
+        fill: var(--a12-panel-bg, var(--a12p8-panel-bg-fallback, #1D1722));
+        stroke: var(--a12-linha, var(--a12p8-divisor-fallback, #A99DA6));
+        stroke-opacity: 0.3;
+        stroke-width: 1px;
+        rx: 12px;
+      }
+
+      .a12p8-header-title {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        fill: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+      }
+
+      .a12p8-header-sub {
+        font-size: 12px;
+        fill: var(--a12p8-muted);
+      }
+
+      .a12p8-panel-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        fill: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+      }
+
+      .a12p8-bone {
+        fill: var(--a12-osso, var(--a12p8-osso-fallback, #DCC7B4));
+        fill-opacity: 0.25;
+        stroke: var(--a12-osso, var(--a12p8-osso-fallback, #DCC7B4));
+        stroke-width: 2px;
+        stroke-linejoin: round;
+      }
+
+      .a12p8-bone-feature {
+        fill: none;
+        stroke: var(--a12-osso-dark, var(--a12p8-osso-dark-fallback, #8C7561));
+        stroke-width: 1.5px;
+        stroke-dasharray: 3 3;
+      }
+
+      .a12p8-region-maior {
+        fill: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        fill-opacity: 0.18;
+        stroke: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        stroke-width: 1px;
+        stroke-dasharray: 4 2;
+      }
+
+      .a12p8-region-menor {
+        fill: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        fill-opacity: 0.18;
+        stroke: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        stroke-width: 1px;
+        stroke-dasharray: 4 2;
+      }
+
+      .a12p8-linea-terminalis {
+        fill: none;
+        stroke: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        stroke-width: 3.5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 3px rgba(243, 190, 91, 0.4));
+      }
+
+      .a12p8-linea-guide {
+        fill: none;
+        stroke: var(--a12-linha, var(--a12p8-divisor-fallback, #A99DA6));
+        stroke-width: 1px;
+        stroke-dasharray: 3 3;
+        opacity: 0.5;
+      }
+
+      .a12p8-sync-beam {
+        fill: none;
+        stroke: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke-width: 1.5px;
+        stroke-dasharray: 4 4;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+      }
+
+      .a12p8-marco-pt {
+        fill: var(--a12-panel-bg, var(--a12p8-panel-bg-fallback, #1D1722));
+        stroke: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        stroke-width: 2px;
+        cursor: pointer;
+        transition: transform 0.2s, fill 0.2s, stroke-width 0.2s;
+      }
+
+      .a12p8-marco-pt:hover, .a12p8-marco-pt:focus {
+        fill: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        stroke: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        stroke-width: 3px;
+        outline: none;
+      }
+
+      .a12p8-marco-pt.a12p8-active {
+        fill: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        stroke-width: 3px;
+      }
+
+      .a12p8-cursor-indicator {
+        fill: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        stroke-width: 2.5px;
+        filter: drop-shadow(0 0 5px rgba(85, 184, 137, 0.8));
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .a12p8-pulse-ring {
+        fill: none;
+        stroke: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke-width: 1.5px;
+        opacity: 0.8;
+        animation: a12p8-pulse 2s infinite;
+      }
+
+      @keyframes a12p8-pulse {
+        0% { r: 6px; opacity: 0.9; }
+        100% { r: 16px; opacity: 0; }
+      }
+
+      .a12p8-badge {
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 8px;
+        rx: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .a12p8-badge-maior {
+        fill: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        fill-opacity: 0.25;
+        stroke: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        stroke-width: 1px;
+      }
+
+      .a12p8-badge-menor {
+        fill: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        fill-opacity: 0.25;
+        stroke: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        stroke-width: 1px;
+      }
+
+      .a12p8-btn-step {
+        fill: var(--a12p8-card);
+        stroke: var(--a12-linha, var(--a12p8-divisor-fallback, #A99DA6));
+        stroke-width: 1px;
+        rx: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .a12p8-btn-step:hover, .a12p8-btn-step:focus {
+        fill: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        stroke: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        outline: none;
+      }
+
+      .a12p8-btn-step:hover text, .a12p8-btn-step:focus text {
+        fill: #141017;
+        font-weight: 700;
+      }
+
+      .a12p8-btn-step.a12p8-active {
+        fill: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+      }
+
+      .a12p8-btn-step.a12p8-active text {
+        fill: #FFFFFF;
+        font-weight: 700;
+      }
+
+      .a12p8-btn-text {
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .a12p8-card-bg {
+        fill: var(--a12p8-card);
+        stroke: var(--a12p8-border);
+        stroke-width: 1.5px;
+        rx: 10px;
+      }
+
+      .a12p8-card-title {
+        font-size: 14px;
+        font-weight: 700;
+        fill: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+      }
+
+      .a12p8-card-body {
+        font-size: 12px;
+        fill: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        line-height: 1.4;
+      }
+
+      .a12p8-card-tag {
+        font-size: 10px;
+        font-weight: 700;
+        fill: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        letter-spacing: 0.5px;
+      }
+
+      .a12p8-label-text {
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+      }
+
+      .a12p8-sublabel-text {
+        font-size: 9.5px;
+        fill: var(--a12p8-muted);
+      }
+
+      .a12p8-focus-indicator {
+        outline: none;
+      }
+
+      .a12p8-focus-indicator:focus-visible {
+        stroke: var(--a12p8-focus-ring);
+        stroke-width: 2px;
+      }
+    </style>
+
+    <linearGradient id="a12p8-grad-maior" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12-pelve-maior, #7FA6D8)" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="var(--a12-pelve-maior, #7FA6D8)" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <linearGradient id="a12p8-grad-menor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12-pelve-menor, #E17A8E)" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="var(--a12-pelve-menor, #E17A8E)" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Marker filter glow -->
+    <filter id="a12p8-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- ==================== HEADER (LEGENDA DE INTERPRETAÇÃO & TÍTULO) ==================== -->
+  <g id="a12p8-group-header" transform="translate(20, 24)">
+    <text x="0" y="0" class="a12p8-header-title">ANATOMIA PÉLVICA: A LINHA TERMINAL (LINHA INOMINADA)</text>
+    <text x="0" y="20" class="a12p8-header-sub">Plano inclinado tridimensional que delimita a transição exata entre a Pelve Maior (Falsa) e a Pelve Menor (Verdadeira / Canal de Parto)</text>
+  </g>
+
+  <!-- ==================== PAINEL ESQUERDO: CORTE SAGITAL (PERFIL) ==================== -->
+  <g id="a12p8-panel-sagittal-group" transform="translate(20, 75)">
+    <rect class="a12p8-panel" x="0" y="0" width="405" height="345" />
+    <text x="16" y="26" class="a12p8-panel-label">PLANO SAGITAL (VISTA DE PERFIL MEDIANO)</text>
+
+    <!-- Região Pelve Maior (Falsa) -->
+    <path class="a12p8-region-maior" fill="url(#a12p8-grad-maior)" d="M 110 260 L 335 105 L 342 55 C 280 25 180 50 150 110 Z" />
+    <!-- Região Pelve Menor (Verdadeira / Canal de Parto) -->
+    <path class="a12p8-region-menor" fill="url(#a12p8-grad-menor)" d="M 110 260 L 335 105 Q 365 185 340 255 C 295 315 195 325 120 295 Z" />
+
+    <!-- Estrutura Óssea: Sacro e Lamber (Posterior) -->
+    <!-- Coluna Lombar L4-L5 -->
+    <path class="a12p8-bone" d="M 325 25 L 345 25 L 345 55 L 335 55 Z" />
+    <path class="a12p8-bone" d="M 328 60 L 348 60 L 345 95 L 335 95 Z" />
+    <!-- Sacro S1-S5 e Cóccix -->
+    <path class="a12p8-bone" d="M 335 105 C 345 125 365 160 360 210 C 355 240 345 260 330 275 L 320 270 C 335 255 342 235 345 205 C 348 165 332 135 322 115 Z" />
+    <path class="a12p8-bone-feature" d="M 335 105 L 360 120 M 345 150 L 365 165 M 350 190 L 362 205" />
+
+    <!-- Estrutura Óssea: Sínfise Púbica (Anterior) -->
+    <path class="a12p8-bone" d="M 110 260 C 100 250 90 260 90 275 C 90 295 108 305 122 290 C 128 275 118 260 110 260 Z" />
+    <path class="a12p8-bone-feature" d="M 98 265 C 102 275 104 285 102 292" />
+
+    <!-- Estrutura Óssea: Assoalho Pélvico e Ísquio -->
+    <path class="a12p8-bone" d="M 230 295 C 240 315 220 325 200 325 C 185 325 175 310 185 295 Z" />
+
+    <!-- Linha Terminal no Corte Sagital (Ouro Inclinada) -->
+    <line id="a12p8-linea-sagittal" class="a12p8-linea-terminalis" x1="335" y1="105" x2="110" y2="260" />
+
+    <!-- Guia Angular de Inclinação (~55° em relação ao plano horizontal) -->
+    <line class="a12p8-linea-guide" x1="110" y1="260" x2="335" y2="260" />
+    <path d="M 160 260 A 50 50 0 0 0 142 238" fill="none" stroke="var(--a12-ouro, #F3BE5B)" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="165" y="252" class="a12p8-sublabel-text" fill="var(--a12-ouro, #F3BE5B)">Inclinação ~55°</text>
+
+    <!-- Badges de Divisão Pélvica -->
+    <g transform="translate(180, 80)">
+      <rect class="a12p8-badge a12p8-badge-maior" x="0" y="0" width="135" height="22" rx="4" />
+      <text x="67" y="15" class="a12p8-label-text" text-anchor="middle" fill="var(--a12-pelve-maior, #7FA6D8)">PELVE MAIOR (FALSA)</text>
+    </g>
+
+    <g transform="translate(180, 205)">
+      <rect class="a12p8-badge a12p8-badge-menor" x="0" y="0" width="155" height="22" rx="4" />
+      <text x="77" y="15" class="a12p8-label-text" text-anchor="middle" fill="var(--a12-pelve-menor, #E17A8E)">PELVE MENOR (VERDADEIRA)</text>
+    </g>
+
+    <!-- Canal de Parto (Seta indicativa inferior) -->
+    <g transform="translate(210, 265)">
+      <path d="M 10 0 L 10 30 M 5 25 L 10 30 L 15 25" fill="none" stroke="var(--a12-pelve-menor, #E17A8E)" stroke-width="2" stroke-linecap="round" />
+      <text x="22" y="18" class="a12p8-sublabel-text" fill="var(--a12-pelve-menor, #E17A8E)" font-weight="700">CANAL DE PARTO</text>
+    </g>
+
+    <!-- Rótulos Fixo dos Extremos Anatômicos -->
+    <text x="342" y="100" class="a12p8-label-text" text-anchor="start">Promontório (S1)</text>
+    <text x="14" y="260" class="a12p8-label-text" text-anchor="start">Borda Sup. Sínfise</text>
+
+    <!-- 5 Pontos de Marcos ao longo da Linha Terminal no perfil -->
+    <!-- Pt 0: Promontório (335, 105) -->
+    <circle id="a12p8-sag-pt-0" class="a12p8-marco-pt a12p8-focus-indicator" cx="335" cy="105" r="7" role="button" tabindex="0" aria-label="Marco 1: Promontório Sacral" />
+    <!-- Pt 1: Linha Arqueada (278.7, 143.7) -->
+    <circle id="a12p8-sag-pt-1" class="a12p8-marco-pt a12p8-focus-indicator" cx="278.7" cy="143.7" r="7" role="button" tabindex="0" aria-label="Marco 2: Linha Arqueada do Ílio" />
+    <!-- Pt 2: Eminência Iliopúbica (222.5, 182.5) -->
+    <circle id="a12p8-sag-pt-2" class="a12p8-marco-pt a12p8-focus-indicator" cx="222.5" cy="182.5" r="7" role="button" tabindex="0" aria-label="Marco 3: Eminência Iliopúbica" />
+    <!-- Pt 3: Linha Pectínea (166.2, 221.2) -->
+    <circle id="a12p8-sag-pt-3" class="a12p8-marco-pt a12p8-focus-indicator" cx="166.2" cy="221.2" r="7" role="button" tabindex="0" aria-label="Marco 4: Linha Pectínea" />
+    <!-- Pt 4: Sínfise Púbica (110, 260) -->
+    <circle id="a12p8-sag-pt-4" class="a12p8-marco-pt a12p8-focus-indicator" cx="110" cy="260" r="7" role="button" tabindex="0" aria-label="Marco 5: Borda Superior da Sínfise Púbica" />
+
+    <!-- Cursor Interativo Animado no Perfil Sagital -->
+    <g id="a12p8-cursor-sagittal-group" transform="translate(335, 105)">
+      <circle class="a12p8-pulse-ring" cx="0" cy="0" r="10" />
+      <circle class="a12p8-cursor-indicator" cx="0" cy="0" r="7" />
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL DIREITO: PLANO SUPERIOR (ESTREITO SUPERIOR) ==================== -->
+  <g id="a12p8-panel-superior-group" transform="translate(435, 75)">
+    <rect class="a12p8-panel" x="0" y="0" width="405" height="345" />
+    <text x="16" y="26" class="a12p8-panel-label">PLANO SUPERIOR (CONTORNO DO ESTREITO SUPERIOR)</text>
+
+    <!-- Silhueta da Bacia Pélvica Vista de Cima (Ossos Ilíacos, Sacro, Púbis) -->
+    <!-- Asas Ilíacas Superiores / Fossas Ilíacas (Pelve Maior) -->
+    <path class="a12p8-bone" d="M 202 50 C 245 55 315 80 325 125 C 335 170 305 220 275 245 C 245 270 207 275 202 275 C 197 275 159 270 129 245 C 99 220 69 170 79 125 C 89 80 159 55 202 50 Z" />
+    <!-- Espinhas Ilíacas e Sacro Posterior -->
+    <path class="a12p8-bone" d="M 165 48 C 185 45 219 45 239 48 C 255 58 265 85 245 95 C 220 85 184 85 159 95 C 139 85 149 58 165 48 Z" />
+    <text x="202" y="40" class="a12p8-sublabel-text" text-anchor="middle">Sacro / Promontório (Posterior)</text>
+    <text x="202" y="295" class="a12p8-sublabel-text" text-anchor="middle">Sínfise Púbica (Anterior)</text>
+
+    <!-- Anel Fechado da LINHA TERMINAL no Plano Superior (Linha Inominada) -->
+    <path id="a12p8-ring-superior" class="a12p8-linea-terminalis" d="M 202 65 C 235 72 282 95 288 135 C 294 175 262 225 232 248 C 215 260 205 263 202 263 C 199 263 189 260 172 248 C 142 225 110 175 116 135 C 122 95 169 72 202 65 Z" />
+
+    <!-- Marcadores Anatômicos no Plano Superior (Lado Direito e Simétricos no Lado Esquerdo) -->
+    <!-- Pt 0: Promontório (202, 65) -->
+    <circle id="a12p8-sup-pt-0" class="a12p8-marco-pt a12p8-focus-indicator" cx="202" cy="65" r="7" role="button" tabindex="0" aria-label="Marco 1 Superior: Promontório" />
+
+    <!-- Pt 1: Linha Arqueada do Ílio (Direita: 270, 115 / Esquerda: 134, 115) -->
+    <circle id="a12p8-sup-pt-1-L" class="a12p8-marco-pt" cx="134" cy="115" r="5" opacity="0.6" />
+    <circle id="a12p8-sup-pt-1" class="a12p8-marco-pt a12p8-focus-indicator" cx="270" cy="115" r="7" role="button" tabindex="0" aria-label="Marco 2 Superior: Linha Arqueada" />
+
+    <!-- Pt 2: Eminência Iliopúbica (Direita: 268, 178 / Esquerda: 136, 178) -->
+    <circle id="a12p8-sup-pt-2-L" class="a12p8-marco-pt" cx="136" cy="178" r="5" opacity="0.6" />
+    <circle id="a12p8-sup-pt-2" class="a12p8-marco-pt a12p8-focus-indicator" cx="268" cy="178" r="7" role="button" tabindex="0" aria-label="Marco 3 Superior: Eminência Iliopúbica" />
+
+    <!-- Pt 3: Linha Pectínea (Direita: 232, 235 / Esquerda: 172, 235) -->
+    <circle id="a12p8-sup-pt-3-L" class="a12p8-marco-pt" cx="172" cy="235" r="5" opacity="0.6" />
+    <circle id="a12p8-sup-pt-3" class="a12p8-marco-pt a12p8-focus-indicator" cx="232" cy="235" r="7" role="button" tabindex="0" aria-label="Marco 4 Superior: Linha Pectínea" />
+
+    <!-- Pt 4: Sínfise Púbica (202, 263) -->
+    <circle id="a12p8-sup-pt-4" class="a12p8-marco-pt a12p8-focus-indicator" cx="202" cy="263" r="7" role="button" tabindex="0" aria-label="Marco 5 Superior: Sínfise Púbica" />
+
+    <!-- Cursor Interativo Animado no Plano Superior -->
+    <g id="a12p8-cursor-superior-group" transform="translate(202, 65)">
+      <circle class="a12p8-pulse-ring" cx="0" cy="0" r="10" />
+      <circle class="a12p8-cursor-indicator" cx="0" cy="0" r="7" />
+    </g>
+
+    <!-- Indicador de Área Central (Estreito Superior / Entrada Pélvica) -->
+    <text x="202" y="165" class="a12p8-label-text" text-anchor="middle" fill="var(--a12-pelve-menor, #E17A8E)" font-weight="700">ENTRADA PÉLVICA</text>
+    <text x="202" y="180" class="a12p8-sublabel-text" text-anchor="middle">(Plano do Estreito Superior)</text>
+  </g>
+
+  <!-- Feixe de Sincronização Dinâmica entre Perfil e Vista Superior -->
+  <line id="a12p8-sync-beam-line" class="a12p8-sync-beam" x1="355" y1="180" x2="637" y2="140" />
+
+  <!-- ==================== BARRA DE NAVEGAÇÃO DOS 5 MARCOS ANATÔMICOS ==================== -->
+  <g id="a12p8-group-steps" transform="translate(20, 435)">
+    <!-- 5 Botoes para selecionar a sequencia verbatim -->
+    <!-- Button 1 -->
+    <g id="a12p8-btn-step-0" class="a12p8-btn-step a12p8-active a12p8-focus-indicator" transform="translate(0, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 1: Promontório">
+      <rect x="0" y="0" width="155" height="34" rx="6" />
+      <text x="77" y="21" class="a12p8-btn-text">1. Promontório</text>
+    </g>
+
+    <!-- Button 2 -->
+    <g id="a12p8-btn-step-1" class="a12p8-btn-step a12p8-focus-indicator" transform="translate(165, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 2: Linha Arqueada">
+      <rect x="0" y="0" width="155" height="34" rx="6" />
+      <text x="77" y="21" class="a12p8-btn-text">2. Linha Arqueada</text>
+    </g>
+
+    <!-- Button 3 -->
+    <g id="a12p8-btn-step-2" class="a12p8-btn-step a12p8-focus-indicator" transform="translate(330, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 3: Eminência Iliopúbica">
+      <rect x="0" y="0" width="160" height="34" rx="6" />
+      <text x="80" y="21" class="a12p8-btn-text">3. Eminência Iliopúbica</text>
+    </g>
+
+    <!-- Button 4 -->
+    <g id="a12p8-btn-step-3" class="a12p8-btn-step a12p8-focus-indicator" transform="translate(498, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 4: Linha Pectínea">
+      <rect x="0" y="0" width="155" height="34" rx="6" />
+      <text x="77" y="21" class="a12p8-btn-text">4. Linha Pectínea</text>
+    </g>
+
+    <!-- Button 5 -->
+    <g id="a12p8-btn-step-4" class="a12p8-btn-step a12p8-focus-indicator" transform="translate(663, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 5: Sínfise Púbica">
+      <rect x="0" y="0" width="157" height="34" rx="6" />
+      <text x="78" y="21" class="a12p8-btn-text">5. Sínfise Púbica</text>
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL DE LEITURA & INTERPRETAÇÃO CLÍNICA ==================== -->
+  <g id="a12p8-group-card" transform="translate(20, 482)">
+    <rect class="a12p8-card-bg" x="0" y="0" width="820" height="128" />
+
+    <!-- Titulo do Marco Selecionado e Tag de Posicao -->
+    <text id="a12p8-card-title" class="a12p8-card-title" x="20" y="28">1. PROMONTÓRIO SACRAL (MARCO ANTEROPOSTERIOR INICIAL)</text>
+    <text id="a12p8-card-tag" class="a12p8-card-tag" x="800" y="28" text-anchor="end">MARCO 1 DE 5 · PERCURSO ANATÔMICO VERBATIM</text>
+
+    <line x1="20" y1="38" x2="800" y2="38" stroke="var(--a12p8-border)" stroke-width="1" />
+
+    <!-- Descrição Anatômica -->
+    <text x="20" y="58" class="a12p8-card-body" font-weight="700" fill="var(--a12-ouro, #F3BE5B)">Descrição Anatômica:</text>
+    <text id="a12p8-card-desc" x="160" y="58" class="a12p8-card-body">Projeção anterior da margem superior do corpo da 1ª vértebra sacral (S1). Representa o ponto mais posterior da linha terminal e a âncora posterior da pelve verdadeira.</text>
+
+    <!-- Relevância Obstétrica / Função Didática -->
+    <text x="20" y="84" class="a12p8-card-body" font-weight="700" fill="var(--a12-verde, #55B889)">Importância Obstétrica:</text>
+    <text id="a12p8-card-relevancia" x="160" y="84" class="a12p8-card-body">Ponto fixo posterior para mensuração do Diâmetro Conjugado Obstétrico (do promontório à face posterior da sínfise púbica, mínimo normal ~10,5 cm).</text>
+
+    <!-- Regra de Transição / Resumo de Conclusão -->
+    <text x="20" y="110" class="a12p8-card-body" font-weight="700" fill="var(--a12-pelve-maior, #7FA6D8)">Regra de Divisão:</text>
+    <text id="a12p8-card-regra" x="160" y="110" class="a12p8-card-body">Qualquer estrutura ACIMA deste nível está na Pelve Maior (vísceras abdominais). ABAIXO começa o Canal de Parto (Pelve Menor).</text>
+  </g>
+
+  <!-- Engine Interativo Self-Contained em CDATA -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      'use strict';
+
+      // Dados determinísticos dos 5 marcos anatômicos
+      var marcos = [
+        {
+          id: 0,
+          title: "1. PROMONTÓRIO SACRAL (MARCO POSTERIOR INICIAL)",
+          desc: "Projeção anterior da margem superior da 1ª vértebra sacral (S1). Âncora posterior da linha inominada.",
+          relevancia: "Ponto fixo posterior para medida do Diâmetro Conjugado Obstétrico (mínimo normal ~10,5 cm).",
+          regra: "Ponto divisor posterior: Estruturas acima pertencem à cavidade abdominal / pelve falsa.",
+          sag: { x: 335, y: 105 },
+          sup: { x: 202, y: 65 }
+        },
+        {
+          id: 1,
+          title: "2. LINHA ARQUEADA DO ÍLIO (SEGMENTO LATERAL)",
+          desc: "Crista óssea curva e suave na superfície medial do ílio, estendendo-se inferior e anterior ao sacro.",
+          relevancia: "Constitui a parede lateral do estreito superior pélvico. Guia a passagem da apresentação fetal.",
+          regra: "Separa a fossa ilíaca (pelve maior, superior) da parede pélvica lateral (pelve menor, inferior).",
+          sag: { x: 278.7, y: 143.7 },
+          sup: { x: 270, y: 115 }
+        },
+        {
+          id: 2,
+          title: "3. EMINÊNCIA ILIOPÚBICA (PONTO DE INFLEXÃO ANTEROLATERAL)",
+          desc: "Elevação óssea localizada na zona de fusão entre o ílio e o púbis, correspondendo à margem acetabular.",
+          relevancia: "Marca a inflexão de curvatura do anel pélvico no estreito superior.",
+          regra: "Ponto de ancoragem anterior médio no plano do estreito superior pélvico.",
+          sag: { x: 222.5, y: 182.5 },
+          sup: { x: 268, y: 178 }
+        },
+        {
+          id: 3,
+          title: "4. LINHA PECTÍNEA / PÉCTEN DO PÚBIS (SEGMENTO ANTERIOR)",
+          desc: "Crista afiada na margem superior do ramo superior do osso púbico.",
+          relevancia: "Inserção do ligamento pectíneo (Cooper) e marco anatômico para herniorrafias pélvicas.",
+          regra: "Continuação anterior imediata da linha arqueada até a sínfise púbica.",
+          sag: { x: 166.2, y: 221.2 },
+          sup: { x: 232, y: 235 }
+        },
+        {
+          id: 4,
+          title: "5. BORDA SUPERIOR DA SÍNFISE PÚBICA (MARCO ANTERIOR FINAL)",
+          desc: "Margem superior da articulação fibrocartilaginosa pubiana na linha média anterior.",
+          relevancia: "Encerra o contorno da linha terminal. Limite anterior do diâmetro conjugado verdadeiro (11,0 cm).",
+          regra: "Ponto divisor anterior: Abaixo deste marco inicia-se diretamente o Canal de Parto.",
+          sag: { x: 110, y: 260 },
+          sup: { x: 202, y: 263 }
+        }
+      ];
+
+      var currentIdx = 0;
+
+      function updateScene(idx) {
+        if (idx < 0 || idx >= marcos.length) return;
+        currentIdx = idx;
+        var data = marcos[idx];
+
+        // 1. Atualizar posição dos cursores nos dois painéis
+        var curSag = document.getElementById('a12p8-cursor-sagittal-group');
+        var curSup = document.getElementById('a12p8-cursor-superior-group');
+        if (curSag) curSag.setAttribute('transform', 'translate(' + data.sag.x + ', ' + data.sag.y + ')');
+        if (curSup) curSup.setAttribute('transform', 'translate(' + data.sup.x + ', ' + data.sup.y + ')');
+
+        // 2. Atualizar feixe de sincronização entre painéis
+        var syncBeam = document.getElementById('a12p8-sync-beam-line');
+        if (syncBeam) {
+          // Coordenadas absolutas adicionando o offset do painel sagital (20) e superior (435)
+          syncBeam.setAttribute('x1', data.sag.x + 20);
+          syncBeam.setAttribute('y1', data.sag.y + 75);
+          syncBeam.setAttribute('x2', data.sup.x + 435);
+          syncBeam.setAttribute('y2', data.sup.y + 75);
+        }
+
+        // 3. Atualizar estados ativos nos botões de passo
+        for (var i = 0; i < 5; i++) {
+          var btn = document.getElementById('a12p8-btn-step-' + i);
+          var sagPt = document.getElementById('a12p8-sag-pt-' + i);
+          var supPt = document.getElementById('a12p8-sup-pt-' + i);
+
+          if (btn) {
+            if (i === idx) {
+              btn.classList.add('a12p8-active');
+              btn.setAttribute('aria-selected', 'true');
+            } else {
+              btn.classList.remove('a12p8-active');
+              btn.setAttribute('aria-selected', 'false');
+            }
+          }
+
+          if (sagPt) {
+            if (i === idx) sagPt.classList.add('a12p8-active');
+            else sagPt.classList.remove('a12p8-active');
+          }
+
+          if (supPt) {
+            if (i === idx) supPt.classList.add('a12p8-active');
+            else supPt.classList.remove('a12p8-active');
+          }
+        }
+
+        // 4. Atualizar os textos do painel de leitura
+        var titleEl = document.getElementById('a12p8-card-title');
+        var descEl = document.getElementById('a12p8-card-desc');
+        var relEl = document.getElementById('a12p8-card-relevancia');
+        var regEl = document.getElementById('a12p8-card-regra');
+        var tagEl = document.getElementById('a12p8-card-tag');
+
+        if (titleEl) titleEl.textContent = data.title;
+        if (descEl) descEl.textContent = data.desc;
+        if (relEl) relEl.textContent = data.relevancia;
+        if (regEl) regEl.textContent = data.regra;
+        if (tagEl) tagEl.textContent = 'MARCO ' + (idx + 1) + ' DE 5 · PERCURSO ANATÔMICO VERBATIM';
+      }
+
+      // Handler para clique e teclado
+      function setupListeners() {
+        for (var i = 0; i < 5; i++) {
+          (function(index) {
+            var btn = document.getElementById('a12p8-btn-step-' + index);
+            var sagPt = document.getElementById('a12p8-sag-pt-' + index);
+            var supPt = document.getElementById('a12p8-sup-pt-' + index);
+
+            var handler = function(e) {
+              if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+              e.preventDefault();
+              updateScene(index);
+            };
+
+            if (btn) {
+              btn.addEventListener('click', handler);
+              btn.addEventListener('keydown', handler);
+            }
+            if (sagPt) {
+              sagPt.addEventListener('click', handler);
+              sagPt.addEventListener('keydown', handler);
+            }
+            if (supPt) {
+              supPt.addEventListener('click', handler);
+              supPt.addEventListener('keydown', handler);
+            }
+          })(i);
+        }
+
+        // Navegação global por setas do teclado (Esquerda/Direita)
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            var next = (currentIdx + 1) % 5;
+            updateScene(next);
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            var prev = (currentIdx - 1 + 5) % 5;
+            updateScene(prev);
+          }
+        });
+      }
+
+      // Inicialização
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setupListeners();
+          updateScene(0);
+        });
+      } else {
+        setupListeners();
+        updateScene(0);
+      }
+    })();
+    ]]>
+  </script>
+</svg>

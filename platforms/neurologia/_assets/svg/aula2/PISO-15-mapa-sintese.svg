@@ -1,0 +1,658 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 600" width="100%" height="100%" id="p15-svg-container">
+  <defs>
+    <!-- Gradientes de Cores para o Cérebro e Elementos -->
+    <linearGradient id="p15-grad-brain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--c-indigo)" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="var(--c-primary)" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="p15-grad-hipocampo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--c-amber)" />
+      <stop offset="100%" stop-color="var(--c-danger)" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    #p15-svg-container {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      --bg-surface: #0f172a;
+      --bg-panel: rgba(30, 41, 59, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --c-primary: #06b6d4;
+      --c-indigo: #6366f1;
+      --c-amber: #f59e0b;
+      --c-danger: #f87171;
+      --c-passo1: #38bdf8;
+      --c-passo2: #fb923c;
+      --c-passo3: #c084fc;
+      --c-alzheimer: #f87171;
+      --c-brain-base: rgba(99, 102, 241, 0.08);
+      --c-brain-stroke: rgba(99, 102, 241, 0.35);
+      transition: background-color 0.3s ease;
+    }
+
+    @media (prefers-color-scheme: light) {
+      #p15-svg-container {
+        --bg-surface: #ffffff;
+        --bg-panel: rgba(241, 245, 249, 0.85);
+        --border-color: rgba(0, 0, 0, 0.08);
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --c-primary: #0891b2;
+        --c-indigo: #4338ca;
+        --c-amber: #d97706;
+        --c-danger: #dc2626;
+        --c-passo1: #0284c7;
+        --c-passo2: #ea580c;
+        --c-passo3: #7c3aed;
+        --c-alzheimer: #dc2626;
+        --c-brain-base: rgba(99, 102, 241, 0.05);
+        --c-brain-stroke: rgba(99, 102, 241, 0.25);
+      }
+    }
+
+    /* Tipografia e Layout */
+    #p15-svg-container .p15-title {
+      font-size: 20px;
+      font-weight: 800;
+      fill: var(--text-main);
+      letter-spacing: -0.025em;
+    }
+
+    #p15-svg-container .p15-subtitle {
+      font-size: 13px;
+      fill: var(--text-muted);
+    }
+
+    #p15-svg-container .p15-legend {
+      font-size: 11px;
+      fill: var(--text-muted);
+      font-weight: 500;
+    }
+
+    #p15-svg-container .p15-brain-outline {
+      fill: var(--c-brain-base);
+      stroke: var(--c-brain-stroke);
+      stroke-width: 2;
+      transition: all 0.4s ease;
+    }
+
+    #p15-svg-container .p15-brain-sulcus {
+      fill: none;
+      stroke: var(--c-brain-stroke);
+      stroke-width: 1.2;
+      opacity: 0.5;
+    }
+
+    #p15-svg-container .p15-brain-part {
+      fill: none;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      opacity: 0.1;
+      transition: all 0.4s ease;
+    }
+
+    #p15-svg-container .p15-brain-part.active {
+      opacity: 0.85;
+      filter: drop-shadow(0 0 4px currentColor);
+    }
+
+    #p15-svg-container .p15-hipocampo {
+      fill: none;
+      stroke-width: 5;
+      stroke-linecap: round;
+      transition: all 0.4s ease;
+    }
+
+    #p15-svg-container .p15-btn {
+      cursor: pointer;
+      outline: none;
+    }
+
+    #p15-svg-container .p15-btn-circle {
+      fill: var(--bg-panel);
+      stroke: var(--border-color);
+      stroke-width: 2.5;
+      transition: all 0.3s ease;
+    }
+
+    #p15-svg-container .p15-btn:hover .p15-btn-circle {
+      stroke: var(--text-main);
+      transform: scale(1.05);
+      transform-origin: 530px 170px;
+    }
+    #p15-svg-container #p15-btn-2:hover .p15-btn-circle { transform-origin: 630px 170px; }
+    #p15-svg-container #p15-btn-3:hover .p15-btn-circle { transform-origin: 730px 170px; }
+    #p15-svg-container #p15-btn-4:hover .p15-btn-circle { transform-origin: 830px 170px; }
+
+    #p15-svg-container .p15-btn.active .p15-btn-circle {
+      stroke-width: 4;
+    }
+
+    #p15-svg-container .p15-btn.active#p15-btn-1 .p15-btn-circle { stroke: var(--c-passo1); fill: rgba(56, 189, 248, 0.08); }
+    #p15-svg-container .p15-btn.active#p15-btn-2 .p15-btn-circle { stroke: var(--c-passo2); fill: rgba(251, 146, 60, 0.08); }
+    #p15-svg-container .p15-btn.active#p15-btn-3 .p15-btn-circle { stroke: var(--c-passo3); fill: rgba(192, 132, 252, 0.08); }
+    #p15-svg-container .p15-btn.active#p15-btn-4 .p15-btn-circle { stroke: var(--c-alzheimer); fill: rgba(248, 113, 113, 0.08); }
+
+    #p15-svg-container .p15-btn-text {
+      font-size: 11px;
+      font-weight: 700;
+      fill: var(--text-muted);
+      text-anchor: middle;
+      transition: all 0.3s ease;
+    }
+
+    #p15-svg-container .p15-btn.active .p15-btn-text {
+      fill: var(--text-main);
+    }
+
+    #p15-svg-container .p15-step-num {
+      font-size: 13px;
+      font-weight: 800;
+      fill: var(--text-muted);
+      text-anchor: middle;
+      dominant-baseline: middle;
+      transition: all 0.3s ease;
+    }
+
+    #p15-svg-container .p15-btn.active .p15-step-num {
+      fill: var(--text-main);
+    }
+
+    #p15-svg-container .p15-arrow-line {
+      fill: none;
+      stroke: var(--border-color);
+      stroke-width: 2.5;
+      stroke-dasharray: 5 4;
+      transition: all 0.3s ease;
+    }
+
+    #p15-svg-container .p15-arrow-line.active {
+      stroke-dasharray: none;
+      animation: p15-pulse 2s infinite;
+    }
+
+    #p15-svg-container .p15-arrow-head {
+      fill: var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    #p15-svg-container .p15-arrow-line.active + .p15-arrow-head {
+      fill: var(--text-main);
+    }
+
+    @keyframes p15-pulse {
+      0% { stroke-width: 2.5; opacity: 0.8; }
+      50% { stroke-width: 3.5; opacity: 1; }
+      100% { stroke-width: 2.5; opacity: 0.8; }
+    }
+
+    #p15-svg-container .p15-detail-header {
+      font-size: 17px;
+      font-weight: 800;
+      fill: var(--text-main);
+    }
+
+    #p15-svg-container .p15-detail-subtitle {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    #p15-svg-container .p15-detail-body {
+      font-size: 12.5px;
+      fill: var(--text-muted);
+    }
+
+    #p15-svg-container .p15-detail-label {
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--text-main);
+    }
+
+    #p15-svg-container .p15-case-box {
+      fill: rgba(255, 255, 255, 0.015);
+      stroke: var(--border-color);
+      stroke-width: 1;
+      rx: 8px;
+    }
+
+    #p15-svg-container .p15-conn-line {
+      fill: none;
+      stroke: var(--border-color);
+      stroke-width: 1.5;
+      stroke-dasharray: 4 4;
+      opacity: 0.05;
+      transition: all 0.5s ease;
+    }
+
+    #p15-svg-container .p15-conn-line.active {
+      stroke-width: 2.5;
+      stroke-dasharray: none;
+      opacity: 0.55;
+    }
+
+    @keyframes p15-alert-pulse {
+      0% { r: 8px; opacity: 0.8; stroke-width: 1.5; }
+      50% { r: 22px; opacity: 0.4; stroke-width: 1; }
+      100% { r: 35px; opacity: 0; stroke-width: 0.5; }
+    }
+  </style>
+
+  <!-- Retângulo de Fundo Principal -->
+  <rect width="100%" height="100%" fill="var(--bg-surface)" rx="16" />
+
+  <!-- Cabeçalho (Título e Subtítulo) -->
+  <g transform="translate(40, 45)">
+    <text class="p15-title">MÉTODO DE INVESTIGAÇÃO NAS DEMÊNCIAS</text>
+    <text y="24" class="p15-subtitle">O raciocínio clínico estruturado passo a passo até a hipótese de Alzheimer</text>
+  </g>
+
+  <!-- LADO ESQUERDO: GRÁFICO CEREBRAL -->
+  <g transform="translate(10, 0)">
+    <!-- Painel de Fundo do Cérebro -->
+    <rect x="30" y="110" width="390" height="430" rx="16" fill="var(--bg-panel)" stroke="var(--border-color)" stroke-width="1.5" />
+    
+    <!-- Cérebro Anatomia Base -->
+    <g transform="translate(20, -10)">
+      <!-- Silhueta Externa (Córtex Base) -->
+      <path class="p15-brain-outline" d="M 210,170 
+               C 260,170 300,190 320,220 
+               C 340,250 350,280 350,310 
+               C 350,330 340,350 330,360 
+               C 330,360 345,370 345,385 
+               C 345,405 320,420 290,420 
+               C 275,420 260,415 250,405 
+               C 245,425 230,450 210,450 
+               C 190,450 185,430 185,410 
+               C 160,420 140,410 125,395 
+               C 110,380 100,355 100,330 
+               C 100,300 110,280 120,260 
+               C 110,250 105,230 110,210 
+               C 115,185 140,170 170,170 
+               C 185,170 200,170 210,170 Z" />
+      
+      <!-- Cerebelo -->
+      <path d="M 290,420 C 310,420 335,410 335,385 C 335,365 310,360 290,360 C 270,360 260,375 260,390 C 260,405 275,420 290,420 Z" 
+            fill="var(--c-brain-base)" stroke="var(--c-brain-stroke)" stroke-width="1.5" opacity="0.7" />
+      <path d="M 270,375 C 290,375 320,370 325,385 M 265,390 C 290,390 320,385 330,395 M 275,405 C 295,405 315,400 320,410" 
+            fill="none" stroke="var(--c-brain-stroke)" stroke-width="1" opacity="0.5" />
+
+      <!-- Tronco Encefálico -->
+      <path d="M 250,405 C 245,425 230,455 210,455 C 195,455 185,430 185,410 Z" 
+            fill="var(--c-brain-base)" stroke="var(--c-brain-stroke)" stroke-width="1.5" opacity="0.7" />
+      <path d="M 195,415 C 205,425 215,435 220,445 M 200,405 C 210,415 220,425 225,435" 
+            fill="none" stroke="var(--c-brain-stroke)" stroke-width="1" opacity="0.5" />
+
+      <!-- Sulcos Internos -->
+      <path class="p15-brain-sulcus" d="M 150,300 C 180,305 220,300 270,330" />
+      <path class="p15-brain-sulcus" d="M 225,172 C 220,210 210,250 200,295" />
+      <path class="p15-brain-sulcus" d="M 170,180 C 165,210 150,230 130,240" />
+      <path class="p15-brain-sulcus" d="M 195,200 C 190,230 185,250 165,270" />
+      <path class="p15-brain-sulcus" d="M 265,180 C 270,210 280,240 300,260" />
+      <path class="p15-brain-sulcus" d="M 310,205 C 315,230 320,260 335,280" />
+      <path class="p15-brain-sulcus" d="M 300,280 C 280,290 275,310 275,330" />
+      <path class="p15-brain-sulcus" d="M 250,345 C 245,370 230,390 220,400" />
+      <path class="p15-brain-sulcus" d="M 160,320 C 165,350 155,380 140,390" />
+      <path class="p15-brain-sulcus" d="M 190,340 C 200,360 195,390 180,405" />
+
+      <!-- Passo 1: Córtex Frontotemporal de Associação -->
+      <path id="p15-highlight-1" class="p15-brain-part" stroke="var(--c-passo1)"
+            d="M 160,175 C 130,200 120,230 120,255 C 115,280 125,300 140,315 M 200,172 C 180,190 170,210 170,240 M 250,175 C 280,190 300,210 310,230 M 155,330 C 180,335 210,330 240,350" />
+
+      <!-- Passo 2: Circuito Límbico Central -->
+      <path id="p15-highlight-2" class="p15-brain-part" stroke="var(--c-passo2)"
+            d="M 190,290 C 170,290 160,320 170,350 C 180,370 210,380 230,370 C 250,360 260,330 250,300 C 240,280 210,280 190,290 Z" />
+
+      <!-- Passo 3: Tronco e Ventrículos -->
+      <path id="p15-highlight-3" class="p15-brain-part" stroke="var(--c-passo3)"
+            d="M 195,415 C 205,425 215,435 220,445 M 200,405 C 210,415 220,425 225,435 M 200,300 C 210,270 230,270 240,300 M 205,330 C 215,310 225,310 235,330" />
+
+      <!-- Passo 4: Hipocampo Medial (Destaque Patológico) -->
+      <g id="p15-highlight-4-group">
+        <path id="p15-hipocampo-shape" class="p15-hipocampo" stroke="var(--c-brain-stroke)" opacity="0.6"
+              d="M 215,330 C 205,335 200,345 200,355 C 200,365 215,370 225,365 C 235,360 238,345 230,335 C 228,332 222,332 218,335" />
+        <circle id="p15-alert-ring-1" cx="218" cy="350" r="12" fill="none" stroke="var(--c-alzheimer)" stroke-width="1.5" opacity="0" />
+        <circle id="p15-alert-ring-2" cx="218" cy="350" r="22" fill="none" stroke="var(--c-alzheimer)" stroke-width="1" opacity="0" />
+      </g>
+    </g>
+
+    <!-- Linhas de Chamada do Zoom -->
+    <g id="p15-zoom-group" opacity="0.3" style="transition: all 0.4s ease;">
+      <line x1="238" y1="340" x2="110" y2="445" stroke="var(--c-danger)" stroke-width="1.2" stroke-dasharray="3 3" />
+      <line x1="238" y1="340" x2="190" y2="445" stroke="var(--c-danger)" stroke-width="1.2" stroke-dasharray="3 3" />
+      
+      <!-- Círculo de Zoom Anatômico (Hipocampo) -->
+      <circle cx="150" cy="465" r="42" fill="var(--bg-panel)" stroke="var(--c-danger)" stroke-width="1.5" />
+      <circle cx="150" cy="465" r="38" fill="none" stroke="var(--border-color)" stroke-width="1" stroke-dasharray="2 2" />
+      
+      <!-- Desenho Interno do Zoom -->
+      <!-- Esboço do Volume Basal Normal (Tracejado) -->
+      <path d="M 130,460 C 127,465 125,472 127,480 C 129,488 138,492 147,488 C 155,484 158,472 151,464 C 149,461 145,461 142,464 Z" 
+            fill="none" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="2 2" opacity="0.6" />
+      <text x="150" y="497" font-size="7px" fill="var(--text-muted)" text-anchor="middle" font-weight="600">Volume Basal</text>
+      
+      <!-- Hipocampo Atrofiado de Dona Helena (Sólido) -->
+      <path d="M 134,465 C 131,468 129,473 131,478 C 133,483 139,486 144,482 C 149,479 150,471 146,465 Z" 
+            fill="rgba(248, 113, 113, 0.2)" stroke="var(--c-danger)" stroke-width="1.8" />
+      
+      <!-- Corno Temporal Alargado (Líquor/Vascular) -->
+      <path d="M 146,465 C 150,457 156,461 158,469 C 156,478 148,481 144,482 C 149,479 150,471 146,465 Z" 
+            fill="rgba(56, 189, 248, 0.25)" stroke="none" />
+      
+      <!-- Textos do Zoom -->
+      <text x="150" y="440" font-size="8.5px" font-weight="800" fill="var(--c-danger)" text-anchor="middle">ATROFIA MTA 3</text>
+      <text x="150" y="449" font-size="6.5px" fill="var(--text-muted)" text-anchor="middle">Fenda coróidea alargada</text>
+      
+      <!-- Badge Zoom -->
+      <rect x="180" y="465" width="22" height="9" rx="2.5" fill="var(--c-danger)" />
+      <text x="191" y="472" font-size="6px" font-weight="800" fill="#ffffff" text-anchor="middle">ZOOM</text>
+    </g>
+  </g>
+
+  <!-- LADO DIREITO: TRILHA DE RACIOCÍNIO E PAINÉIS DE DETALHES -->
+  
+  <!-- Linhas de Conexão Física/Lógica entre Cérebro e Passos -->
+  <path id="p15-conn-1" class="p15-conn-line" d="M 180,245 C 280,210 380,150 530,170" />
+  <path id="p15-conn-2" class="p15-conn-line" d="M 230,320 C 330,310 430,210 630,170" />
+  <path id="p15-conn-3" class="p15-conn-line" d="M 230,420 C 350,430 490,230 730,170" />
+  <path id="p15-conn-4" class="p15-conn-line" d="M 238,340 C 380,380 580,240 830,170" />
+
+  <!-- Painel da Trilha Superior -->
+  <rect x="480" y="110" width="420" height="120" rx="16" fill="var(--bg-panel)" stroke="var(--border-color)" stroke-width="1.5" />
+  <text x="500" y="138" font-size="11px" font-weight="800" fill="var(--text-muted)" letter-spacing="0.05em">ETAPAS DO RACIOCÍNIO CLÍNICO</text>
+
+  <!-- Linha de Fundo da Trilha -->
+  <line x1="530" y1="170" x2="830" y2="170" stroke="var(--border-color)" stroke-width="3" />
+  
+  <!-- Setas de Fluxo Ativas (Dinamizadas por JS) -->
+  <g>
+    <path id="p15-arrow-1" class="p15-arrow-line" d="M 530,170 L 630,170" />
+    <path class="p15-arrow-head" d="M 622,166 L 630,170 L 622,174 Z" />
+  </g>
+  <g>
+    <path id="p15-arrow-2" class="p15-arrow-line" d="M 630,170 L 730,170" />
+    <path class="p15-arrow-head" d="M 722,166 L 730,170 L 722,174 Z" />
+  </g>
+  <g>
+    <path id="p15-arrow-3" class="p15-arrow-line" d="M 730,170 L 830,170" />
+    <path class="p15-arrow-head" d="M 822,166 L 830,170 L 822,174 Z" />
+  </g>
+
+  <!-- Botão Passo 1 -->
+  <g id="p15-btn-1" class="p15-btn" role="button" aria-label="Passo 1: Caracterizar o Déficit" tabindex="0">
+    <circle cx="530" cy="170" r="16" class="p15-btn-circle" />
+    <text x="530" y="170" class="p15-step-num">1</text>
+    <text x="530" y="206" class="p15-btn-text">Caracterizar</text>
+  </g>
+
+  <!-- Botão Passo 2 -->
+  <g id="p15-btn-2" class="p15-btn" role="button" aria-label="Passo 2: Afastar Falseadores" tabindex="0">
+    <circle cx="630" cy="170" r="16" class="p15-btn-circle" />
+    <text x="630" y="170" class="p15-step-num">2</text>
+    <text x="630" y="206" class="p15-btn-text">Falseadores</text>
+  </g>
+
+  <!-- Botão Passo 3 -->
+  <g id="p15-btn-3" class="p15-btn" role="button" aria-label="Passo 3: Excluir Causas Reversíveis" tabindex="0">
+    <circle cx="730" cy="170" r="16" class="p15-btn-circle" />
+    <text x="730" y="170" class="p15-step-num">3</text>
+    <text x="730" y="206" class="p15-btn-text">Reversíveis</text>
+  </g>
+
+  <!-- Botão Passo 4 / Etiologia -->
+  <g id="p15-btn-4" class="p15-btn" role="button" aria-label="Passo 4: Etiologia de Alzheimer" tabindex="0">
+    <circle cx="830" cy="170" r="16" class="p15-btn-circle" />
+    <text x="830" y="170" class="p15-step-num">4</text>
+    <text x="830" y="206" class="p15-btn-text">Alzheimer</text>
+  </g>
+
+  <!-- Painel de Detalhes Inferior -->
+  <rect x="480" y="250" width="420" height="290" rx="16" fill="var(--bg-panel)" stroke="var(--border-color)" stroke-width="1.5" />
+
+  <!-- GRUPO DE DETALHES 1 (CARACTERIZAR DÉFICIT) -->
+  <g id="p15-detail-1" opacity="1" style="pointer-events: all; transition: opacity 0.3s ease;">
+    <text x="510" y="288" class="p15-detail-subtitle" fill="var(--c-passo1)">Passo 1 · Investigação Inicial</text>
+    <text x="510" y="312" class="p15-detail-header">Caracterizar o Déficit</text>
+    
+    <text x="510" y="340" class="p15-detail-label">Conceito Clínico:</text>
+    <text x="510" y="358" class="p15-detail-body">
+      <tspan x="510" dy="0">Confirmar declínio cognitivo em comparação ao nível basal,</tspan>
+      <tspan x="510" dy="18">associado a comprometimento funcional nas Atividades da</tspan>
+      <tspan x="510" dy="18">Vida Diária (perda da autonomia e independência).</tspan>
+    </text>
+    
+    <!-- Caixa do Caso Clínico -->
+    <g transform="translate(510, 410)">
+      <rect width="360" height="70" class="p15-case-box" />
+      <text x="15" y="20" class="p15-detail-label" fill="var(--c-passo1)" font-size="11.5px">Caso Clínico (Dona Helena):</text>
+      <text x="15" y="38" class="p15-detail-body" font-size="12px">
+        <tspan x="15" dy="0">Amnésia anterógrada marcante (repetição sistemática de</tspan>
+        <tspan x="15" dy="16">perguntas) e esquecimento funcional (panelas acesas no fogo).</tspan>
+      </text>
+    </g>
+    
+    <text x="510" y="510" class="p15-detail-label">Status de Dona Helena:</text>
+    <rect x="660" y="496" width="180" height="20" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+    <text x="750" y="510" font-size="10.5px" font-weight="900" fill="var(--c-passo1)" text-anchor="middle">SÍNDROME CONFIRMADA</text>
+  </g>
+
+  <!-- GRUPO DE DETALHES 2 (AFASTAR FALSEADORES) -->
+  <g id="p15-detail-2" opacity="0" style="pointer-events: none; transition: opacity 0.3s ease;">
+    <text x="510" y="288" class="p15-detail-subtitle" fill="var(--c-passo2)">Passo 2 · Diagnóstico Diferencial</text>
+    <text x="510" y="312" class="p15-detail-header">Afastar Falseadores</text>
+    
+    <text x="510" y="340" class="p15-detail-label">Conceito Clínico:</text>
+    <text x="510" y="358" class="p15-detail-body">
+      <tspan x="510" dy="0">Excluir síndromes e mimetizadores temporários, como a</tspan>
+      <tspan x="510" dy="18">depressão (pseudodemência), delirium (flutuação aguda de</tspan>
+      <tspan x="510" dy="18">consciência e atenção) ou déficits sensoriais graves isolados.</tspan>
+    </text>
+    
+    <!-- Caixa do Caso Clínico -->
+    <g transform="translate(510, 410)">
+      <rect width="360" height="70" class="p15-case-box" />
+      <text x="15" y="20" class="p15-detail-label" fill="var(--c-passo2)" font-size="11.5px">Caso Clínico (Dona Helena):</text>
+      <text x="15" y="38" class="p15-detail-body" font-size="12px">
+        <tspan x="15" dy="0">Escala de Depressão Geriátrica (GDS-15) = 2 (sem depressão).</tspan>
+        <tspan x="15" dy="16">Curso insidioso e estável ao longo de meses afasta delirium.</tspan>
+      </text>
+    </g>
+    
+    <text x="510" y="510" class="p15-detail-label">Status de Dona Helena:</text>
+    <rect x="660" y="496" width="180" height="20" rx="4" fill="rgba(251, 146, 60, 0.15)" />
+    <text x="750" y="510" font-size="10.5px" font-weight="900" fill="var(--c-passo2)" text-anchor="middle">FALSEADORES AFASTADOS</text>
+  </g>
+
+  <!-- GRUPO DE DETALHES 3 (CAUSAS REVERSÍVEIS) -->
+  <g id="p15-detail-3" opacity="0" style="pointer-events: none; transition: opacity 0.3s ease;">
+    <text x="510" y="288" class="p15-detail-subtitle" fill="var(--c-passo3)">Passo 3 · Triagem Sistêmica</text>
+    <text x="510" y="312" class="p15-detail-header">Excluir Causas Reversíveis</text>
+    
+    <text x="510" y="340" class="p15-detail-label">Conceito Clínico:</text>
+    <text x="510" y="358" class="p15-detail-body">
+      <tspan x="510" dy="0">Descartar causas sistêmicas corrigíveis de declínio cognitivo:</tspan>
+      <tspan x="510" dy="18">metabólicas (hipotireoidismo, deficiência de B12), infecciosas</tspan>
+      <tspan x="510" dy="18">(sífilis, HIV) ou neuroestruturais (HPN, massas expansivas).</tspan>
+    </text>
+    
+    <!-- Caixa do Caso Clínico -->
+    <g transform="translate(510, 410)">
+      <rect width="360" height="70" class="p15-case-box" />
+      <text x="15" y="20" class="p15-detail-label" fill="var(--c-passo3)" font-size="11.5px">Caso Clínico (Dona Helena):</text>
+      <text x="15" y="38" class="p15-detail-body" font-size="12px">
+        <tspan x="15" dy="0">Laboratório normal (TSH e Vitamina B12 em níveis adequados,</tspan>
+        <tspan x="15" dy="16">VDRL não reagente). RNM sem sinais de HPN ou tumores.</tspan>
+      </text>
+    </g>
+    
+    <text x="510" y="510" class="p15-detail-label">Status de Dona Helena:</text>
+    <rect x="660" y="496" width="180" height="20" rx="4" fill="rgba(192, 132, 252, 0.15)" />
+    <text x="750" y="510" font-size="10.5px" font-weight="900" fill="var(--c-passo3)" text-anchor="middle">CAUSAS REVERSÍVEIS EXCLUÍDAS</text>
+  </g>
+
+  <!-- GRUPO DE DETALHES 4 (ALZHEIMER) -->
+  <g id="p15-detail-4" opacity="0" style="pointer-events: none; transition: opacity 0.3s ease;">
+    <text x="510" y="288" class="p15-detail-subtitle" fill="var(--c-alzheimer)">Passo 4 · Conclusão e Etiologia</text>
+    <text x="510" y="312" class="p15-detail-header" fill="var(--c-alzheimer)">Doença de Alzheimer</text>
+    
+    <text x="510" y="340" class="p15-detail-label">Conceito Clínico:</text>
+    <text x="510" y="358" class="p15-detail-body">
+      <tspan x="510" dy="0">Após a exclusão das causas secundárias e falseadores,</tspan>
+      <tspan x="510" dy="18">o diagnóstico é confirmado pelo padrão de evolução clínica</tspan>
+      <tspan x="510" dy="18">e assinatura de imagem por atrofia do hipocampo.</tspan>
+    </text>
+    
+    <!-- Caixa do Caso Clínico -->
+    <g transform="translate(510, 410)">
+      <rect width="360" height="70" class="p15-case-box" />
+      <text x="15" y="20" class="p15-detail-label" fill="var(--c-alzheimer)" font-size="11.5px">Caso Clínico (Dona Helena):</text>
+      <text x="15" y="38" class="p15-detail-body" font-size="12px">
+        <tspan x="15" dy="0">Quadro de amnésia progressiva e típica associado a RNM</tspan>
+        <tspan x="15" dy="16">com atrofia temporal medial bilateral (MTA escore 3).</tspan>
+      </text>
+    </g>
+    
+    <text x="510" y="510" class="p15-detail-label">Status de Dona Helena:</text>
+    <rect x="660" y="496" width="180" height="20" rx="4" fill="rgba(239, 68, 68, 0.15)" />
+    <text x="750" y="510" font-size="10.5px" font-weight="900" fill="var(--c-danger)" text-anchor="middle">ALZHEIMER POR EXCLUSÃO</text>
+  </g>
+
+  <!-- RODAPÉ: LINHA DE SEPARAÇÃO E LEGENDA OBRIGATÓRIA -->
+  <line x1="40" y1="555" x2="900" y2="555" stroke="var(--border-color)" stroke-width="1" opacity="0.6" />
+  <text x="470" y="576" class="p15-legend" text-anchor="middle">
+    Legenda: O método inteiro num quadro: caracterizar o déficit, afastar os falseadores, excluir as reversíveis — e só então nomear o Alzheimer por exclusão. Foi o caminho de Dona Helena.
+  </text>
+
+  <!-- SCRIPT DE INTERATIVIDADE PURE-JS -->
+  <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+      const steps = [
+        { id: 1, color: 'var(--c-passo1)', highlightId: 'p15-highlight-1' },
+        { id: 2, color: 'var(--c-passo2)', highlightId: 'p15-highlight-2' },
+        { id: 3, color: 'var(--c-passo3)', highlightId: 'p15-highlight-3' },
+        { id: 4, color: 'var(--c-alzheimer)', highlightId: 'p15-highlight-4' }
+      ];
+
+      function setStep(stepNum) {
+        for (let i = 1; i <= 4; i++) {
+          // Reset botões
+          const btn = document.getElementById('p15-btn-' + i);
+          if (btn) btn.classList.remove('active');
+
+          // Reset painéis de detalhes
+          const detail = document.getElementById('p15-detail-' + i);
+          if (detail) {
+            detail.setAttribute('opacity', '0');
+            detail.style.pointerEvents = 'none';
+          }
+
+          // Reset destaques no cérebro
+          const highlight = document.getElementById('p15-highlight-' + i);
+          if (highlight) {
+            highlight.classList.remove('active');
+            highlight.style.stroke = 'var(--c-brain-stroke)';
+          }
+
+          // Reset conexões lógica-física
+          const conn = document.getElementById('p15-conn-' + i);
+          if (conn) {
+            conn.classList.remove('active');
+            conn.style.stroke = 'var(--border-color)';
+          }
+        }
+
+        // Ativar botão selecionado
+        const activeBtn = document.getElementById('p15-btn-' + stepNum);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        // Ativar detalhes selecionados
+        const activeDetail = document.getElementById('p15-detail-' + stepNum);
+        if (activeDetail) {
+          activeDetail.setAttribute('opacity', '1');
+          activeDetail.style.pointerEvents = 'all';
+        }
+
+        // Ativar conexões físicas e fluxo
+        for (let i = 1; i <= 3; i++) {
+          const arrow = document.getElementById('p15-arrow-' + i);
+          if (arrow) {
+            if (i < stepNum) {
+              arrow.classList.add('active');
+              arrow.style.stroke = steps[i - 1].color;
+            } else {
+              arrow.classList.remove('active');
+              arrow.style.stroke = 'var(--border-color)';
+            }
+          }
+        }
+
+        // Ativar conexão correspondente com o cérebro
+        const activeConn = document.getElementById('p15-conn-' + stepNum);
+        if (activeConn) {
+          activeConn.classList.add('active');
+          activeConn.style.stroke = steps[stepNum - 1].color;
+        }
+
+        // Comportamentos específicos para o Passo 4 (Alzheimer e Hipocampo)
+        const hipo = document.getElementById('p15-hipocampo-shape');
+        const ring1 = document.getElementById('p15-alert-ring-1');
+        const ring2 = document.getElementById('p15-alert-ring-2');
+        const zoomGroup = document.getElementById('p15-zoom-group');
+
+        if (stepNum === 4) {
+          if (hipo) {
+            hipo.style.stroke = 'var(--c-alzheimer)';
+            hipo.style.strokeWidth = '6px';
+            hipo.style.opacity = '1';
+          }
+          if (ring1) ring1.style.animation = 'p15-alert-pulse 1.8s infinite ease-out';
+          if (ring2) ring2.style.animation = 'p15-alert-pulse 1.8s infinite ease-out 0.9s';
+          if (zoomGroup) zoomGroup.setAttribute('opacity', '1');
+        } else {
+          if (hipo) {
+            hipo.style.stroke = 'var(--c-brain-stroke)';
+            hipo.style.strokeWidth = '5px';
+            hipo.style.opacity = '0.6';
+          }
+          if (ring1) ring1.style.animation = 'none';
+          if (ring2) ring2.style.animation = 'none';
+          if (zoomGroup) zoomGroup.setAttribute('opacity', '0.3');
+          
+          // Destaque do córtex correspondente
+          const highlight = document.getElementById('p15-highlight-' + stepNum);
+          if (highlight) {
+            highlight.classList.add('active');
+            highlight.style.stroke = steps[stepNum - 1].color;
+          }
+        }
+      }
+
+      function init() {
+        setStep(1);
+        for (let i = 1; i <= 4; i++) {
+          const btn = document.getElementById('p15-btn-' + i);
+          if (btn) {
+            btn.addEventListener('click', function() { setStep(i); });
+            btn.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setStep(i);
+              }
+            });
+          }
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+    //]]>
+  </script>
+</svg>

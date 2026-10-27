@@ -1,0 +1,174 @@
+/* Design tokens — Plataforma Cirurgia Oncológica 2 Bauer
+   Identidade: oncologia cirúrgica do tubo digestivo.
+   Acento da casa = teal-verde cirúrgico. Assinatura/perigo = coral Bauer.
+   Petróleo profundo + off-white quente. Dark mode primário; light sóbrio (neonato). */
+
+:root {
+  /* --- Backgrounds (petróleo profundo, leve viés verde-cirúrgico) --- */
+  --bg-base: #07171a;            /* fundo principal */
+  --bg-elevated: #0b2227;        /* card padrão */
+  --bg-elevated-2: #0f2c31;      /* card sobre card */
+  --bg-glass: rgba(15, 44, 49, 0.62);
+  --bg-glass-strong: rgba(9, 30, 34, 0.84);
+
+  /* --- Ink (texto) off-white quente --- */
+  --ink-100: #f3efe6;
+  --ink-90:  #e7e2d5;
+  --ink-70:  #c0bcac;
+  --ink-50:  #8b897b;
+  --ink-30:  #585749;
+
+  /* --- Acento da casa: teal-verde cirúrgico (tubo digestivo) --- */
+  --teal-100: #d4f5ec;
+  --teal-80:  #8be4d1;
+  --teal-60:  #4fd6c0;           /* destaque tipográfico */
+  --teal-50:  #32c0aa;
+  --teal-40:  #22a690;
+  --teal-30:  #168175;
+  --teal-20:  #0d5d57;
+  --teal-10:  #0a3a3a;
+  --teal-05:  #06292b;
+
+  /* --- Assinatura Bauer: coral (perigo / irressecável / vital) --- */
+  --coral-100: #ffd9d0;
+  --coral-80:  #ff9d8a;
+  --coral-60:  #f4715a;          /* assinatura autoral */
+  --coral-50:  #e8543f;          /* coral Bauer canônico */
+  --coral-40:  #c9412e;
+  --coral-30:  #9c3324;
+  --coral-dim: rgba(232, 84, 63, 0.16);
+
+  /* --- Funcionais (semáforo clínico WCAG AA) --- */
+  --ok-green: #5fdfa0;           /* ressecável / favorável / eficaz */
+  --ok-green-dim: rgba(95, 223, 160, 0.16);
+  --warn-amber: #f2b541;         /* pegadinha / atenção / dose-dependente */
+  --warn-amber-dim: rgba(242, 181, 65, 0.15);
+  --err-red: #f4715a;            /* erro / contraindicação / irressecável */
+  --err-red-dim: rgba(244, 113, 90, 0.16);
+  --info-blue: #5ba8d6;          /* exames de imagem / nota neutra */
+  --info-blue-dim: rgba(91, 168, 214, 0.15);
+
+  /* --- Eixos didáticos do esôfago (CEC × Adeno) --- */
+  --cec-blue: #5ba8d6;           /* escamoso = externo (azul) */
+  --cec-blue-dim: rgba(91, 168, 214, 0.16);
+  --adeno-coral: var(--coral-50);/* adeno = interno/ácido (coral) */
+  --adeno-coral-dim: var(--coral-dim);
+
+  /* --- Bordas / divisórias --- */
+  --border-soft: rgba(243, 239, 230, 0.10);
+  --border-mid:  rgba(243, 239, 230, 0.18);
+  --border-strong: rgba(243, 239, 230, 0.32);
+
+  /* --- Sombras (com glow de luxo) --- */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.42);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.46);
+  --shadow-lg: 0 20px 52px rgba(0,0,0,0.56);
+  --shadow-glow-teal: 0 0 0 1px rgba(79,214,192,0.20), 0 10px 34px rgba(10,58,58,0.62);
+  --shadow-glow-coral: 0 0 0 1px rgba(232,84,63,0.22), 0 10px 34px rgba(120,30,24,0.40);
+
+  /* --- Tipografia --- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-serif: ui-serif, "Lora", "Iowan Old Style", "Apple Garamond", Georgia, serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  /* Escala tipográfica fluida (luxo: respira em qualquer viewport) */
+  --fs-xs: clamp(0.74rem, 0.72rem + 0.1vw, 0.78rem);
+  --fs-sm: clamp(0.86rem, 0.83rem + 0.15vw, 0.92rem);
+  --fs-md: clamp(0.98rem, 0.95rem + 0.2vw, 1.06rem);
+  --fs-lg: clamp(1.10rem, 1.04rem + 0.4vw, 1.28rem);
+  --fs-xl: clamp(1.34rem, 1.20rem + 0.7vw, 1.62rem);
+  --fs-2xl: clamp(1.70rem, 1.45rem + 1.1vw, 2.20rem);
+  --fs-3xl: clamp(2.15rem, 1.80rem + 1.7vw, 2.85rem);
+  --fs-display: clamp(2.35rem, 4vw + 1rem, 3.85rem);
+
+  --lh-tight: 1.16;
+  --lh-snug:  1.32;
+  --lh-base:  1.6;
+  --lh-loose: 1.72;
+
+  /* --- Raios --- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  /* --- Espaçamento --- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 72px;
+  --sp-9: 96px;
+
+  /* --- Container --- */
+  --container-max: 1180px;
+  --container-text: 760px;
+
+  /* --- Z-index canônico --- */
+  --z-content: 1;
+  --z-sticky: 20;
+  --z-banner-mantra: 50;
+  --z-menu: 100;
+  --z-modal: 200;
+  --z-install-prompt: 300;
+  --z-update-toast: 400;
+
+  /* --- Motion (luxo: easing suave, durações refinadas) --- */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-mid:  260ms;
+  --dur-slow: 460ms;
+}
+
+/* === Tema light (opt-in via [data-theme="light"]) — inspiração neonato (creme quente) === */
+:root[data-theme="light"] {
+  --bg-base: #f5efe2;
+  --bg-elevated: #ffffff;
+  --bg-elevated-2: #f0e9d8;
+  --bg-glass: rgba(255, 255, 255, 0.72);
+  --bg-glass-strong: rgba(255, 255, 255, 0.90);
+
+  --ink-100: #15262a;
+  --ink-90:  #243a40;
+  --ink-70:  #46585f;
+  --ink-50:  #6d7a80;
+  --ink-30:  #a8b1b3;
+
+  --teal-60: #0f7d70;
+  --teal-80: #14988a;
+  --teal-10: #d4ece7;   /* light: superficie teal sutil clara (era #0a3a3a escuro) — fix contraste modo claro */
+  --teal-05: #e6f4f1;   /* light: tint teal mais leve (era #06292b escuro) */
+
+  --coral-60: #c8453a;
+  --coral-50: #c8453a;
+
+  --ok-green: #2e8c4a;
+  --warn-amber: #ad7c14;
+  --err-red: #c8453a;
+  --info-blue: #2870a8;
+  --cec-blue: #2870a8;
+
+  --border-soft: rgba(21, 38, 42, 0.10);
+  --border-mid:  rgba(21, 38, 42, 0.18);
+  --border-strong: rgba(21, 38, 42, 0.32);
+
+  --shadow-sm: 0 1px 2px rgba(15,40,45,0.08);
+  --shadow-md: 0 6px 20px rgba(15,40,45,0.10);
+  --shadow-lg: 0 20px 52px rgba(15,40,45,0.15);
+  --shadow-glow-teal: 0 0 0 1px rgba(15,125,112,0.18), 0 10px 34px rgba(15,125,112,0.16);
+  --shadow-glow-coral: 0 0 0 1px rgba(200,69,58,0.18), 0 10px 34px rgba(200,69,58,0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-mid:  0ms;
+    --dur-slow: 0ms;
+  }
+}

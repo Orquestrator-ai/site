@@ -1,0 +1,548 @@
+<svg viewBox="0 0 800 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="nmda-svg-root" id="nmda-interactive-illustration">
+  <defs>
+    <!-- Gradiente para o Cálcio (Ca2+) -->
+    <radialGradient id="grad-calcium" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="40%" stop-color="var(--nmda-brand-orange)" />
+      <stop offset="100%" stop-color="#b45309" />
+    </radialGradient>
+    
+    <!-- Gradiente para o Glutamato -->
+    <radialGradient id="grad-glutamate" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fee2e2" />
+      <stop offset="40%" stop-color="var(--nmda-brand-red)" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </radialGradient>
+    
+    <!-- Gradiente para a Memantina -->
+    <radialGradient id="grad-memantine" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#d1fae5" />
+      <stop offset="40%" stop-color="var(--nmda-brand-green)" />
+      <stop offset="100%" stop-color="#065f46" />
+    </radialGradient>
+
+    <!-- Filtro de sombra para o painel lateral -->
+    <filter id="panel-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <style>
+    .nmda-svg-root {
+      --nmda-bg: var(--bg-canvas, #0f172a);
+      --nmda-panel: var(--bg-surface, #1e293b);
+      --nmda-text-1: var(--ink-high, #f8fafc);
+      --nmda-text-2: var(--ink-medium, #94a3b8);
+      --nmda-border: var(--border-subtle, #334155);
+      
+      --nmda-brand-cyan: var(--color-cyan, #06b6d4);
+      --nmda-brand-red: var(--color-red, #ef4444);
+      --nmda-brand-green: var(--color-green, #10b981);
+      --nmda-brand-orange: var(--color-orange, #f59e0b);
+      
+      font-family: system-ui, -apple-system, sans-serif;
+      user-select: none;
+    }
+
+    @media (prefers-color-scheme: light) {
+      .nmda-svg-root {
+        --nmda-bg: var(--bg-canvas, #f8fafc);
+        --nmda-panel: var(--bg-surface, #ffffff);
+        --nmda-text-1: var(--ink-high, #0f172a);
+        --nmda-text-2: var(--ink-medium, #475569);
+        --nmda-border: var(--border-subtle, #e2e8f0);
+      }
+    }
+
+    /* Estados de alternância */
+    .nmda-svg-root .only-excitoxicity {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    .nmda-svg-root.protection-active .only-excitoxicity {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .nmda-svg-root .only-protection {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .nmda-svg-root.protection-active .only-protection {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Estilos dos botões do Toggle */
+    .nmda-svg-root .btn-toggle {
+      fill: var(--nmda-panel);
+      stroke: var(--nmda-border);
+      stroke-width: 1.5;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .nmda-svg-root .btn-toggle:hover {
+      stroke: var(--nmda-text-2);
+    }
+    .nmda-svg-root #btn-state-excit[aria-selected="true"] {
+      fill: var(--nmda-brand-red);
+      stroke: var(--nmda-brand-red);
+    }
+    .nmda-svg-root #btn-state-prot[aria-selected="true"] {
+      fill: var(--nmda-brand-green);
+      stroke: var(--nmda-brand-green);
+    }
+
+    /* Hotspots interativos */
+    .nmda-svg-root .nmda-hotspot {
+      cursor: pointer;
+      fill: transparent;
+      stroke: var(--nmda-border);
+      stroke-width: 1.5;
+      stroke-dasharray: 4,4;
+      transition: all 0.3s ease;
+    }
+    .nmda-svg-root .nmda-hotspot:hover,
+    .nmda-svg-root .nmda-hotspot:focus,
+    .nmda-svg-root .nmda-hotspot.active-hs {
+      stroke-width: 2.5;
+      stroke-dasharray: 4,2;
+      animation: rotate-dash 10s linear infinite;
+      outline: none;
+    }
+    .nmda-svg-root .nmda-hotspot[data-topic="glutamato"]:hover,
+    .nmda-svg-root .nmda-hotspot[data-topic="glutamato"].active-hs {
+      stroke: var(--nmda-brand-red);
+    }
+    .nmda-svg-root .nmda-hotspot[data-topic="nmda"]:hover,
+    .nmda-svg-root .nmda-hotspot[data-topic="nmda"].active-hs {
+      stroke: var(--nmda-brand-cyan);
+    }
+    .nmda-svg-root .nmda-hotspot[data-topic="calcio"]:hover,
+    .nmda-svg-root .nmda-hotspot[data-topic="calcio"].active-hs {
+      stroke: var(--nmda-brand-orange);
+    }
+    .nmda-svg-root .nmda-hotspot[data-topic="memantina"]:hover,
+    .nmda-svg-root .nmda-hotspot[data-topic="memantina"].active-hs {
+      stroke: var(--nmda-brand-green);
+    }
+
+    @keyframes rotate-dash {
+      to {
+        stroke-dashoffset: -20;
+      }
+    }
+
+    /* Linhas de chamada */
+    .nmda-svg-root .callout-line {
+      stroke: var(--nmda-border);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      opacity: 0.7;
+    }
+
+    /* Textos do Painel Lateral */
+    .nmda-svg-root .info-content {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+
+  <!-- Fundo Principal -->
+  <rect width="800" height="500" fill="var(--nmda-bg)" />
+
+  <!-- Cabeçalho (Título e Legenda de Interpretação) -->
+  <g transform="translate(30, 40)">
+    <text font-size="18px" font-weight="bold" fill="var(--nmda-text-1)">RECEPTOR NMDA E MECANISMO DA MEMANTINA</text>
+    <text font-size="12px" font-weight="medium" fill="var(--nmda-text-2)" y="22">Mecanismo de Excitotoxicidade Colinérgica/Glutamatérgica e Proteção Farmacológica</text>
+  </g>
+
+  <!-- Painel Esquerdo: Representação Anatômica/Sináptica -->
+  <g transform="translate(0, 20)">
+    <!-- Espaço Extracelular / Fenda Sináptica (Fundo) -->
+    <rect x="30" y="80" width="410" height="180" fill="var(--nmda-panel)" opacity="0.25" rx="8" />
+    <text x="45" y="105" font-size="10px" font-weight="bold" fill="var(--nmda-text-2)" letter-spacing="1">FENDA SINÁPTICA</text>
+
+    <!-- Membrana Pós-Sináptica -->
+    <!-- Bicamada lipídica esquemática (faixa texturizada) -->
+    <rect x="30" y="260" width="410" height="24" fill="var(--nmda-panel)" stroke="var(--nmda-border)" stroke-width="1.5" rx="4" />
+    <line x1="30" y1="272" x2="440" y2="272" stroke="var(--nmda-border)" stroke-width="1" stroke-dasharray="3,3" />
+    <text x="45" y="275" font-size="9px" font-weight="bold" fill="var(--nmda-text-2)" letter-spacing="1">MEMBRANA PÓS-SINÁPTICA</text>
+
+    <!-- Citoplasma Neuronal (Fundo) -->
+    <rect x="30" y="284" width="410" height="146" fill="var(--nmda-panel)" opacity="0.15" rx="8" />
+    <text x="45" y="415" font-size="10px" font-weight="bold" fill="var(--nmda-text-2)" letter-spacing="1">CITOPLASMA NEURONAL</text>
+
+    <!-- RECEPTOR NMDA (Desenho Centralizado em X: 235) -->
+    <!-- Canal central de diâmetro ~30px -->
+    <!-- Subunidade Esquerda -->
+    <path d="M155,200 C155,170 185,175 205,195 C215,205 215,230 215,260 L215,300 C215,325 195,335 175,335 L175,345 C200,345 223,330 225,300 L225,260 C225,235 230,215 227,205 L223,202 C210,185 185,185 175,200 Z" fill="var(--nmda-brand-cyan)" opacity="0.9" />
+    <!-- Subunidade Direita (Espelhada em relação a X: 235, ou seja, transformações baseadas em 470 - X) -->
+    <path d="M315,200 C315,170 285,175 265,195 C255,205 255,230 255,260 L255,300 C255,325 275,335 295,335 L295,345 C270,345 247,330 245,300 L245,260 C245,235 240,215 243,205 L247,202 C260,185 285,185 295,200 Z" fill="var(--nmda-brand-cyan)" opacity="0.9" />
+    
+    <!-- Sítios de Ligação do Glutamato com Glutamato Acoplado (Vermelho) -->
+    <!-- Sítio Esquerdo -->
+    <g class="only-excitoxicity">
+      <circle cx="180" cy="190" r="9" fill="url(#grad-glutamate)" />
+      <text x="180" y="193" font-size="8px" font-weight="bold" fill="#ffffff" text-anchor="middle">GLU</text>
+    </g>
+    <!-- Sítio Direito -->
+    <g class="only-excitoxicity">
+      <circle cx="290" cy="190" r="9" fill="url(#grad-glutamate)" />
+      <text x="290" y="193" font-size="8px" font-weight="bold" fill="#ffffff" text-anchor="middle">GLU</text>
+    </g>
+
+    <!-- Moléculas livres de Glutamato na Fenda (Cena de Excitotoxicidade) -->
+    <g class="only-excitoxicity">
+      <!-- Excesso de Glutamato -->
+      <circle cx="100" cy="140" r="7" fill="url(#grad-glutamate)" />
+      <circle cx="120" cy="160" r="7" fill="url(#grad-glutamate)" />
+      <circle cx="140" cy="120" r="7" fill="url(#grad-glutamate)" />
+      <circle cx="330" cy="130" r="7" fill="url(#grad-glutamate)" />
+      <circle cx="350" cy="160" r="7" fill="url(#grad-glutamate)" />
+      <circle cx="380" cy="125" r="7" fill="url(#grad-glutamate)" />
+      <text x="100" y="152" font-size="8px" font-weight="bold" fill="var(--nmda-brand-red)">GLU</text>
+      <text x="350" y="172" font-size="8px" font-weight="bold" fill="var(--nmda-brand-red)">GLU</text>
+    </g>
+
+    <!-- ESTADO 1: FLUXO DE CÁLCIO ATIVO (EXCITOTOXICIDADE) -->
+    <g class="only-excitoxicity">
+      <!-- Íons de Ca2+ estáticos acumulados no citoplasma -->
+      <circle cx="140" cy="360" r="7" fill="url(#grad-calcium)" />
+      <text x="140" y="363" font-size="7px" font-weight="bold" fill="#ffffff" text-anchor="middle">Ca²⁺</text>
+
+      <circle cx="180" cy="385" r="7" fill="url(#grad-calcium)" />
+      <text x="180" y="388" font-size="7px" font-weight="bold" fill="#ffffff" text-anchor="middle">Ca²⁺</text>
+
+      <circle cx="280" cy="370" r="7" fill="url(#grad-calcium)" />
+      <text x="280" y="373" font-size="7px" font-weight="bold" fill="#ffffff" text-anchor="middle">Ca²⁺</text>
+
+      <circle cx="320" cy="390" r="7" fill="url(#grad-calcium)" />
+      <text x="320" y="393" font-size="7px" font-weight="bold" fill="#ffffff" text-anchor="middle">Ca²⁺</text>
+
+      <!-- Setas de fluxo maciço descendo -->
+      <path d="M 235,130 L 235,170" stroke="var(--nmda-brand-orange)" stroke-width="2" fill="none" stroke-dasharray="3,3" />
+      <path d="M 235,310 L 235,350" stroke="var(--nmda-brand-orange)" stroke-width="2" fill="none" stroke-dasharray="3,3" />
+      
+      <!-- Íons de Cálcio Animados descendo pelo poro aberto -->
+      <circle cx="235" cy="130" r="7" fill="url(#grad-calcium)">
+        <animate attributeName="cy" values="130;200;260;310;370" dur="2.4s" repeatCount="indefinite" begin="0s" />
+        <animate attributeName="cx" values="235;235;235;235;210" dur="2.4s" repeatCount="indefinite" begin="0s" />
+        <animate attributeName="opacity" values="0;1;1;1;0" dur="2.4s" repeatCount="indefinite" begin="0s" />
+      </circle>
+      <circle cx="235" cy="130" r="7" fill="url(#grad-calcium)">
+        <animate attributeName="cy" values="130;200;260;310;370" dur="2.4s" repeatCount="indefinite" begin="0.6s" />
+        <animate attributeName="cx" values="235;235;235;235;260" dur="2.4s" repeatCount="indefinite" begin="0.6s" />
+        <animate attributeName="opacity" values="0;1;1;1;0" dur="2.4s" repeatCount="indefinite" begin="0.6s" />
+      </circle>
+      <circle cx="235" cy="130" r="7" fill="url(#grad-calcium)">
+        <animate attributeName="cy" values="130;200;260;310;370" dur="2.4s" repeatCount="indefinite" begin="1.2s" />
+        <animate attributeName="cx" values="235;235;235;235;235" dur="2.4s" repeatCount="indefinite" begin="1.2s" />
+        <animate attributeName="opacity" values="0;1;1;1;0" dur="2.4s" repeatCount="indefinite" begin="1.2s" />
+      </circle>
+      <circle cx="235" cy="130" r="7" fill="url(#grad-calcium)">
+        <animate attributeName="cy" values="130;200;260;310;370" dur="2.4s" repeatCount="indefinite" begin="1.8s" />
+        <animate attributeName="cx" values="235;235;235;235;285" dur="2.4s" repeatCount="indefinite" begin="1.8s" />
+        <animate attributeName="opacity" values="0;1;1;1;0" dur="2.4s" repeatCount="indefinite" begin="1.8s" />
+      </circle>
+
+      <!-- Indicador visual de toxicidade no citoplasma -->
+      <path d="M 120,380 C 130,375 150,375 160,380" stroke="var(--nmda-brand-red)" stroke-width="1.5" fill="none" opacity="0.7" />
+      <text x="140" y="393" font-size="8px" fill="var(--nmda-brand-red)" text-anchor="middle" font-weight="bold">LESÃO CELULAR</text>
+    </g>
+
+    <!-- ESTADO 2: MEMANTINA PRESENTE (ANTAGONISMO/PROTEÇÃO) -->
+    <g class="only-protection">
+      <!-- Memantina Bloqueando o Poro (Verde) -->
+      <!-- Posicionada no pescoço do canal (X: 235, Y: 270) -->
+      <circle cx="235" cy="270" r="13" fill="url(#grad-memantine)" stroke="var(--nmda-brand-green)" stroke-width="1" />
+      <text x="235" y="273" font-size="8px" font-weight="bold" fill="#ffffff" text-anchor="middle">MEM</text>
+
+      <!-- Moléculas de Memantina adicionais na fenda -->
+      <circle cx="80" cy="170" r="9" fill="url(#grad-memantine)" opacity="0.6"/>
+      <text x="80" y="173" font-size="6px" fill="#ffffff" text-anchor="middle" opacity="0.6">MEM</text>
+      
+      <circle cx="360" cy="180" r="9" fill="url(#grad-memantine)" opacity="0.6"/>
+      <text x="360" y="183" font-size="6px" fill="#ffffff" text-anchor="middle" opacity="0.6">MEM</text>
+
+      <!-- Íons de Cálcio tentando entrar e batendo no bloqueio (Animação de rebote) -->
+      <circle cx="235" cy="120" r="7" fill="url(#grad-calcium)">
+        <animate attributeName="cy" values="120;190;240;210;170" dur="2.5s" repeatCount="indefinite" begin="0s" />
+        <animate attributeName="cx" values="235;235;235;220;210" dur="2.5s" repeatCount="indefinite" begin="0s" />
+        <animate attributeName="opacity" values="0;1;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0s" />
+      </circle>
+      <circle cx="235" cy="120" r="7" fill="url(#grad-calcium)">
+        <animate attributeName="cy" values="120;190;240;210;170" dur="2.5s" repeatCount="indefinite" begin="1.25s" />
+        <animate attributeName="cx" values="235;235;235;250;260" dur="2.5s" repeatCount="indefinite" begin="1.25s" />
+        <animate attributeName="opacity" values="0;1;1;1;0" dur="2.5s" repeatCount="indefinite" begin="1.25s" />
+      </circle>
+
+      <!-- Setas de rebote/bloqueio (Seta curvada para cima) -->
+      <path d="M 230,230 C 230,245 220,245 220,235" stroke="var(--nmda-brand-red)" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+      
+      <!-- Apenas cálcio fisiológico normal (1 íon com baixa opacidade para mostrar a transmissão basal preservada) -->
+      <circle cx="235" cy="380" r="7" fill="url(#grad-calcium)" opacity="0.4" />
+      <text x="235" y="383" font-size="7px" font-weight="bold" fill="#ffffff" text-anchor="middle" opacity="0.4">Ca²⁺</text>
+      <text x="235" y="395" font-size="8px" fill="var(--nmda-brand-green)" text-anchor="middle" font-weight="bold">TRANSMISSÃO FISIOLÓGICA</text>
+    </g>
+
+    <!-- Linhas de Chamada e Rótulos Dinâmicos para os Hotspots -->
+    <!-- Glutamato Rótulo -->
+    <g>
+      <line x1="180" y1="180" x2="110" y2="180" class="callout-line" />
+      <text x="105" y="183" font-size="10px" font-weight="bold" fill="var(--nmda-brand-red)" text-anchor="end">Glutamato (Excesso)</text>
+    </g>
+
+    <!-- Receptor NMDA Rótulo -->
+    <g>
+      <line x1="215" y1="230" x2="130" y2="230" class="callout-line" />
+      <text x="125" y="233" font-size="10px" font-weight="bold" fill="var(--nmda-brand-cyan)" text-anchor="end">Receptor NMDA</text>
+    </g>
+
+    <!-- Memantina Rótulo (Apenas Proteção) -->
+    <g class="only-protection">
+      <line x1="248" y1="270" x2="340" y2="270" class="callout-line" />
+      <text x="345" y="273" font-size="10px" font-weight="bold" fill="var(--nmda-brand-green)" text-anchor="start">Memantina (Bloqueio)</text>
+    </g>
+
+    <!-- Cálcio Rótulo -->
+    <g>
+      <line x1="235" y1="330" x2="340" y2="330" class="callout-line" />
+      <text x="345" y="333" font-size="10px" font-weight="bold" fill="var(--nmda-brand-orange)" text-anchor="start">Influxo de Ca²⁺</text>
+    </g>
+
+    <!-- ÁREAS ATIVAS (HOTSPOTS INTERATIVOS - SOBREPOSTOS) -->
+    <!-- Hotspot Glutamato -->
+    <rect class="nmda-hotspot active-hs" data-topic="glutamato" x="160" y="170" width="145" height="40" rx="6" tabindex="0" role="button" aria-label="Sítio de ligação do Glutamato" />
+    
+    <!-- Hotspot Receptor NMDA -->
+    <rect class="nmda-hotspot" data-topic="nmda" x="195" y="212" width="80" height="40" rx="6" tabindex="0" role="button" aria-label="Porção Extracelular do Receptor NMDA" />
+
+    <!-- Hotspot Cálcio -->
+    <rect class="nmda-hotspot" data-topic="calcio" x="185" y="305" width="100" height="45" rx="6" tabindex="0" role="button" aria-label="Canal Intracelular e Influxo de Cálcio" />
+
+    <!-- Hotspot Memantina (Disponível apenas quando a proteção está ativa) -->
+    <rect class="nmda-hotspot only-protection" data-topic="memantina" x="215" y="252" width="40" height="35" rx="6" tabindex="0" role="button" aria-label="Memantina bloqueando o poro do receptor" />
+  </g>
+
+  <!-- Painel Direito: Controles e Conteúdo Científico -->
+  <!-- Botões de Estado (Toggle) -->
+  <g transform="translate(480, 80)">
+    <!-- Botão Excitotoxicidade -->
+    <rect id="btn-state-excit" class="btn-toggle" x="0" y="0" width="140" height="32" rx="6" aria-selected="true" role="tab" aria-label="Mostrar Estado de Excitotoxicidade" />
+    <text x="70" y="20" class="btn-text" pointer-events="none">EXCITOTOXICIDADE</text>
+
+    <!-- Botão Proteção (Memantina) -->
+    <rect id="btn-state-prot" class="btn-toggle" x="150" y="0" width="140" height="32" rx="6" aria-selected="false" role="tab" aria-label="Mostrar Estado de Proteção com Memantina" />
+    <text x="220" y="20" class="btn-text" pointer-events="none">PROTEÇÃO (MEMANTINA)</text>
+  </g>
+
+  <!-- Painel de Leitura Lateral -->
+  <g transform="translate(480, 130)" filter="url(#panel-shadow)">
+    <rect width="290" height="290" fill="var(--nmda-panel)" stroke="var(--nmda-border)" stroke-width="1.5" rx="8" />
+    <text x="20" y="28" font-size="11px" font-weight="bold" fill="var(--nmda-text-2)" letter-spacing="1">MECANISMO FARMACOLÓGICO</text>
+    <line x1="20" y1="36" x2="270" y2="36" stroke="var(--nmda-border)" stroke-width="1" />
+
+    <!-- TEXTOS DINÂMICOS (Gerenciados por JS mudando opacidade) -->
+    
+    <!-- Tópico 1: Glutamato -->
+    <g id="info-glutamato" class="info-content" opacity="1" style="pointer-events: auto;">
+      <rect x="20" y="50" width="10" height="10" fill="var(--nmda-brand-red)" rx="2" />
+      <text x="38" y="60" font-size="13px" font-weight="bold" fill="var(--nmda-brand-red)">GLUTAMATO EM EXCESSO</text>
+      
+      <text font-size="11.5px" fill="var(--nmda-text-1)" y="85">
+        <tspan x="20" dy="0">Nas demências (ex: Doença de Alzheimer),</tspan>
+        <tspan x="20" dy="18">há uma liberação contínua e patológica</tspan>
+        <tspan x="20" dy="18">de glutamato na fenda sináptica.</tspan>
+      </text>
+
+      <text font-size="11.5px" fill="var(--nmda-text-2)" y="150">
+        <tspan x="20" dy="0">Esse excesso impede a depuração correta</tspan>
+        <tspan x="20" dy="18">do neurotransmissor pelas células gliais,</tspan>
+        <tspan x="20" dy="18">criando um ruído de fundo tônico e</tspan>
+        <tspan x="20" dy="18">ativando persistentemente os receptores</tspan>
+        <tspan x="20" dy="18">NMDA pós-sinápticos.</tspan>
+      </text>
+
+      <!-- Destaque visual -->
+      <rect x="20" y="250" width="250" height="26" fill="var(--nmda-brand-red)" opacity="0.1" rx="4" />
+      <text x="25" y="266" font-size="9.5px" font-weight="bold" fill="var(--nmda-brand-red)">ALERTA: Neurotoxicidade crônica ativa</text>
+    </g>
+
+    <!-- Tópico 2: Receptor NMDA -->
+    <g id="info-nmda" class="info-content" opacity="0" style="pointer-events: none;">
+      <rect x="20" y="50" width="10" height="10" fill="var(--nmda-brand-cyan)" rx="2" />
+      <text x="38" y="60" font-size="13px" font-weight="bold" fill="var(--nmda-brand-cyan)">RECEPTOR NMDA</text>
+      
+      <text font-size="11.5px" fill="var(--nmda-text-1)" y="85">
+        <tspan x="20" dy="0">O NMDA é um receptor ionotrópico de</tspan>
+        <tspan x="20" dy="18">glutamato, altamente permeável ao Ca²⁺.</tspan>
+        <tspan x="20" dy="18">Possui ativação dependente de ligante</tspan>
+        <tspan x="20" dy="18">e modulação por voltagem.</tspan>
+      </text>
+
+      <text font-size="11.5px" fill="var(--nmda-text-2)" y="165">
+        <tspan x="20" dy="0">Fisiologicamente, o magnésio (Mg²⁺)</tspan>
+        <tspan x="20" dy="18">bloqueia o poro em repouso. Sob ativação</tspan>
+        <tspan x="20" dy="18">crônica do glutamato, o bloqueio do Mg²⁺</tspan>
+        <tspan x="20" dy="18">é perdido, permitindo fluxo descontrolado.</tspan>
+      </text>
+
+      <!-- Destaque visual -->
+      <rect x="20" y="250" width="250" height="26" fill="var(--nmda-brand-cyan)" opacity="0.1" rx="4" />
+      <text x="25" y="266" font-size="9.5px" font-weight="bold" fill="var(--nmda-brand-cyan)">ESTRUTURA: Canal ionotrópico de Ca²⁺</text>
+    </g>
+
+    <!-- Tópico 3: Cálcio -->
+    <g id="info-calcio" class="info-content" opacity="0" style="pointer-events: none;">
+      <rect x="20" y="50" width="10" height="10" fill="var(--nmda-brand-orange)" rx="2" />
+      <text x="38" y="60" font-size="13px" font-weight="bold" fill="var(--nmda-brand-orange)">INFLUXO DE CÁLCIO (Ca²⁺)</text>
+      
+      <text font-size="11.5px" fill="var(--nmda-text-1)" y="85">
+        <tspan x="20" dy="0">O Ca²⁺ é um segundo mensageiro vital.</tspan>
+        <tspan x="20" dy="18">Porém, seu acúmulo intracelular crônico</tspan>
+        <tspan x="20" dy="18">é extremamente deletério para o neurônio.</tspan>
+      </text>
+
+      <text font-size="11.5px" fill="var(--nmda-text-2)" y="150">
+        <tspan x="20" dy="0">O excesso ativa enzimas destrutivas</tspan>
+        <tspan x="20" dy="18">(proteases, caspases, lipases), gera</tspan>
+        <tspan x="20" dy="18">radicais livres (estresse oxidativo)</tspan>
+        <tspan x="20" dy="18">e causa disfunção mitocondrial direta,</tspan>
+        <tspan x="20" dy="18">induzindo apoptose neuronal.</tspan>
+      </text>
+
+      <!-- Destaque visual -->
+      <rect x="20" y="250" width="250" height="26" fill="var(--nmda-brand-orange)" opacity="0.1" rx="4" />
+      <text x="25" y="266" font-size="9.5px" font-weight="bold" fill="var(--nmda-brand-orange)">EXCITOTOXICIDADE: Morte por sobrecarga iônica</text>
+    </g>
+
+    <!-- Tópico 4: Memantina -->
+    <g id="info-memantina" class="info-content" opacity="0" style="pointer-events: none;">
+      <rect x="20" y="50" width="10" height="10" fill="var(--nmda-brand-green)" rx="2" />
+      <text x="38" y="60" font-size="13px" font-weight="bold" fill="var(--nmda-brand-green)">MEMANTINA (PROTETOR)</text>
+      
+      <text font-size="11.5px" fill="var(--nmda-text-1)" y="85">
+        <tspan x="20" dy="0">Antagonista não-competitivo de afinidade</tspan>
+        <tspan x="20" dy="18">moderada. Ela aloja-se no poro do canal,</tspan>
+        <tspan x="20" dy="18">bloqueando o fluxo patológico ("ruído").</tspan>
+      </text>
+
+      <text font-size="11.5px" fill="var(--nmda-text-2)" y="150">
+        <tspan x="20" dy="0">Por ter afinidade moderada, desencaixa-se</tspan>
+        <tspan x="20" dy="18">durante despolarizações fisiológicas fortes</tspan>
+        <tspan x="20" dy="18">(potenciais de ação de aprendizado),</tspan>
+        <tspan x="20" dy="18">permitindo a transmissão normal do sinal</tspan>
+        <tspan x="20" dy="18">cognitivo.</tspan>
+      </text>
+
+      <!-- Destaque visual -->
+      <rect x="20" y="250" width="250" height="26" fill="var(--nmda-brand-green)" opacity="0.1" rx="4" />
+      <text x="25" y="266" font-size="9.5px" font-weight="bold" fill="var(--nmda-brand-green)">PROTEÇÃO: Bloqueia o ruído, poupa o sinal</text>
+    </g>
+  </g>
+
+  <!-- Rodapé (Legenda de Interpretação e Notas) -->
+  <g transform="translate(30, 460)">
+    <text font-size="10.5px" font-weight="medium" fill="var(--nmda-text-1)">
+      <tspan x="0" dy="0" font-weight="bold" fill="var(--nmda-brand-orange)">LEGENDA DE INTERPRETAÇÃO:</tspan>
+      <tspan fill="var(--nmda-text-2)"> O glutamato em excesso é neurotóxico: ativa demais o receptor NMDA. A memantina o antagoniza e preserva o neurônio —</tspan>
+    </text>
+    <text font-size="10.5px" font-weight="medium" fill="var(--nmda-text-2)">
+      <tspan x="0" dy="14">pilar terapêutico nas formas moderada e grave, protegendo contra a excitotoxicidade sináptica cronificada.</tspan>
+    </text>
+  </g>
+
+  <!-- Script Inline para Interação -->
+  <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+      const init = function() {
+        const svg = document.getElementById("nmda-interactive-illustration");
+        if (!svg || svg.dataset.initialized) return;
+        svg.dataset.initialized = "true";
+
+        const btnExcit = svg.querySelector("#btn-state-excit");
+        const btnProt = svg.querySelector("#btn-state-prot");
+        const hotspots = svg.querySelectorAll(".nmda-hotspot");
+        const infoTexts = svg.querySelectorAll(".info-content");
+
+        function setScene(state) {
+          if (state === "protection") {
+            svg.classList.add("protection-active");
+            btnProt.setAttribute("aria-selected", "true");
+            btnExcit.setAttribute("aria-selected", "false");
+            
+            // Define hotspot da memantina como ativo por padrão na cena de proteção
+            hotspots.forEach(h => h.classList.remove("active-hs"));
+            const memHs = svg.querySelector('[data-topic="memantina"]');
+            if (memHs) memHs.classList.add("active-hs");
+            showInfo("memantina");
+          } else {
+            svg.classList.remove("protection-active");
+            btnExcit.setAttribute("aria-selected", "true");
+            btnProt.setAttribute("aria-selected", "false");
+            
+            // Define hotspot do glutamato como ativo por padrão na cena de excitotoxicidade
+            hotspots.forEach(h => h.classList.remove("active-hs"));
+            const glutHs = svg.querySelector('[data-topic="glutamato"]');
+            if (glutHs) glutHs.classList.add("active-hs");
+            showInfo("glutamato");
+          }
+        }
+
+        if (btnExcit && btnProt) {
+          btnExcit.addEventListener("click", () => setScene("excitoxicity"));
+          btnExcit.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              setScene("excitoxicity");
+              e.preventDefault();
+            }
+          });
+          btnProt.addEventListener("click", () => setScene("protection"));
+          btnProt.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              setScene("protection");
+              e.preventDefault();
+            }
+          });
+        }
+
+        hotspots.forEach(hs => {
+          const select = function() {
+            const topic = hs.getAttribute("data-topic");
+            showInfo(topic);
+            hotspots.forEach(h => h.classList.remove("active-hs"));
+            hs.classList.add("active-hs");
+          };
+          hs.addEventListener("click", select);
+          hs.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              select();
+              e.preventDefault();
+            }
+          });
+        });
+
+        function showInfo(topic) {
+          infoTexts.forEach(txt => {
+            if (txt.id === "info-" + topic) {
+              txt.setAttribute("opacity", "1");
+              txt.style.pointerEvents = "auto";
+            } else {
+              txt.setAttribute("opacity", "0");
+              txt.style.pointerEvents = "none";
+            }
+          });
+        }
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+    //]]>
+  </script>
+</svg>

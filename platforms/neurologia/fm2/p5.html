@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D9488">
+<meta name="description" content="Neurite óptica = II par = SNC. O III–XII é SNP apesar do nome “craniano”.">
+<title>Neurite óptica: o II par é SNC — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm2-cara">
+:root,[data-theme="dark"]{--fm2-teal:#14b8a6;--fm2-indigo:#818CF8;--fm2-gelo:#38BDF8;--fm2-ouro:#E0A100;--fm2-coral:#FB7185;--fm2-amber:#F59E0B;--fm2-verde:#34D399}
+[data-theme="light"]{--fm2-teal:#0F766E;--fm2-indigo:#4F46E5;--fm2-gelo:#0284C7;--fm2-ouro:#846006;--fm2-coral:#C81E43;--fm2-amber:#A15206;--fm2-verde:#059669}
+.reading{width:100%;margin:0 auto;padding:0 0 3rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem;margin:0 0 1.25rem;box-shadow:var(--shadow)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--fm2-teal);margin:0 0 .45rem}
+.opener h1{font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 .6rem;color:var(--ink-100)}
+.opener p{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.55}
+.opener--case{border-left:4px solid var(--fm2-indigo)}
+.opener--question{border-left:4px solid var(--fm2-teal)}
+.opener--mnemonic{border-left:4px solid var(--fm2-amber)}
+.opener--impact{border-left:4px solid var(--fm2-coral)}
+.opener--checklist{border-left:4px solid var(--fm2-verde)}
+.opener--vs{border-left:4px solid var(--fm2-gelo)}
+.opener--trap{border-left:4px solid var(--fm2-ouro)}
+.opener--bust{border-left:4px solid var(--fm2-coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.15rem}
+.chip{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.3rem .75rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--fm2-teal);border-color:color-mix(in srgb,var(--fm2-teal) 45%,var(--border))}
+.chip--gold{color:var(--fm2-ouro);border-color:color-mix(in srgb,var(--fm2-ouro) 45%,var(--border))}
+.chip--ok{color:var(--fm2-verde);border-color:color-mix(in srgb,var(--fm2-verde) 45%,var(--border))}
+.chip--no{color:var(--fm2-coral);border-color:color-mix(in srgb,var(--fm2-coral) 45%,var(--border))}
+.chip--series{color:var(--fm2-indigo);border-color:color-mix(in srgb,var(--fm2-indigo) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em;line-height:1.62}
+.prose p.no-indent,.no-indent{text-indent:0}
+.topic-h{font-size:1.12rem;margin:1.4rem 0 .55rem;color:var(--ink-100);font-weight:700}
+.term{color:var(--fm2-indigo);font-weight:700}
+.hl-good{color:var(--fm2-verde);font-weight:700}
+.hl-bad{color:var(--fm2-coral);font-weight:700}
+.hl-warn{color:var(--fm2-amber);font-weight:700}
+.hl-gold{color:var(--fm2-ouro);font-weight:700}
+.nuance{border-left:4px solid var(--fm2-amber);padding:.7rem .9rem;margin:1rem 0;background:color-mix(in srgb,var(--fm2-amber) 9%,var(--bg-2));border-radius:0 10px 10px 0}
+.nuance__title{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--fm2-amber);margin:0 0 .3rem;font-weight:700}
+.nuance p{margin:0;color:var(--ink-80);font-size:.94rem;line-height:1.55}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0}
+.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:300px}
+.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}
+.comparison th{background:var(--bg-3);color:var(--ink-100)}
+.comparison tr:nth-child(even) td{background:var(--bg-2)}
+.exec-card{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.exec-card__title{margin:0 0 .6rem;font-size:1rem;color:var(--fm2-teal);font-weight:700}
+.case-card{border:1px solid var(--border);border-left:4px solid var(--fm2-indigo);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.1rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.case-card h4{margin:0 0 .5rem;color:var(--fm2-indigo)}
+.case-card p{margin:.3rem 0;color:var(--ink-80)}
+.gap-box{border:1px solid var(--border);border-left:4px solid var(--fm2-coral);border-radius:var(--radius-sm);background:color-mix(in srgb,var(--fm2-coral) 8%,var(--bg-2));padding:.9rem 1rem;margin:1.1rem 0}
+.gap-box h4{margin:0 0 .4rem;color:var(--fm2-coral)}
+.gap-box p{margin:0;color:var(--ink-80);font-size:.92rem}
+.continuity{border:1px solid var(--border);border-left:4px solid var(--fm2-gelo);border-radius:var(--radius-sm);background:var(--bg-2);padding:.85rem 1rem;margin:1.2rem 0 0}
+.continuity p{margin:0;color:var(--ink-60);font-size:.92rem}
+.hero-figure{margin:1.5rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.hero-figure__frame{width:100%;display:block;background:var(--bg-1)}
+.hero-figure__cap{padding:.7rem .9rem .9rem;font-size:.8rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.fig__frame{width:100%;display:block;background:var(--bg-1)}
+.fig__frame--svg{padding:.25rem}
+.fm2-inline-svg{display:block;width:100%;height:auto;border-radius:8px}
+.fig__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--fm2-teal);margin-right:.4rem}
+.quiz__alts{list-style:none;margin:0 0 .9rem;padding:0;display:grid;gap:.45rem}
+.alt{display:flex;gap:.6rem;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-3);color:var(--ink-100);padding:.7rem .85rem;cursor:pointer;font:inherit;min-height:44px;line-height:1.45}
+.alt:hover{border-color:var(--fm2-teal);background:var(--bg-4)}
+.alt[aria-checked="true"]{border-color:var(--fm2-gelo);background:color-mix(in srgb,var(--fm2-gelo) 13%,var(--bg-3))}
+.alt.is-correct{border-color:var(--fm2-verde);background:color-mix(in srgb,var(--fm2-verde) 14%,var(--bg-3))}
+.alt.is-correct::after{content:" ✔";color:var(--fm2-verde);font-weight:800;margin-left:auto}
+.alt.is-wrong{border-color:var(--fm2-coral);background:color-mix(in srgb,var(--fm2-coral) 14%,var(--bg-3))}
+.alt.is-wrong::after{content:" ✗";color:var(--fm2-coral);font-weight:800;margin-left:auto}
+.alt.is-marked{border-color:var(--fm2-gelo)}
+.ltr{display:inline-flex;align-items:center;justify-content:center;min-width:1.6rem;height:1.6rem;border-radius:6px;background:var(--bg-4);color:var(--fm2-teal);font-weight:800;font-size:.82rem;flex:0 0 auto}
+.alt.is-correct .ltr{background:var(--fm2-verde);color:#fff}
+.alt.is-wrong .ltr{background:var(--fm2-coral);color:#fff}
+.quiz__btn{display:inline-flex;align-items:center;min-height:44px;padding:.55rem 1rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong);background:var(--bg-3);color:var(--ink-100);cursor:pointer;font:inherit;font-weight:600}
+.quiz__btn:hover:not(:disabled){border-color:var(--fm2-teal);color:var(--fm2-teal)}
+.quiz__btn:disabled{opacity:.6;cursor:default}
+.quiz__explicacao{margin-top:.7rem;padding:.8rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3)}
+.quiz__explicacao[hidden]{display:none}
+.quiz__explicacao p{margin:0 0 .6rem;font-size:.93rem;line-height:1.55}
+.quiz__explicacao p:last-child{margin:0}
+.quiz__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.flow{display:grid;gap:.5rem;margin:.9rem 0}
+.flow__step{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:.7rem .85rem;font-size:.93rem}
+.flow__step strong{color:var(--fm2-teal)}
+.flow__arrow{text-align:center;color:var(--fm2-gelo);font-weight:700}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.9rem 0}
+.stat-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem .9rem;background:var(--bg-2)}
+.stat-card__n{font-size:1.7rem;font-weight:800;color:var(--fm2-teal);line-height:1}
+.stat-card__n--bad{color:var(--fm2-coral)}
+.stat-card__t{display:block;margin-top:.35rem;font-size:.82rem;color:var(--ink-60)}
+.board{display:grid;gap:.5rem;margin:.9rem 0}
+.board__row{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;border:1px solid var(--border);border-radius:var(--radius-sm);padding:.6rem .8rem;background:var(--bg-2)}
+.board__tag{font-weight:800;min-width:1.6rem;text-align:center;border-radius:6px;padding:.15rem .25rem;background:var(--bg-4)}
+.board__tag--ok{background:var(--fm2-verde);color:#fff}
+.board__tag--no{background:var(--fm2-coral);color:#fff}
+.dont-confuse{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.9rem 0}
+.dont-confuse>div{border:1px solid var(--border);border-radius:10px;padding:.65rem .8rem;background:var(--bg-2)}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:560px){.stat-row,.dont-confuse{grid-template-columns:1fr}}
+@media(max-width:420px){.board__row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p5" data-layout="fm2-p05" data-source-ids="049,050,051,052,053,054,055,056,057,058,059,060,061,062,063">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Esclerose múltipla</span>
+        <span class="site-header__subtitle">Neurologia · esclerose múltipla</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">5/12</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<div class="reading">
+  <section class="opener opener--case" aria-labelledby="p5-titulo">
+    <span class="opener__eyebrow">Achado típico / pegadinha</span>
+    <h1 id="p5-titulo">Neurite óptica: o II par é SNC</h1>
+    <p>Neurite óptica cabe na EM — o III–XII clássico, não. O nome “craniano” engana: só I e II são SNC.</p>
+  </section>
+
+  <div class="prose">
+    <h2 class="topic-h">Neurite = mielina do II par</h2>
+    <p class="no-indent">As manifestações <strong>mais frequentes</strong> começam pela <strong>neurite óptica</strong>: acometimento da <strong>bainha de mielina do nervo óptico</strong>. Nervo óptico = <strong>II par craniano</strong>.</p>
+    <h2 class="topic-h">I–II = SNC</h2>
+    <p class="no-indent">Existem 12 pares cranianos: do <strong>I</strong> (olfatório) ao <strong>XII</strong> (hipoglosso). <strong>I e II</strong> representam o <strong>sistema nervoso central</strong>: neurônios com <strong>contato direto</strong> cérebro ↔ meio externo. Olfatório: partículas do cheiro. Óptico: <strong>fótons</strong> para formar imagem. Classicamente acometido na EM: o <strong>nervo óptico</strong> (visão); o I raramente entra no discurso de prova da EM.</p>
+    <h2 class="topic-h">III–XII = SNP apesar do nome</h2>
+    <p class="no-indent">Do <strong>III ao XII</strong>: são <strong>sistema nervoso periférico</strong>, embora se chamem “pares cranianos”.</p>
+    <h2 class="topic-h">Por que “craniano”</h2>
+    <p class="no-indent">Porque <strong>saem do tronco encefálico</strong>, que está <strong>dentro do crânio</strong> — não saem da medula como os nervos espinhais. Saem da medula = nervo <strong>espinhal</strong>; saem do tronco = <strong>par craniano</strong>. A numeração acompanha a <strong>altura de emergência</strong> no tronco: quanto mais alto, menor o número. Exemplos: <strong>III</strong> emerge do <strong>mesencéfalo</strong>; <strong>VII</strong> (facial) da <strong>ponte</strong>; <strong>XII</strong> do <strong>bulbo</strong>.</p>
+  </div>
+
+  <div class="exec-card" style="border-left:4px solid var(--fm2-ouro);background:color-mix(in srgb,var(--fm2-ouro) 8%,var(--bg-2))">
+    <p class="exec-card__title" style="color:var(--fm2-ouro)">Regra de prova</p>
+    <p class="no-indent">EM <strong>não</strong> “pega clássico” o III–XII como alvo desmielinizante central típico da neurite; o clássico é o <strong>II par</strong> (SNC). <strong class="hl-gold">II par = SNC</strong>; <strong>III–XII = SNP</strong> (apesar do nome “craniano”).</p>
+  </div>
+
+  <div class="prose">
+    <p><strong>Resumo operacional:</strong> neurite óptica = II par = SNC = encaixa na EM em mulher jovem.</p>
+  </div>
+
+  <div class="figura-ancorada">
+    <figure class="figura-ancorada__media">
+      <img src="media/B05-optic-neuritis-MRI-right-ON-hyperintense-ICON2022.png" alt="Ressonância magnética mostrando nervo óptico direito hiperintenso (neurite) em contraste com o contralateral." loading="lazy" decoding="async">
+      <figcaption class="figura-ancorada__legenda">Neurite óptica direita em RM — nervo óptico hiperintenso vs contralateral. O II par inflamado é o achado de imagem.</figcaption>
+      <p class="figura-ancorada__fonte">ICON2022 · Wikimedia Commons · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Case-3-mri.png">fonte</a></p>
+    </figure>
+    <div class="figura-ancorada__ancora">
+      <h4>O II par inflamado</h4>
+      <p>O nervo óptico hiperintenso é a neurite óptica vista na RM: II par, SNC, mulher jovem. A lateralidade e o contraste com o lado normal são o que o olho da prova precisa aprender.</p>
+    </div>
+  </div>
+
+  <figure class="fig">
+    <div class="fig__frame fig__frame--svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" class="fm2-inline-svg fm2p5-root" id="fm2p5-svg-root" role="img" aria-label="Ilustração Interativa de Pares Cranianos: SNC vs SNP e Neurite Óptica">
+  <defs>
+    <style>
+      .fm2p5-root {
+        --fm2p5-bg: var(--bg-1, #0b0f19);
+        --fm2p5-card: var(--bg-2, #131c2e);
+        --fm2p5-card-border: var(--ink-20, #233148);
+        --fm2p5-card-inner: var(--bg-3, #1c273e);
+        --fm2p5-txt-main: var(--ink-100, #f8fafc);
+        --fm2p5-txt-muted: var(--ink-70, #94a3b8);
+        --fm2p5-txt-dark: var(--ink-30, #64748b);
+        
+        --fm2p5-snc: var(--kw-cyan, #06b6d4);
+        --fm2p5-snc-glow: rgba(6, 182, 212, 0.25);
+        --fm2p5-snc-bg: rgba(6, 182, 212, 0.1);
+        
+        --fm2p5-snp: var(--kw-slate, #64748b);
+        --fm2p5-snp-bg: rgba(100, 116, 139, 0.08);
+        
+        --fm2p5-gold: var(--kw-gold, #eab308);
+        --fm2p5-gold-bg: rgba(234, 179, 8, 0.15);
+        
+        --fm2p5-red: var(--kw-red, #ef4444);
+        --fm2p5-red-bg: rgba(239, 68, 68, 0.15);
+        
+        --fm2p5-green: var(--kw-green, #10b981);
+        --fm2p5-green-bg: rgba(16, 185, 129, 0.12);
+        
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--fm2p5-bg, #0b0f19);
+        color: var(--fm2p5-txt-main, #f8fafc);
+      }
+      
+      [data-theme="light"] .fm2p5-root {
+        --fm2p5-bg: #f8fafc;
+        --fm2p5-card: #ffffff;
+        --fm2p5-card-border: #cbd5e1;
+        --fm2p5-card-inner: #f1f5f9;
+        --fm2p5-txt-main: #0f172a;
+        --fm2p5-txt-muted: #334155;
+        --fm2p5-txt-dark: #64748b;
+        
+        --fm2p5-snc: #0284c7;
+        --fm2p5-snc-glow: rgba(2, 132, 199, 0.2);
+        --fm2p5-snc-bg: rgba(2, 132, 199, 0.06);
+        
+        --fm2p5-snp: #475569;
+        --fm2p5-snp-bg: rgba(71, 85, 105, 0.06);
+        
+        --fm2p5-gold: #d97706;
+        --fm2p5-gold-bg: rgba(217, 119, 6, 0.12);
+        
+        --fm2p5-red: #dc2626;
+        --fm2p5-red-bg: rgba(220, 38, 38, 0.1);
+        
+        --fm2p5-green: #059669;
+        --fm2p5-green-bg: rgba(5, 150, 105, 0.1);
+      }
+
+      /* Base Layout Typography */
+      .fm2p5-title { font-size: 20px; font-weight: 800; fill: var(--fm2p5-txt-main, #f8fafc); letter-spacing: -0.5px; }
+      .fm2p5-subtitle { font-size: 13px; font-weight: 500; fill: var(--fm2p5-txt-muted, #94a3b8); }
+      .fm2p5-section-hdr { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+      .fm2p5-txt-bold { font-weight: 700; }
+      .fm2p5-txt-sm { font-size: 12px; }
+      .fm2p5-txt-xs { font-size: 11px; }
+
+      /* Buttons &amp; Controls */
+      .fm2p5-btn { cursor: pointer; transition: all 0.2s ease; }
+      .fm2p5-btn rect { fill: var(--fm2p5-card, #131c2e); stroke: var(--fm2p5-card-border, #233148); stroke-width: 1.5; rx: 8; }
+      .fm2p5-btn text { fill: var(--fm2p5-txt-muted, #94a3b8); font-size: 11.5px; font-weight: 600; text-anchor: middle; pointer-events: none; }
+      .fm2p5-btn:hover rect { stroke: var(--fm2p5-snc, #06b6d4); fill: var(--fm2p5-card-inner, #1c273e); }
+      .fm2p5-btn:hover text { fill: var(--fm2p5-txt-main, #f8fafc); }
+      
+      .fm2p5-btn.fm2p5-active rect { fill: var(--fm2p5-snc-bg, rgba(6, 182, 212, 0.1)); stroke: var(--fm2p5-snc, #06b6d4); stroke-width: 2; }
+      .fm2p5-btn.fm2p5-active text { fill: var(--fm2p5-snc, #06b6d4); font-weight: 700; }
+
+      /* Cards &amp; Hotspots */
+      .fm2p5-nerve-card { cursor: pointer; transition: transform 0.15s ease, stroke 0.15s ease; }
+      .fm2p5-nerve-card rect { fill: var(--fm2p5-card, #131c2e); stroke: var(--fm2p5-card-border, #233148); stroke-width: 1.5; rx: 6; }
+      .fm2p5-nerve-card:hover rect { stroke: var(--fm2p5-snc, #06b6d4); }
+      
+      .fm2p5-nerve-card.fm2p5-is-snc rect { stroke: var(--fm2p5-snc, #06b6d4); fill: var(--fm2p5-snc-bg, rgba(6, 182, 212, 0.1)); }
+      .fm2p5-nerve-card.fm2p5-is-gold rect { stroke: var(--fm2p5-gold, #eab308); fill: var(--fm2p5-gold-bg, rgba(234, 179, 8, 0.15)); stroke-width: 2; }
+      .fm2p5-nerve-card.fm2p5-is-selected rect { stroke-width: 2.5; filter: drop-shadow(0 0 6px var(--fm2p5-snc-glow, rgba(6, 182, 212, 0.25))); }
+
+      .fm2p5-badge { rx: 4; }
+      .fm2p5-badge-snc { fill: var(--fm2p5-snc, #06b6d4); }
+      .fm2p5-badge-snp { fill: var(--fm2p5-snp, #64748b); }
+      .fm2p5-badge-gold { fill: var(--fm2p5-gold, #eab308); }
+      .fm2p5-badge-red { fill: var(--fm2p5-red, #ef4444); }
+
+      /* Brainstem Node Indicators */
+      .fm2p5-anchor-node { cursor: pointer; }
+      .fm2p5-anchor-node circle { transition: all 0.2s ease; }
+      .fm2p5-anchor-node:hover circle.fm2p5-dot { r: 8; stroke-width: 3; }
+      
+      /* Animation / Motion effects when enabled */
+      @media (prefers-reduced-motion: no-preference) {
+        .fm2p5-pulse { animation: fm2p5-anim-pulse 2s infinite; }
+      }
+      @keyframes fm2p5-anim-pulse {
+        0% { r: 5px; opacity: 1; }
+        50% { r: 10px; opacity: 0.4; }
+        100% { r: 5px; opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND CONTAINER -->
+  <rect x="0" y="0" width="1000" height="680" fill="var(--fm2p5-bg, #0b0f19)" rx="12"/>
+
+  <!-- ================= TOP HEADER CONTRACT ================= -->
+  <g transform="translate(30, 32)">
+    <text x="0" y="0" class="fm2p5-title">PARES CRANIANOS: A QUEBRA DA INTUIÇÃO (SNC vs SNP)</text>
+    <text x="0" y="20" class="fm2p5-subtitle">I–II pertencem ao SNC (oligodendrócitos, meninges e liquor) · III–XII pertencem ao SNP (células de Schwann). A Neurite Óptica é doença do SNC.</text>
+  </g>
+
+  <!-- ================= INTERACTIVE MODE TABS (TOP RIGHT) ================= -->
+  <g transform="translate(480, 20)">
+    <g class="fm2p5-btn fm2p5-active" id="fm2p5-tab-all" data-mode="all" role="button" tabindex="0" aria-label="Ver Classificação Geral">
+      <rect x="0" y="0" width="155" height="32"/>
+      <text x="77.5" y="20">1. VISÃO GERAL (I–XII)</text>
+    </g>
+    <g class="fm2p5-btn" id="fm2p5-tab-neurite" data-mode="neurite" role="button" tabindex="0" aria-label="Ver Foco Neurite Óptica">
+      <rect x="163" y="0" width="170" height="32"/>
+      <text x="248" y="20">2. NEURITE ÓPTICA &amp; EM</text>
+    </g>
+    <g class="fm2p5-btn" id="fm2p5-tab-tronco" data-mode="tronco" role="button" tabindex="0" aria-label="Ver Emergências no Tronco">
+      <rect x="341" y="0" width="150" height="32"/>
+      <text x="416" y="20">3. TRONCO ENCEFÁLICO</text>
+    </g>
+  </g>
+
+  <!-- ================= LEFT COLUMN: SNC (TERRITÓRIO CENTRAL) ================= -->
+  <g transform="translate(30, 75)">
+    <!-- SNC Box Outer -->
+    <rect x="0" y="0" width="460" height="235" fill="var(--fm2p5-snc-bg, rgba(6, 182, 212, 0.1))" stroke="var(--fm2p5-snc, #06b6d4)" stroke-width="1.5" rx="10" id="fm2p5-box-snc"/>
+    
+    <!-- SNC Header Badge -->
+    <rect x="16" y="14" width="220" height="24" class="fm2p5-badge fm2p5-badge-snc"/>
+    <text x="26" y="30" font-size="11" font-weight="800" fill="#ffffff" letter-spacing="0.5">SISTEMA NERVOSO CENTRAL (SNC)</text>
+    <text x="246" y="30" font-size="11.5" font-weight="600" fill="var(--fm2p5-snc, #06b6d4)">Mielina: OLIGODENDRÓCITOS</text>
+
+    <!-- Par I Card -->
+    <g class="fm2p5-nerve-card fm2p5-is-snc" id="fm2p5-card-cn1" transform="translate(16, 48)" role="button" tabindex="0" aria-label="Par I Olfatório">
+      <rect x="0" y="0" width="428" height="44"/>
+      <circle cx="24" cy="22" r="12" fill="var(--fm2p5-snc, #06b6d4)"/>
+      <text x="24" y="26" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">I</text>
+      <text x="46" y="20" font-size="13" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Nervo Olfatório</text>
+      <text x="46" y="35" font-size="11" fill="var(--fm2p5-txt-muted, #94a3b8)">Evaginação do Telencéfalo (Bulbo/Trato Olfatório) · Bainha SNC</text>
+      <rect x="330" y="12" width="86" height="20" rx="4" fill="var(--fm2p5-snc-bg, rgba(6,182,212,0.2))" stroke="var(--fm2p5-snc, #06b6d4)" stroke-width="1"/>
+      <text x="373" y="26" font-size="10" font-weight="700" fill="var(--fm2p5-snc, #06b6d4)" text-anchor="middle">SNC PROPRIO</text>
+    </g>
+
+    <!-- Par II Card (THE HERO OF THE PIECE) -->
+    <g class="fm2p5-nerve-card fm2p5-is-gold fm2p5-is-selected" id="fm2p5-card-cn2" transform="translate(16, 100)" role="button" tabindex="0" aria-label="Par II Óptico Destaque">
+      <rect x="0" y="0" width="428" height="120"/>
+      
+      <!-- Top Bar of Card II -->
+      <circle cx="24" cy="24" r="13" fill="var(--fm2p5-gold, #eab308)"/>
+      <text x="24" y="28" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">II</text>
+      <text x="46" y="22" font-size="14" font-weight="800" fill="var(--fm2p5-txt-main, #f8fafc)">Nervo Óptico</text>
+      <text x="46" y="37" font-size="11" font-weight="600" fill="var(--fm2p5-gold, #eab308)">EVAGINAÇÃO DO DIENCÉFALO (SNC, NÃO É NERVO PERIFÉRICO!)</text>
+
+      <rect x="320" y="12" width="96" height="22" rx="4" class="fm2p5-badge fm2p5-badge-gold"/>
+      <text x="368" y="27" font-size="10.5" font-weight="800" fill="#ffffff" text-anchor="middle">★ ALVO DA EM</text>
+
+      <!-- Inner Anatomy Detail for CN II -->
+      <g transform="translate(14, 48)">
+        <rect x="0" y="0" width="400" height="60" rx="6" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-gold, #eab308)" stroke-width="1" stroke-dasharray="4 2"/>
+        
+        <!-- Schematic diagram of Optic Nerve Sheath &amp; Meninges -->
+        <path d="M 12 30 Q 50 15 110 30 Q 50 45 12 30 Z" fill="none" stroke="var(--fm2p5-gold, #eab308)" stroke-width="2"/>
+        <circle cx="110" cy="30" r="7" fill="var(--fm2p5-snc, #06b6d4)"/>
+        
+        <text x="126" y="22" font-size="11" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Bainha Meningóidea + Espaço Subaracnóideo (Liquor)</text>
+        <text x="126" y="37" font-size="10.5" fill="var(--fm2p5-txt-muted, #94a3b8)">Mielinizado por <tspan font-weight="700" fill="var(--fm2p5-snc, #06b6d4)">Oligodendrócitos</tspan> (Sustenta a desmielinização central)</text>
+        <text x="126" y="50" font-size="10" font-weight="700" fill="var(--fm2p5-red, #ef4444)">Clinica: Neurite Óptica = Manifestação inicial da Esclerose Múltipla</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= LEFT COLUMN LOWER: SNP (PARES III A XII) ================= -->
+  <g transform="translate(30, 322)">
+    <!-- SNP Box Outer -->
+    <rect x="0" y="0" width="460" height="330" fill="var(--fm2p5-snp-bg, rgba(100, 116, 139, 0.08))" stroke="var(--fm2p5-card-border, #233148)" stroke-width="1.5" rx="10" id="fm2p5-box-snp"/>
+    
+    <!-- SNP Header Badge -->
+    <rect x="16" y="14" width="230" height="24" class="fm2p5-badge fm2p5-badge-snp"/>
+    <text x="26" y="30" font-size="11" font-weight="800" fill="#ffffff" letter-spacing="0.5">SISTEMA NERVOSO PERIFÉRICO (SNP)</text>
+    <text x="256" y="30" font-size="11.5" font-weight="600" fill="var(--fm2p5-txt-muted, #94a3b8)">Mielina: CÉLULAS DE SCHWANN</text>
+
+    <!-- Subtitle / Warning Note -->
+    <text x="16" y="52" font-size="11" font-weight="600" fill="var(--fm2p5-green, #10b981)">✓ Pares III a XII são RESGUARDADOS na Neurite Óptica / Esclerose Múltipla</text>
+
+    <!-- Grid of SNP Nerve Cards (III to XII) -->
+    <g transform="translate(16, 62)">
+      <!-- III -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn3" transform="translate(0, 0)" role="button" tabindex="0" aria-label="Par III Oculomotor">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">III</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Oculomotor</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Mesencéfalo</text>
+      </g>
+      <!-- IV -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn4" transform="translate(220, 0)" role="button" tabindex="0" aria-label="Par IV Troclear">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">IV</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Troclear</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Mesencéfalo (Dorsal)</text>
+      </g>
+
+      <!-- V -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn5" transform="translate(0, 52)" role="button" tabindex="0" aria-label="Par V Trigêmeo">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">V</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Trigêmeo</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Ponte (Ântero-lateral)</text>
+      </g>
+      <!-- VI -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn6" transform="translate(220, 52)" role="button" tabindex="0" aria-label="Par VI Abducente">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">VI</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Abducente</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Sulco Pontobulbar</text>
+      </g>
+
+      <!-- VII -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn7" transform="translate(0, 104)" role="button" tabindex="0" aria-label="Par VII Facial">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">VII</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Facial</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Ponte (Sulco Pontino)</text>
+      </g>
+      <!-- VIII -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn8" transform="translate(220, 104)" role="button" tabindex="0" aria-label="Par VIII Vestibulococlear">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">VIII</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Vestibulococlear</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Sulco Pontobulbar Lat.</text>
+      </g>
+
+      <!-- IX -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn9" transform="translate(0, 156)" role="button" tabindex="0" aria-label="Par IX Glossofaríngeo">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">IX</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Glossofaríngeo</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Bulbo (Sulco Pós-Olivar)</text>
+      </g>
+      <!-- X -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn10" transform="translate(220, 156)" role="button" tabindex="0" aria-label="Par X Vago">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">X</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Vago</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Bulbo (Sulco Pós-Olivar)</text>
+      </g>
+
+      <!-- XI -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn11" transform="translate(0, 208)" role="button" tabindex="0" aria-label="Par XI Acessório">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">XI</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Acessório</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Bulbo / Raios Espinhais</text>
+      </g>
+      <!-- XII -->
+      <g class="fm2p5-nerve-card" id="fm2p5-card-cn12" transform="translate(220, 208)" role="button" tabindex="0" aria-label="Par XII Hipoglosso">
+        <rect x="0" y="0" width="206" height="44"/>
+        <circle cx="20" cy="22" r="10" fill="var(--fm2p5-snp, #64748b)"/>
+        <text x="20" y="25" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">XII</text>
+        <text x="38" y="19" font-size="12" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Hipoglosso</text>
+        <text x="38" y="33" font-size="10" fill="var(--fm2p5-txt-muted, #94a3b8)">Origem: Bulbo (Sulco Pré-Olivar)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT COLUMN TOP: DIAGRAM OF BRAINSTEM &amp; ORIGIN ANCHORS ================= -->
+  <g transform="translate(510, 75)">
+    <!-- Diagram Panel Outer Box -->
+    <rect x="0" y="0" width="460" height="235" fill="var(--fm2p5-card, #131c2e)" stroke="var(--fm2p5-card-border, #233148)" stroke-width="1.5" rx="10"/>
+    
+    <text x="16" y="24" class="fm2p5-section-hdr" fill="var(--fm2p5-txt-main, #f8fafc)">Âncoras de Emergência no Tronco Encefálico</text>
+    <text x="16" y="40" font-size="11" fill="var(--fm2p5-txt-muted, #94a3b8)">Subdivisão anatômica de origem dos pares de III a XII</text>
+
+    <!-- Brainstem Schematic Shape -->
+    <g transform="translate(30, 52)">
+      <!-- Mesencephalon Section -->
+      <path d="M 50 10 L 170 10 L 160 50 L 60 50 Z" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-snc, #06b6d4)" stroke-width="1.5" id="fm2p5-sec-mesen"/>
+      <text x="110" y="34" font-size="11" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)" text-anchor="middle">MESENCÉFALO</text>
+      
+      <!-- Pons Section -->
+      <path d="M 45 54 L 175 54 L 180 115 L 40 115 Z" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-snp, #64748b)" stroke-width="1.5" id="fm2p5-sec-pons"/>
+      <text x="110" y="88" font-size="12" font-weight="800" fill="var(--fm2p5-txt-main, #f8fafc)" text-anchor="middle">PONTE</text>
+
+      <!-- Medulla Section -->
+      <path d="M 55 119 L 165 119 L 150 165 L 70 165 Z" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-snp, #64748b)" stroke-width="1.5" id="fm2p5-sec-medulla"/>
+      <text x="110" y="145" font-size="11" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)" text-anchor="middle">BULBO</text>
+
+      <!-- ANCHOR NODES WITH LIGHT LINES -->
+      <!-- III Mesencéfalo Anchor -->
+      <g class="fm2p5-anchor-node" id="fm2p5-node-cn3" transform="translate(165, 30)">
+        <line x1="0" y1="0" x2="60" y2="0" stroke="var(--fm2p5-gold, #eab308)" stroke-width="2" stroke-dasharray="3 2"/>
+        <circle cx="0" cy="0" r="5" fill="var(--fm2p5-gold, #eab308)" class="fm2p5-pulse"/>
+        <rect x="64" y="-12" width="165" height="24" rx="4" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-gold, #eab308)" stroke-width="1.5"/>
+        <text x="72" y="4" font-size="11" font-weight="800" fill="var(--fm2p5-gold, #eab308)">III (Oculomotor): Mesencéfalo</text>
+      </g>
+
+      <!-- VII Ponte Anchor -->
+      <g class="fm2p5-anchor-node" id="fm2p5-node-cn7" transform="translate(175, 84)">
+        <line x1="0" y1="0" x2="50" y2="0" stroke="var(--fm2p5-snc, #06b6d4)" stroke-width="2" stroke-dasharray="3 2"/>
+        <circle cx="0" cy="0" r="5" fill="var(--fm2p5-snc, #06b6d4)" class="fm2p5-pulse"/>
+        <rect x="54" y="-12" width="165" height="24" rx="4" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-snc, #06b6d4)" stroke-width="1.5"/>
+        <text x="62" y="4" font-size="11" font-weight="800" fill="var(--fm2p5-snc, #06b6d4)">VII (Facial): Ponte</text>
+      </g>
+
+      <!-- XII Bulbo Anchor -->
+      <g class="fm2p5-anchor-node" id="fm2p5-node-cn12" transform="translate(155, 142)">
+        <line x1="0" y1="0" x2="70" y2="0" stroke="var(--fm2p5-green, #10b981)" stroke-width="2" stroke-dasharray="3 2"/>
+        <circle cx="0" cy="0" r="5" fill="var(--fm2p5-green, #10b981)" class="fm2p5-pulse"/>
+        <rect x="74" y="-12" width="165" height="24" rx="4" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-green, #10b981)" stroke-width="1.5"/>
+        <text x="82" y="4" font-size="11" font-weight="800" fill="var(--fm2p5-green, #10b981)">XII (Hipoglosso): Bulbo</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT COLUMN LOWER: DYNAMIC CLINICAL READING PANEL (PAINEL DE LEITURA BAUER) ================= -->
+  <g transform="translate(510, 322)">
+    <rect x="0" y="0" width="460" height="330" fill="var(--fm2p5-card, #131c2e)" stroke="var(--fm2p5-card-border, #233148)" stroke-width="1.5" rx="10"/>
+    
+    <!-- Panel Header -->
+    <g transform="translate(16, 16)">
+      <rect x="0" y="0" width="10" height="20" fill="var(--fm2p5-gold, #eab308)" rx="2"/>
+      <text x="18" y="15" font-size="14" font-weight="800" fill="var(--fm2p5-txt-main, #f8fafc)" id="fm2p5-panel-title">PAINEL DE INTERPRETAÇÃO CLÍNICA DE PROVA</text>
+    </g>
+
+    <!-- Dynamic Content Area -->
+    <g transform="translate(16, 48)" id="fm2p5-panel-body">
+      <!-- Standard Case / Rule Text Box -->
+      <rect x="0" y="0" width="428" height="95" rx="6" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-gold, #eab308)" stroke-width="1.5" id="fm2p5-panel-box-1"/>
+      <text x="14" y="22" font-size="12.5" font-weight="800" fill="var(--fm2p5-gold, #eab308)" id="fm2p5-ptxt-0">★ CONCEITO-CHAVE QUE CAI NA PROVA DE RESIDÊNCIA:</text>
+      <text x="14" y="42" font-size="11.5" fill="var(--fm2p5-txt-main, #f8fafc)" id="fm2p5-ptxt-1">"A Neurite Óptica é um acometimento do SNC porque o Nervo Óptico (II par)"</text>
+      <text x="14" y="58" font-size="11.5" fill="var(--fm2p5-txt-main, #f8fafc)" id="fm2p5-ptxt-2">é mielinizado por Oligodendrócitos e envolto por bainha meningóidea com liquor.</text>
+      <text x="14" y="78" font-size="11" font-weight="700" fill="var(--fm2p5-red, #ef4444)" id="fm2p5-ptxt-3">➔ Por isso, Neurite Óptica aponta para ESCLEROSE MÚLTIPLA (SNC), não polineuropatia periférica!</text>
+
+      <!-- Key Medical Differentiators (Cards inside panel) -->
+      <g transform="translate(0, 108)">
+        <!-- SNC Card -->
+        <rect x="0" y="0" width="206" height="150" rx="6" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-snc, #06b6d4)" stroke-width="1.5"/>
+        <rect x="10" y="10" width="186" height="22" rx="4" class="fm2p5-badge fm2p5-badge-snc"/>
+        <text x="103" y="25" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">SNC: PARES I E II</text>
+
+        <text x="12" y="48" font-size="11" font-weight="700" fill="var(--fm2p5-snc, #06b6d4)">• Origem Embriológica:</text>
+        <text x="12" y="62" font-size="10.5" fill="var(--fm2p5-txt-main, #f8fafc)">Evaginações do diencéfalo / telencéfalo</text>
+
+        <text x="12" y="82" font-size="11" font-weight="700" fill="var(--fm2p5-snc, #06b6d4)">• Mielinização:</text>
+        <text x="12" y="96" font-size="10.5" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Oligodendrócitos</text>
+
+        <text x="12" y="116" font-size="11" font-weight="700" fill="var(--fm2p5-snc, #06b6d4)">• Patologia Típica:</text>
+        <text x="12" y="130" font-size="10.5" font-weight="800" fill="var(--fm2p5-red, #ef4444)">Neurite Óptica (EM, Mulher Jovem)</text>
+      </g>
+
+      <g transform="translate(222, 108)">
+        <!-- SNP Card -->
+        <rect x="0" y="0" width="206" height="150" rx="6" fill="var(--fm2p5-card-inner, #1c273e)" stroke="var(--fm2p5-snp, #64748b)" stroke-width="1.5"/>
+        <rect x="10" y="10" width="186" height="22" rx="4" class="fm2p5-badge fm2p5-badge-snp"/>
+        <text x="103" y="25" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">SNP: PARES III A XII</text>
+
+        <text x="12" y="48" font-size="11" font-weight="700" fill="var(--fm2p5-txt-muted, #94a3b8)">• Origem Embriológica:</text>
+        <text x="12" y="62" font-size="10.5" fill="var(--fm2p5-txt-main, #f8fafc)">Tronco encefálico (Mesencéfalo/Ponte/Bulbo)</text>
+
+        <text x="12" y="82" font-size="11" font-weight="700" fill="var(--fm2p5-txt-muted, #94a3b8)">• Mielinização:</text>
+        <text x="12" y="96" font-size="10.5" font-weight="700" fill="var(--fm2p5-txt-main, #f8fafc)">Células de Schwann</text>
+
+        <text x="12" y="116" font-size="11" font-weight="700" fill="var(--fm2p5-txt-muted, #94a3b8)">• Comportamento na EM:</text>
+        <text x="12" y="130" font-size="10.5" font-weight="800" fill="var(--fm2p5-green, #10b981)">Resguardados / Poupados!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= EMBEDDED INTERACTIVE STATE MACHINE SCRIPT ================= -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var nerveDetails = {
+        "all": {
+          title: "PAINEL DE INTERPRETAÇÃO CLÍNICA DE PROVA",
+          t0: "★ CONCEITO-CHAVE QUE CAI NA PROVA DE RESIDÊNCIA:",
+          t1: "\"A Neurite Óptica é um acometimento do SNC porque o Nervo Óptico (II par)\"",
+          t2: "é mielinizado por Oligodendrócitos e envolto por bainha meningóidea com liquor.",
+          t3: "➔ Por isso, Neurite Óptica aponta para ESCLEROSE MÚLTIPLA (SNC), não polineuropatia periférica!"
+        },
+        "neurite": {
+          title: "FOCO: NEURITE ÓPTICA & ESCLEROSE MÚLTIPLA",
+          t0: "🚨 CASO CLÍNICO TÍPICO DE PROVA DE RESIDÊNCIA:",
+          t1: "Mulher jovem (20–40 anos) com baixa acuidade visual subaguda e dor ocular.",
+          t2: "Imagem: Hiperintensidade T2/FLAIR e realce no Nervo Óptico (II Par).",
+          t3: "➔ Diagnóstico: Neurite Óptica -> Investigar desmielinização central (Esclerose Múltipla)."
+        },
+        "tronco": {
+          title: "FOCO: ÂNCORAS DE EMERGÊNCIA NO TRONCO",
+          t0: "📍 REGRAS ANATÔMICAS DE ORIGEM DOS PARES:",
+          t1: "• Mesencéfalo: Emergência dos pares III (Oculomotor) e IV (Troclear).",
+          t2: "• Ponte: Emergência dos pares V, VI, VII (Facial) e VIII.",
+          t3: "• Bulbo: Emergência dos pares IX, X, XI e XII (Hipoglosso)."
+        },
+        "cn2": {
+          title: "DETALHAMENTO: NERVO ÓPTICO (II PAR)",
+          t0: "★ POR QUE O NERVO ÓPTICO PERTENCE AO SNC?",
+          t1: "Embriologicamente é evaginação do Diencéfalo. Revestido por 3 meninges",
+          t2: "(dura, aracnóide e pia-máter) com liquor. Mielinizado por Oligodendrócitos.",
+          t3: "⚠️ Alvo clássico da Esclerose Múltipla! Não é afetado nas polineuropatias de Schwann."
+        },
+        "cn1": {
+          title: "DETALHAMENTO: NERVO OLFATÓRIO (I PAR)",
+          t0: "🧠 PROLONGAMENTO DO TELENCÉFALO (SNC)",
+          t1: "Constituído por tratos e bulbos olfatórios diretos do Rinencéfalo.",
+          t2: "Possui revestimento de meninges e oligodendrócitos no percurso proximal.",
+          t3: "✓ Junto com o II par, forma a dupla de exceção dos 'pares cranianos que são SNC'."
+        },
+        "cn3": {
+          title: "DETALHAMENTO: NERVO OCULOMOTOR (III PAR)",
+          t0: "👁️ PAR CRANIANO DO SNP (MESENCÉFALO)",
+          t1: "Emerge na fossa interpeduncular do Mesencéfalo.",
+          t2: "Mielinização periférica por Células de Schwann.",
+          t3: "✓ TOTALMENTE POUPADO na Neurite Óptica / Esclerose Múltipla típica."
+        },
+        "cn7": {
+          title: "DETALHAMENTO: NERVO FACIAL (VII PAR)",
+          t0: "🙂 PAR CRANIANO DO SNP (PONTE)",
+          t1: "Emerge no sulco pontobulbar lateral da Ponte.",
+          t2: "Inerva musculatura mímica facial. Mielinizado por Células de Schwann (SNP).",
+          t3: "✓ Lesão clássica: Paralisia de Bell (periférica, SNP) — não confundir com EM central."
+        },
+        "cn12": {
+          title: "DETALHAMENTO: NERVO HIPOGLOSSO (XII PAR)",
+          t0: "👅 PAR CRANIANO DO SNP (BULBO)",
+          t1: "Emerge no sulco pré-olivar do Bulbo.",
+          t2: "Responsável pela motricidade da língua. Estrutura periférica típica (SNP).",
+          t3: "✓ Resguardado na Esclerose Múltipla central."
+        }
+      };
+
+      var tabAll = document.getElementById('fm2p5-tab-all');
+      var tabNeurite = document.getElementById('fm2p5-tab-neurite');
+      var tabTronco = document.getElementById('fm2p5-tab-tronco');
+      var panelTitle = document.getElementById('fm2p5-panel-title');
+      var cardCN2 = document.getElementById('fm2p5-card-cn2');
+      var cardCN1 = document.getElementById('fm2p5-card-cn1');
+      var cardCN3 = document.getElementById('fm2p5-card-cn3');
+      var cardCN7 = document.getElementById('fm2p5-card-cn7');
+      var cardCN12 = document.getElementById('fm2p5-card-cn12');
+      
+      var nodeCN3 = document.getElementById('fm2p5-node-cn3');
+      var nodeCN7 = document.getElementById('fm2p5-node-cn7');
+      var nodeCN12 = document.getElementById('fm2p5-node-cn12');
+
+      function updatePanel(key) {
+        var data = nerveDetails[key] || nerveDetails['all'];
+        if (panelTitle) panelTitle.textContent = data.title;
+        
+        var t0 = document.getElementById('fm2p5-ptxt-0');
+        var t1 = document.getElementById('fm2p5-ptxt-1');
+        var t2 = document.getElementById('fm2p5-ptxt-2');
+        var t3 = document.getElementById('fm2p5-ptxt-3');
+        
+        if (t0) t0.textContent = data.t0;
+        if (t1) t1.textContent = data.t1;
+        if (t2) t2.textContent = data.t2;
+        if (t3) t3.textContent = data.t3;
+      }
+
+      function setActiveTab(activeBtn) {
+        [tabAll, tabNeurite, tabTronco].forEach(function(btn) {
+          if (btn) btn.classList.remove('fm2p5-active');
+        });
+        if (activeBtn) activeBtn.classList.add('fm2p5-active');
+      }
+
+      function highlightNerveCard(selectedCard) {
+        var cards = document.querySelectorAll('.fm2p5-nerve-card');
+        cards.forEach(function(c) { c.classList.remove('fm2p5-is-selected'); });
+        if (selectedCard) selectedCard.classList.add('fm2p5-is-selected');
+      }
+
+      if (tabAll) {
+        tabAll.addEventListener('click', function() {
+          setActiveTab(tabAll);
+          highlightNerveCard(cardCN2);
+          updatePanel('all');
+        });
+      }
+
+      if (tabNeurite) {
+        tabNeurite.addEventListener('click', function() {
+          setActiveTab(tabNeurite);
+          highlightNerveCard(cardCN2);
+          updatePanel('neurite');
+        });
+      }
+
+      if (tabTronco) {
+        tabTronco.addEventListener('click', function() {
+          setActiveTab(tabTronco);
+          highlightNerveCard(null);
+          updatePanel('tronco');
+        });
+      }
+
+      if (cardCN2) {
+        cardCN2.addEventListener('click', function() {
+          highlightNerveCard(cardCN2);
+          updatePanel('cn2');
+        });
+      }
+
+      if (cardCN1) {
+        cardCN1.addEventListener('click', function() {
+          highlightNerveCard(cardCN1);
+          updatePanel('cn1');
+        });
+      }
+
+      if (cardCN3 || nodeCN3) {
+        var fnCN3 = function() {
+          highlightNerveCard(cardCN3);
+          updatePanel('cn3');
+        };
+        if (cardCN3) cardCN3.addEventListener('click', fnCN3);
+        if (nodeCN3) nodeCN3.addEventListener('click', fnCN3);
+      }
+
+      if (cardCN7 || nodeCN7) {
+        var fnCN7 = function() {
+          highlightNerveCard(cardCN7);
+          updatePanel('cn7');
+        };
+        if (cardCN7) cardCN7.addEventListener('click', fnCN7);
+        if (nodeCN7) nodeCN7.addEventListener('click', fnCN7);
+      }
+
+      if (cardCN12 || nodeCN12) {
+        var fnCN12 = function() {
+          highlightNerveCard(cardCN12);
+          updatePanel('cn12');
+        };
+        if (cardCN12) cardCN12.addEventListener('click', fnCN12);
+        if (nodeCN12) nodeCN12.addEventListener('click', fnCN12);
+      }
+
+      var focusables = document.querySelectorAll('[role="button"]');
+      focusables.forEach(function(el) {
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            el.click();
+          }
+        });
+      });
+    })();
+    ]]>
+  </script>
+</svg>
+
+    </div>
+    <figcaption class="fig__cap"><span class="fig__label">Piso</span>Pares I–XII: I–II em cor SNC; III–XII em cor SNP. Setas de emergência no tronco (III mesencéfalo · VII ponte · XII bulbo).</figcaption>
+  </figure>
+
+  <div class="continuity" aria-label="Continuidade">
+    <p>Catalogar as outras manifestações que mais caem — e o Uhthoff.</p>
+  </div>
+
+  <section class="quiz" data-quiz data-gabarito="C" data-quiz-id="p5-q1" aria-labelledby="p5-q1-enun">
+    <h3>Quiz</h3>
+    <p class="quiz__enun" id="p5-q1-enun"><b>Q1.</b> O par classicamente acometido na neurite óptica da EM é:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>III</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>VII</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>II</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>XII</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: C.</b> O clássico desmielinizante central da neurite na EM é o <strong>II par</strong> (nervo óptico, SNC).</p>
+      <p><b>(A)</b> III, <b>(B)</b> VII e <b>(D)</b> XII são SNP apesar do nome “craniano”.</p>
+      <p><em>Por que se cai na B:</em> confundir “facial” com o par da visão.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p5-q2" aria-labelledby="p5-q2-enun">
+    <p class="quiz__enun" id="p5-q2-enun"><b>Q2.</b> Do ponto de vista de classificação SNC×SNP na EM:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>III–XII são SNC porque saem do crânio</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>II é SNC; III–XII são SNP apesar do nome “craniano”</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Todos os 12 são SNC</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Todos os 12 são SNP</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> O <strong>nome engana</strong>: só I e II são SNC; III–XII saem do tronco mas são SNP.</p>
+      <p><b>(A)</b> “craniano” ≠ SNC. <b>(C)</b> nem todos são SNC. <b>(D)</b> I e II não são SNP.</p>
+      <p><em>Por que se cai na A:</em> erro mental de etimologia — “sai do crânio, então é central”.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p4.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Por que o quadro é múltiplo: a mielina</span></a><a class="next" href="p6.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">As três de prova + Uhthoff</span></a></nav>
+</div>
+</main>
+<footer class="rodape">Esclerose múltipla · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm2.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Esclerose múltipla · 12 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="index.html">1. Jaqueline: dois surtos, visão e motor</a></li>
+      <li><a class="menu-panel__link" href="p2.html">2. Espástica = 1º NMS — e o nome da doença</a></li>
+      <li><a class="menu-panel__link" href="p3.html">3. O que é EM: quatro âncoras</a></li>
+      <li><a class="menu-panel__link" href="p4.html">4. Por que o quadro é múltiplo: a mielina</a></li>
+      <li><a class="menu-panel__link is-current" href="p5.html">5. Neurite óptica: o II par é SNC</a></li>
+      <li><a class="menu-panel__link" href="p6.html">6. As três de prova + Uhthoff</a></li>
+      <li><a class="menu-panel__link" href="p7.html">7. Surto-remissão vs 15% progressiva</a></li>
+      <li><a class="menu-panel__link" href="p8.html">8. McDonald: tempo e espaço</a></li>
+      <li><a class="menu-panel__link" href="p9.html">9. RM obrigatória: prova o que a clínica suspeita</a></li>
+      <li><a class="menu-panel__link" href="p10.html">10. LCR e a pegadinha do conversivo</a></li>
+      <li><a class="menu-panel__link" href="p11.html">11. Vignette 25 a: por que é EM</a></li>
+      <li><a class="menu-panel__link" href="p12.html">12. Surto, sequela e PCDT SUS</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

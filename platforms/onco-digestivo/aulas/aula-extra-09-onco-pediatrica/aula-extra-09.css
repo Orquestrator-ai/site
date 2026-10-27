@@ -1,0 +1,53 @@
+/* aula-extra-09.css — estilos específicos da Aula Extra 9 (Oncologia Pediátrica —
+   neuroblastoma × tumor de Wilms).
+   Herda 100% dos tokens da plataforma (tokens.css) e os componentes (components.css).
+   NÃO redefine token canônico.
+   Os 9 SVGs interativos usam a engine CANÔNICA de hotspot (initInteractive →
+   .figure-svg__stage[data-hs-stage] + .hs-shape + .hotspot-detail). Como o components.css
+   já cobre .hs-shape (hover/foco/active/tone) e .hotspot-detail (tones), este arquivo só
+   acrescenta: (a) garantia de responsividade do SVG dentro da coluna e (b) cursor pointer
+   no shape-alvo. Sem comportamento bespoke — onco-ped-interactive.js é um stub no-op.
+   Paleta semântica da aula (onco pediátrica): teal = bom prognóstico/regra que acerta/
+   Wilms-bem · coral = perigo/pegadinha/neuroblastoma-doente/mau prognóstico · âmbar
+   (--warn-amber) = pegadinha de enunciado · verde (--ok-green) = conduta correta ·
+   vermelho (--err-red) = perigo máximo/fator que arruína. Cor nunca é único portador —
+   rótulo textual sempre presente. ZERO hex novo: só var(--token) canônico. */
+
+/* responsivo: SVGs grandes escalam sem estourar a coluna (defensivo; o chassi já põe
+   width:100% no svg; isto cobre stage/frame em qualquer browser). */
+.figure-svg__stage svg,
+.figure-svg__frame svg { max-width: 100%; height: auto; }
+
+/* o elemento desenhado é o alvo do clique (regra de luxo Bauer) — cursor coerente */
+.figure-svg .hs-shape { cursor: pointer; }
+
+/* foco visível padronizado em qualquer alvo interativo dentro do SVG (não remover outline) */
+.figure-svg svg [tabindex]:focus-visible,
+.figure-svg svg [role="button"]:focus-visible {
+  outline: 2px solid var(--warn-amber);
+  outline-offset: 2px;
+}
+
+/* P4 — sinal do guaxinim: crop no painel A (composta A-G 800x388; painel A ~0,0->268x172)
+   + tarja de identidade nos olhos. Especificidade figure.med .img-wrap--guaxinim para vencer components.css. */
+figure.med .img-wrap--guaxinim {
+  display: block;
+  padding: 0;
+  position: relative;
+  aspect-ratio: 268 / 172;
+  overflow: hidden;
+  max-width: 460px;
+  margin-inline: auto;
+}
+figure.med .img-wrap--guaxinim img {
+  width: 298.5%;          /* 800/268 -> isola o painel A no canto superior esquerdo */
+  max-width: none;
+  height: auto;
+  border-radius: 0;
+  display: block;
+}
+figure.med .img-wrap--guaxinim .med__tarja {
+  position: absolute;
+  left: 7%; top: 37%; width: 89%; height: 25%;
+  background: #000; border-radius: 3px; pointer-events: none;
+}

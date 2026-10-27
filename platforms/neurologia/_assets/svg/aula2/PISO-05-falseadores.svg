@@ -1,0 +1,413 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" width="100%" height="100%" class="b-p5-root">
+  <defs>
+    <style>
+      .b-p5-root {
+        --bg-color: var(--bg-1, #0f172a);
+        --card-bg: var(--bg-2, #1e293b);
+        --card-border: var(--border, #334155);
+        --text-primary: var(--ink-100, #f8fafc);
+        --text-secondary: var(--ink-70, #94a3b8);
+        --text-muted: var(--ink-50, #64748b);
+        --color-indigo: var(--kw-indigo, #6366f1);
+        --color-indigo-light: var(--kw-indigo-light, rgba(99, 102, 241, 0.15));
+        --color-cyan: var(--kw-cyan, #06b6d4);
+        --color-cyan-light: var(--kw-cyan-light, rgba(6, 182, 212, 0.15));
+        --color-green: var(--kw-green, #10b981);
+        --color-green-light: var(--kw-green-light, rgba(16, 185, 129, 0.15));
+        --color-red: var(--kw-red, #ef4444);
+        --color-red-light: var(--kw-red-light, rgba(239, 68, 68, 0.15));
+        --color-yellow: var(--kw-yellow, #f59e0b);
+        --color-yellow-light: var(--kw-yellow-light, rgba(245, 158, 11, 0.15));
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        user-select: none;
+      }
+
+      @media (prefers-color-scheme: light) {
+        .b-p5-root {
+          --bg-color: var(--bg-1, #f8fafc);
+          --card-bg: var(--bg-2, #ffffff);
+          --card-border: var(--border, #e2e8f0);
+          --text-primary: var(--ink-100, #0f172a);
+          --text-secondary: var(--ink-70, #475569);
+          --text-muted: var(--ink-50, #94a3b8);
+          --color-indigo: var(--kw-indigo, #4f46e5);
+          --color-cyan: var(--kw-cyan, #0891b2);
+          --color-green: var(--kw-green, #059669);
+          --color-red: var(--kw-red, #dc2626);
+          --color-yellow: var(--kw-yellow, #d97706);
+        }
+      }
+
+      .b-p5-root .b-p5-bg {
+        fill: var(--bg-color);
+        transition: fill 0.3s ease;
+      }
+
+      .b-p5-root .b-p5-title {
+        fill: var(--text-primary);
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .b-p5-root .b-p5-subtitle {
+        fill: var(--text-secondary);
+        font-size: 13px;
+        font-weight: 400;
+      }
+
+      .b-p5-root .b-p5-card-bg {
+        fill: var(--card-bg);
+        stroke: var(--card-border);
+        stroke-width: 1.5;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .b-p5-root .b-p5-card:hover .b-p5-card-bg {
+        stroke: var(--color-indigo);
+        transform: translateY(-2px);
+        filter: drop-shadow(0 8px 16px rgba(99, 102, 241, 0.08));
+      }
+
+      .b-p5-root .b-p5-card[data-active="true"] .b-p5-card-bg {
+        stroke: var(--color-green);
+        filter: drop-shadow(0 8px 16px rgba(16, 185, 129, 0.08));
+      }
+
+      .b-p5-root .b-p5-card-title {
+        fill: var(--text-primary);
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .b-p5-root .b-p5-card-desc {
+        fill: var(--text-secondary);
+        font-size: 12px;
+      }
+
+      .b-p5-root .b-p5-active-title {
+        fill: var(--color-green);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .b-p5-root .b-p5-active-desc {
+        fill: var(--text-primary);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .b-p5-root .b-p5-btn {
+        fill: var(--color-indigo-light);
+        stroke: var(--color-indigo);
+        stroke-width: 1;
+        transition: all 0.2s ease;
+      }
+
+      .b-p5-root .b-p5-card:hover .b-p5-btn {
+        fill: var(--color-indigo);
+      }
+
+      .b-p5-root .b-p5-btn-text {
+        fill: var(--color-indigo);
+        font-size: 11px;
+        font-weight: 600;
+        transition: fill 0.2s ease;
+      }
+
+      .b-p5-root .b-p5-card:hover .b-p5-btn-text {
+        fill: #ffffff;
+      }
+
+      .b-p5-root .b-p5-badge {
+        fill: var(--color-green-light);
+        stroke: var(--color-green);
+        stroke-width: 1;
+      }
+
+      .b-p5-root .b-p5-badge-text {
+        fill: var(--color-green);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .b-p5-root .b-p5-legend-box {
+        fill: var(--card-bg);
+        stroke: var(--card-border);
+        stroke-width: 1.5;
+        transition: all 0.3s ease;
+      }
+
+      .b-p5-root .b-p5-legend-title {
+        fill: var(--text-primary);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .b-p5-root .b-p5-legend-text {
+        fill: var(--text-secondary);
+        font-size: 12px;
+      }
+
+      .b-p5-root .show-on-active {
+        display: none;
+        opacity: 0;
+      }
+
+      .b-p5-root .b-p5-card[data-active="true"] .show-on-active {
+        display: block;
+        opacity: 1;
+      }
+
+      .b-p5-root .b-p5-card[data-active="true"] .show-on-inactive {
+        display: none;
+        opacity: 0;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="b-p5-bg" width="900" height="660" />
+
+  <!-- Topo: Titulo e Instrucoes -->
+  <g transform="translate(450, 45)">
+    <text class="b-p5-title" text-anchor="middle" y="0">OS QUATRO FALSEADORES DA DEMÊNCIA</text>
+    <text class="b-p5-subtitle" text-anchor="middle" y="25">Identifique os imitadores clínicos reversíveis. Clique em cada quadro para acionar o gatilho terapêutico.</text>
+  </g>
+
+  <!-- CARD 1: DELIRIUM AGUDO -->
+  <g id="card-delirium" class="b-p5-card" data-active="false" onclick="toggleCard('card-delirium')" role="button" aria-label="Delirium Agudo" transform="translate(50, 110)">
+    <rect class="b-p5-card-bg" width="380" height="210" rx="12" />
+    
+    <!-- Icone clinico: Delirium -->
+    <g transform="translate(150, 15)">
+      <!-- Estado Inativo -->
+      <g class="show-on-inactive">
+        <path d="M40,15 C25,15 15,25 15,40 C15,50 20,58 28,62 C26,67 30,73 38,73 C41,73 43,71 45,69 C47,71 49,73 52,73 C60,73 64,67 62,62 C70,58 75,50 75,40 C75,25 65,15 50,15 C48,15 46,16 45,17 C44,16 42,15 40,15 Z" fill="var(--color-red-light)" stroke="var(--color-red)" stroke-width="2" />
+        <path d="M30,30 L38,38 L32,46 L42,54" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M50,22 L45,35 L58,48 L48,62" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M60,30 L52,42 L65,50 L58,60" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10,25 L16,28 L12,35" fill="none" stroke="var(--color-yellow)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M70,20 L66,28 L72,32" fill="none" stroke="var(--color-yellow)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M8,45 L15,43 L12,50" fill="none" stroke="var(--color-yellow)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="65" cy="65" r="12" fill="var(--card-bg)" stroke="var(--color-red)" stroke-width="1.5"/>
+        <path d="M65,57 L65,65 L72,62" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="65" cy="53" r="1.5" fill="var(--color-red)"/>
+      </g>
+      <!-- Estado Ativo (Revertido) -->
+      <g class="show-on-active">
+        <path d="M40,15 C25,15 15,25 15,40 C15,50 20,58 28,62 C26,67 30,73 38,73 C41,73 43,71 45,69 C47,71 49,73 52,73 C60,73 64,67 62,62 C70,58 75,50 75,40 C75,25 65,15 50,15 C48,15 46,16 45,17 C44,16 42,15 40,15 Z" fill="var(--color-green-light)" stroke="var(--color-green)" stroke-width="2" />
+        <path d="M30,35 C30,42 35,42 35,48 C35,52 30,55 30,60" fill="none" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M50,22 C47,30 53,38 50,48 C47,56 53,60 50,65" fill="none" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M60,35 C60,42 55,42 55,48 C55,52 60,55 60,60" fill="none" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="65" cy="65" r="12" fill="var(--card-bg)" stroke="var(--color-green)" stroke-width="1.5"/>
+        <path d="M65,57 L65,65 L70,65" fill="none" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M61,65 L64,68 L69,62" fill="none" stroke="var(--color-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- Textos -->
+    <text class="b-p5-card-title" x="190" y="110" text-anchor="middle">Delirium Agudo</text>
+    
+    <!-- Inativo -->
+    <text class="b-p5-card-desc show-on-inactive" x="190" y="132" text-anchor="middle">Confusão flutuante, desatenção e sonolência.</text>
+    <text class="b-p5-card-desc show-on-inactive" x="190" y="150" text-anchor="middle">Instalação abrupta que simula declínio rápido.</text>
+    <g class="show-on-inactive" transform="translate(115, 165)">
+      <rect class="b-p5-btn" width="150" height="28" rx="6" />
+      <text class="b-p5-btn-text" x="75" y="18" text-anchor="middle">Suspender Causa / Tratar</text>
+    </g>
+
+    <!-- Ativo -->
+    <text class="b-p5-active-title show-on-active" x="190" y="132" text-anchor="middle">GATILHO: Tratar Infecção / Distúrbio</text>
+    <text class="b-p5-active-desc show-on-active" x="190" y="150" text-anchor="middle">Cognição restabelecida ao patamar basal.</text>
+    <g class="show-on-active" transform="translate(115, 165)">
+      <rect class="b-p5-badge" width="150" height="28" rx="6" />
+      <text class="b-p5-badge-text" x="75" y="18" text-anchor="middle">✓ REVERTIDO</text>
+    </g>
+  </g>
+
+  <!-- CARD 2: FARMACOS (SEDADO) -->
+  <g id="card-farmaco" class="b-p5-card" data-active="false" onclick="toggleCard('card-farmaco')" role="button" aria-label="Efeito Farmacológico" transform="translate(470, 110)">
+    <rect class="b-p5-card-bg" width="380" height="210" rx="12" />
+    
+    <!-- Icone clinico: Fármacos -->
+    <g transform="translate(150, 15)">
+      <!-- Estado Inativo -->
+      <g class="show-on-inactive">
+        <path d="M40,15 C25,15 15,25 15,40 C15,50 20,58 28,62 C26,67 30,73 38,73 C41,73 43,71 45,69 C47,71 49,73 52,73 C60,73 64,67 62,62 C70,58 75,50 75,40 C75,25 65,15 50,15 C48,15 46,16 45,17 C44,16 42,15 40,15 Z" fill="var(--color-indigo-light)" stroke="var(--color-indigo)" stroke-width="2" />
+        <path d="M30,40 Q35,45 40,40" fill="none" stroke="var(--color-indigo)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M50,40 Q55,45 60,40" fill="none" stroke="var(--color-indigo)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M68,18 L74,18 L68,24 L74,24" fill="none" stroke="var(--color-yellow)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M58,6 L62,6 L58,10 L62,10" fill="none" stroke="var(--color-yellow)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(5, 5)">
+          <rect x="5" y="15" width="12" height="20" rx="2" fill="var(--card-bg)" stroke="var(--color-red)" stroke-width="1.5" transform="rotate(-30 11 25)"/>
+          <rect x="7" y="11" width="8" height="4" fill="var(--text-secondary)" transform="rotate(-30 11 25)"/>
+          <ellipse cx="18" cy="32" rx="4" ry="2" fill="var(--color-red)" transform="rotate(15 18 32)"/>
+          <ellipse cx="25" cy="38" rx="4" ry="2" fill="var(--color-yellow)" transform="rotate(-15 25 38)"/>
+        </g>
+      </g>
+      <!-- Estado Ativo (Revertido) -->
+      <g class="show-on-active">
+        <path d="M40,15 C25,15 15,25 15,40 C15,50 20,58 28,62 C26,67 30,73 38,73 C41,73 43,71 45,69 C47,71 49,73 52,73 C60,73 64,67 62,62 C70,58 75,50 75,40 C75,25 65,15 50,15 C48,15 46,16 45,17 C44,16 42,15 40,15 Z" fill="var(--color-green-light)" stroke="var(--color-green)" stroke-width="2" />
+        <circle cx="33" cy="40" r="3" fill="none" stroke="var(--color-green)" stroke-width="1.5"/>
+        <circle cx="33" cy="40" r="1" fill="var(--color-green)"/>
+        <circle cx="57" cy="40" r="3" fill="none" stroke="var(--color-green)" stroke-width="1.5"/>
+        <circle cx="57" cy="40" r="1" fill="var(--color-green)"/>
+        <path d="M33,26 L30,22" fill="none" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M57,26 L60,22" fill="none" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <g transform="translate(5, 5)">
+          <rect x="5" y="15" width="12" height="20" rx="2" fill="var(--card-bg)" stroke="var(--color-green)" stroke-width="1.5" transform="rotate(-30 11 25)"/>
+          <rect x="7" y="11" width="8" height="4" fill="var(--text-secondary)" transform="rotate(-30 11 25)"/>
+          <circle cx="15" cy="25" r="10" fill="none" stroke="var(--color-red)" stroke-width="2"/>
+          <line x1="8" y1="18" x2="22" y2="32" stroke="var(--color-red)" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Textos -->
+    <text class="b-p5-card-title" x="190" y="110" text-anchor="middle">Carga Farmacológica</text>
+    
+    <!-- Inativo -->
+    <text class="b-p5-card-desc show-on-inactive" x="190" y="132" text-anchor="middle">Lentificação cognitiva e apatia causadas</text>
+    <text class="b-p5-card-desc show-on-inactive" x="190" y="150" text-anchor="middle">por benzodiazepínicos ou tricíclicos.</text>
+    <g class="show-on-inactive" transform="translate(115, 165)">
+      <rect class="b-p5-btn" width="150" height="28" rx="6" />
+      <text class="b-p5-btn-text" x="75" y="18" text-anchor="middle">Suspender Sedativos</text>
+    </g>
+
+    <!-- Ativo -->
+    <text class="b-p5-active-title show-on-active" x="190" y="132" text-anchor="middle">GATILHO: Desmame de Psicotrópicos</text>
+    <text class="b-p5-active-desc show-on-active" x="190" y="150" text-anchor="middle">Retorno do alerta e velocidade mental.</text>
+    <g class="show-on-active" transform="translate(115, 165)">
+      <rect class="b-p5-badge" width="150" height="28" rx="6" />
+      <text class="b-p5-badge-text" x="75" y="18" text-anchor="middle">✓ REVERTIDO</text>
+    </g>
+  </g>
+
+  <!-- CARD 3: DEPRESSAO E APATIA -->
+  <g id="card-depressao" class="b-p5-card" data-active="false" onclick="toggleCard('card-depressao')" role="button" aria-label="Depressão e Apatia" transform="translate(50, 340)">
+    <rect class="b-p5-card-bg" width="380" height="210" rx="12" />
+    
+    <!-- Icone clinico: Depressão -->
+    <g transform="translate(150, 15)">
+      <!-- Estado Inativo -->
+      <g class="show-on-inactive">
+        <rect x="25" y="15" width="30" height="45" rx="3" fill="var(--card-bg)" stroke="var(--text-muted)" stroke-width="1.5"/>
+        <rect x="33" y="11" width="14" height="6" rx="1" fill="var(--text-muted)"/>
+        <line x1="30" y1="23" x2="50" y2="23" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="30" y1="29" x2="45" y2="29" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="30" y1="35" x2="48" y2="35" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="40" y="50" fill="var(--color-red)" font-size="9" font-weight="bold" text-anchor="middle">12/30</text>
+        <path d="M12,50 L20,44" stroke="var(--color-red)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M14,56 L22,50" stroke="var(--color-red)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="68" cy="28" r="5" fill="none" stroke="var(--color-red)" stroke-width="1.5"/>
+        <path d="M68,33 Q68,45 63,55" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M63,40 Q58,45 55,42" fill="none" stroke="var(--color-red)" stroke-width="1" stroke-linecap="round"/>
+      </g>
+      <!-- Estado Ativo (Revertido) -->
+      <g class="show-on-active">
+        <rect x="25" y="15" width="30" height="45" rx="3" fill="var(--card-bg)" stroke="var(--color-green)" stroke-width="1.5"/>
+        <rect x="33" y="11" width="14" height="6" rx="1" fill="var(--color-green)"/>
+        <line x1="30" y1="23" x2="50" y2="23" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="30" y1="29" x2="45" y2="29" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="30" y1="35" x2="48" y2="35" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="40" y="50" fill="var(--color-green)" font-size="9" font-weight="bold" text-anchor="middle">30/30</text>
+        <path d="M12,54 L20,44" stroke="var(--color-green)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="68" cy="25" r="5" fill="none" stroke="var(--color-green)" stroke-width="1.5"/>
+        <line x1="68" y1="30" x2="68" y2="48" stroke="var(--color-green)" stroke-width="1.5"/>
+        <line x1="68" y1="48" x2="63" y2="58" stroke="var(--color-green)" stroke-width="1.5"/>
+        <line x1="68" y1="48" x2="73" y2="58" stroke="var(--color-green)" stroke-width="1.5"/>
+        <path d="M58,35 Q68,28 78,35" fill="none" stroke="var(--color-green)" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Textos -->
+    <text class="b-p5-card-title" x="190" y="110" text-anchor="middle">Depressão / Apatia</text>
+    
+    <!-- Inativo -->
+    <text class="b-p5-card-desc show-on-inactive" x="190" y="132" text-anchor="middle">Pseudodemência: o paciente desiste ou</text>
+    <text class="b-p5-card-desc show-on-inactive" x="190" y="150" text-anchor="middle">abandona o teste por falta de energia.</text>
+    <g class="show-on-inactive" transform="translate(115, 165)">
+      <rect class="b-p5-btn" width="150" height="28" rx="6" />
+      <text class="b-p5-btn-text" x="75" y="18" text-anchor="middle">Tratar Humor e Apatia</text>
+    </g>
+
+    <!-- Ativo -->
+    <text class="b-p5-active-title show-on-active" x="190" y="132" text-anchor="middle">GATILHO: ISRS / Psicoterapia</text>
+    <text class="b-p5-active-desc show-on-active" x="190" y="150" text-anchor="middle">Motivação retomada; testes normalizados.</text>
+    <g class="show-on-active" transform="translate(115, 165)">
+      <rect class="b-p5-badge" width="150" height="28" rx="6" />
+      <text class="b-p5-badge-text" x="75" y="18" text-anchor="middle">✓ REVERTIDO</text>
+    </g>
+  </g>
+
+  <!-- CARD 4: TRANSTORNO MENTAL / PSICOSE -->
+  <g id="card-psicose" class="b-p5-card" data-active="false" onclick="toggleCard('card-psicose')" role="button" aria-label="Transtorno Mental" transform="translate(470, 340)">
+    <rect class="b-p5-card-bg" width="380" height="210" rx="12" />
+    
+    <!-- Icone clinico: Psicose -->
+    <g transform="translate(150, 15)">
+      <!-- Estado Inativo -->
+      <g class="show-on-inactive">
+        <path d="M40,12 C28,12 20,20 20,32 C20,40 24,46 30,50 C28,54 31,58 37,58 C39,58 41,56 42,55 C42,40 42,25 40,12 Z" fill="var(--color-red-light)" stroke="var(--color-red)" stroke-width="2" />
+        <path d="M44,18 C44,31 44,46 44,61 C45,60 47,58 49,58 C55,58 58,54 56,50 C62,46 66,40 66,32 C66,20 58,12 46,12 C45,12 45,15 44,18 Z" fill="var(--color-red-light)" stroke="var(--color-red)" stroke-width="2" transform="translate(0, 8)" />
+        <path d="M42,12 L38,25 L46,38 L40,51 L44,64" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12,20 Q5,32 15,45 T30,55" fill="none" stroke="var(--color-yellow)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
+        <path d="M72,24 Q79,36 69,49 T54,59" fill="none" stroke="var(--color-yellow)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
+      </g>
+      <!-- Estado Ativo (Revertido) -->
+      <g class="show-on-active">
+        <path d="M40,15 C25,15 15,25 15,40 C15,50 20,58 28,62 C26,67 30,73 38,73 C41,73 43,71 45,69 C47,71 49,73 52,73 C60,73 64,67 62,62 C70,58 75,50 75,40 C75,25 65,15 50,15 C48,15 46,16 45,17 C44,16 42,15 40,15 Z" fill="var(--color-green-light)" stroke="var(--color-green)" stroke-width="2" />
+        <line x1="42" y1="20" x2="48" y2="20" stroke="var(--color-green)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="40" y1="35" x2="50" y2="35" stroke="var(--color-green)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="42" y1="50" x2="48" y2="50" stroke="var(--color-green)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="44" y1="65" x2="46" y2="65" stroke="var(--color-green)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="45" cy="35" r="4" fill="var(--color-green)"/>
+        <circle cx="45" cy="50" r="3" fill="var(--color-green)"/>
+        <circle cx="45" cy="40" r="30" fill="none" stroke="var(--color-green)" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
+      </g>
+    </g>
+
+    <!-- Textos -->
+    <text class="b-p5-card-title" x="190" y="110" text-anchor="middle">Transtorno Mental</text>
+    
+    <!-- Inativo -->
+    <text class="b-p5-card-desc show-on-inactive" x="190" y="132" text-anchor="middle">Ruptura com realidade ou humor psicótico</text>
+    <text class="b-p5-card-desc show-on-inactive" x="190" y="150" text-anchor="middle">impedem avaliação e mimetizam demência.</text>
+    <g class="show-on-inactive" transform="translate(115, 165)">
+      <rect class="b-p5-btn" width="150" height="28" rx="6" />
+      <text class="b-p5-btn-text" x="75" y="18" text-anchor="middle">Ajustar Terapêutica Psiquiátrica</text>
+    </g>
+
+    <!-- Ativo -->
+    <text class="b-p5-active-title show-on-active" x="190" y="132" text-anchor="middle">GATILHO: Estabilização de Sintomas</text>
+    <text class="b-p5-active-desc show-on-active" x="190" y="150" text-anchor="middle">Pensamento reorganizado e lucidez clínica.</text>
+    <g class="show-on-active" transform="translate(115, 165)">
+      <rect class="b-p5-badge" width="150" height="28" rx="6" />
+      <text class="b-p5-badge-text" x="75" y="18" text-anchor="middle">✓ REVERTIDO</text>
+    </g>
+  </g>
+
+  <!-- LEGENDA DE INTERPRETACAO (CONTRATO DE LAYOUT Bauer) -->
+  <g transform="translate(50, 570)">
+    <rect class="b-p5-legend-box" width="800" height="65" rx="8" />
+    <text class="b-p5-legend-title" x="15" y="20">Legenda de interpretação</text>
+    <text class="b-p5-legend-text" x="15" y="38">Quatro imitadores que somem quando se trata a causa: delirium (agudo), fármacos (benzo/tricíclico), depressão (abandona o teste) e transtorno mental.</text>
+    <text class="b-p5-legend-text" x="15" y="53">Melhorou ao remover ou corrigir a causa primária? <tspan fill="var(--color-green)" font-weight="700">Nunca foi demência degenerativa.</tspan></text>
+  </g>
+
+  <!-- Script Inline para Interatividade -->
+  <script type="text/javascript">
+    <![CDATA[
+    function toggleCard(cardId) {
+      const card = document.getElementById(cardId);
+      if (!card) return;
+      const isActive = card.getAttribute('data-active') === 'true';
+      card.setAttribute('data-active', isActive ? 'false' : 'true');
+    }
+    ]]>
+  </script>
+</svg>

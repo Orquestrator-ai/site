@@ -1,0 +1,498 @@
+/* base.css — reset moderno + tipografia + chassi fixo Bauer
+   Plataforma Cirurgia Oncológica 2 (portado fiel do template antibioticoterapia) */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-base);
+  color: var(--ink-100);
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: var(--lh-base);
+  min-height: 100%;
+  overscroll-behavior-y: contain;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--dur-mid) var(--ease-out), color var(--dur-mid) var(--ease-out);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* === Grade quadriculada sutil de luxo (Ajuste Bauer 5) ===
+   Quase imperceptível, em off-white da casa (NÃO copiar cor de terceiros).
+   Horizontal levemente mais forte que vertical (assimetria orgânica).
+   Mascarada de cima para baixo; não compete com o texto.
+   z-index -1 + pointer-events:none → atrás de tudo, sem capturar clique.
+   O page-orb do HUB (z-index:0 dentro do fluxo, e main#main com z-index maior)
+   permanece acima desta grade. */
+/* === Grid QUADRICULADO em LINHAS (não pontilhado) — ambiente em TODA a plataforma ===
+   Estilo adaptado do chassi do Codex (duas linear-gradient perpendiculares de 1px),
+   mas MAIS EVIDENTE (ordem Bauer). z-index 0 = ACIMA do fundo opaco do body; o main é
+   elevado a z-index 1, então o conteúdo fica sempre legível acima da grade. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(231, 240, 250, 0.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(231, 240, 250, 0.072) 1px, transparent 1px);
+  background-size: 34px 34px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 22%, rgba(0,0,0,0.55) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 22%, rgba(0,0,0,0.55) 100%);
+}
+/* Conteúdo sempre acima do dot-grid + orb (ambos z-index 0). Só o main é estático;
+   header/progress/overlay/banner já têm z-index de token positivo. */
+body > main { position: relative; z-index: 1; }
+
+/* === Gradient orb (halo que respira) — ambiente padronizado em TODA a plataforma ===
+   2 halos (teal + dourado) que inflam/desinflam; z-index -1 (atrás do conteúdo, junto da grade);
+   screen no dark / multiply no light — somam luz sem tapar o texto. Injetados pelo pwa-bootstrap.js. */
+.page-orb {
+  position: fixed; left: 60%; top: -24vh;
+  width: 78vh; height: 78vh; border-radius: 50%;
+  background: radial-gradient(circle, rgba(98,189,243,0.62) 0%, transparent 66%);
+  opacity: 0.24; filter: blur(82px);
+  pointer-events: none; z-index: 0; mix-blend-mode: screen;
+  animation: orbBreath 16s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+.page-orb--gold {
+  left: 2%; top: 36vh; width: 58vh; height: 58vh;
+  background: radial-gradient(circle, rgba(255,170,140,0.50) 0%, transparent 68%);
+  opacity: 0.16; animation-duration: 20s; animation-delay: -6s;
+}
+/* Ondulação orgânica: deriva lateral + vertical + escala em pontos assimétricos.
+   Teal (16s) e dourado (20s) em períodos diferentes = batem em/fora de fase, nunca repetem igual. */
+@keyframes orbBreath {
+  0%   { transform: translate(0, 0) scale(1);          opacity: 0.18; }
+  20%  { transform: translate(-2vw, 9px) scale(1.03);  opacity: 0.24; }
+  40%  { transform: translate(-1vw, 21px) scale(1.07); opacity: 0.32; }
+  60%  { transform: translate(2vw, 15px) scale(1.06);  opacity: 0.31; }
+  80%  { transform: translate(1.4vw, 6px) scale(1.02); opacity: 0.23; }
+  100% { transform: translate(0, 0) scale(1);          opacity: 0.18; }
+}
+:root[data-theme="light"] .page-orb { opacity: 0.26; mix-blend-mode: multiply; }
+:root[data-theme="light"] .page-orb--gold { opacity: 0.20; }
+@media (prefers-reduced-motion: reduce) { .page-orb { animation: none; } }
+
+/* Tema light (céu claro pediatria): grid quadriculado em linhas escuras discretas */
+:root[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(15, 36, 56, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 36, 56, 0.08) 1px, transparent 1px);
+}
+
+img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+
+a {
+  color: var(--teal-60);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(79,214,192,0.32);
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+a:hover, a:focus-visible { color: var(--teal-80); border-bottom-color: var(--teal-60); }
+
+:focus-visible {
+  outline: 2px solid var(--teal-60);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--ink-100);
+  letter-spacing: -0.01em;
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--sp-3) 0;
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-display); letter-spacing: -0.02em; }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-xl); }
+h4 { font-size: var(--fs-lg); }
+h5 { font-size: var(--fs-md); }
+
+p {
+  margin: 0 0 var(--sp-4) 0;
+  max-width: var(--container-text);
+  text-wrap: pretty;
+}
+ul, ol { padding-left: var(--sp-5); margin: 0 0 var(--sp-4) 0; }
+li { margin-bottom: var(--sp-2); }
+strong { color: var(--ink-100); font-weight: 700; }
+em { font-style: italic; color: var(--ink-90); }
+blockquote {
+  margin: var(--sp-5) 0;
+  padding: var(--sp-4) var(--sp-5);
+  border-left: 3px solid var(--teal-40);
+  background: var(--bg-elevated);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  color: var(--ink-90);
+}
+blockquote p:last-child { margin-bottom: 0; }
+hr { border: 0; height: 1px; background: var(--border-soft); margin: var(--sp-6) 0; }
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-elevated);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* Layout container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--sp-5);
+  padding-right: var(--sp-5);
+}
+.container--text { max-width: calc(var(--container-text) + 2 * var(--sp-5)); }
+
+@media (max-width: 640px) {
+  .container { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: var(--sp-3);
+  z-index: var(--z-modal);
+  background: var(--teal-10);
+  color: var(--ink-100);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--teal-40);
+}
+.skip-link:focus { left: var(--sp-4); }
+
+/* === Header (glass, brand esquerda · ações direita) === */
+/* Header FLOATING: barra arredondada descolada das bordas (Apple-like) */
+.site-header {
+  position: sticky;
+  top: calc(max(var(--sp-3), env(safe-area-inset-top)) + var(--sp-2));
+  z-index: var(--z-sticky);
+  width: min(var(--container-max), calc(100% - 2 * var(--sp-4)));
+  margin: var(--sp-3) auto 0;
+  background: var(--bg-glass-strong);
+  backdrop-filter: saturate(150%) blur(22px);
+  -webkit-backdrop-filter: saturate(150%) blur(22px);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-3) var(--sp-4);
+  transition: transform var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid) var(--ease-out);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header { background: var(--bg-elevated); }
+}
+/* Header some ao rolar p/ baixo, reaparece ao subir (esconde inclusive o gap superior) */
+.site-header[data-hidden="true"] { transform: translateY(calc(-100% - var(--sp-6))); box-shadow: none; }
+@media (max-width: 640px) {
+  .site-header { width: calc(100% - 2 * var(--sp-3)); border-radius: var(--r-lg); padding: var(--sp-2) var(--sp-3); }
+}
+.site-header__row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 100%;
+}
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  text-decoration: none;
+  color: var(--ink-100);
+  border-bottom: 0;
+}
+.site-header__brand:hover { color: var(--teal-60); }
+.site-header__logo {
+  width: 38px; height: 38px;
+  border-radius: var(--r-sm);
+  background: linear-gradient(135deg, var(--teal-10), var(--teal-05));
+  border: 1px solid var(--teal-40);
+  display: grid; place-items: center;
+  overflow: hidden;
+}
+.site-header__logo svg { width: 26px; height: 26px; }
+/* Logo tem o "d" hardcoded em #4fd6c0 (teal brilhante) — fundo precisa ficar escuro nos 2 temas senao o "d" some no claro */
+:root[data-theme="light"] .site-header__logo { background: linear-gradient(135deg, #0a3a3a, #06292b); }
+.site-header__titles { line-height: 1.18; }
+.site-header__title { font-size: var(--fs-md); font-weight: 700; }
+.site-header__subtitle { font-size: var(--fs-xs); color: var(--ink-70); }
+.site-header__spacer { flex: 1; }
+.site-header__progress {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--ink-70);
+  padding: var(--sp-1) var(--sp-3);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-pill);
+  background: var(--bg-elevated);
+  white-space: nowrap;
+}
+
+.icon-btn {
+  width: 38px; height: 38px;
+  border-radius: var(--r-sm);
+  display: grid; place-items: center;
+  color: var(--ink-90);
+  border: 1px solid var(--border-soft);
+  background: var(--bg-elevated);
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), background var(--dur-fast), transform var(--dur-fast);
+}
+.icon-btn:hover, .icon-btn:focus-visible {
+  color: var(--teal-60);
+  border-color: var(--teal-40);
+  background: var(--bg-elevated-2);
+  transform: translateY(-1px);
+}
+
+/* === Menu overlay (painel à DIREITA, dupla camada glass) === */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-mid) var(--ease-out);
+  background: rgba(7,23,26,0.48);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.menu-overlay[aria-hidden="false"] { opacity: 1; pointer-events: auto; }
+.menu-panel {
+  position: absolute;
+  top: 64px;
+  right: var(--sp-4);
+  width: min(360px, calc(100vw - 2 * var(--sp-4)));
+  max-height: calc(100vh - 96px - env(safe-area-inset-bottom));
+  overflow-y: auto;
+  background: var(--bg-glass-strong);
+  backdrop-filter: saturate(150%) blur(24px);
+  -webkit-backdrop-filter: saturate(150%) blur(24px);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-4);
+  transform: translateY(-6px) scale(0.98);
+  opacity: 0;
+  transition: transform var(--dur-mid) var(--ease-lux), opacity var(--dur-mid) var(--ease-out);
+}
+.menu-overlay[aria-hidden="false"] .menu-panel { transform: translateY(0) scale(1); opacity: 1; }
+.menu-panel__title {
+  font-size: var(--fs-xs);
+  color: var(--ink-70);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: var(--sp-2) var(--sp-2) var(--sp-3);
+}
+.menu-panel__list { list-style: none; padding: 0; margin: 0; }
+.menu-panel__item { margin: 0; }
+.menu-panel__link {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-3);
+  border-radius: var(--r-sm);
+  color: var(--ink-90);
+  border-bottom: 0;
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.menu-panel__link:hover, .menu-panel__link:focus-visible {
+  background: var(--bg-elevated-2);
+  color: var(--ink-100);
+  border-bottom: 0;
+}
+.menu-panel__link[aria-current="page"] {
+  background: var(--teal-05);
+  color: var(--teal-60);
+  border-left: 3px solid var(--teal-40);
+  padding-left: calc(var(--sp-3) - 3px);
+}
+.menu-panel__index {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--ink-50);
+  min-width: 32px;
+}
+
+/* === Main === */
+main {
+  flex: 1;
+  padding-bottom: var(--sp-9);
+  padding-left: max(0px, env(safe-area-inset-left));
+  padding-right: max(0px, env(safe-area-inset-right));
+}
+
+/* === Banner mantra (rodapé persistente) === */
+.banner-mantra-fixed {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--z-banner-mantra);
+  /* CORE-FIX nav: banner é decorativo (só mantra, sem link/botão). Sticky bottom + z-index:50
+     interceptava o clique do botão "próxima página" quando ele passava sob a faixa (bug
+     intermitente em ~9 aulas). pointer-events:none deixa o clique atravessar para o conteúdo. */
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, var(--bg-glass-strong) 22%, var(--bg-glass-strong) 100%);
+  backdrop-filter: saturate(150%) blur(14px);
+  -webkit-backdrop-filter: saturate(150%) blur(14px);
+  border-top: 1px solid var(--teal-20);
+  padding-top: var(--sp-3);
+  padding-bottom: max(var(--sp-3), env(safe-area-inset-bottom));
+  padding-left: max(var(--sp-4), env(safe-area-inset-left));
+  padding-right: max(var(--sp-4), env(safe-area-inset-right));
+}
+.banner-mantra-fixed__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-serif);
+  color: var(--ink-100);
+  font-size: var(--fs-md);
+}
+.banner-mantra-fixed__icon { width: 28px; height: 28px; flex-shrink: 0; color: var(--teal-60); }
+.banner-mantra-fixed__text { line-height: 1.3; }
+.banner-mantra-fixed__text strong { color: var(--teal-60); font-weight: 700; }
+
+/* === Footer === */
+.site-footer {
+  border-top: 1px solid var(--border-soft);
+  padding: var(--sp-6) 0 calc(var(--sp-5) + env(safe-area-inset-bottom));
+  color: var(--ink-50);
+  font-size: var(--fs-sm);
+}
+.site-footer .container { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-4); flex-wrap: wrap; }
+
+/* === PWA install + update toast === */
+.pwa-install {
+  position: fixed;
+  bottom: var(--sp-4);
+  left: var(--sp-4);
+  right: var(--sp-4);
+  max-width: 480px;
+  margin: 0 auto;
+  z-index: var(--z-install-prompt);
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--teal-30);
+  border-radius: var(--r-md);
+  padding: var(--sp-3) var(--sp-4);
+  box-shadow: var(--shadow-lg);
+  display: none;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.pwa-install[data-visible="true"] { display: flex; }
+.pwa-install__text { flex: 1; font-size: var(--fs-sm); }
+.pwa-install__text strong { color: var(--teal-60); }
+.pwa-install button { padding: var(--sp-2) var(--sp-3); border-radius: var(--r-sm); border: 1px solid var(--border-mid); background: var(--bg-elevated); }
+.pwa-install button.is-primary { background: var(--teal-30); color: var(--ink-100); border-color: var(--teal-40); }
+
+.pwa-update {
+  position: fixed;
+  top: 72px;
+  right: var(--sp-4);
+  z-index: var(--z-update-toast);
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--warn-amber);
+  border-radius: var(--r-md);
+  padding: var(--sp-3) var(--sp-4);
+  box-shadow: var(--shadow-md);
+  display: none;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-sm);
+}
+.pwa-update[data-visible="true"] { display: flex; }
+.pwa-update button {
+  background: var(--warn-amber);
+  color: var(--bg-base);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--r-sm);
+  font-weight: 600;
+}
+
+@media print {
+  .site-header, .menu-overlay, .banner-mantra-fixed, .pwa-install, .pwa-update, .page-nav, .skip-link { display: none !important; }
+  body { background: #fff; color: #000; }
+  a { color: #000; border-bottom-color: #888; }
+  .page { page-break-inside: avoid; }
+}
+
+/* === AURORA DE RODAPÉ GLOBAL (Bauer 2026-06-05: "melhor que os orbes") — substitui os orbs em TODA página ===
+   Luz que nasce no rodapé e some em degradê pra cima (mask-image): coral quente → azul-céu. Tons da casa, sutil.
+   Camadas: aurora z-index 0 (atrás) < conteúdo z-index 1. prefers-reduced-motion desliga. */
+.page-orb { display: none !important; } /* orbs aposentados em favor da aurora */
+.bottom-aurora {
+  position: fixed; bottom: 0; left: 0; width: 100vw; height: 56vh;
+  z-index: 0; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+.aurora-blur-layer { position: absolute; inset: 0; filter: blur(80px); opacity: 0.55; }
+.aurora-blob { position: absolute; border-radius: 50%; animation: floatAurora infinite alternate ease-in-out; will-change: transform; }
+.aurora-blob--warm { background: var(--coral-50); width: 70vw; height: 46vh; bottom: -12vh; left: -18vw; animation-duration: 25s; opacity: 0.70; }
+.aurora-blob--sky  { background: var(--teal-50); width: 62vw; height: 54vh; bottom: -18vh; right: -10vw; animation-duration: 22s; animation-delay: -5s; }
+.aurora-blob--cyan { background: var(--teal-60); width: 80vw; height: 40vh; bottom: -26vh; left: 8vw;  animation-duration: 28s; animation-delay: -10s; }
+@keyframes floatAurora {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(10vw, -5vh) scale(1.1); }
+  66%  { transform: translate(-10vw, 5vh) scale(0.9); }
+  100% { transform: translate(5vw, -10vh) scale(1.2); }
+}
+body > main { position: relative; z-index: 1; }
+:root[data-theme="light"] .aurora-blur-layer { opacity: 0.40; mix-blend-mode: multiply; }
+:root[data-theme="light"] .aurora-blob--warm { background: #ff9d8a; }
+@media (prefers-reduced-motion: reduce) { .aurora-blob { animation: none; } }
+
+/* === MESH GLOBAL (efeito de cima que se mexe — Bauer: "permanece") — em TODA página, junto com a aurora ===
+   Nuvens de cor flutuando com blur grande. z-index 0 (atrás do conteúdo). O HUB tem sua versão inline própria;
+   o pwa-bootstrap injeta esta nas páginas de aula. SEM estrelinhas (Bauer não gostou). */
+.mesh-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; filter: blur(120px); }
+.mesh-blob { position: absolute; border-radius: 50%; opacity: 0.40; animation: meshMove 15s infinite alternate ease-in-out; will-change: transform; }
+.mesh-blob--1 { width: 60vw; height: 60vw; background: var(--teal-50); top: -18%; left: -8%; animation-delay: 0s; }
+.mesh-blob--2 { width: 52vw; height: 52vw; background: var(--teal-10); bottom: -20%; right: -10%; animation-duration: 19s; opacity: 0.46; }
+.mesh-blob--3 { width: 44vw; height: 44vw; background: var(--teal-30); top: 34%; left: 42%; animation-duration: 13s; opacity: 0.32; }
+@keyframes meshMove {
+  0%   { transform: translate(0,0) scale(1); }
+  25%  { transform: translate(11vw, 7vh) scale(1.12); }
+  50%  { transform: translate(-7vw, 15vh) scale(0.90); }
+  75%  { transform: translate(9vw, -6vh) scale(1.14); }
+  100% { transform: translate(-4vw, 9vh) scale(1.06); }
+}
+:root[data-theme="light"] .mesh-blob { mix-blend-mode: multiply; opacity: 0.22; }
+@media (prefers-reduced-motion: reduce) { .mesh-blob { animation: none; } }

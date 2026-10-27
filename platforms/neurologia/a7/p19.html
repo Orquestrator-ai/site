@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>Banco de raciocínio I — rolândica e ELT — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="a7-cara">
+.a7-ouro{color:#FBBF24}.a7-indigo{color:#818CF8}.a7-cyan{color:#22D3EE}.a7-coral{color:#F87171}.a7-teal{color:#2DD4BF}
+.faixa--ouro{background:rgba(251,191,36,.14);color:#FBBF24;border-color:rgba(251,191,36,.55)}.faixa--indigo{background:rgba(129,140,248,.14);color:#818CF8;border-color:rgba(129,140,248,.5)}
+[data-theme="light"] .faixa--ouro{background:rgba(217,119,6,.12);color:#B45309;border-color:rgba(180,83,9,.45)}[data-theme="light"] .faixa--indigo{background:rgba(79,70,229,.1);color:#4338CA;border-color:rgba(67,56,202,.4)}
+.kw--ouro{color:#FBBF24}[data-theme="light"] .kw--ouro{color:#B45309}
+.a7-chip{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .65rem;border-radius:999px;border:1px solid var(--border);background:var(--bg-3);font-size:.8rem;font-weight:600;line-height:1.2}
+.a7-chip--indigo{border-color:rgba(129,140,248,.6);color:#818CF8}.a7-chip--cyan{border-color:rgba(34,211,238,.6);color:#22D3EE}.a7-chip--gold{border-color:rgba(251,191,36,.6);color:#FBBF24}.a7-chip--coral{border-color:rgba(248,113,113,.6);color:#F87171}.a7-chip--teal{border-color:rgba(45,212,191,.6);color:#2DD4BF}
+[data-theme="light"] .a7-chip--indigo{border-color:rgba(67,56,202,.5);color:#4338CA}[data-theme="light"] .a7-chip--cyan{border-color:rgba(8,145,178,.5);color:#0E7490}[data-theme="light"] .a7-chip--gold{border-color:rgba(180,83,9,.5);color:#B45309}[data-theme="light"] .a7-chip--coral{border-color:rgba(220,38,38,.5);color:#DC2626}
+.a7-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:9px;border:1px dashed rgba(248,113,113,.6);color:#F87171;font-weight:700;font-size:.82rem;text-decoration:none}.a7-pill--teal{border-color:rgba(45,212,191,.6);color:#2DD4BF}.a7-pill:hover{transform:translateY(-1px)}
+.a7-split{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.a7-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}@media(max-width:640px){.a7-split,.a7-grid3{grid-template-columns:1fr}}
+.a7-tabelao{width:100%;border-collapse:collapse;font-size:.9rem}.a7-tabelao th,.a7-tabelao td{padding:.55rem .6rem;border:1px solid var(--border);text-align:left;vertical-align:top}.a7-tabelao th{background:var(--bg-3);font-weight:700}.a7-tabelao caption{caption-side:bottom;font-size:.8rem;color:var(--ink-60,#94A3B8);padding-top:.4rem}
+.a7-fluxo{display:flex;flex-wrap:wrap;gap:.5rem;align-items:stretch}.a7-fluxo__no{flex:1 1 150px;border:1px solid var(--border);border-radius:10px;padding:.7rem .8rem;background:var(--bg-3)}.a7-fluxo__seta{align-self:center;color:var(--ciano,#22D3EE);font-weight:700}
+.a7-revelar{margin:.4rem 0}.a7-revelar summary{cursor:pointer;font-weight:700;color:var(--ciano,#22D3EE)}
+.a7-heroi{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--bg-3)}.a7-heroi figcaption{padding:.6rem .8rem;font-size:.85rem;border-top:1px solid var(--border)}
+.a7-pergunta{border-left:4px solid #FBBF24;padding:.2rem 0 .2rem 1rem;font-size:1.12rem;font-weight:600;color:var(--ink-100,#F4F7FB);line-height:1.4}
+.a7-nuanca{border:1px solid rgba(251,191,36,.5);border-left:5px solid #FBBF24;border-radius:10px;padding:.7rem .9rem;background:rgba(251,191,36,.08)}[data-theme="light"] .a7-nuanca{background:rgba(217,119,6,.06);border-color:rgba(180,83,9,.45)}
+.a7-erro{border-left:5px solid #F87171;border-radius:10px;padding:.7rem .9rem;background:rgba(248,113,113,.08)}[data-theme="light"] .a7-erro{background:rgba(220,38,38,.06)}
+.a7-meta{border:1px solid rgba(45,212,191,.5);border-left:5px solid #2DD4BF;border-radius:10px;padding:.7rem .9rem;background:rgba(45,212,191,.07)}[data-theme="light"] .a7-meta{background:rgba(13,148,136,.06);border-color:rgba(13,148,136,.45)}
+.a7-check{list-style:none;padding:0;margin:.4rem 0 0}.a7-check li{padding:.3rem 0 .3rem 1.6rem;position:relative}.a7-check li::before{content:"✓";position:absolute;left:0;top:.25rem;color:#2DD4BF;font-weight:800}
+.a7-achado{border:1px solid rgba(34,211,238,.5);border-left:5px solid #22D3EE;border-radius:10px;padding:.7rem .9rem;background:rgba(34,211,238,.07)}[data-theme="light"] .a7-achado{background:rgba(8,145,178,.06);border-color:rgba(8,145,178,.45)}
+.a7-dado{border:1px solid rgba(129,140,248,.5);border-left:5px solid #818CF8;border-radius:10px;padding:.7rem .9rem;background:rgba(129,140,248,.08)}[data-theme="light"] .a7-dado{background:rgba(67,56,202,.06);border-color:rgba(67,56,202,.45)}
+.a7-col{border:1px solid var(--border);border-radius:12px;padding:.8rem;background:var(--bg-3)}.a7-col h3{margin-top:0}
+.a7-ancora{border:1px solid rgba(251,191,36,.5);border-left:6px solid #FBBF24;border-radius:12px;padding:.9rem 1.1rem;background:rgba(251,191,36,.09);font-size:1.18rem;font-weight:700;color:#FBBF24;line-height:1.35}[data-theme="light"] .a7-ancora{background:rgba(217,119,6,.07);color:#B45309;border-color:rgba(180,83,9,.45)}
+.a7-x{color:#F87171;font-weight:800}
+.a7-case{border:1px solid var(--border);border-radius:12px;padding:.8rem;background:var(--bg-3)}.a7-case h3{margin-top:0}.a7-case .gab{margin-top:.4rem;padding:.5rem .7rem;border-radius:8px;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.4);color:#34D399;font-weight:700}
+</style>
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html"><span class="site-header__logo" aria-hidden="true">NE</span><span class="site-header__titles"><span class="site-header__title">Epilepsia — Aula 7</span><span class="site-header__subtitle">Neurologia · Aula 7</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress">19/20</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<article data-layout="a7-p19" data-source-ids="201 202 203 204 205 206 207 208 209 210 211 212">
+  <p class="kicker">Achado / pegadinha · Pág. 19 de 20</p>
+  <h1>Banco de raciocínio I — rolândica e ELT</h1>
+  <p class="lead">As síndromes são os grandes marcadores de prova depois da base conceitual. Aqui vêm dois casos com armadilha de diagnóstico diferencial embutida — um noturno orofacial de criança, um de automatismos de adulto — para treinar o olho antes do banco final.</p>
+
+  <!-- COMPONENTE-EXECUTOR: grid case-cards com revelar gabarito -->
+  <div class="a7-split" data-componente="grid-case-cards-revelar">
+    <div class="a7-case">
+      <h3>Caso 1 · menino de 7 anos, noturno</h3>
+      <p>Previramente hígido; <strong>2º</strong> episódio noturno semelhante a um de ~2 min há 7 meses. A mãe ouve barulho e encontra o filho sentado na cama, <strong>babando</strong>, com <strong>fala alterada</strong>; o menino relata <strong>dormência</strong> em língua, lábios, gengivas e bochecha (<strong>consciência preservada</strong>). EN normal à tarde; EEG interictal: ondas agudas bifásicas de alta amplitude + ondas lentas em <strong>centro-temporais</strong>, exacerbando no sono.</p>
+      <details class="a7-revelar"><summary>Revelar diagnóstico</summary><div class="gab">Epilepsia autolimitada com espículas centro-temporais (rolândica / BECTS).</div></details>
+    </div>
+    <div class="a7-case">
+      <h3>Caso 2 · mulher de 40 anos</h3>
+      <p><strong>Perda de consciência</strong> + movimentos orais mastigatórios + movimentos repetitivos de mãos (esfregar objetos, ajeitar roupa); <strong>1–2 min</strong>; confusão e sonolência pós-ictal.</p>
+      <details class="a7-revelar"><summary>Revelar classificação e droga</summary><div class="gab">Focal com perda de consciência (ELT) · 1ª linha: carbamazepina.</div></details>
+    </div>
+  </div>
+
+  <h2>Caso rolândica</h2>
+  <div class="prosa">
+    <p>As síndromes são os grandes marcadores de prova depois da base conceitual. <strong>Caso:</strong> menino de <strong>7 anos</strong>, previamente hígido; <strong>2º</strong> episódio noturno semelhante a um de ~2 min há 7 meses. A mãe ouve barulho; encontra o filho sentado na cama, <strong>babando</strong>, com <strong>fala alterada</strong>; o menino relata <strong>dormência</strong> em língua, lábios, gengivas e bochecha (<strong>consciência preservada</strong>). EN normal à tarde; EEG interictal: ondas agudas bifásicas de alta amplitude + ondas lentas projetando em <strong>centro-temporais</strong>, exacerbando no sono.</p>
+    <p><strong>Dx mais provável:</strong> <strong>epilepsia autolimitada com espículas centro-temporais (rolândica)</strong>.</p>
+  </div>
+
+  <h2>DDx que caem</h2>
+  <div class="prosa">
+    <ul>
+      <li><strong>Terror noturno:</strong> acorda em terror, taquicardia/sudorese, volta a dormir, <strong>amnésia</strong> no dia seguinte — não cabe (aqui há consciência e dormência orofacial).</li>
+      <li><strong>Landau-Kleffner / “apatia epiléptica” no discurso:</strong> encefalopatia rara com deterioração de linguagem por atividade noturna — não é “acorda com boca dormente e fala errada”.</li>
+      <li><strong>AIT em menino de 7 anos:</strong> forçação de barra frente ao padrão clássico rolândico.</li>
+    </ul>
+  </div>
+
+  <h2>Caso ELT</h2>
+  <div class="prosa">
+    <p><strong>Mulher de 40 anos:</strong> perda de consciência + movimentos orais mastigatórios + movimentos repetitivos de mãos (esfregar objetos, ajeitar roupa); <strong>1–2 min</strong>; confusão e sonolência pós.</p>
+  </div>
+
+  <h2>Classificação e CBZ</h2>
+  <div class="prosa">
+    <p>Classificação: <strong>focal com perda de consciência</strong> (parcial complexa na nomenclatura antiga) — não “parcial simples” (há perda de consciência), não TCG (sem tônico/clônico; há automatismos), não ausência (duração 1–2 min e semiologia diferente). A síndrome mais comum no adulto com esse padrão: <strong>epilepsia do lobo temporal</strong>. O fármaco mais indicado no discurso: <strong>carbamazepina</strong>.</p>
+  </div>
+
+  <!-- ILUSTRAÇÃO PISO S19: 2 fluxos de caso (inline, inserido por script) -->
+  <figure class="frame frame--glow">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 620" role="img" aria-labelledby="a7p19-title a7p19-desc" class="a7-inline-svg a7p19-root">
+  <title id="a7p19-title">Dois fluxos de caso — rolândica e ELT</title>
+  <desc id="a7p19-desc">Banco de raciocínio com dois trilhos diagnósticos: fluxo A em criança noturna orofacial com consciência preservada aponta para espectro rolândico; fluxo B em adulto com aura epigástrica e automatismos de 1 a 2 minutos aponta para epilepsia do lobo temporal. Pistas de idade, horário, aura e duração treinam a escolha do fluxo sem fundir as síndromes.</desc>
+  <defs>
+    <linearGradient id="a7p19-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a7p19-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a7p19-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a7p19-auroraT" cx="18%" cy="18%" r="55%">
+      <stop offset="0%" stop-color="var(--a7p19-teal, #2DD4BF)" stop-opacity="0.18"/>
+      <stop offset="55%" stop-color="var(--a7p19-tealDeep, #0F766E)" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="var(--a7p19-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a7p19-auroraI" cx="82%" cy="22%" r="52%">
+      <stop offset="0%" stop-color="var(--a7p19-indigo, #818CF8)" stop-opacity="0.16"/>
+      <stop offset="60%" stop-color="var(--a7p19-indigoDeep, #4338CA)" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="var(--a7p19-bg1, #07111F)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a7p19-auroraG" cx="50%" cy="95%" r="45%">
+      <stop offset="0%" stop-color="var(--a7p19-gold, #FBBF24)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a7p19-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a7p19-cardA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a7p19-cardAHi, #0C2422)"/>
+      <stop offset="100%" stop-color="var(--a7p19-card, #111A2B)"/>
+    </linearGradient>
+    <linearGradient id="a7p19-cardB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a7p19-cardBHi, #161A30)"/>
+      <stop offset="100%" stop-color="var(--a7p19-card, #111A2B)"/>
+    </linearGradient>
+    <linearGradient id="a7p19-cardTrap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a7p19-cardGoldHi, #1F1A10)"/>
+      <stop offset="100%" stop-color="var(--a7p19-card, #111A2B)"/>
+    </linearGradient>
+    <linearGradient id="a7p19-faceFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a7p19-skinHi, #E8C4A8)"/>
+      <stop offset="100%" stop-color="var(--a7p19-skinLo, #C99574)"/>
+    </linearGradient>
+    <linearGradient id="a7p19-hippoFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a7p19-indigoHi, #A5B4FC)"/>
+      <stop offset="100%" stop-color="var(--a7p19-indigo, #818CF8)"/>
+    </linearGradient>
+    <radialGradient id="a7p19-moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a7p19-tealHi, #5EEAD4)" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="var(--a7p19-teal, #2DD4BF)" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="var(--a7p19-teal, #2DD4BF)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a7p19-auraGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a7p19-cyanHi, #67E8F9)" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="var(--a7p19-cyan, #22D3EE)" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="var(--a7p19-cyan, #22D3EE)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="a7p19-glowSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a7p19-glowTeal" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a7p19-glowIndigo" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a7p19-glowGold" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a7p19-arrowT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--a7p19-teal, #2DD4BF)"/>
+    </marker>
+    <marker id="a7p19-arrowI" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--a7p19-indigo, #818CF8)"/>
+    </marker>
+    <style>
+      .a7p19-root {
+        --a7p19-bg0: #0B1220;
+        --a7p19-bg1: #07111F;
+        --a7p19-card: #111A2B;
+        --a7p19-card2: #152033;
+        --a7p19-cardAHi: #0C2422;
+        --a7p19-cardBHi: #161A30;
+        --a7p19-cardGoldHi: #1F1A10;
+        --a7p19-border: rgba(148,163,184,0.18);
+        --a7p19-ink: #F4F7FB;
+        --a7p19-muted: #94A3B8;
+        --a7p19-soft: #B8C0CC;
+        --a7p19-teal: #2DD4BF;
+        --a7p19-tealHi: #5EEAD4;
+        --a7p19-tealDeep: #0F766E;
+        --a7p19-cyan: #22D3EE;
+        --a7p19-cyanHi: #67E8F9;
+        --a7p19-indigo: #818CF8;
+        --a7p19-indigoHi: #A5B4FC;
+        --a7p19-indigoDeep: #4338CA;
+        --a7p19-gold: #FBBF24;
+        --a7p19-goldHi: #FDE68A;
+        --a7p19-goldDeep: #B45309;
+        --a7p19-ok: #34D399;
+        --a7p19-dim: #64748B;
+        --a7p19-skinHi: #E8C4A8;
+        --a7p19-skinLo: #C99574;
+        --a7p19-night: #1E293B;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a7p19-root {
+        --a7p19-bg0: #F8F6F2;
+        --a7p19-bg1: #EEF2F7;
+        --a7p19-card: #FFFFFF;
+        --a7p19-card2: #F1F5F9;
+        --a7p19-cardAHi: #E6FAF7;
+        --a7p19-cardBHi: #E0E7FF;
+        --a7p19-cardGoldHi: #FEF3C7;
+        --a7p19-border: rgba(15,23,42,0.10);
+        --a7p19-ink: #0F172A;
+        --a7p19-muted: #64748B;
+        --a7p19-soft: #475569;
+        --a7p19-teal: #0D9488;
+        --a7p19-tealHi: #14B8A6;
+        --a7p19-tealDeep: #115E59;
+        --a7p19-cyan: #0891B2;
+        --a7p19-cyanHi: #22D3EE;
+        --a7p19-indigo: #4F46E5;
+        --a7p19-indigoHi: #818CF8;
+        --a7p19-indigoDeep: #3730A3;
+        --a7p19-gold: #D97706;
+        --a7p19-goldHi: #FBBF24;
+        --a7p19-goldDeep: #92400E;
+        --a7p19-ok: #059669;
+        --a7p19-dim: #94A3B8;
+        --a7p19-skinHi: #F0D0B4;
+        --a7p19-skinLo: #D4A574;
+        --a7p19-night: #CBD5E1;
+      }
+      .a7p19-root .a7p19-hit,
+      .a7p19-root .a7p19-chip,
+      .a7p19-root .a7p19-btn,
+      .a7p19-root .a7p19-step { cursor: pointer; }
+      .a7p19-root .a7p19-hit:focus,
+      .a7p19-root .a7p19-chip:focus,
+      .a7p19-root .a7p19-btn:focus,
+      .a7p19-root .a7p19-step:focus { outline: none; }
+      .a7p19-root .a7p19-hit:focus .a7p19-hit-ring,
+      .a7p19-root .a7p19-chip:focus .a7p19-chip-ring,
+      .a7p19-root .a7p19-btn:focus .a7p19-btn-ring,
+      .a7p19-root .a7p19-step:focus .a7p19-step-ring { opacity: 1; }
+      .a7p19-root .a7p19-frame,
+      .a7p19-root .a7p19-hit-ring,
+      .a7p19-root .a7p19-chip-ring,
+      .a7p19-root .a7p19-btn-ring,
+      .a7p19-root .a7p19-step-ring,
+      .a7p19-root .a7p19-chip-fill,
+      .a7p19-root .a7p19-btn-fill,
+      .a7p19-root .a7p19-panel,
+      .a7p19-root .a7p19-step,
+      .a7p19-root .a7p19-moon,
+      .a7p19-root .a7p19-face-zone,
+      .a7p19-root .a7p19-aura-dot,
+      .a7p19-root .a7p19-hand-auto,
+      .a7p19-root .a7p19-hippo,
+      .a7p19-root .a7p19-pulse,
+      .a7p19-root .a7p19-flow-line { transition: opacity 0.28s ease, stroke 0.28s ease, fill 0.28s ease, filter 0.28s ease, stroke-width 0.28s ease, transform 0.35s ease; }
+      .a7p19-root[data-focus="A"] .a7p19-panel-b { opacity: 0.38; }
+      .a7p19-root[data-focus="B"] .a7p19-panel-a { opacity: 0.38; }
+      .a7p19-root[data-focus="trap"] .a7p19-panel-a,
+      .a7p19-root[data-focus="trap"] .a7p19-panel-b { opacity: 0.42; }
+      .a7p19-root[data-focus="A"] .a7p19-panel-a .a7p19-frame {
+        stroke: var(--a7p19-teal, #2DD4BF); stroke-width: 2.2; filter: url(#a7p19-glowTeal);
+      }
+      .a7p19-root[data-focus="B"] .a7p19-panel-b .a7p19-frame {
+        stroke: var(--a7p19-indigo, #818CF8); stroke-width: 2.2; filter: url(#a7p19-glowIndigo);
+      }
+      .a7p19-root[data-focus="trap"] .a7p19-panel-trap .a7p19-frame {
+        stroke: var(--a7p19-gold, #FBBF24); stroke-width: 2.2; filter: url(#a7p19-glowGold);
+      }
+      .a7p19-root .a7p19-step[data-active="1"] .a7p19-step-dot {
+        filter: url(#a7p19-glowSoft);
+      }
+      .a7p19-root .a7p19-step[data-active="1"] .a7p19-step-label {
+        fill: var(--a7p19-ink, #F4F7FB); font-weight: 700;
+      }
+      .a7p19-root .a7p19-chip[data-active="1"] .a7p19-chip-fill {
+        stroke-width: 2; filter: url(#a7p19-glowSoft);
+      }
+      .a7p19-root .a7p19-btn[data-active="1"] .a7p19-btn-fill {
+        fill: var(--a7p19-goldDeep, #B45309);
+      }
+      .a7p19-root .a7p19-moon { opacity: 0.45; }
+      .a7p19-root[data-phase="A"] .a7p19-moon,
+      .a7p19-root[data-phase="sleep"] .a7p19-moon { opacity: 1; }
+      .a7p19-root .a7p19-face-zone { opacity: 0.35; }
+      .a7p19-root[data-phase="A"] .a7p19-face-zone,
+      .a7p19-root[data-phase="oro"] .a7p19-face-zone { opacity: 1; }
+      .a7p19-root .a7p19-on-dot { opacity: 0.4; }
+      .a7p19-root[data-phase="A"] .a7p19-on-dot,
+      .a7p19-root[data-phase="on"] .a7p19-on-dot { opacity: 1; filter: url(#a7p19-glowSoft); }
+      .a7p19-root .a7p19-aura-dot { opacity: 0.35; }
+      .a7p19-root[data-phase="B"] .a7p19-aura-dot,
+      .a7p19-root[data-phase="aura"] .a7p19-aura-dot { opacity: 1; }
+      .a7p19-root .a7p19-hand-auto { opacity: 0.25; }
+      .a7p19-root[data-phase="B"] .a7p19-hand-auto,
+      .a7p19-root[data-phase="auto"] .a7p19-hand-auto { opacity: 1; }
+      .a7p19-root .a7p19-hippo { opacity: 0.4; }
+      .a7p19-root[data-phase="B"] .a7p19-hippo,
+      .a7p19-root[data-phase="hippo"] .a7p19-hippo { opacity: 1; filter: url(#a7p19-glowIndigo); }
+      .a7p19-root .a7p19-flow-line { opacity: 0.35; stroke-dasharray: 5 7; }
+      .a7p19-root[data-focus="A"] .a7p19-flow-a,
+      .a7p19-root[data-phase="A"] .a7p19-flow-a,
+      .a7p19-root[data-phase="sleep"] .a7p19-flow-a,
+      .a7p19-root[data-phase="oro"] .a7p19-flow-a,
+      .a7p19-root[data-phase="on"] .a7p19-flow-a { opacity: 1; stroke-dasharray: none; }
+      .a7p19-root[data-focus="B"] .a7p19-flow-b,
+      .a7p19-root[data-phase="B"] .a7p19-flow-b,
+      .a7p19-root[data-phase="aura"] .a7p19-flow-b,
+      .a7p19-root[data-phase="auto"] .a7p19-flow-b,
+      .a7p19-root[data-phase="hippo"] .a7p19-flow-b { opacity: 1; stroke-dasharray: none; }
+      .a7p19-root .a7p19-tip { pointer-events: none; opacity: 0; }
+      .a7p19-root[data-phase="auto"] .a7p19-hand-l {
+        animation: a7p19-rub 1.15s ease-in-out infinite;
+      }
+      .a7p19-root[data-phase="auto"] .a7p19-hand-r {
+        animation: a7p19-rub 1.15s ease-in-out 0.18s infinite reverse;
+      }
+      .a7p19-root[data-phase="sleep"] .a7p19-moon-core,
+      .a7p19-root[data-phase="A"] .a7p19-moon-core {
+        animation: a7p19-breathe 2.4s ease-in-out infinite;
+      }
+      @keyframes a7p19-rub {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(2.5px, 1.5px) rotate(5deg); }
+      }
+      @keyframes a7p19-breathe {
+        0%, 100% { opacity: 0.75; }
+        50% { opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .a7p19-root .a7p19-frame,
+        .a7p19-root .a7p19-panel,
+        .a7p19-root .a7p19-moon,
+        .a7p19-root .a7p19-face-zone,
+        .a7p19-root .a7p19-aura-dot,
+        .a7p19-root .a7p19-hand-auto,
+        .a7p19-root .a7p19-hippo,
+        .a7p19-root .a7p19-flow-line,
+        .a7p19-root .a7p19-btn-fill,
+        .a7p19-root .a7p19-chip-fill,
+        .a7p19-root .a7p19-step {
+          transition: none;
+        }
+        .a7p19-root .a7p19-hand-l,
+        .a7p19-root .a7p19-hand-r,
+        .a7p19-root .a7p19-moon-core { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <rect width="840" height="620" rx="18" fill="url(#a7p19-bg)"/>
+  <rect width="840" height="620" rx="18" fill="url(#a7p19-auroraT)"/>
+  <rect width="840" height="620" rx="18" fill="url(#a7p19-auroraI)"/>
+  <rect width="840" height="620" rx="18" fill="url(#a7p19-auroraG)"/>
+
+  <text x="28" y="30" fill="var(--a7p19-soft, #B8C0CC)" font-size="11" font-weight="700" letter-spacing="1.5">BANCO · RACIOCÍNIO I</text>
+  <text x="28" y="54" fill="var(--a7p19-ink, #F4F7FB)" font-size="19" font-weight="700">Dois trilhos de prova — rolândica × ELT</text>
+  <text x="28" y="74" fill="var(--a7p19-muted, #94A3B8)" font-size="12.5" font-weight="500">Escolha o fluxo pelas pistas · não troque síndromes por idade ou semiologia</text>
+
+  <g class="a7p19-chip" id="a7p19-chip-idade" transform="translate(28,90)" tabindex="0" role="button" aria-label="Pista idade: criança ou adulto">
+    <rect class="a7p19-chip-fill" width="92" height="30" rx="15" fill="var(--a7p19-card2, #152033)" stroke="var(--a7p19-teal, #2DD4BF)" stroke-width="1.3"/>
+    <rect class="a7p19-chip-ring" x="-2" y="-2" width="96" height="34" rx="17" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="1.5" opacity="0"/>
+    <text x="46" y="20" text-anchor="middle" fill="var(--a7p19-tealHi, #5EEAD4)" font-size="12" font-weight="700">Idade</text>
+  </g>
+  <g class="a7p19-chip" id="a7p19-chip-hora" transform="translate(130,90)" tabindex="0" role="button" aria-label="Pista horário: noturno ou qualquer">
+    <rect class="a7p19-chip-fill" width="92" height="30" rx="15" fill="var(--a7p19-card2, #152033)" stroke="var(--a7p19-teal, #2DD4BF)" stroke-width="1.3"/>
+    <rect class="a7p19-chip-ring" x="-2" y="-2" width="96" height="34" rx="17" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="1.5" opacity="0"/>
+    <text x="46" y="20" text-anchor="middle" fill="var(--a7p19-tealHi, #5EEAD4)" font-size="12" font-weight="700">Horário</text>
+  </g>
+  <g class="a7p19-chip" id="a7p19-chip-aura" transform="translate(232,90)" tabindex="0" role="button" aria-label="Pista aura epigástrica">
+    <rect class="a7p19-chip-fill" width="92" height="30" rx="15" fill="var(--a7p19-card2, #152033)" stroke="var(--a7p19-indigo, #818CF8)" stroke-width="1.3"/>
+    <rect class="a7p19-chip-ring" x="-2" y="-2" width="96" height="34" rx="17" fill="none" stroke="var(--a7p19-indigoHi, #A5B4FC)" stroke-width="1.5" opacity="0"/>
+    <text x="46" y="20" text-anchor="middle" fill="var(--a7p19-indigoHi, #A5B4FC)" font-size="12" font-weight="700">Aura</text>
+  </g>
+  <g class="a7p19-chip" id="a7p19-chip-dur" transform="translate(334,90)" tabindex="0" role="button" aria-label="Pista duração 1 a 2 minutos">
+    <rect class="a7p19-chip-fill" width="100" height="30" rx="15" fill="var(--a7p19-card2, #152033)" stroke="var(--a7p19-indigo, #818CF8)" stroke-width="1.3"/>
+    <rect class="a7p19-chip-ring" x="-2" y="-2" width="104" height="34" rx="17" fill="none" stroke="var(--a7p19-indigoHi, #A5B4FC)" stroke-width="1.5" opacity="0"/>
+    <text x="50" y="20" text-anchor="middle" fill="var(--a7p19-indigoHi, #A5B4FC)" font-size="12" font-weight="700">Duração</text>
+  </g>
+  <g class="a7p19-chip" id="a7p19-chip-cons" transform="translate(444,90)" tabindex="0" role="button" aria-label="Pista consciência preservada ou apagada">
+    <rect class="a7p19-chip-fill" width="118" height="30" rx="15" fill="var(--a7p19-card2, #152033)" stroke="var(--a7p19-gold, #FBBF24)" stroke-width="1.3"/>
+    <rect class="a7p19-chip-ring" x="-2" y="-2" width="122" height="34" rx="17" fill="none" stroke="var(--a7p19-goldHi, #FDE68A)" stroke-width="1.5" opacity="0"/>
+    <text x="59" y="20" text-anchor="middle" fill="var(--a7p19-goldHi, #FDE68A)" font-size="12" font-weight="700">Consciência</text>
+  </g>
+  <g class="a7p19-btn" id="a7p19-btn-reset" transform="translate(720,90)" tabindex="0" role="button" aria-label="Limpar foco">
+    <rect class="a7p19-btn-fill" width="92" height="30" rx="15" fill="var(--a7p19-card2, #152033)" stroke="var(--a7p19-dim, #64748B)" stroke-width="1.2"/>
+    <rect class="a7p19-btn-ring" x="-2" y="-2" width="96" height="34" rx="17" fill="none" stroke="var(--a7p19-soft, #B8C0CC)" stroke-width="1.4" opacity="0"/>
+    <text id="a7p19-btn-reset-label" x="46" y="20" text-anchor="middle" fill="var(--a7p19-soft, #B8C0CC)" font-size="12" font-weight="600">Limpar</text>
+  </g>
+
+  <!-- FLUXO A -->
+  <g class="a7p19-panel a7p19-panel-a" id="a7p19-panel-a" transform="translate(24,136)">
+    <rect class="a7p19-frame" width="388" height="318" rx="16" fill="url(#a7p19-cardA)" stroke="var(--a7p19-border, rgba(148,163,184,0.18))" stroke-width="1.4"/>
+    <text x="18" y="28" fill="var(--a7p19-teal, #2DD4BF)" font-size="11" font-weight="700" letter-spacing="1.2">FLUXO A</text>
+    <text x="18" y="50" fill="var(--a7p19-ink, #F4F7FB)" font-size="16" font-weight="700">Criança noturna orofacial</text>
+    <text x="18" y="70" fill="var(--a7p19-muted, #94A3B8)" font-size="12" font-weight="500">→ espectro rolândico</text>
+
+    <g class="a7p19-hit" id="a7p19-hit-child" transform="translate(24,90)" tabindex="0" role="button" aria-label="Criança em sono com foco orofacial e consciência preservada">
+      <rect class="a7p19-hit-ring" x="-4" y="-4" width="168" height="148" rx="14" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="1.6" opacity="0"/>
+      <rect width="160" height="140" rx="12" fill="var(--a7p19-night, #1E293B)" opacity="0.55"/>
+      <circle class="a7p19-moon a7p19-moon-core" cx="128" cy="28" r="14" fill="url(#a7p19-moonGlow)"/>
+      <circle class="a7p19-moon" cx="128" cy="28" r="9" fill="var(--a7p19-tealHi, #5EEAD4)" opacity="0.9"/>
+      <circle class="a7p19-moon" cx="133" cy="25" r="7" fill="var(--a7p19-night, #1E293B)"/>
+      <ellipse cx="72" cy="68" rx="34" ry="38" fill="url(#a7p19-faceFill)"/>
+      <ellipse cx="60" cy="62" rx="3.2" ry="2.2" fill="var(--a7p19-ink, #F4F7FB)" opacity="0.35"/>
+      <ellipse cx="84" cy="62" rx="3.2" ry="2.2" fill="var(--a7p19-ink, #F4F7FB)" opacity="0.35"/>
+      <path class="a7p19-face-zone" d="M52 78 Q72 92 92 78" fill="none" stroke="var(--a7p19-teal, #2DD4BF)" stroke-width="3" stroke-linecap="round"/>
+      <path class="a7p19-face-zone" d="M48 70 Q42 78 48 88" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="2.2" stroke-linecap="round" opacity="0.8"/>
+      <path class="a7p19-face-zone" d="M96 70 Q102 78 96 88" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="2.2" stroke-linecap="round" opacity="0.8"/>
+      <circle class="a7p19-on-dot" cx="72" cy="48" r="5" fill="var(--a7p19-ok, #34D399)"/>
+      <text x="80" y="52" fill="var(--a7p19-ok, #34D399)" font-size="11" font-weight="700">ON</text>
+      <text x="80" y="124" text-anchor="middle" fill="var(--a7p19-soft, #B8C0CC)" font-size="11" font-weight="600">sono · boca/face</text>
+    </g>
+
+    <g id="a7p19-steps-a" transform="translate(200,88)">
+      <path class="a7p19-flow-line a7p19-flow-a" d="M18 18 L18 178" fill="none" stroke="var(--a7p19-teal, #2DD4BF)" stroke-width="1.8" marker-end="url(#a7p19-arrowT)"/>
+      <g class="a7p19-step" id="a7p19-step-a1" data-key="child" transform="translate(0,0)" tabindex="0" role="button" aria-label="Passo idade criança">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="32" rx="10" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="1.4" opacity="0"/>
+        <circle class="a7p19-step-dot" cx="18" cy="6" r="7" fill="var(--a7p19-teal, #2DD4BF)"/>
+        <text class="a7p19-step-label" x="34" y="10" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="600">Criança ~3–10 a</text>
+      </g>
+      <g class="a7p19-step" id="a7p19-step-a2" data-key="sleep" transform="translate(0,42)" tabindex="0" role="button" aria-label="Passo predileção pelo sono">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="32" rx="10" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="1.4" opacity="0"/>
+        <circle class="a7p19-step-dot" cx="18" cy="6" r="7" fill="var(--a7p19-teal, #2DD4BF)"/>
+        <text class="a7p19-step-label" x="34" y="10" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="600">Sono / noturno</text>
+      </g>
+      <g class="a7p19-step" id="a7p19-step-a3" data-key="oro" transform="translate(0,84)" tabindex="0" role="button" aria-label="Passo foco orofacial">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="32" rx="10" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="1.4" opacity="0"/>
+        <circle class="a7p19-step-dot" cx="18" cy="6" r="7" fill="var(--a7p19-teal, #2DD4BF)"/>
+        <text class="a7p19-step-label" x="34" y="10" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="600">Boca / face</text>
+      </g>
+      <g class="a7p19-step" id="a7p19-step-a4" data-key="on" transform="translate(0,126)" tabindex="0" role="button" aria-label="Passo consciência preservada">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="32" rx="10" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="1.4" opacity="0"/>
+        <circle class="a7p19-step-dot" cx="18" cy="6" r="7" fill="var(--a7p19-ok, #34D399)"/>
+        <text class="a7p19-step-label" x="34" y="10" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="600">Consciência ON</text>
+      </g>
+      <g class="a7p19-step" id="a7p19-step-a5" data-key="roland" transform="translate(0,168)" tabindex="0" role="button" aria-label="Destino espectro rolândico">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="36" rx="10" fill="none" stroke="var(--a7p19-tealHi, #5EEAD4)" stroke-width="1.4" opacity="0"/>
+        <rect x="2" y="-6" width="158" height="28" rx="8" fill="var(--a7p19-tealDeep, #0F766E)" opacity="0.35"/>
+        <circle class="a7p19-step-dot" cx="18" cy="8" r="7" fill="var(--a7p19-tealHi, #5EEAD4)"/>
+        <text class="a7p19-step-label" x="34" y="12" fill="var(--a7p19-tealHi, #5EEAD4)" font-size="13" font-weight="700">Rolândica</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- FLUXO B -->
+  <g class="a7p19-panel a7p19-panel-b" id="a7p19-panel-b" transform="translate(428,136)">
+    <rect class="a7p19-frame" width="388" height="318" rx="16" fill="url(#a7p19-cardB)" stroke="var(--a7p19-border, rgba(148,163,184,0.18))" stroke-width="1.4"/>
+    <text x="18" y="28" fill="var(--a7p19-indigo, #818CF8)" font-size="11" font-weight="700" letter-spacing="1.2">FLUXO B</text>
+    <text x="18" y="50" fill="var(--a7p19-ink, #F4F7FB)" font-size="16" font-weight="700">Adulto · aura + automatismos</text>
+    <text x="18" y="70" fill="var(--a7p19-muted, #94A3B8)" font-size="12" font-weight="500">→ ELT / mesial</text>
+
+    <g class="a7p19-hit" id="a7p19-hit-adult" transform="translate(24,90)" tabindex="0" role="button" aria-label="Adulto com aura epigástrica, apaga e automatismos de 1 a 2 minutos">
+      <rect class="a7p19-hit-ring" x="-4" y="-4" width="168" height="148" rx="14" fill="none" stroke="var(--a7p19-indigoHi, #A5B4FC)" stroke-width="1.6" opacity="0"/>
+      <rect width="160" height="140" rx="12" fill="var(--a7p19-card2, #152033)" opacity="0.65"/>
+      <ellipse cx="72" cy="48" rx="28" ry="32" fill="url(#a7p19-faceFill)"/>
+      <path d="M52 42 Q48 28 62 24 Q72 20 82 24 Q96 28 92 42" fill="var(--a7p19-indigoDeep, #4338CA)" opacity="0.55"/>
+      <circle class="a7p19-aura-dot" cx="72" cy="92" r="16" fill="url(#a7p19-auraGlow)"/>
+      <path class="a7p19-aura-dot" d="M72 104 Q72 78 72 58" fill="none" stroke="var(--a7p19-cyan, #22D3EE)" stroke-width="2.2" stroke-linecap="round" marker-end="url(#a7p19-arrowI)"/>
+      <text class="a7p19-aura-dot" x="96" y="88" fill="var(--a7p19-cyanHi, #67E8F9)" font-size="10.5" font-weight="700">epigástrio</text>
+      <g class="a7p19-hand-auto a7p19-hand-l" transform="translate(28,108)">
+        <ellipse cx="0" cy="0" rx="10" ry="7" fill="url(#a7p19-faceFill)" transform="rotate(-25)"/>
+      </g>
+      <g class="a7p19-hand-auto a7p19-hand-r" transform="translate(116,108)">
+        <ellipse cx="0" cy="0" rx="10" ry="7" fill="url(#a7p19-faceFill)" transform="rotate(25)"/>
+      </g>
+      <path class="a7p19-hippo" d="M118 36 c10 -8 22 -4 26 8 c4 12 -2 22 -14 26 c-10 4 -20 -2 -24 -12 c-3 -8 2 -16 12 -22z" fill="url(#a7p19-hippoFill)" opacity="0.95"/>
+      <text x="80" y="132" text-anchor="middle" fill="var(--a7p19-soft, #B8C0CC)" font-size="11" font-weight="600">1–2 min · hipocampo</text>
+    </g>
+
+    <g id="a7p19-steps-b" transform="translate(200,88)">
+      <path class="a7p19-flow-line a7p19-flow-b" d="M18 18 L18 178" fill="none" stroke="var(--a7p19-indigo, #818CF8)" stroke-width="1.8" marker-end="url(#a7p19-arrowI)"/>
+      <g class="a7p19-step" id="a7p19-step-b1" data-key="adult" transform="translate(0,0)" tabindex="0" role="button" aria-label="Passo adulto">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="32" rx="10" fill="none" stroke="var(--a7p19-indigoHi, #A5B4FC)" stroke-width="1.4" opacity="0"/>
+        <circle class="a7p19-step-dot" cx="18" cy="6" r="7" fill="var(--a7p19-indigo, #818CF8)"/>
+        <text class="a7p19-step-label" x="34" y="10" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="600">Adulto</text>
+      </g>
+      <g class="a7p19-step" id="a7p19-step-b2" data-key="aura" transform="translate(0,42)" tabindex="0" role="button" aria-label="Passo aura epigástrica">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="32" rx="10" fill="none" stroke="var(--a7p19-indigoHi, #A5B4FC)" stroke-width="1.4" opacity="0"/>
+        <circle class="a7p19-step-dot" cx="18" cy="6" r="7" fill="var(--a7p19-cyan, #22D3EE)"/>
+        <text class="a7p19-step-label" x="34" y="10" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="600">Aura epigástrica</text>
+      </g>
+      <g class="a7p19-step" id="a7p19-step-b3" data-key="fade" transform="translate(0,84)" tabindex="0" role="button" aria-label="Passo consciência se apaga">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="32" rx="10" fill="none" stroke="var(--a7p19-indigoHi, #A5B4FC)" stroke-width="1.4" opacity="0"/>
+        <circle class="a7p19-step-dot" cx="18" cy="6" r="7" fill="var(--a7p19-indigo, #818CF8)"/>
+        <text class="a7p19-step-label" x="34" y="10" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="600">Apaga</text>
+      </g>
+      <g class="a7p19-step" id="a7p19-step-b4" data-key="auto" transform="translate(0,126)" tabindex="0" role="button" aria-label="Passo automatismos 1 a 2 minutos">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="32" rx="10" fill="none" stroke="var(--a7p19-indigoHi, #A5B4FC)" stroke-width="1.4" opacity="0"/>
+        <circle class="a7p19-step-dot" cx="18" cy="6" r="7" fill="var(--a7p19-indigoHi, #A5B4FC)"/>
+        <text class="a7p19-step-label" x="34" y="10" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="600">Automatismos 1–2 min</text>
+      </g>
+      <g class="a7p19-step" id="a7p19-step-b5" data-key="elt" transform="translate(0,168)" tabindex="0" role="button" aria-label="Destino epilepsia do lobo temporal">
+        <rect class="a7p19-step-ring" x="-6" y="-10" width="168" height="36" rx="10" fill="none" stroke="var(--a7p19-indigoHi, #A5B4FC)" stroke-width="1.4" opacity="0"/>
+        <rect x="2" y="-6" width="158" height="28" rx="8" fill="var(--a7p19-indigoDeep, #4338CA)" opacity="0.35"/>
+        <circle class="a7p19-step-dot" cx="18" cy="8" r="7" fill="var(--a7p19-indigoHi, #A5B4FC)"/>
+        <text class="a7p19-step-label" x="34" y="12" fill="var(--a7p19-indigoHi, #A5B4FC)" font-size="13" font-weight="700">ELT</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- TRAP -->
+  <g class="a7p19-panel a7p19-panel-trap" id="a7p19-panel-trap" transform="translate(24,468)">
+    <rect class="a7p19-frame" width="524" height="70" rx="14" fill="url(#a7p19-cardTrap)" stroke="var(--a7p19-border, rgba(148,163,184,0.18))" stroke-width="1.3"/>
+    <g class="a7p19-hit" id="a7p19-hit-trap" tabindex="0" role="button" aria-label="Armadilha: não trocar síndromes por idade ou semiologia">
+      <rect class="a7p19-hit-ring" x="4" y="4" width="516" height="62" rx="12" fill="none" stroke="var(--a7p19-goldHi, #FDE68A)" stroke-width="1.5" opacity="0"/>
+      <circle cx="30" cy="35" r="10" fill="var(--a7p19-gold, #FBBF24)" opacity="0.9"/>
+      <text x="30" y="39" text-anchor="middle" fill="var(--a7p19-bg0, #0B1220)" font-size="12" font-weight="800">!</text>
+      <text x="52" y="28" fill="var(--a7p19-goldHi, #FDE68A)" font-size="12.5" font-weight="700">Armadilha de prova</text>
+      <text x="52" y="48" fill="var(--a7p19-soft, #B8C0CC)" font-size="12.5" font-weight="500">Não fundir: orofacial noturna ≠ aura + automatismos · idade e semiologia comandam o trilho</text>
+    </g>
+  </g>
+
+  <!-- STATUS -->
+  <g id="a7p19-status" transform="translate(560,468)">
+    <rect width="256" height="70" rx="14" fill="var(--a7p19-card2, #152033)" stroke="var(--a7p19-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <text id="a7p19-status-k" x="16" y="26" fill="var(--a7p19-teal, #2DD4BF)" font-size="12" font-weight="700">Mapa dos dois trilhos</text>
+    <text id="a7p19-status-v" x="16" y="48" fill="var(--a7p19-soft, #B8C0CC)" font-size="12" font-weight="500">Passe nas pistas · cada uma acende um fluxo</text>
+  </g>
+
+  <!-- TOOLTIP -->
+  <g class="a7p19-tip" id="a7p19-tip" transform="translate(0,0)" opacity="0">
+    <rect id="a7p19-tip-bg" x="0" y="0" width="220" height="52" rx="10" fill="var(--a7p19-card, #111A2B)" stroke="var(--a7p19-teal, #2DD4BF)" stroke-width="1.4" opacity="0.97"/>
+    <text id="a7p19-tip-1" x="12" y="20" fill="var(--a7p19-ink, #F4F7FB)" font-size="12" font-weight="700">Pista</text>
+    <text id="a7p19-tip-2" x="12" y="38" fill="var(--a7p19-muted, #94A3B8)" font-size="11.5" font-weight="500">detalhe</text>
+  </g>
+
+  <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a7p19-root');
+  if(!root) return;
+  if(root.tagName && root.tagName.toLowerCase() === 'svg' && !root.hasAttribute('data-a7p19-ready')){
+    root.setAttribute('data-a7p19-ready', '1');
+  }
+
+  var tip = root.getElementById('a7p19-tip');
+  var tipBg = root.getElementById('a7p19-tip-bg');
+  var tip1 = root.getElementById('a7p19-tip-1');
+  var tip2 = root.getElementById('a7p19-tip-2');
+  var statusK = root.getElementById('a7p19-status-k');
+  var statusV = root.getElementById('a7p19-status-v');
+  var btnReset = root.getElementById('a7p19-btn-reset');
+  var playing = false;
+  var timers = [];
+
+  var msgs = {
+    map: {
+      k: 'Mapa dos dois trilhos',
+      v: 'Passe nas pistas · cada uma acende um fluxo',
+      tip1: 'Banco de raciocínio',
+      tip2: 'Caminhos, não spoiler',
+      accent: 'var(--a7p19-teal, #2DD4BF)',
+      focus: '',
+      phase: 'idle',
+      steps: []
+    },
+    idade: {
+      k: 'Pista: idade',
+      v: 'Criança ~3–10 a → A · Adulto → B — o primeiro filtro do trilho',
+      tip1: 'Idade separa trilhos',
+      tip2: 'Criança A · Adulto B',
+      accent: 'var(--a7p19-teal, #2DD4BF)',
+      focus: '',
+      phase: 'idle',
+      steps: ['a1','b1']
+    },
+    hora: {
+      k: 'Pista: horário',
+      v: 'Predileção pelo sono/noturno empurra para o fluxo A (rolândica)',
+      tip1: 'Noturno acende A',
+      tip2: 'Sono · orofacial',
+      accent: 'var(--a7p19-teal, #2DD4BF)',
+      focus: 'A',
+      phase: 'sleep',
+      steps: ['a2']
+    },
+    aura: {
+      k: 'Pista: aura',
+      v: 'Aura epigástrica que sobe é a porta clássica do fluxo B (ELT)',
+      tip1: 'Aura epigástrica',
+      tip2: 'Trilho B · mesial',
+      accent: 'var(--a7p19-indigo, #818CF8)',
+      focus: 'B',
+      phase: 'aura',
+      steps: ['b2']
+    },
+    dur: {
+      k: 'Pista: duração',
+      v: 'Automatismos ~1–2 min sustentam ELT — janela típica do fluxo B',
+      tip1: '1–2 minutos',
+      tip2: 'Automatismos · ELT',
+      accent: 'var(--a7p19-indigo, #818CF8)',
+      focus: 'B',
+      phase: 'auto',
+      steps: ['b4']
+    },
+    cons: {
+      k: 'Pista: consciência',
+      v: 'ON em orofacial noturna → A · Apaga após aura → B — não misture',
+      tip1: 'ON × apaga',
+      tip2: 'Separa A e B',
+      accent: 'var(--a7p19-gold, #FBBF24)',
+      focus: '',
+      phase: 'idle',
+      steps: ['a4','b3']
+    },
+    child: {
+      k: 'Fluxo A · criança',
+      v: 'Idade pediátrica abre o espectro rolândico — não o ELT do adulto',
+      tip1: 'Criança ~3–10 a',
+      tip2: 'Porta do fluxo A',
+      accent: 'var(--a7p19-teal, #2DD4BF)',
+      focus: 'A',
+      phase: 'A',
+      steps: ['a1']
+    },
+    sleep: {
+      k: 'Fluxo A · sono',
+      v: 'Crise no sono/noturna com foco face-boca: padrão de prova da rolândica',
+      tip1: 'Sono / noturno',
+      tip2: 'Orofacial no sono',
+      accent: 'var(--a7p19-teal, #2DD4BF)',
+      focus: 'A',
+      phase: 'sleep',
+      steps: ['a2']
+    },
+    oro: {
+      k: 'Fluxo A · orofacial',
+      v: 'Boca e face: semiologia focal que ancora o trilho A',
+      tip1: 'Boca / face',
+      tip2: 'Foco orofacial',
+      accent: 'var(--a7p19-teal, #2DD4BF)',
+      focus: 'A',
+      phase: 'oro',
+      steps: ['a3']
+    },
+    on: {
+      k: 'Fluxo A · ON',
+      v: 'Consciência preservada fecha o fio rolândico — não é ausência nem ELT',
+      tip1: 'Consciência ON',
+      tip2: 'Preservada',
+      accent: 'var(--a7p19-ok, #34D399)',
+      focus: 'A',
+      phase: 'on',
+      steps: ['a4']
+    },
+    roland: {
+      k: 'Destino A · Rolândica',
+      v: 'Espectro rolândico / BECTS: criança + sono + orofacial + ON',
+      tip1: 'Rolândica',
+      tip2: 'Trilho A fechado',
+      accent: 'var(--a7p19-tealHi, #5EEAD4)',
+      focus: 'A',
+      phase: 'A',
+      steps: ['a5']
+    },
+    adult: {
+      k: 'Fluxo B · adulto',
+      v: 'Adulto muda o mapa: pense mesial/temporal, não rolândica pediátrica',
+      tip1: 'Adulto',
+      tip2: 'Porta do fluxo B',
+      accent: 'var(--a7p19-indigo, #818CF8)',
+      focus: 'B',
+      phase: 'B',
+      steps: ['b1']
+    },
+    fade: {
+      k: 'Fluxo B · apaga',
+      v: 'Após a aura, a consciência se apaga — etapa clássica do ELT',
+      tip1: 'Apaga',
+      tip2: 'Pós-aura',
+      accent: 'var(--a7p19-indigo, #818CF8)',
+      focus: 'B',
+      phase: 'B',
+      steps: ['b3']
+    },
+    auto: {
+      k: 'Fluxo B · automatismos',
+      v: 'Automatismos manuais por cerca de 1–2 min — ainda focais de comportamento',
+      tip1: 'Automatismos',
+      tip2: '1–2 min · focais',
+      accent: 'var(--a7p19-indigoHi, #A5B4FC)',
+      focus: 'B',
+      phase: 'auto',
+      steps: ['b4']
+    },
+    hippo: {
+      k: 'Fluxo B · hipocampo',
+      v: 'Radar no temporal mesial / hipocampo — correlato de prova do ELT',
+      tip1: 'Hipocampo',
+      tip2: 'Mesial · ELT',
+      accent: 'var(--a7p19-indigoHi, #A5B4FC)',
+      focus: 'B',
+      phase: 'hippo',
+      steps: ['b5']
+    },
+    elt: {
+      k: 'Destino B · ELT',
+      v: 'Epilepsia do lobo temporal: aura + apaga + automatismos 1–2 min + mesial',
+      tip1: 'ELT',
+      tip2: 'Trilho B fechado',
+      accent: 'var(--a7p19-indigoHi, #A5B4FC)',
+      focus: 'B',
+      phase: 'B',
+      steps: ['b5']
+    },
+    trap: {
+      k: 'Armadilha de prova',
+      v: 'Trocar síndromes por idade ou semiologia erra o trilho — A e B não se fundem',
+      tip1: 'Não misture',
+      tip2: 'Idade + semiologia',
+      accent: 'var(--a7p19-gold, #FBBF24)',
+      focus: 'trap',
+      phase: 'idle',
+      steps: []
+    },
+    A: {
+      k: 'Fluxo A ativo',
+      v: 'Criança · sono · boca/face · consciência ON → rolândica',
+      tip1: 'Trilho A',
+      tip2: 'Rolândica',
+      accent: 'var(--a7p19-teal, #2DD4BF)',
+      focus: 'A',
+      phase: 'A',
+      steps: ['a1','a2','a3','a4','a5']
+    },
+    B: {
+      k: 'Fluxo B ativo',
+      v: 'Adulto · aura epigástrica · apaga · automatismos 1–2 min · hipocampo → ELT',
+      tip1: 'Trilho B',
+      tip2: 'ELT',
+      accent: 'var(--a7p19-indigo, #818CF8)',
+      focus: 'B',
+      phase: 'B',
+      steps: ['b1','b2','b3','b4','b5']
+    }
+  };
+
+  function setText(el, v){
+    if(!el) return;
+    while(el.firstChild) el.removeChild(el.firstChild);
+    el.appendChild(document.createTextNode(v == null ? '' : String(v)));
+  }
+
+  function reducedMotion(){
+    try {
+      return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch(e){ return false; }
+  }
+
+  function clearTimers(){
+    for(var i=0;i<timers.length;i++) clearTimeout(timers[i]);
+    timers = [];
+  }
+
+  function clearSteps(){
+    var nodes = root.querySelectorAll('.a7p19-step');
+    for(var i=0;i<nodes.length;i++) nodes[i].setAttribute('data-active', '0');
+  }
+
+  function setStepActive(id, on){
+    var el = root.getElementById(id);
+    if(el) el.setAttribute('data-active', on ? '1' : '0');
+  }
+
+  function applySteps(list){
+    clearSteps();
+    if(!list) return;
+    for(var i=0;i<list.length;i++){
+      var s = list[i];
+      if(s === 'a1') setStepActive('a7p19-step-a1', true);
+      if(s === 'a2') setStepActive('a7p19-step-a2', true);
+      if(s === 'a3') setStepActive('a7p19-step-a3', true);
+      if(s === 'a4') setStepActive('a7p19-step-a4', true);
+      if(s === 'a5') setStepActive('a7p19-step-a5', true);
+      if(s === 'b1') setStepActive('a7p19-step-b1', true);
+      if(s === 'b2') setStepActive('a7p19-step-b2', true);
+      if(s === 'b3') setStepActive('a7p19-step-b3', true);
+      if(s === 'b4') setStepActive('a7p19-step-b4', true);
+      if(s === 'b5') setStepActive('a7p19-step-b5', true);
+    }
+  }
+
+  function setFocus(f){
+    if(!f) root.removeAttribute('data-focus');
+    else root.setAttribute('data-focus', f);
+  }
+
+  function setPhase(p){
+    if(!p || p === 'idle') root.removeAttribute('data-phase');
+    else root.setAttribute('data-phase', p);
+  }
+
+  function clearChips(){
+    var chips = root.querySelectorAll('.a7p19-chip');
+    for(var i=0;i<chips.length;i++) chips[i].setAttribute('data-active', '0');
+  }
+
+  function paint(m){
+    if(!m) m = msgs.map;
+    setText(statusK, m.k);
+    setText(statusV, m.v);
+    if(statusK) statusK.setAttribute('fill', m.accent || 'var(--a7p19-teal, #2DD4BF)');
+    setFocus(m.focus || '');
+    setPhase(m.phase || 'idle');
+    applySteps(m.steps || []);
+  }
+
+  function svgPoint(clientX, clientY){
+    var pt = root.createSVGPoint();
+    pt.x = clientX; pt.y = clientY;
+    var ctm = root.getScreenCTM();
+    if(!ctm) return {x: 40, y: 40};
+    return pt.matrixTransform(ctm.inverse());
+  }
+
+  function showTip(clientX, clientY, t1, t2, stroke){
+    if(!tip) return;
+    setText(tip1, t1 || '');
+    setText(tip2, t2 || '');
+    if(tipBg) tipBg.setAttribute('stroke', stroke || 'var(--a7p19-teal, #2DD4BF)');
+    var p = svgPoint(clientX, clientY);
+    var x = p.x + 16;
+    var y = p.y + 16;
+    if(x > 600) x = p.x - 236;
+    if(y > 540) y = p.y - 64;
+    if(x < 8) x = 8;
+    if(y < 8) y = 8;
+    tip.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+    tip.setAttribute('opacity', '1');
+  }
+
+  function hideTip(){
+    if(tip) tip.setAttribute('opacity', '0');
+  }
+
+  function activate(key, ev){
+    var m = msgs[key] || msgs.map;
+    paint(m);
+    clearChips();
+    var chipMap = {
+      idade: 'a7p19-chip-idade',
+      hora: 'a7p19-chip-hora',
+      aura: 'a7p19-chip-aura',
+      dur: 'a7p19-chip-dur',
+      cons: 'a7p19-chip-cons'
+    };
+    if(chipMap[key]){
+      var c = root.getElementById(chipMap[key]);
+      if(c) c.setAttribute('data-active', '1');
+    }
+    if(ev && (ev.clientX || ev.clientY)){
+      showTip(ev.clientX, ev.clientY, m.tip1, m.tip2, m.accent);
+    }
+  }
+
+  function resetAll(){
+    clearTimers();
+    playing = false;
+    clearChips();
+    paint(msgs.map);
+    hideTip();
+  }
+
+  function bindHover(el, key){
+    if(!el) return;
+    el.addEventListener('pointerenter', function(ev){ activate(key, ev); });
+    el.addEventListener('pointermove', function(ev){
+      var m = msgs[key] || msgs.map;
+      showTip(ev.clientX, ev.clientY, m.tip1, m.tip2, m.accent);
+    });
+    el.addEventListener('pointerleave', function(){ hideTip(); });
+    el.addEventListener('click', function(ev){ activate(key, ev); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        activate(key, null);
+      }
+    });
+  }
+
+  bindHover(root.getElementById('a7p19-chip-idade'), 'idade');
+  bindHover(root.getElementById('a7p19-chip-hora'), 'hora');
+  bindHover(root.getElementById('a7p19-chip-aura'), 'aura');
+  bindHover(root.getElementById('a7p19-chip-dur'), 'dur');
+  bindHover(root.getElementById('a7p19-chip-cons'), 'cons');
+
+  bindHover(root.getElementById('a7p19-hit-child'), 'A');
+  bindHover(root.getElementById('a7p19-hit-adult'), 'B');
+  bindHover(root.getElementById('a7p19-hit-trap'), 'trap');
+
+  bindHover(root.getElementById('a7p19-step-a1'), 'child');
+  bindHover(root.getElementById('a7p19-step-a2'), 'sleep');
+  bindHover(root.getElementById('a7p19-step-a3'), 'oro');
+  bindHover(root.getElementById('a7p19-step-a4'), 'on');
+  bindHover(root.getElementById('a7p19-step-a5'), 'roland');
+
+  bindHover(root.getElementById('a7p19-step-b1'), 'adult');
+  bindHover(root.getElementById('a7p19-step-b2'), 'aura');
+  bindHover(root.getElementById('a7p19-step-b3'), 'fade');
+  bindHover(root.getElementById('a7p19-step-b4'), 'auto');
+  bindHover(root.getElementById('a7p19-step-b5'), 'elt');
+
+  if(btnReset){
+    btnReset.addEventListener('click', function(){ resetAll(); });
+    btnReset.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        resetAll();
+      }
+    });
+  }
+
+  root.addEventListener('pointerleave', hideTip);
+  resetAll();
+})();
+  ]]></script>
+</svg>
+
+    <figcaption><strong>Dois fluxos de caso</strong> — o noturno orofacial (rolândica) e o de automatismos de 1–2 min (ELT). O banco amarra a semiologia ao rótulo sindrômico.</figcaption>
+  </figure>
+
+  <!-- IMAGEM REAL B19: EEG IEDs centro-temporais no sono -->
+  <figure class="frame">
+    <img class="frame__media" src="media/B19-CT-IEDs-sleep-Datta-MDPI-fig2.png" alt="Traçado de EEG com descargas epileptiformes interictais centro-temporais frequentes durante o sono, assinatura eletrográfica das espículas da rolândica exacerbadas no sono." loading="lazy">
+    <figcaption><strong>EEG — IEDs centro-temporais no sono</strong>: o traçado do caso 1, com as espículas que se exacerbam no sono — o achado que separa a rolândica do terror noturno.
+      <span class="atr">Datta, <cite>J Clin Med</cite> 2025 · CC BY 4.0 · PMC12653129, Fig. 2 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12653129/" target="_blank" rel="noopener">fonte</a></span>
+    </figcaption>
+  </figure>
+
+  <div class="card card--membrane">
+    <h3 class="card__titulo">Resumo operacional</h3>
+    <p>As síndromes são os grandes marcadores de prova depois da base conceitual; rolândica e ELT têm semiologia e EEG próprios.</p>
+  </div>
+
+  <div class="card card--amber">
+    <h3 class="card__titulo">Por que importa</h3>
+    <p>Confundir rolândica com terror noturno ou ELT com TCG leva ao rótulo — e à droga — errados.</p>
+  </div>
+
+  <section class="quiz" aria-label="Quiz da página">
+    <h3>Quiz</h3>
+    <form class="quiz__q" data-quiz data-gabarito="B" data-quiz-id="a7-p19-q1">
+      <p class="quiz__enun">1. No menino de 7 anos noturno orofacial com EEG centro-temporal, o melhor rótulo:</p>
+      <ul class="quiz__alts">
+        <li><label class="alt"><input type="radio" name="a7p19q1" value="A"><span>A) Terror noturno</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p19q1" value="B"><span>B) Rolândica / BECTS</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p19q1" value="C"><span>C) AIT</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p19q1" value="D"><span>D) West</span></label></li>
+      </ul>
+      <button class="quiz__btn" type="button" data-quiz-verificar>Verificar resposta</button>
+      <span class="quiz__live" data-quiz-live role="status" aria-live="polite"></span>
+      <div class="quiz__explicacao" data-quiz-explicacao hidden>
+        <p><strong class="kw kw--verde">Gabarito: B.</strong> Idade, foco orofacial noturno, consciência preservada e espículas centro-temporais no sono fecham a rolândica. <strong>(A)</strong> terror noturno tem amnésia e não tem dormência orofacial. <strong>(C)</strong> AIT é forçação em criança com padrão clássico. <strong>(D)</strong> West é de lactente com espasmos/hipsarritmia.</p>
+      </div>
+    </form>
+
+    <form class="quiz__q" data-quiz data-gabarito="B" data-quiz-id="a7-p19-q2">
+      <p class="quiz__enun">2. Mulher de 40 anos com automatismos de 1–2 min + pós-ictal; 1ª linha de discurso:</p>
+      <ul class="quiz__alts">
+        <li><label class="alt"><input type="radio" name="a7p19q2" value="A"><span>A) Etosuximida</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p19q2" value="B"><span>B) Carbamazepina</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p19q2" value="C"><span>C) Só observação sem classificar</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p19q2" value="D"><span>D) ACTH</span></label></li>
+      </ul>
+      <button class="quiz__btn" type="button" data-quiz-verificar>Verificar resposta</button>
+      <span class="quiz__live" data-quiz-live role="status" aria-live="polite"></span>
+      <div class="quiz__explicacao" data-quiz-explicacao hidden>
+        <p><strong class="kw kw--verde">Gabarito: B.</strong> É focal com perda de consciência (ELT) — carbamazepina (ou oxcarbazepina). <strong>(A)</strong> etosuximida é da ausência. <strong>(C)</strong> não classificar é não tratar. <strong>(D)</strong> ACTH é do West.</p>
+      </div>
+    </form>
+  </section>
+
+  <div class="card card--membrane">
+    <h3 class="card__titulo">Conexão</h3>
+    <p>Ainda faltam ausência, TCG adulto e o DDx de porta — síncope, psicogênica e as fronteiras do eixo.</p>
+  </div>
+
+  <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="./p18.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Lobo temporal: aura epigástrica, automatismos e hipocampo</span></a><a class="next" href="./p20.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Banco II — ausência, TCG adulto, DDx e fronteiras do eixo</span></a></nav>
+</article>
+</main>
+<footer class="rodape">Epilepsia — Aula 7 · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Aula 7 · 20 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="./index.html"><span class="menu-panel__index">01</span><span>João e o desligar que a Ritalina não explicou</span></a></li>
+      <li><a class="menu-panel__link" href="./p2.html"><span class="menu-panel__index">02</span><span>Qualquer súbito e transitório entra no diferencial</span></a></li>
+      <li><a class="menu-panel__link" href="./p3.html"><span class="menu-panel__index">03</span><span>Epilepsia em três vias — e o que uma crise única não prova</span></a></li>
+      <li><a class="menu-panel__link" href="./p4.html"><span class="menu-panel__index">04</span><span>Provocada × não provocada: a meningite dual</span></a></li>
+      <li><a class="menu-panel__link" href="./p5.html"><span class="menu-panel__index">05</span><span>A alma da crise: hiperexcitação por domínio</span></a></li>
+      <li><a class="menu-panel__link" href="./p6.html"><span class="menu-panel__index">06</span><span>AED deprime; o que falta no comprimido é adesão</span></a></li>
+      <li><a class="menu-panel__link" href="./p7.html"><span class="menu-panel__index">07</span><span>Etiologia por idade: o tabelão que muda a conduta</span></a></li>
+      <li><a class="menu-panel__link" href="./p8.html"><span class="menu-panel__index">08</span><span>O início classifica — dois braços na rua não fecham generalizada</span></a></li>
+      <li><a class="menu-panel__link" href="./p9.html"><span class="menu-panel__index">09</span><span>TCG: tônico, clônico (fadiga) e o marco dos 5 minutos</span></a></li>
+      <li><a class="menu-panel__link" href="./p10.html"><span class="menu-panel__index">10</span><span>Mioclônica, atônica e ausência: três generalizadas que não são TCG</span></a></li>
+      <li><a class="menu-panel__link" href="./p11.html"><span class="menu-panel__index">11</span><span>Anamnese, ponta-onda e quando a RM é inegociável</span></a></li>
+      <li><a class="menu-panel__link" href="./p12.html"><span class="menu-panel__index">12</span><span>Tratar = epiléptico: monoterapia, nível sérico e quando parar</span></a></li>
+      <li><a class="menu-panel__link" href="./p13.html"><span class="menu-panel__index">13</span><span>Tabelão AED: a mesma droga salva a focal e piora a mioclonia</span></a></li>
+      <li><a class="menu-panel__link" href="./p14.html"><span class="menu-panel__index">14</span><span>West e Lennox-Gastaut: espasmo, hipsarritmia e o 20%</span></a></li>
+      <li><a class="menu-panel__link" href="./p15.html"><span class="menu-panel__index">15</span><span>Ausência infantil: 3 Hz, hiperventilação e o João resolvido</span></a></li>
+      <li><a class="menu-panel__link" href="./p16.html"><span class="menu-panel__index">16</span><span>Rolândica: boca, sono e “às vezes só acompanhar”</span></a></li>
+      <li><a class="menu-panel__link" href="./p17.html"><span class="menu-panel__index">17</span><span>Mioclônica juvenil: susto ao despertar e 4–6 Hz</span></a></li>
+      <li><a class="menu-panel__link" href="./p18.html"><span class="menu-panel__index">18</span><span>Lobo temporal: aura epigástrica, automatismos e hipocampo</span></a></li>
+      <li><a class="menu-panel__link" href="./p19.html" aria-current="page"><span class="menu-panel__index">19</span><span>Banco de raciocínio I — rolândica e ELT</span></a></li>
+      <li><a class="menu-panel__link" href="./p20.html"><span class="menu-panel__index">20</span><span>Banco II — ausência, TCG adulto, DDx e fronteiras do eixo</span></a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,677 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" class="a12p1-root" data-svg-tokenized="true" data-active="all" role="img" aria-labelledby="a12p1-title a12p1-desc">
+  <title id="a12p1-title">Anatomia Topográfica e Decisão Clínica na Pelve Feminina</title>
+  <desc id="a12p1-desc">Ilustração médica interativa mapeando 4 territórios pélvicos e os respectivos impactos na conduta cirúrgica e médica.</desc>
+
+  <defs>
+    <!-- Filter effects namespaced -->
+    <filter id="a12p1-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1-glow-ameixa" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1-glow-suporte" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1-glow-linha" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .a12p1-root {
+      --a12p1-bg: var(--bg-1, #141017);
+      --a12p1-tinta: var(--a12-tinta, var(--a12p1-tinta-local, #F7F1F5));
+      --a12p1-osso: var(--a12-osso, var(--a12p1-osso-local, #D9C4B2));
+      --a12p1-hemorragia: var(--a12-coral, var(--a12p1-hemorragia-local, #F06A78));
+      --a12p1-endometriose: var(--a12-ameixa, var(--a12p1-endometriose-local, #9B6BC2));
+      --a12p1-suporte: var(--a12-petroleo-claro, var(--a12p1-suporte-local, #4CB7B0));
+      --a12p1-linha: var(--a12-linha, var(--a12p1-linha-local, #A99BA6));
+      --a12p1-panel-bg: var(--bg-2, #1C1622);
+      --a12p1-panel-border: var(--ink-20, #3A2F45);
+      --a12p1-panel-card-bg: var(--bg-3, #251E2D);
+      --a12p1-subtext: var(--ink-70, #C5B9C9);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-1, var(--a12p1-bg-fallback, #141017));
+    }
+
+    [data-theme="light"] .a12p1-root {
+      --a12p1-bg: var(--bg-1, #F8F6F9);
+      --a12p1-tinta: var(--a12-tinta, var(--a12p1-tinta-local, #1C1622));
+      --a12p1-osso: var(--a12-osso, var(--a12p1-osso-local, #8A725D));
+      --a12p1-hemorragia: var(--a12-coral, var(--a12p1-hemorragia-local, #D93848));
+      --a12p1-endometriose: var(--a12-ameixa, var(--a12p1-endometriose-local, #7B44A8));
+      --a12p1-suporte: var(--a12-petroleo-claro, var(--a12p1-suporte-local, #268C85));
+      --a12p1-linha: var(--a12-linha, var(--a12p1-linha-local, #6E5E6C));
+      --a12p1-panel-bg: var(--bg-2, #FFFFFF);
+      --a12p1-panel-border: var(--ink-20, #E4DCE6);
+      --a12p1-panel-card-bg: var(--bg-3, #F2EDF3);
+      --a12p1-subtext: var(--ink-70, #4D4252);
+    }
+
+    .a12p1-title-main {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      fill: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+    }
+
+    .a12p1-title-sub {
+      font-size: 12px;
+      font-weight: 500;
+      fill: var(--a12-linha, var(--a12p1-linha, #A99BA6));
+    }
+
+    /* Pelvic Girdle and Anatomical Background */
+    .a12p1-pelvis-bone {
+      fill: none;
+      stroke: var(--a12-osso, var(--a12p1-osso, #D9C4B2));
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.55;
+    }
+
+    .a12p1-pelvis-soft {
+      fill: none;
+      stroke: var(--a12-linha, var(--a12p1-linha, #A99BA6));
+      stroke-width: 1.25;
+      stroke-dasharray: 4 3;
+      opacity: 0.35;
+    }
+
+    /* Interactive Territory Shapes */
+    .a12p1-territory {
+      cursor: pointer;
+      transition: opacity 0.25s ease, stroke-width 0.25s ease, filter 0.25s ease;
+      outline: none;
+    }
+
+    .a12p1-territory:hover, .a12p1-territory:focus-visible {
+      stroke-width: 2.5px;
+    }
+
+    .a12p1-territory:focus-visible {
+      stroke-dasharray: 6 3;
+    }
+
+    /* State-based Opacity and Highlight Control */
+    .a12p1-root[data-active="hemorragia"] .a12p1-territory:not([data-id="hemorragia"]),
+    .a12p1-root[data-active="cirurgia"] .a12p1-territory:not([data-id="cirurgia"]),
+    .a12p1-root[data-active="endometriose"] .a12p1-territory:not([data-id="endometriose"]),
+    .a12p1-root[data-active="prolapso"] .a12p1-territory:not([data-id="prolapso"]) {
+      opacity: 0.22 !important;
+    }
+
+    .a12p1-root[data-active="hemorragia"] .a12p1-leader-group:not([data-id="hemorragia"]),
+    .a12p1-root[data-active="cirurgia"] .a12p1-leader-group:not([data-id="cirurgia"]),
+    .a12p1-root[data-active="endometriose"] .a12p1-leader-group:not([data-id="endometriose"]),
+    .a12p1-root[data-active="prolapso"] .a12p1-leader-group:not([data-id="prolapso"]) {
+      opacity: 0.3 !important;
+    }
+
+    .a12p1-root[data-active="hemorragia"] .a12p1-territory[data-id="hemorragia"],
+    .a12p1-root[data-active="cirurgia"] .a12p1-territory[data-id="cirurgia"],
+    .a12p1-root[data-active="endometriose"] .a12p1-territory[data-id="endometriose"],
+    .a12p1-root[data-active="prolapso"] .a12p1-territory[data-id="prolapso"] {
+      opacity: 1.0 !important;
+      stroke-width: 3px !important;
+    }
+
+    /* Leader Lines and Label Boxes */
+    .a12p1-leader-line {
+      fill: none;
+      stroke-width: 1.5;
+      stroke-dasharray: 3 3;
+      transition: opacity 0.25s ease, stroke-width 0.25s ease;
+    }
+
+    .a12p1-label-box {
+      rx: 6;
+      ry: 6;
+      stroke-width: 1.25;
+      cursor: pointer;
+      transition: opacity 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
+    }
+
+    .a12p1-label-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .a12p1-label-sub {
+      font-size: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      fill: var(--a12-linha, var(--a12p1-linha, #A99BA6));
+    }
+
+    /* Right Panel Styles */
+    .a12p1-panel-bg-rect {
+      fill: var(--a12p1-panel-bg, #1C1622);
+      stroke: var(--a12p1-panel-border, #3A2F45);
+      stroke-width: 1;
+      rx: 10;
+      ry: 10;
+    }
+
+    .a12p1-tab-btn {
+      cursor: pointer;
+      rx: 5;
+      ry: 5;
+      stroke-width: 1;
+      transition: fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease;
+      outline: none;
+    }
+
+    .a12p1-tab-btn:focus-visible {
+      stroke-width: 2px;
+      stroke: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+    }
+
+    .a12p1-tab-text {
+      font-size: 10px;
+      font-weight: 700;
+      text-anchor: middle;
+      cursor: pointer;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .a12p1-card-bg {
+      fill: var(--a12p1-panel-card-bg, #251E2D);
+      stroke: var(--a12p1-panel-border, #3A2F45);
+      stroke-width: 1;
+      rx: 8;
+      ry: 8;
+    }
+
+    .a12p1-card {
+      display: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .a12p1-root[data-active="all"] .a12p1-card[data-id="all"],
+    .a12p1-root[data-active="hemorragia"] .a12p1-card[data-id="hemorragia"],
+    .a12p1-root[data-active="cirurgia"] .a12p1-card[data-id="cirurgia"],
+    .a12p1-root[data-active="endometriose"] .a12p1-card[data-id="endometriose"],
+    .a12p1-root[data-active="prolapso"] .a12p1-card[data-id="prolapso"] {
+      display: block;
+    }
+
+    /* Active tab button highlight */
+    .a12p1-root[data-active="all"] .a12p1-tab-btn[data-id="all"],
+    .a12p1-root[data-active="hemorragia"] .a12p1-tab-btn[data-id="hemorragia"],
+    .a12p1-root[data-active="cirurgia"] .a12p1-tab-btn[data-id="cirurgia"],
+    .a12p1-root[data-active="endometriose"] .a12p1-tab-btn[data-id="endometriose"],
+    .a12p1-root[data-active="prolapso"] .a12p1-tab-btn[data-id="prolapso"] {
+      stroke-width: 2px !important;
+      opacity: 1.0 !important;
+    }
+
+    .a12p1-card-header {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .a12p1-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      fill: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+    }
+
+    .a12p1-card-val {
+      font-size: 11px;
+      font-weight: 500;
+      fill: var(--a12p1-subtext, #C5B9C9);
+    }
+
+    .a12p1-badge {
+      rx: 4;
+      ry: 4;
+    }
+
+    .a12p1-badge-text {
+      font-size: 9.5px;
+      font-weight: 700;
+      fill: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+      text-anchor: middle;
+    }
+
+    .a12p1-footer-text {
+      font-size: 11px;
+      font-weight: 600;
+      fill: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+    }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect x="0" y="0" width="960" height="620" fill="var(--bg-1, var(--a12p1-bg-fallback, #141017))" />
+
+  <!-- HEADER -->
+  <g transform="translate(40, 35)">
+    <text x="0" y="0" class="a12p1-title-main">TOPOGRAFIA DA PELVE &amp; DECISÃO CLÍNICA</text>
+    <text x="0" y="20" class="a12p1-title-sub">Quatro endereços pélvicos específicos determinam quatro grupos de conduta médica e cirúrgica independentes.</text>
+  </g>
+
+  <!-- PELVIC MAP &amp; ANATOMY STAGE (Left/Center: x=40 to 560, y=70 to 520) -->
+  <g id="a12p1-pelvis-stage">
+    <!-- Outer Stage Frame / Grid Guide -->
+    <rect x="40" y="70" width="520" height="450" rx="10" ry="10" fill="none" stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" stroke-width="1" opacity="0.2" />
+
+    <!-- Pelvic Bone Contour (Simplified Frontal Silhouette) -->
+    <g class="a12p1-pelvis-bone">
+      <!-- Sacrum / Spine Central Axis -->
+      <path d="M290,115 L290,175 M280,125 L300,125 M282,140 L298,140 M284,155 L296,155 M286,170 L294,170" />
+      <!-- Iliac Crest Left -->
+      <path d="M280,125 C220,110 160,140 145,190 C135,225 150,260 175,285 C190,300 205,310 220,335" />
+      <!-- Iliac Crest Right -->
+      <path d="M300,125 C360,110 420,140 435,190 C445,225 430,260 405,285 C390,300 375,310 360,335" />
+      <!-- Pelvic Brim / Inlet Ring -->
+      <path d="M220,235 C220,200 360,200 360,235 C360,280 220,280 220,235 Z" stroke-dasharray="3 3" opacity="0.4" />
+      <!-- Acetabulum &amp; Ischial Spines Left -->
+      <path d="M175,285 C165,310 170,340 190,360 C210,380 225,410 240,430" />
+      <!-- Acetabulum &amp; Ischial Spines Right -->
+      <path d="M405,285 C415,310 410,340 390,360 C370,380 355,410 340,430" />
+      <!-- Pubic Symphysis &amp; Arch -->
+      <path d="M240,430 C265,445 290,447 290,447 C290,447 315,445 340,430 M290,425 L290,447" />
+    </g>
+
+    <!-- Soft Anatomical Guide Lines (Orientational backdrop - Unlabeled organs/axises) -->
+    <g class="a12p1-pelvis-soft">
+      <!-- Uterine / Vaginal Axis Contour -->
+      <path d="M290,200 C265,200 265,260 275,300 C280,325 285,360 290,380 C295,360 300,325 305,300 C315,260 315,200 290,200 Z" />
+      <!-- Broad Ligament / Parametrial Lateral Wings -->
+      <path d="M210,245 C240,245 265,240 265,250 M370,245 C340,245 315,240 315,250" />
+      <!-- Bladder Anterior Curve -->
+      <path d="M245,340 C270,325 310,325 335,340" />
+      <!-- Rectum Posterior Line -->
+      <path d="M290,175 C310,210 315,270 310,330" />
+    </g>
+
+    <!-- 4 CLINICAL TERRITORIES (INTERACTIVE TARGETS) -->
+    <!-- Territory 1: Hemorragia pós-parto (Zona Miometrial / Vascular Inferior) -->
+    <g class="a12p1-territory" data-id="hemorragia" role="button" tabindex="0" aria-label="Território de Hemorragia pós-parto: Zona miometrial e vascular inferior" filter="url(#a12p1-glow-coral)">
+      <!-- Outer Pulsing Segment -->
+      <path d="M262,215 C262,198 275,188 290,188 C305,188 318,198 318,215 C318,245 308,272 290,272 C272,272 262,245 262,215 Z" 
+            fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" fill-opacity="0.3"
+            stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" stroke-width="2" />
+      <!-- Inner Core Vascular Pattern -->
+      <circle cx="290" cy="225" r="14" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" fill-opacity="0.5" />
+      <path d="M282,225 L298,225 M290,217 L290,233" stroke="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))" stroke-width="2" />
+    </g>
+
+    <!-- Territory 2: Cirurgia ginecológica + sangramento estrutural (Zona Retroperitoneal / Parede Lateral) -->
+    <g class="a12p1-territory" data-id="cirurgia" role="button" tabindex="0" aria-label="Território de Cirurgia ginecológica e sangramento estrutural: Parede pélvica lateral e espaço retroperitoneal" filter="url(#a12p1-glow-linha)">
+      <!-- Left Sidewall Band -->
+      <path d="M192,250 C185,280 190,320 208,345 C220,335 218,295 208,255 Z" 
+            fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" fill-opacity="0.35"
+            stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" stroke-width="2" />
+      <!-- Right Sidewall Band -->
+      <path d="M388,250 C395,280 390,320 372,345 C360,335 362,295 372,255 Z" 
+            fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" fill-opacity="0.35"
+            stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" stroke-width="2" />
+      <!-- Danger Cross Hashing Marks -->
+      <path d="M195,270 L205,280 M195,300 L205,310 M375,270 L385,280 M375,300 L385,310" stroke="var(--a12-osso, var(--a12p1-osso, #D9C4B2))" stroke-width="1.75" />
+    </g>
+
+    <!-- Territory 3: Endometriose (Zona Posterior / Fundo de Saco / Septo Retovaginal) -->
+    <g class="a12p1-territory" data-id="endometriose" role="button" tabindex="0" aria-label="Território de Endometriose: Fundo de saco posterior e compartimento retovaginal" filter="url(#a12p1-glow-ameixa)">
+      <!-- Posterior Cul-de-Sac Crescent -->
+      <path d="M298,280 C322,280 348,292 354,312 C358,332 332,348 304,342 C324,324 316,298 298,280 Z" 
+            fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" fill-opacity="0.4"
+            stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" stroke-width="2" />
+      <!-- Nodular Focal Marks -->
+      <circle cx="330" cy="310" r="5" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+      <circle cx="340" cy="324" r="4" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+    </g>
+
+    <!-- Territory 4: Incontinência urinária + prolapso (Zona Anterior / Assoalho Pélvico / Suporte Apical) -->
+    <g class="a12p1-territory" data-id="prolapso" role="button" tabindex="0" aria-label="Território de Incontinência urinária e prolapso: Compartimento anterior e assoalho pélvico" filter="url(#a12p1-glow-suporte)">
+      <!-- Pelvic Floor Support Hammock -->
+      <path d="M225,365 C255,392 325,392 355,365 C368,388 340,418 290,418 C240,418 212,388 225,365 Z" 
+            fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" fill-opacity="0.4"
+            stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" stroke-width="2" />
+      <!-- Support Vector Lines -->
+      <path d="M250,380 Q290,400 330,380" fill="none" stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" stroke-width="2" stroke-dasharray="4 2" />
+    </g>
+
+    <!-- LEADER LINES &amp; OUTSIDE LABEL BOXES (STRICTLY NON-CROSSING) -->
+
+    <!-- Label 1: Hemorragia pós-parto (Top Left) -->
+    <g class="a12p1-leader-group" data-id="hemorragia">
+      <!-- Leader Line: Outside shape from (260,200) -> (210,155) -> (180,133) -->
+      <path d="M260,200 L210,155 L180,133" class="a12p1-leader-line" stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+      <circle cx="260" cy="200" r="3" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+      
+      <!-- Label Box -->
+      <g transform="translate(50, 95)" class="a12p1-territory" data-id="hemorragia" role="button" tabindex="0" aria-label="Selecionar Hemorragia pós-parto">
+        <rect x="0" y="0" width="220" height="64" class="a12p1-label-box" 
+              fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+              stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+        <rect x="0" y="0" width="6" height="64" rx="3" ry="3" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+        <text x="16" y="24" class="a12p1-label-title" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">Hemorragia pós-parto</text>
+        <text x="16" y="42" class="a12p1-label-sub">Segmento uterino &amp; miométrio</text>
+        <text x="16" y="54" class="a12p1-label-sub">Falha de hemostasia miometrial</text>
+      </g>
+    </g>
+
+    <!-- Label 2: Cirurgia ginecológica + sangramento estrutural (Bottom Left) -->
+    <g class="a12p1-leader-group" data-id="cirurgia">
+      <!-- Leader Line: Outside shape from (190,300) -> (140,360) -> (180,440) -->
+      <path d="M190,300 L140,360 L180,440" class="a12p1-leader-line" stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+      <circle cx="190" cy="300" r="3" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+
+      <!-- Label Box -->
+      <g transform="translate(50, 435)" class="a12p1-territory" data-id="cirurgia" role="button" tabindex="0" aria-label="Selecionar Cirurgia ginecológica e sangramento estrutural">
+        <rect x="0" y="0" width="220" height="64" class="a12p1-label-box" 
+              fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+              stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+        <rect x="0" y="0" width="6" height="64" rx="3" ry="3" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+        <text x="16" y="20" class="a12p1-label-title" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">Cirurgia ginecológica &amp;</text>
+        <text x="16" y="34" class="a12p1-label-title" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))">sangramento estrutural</text>
+        <text x="16" y="52" class="a12p1-label-sub">Parede lateral &amp; retroperitônio</text>
+      </g>
+    </g>
+
+    <!-- Label 3: Endometriose (Top Right / Mid Right) -->
+    <g class="a12p1-leader-group" data-id="endometriose">
+      <!-- Leader Line: Outside shape from (355,310) -> (395,230) -> (370,158) -->
+      <path d="M355,310 L395,230 L370,158" class="a12p1-leader-line" stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+      <circle cx="355" cy="310" r="3" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+
+      <!-- Label Box -->
+      <g transform="translate(330, 95)" class="a12p1-territory" data-id="endometriose" role="button" tabindex="0" aria-label="Selecionar Endometriose">
+        <rect x="0" y="0" width="210" height="64" class="a12p1-label-box" 
+              fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+              stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+        <rect x="0" y="0" width="6" height="64" rx="3" ry="3" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+        <text x="16" y="24" class="a12p1-label-title" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">Endometriose</text>
+        <text x="16" y="42" class="a12p1-label-sub">Fundo de saco posterior &amp;</text>
+        <text x="16" y="54" class="a12p1-label-sub">compartimento retovaginal</text>
+      </g>
+    </g>
+
+    <!-- Label 4: Incontinência urinária + prolapso (Bottom Right) -->
+    <g class="a12p1-leader-group" data-id="prolapso">
+      <!-- Leader Line: Outside shape from (355,385) -> (385,410) -> (360,435) -->
+      <path d="M355,385 L385,410 L360,435" class="a12p1-leader-line" stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+      <circle cx="355" cy="385" r="3" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+
+      <!-- Label Box -->
+      <g transform="translate(330, 435)" class="a12p1-territory" data-id="prolapso" role="button" tabindex="0" aria-label="Selecionar Incontinência urinária e prolapso">
+        <rect x="0" y="0" width="210" height="64" class="a12p1-label-box" 
+              fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+              stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+        <rect x="0" y="0" width="6" height="64" rx="3" ry="3" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+        <text x="16" y="20" class="a12p1-label-title" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">Incontinência urinária &amp;</text>
+        <text x="16" y="34" class="a12p1-label-title" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">prolapso</text>
+        <text x="16" y="52" class="a12p1-label-sub">Assoalho pélvico &amp; suporte</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT READING PANEL (x=580 to 920, y=70 to 520) -->
+  <g id="a12p1-reading-panel" transform="translate(580, 70)">
+    <!-- Panel Background Card -->
+    <rect x="0" y="0" width="340" height="450" class="a12p1-panel-bg-rect" />
+
+    <!-- Panel Header Title -->
+    <text x="20" y="30" class="a12p1-card-header" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">PAINEL DE LEITURA TOPOGRÁFICA</text>
+    <line x1="20" y1="42" x2="320" y2="42" stroke="var(--a12p1-panel-border, #3A2F45)" stroke-width="1" />
+
+    <!-- Interactive Filter Selector Tabs -->
+    <g transform="translate(20, 52)">
+      <!-- Tab All -->
+      <g class="a12p1-tab-btn" data-id="all" role="button" tabindex="0" aria-label="Ver todos os territórios">
+        <rect x="0" y="0" width="56" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" opacity="0.8" />
+        <text x="28" y="16" class="a12p1-tab-text" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">TODOS</text>
+      </g>
+      <!-- Tab Hemorragia -->
+      <g transform="translate(60, 0)" class="a12p1-tab-btn" data-id="hemorragia" role="button" tabindex="0" aria-label="Filtrar Hemorragia">
+        <rect x="0" y="0" width="56" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" opacity="0.6" />
+        <text x="28" y="16" class="a12p1-tab-text" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">HEMO</text>
+      </g>
+      <!-- Tab Cirurgia -->
+      <g transform="translate(120, 0)" class="a12p1-tab-btn" data-id="cirurgia" role="button" tabindex="0" aria-label="Filtrar Cirurgia">
+        <rect x="0" y="0" width="56" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" opacity="0.6" />
+        <text x="28" y="16" class="a12p1-tab-text" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))">CIRURGIA</text>
+      </g>
+      <!-- Tab Endometriose -->
+      <g transform="translate(180, 0)" class="a12p1-tab-btn" data-id="endometriose" role="button" tabindex="0" aria-label="Filtrar Endometriose">
+        <rect x="0" y="0" width="56" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" opacity="0.6" />
+        <text x="28" y="16" class="a12p1-tab-text" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">ENDOM</text>
+      </g>
+      <!-- Tab Prolapso -->
+      <g transform="translate(240, 0)" class="a12p1-tab-btn" data-id="prolapso" role="button" tabindex="0" aria-label="Filtrar Prolapso e Incontinência">
+        <rect x="0" y="0" width="60" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" opacity="0.6" />
+        <text x="30" y="16" class="a12p1-tab-text" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">PROLAPSO</text>
+      </g>
+    </g>
+
+    <!-- CARD CONTENT AREA (x=20, y=90, width=300, height=340) -->
+
+    <!-- CARD 0: ALL (Overview State) -->
+    <g class="a12p1-card" data-id="all" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" />
+      <text x="16" y="26" class="a12p1-card-header" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">VISÃO GERAL DOS 4 ENDEREÇOS</text>
+      <text x="16" y="44" class="a12p1-card-val">Selecione uma área no mapa ou nos botões</text>
+      <text x="16" y="58" class="a12p1-card-val">para isolar a análise médica e cirúrgica.</text>
+      
+      <!-- Mini Summary Rows -->
+      <!-- Row 1 -->
+      <g transform="translate(16, 75)">
+        <rect x="0" y="0" width="268" height="54" rx="6" ry="6" fill="var(--bg-1, #141017)" stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" stroke-width="0.75" />
+        <circle cx="15" cy="27" r="6" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+        <text x="30" y="22" class="a12p1-card-label" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">Hemorragia pós-parto</text>
+        <text x="30" y="38" class="a12p1-card-val">Segmento inferior &amp; miométrio: atonia e hemostasia</text>
+      </g>
+      <!-- Row 2 -->
+      <g transform="translate(16, 137)">
+        <rect x="0" y="0" width="268" height="54" rx="6" ry="6" fill="var(--bg-1, #141017)" stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" stroke-width="0.75" />
+        <circle cx="15" cy="27" r="6" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+        <text x="30" y="22" class="a12p1-card-label" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">Cirurgia ginecológica + sangramento</text>
+        <text x="30" y="38" class="a12p1-card-val">Parede lateral &amp; retroperitônio: ureter e vasos</text>
+      </g>
+      <!-- Row 3 -->
+      <g transform="translate(16, 199)">
+        <rect x="0" y="0" width="268" height="54" rx="6" ry="6" fill="var(--bg-1, #141017)" stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" stroke-width="0.75" />
+        <circle cx="15" cy="27" r="6" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+        <text x="30" y="22" class="a12p1-card-label" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">Endometriose profunda</text>
+        <text x="30" y="38" class="a12p1-card-val">Compartimento posterior: retovaginal e fibrose</text>
+      </g>
+      <!-- Row 4 -->
+      <g transform="translate(16, 261)">
+        <rect x="0" y="0" width="268" height="54" rx="6" ry="6" fill="var(--bg-1, #141017)" stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" stroke-width="0.75" />
+        <circle cx="15" cy="27" r="6" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+        <text x="30" y="22" class="a12p1-card-label" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">Incontinência + prolapso</text>
+        <text x="30" y="38" class="a12p1-card-val">Assoalho pélvico: vetores de suporte e fascia</text>
+      </g>
+    </g>
+
+    <!-- CARD 1: HEMORRAGIA -->
+    <g class="a12p1-card" data-id="hemorragia" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+      
+      <!-- Title &amp; Badge -->
+      <text x="16" y="28" class="a12p1-card-header" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">HEMORRAGIA PÓS-PARTO</text>
+      <rect x="16" y="38" width="110" height="18" class="a12p1-badge" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" fill-opacity="0.25" />
+      <text x="71" y="51" class="a12p1-badge-text" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">EMERGÊNCIA VASCULAR</text>
+
+      <!-- Sections -->
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" class="a12p1-card-label">1. Endereço Anátomo-Topográfico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Segmento uterino inferior e corpo miometrial.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Leito placentário e ramos uterinos inferiores.</text>
+      </g>
+
+      <g transform="translate(16, 140)">
+        <text x="0" y="0" class="a12p1-card-label">2. Impacto e Mecanismo Clínico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Falha da ligadura fisiológica (globo de Pinard).</text>
+        <text x="0" y="30" class="a12p1-card-val">• Atonia uterina e sangramento de alto débito.</text>
+        <text x="0" y="44" class="a12p1-card-val">• Exige resposta sequencial em escala imediata.</text>
+      </g>
+
+      <g transform="translate(16, 218)">
+        <text x="0" y="0" class="a12p1-card-label">3. Regra Determinante de Decisão:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Uterotônicos → Balão de tamponamento →</text>
+        <text x="0" y="30" class="a12p1-card-val">  Suturas de compressão (B-Lynch) →</text>
+        <text x="0" y="44" class="a12p1-card-val">  Embolização ou ligadura vascular / histerectomia.</text>
+      </g>
+    </g>
+
+    <!-- CARD 2: CIRURGIA GINECOLÓGICA -->
+    <g class="a12p1-card" data-id="cirurgia" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+      
+      <text x="16" y="28" class="a12p1-card-header" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">CIRURGIA &amp; SANGRAMENTO</text>
+      <rect x="16" y="38" width="125" height="18" class="a12p1-badge" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" fill-opacity="0.25" />
+      <text x="78" y="51" class="a12p1-badge-text" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">PAREDE PÉLVICA LATERAL</text>
+
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" class="a12p1-card-label">1. Endereço Anátomo-Topográfico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Espaço retroperitoneal e parede pélvica lateral.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Trajeto do ureter e vasos ilíacos internos.</text>
+      </g>
+
+      <g transform="translate(16, 140)">
+        <text x="0" y="0" class="a12p1-card-label">2. Impacto e Mecanismo Clínico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Cruzamento crítico: artéria uterina sobre o ureter.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Risco elevado de ligadura ou laceração ureteral.</text>
+        <text x="0" y="44" class="a12p1-card-val">• Hemorragia de difícil acesso sob retroperitônio.</text>
+      </g>
+
+      <g transform="translate(16, 218)">
+        <text x="0" y="0" class="a12p1-card-label">3. Regra Determinante de Decisão:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Obrigatoriedade de abertura do espaço retroperitoneal.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Identificação visual direta do ureter antes</text>
+        <text x="0" y="44" class="a12p1-card-val">  de qualquer clampeamento vascular lateral.</text>
+      </g>
+    </g>
+
+    <!-- CARD 3: ENDOMETRIOSE -->
+    <g class="a12p1-card" data-id="endometriose" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+      
+      <text x="16" y="28" class="a12p1-card-header" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">ENDOMETRIOSE PROFUNDA</text>
+      <rect x="16" y="38" width="130" height="18" class="a12p1-badge" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" fill-opacity="0.25" />
+      <text x="81" y="51" class="a12p1-badge-text" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">COMPARTIMENTO POSTERIOR</text>
+
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" class="a12p1-card-label">1. Endereço Anátomo-Topográfico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Fundo de saco de Douglas, ligamentos uterossacros</text>
+        <text x="0" y="30" class="a12p1-card-val">  e septo retovaginal.</text>
+      </g>
+
+      <g transform="translate(16, 140)">
+        <text x="0" y="0" class="a12p1-card-label">2. Impacto e Mecanismo Clínico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Fibrose invasiva, aderências e obliteração do fundo</text>
+        <text x="0" y="30" class="a12p1-card-val">  de saco com acometimento da parede retal.</text>
+        <text x="0" y="44" class="a12p1-card-val">• Envolvimento potencial do ureter distal.</text>
+      </g>
+
+      <g transform="translate(16, 218)">
+        <text x="0" y="0" class="a12p1-card-label">3. Regra Determinante de Decisão:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Planejamento multidisciplinar (Ginecologia + Coloprocto).</text>
+        <text x="0" y="30" class="a12p1-card-val">• Necessidade de ureterólise e ressecção discoide</text>
+        <text x="0" y="44" class="a12p1-card-val">  ou segmentar de reto conforme invasão.</text>
+      </g>
+    </g>
+
+    <!-- CARD 4: PROLAPSO &amp; INCONTINENCIA -->
+    <g class="a12p1-card" data-id="prolapso" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+      
+      <text x="16" y="28" class="a12p1-card-header" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">INCONTINÊNCIA &amp; PROLAPSO</text>
+      <rect x="16" y="38" width="135" height="18" class="a12p1-badge" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" fill-opacity="0.25" />
+      <text x="83" y="51" class="a12p1-badge-text" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">ASSOALHO &amp; SUPORTE APICAL</text>
+
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" class="a12p1-card-label">1. Endereço Anátomo-Topográfico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Assoalho pélvico (m. levantador do ânus), fáscia</text>
+        <text x="0" y="30" class="a12p1-card-val">  pubocervical e complexo cardinal-uterossacro.</text>
+      </g>
+
+      <g transform="translate(16, 140)">
+        <text x="0" y="0" class="a12p1-card-label">2. Impacto e Mecanismo Clínico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Desancoragem dos níveis de DeLancey (I, II ou III).</text>
+        <text x="0" y="30" class="a12p1-card-val">• Hipermotilidade uretral e/ou descenso de cúpula.</text>
+        <text x="0" y="44" class="a12p1-card-val">• Alteração de vetores de pressão intra-abdominal.</text>
+      </g>
+
+      <g transform="translate(16, 218)">
+        <text x="0" y="0" class="a12p1-card-label">3. Regra Determinante de Decisão:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Quantificação objetiva pelo sistema POP-Q.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Escolha cirúrgica: Sling suburetral (IUE) vs</text>
+        <text x="0" y="44" class="a12p1-card-val">  Fixação sacroespinhosa / Promontofixação (Prolapso).</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- FOOTER / CONCLUSION BANNER (y=540 to 590) -->
+  <g transform="translate(40, 545)">
+    <rect x="0" y="0" width="880" height="42" rx="8" ry="8" 
+          fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+          stroke="var(--a12p1-panel-border, #3A2F45)" stroke-width="1" />
+    <circle cx="20" cy="21" r="5" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+    <text x="35" y="25" class="a12p1-footer-text">
+      CONCLUSÃO TOPOGRÁFICA: A localização anatômica na pelve pré-determina a abordagem cirúrgica, a via de acesso e a equipe necessária.
+    </text>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED JAVASCRIPT STATE ENGINE -->
+  <script>
+    <![CDATA[
+    (function() {
+      var root = document.querySelector('.a12p1-root');
+      if (!root) return;
+
+      function setActive(id) {
+        root.setAttribute('data-active', id);
+      }
+
+      // Add click and keyboard handlers for territory shapes and label boxes
+      var clickables = root.querySelectorAll('.a12p1-territory, .a12p1-tab-btn');
+      clickables.forEach(function(el) {
+        var id = el.getAttribute('data-id');
+        if (!id) return;
+
+        var handler = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var current = root.getAttribute('data-active');
+          // If clicking the currently active specific tab/shape, return to 'all', else activate id
+          if (current === id && id !== 'all') {
+            setActive('all');
+          } else {
+            setActive(id);
+          }
+        };
+
+        el.addEventListener('click', handler);
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handler(e);
+          }
+        });
+      });
+    })();
+    ]]>
+  </script>
+</svg>

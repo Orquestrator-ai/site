@@ -1,0 +1,600 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 620" width="100%" height="100%" id="a12p6-svg" class="a12p6-root" data-svg-tokenized="true" role="img" aria-labelledby="a12p6-title a12p6-desc">
+  <title id="a12p6-title">Quadril Esquerdo · Mnemônico L-S-P do Acetábulo sem Espelhamento</title>
+  <desc id="a12p6-desc">Diagrama anatômico interativo do osso do quadril esquerdo visto de fora (face lateral), demonstrando a divisão trirradiada do acetábulo em Ílio (superior), Ísquio (posterior/inferior) e Púbis (anterior/inferior), e a sequência mnemônica L-S-P no sentido horário.</desc>
+
+  <defs>
+    <!-- Pattern Fills for Accessibility (Color-blind friendly textures) -->
+    <pattern id="a12p6-pat-ilio" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="1.8" fill="var(--a12p6-ilio, #5DA9D6)" opacity="0.35"/>
+    </pattern>
+    <pattern id="a12p6-pat-isquio" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="var(--a12p6-isquio, #A978C7)" stroke-width="2" opacity="0.35"/>
+    </pattern>
+    <pattern id="a12p6-pat-pubis" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 0 5 L 10 5 M 5 0 L 5 10" stroke="var(--a12p6-pubis, #EF7A82)" stroke-width="1.5" opacity="0.35"/>
+    </pattern>
+
+    <!-- Arrowhead markers -->
+    <marker id="a12p6-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="var(--a12p6-orientacao, #F3BE5B)"/>
+    </marker>
+    <marker id="a12p6-arrow-err" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="var(--a12p6-erro, #D85C6A)"/>
+    </marker>
+
+    <!-- Glow Filters -->
+    <filter id="a12p6-glow-ilio" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--a12p6-ilio, #5DA9D6)" flood-opacity="0.65"/>
+    </filter>
+    <filter id="a12p6-glow-isquio" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--a12p6-isquio, #A978C7)" flood-opacity="0.65"/>
+    </filter>
+    <filter id="a12p6-glow-pubis" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--a12p6-pubis, #EF7A82)" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <style>
+    #a12p6-svg.a12p6-root {
+      --a12p6-bg: var(--bg-1, #121014);
+      --a12p6-card-bg: var(--bg-2, #1B1722);
+      --a12p6-card-inner: var(--bg-3, #25202E);
+      --a12p6-tinta: var(--a12-tinta, var(--a12p6-tinta-loc, #F7F1F5));
+      --a12p6-tinta-sec: var(--ink-70, #C5BDC9);
+      --a12p6-osso: var(--a12-osso, var(--a12p6-osso-loc, #DCC7B4));
+      --a12p6-osso-dark: #7A6453;
+      --a12p6-ilio: var(--a12-ilio, var(--a12p6-ilio-loc, #5DA9D6));
+      --a12p6-isquio: var(--a12-isquio, var(--a12p6-isquio-loc, #A978C7));
+      --a12p6-pubis: var(--a12-pubis, var(--a12p6-pubis-loc, #EF7A82));
+      --a12p6-orientacao: var(--a12-ouro, var(--a12p6-orientacao-loc, #F3BE5B));
+      --a12p6-erro: var(--a12-alerta, var(--a12p6-erro-loc, #D85C6A));
+      --a12p6-sucesso: #4EBE89;
+      --a12p6-border: var(--ink-20, #3B3344);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    [data-theme="light"] #a12p6-svg.a12p6-root {
+      --a12p6-bg: var(--bg-1, #FFFFFF);
+      --a12p6-card-bg: var(--bg-2, #F4EFF6);
+      --a12p6-card-inner: var(--bg-3, #EA9EDF4);
+      --a12p6-tinta: var(--a12-tinta, var(--a12p6-tinta-loc, #1A1423));
+      --a12p6-tinta-sec: var(--ink-70, #4A4154);
+      --a12p6-osso: var(--a12-osso, var(--a12p6-osso-loc, #9E836E));
+      --a12p6-osso-dark: #5E4B3C;
+      --a12p6-ilio: var(--a12-ilio, var(--a12p6-ilio-loc, #1B6999));
+      --a12p6-isquio: var(--a12-isquio, var(--a12p6-isquio-loc, #6B3B8A));
+      --a12p6-pubis: var(--a12-pubis, var(--a12p6-pubis-loc, #B8353F));
+      --a12p6-orientacao: var(--a12-ouro, var(--a12p6-orientacao-loc, #9E6A00));
+      --a12p6-erro: var(--a12-alerta, var(--a12p6-erro-loc, #9E202E));
+      --a12p6-sucesso: #1E7A4C;
+      --a12p6-border: var(--ink-20, #D2C7D7);
+    }
+
+    #a12p6-svg .a12p6-territory {
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+    }
+
+    #a12p6-svg .a12p6-territory:hover,
+    #a12p6-svg .a12p6-territory:focus-visible {
+      opacity: 0.96;
+    }
+
+    #a12p6-svg .a12p6-territory:focus-visible .a12p6-focus-ring {
+      stroke: var(--a12p6-orientacao, #F3BE5B);
+      stroke-width: 3.5px;
+      stroke-dasharray: 4 4;
+    }
+
+    #a12p6-svg .a12p6-terr-body {
+      transition: fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+    }
+
+    #a12p6-svg .a12p6-territory[data-active="true"]#a12p6-terr-ilio .a12p6-terr-body {
+      fill: var(--a12p6-ilio, #5DA9D6);
+      filter: url(#a12p6-glow-ilio);
+    }
+
+    #a12p6-svg .a12p6-territory[data-active="true"]#a12p6-terr-isquio .a12p6-terr-body {
+      fill: var(--a12p6-isquio, #A978C7);
+      filter: url(#a12p6-glow-isquio);
+    }
+
+    #a12p6-svg .a12p6-territory[data-active="true"]#a12p6-terr-pubis .a12p6-terr-body {
+      fill: var(--a12p6-pubis, #EF7A82);
+      filter: url(#a12p6-glow-pubis);
+    }
+
+    #a12p6-svg .a12p6-arc-seg {
+      opacity: 0.25;
+      transition: opacity 0.35s ease, stroke-width 0.35s ease, stroke 0.35s ease;
+    }
+
+    #a12p6-svg .a12p6-arc-seg[data-lit="true"] {
+      opacity: 1;
+      stroke-width: 4px;
+    }
+
+    #a12p6-svg .a12p6-arc-seg[data-error="true"] {
+      opacity: 1;
+      stroke: var(--a12p6-erro, #D85C6A);
+      stroke-width: 4px;
+    }
+
+    #a12p6-svg .a12p6-badge-box {
+      transition: border-color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+    }
+
+    #a12p6-svg .a12p6-badge-box[data-state="active"] {
+      stroke: var(--a12p6-orientacao, #F3BE5B);
+      stroke-width: 2.5px;
+    }
+
+    #a12p6-svg .a12p6-badge-box[data-state="complete"] {
+      stroke: var(--a12p6-sucesso, #4EBE89);
+      stroke-width: 2.5px;
+    }
+
+    #a12p6-svg .a12p6-badge-box[data-state="error"] {
+      stroke: var(--a12p6-erro, #D85C6A);
+      stroke-width: 2.5px;
+    }
+
+    #a12p6-svg .a12p6-btn {
+      cursor: pointer;
+      outline: none;
+      transition: opacity 0.2s ease, filter 0.2s ease;
+    }
+
+    #a12p6-svg .a12p6-btn:hover,
+    #a12p6-svg .a12p6-btn:focus-visible {
+      opacity: 0.88;
+    }
+  </style>
+
+  <!-- BACKGROUND BASE -->
+  <rect x="0" y="0" width="940" height="620" rx="16" fill="var(--a12p6-bg, #121014)"/>
+
+  <!-- TOP HEADER & CAPTION (CONTRATO DE LAYOUT BAUER #1) -->
+  <g id="a12p6-header" transform="translate(20, 20)">
+    <text x="0" y="20" fill="var(--a12p6-tinta, #F7F1F5)" font-size="17" font-weight="800" letter-spacing="0.5">QUADRIL ESQUERDO · VISTO DE FORA · FRENTE DA PACIENTE À ESQUERDA</text>
+    <text x="0" y="42" fill="var(--a12p6-orientacao, #F3BE5B)" font-size="13" font-weight="700">Mnemônico L-S-P no Acetábulo: Ílio (1) → Ísquio (2) → Púbis (3) em Sentido Horário ↻</text>
+    <text x="0" y="58" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="11.5" font-weight="500">Legenda: A rotação horária determina a orientação anatômica exata e impede a memorização espelhada dos três territórios ósseos.</text>
+  </g>
+
+  <!-- ANATOMICAL STAGE (LEFT HIP BONE - LATERAL VIEW) -->
+  <g id="a12p6-stage" transform="translate(20, 90)">
+    <!-- Stage Container Frame -->
+    <rect x="0" y="0" width="550" height="510" rx="14" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-border, #3B3344)" stroke-width="1.5"/>
+
+    <!-- Compass Orientation Badges -->
+    <g id="a12p6-compass" font-size="10.5" font-weight="700" text-anchor="middle">
+      <!-- Superior -->
+      <rect x="225" y="10" width="100" height="22" rx="4" fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-border, #3B3344)"/>
+      <text x="275" y="25" fill="var(--a12p6-tinta-sec, #C5BDC9)">SUPERIOR</text>
+
+      <!-- Anterior (Left) -->
+      <rect x="12" y="245" width="135" height="24" rx="4" fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-border, #3B3344)"/>
+      <text x="79" y="261" fill="var(--a12p6-orientacao, #F3BE5B)">ANTERIOR (FRENTE)</text>
+
+      <!-- Posterior (Right) -->
+      <rect x="403" y="245" width="135" height="24" rx="4" fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-border, #3B3344)"/>
+      <text x="470" y="261" fill="var(--a12p6-orientacao, #F3BE5B)">POSTERIOR (ATRÁS)</text>
+
+      <!-- Inferior -->
+      <rect x="225" y="478" width="100" height="22" rx="4" fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-border, #3B3344)"/>
+      <text x="275" y="493" fill="var(--a12p6-tinta-sec, #C5BDC9)">INFERIOR</text>
+    </g>
+
+    <!-- BONE ANATOMY & INTERACTIVE TERRITORIES -->
+    <g id="a12p6-bone-group">
+
+      <!-- 1. TERRITÓRIO ÍLIO (SUPERIOR / 1.º NA SEQUÊNCIA) -->
+      <g id="a12p6-terr-ilio" class="a12p6-territory" role="button" tabindex="0" aria-label="1. Ílio (Posição Superior). Toque ou pressione Enter para ativar." data-terr="ilio" data-active="false">
+        <!-- Ílio Outer Path -->
+        <path class="a12p6-terr-body" d="
+          M 160 170
+          C 160 115, 215 90, 275 90
+          C 335 90, 395 115, 420 160
+          C 420 180, 415 195, 405 215
+          C 390 245, 360 255, 345 270
+          C 328 285, 335 340, 275 330
+          C 215 340, 218 285, 200 255
+          C 185 230, 160 200, 160 170 Z"
+          fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-ilio, #5DA9D6)" stroke-width="2.5"/>
+        <path d="
+          M 160 170
+          C 160 115, 215 90, 275 90
+          C 335 90, 395 115, 420 160
+          C 420 180, 415 195, 405 215
+          C 390 245, 360 255, 345 270
+          C 328 285, 335 340, 275 330
+          C 215 340, 218 285, 200 255
+          C 185 230, 160 200, 160 170 Z"
+          fill="url(#a12p6-pat-ilio)" pointer-events="none"/>
+        <path class="a12p6-focus-ring" d="M 155 165 C 155 110, 212 85, 275 85 C 338 85, 400 110, 425 155 C 425 178, 418 195, 410 215 C 395 248, 363 258, 348 273 C 330 288, 338 345, 275 335 C 212 345, 215 288, 195 258 C 180 230, 155 195, 155 165 Z" fill="none"/>
+
+        <!-- Label Badge Ílio -->
+        <g transform="translate(210, 120)">
+          <rect x="0" y="0" width="130" height="28" rx="14" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-ilio, #5DA9D6)" stroke-width="2"/>
+          <text x="65" y="18" fill="var(--a12p6-ilio, #5DA9D6)" font-size="12" font-weight="800" text-anchor="middle">1. ÍLIO (Superior)</text>
+        </g>
+        <!-- Mnemonic Key Badge 1 -->
+        <g transform="translate(242, 154)">
+          <rect x="0" y="0" width="66" height="22" rx="11" fill="var(--a12p6-ilio, #5DA9D6)"/>
+          <text x="33" y="15" fill="#FFFFFF" font-size="11" font-weight="900" text-anchor="middle">í-L-io</text>
+        </g>
+      </g>
+
+      <!-- 2. TERRITÓRIO ÍSQUIO (POSTERIOR-INFERIOR / 2.º NA SEQUÊNCIA) -->
+      <g id="a12p6-terr-isquio" class="a12p6-territory" role="button" tabindex="0" aria-label="2. Ísquio (Posição Posterior e Inferior). Toque ou pressione Enter para ativar." data-terr="isquio" data-active="false">
+        <!-- Ísquio Outer Path -->
+        <path class="a12p6-terr-body" d="
+          M 345 270
+          C 375 285, 388 295, 375 315
+          C 365 330, 370 345, 380 365
+          C 398 395, 405 440, 375 480
+          C 350 510, 305 515, 275 510
+          C 270 470, 315 455, 315 420
+          C 315 375, 295 360, 275 330
+          C 335 340, 328 285, 345 270 Z"
+          fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-isquio, #A978C7)" stroke-width="2.5"/>
+        <path d="
+          M 345 270
+          C 375 285, 388 295, 375 315
+          C 365 330, 370 345, 380 365
+          C 398 395, 405 440, 375 480
+          C 350 510, 305 515, 275 510
+          C 270 470, 315 455, 315 420
+          C 315 375, 295 360, 275 330
+          C 335 340, 328 285, 345 270 Z"
+          fill="url(#a12p6-pat-isquio)" pointer-events="none"/>
+        <path class="a12p6-focus-ring" d="M 348 265 C 378 280, 393 292, 380 315 C 370 330, 375 348, 385 368 C 403 398, 410 445, 380 485 C 352 515, 305 520, 272 515 C 265 470, 318 455, 318 418 C 318 372, 298 358, 272 325 C 338 338, 330 282, 348 265 Z" fill="none"/>
+
+        <!-- Label Badge Ísquio -->
+        <g transform="translate(355, 430)">
+          <rect x="0" y="0" width="165" height="28" rx="14" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-isquio, #A978C7)" stroke-width="2"/>
+          <text x="82.5" y="18" fill="var(--a12p6-isquio, #A978C7)" font-size="12" font-weight="800" text-anchor="middle">2. ÍSQUIO (Post/Inf)</text>
+        </g>
+        <!-- Mnemonic Key Badge 2 -->
+        <g transform="translate(400, 464)">
+          <rect x="0" y="0" width="75" height="22" rx="11" fill="var(--a12p6-isquio, #A978C7)"/>
+          <text x="37.5" y="15" fill="#FFFFFF" font-size="11" font-weight="900" text-anchor="middle">í-S-quio</text>
+        </g>
+      </g>
+
+      <!-- 3. TERRITÓRIO PÚBIS (ANTERIOR-INFERIOR / 3.º NA SEQUÊNCIA) -->
+      <g id="a12p6-terr-pubis" class="a12p6-territory" role="button" tabindex="0" aria-label="3. Púbis (Posição Anterior e Inferior). Toque ou pressione Enter para ativar." data-terr="pubis" data-active="false">
+        <!-- Púbis Outer Path -->
+        <path class="a12p6-terr-body" d="
+          M 200 255
+          C 218 285, 215 340, 275 330
+          C 255 360, 235 375, 235 420
+          C 235 455, 280 470, 275 510
+          C 225 515, 165 495, 140 455
+          C 130 435, 135 410, 155 390
+          C 180 365, 195 320, 200 255 Z"
+          fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-pubis, #EF7A82)" stroke-width="2.5"/>
+        <path d="
+          M 200 255
+          C 218 285, 215 340, 275 330
+          C 255 360, 235 375, 235 420
+          C 235 455, 280 470, 275 510
+          C 225 515, 165 495, 140 455
+          C 130 435, 135 410, 155 390
+          C 180 365, 195 320, 200 255 Z"
+          fill="url(#a12p6-pat-pubis)" pointer-events="none"/>
+        <path class="a12p6-focus-ring" d="M 195 250 C 215 285, 212 342, 272 325 C 252 358, 230 372, 230 420 C 230 458, 278 472, 272 515 C 220 520, 160 498, 135 458 C 124 435, 130 408, 150 385 C 175 360, 190 318, 195 250 Z" fill="none"/>
+
+        <!-- Label Badge Púbis -->
+        <g transform="translate(30, 430)">
+          <rect x="0" y="0" width="160" height="28" rx="14" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-pubis, #EF7A82)" stroke-width="2"/>
+          <text x="80" y="18" fill="var(--a12p6-pubis, #EF7A82)" font-size="12" font-weight="800" text-anchor="middle">3. PÚBIS (Ant/Inf)</text>
+        </g>
+        <!-- Mnemonic Key Badge 3 -->
+        <g transform="translate(75, 464)">
+          <rect x="0" y="0" width="70" height="22" rx="11" fill="var(--a12p6-pubis, #EF7A82)"/>
+          <text x="35" y="15" fill="#FFFFFF" font-size="11" font-weight="900" text-anchor="middle">P-úbis</text>
+        </g>
+      </g>
+
+      <!-- FORAME OBTURADO (OBTURATOR FORAMEN) -->
+      <g id="a12p6-foramen" transform="translate(235, 405)">
+        <ellipse cx="40" cy="30" rx="36" ry="26" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-border, #3B3344)" stroke-width="2"/>
+        <text x="40" y="33" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="9" font-weight="600" text-anchor="middle">Forame Obturado</text>
+      </g>
+
+      <!-- ACETÁBULO & CARTILAGEM TRIRRADIADA ("T") -->
+      <g id="a12p6-acetabulum" transform="translate(275, 330)">
+        <!-- Outer Acetabular Rim -->
+        <circle cx="0" cy="0" r="68" fill="none" stroke="var(--a12p6-osso, #DCC7B4)" stroke-width="4"/>
+        <circle cx="0" cy="0" r="62" fill="none" stroke="var(--a12p6-card-bg, #1B1722)" stroke-width="8" opacity="0.6"/>
+
+        <!-- Lunate Surface (Superfície Semilunar) C-Shape -->
+        <path d="M -48 30 A 56 56 0 1 1 48 30" fill="none" stroke="var(--a12p6-osso, #DCC7B4)" stroke-width="12" stroke-linecap="round" opacity="0.4"/>
+
+        <!-- Acetabular Fossa Center -->
+        <circle cx="0" cy="0" r="22" fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-border, #3B3344)" stroke-width="1.5"/>
+
+        <!-- TRIRADIATE CARTILAGE "T" LINES -->
+        <!-- Stem 1: Ílio (Vertical up) -->
+        <line x1="0" y1="0" x2="0" y2="-68" stroke="var(--a12p6-orientacao, #F3BE5B)" stroke-width="4" stroke-dasharray="3 2"/>
+        <!-- Stem 2: Ísquio (Down-right) -->
+        <line x1="0" y1="0" x2="56" y2="38" stroke="var(--a12p6-orientacao, #F3BE5B)" stroke-width="4" stroke-dasharray="3 2"/>
+        <!-- Stem 3: Púbis (Down-left) -->
+        <line x1="0" y1="0" x2="-56" y2="38" stroke="var(--a12p6-orientacao, #F3BE5B)" stroke-width="4" stroke-dasharray="3 2"/>
+
+        <circle cx="0" cy="0" r="5" fill="var(--a12p6-orientacao, #F3BE5B)"/>
+
+        <!-- T-Cartilage Title Badge -->
+        <g transform="translate(-65, -88)">
+          <rect x="0" y="0" width="130" height="20" rx="4" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-orientacao, #F3BE5B)" stroke-width="1.5"/>
+          <text x="65" y="14" fill="var(--a12p6-orientacao, #F3BE5B)" font-size="10" font-weight="800" text-anchor="middle">"T" ACETABULAR (Cartilagem)</text>
+        </g>
+      </g>
+
+      <!-- CLOCKWISE ARCS & ARROW (SENTIDO HORÁRIO) -->
+      <g id="a12p6-clock-arcs" transform="translate(275, 330)">
+        <!-- Outer Circle Arc Reference -->
+        <circle cx="0" cy="0" r="105" fill="none" stroke="var(--a12p6-border, #3B3344)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+        <!-- Arc Segment 1: Ílio -> Ísquio (Top to Right) -->
+        <path id="a12p6-arc-1" class="a12p6-arc-seg" d="M 0 -105 A 105 105 0 0 1 91 52.5" fill="none" stroke="var(--a12p6-ilio, #5DA9D6)" stroke-width="3" marker-end="url(#a12p6-arrow)" data-lit="false"/>
+
+        <!-- Arc Segment 2: Ísquio -> Púbis (Right to Left) -->
+        <path id="a12p6-arc-2" class="a12p6-arc-seg" d="M 91 52.5 A 105 105 0 0 1 -91 52.5" fill="none" stroke="var(--a12p6-isquio, #A978C7)" stroke-width="3" marker-end="url(#a12p6-arrow)" data-lit="false"/>
+
+        <!-- Arc Segment 3: Púbis -> Ílio (Left to Top) -->
+        <path id="a12p6-arc-3" class="a12p6-arc-seg" d="M -91 52.5 A 105 105 0 0 1 0 -105" fill="none" stroke="var(--a12p6-pubis, #EF7A82)" stroke-width="3" marker-end="url(#a12p6-arrow)" data-lit="false"/>
+
+        <!-- Clockwise Badge at Top Right -->
+        <g transform="translate(45, -125)">
+          <rect x="0" y="0" width="115" height="24" rx="12" fill="var(--a12p6-orientacao, #F3BE5B)"/>
+          <text x="57.5" y="16" fill="#1A1423" font-size="11" font-weight="900" text-anchor="middle">↻ SENTIDO HORÁRIO</text>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- SIDE READOUT PANEL (PAINEL DE LEITURA DE VALORES E INTERPRETAÇÃO - CONTRATO BAUER #4) -->
+  <g id="a12p6-panel" transform="translate(590, 90)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="330" height="510" rx="14" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-border, #3B3344)" stroke-width="1.5"/>
+
+    <!-- Panel Title Header -->
+    <g transform="translate(20, 20)">
+      <text x="0" y="16" fill="var(--a12p6-tinta, #F7F1F5)" font-size="15" font-weight="800">PAINEL DE LEITURA &amp; SEQUÊNCIA</text>
+      <text x="0" y="34" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="11.5" font-weight="600">Regra Mnemônica: L → S → P (Sentido Horário)</text>
+    </g>
+
+    <!-- KEY LIST BOX (SEGUNDA CHAVE COMPACTA) -->
+    <g transform="translate(20, 70)">
+      <rect x="0" y="0" width="290" height="135" rx="10" fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-border, #3B3344)"/>
+
+      <!-- Item 1: Ílio -->
+      <g transform="translate(15, 15)">
+        <rect id="a12p6-badge-ilio" class="a12p6-badge-box" x="0" y="0" width="260" height="32" rx="6" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-ilio, #5DA9D6)" stroke-width="1.5" data-state="neutral"/>
+        <text x="12" y="20" fill="var(--a12p6-ilio, #5DA9D6)" font-size="13" font-weight="800">1. í - L - io</text>
+        <text x="248" y="20" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="11" font-weight="700" text-anchor="end">Superior (12h)</text>
+      </g>
+
+      <!-- Item 2: Ísquio -->
+      <g transform="translate(15, 52)">
+        <rect id="a12p6-badge-isquio" class="a12p6-badge-box" x="0" y="0" width="260" height="32" rx="6" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-isquio, #A978C7)" stroke-width="1.5" data-state="neutral"/>
+        <text x="12" y="20" fill="var(--a12p6-isquio, #A978C7)" font-size="13" font-weight="800">2. í - S - quio</text>
+        <text x="248" y="20" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="11" font-weight="700" text-anchor="end">Post/Inf (4h)</text>
+      </g>
+
+      <!-- Item 3: Púbis -->
+      <g transform="translate(15, 89)">
+        <rect id="a12p6-badge-pubis" class="a12p6-badge-box" x="0" y="0" width="260" height="32" rx="6" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-pubis, #EF7A82)" stroke-width="1.5" data-state="neutral"/>
+        <text x="12" y="20" fill="var(--a12p6-pubis, #EF7A82)" font-size="13" font-weight="800">3. P - úbis</text>
+        <text x="248" y="20" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="11" font-weight="700" text-anchor="end">Ant/Inf (8h)</text>
+      </g>
+    </g>
+
+    <!-- DYNAMIC STATUS & FEEDBACK CARD -->
+    <g transform="translate(20, 220)">
+      <rect x="0" y="0" width="290" height="215" rx="10" fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-border, #3B3344)"/>
+
+      <!-- Status Header Badge -->
+      <g transform="translate(15, 15)">
+        <rect id="a12p6-status-bg" x="0" y="0" width="260" height="30" rx="6" fill="var(--a12p6-orientacao, #F3BE5B)"/>
+        <text id="a12p6-status-title" x="130" y="20" fill="#1A1423" font-size="11.5" font-weight="900" text-anchor="middle">AGUARDANDO ATIVAÇÃO (0/3)</text>
+      </g>
+
+      <!-- Detailed Explanation Text lines -->
+      <text id="a12p6-msg-line1" x="20" y="70" fill="var(--a12p6-tinta, #F7F1F5)" font-size="12" font-weight="700">Validação Anatômica do Quadril:</text>
+      <text id="a12p6-msg-line2" x="20" y="92" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="11" font-weight="500">Selecione os territórios ósseos no osso</text>
+      <text id="a12p6-msg-line3" x="20" y="110" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="11" font-weight="500">para percorrer a rotação mnemônica</text>
+      <text id="a12p6-msg-line4" x="20" y="128" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="11" font-weight="500">L (Ílio) → S (Ísquio) → P (Púbis).</text>
+
+      <!-- Active Position Readout Box -->
+      <g transform="translate(15, 148)">
+        <rect x="0" y="0" width="260" height="52" rx="6" fill="var(--a12p6-card-bg, #1B1722)" stroke="var(--a12p6-border, #3B3344)"/>
+        <text x="12" y="20" fill="var(--a12p6-tinta-sec, #C5BDC9)" font-size="10.5" font-weight="600">Referência de Orientação:</text>
+        <text id="a12p6-ref-text" x="12" y="38" fill="var(--a12p6-orientacao, #F3BE5B)" font-size="11" font-weight="800">Vista Lateral · Frente da Paciente à Esquerda</text>
+      </g>
+    </g>
+
+    <!-- RESET / REINICIAR BUTTON -->
+    <g id="a12p6-btn-reset" class="a12p6-btn" transform="translate(20, 450)" role="button" tabindex="0" aria-label="Reiniciar sequência mnemônica">
+      <rect x="0" y="0" width="290" height="38" rx="8" fill="var(--a12p6-card-inner, #25202E)" stroke="var(--a12p6-border, #3B3344)" stroke-width="1.5"/>
+      <text x="145" y="24" fill="var(--a12p6-tinta, #F7F1F5)" font-size="12" font-weight="800" text-anchor="middle">↺ REINICIAR SEQUÊNCIA</text>
+    </g>
+
+  </g>
+
+  <!-- INLINE SELF-CONTAINED JAVASCRIPT ENGINE (NO EXTERNAL DEPENDENCIES) -->
+  <script>//<![CDATA[
+    (function() {
+      'use strict';
+
+      // Elements
+      var terrIlio = document.getElementById('a12p6-terr-ilio');
+      var terrIsquio = document.getElementById('a12p6-terr-isquio');
+      var terrPubis = document.getElementById('a12p6-terr-pubis');
+      var btnReset = document.getElementById('a12p6-btn-reset');
+
+      var arc1 = document.getElementById('a12p6-arc-1');
+      var arc2 = document.getElementById('a12p6-arc-2');
+      var arc3 = document.getElementById('a12p6-arc-3');
+
+      var badgeIlio = document.getElementById('a12p6-badge-ilio');
+      var badgeIsquio = document.getElementById('a12p6-badge-isquio');
+      var badgePubis = document.getElementById('a12p6-badge-pubis');
+
+      var statusBg = document.getElementById('a12p6-status-bg');
+      var statusTitle = document.getElementById('a12p6-status-title');
+      var msgLine1 = document.getElementById('a12p6-msg-line1');
+      var msgLine2 = document.getElementById('a12p6-msg-line2');
+      var msgLine3 = document.getElementById('a12p6-msg-line3');
+      var msgLine4 = document.getElementById('a12p6-msg-line4');
+      var refText = document.getElementById('a12p6-ref-text');
+
+      // State tracking
+      var sequence = [];
+      var expectedSequence = ['ilio', 'isquio', 'pubis'];
+
+      function resetAll() {
+        sequence = [];
+        terrIlio.setAttribute('data-active', 'false');
+        terrIsquio.setAttribute('data-active', 'false');
+        terrPubis.setAttribute('data-active', 'false');
+
+        arc1.setAttribute('data-lit', 'false');
+        arc1.removeAttribute('data-error');
+        arc2.setAttribute('data-lit', 'false');
+        arc2.removeAttribute('data-error');
+        arc3.setAttribute('data-lit', 'false');
+        arc3.removeAttribute('data-error');
+
+        badgeIlio.setAttribute('data-state', 'neutral');
+        badgeIsquio.setAttribute('data-state', 'neutral');
+        badgePubis.setAttribute('data-state', 'neutral');
+
+        statusBg.setAttribute('fill', 'var(--a12p6-orientacao, #F3BE5B)');
+        statusTitle.setAttribute('fill', '#1A1423');
+        statusTitle.textContent = 'AGUARDANDO ATIVAÇÃO (0/3)';
+
+        msgLine1.textContent = 'Validação Anatômica do Quadril:';
+        msgLine1.setAttribute('fill', 'var(--a12p6-tinta, #F7F1F5)');
+        msgLine2.textContent = 'Selecione os territórios ósseos no osso';
+        msgLine3.textContent = 'para percorrer a rotação mnemônica';
+        msgLine4.textContent = 'L (Ílio) → S (Ísquio) → P (Púbis).';
+        refText.textContent = 'Vista Lateral · Frente da Paciente à Esquerda';
+      }
+
+      function handleTerritoryClick(id) {
+        // If already completed or in error, reset first if clicking out of step
+        var nextExpected = expectedSequence[sequence.length];
+
+        if (id === nextExpected) {
+          // Correct step in sequence!
+          sequence.push(id);
+
+          if (id === 'ilio') {
+            terrIlio.setAttribute('data-active', 'true');
+            arc1.setAttribute('data-lit', 'true');
+            badgeIlio.setAttribute('data-state', 'active');
+
+            statusBg.setAttribute('fill', 'var(--a12p6-ilio, #5DA9D6)');
+            statusTitle.setAttribute('fill', '#FFFFFF');
+            statusTitle.textContent = 'PASSO 1/3: í - L - io ATIVADO';
+
+            msgLine1.textContent = '1. ÍLIO · Posição SUPERIOR (12h)';
+            msgLine1.setAttribute('fill', 'var(--a12p6-ilio, #5DA9D6)');
+            msgLine2.textContent = 'Primeiro território da regra L-S-P.';
+            msgLine3.textContent = 'Forma a porção superior do acetábulo.';
+            msgLine4.textContent = 'Próximo passo esperado: 2. Ísquio (4h).';
+            refText.textContent = '1. Ílio (Superior) → Ativado com Sucesso!';
+
+          } else if (id === 'isquio') {
+            terrIsquio.setAttribute('data-active', 'true');
+            arc2.setAttribute('data-lit', 'true');
+            badgeIsquio.setAttribute('data-state', 'active');
+
+            statusBg.setAttribute('fill', 'var(--a12p6-isquio, #A978C7)');
+            statusTitle.setAttribute('fill', '#FFFFFF');
+            statusTitle.textContent = 'PASSO 2/3: í - S - quio ATIVADO';
+
+            msgLine1.textContent = '2. ÍSQUIO · Posição POSTERIOR (4h)';
+            msgLine1.setAttribute('fill', 'var(--a12p6-isquio, #A978C7)');
+            msgLine2.textContent = 'Segundo território no sentido horário.';
+            msgLine3.textContent = 'Localizado posterior e inferiormente.';
+            msgLine4.textContent = 'Próximo passo esperado: 3. Púbis (8h).';
+            refText.textContent = '2. Ísquio (Posterior/Inferior) → Ativado!';
+
+          } else if (id === 'pubis') {
+            terrPubis.setAttribute('data-active', 'true');
+            arc3.setAttribute('data-lit', 'true');
+            badgeIlio.setAttribute('data-state', 'complete');
+            badgeIsquio.setAttribute('data-state', 'complete');
+            badgePubis.setAttribute('data-state', 'complete');
+
+            statusBg.setAttribute('fill', 'var(--a12p6-sucesso, #4EBE89)');
+            statusTitle.setAttribute('fill', '#FFFFFF');
+            statusTitle.textContent = 'SEQUÊNCIA COMPLETA ✓ (3/3)';
+
+            msgLine1.textContent = '3. PÚBIS · Posição ANTERIOR (8h)';
+            msgLine1.setAttribute('fill', 'var(--a12p6-sucesso, #4EBE89)');
+            msgLine2.textContent = 'Mnemônico L-S-P concluído com sucesso!';
+            msgLine3.textContent = 'Rotação horária validada no quadril esquerdo:';
+            msgLine4.textContent = 'Ílio (sup) → Ísquio (post) → Púbis (ant).';
+            refText.textContent = 'Orientação Correta Validada no Sentido Horário!';
+          }
+
+        } else {
+          // Out of sequence click! Signal orientation error without harsh fail
+          statusBg.setAttribute('fill', 'var(--a12p6-erro, #D85C6A)');
+          statusTitle.setAttribute('fill', '#FFFFFF');
+          statusTitle.textContent = 'ORIENTAÇÃO INVERTIDA ⚠';
+
+          msgLine1.textContent = 'Sentido de Rotação Incorreto:';
+          msgLine1.setAttribute('fill', 'var(--a12p6-erro, #D85C6A)');
+          msgLine2.textContent = 'A sequência L-S-P exige rotação horária:';
+          msgLine3.textContent = '1. Ílio (sup) → 2. Ísquio (post) → 3. Púbis (ant).';
+          msgLine4.textContent = 'Siga a ordem correta para fixar a orientação.';
+          refText.textContent = 'Alerta: A ordem deve seguir o sentido horário!';
+
+          if (sequence.length === 0) {
+            badgeIlio.setAttribute('data-state', 'error');
+          } else if (sequence.length === 1) {
+            badgeIsquio.setAttribute('data-state', 'error');
+          }
+        }
+      }
+
+      // Event Listeners
+      function attachEvents(el, id) {
+        el.addEventListener('click', function() {
+          handleTerritoryClick(id);
+        });
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleTerritoryClick(id);
+          }
+        });
+      }
+
+      attachEvents(terrIlio, 'ilio');
+      attachEvents(terrIsquio, 'isquio');
+      attachEvents(terrPubis, 'pubis');
+
+      btnReset.addEventListener('click', resetAll);
+      btnReset.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          resetAll();
+        }
+      });
+
+      // Initial state
+      resetAll();
+
+    })();
+  //]]></script>
+</svg>

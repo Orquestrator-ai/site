@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D9488">
+<meta name="description" content="Ressonância magnética é critério obrigatório: lesões de substância branca periventriculares mostram tempo e espaço.">
+<title>RM obrigatória: prova o que a clínica suspeita — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm2-cara">
+:root,[data-theme="dark"]{--fm2-teal:#14b8a6;--fm2-indigo:#818CF8;--fm2-gelo:#38BDF8;--fm2-ouro:#E0A100;--fm2-coral:#FB7185;--fm2-amber:#F59E0B;--fm2-verde:#34D399}
+[data-theme="light"]{--fm2-teal:#0F766E;--fm2-indigo:#4F46E5;--fm2-gelo:#0284C7;--fm2-ouro:#846006;--fm2-coral:#C81E43;--fm2-amber:#A15206;--fm2-verde:#059669}
+.reading{width:100%;margin:0 auto;padding:0 0 3rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem;margin:0 0 1.25rem;box-shadow:var(--shadow)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--fm2-teal);margin:0 0 .45rem}
+.opener h1{font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 .6rem;color:var(--ink-100)}
+.opener p{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.55}
+.opener--case{border-left:4px solid var(--fm2-indigo)}
+.opener--question{border-left:4px solid var(--fm2-teal)}
+.opener--mnemonic{border-left:4px solid var(--fm2-amber)}
+.opener--impact{border-left:4px solid var(--fm2-coral)}
+.opener--checklist{border-left:4px solid var(--fm2-verde)}
+.opener--vs{border-left:4px solid var(--fm2-gelo)}
+.opener--trap{border-left:4px solid var(--fm2-ouro)}
+.opener--bust{border-left:4px solid var(--fm2-coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.15rem}
+.chip{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.3rem .75rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--fm2-teal);border-color:color-mix(in srgb,var(--fm2-teal) 45%,var(--border))}
+.chip--gold{color:var(--fm2-ouro);border-color:color-mix(in srgb,var(--fm2-ouro) 45%,var(--border))}
+.chip--ok{color:var(--fm2-verde);border-color:color-mix(in srgb,var(--fm2-verde) 45%,var(--border))}
+.chip--no{color:var(--fm2-coral);border-color:color-mix(in srgb,var(--fm2-coral) 45%,var(--border))}
+.chip--series{color:var(--fm2-indigo);border-color:color-mix(in srgb,var(--fm2-indigo) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em;line-height:1.62}
+.prose p.no-indent,.no-indent{text-indent:0}
+.topic-h{font-size:1.12rem;margin:1.4rem 0 .55rem;color:var(--ink-100);font-weight:700}
+.term{color:var(--fm2-indigo);font-weight:700}
+.hl-good{color:var(--fm2-verde);font-weight:700}
+.hl-bad{color:var(--fm2-coral);font-weight:700}
+.hl-warn{color:var(--fm2-amber);font-weight:700}
+.hl-gold{color:var(--fm2-ouro);font-weight:700}
+.nuance{border-left:4px solid var(--fm2-amber);padding:.7rem .9rem;margin:1rem 0;background:color-mix(in srgb,var(--fm2-amber) 9%,var(--bg-2));border-radius:0 10px 10px 0}
+.nuance__title{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--fm2-amber);margin:0 0 .3rem;font-weight:700}
+.nuance p{margin:0;color:var(--ink-80);font-size:.94rem;line-height:1.55}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0}
+.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:300px}
+.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}
+.comparison th{background:var(--bg-3);color:var(--ink-100)}
+.comparison tr:nth-child(even) td{background:var(--bg-2)}
+.exec-card{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.exec-card__title{margin:0 0 .6rem;font-size:1rem;color:var(--fm2-teal);font-weight:700}
+.case-card{border:1px solid var(--border);border-left:4px solid var(--fm2-indigo);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.1rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.case-card h4{margin:0 0 .5rem;color:var(--fm2-indigo)}
+.case-card p{margin:.3rem 0;color:var(--ink-80)}
+.gap-box{border:1px solid var(--border);border-left:4px solid var(--fm2-coral);border-radius:var(--radius-sm);background:color-mix(in srgb,var(--fm2-coral) 8%,var(--bg-2));padding:.9rem 1rem;margin:1.1rem 0}
+.gap-box h4{margin:0 0 .4rem;color:var(--fm2-coral)}
+.gap-box p{margin:0;color:var(--ink-80);font-size:.92rem}
+.continuity{border:1px solid var(--border);border-left:4px solid var(--fm2-gelo);border-radius:var(--radius-sm);background:var(--bg-2);padding:.85rem 1rem;margin:1.2rem 0 0}
+.continuity p{margin:0;color:var(--ink-60);font-size:.92rem}
+.hero-figure{margin:1.5rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.hero-figure__frame{width:100%;display:block;background:var(--bg-1)}
+.hero-figure__cap{padding:.7rem .9rem .9rem;font-size:.8rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.fig__frame{width:100%;display:block;background:var(--bg-1)}
+.fig__frame--svg{padding:.25rem}
+.fm2-inline-svg{display:block;width:100%;height:auto;border-radius:8px}
+.fig__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--fm2-teal);margin-right:.4rem}
+.quiz__alts{list-style:none;margin:0 0 .9rem;padding:0;display:grid;gap:.45rem}
+.alt{display:flex;gap:.6rem;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-3);color:var(--ink-100);padding:.7rem .85rem;cursor:pointer;font:inherit;min-height:44px;line-height:1.45}
+.alt:hover{border-color:var(--fm2-teal);background:var(--bg-4)}
+.alt[aria-checked="true"]{border-color:var(--fm2-gelo);background:color-mix(in srgb,var(--fm2-gelo) 13%,var(--bg-3))}
+.alt.is-correct{border-color:var(--fm2-verde);background:color-mix(in srgb,var(--fm2-verde) 14%,var(--bg-3))}
+.alt.is-correct::after{content:" ✔";color:var(--fm2-verde);font-weight:800;margin-left:auto}
+.alt.is-wrong{border-color:var(--fm2-coral);background:color-mix(in srgb,var(--fm2-coral) 14%,var(--bg-3))}
+.alt.is-wrong::after{content:" ✗";color:var(--fm2-coral);font-weight:800;margin-left:auto}
+.alt.is-marked{border-color:var(--fm2-gelo)}
+.ltr{display:inline-flex;align-items:center;justify-content:center;min-width:1.6rem;height:1.6rem;border-radius:6px;background:var(--bg-4);color:var(--fm2-teal);font-weight:800;font-size:.82rem;flex:0 0 auto}
+.alt.is-correct .ltr{background:var(--fm2-verde);color:#fff}
+.alt.is-wrong .ltr{background:var(--fm2-coral);color:#fff}
+.quiz__btn{display:inline-flex;align-items:center;min-height:44px;padding:.55rem 1rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong);background:var(--bg-3);color:var(--ink-100);cursor:pointer;font:inherit;font-weight:600}
+.quiz__btn:hover:not(:disabled){border-color:var(--fm2-teal);color:var(--fm2-teal)}
+.quiz__btn:disabled{opacity:.6;cursor:default}
+.quiz__explicacao{margin-top:.7rem;padding:.8rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3)}
+.quiz__explicacao[hidden]{display:none}
+.quiz__explicacao p{margin:0 0 .6rem;font-size:.93rem;line-height:1.55}
+.quiz__explicacao p:last-child{margin:0}
+.quiz__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.flow{display:grid;gap:.5rem;margin:.9rem 0}
+.flow__step{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:.7rem .85rem;font-size:.93rem}
+.flow__step strong{color:var(--fm2-teal)}
+.flow__arrow{text-align:center;color:var(--fm2-gelo);font-weight:700}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.9rem 0}
+.stat-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem .9rem;background:var(--bg-2)}
+.stat-card__n{font-size:1.7rem;font-weight:800;color:var(--fm2-teal);line-height:1}
+.stat-card__n--bad{color:var(--fm2-coral)}
+.stat-card__t{display:block;margin-top:.35rem;font-size:.82rem;color:var(--ink-60)}
+.board{display:grid;gap:.5rem;margin:.9rem 0}
+.board__row{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;border:1px solid var(--border);border-radius:var(--radius-sm);padding:.6rem .8rem;background:var(--bg-2)}
+.board__tag{font-weight:800;min-width:1.6rem;text-align:center;border-radius:6px;padding:.15rem .25rem;background:var(--bg-4)}
+.board__tag--ok{background:var(--fm2-verde);color:#fff}
+.board__tag--no{background:var(--fm2-coral);color:#fff}
+.dont-confuse{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.9rem 0}
+.dont-confuse>div{border:1px solid var(--border);border-radius:10px;padding:.65rem .8rem;background:var(--bg-2)}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:560px){.stat-row,.dont-confuse{grid-template-columns:1fr}}
+@media(max-width:420px){.board__row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p9" data-layout="fm2-p09" data-source-ids="102,103,104,105,106,107,108,109,110,111,112,113">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Esclerose múltipla</span>
+        <span class="site-header__subtitle">Neurologia · esclerose múltipla</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">9/12</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<div class="reading">
+  <section class="opener opener--case" aria-labelledby="p9-titulo">
+    <span class="opener__eyebrow">Achado típico</span>
+    <h1 id="p9-titulo">RM obrigatória: prova o que a clínica suspeita</h1>
+    <p>Múltiplas lesões de substância branca — o olho da ressonância. A clínica motiva; a RM confirma.</p>
+  </section>
+
+  <div class="prose">
+    <h2 class="topic-h">Clínica não fecha sozinha</h2>
+    <p class="no-indent"><strong>Não</strong> se pode fechar EM <strong>só pela clínica</strong>: é preciso <strong>mostrar a lesão desmielinizante</strong>. O exame que mostra a lesão da bainha de mielina: <strong>ressonância magnética</strong>.</p>
+    <h2 class="topic-h">Lesões de substância branca</h2>
+    <p class="no-indent">A bainha de mielina tem cor de <strong>substância branca</strong> no SNC → lesões clássicas de <strong>substância branca</strong>, frequentemente nas partes mais internas do cérebro. Corte <strong>axial</strong>: múltiplas lesões de SB. Corte <strong>sagital</strong>: região <strong>periventricular</strong> (ao redor do ventrículo lateral) rica em SB, com várias lesões. Na <strong>neurite óptica</strong>, a RM pode mostrar nervo óptico <strong>branco, brilhante, inflamado</strong>, contrastando com o contralateral normal.</p>
+    <h2 class="topic-h">Tempo e espaço na RM</h2>
+    <p class="no-indent">A RM pode mostrar o <strong>tempo</strong> e o <strong>espaço</strong>. <strong>Tempo na RM:</strong> distinguir <strong>lesão aguda</strong> vs <strong>lesão cicatricial</strong> — cicatriz = já aconteceu; aguda = está acontecendo agora. <strong>Espaço na RM:</strong> vários pontos de lesão inflamatória atual ou pregressa.</p>
+    <h2 class="topic-h">Fluxo: suspeita → RM confirma</h2>
+    <p class="no-indent">Hoje, a ressonância é <strong>critério obrigatório</strong> na investigação de EM. A <strong>clínica motiva</strong> o exame: a clínica levanta a suspeita; a RM <strong>confirma</strong>. Fluxo: <strong>suspeita clínica → RM confirma</strong> (tempo e/ou espaço na imagem).</p>
+    <p><strong>Resumo operacional:</strong> sem lesão desmielinizante na RM, não se fecha EM — por mais “McDonald clínico” que a história pareça.</p>
+  </div>
+
+  <div class="flow" aria-label="Fluxo suspeita para RM">
+    <div class="flow__step"><strong>1.</strong> Clínica levanta suspeita (mulher jovem + visão + surtos)</div>
+    <div class="flow__arrow">▼</div>
+    <div class="flow__step"><strong>2.</strong> RM de crânio (cortes axial + sagital, FLAIR/T2)</div>
+    <div class="flow__arrow">▼</div>
+    <div class="flow__step"><strong>3.</strong> Lesões de SB periventriculares mostram <strong>tempo</strong> (aguda vs cicatriz) e <strong>espaço</strong> (≥2 sítios) → confirma</div>
+  </div>
+
+  <div class="figura-ancorada">
+    <figure class="figura-ancorada__media">
+      <img src="media/B09-MS-FLAIR-3T-multiple-WM-lesions-Mehta-2013-PLOS.png" alt="RM FLAIR 3T com múltiplas lesões hiperintensas de substância branca em paciente com esclerose múltipla." loading="lazy" decoding="async">
+      <figcaption class="figura-ancorada__legenda">FLAIR 3T — múltiplas lesões de SB em EM (RR ativa). Lesões periventriculares brancas é o que a clínica suspeita e a RM confirma.</figcaption>
+      <p class="figura-ancorada__fonte">Mehta V, Pei W, Yang G, et al. <em>PLoS ONE</em> 2013 · CC BY 2.5 · <a href="https://commons.wikimedia.org/wiki/File:Journal.pone.0057573.g005.png">Wikimedia Commons</a></p>
+    </figure>
+    <div class="figura-ancorada__ancora">
+      <h4>O olho da ressonância</h4>
+      <p>As hiperintensidades em FLAIR são as lesões desmielinizantes de substância branca. Sem isso visível, a clínica não fecha EM — por mais que a história pareça McDonald.</p>
+    </div>
+  </div>
+
+  <figure class="fig">
+    <div class="fig__frame fig__frame--svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" class="fm2-inline-svg fm2p9-root" id="fm2p9-svg" data-mode="all" data-active-lesion="none">
+  <defs>
+    <!-- Gradients and Filters -->
+    <linearGradient id="fm2p9-grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p9-bg-grad-1, #070a12)"/>
+      <stop offset="100%" stop-color="var(--fm2p9-bg-grad-2, #0f172a)"/>
+    </linearGradient>
+    
+    <linearGradient id="fm2p9-grad-brain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p9-brain-grad-1, #1e293b)"/>
+      <stop offset="100%" stop-color="var(--fm2p9-brain-grad-2, #0f172a)"/>
+    </linearGradient>
+
+    <radialGradient id="fm2p9-grad-lesion-aguda" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm2p9-gold-bright, #fef08a)"/>
+      <stop offset="40%" stop-color="var(--fm2p9-gold-accent, #f59e0b)"/>
+      <stop offset="85%" stop-color="var(--fm2p9-red-accent, #ef4444)"/>
+      <stop offset="100%" stop-color="rgba(239,68,68,0)"/>
+    </radialGradient>
+
+    <radialGradient id="fm2p9-grad-lesion-cronica" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm2p9-ice-bright, #e0f2fe)"/>
+      <stop offset="60%" stop-color="var(--fm2p9-blue-accent, #38bdf8)"/>
+      <stop offset="100%" stop-color="rgba(56,189,248,0)"/>
+    </radialGradient>
+
+    <filter id="fm2p9-glow-gold" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="fm2p9-glow-blue" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* Scoped CSS strictly using .fm2p9-root */
+    .fm2p9-root {
+      --fm2p9-bg: #090d16;
+      --fm2p9-bg-grad-1: #070a12;
+      --fm2p9-bg-grad-2: #0f172a;
+      --fm2p9-card-bg: #111827;
+      --fm2p9-card-border: #1e293b;
+      --fm2p9-card-header: #1e293b;
+      --fm2p9-text-main: #f8fafc;
+      --fm2p9-text-muted: #94a3b8;
+      --fm2p9-text-sub: #cbd5e1;
+      --fm2p9-brain-grad-1: #1e293b;
+      --fm2p9-brain-grad-2: #0f172a;
+      --fm2p9-brain-stroke: #334155;
+      --fm2p9-brain-cortex: #1e293b;
+      --fm2p9-ventricle: #090d16;
+      --fm2p9-ventricle-stroke: #38bdf8;
+      --fm2p9-teal-accent: #14b8a6;
+      --fm2p9-teal-bg: rgba(20, 184, 166, 0.12);
+      --fm2p9-gold-accent: #f59e0b;
+      --fm2p9-gold-bright: #fef08a;
+      --fm2p9-gold-bg: rgba(245, 158, 11, 0.15);
+      --fm2p9-blue-accent: #38bdf8;
+      --fm2p9-blue-bg: rgba(56, 189, 248, 0.12);
+      --fm2p9-green-normal: #22c55e;
+      --fm2p9-green-bg: rgba(34, 197, 94, 0.12);
+      --fm2p9-red-alert: #ef4444;
+      --fm2p9-red-bg: rgba(239, 68, 68, 0.12);
+      --fm2p9-chip-bg: #1e293b;
+      --fm2p9-chip-border: #334155;
+      --fm2p9-chip-hover: #334155;
+      --fm2p9-panel-shadow: rgba(0,0,0,0.5);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Light theme overrides */
+    [data-theme="light"] .fm2p9-root {
+      --fm2p9-bg: #f8fafc;
+      --fm2p9-bg-grad-1: #f1f5f9;
+      --fm2p9-bg-grad-2: #e2e8f0;
+      --fm2p9-card-bg: #ffffff;
+      --fm2p9-card-border: #cbd5e1;
+      --fm2p9-card-header: #f1f5f9;
+      --fm2p9-text-main: #0f172a;
+      --fm2p9-text-muted: #475569;
+      --fm2p9-text-sub: #334155;
+      --fm2p9-brain-grad-1: #ffffff;
+      --fm2p9-brain-grad-2: #e2e8f0;
+      --fm2p9-brain-stroke: #94a3b8;
+      --fm2p9-brain-cortex: #cbd5e1;
+      --fm2p9-ventricle: #cbd5e1;
+      --fm2p9-ventricle-stroke: #0284c7;
+      --fm2p9-teal-accent: #0d9488;
+      --fm2p9-teal-bg: rgba(13, 148, 136, 0.12);
+      --fm2p9-gold-accent: #d97706;
+      --fm2p9-gold-bright: #b45309;
+      --fm2p9-gold-bg: rgba(217, 119, 6, 0.12);
+      --fm2p9-blue-accent: #0284c7;
+      --fm2p9-blue-bg: rgba(2, 132, 199, 0.12);
+      --fm2p9-green-normal: #16a34a;
+      --fm2p9-green-bg: rgba(22, 163, 74, 0.12);
+      --fm2p9-red-alert: #dc2626;
+      --fm2p9-red-bg: rgba(220, 38, 38, 0.12);
+      --fm2p9-chip-bg: #ffffff;
+      --fm2p9-chip-border: #cbd5e1;
+      --fm2p9-chip-hover: #f1f5f9;
+      --fm2p9-panel-shadow: rgba(0,0,0,0.08);
+    }
+
+    /* Base styling */
+    .fm2p9-root .fm2p9-bg-rect { fill: url(#fm2p9-grad-bg); }
+    .fm2p9-root .fm2p9-title-main { fill: var(--fm2p9-text-main, #f8fafc); font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+    .fm2p9-root .fm2p9-title-sub { fill: var(--fm2p9-teal-accent, #14b8a6); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .fm2p9-root .fm2p9-legend-banner { fill: var(--fm2p9-card-bg, #111827); stroke: var(--fm2p9-card-border, #1e293b); stroke-width: 1px; rx: 6px; }
+    .fm2p9-root .fm2p9-legend-text { fill: var(--fm2p9-text-muted, #94a3b8); font-size: 11px; font-weight: 500; }
+    .fm2p9-root .fm2p9-legend-bold { fill: var(--fm2p9-text-main, #f8fafc); font-weight: 700; }
+    .fm2p9-root .fm2p9-legend-highlight { fill: var(--fm2p9-gold-accent, #f59e0b); font-weight: 700; }
+
+    /* Cards */
+    .fm2p9-root .fm2p9-card { fill: var(--fm2p9-card-bg, #111827); stroke: var(--fm2p9-card-border, #1e293b); stroke-width: 1.5px; rx: 10px; }
+    .fm2p9-root .fm2p9-card-head { fill: var(--fm2p9-card-header, #1e293b); rx: 8px; }
+
+    /* Brain Anatomy */
+    .fm2p9-root .fm2p9-brain-cortex-path { fill: url(#fm2p9-grad-brain); stroke: var(--fm2p9-brain-stroke, #334155); stroke-width: 2.5px; }
+    .fm2p9-root .fm2p9-ventricle-path { fill: var(--fm2p9-ventricle, #090d16); stroke: var(--fm2p9-ventricle-stroke, #38bdf8); stroke-width: 1.5px; opacity: 0.8; }
+    .fm2p9-root .fm2p9-corpus-callosum { fill: none; stroke: var(--fm2p9-text-muted, #94a3b8); stroke-width: 1.5px; stroke-dasharray: 4,3; opacity: 0.6; }
+    .fm2p9-root .fm2p9-sulcus { fill: none; stroke: var(--fm2p9-brain-stroke, #334155); stroke-width: 1px; opacity: 0.5; }
+
+    /* Anatomical pointer lines */
+    .fm2p9-root .fm2p9-pointer-line { stroke: var(--fm2p9-teal-accent, #14b8a6); stroke-width: 1.2px; stroke-dasharray: 3,3; }
+    .fm2p9-root .fm2p9-pointer-dot { fill: var(--fm2p9-teal-accent, #14b8a6); }
+    .fm2p9-root .fm2p9-region-tag { fill: var(--fm2p9-card-bg, #111827); stroke: var(--fm2p9-teal-accent, #14b8a6); stroke-width: 1px; rx: 4px; }
+    .fm2p9-root .fm2p9-region-text { fill: var(--fm2p9-teal-accent, #14b8a6); font-size: 10px; font-weight: 700; }
+
+    /* Lesions */
+    .fm2p9-root .fm2p9-lesion { cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .fm2p9-root .fm2p9-lesion:hover { transform: scale(1.25); }
+    
+    .fm2p9-root .fm2p9-lesion-aguda-core { fill: url(#fm2p9-grad-lesion-aguda); filter: url(#fm2p9-glow-gold); }
+    .fm2p9-root .fm2p9-lesion-aguda-ring { fill: none; stroke: var(--fm2p9-gold-bright, #fef08a); stroke-width: 1.5px; stroke-dasharray: 3,2; }
+    
+    .fm2p9-root .fm2p9-lesion-cronica-core { fill: url(#fm2p9-grad-lesion-cronica); filter: url(#fm2p9-glow-blue); }
+    .fm2p9-root .fm2p9-lesion-cronica-ring { fill: none; stroke: var(--fm2p9-blue-accent, #38bdf8); stroke-width: 1px; }
+
+    /* Dawson fingers indicator */
+    .fm2p9-root .fm2p9-dawson-line { stroke: var(--fm2p9-gold-accent, #f59e0b); stroke-width: 1.5px; stroke-dasharray: 2,2; opacity: 0.8; }
+
+    /* Mode and Selection visibility controls via data attributes on root */
+    .fm2p9-root[data-mode="dis"] .fm2p9-tag-dit { opacity: 0.3; }
+    .fm2p9-root[data-mode="dit"] .fm2p9-tag-dis { opacity: 0.3; }
+    .fm2p9-root[data-mode="dis"] .fm2p9-chip-dis { fill: var(--fm2p9-gold-accent, #f59e0b) !important; stroke: var(--fm2p9-gold-bright, #fef08a) !important; }
+    .fm2p9-root[data-mode="dis"] .fm2p9-chip-dis .fm2p9-chip-text { fill: #0f172a !important; font-weight: 800 !important; }
+    .fm2p9-root[data-mode="dit"] .fm2p9-chip-dit { fill: var(--fm2p9-gold-accent, #f59e0b) !important; stroke: var(--fm2p9-gold-bright, #fef08a) !important; }
+    .fm2p9-root[data-mode="dit"] .fm2p9-chip-dit .fm2p9-chip-text { fill: #0f172a !important; font-weight: 800 !important; }
+    .fm2p9-root[data-mode="all"] .fm2p9-chip-all { fill: var(--fm2p9-teal-accent, #14b8a6) !important; stroke: var(--fm2p9-teal-accent, #14b8a6) !important; }
+    .fm2p9-root[data-mode="all"] .fm2p9-chip-all .fm2p9-chip-text { fill: #0f172a !important; font-weight: 800 !important; }
+
+    /* Active lesion pulse animation */
+    .fm2p9-root .fm2p9-lesion-pulse { animation: fm2p9-pulse 2s infinite ease-in-out; }
+    @keyframes fm2p9-pulse {
+      0% { r: 12px; opacity: 0.8; }
+      50% { r: 18px; opacity: 0.2; }
+      100% { r: 12px; opacity: 0.8; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fm2p9-root .fm2p9-lesion-pulse { animation: none; }
+    }
+
+    /* Chips / Interactive buttons */
+    .fm2p9-root .fm2p9-chip { cursor: pointer; fill: var(--fm2p9-chip-bg, #1e293b); stroke: var(--fm2p9-chip-border, #334155); stroke-width: 1.5px; rx: 16px; transition: all 0.2s ease; }
+    .fm2p9-root .fm2p9-chip:hover { fill: var(--fm2p9-chip-hover, #334155); stroke: var(--fm2p9-teal-accent, #14b8a6); }
+    .fm2p9-root .fm2p9-chip-text { fill: var(--fm2p9-text-main, #f8fafc); font-size: 11px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
+    .fm2p9-root .fm2p9-chip-subtext { fill: var(--fm2p9-text-muted, #94a3b8); font-size: 9px; font-weight: 500; text-anchor: middle; pointer-events: none; }
+
+    /* Reading Panel Text */
+    .fm2p9-root .fm2p9-panel-title { fill: var(--fm2p9-text-main, #f8fafc); font-size: 14px; font-weight: 700; }
+    .fm2p9-root .fm2p9-panel-subtitle { fill: var(--fm2p9-teal-accent, #14b8a6); font-size: 11px; font-weight: 600; }
+    .fm2p9-root .fm2p9-panel-body { fill: var(--fm2p9-text-sub, #cbd5e1); font-size: 11px; line-height: 1.4; }
+    .fm2p9-root .fm2p9-badge { rx: 4px; }
+    .fm2p9-root .fm2p9-badge-green { fill: var(--fm2p9-green-bg, rgba(34,197,94,0.15)); stroke: var(--fm2p9-green-normal, #22c55e); stroke-width: 1px; }
+    .fm2p9-root .fm2p9-badge-green-text { fill: var(--fm2p9-green-normal, #22c55e); font-size: 10px; font-weight: 700; }
+    .fm2p9-root .fm2p9-badge-gold { fill: var(--fm2p9-gold-bg, rgba(245,158,11,0.15)); stroke: var(--fm2p9-gold-accent, #f59e0b); stroke-width: 1px; }
+    .fm2p9-root .fm2p9-badge-gold-text { fill: var(--fm2p9-gold-accent, #f59e0b); font-size: 10px; font-weight: 700; }
+    .fm2p9-root .fm2p9-badge-red { fill: var(--fm2p9-red-bg, rgba(239,68,68,0.15)); stroke: var(--fm2p9-red-alert, #ef4444); stroke-width: 1px; }
+    .fm2p9-root .fm2p9-badge-red-text { fill: var(--fm2p9-red-alert, #ef4444); font-size: 10px; font-weight: 700; }
+
+    /* Tooltip */
+    .fm2p9-root .fm2p9-tooltip { pointer-events: none; opacity: 0; transition: opacity 0.15s ease; }
+    .fm2p9-root .fm2p9-tooltip-bg { fill: var(--fm2p9-card-bg, #111827); stroke: var(--fm2p9-teal-accent, #14b8a6); stroke-width: 1.5px; rx: 6px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); }
+    .fm2p9-root .fm2p9-tooltip-title { fill: var(--fm2p9-text-main, #f8fafc); font-size: 11px; font-weight: 700; }
+    .fm2p9-root .fm2p9-tooltip-desc { fill: var(--fm2p9-text-muted, #94a3b8); font-size: 10px; font-weight: 500; }
+  </style>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1000" height="660" class="fm2p9-bg-rect" />
+
+  <!-- HEADER -->
+  <g transform="translate(30, 20)">
+    <text x="0" y="16" class="fm2p9-title-sub">Ressonância Magnética na Esclerose Múltipla</text>
+    <text x="0" y="38" class="fm2p9-title-main">CRITÉRIOS RADIOLÓGICOS: DISSEMINAÇÃO NO ESPAÇO (DIS) E NO TEMPO (DIT)</text>
+    
+    <!-- LEGENDA DE INTERPRETAÇÃO DE ACORDO COM O CONTRATO BAUER -->
+    <rect x="0" y="48" width="940" height="32" class="fm2p9-legend-banner" />
+    <text x="12" y="68" class="fm2p9-legend-text">
+      <tspan class="fm2p9-legend-bold">REGRA DE OURO (MCDONALD): </tspan>
+      A RM confirma a suspeita clínica ao demonstrar 
+      <tspan class="fm2p9-legend-highlight">ESPAÇO (≥2 sítios anatômicos)</tspan> e 
+      <tspan class="fm2p9-legend-highlight">TEMPO (lesões Gd+ e Gd- coexistentes)</tspan>. 
+      <tspan style="fill:var(--fm2p9-red-alert,#ef4444); font-weight:700;">Atenção: RM isolada sem surto clínico NÃO fecha diagnóstico.</tspan>
+    </text>
+  </g>
+
+  <!-- LEFT MAIN AREA: BRAIN MRI SILHOUETTE + CHIPS -->
+  <g transform="translate(30, 115)">
+    <!-- Container Card for MRI Slice -->
+    <rect x="0" y="0" width="540" height="520" class="fm2p9-card" />
+    <rect x="15" y="12" width="510" height="36" class="fm2p9-card-head" />
+    <text x="30" y="35" style="fill:var(--fm2p9-text-main,#f8fafc); font-size:12px; font-weight:700;">CORTE AXIAL SCHEMATIC · FLAIR / T1+C (SUBSTÂNCIA BRANCA)</text>
+    <text x="380" y="35" style="fill:var(--fm2p9-teal-accent,#14b8a6); font-size:10px; font-weight:700;">SELEÇÃO INTERATIVA</text>
+
+    <!-- INTERACTIVE CHIPS (SELETORES MACRO TEMPO / ESPAÇO) -->
+    <g transform="translate(25, 60)">
+      <!-- Chip ALL -->
+      <g class="fm2p9-chip fm2p9-chip-all" id="fm2p9-btn-all" role="button" tabindex="0" aria-label="Ver visão completa de Tempo e Espaço">
+        <rect x="0" y="0" width="145" height="36" class="fm2p9-chip" />
+        <text x="72" y="18" class="fm2p9-chip-text">VISÃO INTEGRADA</text>
+        <text x="72" y="29" class="fm2p9-chip-subtext">Todas as Lesões</text>
+      </g>
+
+      <!-- Chip DIS (ESPAÇO) -->
+      <g class="fm2p9-chip fm2p9-chip-dis" id="fm2p9-btn-dis" transform="translate(160, 0)" role="button" tabindex="0" aria-label="Filtrar Disseminação no Espaço (Múltiplos Sítios)">
+        <rect x="0" y="0" width="160" height="36" class="fm2p9-chip" />
+        <text x="80" y="18" class="fm2p9-chip-text">ESPAÇO (DIS)</text>
+        <text x="80" y="29" class="fm2p9-chip-subtext">Múltiplos Sítios (≥2 de 4)</text>
+      </g>
+
+      <!-- Chip DIT (TEMPO) -->
+      <g class="fm2p9-chip fm2p9-chip-dit" id="fm2p9-btn-dit" transform="translate(330, 0)" role="button" tabindex="0" aria-label="Filtrar Disseminação no Tempo (Aguda vs Cicatriz)">
+        <rect x="0" y="0" width="160" height="36" class="fm2p9-chip" />
+        <text x="80" y="18" class="fm2p9-chip-text">TEMPO (DIT)</text>
+        <text x="80" y="29" class="fm2p9-chip-subtext">Aguda (Gd+) vs Cicatriz</text>
+      </g>
+    </g>
+
+    <!-- BRAIN SILHOUETTE CANVAS (X: 30..510, Y: 110..470) -->
+    <g transform="translate(120, 110)">
+      <!-- Outer Brain Contour (Axial Slice Silhouette) -->
+      <path class="fm2p9-brain-cortex-path" d="
+        M 150 15 
+        C 210 15, 270 45, 285 110 
+        C 300 175, 295 240, 275 300 
+        C 255 360, 210 395, 150 395 
+        C 90 395, 45 360, 25 300 
+        C 5 240, 0 175, 15 110 
+        C 30 45, 90 15, 150 15 Z" />
+
+      <!-- Sulci and Hemispheric Fissure -->
+      <line x1="150" y1="20" x2="150" y2="120" class="fm2p9-sulcus" />
+      <line x1="150" y1="260" x2="150" y2="390" class="fm2p9-sulcus" />
+      <path d="M 60 180 Q 90 170 120 190" class="fm2p9-sulcus" />
+      <path d="M 240 180 Q 210 170 180 190" class="fm2p9-sulcus" />
+
+      <!-- Lateral Ventricles (Butterfly shape in center) -->
+      <!-- Left Ventricle -->
+      <path class="fm2p9-ventricle-path" d="
+        M 138 130 
+        C 120 140, 115 180, 125 210 
+        C 135 240, 142 245, 144 220 
+        C 146 195, 142 160, 138 130 Z" />
+
+      <!-- Right Ventricle -->
+      <path class="fm2p9-ventricle-path" d="
+        M 162 130 
+        C 180 140, 185 180, 175 210 
+        C 165 240, 158 245, 156 220 
+        C 154 195, 158 160, 162 130 Z" />
+
+      <!-- Corpus Callosum outline -->
+      <path class="fm2p9-corpus-callosum" d="M 125 125 Q 150 115 175 125 Q 150 135 125 125 Z" />
+      <path class="fm2p9-corpus-callosum" d="M 128 225 Q 150 235 172 225 Q 150 215 128 225 Z" />
+
+      <!-- Dawson Fingers (Perpendicular lines to ventricle wall) -->
+      <line x1="118" y1="160" x2="85" y2="150" class="fm2p9-dawson-line" />
+      <line x1="118" y1="185" x2="80" y2="185" class="fm2p9-dawson-line" />
+      <line x1="182" y1="160" x2="215" y2="155" class="fm2p9-dawson-line" />
+
+      <!-- ANATOMICAL SITE POINTERS AND TAGS -->
+      <!-- 1. PERIVENTRICULAR (DIS #1) -->
+      <g transform="translate(-80, 140)" class="fm2p9-tag-dis">
+        <line x1="80" y1="20" x2="18" y2="20" class="fm2p9-pointer-line" />
+        <circle cx="80" cy="20" r="3" class="fm2p9-pointer-dot" />
+        <rect x="-75" y="6" width="105" height="26" class="fm2p9-region-tag" />
+        <text x="-23" y="23" class="fm2p9-region-text" text-anchor="middle">PERIVENTRICULAR</text>
+      </g>
+
+      <!-- 2. JUXTACORTICAL / CORTICAL (DIS #2) -->
+      <g transform="translate(250, 80)" class="fm2p9-tag-dis">
+        <line x1="-30" y1="20" x2="30" y2="20" class="fm2p9-pointer-line" />
+        <circle cx="-30" cy="20" r="3" class="fm2p9-pointer-dot" />
+        <rect x="30" y="6" width="115" height="26" class="fm2p9-region-tag" />
+        <text x="87" y="23" class="fm2p9-region-text" text-anchor="middle">JUXTACORTICAL</text>
+      </g>
+
+      <!-- 3. INFRATENTORIAL (DIS #3) -->
+      <g transform="translate(250, 310)" class="fm2p9-tag-dis">
+        <line x1="-35" y1="15" x2="30" y2="15" class="fm2p9-pointer-line" />
+        <circle cx="-35" cy="15" r="3" class="fm2p9-pointer-dot" />
+        <rect x="30" y="2" width="115" height="26" class="fm2p9-region-tag" />
+        <text x="87" y="19" class="fm2p9-region-text" text-anchor="middle">INFRATENTORIAL</text>
+      </g>
+
+      <!-- 4. MEDULAR / SPINAL CORD INSET (DIS #4) -->
+      <g transform="translate(45, 340)" class="fm2p9-tag-dis">
+        <!-- Small Inset Box for Spinal Cord -->
+        <rect x="-10" y="-10" width="60" height="60" rx="6" style="fill:var(--fm2p9-card-bg,#111827); stroke:var(--fm2p9-teal-accent,#14b8a6); stroke-width:1px;" />
+        <!-- Spinal cord cross section -->
+        <circle cx="20" cy="20" r="22" style="fill:var(--fm2p9-brain-stroke,#334155); stroke:var(--fm2p9-brain-stroke,#334155);" />
+        <path d="M 12 20 Q 20 14 28 20 Q 20 26 12 20 Z" style="fill:var(--fm2p9-ventricle,#090d16);" />
+        <!-- Medulla Pointer -->
+        <line x1="50" y1="20" x2="80" y2="20" class="fm2p9-pointer-line" />
+        <rect x="-75" y="55" width="90" height="24" class="fm2p9-region-tag" />
+        <text x="-30" y="71" class="fm2p9-region-text" text-anchor="middle">MEDULAR</text>
+      </g>
+
+      <!-- LESION HOTSPOTS (INTERACTIVE LESION OBJECTS) -->
+      <!-- Lesão 1: Periventricular Aguda (Gd+) -> TEMPO: Aguda / ESPAÇO: Periventricular -->
+      <g class="fm2p9-lesion" id="fm2p9-lesion-1" transform="translate(85, 150)" role="button" tabindex="0" aria-label="Lesão Periventricular Aguda com realce por Gadolínio" data-id="1" data-site="periventricular" data-time="aguda">
+        <circle cx="0" cy="0" r="16" class="fm2p9-lesion-pulse" style="fill:var(--fm2p9-gold-glow, rgba(245,158,11,0.3));" />
+        <circle cx="0" cy="0" r="10" class="fm2p9-lesion-aguda-core" />
+        <circle cx="0" cy="0" r="12" class="fm2p9-lesion-aguda-ring" />
+      </g>
+
+      <!-- Lesão 2: Periventricular Crônica (Gd-) -> TEMPO: Crônica / ESPAÇO: Periventricular -->
+      <g class="fm2p9-lesion" id="fm2p9-lesion-2" transform="translate(215, 155)" role="button" tabindex="0" aria-label="Lesão Periventricular Crônica sem realce por Gadolínio" data-id="2" data-site="periventricular" data-time="cronica">
+        <circle cx="0" cy="0" r="9" class="fm2p9-lesion-cronica-core" />
+        <circle cx="0" cy="0" r="11" class="fm2p9-lesion-cronica-ring" />
+      </g>
+
+      <!-- Lesão 3: Juxtacortical Aguda (Gd+) -> TEMPO: Aguda / ESPAÇO: Juxtacortical -->
+      <g class="fm2p9-lesion" id="fm2p9-lesion-3" transform="translate(220, 100)" role="button" tabindex="0" aria-label="Lesão Juxtacortical Aguda com realce por Gadolínio" data-id="3" data-site="juxtacortical" data-time="aguda">
+        <circle cx="0" cy="0" r="14" class="fm2p9-lesion-pulse" style="fill:var(--fm2p9-gold-glow, rgba(245,158,11,0.3));" />
+        <circle cx="0" cy="0" r="9" class="fm2p9-lesion-aguda-core" />
+        <circle cx="0" cy="0" r="11" class="fm2p9-lesion-aguda-ring" />
+      </g>
+
+      <!-- Lesão 4: Infratentorial Crônica (Gd-) -> TEMPO: Crônica / ESPAÇO: Infratentorial -->
+      <g class="fm2p9-lesion" id="fm2p9-lesion-4" transform="translate(215, 325)" role="button" tabindex="0" aria-label="Lesão Infratentorial Crônica no Tronco Encefálico" data-id="4" data-site="infratentorial" data-time="cronica">
+        <circle cx="0" cy="0" r="10" class="fm2p9-lesion-cronica-core" />
+        <circle cx="0" cy="0" r="12" class="fm2p9-lesion-cronica-ring" />
+      </g>
+
+      <!-- Lesão 5: Medular Aguda (Gd+) -> TEMPO: Aguda / ESPAÇO: Medular -->
+      <g class="fm2p9-lesion" id="fm2p9-lesion-5" transform="translate(65, 360)" role="button" tabindex="0" aria-label="Lesão Medular Aguda Cervical" data-id="5" data-site="medular" data-time="aguda">
+        <circle cx="0" cy="0" r="12" class="fm2p9-lesion-pulse" style="fill:var(--fm2p9-gold-glow, rgba(245,158,11,0.3));" />
+        <circle cx="0" cy="0" r="7" class="fm2p9-lesion-aguda-core" />
+        <circle cx="0" cy="0" r="9" class="fm2p9-lesion-aguda-ring" />
+      </g>
+    </g>
+
+    <!-- LESION TYPE LEGEND (BOTTOM OF BRAIN CANVAS) -->
+    <g transform="translate(30, 475)">
+      <!-- Aguda Gd+ -->
+      <circle cx="15" cy="15" r="7" class="fm2p9-lesion-aguda-core" />
+      <circle cx="15" cy="15" r="9" class="fm2p9-lesion-aguda-ring" />
+      <text x="32" y="19" style="fill:var(--fm2p9-gold-accent,#f59e0b); font-size:11px; font-weight:700;">Lesão Aguda (Gd+)</text>
+      <text x="145" y="19" style="fill:var(--fm2p9-text-muted,#94a3b8); font-size:10px;">Capta Gadolínio = Inflamação ativa (TEMPO)</text>
+
+      <!-- Crônica Gd- -->
+      <circle cx="310" cy="15" r="7" class="fm2p9-lesion-cronica-core" />
+      <circle cx="310" cy="15" r="9" class="fm2p9-lesion-cronica-ring" />
+      <text x="325" y="19" style="fill:var(--fm2p9-blue-accent,#38bdf8); font-size:11px; font-weight:700;">Lesão Crônica (Gd-)</text>
+      <text x="435" y="19" style="fill:var(--fm2p9-text-muted,#94a3b8); font-size:10px;">Sem realce = Cicatriz / Desmielinização prévia</text>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: CLINICAL INTERPRETATION AND READOUT (PAINEL BAUER DE LEITURA) -->
+  <g transform="translate(590, 115)">
+    <!-- Container Card for Readout -->
+    <rect x="0" y="0" width="380" height="520" class="fm2p9-card" />
+    <rect x="15" y="12" width="350" height="36" class="fm2p9-card-head" />
+    <text x="30" y="35" class="fm2p9-panel-title">PAINEL DE ANÁLISE RADIOLÓGICA</text>
+    
+    <!-- DYNAMIC DETAIL DISPLAY PANEL -->
+    <g transform="translate(20, 60)" id="fm2p9-detail-box">
+      <!-- Active Mode Title and Badge -->
+      <rect x="0" y="0" width="340" height="28" class="fm2p9-badge fm2p9-badge-gold" id="fm2p9-panel-badge-bg" />
+      <text x="12" y="18" class="fm2p9-badge-gold-text" id="fm2p9-panel-badge-text">VISÃO INTEGRADA · CRITÉRIOS DE MCDONALD</text>
+
+      <!-- Core Clinical Explanation Block -->
+      <g transform="translate(0, 40)">
+        <text x="0" y="15" class="fm2p9-panel-subtitle" id="fm2p9-desc-title">INTEGRAÇÃO: ESPAÇO E TEMPO NA RM</text>
+
+        <!-- Paragraph text broken into tspans -->
+        <text x="0" y="38" class="fm2p9-panel-body" id="fm2p9-desc-p1">
+          <tspan x="0" dy="0">Para a RM confirmar o diagnóstico de EM, é necessário</tspan>
+          <tspan x="0" dy="16">demonstrar desmielinização multifocal que variou</tspan>
+          <tspan x="0" dy="16">ao longo da anatomia (ESPAÇO) e no histórico (TEMPO).</tspan>
+        </text>
+      </g>
+
+      <!-- CRITERION 1: DISSEMINATION IN SPACE (DIS) -->
+      <g transform="translate(0, 120)" id="fm2p9-block-dis">
+        <rect x="0" y="0" width="340" height="110" rx="8" style="fill:var(--fm2p9-card-header,#1e293b); stroke:var(--fm2p9-teal-accent,#14b8a6); stroke-width:1px;" />
+        <text x="12" y="22" style="fill:var(--fm2p9-teal-accent,#14b8a6); font-size:12px; font-weight:700;">1. ESPAÇO (DIS) · MÚLTIPLOS SÍTIOS ANATÔMICOS</text>
+        <text x="12" y="42" class="fm2p9-panel-body">
+          <tspan x="12" dy="0">Exige ≥ 1 lesão em T2/FLAIR em pelo menos <tspan style="fill:var(--fm2p9-gold-accent,#f59e0b); font-weight:700;">2 de 4</tspan></tspan>
+          <tspan x="12" dy="16">regiões características do Sistema Nervoso Central:</tspan>
+        </text>
+        
+        <!-- 4 Sites checklist -->
+        <g transform="translate(12, 70)">
+          <text x="0" y="0" style="fill:var(--fm2p9-text-main,#f8fafc); font-size:10px; font-weight:600;">✓ Periventricular (Dedos de Dawson)</text>
+          <text x="170" y="0" style="fill:var(--fm2p9-text-main,#f8fafc); font-size:10px; font-weight:600;">✓ Juxtacortical / Cortical</text>
+          <text x="0" y="16" style="fill:var(--fm2p9-text-main,#f8fafc); font-size:10px; font-weight:600;">✓ Infratentorial (Tronco/Cerebelo)</text>
+          <text x="170" y="16" style="fill:var(--fm2p9-text-main,#f8fafc); font-size:10px; font-weight:600;">✓ Medula Espinhal</text>
+        </g>
+      </g>
+
+      <!-- CRITERION 2: DISSEMINATION IN TIME (DIT) -->
+      <g transform="translate(0, 240)" id="fm2p9-block-dit">
+        <rect x="0" y="0" width="340" height="110" rx="8" style="fill:var(--fm2p9-card-header,#1e293b); stroke:var(--fm2p9-gold-accent,#f59e0b); stroke-width:1px;" />
+        <text x="12" y="22" style="fill:var(--fm2p9-gold-accent,#f59e0b); font-size:12px; font-weight:700;">2. TEMPO (DIT) · SURTOS EM MOMENTOS DISTINTOS</text>
+        <text x="12" y="42" class="fm2p9-panel-body">
+          <tspan x="12" dy="0">Pode ser demonstrada em um <tspan style="fill:var(--fm2p9-gold-accent,#f59e0b); font-weight:700;">ÚNICO EXAME DE RM</tspan>:</tspan>
+          <tspan x="12" dy="18">✓ Presença simultânea de lesão <tspan style="fill:var(--fm2p9-gold-accent,#f59e0b); font-weight:700;">Aguda (Gd+)</tspan> E</tspan>
+          <tspan x="22" dy="16">lesão <tspan style="fill:var(--fm2p9-blue-accent,#38bdf8); font-weight:700;">Crônica (Gd-)</tspan> em qualquer localização.</tspan>
+          <tspan x="12" dy="18">OU por nova lesão em RM de acompanhamento.</tspan>
+        </text>
+      </g>
+
+      <!-- CLINICAL ALERT / PITFALL (CONTRATO BAUER - ANCORAGEM CLÍNICA) -->
+      <g transform="translate(0, 360)">
+        <rect x="0" y="0" width="340" height="85" rx="8" class="fm2p9-badge-red" />
+        <text x="12" y="22" class="fm2p9-badge-red-text">PEGADINHA DE PROVA · CORRELAÇÃO OBRIGATÓRIA</text>
+        <text x="12" y="40" class="fm2p9-panel-body" style="fill:var(--fm2p9-text-main,#f8fafc);">
+          <tspan x="12" dy="0">A RM NUNCA fecha diagnóstico de EM isolada!</tspan>
+          <tspan x="12" dy="16">É indispensável haver <tspan style="fill:var(--fm2p9-red-alert,#ef4444); font-weight:700;">ao menos 1 surto clínico típico</tspan></tspan>
+          <tspan x="12" dy="16">(neurite óptica, mielite, síndrome tronco-encefálica).</tspan>
+        </text>
+      </g>
+
+      <!-- FOOTER NOTE -->
+      <text x="0" y="465" style="fill:var(--fm2p9-text-muted,#94a3b8); font-size:10px; font-weight:500;">
+        Clique nos chips ou sobre as lesões na imagem para explorar a análise.
+      </text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE TOOLTIP ELEMENT -->
+  <g class="fm2p9-tooltip" id="fm2p9-tooltip">
+    <rect width="180" height="42" class="fm2p9-tooltip-bg" />
+    <text x="10" y="18" class="fm2p9-tooltip-title" id="fm2p9-tt-title">Lesão Periventricular</text>
+    <text x="10" y="32" class="fm2p9-tooltip-desc" id="fm2p9-tt-desc">Aguda (Gd+) · Disseminação no Tempo</text>
+  </g>
+
+  <!-- INLINE INTERACTIVE SCRIPT (SELF-CONTAINED IN CDATA) -->
+  <script type="text/javascript"><![CDATA[
+    (function() {
+      var svg = document.getElementById('fm2p9-svg');
+      if (!svg) return;
+
+      var btnAll = document.getElementById('fm2p9-btn-all');
+      var btnDis = document.getElementById('fm2p9-btn-dis');
+      var btnDit = document.getElementById('fm2p9-btn-dit');
+
+      var panelBadgeText = document.getElementById('fm2p9-panel-badge-text');
+      var descTitle = document.getElementById('fm2p9-desc-title');
+      var descP1 = document.getElementById('fm2p9-desc-p1');
+
+      var tooltip = document.getElementById('fm2p9-tooltip');
+      var ttTitle = document.getElementById('fm2p9-tt-title');
+      var ttDesc = document.getElementById('fm2p9-tt-desc');
+
+      var lesions = document.querySelectorAll('.fm2p9-lesion');
+
+      // Data dictionaries for interactive readout update
+      var lesionData = {
+        '1': {
+          title: 'LESÃO PERIVENTRICULAR (AGUDA Gd+)',
+          badge: 'ESPAÇO: PERIVENTRICULAR · TEMPO: AGUDA',
+          desc: [
+            'Disposta de forma perpendicular aos ventrículos (Dedo de Dawson).',
+            'Como capta Gadolínio (Gd+), indica processo inflamatório ativo',
+            'recente (quebra da barreira hematoencefálica).'
+          ],
+          ttTitle: 'Periventricular Aguda',
+          ttDesc: 'Gd+ (Ativa) · Dedo de Dawson'
+        },
+        '2': {
+          title: 'LESÃO PERIVENTRICULAR (CRÔNICA Gd-)',
+          badge: 'ESPAÇO: PERIVENTRICULAR · TEMPO: CRÔNICA',
+          desc: [
+            'Placa hiperintensa em T2/FLAIR sem captação de contraste (Gd-).',
+            'Representa sequela/cicatriz desmielinizante antiga.',
+            'Coexiste com lesão Gd+ para provar Disseminação no Tempo (DIT).'
+          ],
+          ttTitle: 'Periventricular Crônica',
+          ttDesc: 'Gd- (Cicatriz antiga)'
+        },
+        '3': {
+          title: 'LESÃO JUXTACORTICAL (AGUDA Gd+)',
+          badge: 'ESPAÇO: JUXTACORTICAL · TEMPO: AGUDA',
+          desc: [
+            'Localizada na substância branca imediatamente adjacente ao córtex.',
+            'Acomete as fibras em U subcorticais.',
+            'Preenche critério de Espaço (Juxtacortical/Cortical).'
+          ],
+          ttTitle: 'Juxtacortical Aguda',
+          ttDesc: 'Gd+ (Ativa) · Fibras em U'
+        },
+        '4': {
+          title: 'LESÃO INFRATENTORIAL (CRÔNICA Gd-)',
+          badge: 'ESPAÇO: INFRATENTORIAL · TEMPO: CRÔNICA',
+          desc: [
+            'Localizada no tronco encefálico (ponte/pedúnculo) ou cerebelo.',
+            'Frequente causa de diplopia, ataxia ou paralisia facial no surto.',
+            'Sem realce por Gd (fase crônica/sequelar).'
+          ],
+          ttTitle: 'Infratentorial Crônica',
+          ttDesc: 'Gd- (Tronco Encefálico)'
+        },
+        '5': {
+          title: 'LESÃO MEDULAR CERVICAL (AGUDA Gd+)',
+          badge: 'ESPAÇO: MEDULAR · TEMPO: AGUDA',
+          desc: [
+            'Lesão periférica, curta (< 2 segmentos vertebrais) na medula.',
+            'Captação de Gadolínio em fase aguda de mielite parcial.',
+            'Preenche o 4º sítio anatômico de Espaço (Medula Espinhal).'
+          ],
+          ttTitle: 'Medular Cervical Aguda',
+          ttDesc: 'Gd+ (Mielite parcial)'
+        }
+      };
+
+      // Set Mode
+      function setMode(mode) {
+        svg.setAttribute('data-mode', mode);
+        svg.setAttribute('data-active-lesion', 'none');
+
+        if (mode === 'dis') {
+          panelBadgeText.textContent = 'FILTRO: ESPAÇO (DIS) · MÚLTIPLOS SÍTIOS';
+          descTitle.textContent = 'DISSEMINAÇÃO NO ESPAÇO (DIS)';
+          descP1.innerHTML = '<tspan x="0" dy="0">Exige lesões em <tspan style="fill:var(--fm2p9-gold-accent,#f59e0b); font-weight:700;">≥ 2 de 4 regiões clássicas</tspan>:</tspan>' +
+            '<tspan x="0" dy="18">1. Periventricular | 2. Juxtacortical/Cortical</tspan>' +
+            '<tspan x="0" dy="18">3. Infratentorial | 4. Medula Espinhal.</tspan>';
+        } else if (mode === 'dit') {
+          panelBadgeText.textContent = 'FILTRO: TEMPO (DIT) · AGUDA VS CRÔNICA';
+          descTitle.textContent = 'DISSEMINAÇÃO NO TEMPO (DIT)';
+          descP1.innerHTML = '<tspan x="0" dy="0">Provada na RM inicial se houver <tspan style="fill:var(--fm2p9-gold-accent,#f59e0b); font-weight:700;">SIMULTANEIDADE</tspan>:</tspan>' +
+            '<tspan x="0" dy="18">• Lesão capta contraste (Aguda Gd+)</tspan>' +
+            '<tspan x="0" dy="18">• Lesão NÃO capta contraste (Crônica Gd-).</tspan>';
+        } else {
+          panelBadgeText.textContent = 'VISÃO INTEGRADA · CRITÉRIOS DE MCDONALD';
+          descTitle.textContent = 'INTEGRAÇÃO: ESPAÇO E TEMPO NA RM';
+          descP1.innerHTML = '<tspan x="0" dy="0">Para a RM confirmar o diagnóstico de EM, é necessário</tspan>' +
+            '<tspan x="0" dy="16">demonstrar desmielinização multifocal que variou</tspan>' +
+            '<tspan x="0" dy="16">ao longo da anatomia (ESPAÇO) e no histórico (TEMPO).</tspan>';
+        }
+      }
+
+      // Event listeners for Chips
+      if (btnAll) btnAll.addEventListener('click', function() { setMode('all'); });
+      if (btnDis) btnDis.addEventListener('click', function() { setMode('dis'); });
+      if (btnDit) btnDit.addEventListener('click', function() { setMode('dit'); });
+
+      // Keyboard navigation for chips
+      [btnAll, btnDis, btnDit].forEach(function(btn) {
+        if (!btn) return;
+        btn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+
+      // Mouse follow Tooltip
+      function showTooltip(evt, textTitle, textDesc) {
+        ttTitle.textContent = textTitle;
+        ttDesc.textContent = textDesc;
+        tooltip.style.opacity = '1';
+        
+        var p = svg.createSVGPoint();
+        p.x = evt.clientX;
+        p.y = evt.clientY;
+        var ctm = svg.getScreenCTM();
+        if (ctm) {
+          var svgP = p.matrixTransform(ctm.inverse());
+          tooltip.setAttribute('transform', 'translate(' + (svgP.x + 15) + ',' + (svgP.y - 20) + ')');
+        }
+      }
+
+      function hideTooltip() {
+        tooltip.style.opacity = '0';
+      }
+
+      // Event listeners for Lesions
+      lesions.forEach(function(lesion) {
+        var id = lesion.getAttribute('data-id');
+        var info = lesionData[id];
+        if (!info) return;
+
+        lesion.addEventListener('mouseenter', function(e) {
+          showTooltip(e, info.ttTitle, info.ttDesc);
+        });
+
+        lesion.addEventListener('mousemove', function(e) {
+          showTooltip(e, info.ttTitle, info.ttDesc);
+        });
+
+        lesion.addEventListener('mouseleave', function() {
+          hideTooltip();
+        });
+
+        lesion.addEventListener('click', function() {
+          svg.setAttribute('data-active-lesion', id);
+          panelBadgeText.textContent = info.badge;
+          descTitle.textContent = info.title;
+          descP1.innerHTML = '<tspan x="0" dy="0">' + info.desc[0] + '</tspan>' +
+            '<tspan x="0" dy="16">' + info.desc[1] + '</tspan>' +
+            '<tspan x="0" dy="16">' + info.desc[2] + '</tspan>';
+        });
+
+        lesion.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            lesion.click();
+          }
+        });
+      });
+    })();
+  ]]></script>
+</svg>
+
+    </div>
+    <figcaption class="fig__cap"><span class="fig__label">Piso</span>Overlay na silhueta de RM: “aguda vs cicatriz = TEMPO” e “múltiplos sítios = ESPAÇO”.</figcaption>
+  </figure>
+
+  <div class="continuity" aria-label="Continuidade">
+    <p>O <strong>líquor</strong> entra como substituto de tempo — e a pegadinha do conversivo.</p>
+  </div>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p9-q1" aria-labelledby="p9-q1-enun">
+    <h3>Quiz</h3>
+    <p class="quiz__enun" id="p9-q1-enun"><b>Q1.</b> Fechar EM <strong>somente</strong> pela história clínica de dois surtos:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>É o padrão ouro isolado</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>Não basta — precisa mostrar lesão desmielinizante (RM)</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Exige só LCR</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Exige biópsia sempre</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> A RM é <strong>critério obrigatório</strong> — só clínica não fecha.</p>
+      <p><b>(A)</b> clínica não é padrão ouro isolado. <b>(C)</b> LCR não substitui RM. <b>(D)</b> não há biópsia.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p9-q2" aria-labelledby="p9-q2-enun">
+    <p class="quiz__enun" id="p9-q2-enun"><b>Q2.</b> Na RM, tempo e espaço correspondem a:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Tempo = só idade do paciente; espaço = só altura</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>Tempo ≈ aguda vs cicatriz; espaço ≈ múltiplos sítios</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Só contraste venoso</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Só espectroscopia</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> Tempo = distinguir lesão aguda de cicatricial; espaço = múltiplos pontos de lesão.</p>
+      <p><b>(A)</b> não é idade/altura. <b>(C)(D)</b> não são o eixo tempo×espaço.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p8.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">McDonald: tempo e espaço</span></a><a class="next" href="p10.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">LCR e a pegadinha do conversivo</span></a></nav>
+</div>
+</main>
+<footer class="rodape">Esclerose múltipla · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm2.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Esclerose múltipla · 12 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="index.html">1. Jaqueline: dois surtos, visão e motor</a></li>
+      <li><a class="menu-panel__link" href="p2.html">2. Espástica = 1º NMS — e o nome da doença</a></li>
+      <li><a class="menu-panel__link" href="p3.html">3. O que é EM: quatro âncoras</a></li>
+      <li><a class="menu-panel__link" href="p4.html">4. Por que o quadro é múltiplo: a mielina</a></li>
+      <li><a class="menu-panel__link" href="p5.html">5. Neurite óptica: o II par é SNC</a></li>
+      <li><a class="menu-panel__link" href="p6.html">6. As três de prova + Uhthoff</a></li>
+      <li><a class="menu-panel__link" href="p7.html">7. Surto-remissão vs 15% progressiva</a></li>
+      <li><a class="menu-panel__link" href="p8.html">8. McDonald: tempo e espaço</a></li>
+      <li><a class="menu-panel__link is-current" href="p9.html">9. RM obrigatória: prova o que a clínica suspeita</a></li>
+      <li><a class="menu-panel__link" href="p10.html">10. LCR e a pegadinha do conversivo</a></li>
+      <li><a class="menu-panel__link" href="p11.html">11. Vignette 25 a: por que é EM</a></li>
+      <li><a class="menu-panel__link" href="p12.html">12. Surto, sequela e PCDT SUS</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

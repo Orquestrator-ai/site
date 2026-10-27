@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>Status convulsivo × não convulsivo — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Manejo da Crise / Status Epiléptico</span>
+        <span class="site-header__subtitle">Neurologia · Aula 9</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">3/11</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<style>
+.a9-l3{--i:#818CF8;--c:#38BDF8;--r:#F87171;--g:#FBBF24;--t:#2DD4BF;--gr:#4ADE80;--ink:var(--ink,#F4F7FB);--mu:var(--muted,#94A3B8);--ca:var(--card-bg,rgba(17,26,43,0.72));--c2:var(--card-bg2,rgba(21,32,51,0.65));--b:var(--border,rgba(148,163,184,0.14));max-width:820px;margin:0 auto;padding:0 20px;}
+[data-theme="light"] .a9-l3{--ink:#0F172A;--mu:#64748B;--ca:rgba(255,255,255,0.82);--c2:rgba(241,245,249,0.78);--b:rgba(15,23,42,0.10);}
+.a9-l3 h1{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;color:var(--ink);margin:32px 0 6px;line-height:1.2;}
+.a9-l3 .a9-sub{font-size:.9rem;color:var(--mu);margin-bottom:20px;}
+.a9-l3 .a9-prose{text-align:justify;text-indent:1.5em;hyphens:auto;color:var(--ink);line-height:1.75;font-size:.95rem;}
+.a9-l3 .a9-prose p{margin:0 0 12px;}
+.a9-l3 .a9-prose h3{text-indent:0;font-size:1.1rem;font-weight:700;color:var(--i);margin:24px 0 8px;}
+.a9-l3 .a9-prose strong{color:var(--r);}
+.a9-l3 .a9-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}
+@media(max-width:600px){.a9-l3 .a9-split{grid-template-columns:1fr;}.a9-l3 h1{font-size:1.4rem;}}
+.a9-l3 .a9-sp-card{background:var(--ca);border:1px solid var(--b);border-radius:14px;padding:20px;}
+.a9-l3 .a9-sp-card.conv{border-left:3px solid var(--r);}
+.a9-l3 .a9-sp-card.nconv{border-left:3px solid var(--c);}
+.a9-l3 .a9-sp-card h4{font-size:1rem;font-weight:700;margin:0 0 10px;}
+.a9-l3 .a9-sp-card.conv h4{color:var(--r);}
+.a9-l3 .a9-sp-card.nconv h4{color:var(--c);}
+.a9-l3 .a9-sp-card p{margin:0;font-size:.88rem;color:var(--ink);text-indent:0;}
+.a9-l3 .a9-sp-card .a9-time{font-size:1.3rem;font-weight:800;margin:8px 0;}
+.a9-l3 .a9-sp-card.conv .a9-time{color:var(--r);}
+.a9-l3 .a9-sp-card.nconv .a9-time{color:var(--c);}
+.a9-l3 .a9-nuance{background:var(--c2);border:1px solid var(--g);border-radius:12px;padding:18px 20px;margin:18px 0;}
+.a9-l3 .a9-nuance .a9-nu-l{font-size:.78rem;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.a9-l3 .a9-nuance p{font-size:.88rem;color:var(--ink);text-indent:0;margin:0;line-height:1.6;}
+.a9-l3 .a9-tbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem;}
+.a9-l3 .a9-tbl th{background:var(--c2);color:var(--i);font-weight:700;padding:10px 12px;text-align:left;border-bottom:2px solid var(--b);}
+.a9-l3 .a9-tbl td{padding:10px 12px;border-bottom:1px solid var(--b);color:var(--ink);}
+.a9-l3 .a9-tbl-wrap{overflow-x:auto;margin:16px 0;border-radius:12px;background:var(--ca);border:1px solid var(--b);}
+.a9-l3 .a9-chip-gold{display:inline-block;padding:6px 14px;border-radius:20px;font-size:.82rem;font-weight:700;color:var(--g);background:rgba(251,191,36,0.1);border:1px solid var(--g);margin:8px 0;}
+.a9-l3 .a9-svg-wrap,.a9-l3 .a9-img-wrap{margin:24px 0;border-radius:16px;overflow:hidden;background:var(--ca);border:1px solid var(--b);}
+.a9-l3 .a9-svg-wrap svg,.a9-l3 .a9-img-wrap img{display:block;width:100%;height:auto;}
+.a9-l3 .a9-img-wrap .a9-cap{padding:10px 16px;font-size:.78rem;color:var(--mu);line-height:1.5;border-top:1px solid var(--b);}
+.a9-l3 .a9-why{background:var(--c2);border-radius:12px;padding:16px 20px;margin:18px 0;border-left:3px solid var(--t);}
+.a9-l3 .a9-why .a9-why-l{font-size:.78rem;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l3 .a9-why p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l3 .a9-resumo{background:var(--ca);border:1px solid var(--t);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.a9-l3 .a9-resumo .a9-res-l{font-size:.78rem;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l3 .a9-resumo p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l3 .a9-nc{background:var(--ca);border:1px solid var(--r);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.a9-l3 .a9-nc .a9-nc-l{font-size:.78rem;font-weight:700;color:var(--r);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l3 .a9-nc p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l3 .a9-quiz{margin:28px 0;}
+.a9-l3 .a9-quiz h3{font-size:1.05rem;font-weight:700;color:var(--g);margin:0 0 16px;}
+.a9-l3 .a9-qb{background:var(--ca);border:1px solid var(--b);border-radius:14px;padding:20px;margin-bottom:16px;}
+.a9-l3 .a9-qb .a9-qe{font-weight:700;color:var(--ink);margin-bottom:12px;font-size:.92rem;}
+.a9-l3 .a9-qb .a9-qo{display:flex;flex-direction:column;gap:8px;}
+.a9-l3 .a9-qb .a9-opt{padding:10px 14px;border-radius:10px;background:var(--c2);border:1px solid var(--b);cursor:pointer;font-size:.88rem;color:var(--ink);transition:all .2s;min-height:44px;display:flex;align-items:center;}
+.a9-l3 .a9-qb .a9-opt:hover{border-color:var(--i);}
+.a9-l3 .a9-qb .a9-opt.chosen{border-color:var(--i);background:rgba(129,140,248,0.12);}
+.a9-l3 .a9-qb .a9-opt.correct{border-color:var(--gr);background:rgba(74,222,128,0.15);}
+.a9-l3 .a9-qb .a9-opt.wrong{border-color:var(--r);background:rgba(248,113,113,0.12);}
+.a9-l3 .a9-qfb{margin-top:12px;padding:14px 16px;border-radius:10px;font-size:.85rem;line-height:1.6;display:none;}
+.a9-l3 .a9-qfb.show{display:block;}
+.a9-l3 .a9-qfb.cok{background:rgba(74,222,128,0.1);border:1px solid var(--gr);color:var(--ink);}
+.a9-l3 .a9-qfb.er{background:rgba(248,113,113,0.1);border:1px solid var(--r);color:var(--ink);}
+</style>
+<div class="a9-l3" data-layout="a9-p03">
+<h1>Status convulsivo × não convulsivo</h1>
+<p class="a9-sub">Comparação · tempos distintos · evidência · nuance ILAE 10/60</p>
+
+<div class="a9-prose">
+<h3>1. Não existe só o status que treme</h3>
+<p>Há <strong>tipos</strong> de estado de mal — não só o convulsivo.</p>
+
+<h3>2. Status convulsivo</h3>
+<p><strong>Status convulsivo</strong> (tônico-clônico) carrega os tempos <strong>5 e 30</strong>.</p>
+
+<h3>3. Status não convulsivo</h3>
+<p>Crises de <strong>ausência</strong> e <strong>focais</strong> também podem evoluir para estado de mal. Quando ausência, focal ou <strong>confusão mental</strong> prolongada constituem o quadro, fala-se em <strong>status não convulsivo</strong>. De forma geral, o não convulsivo tem <strong>melhor prognóstico</strong> relativo. Com <strong>menor evidência</strong>: tempo 1 ≈ <strong>10 minutos</strong>; tempo 2 ≈ <strong>40 minutos</strong>.</p>
+</div>
+
+<div class="a9-split">
+  <div class="a9-sp-card conv"><h4>⚡ Convulsivo (TCG)</h4><div class="a9-time">5 : 30</div><p>T1 = 5 min (atuar)<br>T2 = 30 min (lesão)<br>Mais comum · mais estudado</p></div>
+  <div class="a9-sp-card nconv"><h4>🔵 Não convulsivo</h4><div class="a9-time">≈10 : ≈40</div><p>Ausência · focal · confusão<br>Menor evidência nos tempos<br>Melhor prognóstico relativo</p></div>
+</div>
+
+<div class="a9-nuance"><div class="a9-nu-l">📋 CAIXA-NUANÇA · VFP [034] (DIVERGÊNCIA-DIRETRIZ-VERSÃO)</div>
+<p>Canon da fonte: não-convulsivo ≈ <strong>10 / ≈ 40</strong> (menor evidência).<br>ILAE 2015 / HC-UFMG 2025 (focal): <strong>t1 = 10 min</strong>; <strong>t2 = 60 min</strong> (ausência: t2 incerto).<br><strong>Mantém-se o mapa da fonte no corpo</strong>; a prova de hospital top pode cobrar <strong>10/60</strong>. Não fundir com o 5/30 do TCG.</p></div>
+
+<div class="a9-prose">
+<h3>4. O que se ensina no absoluto</h3>
+<p>Em termos absolutos de ensino e prática, trabalha-se com <strong>5:30</strong>, porque o TCG convulsivo é o mais comum. A ressalva do não convulsivo <strong>deve ser sabida</strong> — não se funde num único número como se fosse lei igual ao 5/30.</p>
+</div>
+
+<div class="a9-tbl-wrap">
+<table class="a9-tbl">
+<tr><th>Tipo</th><th>Exemplos</th><th>T1</th><th>T2</th><th>Prognóstico</th></tr>
+<tr><td><strong>Convulsivo</strong></td><td>TCG</td><td><strong>5 min</strong></td><td><strong>30 min</strong></td><td>Referência / mais comum</td></tr>
+<tr><td><strong>Não convulsivo</strong></td><td>Ausência, focal, confusão</td><td>≈ <strong>10 min</strong></td><td>≈ <strong>40 min</strong> (fonte) · <strong>60</strong> ILAE focal</td><td>Melhor (menor evidência)</td></tr>
+</table>
+</div>
+<div class="a9-chip-gold">Na prática ensina-se 5:30 — saiba a ressalva.</div>
+
+<div class="a9-svg-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 680" role="img" aria-labelledby="a9p3-title a9p3-desc" class="a9-inline-svg a9p3-root">
+  <title id="a9p3-title">Convulsivo 5:30 e não convulsivo ~10:~40</title>
+  <desc id="a9p3-desc">Dois mapas temporais de status epiléptico lado a lado. À esquerda, status convulsivo em TCG com marcos 5 minutos para atuar e 30 minutos para lesão. À direita, status não convulsivo em ausência, focal ou confusão prolongada com marcos aproximados ~10 e ~40 minutos, com menor evidência. Os relógios não se fundem em lei única.</desc>
+  <defs>
+    <linearGradient id="a9p3-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a9p3-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a9p3-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a9p3-auroraL" cx="18%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p3-coral, #F87171)" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="var(--a9p3-indigo, #818CF8)" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="var(--a9p3-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p3-auroraR" cx="82%" cy="24%" r="48%">
+      <stop offset="0%" stop-color="var(--a9p3-cyan, #22D3EE)" stop-opacity="0.20"/>
+      <stop offset="50%" stop-color="var(--a9p3-gold, #FBBF24)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p3-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a9p3-cardConv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p3-card, #111A2B)"/>
+      <stop offset="100%" stop-color="var(--a9p3-cardConvDeep, #1A1528)"/>
+    </linearGradient>
+    <linearGradient id="a9p3-cardNC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p3-card, #111A2B)"/>
+      <stop offset="100%" stop-color="var(--a9p3-cardNCDeep, #0F1C2A)"/>
+    </linearGradient>
+    <radialGradient id="a9p3-glow5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p3-gold, #FBBF24)" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="var(--a9p3-gold, #FBBF24)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p3-gold, #FBBF24)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p3-glow30" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p3-coral, #F87171)" stop-opacity="0.50"/>
+      <stop offset="70%" stop-color="var(--a9p3-coral, #F87171)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p3-coral, #F87171)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p3-glow10" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p3-cyan, #22D3EE)" stop-opacity="0.48"/>
+      <stop offset="70%" stop-color="var(--a9p3-cyan, #22D3EE)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p3-cyan, #22D3EE)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p3-glow40" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p3-indigo, #818CF8)" stop-opacity="0.48"/>
+      <stop offset="70%" stop-color="var(--a9p3-indigo, #818CF8)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p3-indigo, #818CF8)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="a9p3-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a9p3-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .a9p3-root {
+        --a9p3-bg0: #0B1220;
+        --a9p3-bg1: #07111F;
+        --a9p3-card: #111A2B;
+        --a9p3-card2: #152033;
+        --a9p3-cardConvDeep: #1A1528;
+        --a9p3-cardNCDeep: #0F1C2A;
+        --a9p3-border: rgba(148,163,184,0.18);
+        --a9p3-ink: #F4F7FB;
+        --a9p3-muted: #94A3B8;
+        --a9p3-soft: #B8C0CC;
+        --a9p3-indigo: #818CF8;
+        --a9p3-indigoHi: #C7D2FE;
+        --a9p3-indigoDeep: #4338CA;
+        --a9p3-cyan: #22D3EE;
+        --a9p3-cyanDim: #0891B2;
+        --a9p3-coral: #F87171;
+        --a9p3-coralHi: #FECACA;
+        --a9p3-coralDeep: #B91C1C;
+        --a9p3-gold: #FBBF24;
+        --a9p3-goldHi: #FDE68A;
+        --a9p3-goldDeep: #B45309;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a9p3-root {
+        --a9p3-bg0: #F8F6F2;
+        --a9p3-bg1: #EEF2F7;
+        --a9p3-card: #FFFFFF;
+        --a9p3-card2: #F1F5F9;
+        --a9p3-cardConvDeep: #FEF2F2;
+        --a9p3-cardNCDeep: #ECFEFF;
+        --a9p3-border: rgba(15,23,42,0.10);
+        --a9p3-ink: #0F172A;
+        --a9p3-muted: #64748B;
+        --a9p3-soft: #475569;
+        --a9p3-indigo: #4F46E5;
+        --a9p3-indigoHi: #E0E7FF;
+        --a9p3-indigoDeep: #3730A3;
+        --a9p3-cyan: #0891B2;
+        --a9p3-cyanDim: #0E7490;
+        --a9p3-coral: #DC2626;
+        --a9p3-coralHi: #FEE2E2;
+        --a9p3-coralDeep: #991B1B;
+        --a9p3-gold: #D97706;
+        --a9p3-goldHi: #FDE68A;
+        --a9p3-goldDeep: #92400E;
+      }
+      .a9p3-root .a9p3-hs,
+      .a9p3-root .a9p3-chip {
+        cursor: pointer;
+      }
+      .a9p3-root .a9p3-hs:focus,
+      .a9p3-root .a9p3-chip:focus {
+        outline: none;
+      }
+      .a9p3-root .a9p3-hs:focus .a9p3-hs-ring,
+      .a9p3-root .a9p3-chip:focus .a9p3-chip-ring {
+        opacity: 1;
+      }
+      .a9p3-root .a9p3-panel,
+      .a9p3-root .a9p3-mark,
+      .a9p3-root .a9p3-chip-fill,
+      .a9p3-root .a9p3-split-mark {
+        transition: opacity 0.32s ease, stroke 0.32s ease, filter 0.32s ease;
+      }
+      .a9p3-root .a9p3-tip {
+        pointer-events: none;
+      }
+      .a9p3-root .a9p3-chip-fill {
+        opacity: 0.72;
+      }
+      .a9p3-root .a9p3-panel {
+        opacity: 0.94;
+      }
+      .a9p3-root[data-phase="conv"] .a9p3-panel-conv {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="conv"] .a9p3-panel-conv .a9p3-panel-face {
+        stroke: var(--a9p3-coral, #F87171);
+        stroke-width: 2.2;
+      }
+      .a9p3-root[data-phase="conv"] .a9p3-panel-nc {
+        opacity: 0.36;
+      }
+      .a9p3-root[data-phase="conv"] .a9p3-chip-conv .a9p3-chip-fill {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="nc"] .a9p3-panel-nc {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="nc"] .a9p3-panel-nc .a9p3-panel-face {
+        stroke: var(--a9p3-cyan, #22D3EE);
+        stroke-width: 2.2;
+      }
+      .a9p3-root[data-phase="nc"] .a9p3-panel-conv {
+        opacity: 0.36;
+      }
+      .a9p3-root[data-phase="nc"] .a9p3-chip-nc .a9p3-chip-fill {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="c530"] .a9p3-panel-conv {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="c530"] .a9p3-panel-nc {
+        opacity: 0.34;
+      }
+      .a9p3-root[data-phase="c530"] .a9p3-mark-5 .a9p3-mark-face,
+      .a9p3-root[data-phase="c530"] .a9p3-mark-30 .a9p3-mark-face {
+        stroke-width: 2.4;
+      }
+      .a9p3-root[data-phase="c530"] .a9p3-mark-5 .a9p3-mark-face {
+        stroke: var(--a9p3-gold, #FBBF24);
+      }
+      .a9p3-root[data-phase="c530"] .a9p3-mark-30 .a9p3-mark-face {
+        stroke: var(--a9p3-coral, #F87171);
+      }
+      .a9p3-root[data-phase="c530"] .a9p3-chip-c530 .a9p3-chip-fill {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="n1040"] .a9p3-panel-nc {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="n1040"] .a9p3-panel-conv {
+        opacity: 0.34;
+      }
+      .a9p3-root[data-phase="n1040"] .a9p3-mark-10 .a9p3-mark-face,
+      .a9p3-root[data-phase="n1040"] .a9p3-mark-40 .a9p3-mark-face {
+        stroke-width: 2.4;
+      }
+      .a9p3-root[data-phase="n1040"] .a9p3-mark-10 .a9p3-mark-face {
+        stroke: var(--a9p3-cyan, #22D3EE);
+      }
+      .a9p3-root[data-phase="n1040"] .a9p3-mark-40 .a9p3-mark-face {
+        stroke: var(--a9p3-indigo, #818CF8);
+      }
+      .a9p3-root[data-phase="n1040"] .a9p3-chip-n1040 .a9p3-chip-fill {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="split"] .a9p3-panel-conv,
+      .a9p3-root[data-phase="split"] .a9p3-panel-nc {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="split"] .a9p3-panel-conv .a9p3-panel-face {
+        stroke: var(--a9p3-coral, #F87171);
+        stroke-width: 2;
+      }
+      .a9p3-root[data-phase="split"] .a9p3-panel-nc .a9p3-panel-face {
+        stroke: var(--a9p3-cyan, #22D3EE);
+        stroke-width: 2;
+      }
+      .a9p3-root[data-phase="split"] .a9p3-chip-split .a9p3-chip-fill {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="split"] .a9p3-split-mark {
+        opacity: 1;
+      }
+      .a9p3-root .a9p3-split-mark {
+        opacity: 0.7;
+      }
+      .a9p3-root[data-phase="c530"] .a9p3-glow-5,
+      .a9p3-root[data-phase="c530"] .a9p3-glow-30,
+      .a9p3-root[data-phase="split"] .a9p3-glow-5,
+      .a9p3-root[data-phase="split"] .a9p3-glow-30 {
+        opacity: 1;
+      }
+      .a9p3-root[data-phase="n1040"] .a9p3-glow-10,
+      .a9p3-root[data-phase="n1040"] .a9p3-glow-40,
+      .a9p3-root[data-phase="split"] .a9p3-glow-10,
+      .a9p3-root[data-phase="split"] .a9p3-glow-40 {
+        opacity: 1;
+      }
+      .a9p3-root .a9p3-glow-5,
+      .a9p3-root .a9p3-glow-30,
+      .a9p3-root .a9p3-glow-10,
+      .a9p3-root .a9p3-glow-40 {
+        opacity: 0.42;
+      }
+      @keyframes a9p3-pulse {
+        0%, 100% { opacity: 0.42; }
+        50% { opacity: 0.92; }
+      }
+      .a9p3-root[data-phase="c530"] .a9p3-glow-5,
+      .a9p3-root[data-phase="c530"] .a9p3-glow-30,
+      .a9p3-root[data-phase="n1040"] .a9p3-glow-10,
+      .a9p3-root[data-phase="n1040"] .a9p3-glow-40,
+      .a9p3-root[data-phase="split"] .a9p3-glow-5,
+      .a9p3-root[data-phase="split"] .a9p3-glow-30,
+      .a9p3-root[data-phase="split"] .a9p3-glow-10,
+      .a9p3-root[data-phase="split"] .a9p3-glow-40 {
+        animation: a9p3-pulse 1.8s ease-in-out infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .a9p3-root[data-phase="c530"] .a9p3-glow-5,
+        .a9p3-root[data-phase="c530"] .a9p3-glow-30,
+        .a9p3-root[data-phase="n1040"] .a9p3-glow-10,
+        .a9p3-root[data-phase="n1040"] .a9p3-glow-40,
+        .a9p3-root[data-phase="split"] .a9p3-glow-5,
+        .a9p3-root[data-phase="split"] .a9p3-glow-30,
+        .a9p3-root[data-phase="split"] .a9p3-glow-10,
+        .a9p3-root[data-phase="split"] .a9p3-glow-40 {
+          animation: none;
+        }
+        .a9p3-root .a9p3-panel,
+        .a9p3-root .a9p3-mark,
+        .a9p3-root .a9p3-chip-fill,
+        .a9p3-root .a9p3-split-mark {
+          transition: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="840" height="680" rx="18" fill="url(#a9p3-bg)"/>
+  <rect width="840" height="680" rx="18" fill="url(#a9p3-auroraL)"/>
+  <rect width="840" height="680" rx="18" fill="url(#a9p3-auroraR)"/>
+
+  <text x="28" y="36" fill="var(--a9p3-ink, #F4F7FB)" font-size="20" font-weight="700" letter-spacing="-0.3">Dois relógios · não uma lei</text>
+  <text x="28" y="58" fill="var(--a9p3-soft, #B8C0CC)" font-size="13" font-weight="500">Convulsivo</text>
+  <text x="118" y="58" fill="var(--a9p3-coral, #F87171)" font-size="13" font-weight="700">5′ · 30′</text>
+  <text x="178" y="58" fill="var(--a9p3-muted, #94A3B8)" font-size="13" font-weight="500">×</text>
+  <text x="196" y="58" fill="var(--a9p3-soft, #B8C0CC)" font-size="13" font-weight="500">não convulsivo</text>
+  <text x="310" y="58" fill="var(--a9p3-cyan, #22D3EE)" font-size="13" font-weight="700">~10′ · ~40′</text>
+
+  <g id="a9p3-badge" transform="translate(548,16)">
+    <rect width="264" height="36" rx="18" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.6"/>
+    <circle cx="18" cy="18" r="5" fill="var(--a9p3-gold, #FBBF24)"/>
+    <text x="34" y="22" fill="var(--a9p3-gold, #FBBF24)" font-size="11.5" font-weight="700" letter-spacing="0.2">NÃO-CONV · MENOR EVIDÊNCIA</text>
+  </g>
+
+  <g id="a9p3-chips" transform="translate(28,74)">
+    <g class="a9p3-chip a9p3-chip-conv" id="a9p3-chip-conv" tabindex="0" role="button" aria-label="Mapa convulsivo TCG: 5 minutos atuar, 30 minutos lesão" data-key="conv">
+      <rect class="a9p3-chip-ring" x="-2" y="-2" width="118" height="34" rx="12" fill="none" stroke="var(--a9p3-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-chip-fill" width="114" height="30" rx="10" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-coral, #F87171)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p3-coral, #F87171)"/>
+      <text x="26" y="19" fill="var(--a9p3-coral, #F87171)" font-size="12" font-weight="700">Convulsivo</text>
+    </g>
+    <g class="a9p3-chip a9p3-chip-nc" id="a9p3-chip-nc" tabindex="0" role="button" aria-label="Mapa não convulsivo: cerca de 10 e 40 minutos, menor evidência" data-key="nc" transform="translate(122,0)">
+      <rect class="a9p3-chip-ring" x="-2" y="-2" width="132" height="34" rx="12" fill="none" stroke="var(--a9p3-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-chip-fill" width="128" height="30" rx="10" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-cyan, #22D3EE)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p3-cyan, #22D3EE)"/>
+      <text x="26" y="19" fill="var(--a9p3-cyan, #22D3EE)" font-size="12" font-weight="700">Não convulsivo</text>
+    </g>
+    <g class="a9p3-chip a9p3-chip-c530" id="a9p3-chip-c530" tabindex="0" role="button" aria-label="Par 5 e 30 do status convulsivo" data-key="c530" transform="translate(258,0)">
+      <rect class="a9p3-chip-ring" x="-2" y="-2" width="92" height="34" rx="12" fill="none" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-chip-fill" width="88" height="30" rx="10" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p3-gold, #FBBF24)"/>
+      <text x="26" y="19" fill="var(--a9p3-gold, #FBBF24)" font-size="12" font-weight="700">5′ · 30′</text>
+    </g>
+    <g class="a9p3-chip a9p3-chip-n1040" id="a9p3-chip-n1040" tabindex="0" role="button" aria-label="Par aproximadamente 10 e 40 do não convulsivo" data-key="n1040" transform="translate(358,0)">
+      <rect class="a9p3-chip-ring" x="-2" y="-2" width="108" height="34" rx="12" fill="none" stroke="var(--a9p3-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-chip-fill" width="104" height="30" rx="10" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-indigo, #818CF8)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p3-indigo, #818CF8)"/>
+      <text x="26" y="19" fill="var(--a9p3-indigo, #818CF8)" font-size="12" font-weight="700">~10′ · ~40′</text>
+    </g>
+    <g class="a9p3-chip a9p3-chip-split" id="a9p3-chip-split" tabindex="0" role="button" aria-label="Split: dois mapas distintos, não fundir" data-key="split" transform="translate(474,0)">
+      <rect class="a9p3-chip-ring" x="-2" y="-2" width="128" height="34" rx="12" fill="none" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-chip-fill" width="124" height="30" rx="10" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.3"/>
+      <circle cx="14" cy="15" r="5" fill="var(--a9p3-gold, #FBBF24)"/>
+      <text x="26" y="19" fill="var(--a9p3-gold, #FBBF24)" font-size="12" font-weight="700">Não fundir</text>
+    </g>
+  </g>
+
+  <g class="a9p3-panel a9p3-panel-conv a9p3-hs" id="a9p3-hs-conv" tabindex="0" role="button" aria-label="Status convulsivo TCG: relógio 5 minutos atuar e 30 minutos lesão" data-key="conv" transform="translate(28,122)">
+    <rect class="a9p3-hs-ring" x="-4" y="-4" width="372" height="392" rx="22" fill="none" stroke="var(--a9p3-coral, #F87171)" stroke-width="2" opacity="0"/>
+    <rect class="a9p3-panel-face" x="0" y="0" width="364" height="384" rx="18" fill="url(#a9p3-cardConv)" stroke="var(--a9p3-coral, #F87171)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="6" height="384" rx="3" fill="var(--a9p3-coral, #F87171)"/>
+
+    <text x="24" y="34" fill="var(--a9p3-coral, #F87171)" font-size="13" font-weight="700" letter-spacing="0.4">CONVULSIVO</text>
+    <text x="24" y="56" fill="var(--a9p3-ink, #F4F7FB)" font-size="18" font-weight="800">TCG · treme</text>
+    <text x="24" y="78" fill="var(--a9p3-muted, #94A3B8)" font-size="12" font-weight="500">Foco tônico-clônico generalizado</text>
+
+    <g transform="translate(92,108)">
+      <circle cx="90" cy="90" r="88" fill="var(--a9p3-card2, #152033)" stroke="var(--a9p3-border, rgba(148,163,184,0.18))" stroke-width="1.5"/>
+      <circle cx="90" cy="90" r="74" fill="none" stroke="var(--a9p3-coral, #F87171)" stroke-width="2" opacity="0.55"/>
+      <circle cx="90" cy="90" r="58" fill="none" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.4" opacity="0.45" stroke-dasharray="3 5"/>
+      <circle cx="90" cy="90" r="4" fill="var(--a9p3-ink, #F4F7FB)"/>
+      <line x1="90" y1="90" x2="90" y2="36" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="3.2" stroke-linecap="round"/>
+      <line x1="90" y1="90" x2="138" y2="118" stroke="var(--a9p3-coral, #F87171)" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="90" cy="28" r="5" fill="var(--a9p3-gold, #FBBF24)"/>
+      <circle cx="148" cy="124" r="5" fill="var(--a9p3-coral, #F87171)"/>
+      <text x="90" y="22" text-anchor="middle" fill="var(--a9p3-gold, #FBBF24)" font-size="11" font-weight="700">5′</text>
+      <text x="162" y="130" fill="var(--a9p3-coral, #F87171)" font-size="11" font-weight="700">30′</text>
+    </g>
+
+    <g class="a9p3-mark a9p3-mark-5 a9p3-hs" id="a9p3-hs-mark5" tabindex="0" role="button" aria-label="Marco 5 minutos do convulsivo: atuar" data-key="c530" transform="translate(28,310)">
+      <ellipse class="a9p3-glow-5" cx="72" cy="28" rx="56" ry="28" fill="url(#a9p3-glow5)" filter="url(#a9p3-glow)"/>
+      <rect class="a9p3-hs-ring" x="-4" y="-4" width="152" height="64" rx="16" fill="none" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-mark-face" x="0" y="0" width="144" height="56" rx="14" fill="var(--a9p3-card2, #152033)" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.7"/>
+      <text x="16" y="24" fill="var(--a9p3-gold, #FBBF24)" font-size="20" font-weight="800">5′</text>
+      <text x="16" y="42" fill="var(--a9p3-goldHi, #FDE68A)" font-size="12" font-weight="700">atuar · T1</text>
+    </g>
+
+    <g class="a9p3-mark a9p3-mark-30 a9p3-hs" id="a9p3-hs-mark30" tabindex="0" role="button" aria-label="Marco 30 minutos do convulsivo: lesão" data-key="c530" transform="translate(192,310)">
+      <ellipse class="a9p3-glow-30" cx="72" cy="28" rx="56" ry="28" fill="url(#a9p3-glow30)" filter="url(#a9p3-glow)"/>
+      <rect class="a9p3-hs-ring" x="-4" y="-4" width="152" height="64" rx="16" fill="none" stroke="var(--a9p3-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-mark-face" x="0" y="0" width="144" height="56" rx="14" fill="var(--a9p3-card2, #152033)" stroke="var(--a9p3-coral, #F87171)" stroke-width="1.7"/>
+      <text x="16" y="24" fill="var(--a9p3-coral, #F87171)" font-size="20" font-weight="800">30′</text>
+      <text x="16" y="42" fill="var(--a9p3-coralHi, #FECACA)" font-size="12" font-weight="700">lesão · T2</text>
+    </g>
+  </g>
+
+  <g class="a9p3-split-mark" id="a9p3-split" transform="translate(398,280)">
+    <circle cx="22" cy="22" r="22" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.8"/>
+    <text x="22" y="18" text-anchor="middle" fill="var(--a9p3-gold, #FBBF24)" font-size="11" font-weight="800">≠</text>
+    <text x="22" y="32" text-anchor="middle" fill="var(--a9p3-goldHi, #FDE68A)" font-size="9" font-weight="700">split</text>
+    <line x1="22" y1="-96" x2="22" y2="0" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.55"/>
+    <line x1="22" y1="44" x2="22" y2="140" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.55"/>
+  </g>
+
+  <g class="a9p3-panel a9p3-panel-nc a9p3-hs" id="a9p3-hs-nc" tabindex="0" role="button" aria-label="Status não convulsivo: relógio aproximadamente 10 e 40 minutos, menor evidência" data-key="nc" transform="translate(448,122)">
+    <rect class="a9p3-hs-ring" x="-4" y="-4" width="372" height="392" rx="22" fill="none" stroke="var(--a9p3-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+    <rect class="a9p3-panel-face" x="0" y="0" width="364" height="384" rx="18" fill="url(#a9p3-cardNC)" stroke="var(--a9p3-cyan, #22D3EE)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="6" height="384" rx="3" fill="var(--a9p3-cyan, #22D3EE)"/>
+
+    <text x="24" y="34" fill="var(--a9p3-cyan, #22D3EE)" font-size="13" font-weight="700" letter-spacing="0.4">NÃO CONVULSIVO</text>
+    <text x="24" y="56" fill="var(--a9p3-ink, #F4F7FB)" font-size="18" font-weight="800">Não treme</text>
+    <text x="24" y="78" fill="var(--a9p3-muted, #94A3B8)" font-size="12" font-weight="500">Ausência · focal · confusão</text>
+
+    <g transform="translate(92,108)">
+      <circle cx="90" cy="90" r="88" fill="var(--a9p3-card2, #152033)" stroke="var(--a9p3-border, rgba(148,163,184,0.18))" stroke-width="1.5"/>
+      <circle cx="90" cy="90" r="74" fill="none" stroke="var(--a9p3-indigo, #818CF8)" stroke-width="2" opacity="0.55"/>
+      <circle cx="90" cy="90" r="58" fill="none" stroke="var(--a9p3-cyan, #22D3EE)" stroke-width="1.4" opacity="0.5" stroke-dasharray="2 6"/>
+      <circle cx="90" cy="90" r="4" fill="var(--a9p3-ink, #F4F7FB)"/>
+      <line x1="90" y1="90" x2="118" y2="40" stroke="var(--a9p3-cyan, #22D3EE)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="90" y1="90" x2="42" y2="132" stroke="var(--a9p3-indigo, #818CF8)" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="122" cy="36" r="5" fill="var(--a9p3-cyan, #22D3EE)"/>
+      <circle cx="38" cy="138" r="5" fill="var(--a9p3-indigo, #818CF8)"/>
+      <text x="132" y="32" fill="var(--a9p3-cyan, #22D3EE)" font-size="11" font-weight="700">~10′</text>
+      <text x="18" y="156" fill="var(--a9p3-indigo, #818CF8)" font-size="11" font-weight="700">~40′</text>
+    </g>
+
+    <g class="a9p3-mark a9p3-mark-10 a9p3-hs" id="a9p3-hs-mark10" tabindex="0" role="button" aria-label="Marco cerca de 10 minutos do não convulsivo" data-key="n1040" transform="translate(28,310)">
+      <ellipse class="a9p3-glow-10" cx="72" cy="28" rx="56" ry="28" fill="url(#a9p3-glow10)" filter="url(#a9p3-glow)"/>
+      <rect class="a9p3-hs-ring" x="-4" y="-4" width="152" height="64" rx="16" fill="none" stroke="var(--a9p3-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-mark-face" x="0" y="0" width="144" height="56" rx="14" fill="var(--a9p3-card2, #152033)" stroke="var(--a9p3-cyan, #22D3EE)" stroke-width="1.7"/>
+      <text x="16" y="24" fill="var(--a9p3-cyan, #22D3EE)" font-size="20" font-weight="800">~10′</text>
+      <text x="16" y="42" fill="var(--a9p3-soft, #B8C0CC)" font-size="12" font-weight="700">T1 · aproximado</text>
+    </g>
+
+    <g class="a9p3-mark a9p3-mark-40 a9p3-hs" id="a9p3-hs-mark40" tabindex="0" role="button" aria-label="Marco cerca de 40 minutos do não convulsivo" data-key="n1040" transform="translate(192,310)">
+      <ellipse class="a9p3-glow-40" cx="72" cy="28" rx="56" ry="28" fill="url(#a9p3-glow40)" filter="url(#a9p3-glow)"/>
+      <rect class="a9p3-hs-ring" x="-4" y="-4" width="152" height="64" rx="16" fill="none" stroke="var(--a9p3-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect class="a9p3-mark-face" x="0" y="0" width="144" height="56" rx="14" fill="var(--a9p3-card2, #152033)" stroke="var(--a9p3-indigo, #818CF8)" stroke-width="1.7"/>
+      <text x="16" y="24" fill="var(--a9p3-indigo, #818CF8)" font-size="20" font-weight="800">~40′</text>
+      <text x="16" y="42" fill="var(--a9p3-indigoHi, #C7D2FE)" font-size="12" font-weight="700">T2 · aproximado</text>
+    </g>
+  </g>
+
+  <g id="a9p3-caveat" transform="translate(28,528)">
+    <rect width="784" height="52" rx="14" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.5"/>
+    <circle cx="28" cy="26" r="8" fill="var(--a9p3-gold, #FBBF24)" opacity="0.9"/>
+    <text x="28" y="30" text-anchor="middle" fill="var(--a9p3-bg0, #0B1220)" font-size="12" font-weight="800">!</text>
+    <text x="48" y="24" fill="var(--a9p3-gold, #FBBF24)" font-size="13" font-weight="700">Ressalva de evidência</text>
+    <text x="48" y="42" fill="var(--a9p3-soft, #B8C0CC)" font-size="12" font-weight="500">Não-convulsivo: ~10′ / ~40′ com menor evidência · prognóstico relativo em geral melhor · não copiar 5:30 cego</text>
+  </g>
+
+  <g id="a9p3-status" transform="translate(28,594)">
+    <rect width="784" height="60" rx="14" fill="var(--a9p3-card, #111A2B)" stroke="var(--a9p3-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <text id="a9p3-status-text" x="20" y="26" fill="var(--a9p3-gold, #FBBF24)" font-size="13.5" font-weight="700">Dois mapas: convulsivo 5′·30′ ≠ não-convulsivo ~10′·~40′</text>
+    <text id="a9p3-live" x="20" y="46" fill="var(--a9p3-muted, #94A3B8)" font-size="12" font-weight="500">Status que não treme existe. Não apague o relógio só porque não há abalo motor.</text>
+  </g>
+
+  <g id="a9p3-tip" class="a9p3-tip" opacity="0" aria-hidden="true" transform="translate(0,0)">
+    <rect id="a9p3-tip-bg" x="0" y="0" width="260" height="56" rx="12" fill="var(--a9p3-card2, #152033)" stroke="var(--a9p3-gold, #FBBF24)" stroke-width="1.5" opacity="0.98"/>
+    <text id="a9p3-tip-t1" x="14" y="24" fill="var(--a9p3-ink, #F4F7FB)" font-size="13" font-weight="700"></text>
+    <text id="a9p3-tip-t2" x="14" y="42" fill="var(--a9p3-soft, #B8C0CC)" font-size="11.5" font-weight="500"></text>
+  </g>
+
+  <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a9p3-root');
+  if(!root){
+    var nodes = document.getElementsByTagName('svg');
+    root = nodes.length ? nodes[nodes.length - 1] : null;
+  }
+  if(!root) return;
+
+  function Q(sel){ return root.querySelector(sel); }
+
+  var tip = Q('#a9p3-tip');
+  var tipBg = Q('#a9p3-tip-bg');
+  var tipT1 = Q('#a9p3-tip-t1');
+  var tipT2 = Q('#a9p3-tip-t2');
+  var statusEl = Q('#a9p3-status-text');
+  var liveEl = Q('#a9p3-live');
+
+  var labels = {
+    conv: {
+      tip1: 'Convulsivo · TCG',
+      tip2: 'Relógio 5′ atuar · 30′ lesão',
+      status: 'Mapa convulsivo: 5′ age · 30′ lesa · motor visível',
+      live: 'TCG em curso. Não aplique este par cego ao status de confusão.',
+      stroke: 'var(--a9p3-coral, #F87171)'
+    },
+    nc: {
+      tip1: 'Não convulsivo',
+      tip2: 'Ausência · focal · confusão',
+      status: 'Mapa não-convulsivo: ~10′ · ~40′ · menor evidência',
+      live: 'Status que não treme. Tempos aproximados — não fundir com 5:30.',
+      stroke: 'var(--a9p3-cyan, #22D3EE)'
+    },
+    c530: {
+      tip1: '5′ · 30′ (convulsivo)',
+      tip2: 'T1 atuar · T2 lesão em TCG',
+      status: 'Par convulsivo fechado: 5 age · 30 lesa',
+      live: 'Este é o relógio ensinado do TCG. O outro painel é outro mapa.',
+      stroke: 'var(--a9p3-gold, #FBBF24)'
+    },
+    n1040: {
+      tip1: '~10′ · ~40′ (não-conv)',
+      tip2: 'Aproximados · menor evidência',
+      status: 'Par não-convulsivo: ~10 · ~40 · não é 5:30',
+      live: 'Fonte com menos peso que o 5:30. Honestidade: tilde = aproximado.',
+      stroke: 'var(--a9p3-indigo, #818CF8)'
+    },
+    split: {
+      tip1: 'Dois mapas · não uma lei',
+      tip2: '≠ fundir 10/40 com 5/30',
+      status: 'Split: convulsivo 5′·30′ ≠ não-convulsivo ~10′·~40′',
+      live: 'Prova: aplicar 5:30 no não-convulsivo, ou apagar o que não treme, erra o caso.',
+      stroke: 'var(--a9p3-gold, #FBBF24)'
+    }
+  };
+
+  function setPhase(key){
+    root.setAttribute('data-phase', key || 'split');
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx;
+    pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x: 40, y: 40};
+    var p = pt.matrixTransform(m.inverse());
+    return {x: p.x, y: p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip || !tipT1 || !tipT2 || !tipBg) return;
+    tipT1.textContent = t1 || '';
+    tipT2.textContent = t2 || '';
+    tipBg.setAttribute('stroke', stroke || 'var(--a9p3-gold, #FBBF24)');
+    var w = 250;
+    if(t2 && t2.length > 34) w = 280;
+    tipBg.setAttribute('width', String(w));
+    var p = clientToSvg(cx, cy);
+    var x = p.x + 16;
+    var y = p.y - 64;
+    if(x + w > 820) x = p.x - w - 12;
+    if(x < 8) x = 8;
+    if(y < 8) y = p.y + 18;
+    if(y > 620) y = 620;
+    tip.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+    tip.setAttribute('opacity', '1');
+    tip.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity', '0');
+    tip.setAttribute('aria-hidden', 'true');
+  }
+
+  function applyLabel(key, cx, cy){
+    var L = labels[key];
+    if(!L) return;
+    setPhase(key);
+    if(statusEl){
+      statusEl.textContent = L.status;
+      var fill = 'var(--a9p3-cyan, #22D3EE)';
+      if(key === 'conv' || key === 'c530') fill = 'var(--a9p3-coral, #F87171)';
+      if(key === 'c530') fill = 'var(--a9p3-gold, #FBBF24)';
+      if(key === 'nc') fill = 'var(--a9p3-cyan, #22D3EE)';
+      if(key === 'n1040') fill = 'var(--a9p3-indigo, #818CF8)';
+      if(key === 'split') fill = 'var(--a9p3-gold, #FBBF24)';
+      statusEl.setAttribute('fill', fill);
+    }
+    if(liveEl) liveEl.textContent = L.live;
+    if(cx != null && cy != null) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+  }
+
+  function bind(el, key){
+    if(!el) return;
+    var L = labels[key];
+    function go(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      applyLabel(key, cx, cy);
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      applyLabel(key, ev.clientX, ev.clientY);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      if(tip && tip.getAttribute('opacity') === '1' && L){
+        showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+      }
+    });
+    el.addEventListener('mouseleave', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      hideTip();
+    });
+    el.addEventListener('click', go);
+    el.addEventListener('focus', function(){
+      var b = el.getBoundingClientRect();
+      applyLabel(key, b.left + b.width/2, b.top + b.height/2);
+    });
+    el.addEventListener('blur', function(){ hideTip(); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        go(ev);
+      }
+    });
+  }
+
+  bind(Q('#a9p3-hs-conv'), 'conv');
+  bind(Q('#a9p3-hs-nc'), 'nc');
+  bind(Q('#a9p3-hs-mark5'), 'c530');
+  bind(Q('#a9p3-hs-mark30'), 'c530');
+  bind(Q('#a9p3-hs-mark10'), 'n1040');
+  bind(Q('#a9p3-hs-mark40'), 'n1040');
+  bind(Q('#a9p3-chip-conv'), 'conv');
+  bind(Q('#a9p3-chip-nc'), 'nc');
+  bind(Q('#a9p3-chip-c530'), 'c530');
+  bind(Q('#a9p3-chip-n1040'), 'n1040');
+  bind(Q('#a9p3-chip-split'), 'split');
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    if(!t) return;
+    var keep = false;
+    var nodes = root.querySelectorAll('.a9p3-hs, .a9p3-chip');
+    for(var i = 0; i < nodes.length; i++){
+      if(nodes[i].contains(t) || nodes[i] === t){ keep = true; break; }
+    }
+    if(!keep) hideTip();
+  });
+
+  setPhase('split');
+  if(statusEl){
+    statusEl.textContent = 'Dois mapas: convulsivo 5′·30′ ≠ não-convulsivo ~10′·~40′';
+    statusEl.setAttribute('fill', 'var(--a9p3-gold, #FBBF24)');
+  }
+  if(liveEl){
+    liveEl.textContent = 'Status que não treme existe. Não apague o relógio só porque não há abalo motor.';
+  }
+})();
+  ]]></script>
+</svg>
+</div>
+
+<div class="a9-img-wrap">
+  <img src="media/B03-absence-status-eeg-banerjee2024.jpg" alt="EEG em status de ausência atípico: painéis A mostram ritmo generalizado de 3 a 4 Hz com ondas agudas durante a vigília, consistente com crise eletroclínica prolongada sem convulsão; painéis B mostram desaparecimento da atividade rítmica com retorno ao baseline clínico." loading="lazy">
+  <div class="a9-cap">EEG de status de ausência (não convulsivo): ritmo 3–4 Hz generalizado em A; resolução em B. Banerjee et al. 2024 · <em>Cureus</em> · CC BY 4.0 · PMC11330277. <strong>não convulsivo · confusão</strong></div>
+</div>
+
+<div class="a9-nc"><div class="a9-nc-l">⚠️ Não confunda</div><p>5:30 do TCG <strong>≠</strong> 10/40 (ou 10/60) do não-convulsivo. São mapas paralelos, não sinônimos.</p></div>
+
+<div class="a9-why"><div class="a9-why-l">Por que importa</div><p>Não fundir 10/40 em lei igual a 5/30; não apagar o não-convulsivo.</p></div>
+
+<div class="a9-resumo"><div class="a9-res-l">📌 Resumo operacional</div><p>Convulsivo (TCG) = <strong>5:30</strong>. Não-conv ≈ <strong>10 / 40</strong> (menor evidência; melhor prognóstico relativo). Na prática ensina-se <strong>5:30</strong>.</p></div>
+
+<div class="a9-quiz" id="quiz-p3"><h3>🧠 Quiz</h3>
+<div class="a9-qb" data-q="0"><div class="a9-qe">Q1. Status de ausência / confusão prolongada. Sobre tempos:</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) Usa-se exatamente 5 e 30 como no TCG</button>
+<button class="a9-opt" data-opt="B">B) Há mapa com menor evidência (~10 / ~40 na fonte); na prática o ensino absoluto ainda privilegia 5:30 do convulsivo</button>
+<button class="a9-opt" data-opt="C">C) Não existe status sem abalos motores</button>
+<button class="a9-opt" data-opt="D">D) T2 canônico único = 40 min em todas as diretrizes</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+<div class="a9-qb" data-q="1"><div class="a9-qe">Q2. Por que a prática "absoluta" ensina 5:30?</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) Porque o não-convulsivo não existe</button>
+<button class="a9-opt" data-opt="B">B) Porque o TCG convulsivo é o mais comum — sem apagar a ressalva 10/40</button>
+<button class="a9-opt" data-opt="C">C) Porque 30 min é quando se inicia o benzo</button>
+<button class="a9-opt" data-opt="D">D) Porque ILAE aboliu o t1=5</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+</div>
+</div>
+<script>
+(function(){
+var A={'0':{c:'B',f:'<strong>Gabarito: B.</strong><br><br><strong>A:</strong> funde tipos. <em>Por que cair:</em> um único relógio para tudo.<br><strong>C:</strong> apaga o não-convulsivo. <em>Por que cair:</em> "status = tremer".<br><strong>D:</strong> ignora divergência ILAE 60. <em>Por que cair:</em> fixa um número como lei universal.'},'1':{c:'B',f:'<strong>Gabarito: B.</strong><br><br><strong>A:</strong> falso. <em>Por que cair:</em> simplificação.<br><strong>C:</strong> inverte 5 e 30. <em>Por que cair:</em> confunde lesão com início de tratamento.<br><strong>D:</strong> falso. <em>Por que cair:</em> inventa diretriz.'}};
+var S='p2-status:a9:p03:quiz:v1',s=null;
+try{var r=localStorage.getItem(S);if(r)s=JSON.parse(r);}catch(e){}
+document.querySelectorAll('.a9-qb').forEach(function(b){
+var i=b.getAttribute('data-q'),a=A[i];if(!a)return;
+var f=b.querySelector('.a9-qfb'),o=b.querySelectorAll('.a9-opt');
+function F(c,ch){
+o.forEach(function(x){x.classList.remove('chosen','correct','wrong');if(x.getAttribute('data-opt')===c)x.classList.add('correct');if(x.getAttribute('data-opt')===ch&&ch!==c)x.classList.add('wrong');if(x.getAttribute('data-opt')===ch)x.classList.add('chosen');x.disabled=true;});
+f.className='a9-qfb show '+(ch===c?'cok':'er');f.innerHTML=a.f;
+}
+if(s&&s[i]!==undefined)F(a.c,s[i]);
+o.forEach(function(x){x.addEventListener('click',function(){if(x.disabled)return;var ch=x.getAttribute('data-opt');F(a.c,ch);var st=s?JSON.parse(JSON.stringify(s)):{};st[i]=ch;try{localStorage.setItem(S,JSON.stringify(st));}catch(e){}});});
+});
+})();
+</script>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p2.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Cinco age, trinta lesa</span></a><a class="next" href="p4.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Estabiliza e mede glicose</span></a></nav>
+</main>
+<footer class="rodape">Manejo da Crise / Status Epiléptico · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula"><p class="menu-panel__title">Aula 9 · 11 páginas</p><ul class="menu-panel__list"><li><a href="index.html">1 · Cláudio Honor</a></li><li><a href="p2.html">2 · Cinco age, trinta lesa</a></li><li><a href="p3.html">3 · Status convulsivo × não convulsivo</a></li><li><a href="p4.html">4 · Estabiliza e mede glicose</a></li><li><a href="p5.html">5 · Benzo: o 1º, as vias, o Brasil</a></li><li><a href="p6.html">6 · Dose, teto e o medo de intubar</a></li><li><a href="p7.html">7 · Segundo fármaco</a></li><li><a href="p8.html">8 · Fenitoína: 20 mg/kg, 50 mg/min</a></li><li><a href="p9.html">9 · Status refratário</a></li><li><a href="p10.html">10 · Exceções que matam gabarito</a></li><li><a href="p11.html">11 · Prova, fecho e escada final</a></li></ul></nav>
+</div>
+<script>(function(){var btn=document.getElementById('menu-toggle'),ov=document.getElementById('menu-overlay');if(!btn||!ov)return;function fecha(){ov.setAttribute('aria-hidden','true');btn.setAttribute('aria-expanded','false');document.body.style.overflow='';}function abre(){ov.setAttribute('aria-hidden','false');btn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}btn.addEventListener('click',function(){ov.getAttribute('aria-hidden')==='false'?fecha():abre();});document.addEventListener('click',function(e){var p=ov.querySelector('.menu-panel');if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target))fecha();});document.addEventListener('keydown',function(e){if(e.key==='Escape')fecha();});})();</script>
+</body>
+</html>

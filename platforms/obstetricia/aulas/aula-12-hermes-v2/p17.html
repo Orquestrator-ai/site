@@ -1,0 +1,831 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CHASSI DA PLATAFORMA GO — copie VERBATIM e troque SÓ o que está em {{ }}.
+
+     ⛔ NÃO invente header, footer, menu, CSS nem JS. NÃO crie arquivo .css novo.
+     ⛔ NÃO mexa nos caminhos ../../assets/ — eles apontam para o chassi compartilhado
+        (tokens.css, base.css, components.css) que dá a identidade da plataforma inteira.
+
+     O QUE É SEU: o conteúdo dentro de <main id="main"><div class="reading"> … </div></main>.
+     Ali dentro você decide a cara da página — paleta interna, ritmo, componentes,
+     como monta o card, que interação inventa. O resto é contrato.
+
+     Placeholders:
+       p17        p1, p2, … p22          (index.html é p1)
+       17       1, 2, … 22
+       22          22
+       Dois andares do períneo  título curto desta página
+       Períneo: espaço profundo e superficial separados pela membrana perineal. Diafragma urogenital = transverso profundo + esfíncter uretral externo.      uma frase, para o <meta description>
+       <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17" aria-current="page"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li>     os 22 <li> do menu — repita o padrão de menu-panel__item
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<!doctype html>
+<html lang="pt-BR" data-page="p17">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#171219">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Períneo: espaço profundo e superficial separados pela membrana perineal. Diafragma urogenital = transverso profundo + esfíncter uretral externo.">
+  <title>Dois andares do períneo · Anatomia da pelve feminina (parte 1) — GO Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/img/icon.svg" type="image/svg+xml">
+  <style id="critical-nav-fouc">#home-btn{display:grid;place-items:center;width:40px;height:40px;color:#ecdde6;border-bottom:0}#home-btn svg{display:block;width:20px;height:20px}</style>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/aula-12.css">
+</head>
+<body data-page-id="p17" data-a12-page="p17">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="page-orb" aria-hidden="true"></div><div class="page-orb page-orb--rose" aria-hidden="true"></div>
+  <header class="site-header" id="site-header"><div class="site-header__row">
+    <a class="site-header__brand" href="../../index.html"><span class="site-header__logo">GO</span><span class="site-header__titles"><span class="site-header__title">Anatomia da pelve feminina (parte 1)</span><span class="site-header__subtitle">Ginecologia e Obstetrícia · Aula 12</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress" id="progress">17/22</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub do módulo" title="Hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header>
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas da aula"><p class="menu-panel__title">Aula 12 — Anatomia da pelve feminina (parte 1)</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17" aria-current="page"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li></ul><p class="menu-panel__title">Módulo</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="../../index.html"><span class="menu-panel__index">⌂</span><span>Voltar ao hub do módulo</span></a></li></ul></nav></div>
+  <main id="main"><div class="reading">
+
+  <!-- ▼▼▼ AQUI DENTRO É SEU. O conteúdo da página, com a peça SVG da tabela
+       copiada byte a byte, o quiz, e a didática que você decidir. ▼▼▼ -->
+
+<article data-page="p17" data-layout="a12-p17">
+
+<header class="a12-question-stage" data-opener="E8">
+<div class="a12-question-stage__question">
+<span class="a12-question-stage__eyebrow">Erro comum desmontado</span>
+<h1 id="p17-title">Dois andares do períneo — e a membrana que os divide</h1>
+<p class="a12-question-stage__lead no-indent">Quase todo mundo lê "espaço profundo" como "o de baixo". Numa pelve, é o contrário — e essa inversão sozinha desmonta tudo o que vem depois. Profundo aqui não é mais para baixo: é mais para dentro.</p>
+</div>
+</header>
+
+<div class="chipset"><span class="a12-modmark">Obstetrícia</span><span class="chip--topic">Parte B · Chão</span><span class="chip--topic">Itens 126–136</span><span class="chip--topic">Erro comum</span></div>
+
+<div class="a12-topic" data-topic="1">
+<div class="a12-topic__kicker">Tópico 1</div>
+<h2 class="topic-h">Mais uma camada para fora</h2>
+<div class="prose">
+<p>O <strong class="term">períneo fica abaixo do diafragma pélvico</strong> — e a palavra continua com o significado estabelecido: <strong class="term">mais para fora, mais perto de quem examina a paciente por baixo, mais longe das vísceras</strong>. É a <strong class="term">terceira e mais externa</strong> das três camadas do chão.</p>
+</div>
+</div>
+
+<div class="a12-topic" data-topic="2">
+<div class="a12-topic__kicker">Tópico 2</div>
+<h2 class="topic-h">Profundo e superficial em relação a quê</h2>
+<div class="prose">
+<p>O períneo <strong class="term">ainda se subdivide</strong>: ele tem um <strong class="term">espaço profundo</strong> e um <strong class="term">espaço superficial</strong>.</p>
+<p>E antes de nomear o que há dentro de cada um, a orientação — porque sem ela os dois termos <strong class="term">invertem</strong> na cabeça de quem lê. Numa pelve, é perfeitamente natural ler "profundo" como "mais para baixo", e é errado:</p>
+<blockquote>
+<p><strong>profundo = mais para DENTRO</strong>, mais perto do diafragma pélvico (e, portanto, das vísceras)<br>
+<strong>superficial = mais para FORA</strong>, mais perto da pele, do lado de quem examina por baixo</p>
+</blockquote>
+<p>É exatamente a <strong class="term">mesma orientação</strong> já usada para empilhar as três camadas, aplicada um andar abaixo. Quem fixou aquela, paga esta de graça: <strong class="term">profundo é para dentro, superficial é para a pele.</strong> Se em algum momento a pilha parecer estranha, volte a este par — é quase sempre aqui que ela inverte.</p>
+</div>
+</div>
+
+<div class="a12-topic" data-topic="3">
+<div class="a12-topic__kicker">Tópico 3</div>
+<h2 class="topic-h">A membrana perineal é quem divide</h2>
+<div class="prose">
+<p>E quem separa os dois espaços é a <strong class="term">membrana perineal</strong>. Ela é uma lâmina fibrosa, fina e resistente, esticada transversalmente na porção anterior do períneo. Traçando a linha da membrana perineal sobre o períneo, obtêm-se os dois espaços: <strong class="term">acima dela (mais para dentro), o profundo; abaixo dela (mais para fora), o superficial</strong>.</p>
+<p>Vale desde já uma nota que reaparece adiante como regra de leitura de figura: <strong class="term">a membrana perineal não é apenas um divisor, é um marco de orientação.</strong> Numa imagem de períneo, identificá-la responde imediatamente em que andar se está olhando.</p>
+<p>Com isso, a pilha de três andares se fecha, e ela é a espinha dorsal desta parte inteira:</p>
+<blockquote>
+<p><strong>diafragma pélvico</strong> → <strong>espaço profundo do períneo</strong> (com o <strong>diafragma urogenital</strong> dentro) → <strong>espaço superficial do períneo</strong></p>
+</blockquote>
+<p>Três andares, cada seta apontando <strong class="term">para fora</strong>.</p>
+</div>
+</div>
+
+<figure class="a12-fig">
+<svg id="a12p17-svg" class="a12-inline-svg a12p17-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%" data-svg-tokenized="true" role="img" aria-labelledby="a12p17-title a12p17-desc">
+  <title id="a12p17-title">Dois Andares e a Membrana Perineal - Eixo Anatômico de Profundidade</title>
+  <desc id="a12p17-desc">Ilustração anatômica interativa do assoalho pélvico feminino em corte sagital esquemático, demonstrando a membrana perineal como divisor entre os espaços profundo e superficial com sonda de profundidade móvel.</desc>
+
+  <style>
+    #a12p17-svg {
+      --a12p17-tinta-val: #F7F1F5;
+      --a12p17-tinta: var(--a12-tinta, var(--a12p17-tinta-val, #F7F1F5));
+      --a12p17-bg-val: #141115;
+      --a12p17-bg: var(--bg-1, var(--a12p17-bg-val, #141115));
+      --a12p17-card-val: #1F1B22;
+      --a12p17-card: var(--bg-2, var(--a12p17-card-val, #1F1B22));
+      --a12p17-border-val: #38303C;
+      --a12p17-border: var(--ink-20, var(--a12p17-border-val, #38303C));
+      --a12p17-subtext-val: #BCAEB9;
+      --a12p17-subtext: var(--ink-70, var(--a12p17-subtext-val, #BCAEB9));
+
+      --a12p17-diafragma-val: #55B889;
+      --a12p17-diafragma: var(--a12-diafragma-pelvico, var(--a12p17-diafragma-val, #55B889));
+      --a12p17-profundo-val: #6FA8D6;
+      --a12p17-profundo: var(--a12-profundo, var(--a12p17-profundo-val, #6FA8D6));
+      --a12p17-membrana-val: #F3BE5B;
+      --a12p17-membrana: var(--a12-membrana-perineal, var(--a12p17-membrana-val, #F3BE5B));
+      --a12p17-superficial-val: #EF7582;
+      --a12p17-superficial: var(--a12-superficial, var(--a12p17-superficial-val, #EF7582));
+      --a12p17-sonda-val: #4CB7B0;
+      --a12p17-sonda: var(--a12-petroleo-claro, var(--a12p17-sonda-val, #4CB7B0));
+      --a12p17-pele-val: #C99074;
+      --a12p17-pele: var(--a12-pele-esquema, var(--a12p17-pele-val, #C99074));
+
+      background-color: var(--a12p17-bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      user-select: none;
+    }
+
+    :root[data-theme="light"] #a12p17-svg,
+    #a12p17-svg[data-theme="light"] {
+      --a12p17-tinta-val: #1E1B1D;
+      --a12p17-bg-val: #F8F6F8;
+      --a12p17-card-val: #FFFFFF;
+      --a12p17-border-val: #E2D8E1;
+      --a12p17-subtext-val: #5C525B;
+    }
+
+    #a12p17-svg .a12p17-title-text { fill: var(--a12p17-tinta); font-size: 20px; font-weight: 800; letter-spacing: 0.5px; }
+    #a12p17-svg .a12p17-subtitle-text { fill: var(--a12p17-subtext); font-size: 13px; font-weight: 500; }
+    #a12p17-svg .a12p17-badge-box { fill: var(--a12p17-card); stroke: var(--a12p17-border); stroke-width: 1px; rx: 6px; }
+    #a12p17-svg .a12p17-badge-text { fill: var(--a12p17-membrana); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+
+    #a12p17-svg .a12p17-panel { fill: var(--a12p17-card); stroke: var(--a12p17-border); stroke-width: 1.5px; rx: 12px; }
+    #a12p17-svg .a12p17-axis-line { stroke: var(--a12p17-subtext); stroke-width: 2px; stroke-dasharray: 4 4; opacity: 0.6; }
+    #a12p17-svg .a12p17-axis-arrow { fill: var(--a12p17-subtext); }
+    #a12p17-svg .a12p17-axis-label { fill: var(--a12p17-tinta); font-size: 11px; font-weight: 700; }
+
+    /* Camadas Anatômicas Interativas */
+    #a12p17-svg .a12p17-layer-box { cursor: pointer; transition: all 0.25s ease; stroke-width: 2px; }
+    #a12p17-svg .a12p17-layer-box:hover { filter: brightness(1.15); stroke-width: 3px; }
+    #a12p17-svg .a12p17-layer-box.active { stroke-width: 3.5px; filter: drop-shadow(0 0 8px rgba(243, 190, 91, 0.4)); }
+
+    #a12p17-svg .a12p17-layer-diafragma { fill: var(--a12p17-diafragma); fill-opacity: 0.2; stroke: var(--a12p17-diafragma); }
+    #a12p17-svg .a12p17-layer-profundo { fill: var(--a12p17-profundo); fill-opacity: 0.2; stroke: var(--a12p17-profundo); }
+    #a12p17-svg .a12p17-layer-membrana { fill: var(--a12p17-membrana); fill-opacity: 0.35; stroke: var(--a12p17-membrana); }
+    #a12p17-svg .a12p17-layer-superficial { fill: var(--a12p17-superficial); fill-opacity: 0.2; stroke: var(--a12p17-superficial); }
+    #a12p17-svg .a12p17-layer-pele { fill: var(--a12p17-pele); fill-opacity: 0.25; stroke: var(--a12p17-pele); }
+
+    #a12p17-svg .a12p17-layer-diafragma.active { fill-opacity: 0.45; }
+    #a12p17-svg .a12p17-layer-profundo.active { fill-opacity: 0.45; }
+    #a12p17-svg .a12p17-layer-membrana.active { fill-opacity: 0.65; }
+    #a12p17-svg .a12p17-layer-superficial.active { fill-opacity: 0.45; }
+    #a12p17-svg .a12p17-layer-pele.active { fill-opacity: 0.55; }
+
+    #a12p17-svg .a12p17-layer-tag { font-size: 13px; font-weight: 800; letter-spacing: 0.5px; }
+    #a12p17-svg .a12p17-layer-desc-text { fill: var(--a12p17-subtext); font-size: 11px; font-weight: 500; }
+
+    /* Fibras Musculares Cruzando Membrana */
+    #a12p17-svg .a12p17-fiber { stroke: var(--a12p17-profundo); stroke-width: 2.5px; stroke-dasharray: 6 3; fill: none; opacity: 0.85; }
+    #a12p17-svg .a12p17-fiber-node { fill: var(--a12p17-profundo); }
+
+    /* Sonda de Profundidade */
+    #a12p17-svg .a12p17-probe-shaft { stroke: var(--a12p17-sonda); stroke-width: 4px; stroke-linecap: round; }
+    #a12p17-svg .a12p17-probe-tip { fill: var(--a12p17-sonda); stroke: var(--a12p17-tinta); stroke-width: 2px; filter: drop-shadow(0 0 6px var(--a12p17-sonda)); }
+    #a12p17-svg .a12p17-probe-glow { fill: var(--a12p17-sonda); opacity: 0.25; }
+    #a12p17-svg .a12p17-probe-handle { fill: var(--a12p17-card); stroke: var(--a12p17-sonda); stroke-width: 2.5px; rx: 4px; }
+    #a12p17-svg .a12p17-probe-text { fill: var(--a12p17-sonda); font-size: 11px; font-weight: 800; }
+
+    /* Painel Direito / Leitura */
+    #a12p17-svg .a12p17-card-title { fill: var(--a12p17-tinta); font-size: 15px; font-weight: 800; }
+    #a12p17-svg .a12p17-status-badge { rx: 6px; }
+    #a12p17-svg .a12p17-status-text { font-size: 13px; font-weight: 800; text-anchor: middle; }
+    #a12p17-svg .a12p17-depth-val { fill: var(--a12p17-sonda); font-size: 26px; font-weight: 900; }
+    #a12p17-svg .a12p17-depth-unit { fill: var(--a12p17-subtext); font-size: 12px; font-weight: 600; }
+
+    #a12p17-svg .a12p17-info-label { fill: var(--a12p17-subtext); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    #a12p17-svg .a12p17-info-body { fill: var(--a12p17-tinta); font-size: 12.5px; font-weight: 500; line-height: 1.4; }
+    #a12p17-svg .a12p17-struct-item { fill: var(--a12p17-tinta); font-size: 12px; font-weight: 600; }
+
+    /* Botões Interativos */
+    #a12p17-svg .a12p17-btn { cursor: pointer; transition: all 0.2s ease; fill: var(--a12p17-card); stroke: var(--a12p17-border); stroke-width: 1.5px; rx: 8px; }
+    #a12p17-svg .a12p17-btn:hover { fill: var(--a12p17-border); stroke: var(--a12p17-sonda); }
+    #a12p17-svg .a12p17-btn:focus { outline: 2px solid var(--a12p17-sonda); }
+    #a12p17-svg .a12p17-btn-text { fill: var(--a12p17-tinta); font-size: 12px; font-weight: 700; pointer-events: none; }
+    #a12p17-svg .a12p17-btn.active { fill: var(--a12p17-sonda); stroke: var(--a12p17-sonda); }
+    #a12p17-svg .a12p17-btn.active .a12p17-btn-text { fill: #141115; }
+
+    /* Legenda Inferior */
+    #a12p17-svg .a12p17-legend-box { fill: var(--a12p17-card); stroke: var(--a12p17-border); stroke-width: 1.5px; rx: 8px; }
+    #a12p17-svg .a12p17-legend-title { fill: var(--a12p17-membrana); font-size: 12px; font-weight: 800; letter-spacing: 0.5px; }
+    #a12p17-svg .a12p17-legend-text { fill: var(--a12p17-tinta); font-size: 12px; font-weight: 500; }
+
+    /* Acessibilidade Focus Indicator */
+    #a12p17-svg [tabindex="0"]:focus-visible { outline: 2px solid var(--a12p17-membrana); outline-offset: 2px; }
+  </style>
+
+  <!-- Cabeçalho -->
+  <g id="a12p17-header" transform="translate(40, 30)">
+    <text class="a12p17-title-text" x="0" y="20">DOIS ANDARES E A MEMBRANA PERINEAL</text>
+    <text class="a12p17-subtitle-text" x="0" y="40">Eixo Anatômico de Profundidade Pélvica · Membrana como Divisor Fundamental</text>
+    <g transform="translate(680, 5)">
+      <rect class="a12p17-badge-box" x="0" y="0" width="240" height="32"/>
+      <text class="a12p17-badge-text" x="120" y="20" text-anchor="middle">ZOOM · CORTE SAGITAL MEDIANO</text>
+    </g>
+  </g>
+
+  <!-- Painel Anatômico (Esquerda) -->
+  <g id="a12p17-anatomy-stage" transform="translate(40, 90)">
+    <!-- Fundo do Palco Anatômico -->
+    <rect class="a12p17-panel" x="0" y="0" width="560" height="475"/>
+
+    <!-- Eixo de Profundidade (Lateral Esquerda) -->
+    <g id="a12p17-axis" transform="translate(50, 20)">
+      <!-- Seta Interno / Profundo (Para Cima) -->
+      <path class="a12p17-axis-arrow" d="M 25 15 L 20 27 L 30 27 Z"/>
+      <line class="a12p17-axis-line" x1="25" y1="25" x2="25" y2="405"/>
+      <!-- Seta Externo / Pele (Para Baixo) -->
+      <path class="a12p17-axis-arrow" d="M 25 415 L 20 403 L 30 403 Z"/>
+
+      <text class="a12p17-axis-label" x="25" y="10" text-anchor="middle" fill="var(--a12p17-profundo)">VÍSCERAS / PROFUNDO</text>
+      <text class="a12p17-axis-label" x="25" y="430" text-anchor="middle" fill="var(--a12p17-pele)">EXAMINADOR / PELE</text>
+
+      <!-- Marcadores de Milímetros de Profundidade -->
+      <text class="a12p17-subtext" x="12" y="55" font-size="10" font-weight="700">60mm</text>
+      <text class="a12p17-subtext" x="12" y="135" font-size="10" font-weight="700">45mm</text>
+      <text class="a12p17-subtext" x="12" y="235" font-size="10" font-weight="700">30mm</text>
+      <text class="a12p17-subtext" x="12" y="315" font-size="10" font-weight="700">15mm</text>
+      <text class="a12p17-subtext" x="12" y="380" font-size="10" font-weight="700">0mm</text>
+    </g>
+
+    <!-- Camadas Anatômicas Empilhadas (Topologia Contínua) -->
+    <g id="a12p17-layers" transform="translate(120, 25)">
+      
+      <!-- 1. DIAFRAGMA PÉLVICO (Topo / Polo Interno) -->
+      <g id="a12p17-grp-diafragma" class="a12p17-layer-item" tabindex="0" role="button" aria-label="Diafragma Pélvico - Polo Interno">
+        <rect id="a12p17-box-diafragma" class="a12p17-layer-box a12p17-layer-diafragma" x="0" y="10" width="370" height="70" rx="8"/>
+        <!-- Fibra muscular estriada esquema -->
+        <path d="M 20 30 Q 180 50 350 30 M 20 50 Q 180 70 350 50" stroke="var(--a12p17-diafragma)" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <text class="a12p17-layer-tag" x="20" y="35" fill="var(--a12p17-diafragma)">DIAFRAGMA PÉLVICO (M. Levator Ani)</text>
+        <text class="a12p17-layer-desc-text" x="20" y="55">Polo Interno · Limite superior do assoalho pélvico (perto das vísceras)</text>
+      </g>
+
+      <!-- 2. ESPAÇO PERINEAL PROFUNDO -->
+      <g id="a12p17-grp-profundo" class="a12p17-layer-item" tabindex="0" role="button" aria-label="Espaço Perineal Profundo">
+        <rect id="a12p17-box-profundo" class="a12p17-layer-box a12p17-layer-profundo" x="0" y="90" width="370" height="110" rx="8"/>
+        <!-- Estruturas internas: M. Transverso Profundo & Esfíncter Uretral -->
+        <rect x="20" y="105" width="160" height="45" rx="5" fill="var(--a12p17-profundo)" fill-opacity="0.25" stroke="var(--a12p17-profundo)" stroke-width="1"/>
+        <text x="100" y="132" fill="var(--a12p17-tinta)" font-size="10.5" font-weight="700" text-anchor="middle">M. Transverso Profundo</text>
+        
+        <circle cx="280" cy="128" r="22" fill="var(--a12p17-profundo)" fill-opacity="0.3" stroke="var(--a12p17-profundo)" stroke-width="1"/>
+        <circle cx="280" cy="128" r="8" fill="var(--a12p17-card)" stroke="var(--a12p17-profundo)" stroke-width="1.5"/>
+        <text x="280" y="163" fill="var(--a12p17-tinta)" font-size="10" font-weight="700" text-anchor="middle">Esfíncter Uretral Ext.</text>
+
+        <text class="a12p17-layer-tag" x="20" y="180" fill="var(--a12p17-profundo)">ESPAÇO PERINEAL PROFUNDO</text>
+        <text class="a12p17-layer-desc-text" x="20" y="195">Acima da membrana perineal · Diafragma Urogenital</text>
+      </g>
+
+      <!-- FIBRAS MUSCULARES ATRAVESSANDO A MEMBRANA (De cima para baixo) -->
+      <g id="a12p17-traversing-fibers" pointer-events="none">
+        <!-- Fibra 1 (Esquerda) -->
+        <path class="a12p17-fiber" d="M 70 150 L 70 270 L 65 295"/>
+        <circle class="a12p17-fiber-node" cx="70" cy="150" r="3.5"/>
+        <path d="M 65 295 L 60 287 L 70 287 Z" fill="var(--a12p17-profundo)"/>
+
+        <!-- Fibra 2 (Centro) -->
+        <path class="a12p17-fiber" d="M 140 150 L 140 270 L 145 295"/>
+        <circle class="a12p17-fiber-node" cx="140" cy="150" r="3.5"/>
+        <path d="M 145 295 L 140 287 L 150 287 Z" fill="var(--a12p17-profundo)"/>
+
+        <!-- Fibra 3 (Direita) -->
+        <path class="a12p17-fiber" d="M 330 150 L 330 270 L 330 295"/>
+        <circle class="a12p17-fiber-node" cx="330" cy="150" r="3.5"/>
+        <path d="M 330 295 L 325 287 L 335 287 Z" fill="var(--a12p17-profundo)"/>
+
+        <!-- Rótulo explicativo da transição de fibras -->
+        <rect x="165" y="212" width="165" height="18" rx="4" fill="var(--a12p17-card)" stroke="var(--a12p17-profundo)" stroke-width="1"/>
+        <text x="247" y="225" fill="var(--a12p17-profundo)" font-size="9.5" font-weight="800" text-anchor="middle">Fibras Profundas Perfurantes ➔</text>
+      </g>
+
+      <!-- 3. MEMBRANA PERINEAL (DIVISOR CENTRAL) -->
+      <g id="a12p17-grp-membrana" class="a12p17-layer-item" tabindex="0" role="button" aria-label="Membrana Perineal - Divisor Anatômico">
+        <rect id="a12p17-box-membrana" class="a12p17-layer-box a12p17-layer-membrana" x="0" y="210" width="370" height="35" rx="6"/>
+        <!-- Orifícios de passagem (Perforations) -->
+        <circle cx="70" cy="227" r="5" fill="var(--a12p17-card)" stroke="var(--a12p17-membrana)" stroke-width="1.5"/>
+        <circle cx="140" cy="227" r="5" fill="var(--a12p17-card)" stroke="var(--a12p17-membrana)" stroke-width="1.5"/>
+        <circle cx="330" cy="227" r="5" fill="var(--a12p17-card)" stroke="var(--a12p17-membrana)" stroke-width="1.5"/>
+
+        <text class="a12p17-layer-tag" x="185" y="232" fill="var(--a12p17-membrana)" text-anchor="middle">MEMBRANA PERINEAL (LÂMINA DIVISORA)</text>
+      </g>
+
+      <!-- 4. ESPAÇO PERINEAL SUPERFICIAL -->
+      <g id="a12p17-grp-superficial" class="a12p17-layer-item" tabindex="0" role="button" aria-label="Espaço Perineal Superficial">
+        <rect id="a12p17-box-superficial" class="a12p17-layer-box a12p17-layer-superficial" x="0" y="255" width="370" height="90" rx="8"/>
+        <!-- Músculos Superficiais -->
+        <rect x="20" y="270" width="100" height="35" rx="5" fill="var(--a12p17-superficial)" fill-opacity="0.3" stroke="var(--a12p17-superficial)" stroke-width="1"/>
+        <text x="70" y="291" fill="var(--a12p17-tinta)" font-size="10" font-weight="700" text-anchor="middle">M. Bulboesponjoso</text>
+
+        <rect x="135" y="270" width="100" height="35" rx="5" fill="var(--a12p17-superficial)" fill-opacity="0.3" stroke="var(--a12p17-superficial)" stroke-width="1"/>
+        <text x="185" y="291" fill="var(--a12p17-tinta)" font-size="10" font-weight="700" text-anchor="middle">Isquiocavernoso</text>
+
+        <rect x="250" y="270" width="100" height="35" rx="5" fill="var(--a12p17-superficial)" fill-opacity="0.3" stroke="var(--a12p17-superficial)" stroke-width="1"/>
+        <text x="300" y="291" fill="var(--a12p17-tinta)" font-size="10" font-weight="700" text-anchor="middle">Transverso Superf.</text>
+
+        <text class="a12p17-layer-tag" x="20" y="328" fill="var(--a12p17-superficial)">ESPAÇO PERINEAL SUPERFICIAL</text>
+        <text class="a12p17-layer-desc-text" x="20" y="340">Abaixo da membrana · Músculos eréteis e vulvares</text>
+      </g>
+
+      <!-- 5. PELE E TECIDO SUBCUTÂNEO (Polo Externo) -->
+      <g id="a12p17-grp-pele" class="a12p17-layer-item" tabindex="0" role="button" aria-label="Pele e Tecido Subcutâneo">
+        <rect id="a12p17-box-pele" class="a12p17-layer-box a12p17-layer-pele" x="0" y="355" width="370" height="40" rx="6"/>
+        <path d="M 0 365 Q 92 370 185 365 T 370 365" fill="none" stroke="var(--a12p17-pele)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text class="a12p17-layer-tag" x="20" y="380" fill="var(--a12p17-pele)">PELE / TEGUMENTO PERINEAL</text>
+        <text class="a12p17-layer-desc-text" x="220" y="380">Superfície de Exame Exterior</text>
+      </g>
+
+    </g>
+
+    <!-- Examinador Esquemático (Ponto de Vista por Baixo) -->
+    <g id="a12p17-examiner" transform="translate(240, 432)">
+      <!-- Ícone Olho / Ponto de Vista -->
+      <path d="M 0 12 Q 25 -3 50 12 Q 25 27 0 12 Z" fill="none" stroke="var(--a12p17-pele)" stroke-width="2"/>
+      <circle cx="25" cy="12" r="6" fill="var(--a12p17-pele)"/>
+      <path d="M 25 -4 L 25 -14 M 25 -14 L 21 -10 M 25 -14 L 29 -10" stroke="var(--a12p17-pele)" stroke-width="2" stroke-linecap="round"/>
+      <text x="65" y="16" fill="var(--a12p17-pele)" font-size="11" font-weight="800">EXAMINADOR (PERSPECTIVA INFERIOR / DE BAIXO)</text>
+    </g>
+
+    <!-- SONDA DE PROFUNDIDADE (Elemento Dinâmico Interativo) -->
+    <g id="a12p17-probe-group" transform="translate(100, 0)">
+      <!-- Linha da Sonda / Haste -->
+      <line id="a12p17-probe-shaft" class="a12p17-probe-shaft" x1="0" y1="415" x2="0" y2="380"/>
+      <!-- Brilho da Ponta -->
+      <circle id="a12p17-probe-glow" class="a12p17-probe-glow" cx="0" cy="380" r="14"/>
+      <!-- Ponta da Sonda -->
+      <circle id="a12p17-probe-tip" class="a12p17-probe-tip" cx="0" cy="380" r="6"/>
+
+      <!-- Cabo / Manípulo de Controle na Base -->
+      <g id="a12p17-probe-handle-grp" transform="translate(-25, 415)">
+        <rect class="a12p17-probe-handle" x="0" y="0" width="50" height="24"/>
+        <text class="a12p17-probe-text" x="25" y="16" text-anchor="middle">SONDA</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Painel de Leitura e Controles (Direita) -->
+  <g id="a12p17-readout-stage" transform="translate(620, 90)">
+    <rect class="a12p17-panel" x="0" y="0" width="340" height="475"/>
+
+    <g transform="translate(20, 25)">
+      <!-- Título do Painel -->
+      <text class="a12p17-card-title" x="0" y="15">PAINEL DE LEITURA ANATÔMICA</text>
+      <line x1="0" y1="28" x2="300" y2="28" stroke="var(--a12p17-border)" stroke-width="1"/>
+
+      <!-- Medidor de Profundidade Ativa -->
+      <g transform="translate(0, 40)">
+        <text class="a12p17-info-label" x="0" y="12">PROFUNDIDADE DA SONDA</text>
+        <text id="a12p17-depth-display" class="a12p17-depth-val" x="0" y="42">0 <tspan class="a12p17-depth-unit">mm (Superfície)</tspan></text>
+      </g>
+
+      <!-- Badge de Estado da Camada Ativa -->
+      <g id="a12p17-status-badge-grp" transform="translate(0, 100)">
+        <rect id="a12p17-status-rect" class="a12p17-status-badge" x="0" y="0" width="300" height="34" fill="var(--a12p17-pele)" fill-opacity="0.3" stroke="var(--a12p17-pele)" stroke-width="1.5"/>
+        <text id="a12p17-status-txt" class="a12p17-status-text" x="150" y="22" fill="var(--a12p17-pele)">PELE / PLANO EXTERNO</text>
+      </g>
+
+      <!-- Descrição Dinâmica da Camada -->
+      <g transform="translate(0, 155)">
+        <text class="a12p17-info-label" x="0" y="12">LOCALIZAÇÃO &amp; REFERENCIAL</text>
+        <text id="a12p17-info-location" class="a12p17-info-body" x="0" y="32" width="300">Ponto zero de entrada do exame clínico. Situado exteriormente à membrana perineal.</text>
+      </g>
+
+      <g transform="translate(0, 220)">
+        <text class="a12p17-info-label" x="0" y="12">ESTRUTURAS PRESENTES NESTE ANDAR</text>
+        <g id="a12p17-struct-list" transform="translate(0, 25)">
+          <!-- Dinamicamente preenchido pelo script -->
+        </g>
+      </g>
+
+      <!-- Controles da Sonda de Profundidade -->
+      <g transform="translate(0, 310)">
+        <text class="a12p17-info-label" x="0" y="12">MOVER SONDA DE PROFUNDIDADE</text>
+        
+        <!-- Botões Passo a Passo -->
+        <g id="a12p17-btn-in" class="a12p17-btn" transform="translate(0, 25)" tabindex="0" role="button" aria-label="Avançar Sonda Para Dentro">
+          <rect x="0" y="0" width="142" height="36" rx="6"/>
+          <text class="a12p17-btn-text" x="71" y="22" text-anchor="middle">▲ PARA DENTRO</text>
+        </g>
+
+        <g id="a12p17-btn-out" class="a12p17-btn" transform="translate(158, 25)" tabindex="0" role="button" aria-label="Recuar Sonda Para Fora">
+          <rect x="0" y="0" width="142" height="36" rx="6"/>
+          <text class="a12p17-btn-text" x="71" y="22" text-anchor="middle">▼ PARA FORA</text>
+        </g>
+
+        <!-- Seleção Direta por Camada -->
+        <g transform="translate(0, 72)">
+          <g id="a12p17-nav-0" class="a12p17-btn" transform="translate(0, 0)" tabindex="0" role="button" aria-label="Ir para Pele">
+            <rect x="0" y="0" width="54" height="28" rx="4"/>
+            <text class="a12p17-btn-text" x="27" y="18" font-size="10" text-anchor="middle">Pele</text>
+          </g>
+          <g id="a12p17-nav-1" class="a12p17-btn" transform="translate(61, 0)" tabindex="0" role="button" aria-label="Ir para Espaço Superficial">
+            <rect x="0" y="0" width="54" height="28" rx="4"/>
+            <text class="a12p17-btn-text" x="27" y="18" font-size="10" text-anchor="middle">Superf.</text>
+          </g>
+          <g id="a12p17-nav-2" class="a12p17-btn" transform="translate(122, 0)" tabindex="0" role="button" aria-label="Ir para Membrana Perineal">
+            <rect x="0" y="0" width="56" height="28" rx="4"/>
+            <text class="a12p17-btn-text" x="28" y="18" font-size="10" text-anchor="middle">Membr.</text>
+          </g>
+          <g id="a12p17-nav-3" class="a12p17-btn" transform="translate(184, 0)" tabindex="0" role="button" aria-label="Ir para Espaço Profundo">
+            <rect x="0" y="0" width="54" height="28" rx="4"/>
+            <text class="a12p17-btn-text" x="27" y="18" font-size="10" text-anchor="middle">Profundo</text>
+          </g>
+          <g id="a12p17-nav-4" class="a12p17-btn" transform="translate(244, 0)" tabindex="0" role="button" aria-label="Ir para Diafragma Pélvico">
+            <rect x="0" y="0" width="56" height="28" rx="4"/>
+            <text class="a12p17-btn-text" x="28" y="18" font-size="10" text-anchor="middle">Diafrag.</text>
+          </g>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- Legenda de Interpretação (Rodapé) -->
+  <g id="a12p17-footer-legend" transform="translate(40, 580)">
+    <rect class="a12p17-legend-box" x="0" y="0" width="920" height="90"/>
+    <g transform="translate(25, 20)">
+      <text class="a12p17-legend-title" x="0" y="12">LEGENDA DE INTERPRETAÇÃO CLÍNICA &amp; RECONHECIMENTO DE ANDARES</text>
+      <text class="a12p17-legend-text" x="0" y="34">1. A <tspan fill="var(--a12p17-membrana)" font-weight="800">Membrana Perineal</tspan> é o divisor anatômico rígido: estruturas acima são <tspan fill="var(--a12p17-profundo)" font-weight="800">Profundas</tspan> e abaixo são <tspan fill="var(--a12p17-superficial)" font-weight="800">Superficiais</tspan>.</text>
+      <text class="a12p17-legend-text" x="0" y="54">2. O <tspan fill="var(--a12p17-profundo)" font-weight="800">Espaço Profundo</tspan> insere-se entre a membrana e o <tspan fill="var(--a12p17-diafragma)" font-weight="800">Diafragma Pélvico</tspan>. Fibras profundas perfuram a membrana de cima para baixo.</text>
+    </g>
+  </g>
+
+  <!-- Região Live para Acessibilidade (Screen Readers) -->
+  <g id="a12p17-aria-live" aria-live="polite" class="sr-only"></g>
+
+  <!-- Motor Script Self-Contained -->
+  <script>//<![CDATA[
+    (function() {
+      'use strict';
+
+      // Dados determinísticos das camadas anatômicas
+      var STEPS = [
+        {
+          id: 'pele',
+          name: 'PELE / TEGUMENTO PERINEAL',
+          depth: '0 mm (Superfície)',
+          y: 400,
+          color: 'var(--a12p17-pele)',
+          location: 'Ponto zero de entrada do exame clínico. Situado exteriormente à membrana perineal.',
+          structures: [
+            '• Epiderme e derme perineal',
+            '• Tecido adiposo subcutâneo',
+            '• Orifícios vulvares e anais externos'
+          ]
+        },
+        {
+          id: 'superficial',
+          name: 'ESPAÇO PERINEAL SUPERFICIAL',
+          depth: '15 mm (Superficial)',
+          y: 320,
+          color: 'var(--a12p17-superficial)',
+          location: 'Compreendido entre a Pele e a face inferior da Membrana Perineal (andar de fora).',
+          structures: [
+            '• M. Bulboesponjoso & Isquiocavernoso',
+            '• M. Transverso Superficial do Períneo',
+            '• Corpos eréteis (Bulbos do vestíbulo e Clitóris)',
+            '• Glândulas vestibulares maiores (Bartholin)'
+          ]
+        },
+        {
+          id: 'membrana',
+          name: 'MEMBRANA PERINEAL (LÂMINA DIVISORA)',
+          depth: '30 mm (Divisor Central)',
+          y: 247,
+          color: 'var(--a12p17-membrana)',
+          location: 'Fáscia fibromuscular triangular espessa. Divisor anatômico entre o andar superficial e o profundo.',
+          structures: [
+            '• Lâmina fascial fibrosa resistente',
+            '• Perfurações para passagem de fibras profundas',
+            '• Hiato urogenital (passagem da uretra e vagina)',
+            '• Fixação ao arco púbico lateralmente'
+          ]
+        },
+        {
+          id: 'profundo',
+          name: 'ESPAÇO PERINEAL PROFUNDO',
+          depth: '45 mm (Profundo)',
+          y: 170,
+          color: 'var(--a12p17-profundo)',
+          location: 'Situado ACIMA da Membrana Perineal e ABAIXO do Diafragma Pélvico (andar de dentro).',
+          structures: [
+            '• M. Transverso Profundo do Períneo',
+            '• M. Esfíncter Uretral Externo (Urogenital)',
+            '• Fibras musculares perfurantes para a membrana',
+            '• Vasos e nervos pudendos internos'
+          ]
+        },
+        {
+          id: 'diafragma',
+          name: 'DIAFRAGMA PÉLVICO (M. LEVATOR ANI)',
+          depth: '60 mm (Polo Interno / Visceral)',
+          y: 60,
+          color: 'var(--a12p17-diafragma)',
+          location: 'Assoalho muscular principal da cavidade pélvica. Teto do espaço perineal profundo.',
+          structures: [
+            '• M. Pubococcígeo e Puborretal',
+            '• M. Iliococcígeo',
+            '• Fáscia superior do diafragma pélvico',
+            '• Transição direta para a cavidade pélvica visceral'
+          ]
+        }
+      ];
+
+      var currentStepIndex = 0;
+
+      function updateUI() {
+        var step = STEPS[currentStepIndex];
+
+        // 1. Mover a Sonda de Profundidade
+        var shaft = document.getElementById('a12p17-probe-shaft');
+        var tip = document.getElementById('a12p17-probe-tip');
+        var glow = document.getElementById('a12p17-probe-glow');
+
+        if (shaft && tip && glow) {
+          tip.setAttribute('cy', step.y);
+          glow.setAttribute('cy', step.y);
+          shaft.setAttribute('y2', step.y);
+        }
+
+        // 2. Atualizar Highlight das Camadas no Desenho Anatômico
+        STEPS.forEach(function(s, idx) {
+          var box = document.getElementById('a12p17-box-' + s.id);
+          if (box) {
+            if (idx === currentStepIndex) {
+              box.classList.add('active');
+            } else {
+              box.classList.remove('active');
+            }
+          }
+
+          var navBtn = document.getElementById('a12p17-nav-' + idx);
+          if (navBtn) {
+            if (idx === currentStepIndex) {
+              navBtn.classList.add('active');
+            } else {
+              navBtn.classList.remove('active');
+            }
+          }
+        });
+
+        // 3. Atualizar Leitura no Painel Direito
+        var depthDisp = document.getElementById('a12p17-depth-display');
+        var statusRect = document.getElementById('a12p17-status-rect');
+        var statusTxt = document.getElementById('a12p17-status-txt');
+        var infoLoc = document.getElementById('a12p17-info-location');
+        var structList = document.getElementById('a12p17-struct-list');
+
+        if (depthDisp) {
+          depthDisp.innerHTML = step.depth.split(' ')[0] + ' <tspan class="a12p17-depth-unit">' + step.depth.substring(step.depth.indexOf(' ')) + '</tspan>';
+        }
+
+        if (statusRect && statusTxt) {
+          statusRect.setAttribute('fill', step.color);
+          statusRect.setAttribute('stroke', step.color);
+          statusTxt.setAttribute('fill', step.id === 'membrana' ? '#141115' : '#ffffff');
+          statusTxt.textContent = step.name;
+        }
+
+        if (infoLoc) {
+          infoLoc.textContent = step.location;
+        }
+
+        if (structList) {
+          // Limpar e reconstruir lista de estruturas
+          while (structList.firstChild) {
+            structList.removeChild(structList.firstChild);
+          }
+
+          step.structures.forEach(function(itemText, i) {
+            var textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            textEl.setAttribute('class', 'a12p17-struct-item');
+            textEl.setAttribute('x', '0');
+            textEl.setAttribute('y', (i * 20).toString());
+            textEl.textContent = itemText;
+            structList.appendChild(textEl);
+          });
+        }
+
+        // 4. Anúncio ARIA para Acessibilidade
+        var ariaLive = document.getElementById('a12p17-aria-live');
+        if (ariaLive) {
+          ariaLive.textContent = 'Sonda posicionada em: ' + step.name + ', profundidade: ' + step.depth;
+        }
+      }
+
+      function setStep(idx) {
+        if (idx >= 0 && idx < STEPS.length) {
+          currentStepIndex = idx;
+          updateUI();
+        }
+      }
+
+      function setupEvents() {
+        // Eventos dos botões Passo a Passo
+        var btnIn = document.getElementById('a12p17-btn-in');
+        var btnOut = document.getElementById('a12p17-btn-out');
+
+        if (btnIn) {
+          btnIn.addEventListener('click', function() {
+            setStep(Math.min(currentStepIndex + 1, STEPS.length - 1));
+          });
+          btnIn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setStep(Math.min(currentStepIndex + 1, STEPS.length - 1));
+            }
+          });
+        }
+
+        if (btnOut) {
+          btnOut.addEventListener('click', function() {
+            setStep(Math.max(currentStepIndex - 1, 0));
+          });
+          btnOut.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setStep(Math.max(currentStepIndex - 1, 0));
+            }
+          });
+        }
+
+        // Eventos dos botões de navegação direta por camada (0 a 4)
+        STEPS.forEach(function(s, idx) {
+          var navBtn = document.getElementById('a12p17-nav-' + idx);
+          if (navBtn) {
+            navBtn.addEventListener('click', function() { setStep(idx); });
+            navBtn.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setStep(idx);
+              }
+            });
+          }
+
+          var grpItem = document.getElementById('a12p17-grp-' + s.id);
+          if (grpItem) {
+            grpItem.addEventListener('click', function() { setStep(idx); });
+            grpItem.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setStep(idx);
+              }
+            });
+          }
+        });
+
+        // Teclas de Atalho de Seta Cima/Baixo no SVG
+        var rootSvg = document.getElementById('a12p17-svg');
+        if (rootSvg) {
+          rootSvg.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              setStep(Math.min(currentStepIndex + 1, STEPS.length - 1));
+            } else if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              setStep(Math.max(currentStepIndex - 1, 0));
+            }
+          });
+        }
+      }
+
+      // Inicialização
+      document.addEventListener('DOMContentLoaded', function() {
+        setupEvents();
+        updateUI();
+      });
+
+      // Executar imediatamente se o DOM já estiver pronto
+      if (document.readyState === 'interactive' || document.readyState === 'complete') {
+        setupEvents();
+        updateUI();
+      }
+    })();
+  //]]></script>
+</svg>
+<figcaption>Zoom perineal: os andares empilhados e a membrana perineal como divisor entre o espaço profundo (com o diafragma urogenital) e o espaço superficial. Seta "para fora / para a pele" desenhada dentro da figura.</figcaption>
+</figure>
+
+<div class="a12-topic" data-topic="4">
+<div class="a12-topic__kicker">Tópico 4</div>
+<h2 class="topic-h">No espaço profundo: o diafragma urogenital</h2>
+<div class="prose">
+<p>No <strong class="term">espaço profundo</strong> está o <strong class="term">diafragma urogenital</strong>. E ele <strong class="term">cai muito em prova de residência</strong> — é declaração explícita de prioridade, e vale gastar atenção aqui.</p>
+<p>O que tem consenso e não tem discussão: o <strong class="term">músculo transverso profundo do períneo</strong> e o <strong class="term">esfíncter uretral externo</strong> compõem o diafragma urogenital.</p>
+<p>E há uma lógica de nome que dispensa decoreba e elimina o par mais trocado deste andar: como o diafragma urogenital fica <strong class="term">no espaço profundo</strong> do períneo, o transverso que o compõe <strong class="term">também é o profundo</strong>. <strong class="term">O adjetivo do músculo repete o andar em que ele mora.</strong> Transverso <em>profundo</em> → espaço <em>profundo</em>. Transverso <em>superficial</em> → espaço <em>superficial</em>. Nunca mais é preciso decidir qual é qual.</p>
+</div>
+</div>
+
+<div class="a12-topic" data-topic="5">
+<div class="a12-topic__kicker">Tópico 5</div>
+<h2 class="topic-h">Onde a literatura não é unânime — e o que fazer na prova</h2>
+<div class="prose">
+<p>Existe <strong class="term">divergência real na literatura</strong> quanto aos componentes do diafragma urogenital, e esconder isso do leitor seria pior do que declará-lo — porque a instabilidade vai aparecer, mais cedo ou mais tarde, numa questão mal formulada ou num atlas mais recente. Melhor encontrá-la aqui.</p>
+<blockquote>
+<p>Este é um daqueles pontos em que <strong class="term">o nome da prova e o nome do atlas moderno não são o mesmo</strong>. A prova pede <strong class="term">diafragma urogenital</strong>, e o que ela quer ouvir é <strong class="term">transverso profundo do períneo + esfíncter uretral externo</strong>. O atlas moderno não usa mais "diafragma" aqui, porque a estrutura de sanduíche que o nome sugere <strong class="term">não existe</strong>: o que existe é a <strong class="term">membrana perineal</strong> e, acima dela, os <strong class="term">músculos do espaço profundo</strong>. <strong class="term">Guarde o nome de prova; saiba que ele é histórico. Nas duas versões, os dois músculos são os mesmos.</strong></p>
+</blockquote>
+<p>E vale saber de onde vem a divergência, porque isso a torna memorável em vez de confusa: o termo nasceu de uma leitura antiga das dissecções, que via ali <strong class="term">duas fáscias com músculo entre elas</strong> — um sanduíche, como o diafragma torácico. Dissecções modernas e reconstruções tridimensionais mostraram que esse sanduíche <strong class="term">não existe</strong>: existe <strong class="term">uma</strong> lâmina, a membrana perineal, e músculos que a atravessam de cima para baixo, com fibras <strong class="term">perpendiculares</strong> a ela e não paralelas. O nome sobreviveu porque é prático e porque as provas continuam usando.</p>
+<p><strong class="term">No espaço superficial</strong>, por sua vez, ficam músculos muito importantes — várias estruturas, mas, pensando em prova de residência, um conjunto nominal de músculos que precisa ser sabido um a um.</p>
+</div>
+</div>
+
+<div class="a12-nao-confunda">
+<h3>Não confunda</h3>
+<ul>
+<li><strong class="term">Transverso PROFUNDO do períneo</strong> (espaço <strong class="term">profundo</strong>, compõe o diafragma urogenital) ≠ <strong class="term">transverso SUPERFICIAL do períneo</strong> (espaço <strong class="term">superficial</strong>). O adjetivo do músculo <strong class="term">repete o andar</strong> — é a regra que elimina a troca.</li>
+<li><strong class="term">Profundo</strong> = mais para dentro, mais perto do diafragma pélvico ≠ "mais para baixo". <strong class="term">Superficial</strong> = mais para fora, mais perto da pele.</li>
+<li><strong class="term">Membrana perineal</strong> = a lâmina que <strong class="term">divide</strong> os dois espaços ≠ <strong class="term">diafragma urogenital</strong> = o conjunto muscular que ocupa o espaço <strong class="term">profundo</strong>. Um é divisor, o outro é conteúdo.</li>
+</ul>
+</div>
+
+<section class="quiz" data-quiz-id="a12-p17" aria-labelledby="quiz-p17-title">
+<h2 id="quiz-p17-title">Quiz — fixação</h2>
+<ol class="quiz__questions" style="list-style:none;padding:0;margin:0">
+<li class="quiz__q" data-q="1"><p class="quiz__stem">No períneo, os termos "espaço profundo" e "espaço superficial" devem ser entendidos como:</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>profundo = mais próximo dos pés; superficial = mais próximo da cabeça.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>profundo = mais para dentro, próximo ao diafragma pélvico; superficial = mais para fora, próximo à pele.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>profundo = posterior, próximo ao ânus; superficial = anterior, próximo à vulva.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>profundo = intrapélvico; superficial = intra-abdominal.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why">O eixo é o mesmo já usado para empilhar as três camadas do chão: <strong class="term">profundo aponta para dentro</strong>, na direção das vísceras e do diafragma pélvico; <strong class="term">superficial aponta para fora</strong>, na direção da pele e de quem examina por baixo. Manter o mesmo eixo é o que impede a pilha de inverter — e a inversão é o erro que arrasta as páginas seguintes.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">aplica o eixo craniocaudal do corpo em pé, que não descreve profundidade numa região examinada por baixo.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">troca o eixo profundo/superficial pelo eixo <strong class="term">anterior/posterior</strong>, que é outro e existe em paralelo — os dois triângulos do períneo se dividem nesse outro eixo, e confundi-los mistura duas divisões independentes.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">desloca o períneo para dentro da pelve e do abdome, quando ele é justamente a camada <strong class="term">externa</strong> ao anel.</span></li><li class="is-wrong"><b>Por que cair na (A):</b> <span class="why">"profundo" no uso comum significa "fundo, lá embaixo", e ninguém desconfia de uma palavra tão familiar. A defesa é ancorar a palavra em <strong class="term">duas estruturas</strong> e não em uma direção: profundo é o lado do <strong class="term">diafragma pélvico</strong>; superficial é o lado da <strong class="term">pele</strong>.</span></li></ul></div></li>
+<li class="quiz__q" data-q="2"><p class="quiz__stem">Quais são os componentes de consenso do diafragma urogenital?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">A</span><span>transverso profundo do períneo e esfíncter uretral externo.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">B</span><span>transverso superficial do períneo e bulboesponjoso.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>levantador do ânus e coccígeo.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>isquiocavernoso e esfíncter externo do ânus.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito A.</b> <span class="why">São os dois componentes sobre os quais não há discussão, e a lógica do nome ajuda a não errar: como o diafragma urogenital mora no <strong class="term">espaço profundo</strong>, o transverso que o compõe é <strong class="term">o profundo</strong> — o adjetivo do músculo repete o andar.</span></li><li class="is-wrong"><b>(B)</b> <span class="why">troca o andar: os dois são do <strong class="term">espaço superficial</strong>, uma camada mais para fora.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">troca de camada inteira: são os dois músculos do <strong class="term">diafragma pélvico</strong>, acima do períneo — é a confusão entre os dois "diafragmas", e ela é frequente porque a palavra é a mesma.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">também são do <strong class="term">espaço superficial</strong>, e o esfíncter externo do ânus pertence ainda a outro território dentro dele.</span></li><li class="is-wrong"><b>Por que cair na (C):</b> <span class="why">os dois nomes contêm "diafragma", estão em camadas vizinhas e ambos fazem parte do chão. A régua que separa: <strong class="term">diafragma PÉLVICO é a camada 2 (levantador + coccígeo); diafragma UROGENITAL está dentro do espaço profundo do períneo, que é a camada 3 (transverso profundo + esfíncter uretral externo).</strong></span></li></ul></div></li>
+</ol></section>
+
+<div class="a12-resumo">
+<h3>Resumo operacional</h3>
+<p>O <strong class="term">períneo</strong> é a terceira e mais externa camada do chão, e se subdivide em <strong class="term">espaço profundo</strong> (mais para dentro, junto ao diafragma pélvico) e <strong class="term">espaço superficial</strong> (mais para fora, junto à pele), separados pela <strong class="term">membrana perineal</strong>. A pilha completa: <strong class="term">diafragma pélvico → espaço profundo (com o diafragma urogenital) → espaço superficial</strong>. <strong class="term">Diafragma urogenital = transverso profundo do períneo + esfíncter uretral externo</strong> — e <strong class="term">o adjetivo do músculo repete o andar em que ele mora</strong>. O termo é o cobrado em prova; a anatomia moderna descreve <strong class="term">membrana perineal + músculos do espaço profundo</strong>, porque o "sanduíche" que o nome sugere não existe.</p>
+</div>
+
+</article>
+
+    <!-- ▲▲▲ FIM DO SEU CONTEÚDO ▲▲▲ -->
+
+  </div></main>
+  <footer class="site-footer"><div class="container"><span>Anatomia da pelve feminina (parte 1) · Aula 12 — conteúdo educacional para residência.</span><span>17 / 22</span></div></footer>
+  <script src="../../assets/js/pwa-bootstrap.js" defer></script>
+  <script src="../../assets/js/app-a12.js" defer></script>
+  <script src="../../assets/js/quiz-a12.js" defer></script>
+  <script src="../../assets/js/aula-12.js" defer></script>
+</body>
+</html>
+
+<!-- Padrão de UM item do menu, para montar <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17" aria-current="page"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li> (22 deles):
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>Título curto</span></a></li>
+     O primeiro aponta para index.html com data-page-id="p1".
+-->

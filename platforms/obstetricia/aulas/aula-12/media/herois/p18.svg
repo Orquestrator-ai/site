@@ -1,0 +1,479 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 710" width="100%" height="100%" id="a12p18h-root" class="a12p18h-root" data-scene="all" data-active-spot="none">
+  <defs>
+    <style>
+      .a12p18h-root {
+        --a12p18h-bg: #160814;
+        --a12p18h-panel-bg: #260d21;
+        --a12p18h-panel-border: #4d1a3f;
+        --a12p18h-card-bg: #1f0a1b;
+        --a12p18h-text-main: #fce8f3;
+        --a12p18h-text-sub: #d69abf;
+        --a12p18h-text-muted: #9c6085;
+        --a12p18h-accent-ug: #ff3377;
+        --a12p18h-accent-ug-fill: rgba(255, 51, 119, 0.22);
+        --a12p18h-accent-anal: #ba68c8;
+        --a12p18h-accent-anal-fill: rgba(186, 104, 200, 0.22);
+        --a12p18h-line-bitub: #ffea00;
+        --a12p18h-bone: #e3b0c4;
+        --a12p18h-bone-stroke: #f5d0df;
+        --a12p18h-organ: #7c2d59;
+        --a12p18h-organ-stroke: #b84d84;
+        --a12p18h-highlight: #00e676;
+        --a12p18h-btn-bg: #381230;
+        --a12p18h-btn-border: #632354;
+        --a12p18h-btn-active: #ff3377;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      [data-theme="light"] .a12p18h-root {
+        --a12p18h-bg: #fdf6fa;
+        --a12p18h-panel-bg: #f4e4ec;
+        --a12p18h-panel-border: #dca8c5;
+        --a12p18h-card-bg: #ebd4e2;
+        --a12p18h-text-main: #2b0b22;
+        --a12p18h-text-sub: #5c1f4a;
+        --a12p18h-text-muted: #8c4a75;
+        --a12p18h-accent-ug: #d81b60;
+        --a12p18h-accent-ug-fill: rgba(216, 27, 96, 0.18);
+        --a12p18h-accent-anal: #8e24aa;
+        --a12p18h-accent-anal-fill: rgba(142, 36, 170, 0.18);
+        --a12p18h-line-bitub: #d8a000;
+        --a12p18h-bone: #a86b84;
+        --a12p18h-bone-stroke: #612344;
+        --a12p18h-organ: #c47b9f;
+        --a12p18h-organ-stroke: #80305a;
+        --a12p18h-highlight: #00a852;
+        --a12p18h-btn-bg: #e6cbdc;
+        --a12p18h-btn-border: #c48fb2;
+        --a12p18h-btn-active: #d81b60;
+      }
+
+      .a12p18h-bg-rect { fill: var(--a12p18h-bg, #160814); }
+      .a12p18h-panel-box { fill: var(--a12p18h-panel-bg, #260d21); stroke: var(--a12p18h-panel-border, #4d1a3f); stroke-width: 1.5px; rx: 12px; }
+      .a12p18h-card-box { fill: var(--a12p18h-card-bg, #1f0a1b); stroke: var(--a12p18h-panel-border, #4d1a3f); stroke-width: 1.5px; rx: 10px; }
+
+      .a12p18h-txt-title { fill: var(--a12p18h-text-main, #fce8f3); font-size: 20px; font-weight: 800; letter-spacing: 0.5px; }
+      .a12p18h-txt-subtitle { fill: var(--a12p18h-text-sub, #d69abf); font-size: 13.5px; font-weight: 500; }
+      .a12p18h-txt-badge { fill: var(--a12p18h-accent-ug, #ff3377); font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+
+      .a12p18h-sec-title { fill: var(--a12p18h-text-main, #fce8f3); font-size: 14px; font-weight: 700; }
+      .a12p18h-sec-sub { fill: var(--a12p18h-text-muted, #9c6085); font-size: 11.5px; font-weight: 500; }
+
+      .a12p18h-bone-shape { fill: var(--a12p18h-bone, #e3b0c4); stroke: var(--a12p18h-bone-stroke, #f5d0df); stroke-width: 1.5px; }
+      .a12p18h-organ-shape { fill: var(--a12p18h-organ, #7c2d59); stroke: var(--a12p18h-organ-stroke, #b84d84); stroke-width: 1.5px; }
+
+      .a12p18h-ug-area { fill: var(--a12p18h-accent-ug-fill, rgba(255, 51, 119, 0.22)); stroke: var(--a12p18h-accent-ug, #ff3377); stroke-width: 2.5px; transition: all 0.25s ease; }
+      .a12p18h-anal-area { fill: var(--a12p18h-accent-anal-fill, rgba(186, 104, 200, 0.22)); stroke: var(--a12p18h-accent-anal, #ba68c8); stroke-width: 2.5px; transition: all 0.25s ease; }
+      .a12p18h-bitub-line { stroke: var(--a12p18h-line-bitub, #ffea00); stroke-width: 3px; stroke-dasharray: 6 3; transition: all 0.25s ease; }
+
+      .a12p18h-proj-line { stroke: var(--a12p18h-text-muted, #9c6085); stroke-width: 1.2px; stroke-dasharray: 4 4; opacity: 0.6; }
+
+      .a12p18h-btn-rect { fill: var(--a12p18h-btn-bg, #381230); stroke: var(--a12p18h-btn-border, #632354); stroke-width: 1.5px; rx: 18px; cursor: pointer; transition: all 0.2s ease; }
+      .a12p18h-btn-rect:hover { stroke: var(--a12p18h-accent-ug, #ff3377); filter: brightness(1.15); }
+      .a12p18h-btn-text { fill: var(--a12p18h-text-main, #fce8f3); font-size: 11.5px; font-weight: 600; text-anchor: middle; pointer-events: none; }
+
+      .a12p18h-hs-shape { cursor: pointer; transition: transform 0.2s ease, filter 0.2s ease; }
+      .a12p18h-hs-shape:hover { filter: drop-shadow(0 0 6px var(--a12p18h-accent-ug, #ff3377)); }
+
+      /* Dynamic Scene Filtering */
+      #a12p18h-root[data-scene="ug"] .a12p18h-anal-group { opacity: 0.25; }
+      #a12p18h-root[data-scene="anal"] .a12p18h-ug-group { opacity: 0.25; }
+      #a12p18h-root[data-scene="ug"] .a12p18h-btn-ug .a12p18h-btn-rect { fill: var(--a12p18h-btn-active, #ff3377); stroke: #ffffff; }
+      #a12p18h-root[data-scene="anal"] .a12p18h-btn-anal .a12p18h-btn-rect { fill: var(--a12p18h-accent-anal, #ba68c8); stroke: #ffffff; }
+      #a12p18h-root[data-scene="bitub"] .a12p18h-btn-bitub .a12p18h-btn-rect { fill: var(--a12p18h-line-bitub, #ffea00); stroke: #ffffff; }
+      #a12p18h-root[data-scene="bitub"] .a12p18h-btn-bitub .a12p18h-btn-text { fill: #111111; }
+      #a12p18h-root[data-scene="all"] .a12p18h-btn-all .a12p18h-btn-rect { fill: var(--a12p18h-btn-border, #632354); stroke: var(--a12p18h-accent-ug, #ff3377); }
+
+      /* Highlight active hotspot */
+      .a12p18h-spot-active { filter: drop-shadow(0 0 10px var(--a12p18h-line-bitub, #ffea00)) !important; stroke-width: 3.5px !important; }
+    </style>
+
+    <!-- Filters & Gradients -->
+    <filter id="a12p18h-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="a12p18h-grad-ug" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p18h-accent-ug, #ff3377)" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="var(--a12p18h-accent-ug, #ff3377)" stop-opacity="0.10" />
+    </linearGradient>
+    <linearGradient id="a12p18h-grad-anal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p18h-accent-anal, #ba68c8)" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="var(--a12p18h-accent-anal, #ba68c8)" stop-opacity="0.10" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect class="a12p18h-bg-rect" width="1050" height="710" rx="16" />
+
+  <!-- HEADER -->
+  <g transform="translate(35, 32)">
+    <text class="a12p18h-txt-badge" x="0" y="0">ANATOMIA DO PERÍNEO · CONVERSÃO DE PERSPECTIVA</text>
+    <text class="a12p18h-txt-title" x="0" y="24">SAÍDA PÉLVICA: CORTE SAGITAL vs. VISTA INFERIOR</text>
+    <text class="a12p18h-txt-subtitle" x="0" y="44">
+      De perfil, o assoalho é uma pilha de camadas viscerais. Ao mudar o observador para baixo, os dois trígonos projetam-se como territórios de superfície.
+    </text>
+  </g>
+
+  <!-- SCENE MODE SELECTOR BUTTONS (Center Top) -->
+  <g transform="translate(35, 92)">
+    <g class="a12p18h-btn-all" role="button" tabindex="0" aria-label="Ver Ambos os Trígonos" onclick="a12p18hSetScene('all')" onkeydown="a12p18hKeyScene(event, 'all')">
+      <rect class="a12p18h-btn-rect" x="0" y="0" width="140" height="32" />
+      <text class="a12p18h-btn-text" x="70" y="20">Vista Geral (Ambos)</text>
+    </g>
+    <g class="a12p18h-btn-ug" role="button" tabindex="0" aria-label="Foco no Trígono Urogenital" onclick="a12p18hSetScene('ug')" onkeydown="a12p18hKeyScene(event, 'ug')">
+      <rect class="a12p18h-btn-rect" x="152" y="0" width="175" height="32" />
+      <text class="a12p18h-btn-text" x="239.5" y="20">Trígono Urogenital (Ant.)</text>
+    </g>
+    <g class="a12p18h-btn-anal" role="button" tabindex="0" aria-label="Foco no Trígono Anal" onclick="a12p18hSetScene('anal')" onkeydown="a12p18hKeyScene(event, 'anal')">
+      <rect class="a12p18h-btn-rect" x="339" y="0" width="160" height="32" />
+      <text class="a12p18h-btn-text" x="419" y="20">Trígono Anal (Post.)</text>
+    </g>
+    <g class="a12p18h-btn-bitub" role="button" tabindex="0" aria-label="Foco na Linha Bituberosa" onclick="a12p18hSetScene('bitub')" onkeydown="a12p18hKeyScene(event, 'bitub')">
+      <rect class="a12p18h-btn-rect" x="511" y="0" width="165" height="32" />
+      <text class="a12p18h-btn-text" x="593.5" y="20">Linha Bituberosa (Divisor)</text>
+    </g>
+  </g>
+
+  <!-- PANEL 1: CORTE SAGITAL (PROFILE VIEW) -->
+  <g transform="translate(35, 138)">
+    <rect class="a12p18h-panel-box" width="465" height="365" />
+
+    <!-- Section Sub-Header -->
+    <text class="a12p18h-sec-title" x="20" y="28">1. CORTE SAGITAL (VISÃO DE PERFIL)</text>
+    <text class="a12p18h-sec-sub" x="20" y="45">Frente (Anterior) à Esquerda | Assoalho visto como pilha de camadas</text>
+
+    <!-- Anatomical Orientation Arrows (Profile) -->
+    <g transform="translate(20, 340)">
+      <path d="M 0,-15 L 0,0 L 25,0" fill="none" stroke="var(--a12p18h-text-muted, #9c6085)" stroke-width="1.2" />
+      <text x="30" y="4" fill="var(--a12p18h-text-muted, #9c6085)" font-size="10" font-weight="600">ANTERIOR</text>
+      <text x="-4" y="-20" fill="var(--a12p18h-text-muted, #9c6085)" font-size="10" font-weight="600">SUPERIOR</text>
+    </g>
+
+    <!-- PROFILE ANATOMY DRAWING -->
+    <g id="a12p18h-profile-graphics" transform="translate(10, 20)">
+
+      <!-- Pubic Symphysis (Anterior Bone) -->
+      <g class="a12p18h-hs-shape" data-spot="pubis" role="button" tabindex="0" aria-label="Sínfise Púbica" onclick="a12p18hSelectSpot('pubis')" onkeydown="a12p18hKeySpot(event, 'pubis')">
+        <path class="a12p18h-bone-shape" id="a12p18h-prof-pubis" d="M 85,270 C 70,250 70,220 85,200 C 105,200 115,220 110,250 Z" />
+        <text x="80" y="190" fill="var(--a12p18h-text-main, #fce8f3)" font-size="11" font-weight="700" text-anchor="middle">Sínfise Púbica</text>
+      </g>
+
+      <!-- Sacrum & Coccyx (Posterior Bone) -->
+      <g class="a12p18h-hs-shape" data-spot="coccyx" role="button" tabindex="0" aria-label="Cóccix" onclick="a12p18hSelectSpot('coccyx')" onkeydown="a12p18hKeySpot(event, 'coccyx')">
+        <!-- Sacrum -->
+        <path class="a12p18h-bone-shape" d="M 370,120 C 390,150 400,190 390,230 C 380,240 370,230 365,210 C 375,180 370,150 355,130 Z" />
+        <!-- Coccyx -->
+        <path class="a12p18h-bone-shape" id="a12p18h-prof-coccyx" d="M 390,235 C 395,255 390,275 375,290 C 368,285 375,265 380,245 Z" fill="var(--a12p18h-accent-anal, #ba68c8)" />
+        <text x="410" y="270" fill="var(--a12p18h-text-main, #fce8f3)" font-size="11" font-weight="700">Cóccix</text>
+      </g>
+
+      <!-- Viscera (Bladder, Uterus, Rectum) -->
+      <!-- Bladder -->
+      <path class="a12p18h-organ-shape" d="M 115,230 C 130,200 170,200 185,230 C 180,260 140,270 120,250 Z" opacity="0.6" />
+      <text x="145" y="235" fill="var(--a12p18h-text-sub, #d69abf)" font-size="10" text-anchor="middle">Bexiga</text>
+
+      <!-- Urethra -->
+      <path d="M 140,255 L 145,295" stroke="var(--a12p18h-accent-ug, #ff3377)" stroke-width="3" fill="none" />
+
+      <!-- Uterus & Vagina -->
+      <path class="a12p18h-organ-shape" d="M 190,180 C 220,170 240,190 230,220 C 210,230 190,210 190,180 Z" opacity="0.6" />
+      <text x="215" y="195" fill="var(--a12p18h-text-sub, #d69abf)" font-size="10" text-anchor="middle">Útero</text>
+      <!-- Vagina -->
+      <path d="M 210,225 L 200,295" stroke="var(--a12p18h-accent-ug, #ff3377)" stroke-width="4" fill="none" />
+
+      <!-- Rectum & Anal Canal -->
+      <path class="a12p18h-organ-shape" d="M 330,160 C 350,190 340,240 310,260 C 290,240 300,190 315,160 Z" opacity="0.6" />
+      <text x="325" y="210" fill="var(--a12p18h-text-sub, #d69abf)" font-size="10" text-anchor="middle">Reto</text>
+      <!-- Anal canal -->
+      <path d="M 310,260 L 300,298" stroke="var(--a12p18h-accent-anal, #ba68c8)" stroke-width="4" fill="none" />
+
+      <!-- Perineal Body / Centro Tendíneo (Center Junction) -->
+      <g class="a12p18h-hs-shape" data-spot="bitub" role="button" tabindex="0" aria-label="Corpo Perineal / Linha Bituberosa" onclick="a12p18hSelectSpot('bitub')" onkeydown="a12p18hKeySpot(event, 'bitub')">
+        <circle id="a12p18h-prof-cp" cx="240" cy="296" r="8" fill="var(--a12p18h-line-bitub, #ffea00)" stroke="#ffffff" stroke-width="2" />
+        <text x="240" y="322" fill="var(--a12p18h-line-bitub, #ffea00)" font-size="11" font-weight="700" text-anchor="middle">Corpo Perineal</text>
+      </g>
+
+      <!-- Surface Profile Lines (Trígonos vistos de perfil) -->
+      <!-- Trígono UG (Perfil) -->
+      <g class="a12p18h-hs-shape a12p18h-ug-group" data-spot="ug" role="button" tabindex="0" aria-label="Trígono Urogenital de Perfil" onclick="a12p18hSelectSpot('ug')" onkeydown="a12p18hKeySpot(event, 'ug')">
+        <path id="a12p18h-prof-ug-line" d="M 98,260 L 240,296" stroke="var(--a12p18h-accent-ug, #ff3377)" stroke-width="6" stroke-linecap="round" fill="none" />
+        <rect x="110" y="282" width="110" height="20" rx="4" fill="var(--a12p18h-panel-bg, #260d21)" stroke="var(--a12p18h-accent-ug, #ff3377)" stroke-width="1" />
+        <text x="165" y="296" fill="var(--a12p18h-accent-ug, #ff3377)" font-size="10" font-weight="700" text-anchor="middle">Trígono UG (Perfil)</text>
+      </g>
+
+      <!-- Trígono Anal (Perfil) -->
+      <g class="a12p18h-hs-shape a12p18h-anal-group" data-spot="anal" role="button" tabindex="0" aria-label="Trígono Anal de Perfil" onclick="a12p18hSelectSpot('anal')" onkeydown="a12p18hKeySpot(event, 'anal')">
+        <path id="a12p18h-prof-anal-line" d="M 240,296 L 380,265" stroke="var(--a12p18h-accent-anal, #ba68c8)" stroke-width="6" stroke-linecap="round" fill="none" />
+        <rect x="260" y="290" width="110" height="20" rx="4" fill="var(--a12p18h-panel-bg, #260d21)" stroke="var(--a12p18h-accent-anal, #ba68c8)" stroke-width="1" />
+        <text x="315" y="304" fill="var(--a12p18h-accent-anal, #ba68c8)" font-size="10" font-weight="700" text-anchor="middle">Trígono Anal (Perfil)</text>
+      </g>
+
+      <!-- Observer Eye Icon (Looking UP from bottom) -->
+      <g transform="translate(230, 335)">
+        <path d="M -15,0 Q 0,-12 15,0 Q 0,12 -15,0 Z" fill="none" stroke="var(--a12p18h-text-main, #fce8f3)" stroke-width="1.8" />
+        <circle cx="0" cy="0" r="4" fill="var(--a12p18h-accent-ug, #ff3377)" />
+        <text x="0" y="22" fill="var(--a12p18h-text-sub, #d69abf)" font-size="10" font-weight="600" text-anchor="middle">Observador por Baixo (Vista Perineal)</text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- TRANSITION PROJECTION RAYS (Center Connector) -->
+  <g id="a12p18h-projections">
+    <!-- Projection Pubis -->
+    <path class="a12p18h-proj-line" d="M 143,398 C 280,410 520,200 765,190" />
+    <!-- Projection Bituberous / Perineal Body -->
+    <path class="a12p18h-proj-line" d="M 285,434 C 420,440 560,340 765,340" stroke="var(--a12p18h-line-bitub, #ffea00)" opacity="0.8" />
+    <!-- Projection Coccyx -->
+    <path class="a12p18h-proj-line" d="M 425,403 C 540,430 620,460 765,490" />
+  </g>
+
+  <!-- PANEL 2: VISTA INFERIOR PERINEAL (BOTTOM VIEW) -->
+  <g transform="translate(525, 138)">
+    <rect class="a12p18h-panel-box" width="490" height="365" />
+
+    <!-- Section Sub-Header -->
+    <text class="a12p18h-sec-title" x="20" y="28">2. VISTA INFERIOR (SUPERFÍCIE PERINEAL)</text>
+    <text class="a12p18h-sec-sub" x="20" y="45">Sínfise à frente (Topo) · Cóccix atrás (Base) · Tuberosidades nas laterais</text>
+
+    <!-- Anatomical Compass / Orientation (Inferior View) -->
+    <g transform="translate(425, 60)">
+      <circle cx="0" cy="0" r="22" fill="var(--a12p18h-card-bg, #1f0a1b)" stroke="var(--a12p18h-panel-border, #4d1a3f)" stroke-width="1" />
+      <text x="0" y="-9" fill="var(--a12p18h-accent-ug, #ff3377)" font-size="9" font-weight="800" text-anchor="middle">ANT</text>
+      <text x="0" y="15" fill="var(--a12p18h-accent-anal, #ba68c8)" font-size="9" font-weight="800" text-anchor="middle">POST</text>
+      <text x="-13" y="3" fill="var(--a12p18h-text-muted, #9c6085)" font-size="8" font-weight="700" text-anchor="middle">R</text>
+      <text x="13" y="3" fill="var(--a12p18h-text-muted, #9c6085)" font-size="8" font-weight="700" text-anchor="middle">L</text>
+    </g>
+
+    <!-- INFERIOR VIEW GRAPHICS -->
+    <g id="a12p18h-inferior-graphics" transform="translate(0, 10)">
+
+      <!-- BONY FRAMEWORK (Osteofibrous Diamond) -->
+
+      <!-- Pubic Symphysis (Anterior Apex) -->
+      <g class="a12p18h-hs-shape" data-spot="pubis" role="button" tabindex="0" aria-label="Sínfise Púbica (Vista Inferior)" onclick="a12p18hSelectSpot('pubis')" onkeydown="a12p18hKeySpot(event, 'pubis')">
+        <path class="a12p18h-bone-shape" id="a12p18h-inf-pubis" d="M 220,50 C 235,42 245,42 260,50 C 265,65 215,65 220,50 Z" />
+        <text x="240" y="38" fill="var(--a12p18h-text-main, #fce8f3)" font-size="11" font-weight="700" text-anchor="middle">Sínfise Púbica</text>
+      </g>
+
+      <!-- Ischiopubic Rami (Anterior Lateral Borders) -->
+      <path d="M 220,55 L 110,190 M 260,55 L 370,190" stroke="var(--a12p18h-bone, #e3b0c4)" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.7" />
+
+      <!-- Ischial Tuberosities (Lateral Vertices) -->
+      <g class="a12p18h-hs-shape" data-spot="tuberosity" role="button" tabindex="0" aria-label="Tuberosidades Isquiáticas" onclick="a12p18hSelectSpot('tuberosity')" onkeydown="a12p18hKeySpot(event, 'tuberosity')">
+        <ellipse id="a12p18h-inf-tub-l" cx="105" cy="195" rx="18" ry="14" class="a12p18h-bone-shape" />
+        <ellipse id="a12p18h-inf-tub-r" cx="375" cy="195" rx="18" ry="14" class="a12p18h-bone-shape" />
+        <text x="45" y="198" fill="var(--a12p18h-text-main, #fce8f3)" font-size="10" font-weight="700" text-anchor="end">Tuberosidade Isquiática (D)</text>
+        <text x="435" y="198" fill="var(--a12p18h-text-main, #fce8f3)" font-size="10" font-weight="700" text-anchor="start">Tuberosidade Isquiática (E)</text>
+      </g>
+
+      <!-- Sacrotuberous Ligaments / Posterior Borders -->
+      <path d="M 110,200 L 230,320 M 370,200 L 250,320" stroke="var(--a12p18h-organ-stroke, #b84d84)" stroke-width="3" stroke-dasharray="4 2" fill="none" opacity="0.6" />
+
+      <!-- Coccyx (Posterior Apex) -->
+      <g class="a12p18h-hs-shape" data-spot="coccyx" role="button" tabindex="0" aria-label="Cóccix (Vista Inferior)" onclick="a12p18hSelectSpot('coccyx')" onkeydown="a12p18hKeySpot(event, 'coccyx')">
+        <path class="a12p18h-bone-shape" id="a12p18h-inf-coccyx" d="M 230,320 C 235,335 245,335 250,320 C 245,312 235,312 230,320 Z" fill="var(--a12p18h-accent-anal, #ba68c8)" />
+        <text x="240" y="344" fill="var(--a12p18h-text-main, #fce8f3)" font-size="11" font-weight="700" text-anchor="middle">Cóccix</text>
+      </g>
+
+
+      <!-- SURFACE TRIANGLES (THE TWO TERRITORIES) -->
+
+      <!-- 1. TRÍGONO UROGENITAL (ANTERIOR TRIANGLE) -->
+      <g class="a12p18h-hs-shape a12p18h-ug-group" data-spot="ug" role="button" tabindex="0" aria-label="Trígono Urogenital (Superfície Anterior)" onclick="a12p18hSelectSpot('ug')" onkeydown="a12p18hKeySpot(event, 'ug')">
+        <polygon class="a12p18h-ug-area" id="a12p18h-inf-ug-poly" points="240,55 375,195 105,195" />
+
+        <!-- Urethral Orifice -->
+        <circle cx="240" cy="120" r="5" fill="#ffffff" stroke="var(--a12p18h-accent-ug, #ff3377)" stroke-width="2" />
+        <text x="240" y="110" fill="var(--a12p18h-text-sub, #d69abf)" font-size="9.5" text-anchor="middle" font-weight="600">Meato Uretral</text>
+
+        <!-- Vaginal Introitus -->
+        <ellipse cx="240" cy="155" rx="10" ry="14" fill="var(--a12p18h-panel-bg, #260d21)" stroke="var(--a12p18h-accent-ug, #ff3377)" stroke-width="2" />
+        <text x="240" y="159" fill="var(--a12p18h-accent-ug, #ff3377)" font-size="9.5" text-anchor="middle" font-weight="700">Intróito Vaginal</text>
+
+        <!-- Triangle Label -->
+        <rect x="25" y="115" width="130" height="22" rx="4" fill="var(--a12p18h-panel-bg, #260d21)" stroke="var(--a12p18h-accent-ug, #ff3377)" stroke-width="1.2" />
+        <text x="90" y="130" fill="var(--a12p18h-accent-ug, #ff3377)" font-size="11" font-weight="800" text-anchor="middle">TRÍGONO UROGENITAL</text>
+        <line x1="155" y1="126" x2="185" y2="135" stroke="var(--a12p18h-accent-ug, #ff3377)" stroke-width="1" stroke-dasharray="2 2" />
+      </g>
+
+      <!-- 2. TRÍGONO ANAL (POSTERIOR TRIANGLE) -->
+      <g class="a12p18h-hs-shape a12p18h-anal-group" data-spot="anal" role="button" tabindex="0" aria-label="Trígono Anal (Superfície Posterior)" onclick="a12p18hSelectSpot('anal')" onkeydown="a12p18hKeySpot(event, 'anal')">
+        <polygon class="a12p18h-anal-area" id="a12p18h-inf-anal-poly" points="105,195 375,195 240,320" />
+
+        <!-- Anal Orifice -->
+        <circle cx="240" cy="250" r="11" fill="var(--a12p18h-panel-bg, #260d21)" stroke="var(--a12p18h-accent-anal, #ba68c8)" stroke-width="2.5" />
+        <circle cx="240" cy="250" r="5" fill="var(--a12p18h-accent-anal, #ba68c8)" />
+        <text x="240" y="275" fill="var(--a12p18h-accent-anal, #ba68c8)" font-size="10" font-weight="700" text-anchor="middle">Orifício Anal</text>
+
+        <!-- Anococcygeal Ligament -->
+        <line x1="240" y1="262" x2="240" y2="315" stroke="var(--a12p18h-accent-anal, #ba68c8)" stroke-width="2" stroke-dasharray="3 2" />
+
+        <!-- Triangle Label -->
+        <rect x="325" y="255" width="115" height="22" rx="4" fill="var(--a12p18h-panel-bg, #260d21)" stroke="var(--a12p18h-accent-anal, #ba68c8)" stroke-width="1.2" />
+        <text x="382.5" y="270" fill="var(--a12p18h-accent-anal, #ba68c8)" font-size="11" font-weight="800" text-anchor="middle">TRÍGONO ANAL</text>
+        <line x1="325" y1="266" x2="290" y2="255" stroke="var(--a12p18h-accent-anal, #ba68c8)" stroke-width="1" stroke-dasharray="2 2" />
+      </g>
+
+      <!-- 3. LINHA BITUBEROSA & CORPO PERINEAL (BOUNDARY LINE) -->
+      <g class="a12p18h-hs-shape" data-spot="bitub" role="button" tabindex="0" aria-label="Linha Bituberosa" onclick="a12p18hSelectSpot('bitub')" onkeydown="a12p18hKeySpot(event, 'bitub')">
+        <line class="a12p18h-bitub-line" id="a12p18h-inf-bitub" x1="105" y1="195" x2="375" y2="195" />
+
+        <!-- Perineal Body Node (Center) -->
+        <circle id="a12p18h-inf-cp" cx="240" cy="195" r="9" fill="var(--a12p18h-line-bitub, #ffea00)" stroke="#ffffff" stroke-width="2" />
+        <text x="240" y="185" fill="var(--a12p18h-line-bitub, #ffea00)" font-size="10.5" font-weight="800" text-anchor="middle">Corpo Perineal (Centro Tendíneo)</text>
+
+        <!-- Line Label -->
+        <rect x="150" y="204" width="180" height="18" rx="3" fill="#111111" opacity="0.85" />
+        <text x="240" y="217" fill="var(--a12p18h-line-bitub, #ffea00)" font-size="10" font-weight="700" text-anchor="middle">LINHA BITUBEROSA (DIVISÃO TRANSVERSA)</text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- READOUT / INTERACTIVE EXPLANATION CARD (BOTTOM) -->
+  <g transform="translate(35, 520)">
+    <rect class="a12p18h-card-box" width="980" height="155" />
+
+    <!-- Card Icon / Status Badge -->
+    <g transform="translate(25, 25)">
+      <circle cx="16" cy="16" r="16" fill="var(--a12p18h-accent-ug, #ff3377)" opacity="0.2" />
+      <circle cx="16" cy="16" r="8" fill="var(--a12p18h-accent-ug, #ff3377)" id="a12p18h-card-dot" />
+    </g>
+
+    <!-- Content Text Area -->
+    <g transform="translate(70, 24)">
+      <text id="a12p18h-readout-title" class="a12p18h-txt-title" x="0" y="12" font-size="16">
+        CONVERSÃO DE PLANO: A LÓGICA DAS DUAS PERSPECTIVAS
+      </text>
+
+      <text id="a12p18h-readout-desc" class="a12p18h-txt-subtitle" x="0" y="36" font-size="12.5" width="880">
+        De perfil (corte sagital), a saída pélvica é observada em profundidade como uma pilha de camadas viscerais e musculares.
+        Ao alterar a perspectiva do observador para baixo (visão perineal), esse mesmo plano se abre em dois territórios de superfície:
+        o Trígono Urogenital (anterior) e o Trígono Anal (posterior), unidos no Corpo Perineal.
+      </text>
+
+      <!-- Clinical Takeaway Box -->
+      <g transform="translate(0, 62)">
+        <rect width="885" height="42" rx="6" fill="var(--a12p18h-panel-bg, #260d21)" stroke="var(--a12p18h-panel-border, #4d1a3f)" stroke-width="1" />
+        <text class="a12p18h-txt-badge" x="15" y="18" font-size="10">REDAÇÃO PARA PROVA &amp; RESIDÊNCIA:</text>
+        <text id="a12p18h-readout-clinical" class="a12p18h-txt-subtitle" x="15" y="32" font-size="11.5" fill="var(--a12p18h-text-main, #fce8f3)">
+          • A Linha Bituberosa (unindo as tuberosidades isquiáticas) é o divisor imaginário que converte a saída pélvica nos 2 trígonos perineais.
+        </text>
+      </g>
+
+      <!-- Affordance hint (Neutral text, NO teaching metalanguage) -->
+      <text class="a12p18h-sec-sub" x="0" y="118" font-size="10.5">
+        Toque ou passe o mouse nos botões do topo ou nas estruturas destacadas para alternar o foco anatômico.
+      </text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE SCRIPT (Self-contained, deterministic state machine) -->
+  <script><![CDATA[
+    (function() {
+      var root = document.getElementById('a12p18h-root');
+      var titleElem = document.getElementById('a12p18h-readout-title');
+      var descElem = document.getElementById('a12p18h-readout-desc');
+      var clinElem = document.getElementById('a12p18h-readout-clinical');
+      var dotElem = document.getElementById('a12p18h-card-dot');
+
+      var dataMap = {
+        'all': {
+          title: 'CONVERSÃO DE PLANO: A LÓGICA DAS DUAS PERSPECTIVAS',
+          desc: 'De perfil (corte sagital), o assoalho é uma pilha de camadas viscerais e musculares. Ao mudar o observador para baixo, essa mesma saída pélvica projeta-se em dois territórios de superfície: os Trígonos Urogenital e Anal.',
+          clin: '• A Linha Bituberosa (unindo as tuberosidades isquiáticas) é o divisor transversal que delimita os dois trígonos no corpo perineal.',
+          dotColor: 'var(--a12p18h-accent-ug, #ff3377)'
+        },
+        'ug': {
+          title: 'TRÍGONO UROGENITAL (REGIÃO ANTERIOR)',
+          desc: 'Delimitado pela sínfise púbica (ápice anterior), ramos isquiopúbicos (laterais) e linha bituberosa (base posterior). É atravessado pela uretra e pela vagina. Em ortostatismo, apresenta orientação quase horizontal.',
+          clin: '• Contém a membrana do períneo e a musculatura erétil/superficial. Fixa-se fortemente ao corpo perineal em sua margem posterior.',
+          dotColor: 'var(--a12p18h-accent-ug, #ff3377)'
+        },
+        'anal': {
+          title: 'TRÍGONO ANAL (REGIÃO POSTERIOR)',
+          desc: 'Delimitado pela linha bituberosa (base anterior), ligamentos sacrotuberóides/tuberosidades (laterais) e cóccix (ápice posterior). Contém o orifício anal, o ligamento anococcígeo e o gorduroso espaço da fossa isquioanal.',
+          clin: '• Inclina-se dorsossuperiormente. Diferente do trígono UG, não possui membrana fibrosa contínua, permitindo expansão durante a defecação.',
+          dotColor: 'var(--a12p18h-accent-anal, #ba68c8)'
+        },
+        'bitub': {
+          title: 'LINHA BITUBEROSA & CORPO PERINEAL',
+          desc: 'Linha transversal imaginária que conecta os dois tubérculos isquiáticos. Passa exatamente pelo Corpo Perineal (centro tendíneo do períneo), nódulo fibromuscular onde convergem os esfíncteres e músculos perineais.',
+          clin: '• É o eixo de dobradiça da conversão de plano: o ponto de encontro anatômico entre o Trígono Urogenital e o Trígono Anal.',
+          dotColor: 'var(--a12p18h-line-bitub, #ffea00)'
+        },
+        'pubis': {
+          title: 'PONTO FIXO ANTERIOR: SÍNFISE PÚBICA',
+          desc: 'Articulação cartilaginosa anterior. No corte sagital, é o limite anterior da bacia. Na vista inferior, forma o ápice do Trígono Urogenital e o ponto de origem do arco púbico.',
+          clin: '• Referência óssea palpável anterior para medição e delimitação do diâmetro sagital da saída pélvica.',
+          dotColor: 'var(--a12p18h-bone, #e3b0c4)'
+        },
+        'coccyx': {
+          title: 'PONTO FIXO POSTERIOR: CÓCCIX',
+          desc: 'Vértice ósseo posterior da saída pélvica. No corte sagital, encerra a curva sacrococcígea. Na vista inferior, constitui o ápice posterior do Trígono Anal.',
+          clin: '• Serve de inserção para o músculo levantador do ânus e para o ligamento anococcígeo.',
+          dotColor: 'var(--a12p18h-accent-anal, #ba68c8)'
+        },
+        'tuberosity': {
+          title: 'VÉRTICES LATERAIS: TUBEROSIDADES ISQUIÁTICAS',
+          desc: 'Prominências ósseas isquiáticas laterais (direita e esquerda). Suportam o peso do corpo na posição sentada e ancoram as extremidades da Linha Bituberosa.',
+          clin: '• Definem o diâmetro bituberoso (transverso) da saída pélvica, fundamental na avaliação tocoginecológica.',
+          dotColor: 'var(--a12p18h-bone, #e3b0c4)'
+        }
+      };
+
+      window.a12p18hSetScene = function(sceneKey) {
+        root.setAttribute('data-scene', sceneKey);
+        var data = dataMap[sceneKey] || dataMap['all'];
+        if (titleElem) titleElem.textContent = data.title;
+        if (descElem) descElem.textContent = data.desc;
+        if (clinElem) clinElem.textContent = data.clin;
+        if (dotElem) dotElem.style.fill = data.dotColor;
+
+        // Clear active spot highlights
+        var spots = root.querySelectorAll('.a12p18h-spot-active');
+        for (var i = 0; i < spots.length; i++) {
+          spots[i].classList.remove('a12p18h-spot-active');
+        }
+      };
+
+      window.a12p18hSelectSpot = function(spotKey) {
+        var data = dataMap[spotKey];
+        if (!data) return;
+
+        root.setAttribute('data-active-spot', spotKey);
+        if (titleElem) titleElem.textContent = data.title;
+        if (descElem) descElem.textContent = data.desc;
+        if (clinElem) clinElem.textContent = data.clin;
+        if (dotElem) dotElem.style.fill = data.dotColor;
+
+        // Synchronized highlight in both views
+        var spots = root.querySelectorAll('.a12p18h-spot-active');
+        for (var i = 0; i < spots.length; i++) {
+          spots[i].classList.remove('a12p18h-spot-active');
+        }
+
+        var targets = root.querySelectorAll('[data-spot="' + spotKey + '"]');
+        for (var j = 0; j < targets.length; j++) {
+          targets[j].classList.add('a12p18h-spot-active');
+        }
+      };
+
+      window.a12p18hKeyScene = function(evt, sceneKey) {
+        if (evt.key === 'Enter' || evt.key === ' ') {
+          evt.preventDefault();
+          a12p18hSetScene(sceneKey);
+        }
+      };
+
+      window.a12p18hKeySpot = function(evt, spotKey) {
+        if (evt.key === 'Enter' || evt.key === ' ') {
+          evt.preventDefault();
+          a12p18hSelectSpot(spotKey);
+        }
+      };
+    })();
+  ]]></script>
+</svg>

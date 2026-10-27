@@ -1,0 +1,200 @@
+/* aula-extra-05.css — estilos específicos das interações bespoke da Aula Extra 5 (HPB).
+   Herda 100% dos tokens da plataforma (tokens.css). NÃO redefine token canônico.
+   Só estados visuais dos SVGs interativos que o components.css compartilhado não cobre. */
+
+/* Tokens locais de ESTADO (cores que não existem no tokens.css canônico).
+   Aqui ficam só verde-acerto, azul-QoL e glows — para que o modo light também os ajuste
+   sem espalhar hex pelo arquivo. Tokens canônicos (--teal-*, --coral-*, --warn-amber,
+   --ink-*, --bg-*) continuam vindo de tokens.css e NÃO são redefinidos. */
+:root {
+  --state-correct: #5fdfa0;        /* verde "acertou/normal" */
+  --state-correct-ink: #07171a;    /* texto sobre selecionado */
+  --qol-blue: #5ba8d6;             /* QoL IPSS (não soma) */
+  --qol-blue-soft: #8fc8e6;
+  --teal-glow: rgba(79, 214, 192, .45);
+  --teal-glow-soft: rgba(79, 214, 192, .3);
+  --coral-glow: rgba(244, 113, 90, .4);
+  --correct-glow: rgba(95, 223, 160, .35);
+  --qol-glow: rgba(91, 168, 214, .4);
+  --state-correct-fill: rgba(95, 223, 160, .12);  /* preenchimento translúcido do veredito "normal" */
+  --warn-amber-fill: rgba(242, 181, 65, .14);     /* preenchimento translúcido do veredito "atenção" */
+}
+:root[data-theme="light"] {
+  --state-correct: #1f9e6b;        /* verde acerto com contraste no creme */
+  --state-correct-ink: #f5efe2;
+  --qol-blue: #2b6e98;
+  --qol-blue-soft: #1f5d86;
+  --state-correct-fill: rgba(31, 158, 107, .14);  /* light: tint verde sobre creme */
+  --warn-amber-fill: rgba(173, 124, 20, .14);     /* light: tint âmbar sobre creme */
+}
+
+/* ---- controles de slider/step embaixo dos SVGs ---- */
+.hpb-ctl {
+  display: flex; align-items: center; gap: var(--sp-3);
+  flex-wrap: wrap; margin-top: var(--sp-3);
+}
+.hpb-ctl__btn {
+  font: inherit; cursor: pointer;
+  background: var(--bg-elevated-2); color: var(--ink-100);
+  border: 1px solid var(--teal-40); border-radius: var(--r-sm);
+  padding: var(--sp-2) var(--sp-4); min-width: 44px; min-height: 40px;
+  transition: background var(--dur-fast, .18s) ease, border-color var(--dur-fast, .18s) ease;
+}
+.hpb-ctl__btn:hover { background: var(--bg-elevated); border-color: var(--teal-60); }
+.hpb-ctl__btn:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+.hpb-ctl__count {
+  font-family: var(--font-mono); font-size: var(--fs-sm);
+  color: var(--ink-70); flex: 1; min-width: 180px;
+}
+
+.hpb-slider {
+  display: flex; flex-direction: column; gap: var(--sp-2); margin-top: var(--sp-3);
+}
+.hpb-slider label { font-size: var(--fs-sm); color: var(--ink-70); font-family: var(--font-mono); }
+.hpb-slider input[type="range"] {
+  width: 100%; accent-color: var(--teal-60); height: 28px; cursor: pointer;
+}
+.hpb-slider input[type="range"]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 3px; border-radius: var(--r-sm); }
+
+/* campo de calculadora (inputs HTML sobre o SVG da complacência) */
+.hpb-calc-inputs {
+  display: flex; gap: var(--sp-4); flex-wrap: wrap; margin-top: var(--sp-3);
+  align-items: flex-end;
+}
+.hpb-calc-inputs label {
+  display: flex; flex-direction: column; gap: var(--sp-1);
+  font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono);
+}
+.hpb-calc-inputs input[type="number"] {
+  font: inherit; font-size: var(--fs-md); width: 110px;
+  background: var(--bg-base); color: var(--ink-100);
+  border: 1.4px solid var(--teal-40); border-radius: var(--r-sm);
+  padding: var(--sp-2) var(--sp-3); min-height: 40px;
+}
+.hpb-calc-inputs input[type="number"]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 1px; }
+
+/* ---- hotspots com painel próprio (g.hotspot) — SVG-1 / SVG-3 ---- */
+.svg-anat .hotspot { cursor: pointer; }
+.svg-anat .hotspot .hs-shape { transition: filter var(--dur-mid, .26s) ease; }
+.svg-anat .hotspot.is-active .hs-shape { filter: drop-shadow(0 0 6px currentColor); }
+.svg-anat .hotspot:focus-visible .hs-shape { outline: 2px solid var(--teal-60); }
+.svg-anat .hotspot:focus { outline: none; }
+
+/* ---- SVG-2 step-through uretra ---- */
+[data-svg="svg2"] .seg { transition: stroke var(--dur-mid, .26s) ease, opacity var(--dur-mid, .26s) ease; }
+[data-svg="svg2"] .seg:not(.is-lit) { opacity: .4; }
+[data-svg="svg2"] .seg.is-on { stroke: var(--teal-60) !important; filter: drop-shadow(0 0 6px var(--teal-glow)); }
+[data-svg="svg2"] .seg-label { opacity: .55; transition: opacity var(--dur-mid, .26s) ease, fill var(--dur-mid, .26s) ease; }
+[data-svg="svg2"] .seg-label.is-on { opacity: 1; fill: var(--teal-60); font-weight: 700; }
+[data-svg="svg2"] .trauma { transition: opacity var(--dur-mid, .26s) ease; }
+
+/* ---- SVG-6 calculadora de complacência: tremor ---- */
+@media (prefers-reduced-motion: no-preference) {
+  #cmpl-tremor { animation: cmplTremor 2.6s ease-in-out infinite; transform-origin: 600px 196px; }
+  #cmpl-tremor.cmpl-tremor--fast { animation-duration: 1.6s; }
+  @keyframes cmplTremor {
+    0%, 86%, 100% { transform: none; }
+    88% { transform: translate(1.2px, -1px) scale(1.012); }
+    90% { transform: translate(-1px, 1px) scale(.99); }
+    92% { transform: translate(.8px, 0); }
+    94% { transform: none; }
+  }
+}
+
+/* ---- SVG-7 diagrama causal ---- */
+.caus-row { cursor: pointer; transition: opacity var(--dur-mid, .26s) ease; }
+.caus-row .caus-mech, .caus-row .caus-sym, .caus-row .caus-drug { transition: stroke .26s ease, fill .26s ease, filter .26s ease; }
+[data-caus].has-active .caus-row:not(.is-on) { opacity: .42; }
+.caus-row.is-on .caus-sym { stroke: var(--teal-60); fill: var(--teal-10); }
+.caus-row.is-on .caus-drug { stroke: var(--state-correct); fill: var(--teal-10); filter: drop-shadow(0 0 10px var(--correct-glow)); }
+.caus-row.is-on .caus-mech { filter: drop-shadow(0 0 10px var(--teal-glow)); }
+.caus-row:focus-visible { outline: 2px solid var(--teal-80); outline-offset: 3px; }
+
+/* ---- SVG-8 tabela LUTS clicável ---- */
+.luts-chip { cursor: pointer; }
+.luts-chip rect { transition: stroke-width .2s ease, filter .2s ease; }
+.luts-col[data-class="obstrutivo"] .luts-chip.is-active rect { stroke: var(--teal-60); stroke-width: 2.4; filter: drop-shadow(0 0 8px var(--teal-glow)); }
+.luts-col[data-class="irritativo"] .luts-chip.is-active rect { stroke: var(--coral-60); stroke-width: 2.4; filter: drop-shadow(0 0 8px var(--coral-glow)); }
+.luts-chip:focus-visible rect { outline: 2px solid var(--teal-80); }
+
+/* ---- SVG-9 IPSS ---- */
+.ipss-dot, .ipss-qoldot { cursor: pointer; }
+.ipss-dot circle, .ipss-qoldot circle { transition: fill .2s ease, stroke .2s ease, filter .2s ease; }
+.ipss-dot.is-sel circle { fill: var(--teal-40); stroke: var(--teal-60); filter: drop-shadow(0 0 6px var(--teal-glow)); }
+.ipss-dot.is-sel text { fill: var(--bg-base); font-weight: 700; }
+.ipss-qoldot.is-sel circle { fill: var(--qol-blue); stroke: var(--qol-blue-soft); }
+.ipss-qoldot.is-sel text { fill: var(--bg-base); font-weight: 700; }
+.ipss-dot:focus-visible circle, .ipss-qoldot:focus-visible circle { outline: 2px solid var(--teal-80); }
+
+/* ---- SVG-10 conduta + step ---- */
+.cond-step { cursor: pointer; }
+.cond-step rect { transition: filter .26s ease, stroke-width .26s ease; }
+.cond-step.is-active rect { stroke-width: 2.6; filter: drop-shadow(0 0 10px var(--teal-glow-soft)); }
+.cond-step:focus-visible rect, #cond-next:focus-visible rect, #cond-prev:focus-visible rect { outline: 2px solid var(--teal-80); outline-offset: 2px; }
+.cond-etapa { transition: opacity .26s ease; }
+.cond-etapa.is-dim { opacity: .4; }
+.cond-track .cond-node { transition: fill .26s ease, stroke .26s ease, filter .26s ease; }
+.cond-node.is-on { fill: var(--teal-10); stroke: var(--teal-60); filter: drop-shadow(0 0 7px var(--teal-glow)); }
+#cond-next, #cond-prev { cursor: pointer; }
+
+/* ---- SVG-11 tabela fármacos com filtro ---- */
+.f11-chip { cursor: pointer; }
+.f11-chip rect { transition: fill .2s ease, stroke .2s ease; }
+.f11-chip:focus-visible rect { outline: 2px solid var(--teal-80); }
+.f11-row { transition: opacity .26s ease; }
+.f11-row.f11-dim { opacity: .32; }
+.f11-row.f11-hit rect { stroke: var(--teal-60); stroke-width: 2; fill: rgba(79,214,192,0.10); }
+
+/* ---- SVG-12 cadeia causal ---- */
+.c12-step { cursor: pointer; }
+.c12-step rect { transition: stroke-width .2s ease, filter .2s ease; }
+.c12-step.is-on rect { stroke-width: 2.6; filter: drop-shadow(0 0 8px var(--teal-glow-soft)); }
+.c12-step:focus-visible rect { outline: 2px solid var(--teal-80); }
+
+/* ---- SVG-13 bexigoma + conduta ---- */
+.b13-hotspot { cursor: pointer; }
+.b13-hotspot ellipse { transition: filter .26s ease; }
+.b13-hotspot.is-active > ellipse:first-of-type { filter: drop-shadow(0 0 10px var(--teal-glow)); }
+.b13-hotspot:focus-visible { outline: 2px solid var(--teal-80); }
+.s13-card:focus-visible rect { outline: 2px solid var(--teal-80); }
+@media (prefers-reduced-motion: no-preference) {
+  .b13-pulse { animation: b13Pulse 2.4s ease-in-out infinite; }
+  @keyframes b13Pulse { 0%,100% { opacity: .18; } 50% { opacity: .4; } }
+}
+
+/* ---- SVG-14 step RTU + cadeia síndrome ---- */
+.rtu-step-label { cursor: pointer; transition: fill .2s ease; }
+.rtu-step-label.is-on { fill: var(--ink-100); font-weight: 600; }
+.rtu-scope { transition: filter .26s ease; }
+.rtu-scope.is-on { filter: drop-shadow(0 0 7px var(--teal-glow)); }
+.rtu-lobe { transition: fill .3s ease, transform .3s ease; }
+.rtu-lobe.is-rasp { fill: var(--coral-40); }
+.syn-step { cursor: pointer; }
+.syn-step rect { transition: stroke-width .2s ease, filter .2s ease; }
+.syn-step.is-on rect { stroke-width: 2.6; filter: drop-shadow(0 0 7px var(--qol-glow)); }
+.syn-step:focus-visible rect { outline: 2px solid var(--teal-80); }
+
+/* ---- SVG-15 toque + polpas ---- */
+.t15-hotspot { cursor: pointer; }
+.t15-hotspot ellipse { transition: filter .26s ease; }
+.t15-hotspot.is-active ellipse { filter: drop-shadow(0 0 9px var(--coral-glow)); }
+.t15-hotspot:focus-visible { outline: 2px solid var(--teal-80); }
+.t15-plus, .t15-minus { cursor: pointer; }
+.t15-plus rect, .t15-minus rect { transition: fill .15s ease; }
+.t15-plus:focus-visible rect, .t15-minus:focus-visible rect { outline: 2px solid var(--teal-80); }
+
+/* ---- SVG-16 quiz-caso ---- */
+.q16-opt { cursor: pointer; }
+.q16-opt rect { transition: stroke .2s ease, fill .2s ease; }
+.q16-opt.is-correct rect { stroke: var(--state-correct); stroke-width: 2; fill: rgba(95,223,160,0.12); }
+.q16-opt.is-wrong rect { stroke: var(--coral-60); stroke-width: 2; fill: rgba(244,113,90,0.10); }
+.q16-opt:focus-visible rect { outline: 2px solid var(--teal-80); }
+
+/* responsivo: SVGs grandes deslizam horizontalmente em telas estreitas sem estourar */
+.figure-svg__stage svg, .figure-svg__frame svg { max-width: 100%; height: auto; }
+
+/* ---- 2ª peça: mapas conceituais estáticos (SVG-17/18/19) ---- */
+/* reusa o frame do figure-svg, mas sem stage interativo: centra o SVG e contém a largura
+   p/ ancorar ao fluxo sem criar void em telas largas (a regra é "bem ancorada"). */
+.figure-svg--map .figure-svg__frame--map { display: flex; justify-content: center; padding: var(--sp-3); }
+.figure-svg--map .figure-svg__frame--map svg { max-width: 560px; width: 100%; height: auto; display: block; }

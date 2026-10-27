@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>Benzo: o 1º, as vias, o Brasil — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Manejo da Crise / Status Epiléptico</span>
+        <span class="site-header__subtitle">Neurologia · Aula 9</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">5/11</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<style>
+.a9-l5{--i:#818CF8;--c:#38BDF8;--r:#F87171;--g:#FBBF24;--t:#2DD4BF;--gr:#4ADE80;--ink:var(--ink,#F4F7FB);--mu:var(--muted,#94A3B8);--ca:var(--card-bg,rgba(17,26,43,0.72));--c2:var(--card-bg2,rgba(21,32,51,0.65));--b:var(--border,rgba(148,163,184,0.14));max-width:820px;margin:0 auto;padding:0 20px;}
+[data-theme="light"] .a9-l5{--ink:#0F172A;--mu:#64748B;--ca:rgba(255,255,255,0.82);--c2:rgba(241,245,249,0.78);--b:rgba(15,23,42,0.10);}
+.a9-l5 h1{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;color:var(--ink);margin:32px 0 6px;line-height:1.2;}
+.a9-l5 .a9-sub{font-size:.9rem;color:var(--mu);margin-bottom:20px;}
+.a9-l5 .a9-prose{text-align:justify;text-indent:1.5em;hyphens:auto;color:var(--ink);line-height:1.75;font-size:.95rem;}
+.a9-l5 .a9-prose p{margin:0 0 12px;}
+.a9-l5 .a9-prose h3{text-indent:0;font-size:1.1rem;font-weight:700;color:var(--i);margin:24px 0 8px;}
+.a9-l5 .a9-prose strong{color:var(--r);}
+.a9-l5 .a9-matrix{overflow-x:auto;margin:16px 0;border-radius:12px;background:var(--ca);border:1px solid var(--b);}
+.a9-l5 .a9-matrix table{width:100%;border-collapse:collapse;font-size:.88rem;}
+.a9-l5 .a9-matrix th{background:var(--c2);color:var(--i);font-weight:700;padding:10px 12px;text-align:center;border-bottom:2px solid var(--b);}
+.a9-l5 .a9-matrix td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--b);color:var(--ink);}
+.a9-l5 .a9-matrix .ok{color:var(--gr);font-weight:700;}
+.a9-l5 .a9-matrix .no{color:var(--r);font-weight:700;}
+.a9-l5 .a9-chip-gold{display:inline-block;padding:6px 14px;border-radius:20px;font-size:.82rem;font-weight:700;color:var(--g);background:rgba(251,191,36,0.1);border:1px solid var(--g);margin:8px 0;}
+.a9-l5 .a9-box-dig{background:var(--c2);border:1px solid var(--c);border-radius:10px;padding:14px 18px;margin:14px 0;font-size:.85rem;color:var(--mu);}
+.a9-l5 .a9-box-dig .a9-dig-l{font-size:.75rem;font-weight:700;color:var(--c);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l5 .a9-svg-wrap,.a9-l5 .a9-img-wrap{margin:24px 0;border-radius:16px;overflow:hidden;background:var(--ca);border:1px solid var(--b);}
+.a9-l5 .a9-svg-wrap svg,.a9-l5 .a9-img-wrap img{display:block;width:100%;height:auto;}
+.a9-l5 .a9-img-wrap .a9-cap{padding:10px 16px;font-size:.78rem;color:var(--mu);line-height:1.5;border-top:1px solid var(--b);}
+.a9-l5 .a9-pegs{background:var(--ca);border:1px solid var(--g);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.a9-l5 .a9-pegs .a9-peg-l{font-size:.78rem;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.a9-l5 .a9-pegs ol{margin:0;padding-left:20px;color:var(--ink);font-size:.9rem;}
+.a9-l5 .a9-pegs li{margin-bottom:4px;}
+.a9-l5 .a9-why{background:var(--c2);border-radius:12px;padding:16px 20px;margin:18px 0;border-left:3px solid var(--t);}
+.a9-l5 .a9-why .a9-why-l{font-size:.78rem;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l5 .a9-why p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l5 .a9-resumo{background:var(--ca);border:1px solid var(--t);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.a9-l5 .a9-resumo .a9-res-l{font-size:.78rem;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l5 .a9-resumo p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l5 .a9-quiz{margin:28px 0;}
+.a9-l5 .a9-quiz h3{font-size:1.05rem;font-weight:700;color:var(--g);margin:0 0 16px;}
+.a9-l5 .a9-qb{background:var(--ca);border:1px solid var(--b);border-radius:14px;padding:20px;margin-bottom:16px;}
+.a9-l5 .a9-qb .a9-qe{font-weight:700;color:var(--ink);margin-bottom:12px;font-size:.92rem;}
+.a9-l5 .a9-qb .a9-qo{display:flex;flex-direction:column;gap:8px;}
+.a9-l5 .a9-qb .a9-opt{padding:10px 14px;border-radius:10px;background:var(--c2);border:1px solid var(--b);cursor:pointer;font-size:.88rem;color:var(--ink);transition:all .2s;min-height:44px;display:flex;align-items:center;}
+.a9-l5 .a9-qb .a9-opt:hover{border-color:var(--i);}
+.a9-l5 .a9-qb .a9-opt.chosen{border-color:var(--i);background:rgba(129,140,248,0.12);}
+.a9-l5 .a9-qb .a9-opt.correct{border-color:var(--gr);background:rgba(74,222,128,0.15);}
+.a9-l5 .a9-qb .a9-opt.wrong{border-color:var(--r);background:rgba(248,113,113,0.12);}
+.a9-l5 .a9-qfb{margin-top:12px;padding:14px 16px;border-radius:10px;font-size:.85rem;line-height:1.6;display:none;}
+.a9-l5 .a9-qfb.show{display:block;}
+.a9-l5 .a9-qfb.cok{background:rgba(74,222,128,0.1);border:1px solid var(--gr);color:var(--ink);}
+.a9-l5 .a9-qfb.er{background:rgba(248,113,113,0.1);border:1px solid var(--r);color:var(--ink);}
+@media(max-width:600px){.a9-l5 h1{font-size:1.4rem;}}
+</style>
+<div class="a9-l5" data-layout="a9-p05">
+<h1>Benzo: o 1º, as vias, o Brasil</h1>
+<p class="a9-sub">Farmacologia aplicada · DZP vs MDZ · lorazepam ausente · matriz de vias</p>
+
+<div class="a9-prose">
+<h3>1. Primeiro medicamento: rápido no SNC</h3>
+<p>O <strong>primeiro medicamento</strong> para o paciente em status é de uso <strong>parenteral</strong>, com efeito rápido. Precisa <strong>penetrar muito rapidamente</strong> no SNC para <strong>bloquear a crise</strong> — ou seja, <strong>rebaixar</strong> o paciente. O grande medicamento de emergência que faz isso é o <strong>benzodiazepínico</strong>.</p>
+
+<h3>2. Realidade brasileira</h3>
+<p>Na emergência brasileira, o benzo parenteral disponível para esse uso prático são <strong>dois</strong>: <strong>diazepam</strong> ou <strong>midazolam</strong>. Literatura internacional de referência cita <strong>lorazepam</strong> parenteral — <strong>não há lorazepam parenteral disponível no Brasil</strong>. Trabalha-se com <strong>diazepam</strong> e <strong>midazolam</strong>.</p>
+
+<h3>3. Diazepam — vias</h3>
+<p><strong>Diazepam</strong> — vias permitidas: <strong>intravenoso (IV)</strong> ou <strong>intra-retal</strong>. <strong>Diazepam intramuscular (IM) é proibido</strong> — absorção <strong>errática</strong>; não se sabe se será absorvido direito. <strong>Não é "só off-label"</strong>: é <strong>errado</strong> fazer intramuscular.</p>
+
+<h3>4. Midazolam — vias</h3>
+<p><strong>Midazolam</strong> — vias permitidas: <strong>IV</strong>, <strong>IM</strong> e <strong>spray nasal</strong> (absorção no <strong>capilar nasal</strong>).</p>
+
+<h3>5. Nasal não é inalatório</h3>
+<p>Spray nasal <strong>não</strong> se chama <strong>inalatório</strong>. Inalatório = absorção <strong>pulmonar</strong> (bomba da asma, corticóide inalatório, beta-2, anticolinérgico, DPOC). No nasal, a absorção é <strong>capilar</strong>; questiona-se ainda se o nervo olfatório contribui para levar ao SNC.</p>
+</div>
+
+<div class="a9-box-dig"><div class="a9-dig-l">📦 Box digressão [053]</div>Analogia de absorção: usuário de cocaína que <strong>cheira</strong> — absorção é <strong>capilar</strong>, não pulmonar/inalatória. Serve só para cravar o conceito; não é indicação terapêutica.</div>
+
+<div class="a9-matrix"><table>
+<tr><th>Fármaco</th><th>IV</th><th>IM</th><th>Retal</th><th>Nasal</th><th>Inalatório</th></tr>
+<tr><td><strong>Diazepam</strong></td><td class="ok">✓</td><td class="no">✗ (errática)</td><td class="ok">✓</td><td>—</td><td class="no">✗</td></tr>
+<tr><td><strong>Midazolam</strong></td><td class="ok">✓</td><td class="ok">✓</td><td>—</td><td class="ok">✓ (capilar)</td><td class="no">✗</td></tr>
+<tr><td>Lorazepam (lit.)</td><td>citado</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</table></div>
+<div class="a9-chip-gold">DZP IM = errado, não off-label.</div>
+
+<div class="a9-svg-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 760" role="img" aria-labelledby="a9p5-title a9p5-desc" class="a9-inline-svg a9p5-root">
+  <title id="a9p5-title">Mapa de vias: DZP e MDZ no Brasil</title>
+  <desc id="a9p5-desc">Primeiro fármaco de status no adulto: benzodiazepínico parenteral. Literatura cita lorazepam EV, tipicamente ausente no pronto-socorro brasileiro. Diazepam: vias certas EV e retal; IM errado, marcado com X coral. Midazolam: EV, IM e spray nasal; absorção capilar nasal, não inalatória pulmonar.</desc>
+  <defs>
+    <linearGradient id="a9p5-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a9p5-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a9p5-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a9p5-auroraL" cx="14%" cy="16%" r="48%">
+      <stop offset="0%" stop-color="var(--a9p5-indigo, #818CF8)" stop-opacity="0.26"/>
+      <stop offset="55%" stop-color="var(--a9p5-cyan, #22D3EE)" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="var(--a9p5-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p5-auroraR" cx="88%" cy="20%" r="46%">
+      <stop offset="0%" stop-color="var(--a9p5-gold, #FBBF24)" stop-opacity="0.24"/>
+      <stop offset="50%" stop-color="var(--a9p5-coral, #F87171)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p5-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a9p5-cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p5-card, #111A2B)"/>
+      <stop offset="100%" stop-color="var(--a9p5-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p5-goldFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p5-goldDeepCard, #2A2410)"/>
+      <stop offset="100%" stop-color="var(--a9p5-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p5-okFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p5-okDeepCard, #10261F)"/>
+      <stop offset="100%" stop-color="var(--a9p5-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p5-coralFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p5-coralDeepCard, #2A1518)"/>
+      <stop offset="100%" stop-color="var(--a9p5-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p5-bodyFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p5-indigoHi, #C7D2FE)" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="var(--a9p5-indigo, #818CF8)" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="var(--a9p5-indigoDeep, #4338CA)" stop-opacity="0.20"/>
+    </linearGradient>
+    <radialGradient id="a9p5-glowCoral" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p5-coral, #F87171)" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="var(--a9p5-coral, #F87171)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p5-coral, #F87171)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p5-glowOk" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p5-ok, #34D399)" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="var(--a9p5-ok, #34D399)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p5-ok, #34D399)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p5-glowGold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p5-gold, #FBBF24)" stop-opacity="0.50"/>
+      <stop offset="70%" stop-color="var(--a9p5-gold, #FBBF24)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p5-gold, #FBBF24)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="a9p5-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a9p5-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a9p5-arrOk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p5-ok, #34D399)"/>
+    </marker>
+    <marker id="a9p5-arrCoral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p5-coral, #F87171)"/>
+    </marker>
+    <marker id="a9p5-arrGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p5-gold, #FBBF24)"/>
+    </marker>
+    <marker id="a9p5-arrIndigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p5-indigo, #818CF8)"/>
+    </marker>
+    <style>
+      .a9p5-root {
+        --a9p5-bg0: #0B1220;
+        --a9p5-bg1: #07111F;
+        --a9p5-card: #111A2B;
+        --a9p5-card2: #152033;
+        --a9p5-cardDeep: #0E1A2A;
+        --a9p5-goldDeepCard: #2A2410;
+        --a9p5-coralDeepCard: #2A1518;
+        --a9p5-okDeepCard: #10261F;
+        --a9p5-border: rgba(148,163,184,0.18);
+        --a9p5-ink: #F4F7FB;
+        --a9p5-muted: #94A3B8;
+        --a9p5-soft: #B8C0CC;
+        --a9p5-indigo: #818CF8;
+        --a9p5-indigoHi: #C7D2FE;
+        --a9p5-indigoDeep: #4338CA;
+        --a9p5-cyan: #22D3EE;
+        --a9p5-cyanDim: #0891B2;
+        --a9p5-gold: #FBBF24;
+        --a9p5-goldHi: #FDE68A;
+        --a9p5-goldDeep: #B45309;
+        --a9p5-coral: #F87171;
+        --a9p5-coralHi: #FECACA;
+        --a9p5-coralDeep: #B91C1C;
+        --a9p5-ok: #34D399;
+        --a9p5-okHi: #A7F3D0;
+        --a9p5-okDeep: #047857;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a9p5-root {
+        --a9p5-bg0: #F8F6F2;
+        --a9p5-bg1: #EEF2F7;
+        --a9p5-card: #FFFFFF;
+        --a9p5-card2: #F1F5F9;
+        --a9p5-cardDeep: #F8FAFC;
+        --a9p5-goldDeepCard: #FFFBEB;
+        --a9p5-coralDeepCard: #FEF2F2;
+        --a9p5-okDeepCard: #ECFDF5;
+        --a9p5-border: rgba(15,23,42,0.10);
+        --a9p5-ink: #0F172A;
+        --a9p5-muted: #64748B;
+        --a9p5-soft: #475569;
+        --a9p5-indigo: #4F46E5;
+        --a9p5-indigoHi: #E0E7FF;
+        --a9p5-indigoDeep: #3730A3;
+        --a9p5-cyan: #0891B2;
+        --a9p5-cyanDim: #0E7490;
+        --a9p5-gold: #D97706;
+        --a9p5-goldHi: #FDE68A;
+        --a9p5-goldDeep: #92400E;
+        --a9p5-coral: #DC2626;
+        --a9p5-coralHi: #FEE2E2;
+        --a9p5-coralDeep: #991B1B;
+        --a9p5-ok: #059669;
+        --a9p5-okHi: #D1FAE5;
+        --a9p5-okDeep: #065F46;
+      }
+      .a9p5-root .a9p5-hs,
+      .a9p5-root .a9p5-chip {
+        cursor: pointer;
+      }
+      .a9p5-root .a9p5-hs:focus,
+      .a9p5-root .a9p5-chip:focus {
+        outline: none;
+      }
+      .a9p5-root .a9p5-hs:focus .a9p5-hs-ring,
+      .a9p5-root .a9p5-chip:focus .a9p5-chip-ring {
+        opacity: 1;
+      }
+      .a9p5-root .a9p5-panel,
+      .a9p5-root .a9p5-route,
+      .a9p5-root .a9p5-site,
+      .a9p5-root .a9p5-chip-fill {
+        transition: opacity 0.28s ease, stroke 0.28s ease, filter 0.28s ease;
+      }
+      .a9p5-root .a9p5-tip {
+        pointer-events: none;
+      }
+      .a9p5-root .a9p5-chip-fill {
+        opacity: 0.72;
+      }
+      .a9p5-root .a9p5-panel,
+      .a9p5-root .a9p5-route,
+      .a9p5-root .a9p5-site {
+        opacity: 0.94;
+      }
+      .a9p5-root[data-phase="first"] .a9p5-chip-first .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="first"] .a9p5-panel-lor,
+      .a9p5-root[data-phase="first"] .a9p5-panel-dzp,
+      .a9p5-root[data-phase="first"] .a9p5-panel-mdz { opacity: 0.42; }
+      .a9p5-root[data-phase="lor"] .a9p5-panel-lor {
+        opacity: 1;
+        filter: url(#a9p5-glow);
+      }
+      .a9p5-root[data-phase="lor"] .a9p5-panel-lor .a9p5-panel-face {
+        stroke: var(--a9p5-gold, #FBBF24);
+        stroke-width: 2.6;
+      }
+      .a9p5-root[data-phase="lor"] .a9p5-panel-dzp,
+      .a9p5-root[data-phase="lor"] .a9p5-panel-mdz,
+      .a9p5-root[data-phase="lor"] .a9p5-site { opacity: 0.36; }
+      .a9p5-root[data-phase="lor"] .a9p5-chip-lor .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="dzp"] .a9p5-panel-dzp {
+        opacity: 1;
+        filter: url(#a9p5-soft);
+      }
+      .a9p5-root[data-phase="dzp"] .a9p5-panel-dzp .a9p5-panel-face {
+        stroke: var(--a9p5-ok, #34D399);
+        stroke-width: 2.4;
+      }
+      .a9p5-root[data-phase="dzp"] .a9p5-panel-lor,
+      .a9p5-root[data-phase="dzp"] .a9p5-panel-mdz { opacity: 0.36; }
+      .a9p5-root[data-phase="dzp"] .a9p5-site-lung { opacity: 0.34; }
+      .a9p5-root[data-phase="dzp"] .a9p5-chip-dzp .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="mdz"] .a9p5-panel-mdz {
+        opacity: 1;
+        filter: url(#a9p5-soft);
+      }
+      .a9p5-root[data-phase="mdz"] .a9p5-panel-mdz .a9p5-panel-face {
+        stroke: var(--a9p5-cyan, #22D3EE);
+        stroke-width: 2.4;
+      }
+      .a9p5-root[data-phase="mdz"] .a9p5-panel-lor,
+      .a9p5-root[data-phase="mdz"] .a9p5-panel-dzp { opacity: 0.36; }
+      .a9p5-root[data-phase="mdz"] .a9p5-site-glute { opacity: 0.34; }
+      .a9p5-root[data-phase="mdz"] .a9p5-chip-mdz .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="dzpim"] .a9p5-site-glute {
+        opacity: 1;
+        filter: url(#a9p5-glow);
+      }
+      .a9p5-root[data-phase="dzpim"] .a9p5-panel-dzp { opacity: 1; }
+      .a9p5-root[data-phase="dzpim"] .a9p5-panel-lor,
+      .a9p5-root[data-phase="dzpim"] .a9p5-panel-mdz,
+      .a9p5-root[data-phase="dzpim"] .a9p5-site-nasal,
+      .a9p5-root[data-phase="dzpim"] .a9p5-site-lung,
+      .a9p5-root[data-phase="dzpim"] .a9p5-site-ev,
+      .a9p5-root[data-phase="dzpim"] .a9p5-site-retal { opacity: 0.34; }
+      .a9p5-root[data-phase="dzpim"] .a9p5-chip-dzpim .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="nasal"] .a9p5-site-nasal {
+        opacity: 1;
+        filter: url(#a9p5-glow);
+      }
+      .a9p5-root[data-phase="nasal"] .a9p5-panel-mdz { opacity: 1; }
+      .a9p5-root[data-phase="nasal"] .a9p5-panel-lor,
+      .a9p5-root[data-phase="nasal"] .a9p5-panel-dzp,
+      .a9p5-root[data-phase="nasal"] .a9p5-site-glute,
+      .a9p5-root[data-phase="nasal"] .a9p5-site-lung { opacity: 0.34; }
+      .a9p5-root[data-phase="nasal"] .a9p5-chip-nasal .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="lung"] .a9p5-site-lung {
+        opacity: 1;
+        filter: url(#a9p5-glow);
+      }
+      .a9p5-root[data-phase="lung"] .a9p5-panel-mdz { opacity: 0.72; }
+      .a9p5-root[data-phase="lung"] .a9p5-panel-lor,
+      .a9p5-root[data-phase="lung"] .a9p5-panel-dzp,
+      .a9p5-root[data-phase="lung"] .a9p5-site-glute,
+      .a9p5-root[data-phase="lung"] .a9p5-site-nasal { opacity: 0.34; }
+      .a9p5-root[data-phase="lung"] .a9p5-chip-lung .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="ev"] .a9p5-site-ev {
+        opacity: 1;
+        filter: url(#a9p5-soft);
+      }
+      .a9p5-root[data-phase="ev"] .a9p5-chip-ev .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="retal"] .a9p5-site-retal {
+        opacity: 1;
+        filter: url(#a9p5-soft);
+      }
+      .a9p5-root[data-phase="retal"] .a9p5-chip-retal .a9p5-chip-fill { opacity: 1; }
+      .a9p5-root[data-phase="mdzim"] .a9p5-site-mdzim {
+        opacity: 1;
+        filter: url(#a9p5-soft);
+      }
+      .a9p5-root[data-phase="mdzim"] .a9p5-chip-mdzim .a9p5-chip-fill { opacity: 1; }
+    </style>
+  </defs>
+
+  <rect width="840" height="760" fill="url(#a9p5-bg)"/>
+  <rect width="840" height="760" fill="url(#a9p5-auroraL)"/>
+  <rect width="840" height="760" fill="url(#a9p5-auroraR)"/>
+
+  <g id="a9p5-header" transform="translate(28,20)">
+    <text x="0" y="22" fill="var(--a9p5-ink, #F4F7FB)" font-size="20" font-weight="700" letter-spacing="-0.3">Mapa de vias · status no adulto</text>
+    <text x="0" y="44" fill="var(--a9p5-muted, #94A3B8)" font-size="13" font-weight="500">1º fármaco = benzo parenteral · BR real: DZP + MDZ · lorazepam EV da literatura ausente no PS</text>
+    <g id="a9p5-chip-first" class="a9p5-chip" transform="translate(612,4)" tabindex="0" role="button" aria-label="Primeiro fármaco: benzodiazepínico parenteral">
+      <rect class="a9p5-chip-ring" x="-3" y="-3" width="178" height="42" rx="12" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="2" opacity="0"/>
+      <rect class="a9p5-chip-fill" width="172" height="36" rx="10" fill="var(--a9p5-okDeepCard, #10261F)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.6"/>
+      <circle cx="18" cy="18" r="7" fill="var(--a9p5-ok, #34D399)"/>
+      <text x="18" y="22" text-anchor="middle" fill="var(--a9p5-bg0, #0B1220)" font-size="11" font-weight="800">1º</text>
+      <text x="34" y="22" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12.5" font-weight="700">Benzo parenteral</text>
+    </g>
+  </g>
+
+  <g id="a9p5-panels" transform="translate(28,78)">
+    <g id="a9p5-panel-lor" class="a9p5-panel a9p5-panel-lor a9p5-hs" tabindex="0" role="button" aria-label="Lorazepam: literatura EV, ausente no PS brasileiro">
+      <rect class="a9p5-hs-ring" x="-4" y="-4" width="248" height="168" rx="18" fill="none" stroke="var(--a9p5-gold, #FBBF24)" stroke-width="2.2" opacity="0"/>
+      <rect class="a9p5-panel-face" width="240" height="160" rx="16" fill="url(#a9p5-goldFace)" stroke="var(--a9p5-gold, #FBBF24)" stroke-width="1.6"/>
+      <circle cx="26" cy="28" r="14" fill="url(#a9p5-glowGold)"/>
+      <circle cx="26" cy="28" r="10" fill="var(--a9p5-gold, #FBBF24)"/>
+      <text x="26" y="32" text-anchor="middle" fill="var(--a9p5-bg0, #0B1220)" font-size="11" font-weight="800">L</text>
+      <text x="46" y="24" fill="var(--a9p5-goldHi, #FDE68A)" font-size="15" font-weight="700">Lorazepam</text>
+      <text x="46" y="42" fill="var(--a9p5-muted, #94A3B8)" font-size="11.5" font-weight="500">Literatura · EV</text>
+      <rect x="16" y="58" width="208" height="36" rx="10" fill="var(--a9p5-gold, #FBBF24)" opacity="0.14"/>
+      <text x="28" y="81" fill="var(--a9p5-gold, #FBBF24)" font-size="13.5" font-weight="700">AUSENTE no PS BR</text>
+      <text x="16" y="118" fill="var(--a9p5-soft, #B8C0CC)" font-size="12" font-weight="500">Pegadinha de banca: não</text>
+      <text x="16" y="136" fill="var(--a9p5-soft, #B8C0CC)" font-size="12" font-weight="500">assume ampola no carrinho.</text>
+    </g>
+
+    <g id="a9p5-panel-dzp" class="a9p5-panel a9p5-panel-dzp a9p5-hs" transform="translate(260,0)" tabindex="0" role="button" aria-label="Diazepam: EV e retal corretos, IM errado">
+      <rect class="a9p5-hs-ring" x="-4" y="-4" width="248" height="168" rx="18" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="2.2" opacity="0"/>
+      <rect class="a9p5-panel-face" width="240" height="160" rx="16" fill="url(#a9p5-cardFace)" stroke="var(--a9p5-border, rgba(148,163,184,0.18))" stroke-width="1.4"/>
+      <circle cx="26" cy="28" r="10" fill="var(--a9p5-ok, #34D399)"/>
+      <text x="26" y="32" text-anchor="middle" fill="var(--a9p5-bg0, #0B1220)" font-size="11" font-weight="800">D</text>
+      <text x="46" y="24" fill="var(--a9p5-ink, #F4F7FB)" font-size="15" font-weight="700">Diazepam</text>
+      <text x="46" y="42" fill="var(--a9p5-muted, #94A3B8)" font-size="11.5" font-weight="500">BR prático · DZP</text>
+      <g transform="translate(16,58)">
+        <rect width="96" height="28" rx="8" fill="var(--a9p5-okDeepCard, #10261F)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.3"/>
+        <text x="48" y="18" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12" font-weight="700">EV ✓</text>
+        <rect x="106" width="102" height="28" rx="8" fill="var(--a9p5-okDeepCard, #10261F)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.3"/>
+        <text x="157" y="18" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12" font-weight="700">Retal ✓</text>
+      </g>
+      <g transform="translate(16,98)">
+        <rect width="208" height="42" rx="10" fill="url(#a9p5-coralFace)" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.8"/>
+        <text x="16" y="18" fill="var(--a9p5-coralHi, #FECACA)" font-size="13" font-weight="700">IM ✗ · errado</text>
+        <text x="16" y="34" fill="var(--a9p5-coral, #F87171)" font-size="11.5" font-weight="600">Não é “off-label simpático”</text>
+      </g>
+    </g>
+
+    <g id="a9p5-panel-mdz" class="a9p5-panel a9p5-panel-mdz a9p5-hs" transform="translate(520,0)" tabindex="0" role="button" aria-label="Midazolam: EV, IM e spray nasal corretos">
+      <rect class="a9p5-hs-ring" x="-4" y="-4" width="248" height="168" rx="18" fill="none" stroke="var(--a9p5-cyan, #22D3EE)" stroke-width="2.2" opacity="0"/>
+      <rect class="a9p5-panel-face" width="240" height="160" rx="16" fill="url(#a9p5-cardFace)" stroke="var(--a9p5-border, rgba(148,163,184,0.18))" stroke-width="1.4"/>
+      <circle cx="26" cy="28" r="10" fill="var(--a9p5-cyan, #22D3EE)"/>
+      <text x="26" y="32" text-anchor="middle" fill="var(--a9p5-bg0, #0B1220)" font-size="11" font-weight="800">M</text>
+      <text x="46" y="24" fill="var(--a9p5-ink, #F4F7FB)" font-size="15" font-weight="700">Midazolam</text>
+      <text x="46" y="42" fill="var(--a9p5-muted, #94A3B8)" font-size="11.5" font-weight="500">BR prático · MDZ</text>
+      <g transform="translate(16,58)">
+        <rect width="64" height="28" rx="8" fill="var(--a9p5-okDeepCard, #10261F)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.3"/>
+        <text x="32" y="18" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12" font-weight="700">EV ✓</text>
+        <rect x="72" width="64" height="28" rx="8" fill="var(--a9p5-okDeepCard, #10261F)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.3"/>
+        <text x="104" y="18" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12" font-weight="700">IM ✓</text>
+        <rect x="144" width="64" height="28" rx="8" fill="var(--a9p5-okDeepCard, #10261F)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.3"/>
+        <text x="176" y="18" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12" font-weight="700">Nas ✓</text>
+      </g>
+      <g transform="translate(16,98)">
+        <rect width="208" height="42" rx="10" fill="var(--a9p5-card2, #152033)" stroke="var(--a9p5-cyan, #22D3EE)" stroke-width="1.4"/>
+        <text x="16" y="18" fill="var(--a9p5-cyan, #22D3EE)" font-size="12.5" font-weight="700">Spray nasal = capilar</text>
+        <text x="16" y="34" fill="var(--a9p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">≠ inalatório pulmonar</text>
+      </g>
+    </g>
+  </g>
+
+  <g id="a9p5-map" transform="translate(28,260)">
+    <rect width="784" height="318" rx="18" fill="var(--a9p5-card, #111A2B)" stroke="var(--a9p5-border, rgba(148,163,184,0.18))" stroke-width="1.3"/>
+    <text x="20" y="28" fill="var(--a9p5-soft, #B8C0CC)" font-size="13" font-weight="600">Anatomia das vias · o desenho carrega o corpo das proibições</text>
+
+    <g id="a9p5-body" transform="translate(72,48)">
+      <ellipse cx="90" cy="28" rx="28" ry="30" fill="url(#a9p5-bodyFill)" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.8"/>
+      <path d="M62 54 Q90 64 118 54 L128 118 Q90 138 52 118 Z" fill="url(#a9p5-bodyFill)" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.8"/>
+      <path d="M52 118 Q44 170 40 210 L68 214 Q74 170 78 128 Z" fill="url(#a9p5-bodyFill)" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.6"/>
+      <path d="M128 118 Q136 170 140 210 L112 214 Q106 170 102 128 Z" fill="url(#a9p5-bodyFill)" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.6"/>
+      <path d="M54 54 Q28 78 18 108 L42 118 Q52 88 66 70 Z" fill="url(#a9p5-bodyFill)" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.5"/>
+      <path d="M126 54 Q152 78 162 108 L138 118 Q128 88 114 70 Z" fill="url(#a9p5-bodyFill)" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.5"/>
+      <ellipse cx="90" cy="16" rx="10" ry="6" fill="var(--a9p5-indigo, #818CF8)" opacity="0.35"/>
+      <path d="M82 24 Q90 30 98 24" fill="none" stroke="var(--a9p5-indigoHi, #C7D2FE)" stroke-width="1.2" opacity="0.7"/>
+      <ellipse cx="78" cy="22" rx="3" ry="2.2" fill="var(--a9p5-indigoDeep, #4338CA)" opacity="0.55"/>
+      <ellipse cx="102" cy="22" rx="3" ry="2.2" fill="var(--a9p5-indigoDeep, #4338CA)" opacity="0.55"/>
+      <path d="M72 200 Q90 222 108 200" fill="none" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.5" opacity="0.5"/>
+      <ellipse cx="90" cy="208" rx="18" ry="10" fill="var(--a9p5-indigo, #818CF8)" opacity="0.12" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.2"/>
+    </g>
+
+    <g id="a9p5-site-ev" class="a9p5-site a9p5-hs a9p5-site-ev" transform="translate(12,96)" tabindex="0" role="button" aria-label="Via EV: correta para diazepam e midazolam">
+      <rect class="a9p5-hs-ring" x="-2" y="-2" width="148" height="48" rx="12" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="2" opacity="0"/>
+      <line x1="138" y1="22" x2="118" y2="72" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#a9p5-arrOk)"/>
+      <rect width="120" height="40" rx="10" fill="url(#a9p5-okFace)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.5"/>
+      <circle cx="18" cy="20" r="8" fill="var(--a9p5-ok, #34D399)"/>
+      <path d="M14 20 L17 23 L23 16" fill="none" stroke="var(--a9p5-bg0, #0B1220)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="34" y="17" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12.5" font-weight="700">EV</text>
+      <text x="34" y="32" fill="var(--a9p5-soft, #B8C0CC)" font-size="11" font-weight="500">DZP · MDZ</text>
+    </g>
+
+    <g id="a9p5-site-retal" class="a9p5-site a9p5-hs a9p5-site-retal" transform="translate(12,220)" tabindex="0" role="button" aria-label="Via retal: correta para diazepam">
+      <rect class="a9p5-hs-ring" x="-2" y="-2" width="148" height="48" rx="12" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="2" opacity="0"/>
+      <line x1="130" y1="18" x2="150" y2="18" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#a9p5-arrOk)"/>
+      <rect width="120" height="40" rx="10" fill="url(#a9p5-okFace)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.5"/>
+      <circle cx="18" cy="20" r="8" fill="var(--a9p5-ok, #34D399)"/>
+      <path d="M14 20 L17 23 L23 16" fill="none" stroke="var(--a9p5-bg0, #0B1220)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="34" y="17" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12.5" font-weight="700">Retal</text>
+      <text x="34" y="32" fill="var(--a9p5-soft, #B8C0CC)" font-size="11" font-weight="500">DZP ✓</text>
+    </g>
+
+    <g id="a9p5-site-glute" class="a9p5-site a9p5-hs a9p5-site-glute" transform="translate(248,168)" tabindex="0" role="button" aria-label="Diazepam intramuscular: via errada com X coral no glúteo">
+      <rect class="a9p5-hs-ring" x="-6" y="-6" width="132" height="92" rx="16" fill="none" stroke="var(--a9p5-coral, #F87171)" stroke-width="2.2" opacity="0"/>
+      <circle cx="28" cy="40" r="34" fill="url(#a9p5-glowCoral)"/>
+      <circle cx="28" cy="40" r="22" fill="var(--a9p5-coralDeepCard, #2A1518)" stroke="var(--a9p5-coral, #F87171)" stroke-width="2.4"/>
+      <path d="M16 28 L40 52 M40 28 L16 52" stroke="var(--a9p5-coral, #F87171)" stroke-width="4.2" stroke-linecap="round"/>
+      <rect x="56" y="18" width="62" height="48" rx="10" fill="url(#a9p5-coralFace)" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.6"/>
+      <text x="87" y="38" text-anchor="middle" fill="var(--a9p5-coralHi, #FECACA)" font-size="13" font-weight="800">IM</text>
+      <text x="87" y="54" text-anchor="middle" fill="var(--a9p5-coral, #F87171)" font-size="11" font-weight="700">DZP ✗</text>
+    </g>
+
+    <g id="a9p5-site-mdzim" class="a9p5-site a9p5-hs a9p5-site-mdzim" transform="translate(248,70)" tabindex="0" role="button" aria-label="Midazolam intramuscular: via correta">
+      <rect class="a9p5-hs-ring" x="-2" y="-2" width="132" height="52" rx="12" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="2" opacity="0"/>
+      <circle cx="18" cy="22" r="12" fill="url(#a9p5-glowOk)"/>
+      <circle cx="18" cy="22" r="9" fill="var(--a9p5-ok, #34D399)"/>
+      <path d="M14 22 L17 25 L23 18" fill="none" stroke="var(--a9p5-bg0, #0B1220)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="36" y="4" width="86" height="40" rx="10" fill="url(#a9p5-okFace)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.4"/>
+      <text x="79" y="20" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12.5" font-weight="700">IM MDZ</text>
+      <text x="79" y="36" text-anchor="middle" fill="var(--a9p5-soft, #B8C0CC)" font-size="11" font-weight="500">via certa</text>
+    </g>
+
+    <g id="a9p5-site-nasal" class="a9p5-site a9p5-hs a9p5-site-nasal" transform="translate(430,42)" tabindex="0" role="button" aria-label="Spray nasal: absorção capilar, não pulmonar">
+      <rect class="a9p5-hs-ring" x="-4" y="-4" width="168" height="118" rx="16" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="2.2" opacity="0"/>
+      <rect width="160" height="110" rx="14" fill="url(#a9p5-okFace)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.6"/>
+      <ellipse cx="42" cy="48" rx="26" ry="20" fill="var(--a9p5-indigo, #818CF8)" opacity="0.18" stroke="var(--a9p5-indigo, #818CF8)" stroke-width="1.4"/>
+      <path d="M30 48 Q42 58 54 48" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="2.2"/>
+      <circle cx="36" cy="44" r="3.5" fill="var(--a9p5-ok, #34D399)"/>
+      <circle cx="48" cy="44" r="3.5" fill="var(--a9p5-ok, #34D399)"/>
+      <path d="M42 56 L42 68" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.6" stroke-dasharray="2 2"/>
+      <circle cx="42" cy="74" r="5" fill="var(--a9p5-ok, #34D399)" opacity="0.85"/>
+      <text x="78" y="36" fill="var(--a9p5-okHi, #A7F3D0)" font-size="13" font-weight="700">Spray nasal</text>
+      <text x="78" y="54" fill="var(--a9p5-ink, #F4F7FB)" font-size="12" font-weight="600">capilar nasal</text>
+      <text x="78" y="72" fill="var(--a9p5-ok, #34D399)" font-size="11.5" font-weight="700">MDZ ✓</text>
+      <text x="18" y="96" fill="var(--a9p5-muted, #94A3B8)" font-size="11" font-weight="500">absorção mucosa · não alvéolo</text>
+    </g>
+
+    <g id="a9p5-site-lung" class="a9p5-site a9p5-hs a9p5-site-lung" transform="translate(612,42)" tabindex="0" role="button" aria-label="Inalatório pulmonar: via errada para midazolam nasal">
+      <rect class="a9p5-hs-ring" x="-4" y="-4" width="168" height="118" rx="16" fill="none" stroke="var(--a9p5-coral, #F87171)" stroke-width="2.2" opacity="0"/>
+      <rect width="160" height="110" rx="14" fill="url(#a9p5-coralFace)" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.8"/>
+      <path d="M28 40 Q42 22 56 40 Q68 58 56 78 Q42 94 28 78 Q16 58 28 40 Z" fill="var(--a9p5-coral, #F87171)" opacity="0.18" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.5"/>
+      <path d="M48 40 Q62 22 76 40 Q88 58 76 78 Q62 94 48 78 Q36 58 48 40 Z" fill="var(--a9p5-coral, #F87171)" opacity="0.14" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.4"/>
+      <path d="M34 34 L70 82 M70 34 L34 82" stroke="var(--a9p5-coral, #F87171)" stroke-width="3.4" stroke-linecap="round"/>
+      <text x="92" y="40" fill="var(--a9p5-coralHi, #FECACA)" font-size="13" font-weight="700">Pulmão</text>
+      <text x="92" y="58" fill="var(--a9p5-coral, #F87171)" font-size="12" font-weight="700">≠ via nasal</text>
+      <text x="92" y="76" fill="var(--a9p5-soft, #B8C0CC)" font-size="11" font-weight="500">não “inalatório”</text>
+      <text x="18" y="96" fill="var(--a9p5-coralHi, #FECACA)" font-size="11" font-weight="600">erro clássico de prova</text>
+    </g>
+
+    <g transform="translate(430,178)">
+      <path d="M140 40 L182 40" stroke="var(--a9p5-coral, #F87171)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#a9p5-arrCoral)"/>
+      <path d="M140 40 L98 40" stroke="var(--a9p5-ok, #34D399)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#a9p5-arrOk)"/>
+      <rect x="98" y="52" width="124" height="36" rx="10" fill="var(--a9p5-card2, #152033)" stroke="var(--a9p5-gold, #FBBF24)" stroke-width="1.4"/>
+      <text x="160" y="68" text-anchor="middle" fill="var(--a9p5-gold, #FBBF24)" font-size="12" font-weight="700">nasal ≠ pulmão</text>
+      <text x="160" y="82" text-anchor="middle" fill="var(--a9p5-soft, #B8C0CC)" font-size="11" font-weight="500">capilar · não alvéolo</text>
+    </g>
+
+    <g transform="translate(612,178)">
+      <rect width="160" height="100" rx="12" fill="var(--a9p5-card2, #152033)" stroke="var(--a9p5-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+      <text x="14" y="24" fill="var(--a9p5-muted, #94A3B8)" font-size="11.5" font-weight="600">Legenda rápida</text>
+      <circle cx="22" cy="46" r="6" fill="var(--a9p5-ok, #34D399)"/>
+      <text x="36" y="50" fill="var(--a9p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">via certa</text>
+      <circle cx="22" cy="70" r="6" fill="var(--a9p5-coral, #F87171)"/>
+      <text x="36" y="74" fill="var(--a9p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">via errada</text>
+      <circle cx="22" cy="94" r="6" fill="var(--a9p5-gold, #FBBF24)"/>
+      <text x="36" y="98" fill="var(--a9p5-soft, #B8C0CC)" font-size="11.5" font-weight="500">pegadinha BR</text>
+    </g>
+  </g>
+
+  <g id="a9p5-chips" transform="translate(28,592)">
+    <g id="a9p5-chip-lor" class="a9p5-chip" tabindex="0" role="button" aria-label="Pegadinha lorazepam ausente">
+      <rect class="a9p5-chip-ring" x="-2" y="-2" width="124" height="36" rx="10" fill="none" stroke="var(--a9p5-gold, #FBBF24)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p5-chip-fill" width="120" height="32" rx="9" fill="var(--a9p5-goldDeepCard, #2A2410)" stroke="var(--a9p5-gold, #FBBF24)" stroke-width="1.3"/>
+      <text x="60" y="21" text-anchor="middle" fill="var(--a9p5-goldHi, #FDE68A)" font-size="12" font-weight="700">LOR ausente</text>
+    </g>
+    <g id="a9p5-chip-dzpim" class="a9p5-chip" transform="translate(128,0)" tabindex="0" role="button" aria-label="Diazepam IM errado">
+      <rect class="a9p5-chip-ring" x="-2" y="-2" width="116" height="36" rx="10" fill="none" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p5-chip-fill" width="112" height="32" rx="9" fill="var(--a9p5-coralDeepCard, #2A1518)" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.3"/>
+      <text x="56" y="21" text-anchor="middle" fill="var(--a9p5-coralHi, #FECACA)" font-size="12" font-weight="700">DZP-IM ✗</text>
+    </g>
+    <g id="a9p5-chip-nasal" class="a9p5-chip" transform="translate(248,0)" tabindex="0" role="button" aria-label="Spray nasal capilar">
+      <rect class="a9p5-chip-ring" x="-2" y="-2" width="116" height="36" rx="10" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p5-chip-fill" width="112" height="32" rx="9" fill="var(--a9p5-okDeepCard, #10261F)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.3"/>
+      <text x="56" y="21" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12" font-weight="700">Nasal ✓</text>
+    </g>
+    <g id="a9p5-chip-lung" class="a9p5-chip" transform="translate(368,0)" tabindex="0" role="button" aria-label="Pulmão não é via nasal">
+      <rect class="a9p5-chip-ring" x="-2" y="-2" width="132" height="36" rx="10" fill="none" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p5-chip-fill" width="128" height="32" rx="9" fill="var(--a9p5-coralDeepCard, #2A1518)" stroke="var(--a9p5-coral, #F87171)" stroke-width="1.3"/>
+      <text x="64" y="21" text-anchor="middle" fill="var(--a9p5-coralHi, #FECACA)" font-size="12" font-weight="700">≠ inalatório</text>
+    </g>
+    <g id="a9p5-chip-dzp" class="a9p5-chip" transform="translate(508,0)" tabindex="0" role="button" aria-label="Diazepam painel">
+      <rect class="a9p5-chip-ring" x="-2" y="-2" width="88" height="36" rx="10" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p5-chip-fill" width="84" height="32" rx="9" fill="var(--a9p5-card2, #152033)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.3"/>
+      <text x="42" y="21" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12" font-weight="700">DZP</text>
+    </g>
+    <g id="a9p5-chip-mdz" class="a9p5-chip" transform="translate(604,0)" tabindex="0" role="button" aria-label="Midazolam painel">
+      <rect class="a9p5-chip-ring" x="-2" y="-2" width="88" height="36" rx="10" fill="none" stroke="var(--a9p5-cyan, #22D3EE)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p5-chip-fill" width="84" height="32" rx="9" fill="var(--a9p5-card2, #152033)" stroke="var(--a9p5-cyan, #22D3EE)" stroke-width="1.3"/>
+      <text x="42" y="21" text-anchor="middle" fill="var(--a9p5-cyan, #22D3EE)" font-size="12" font-weight="700">MDZ</text>
+    </g>
+    <g id="a9p5-chip-ev" class="a9p5-chip" transform="translate(700,0)" tabindex="0" role="button" aria-label="Via EV">
+      <rect class="a9p5-chip-ring" x="-2" y="-2" width="84" height="36" rx="10" fill="none" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p5-chip-fill" width="80" height="32" rx="9" fill="var(--a9p5-okDeepCard, #10261F)" stroke="var(--a9p5-ok, #34D399)" stroke-width="1.3"/>
+      <text x="40" y="21" text-anchor="middle" fill="var(--a9p5-okHi, #A7F3D0)" font-size="12" font-weight="700">EV</text>
+    </g>
+  </g>
+
+  <g id="a9p5-guard" transform="translate(28,640)">
+    <rect width="784" height="40" rx="12" fill="var(--a9p5-card, #111A2B)" stroke="var(--a9p5-gold, #FBBF24)" stroke-width="1.4"/>
+    <circle cx="22" cy="20" r="7" fill="var(--a9p5-gold, #FBBF24)"/>
+    <text x="22" y="24" text-anchor="middle" fill="var(--a9p5-bg0, #0B1220)" font-size="11" font-weight="800">!</text>
+    <text x="40" y="25" fill="var(--a9p5-soft, #B8C0CC)" font-size="12.5" font-weight="500">Não marque DZP IM · não invente lorazepam no carrinho BR · nasal de MDZ não é “inalatório” pulmonar</text>
+  </g>
+
+  <g id="a9p5-status" transform="translate(28,692)">
+    <rect width="784" height="48" rx="12" fill="var(--a9p5-card, #111A2B)" stroke="var(--a9p5-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <text id="a9p5-status-text" x="16" y="20" fill="var(--a9p5-gold, #FBBF24)" font-size="13.5" font-weight="700">1º = benzo parenteral · BR real ancora DZP + MDZ</text>
+    <text id="a9p5-live" x="16" y="38" fill="var(--a9p5-muted, #94A3B8)" font-size="12" font-weight="500">X coral no glúteo do DZP-IM · nasal capilar ≠ pulmão. Toque ou passe o cursor nas vias.</text>
+  </g>
+
+  <g id="a9p5-tip" class="a9p5-tip" opacity="0" aria-hidden="true" transform="translate(0,0)">
+    <rect id="a9p5-tip-bg" x="0" y="0" width="280" height="56" rx="12" fill="var(--a9p5-card2, #152033)" stroke="var(--a9p5-gold, #FBBF24)" stroke-width="1.5" opacity="0.98"/>
+    <text id="a9p5-tip-t1" x="14" y="24" fill="var(--a9p5-ink, #F4F7FB)" font-size="13" font-weight="700"></text>
+    <text id="a9p5-tip-t2" x="14" y="42" fill="var(--a9p5-soft, #B8C0CC)" font-size="11.5" font-weight="500"></text>
+  </g>
+
+  <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a9p5-root');
+  if(!root){
+    var nodes = document.getElementsByTagName('svg');
+    root = nodes.length ? nodes[nodes.length - 1] : null;
+  }
+  if(!root) return;
+
+  function Q(sel){ return root.querySelector(sel); }
+
+  var tip = Q('#a9p5-tip');
+  var tipBg = Q('#a9p5-tip-bg');
+  var tipT1 = Q('#a9p5-tip-t1');
+  var tipT2 = Q('#a9p5-tip-t2');
+  var statusEl = Q('#a9p5-status-text');
+  var liveEl = Q('#a9p5-live');
+
+  var labels = {
+    first: {
+      tip1: '1º fármaco de status',
+      tip2: 'Benzo parenteral · adulto TCG',
+      status: '1º = benzodiazepínico parenteral',
+      live: 'Sem exceção especial nesta matriz. Não abre com AED de manutenção.',
+      stroke: 'var(--a9p5-ok, #34D399)',
+      fill: 'var(--a9p5-ok, #34D399)'
+    },
+    lor: {
+      tip1: 'Lorazepam EV · literatura',
+      tip2: 'Ausente no PS brasileiro real',
+      status: 'Pegadinha BR: lorazepam EV tipicamente ausente',
+      live: 'Literatura ama lorazepam EV. Carrinho BR: não assume a ampola. Ancora em DZP + MDZ.',
+      stroke: 'var(--a9p5-gold, #FBBF24)',
+      fill: 'var(--a9p5-gold, #FBBF24)'
+    },
+    dzp: {
+      tip1: 'Diazepam · BR prático',
+      tip2: 'EV e retal certos · IM errado',
+      status: 'DZP: EV ✓ · retal ✓ · IM ✗',
+      live: 'Duas vias certas e uma proibida. O X coral no glúteo não é detalhe estético.',
+      stroke: 'var(--a9p5-ok, #34D399)',
+      fill: 'var(--a9p5-ok, #34D399)'
+    },
+    mdz: {
+      tip1: 'Midazolam · BR prático',
+      tip2: 'EV · IM · spray nasal',
+      status: 'MDZ: EV ✓ · IM ✓ · nasal ✓',
+      live: 'Três vias úteis. Nasal é capilar de mucosa — não confunda com inalação pulmonar.',
+      stroke: 'var(--a9p5-cyan, #22D3EE)',
+      fill: 'var(--a9p5-cyan, #22D3EE)'
+    },
+    dzpim: {
+      tip1: 'DZP intramuscular',
+      tip2: 'Errado · X coral no glúteo',
+      status: 'DZP-IM = via errada (não off-label aceitável)',
+      live: 'Marcar DZP IM é pegadinha clássica. Absorção irregular e proibição didática firme.',
+      stroke: 'var(--a9p5-coral, #F87171)',
+      fill: 'var(--a9p5-coral, #F87171)'
+    },
+    nasal: {
+      tip1: 'Spray nasal MDZ',
+      tip2: 'Absorção capilar nasal',
+      status: 'Nasal = mucosa capilar · não alvéolo',
+      live: 'A gota vai para o leito vascular da mucosa. Isso não é “inalar pro pulmão”.',
+      stroke: 'var(--a9p5-ok, #34D399)',
+      fill: 'var(--a9p5-ok, #34D399)'
+    },
+    lung: {
+      tip1: 'Pulmão · via falsa',
+      tip2: 'Nasal ≠ inalatório',
+      status: 'Erro: chamar MDZ nasal de inalatório pulmonar',
+      live: 'Banca troca “nasal” por “inalatório”. Pulmão leva X. Capilar nasal leva check.',
+      stroke: 'var(--a9p5-coral, #F87171)',
+      fill: 'var(--a9p5-coral, #F87171)'
+    },
+    ev: {
+      tip1: 'Via EV',
+      tip2: 'Certa para DZP e MDZ',
+      status: 'EV: via parental de escolha quando há acesso',
+      live: 'Diazepam e midazolam: EV permitido. É o eixo parenteral clássico de status.',
+      stroke: 'var(--a9p5-ok, #34D399)',
+      fill: 'var(--a9p5-ok, #34D399)'
+    },
+    retal: {
+      tip1: 'Via retal',
+      tip2: 'Diazepam · via certa',
+      status: 'Retal: DZP permitido (sem acesso EV)',
+      live: 'Quando o acesso venoso atrasa, retal de diazepam é via certa — não IM.',
+      stroke: 'var(--a9p5-ok, #34D399)',
+      fill: 'var(--a9p5-ok, #34D399)'
+    },
+    mdzim: {
+      tip1: 'IM midazolam',
+      tip2: 'Via certa · contrastar com DZP',
+      status: 'IM: certo no MDZ · errado no DZP',
+      live: 'O mesmo compartimento muscular: MDZ sim, DZP não. A peça existe para gravar esse contraste.',
+      stroke: 'var(--a9p5-ok, #34D399)',
+      fill: 'var(--a9p5-ok, #34D399)'
+    }
+  };
+
+  function setPhase(key){
+    root.setAttribute('data-phase', key || 'first');
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx;
+    pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x: 40, y: 40};
+    var p = pt.matrixTransform(m.inverse());
+    return {x: p.x, y: p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip || !tipT1 || !tipT2 || !tipBg) return;
+    tipT1.textContent = t1 || '';
+    tipT2.textContent = t2 || '';
+    tipBg.setAttribute('stroke', stroke || 'var(--a9p5-gold, #FBBF24)');
+    var w = 268;
+    if(t2 && t2.length > 36) w = 300;
+    tipBg.setAttribute('width', String(w));
+    var p = clientToSvg(cx, cy);
+    var x = p.x + 16;
+    var y = p.y - 64;
+    if(x + w > 820) x = p.x - w - 12;
+    if(x < 8) x = 8;
+    if(y < 8) y = p.y + 18;
+    if(y > 700) y = 700;
+    tip.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+    tip.setAttribute('opacity', '1');
+    tip.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity', '0');
+    tip.setAttribute('aria-hidden', 'true');
+  }
+
+  function applyLabel(key, cx, cy){
+    var L = labels[key];
+    if(!L) return;
+    setPhase(key);
+    if(statusEl){
+      statusEl.textContent = L.status;
+      statusEl.setAttribute('fill', L.fill || 'var(--a9p5-gold, #FBBF24)');
+    }
+    if(liveEl) liveEl.textContent = L.live;
+    if(cx != null && cy != null) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+  }
+
+  function bind(el, key){
+    if(!el) return;
+    var L = labels[key];
+    function go(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      applyLabel(key, cx, cy);
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      applyLabel(key, ev.clientX, ev.clientY);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      if(tip && tip.getAttribute('opacity') === '1' && L){
+        showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+      }
+    });
+    el.addEventListener('mouseleave', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      hideTip();
+    });
+    el.addEventListener('click', go);
+    el.addEventListener('focus', function(){
+      var b = el.getBoundingClientRect();
+      applyLabel(key, b.left + b.width/2, b.top + b.height/2);
+    });
+    el.addEventListener('blur', function(){ hideTip(); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        go(ev);
+      }
+    });
+  }
+
+  bind(Q('#a9p5-chip-first'), 'first');
+  bind(Q('#a9p5-panel-lor'), 'lor');
+  bind(Q('#a9p5-panel-dzp'), 'dzp');
+  bind(Q('#a9p5-panel-mdz'), 'mdz');
+  bind(Q('#a9p5-site-ev'), 'ev');
+  bind(Q('#a9p5-site-retal'), 'retal');
+  bind(Q('#a9p5-site-glute'), 'dzpim');
+  bind(Q('#a9p5-site-mdzim'), 'mdzim');
+  bind(Q('#a9p5-site-nasal'), 'nasal');
+  bind(Q('#a9p5-site-lung'), 'lung');
+  bind(Q('#a9p5-chip-lor'), 'lor');
+  bind(Q('#a9p5-chip-dzpim'), 'dzpim');
+  bind(Q('#a9p5-chip-nasal'), 'nasal');
+  bind(Q('#a9p5-chip-lung'), 'lung');
+  bind(Q('#a9p5-chip-dzp'), 'dzp');
+  bind(Q('#a9p5-chip-mdz'), 'mdz');
+  bind(Q('#a9p5-chip-ev'), 'ev');
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    if(!t) return;
+    var keep = false;
+    var nodes = root.querySelectorAll('.a9p5-hs, .a9p5-chip');
+    for(var i = 0; i < nodes.length; i++){
+      if(nodes[i].contains(t) || nodes[i] === t){ keep = true; break; }
+    }
+    if(!keep) hideTip();
+  });
+
+  setPhase('first');
+  if(statusEl){
+    statusEl.textContent = '1º = benzo parenteral · BR real ancora DZP + MDZ';
+    statusEl.setAttribute('fill', 'var(--a9p5-gold, #FBBF24)');
+  }
+  if(liveEl){
+    liveEl.textContent = 'X coral no glúteo do DZP-IM · nasal capilar ≠ pulmão. Toque ou passe o cursor nas vias.';
+  }
+})();
+  ]]></script>
+</svg>
+</div>
+
+<div class="a9-img-wrap">
+  <img src="media/B05-midazolam-iv-sandoz-heilman.jpg" alt="Dois frascos de vidro de midazolam injetável Sandoz: à esquerda 1 mg por mL (tampa laranja) e à direita 5 mg por mL (tampa verde); rótulos legíveis com via intramuscular e intravenosa lenta." loading="lazy">
+  <div class="a9-cap">Midazolam parenteral real (1 mg/mL e 5 mg/mL) — material físico das vias do status. James Heilman, MD, 2009 · Wikimedia Commons · CC BY 3.0. Nota: lorazepam EV ausente na prática BR.</div>
+</div>
+
+<div class="a9-pegs"><div class="a9-peg-l">⚡ Pegadinhas de prova</div><ol><li>Marcar lorazepam EV como se estivesse no carrinho BR.</li><li>Marcar DZP IM.</li><li>Chamar MDZ nasal de "inalatório".</li></ol></div>
+
+<div class="a9-why"><div class="a9-why-l">Por que importa</div><p>Via errada = absorção errática ou gabarito anulado.</p></div>
+
+<div class="a9-resumo"><div class="a9-res-l">📌 Resumo operacional</div><p>1º = <strong>benzo parenteral</strong>. BR: <strong>DZP</strong> (IV/retal; <strong>nunca IM</strong>) ou <strong>MDZ</strong> (IV/IM/nasal). Lorazepam lit. <strong>sem</strong> EV no BR. Nasal ≠ inalatório.</p></div>
+
+<div class="a9-quiz" id="quiz-p5"><h3>🧠 Quiz</h3>
+<div class="a9-qb" data-q="0"><div class="a9-qe">Q1. No plantão BR, 1ª linha parenteral prática de status (quando benzo é o 1º):</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) Lorazepam EV (sempre disponível)</button>
+<button class="a9-opt" data-opt="B">B) Diazepam ou midazolam (realidade BR)</button>
+<button class="a9-opt" data-opt="C">C) Só fenitoína</button>
+<button class="a9-opt" data-opt="D">D) Só propofol</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+<div class="a9-qb" data-q="1"><div class="a9-qe">Q2. Via <strong>incorreta</strong> de diazepam nesta emergência:</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) IV</button>
+<button class="a9-opt" data-opt="B">B) Retal</button>
+<button class="a9-opt" data-opt="C">C) IM</button>
+<button class="a9-opt" data-opt="D">D) Nenhuma — todas equivalentes</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+</div>
+</div>
+<script>
+(function(){
+var A={'0':{c:'B',f:'<strong>Gabarito: B.</strong><br><br><strong>A:</strong> literatura ≠ carrinho BR. <em>Por que cair:</em> decorou UpToDate sem filtro local.<br><strong>C, D:</strong> degraus errados. <em>Por que cair:</em> confunde escada.'},'1':{c:'C',f:'<strong>Gabarito: C.</strong> Absorção errática; é <strong>errado</strong>, não "só off-label".<br><br><strong>A, B:</strong> corretas. <em>Por que cair em D:</em> equaliza vias.'}};
+var S='p2-status:a9:p05:quiz:v1',s=null;
+try{var r=localStorage.getItem(S);if(r)s=JSON.parse(r);}catch(e){}
+document.querySelectorAll('.a9-qb').forEach(function(b){
+var i=b.getAttribute('data-q'),a=A[i];if(!a)return;
+var f=b.querySelector('.a9-qfb'),o=b.querySelectorAll('.a9-opt');
+function F(c,ch){
+o.forEach(function(x){x.classList.remove('chosen','correct','wrong');if(x.getAttribute('data-opt')===c)x.classList.add('correct');if(x.getAttribute('data-opt')===ch&&ch!==c)x.classList.add('wrong');if(x.getAttribute('data-opt')===ch)x.classList.add('chosen');x.disabled=true;});
+f.className='a9-qfb show '+(ch===c?'cok':'er');f.innerHTML=a.f;
+}
+if(s&&s[i]!==undefined)F(a.c,s[i]);
+o.forEach(function(x){x.addEventListener('click',function(){if(x.disabled)return;var ch=x.getAttribute('data-opt');F(a.c,ch);var st=s?JSON.parse(JSON.stringify(s)):{};st[i]=ch;try{localStorage.setItem(S,JSON.stringify(st));}catch(e){}});});
+});
+})();
+</script>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p4.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Estabiliza e mede glicose</span></a><a class="next" href="p6.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Dose, teto e o medo de intubar</span></a></nav>
+</main>
+<footer class="rodape">Manejo da Crise / Status Epiléptico · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas desta aula"><p class="menu-panel__title">Aula 9 · 11 páginas</p><ul class="menu-panel__list"><li><a href="index.html">1 · Cláudio Honor</a></li><li><a href="p2.html">2 · Cinco age, trinta lesa</a></li><li><a href="p3.html">3 · Status convulsivo × não convulsivo</a></li><li><a href="p4.html">4 · Estabiliza e mede glicose</a></li><li><a href="p5.html">5 · Benzo: o 1º, as vias, o Brasil</a></li><li><a href="p6.html">6 · Dose, teto e o medo de intubar</a></li><li><a href="p7.html">7 · Segundo fármaco</a></li><li><a href="p8.html">8 · Fenitoína: 20 mg/kg, 50 mg/min</a></li><li><a href="p9.html">9 · Status refratário</a></li><li><a href="p10.html">10 · Exceções que matam gabarito</a></li><li><a href="p11.html">11 · Prova, fecho e escada final</a></li></ul></nav></div>
+<script>(function(){var btn=document.getElementById('menu-toggle'),ov=document.getElementById('menu-overlay');if(!btn||!ov)return;function fecha(){ov.setAttribute('aria-hidden','true');btn.setAttribute('aria-expanded','false');document.body.style.overflow='';}function abre(){ov.setAttribute('aria-hidden','false');btn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}btn.addEventListener('click',function(){ov.getAttribute('aria-hidden')==='false'?fecha():abre();});document.addEventListener('click',function(e){var p=ov.querySelector('.menu-panel');if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target))fecha();});document.addEventListener('keydown',function(e){if(e.key==='Escape')fecha();});})();</script>
+</body>
+</html>

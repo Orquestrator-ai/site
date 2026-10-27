@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" class="a12p16h-root" id="a12p16h-svg" data-active-mode="wall">
+  <defs>
+    <style>
+      .a12p16h-root {
+        --a12p16h-bg: #160814;
+        --a12p16h-card-bg: #240c20;
+        --a12p16h-card-border: #4a1a41;
+        --a12p16h-text-title: #ffffff;
+        --a12p16h-text-body: #f3e5ec;
+        --a12p16h-text-muted: #bca0b2;
+        --a12p16h-wall-color: #f43f5e;
+        --a12p16h-floor-color: #ec4899;
+        --a12p16h-atla-color: #fbbf24;
+        --a12p16h-kegel-color: #34d399;
+        --a12p16h-alert-bg: #3f121d;
+        --a12p16h-alert-border: #991b1b;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+      [data-theme="light"] .a12p16h-root {
+        --a12p16h-bg: #fcf7fa;
+        --a12p16h-card-bg: #ffffff;
+        --a12p16h-card-border: #e8d5e2;
+        --a12p16h-text-title: #2a0823;
+        --a12p16h-text-body: #3b1233;
+        --a12p16h-text-muted: #704866;
+        --a12p16h-wall-color: #e11d48;
+        --a12p16h-floor-color: #db2777;
+        --a12p16h-atla-color: #d97706;
+        --a12p16h-kegel-color: #059669;
+        --a12p16h-alert-bg: #fef2f2;
+        --a12p16h-alert-border: #f87171;
+      }
+
+      .a12p16h-bg-rect { fill: var(--a12p16h-bg, #160814); }
+      .a12p16h-card { fill: var(--a12p16h-card-bg, #240c20); stroke: var(--a12p16h-card-border, #4a1a41); stroke-width: 1.5px; rx: 12px; }
+      .a12p16h-title { fill: var(--a12p16h-text-title, #ffffff); font-size: 19px; font-weight: 700; letter-spacing: 0.4px; }
+      .a12p16h-subtitle { fill: var(--a12p16h-text-muted, #bca0b2); font-size: 12px; font-weight: 500; }
+      
+      /* Interactive tabs */
+      .a12p16h-tab { cursor: pointer; transition: all 0.2s ease; }
+      .a12p16h-tab-bg { fill: #2a0c24; stroke: #521c49; stroke-width: 1.5px; rx: 8px; }
+      .a12p16h-tab:hover .a12p16h-tab-bg { fill: #3e1236; stroke: #86276d; }
+      .a12p16h-tab.a12p16h-active .a12p16h-tab-bg { fill: #5c1d52; stroke: #f43f5e; stroke-width: 2px; }
+      
+      .a12p16h-tab-text { fill: var(--a12p16h-text-body, #f3e5ec); font-size: 11px; font-weight: 700; text-anchor: middle; }
+      
+      /* Anatomical clickable shapes */
+      .a12p16h-clickable { cursor: pointer; transition: opacity 0.25s ease, filter 0.25s ease; }
+      .a12p16h-clickable:hover { filter: brightness(1.25); }
+      
+      /* Active highlights */
+      .a12p16h-hl-wall { fill: none; stroke: var(--a12p16h-wall-color, #f43f5e); stroke-width: 4px; opacity: 0; transition: opacity 0.3s ease; filter: drop-shadow(0 0 6px rgba(244,63,94,0.6)); }
+      .a12p16h-hl-floor { fill: none; stroke: var(--a12p16h-floor-color, #ec4899); stroke-width: 4px; opacity: 0; transition: opacity 0.3s ease; filter: drop-shadow(0 0 6px rgba(236,72,153,0.6)); }
+      .a12p16h-hl-atla { fill: none; stroke: var(--a12p16h-atla-color, #fbbf24); stroke-width: 5px; opacity: 0; transition: opacity 0.3s ease; filter: drop-shadow(0 0 8px rgba(251,191,36,0.8)); }
+      .a12p16h-hl-kegel { fill: none; stroke: var(--a12p16h-kegel-color, #34d399); stroke-width: 5px; opacity: 0; transition: opacity 0.3s ease; filter: drop-shadow(0 0 8px rgba(52,211,153,0.8)); }
+      
+      .a12p16h-root[data-active-mode="wall"] .a12p16h-hl-wall { opacity: 1; }
+      .a12p16h-root[data-active-mode="floor"] .a12p16h-hl-floor { opacity: 1; }
+      .a12p16h-root[data-active-mode="atla"] .a12p16h-hl-atla { opacity: 1; }
+      .a12p16h-root[data-active-mode="kegel"] .a12p16h-hl-kegel { opacity: 1; }
+
+      /* Dimming inactive anatomy when mode is selected */
+      .a12p16h-anat-part { transition: opacity 0.3s ease; }
+      .a12p16h-root[data-active-mode="wall"] .a12p16h-dim-on-wall { opacity: 0.3; }
+      .a12p16h-root[data-active-mode="floor"] .a12p16h-dim-on-floor { opacity: 0.3; }
+      .a12p16h-root[data-active-mode="atla"] .a12p16h-dim-on-atla { opacity: 0.35; }
+      .a12p16h-root[data-active-mode="kegel"] .a12p16h-dim-on-kegel { opacity: 0.3; }
+      
+      /* Muscle texture patterns */
+      .a12p16h-striked { stroke-dasharray: 4,3; }
+    </style>
+
+    <linearGradient id="a12p16h-grad-wall" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9f1239" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    
+    <linearGradient id="a12p16h-grad-floor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#831843" />
+      <stop offset="100%" stop-color="#db2777" />
+    </linearGradient>
+
+    <linearGradient id="a12p16h-grad-kegel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <linearGradient id="a12p16h-grad-bone" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2d1d29" />
+      <stop offset="100%" stop-color="#483243" />
+    </linearGradient>
+
+    <pattern id="a12p16h-hatch-wall" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#f43f5e" stroke-width="1.2" opacity="0.4" />
+    </pattern>
+    <pattern id="a12p16h-hatch-floor" width="10" height="10" patternTransform="rotate(-30 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#f472b6" stroke-width="1.2" opacity="0.4" />
+    </pattern>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1000" height="680" class="a12p16h-bg-rect" />
+
+  <!-- Header Banner -->
+  <g transform="translate(30, 22)">
+    <text x="0" y="20" class="a12p16h-title">ASSOALHO PÉLVICO: ANATOMIA DO CORTE CORONAL</text>
+    <text x="0" y="38" class="a12p16h-subtitle">Diferenciação Anatômica Crítica: Parede Lateral (M. Obturador Interno) vs. Chão Pélvico (M. Levantador do Ânus)</text>
+  </g>
+
+  <!-- Orientation Badge -->
+  <g transform="translate(30, 72)">
+    <rect width="280" height="26" rx="6" fill="#2d0c25" stroke="#5c1d52" stroke-width="1" />
+    <circle cx="14" cy="13" r="4" fill="#34d399" />
+    <text x="26" y="17" fill="#f3e5ec" font-size="11" font-weight="600">CORTE CORONAL · Visão Anterior (Frente)</text>
+  </g>
+
+  <!-- MAIN ANATOMICAL STAGE (Center Left) -->
+  <g transform="translate(30, 110)">
+    <!-- Stage Outer Container -->
+    <rect width="570" height="540" class="a12p16h-card" />
+    
+    <!-- Anatomical Background Grid / Guide Lines -->
+    <line x1="285" y1="20" x2="285" y2="520" stroke="#3d1437" stroke-width="1" stroke-dasharray="4,4" />
+    <text x="285" y="35" fill="#8c6882" font-size="10" font-weight="700" text-anchor="middle">LINHA MÉDIA SAGITAL</text>
+
+    <!-- 1. BONY PELVIS / ISCHIAL WALLS (Parede Óssea Lateral) -->
+    <g class="a12p16h-anat-part a12p16h-dim-on-wall a12p16h-dim-on-floor a12p16h-dim-on-atla a12p16h-dim-on-kegel">
+      <!-- Left Pelvic Bone (Ischium / Pubic Ramus) -->
+      <path d="M 40,60 C 70,60 100,80 120,150 C 135,210 140,280 140,360 C 140,410 120,460 90,490 L 40,490 Z" fill="url(#a12p16h-grad-bone)" stroke="#6b4c63" stroke-width="2" />
+      <path d="M 50,80 C 75,80 95,100 110,160 C 122,210 125,280 125,350" fill="none" stroke="#251221" stroke-width="3" />
+      
+      <!-- Right Pelvic Bone -->
+      <path d="M 530,60 C 500,60 470,80 450,150 C 435,210 430,280 430,360 C 430,410 450,460 480,490 L 530,490 Z" fill="url(#a12p16h-grad-bone)" stroke="#6b4c63" stroke-width="2" />
+      <path d="M 520,80 C 495,80 475,100 460,160 C 448,210 445,280 445,350" fill="none" stroke="#251221" stroke-width="3" />
+      
+      <text x="65" y="110" fill="#a07d98" font-size="11" font-weight="700">ÍSQUIO / OSCO PÉLVICO</text>
+      <text x="505" y="110" fill="#a07d98" font-size="11" font-weight="700" text-anchor="end">PAREDE ÓSSEA</text>
+    </g>
+
+    <!-- 2. OBTURATOR INTERNUS MUSCLE (Parede Lateral - NOT Floor!) -->
+    <g class="a12p16h-anat-part a12p16h-dim-on-floor a12p16h-dim-on-kegel a12p16h-clickable" id="a12p16h-group-wall">
+      <!-- Left Obturator Internus -->
+      <path d="M 120,150 C 130,190 135,240 135,310 C 135,360 128,410 115,450 L 150,440 C 160,390 165,320 162,250 C 158,200 142,165 120,150 Z" fill="url(#a12p16h-grad-wall)" stroke="#f43f5e" stroke-width="1.5" />
+      <path d="M 120,150 C 130,190 135,240 135,310 C 135,360 128,410 115,450 L 150,440 C 160,390 165,320 162,250 C 158,200 142,165 120,150 Z" fill="url(#a12p16h-hatch-wall)" />
+      <!-- Left Muscle Striations -->
+      <path d="M 130,180 C 142,230 146,290 144,350 M 140,200 C 150,250 152,310 148,370" fill="none" stroke="#fda4af" stroke-width="1" class="a12p16h-striked" opacity="0.6" />
+
+      <!-- Right Obturator Internus -->
+      <path d="M 450,150 C 440,190 435,240 435,310 C 435,360 442,410 455,450 L 420,440 C 410,390 405,320 408,250 C 412,200 428,165 450,150 Z" fill="url(#a12p16h-grad-wall)" stroke="#f43f5e" stroke-width="1.5" />
+      <path d="M 450,150 C 440,190 435,240 435,310 C 435,360 442,410 455,450 L 420,440 C 410,390 405,320 408,250 C 412,200 428,165 450,150 Z" fill="url(#a12p16h-hatch-wall)" />
+      <!-- Right Muscle Striations -->
+      <path d="M 440,180 C 428,230 424,290 426,350 M 430,200 C 420,250 418,310 422,370" fill="none" stroke="#fda4af" stroke-width="1" class="a12p16h-striked" opacity="0.6" />
+
+      <!-- Active Wall Overlay Highlight -->
+      <path d="M 120,150 C 130,190 135,240 135,310 C 135,360 128,410 115,450 L 150,440 C 160,390 165,320 162,250 C 158,200 142,165 120,150 Z" class="a12p16h-hl-wall" />
+      <path d="M 450,150 C 440,190 435,240 435,310 C 435,360 442,410 455,450 L 420,440 C 410,390 405,320 408,250 C 412,200 428,165 450,150 Z" class="a12p16h-hl-wall" />
+    </g>
+
+    <!-- 3. ARCO TENDÍNEO DO LEVANTADOR DO ÂNUS (ATLA - Fascial Transition Band) -->
+    <g class="a12p16h-anat-part a12p16h-dim-on-wall a12p16h-dim-on-floor a12p16h-dim-on-kegel a12p16h-clickable" id="a12p16h-group-atla">
+      <!-- Left ATLA Band -->
+      <path d="M 152,280 C 155,305 156,330 152,355" fill="none" stroke="#fbbf24" stroke-width="5" stroke-linecap="round" />
+      <circle cx="152" cy="280" r="4" fill="#ffffff" stroke="#fbbf24" stroke-width="2" />
+      <circle cx="152" cy="355" r="4" fill="#ffffff" stroke="#fbbf24" stroke-width="2" />
+      
+      <!-- Right ATLA Band -->
+      <path d="M 418,280 C 415,305 414,330 418,355" fill="none" stroke="#fbbf24" stroke-width="5" stroke-linecap="round" />
+      <circle cx="418" cy="280" r="4" fill="#ffffff" stroke="#fbbf24" stroke-width="2" />
+      <circle cx="418" cy="355" r="4" fill="#ffffff" stroke="#fbbf24" stroke-width="2" />
+
+      <!-- Active ATLA Highlight -->
+      <path d="M 152,280 C 155,305 156,330 152,355" class="a12p16h-hl-atla" stroke-linecap="round" />
+      <path d="M 418,280 C 415,305 414,330 418,355" class="a12p16h-hl-atla" stroke-linecap="round" />
+    </g>
+
+    <!-- 4. LEVATOR ANI & PELVIC FLOOR MUSCLES (Chão Pélvico) -->
+    <g class="a12p16h-anat-part a12p16h-dim-on-wall a12p16h-clickable" id="a12p16h-group-floor">
+      <!-- Left Iliococcygeus & Outer Levator Ani Sheet -->
+      <path d="M 154,320 C 180,360 210,395 245,415 L 235,445 C 195,425 165,385 146,345 Z" fill="url(#a12p16h-grad-floor)" stroke="#ec4899" stroke-width="1.5" />
+      <path d="M 154,320 C 180,360 210,395 245,415 L 235,445 C 195,425 165,385 146,345 Z" fill="url(#a12p16h-hatch-floor)" />
+
+      <!-- Right Iliococcygeus & Outer Levator Ani Sheet -->
+      <path d="M 416,320 C 390,360 360,395 325,415 L 335,445 C 375,425 405,385 424,345 Z" fill="url(#a12p16h-grad-floor)" stroke="#ec4899" stroke-width="1.5" />
+      <path d="M 416,320 C 390,360 360,395 325,415 L 335,445 C 375,425 405,385 424,345 Z" fill="url(#a12p16h-hatch-floor)" />
+
+      <!-- Active Floor Highlight -->
+      <path d="M 154,320 C 180,360 210,395 245,415 L 235,445 C 195,425 165,385 146,345 Z" class="a12p16h-hl-floor" />
+      <path d="M 416,320 C 390,360 360,395 325,415 L 335,445 C 375,425 405,385 424,345 Z" class="a12p16h-hl-floor" />
+    </g>
+
+    <!-- 5. PUBOCOCCYGEUS MUSCLE (Inner Levator Ani - Kegel Target) -->
+    <g class="a12p16h-anat-part a12p16h-dim-on-wall a12p16h-dim-on-atla a12p16h-clickable" id="a12p16h-group-kegel">
+      <!-- Left Pubococcygeus -->
+      <path d="M 235,415 C 255,428 270,442 278,460 L 252,480 C 242,462 225,445 205,432 Z" fill="url(#a12p16h-grad-kegel)" stroke="#34d399" stroke-width="2" />
+      <path d="M 220,425 C 238,440 252,458 260,470" fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-dasharray="3,2" />
+
+      <!-- Right Pubococcygeus -->
+      <path d="M 335,415 C 315,428 300,442 292,460 L 318,480 C 328,462 345,445 365,432 Z" fill="url(#a12p16h-grad-kegel)" stroke="#34d399" stroke-width="2" />
+      <path d="M 350,425 C 332,440 318,458 310,470" fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-dasharray="3,2" />
+
+      <!-- Active Kegel Highlight -->
+      <path d="M 235,415 C 255,428 270,442 278,460 L 252,480 C 242,462 225,445 205,432 Z" class="a12p16h-hl-kegel" />
+      <path d="M 335,415 C 315,428 300,442 292,460 L 318,480 C 328,462 345,445 365,432 Z" class="a12p16h-hl-kegel" />
+    </g>
+
+    <!-- 6. CENTRAL VISCERA (Bexiga, Vagina, Reto / Hiato Urogenital) -->
+    <g class="a12p16h-anat-part a12p16h-dim-on-wall a12p16h-dim-on-floor a12p16h-dim-on-atla a12p16h-dim-on-kegel">
+      <!-- Bexiga (Urinary Bladder Dome) -->
+      <path d="M 230,220 C 230,170 340,170 340,220 C 340,270 230,270 230,220 Z" fill="#3b1535" stroke="#9d4edd" stroke-width="1.5" opacity="0.85" />
+      <text x="285" y="222" fill="#e0aaff" font-size="11" font-weight="700" text-anchor="middle">BEXIGA</text>
+
+      <!-- Vagina & Canal Vaginal -->
+      <path d="M 265,270 C 265,270 305,270 305,270 L 298,390 L 272,390 Z" fill="#4a183d" stroke="#c77dff" stroke-width="1.5" opacity="0.85" />
+      <text x="285" y="335" fill="#f0d6ff" font-size="11" font-weight="700" text-anchor="middle">VAGINA</text>
+
+      <!-- Reto & Canal Anal (Inferior) -->
+      <path d="M 270,410 L 300,410 L 295,500 L 275,500 Z" fill="#2d1029" stroke="#a21caf" stroke-width="1.5" opacity="0.85" />
+      <text x="285" y="455" fill="#f5d0fe" font-size="10" font-weight="700" text-anchor="middle">RETO</text>
+    </g>
+
+    <!-- 7. ANATOMICAL CALLOUT LABELS & LEADER LINES -->
+    <!-- Label 1: Obturador Interno (Parede Lateral) -->
+    <g transform="translate(15, 170)" class="a12p16h-clickable" id="a12p16h-lbl-wall">
+      <rect width="190" height="34" rx="6" fill="#3f121d" stroke="#f43f5e" stroke-width="1.5" />
+      <text x="10" y="15" fill="#fecdd3" font-size="10" font-weight="800">M. OBTURADOR INTERNO</text>
+      <text x="10" y="27" fill="#fb7185" font-size="9" font-weight="700">PAREDE LATERAL (NÃO É CHÃO!)</text>
+      <!-- Leader Line -->
+      <path d="M 140,34 L 140,80 L 146,80" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="3,2" />
+      <circle cx="146" cy="80" r="3" fill="#f43f5e" />
+    </g>
+
+    <!-- Label 2: Arco Tendíneo (ATLA) -->
+    <g transform="translate(15, 275)" class="a12p16h-clickable" id="a12p16h-lbl-atla">
+      <rect width="180" height="34" rx="6" fill="#3a2507" stroke="#fbbf24" stroke-width="1.5" />
+      <text x="10" y="15" fill="#fef3c7" font-size="10" font-weight="800">ARCO TENDÍNEO (ATLA)</text>
+      <text x="10" y="27" fill="#fcd34d" font-size="9" font-weight="700">Transição Fascial / Origem</text>
+      <!-- Leader Line -->
+      <path d="M 130,34 L 130,50 L 152,50" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2" />
+      <circle cx="152" cy="50" r="3" fill="#fbbf24" />
+    </g>
+
+    <!-- Label 3: Levantador do Ânus (Chão Pélvico) -->
+    <g transform="translate(15, 470)" class="a12p16h-clickable" id="a12p16h-lbl-floor">
+      <rect width="190" height="34" rx="6" fill="#3b112c" stroke="#ec4899" stroke-width="1.5" />
+      <text x="10" y="15" fill="#fbcfe8" font-size="10" font-weight="800">M. LEVANTADOR DO ÂNUS</text>
+      <text x="10" y="27" fill="#f472b6" font-size="9" font-weight="700">CHÃO PÉLVICO (DIAFRAGMA)</text>
+      <!-- Leader Line -->
+      <path d="M 140,0 L 140,-45 L 180,-45" fill="none" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="3,2" />
+      <circle cx="180" cy="-45" r="3" fill="#ec4899" />
+    </g>
+
+    <!-- Label 4: Pubococcígeo (Treino de Kegel) -->
+    <g transform="translate(365, 470)" class="a12p16h-clickable" id="a12p16h-lbl-kegel">
+      <rect width="190" height="34" rx="6" fill="#06372b" stroke="#34d399" stroke-width="1.5" />
+      <text x="10" y="15" fill="#a7f3d0" font-size="10" font-weight="800">M. PUBOCOCCÍGEO</text>
+      <text x="10" y="27" fill="#34d399" font-size="9" font-weight="700">ALVO DO TREINO DE KEGEL</text>
+      <!-- Leader Line -->
+      <path d="M 50,0 L 50,-25 L -45,-25" fill="none" stroke="#34d399" stroke-width="1.5" stroke-dasharray="3,2" />
+      <circle cx="-45" cy="-25" r="3" fill="#34d399" />
+    </g>
+  </g>
+
+  <!-- INTERACTIVE CLINICAL INTERPRETATION PANEL (Right) -->
+  <g transform="translate(620, 110)">
+    <rect width="350" height="540" class="a12p16h-card" />
+    
+    <!-- Panel Header -->
+    <g transform="translate(20, 20)">
+      <text x="0" y="16" fill="#ffffff" font-size="14" font-weight="800" letter-spacing="0.5px">PAINEL DE FIXAÇÃO DE PROVA</text>
+      <text x="0" y="32" fill="#bca0b2" font-size="11" font-weight="500">Selecione uma estrutura para analisar a pegadinha:</text>
+    </g>
+
+    <!-- Mode Selector Tabs (4 Pill Buttons) -->
+    <g transform="translate(20, 60)">
+      <!-- Tab 1: Parede Lateral -->
+      <g class="a12p16h-tab a12p16h-active" id="a12p16h-tab-wall" transform="translate(0, 0)">
+        <rect width="150" height="32" class="a12p16h-tab-bg" />
+        <text x="75" y="20" class="a12p16h-tab-text">PAREDE LATERAL</text>
+      </g>
+      
+      <!-- Tab 2: Chão Pélvico -->
+      <g class="a12p16h-tab" id="a12p16h-tab-floor" transform="translate(160, 0)">
+        <rect width="150" height="32" class="a12p16h-tab-bg" />
+        <text x="75" y="20" class="a12p16h-tab-text">CHÃO PÉLVICO</text>
+      </g>
+
+      <!-- Tab 3: Arco Tendíneo -->
+      <g class="a12p16h-tab" id="a12p16h-tab-atla" transform="translate(0, 40)">
+        <rect width="150" height="32" class="a12p16h-tab-bg" />
+        <text x="75" y="20" class="a12p16h-tab-text">ARCO TENDÍNEO (ATLA)</text>
+      </g>
+
+      <!-- Tab 4: Treino de Kegel -->
+      <g class="a12p16h-tab" id="a12p16h-tab-kegel" transform="translate(160, 40)">
+        <rect width="150" height="32" class="a12p16h-tab-bg" />
+        <text x="75" y="20" class="a12p16h-tab-text">TREINO DE KEGEL</text>
+      </g>
+    </g>
+
+    <!-- CARD 1: DIAGNÓSTICO ANATÔMICO -->
+    <g transform="translate(20, 150)">
+      <rect width="310" height="95" rx="8" fill="#1b0918" stroke="#4a1a41" stroke-width="1" />
+      <text x="15" y="22" fill="#bca0b2" font-size="10" font-weight="700">ESTRUTURA SELECIONADA:</text>
+      <text x="15" y="42" fill="#ffffff" font-size="15" font-weight="800" id="a12p16h-panel-title">M. Obturador Interno</text>
+      
+      <!-- Tag Pill -->
+      <g id="a12p16h-panel-tag-group" transform="translate(15, 55)">
+        <rect width="210" height="24" rx="4" class="a12p16h-badge-wall" id="a12p16h-panel-tag-bg" />
+        <text x="105" y="16" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle" id="a12p16h-panel-tag-text">PAREDE LATERAL (NÃO É CHÃO)</text>
+      </g>
+    </g>
+
+    <!-- CARD 2: PONTO CRÍTICO / ARMADILHA DE PROVA -->
+    <g transform="translate(20, 260)">
+      <rect width="310" height="135" rx="8" fill="#3f121d" stroke="#991b1b" stroke-width="1.5" id="a12p16h-alert-box" />
+      <g transform="translate(15, 18)">
+        <circle cx="8" cy="8" r="8" fill="#ef4444" />
+        <text x="8" y="12" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle">!</text>
+        <text x="24" y="12" fill="#fca5a5" font-size="11" font-weight="800" letter-spacing="0.4px" id="a12p16h-alert-header">ARMADILHA DE PROVA DA RESIDÊNCIA</text>
+      </g>
+
+      <foreignObject x="15" y="42" width="280" height="85">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="color: #fecdd3; font-size: 11px; line-height: 1.45; font-weight: 500;" id="a12p16h-alert-text">
+          O <strong>músculo obturador interno</strong> é volumoso e fica dentro da pelve, mas <em>forra a parede óssea lateral</em>! Ele NUNCA compõe o diafragma pélvico (chão). Confundi-lo com o levantador do ânus é o erro nº 1 nas questões.
+        </div>
+      </foreignObject>
+    </g>
+
+    <!-- CARD 3: CONCLUSÃO DIDÁTICA E RESUMO -->
+    <g transform="translate(20, 410)">
+      <rect width="310" height="110" rx="8" fill="#1b0918" stroke="#4a1a41" stroke-width="1" />
+      <text x="15" y="22" fill="#fbbf24" font-size="10" font-weight="800">MEMORIZE PARA A PROVA:</text>
+      
+      <foreignObject x="15" y="32" width="280" height="70">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="color: #f3e5ec; font-size: 11px; line-height: 1.45; font-weight: 400;" id="a12p16h-summary-text">
+          • <strong>Parede Lateral:</strong> M. Obturador Interno<br/>
+          • <strong>Chão Pélvico:</strong> M. Levantador do Ânus + Coccígeo<br/>
+          • <strong>Linha de Transição:</strong> Arco Tendíneo do Levantador do Ânus (ATLA).
+        </div>
+      </foreignObject>
+    </g>
+  </g>
+
+  <!-- SELF-CONTAINED INTERACTIVE ENGINE (INLINE JS) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('a12p16h-svg');
+      if (!root) return;
+
+      var modesData = {
+        wall: {
+          title: "M. Obturador Interno",
+          tagText: "PAREDE LATERAL (NÃO É CHÃO)",
+          tagClass: "a12p16h-badge-wall",
+          alertHeader: "ARMADILHA DE PROVA DA RESIDÊNCIA",
+          alertBg: "#3f121d",
+          alertBorder: "#991b1b",
+          alertText: "O <strong>músculo obturador interno</strong> é volumoso e fica dentro da pelve, mas <em>forra a parede óssea lateral</em>! Ele NUNCA compõe o diafragma pélvico (chão). Confundi-lo com o levantador do ânus é o erro nº 1 nas questões de anatomia pélvica.",
+          summaryText: "• <strong>Parede Lateral:</strong> M. Obturador Interno.<br/>• <strong>Função:</strong> Rotação lateral do quadril.<br/>• <strong>Regra:</strong> Forra a pelve, mas NÃO sustenta as vísceras de baixo."
+        },
+        floor: {
+          title: "M. Levantador do Ânus",
+          tagText: "CHÃO PÉLVICO (DIAFRAGMA)",
+          tagClass: "a12p16h-badge-floor",
+          alertHeader: "COMPOSIÇÃO DO DIAFRAGMA PÉLVICO",
+          alertBg: "#3b112c",
+          alertBorder: "#ec4899",
+          alertText: "O verdadeiro <strong>chão pélvico</strong> é formado pelo <em>M. Levantador do Ânus</em> (pubococcígeo, iliococcígeo e puborretal) + <em>M. Coccígeo</em>. Eles formam um funil muscular suspenso que suporta todo o peso visceral.",
+          summaryText: "• <strong>Componentes:</strong> Pubococcígeo + Iliococcígeo + Puborretal.<br/>• <strong>Fixação:</strong> Origina-se no ATLA (parede lateral) e converge para a linha média."
+        },
+        atla: {
+          title: "Arco Tendíneo (ATLA)",
+          tagText: "TRANSIÇÃO FASCIAL DE ORIGEM",
+          tagClass: "a12p16h-badge-atla",
+          alertHeader: "PONTO DE TRANSIÇÃO ANATÔMICA",
+          alertBg: "#3a2507",
+          alertBorder: "#fbbf24",
+          alertText: "O <strong>Arco Tendíneo do Levantador do Ânus (ATLA)</strong> é um espessamento da fáscia do m. obturador interno. É exatamente no ATLA que o levantador do ânus se origina, marcando a transição exata entre a <em>parede lateral</em> e o <em>chão</em>.",
+          summaryText: "• <strong>Localização:</strong> Suspenso sobre a fáscia do obturador interno.<br/>• <strong>Importância:</strong> Ponto de ancoragem cirúrgica e marco anatômico decisivo."
+        },
+        kegel: {
+          title: "Feixe Pubococcígeo",
+          tagText: "ALVO DE FORTALECIMENTO (KEGEL)",
+          tagClass: "a12p16h-badge-kegel",
+          alertHeader: "CORRELAÇÃO CLÍNICA DE FISIOTERAPIA",
+          alertBg: "#06372b",
+          alertBorder: "#34d399",
+          alertText: "Dentro do levantador do ânus, o <strong>músculo pubococcígeo</strong> é o feixe muscular diretamente fortalecido nos <em>Exercícios de Kegel</em> e biofeedback. Ele envolve os hiatos urogenital e anal, garantindo a continência.",
+          summaryText: "• <strong>Indicação:</strong> Tratamento da incontinência urinária de esforço.<br/>• <strong>Mecanismo:</strong> Aumento do tónus muscular e fechamento uretral sob estresse."
+        }
+      };
+
+      function setMode(mode) {
+        if (!modesData[mode]) return;
+        root.setAttribute('data-active-mode', mode);
+
+        // Update tabs active state
+        var tabs = ['wall', 'floor', 'atla', 'kegel'];
+        tabs.forEach(function(m) {
+          var tabEl = document.getElementById('a12p16h-tab-' + m);
+          if (tabEl) {
+            if (m === mode) {
+              tabEl.classList.add('a12p16h-active');
+            } else {
+              tabEl.classList.remove('a12p16h-active');
+            }
+          }
+        });
+
+        // Update panel contents
+        var data = modesData[mode];
+        var titleEl = document.getElementById('a12p16h-panel-title');
+        var tagTextEl = document.getElementById('a12p16h-panel-tag-text');
+        var tagBgEl = document.getElementById('a12p16h-panel-tag-bg');
+        var alertHeaderEl = document.getElementById('a12p16h-alert-header');
+        var alertBoxEl = document.getElementById('a12p16h-alert-box');
+        var alertTextEl = document.getElementById('a12p16h-alert-text');
+        var summaryTextEl = document.getElementById('a12p16h-summary-text');
+
+        if (titleEl) titleEl.textContent = data.title;
+        if (tagTextEl) tagTextEl.textContent = data.tagText;
+        if (tagBgEl) tagBgEl.setAttribute('class', data.tagClass);
+        if (alertHeaderEl) alertHeaderEl.textContent = data.alertHeader;
+        if (alertBoxEl) {
+          alertBoxEl.style.fill = data.alertBg;
+          alertBoxEl.style.stroke = data.alertBorder;
+        }
+        if (alertTextEl) alertTextEl.innerHTML = data.alertText;
+        if (summaryTextEl) summaryTextEl.innerHTML = data.summaryText;
+      }
+
+      // Attach click events to tabs
+      ['wall', 'floor', 'atla', 'kegel'].forEach(function(m) {
+        var tabEl = document.getElementById('a12p16h-tab-' + m);
+        if (tabEl) {
+          tabEl.addEventListener('click', function() { setMode(m); });
+        }
+      });
+
+      // Attach click events to anatomical groups and labels
+      var bindings = [
+        { id: 'a12p16h-group-wall', mode: 'wall' },
+        { id: 'a12p16h-lbl-wall', mode: 'wall' },
+        { id: 'a12p16h-group-floor', mode: 'floor' },
+        { id: 'a12p16h-lbl-floor', mode: 'floor' },
+        { id: 'a12p16h-group-atla', mode: 'atla' },
+        { id: 'a12p16h-lbl-atla', mode: 'atla' },
+        { id: 'a12p16h-group-kegel', mode: 'kegel' },
+        { id: 'a12p16h-lbl-kegel', mode: 'kegel' }
+      ];
+
+      bindings.forEach(function(item) {
+        var el = document.getElementById(item.id);
+        if (el) {
+          el.addEventListener('click', function() { setMode(item.mode); });
+        }
+      });
+    })();
+    ]]>
+  </script>
+</svg>

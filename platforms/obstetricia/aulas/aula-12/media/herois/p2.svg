@@ -1,0 +1,450 @@
+<svg id="a12p2h-svg-root" class="a12p2h-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" data-mode="biped">
+  <defs>
+    <style type="text/css">
+      .a12p2h-root {
+        --a12p2h-bg: #160814;
+        --a12p2h-bg-card: #250c22;
+        --a12p2h-bg-card-border: #44143d;
+        --a12p2h-ink-main: #fce7f3;
+        --a12p2h-ink-muted: #f472b6;
+        --a12p2h-ink-dim: #a85597;
+        --a12p2h-accent: #ec4899;
+        --a12p2h-accent-glow: rgba(236, 72, 153, 0.4);
+        --a12p2h-pelvis-fill: #3b1034;
+        --a12p2h-pelvis-stroke: #f43f5e;
+        --a12p2h-vector-active: #38bdf8;
+        --a12p2h-vector-main: #fb7185;
+        --a12p2h-vector-glow: #e11d48;
+        --a12p2h-c-ok: #22c55e;
+        --a12p2h-c-warn: #f59e0b;
+        --a12p2h-c-alert: #ef4444;
+        --a12p2h-btn-bg: #371032;
+        --a12p2h-btn-active: #9d174d;
+        --a12p2h-silhouette: #2c0b28;
+        --a12p2h-silhouette-stroke: #701a61;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      [data-theme="light"] .a12p2h-root {
+        --a12p2h-bg: #fff5f8;
+        --a12p2h-bg-card: #ffffff;
+        --a12p2h-bg-card-border: #fbcfe8;
+        --a12p2h-ink-main: #3b0764;
+        --a12p2h-ink-muted: #831843;
+        --a12p2h-ink-dim: #9d174d;
+        --a12p2h-accent: #db2777;
+        --a12p2h-accent-glow: rgba(219, 39, 119, 0.25);
+        --a12p2h-pelvis-fill: #fce7f3;
+        --a12p2h-pelvis-stroke: #be123c;
+        --a12p2h-vector-active: #0284c7;
+        --a12p2h-vector-main: #e11d48;
+        --a12p2h-vector-glow: #be123c;
+        --a12p2h-c-ok: #16a34a;
+        --a12p2h-c-warn: #d97706;
+        --a12p2h-c-alert: #dc2626;
+        --a12p2h-btn-bg: #fce7f3;
+        --a12p2h-btn-active: #be123c;
+        --a12p2h-silhouette: #fbcfe8;
+        --a12p2h-silhouette-stroke: #f472b6;
+      }
+
+      .a12p2h-bg-rect { fill: var(--a12p2h-bg, #160814); }
+      .a12p2h-title { fill: var(--a12p2h-ink-main, #fce7f3); font-size: 17px; font-weight: 800; letter-spacing: 0.5px; }
+      .a12p2h-subtitle { fill: var(--a12p2h-ink-muted, #f472b6); font-size: 12px; font-weight: 500; }
+      .a12p2h-legend-title { fill: var(--a12p2h-accent, #ec4899); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+      .a12p2h-legend-text { fill: var(--a12p2h-ink-main, #fce7f3); font-size: 11.5px; font-weight: 400; line-height: 1.4; }
+
+      .a12p2h-card { fill: var(--a12p2h-bg-card, #250c22); stroke: var(--a12p2h-bg-card-border, #44143d); stroke-width: 1.5; rx: 10px; }
+      .a12p2h-card-title { fill: var(--a12p2h-ink-main, #fce7f3); font-size: 13px; font-weight: 700; }
+      .a12p2h-label-ext { fill: var(--a12p2h-ink-main, #fce7f3); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; }
+      .a12p2h-label-sub { fill: var(--a12p2h-ink-dim, #a85597); font-size: 10.5px; font-weight: 500; }
+
+      .a12p2h-verb-tag { fill: var(--a12p2h-accent, #ec4899); font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+      .a12p2h-verb-bg { fill: var(--a12p2h-bg-card, #250c22); stroke: var(--a12p2h-accent, #ec4899); stroke-width: 1.5; rx: 4px; }
+
+      .a12p2h-silhouette-path { fill: var(--a12p2h-silhouette, #2c0b28); stroke: var(--a12p2h-silhouette-stroke, #701a61); stroke-width: 1.5; opacity: 0.85; }
+      .a12p2h-pelvis-highlight { fill: var(--a12p2h-pelvis-fill, #3b1034); stroke: var(--a12p2h-pelvis-stroke, #f43f5e); stroke-width: 2.5; filter: drop-shadow(0 0 6px var(--a12p2h-accent-glow, rgba(236, 72, 153, 0.4))); }
+
+      .a12p2h-spine-path { stroke: var(--a12p2h-vector-main, #fb7185); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 6 3; }
+      .a12p2h-vector-arrow { stroke: var(--a12p2h-vector-main, #fb7185); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .a12p2h-vector-active-path { stroke: var(--a12p2h-vector-active, #38bdf8); stroke-width: 4.5; stroke-linecap: round; fill: none; filter: drop-shadow(0 0 5px var(--a12p2h-vector-active, #38bdf8)); }
+
+      .a12p2h-btn { cursor: pointer; transition: all 0.2s ease; }
+      .a12p2h-btn-rect { fill: var(--a12p2h-btn-bg, #371032); stroke: var(--a12p2h-bg-card-border, #44143d); stroke-width: 1.5; rx: 6px; }
+      .a12p2h-btn-text { fill: var(--a12p2h-ink-main, #fce7f3); font-size: 11.5px; font-weight: 600; text-anchor: middle; }
+      .a12p2h-btn:hover .a12p2h-btn-rect { stroke: var(--a12p2h-accent, #ec4899); fill: var(--a12p2h-bg-card, #250c22); }
+      .a12p2h-btn.a12p2h-active .a12p2h-btn-rect { fill: var(--a12p2h-btn-active, #9d174d); stroke: var(--a12p2h-accent, #ec4899); }
+      .a12p2h-btn.a12p2h-active .a12p2h-btn-text { fill: #ffffff; font-weight: 700; }
+
+      .a12p2h-badge-ok { fill: var(--a12p2h-c-ok, #22c55e); font-size: 10px; font-weight: 700; }
+      .a12p2h-badge-warn { fill: var(--a12p2h-c-warn, #f59e0b); font-size: 10px; font-weight: 700; }
+      .a12p2h-badge-alert { fill: var(--a12p2h-c-alert, #ef4444); font-size: 10px; font-weight: 700; }
+
+      .a12p2h-hotspot { cursor: pointer; }
+      .a12p2h-hotspot:hover .a12p2h-hotspot-circle { transform: scale(1.25); filter: drop-shadow(0 0 8px var(--a12p2h-accent, #ec4899)); }
+      .a12p2h-hotspot-circle { transition: transform 0.2s ease; transform-origin: center; }
+
+      /* Vector visibility modes */
+      .a12p2h-root[data-mode="biped"] .a12p2h-vec-uniped { opacity: 0.15; stroke-dasharray: 4 4; }
+      .a12p2h-root[data-mode="biped"] .a12p2h-vec-biped { opacity: 1; }
+      .a12p2h-root[data-mode="uniped"] .a12p2h-vec-biped-left { opacity: 0.2; stroke-dasharray: 3 3; }
+      .a12p2h-root[data-mode="uniped"] .a12p2h-vec-uniped-right { opacity: 1; stroke-width: 6; stroke: var(--a12p2h-vector-active, #38bdf8); filter: drop-shadow(0 0 6px var(--a12p2h-vector-active, #38bdf8)); }
+      .a12p2h-root[data-mode="stress"] .a12p2h-pelvis-highlight { stroke: var(--a12p2h-c-warn, #f59e0b); stroke-width: 3.5; }
+      .a12p2h-root[data-mode="stress"] .a12p2h-vec-ring-stress { opacity: 1; stroke: var(--a12p2h-c-warn, #f59e0b); stroke-width: 4; stroke-dasharray: 4 2; }
+    </style>
+
+    <!-- Marker definition for Force Vectors -->
+    <marker id="a12p2h-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12p2h-vector-main, #fb7185)" />
+    </marker>
+    <marker id="a12p2h-arrow-active" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12p2h-vector-active, #38bdf8)" />
+    </marker>
+    <marker id="a12p2h-arrow-warn" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12p2h-c-warn, #f59e0b)" />
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect class="a12p2h-bg-rect" width="1000" height="680" rx="12" />
+
+  <!-- HEADER -->
+  <g transform="translate(30, 35)">
+    <text class="a12p2h-title" x="0" y="0">ANATOMIA E BIOMECÂNICA DA PELVE: LOCALIZAÇÃO E TRANSMISSÃO DE CARGA</text>
+    <text class="a12p2h-subtitle" x="0" y="20">A pelve como junta de transição entre o esqueleto axial (tronco) e os membros inferiores</text>
+  </g>
+
+  <!-- VIEW 1: ANTERIOR VIEW (ANATOMICAL POSITION & FORCE DIVISION) -->
+  <g transform="translate(40, 75)">
+    <rect class="a12p2h-card" width="280" height="520" />
+    <text class="a12p2h-card-title" x="20" y="30">1. VISÃO ANTERIOR (CORONAL)</text>
+    <text class="a12p2h-label-sub" x="20" y="46">Divisão de carga simétrica e trajetos vetoriais</text>
+
+    <!-- ANTERIOR HUMAN SILHOUETTE (Center at x=140, body bounds x=72..208) -->
+    <!-- Head & Neck -->
+    <path class="a12p2h-silhouette-path" d="
+      M 140 65 C 130 65 125 72 125 82 C 125 94 132 102 140 102 C 148 102 155 94 155 82 C 155 72 150 65 140 65 Z
+      M 133 102 L 131 118 L 149 118 L 147 102 Z
+      M 131 118 C 110 122 88 132 82 142 L 72 230 C 70 240 76 245 84 240 L 98 185 L 102 180 L 102 265 C 102 275 110 282 118 285 L 118 315 L 115 320 C 112 325 112 340 114 360 C 115 375 110 400 108 430 L 102 490 C 100 500 112 505 122 505 L 132 505 L 135 370 L 140 370 L 145 370 L 148 505 L 158 505 C 168 505 180 500 178 490 L 172 430 C 170 400 165 375 166 360 C 168 340 168 325 165 320 L 162 315 L 162 285 C 170 282 178 275 178 265 L 178 180 L 182 185 L 196 240 C 204 245 210 240 208 230 L 198 142 C 192 132 170 122 149 118 Z
+    " />
+
+    <!-- HIGHLIGHTED PELVIC RING TRANSITION ZONE -->
+    <path class="a12p2h-pelvis-highlight" d="
+      M 116 280 
+      C 105 285 96 300 100 315
+      C 104 330 114 348 126 352
+      C 134 355 140 354 140 354
+      C 140 354 146 355 154 352
+      C 166 348 176 330 180 315
+      C 184 300 175 285 164 280
+      C 152 276 140 282 140 282
+      C 140 282 128 276 116 280 Z
+      M 124 300 C 132 295 140 302 140 302 C 140 302 148 295 156 300 C 162 310 158 328 152 334 C 146 340 140 338 140 338 C 140 338 134 340 128 334 C 122 328 118 310 124 300 Z
+    " />
+
+    <!-- SPINE FORCE TRAJECTORY (Receives Axial Load) -->
+    <line class="a12p2h-spine-path" x1="140" y1="120" x2="140" y2="280" />
+    <path class="a12p2h-vector-arrow" d="M 140 120 L 140 270" marker-end="url(#a12p2h-arrow)" />
+
+    <!-- SACROILIAC BIFURCATION VECTORS (Estabiliza & Divide) -->
+    <!-- Left Branch -->
+    <path class="a12p2h-vector-arrow a12p2h-vec-biped a12p2h-vec-biped-left" d="M 140 282 C 136 295 125 315 124 335" marker-end="url(#a12p2h-arrow)" />
+    <!-- Right Branch -->
+    <path class="a12p2h-vector-arrow a12p2h-vec-biped a12p2h-vec-uniped-right" d="M 140 282 C 144 295 155 315 156 335" marker-end="url(#a12p2h-arrow)" />
+
+    <!-- RING STRESS VECTORS (Stress mode toggle) -->
+    <path class="a12p2h-vec-ring-stress" d="M 115 315 Q 140 330 165 315" fill="none" opacity="0" />
+
+    <!-- FEMUR FORCE TRANSMISSION LINES (Transmite aos Membros) -->
+    <!-- Left Femur line -->
+    <path class="a12p2h-vector-arrow a12p2h-vec-biped a12p2h-vec-biped-left" d="M 124 335 L 120 420 L 125 495" marker-end="url(#a12p2h-arrow)" />
+    <!-- Right Femur line -->
+    <path class="a12p2h-vector-arrow a12p2h-vec-biped a12p2h-vec-uniped-right" d="M 156 335 L 160 420 L 155 495" marker-end="url(#a12p2h-arrow)" />
+
+    <!-- HOTSPOTS ON ANTERIOR VIEW -->
+    <g class="a12p2h-hotspot" id="a12p2h-hs-sacrum" tabindex="0" role="button" aria-label="Ponto de entrada axial Sacro-Lumbar">
+      <circle class="a12p2h-hotspot-circle" cx="140" cy="275" r="7" fill="var(--a12p2h-accent, #ec4899)" stroke="#fff" stroke-width="1.5" />
+    </g>
+    <g class="a12p2h-hotspot" id="a12p2h-hs-ring" tabindex="0" role="button" aria-label="Anel Pélvico e Arcos Sacroilíacos">
+      <circle class="a12p2h-hotspot-circle" cx="120" cy="315" r="6" fill="var(--a12p2h-vector-active, #38bdf8)" stroke="#fff" stroke-width="1.5" />
+      <circle class="a12p2h-hotspot-circle" cx="160" cy="315" r="6" fill="var(--a12p2h-vector-active, #38bdf8)" stroke="#fff" stroke-width="1.5" />
+    </g>
+    <g class="a12p2h-hotspot" id="a12p2h-hs-hip" tabindex="0" role="button" aria-label="Transmissão Acetabulo-Femoral">
+      <circle class="a12p2h-hotspot-circle" cx="124" cy="340" r="6" fill="var(--a12p2h-c-ok, #22c55e)" stroke="#fff" stroke-width="1.5" />
+      <circle class="a12p2h-hotspot-circle" cx="156" cy="340" r="6" fill="var(--a12p2h-c-ok, #22c55e)" stroke="#fff" stroke-width="1.5" />
+    </g>
+  </g>
+
+  <!-- VIEW 2: SAGITTAL / PROFILE VIEW (POSTURAL & GRAVITY ALIGNMENT) -->
+  <g transform="translate(340, 75)">
+    <rect class="a12p2h-card" width="270" height="520" />
+    <text class="a12p2h-card-title" x="20" y="30">2. VISÃO SAGITAL (PERFIL)</text>
+    <text class="a12p2h-label-sub" x="20" y="46">Linha de gravidade e inclinação pélvica</text>
+
+    <!-- SAGITTAL SILHOUETTE (Center ~ x=135) -->
+    <path class="a12p2h-silhouette-path" d="
+      M 130 65 
+      C 145 65 155 75 152 90
+      C 150 98 144 103 138 105
+      C 134 112 135 120 148 132
+      C 162 145 168 175 165 210
+      C 162 235 152 260 148 275
+      C 145 285 142 295 146 305
+      C 155 320 162 340 158 360
+      C 152 385 144 420 142 450
+      C 140 480 145 498 152 505
+      L 125 505
+      C 120 495 118 470 120 440
+      C 122 400 128 375 125 355
+      C 122 340 114 325 112 310
+      C 108 290 108 275 114 260
+      C 120 240 122 215 118 190
+      C 114 165 110 145 120 125
+      C 124 118 122 108 118 103
+      C 112 95 116 65 130 65 Z
+    " />
+
+    <!-- SAGITTAL PELVIS HIGHLIGHT & TILT ANGLE -->
+    <path class="a12p2h-pelvis-highlight" d="
+      M 115 280
+      C 110 290 115 315 130 330
+      C 142 340 154 330 152 315
+      C 150 300 135 285 125 278 Z
+    " />
+
+    <!-- LINE OF GRAVITY (Plumb line passing from ear -> shoulder -> L3 -> sacrum -> hip) -->
+    <line x1="138" y1="75" x2="138" y2="495" stroke="var(--a12p2h-accent, #ec4899)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.75" />
+    <text x="144" y="90" fill="var(--a12p2h-accent, #ec4899)" font-size="9.5" font-weight="700">LINHA DE GRAVIDADE</text>
+
+    <!-- LUMBAR LORDOSIS & SACRAL PROMONTORY TRAJECTORY -->
+    <path class="a12p2h-vector-arrow" d="M 125 180 Q 115 230 132 280" marker-end="url(#a12p2h-arrow)" />
+    <path class="a12p2h-vector-arrow" d="M 132 280 L 135 345 L 132 490" marker-end="url(#a12p2h-arrow)" />
+
+    <!-- ANGLE OF PELVIC TILT INDICATOR -->
+    <path d="M 120 285 L 148 298" stroke="var(--a12p2h-c-warn, #f59e0b)" stroke-width="2" stroke-dasharray="2 2" />
+    <text x="154" y="302" fill="var(--a12p2h-c-warn, #f59e0b)" font-size="9.5" font-weight="700">30° Tilt</text>
+  </g>
+
+  <!-- EXTERNAL MARGIN LABELS (EXACTLY 3 MAIN ANATOMICAL LABELS ON FAR LEFT MARGIN - ZERO SILHOUETTE OVERLAP) -->
+  <!-- 1. ABDOME (Above) -->
+  <g transform="translate(15, 170)">
+    <line x1="75" y1="15" x2="138" y2="15" stroke="var(--a12p2h-ink-muted, #f472b6)" stroke-width="1.5" stroke-dasharray="3 3" />
+    <circle cx="138" cy="15" r="3.5" fill="var(--a12p2h-ink-muted, #f472b6)" />
+    <text class="a12p2h-label-ext" x="70" y="12" text-anchor="end">abdome</text>
+    <text class="a12p2h-label-sub" x="70" y="26" text-anchor="end">(Tronco / Visceral)</text>
+  </g>
+
+  <!-- 2. PELVE (Middle - Transition Zone) -->
+  <g transform="translate(15, 385)">
+    <line x1="65" y1="0" x2="140" y2="-70" stroke="var(--a12p2h-accent, #ec4899)" stroke-width="2" />
+    <circle cx="140" cy="-70" r="4.5" fill="var(--a12p2h-accent, #ec4899)" />
+    <text class="a12p2h-label-ext" x="60" y="-5" text-anchor="end" fill="var(--a12p2h-accent, #ec4899)">pelve</text>
+    <text class="a12p2h-label-sub" x="60" y="10" text-anchor="end">(Cíngulo Pélvico)</text>
+  </g>
+
+  <!-- 3. MEMBROS INFERIORES (Below) -->
+  <g transform="translate(15, 520)">
+    <line x1="160" y1="-20" x2="125" y2="-20" stroke="var(--a12p2h-ink-muted, #f472b6)" stroke-width="1.5" stroke-dasharray="3 3" />
+    <circle cx="125" cy="-20" r="3.5" fill="var(--a12p2h-ink-muted, #f472b6)" />
+    <text class="a12p2h-label-ext" x="165" y="-16" text-anchor="start">membros inferiores</text>
+    <text class="a12p2h-label-sub" x="165" y="-2" text-anchor="start">(Base de Sustentação)</text>
+  </g>
+
+  <!-- THREE VERBS ACCOMPANYING LOAD PATHWAY (RECEBE -> ESTABILIZA -> TRANSMITE) -->
+  <!-- Verb 1: RECEBE (At entry of axial load into sacroiliac joint) -->
+  <g transform="translate(195, 315)">
+    <rect class="a12p2h-verb-bg" x="-6" y="-14" width="72" height="20" />
+    <text class="a12p2h-verb-tag" x="30" y="0" text-anchor="middle">RECEBE</text>
+  </g>
+  
+  <!-- Verb 2: ESTABILIZA (Across pelvic ring) -->
+  <g transform="translate(195, 385)">
+    <rect class="a12p2h-verb-bg" x="-6" y="-14" width="94" height="20" />
+    <text class="a12p2h-verb-tag" x="41" y="0" text-anchor="middle">ESTABILIZA</text>
+  </g>
+
+  <!-- Verb 3: TRANSMITE (At acetabulum / femur transition) -->
+  <g transform="translate(195, 455)">
+    <rect class="a12p2h-verb-bg" x="-6" y="-14" width="88" height="20" />
+    <text class="a12p2h-verb-tag" x="38" y="0" text-anchor="middle">TRANSMITE</text>
+  </g>
+
+  <!-- RIGHT PANEL: INTERACTIVE BIOMECHANICAL CONTROL & READING BOX -->
+  <g transform="translate(630, 75)">
+    <rect class="a12p2h-card" width="330" height="520" />
+    
+    <text class="a12p2h-card-title" x="20" y="30">3. SIMULADOR DE CARGA PÉLVICA</text>
+    <text class="a12p2h-label-sub" x="20" y="46">Clique para alternar o modo de apoio e analisar vetores</text>
+
+    <!-- INTERACTIVE MODE BUTTONS -->
+    <g transform="translate(20, 65)">
+      <!-- Button 1: Bipedal -->
+      <g class="a12p2h-btn a12p2h-active" id="a12p2h-btn-biped" tabindex="0" role="button" aria-label="Modo Bípede Simétrico 50/50">
+        <rect class="a12p2h-btn-rect" x="0" y="0" width="90" height="32" />
+        <text class="a12p2h-btn-text" x="45" y="20">Bípede 50/50</text>
+      </g>
+      <!-- Button 2: Unipedal -->
+      <g class="a12p2h-btn" id="a12p2h-btn-uniped" tabindex="0" role="button" aria-label="Modo Unípede Apoio Único">
+        <rect class="a12p2h-btn-rect" x="98" y="0" width="90" height="32" />
+        <text class="a12p2h-btn-text" x="143" y="20">Unípede 100%</text>
+      </g>
+      <!-- Button 3: Stress Analysis -->
+      <g class="a12p2h-btn" id="a12p2h-btn-stress" tabindex="0" role="button" aria-label="Análise de Tensão no Anel Pélvico">
+        <rect class="a12p2h-btn-rect" x="196" y="0" width="94" height="32" />
+        <text class="a12p2h-btn-text" x="243" y="20">Tensão Anel</text>
+      </g>
+    </g>
+
+    <!-- DYNAMIC LOAD DISTRIBUTION METERS -->
+    <g transform="translate(20, 120)">
+      <text fill="var(--a12p2h-ink-main, #fce7f3)" font-size="11.5" font-weight="700" x="0" y="0">DISTRIBUIÇÃO VETORIAL DE CARGA (70 kg / 700 N)</text>
+      
+      <!-- Axial Force Input Meter -->
+      <g transform="translate(0, 15)">
+        <text fill="var(--a12p2h-ink-dim, #a85597)" font-size="10.5" x="0" y="12">Carga Axial Suportada (L5-S1):</text>
+        <text id="a12p2h-val-axial" fill="var(--a12p2h-accent, #ec4899)" font-size="11" font-weight="800" x="290" y="12" text-anchor="end">700 N (100%)</text>
+        <rect x="0" y="18" width="290" height="8" rx="4" fill="var(--a12p2h-btn-bg, #371032)" />
+        <rect x="0" y="18" width="290" height="8" rx="4" fill="var(--a12p2h-vector-main, #fb7185)" />
+      </g>
+
+      <!-- Left Member Meter -->
+      <g transform="translate(0, 50)">
+        <text fill="var(--a12p2h-ink-dim, #a85597)" font-size="10.5" x="0" y="12">Membro Inferior Esquerdo (F_esq):</text>
+        <text id="a12p2h-val-left" fill="var(--a12p2h-ink-main, #fce7f3)" font-size="11" font-weight="700" x="290" y="12" text-anchor="end">350 N (50%)</text>
+        <rect x="0" y="18" width="290" height="8" rx="4" fill="var(--a12p2h-btn-bg, #371032)" />
+        <rect id="a12p2h-bar-left" x="0" y="18" width="145" height="8" rx="4" fill="var(--a12p2h-c-ok, #22c55e)" style="transition: width 0.3s ease;" />
+      </g>
+
+      <!-- Right Member Meter -->
+      <g transform="translate(0, 85)">
+        <text fill="var(--a12p2h-ink-dim, #a85597)" font-size="10.5" x="0" y="12">Membro Inferior Direito (F_dir):</text>
+        <text id="a12p2h-val-right" fill="var(--a12p2h-ink-main, #fce7f3)" font-size="11" font-weight="700" x="290" y="12" text-anchor="end">350 N (50%)</text>
+        <rect x="0" y="18" width="290" height="8" rx="4" fill="var(--a12p2h-btn-bg, #371032)" />
+        <rect id="a12p2h-bar-right" x="0" y="18" width="145" height="8" rx="4" fill="var(--a12p2h-c-ok, #22c55e)" style="transition: width 0.3s ease, fill 0.3s ease;" />
+      </g>
+    </g>
+
+    <!-- CLINICAL INTERPRETATION BOX WITH COLOR MEANING CONVENTION -->
+    <g transform="translate(20, 255)">
+      <rect width="290" height="240" rx="8" fill="var(--a12p2h-btn-bg, #371032)" stroke="var(--a12p2h-bg-card-border, #44143d)" stroke-width="1.5" />
+      
+      <text fill="var(--a12p2h-accent, #ec4899)" font-size="11" font-weight="800" x="15" y="24" letter-spacing="0.5px">PAINEL DE ANÁLISE BIOMECÂNICA</text>
+      
+      <!-- Status Badge -->
+      <g transform="translate(15, 36)">
+        <text id="a12p2h-status-badge" class="a12p2h-badge-ok" x="0" y="0">● FAIXA NORMAL: TRANSMISSÃO EQUILIBRADA</text>
+      </g>
+
+      <!-- Detailed Dynamic Explanation Text -->
+      <foreignObject x="15" y="50" width="260" height="175">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="color: var(--a12p2h-ink-main, #fce7f3); font-size: 11px; line-height: 1.45; font-family: system-ui, sans-serif;">
+          <p id="a12p2h-desc-text" style="margin: 0;">
+            <b>Postura Bípede Simétrica:</b> O peso corporal vindo da coluna vertebral (L5-S1) incide sobre a base do sacro. A pelve atua como um <i>nódulo de distribuição</i>, dividindo a força exatamente em <b>50% para cada ramo do anel pélvico</b> rumo aos dois acetábulos e fêmures.
+          </p>
+        </div>
+      </foreignObject>
+    </g>
+
+  </g>
+
+  <!-- FOOTER INTERPRETATION LEGEND (NAME & CONCLUSION OF FIGURE) -->
+  <g transform="translate(40, 620)">
+    <rect class="a12p2h-card" width="920" height="42" rx="6" />
+    <text class="a12p2h-legend-title" x="18" y="18">LEGENDA ANATÔMICO-CLÍNICA DE INTERPRETAÇÃO:</text>
+    <text class="a12p2h-legend-text" x="18" y="32">
+      A pelve une o tronco aos membros inferiores funcionando como anel fechado incompressível. Ela <tspan font-weight="700" fill="var(--a12p2h-accent, #ec4899)">RECEBE</tspan> a carga peso da coluna, <tspan font-weight="700" fill="var(--a12p2h-accent, #ec4899)">ESTABILIZA</tspan> as forças via arcos sacroilíacos/púbico e <tspan font-weight="700" fill="var(--a12p2h-accent, #ec4899)">TRANSMITE</tspan> a resultante vetorial aos fêmures.
+    </text>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED JAVASCRIPT (SELF-CONTAINED ENGINE) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('a12p2h-svg-root');
+      var btnBiped = document.getElementById('a12p2h-btn-biped');
+      var btnUniped = document.getElementById('a12p2h-btn-uniped');
+      var btnStress = document.getElementById('a12p2h-btn-stress');
+
+      var valLeft = document.getElementById('a12p2h-val-left');
+      var valRight = document.getElementById('a12p2h-val-right');
+      var barLeft = document.getElementById('a12p2h-bar-left');
+      var barRight = document.getElementById('a12p2h-bar-right');
+      var statusBadge = document.getElementById('a12p2h-status-badge');
+      var descText = document.getElementById('a12p2h-desc-text');
+
+      var hsSacrum = document.getElementById('a12p2h-hs-sacrum');
+      var hsRing = document.getElementById('a12p2h-hs-ring');
+      var hsHip = document.getElementById('a12p2h-hs-hip');
+
+      function clearButtons() {
+        if (btnBiped) btnBiped.classList.remove('a12p2h-active');
+        if (btnUniped) btnUniped.classList.remove('a12p2h-active');
+        if (btnStress) btnStress.classList.remove('a12p2h-active');
+      }
+
+      function setMode(mode) {
+        clearButtons();
+        root.setAttribute('data-mode', mode);
+
+        if (mode === 'biped') {
+          if (btnBiped) btnBiped.classList.add('a12p2h-active');
+          if (valLeft) valLeft.textContent = '350 N (50%)';
+          if (valRight) valRight.textContent = '350 N (50%)';
+          if (barLeft) barLeft.setAttribute('width', '145');
+          if (barRight) {
+            barRight.setAttribute('width', '145');
+            barRight.setAttribute('fill', 'var(--a12p2h-c-ok, #22c55e)');
+          }
+          if (statusBadge) {
+            statusBadge.setAttribute('class', 'a12p2h-badge-ok');
+            statusBadge.textContent = '● FAIXA NORMAL: TRANSMISSÃO EQUILIBRADA';
+          }
+          if (descText) {
+            descText.innerHTML = '<b>Postura Bípede Simétrica:</b> O peso corporal vindo da coluna vertebral (L5-S1) incide sobre a base do sacro. A pelve atua como um <i>nódulo de distribuição</i>, dividindo a força exatamente em <b>50% para cada ramo do anel pélvico</b> rumo aos dois acetábulos e fêmures.';
+          }
+        } else if (mode === 'uniped') {
+          if (btnUniped) btnUniped.classList.add('a12p2h-active');
+          if (valLeft) valLeft.textContent = '0 N (0%)';
+          if (valRight) valRight.textContent = '700 N (100%)';
+          if (barLeft) barLeft.setAttribute('width', '0');
+          if (barRight) {
+            barRight.setAttribute('width', '290');
+            barRight.setAttribute('fill', 'var(--a12p2h-vector-active, #38bdf8)');
+          }
+          if (statusBadge) {
+            statusBadge.setAttribute('class', 'a12p2h-badge-warn');
+            statusBadge.textContent = '▲ APOIO UNÍPEDE: SOBRECARGA UNILATERAL';
+          }
+          if (descText) {
+            descText.innerHTML = '<b>Apoio Unípedal (Marcha/Corrida):</b> 100% da carga vetorial do tronco se desvia por um único ramo pélvico. A musculatura abdutora do quadril (glúteo médio) entra em contração isométrica vigorosa para evitar o estresse de Trendelenburg.';
+          }
+        } else if (mode === 'stress') {
+          if (btnStress) btnStress.classList.add('a12p2h-active');
+          if (valLeft) valLeft.textContent = '350 N [Tensão Arqueada]';
+          if (valRight) valRight.textContent = '350 N [Compressão Púbica]';
+          if (barLeft) barLeft.setAttribute('width', '145');
+          if (barRight) {
+            barRight.setAttribute('width', '145');
+            barRight.setAttribute('fill', 'var(--a12p2h-c-warn, #f59e0b)');
+          }
+          if (statusBadge) {
+            statusBadge.setAttribute('class', 'a12p2h-badge-alert');
+            statusBadge.textContent = '■ ANÁLISE DE TENSÃO: ARCOS DE FORÇA';
+          }
+          if (descText) {
+            descText.innerHTML = '<b>Mecânica do Anel Pélvico:</b> As forças verticais geram vetores de cisalhamento nas articulações sacroilíacas e tração/compressão na sínfise púbica. O anel rígido converte forças verticais em forças oblíquas de contenção.';
+          }
+        }
+      }
+
+      if (btnBiped) btnBiped.addEventListener('click', function() { setMode('biped'); });
+      if (btnUniped) btnUniped.addEventListener('click', function() { setMode('uniped'); });
+      if (btnStress) btnStress.addEventListener('click', function() { setMode('stress'); });
+
+      if (hsSacrum) hsSacrum.addEventListener('click', function() { setMode('biped'); });
+      if (hsRing) hsRing.addEventListener('click', function() { setMode('stress'); });
+      if (hsHip) hsHip.addEventListener('click', function() { setMode('uniped'); });
+    })();
+    ]]>
+  </script>
+</svg>

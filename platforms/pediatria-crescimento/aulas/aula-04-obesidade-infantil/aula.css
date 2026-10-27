@@ -1,0 +1,190 @@
+/* aula.css — Aula 04 "Obesidade infantil" (Pediatria Bauer)
+   Camada por-aula: NÃO toca tokens/base/components globais.
+   Cobre: wrappers de SVG inline (pisos P1-P10 + figura-herói P11 self-contained),
+   figure.med + tarja de privacidade, nota-banca (blindagem SBP) + nota-valor (número
+   de prova), a tabela em escada por escore-Z (P5) e a identidade por página.
+   Eixo cromático da aula = escala de gravidade: verde (normal) → âmbar (sobrepeso/risco)
+   → vermelho (obesidade) → preto (obesidade grave). */
+
+/* ===== Wrapper de SVG inline (piso e herói): frame de luxo da casa ===== */
+.figure-svg__embed { margin: var(--sp-6) 0; }
+.figure-svg__embed .figure-svg__frame { position: relative; }
+.figure-svg__embed svg { display: block; width: 100%; height: auto; }
+.figure-svg__embed figcaption { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.figure-svg__embed figcaption strong { color: var(--ink-100); }
+.figure-svg__embed .figure-svg__hint {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--teal-60); margin-top: var(--sp-2);
+}
+
+/* herói P11 self-contained: o stage só dá o palco; a interação vive no <script> do SVG */
+.hero-stage { position: relative; width: 100%; }
+.hero-stage svg { display: block; width: 100%; height: auto; }
+
+/* ===== figure.med — tarja de privacidade (criança/paciente identificável) ===== */
+.med { position: relative; }
+.med .img-wrap { position: relative; }
+.med__tarja {
+  position: absolute;
+  background: rgba(8, 18, 30, 0.96);
+  border-radius: 3px;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+}
+.med__tarja::after {
+  content: attr(data-label);
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.55); text-transform: uppercase;
+}
+/* posição da tarja por imagem (faixa sobre os olhos/rostos, sem cobrir o achado clínico).
+   Apenas onde o manifesto pede tarja: P9 (crianças comendo fruta) e P10 (crianças correndo). */
+.med__tarja--p9   { top: 30%; left: 8%;  width: 84%; height: 7%; }
+.med__tarja--p10  { top: 24%; left: 10%; width: 80%; height: 8%; }
+
+/* ===== nota-banca — blindagem SBP discreta (ledger §0): secundária, recuada, escudo ===== */
+.nota-banca {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--info-blue-dim);
+  border-left: 2px solid var(--info-blue);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-banca__shield { flex-shrink: 0; width: 18px; height: 18px; color: var(--info-blue); margin-top: 2px; }
+.nota-banca__body { flex: 1; }
+.nota-banca__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--info-blue); margin-right: var(--sp-2); }
+.nota-banca p { margin: 0; font-size: var(--fs-sm); }
+.nota-banca strong { color: var(--ink-90); }
+
+/* ===== nota-valor — número de prova (ledger §0): ícone "+", acento da casa ===== */
+.nota-valor {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--teal-05);
+  border-left: 2px solid var(--teal-50);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-valor__plus { flex-shrink: 0; width: 18px; height: 18px; color: var(--teal-60); margin-top: 2px; }
+.nota-valor__body { flex: 1; }
+.nota-valor__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-60); margin-right: var(--sp-2); }
+.nota-valor p { margin: 0; font-size: var(--fs-sm); }
+.nota-valor strong { color: var(--ink-90); }
+
+/* ===== tabela em escada por escore-Z (P5): duas faixas etárias lado a lado ===== */
+.zscore-table { margin: var(--sp-5) 0; border-radius: var(--r-md); border: 1px solid var(--border-mid); overflow: hidden; }
+.zscore-table__scroll { overflow-x: auto; }
+.zscore-table table { width: 100%; border-collapse: collapse; min-width: 460px; }
+.zscore-table caption { caption-side: top; text-align: left; padding: var(--sp-3) var(--sp-4); background: var(--bg-elevated-2); font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-90); border-bottom: 1px solid var(--border-soft); }
+.zscore-table th, .zscore-table td { padding: var(--sp-3) var(--sp-4); text-align: left; border-bottom: 1px solid var(--border-soft); font-size: var(--fs-sm); }
+.zscore-table thead th { background: var(--bg-elevated); color: var(--ink-100); font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; }
+.zscore-table tbody th { font-family: var(--font-mono); color: var(--teal-60); white-space: nowrap; }
+.zscore-table tbody tr:last-child td, .zscore-table tbody tr:last-child th { border-bottom: 0; }
+.zscore-table .z-cell { font-weight: 600; }
+.zscore-table .z-cell--warn { color: var(--warn-amber); }
+.zscore-table .z-cell--bad  { color: var(--err-red); }
+.zscore-table .z-cell--grave { color: var(--ink-100); background: linear-gradient(90deg, rgba(0,0,0,0.28), transparent); }
+
+/* ===== identidade por página: ponto do page-tag conforme eixo da gravidade =====
+   case = coral (Maju/clínica), sys = âmbar (conceito/método/zona cinzenta),
+   fisio = verde (normal/fisiológico/manter), pato = vermelho (obesidade/comorbidade/doença). */
+.page-tag--sys .page-tag__dot   { background: var(--warn-amber); box-shadow: 0 0 8px var(--warn-amber); }
+.page-tag--case .page-tag__dot  { background: var(--coral-60); box-shadow: 0 0 8px var(--coral-60); }
+.page-tag--fisio .page-tag__dot { background: var(--ok-green); box-shadow: 0 0 8px var(--ok-green); }
+.page-tag--pato .page-tag__dot  { background: var(--err-red); box-shadow: 0 0 8px var(--err-red); }
+
+/* TIPOGRAFIA (justify + tab) e LARGURA DE CONTEÚDO agora vêm do chassi
+   (components.css / tokens.css) — promovidos do teste desta aula para todas.
+   Mantido só o específico da p5 abaixo. (Style Director 2026-06-08) */
+
+/* ===== TESTE p5: cards de vidro fosco (membrana translúcida) — adaptação onco → cores da casa =====
+   Card translúcido (--bg-glass + blur) com "parede fininha" (brilho sutil no topo).
+   --split: texto maior à esquerda + membrana menor e mais opaca (--bg-glass-strong) à direita.
+   --table: envolve a tabela; legenda "Item a item" em caixa de traço ouro.
+   REVERTER: apagar este bloco + desfazer a marcação da p5 no index.html. (Bauer 2026-06-07, teste.) */
+.glass-card {
+  position: relative;
+  background: var(--bg-glass);
+  backdrop-filter: saturate(140%) blur(16px);
+  -webkit-backdrop-filter: saturate(140%) blur(16px);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.06);
+  padding: var(--sp-5);
+  margin: var(--sp-5) 0;
+}
+.glass-card--split { display: grid; grid-template-columns: 1.55fr 1fr; gap: var(--sp-5); align-items: start; }
+.glass-card__main > :first-child { margin-top: 0; }
+.glass-card__aside {
+  background: var(--bg-glass-strong);
+  border: 1px solid var(--border-soft);
+  border-left: 2px solid var(--teal-50);
+  border-radius: var(--r-md);
+  padding: var(--sp-4);
+}
+.glass-card__aside-title { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-60); margin: 0 0 var(--sp-2); }
+.glass-card__aside p { font-size: var(--fs-sm); color: var(--ink-90); margin: 0; }
+@media (max-width: 640px) { .glass-card--split { grid-template-columns: 1fr; } }
+
+.glass-card--table { padding: var(--sp-4); }
+.glass-card--table .zscore-table { margin: 0; border: 0; }
+.table-legend {
+  margin: var(--sp-4) 0 0;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--warn-amber-dim);
+  border: 1px dashed var(--warn-amber);
+  border-radius: var(--r-sm);
+  font-size: var(--fs-sm);
+  color: var(--ink-90);
+}
+.table-legend__tag { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--warn-amber); font-weight: 700; margin-right: var(--sp-2); }
+.table-legend strong { color: var(--ink-100); }
+
+/* ===== TESTE p5: agrupamento — membrana grande (mais translúcida) atrás de 2 cards + interativo =====
+   .glass-group = membrana grande e MAIS translúcida (atrás de tudo, do topo dos cards à legenda).
+   .glass-card--mini = os dois cards de texto lado a lado, mais opacos, assentados sobre o grupo.
+   .fig-legend-gold = legenda do interativo no mesmo traço dourado da tabela.
+   REVERTER: apagar este bloco + desfazer a marcação da p5. (Bauer 2026-06-07, teste.) */
+.glass-group {
+  background: rgba(20, 52, 84, 0.26);
+  backdrop-filter: saturate(130%) blur(10px);
+  -webkit-backdrop-filter: saturate(130%) blur(10px);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  padding: var(--sp-5);
+  margin: var(--sp-5) 0;
+}
+.glass-group__cards { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin-bottom: var(--sp-5); }
+.glass-card--mini {
+  background: var(--bg-glass);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+  padding: var(--sp-4);
+}
+.glass-card--mini > :first-child { margin-top: 0; }
+.glass-card--mini .topic-h { font-size: var(--fs-md); margin-bottom: var(--sp-2); }
+.glass-card--mini p { font-size: var(--fs-sm); line-height: var(--lh-snug); }
+.glass-group figure.figure-svg__embed { margin: var(--sp-5) 0 0; }
+/* divisor tracejado entre os dois tópicos empilhados (teal = estrutura; ouro fica reservado p/ legenda) */
+.glass-divider { border: 0; border-top: 1px dashed var(--teal-40); opacity: 0.55; margin: var(--sp-5) 0; }
+@media (max-width: 720px) { .glass-group__cards { grid-template-columns: 1fr; } }
+
+.fig-legend-gold {
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--warn-amber-dim);
+  border: 1px dashed var(--warn-amber);
+  border-radius: var(--r-sm);
+}
+.fig-legend-gold strong { color: var(--warn-amber); }
+.fig-legend-gold .figure-svg__hint { color: var(--ink-50); }

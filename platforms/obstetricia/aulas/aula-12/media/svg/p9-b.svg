@@ -1,0 +1,639 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" class="a12p9b-root" id="a12p9b-svg" data-svg-tokenized="true" tabindex="0" role="img" aria-labelledby="a12p9b-title-id a12p9b-desc-id">
+  <title id="a12p9b-title-id">Estreitos da Pelve Menor, Gargalo Biespinhal e Trajetória do Parto</title>
+  <desc id="a12p9b-desc-id">Ilustração vetorial interativa self-contained demonstrando a anatomia da pelve menor em vista oblíqua volumétrica, os três estreitos (superior 13cm, médio 10,5cm e inferior 11cm com dois triângulos), e a descida e rotação do polo cefálico fetal.</desc>
+
+  <style>
+    .a12p9b-root {
+      --a12p9b-bg: var(--a12-bg, var(--bg-1, #121115));
+      --a12p9b-panel-bg: var(--a12-panel-bg, var(--bg-2, #1C1A22));
+      --a12p9b-panel-border: var(--a12-panel-border, var(--ink-20, #34303E));
+      --a12p9b-tinta: var(--a12-tinta, var(--a12p9-tinta, #F7F1F5));
+      --a12p9b-subtinta: var(--a12-subtinta, var(--ink-70, #B8B0BD));
+      --a12p9b-osso: var(--a12-osso, var(--a12p9-osso, #DCC7B4));
+      --a12p9b-osso-stroke: rgba(220, 199, 180, 0.45);
+      --a12p9b-osso-fill: rgba(220, 199, 180, 0.06);
+      --a12p9b-superior: var(--a12-estreito-superior, var(--a12p9-superior, #6FA8D6));
+      --a12p9b-medio: var(--a12-estreito-medio, var(--a12p9-medio, #E56C7B));
+      --a12p9b-inferior: var(--a12-estreito-inferior, var(--a12p9-inferior, #8C76C5));
+      --a12p9b-cabeca: var(--a12-petroleo-claro, var(--a12p9-cabeca, #4CB7B0));
+      --a12p9b-cabeca-stroke: #2E8B85;
+      --a12p9b-gargalo: var(--a12-ouro, var(--a12p9-gargalo, #F3BE5B));
+      --a12p9b-btn-bg: #27242F;
+      --a12p9b-btn-border: #443F50;
+      --a12p9b-font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--a12p9b-bg);
+      font-family: var(--a12p9b-font);
+      outline: none;
+    }
+
+    [data-theme="light"] .a12p9b-root {
+      --a12p9b-bg: #F8F6F8;
+      --a12p9b-panel-bg: #FFFFFF;
+      --a12p9b-panel-border: #E2D7E2;
+      --a12p9b-tinta: #1E1E24;
+      --a12p9b-subtinta: #55505D;
+      --a12p9b-osso: #A68B74;
+      --a12p9b-osso-stroke: rgba(166, 139, 116, 0.65);
+      --a12p9b-osso-fill: rgba(166, 139, 116, 0.12);
+      --a12p9b-superior: #2B75B0;
+      --a12p9b-medio: #D33F53;
+      --a12p9b-inferior: #6B4FA0;
+      --a12p9b-cabeca: #208B85;
+      --a12p9b-cabeca-stroke: #125753;
+      --a12p9b-gargalo: #D49015;
+      --a12p9b-btn-bg: #EFEAEF;
+      --a12p9b-btn-border: #D3C9D3;
+    }
+
+    .a12p9b-title-main {
+      font-size: 20px;
+      font-weight: 700;
+      fill: var(--a12p9b-tinta);
+      letter-spacing: -0.02em;
+    }
+
+    .a12p9b-title-sub {
+      font-size: 13px;
+      fill: var(--a12p9b-subtinta);
+      font-weight: 400;
+    }
+
+    .a12p9b-ring {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .a12p9b-ring-shape {
+      fill: none;
+      stroke-width: 3;
+      transition: all 0.3s ease;
+    }
+
+    .a12p9b-ring-superior .a12p9b-ring-shape {
+      stroke: var(--a12p9b-superior);
+    }
+
+    .a12p9b-ring-medio .a12p9b-ring-shape {
+      stroke: var(--a12p9b-medio);
+      stroke-dasharray: 6 3;
+    }
+
+    .a12p9b-ring-inferior .a12p9b-ring-shape {
+      stroke: var(--a12p9b-inferior);
+    }
+
+    .a12p9b-ring.is-highlighted .a12p9b-ring-shape {
+      stroke-width: 5;
+      filter: drop-shadow(0 0 6px rgba(243, 190, 91, 0.4));
+    }
+
+    .a12p9b-ring-fill {
+      opacity: 0.12;
+      transition: opacity 0.3s ease;
+    }
+
+    .a12p9b-ring.is-highlighted .a12p9b-ring-fill {
+      opacity: 0.28;
+    }
+
+    .a12p9b-spine-anchor {
+      fill: var(--a12p9b-gargalo);
+      stroke: var(--a12p9b-medio);
+      stroke-width: 2;
+      transition: all 0.3s ease;
+    }
+
+    .a12p9b-spine-anchor:hover {
+      transform: scale(1.3);
+    }
+
+    .a12p9b-fetal-head {
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .a12p9b-btn {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+
+    .a12p9b-btn-rect {
+      fill: var(--a12p9b-btn-bg);
+      stroke: var(--a12p9b-btn-border);
+      stroke-width: 1.5;
+      rx: 8px;
+    }
+
+    .a12p9b-btn-text {
+      font-size: 13px;
+      font-weight: 600;
+      fill: var(--a12p9b-tinta);
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+    .a12p9b-btn.is-active .a12p9b-btn-rect {
+      fill: var(--a12p9b-gargalo);
+      stroke: var(--a12p9b-gargalo);
+    }
+
+    .a12p9b-btn.is-active .a12p9b-btn-text {
+      fill: #121115;
+    }
+
+    .a12p9b-btn:hover:not(.is-active) .a12p9b-btn-rect {
+      stroke: var(--a12p9b-gargalo);
+    }
+
+    .a12p9b-btn:focus-visible .a12p9b-btn-rect {
+      stroke: var(--a12p9b-gargalo);
+      stroke-width: 3;
+    }
+
+    .a12p9b-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+    }
+
+    .a12p9b-bar-rect {
+      transition: width 0.5s ease, fill 0.3s ease;
+    }
+
+    .a12p9b-bar-group.is-active .a12p9b-bar-rect {
+      filter: drop-shadow(0 0 4px var(--a12p9b-gargalo));
+    }
+
+    .a12p9b-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <!-- BACKGROUND -->
+  <rect width="1000" height="660" fill="var(--a12p9b-bg)" rx="16" />
+
+  <!-- HEADER -->
+  <g transform="translate(32, 40)">
+    <text class="a12p9b-title-main" x="0" y="0">ESTREITOS DA PELVE MENOR &amp; TRAJETÓRIA DO PARTO</text>
+    <text class="a12p9b-title-sub" x="0" y="22">O estreito médio (10,5 cm) é o menor diâmetro da pelve (gargalo biespinhal); o polo cefálico orienta-se na entrada (13 cm), rotaciona no meio e deflete na saída (11 cm).</text>
+  </g>
+
+  <!-- ANATOMY STAGE (LEFT SIDE) -->
+  <g id="a12p9b-stage-left" transform="translate(20, 70)">
+
+    <!-- PELVIS 3D BONE FRAMEWORK (OBLIQUE PERSPECTIVE) -->
+    <g id="a12p9b-pelvic-bones" stroke="var(--a12p9b-osso-stroke)" stroke-width="1.8" fill="var(--a12p9b-osso-fill)">
+      <!-- Sacral Promontory & Sacrum Back -->
+      <path d="M 230 135 C 260 120, 340 120, 370 135 C 385 150, 375 190, 360 230 C 345 270, 335 340, 330 400 C 320 470, 310 520, 300 540 C 290 520, 280 470, 270 400 C 255 340, 245 270, 240 230 C 225 190, 215 150, 230 135 Z" opacity="0.65" />
+      <!-- Sacral Vertebrae Ridge Lines -->
+      <line x1="260" y1="155" x2="340" y2="155" stroke-dasharray="2 2" opacity="0.5" />
+      <line x1="265" y1="185" x2="335" y2="185" stroke-dasharray="2 2" opacity="0.5" />
+      <line x1="270" y1="215" x2="330" y2="215" stroke-dasharray="2 2" opacity="0.5" />
+
+      <!-- Iliac Wings Lateral -->
+      <!-- Left Iliac Wing -->
+      <path d="M 230 135 C 190 130, 120 160, 110 210 C 100 260, 140 290, 185 300 C 195 320, 190 350, 175 390 C 160 430, 180 475, 210 475" />
+      <!-- Right Iliac Wing -->
+      <path d="M 370 135 C 410 130, 480 160, 490 210 C 500 260, 460 290, 415 300 C 405 320, 410 350, 425 390 C 440 430, 420 475, 390 475" />
+
+      <!-- Pubic Symphysis (Anterior Upper) -->
+      <path d="M 265 220 Q 300 228 335 220 C 340 235, 335 250, 300 252 C 265 250, 260 235, 265 220 Z" fill="rgba(220, 199, 180, 0.2)" />
+      <!-- Pubic Arch Subpubic Angle (Anterior Lower) -->
+      <path d="M 255 385 Q 300 375 345 385 L 390 475 Q 300 440 210 475 Z" fill="none" stroke-width="2" />
+
+      <!-- Ischial Tuberosities (Bases) -->
+      <ellipse cx="210" cy="475" rx="22" ry="12" />
+      <ellipse cx="390" cy="475" rx="22" ry="12" />
+
+      <!-- Coccyx Apex -->
+      <path d="M 290 525 Q 300 545 310 525 Z" fill="var(--a12p9b-osso)" />
+    </g>
+
+    <!-- AXIS OF DESCENT (CURVA DE CARUS) -->
+    <path d="M 300 175 L 300 315 Q 300 430 335 480" fill="none" stroke="var(--a12p9b-gargalo)" stroke-width="2" stroke-dasharray="4 4" opacity="0.65" />
+
+    <!-- ESTREITO SUPERIOR (RING 1 - ENTRADA - 13,0 cm) -->
+    <g id="a12p9b-ring-superior" class="a12p9b-ring a12p9b-ring-superior" role="button" aria-label="Estreito Superior: Entrada Pelvina, 13 cm">
+      <ellipse cx="300" cy="175" rx="145" ry="52" class="a12p9b-ring-fill" fill="var(--a12p9b-superior)" />
+      <ellipse cx="300" cy="175" rx="145" ry="52" class="a12p9b-ring-shape" />
+      <!-- Transverse Diameter Line (13 cm) -->
+      <line x1="155" y1="175" x2="445" y2="175" stroke="var(--a12p9b-superior)" stroke-width="2.5" stroke-dasharray="5 3" />
+      <circle cx="155" cy="175" r="4" fill="var(--a12p9b-superior)" />
+      <circle cx="445" cy="175" r="4" fill="var(--a12p9b-superior)" />
+      <!-- Label Tag -->
+      <rect x="360" y="145" width="150" height="24" rx="12" fill="var(--a12p9b-btn-bg)" stroke="var(--a12p9b-superior)" stroke-width="1.5" />
+      <text x="435" y="161" fill="var(--a12p9b-tinta)" font-size="11" font-weight="700" text-anchor="middle">ENTRADA: 13,0 cm</text>
+    </g>
+
+    <!-- ESTREITO MÉDIO (RING 2 - GARGALO BIESPINHAL - 10,5 cm) -->
+    <g id="a12p9b-ring-medio" class="a12p9b-ring a12p9b-ring-medio" role="button" aria-label="Estreito Médio: Gargalo Biespinhal, 10,5 cm">
+      <ellipse cx="300" cy="315" rx="105" ry="38" class="a12p9b-ring-fill" fill="var(--a12p9b-medio)" />
+      <ellipse cx="300" cy="315" rx="105" ry="38" class="a12p9b-ring-shape" />
+
+      <!-- Ischial Spines Prominences (Espinhas Isquiáticas) -->
+      <!-- Left Spine -->
+      <path d="M 175 315 L 195 315 L 182 308 Z" fill="var(--a12p9b-gargalo)" stroke="var(--a12p9b-medio)" stroke-width="1.5" />
+      <circle cx="195" cy="315" r="5" class="a12p9b-spine-anchor" />
+      <!-- Right Spine -->
+      <path d="M 425 315 L 405 315 L 418 308 Z" fill="var(--a12p9b-gargalo)" stroke="var(--a12p9b-medio)" stroke-width="1.5" />
+      <circle cx="405" cy="315" r="5" class="a12p9b-spine-anchor" />
+
+      <!-- Bispinous Diameter Line (10,5 cm) -->
+      <line x1="195" y1="315" x2="405" y2="315" stroke="var(--a12p9b-gargalo)" stroke-width="3" />
+
+      <!-- Bottleneck Label Badge -->
+      <g transform="translate(190, 332)">
+        <rect width="220" height="26" rx="13" fill="var(--a12p9b-medio)" stroke="var(--a12p9b-gargalo)" stroke-width="1.5" />
+        <text x="110" y="17" fill="#FFFFFF" font-size="11" font-weight="800" text-anchor="middle">GARGALO (Biespinhal): 10,5 cm</text>
+      </g>
+    </g>
+
+    <!-- ESTREITO INFERIOR (RING 3 - SAÍDA - 2 TRIÂNGULOS - 11,0 cm) -->
+    <g id="a12p9b-ring-inferior" class="a12p9b-ring a12p9b-ring-inferior" role="button" aria-label="Estreito Inferior: Saída Pelvina de dois triângulos, 11 cm">
+      <!-- Triangle 1: Anterior Urogenital (Apex: Pubic Arch 300, 385; Base: Tuberosities 210,475 to 390,475) -->
+      <polygon points="300,385 210,475 390,475" fill="var(--a12p9b-inferior)" opacity="0.18" stroke="var(--a12p9b-inferior)" stroke-width="2" stroke-dasharray="4 2" />
+      <!-- Triangle 2: Posterior Anal (Apex: Coccyx 300, 530; Base: Tuberosities 210,475 to 390,475) -->
+      <polygon points="300,530 210,475 390,475" fill="var(--a12p9b-inferior)" opacity="0.14" stroke="var(--a12p9b-inferior)" stroke-width="2" stroke-dasharray="4 2" />
+
+      <!-- Common Intertuberous Base Line (11,0 cm) -->
+      <line x1="210" y1="475" x2="390" y2="475" stroke="var(--a12p9b-inferior)" stroke-width="3" />
+      <circle cx="210" cy="475" r="5" fill="var(--a12p9b-inferior)" />
+      <circle cx="390" cy="475" r="5" fill="var(--a12p9b-inferior)" />
+
+      <!-- Label Triangles & Output Diameter -->
+      <text x="300" y="440" fill="var(--a12p9b-inferior)" font-size="10" font-weight="700" text-anchor="middle">▲ Triângulo Urogenital</text>
+      <text x="300" y="505" fill="var(--a12p9b-inferior)" font-size="10" font-weight="700" text-anchor="middle">▼ Triângulo Anal</text>
+
+      <rect x="360" y="485" width="145" height="24" rx="12" fill="var(--a12p9b-btn-bg)" stroke="var(--a12p9b-inferior)" stroke-width="1.5" />
+      <text x="432" y="501" fill="var(--a12p9b-tinta)" font-size="11" font-weight="700" text-anchor="middle">SAÍDA: 11,0 cm</text>
+    </g>
+
+    <!-- FETAL HEAD (POLO CEFÁLICO MOVEL COM ROTAÇÃO E SUTURAS) -->
+    <g id="a12p9b-fetal-head-group" class="a12p9b-fetal-head" transform="translate(300, 175) rotate(0) scale(1, 0.95)" role="img" aria-label="Cabeça Fetal desce e rotaciona">
+      <!-- Head Outer Contour -->
+      <ellipse cx="0" cy="0" rx="68" ry="46" fill="var(--a12p9b-cabeca)" fill-opacity="0.85" stroke="var(--a12p9b-cabeca-stroke)" stroke-width="3.5" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.3))" />
+      <!-- Inner Parietal Vault Texture -->
+      <ellipse cx="0" cy="0" rx="60" ry="38" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.3" />
+
+      <!-- Sutura Sagital (Longitudinal Axis) -->
+      <line x1="-58" y1="0" x2="58" y2="0" stroke="#FFFFFF" stroke-width="2.5" />
+      <!-- Sutura Coronal (Transverse Axis Anterior) -->
+      <line x1="28" y1="-32" x2="28" y2="32" stroke="#FFFFFF" stroke-width="1.8" />
+      <!-- Sutura Lambdóide (Transverse Axis Posterior) -->
+      <path d="M -32 -28 L -48 0 L -32 28" fill="none" stroke="#FFFFFF" stroke-width="1.8" />
+
+      <!-- Fontanela Anterior (Bregma - Diamond Shape) -->
+      <polygon points="28,-8 36,0 28,8 20,0" fill="#FFFFFF" opacity="0.9" />
+      <!-- Fontanela Posterior (Lâmbda - Triangle Shape) -->
+      <polygon points="-48,-6 -40,0 -48,6" fill="#FFFFFF" opacity="0.9" />
+
+      <!-- Occiput Marker Indicator -->
+      <circle cx="-52" cy="0" r="4" fill="var(--a12p9b-gargalo)" />
+      <text x="-52" y="-10" fill="#FFFFFF" font-size="9" font-weight="800" text-anchor="middle">O</text>
+    </g>
+
+    <!-- STEP INDICATOR OVERLAY ON STAGE -->
+    <rect x="20" y="555" width="540" height="28" rx="14" fill="var(--a12p9b-panel-bg)" stroke="var(--a12p9b-panel-border)" stroke-width="1" />
+    <text id="a12p9b-head-status-text" x="290" y="573" fill="var(--a12p9b-tinta)" font-size="12" font-weight="600" text-anchor="middle">
+      Passo 1/3: Orientação Transversa na Entrada (13,0 cm)
+    </text>
+
+  </g>
+
+  <!-- INTERACTIVE CONTROL & CLINICAL READING PANEL (RIGHT SIDE) -->
+  <g id="a12p9b-panel-right" transform="translate(585, 75)">
+
+    <!-- Panel Card Background -->
+    <rect width="390" height="550" rx="16" fill="var(--a12p9b-panel-bg)" stroke="var(--a12p9b-panel-border)" stroke-width="1.5" />
+
+    <!-- STEP TABS (1. Entrada | 2. Médio | 3. Saída) -->
+    <g transform="translate(16, 20)">
+      <text x="0" y="-4" fill="var(--a12p9b-subtinta)" font-size="11" font-weight="700" letter-spacing="0.05em">SELECIONE O PLANO DE PASSAGEM:</text>
+
+      <g id="a12p9b-btn-step-1" class="a12p9b-btn is-active" transform="translate(0, 8)" role="button" aria-selected="true" tabindex="0" aria-label="Ver Estreito Superior Entrada">
+        <rect class="a12p9b-btn-rect" width="112" height="36" />
+        <text class="a12p9b-btn-text" x="56" y="18">1. Entrada</text>
+      </g>
+
+      <g id="a12p9b-btn-step-2" class="a12p9b-btn" transform="translate(122, 8)" role="button" aria-selected="false" tabindex="0" aria-label="Ver Estreito Médio Gargalo">
+        <rect class="a12p9b-btn-rect" width="114" height="36" />
+        <text class="a12p9b-btn-text" x="57" y="18">2. Médio (Gargalo)</text>
+      </g>
+
+      <g id="a12p9b-btn-step-3" class="a12p9b-btn" transform="translate(244, 8)" role="button" aria-selected="false" tabindex="0" aria-label="Ver Estreito Inferior Saída">
+        <rect class="a12p9b-btn-rect" width="114" height="36" />
+        <text class="a12p9b-btn-text" x="57" y="18">3. Saída</text>
+      </g>
+    </g>
+
+    <!-- PLAY / AUTO SIMULATION BUTTON -->
+    <g id="a12p9b-btn-play" class="a12p9b-btn" transform="translate(16, 72)" role="button" tabindex="0" aria-label="Simular descida do parto">
+      <rect class="a12p9b-btn-rect" width="358" height="32" rx="6" fill="var(--a12p9b-btn-bg)" />
+      <text class="a12p9b-btn-text" x="179" y="16" fill="var(--a12p9b-gargalo)">▶ Simular Descida e Rotação Fetal</text>
+    </g>
+
+    <!-- DYNAMIC CLINICAL DETAILS CARD -->
+    <g transform="translate(16, 120)">
+      <!-- Stage Header & Badge -->
+      <text id="a12p9b-card-title" x="0" y="16" fill="var(--a12p9b-tinta)" font-size="16" font-weight="800">ESTREITO SUPERIOR (ENTRADA)</text>
+      <g transform="translate(0, 26)">
+        <rect id="a12p9b-card-badge-bg" width="180" height="22" rx="11" fill="var(--a12p9b-superior)" />
+        <text id="a12p9b-card-badge" x="90" y="15" fill="#FFFFFF" font-size="10" font-weight="800" text-anchor="middle" letter-spacing="0.04em">ENTRADA PELVINA</text>
+      </g>
+
+      <!-- Key Metrics Highlight Box -->
+      <rect x="0" y="60" width="358" height="72" rx="10" fill="rgba(0,0,0,0.15)" stroke="var(--a12p9b-panel-border)" stroke-width="1" />
+      <g transform="translate(16, 76)">
+        <text x="0" y="12" fill="var(--a12p9b-subtinta)" font-size="11" font-weight="600">DIÂMETRO DOMINANTE:</text>
+        <text id="a12p9b-val-diameter" x="0" y="38" fill="var(--a12p9b-gargalo)" font-size="26" font-weight="900">13,0 cm</text>
+
+        <text x="170" y="12" fill="var(--a12p9b-subtinta)" font-size="11" font-weight="600">TIPO / MARCO:</text>
+        <text id="a12p9b-val-type" x="170" y="32" fill="var(--a12p9b-tinta)" font-size="12" font-weight="700">Transiverso Maior</text>
+      </g>
+
+      <!-- Landmark & Dynamics Description Text -->
+      <g transform="translate(0, 148)">
+        <text x="0" y="0" fill="var(--a12p9b-subtinta)" font-size="11" font-weight="700" letter-spacing="0.04em">LIMITES ANATÔMICOS:</text>
+        <text id="a12p9b-val-landmark" x="0" y="18" fill="var(--a12p9b-tinta)" font-size="12" font-weight="600" width="358">Linha Terminal / Promontório à Sínfise Púbica</text>
+
+        <text x="0" y="46" fill="var(--a12p9b-subtinta)" font-size="11" font-weight="700" letter-spacing="0.04em">MECÂNICA OBSTÉTRICA E DINÂMICA:</text>
+        <foreignObject x="0" y="52" width="358" height="95">
+          <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size:12px; line-height:1.45; color:var(--a12p9b-tinta); font-family:sans-serif;">
+            <xhtml:span id="a12p9b-val-dynamics">
+              A cabeça fetal ingressa na pelve orientada preferencialmente no diâmetro TRANSVERSO ou OBLÍQUO (13 cm), aproveitando o maior espaço disponível na entrada pelvina.
+            </xhtml:span>
+          </xhtml:div>
+        </foreignObject>
+      </g>
+    </g>
+
+    <!-- DIAMETER COMPARISON BAR CHART (CONFIRMS 10,5 cm BOTTLENECK) -->
+    <g transform="translate(16, 420)">
+      <line x1="0" y1="0" x2="358" y2="0" stroke="var(--a12p9b-panel-border)" stroke-width="1" />
+      <text x="0" y="18" fill="var(--a12p9b-subtinta)" font-size="11" font-weight="700" letter-spacing="0.04em">COMPARATIVO DOS DIÂMETROS (GARGALO EM DESTAQUE):</text>
+
+      <!-- Bar 1: Superior (13.0 cm) -->
+      <g id="a12p9b-bar-1" class="a12p9b-bar-group is-active" transform="translate(0, 30)">
+        <text x="0" y="12" fill="var(--a12p9b-tinta)" font-size="11" font-weight="600">Superior (Entrada)</text>
+        <rect x="130" y="2" width="180" height="14" rx="4" fill="var(--a12p9b-superior)" class="a12p9b-bar-rect" />
+        <text x="318" y="13" fill="var(--a12p9b-tinta)" font-size="11" font-weight="800">13,0 cm</text>
+      </g>
+
+      <!-- Bar 2: Médio (10.5 cm - Bottleneck) -->
+      <g id="a12p9b-bar-2" class="a12p9b-bar-group" transform="translate(0, 52)">
+        <text x="0" y="12" fill="var(--a12p9b-medio)" font-size="11" font-weight="800">Médio (Gargalo)</text>
+        <rect x="130" y="2" width="145" height="14" rx="4" fill="var(--a12p9b-medio)" class="a12p9b-bar-rect" />
+        <text x="283" y="13" fill="var(--a12p9b-medio)" font-size="11" font-weight="900">10,5 cm ★</text>
+      </g>
+
+      <!-- Bar 3: Inferior (11.0 cm) -->
+      <g id="a12p9b-bar-3" class="a12p9b-bar-group" transform="translate(0, 74)">
+        <text x="0" y="12" fill="var(--a12p9b-tinta)" font-size="11" font-weight="600">Inferior (Saída)</text>
+        <rect x="130" y="2" width="152" height="14" rx="4" fill="var(--a12p9b-inferior)" class="a12p9b-bar-rect" />
+        <text x="290" y="13" fill="var(--a12p9b-tinta)" font-size="11" font-weight="800">11,0 cm</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ARIA LIVE REGION FOR SCREEN READERS -->
+  <g class="a12p9b-sr-only">
+    <text id="a12p9b-aria-live" aria-live="polite">Plano 1: Estreito Superior (Entrada), diâmetro 13,0 cm. Orientação transversa.</text>
+  </g>
+
+  <!-- SELF-CONTAINED INTERACTIVE JAVASCRIPT ENGINE -->
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function() {
+      var currentStep = 1;
+      var isPlaying = false;
+      var timer = null;
+
+      var stepData = {
+        1: {
+          name: "ESTREITO SUPERIOR (ENTRADA)",
+          badge: "ENTRADA PELVINA",
+          badgeClass: "badge-superior",
+          badgeColor: "var(--a12p9b-superior)",
+          diameter: "13,0 cm",
+          type: "Transiverso Maior",
+          landmark: "Linha Terminal / Promontório à Sínfise Púbica",
+          dynamics: "A cabeça fetal ingressa na pelve orientada preferencialmente no diâmetro TRANSVERSO ou OBLÍQUO (13 cm), aproveitando o maior espaço disponível na entrada pelvina.",
+          ringId: "a12p9b-ring-superior",
+          headY: 175,
+          headRot: 0,
+          headScaleX: 1.0,
+          headScaleY: 0.95
+        },
+        2: {
+          name: "ESTREITO MÉDIO (GARGALO)",
+          badge: "O MENOR DIÂMETRO (GARGALO)",
+          badgeClass: "badge-gargalo",
+          badgeColor: "var(--a12p9b-medio)",
+          diameter: "10,5 cm",
+          type: "Diâmetro Biespinhal (Espinhas)",
+          landmark: "Espinhas Isquiáticas / Plano de Menor Espaço",
+          dynamics: "ACHADO CRÍTICO: O diâmetro biespinhal (10,5 cm) é o verdadeiro gargalo da pelve! Ao encontrar a resistência das espinhas isquiáticas, a cabeça fetal é forçada a realizar ROTAÇÃO INTERNA.",
+          ringId: "a12p9b-ring-medio",
+          headY: 315,
+          headRot: 45,
+          headScaleX: 0.88,
+          headScaleY: 0.92
+        },
+        3: {
+          name: "ESTREITO INFERIOR (SAÍDA)",
+          badge: "SAÍDA PELVINA (2 TRIÂNGULOS)",
+          badgeClass: "badge-inferior",
+          badgeColor: "var(--a12p9b-inferior)",
+          diameter: "11,0 cm",
+          type: "Diâmetro Intertuberoso",
+          landmark: "Arco Púbico, Tuberosidades e Cóccix",
+          dynamics: "A saída bifurca-se em 2 triângulos (urogenital e anal). A cabeça fetal atravessa o triângulo anterior e DEFLETE (extensão) sob o arco subpúbico (11 cm).",
+          ringId: "a12p9b-ring-inferior",
+          headY: 475,
+          headRot: 90,
+          headScaleX: 0.95,
+          headScaleY: 1.0
+        }
+      };
+
+      function setStep(step) {
+        if (step < 1) step = 3;
+        if (step > 3) step = 1;
+        currentStep = step;
+        var d = stepData[step];
+
+        // Update active tab buttons
+        for (var i = 1; i <= 3; i++) {
+          var btn = document.getElementById("a12p9b-btn-step-" + i);
+          if (btn) {
+            if (i === step) {
+              btn.classList.add("is-active");
+              btn.setAttribute("aria-selected", "true");
+            } else {
+              btn.classList.remove("is-active");
+              btn.setAttribute("aria-selected", "false");
+            }
+          }
+          var ring = document.getElementById(stepData[i].ringId);
+          if (ring) {
+            if (i === step) {
+              ring.classList.add("is-highlighted");
+            } else {
+              ring.classList.remove("is-highlighted");
+            }
+          }
+        }
+
+        // Update Head Position & Rotation
+        var headGroup = document.getElementById("a12p9b-fetal-head-group");
+        if (headGroup) {
+          headGroup.setAttribute("transform", "translate(300, " + d.headY + ") rotate(" + d.headRot + ") scale(" + d.headScaleX + ", " + d.headScaleY + ")");
+        }
+
+        // Update Head Status Text
+        var headStatusText = document.getElementById("a12p9b-head-status-text");
+        if (headStatusText) {
+          headStatusText.textContent = "Passo " + step + "/3: " + (step === 1 ? "Orientação Transversa na Entrada (13,0 cm)" : (step === 2 ? "Compressão e Rotação Interna no Gargalo (10,5 cm)" : "Deflexão Anteroposterior na Saída (11,0 cm)"));
+        }
+
+        // Update Panel Data
+        var titleEl = document.getElementById("a12p9b-card-title");
+        if (titleEl) titleEl.textContent = d.name;
+
+        var badgeEl = document.getElementById("a12p9b-card-badge");
+        if (badgeEl) badgeEl.textContent = d.badge;
+
+        var badgeBgEl = document.getElementById("a12p9b-card-badge-bg");
+        if (badgeBgEl) badgeBgEl.setAttribute("fill", d.badgeColor);
+
+        var valDiam = document.getElementById("a12p9b-val-diameter");
+        if (valDiam) valDiam.textContent = d.diameter;
+
+        var valType = document.getElementById("a12p9b-val-type");
+        if (valType) valType.textContent = d.type;
+
+        var valLandmark = document.getElementById("a12p9b-val-landmark");
+        if (valLandmark) valLandmark.textContent = d.landmark;
+
+        var valDynamics = document.getElementById("a12p9b-val-dynamics");
+        if (valDynamics) valDynamics.textContent = d.dynamics;
+
+        // Update Bar chart highlights
+        for (var b = 1; b <= 3; b++) {
+          var bar = document.getElementById("a12p9b-bar-" + b);
+          if (bar) {
+            if (b === step) {
+              bar.classList.add("is-active");
+            } else {
+              bar.classList.remove("is-active");
+            }
+          }
+        }
+
+        // ARIA Live update
+        var liveRegion = document.getElementById("a12p9b-aria-live");
+        if (liveRegion) {
+          liveRegion.textContent = "Plano " + step + ": " + d.name + ", diâmetro " + d.diameter + ". " + d.landmark + ". " + d.dynamics;
+        }
+      }
+
+      // Bind Click Events
+      for (var k = 1; k <= 3; k++) {
+        (function(stepNum) {
+          var btn = document.getElementById("a12p9b-btn-step-" + stepNum);
+          if (btn) {
+            btn.addEventListener("click", function() {
+              stopAuto();
+              setStep(stepNum);
+            });
+            btn.addEventListener("keydown", function(e) {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                stopAuto();
+                setStep(stepNum);
+              }
+            });
+          }
+          var ring = document.getElementById(stepData[stepNum].ringId);
+          if (ring) {
+            ring.addEventListener("click", function() {
+              stopAuto();
+              setStep(stepNum);
+            });
+          }
+        })(k);
+      }
+
+      var playBtn = document.getElementById("a12p9b-btn-play");
+      function stopAuto() {
+        if (isPlaying) {
+          isPlaying = false;
+          if (timer) clearInterval(timer);
+          if (playBtn) {
+            var playText = playBtn.querySelector("text");
+            if (playText) playText.textContent = "▶ Simular Descida e Rotação Fetal";
+          }
+        }
+      }
+
+      if (playBtn) {
+        playBtn.addEventListener("click", function() {
+          if (isPlaying) {
+            stopAuto();
+          } else {
+            isPlaying = true;
+            var playText = playBtn.querySelector("text");
+            if (playText) playText.textContent = "⏸ Pausar Descida";
+            setStep((currentStep % 3) + 1);
+            timer = setInterval(function() {
+              setStep((currentStep % 3) + 1);
+            }, 2500);
+          }
+        });
+        playBtn.addEventListener("keydown", function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            playBtn.click();
+          }
+        });
+      }
+
+      // Keyboard navigation on Root SVG
+      var rootSvg = document.getElementById("a12p9b-svg");
+      if (rootSvg) {
+        rootSvg.addEventListener("keydown", function(e) {
+          if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+            e.preventDefault();
+            stopAuto();
+            setStep(currentStep + 1);
+          } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+            e.preventDefault();
+            stopAuto();
+            setStep(currentStep - 1);
+          } else if (e.key === "1") {
+            stopAuto(); setStep(1);
+          } else if (e.key === "2") {
+            stopAuto(); setStep(2);
+          } else if (e.key === "3") {
+            stopAuto(); setStep(3);
+          }
+        });
+      }
+
+      // Initialize Step 1
+      setStep(1);
+    })();
+    /*]]>*/
+  </script>
+</svg>

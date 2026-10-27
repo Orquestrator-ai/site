@@ -1,0 +1,764 @@
+<svg id="a12p21h-svg" class="a12p21h-root" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css">
+      /* Variable Definitions with Literal Hex Fallbacks */
+      .a12p21h-root {
+        --a12p21h-bg-main: #140612;
+        --a12p21h-card-bg: #220b1e;
+        --a12p21h-card-border: #44183a;
+        --a12p21h-card-header: #2e0e29;
+        --a12p21h-text-main: #fce8f3;
+        --a12p21h-text-muted: #d4a5c3;
+        --a12p21h-text-dim: #9e6f8f;
+        
+        --a12p21h-brand-pink: #e64980;
+        --a12p21h-brand-wine: #862e9c;
+        --a12p21h-highlight: #ff87d3;
+        
+        /* Clinical Colors (Bauer Convention) */
+        --a12p21h-color-normal: #20c997; /* Green = Normal / Zero Landmark */
+        --a12p21h-color-warning: #ffc078; /* Yellow/Orange = Attention / Threshold */
+        --a12p21h-color-alert: #ff6b6b; /* Red = Pathological / Prolapse */
+        --a12p21h-color-gold: #ffd43b; /* Gold = Landmark Zero Accent */
+
+        /* Anatomical Gradients and Colors */
+        --a12p21h-skin-outer: #381228;
+        --a12p21h-skin-mid: #541c3c;
+        --a12p21h-skin-inner: #7d2a58;
+        --a12p21h-mucosa-base: #a63773;
+        --a12p21h-mucosa-bright: #d64d93;
+        --a12p21h-lumen-dark: #1f0516;
+        
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      /* Light Theme Override */
+      [data-theme="light"] .a12p21h-root {
+        --a12p21h-bg-main: #fdf5f8;
+        --a12p21h-card-bg: #ffffff;
+        --a12p21h-card-border: #f0cce0;
+        --a12p21h-card-header: #fae8f2;
+        --a12p21h-text-main: #2b0822;
+        --a12p21h-text-muted: #6b2455;
+        --a12p21h-text-dim: #995281;
+
+        --a12p21h-brand-pink: #d6336c;
+        --a12p21h-brand-wine: #70248a;
+        --a12p21h-highlight: #c22575;
+
+        --a12p21h-color-normal: #0ca678;
+        --a12p21h-color-warning: #f59f00;
+        --a12p21h-color-alert: #e03131;
+        --a12p21h-color-gold: #f59f00;
+
+        --a12p21h-skin-outer: #f5d3e3;
+        --a12p21h-skin-mid: #eba6c8;
+        --a12p21h-skin-inner: #e07bb0;
+        --a12p21h-mucosa-base: #d64d93;
+        --a12p21h-mucosa-bright: #e66ea9;
+        --a12p21h-lumen-dark: #4a0d33;
+      }
+
+      /* Base Layout Styling */
+      .a12p21h-root {
+        background-color: var(--a12p21h-bg-main, #140612);
+        color: var(--a12p21h-text-main, #fce8f3);
+        user-select: none;
+      }
+
+      /* Interactive Elements Styling */
+      .a12p21h-anat-part {
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.25s ease, stroke-width 0.2s ease;
+      }
+      .a12p21h-anat-part:hover {
+        filter: brightness(1.2) drop-shadow(0 0 6px var(--a12p21h-highlight, #ff87d3));
+      }
+      .a12p21h-anat-part.a12p21h-active {
+        stroke: var(--a12p21h-highlight, #ff87d3) !important;
+        stroke-width: 2.5px !important;
+        filter: brightness(1.25) drop-shadow(0 0 10px var(--a12p21h-highlight, #ff87d3));
+      }
+      .a12p21h-anat-part.a12p21h-dimmed {
+        opacity: 0.35;
+      }
+
+      /* Special Hymenal Zero Marker */
+      .a12p21h-zero-landmark {
+        stroke: var(--a12p21h-color-gold, #ffd43b);
+        stroke-dasharray: 4, 3;
+        animation: a12p21h-pulse 3s infinite linear;
+      }
+      @keyframes a12p21h-pulse {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 14; }
+      }
+
+      /* Label Callouts */
+      .a12p21h-callout {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .a12p21h-callout.a12p21h-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .a12p21h-callout-line {
+        stroke: var(--a12p21h-brand-pink, #e64980);
+        stroke-width: 1.5;
+        stroke-dasharray: none;
+      }
+      .a12p21h-callout-node {
+        fill: var(--a12p21h-brand-pink, #e64980);
+        stroke: var(--a12p21h-bg-main, #140612);
+        stroke-width: 1.5;
+      }
+      .a12p21h-callout-bg {
+        fill: var(--a12p21h-card-bg, #220b1e);
+        stroke: var(--a12p21h-card-border, #44183a);
+        stroke-width: 1;
+        rx: 4px;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+      }
+      .a12p21h-callout-text {
+        fill: var(--a12p21h-text-main, #fce8f3);
+        font-size: 11px;
+        font-weight: 600;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      .a12p21h-callout.a12p21h-active .a12p21h-callout-bg {
+        fill: var(--a12p21h-brand-wine, #862e9c);
+        stroke: var(--a12p21h-highlight, #ff87d3);
+      }
+
+      /* Tab Buttons */
+      .a12p21h-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .a12p21h-btn-bg {
+        fill: var(--a12p21h-card-bg, #220b1e);
+        stroke: var(--a12p21h-card-border, #44183a);
+        stroke-width: 1.2;
+        rx: 6px;
+      }
+      .a12p21h-btn:hover .a12p21h-btn-bg {
+        fill: var(--a12p21h-card-header, #2e0e29);
+        stroke: var(--a12p21h-brand-pink, #e64980);
+      }
+      .a12p21h-btn.a12p21h-btn-active .a12p21h-btn-bg {
+        fill: var(--a12p21h-brand-wine, #862e9c);
+        stroke: var(--a12p21h-highlight, #ff87d3);
+        stroke-width: 1.8;
+      }
+      .a12p21h-btn-text {
+        fill: var(--a12p21h-text-main, #fce8f3);
+        font-size: 11px;
+        font-weight: 600;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+
+      /* POP-Q Scale Marker Visualizer */
+      .a12p21h-popq-scale {
+        transition: opacity 0.3s ease;
+      }
+      .a12p21h-popq-scale.a12p21h-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Compass Styling */
+      .a12p21h-compass-line {
+        stroke: var(--a12p21h-text-dim, #9e6f8f);
+        stroke-width: 1;
+      }
+      .a12p21h-compass-text {
+        fill: var(--a12p21h-text-muted, #d4a5c3);
+        font-size: 9px;
+        font-weight: 700;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+    </style>
+
+    <!-- Gradients for Anatomy -->
+    <radialGradient id="a12p21h-grad-pubis" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="var(--a12p21h-skin-inner, #7d2a58)" />
+      <stop offset="60%" stop-color="var(--a12p21h-skin-mid, #541c3c)" />
+      <stop offset="100%" stop-color="var(--a12p21h-skin-outer, #381228)" />
+    </radialGradient>
+
+    <linearGradient id="a12p21h-grad-majora-l" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p21h-skin-outer, #381228)" />
+      <stop offset="50%" stop-color="var(--a12p21h-skin-mid, #541c3c)" />
+      <stop offset="100%" stop-color="var(--a12p21h-skin-inner, #7d2a58)" />
+    </linearGradient>
+
+    <linearGradient id="a12p21h-grad-majora-r" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p21h-skin-outer, #381228)" />
+      <stop offset="50%" stop-color="var(--a12p21h-skin-mid, #541c3c)" />
+      <stop offset="100%" stop-color="var(--a12p21h-skin-inner, #7d2a58)" />
+    </linearGradient>
+
+    <linearGradient id="a12p21h-grad-minora" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p21h-mucosa-base, #a63773)" />
+      <stop offset="50%" stop-color="var(--a12p21h-mucosa-bright, #d64d93)" />
+      <stop offset="100%" stop-color="var(--a12p21h-mucosa-base, #a63773)" />
+    </linearGradient>
+
+    <radialGradient id="a12p21h-grad-vestibule" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a12p21h-mucosa-bright, #d64d93)" />
+      <stop offset="70%" stop-color="var(--a12p21h-mucosa-base, #a63773)" />
+      <stop offset="100%" stop-color="var(--a12p21h-lumen-dark, #1f0516)" />
+    </radialGradient>
+
+    <radialGradient id="a12p21h-grad-clitoris" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ff9ebb" />
+      <stop offset="50%" stop-color="#e64980" />
+      <stop offset="100%" stop-color="#9e224e" />
+    </radialGradient>
+  </defs>
+
+  <!-- BACKGROUND BASE -->
+  <rect width="1000" height="700" fill="var(--a12p21h-bg-main, #140612)" />
+
+  <!-- HEADER CONTRACT 1: TITLE + INTERPRETATION LEGEND -->
+  <g id="a12p21h-header" transform="translate(30, 24)">
+    <text x="0" y="18" fill="var(--a12p21h-text-main, #fce8f3)" font-size="18" font-weight="800" letter-spacing="0.5">
+      TOPOGRAFIA NOMINAL DA VULVA E MARCO ZERO (POP-Q)
+    </text>
+    <text x="0" y="38" fill="var(--a12p21h-text-muted, #d4a5c3)" font-size="12" font-weight="500">
+      Anatomia Pélvica Feminina (Vista Inferior em Posição de Litotomia) • A <tspan fill="var(--a12p21h-color-gold, #ffd43b)" font-weight="700">Carúncula Himenal</tspan> é o Ponto Zero (0 cm) da Régua de Estática Pélvica.
+    </text>
+  </g>
+
+  <!-- LEFT CANVAS: ANATOMICAL DRAWING STAGE (x: 30..530, y: 75..670) -->
+  <g id="a12p21h-stage" transform="translate(30, 75)">
+    <!-- STAGE BACKGROUND CARD -->
+    <rect width="500" height="590" rx="10" fill="var(--a12p21h-card-bg, #220b1e)" stroke="var(--a12p21h-card-border, #44183a)" stroke-width="1.2" />
+
+    <!-- ANATOMICAL ORIENTATION DECLARATION (COMPASS) -->
+    <g id="a12p21h-compass" transform="translate(430, 50)">
+      <circle cx="0" cy="0" r="24" fill="var(--a12p21h-card-header, #2e0e29)" stroke="var(--a12p21h-card-border, #44183a)" stroke-width="1" />
+      <line x1="0" y1="-18" x2="0" y2="18" class="a12p21h-compass-line" />
+      <line x1="-18" y1="0" x2="18" y2="0" class="a12p21h-compass-line" />
+      <text x="0" y="-10" class="a12p21h-compass-text">ANT</text>
+      <text x="0" y="14" class="a12p21h-compass-text">POST</text>
+      <text x="-11" y="2" class="a12p21h-compass-text">DIR</text>
+      <text x="11" y="2" class="a12p21h-compass-text">ESQ</text>
+    </g>
+
+    <!-- ANATOMY DRAWING GROUP (CENTERED AT X=250) -->
+    <g id="a12p21h-anatomy-group" transform="translate(250, 290)">
+
+      <!-- 1. MONTE PÚBICO (MONTE DE VÊNUS) -->
+      <path id="a12p21h-part-pubis" class="a12p21h-anat-part" data-id="pubis" data-name="Monte Púbico"
+            d="M -160,-230 C -90,-260 90,-260 160,-230 C 180,-180 150,-120 120,-100 C 50,-130 -50,-130 -120,-100 C -150,-120 -180,-180 -160,-230 Z"
+            fill="url(#a12p21h-grad-pubis)" stroke="var(--a12p21h-skin-outer, #381228)" stroke-width="1.5" />
+      <!-- Soft Hair/Texture lines -->
+      <path d="M -80,-235 Q 0,-245 80,-235 M -110,-215 Q 0,-225 110,-215 M -60,-200 Q 0,-205 60,-200" 
+            fill="none" stroke="var(--a12p21h-skin-outer, #381228)" stroke-width="1.2" opacity="0.4" pointer-events="none" />
+
+      <!-- 5. GRANDES LÁBIOS (LABIA MAJORA) - LEFT and RIGHT -->
+      <!-- Esquerdo (Anatomical Left = Viewer Right) -->
+      <path id="a12p21h-part-majora-l" class="a12p21h-anat-part" data-id="majora" data-name="Grandes Lábios"
+            d="M 120,-100 C 160,-40 165,80 140,160 C 115,220 50,250 10,255 C 30,220 70,160 70,80 C 70,-10 50,-80 120,-100 Z"
+            fill="url(#a12p21h-grad-majora-l)" stroke="var(--a12p21h-skin-outer, #381228)" stroke-width="1.5" />
+      <!-- Direito (Anatomical Right = Viewer Left) -->
+      <path id="a12p21h-part-majora-r" class="a12p21h-anat-part" data-id="majora" data-name="Grandes Lábios"
+            d="M -120,-100 C -160,-40 -165,80 -140,160 C -115,220 -50,250 -10,255 C -30,220 -70,160 -70,80 C -70,-10 -50,-80 -120,-100 Z"
+            fill="url(#a12p21h-grad-majora-r)" stroke="var(--a12p21h-skin-outer, #381228)" stroke-width="1.5" />
+
+      <!-- COMISSURA POSTERIOR DO PERÍNEO -->
+      <path d="M -25,250 C 0,265 0,265 25,250 C 15,275 -15,275 -25,250 Z" 
+            fill="var(--a12p21h-skin-mid, #541c3c)" stroke="var(--a12p21h-skin-outer, #381228)" stroke-width="1" />
+
+      <!-- VESTÍBULO VULVAR (FUNDO MUCOSO) -->
+      <path id="a12p21h-vestibule-bg" 
+            d="M 0,-115 C 65,-80 65,160 0,235 C -65,160 -65,-80 0,-115 Z"
+            fill="url(#a12p21h-grad-vestibule)" stroke="var(--a12p21h-mucosa-base, #a63773)" stroke-width="1" />
+
+      <!-- 4. PEQUENOS LÁBIOS (LABIA MINORA) - LEFT and RIGHT -->
+      <!-- Esquerdo -->
+      <path id="a12p21h-part-minora-l" class="a12p21h-anat-part" data-id="minora" data-name="Pequenos Lábios"
+            d="M 0,-110 C 35,-80 58,-10 52,70 C 46,140 25,200 0,225 C 20,180 32,120 30,60 C 28,0 12,-70 0,-110 Z"
+            fill="url(#a12p21h-grad-minora)" stroke="var(--a12p21h-mucosa-bright, #d64d93)" stroke-width="1.2" />
+      <!-- Direito -->
+      <path id="a12p21h-part-minora-r" class="a12p21h-anat-part" data-id="minora" data-name="Pequenos Lábios"
+            d="M 0,-110 C -35,-80 -58,-10 -52,70 C -46,140 -25,200 0,225 C -20,180 -32,120 -30,60 C -28,0 -12,-70 0,-110 Z"
+            fill="url(#a12p21h-grad-minora)" stroke="var(--a12p21h-mucosa-bright, #d64d93)" stroke-width="1.2" />
+
+      <!-- 2. CLITÓRIS (GLANDE E PREPÚCIO) -->
+      <g id="a12p21h-part-clitoris" class="a12p21h-anat-part" data-id="clitoris" data-name="Clitóris">
+        <!-- Prepúcio do Clitóris (Capuz) -->
+        <path d="M -22,-115 C -20,-130 20,-130 22,-115 C 25,-100 0,-92 0,-92 C 0,-92 -25,-100 -22,-115 Z" 
+              fill="var(--a12p21h-mucosa-bright, #d64d93)" stroke="var(--a12p21h-brand-pink, #e64980)" stroke-width="1.2" />
+        <!-- Glande do Clitóris -->
+        <ellipse cx="0" cy="-105" rx="9" ry="8" fill="url(#a12p21h-grad-clitoris)" stroke="#ffffff" stroke-width="0.8" />
+        <!-- Frênulo do Clitóris -->
+        <path d="M -8,-98 C 0,-90 0,-90 0,-82 C 0,-90 0,-90 8,-98" fill="none" stroke="var(--a12p21h-brand-pink, #e64980)" stroke-width="1" />
+      </g>
+
+      <!-- 3. ÓSTIO URETRAL EXTERNO (MEATO URETRAL) -->
+      <g id="a12p21h-part-urethra" class="a12p21h-anat-part" data-id="urethra" data-name="Óstio Uretral Externo">
+        <!-- Papila/Mucosa Periuretral -->
+        <ellipse cx="0" cy="-45" rx="14" ry="11" fill="var(--a12p21h-mucosa-bright, #d64d93)" opacity="0.6" />
+        <!-- Fenda Uretral -->
+        <ellipse cx="0" cy="-45" rx="4" ry="7" fill="var(--a12p21h-lumen-dark, #1f0516)" stroke="var(--a12p21h-brand-pink, #e64980)" stroke-width="1" />
+        <line x1="0" y1="-50" x2="0" y2="-40" stroke="var(--a12p21h-text-main, #fce8f3)" stroke-width="1" />
+      </g>
+
+      <!-- 6. INTRÓITO VAGINAL (ABERTURA DA VAGINA) -->
+      <g id="a12p21h-part-introitus" class="a12p21h-anat-part" data-id="introitus" data-name="Intróito Vaginal">
+        <!-- Lúmen Vaginal -->
+        <ellipse cx="0" cy="55" rx="34" ry="46" fill="var(--a12p21h-lumen-dark, #1f0516)" stroke="var(--a12p21h-mucosa-base, #a63773)" stroke-width="1.5" />
+        <!-- Rugas da Mucosa Vaginal Interna -->
+        <path d="M -20,35 C 0,42 0,42 20,35 M -26,55 C 0,63 0,63 26,55 M -20,75 C 0,82 0,82 20,75" 
+              fill="none" stroke="var(--a12p21h-mucosa-base, #a63773)" stroke-width="1" opacity="0.7" />
+      </g>
+
+      <!-- 7. CARÚNCULA HIMENAL (MARCO ZERO POP-Q) - ANEL DE RESTOS HIMENAIS -->
+      <g id="a12p21h-part-hymen" class="a12p21h-anat-part" data-id="hymen" data-name="Carúncula Himenal (Marco Zero)">
+        <!-- Anel Conector do Hímen (Linha POP-Q Zero) -->
+        <ellipse id="a12p21h-hymen-ring" cx="0" cy="55" rx="36" ry="48" fill="none" class="a12p21h-zero-landmark" stroke-width="2" />
+        
+        <!-- Nódulos/Lóbulos das Carúnculas Himenais (Restos de Hímen) -->
+        <circle cx="-35" cy="40" r="5" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-lumen-dark, #1f0516)" stroke-width="1" />
+        <circle cx="-37" cy="58" r="4.5" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-lumen-dark, #1f0516)" stroke-width="1" />
+        <circle cx="-28" cy="85" r="5.5" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-lumen-dark, #1f0516)" stroke-width="1" />
+        <circle cx="0" cy="98" r="6" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-lumen-dark, #1f0516)" stroke-width="1" />
+        <circle cx="28" cy="85" r="5.5" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-lumen-dark, #1f0516)" stroke-width="1" />
+        <circle cx="37" cy="58" r="4.5" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-lumen-dark, #1f0516)" stroke-width="1" />
+        <circle cx="35" cy="40" r="5" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-lumen-dark, #1f0516)" stroke-width="1" />
+        <circle cx="0" cy="10" r="5" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-lumen-dark, #1f0516)" stroke-width="1" />
+
+        <!-- BADGE PONTO ZERO (POP-Q LANDMARK 0 CM) -->
+        <g transform="translate(0, 55)">
+          <rect x="-42" y="-12" width="84" height="24" rx="12" fill="var(--a12p21h-color-normal, #20c997)" stroke="#ffffff" stroke-width="1.5" />
+          <text x="0" y="2" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle" dominant-baseline="middle">
+            MARCO 0 cm
+          </text>
+        </g>
+      </g>
+
+      <!-- OVERLAY POP-Q RULER VISUALIZER (TOGGLED IN POP-Q MODE) -->
+      <g id="a12p21h-popq-visualizer" class="a12p21h-popq-scale a12p21h-hidden" transform="translate(-180, -40)">
+        <!-- Vertical Ruler Axis -->
+        <line x1="0" y1="-50" x2="0" y2="230" stroke="var(--a12p21h-color-gold, #ffd43b)" stroke-width="2" stroke-dasharray="4,2" />
+        
+        <!-- Axis Ticks and Labels -->
+        <!-- Negative (Proximal / Inside) -->
+        <g transform="translate(0, 0)">
+          <line x1="-8" y1="0" x2="8" y2="0" stroke="var(--a12p21h-color-normal, #20c997)" stroke-width="2" />
+          <text x="-14" y="3" fill="var(--a12p21h-color-normal, #20c997)" font-size="10" font-weight="800" text-anchor="end">-3 cm (Proximal)</text>
+        </g>
+        
+        <!-- Zero (Hymenal Plane) -->
+        <g transform="translate(0, 95)">
+          <line x1="-12" y1="0" x2="12" y2="0" stroke="var(--a12p21h-color-gold, #ffd43b)" stroke-width="3" />
+          <text x="-16" y="3" fill="var(--a12p21h-color-gold, #ffd43b)" font-size="11" font-weight="900" text-anchor="end">0 cm (HÍMEN)</text>
+        </g>
+        
+        <!-- Positive (Distal / Prolapsed) -->
+        <g transform="translate(0, 190)">
+          <line x1="-8" y1="0" x2="8" y2="0" stroke="var(--a12p21h-color-alert, #ff6b6b)" stroke-width="2" />
+          <text x="-14" y="3" fill="var(--a12p21h-color-alert, #ff6b6b)" font-size="10" font-weight="800" text-anchor="end">+3 cm (Distal/Prolapso)</text>
+        </g>
+      </g>
+
+    </g> <!-- END ANATOMY GROUP -->
+
+    <!-- CALLOUT LABELS (MAX 5 ACTIVE AT ONCE; DYNAMICALLY FILTERED OR SWITCHED) -->
+    <g id="a12p21h-callouts-layer">
+
+      <!-- 1. Monte Púbico -->
+      <g id="a12p21h-callout-pubis" class="a12p21h-callout" transform="translate(70, 70)">
+        <line x1="100" y1="20" x2="180" y2="20" class="a12p21h-callout-line" />
+        <circle cx="180" cy="20" r="3.5" class="a12p21h-callout-node" />
+        <rect x="0" y="0" width="100" height="32" class="a12p21h-callout-bg" />
+        <text x="50" y="16" class="a12p21h-callout-text">1. Monte Púbico</text>
+      </g>
+
+      <!-- 2. Clitóris -->
+      <g id="a12p21h-callout-clitoris" class="a12p21h-callout" transform="translate(330, 165)">
+        <line x1="0" y1="20" x2="-70" y2="20" class="a12p21h-callout-line" />
+        <circle cx="-70" cy="20" r="3.5" class="a12p21h-callout-node" />
+        <rect x="0" y="0" width="100" height="32" class="a12p21h-callout-bg" />
+        <text x="50" y="16" class="a12p21h-callout-text">2. Clitóris</text>
+      </g>
+
+      <!-- 3. Óstio Uretral Externo -->
+      <g id="a12p21h-callout-urethra" class="a12p21h-callout" transform="translate(70, 230)">
+        <line x1="120" y1="16" x2="180" y2="16" class="a12p21h-callout-line" />
+        <circle cx="180" cy="16" r="3.5" class="a12p21h-callout-node" />
+        <rect x="0" y="0" width="120" height="32" class="a12p21h-callout-bg" />
+        <text x="60" y="16" class="a12p21h-callout-text">3. Óstio Uretral</text>
+      </g>
+
+      <!-- 4. Pequenos Lábios -->
+      <g id="a12p21h-callout-minora" class="a12p21h-callout" transform="translate(330, 310)">
+        <line x1="0" y1="16" x2="-55" y2="16" class="a12p21h-callout-line" />
+        <circle cx="-55" cy="16" r="3.5" class="a12p21h-callout-node" />
+        <rect x="0" y="0" width="125" height="32" class="a12p21h-callout-bg" />
+        <text x="62.5" y="16" class="a12p21h-callout-text">4. Pequenos Lábios</text>
+      </g>
+
+      <!-- 5. Grandes Lábios -->
+      <g id="a12p21h-callout-majora" class="a12p21h-callout" transform="translate(50, 370)">
+        <line x1="120" y1="16" x2="150" y2="16" class="a12p21h-callout-line" />
+        <circle cx="150" cy="16" r="3.5" class="a12p21h-callout-node" />
+        <rect x="0" y="0" width="120" height="32" class="a12p21h-callout-bg" />
+        <text x="60" y="16" class="a12p21h-callout-text">5. Grandes Lábios</text>
+      </g>
+
+      <!-- 6. Intróito Vaginal -->
+      <g id="a12p21h-callout-introitus" class="a12p21h-callout" transform="translate(330, 410)">
+        <line x1="0" y1="16" x2="-50" y2="16" class="a12p21h-callout-line" />
+        <circle cx="-50" cy="16" r="3.5" class="a12p21h-callout-node" />
+        <rect x="0" y="0" width="120" height="32" class="a12p21h-callout-bg" />
+        <text x="60" y="16" class="a12p21h-callout-text">6. Intróito Vaginal</text>
+      </g>
+
+      <!-- 7. Carúncula Himenal (Marco Zero) -->
+      <g id="a12p21h-callout-hymen" class="a12p21h-callout" transform="translate(170, 520)">
+        <line x1="75" y1="0" x2="80" y2="-65" class="a12p21h-callout-line" stroke="var(--a12p21h-color-gold, #ffd43b)" stroke-width="2" />
+        <circle cx="80" cy="-65" r="4.5" fill="var(--a12p21h-color-gold, #ffd43b)" stroke="var(--a12p21h-bg-main, #140612)" stroke-width="1.5" />
+        <rect x="0" y="-18" width="150" height="36" class="a12p21h-callout-bg" stroke="var(--a12p21h-color-gold, #ffd43b)" stroke-width="1.5" />
+        <text x="75" y="0" fill="var(--a12p21h-color-gold, #ffd43b)" font-size="11" font-weight="800" text-anchor="middle" dominant-baseline="middle">
+          7. CARÚNCULA (MARCO 0)
+        </text>
+      </g>
+
+    </g> <!-- END CALLOUTS LAYER -->
+  </g> <!-- END STAGE -->
+
+  <!-- RIGHT PANEL: CLINICAL CONTROL and READING PANEL (x: 555..970, y: 75..670) -->
+  <g id="a12p21h-right-panel" transform="translate(555, 75)">
+    <!-- PANEL CONTAINER -->
+    <rect width="415" height="590" rx="10" fill="var(--a12p21h-card-bg, #220b1e)" stroke="var(--a12p21h-card-border, #44183a)" stroke-width="1.2" />
+
+    <!-- CONTROLS SECTION: MODE / FOCUS SELECTION -->
+    <g transform="translate(20, 20)">
+      <text x="0" y="12" fill="var(--a12p21h-brand-pink, #e64980)" font-size="11" font-weight="800" letter-spacing="1">
+        MODOS DE FOCO TOPOGRÁFICO (MAX 5 RÓTULOS ATIVOS)
+      </text>
+
+      <!-- TAB BUTTON 1: EXTERNAL -->
+      <g id="a12p21h-btn-ext" class="a12p21h-btn" transform="translate(0, 26)">
+        <rect width="180" height="34" class="a12p21h-btn-bg" />
+        <text x="90" y="17" class="a12p21h-btn-text">1. Cobertura Externa (3)</text>
+      </g>
+
+      <!-- TAB BUTTON 2: VESTIBULE -->
+      <g id="a12p21h-btn-vest" class="a12p21h-btn" transform="translate(195, 26)">
+        <rect width="180" height="34" class="a12p21h-btn-bg" />
+        <text x="90" y="17" class="a12p21h-btn-text">2. Vestíbulo &amp; Vias (3)</text>
+      </g>
+
+      <!-- TAB BUTTON 3: HYMEN / POP-Q ZERO -->
+      <g id="a12p21h-btn-popq" class="a12p21h-btn a12p21h-btn-active" transform="translate(0, 68)">
+        <rect width="180" height="34" class="a12p21h-btn-bg" />
+        <text x="90" y="17" class="a12p21h-btn-text" fill="var(--a12p21h-color-gold, #ffd43b)">★ 3. Marco Zero POP-Q (1)</text>
+      </g>
+
+      <!-- TAB BUTTON 4: ALL 7 STRUCTURES -->
+      <g id="a12p21h-btn-all" class="a12p21h-btn" transform="translate(195, 68)">
+        <rect width="180" height="34" class="a12p21h-btn-bg" />
+        <text x="90" y="17" class="a12p21h-btn-text">4. Visão Geral Nominal (7)</text>
+      </g>
+    </g>
+
+    <!-- INTERACTIVE CLINICAL DISPLAY BOX (DYNAMIC DETAILS) -->
+    <g id="a12p21h-detail-box" transform="translate(20, 140)">
+      <!-- HEADER BAR -->
+      <rect width="375" height="36" rx="6" fill="var(--a12p21h-card-header, #2e0e29)" stroke="var(--a12p21h-card-border, #44183a)" stroke-width="1" />
+      <text id="a12p21h-detail-title" x="16" y="18" fill="var(--a12p21h-color-gold, #ffd43b)" font-size="13" font-weight="800" dominant-baseline="middle">
+        MARCO ZERO: CARÚNCULA HIMENAL
+      </text>
+
+      <!-- BODY CONTENT CARD -->
+      <rect x="0" y="44" width="375" height="235" rx="6" fill="var(--a12p21h-bg-main, #140612)" stroke="var(--a12p21h-card-border, #44183a)" stroke-width="1" />
+      
+      <!-- DYNAMIC CONTENT TEXT -->
+      <g id="a12p21h-detail-content" transform="translate(16, 60)">
+        <text y="14" fill="var(--a12p21h-text-main, #fce8f3)" font-size="12" font-weight="700">
+          Relevância Anatômica e Estática Pélvica:
+        </text>
+        <text y="34" fill="var(--a12p21h-text-muted, #d4a5c3)" font-size="11" width="340">
+          • As carúnculas himenais são os remanescentes mucosos
+        </text>
+        <text y="50" fill="var(--a12p21h-text-muted, #d4a5c3)" font-size="11">
+          do hímen cicatrizado após a rotura.
+        </text>
+
+        <text y="76" fill="var(--a12p21h-color-normal, #20c997)" font-size="12" font-weight="800">
+          CONVENÇÃO DE LEITURA POP-Q (PONTO ZERO):
+        </text>
+        <text y="96" fill="var(--a12p21h-color-normal, #20c997)" font-size="11" font-weight="600">
+          ✔ 0 cm: Plano do hímen (Marco Zero Anatômico).
+        </text>
+        <text y="114" fill="var(--a12p21h-color-warning, #ffc078)" font-size="11" font-weight="600">
+          ▲ Val. Negativos (-cm): Estrutura acima/proximal ao hímen.
+        </text>
+        <text y="132" fill="var(--a12p21h-color-alert, #ff6b6b)" font-size="11" font-weight="600">
+          ✖ Val. Positivos (+cm): Estrutura além/distal ao hímen (Prolapso).
+        </text>
+
+        <text y="160" fill="var(--a12p21h-text-dim, #9e6f8f)" font-size="10" font-style="italic">
+          Toque nas estruturas ou alterne os botões para explorar a topografia.
+        </text>
+      </g>
+    </g> <!-- END DETAIL BOX -->
+
+    <!-- CLINICAL SUMMARY TABLE / REPOSITÓRIO NOMINAL (7 ESTRUTURAS) -->
+    <g id="a12p21h-table-summary" transform="translate(20, 435)">
+      <text x="0" y="0" fill="var(--a12p21h-text-main, #fce8f3)" font-size="12" font-weight="800" letter-spacing="0.5">
+        QUADRO NOMINAL DAS 7 ESTRUTURAS
+      </text>
+
+      <!-- TABLE CONTAINER -->
+      <g transform="translate(0, 12)">
+        <rect width="375" height="125" rx="6" fill="var(--a12p21h-card-header, #2e0e29)" stroke="var(--a12p21h-card-border, #44183a)" stroke-width="1" />
+        
+        <!-- Table Lines and Grid -->
+        <line x1="150" y1="0" x2="150" y2="125" stroke="var(--a12p21h-card-border, #44183a)" stroke-width="1" />
+        
+        <!-- Table Items -->
+        <g font-size="10" font-weight="600">
+          <!-- Row 1 -->
+          <text x="12" y="18" fill="var(--a12p21h-text-main, #fce8f3)">1. Monte Púbico</text>
+          <text x="162" y="18" fill="var(--a12p21h-text-muted, #d4a5c3)">Coxim Adiposo Anterior</text>
+          <!-- Row 2 -->
+          <text x="12" y="35" fill="var(--a12p21h-text-main, #fce8f3)">2. Clitóris</text>
+          <text x="162" y="35" fill="var(--a12p21h-text-muted, #d4a5c3)">Órgão Erétil (Glande/Prepúcio)</text>
+          <!-- Row 3 -->
+          <text x="12" y="52" fill="var(--a12p21h-text-main, #fce8f3)">3. Óstio Uretral</text>
+          <text x="162" y="52" fill="var(--a12p21h-text-muted, #d4a5c3)">Meato Urinário no Vestíbulo</text>
+          <!-- Row 4 -->
+          <text x="12" y="69" fill="var(--a12p21h-text-main, #fce8f3)">4. Pequenos Lábios</text>
+          <text x="162" y="69" fill="var(--a12p21h-text-muted, #d4a5c3)">Dobras Mucocutâneas Internas</text>
+          <!-- Row 5 -->
+          <text x="12" y="86" fill="var(--a12p21h-text-main, #fce8f3)">5. Grandes Lábios</text>
+          <text x="162" y="86" fill="var(--a12p21h-text-muted, #d4a5c3)">Dobras Cutâneas Espessas Laterais</text>
+          <!-- Row 6 -->
+          <text x="12" y="103" fill="var(--a12p21h-text-main, #fce8f3)">6. Intróito Vaginal</text>
+          <text x="162" y="103" fill="var(--a12p21h-text-muted, #d4a5c3)">Abertura Inferior do Vestíbulo</text>
+          <!-- Row 7 (Gold Highlighted) -->
+          <text x="12" y="118" fill="var(--a12p21h-color-gold, #ffd43b)" font-weight="800">7. Carúncula Himenal</text>
+          <text x="162" y="118" fill="var(--a12p21h-color-gold, #ffd43b)" font-weight="800">Marco Zero (0 cm) Estática Pélvica</text>
+        </g>
+      </g>
+    </g>
+
+  </g> <!-- END RIGHT PANEL -->
+
+  <!-- INLINE SELF-CONTAINED JAVASCRIPT ENGINE -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // Data Dictionary for the 7 nominal structures
+      var a12p21hData = {
+        pubis: {
+          title: "1. MONTE PÚBICO (MONTE DE VÊNUS)",
+          text: ["• Proeminência adiposa anterior sobre a sínfise púbica.", "• Coberta por pele e pelos pubianos na puberdade.", "• Protege os ossos pélvicos durante o coito."],
+          color: "var(--a12p21h-text-main, #fce8f3)",
+          mode: "ext"
+        },
+        clitoris: {
+          title: "2. CLITÓRIS (GLANDE E PREPÚCIO)",
+          text: ["• Principal corpo erétil e de sensibilidade feminina.", "• Formado pela glande, capuz (prepúcio) e frênulo.", "• Localizado na junção anterior dos pequenos lábios."],
+          color: "var(--a12p21h-brand-pink, #e64980)",
+          mode: "vest"
+        },
+        urethra: {
+          title: "3. ÓSTIO URETRAL EXTERNO",
+          text: ["• Abertura da uretra no vestíbulo vulvar.", "• Situado entre o clitóris e o intróito vaginal.", "• Margens fendas mucosas revestidas por glândulas."],
+          color: "var(--a12p21h-text-main, #fce8f3)",
+          mode: "vest"
+        },
+        minora: {
+          title: "4. PEQUENOS LÁBIOS (LABIA MINORA)",
+          text: ["• Dobras mucocutâneas internas delgadas e vascularizadas.", "• Delimitam o vestíbulo vulvar.", "• Anteriormente fundem-se para formar o prepúcio clitoridiano."],
+          color: "var(--a12p21h-brand-pink, #e64980)",
+          mode: "ext"
+        },
+        majora: {
+          title: "5. GRANDES LÁBIOS (LABIA MAJORA)",
+          text: ["• Dobras cutâneas espessas laterais contendo tecido adiposo.", "• Delimitam a fenda vulvar externamente.", "• Unem-se na comissura posterior e monte púbico."],
+          color: "var(--a12p21h-text-main, #fce8f3)",
+          mode: "ext"
+        },
+        introitus: {
+          title: "6. INTRÓITO VAGINAL",
+          text: ["• Abertura inferior da vagina no vestíbulo.", "• Posterior ao óstio uretral e anterior à fossa navicular.", "• Sede da inserção e limites das carúnculas himenais."],
+          color: "var(--a12p21h-brand-pink, #e64980)",
+          mode: "vest"
+        },
+        hymen: {
+          title: "7. CARÚNCULA HIMENAL (MARCO ZERO POP-Q)",
+          text: [
+            "• Remanescentes mucosos do hímen cicatrizado.",
+            "• MARCO ZERO (0 cm): Referência oficial do sistema POP-Q.",
+            "✔ 0 cm: Nível no plano das carúnculas himenais.",
+            "▲ Valores Negativos (-cm): Ponto acima/proximal ao hímen.",
+            "✖ Valores Positivos (+cm): Ponto prolapsado distal ao hímen."
+          ],
+          color: "var(--a12p21h-color-gold, #ffd43b)",
+          mode: "popq"
+        }
+      };
+
+      // Callout Mappings
+      var calloutMap = {
+        pubis: "a12p21h-callout-pubis",
+        clitoris: "a12p21h-callout-clitoris",
+        urethra: "a12p21h-callout-urethra",
+        minora: "a12p21h-callout-minora",
+        majora: "a12p21h-callout-majora",
+        introitus: "a12p21h-callout-introitus",
+        hymen: "a12p21h-callout-hymen"
+      };
+
+      // Current State
+      var currentMode = "popq"; // Default active mode: POP-Q Marco Zero
+      var activeId = "hymen";
+
+      function updateUI() {
+        // 1. Update Buttons
+        var btns = {
+          ext: document.getElementById("a12p21h-btn-ext"),
+          vest: document.getElementById("a12p21h-btn-vest"),
+          popq: document.getElementById("a12p21h-btn-popq"),
+          all: document.getElementById("a12p21h-btn-all")
+        };
+        for (var k in btns) {
+          if (btns[k]) {
+            if (k === currentMode) {
+              btns[k].classList.add("a12p21h-btn-active");
+            } else {
+              btns[k].classList.remove("a12p21h-btn-active");
+            }
+          }
+        }
+
+        // 2. Filter Callout Labels (Max 5 active rule enforcement!)
+        for (var id in calloutMap) {
+          var el = document.getElementById(calloutMap[id]);
+          if (!el) continue;
+
+          var visible = false;
+          if (currentMode === "all") {
+            visible = true;
+          } else if (currentMode === "ext" && (id === "pubis" || id === "majora" || id === "minora")) {
+            visible = true;
+          } else if (currentMode === "vest" && (id === "clitoris" || id === "urethra" || id === "introitus")) {
+            visible = true;
+          } else if (currentMode === "popq" && (id === "hymen" || id === "introitus")) {
+            visible = true;
+          }
+
+          if (visible) {
+            el.classList.remove("a12p21h-hidden");
+          } else {
+            el.classList.add("a12p21h-hidden");
+          }
+
+          if (id === activeId) {
+            el.classList.add("a12p21h-active");
+          } else {
+            el.classList.remove("a12p21h-active");
+          }
+        }
+
+        // 3. Highlight Anatomy Shapes
+        var parts = document.querySelectorAll(".a12p21h-anat-part");
+        parts.forEach(function(part) {
+          var pId = part.getAttribute("data-id");
+          if (pId === activeId) {
+            part.classList.add("a12p21h-active");
+            part.classList.remove("a12p21h-dimmed");
+          } else {
+            part.classList.remove("a12p21h-active");
+            if (activeId !== null) {
+              part.classList.add("a12p21h-dimmed");
+            } else {
+              part.classList.remove("a12p21h-dimmed");
+            }
+          }
+        });
+
+        // 4. POP-Q Ruler Visualizer Toggle
+        var popqVis = document.getElementById("a12p21h-popq-visualizer");
+        if (popqVis) {
+          if (currentMode === "popq" || activeId === "hymen") {
+            popqVis.classList.remove("a12p21h-hidden");
+          } else {
+            popqVis.classList.add("a12p21h-hidden");
+          }
+        }
+
+        // 5. Update Right Clinical Detail Box
+        var titleEl = document.getElementById("a12p21h-detail-title");
+        var contentEl = document.getElementById("a12p21h-detail-content");
+        var data = a12p21hData[activeId] || a12p21hData["hymen"];
+
+        if (titleEl) {
+          titleEl.textContent = data.title;
+          titleEl.setAttribute("fill", data.color);
+        }
+
+        if (contentEl) {
+          var htmlText = "";
+          data.text.forEach(function(line, idx) {
+            var yPos = 16 + (idx * 20);
+            var color = "var(--a12p21h-text-muted, #d4a5c3)";
+            var weight = "500";
+            if (line.indexOf("✔") >= 0) { color = "var(--a12p21h-color-normal, #20c997)"; weight = "700"; }
+            if (line.indexOf("▲") >= 0) { color = "var(--a12p21h-color-warning, #ffc078)"; weight = "700"; }
+            if (line.indexOf("✖") >= 0) { color = "var(--a12p21h-color-alert, #ff6b6b)"; weight = "700"; }
+            if (line.indexOf("MARCO ZERO") >= 0) { color = "var(--a12p21h-color-gold, #ffd43b)"; weight = "800"; }
+
+            htmlText += '<text y="' + yPos + '" fill="' + color + '" font-size="11" font-weight="' + weight + '">' + line + '</text>';
+          });
+          contentEl.innerHTML = htmlText;
+        }
+      }
+
+      // Attach Event Listeners
+      function initEvents() {
+        // Anatomy clicks
+        var parts = document.querySelectorAll(".a12p21h-anat-part");
+        parts.forEach(function(part) {
+          part.addEventListener("click", function(e) {
+            e.stopPropagation();
+            activeId = part.getAttribute("data-id");
+            updateUI();
+          });
+        });
+
+        // Mode button clicks
+        var bExt = document.getElementById("a12p21h-btn-ext");
+        var bVest = document.getElementById("a12p21h-btn-vest");
+        var bPopq = document.getElementById("a12p21h-btn-popq");
+        var bAll = document.getElementById("a12p21h-btn-all");
+
+        if (bExt) bExt.addEventListener("click", function() { currentMode = "ext"; activeId = "pubis"; updateUI(); });
+        if (bVest) bVest.addEventListener("click", function() { currentMode = "vest"; activeId = "clitoris"; updateUI(); });
+        if (bPopq) bPopq.addEventListener("click", function() { currentMode = "popq"; activeId = "hymen"; updateUI(); });
+        if (bAll) bAll.addEventListener("click", function() { currentMode = "all"; activeId = "hymen"; updateUI(); });
+
+        // Initial UI Render
+        updateUI();
+      }
+
+      // Initialize on Load
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        initEvents();
+      } else {
+        document.addEventListener("DOMContentLoaded", initEvents);
+      }
+    })();
+    ]]>
+  </script>
+</svg>

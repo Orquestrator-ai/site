@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="ELA (fm4). Diagnóstico clínico + exclusão, sensitivo preservado, fronteira ELA × Guillain-Barré (corpo × axônio) e associação com DFT.">
+<title>Clínica manda · não é GBS · DFT · Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm4-cara">
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.5}
+.opener--finding{border-left:4px solid var(--amber)}.opener--finding .opener__eyebrow{color:var(--amber)}
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip,.chip--topic,.chip--1,.chip--2,.chip--ok,.chip--gold,.chip--no{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ink-60)}
+.chip--1{color:var(--indigo);border-color:color-mix(in srgb,var(--indigo) 45%,var(--border))}
+.chip--2{color:var(--ciano);border-color:color-mix(in srgb,var(--ciano) 45%,var(--border))}
+.chip--ok{color:var(--verde);border-color:color-mix(in srgb,var(--verde) 45%,var(--border))}
+.chip--no{color:var(--coral);border-color:color-mix(in srgb,var(--coral) 45%,var(--border))}
+.chip--gold{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}
+.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose ul,.prose-list{margin:0 0 1em 1.1rem;padding:0}
+.prose ul li,.prose-list li{margin:.3rem 0}
+.prose strong,.term{color:var(--ink-100)}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.hl-1{color:var(--indigo);font-weight:700}.hl-2{color:var(--ciano);font-weight:700}
+.exec-card,.continuity,.cmp{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.exec-card__title{margin:0 0 .65rem;font-size:1rem;color:var(--ciano)}
+.continuity{border-left:3px solid var(--indigo)}
+.orbit{display:grid;grid-template-columns:auto 1fr;gap:.5rem .8rem;margin:.6rem 0 0;font-size:.92rem;align-items:center}
+.orbit__core{font-weight:800;color:var(--ink-100);text-align:center;border:2px solid var(--indigo);border-radius:999px;padding:.55rem 1.1rem;background:var(--bg-3);grid-row:span 2}
+.orbit__ring{color:var(--ink-60);font-size:.85rem;line-height:1.5}
+.cmp__grid{display:grid;grid-template-columns:auto 1fr 1fr;gap:0 .5rem;margin-top:.6rem;font-size:.92rem}
+.cmp__head{font-weight:800;padding:.5rem .5rem .35rem;border-bottom:1px solid var(--border)}
+.cmp__head--ela{color:var(--indigo)}
+.cmp__head--gbs{color:var(--ciano)}
+.cmp__row{display:contents}
+.cmp__row>div{padding:.5rem;border-bottom:1px solid var(--border);color:var(--ink-80);line-height:1.45}
+.cmp__row.is-hl>div{background:color-mix(in srgb,var(--amber) 12%,var(--bg-3))}
+.cmp__lab{color:var(--ink-60);font-weight:700}
+.cmp__btns{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.cmp__btn{min-height:40px;border-radius:999px;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100);padding:.4rem .85rem;cursor:pointer;font:inherit}
+.cmp__btn:hover{border-color:var(--amber)}
+.dft-card{border:1px solid color-mix(in srgb,var(--amber) 40%,var(--border));border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow);border-left:4px solid var(--amber);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.dft-card h3{margin:0 0 .4rem;color:var(--amber);font-size:1rem}
+.dft-card p{margin:0;color:var(--ink-80);line-height:1.5;font-size:.95rem}
+.fig{margin:1.25rem 0}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ciano);margin-bottom:.3rem;font-weight:800}
+.fig__svg-frame{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-1);box-shadow:var(--shadow)}
+.fm4-inline-svg{display:block;width:100%;height:auto;border-radius:var(--radius-sm)}
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.quiz h2{margin:0 0 .85rem;font-size:1.1rem;color:var(--ink-100)}
+.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}
+.quiz__stem{margin:0 0 .55rem;font-weight:600;color:var(--ink-100);line-height:1.45}
+.quiz__alternatives{display:grid;gap:.4rem}
+.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit;line-height:1.4}
+.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}
+.quiz__alt.is-correct{border-color:var(--verde);background:color-mix(in srgb,var(--verde) 14%,var(--bg-3))}
+.quiz__alt.is-wrong{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 12%,var(--bg-3))}
+.quiz__feedback{margin-top:.6rem;padding:.75rem .8rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}
+.quiz__feedback[hidden]{display:none}
+.quiz__verdict{margin:0 0 .4rem;font-weight:800}
+.quiz__verdict.is-ok{color:var(--verde)}.quiz__verdict.is-bad{color:var(--coral)}
+.quiz__justification,.quiz__distractor{margin:.3rem 0 0;font-size:.92rem;line-height:1.5;color:var(--ink-80)}
+.page-nav{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.page-nav a{display:inline-flex;flex-direction:column;min-height:44px;padding:.5rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);text-decoration:none;color:var(--ink-100)}
+.page-nav a:hover{background:var(--bg-4)}
+.page-nav .nav-dir{font-size:.72rem;color:var(--ink-60)}.page-nav .nav-ttl{font-size:.86rem}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:640px){.cmp__grid{grid-template-columns:1fr}.cmp__head{display:none}.cmp__row>div{border:1px solid var(--border);border-radius:8px;margin-top:.4rem}.orbit{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p6" data-layout="fm4-p06" data-source-ids="047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html"><span class="site-header__logo" aria-hidden="true">NE</span><span class="site-header__titles"><span class="site-header__title">ELA: esclerose lateral amiotrófica</span><span class="site-header__subtitle">Neurologia · esclerose lateral amiotrófica</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress">6/8</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+  <div class="reading">
+    <article class="page" data-page="p6" data-layout="fm4-p06" data-source-ids="047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062">
+      <p class="page__eyebrow">Página 6 · Achado típico / pegadinha</p>
+
+      <section class="opener opener--finding" data-opener="E4">
+        <span class="opener__eyebrow">Achado típico / pegadinha</span>
+        <h1 id="page-title">Clínica manda · não é GBS · DFT</h1>
+        <p class="opener__lead no-indent">Sensibilidade alterada no “quadro de ELA” — e agora? Sensitivo é o freio; GBS é a fronteira; DFT é o atalho de prova.</p>
+      </section>
+
+      <div class="chipset">
+        <span class="chip--ok">sensitivo preservado</span><span class="chip--1">corpo+1º</span><span class="chip--2">axônio</span><span class="chip--gold">DFT</span>
+      </div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h2 class="topic-h">Clínica manda; exclusão fecha</h2>
+          <p>Como doença <strong class="term">degenerativa</strong>, a <strong class="term">clínica tem muito peso</strong> no diagnóstico. <strong class="term">Existem critérios clínicos</strong> para preencher o diagnóstico — mas saber a lista na ponta da língua é <strong class="term">bobagem</strong> no sentido de decorar checklist: o essencial é a <strong class="term">clínica</strong> + <strong class="term">afastar outras causas</strong>.</p>
+          <p>Diagnóstico de boa doença neurodegenerativa: critérios existem, fluxo prático = <strong class="term">clínica</strong> + <strong class="term">exclusão</strong> de mímicos. No caso de Jairo, liquor e imagem de crânio/coluna <strong>normais</strong> empurram para fora o mímico estrutural óbvio — sem substituir a leitura do exame misto.</p>
+
+          <h2 class="topic-h">Sensitivo preservado</h2>
+          <p>A <strong class="term">sensibilidade é preservada</strong> na ELA. Se houver <strong class="term">alteração sensitiva</strong>, pensar em <strong class="term">outro motivo</strong> (não ELA típica).</p>
+
+          <h2 class="topic-h">ELA ≠ Guillain-Barré (corpo × axônio)</h2>
+          <p><strong>Não</strong> é como <strong>Guillain-Barré</strong>. Guillain-Barré de base é uma <strong class="term">polineuropatia</strong> (com preferência pelo motor, mas no <strong>nervo</strong>). Em GBS, o <strong>nervo motor</strong> corresponde ao <strong class="hl-2">segundo neurônio</strong> no sentido de via — mas o sítio é o <strong>nervo / axônio</strong>, não o corpo celular.</p>
+          <p>Na ELA, o problema do 2º está no <strong class="hl-2">corpo do segundo neurônio</strong> (que começa a morrer) — <strong>não</strong> no <strong>axônio</strong>, <strong>não</strong> é nervo periférico como neuropatia clássica. O <strong class="hl-1">primeiro neurônio</strong> também começa a morrer na ELA.</p>
+          <p class="no-indent"><strong>Não</strong> se classifica ELA como <strong>neuropatia periférica</strong> — é doença dos <strong>neurônios motores</strong> (corpo do 2º + 1º).</p>
+          <p class="no-indent">Fronteira: <strong class="hl-2">GBS come o nervo/axônio</strong>; <strong class="hl-1">ELA mata o corpo do neurônio — e o primeiro também</strong>.</p>
+
+          <h2 class="topic-h">Demência que anda com a ELA</h2>
+          <p>Existe <strong class="term">associação</strong> da ELA com <strong class="term">demência frontotemporal (DFT)</strong>. A <strong class="term">patogênese</strong> da esclerose lateral amiotrófica é <strong class="term">muito semelhante</strong> à da demência frontotemporal. Se a prova perguntar <strong class="term">qual demência</strong> se associa à ELA → <strong class="hl-2">frontotemporal</strong>.</p>
+        </div>
+      </section>
+
+      <aside class="exec-card" aria-label="Órbita clínica + exclusão">
+        <h3 class="exec-card__title">Clínica no centro, exclusão em volta</h3>
+        <div class="orbit">
+          <div class="orbit__core">clínica</div>
+          <div class="orbit__ring">↓ critérios existem, mas decorar lista é bobagem — o essencial é a leitura do exame misto</div>
+          <div class="orbit__ring">← exclusão: liquor e RM crânio/coluna normais afastam mímico estrutural óbvio</div>
+        </div>
+      </aside>
+
+      <!-- COMPARISON ela-vs-gbs -->
+      <section class="cmp" aria-label="Comparison ELA × Guillain-Barré">
+        <h3 class="exec-card__title" style="color:var(--ink-100)">ELA × Guillain-Barré</h3>
+        <div class="cmp__grid">
+          <div class="cmp__head"></div>
+          <div class="cmp__head cmp__head--ela">ELA</div>
+          <div class="cmp__head cmp__head--gbs">Guillain-Barré</div>
+
+          <div class="cmp__row" data-row="sitio">
+            <div class="cmp__lab">Sítio 2º</div>
+            <div><strong class="hl-2">Corpo</strong> do 2º NMS</div>
+            <div><strong class="hl-2">Nervo / axônio</strong> (polineuropatia)</div>
+          </div>
+          <div class="cmp__row" data-row="1">
+            <div class="cmp__lab">1º NMS</div>
+            <div><strong class="hl-1">Também morre</strong> (Babinski, espasticidade, hiperreflexia)</div>
+            <div>Não é o padrão misto 1º+2º da ELA</div>
+          </div>
+          <div class="cmp__row" data-row="sens">
+            <div class="cmp__lab">Sensibilidade</div>
+            <div><strong class="hl-1">Preservada</strong> (se alterada → outro motivo)</div>
+            <div>Pode haver componente sensitivo (ex.: dormência de porta)</div>
+          </div>
+          <div class="cmp__row" data-row="class">
+            <div class="cmp__lab">Classificação</div>
+            <div>Doença do <strong>neurônio motor</strong></div>
+            <div>Neuropatia / polineuropatia — <strong>não</strong> confundir com ELA</div>
+          </div>
+        </div>
+        <div class="cmp__btns">
+          <button type="button" class="cmp__btn" data-compare-highlight="sitio">Destacar linha “sítio”</button>
+          <button type="button" class="cmp__btn" data-compare-highlight="1">Destacar linha “1º NMS”</button>
+          <button type="button" class="cmp__btn" data-compare-highlight="sens">Destacar linha “sensitivo”</button>
+        </div>
+      </section>
+
+      <div class="dft-card">
+        <h3>ELA ↔ DFT</h3>
+        <p>Patogênese muito semelhante. Se a prova perguntar qual demência se associa à ELA → <strong>frontotemporal</strong>.</p>
+      </div>
+
+      <!-- FIGURA REAL — R6 corno anterior -->
+      <div class="figura-ancorada">
+        <figure class="figura-ancorada__media">
+          <img src="media/B06-als-anterior-horn-motoneuron-loss.png" alt="Histologia de medula: corno anterior controle com muitos motoneurônios grandes (A–B) versus corno anterior na ELA com depleção e neurônios atróficos (C–D); E–G mostram corpo do motoneurônio normal, atrófico e residual (Nissl)." loading="lazy" decoding="async">
+          <figcaption class="figura-ancorada__legenda"><b>Corno anterior na ELA</b> — perda de motoneurônios. A peça que morre é o <strong>corpo</strong>, não o axônio.</figcaption>
+          <p class="figura-ancorada__fonte">By Lee J. Martin, from “Mitochondrial and Cell Death Mechanisms in Neurodegenerative Diseases”, Pharmaceuticals (Basel) 2010, via Wikimedia Commons / PMC3023298 Fig. 5 · CC BY 3.0 · <a href="https://commons.wikimedia.org/wiki/File:ALS_loss_of_neurons_and_oher_often_inclusions.png" rel="noopener">fonte</a></p>
+        </figure>
+        <div class="figura-ancorada__ancora">
+          <h4>Por que “corpo”, não “axônio”</h4>
+          <p>A histologia mostra o corno anterior <strong>esvaziado</strong> de neurônios grandes — o corpo do 2º morrendo. É o contraste que separa ELA de GBS: aqui a lesão é no <strong>corpo</strong> do motoneurônio (e o 1º também cai), não na bainha ou no axônio do nervo periférico.</p>
+        </div>
+      </div>
+
+      <!-- Figura: corpo × axônio -->
+      <figure class="fig">
+        <span class="fig__label">Fronteira de sítio — ELA × GBS</span>
+        <div class="fig__svg-frame">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" id="fm4p6-svg" class="fm4-inline-svg fm4p6-root" role="img" aria-label="ELA versus Guillain-Barré: sítio da lesão">
+  <title>ELA versus Guillain-Barré: sítio da lesão</title>
+  <desc>Compara o alvo da ELA no corpo do segundo neurônio e no primeiro neurônio com o alvo da Guillain-Barré no nervo periférico/axônio, e preserva a via sensitiva na ELA.</desc>
+
+  <defs>
+    <style>
+      .fm4p6-root {
+        --fm4p6-bg: var(--bg-1, #0f172a);
+        --fm4p6-panel: var(--bg-2, #1e293b);
+        --fm4p6-panel-border: var(--ink-20, #334155);
+        --fm4p6-text-main: var(--ink-100, #f8fafc);
+        --fm4p6-text-sub: var(--ink-70, #94a3b8);
+        --fm4p6-text-muted: var(--ink-50, #64748b);
+        
+        --fm4p6-teal: var(--kw-teal, #14b8a6);
+        --fm4p6-teal-dark: var(--kw-teal-dark, #0d9488);
+        --fm4p6-teal-light: var(--kw-teal-light, #ccfbf1);
+        --fm4p6-teal-glow: rgba(20, 184, 166, 0.25);
+        
+        --fm4p6-coral: var(--kw-coral, #f43f5e);
+        --fm4p6-coral-dark: var(--kw-coral-dark, #e11d48);
+        --fm4p6-coral-light: var(--kw-coral-light, #ffe4e6);
+        --fm4p6-coral-glow: rgba(244, 63, 94, 0.25);
+        
+        --fm4p6-green: var(--kw-green, #22c55e);
+        --fm4p6-green-dark: var(--kw-green-dark, #16a34a);
+        --fm4p6-green-light: var(--kw-green-light, #dcfce7);
+        
+        --fm4p6-amber: var(--kw-amber, #f59e0b);
+        --fm4p6-amber-dark: var(--kw-amber-dark, #d97706);
+        --fm4p6-amber-light: var(--kw-amber-light, #fef3c7);
+        --fm4p6-amber-glow: rgba(245, 158, 11, 0.3);
+        
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--fm4p6-bg, #0f172a);
+        color: var(--fm4p6-text-main, #f8fafc);
+        user-select: none;
+      }
+
+      [data-theme="light"] .fm4p6-root {
+        --fm4p6-bg: var(--bg-1, #f8fafc);
+        --fm4p6-panel: var(--bg-2, #ffffff);
+        --fm4p6-panel-border: var(--ink-20, #e2e8f0);
+        --fm4p6-text-main: var(--ink-100, #0f172a);
+        --fm4p6-text-sub: var(--ink-70, #475569);
+        --fm4p6-text-muted: var(--ink-50, #94a3b8);
+        
+        --fm4p6-teal: var(--kw-teal, #0d9488);
+        --fm4p6-teal-dark: var(--kw-teal-dark, #0f766e);
+        --fm4p6-teal-light: var(--kw-teal-light, #14b8a6);
+        --fm4p6-teal-glow: rgba(13, 148, 136, 0.15);
+        
+        --fm4p6-coral: var(--kw-coral, #e11d48);
+        --fm4p6-coral-dark: var(--kw-coral-dark, #be123c);
+        --fm4p6-coral-light: var(--kw-coral-light, #f43f5e);
+        --fm4p6-coral-glow: rgba(225, 29, 72, 0.15);
+        
+        --fm4p6-green: var(--kw-green, #16a34a);
+        --fm4p6-green-dark: var(--kw-green-dark, #15803d);
+        
+        --fm4p6-amber: var(--kw-amber, #d97706);
+        --fm4p6-amber-dark: var(--kw-amber-dark, #b45309);
+        --fm4p6-amber-glow: rgba(217, 119, 6, 0.2);
+      }
+
+      .fm4p6-header-title {
+        font-size: 20px;
+        font-weight: 800;
+        fill: var(--fm4p6-text-main, #f8fafc);
+        letter-spacing: 0.5px;
+      }
+
+      .fm4p6-header-sub {
+        font-size: 13px;
+        font-weight: 500;
+        fill: var(--fm4p6-text-sub, #94a3b8);
+      }
+
+      .fm4p6-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .fm4p6-btn-bg {
+        fill: var(--fm4p6-panel, #1e293b);
+        stroke: var(--fm4p6-panel-border, #334155);
+        stroke-width: 1.5px;
+        rx: 8px;
+      }
+      .fm4p6-btn-text {
+        font-size: 12px;
+        font-weight: 700;
+        fill: var(--fm4p6-text-sub, #94a3b8);
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+      .fm4p6-btn:hover .fm4p6-btn-bg {
+        stroke: var(--fm4p6-teal, #14b8a6);
+      }
+      .fm4p6-btn.fm4p6-active-both .fm4p6-btn-bg {
+        fill: var(--fm4p6-panel-border, #334155);
+        stroke: var(--fm4p6-text-main, #f8fafc);
+      }
+      .fm4p6-btn.fm4p6-active-both .fm4p6-btn-text {
+        fill: var(--fm4p6-text-main, #f8fafc);
+      }
+      .fm4p6-btn.fm4p6-active-ela .fm4p6-btn-bg {
+        fill: var(--fm4p6-teal-dark, #0d9488);
+        stroke: var(--fm4p6-teal, #14b8a6);
+      }
+      .fm4p6-btn.fm4p6-active-ela .fm4p6-btn-text {
+        fill: #ffffff;
+      }
+      .fm4p6-btn.fm4p6-active-gbs .fm4p6-btn-bg {
+        fill: var(--fm4p6-coral-dark, #e11d48);
+        stroke: var(--fm4p6-coral, #f43f5e);
+      }
+      .fm4p6-btn.fm4p6-active-gbs .fm4p6-btn-text {
+        fill: #ffffff;
+      }
+
+      .fm4p6-stage-box {
+        fill: var(--fm4p6-panel, #1e293b);
+        stroke: var(--fm4p6-panel-border, #334155);
+        stroke-width: 1.5px;
+        rx: 12px;
+      }
+
+      .fm4p6-hs {
+        cursor: pointer;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+      .fm4p6-hs:hover, .fm4p6-hs:focus {
+        outline: none;
+      }
+      .fm4p6-hs:hover .fm4p6-target-glow {
+        opacity: 0.8;
+      }
+
+      .fm4p6-pulse {
+        animation: fm4p6-key-pulse 2s infinite ease-in-out;
+      }
+      @keyframes fm4p6-key-pulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.03); opacity: 1; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fm4p6-pulse { animation: none; }
+        .fm4p6-hs { transition: none; }
+      }
+
+      .fm4p6-seal-bg {
+        fill: var(--fm4p6-amber-light, #fef3c7);
+        stroke: var(--fm4p6-amber, #f59e0b);
+        stroke-width: 2px;
+        rx: 8px;
+      }
+      [data-theme="light"] .fm4p6-seal-bg {
+        fill: #fffbeb;
+        stroke: var(--fm4p6-amber-dark, #b45309);
+      }
+      .fm4p6-seal-text-title {
+        font-size: 11px;
+        font-weight: 800;
+        fill: var(--fm4p6-amber-dark, #d97706);
+        letter-spacing: 0.5px;
+      }
+      .fm4p6-seal-text-sub {
+        font-size: 10px;
+        font-weight: 700;
+        fill: var(--fm4p6-amber-dark, #b45309);
+      }
+
+      .fm4p6-chip-bg-dft {
+        fill: rgba(245, 158, 11, 0.15);
+        stroke: var(--fm4p6-amber, #f59e0b);
+        stroke-width: 1.5px;
+        rx: 6px;
+      }
+      .fm4p6-chip-bg-sensory {
+        fill: rgba(34, 197, 94, 0.15);
+        stroke: var(--fm4p6-green, #22c55e);
+        stroke-width: 1.5px;
+        rx: 6px;
+      }
+
+      .fm4p6-card-bg {
+        fill: var(--fm4p6-panel, #1e293b);
+        stroke: var(--fm4p6-panel-border, #334155);
+        stroke-width: 1.5px;
+        rx: 12px;
+      }
+
+      .fm4p6-card-title {
+        font-size: 17px;
+        font-weight: 800;
+        fill: var(--fm4p6-text-main, #f8fafc);
+      }
+      .fm4p6-card-subtitle {
+        font-size: 12px;
+        font-weight: 600;
+        fill: var(--fm4p6-text-sub, #94a3b8);
+      }
+
+      .fm4p6-badge {
+        rx: 4px;
+      }
+      .fm4p6-badge-teal {
+        fill: var(--fm4p6-teal-dark, #0d9488);
+      }
+      .fm4p6-badge-coral {
+        fill: var(--fm4p6-coral-dark, #e11d48);
+      }
+      .fm4p6-badge-green {
+        fill: var(--fm4p6-green-dark, #16a34a);
+      }
+      .fm4p6-badge-amber {
+        fill: var(--fm4p6-amber-dark, #d97706);
+      }
+      .fm4p6-badge-text {
+        font-size: 10px;
+        font-weight: 800;
+        fill: #ffffff;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+
+      .fm4p6-table-header {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--fm4p6-text-muted, #64748b);
+      }
+      .fm4p6-table-label {
+        font-size: 12px;
+        font-weight: 600;
+        fill: var(--fm4p6-text-sub, #94a3b8);
+      }
+      .fm4p6-table-val {
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .fm4p6-val-teal { fill: var(--fm4p6-teal, #14b8a6); }
+      .fm4p6-val-coral { fill: var(--fm4p6-coral, #f43f5e); }
+      .fm4p6-val-green { fill: var(--fm4p6-green, #22c55e); }
+      .fm4p6-val-amber { fill: var(--fm4p6-amber, #f59e0b); }
+      .fm4p6-val-normal { fill: var(--fm4p6-text-main, #f8fafc); }
+
+      .fm4p6-box-note {
+        fill: rgba(15, 23, 42, 0.6);
+        stroke: var(--fm4p6-panel-border, #334155);
+        stroke-width: 1px;
+        rx: 6px;
+      }
+      [data-theme="light"] .fm4p6-box-note {
+        fill: rgba(241, 245, 249, 0.8);
+      }
+      .fm4p6-note-text {
+        font-size: 11.5px;
+        font-weight: 500;
+        fill: var(--fm4p6-text-main, #f8fafc);
+        line-height: 1.4;
+      }
+
+      .fm4p6-tooltip {
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+      }
+      .fm4p6-tooltip-bg {
+        fill: #020617;
+        stroke: var(--fm4p6-teal, #14b8a6);
+        stroke-width: 1.5px;
+        rx: 6px;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+      }
+      [data-theme="light"] .fm4p6-tooltip-bg {
+        fill: #ffffff;
+        stroke: var(--fm4p6-panel-border, #cbd5e1);
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+      }
+      .fm4p6-tooltip-title {
+        font-size: 11px;
+        font-weight: 800;
+        fill: var(--fm4p6-teal, #14b8a6);
+      }
+      .fm4p6-tooltip-body {
+        font-size: 10.5px;
+        font-weight: 500;
+        fill: #f8fafc;
+      }
+      [data-theme="light"] .fm4p6-tooltip-body {
+        fill: #1e293b;
+      }
+
+      .fm4p6-dimmed {
+        opacity: 0.25;
+        filter: grayscale(80%);
+      }
+      .fm4p6-highlight-ela {
+        stroke: var(--fm4p6-teal, #14b8a6) !important;
+        stroke-width: 3px !important;
+        filter: drop-shadow(0 0 8px var(--fm4p6-teal-glow));
+      }
+      .fm4p6-highlight-gbs {
+        stroke: var(--fm4p6-coral, #f43f5e) !important;
+        stroke-width: 3px !important;
+        filter: drop-shadow(0 0 8px var(--fm4p6-coral-glow));
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND BASE -->
+  <rect width="1000" height="680" fill="var(--fm4p6-bg, #0f172a)" rx="16"/>
+
+  <!-- HEADER -->
+  <g transform="translate(24, 28)">
+    <text x="0" y="0" class="fm4p6-header-title">FRONTEIRA DE SÍTIO: NEURÔNIO MOTOR (ELA) vs NERVO PERIFÉRICO (GBS)</text>
+    <text x="0" y="20" class="fm4p6-header-sub">Legenda: A ELA degenera o Corpo Celular (2º NM) + 1º NM. A GBS acomete o Axônio/Bainha no Nervo Periférico. ELA NÃO é neuropatia!</text>
+  </g>
+
+  <!-- CONTROLS / MODE TOGGLE BUTTONS -->
+  <g transform="translate(24, 72)">
+    <!-- BOTH MODE -->
+    <g class="fm4p6-btn fm4p6-active-both" id="fm4p6-btn-both" role="button" tabindex="0" aria-label="Modo Comparativo Geral">
+      <rect class="fm4p6-btn-bg" x="0" y="0" width="170" height="34"/>
+      <text class="fm4p6-btn-text" x="85" y="17">COMPARAÇÃO GERAL</text>
+    </g>
+    <!-- ELA MODE -->
+    <g class="fm4p6-btn" id="fm4p6-btn-ela" role="button" tabindex="0" aria-label="Ver Sítio ELA: Corpo Celular e 1º NM">
+      <rect class="fm4p6-btn-bg" x="182" y="0" width="190" height="34"/>
+      <text class="fm4p6-btn-text" x="277" y="17">SÍTIO ELA (CORPO + 1º NM)</text>
+    </g>
+    <!-- GBS MODE -->
+    <g class="fm4p6-btn" id="fm4p6-btn-gbs" role="button" tabindex="0" aria-label="Ver Sítio GBS: Nervo Periférico">
+      <rect class="fm4p6-btn-bg" x="384" y="0" width="190" height="34"/>
+      <text class="fm4p6-btn-text" x="479" y="17">SÍTIO GBS (AXÔNIO/NERVO)</text>
+    </g>
+  </g>
+
+  <!-- MAIN ANATOMICAL STAGE PANEL (LEFT) -->
+  <g transform="translate(24, 120)">
+    <rect class="fm4p6-stage-box" width="550" height="536"/>
+    
+    <!-- STAGE TITLE / CONTEXT -->
+    <text x="20" y="30" font-size="13" font-weight="700" fill="var(--fm4p6-text-sub, #94a3b8)">DIAGRAMA TOPOGRÁFICO DE INERVAÇÃO MOTORA E SENSITIVA</text>
+    <line x1="20" y1="40" x2="530" y2="40" stroke="var(--fm4p6-panel-border, #334155)" stroke-width="1"/>
+
+    <!-- 1. CÓRTEX MOTOR & VIA CORTICOESPINAL (1º NEURÔNIO MOTOR) -->
+    <g class="fm4p6-hs" id="fm4p6-hs-1nm" role="button" tabindex="0" aria-label="1º Neurônio Motor (Córtex e Trato Corticoespinal) - Atingido na ELA">
+      <!-- Glow effect on hover -->
+      <path class="fm4p6-target-glow" d="M 60,60 Q 110,45 160,60 Q 180,85 160,110 Q 110,125 60,110 Z" fill="var(--fm4p6-teal-glow)" opacity="0"/>
+      <!-- Brain / Motor Cortex Silhouette -->
+      <path d="M 65,65 C 75,50 110,45 145,55 C 170,62 175,85 165,100 C 155,115 125,120 95,115 C 70,110 60,85 65,65 Z" fill="none" stroke="var(--fm4p6-teal, #14b8a6)" stroke-width="2.5" stroke-dasharray="6 3"/>
+      <!-- Betz Pyramidal Cell Body -->
+      <polygon points="105,72 120,90 90,90" fill="var(--fm4p6-teal, #14b8a6)"/>
+      <circle cx="105" cy="84" r="3" fill="#ffffff"/>
+      <!-- Corticospinal Axon (1st Motor Neuron Axon descending) -->
+      <path id="fm4p6-path-1nm" d="M 105,90 L 105,180 Q 105,210 125,225" fill="none" stroke="var(--fm4p6-teal, #14b8a6)" stroke-dasharray="4 2" stroke-width="3"/>
+      <!-- Direction Arrowhead -->
+      <polygon points="123,220 132,228 122,232" fill="var(--fm4p6-teal, #14b8a6)"/>
+      
+      <!-- Label -->
+      <rect x="175" y="65" width="130" height="26" rx="4" fill="var(--fm4p6-panel-border, #334155)"/>
+      <text x="183" y="82" font-size="11" font-weight="700" fill="var(--fm4p6-teal, #14b8a6)">1º NM (CÓRTEX / PIRAMIDAL)</text>
+      <text x="183" y="100" font-size="10" font-weight="600" fill="var(--fm4p6-text-muted, #64748b)">Sinais: Babinski / Espasticidade</text>
+      
+      <!-- Touch target expansion -->
+      <rect x="50" y="50" width="260" height="80" fill="transparent"/>
+    </g>
+
+    <!-- SPINAL CORD CROSS SECTION (CORNO ANTERIOR) -->
+    <g transform="translate(40, 190)">
+      <!-- Spinal Cord Outline -->
+      <path d="M 40,30 Q 140,10 240,30 Q 270,90 240,150 Q 140,170 40,150 Q 10,90 40,30 Z" fill="var(--fm4p6-panel-border, #334155)" opacity="0.4" stroke="var(--fm4p6-text-muted, #64748b)" stroke-width="1.5"/>
+      <!-- Butterfly Gray Matter -->
+      <path d="M 90,60 C 110,75 120,75 140,60 C 160,45 190,55 190,85 C 190,115 160,110 145,100 C 130,120 110,120 95,100 C 80,110 50,115 50,85 C 50,55 70,45 90,60 Z" fill="rgba(148, 163, 184, 0.15)" stroke="var(--fm4p6-text-sub, #94a3b8)" stroke-dasharray="3 3" stroke-width="1.5"/>
+      <text x="140" y="45" font-size="10" font-weight="700" fill="var(--fm4p6-text-muted, #64748b)" text-anchor="middle">MEDULA ESPINHAL (CÂMBIO MOTOR)</text>
+    </g>
+
+    <!-- 2. CORPO CELULAR DO 2º NEURÔNIO MOTOR (CORNO ANTERIOR) - ELA TARGET -->
+    <g class="fm4p6-hs" id="fm4p6-hs-2nm-corpo" role="button" tabindex="0" aria-label="Corpo Celular do 2º Neurônio Motor (Corno Anterior) - ALVO PRINCIPAL DA ELA">
+      <!-- Glow effect -->
+      <circle class="fm4p6-target-glow" cx="135" cy="275" r="32" fill="var(--fm4p6-teal-glow)" opacity="0"/>
+      
+      <!-- Soma / Motor Neuron Body with Dendrites -->
+      <path id="fm4p6-soma-shape" d="M 135,255 L 142,267 L 157,263 L 147,275 L 158,287 L 143,286 L 135,298 L 127,286 L 112,287 L 123,275 L 113,263 L 128,267 Z" fill="var(--fm4p6-teal, #14b8a6)" stroke="#ffffff" stroke-width="1.5"/>
+      <circle cx="135" cy="275" r="6" fill="#ffffff"/>
+      <circle cx="135" cy="275" r="2.5" fill="var(--fm4p6-teal-dark, #0d9488)"/>
+
+      <!-- Synaptic Connection from 1st NM -->
+      <circle cx="130" cy="258" r="3" fill="var(--fm4p6-teal, #14b8a6)"/>
+
+      <!-- Label / Callout -->
+      <line x1="135" y1="298" x2="135" y2="345" stroke="var(--fm4p6-teal, #14b8a6)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="50" y="345" width="170" height="44" rx="6" fill="var(--fm4p6-panel, #1e293b)" stroke="var(--fm4p6-teal, #14b8a6)" stroke-width="2"/>
+      <text x="60" y="363" font-size="11" font-weight="800" fill="var(--fm4p6-teal, #14b8a6)">SÍTIO ELA: CORPO CELULAR</text>
+      <text x="60" y="379" font-size="10" font-weight="600" fill="var(--fm4p6-text-sub, #94a3b8)">Morte do 2º NM no Corno Anterior</text>
+
+      <!-- Touch area -->
+      <rect x="40" y="245" width="190" height="150" fill="transparent"/>
+    </g>
+
+    <!-- 3. AXÔNIO / NERVO PERIFÉRICO / BAINHA DE MIELINA - GBS TARGET -->
+    <g class="fm4p6-hs" id="fm4p6-hs-gbs-nervo" role="button" tabindex="0" aria-label="Nervo Periférico (Axônio e Mielina) - ALVO PRINCIPAL DA GBS">
+      <!-- Glow effect -->
+      <path class="fm4p6-target-glow" d="M 155,275 C 220,275 260,340 310,380 C 360,420 400,430 450,440" fill="none" stroke="var(--fm4p6-coral-glow)" stroke-width="24" stroke-linecap="round" opacity="0"/>
+
+      <!-- Axon Inner Core Pathway -->
+      <path id="fm4p6-axon-core" d="M 148,275 C 220,275 250,340 310,380 C 360,420 390,430 450,440" fill="none" stroke="var(--fm4p6-coral, #f43f5e)" stroke-width="4"/>
+
+      <!-- Myelin Sheath Segment Blocks (Nodes of Ranvier) -->
+      <g id="fm4p6-myelin-segments">
+        <rect x="180" y="267" width="28" height="16" rx="4" fill="var(--fm4p6-coral, #f43f5e)" stroke="#ffffff" stroke-width="1"/>
+        <rect x="220" y="285" width="28" height="16" rx="4" fill="var(--fm4p6-coral, #f43f5e)" stroke="#ffffff" stroke-width="1" transform="rotate(25, 234, 293)"/>
+        <rect x="268" y="332" width="28" height="16" rx="4" fill="var(--fm4p6-coral, #f43f5e)" stroke="#ffffff" stroke-width="1" transform="rotate(45, 282, 340)"/>
+        <rect x="325" y="380" width="28" height="16" rx="4" fill="var(--fm4p6-coral, #f43f5e)" stroke="#ffffff" stroke-width="1" transform="rotate(30, 339, 388)"/>
+        <rect x="380" y="412" width="28" height="16" rx="4" fill="var(--fm4p6-coral, #f43f5e)" stroke="#ffffff" stroke-width="1" transform="rotate(10, 394, 420)"/>
+      </g>
+
+      <!-- Label / Callout for GBS -->
+      <line x1="330" y1="365" x2="330" y2="305" stroke="var(--fm4p6-coral, #f43f5e)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="250" y="265" width="165" height="42" rx="6" fill="var(--fm4p6-panel, #1e293b)" stroke="var(--fm4p6-coral, #f43f5e)" stroke-width="2"/>
+      <text x="260" y="283" font-size="11" font-weight="800" fill="var(--fm4p6-coral, #f43f5e)">SÍTIO GBS: AXÔNIO/NERVO</text>
+      <text x="260" y="299" font-size="10" font-weight="600" fill="var(--fm4p6-text-sub, #94a3b8)">Polineuropatia Periférica</text>
+
+      <!-- Touch area -->
+      <path d="M 150,270 C 220,270 250,335 310,375 C 360,415 390,425 460,445" fill="none" stroke="transparent" stroke-width="36"/>
+    </g>
+
+    <!-- SKELETAL MUSCLE MOTOR ENDPLATE (EFETOR) -->
+    <g transform="translate(440, 425)">
+      <!-- Neuromuscular Junction Terminal -->
+      <path d="M 10,15 L 25,25 M 10,15 L 22,5 M 10,15 L 28,15" stroke="var(--fm4p6-coral, #f43f5e)" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="25" cy="25" r="3.5" fill="var(--fm4p6-coral, #f43f5e)"/>
+      <circle cx="22" cy="5" r="3.5" fill="var(--fm4p6-coral, #f43f5e)"/>
+      <circle cx="28" cy="15" r="3.5" fill="var(--fm4p6-coral, #f43f5e)"/>
+      <!-- Muscle Fibers -->
+      <path d="M 20,35 C 40,25 70,25 90,35 C 70,45 40,45 20,35 Z" fill="rgba(244, 63, 94, 0.2)" stroke="var(--fm4p6-coral, #f43f5e)" stroke-width="1.5"/>
+      <path d="M 20,50 C 40,40 70,40 90,50 C 70,60 40,60 20,50 Z" fill="rgba(244, 63, 94, 0.2)" stroke="var(--fm4p6-coral, #f43f5e)" stroke-width="1.5"/>
+      <text x="55" y="75" font-size="10" font-weight="700" fill="var(--fm4p6-text-muted, #64748b)" text-anchor="middle">MÚSCULO EFETOR</text>
+    </g>
+
+    <!-- 4. FIBRA SENSITIVA & GANGLIO DA RAIZ DORSAL (PRESERVADA NA ELA) -->
+    <g class="fm4p6-hs" id="fm4p6-hs-sensory" role="button" tabindex="0" aria-label="Via Sensitiva (Preservada na ELA)">
+      <!-- Sensory Nerve Loop -->
+      <path d="M 450,460 C 370,480 290,460 240,410 C 210,380 200,310 190,240 L 190,225" fill="none" stroke="var(--fm4p6-green, #22c55e)" stroke-width="2.5" stroke-dasharray="5 3"/>
+      <!-- Dorsal Root Ganglion -->
+      <ellipse cx="190" cy="230" rx="9" ry="6" fill="var(--fm4p6-green, #22c55e)"/>
+      
+      <!-- Sensory Chip/Badge -->
+      <g transform="translate(180, 470)">
+        <rect class="fm4p6-chip-bg-sensory" x="0" y="0" width="220" height="42"/>
+        <text x="12" y="18" font-size="11" font-weight="800" fill="var(--fm4p6-green, #22c55e)">CHIP: SENSITIVO PRESERVADO</text>
+        <text x="12" y="34" font-size="10" font-weight="600" fill="var(--fm4p6-green, #22c55e)">Sensibilidade Normal na ELA (Regra)</text>
+      </g>
+    </g>
+
+    <!-- GOLD SEAL: ELA NÃO É NEUROPATIA PERIFÉRICA -->
+    <g class="fm4p6-hs fm4p6-pulse" id="fm4p6-hs-seal" transform="translate(240, 140)" role="button" tabindex="0" aria-label="Selo de Alerta: ELA NÃO é neuropatia periférica!">
+      <rect class="fm4p6-seal-bg" x="0" y="0" width="270" height="52"/>
+      <!-- Alert Icon -->
+      <circle cx="26" cy="26" r="14" fill="var(--fm4p6-amber, #f59e0b)"/>
+      <text x="26" y="31" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">!</text>
+      
+      <!-- Text -->
+      <text x="50" y="22" class="fm4p6-seal-text-title">REGRA DE OURO (PROVA RESIDÊNCIA)</text>
+      <text x="50" y="40" class="fm4p6-seal-text-sub">ELA NÃO É NEUROPATIA PERIFÉRICA!</text>
+    </g>
+
+  </g>
+
+  <!-- RIGHT CLINICAL PANEL / INTERPRETATION CARD -->
+  <g transform="translate(598, 120)">
+    <rect class="fm4p6-card-bg" width="378" height="536"/>
+    
+    <!-- CARD HEADER -->
+    <g transform="translate(24, 28)">
+      <!-- Entity Badge -->
+      <rect id="fm4p6-card-badge-bg" class="fm4p6-badge fm4p6-badge-teal" x="0" y="0" width="130" height="22"/>
+      <text id="fm4p6-card-badge-text" class="fm4p6-badge-text" x="65" y="11">VISÃO COMPARATIVA</text>
+      
+      <!-- Main Dynamic Title -->
+      <text id="fm4p6-card-title" class="fm4p6-card-title" x="0" y="48">FRONTEIRA TOPOGRÁFICA</text>
+      <text id="fm4p6-card-subtitle" class="fm4p6-card-subtitle" x="0" y="68">Selecione um sítio ou modo para detalhar</text>
+    </g>
+
+    <line x1="24" y1="110" x2="354" y2="110" stroke="var(--fm4p6-panel-border, #334155)" stroke-width="1"/>
+
+    <!-- COMPARISON TABLE / CLINICAL PARAMETERS -->
+    <g transform="translate(24, 125)">
+      <text x="0" y="12" class="fm4p6-table-header">PARÂMETRO</text>
+      <text x="140" y="12" class="fm4p6-table-header">ELA</text>
+      <text x="240" y="12" class="fm4p6-table-header">GBS</text>
+      
+      <line x1="0" y1="22" x2="330" y2="22" stroke="var(--fm4p6-panel-border, #334155)" stroke-dasharray="2 2" stroke-width="1"/>
+
+      <!-- ROW 1: Sítio Primário -->
+      <g transform="translate(0, 40)">
+        <text x="0" y="0" class="fm4p6-table-label">Sítio Primário</text>
+        <text id="fm4p6-row1-ela" x="140" y="0" class="fm4p6-table-val fm4p6-val-teal">Corpo Celular</text>
+        <text id="fm4p6-row1-gbs" x="240" y="0" class="fm4p6-table-val fm4p6-val-coral">Axônio / Mielina</text>
+      </g>
+
+      <!-- ROW 2: 1º Neurônio Motor -->
+      <g transform="translate(0, 70)">
+        <text x="0" y="0" class="fm4p6-table-label">1º Neurônio Motor</text>
+        <text id="fm4p6-row2-ela" x="140" y="0" class="fm4p6-table-val fm4p6-val-teal">Atingido (+)</text>
+        <text id="fm4p6-row2-gbs" x="240" y="0" class="fm4p6-table-val fm4p6-val-normal">Preservado (-)</text>
+      </g>
+
+      <!-- ROW 3: Reflexos Tendinosos -->
+      <g transform="translate(0, 100)">
+        <text x="0" y="0" class="fm4p6-table-label">Reflexos (ROT)</text>
+        <text id="fm4p6-row3-ela" x="140" y="0" class="fm4p6-table-val fm4p6-val-teal">Vivos / Babinski</text>
+        <text id="fm4p6-row3-gbs" x="240" y="0" class="fm4p6-table-val fm4p6-val-coral">Areflexia / Abolidos</text>
+      </g>
+
+      <!-- ROW 4: Sensibilidade -->
+      <g transform="translate(0, 130)">
+        <text x="0" y="0" class="fm4p6-table-label">Sensibilidade</text>
+        <text id="fm4p6-row4-ela" x="140" y="0" class="fm4p6-table-val fm4p6-val-green">Preservada (OK)</text>
+        <text id="fm4p6-row4-gbs" x="240" y="0" class="fm4p6-table-val fm4p6-val-coral">Alterada / Parestesia</text>
+      </g>
+
+      <!-- ROW 5: Classificação -->
+      <g transform="translate(0, 160)">
+        <text x="0" y="0" class="fm4p6-table-label">Classificação</text>
+        <text id="fm4p6-row5-ela" x="140" y="0" class="fm4p6-table-val fm4p6-val-amber">Doença NM</text>
+        <text id="fm4p6-row5-gbs" x="240" y="0" class="fm4p6-table-val fm4p6-val-coral">Polineuropatia</text>
+      </g>
+    </g>
+
+    <line x1="24" y1="315" x2="354" y2="315" stroke="var(--fm4p6-panel-border, #334155)" stroke-width="1"/>
+
+    <!-- CLINICAL SUMMARY BOX / PEARLS -->
+    <g transform="translate(24, 330)">
+      <rect class="fm4p6-box-note" width="330" height="175"/>
+      <text x="14" y="24" font-size="12" font-weight="800" fill="var(--fm4p6-amber, #f59e0b)">ANÁLISE DE PROVA &amp; CONCEITO CHAVE:</text>
+      
+      <text id="fm4p6-note-line1" x="14" y="50" class="fm4p6-note-text">• ELA compromete o corpo celular no corno anterior da</text>
+      <text id="fm4p6-note-line2" x="24" y="68" class="fm4p6-note-text">medula E o 1º neurônio motor (trato corticoespinal).</text>
+      <text id="fm4p6-note-line3" x="14" y="92" class="fm4p6-note-text">• GBS é uma polineuropatia periférica (nervo/axônio).</text>
+      <text id="fm4p6-note-line4" x="14" y="116" class="fm4p6-note-text">• NUNCA classifique ELA como neuropatia periférica!</text>
+      <text id="fm4p6-note-line5" x="14" y="140" class="fm4p6-note-text">• Sensibilidade preservada + Babinski + Atrofia = ELA.</text>
+      <text id="fm4p6-note-line6" x="14" y="158" class="fm4p6-note-text">• Associa com DFT (Demência Frontotemporal).</text>
+    </g>
+  </g>
+
+  <!-- MOUSE FOLLOW TOOLTIP ENGINE -->
+  <g id="fm4p6-tooltip-group" class="fm4p6-tooltip" transform="translate(0, 0)">
+    <rect id="fm4p6-tooltip-rect" class="fm4p6-tooltip-bg" x="0" y="0" width="180" height="46"/>
+    <text id="fm4p6-tooltip-title-text" class="fm4p6-tooltip-title" x="10" y="18">DICA ANATÔMICA</text>
+    <text id="fm4p6-tooltip-body-text" class="fm4p6-tooltip-body" x="10" y="34">Clique para inspecionar o sítio</text>
+  </g>
+
+  <!-- INLINE INTERACTIVE ENGINE SCRIPT -->
+  <script>
+    <![CDATA[
+    (function() {
+      var svg = document.getElementById('fm4p6-svg');
+      if (!svg) return;
+
+      var state = {
+        mode: 'both',
+        selected: null
+      };
+
+      var btnBoth = document.getElementById('fm4p6-btn-both');
+      var btnEla = document.getElementById('fm4p6-btn-ela');
+      var btnGbs = document.getElementById('fm4p6-btn-gbs');
+
+      var hs1nm = document.getElementById('fm4p6-hs-1nm');
+      var hs2nmCorpo = document.getElementById('fm4p6-hs-2nm-corpo');
+      var hsGbsNervo = document.getElementById('fm4p6-hs-gbs-nervo');
+      var hsSensory = document.getElementById('fm4p6-hs-sensory');
+      var hsSeal = document.getElementById('fm4p6-hs-seal');
+
+      var cardBadgeBg = document.getElementById('fm4p6-card-badge-bg');
+      var cardBadgeText = document.getElementById('fm4p6-card-badge-text');
+      var cardTitle = document.getElementById('fm4p6-card-title');
+      var cardSub = document.getElementById('fm4p6-card-subtitle');
+
+      var noteLines = [
+        document.getElementById('fm4p6-note-line1'),
+        document.getElementById('fm4p6-note-line2'),
+        document.getElementById('fm4p6-note-line3'),
+        document.getElementById('fm4p6-note-line4'),
+        document.getElementById('fm4p6-note-line5'),
+        document.getElementById('fm4p6-note-line6')
+      ];
+
+      var tooltipGroup = document.getElementById('fm4p6-tooltip-group');
+      var tooltipRect = document.getElementById('fm4p6-tooltip-rect');
+      var tooltipTitle = document.getElementById('fm4p6-tooltip-title-text');
+      var tooltipBody = document.getElementById('fm4p6-tooltip-body-text');
+
+      function showTooltip(evt, title, body) {
+        if (!tooltipGroup || !svg.getScreenCTM) return;
+        tooltipTitle.textContent = title;
+        tooltipBody.textContent = body;
+        
+        var titleWidth = title.length * 7;
+        var bodyWidth = body.length * 6;
+        var maxW = Math.max(titleWidth, bodyWidth, 140) + 20;
+        tooltipRect.setAttribute('width', maxW);
+
+        var pt = svg.createSVGPoint();
+        pt.x = evt.clientX || (evt.touches && evt.touches[0] ? evt.touches[0].clientX : 0);
+        pt.y = evt.clientY || (evt.touches && evt.touches[0] ? evt.touches[0].clientY : 0);
+
+        if (pt.x === 0 && pt.y === 0) {
+          pt.x = 300; pt.y = 200;
+        }
+
+        var loc = pt.matrixTransform(svg.getScreenCTM().inverse());
+        var x = loc.x + 12;
+        var y = loc.y + 12;
+
+        if (x + maxW > 980) x = loc.x - maxW - 10;
+        if (y + 50 > 660) y = loc.y - 55;
+
+        tooltipGroup.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+        tooltipGroup.style.opacity = '1';
+      }
+
+      function hideTooltip() {
+        if (tooltipGroup) tooltipGroup.style.opacity = '0';
+      }
+
+      function setMode(mode) {
+        state.mode = mode;
+        btnBoth.className.baseVal = 'fm4p6-btn' + (mode === 'both' ? ' fm4p6-active-both' : '');
+        btnEla.className.baseVal = 'fm4p6-btn' + (mode === 'ela' ? ' fm4p6-active-ela' : '');
+        btnGbs.className.baseVal = 'fm4p6-btn' + (mode === 'gbs' ? ' fm4p6-active-gbs' : '');
+
+        if (mode === 'ela') {
+          hs1nm.classList.remove('fm4p6-dimmed');
+          hs2nmCorpo.classList.remove('fm4p6-dimmed');
+          hsSensory.classList.remove('fm4p6-dimmed');
+          hsGbsNervo.classList.add('fm4p6-dimmed');
+          updatePanelForELA();
+        } else if (mode === 'gbs') {
+          hsGbsNervo.classList.remove('fm4p6-dimmed');
+          hs1nm.classList.add('fm4p6-dimmed');
+          hs2nmCorpo.classList.add('fm4p6-dimmed');
+          hsSensory.classList.remove('fm4p6-dimmed');
+          updatePanelForGBS();
+        } else {
+          hs1nm.classList.remove('fm4p6-dimmed');
+          hs2nmCorpo.classList.remove('fm4p6-dimmed');
+          hsGbsNervo.classList.remove('fm4p6-dimmed');
+          hsSensory.classList.remove('fm4p6-dimmed');
+          updatePanelForBoth();
+        }
+      }
+
+      function updatePanelForBoth() {
+        cardBadgeBg.className.baseVal = 'fm4p6-badge fm4p6-badge-teal';
+        cardBadgeText.textContent = 'VISÃO COMPARATIVA';
+        cardTitle.textContent = 'FRONTEIRA TOPOGRÁFICA';
+        cardSub.textContent = 'Comparação clínica e anatomopatológica';
+
+        noteLines[0].textContent = '• ELA: Lesão do CORPO CELULAR (2º NM) + 1º NM.';
+        noteLines[1].textContent = '  Apresenta sinais mistos (Babinski + Atrofia).';
+        noteLines[2].textContent = '• GBS: Polineuropatia periférica (AXÔNIO/MIELINA).';
+        noteLines[3].textContent = '  Tetraparesia flácida arreflexica ascendente.';
+        noteLines[4].textContent = '• ELA NÃO É NEUROPATIA PERIFÉRICA!';
+        noteLines[5].textContent = '• Sensibilidade normal na ELA; alterada na GBS.';
+      }
+
+      function updatePanelForELA() {
+        cardBadgeBg.className.baseVal = 'fm4p6-badge fm4p6-badge-teal';
+        cardBadgeText.textContent = 'DOENÇA DO NEURÔNIO MOTOR';
+        cardTitle.textContent = 'SÍTIO ELA: CORPO DO 2º + 1º NM';
+        cardSub.textContent = 'Corpo no corno anterior + 1º também morre';
+
+        noteLines[0].textContent = '• ELA: problema do 2º no CORPO do neurônio';
+        noteLines[1].textContent = '  (corno anterior) — e o 1º também começa a morrer.';
+        noteLines[2].textContent = '• Clínica mista: Babinski/espasticidade/hiperreflexia';
+        noteLines[3].textContent = '  + atrofia/fasciculação + sensitivo preservado.';
+        noteLines[4].textContent = '• ELA NÃO é neuropatia periférica!';
+        noteLines[5].textContent = '• Associação com DFT (demência frontotemporal).';
+      }
+
+      function updatePanelForGBS() {
+        cardBadgeBg.className.baseVal = 'fm4p6-badge fm4p6-badge-coral';
+        cardBadgeText.textContent = 'POLINEUROPATIA (NERVO/AXÔNIO)';
+        cardTitle.textContent = 'SÍTIO GBS: NERVO / AXÔNIO';
+        cardSub.textContent = 'Polineuropatia — sítio no nervo, não no corpo';
+
+        noteLines[0].textContent = '• GBS: polineuropatia no nervo/axônio';
+        noteLines[1].textContent = '  (não no corpo do 2º como na ELA).';
+        noteLines[2].textContent = '• Preferência pelo motor, mas sítio = nervo.';
+        noteLines[3].textContent = '• Não é o padrão misto 1º+2º da ELA.';
+        noteLines[4].textContent = '• Pode haver componente sensitivo.';
+        noteLines[5].textContent = '• Fronteira: GBS come nervo; ELA mata corpo + 1º.';
+      }
+
+      btnBoth.addEventListener('click', function() { setMode('both'); });
+      btnEla.addEventListener('click', function() { setMode('ela'); });
+      btnGbs.addEventListener('click', function() { setMode('gbs'); });
+
+      btnBoth.addEventListener('keydown', function(e) { if(e.key==='Enter'||e.key===' ') { setMode('both'); } });
+      btnEla.addEventListener('keydown', function(e) { if(e.key==='Enter'||e.key===' ') { setMode('ela'); } });
+      btnGbs.addEventListener('keydown', function(e) { if(e.key==='Enter'||e.key===' ') { setMode('gbs'); } });
+
+      hs1nm.addEventListener('mouseenter', function(e) { showTooltip(e, '1º NEURÔNIO MOTOR', 'Córtex Motor / Trato Corticoespinal -> Atingido na ELA'); });
+      hs1nm.addEventListener('mousemove', function(e) { showTooltip(e, '1º NEURÔNIO MOTOR', 'Córtex Motor / Trato Corticoespinal -> Atingido na ELA'); });
+      hs1nm.addEventListener('mouseleave', hideTooltip);
+      hs1nm.addEventListener('click', function() { setMode('ela'); });
+
+      hs2nmCorpo.addEventListener('mouseenter', function(e) { showTooltip(e, 'CORPO CELULAR (2º NM)', 'Corno Anterior da Medula -> Sítio Primário da ELA'); });
+      hs2nmCorpo.addEventListener('mousemove', function(e) { showTooltip(e, 'CORPO CELULAR (2º NM)', 'Corno Anterior da Medula -> Sítio Primário da ELA'); });
+      hs2nmCorpo.addEventListener('mouseleave', hideTooltip);
+      hs2nmCorpo.addEventListener('click', function() { setMode('ela'); });
+
+      hsGbsNervo.addEventListener('mouseenter', function(e) { showTooltip(e, 'NERVO PERIFÉRICO', 'Axônio / Mielina -> Sítio Primário da GBS'); });
+      hsGbsNervo.addEventListener('mousemove', function(e) { showTooltip(e, 'NERVO PERIFÉRICO', 'Axônio / Mielina -> Sítio Primário da GBS'); });
+      hsGbsNervo.addEventListener('mouseleave', hideTooltip);
+      hsGbsNervo.addEventListener('click', function() { setMode('gbs'); });
+
+      hsSensory.addEventListener('mouseenter', function(e) { showTooltip(e, 'CHIP SENSITIVO', 'Via Sensitiva Preservada na ELA (Regra Diagnóstica)'); });
+      hsSensory.addEventListener('mousemove', function(e) { showTooltip(e, 'CHIP SENSITIVO', 'Via Sensitiva Preservada na ELA (Regra Diagnóstica)'); });
+      hsSensory.addEventListener('mouseleave', hideTooltip);
+
+      hsSeal.addEventListener('mouseenter', function(e) { showTooltip(e, 'REGRA DE OURO DA PROVA', 'ELA NÃO é neuropatia periférica! É doença do neurônio motor.'); });
+      hsSeal.addEventListener('mousemove', function(e) { showTooltip(e, 'REGRA DE OURO DA PROVA', 'ELA NÃO é neuropatia periférica! É doença do neurônio motor.'); });
+      hsSeal.addEventListener('mouseleave', hideTooltip);
+
+    })();
+    ]]>
+  </script>
+</svg>
+
+        </div>
+        <p class="figura-ancorada__fonte" style="margin:.5rem .9rem .7rem">Neurônio motor: corpo destacado (ELA) vs nervo/axônio destacado (GBS) — seta “não é neuropatia periférica”.</p>
+      </figure>
+
+      <aside class="continuity">
+        <div class="prose">
+          <p class="no-indent"><strong>Por que importa na prática:</strong> classificar ELA como “neuropatia” ou fechar ELA com sensitivo alterado gera conduta e prognóstico errados; DFT é o atalho de prova.</p>
+          <p class="no-indent"><strong>Resumo operacional:</strong> clínica + exclusão · sensitivo OK · corpo+1º ≠ axônio · DFT.</p>
+          <p class="no-indent">O que se oferece de verdade — e o que só compra meses.</p>
+        </div>
+      </aside>
+
+      <!-- QUIZ P6 (3 perguntas) -->
+      <section class="quiz" data-quiz-id="fm4-ela-p06" aria-labelledby="quiz-p06-title">
+        <h2 id="quiz-p06-title">Quiz — fixação</h2>
+        <ol class="quiz__questions">
+          <li class="quiz__question" data-q="1">
+            <p class="quiz__stem">Alteração sensitiva clara em quadro “parecido com ELA” deve:</p>
+            <div role="radiogroup" aria-label="Q1" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Confirmar ELA típica</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Fazer pensar em outro motivo</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Provar GBS automaticamente</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Ser ignorada</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> Sensitivo preservado é regra da ELA típica; sensitivo alterado abre diferencial.</p>
+              <p class="quiz__distractor">(A) quebra a regra. (C) GBS é uma hipótese, não automática. (D) joga fora discriminador. Cai em A porque “fraqueza progressiva” engole o sensitivo.</p>
+            </div>
+          </li>
+          <li class="quiz__question" data-q="2">
+            <p class="quiz__stem">A fronteira topográfica ELA × Guillain-Barré é:</p>
+            <div role="radiogroup" aria-label="Q2" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Ambos são neuropatia periférica do axônio</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — ELA = corpo do 2º + 1º; GBS = nervo/axônio (polineuropatia)</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — ELA só pega 1º; GBS só pega músculo</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Não há diferença topográfica</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> Sítio do 2º (corpo vs axônio) + presença do 1º na ELA.</p>
+              <p class="quiz__distractor">(A) classifica ELA errado. (C)/(D) apagam a topografia. Cai em A porque “motor” vira sinônimo de “nervo”.</p>
+            </div>
+          </li>
+          <li class="quiz__question" data-q="3">
+            <p class="quiz__stem">Demência associada à ELA na prova:</p>
+            <div role="radiogroup" aria-label="Q3" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Alzheimer</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Frontotemporal</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Corpos de Lewy exclusivamente</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Nenhuma associação</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> DFT = resposta cobrada; patogenia semelhante.</p>
+              <p class="quiz__distractor">(A)/(C) outras demências. (D) nega a associação. Cai em A porque é a demência “default” da banca leiga.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p5.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Três anos, o motor e a mente intacta</span></a><a class="next" href="p7.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Suporte no chão; riluzole e edaravone compram meses</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="rodape">ELA: esclerose lateral amiotrófica.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm4.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">ELA · 8 páginas</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>Jairo: do “estresse” ao pé que arrasta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>Um neurônio sozinho não basta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>ELA: a neurodegenerativa dos dois neurônios</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Fasciculação: inespecífica na vida, ímã na prova</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Três anos, o motor e a mente intacta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" aria-current="page"><span class="menu-panel__index">06</span><span>Clínica manda · não é GBS · DFT</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Suporte no chão; riluzole e edaravone compram meses</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Mantra + vignette 72 a: tenar, clonos, bulbar</span></a></li></ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" id="a12p22b-svg" class="a12p22b-root" data-svg-tokenized="true" data-mode="full" data-active="puborretal" role="img" aria-labelledby="a12p22b-title a12p22b-desc">
+  <!--
+    ================================================================================
+    PECA SINTESE AUTORAL (a12p22b) : ANATOMIA INTEGRAL E CAMADAS DO ASSOALHO PELVICO
+    ================================================================================
+    SINTESE DOS 4 MOLDES CONCEITUAIS:
+    - Molde 1 (Arquitetura Perineal): Enquadramento osteo-referencial completo em vista
+      inferior/perineal (Sinfise Pubica, Espinhas Isquiaticas, Cocci/Coccix).
+    - Molde 2 (Estratigrafia de Sustentacao): Separacao rigorosa das 4 camadas (Fascia
+      Endopelvica/Cordas a Diafragma Pelvico a Diafragma Urogenital/Membrana a Espaco Superficial).
+    - Molde 3 (Motor de Recuperacao Ativa): Tres modos funcionais (Preenchido, Sem Rotulos,
+      Conferencia Clinica) integrados com painel lateral dinamico sem reprocessamento.
+    - Molde 4 (Ergonomia e Tokenizacao): Corredores de linhas-guia sem cruzamento,
+      tokens triplamente encadeados com fallback hex terminal e acessibilidade ARIA total.
+    ================================================================================
+  -->
+  <title id="a12p22b-title">SÍNTESE ANATÔMICA DO ASSOALHO PÉLVICO — VISTA INFERIOR E ESTRATIGRAFIA DE SUSTENTAÇÃO</title>
+  <desc id="a12p22b-desc">Prancha anatômica interativa com enquadramento ântero-posterior da pelve, destacando as âncoras ósseas, diafragma pélvico, diafragma urogenital, fáscias, cordas de suspensão e músculos superficiais do períneo.</desc>
+
+  <defs>
+    <style type="text/css">
+      /* RESET E DEFINICAO DE VARIAVEIS DE COR COM ENCADEMENTO DE 3 NIVEIS */
+      .a12p22b-root {
+        --a12p22b-bg: var(--bg-1, #0F141C);
+        --a12p22b-panel-bg: var(--bg-2, #18202C);
+        --a12p22b-panel-border: var(--ink-20, #2E3B4E);
+        --a12p22b-text-main: var(--ink-100, #F1F5F9);
+        --a12p22b-text-muted: var(--ink-60, #94A3B8);
+        
+        /* TOKENS DO BRIEF DA AULA 12 */
+        --a12p22b-tinta: var(--a12-tinta, var(--a12p22-tinta, #F7F1F5));
+        --a12p22b-osso: var(--a12-osso, var(--a12p22-osso, #DCC7B4));
+        --a12p22b-fascia: var(--a12-fascia-endopelvica, var(--a12p22-fascia, #6FA8D6));
+        --a12p22b-diafragma: var(--a12-diafragma-pelvico, var(--a12p22-diafragma, #55B889));
+        --a12p22b-perineo: var(--a12-regiao-perineal, var(--a12p22-perineo, #EF7582));
+        --a12p22b-membrana: var(--a12-membrana-perineal, var(--a12p22-membrana, #F3BE5B));
+        --a12p22b-suspensao: var(--a12-suspensao, var(--a12p22-suspensao, #A978C7));
+        --a12p22b-atenuado: var(--a12-atenuado, var(--a12p22-atenuado, #9D919A));
+
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a12p22b-bg);
+        color: var(--a12p22b-text-main);
+      }
+
+      /* TEMA CLARO VIA DATA-THEME (NUNCA PREFERS-COLOR-SCHEME OU :ROOT) */
+      [data-theme="light"] .a12p22b-root {
+        --a12p22b-bg: #F8FAFC;
+        --a12p22b-panel-bg: #FFFFFF;
+        --a12p22b-panel-border: #E2E8F0;
+        --a12p22b-text-main: #0F172A;
+        --a12p22b-text-muted: #475569;
+        
+        --a12p22b-tinta: #2A1F2D;
+        --a12p22b-osso: #8C6D53;
+        --a12p22b-fascia: #2B6CB0;
+        --a12p22b-diafragma: #276749;
+        --a12p22b-perineo: #9B2C2C;
+        --a12p22b-membrana: #D69E2E;
+        --a12p22b-suspensao: #6B46C1;
+        --a12p22b-atenuado: #64748B;
+      }
+
+      /* INTERATIVIDADE E HIGHLIGHTS DE ESTRUTURAS */
+      #a12p22b-svg .a12p22b-hs {
+        cursor: pointer;
+        transition: opacity 0.2s ease, stroke-width 0.2s ease, filter 0.2s ease;
+      }
+
+      #a12p22b-svg .a12p22b-hs:hover,
+      #a12p22b-svg .a12p22b-hs:focus {
+        filter: drop-shadow(0 0 6px currentColor);
+        outline: none;
+      }
+
+      #a12p22b-svg [data-mode="unlabeled"] .a12p22b-label-text {
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+
+      #a12p22b-svg [data-mode="unlabeled"] .a12p22b-hs.is-revealed + .a12p22b-leader .a12p22b-label-text,
+      #a12p22b-svg [data-mode="unlabeled"] .a12p22b-hs.is-active + .a12p22b-leader .a12p22b-label-text {
+        opacity: 1;
+      }
+
+      #a12p22b-svg .a12p22b-item {
+        cursor: pointer;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+      }
+
+      #a12p22b-svg .a12p22b-item:hover,
+      #a12p22b-svg .a12p22b-item.is-active {
+        background-color: rgba(255, 255, 255, 0.07);
+        border-left: 3px solid currentColor;
+      }
+
+      #a12p22b-svg .a12p22b-btn {
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.1s ease, opacity 0.2s ease;
+      }
+      #a12p22b-svg .a12p22b-btn:active {
+        transform: scale(0.97);
+      }
+    </style>
+
+    <!-- PADRAO DE HACHURA PARA ESTRUTURAS FORA DO PLANO MEDIANO (LIG. CARDINAL) -->
+    <pattern id="a12p22b-pattern-cardinal" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="var(--a12p22b-suspensao)" stroke-width="2.5" opacity="0.65"/>
+    </pattern>
+
+    <!-- GRADIENTES DA SETA DE VETOR PROFUNDO TO SUPERFICIAL -->
+    <linearGradient id="a12p22b-grad-vetor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p22b-fascia)"/>
+      <stop offset="35%" stop-color="var(--a12p22b-diafragma)"/>
+      <stop offset="70%" stop-color="var(--a12p22b-membrana)"/>
+      <stop offset="100%" stop-color="var(--a12p22b-perineo)"/>
+    </linearGradient>
+
+    <marker id="a12p22b-arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="var(--a12p22b-perineo)"/>
+    </marker>
+  </defs>
+
+  <!-- ======================================================================= -->
+  <!-- CABECALHO DA PECA (TITULO E LEGENDA DE INTERPRETACAO)                    -->
+  <!-- ======================================================================= -->
+  <g id="a12p22b-header" transform="translate(40, 24)">
+    <text x="0" y="20" font-size="18" font-weight="700" fill="var(--a12p22b-text-main)" letter-spacing="0.5">
+      SÍNTESE ANATÔMICA DO ASSOALHO PÉLVICO (VISTA INFERIOR &amp; ESTRATIGRAFIA)
+    </text>
+    <text x="0" y="38" font-size="12" fill="var(--a12p22b-text-muted)">
+      Ancoragem Osteo-Referencial (Sínfise, Espinhas, Cóccix) e Integração das 4 Camadas de Sustentação
+    </text>
+    
+    <!-- LEGENDA DE INTERPRETACAO DIDATICA (CONTRATO DE LAYOUT BAUER #1) -->
+    <rect x="0" y="48" width="1120" height="32" rx="6" fill="var(--a12p22b-panel-bg)" stroke="var(--a12p22b-panel-border)" stroke-width="1"/>
+    <circle cx="14" cy="64" r="5" fill="var(--a12p22b-membrana)"/>
+    <text x="26" y="68" font-size="11" font-weight="600" fill="var(--a12p22b-text-main)">
+      LEGENDA DIDÁTICA: <tspan font-weight="400" fill="var(--a12p22b-text-muted)">A estabilidade pélvica é biomecanicamente encadeada — lesões na Fáscia/Cordas (Nível I) sobram para o Diafragma Pélvico (Nível II) e colapsam o Plano Perineal (Nível III).</tspan>
+    </text>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- BARRA DE CONTROLE E MODOS INTERATIVOS                                  -->
+  <!-- ======================================================================= -->
+  <g id="a12p22b-controls" transform="translate(40, 114)">
+    <!-- BOTAO MODO 1: PREENCHIDO (FULL) -->
+    <g id="a12p22b-btn-full" class="a12p22b-btn" role="button" aria-label="Modo Preenchido" tabindex="0" transform="translate(0,0)">
+      <rect id="a12p22b-btn-full-bg" x="0" y="0" width="115" height="28" rx="14" fill="var(--a12p22b-fascia)" opacity="0.9"/>
+      <text id="a12p22b-btn-full-tx" x="57" y="18" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Preenchido</text>
+    </g>
+
+    <!-- BOTAO MODO 2: SEM ROTULOS (ACTIVE RECALL) -->
+    <g id="a12p22b-btn-unlabeled" class="a12p22b-btn" role="button" aria-label="Modo Sem Rótulos" tabindex="0" transform="translate(125,0)">
+      <rect id="a12p22b-btn-unlabeled-bg" x="0" y="0" width="125" height="28" rx="14" fill="var(--a12p22b-panel-bg)" stroke="var(--a12p22b-panel-border)"/>
+      <text id="a12p22b-btn-unlabeled-tx" x="62" y="18" font-size="11" font-weight="600" fill="var(--a12p22b-text-muted)" text-anchor="middle">Sem Rótulos</text>
+    </g>
+
+    <!-- BOTAO MODO 3: CONFERENCIA CLINICA -->
+    <g id="a12p22b-btn-conference" class="a12p22b-btn" role="button" aria-label="Modo Conferência Clínica" tabindex="0" transform="translate(260,0)">
+      <rect id="a12p22b-btn-conference-bg" x="0" y="0" width="135" height="28" rx="14" fill="var(--a12p22b-panel-bg)" stroke="var(--a12p22b-panel-border)"/>
+      <text id="a12p22b-btn-conference-tx" x="67" y="18" font-size="11" font-weight="600" fill="var(--a12p22b-text-muted)" text-anchor="middle">Conferência</text>
+    </g>
+
+    <text x="415" y="18" font-size="11" fill="var(--a12p22b-text-muted)">
+      Toque nas estruturas anatômicas ou na lista para inspecionar relações.
+    </text>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- ESTAGIO GRAFICO PRINCIPAL — ANATOMIA PELVICA (VISTA PERINEAL INFERIOR)  -->
+  <!-- ======================================================================= -->
+  <g id="a12p22b-stage" transform="translate(40, 155)">
+    <!-- RETANGULO DE CONFINAMENTO DO PALCO -->
+    <rect x="0" y="0" width="710" height="595" rx="10" fill="var(--a12p22b-panel-bg)" stroke="var(--a12p22b-panel-border)" stroke-width="1"/>
+
+    <!-- VETOR PERMANENTE DE DENTRO (PROFUNDO) A FORA (SUPERFICIAL) -->
+    <g id="a12p22b-vetor-eixo" transform="translate(25, 40)">
+      <line x1="12" y1="15" x2="12" y2="480" stroke="url(#a12p22b-grad-vetor)" stroke-width="4" stroke-dasharray="6 4" marker-end="url(#a12p22b-arrowhead)"/>
+      <rect x="0" y="0" width="130" height="20" rx="4" fill="var(--a12p22b-panel-bg)" stroke="var(--a12p22b-fascia)" stroke-width="1"/>
+      <text x="65" y="14" font-size="9" font-weight="700" fill="var(--a12p22b-fascia)" text-anchor="middle">1. PROFUNDO (Nível I)</text>
+      
+      <rect x="0" y="500" width="130" height="20" rx="4" fill="var(--a12p22b-panel-bg)" stroke="var(--a12p22b-perineo)" stroke-width="1"/>
+      <text x="65" y="514" font-size="9" font-weight="700" fill="var(--a12p22b-perineo)" text-anchor="middle">4. SUPERFICIAL (Nível III)</text>
+    </g>
+
+    <!-- ANCORAGEM OSSEA (MOLDE 1): SINFISE, ESPINHAS ISQUIATICAS, COCCIX -->
+    <g id="a12p22b-os-group" fill="var(--a12p22b-osso)" opacity="0.85">
+      <!-- SINFISE PUBICA & RAMOS PUBICOS (ANTERIOR / TOPO) -->
+      <path id="a12p22b-sinfise" class="a12p22b-hs" data-id="sinfise" d="M 320,60 C 350,60 380,60 410,60 C 425,85 440,115 460,150 C 440,145 420,135 410,125 C 380,105 350,105 320,125 C 310,135 290,145 270,150 C 290,115 305,85 320,60 Z" stroke="var(--a12p22b-osso)" stroke-width="2" role="button" aria-label="Sínfise Púbica" tabindex="0"/>
+
+      <!-- ESPINHA ISQUIATICA ESQUERDA (LATERAL ESQUERDA) -->
+      <path id="a12p22b-espinha-e" class="a12p22b-hs" data-id="espinha" d="M 200,280 C 190,295 180,310 195,325 C 210,320 220,305 215,290 Z" stroke="var(--a12p22b-osso)" stroke-width="1.5" role="button" aria-label="Espinha Isquiática Esquerda" tabindex="0"/>
+
+      <!-- ESPINHA ISQUIATICA DIREITA (LATERAL DIREITA) -->
+      <path id="a12p22b-espinha-d" class="a12p22b-hs" data-id="espinha" d="M 530,280 C 540,295 550,310 535,325 C 520,320 510,305 515,290 Z" stroke="var(--a12p22b-osso)" stroke-width="1.5" role="button" aria-label="Espinha Isquiática Direita" tabindex="0"/>
+
+      <!-- TUBEROSIDADE ISQUIATICA ESQUERDA -->
+      <path id="a12p22b-tuberosidade-e" d="M 230,350 C 210,370 200,410 220,440 C 240,430 250,390 245,360 Z" stroke="var(--a12p22b-osso)" stroke-width="1.5"/>
+
+      <!-- TUBEROSIDADE ISQUIATICA DIREITA -->
+      <path id="a12p22b-tuberosidade-d" d="M 500,350 C 520,370 530,410 510,440 C 490,430 480,390 485,360 Z" stroke="var(--a12p22b-osso)" stroke-width="1.5"/>
+
+      <!-- COCCIX & SACRO INFERIOR (POSTERIOR / BASE) -->
+      <path id="a12p22b-coccix" class="a12p22b-hs" data-id="coccix" d="M 345,510 C 355,500 375,500 385,510 C 380,535 370,555 365,565 C 360,555 350,535 345,510 Z" stroke="var(--a12p22b-osso)" stroke-width="2" role="button" aria-label="Cóccix e Promontório Sacro" tabindex="0"/>
+    </g>
+
+    <!-- CAMADA 1: FASCIA ENDOPELVICA & CORDAS DE SUSTENTACAO (NIVEL I) -->
+    <g id="a12p22b-layer-fascia">
+      <!-- FASCIA ENDOPELVICA (LAMINA DE FUNDO) -->
+      <path id="a12p22b-fascia-endopelvica" class="a12p22b-hs" data-id="fascia-endopelvica" d="M 270,160 C 320,130 410,130 460,160 C 490,240 490,340 460,420 C 410,460 320,460 270,420 C 240,340 240,240 270,160 Z" fill="var(--a12p22b-fascia)" opacity="0.18" stroke="var(--a12p22b-fascia)" stroke-width="1.5" stroke-dasharray="4 2" role="button" aria-label="Fáscia Endopélvica" tabindex="0"/>
+
+      <!-- CORDA: PUBOVESICOUTERINO (ANTERIOR) -->
+      <path id="a12p22b-pubovesico" class="a12p22b-hs" data-id="pubovesico" d="M 345,110 L 345,185 M 385,110 L 385,185" stroke="var(--a12p22b-suspensao)" stroke-width="4" stroke-linecap="round" fill="none" role="button" aria-label="Ligamento Pubovesicouterino Anterior" tabindex="0"/>
+
+      <!-- CORDA: CARDINAL LATERAL (INDICADO FORA DO PLANO DE CORTE MEDIANO) -->
+      <path id="a12p22b-cardinal" class="a12p22b-hs" data-id="cardinal" d="M 215,295 L 310,230 M 515,295 L 420,230" stroke="url(#a12p22b-pattern-cardinal)" stroke-width="7" stroke-linecap="round" fill="none" role="button" aria-label="Ligamento Cardinal Lateral (Fora do Plano)" tabindex="0"/>
+
+      <!-- CORDA: UTEROSSACRO (POSTERIOR) -->
+      <path id="a12p22b-uterossacro" class="a12p22b-hs" data-id="uterossacro" d="M 330,260 C 335,350 345,460 355,505 M 400,260 C 395,350 385,460 375,505" stroke="var(--a12p22b-suspensao)" stroke-width="4.5" stroke-linecap="round" fill="none" role="button" aria-label="Ligamento Uterossacro Posterior" tabindex="0"/>
+    </g>
+
+    <!-- CAMADA 2: DIAFRAGMA PELVICO / LEVANTADOR DO ANUS & COCCIGEO (NIVEL II) -->
+    <g id="a12p22b-layer-diafragma">
+      <!-- MUSCULO COCCIGEO (POSTERO-LATERAL) -->
+      <path id="a12p22b-coccigeo" class="a12p22b-hs" data-id="coccigeo" d="M 210,315 L 345,510 L 265,420 Z M 520,315 L 385,510 L 465,420 Z" fill="var(--a12p22b-diafragma)" opacity="0.4" stroke="var(--a12p22b-diafragma)" stroke-width="1.5" role="button" aria-label="Músculo Coccígeo" tabindex="0"/>
+
+      <!-- ILIOCOCCIGEO (FAIXA LATERAL DO LEVANTADOR) -->
+      <path id="a12p22b-iliococcigeo" class="a12p22b-hs" data-id="iliococcigeo" d="M 260,180 C 220,250 220,350 265,420 C 320,470 410,470 465,420 C 510,350 510,250 470,180 Z" fill="var(--a12p22b-diafragma)" opacity="0.35" stroke="var(--a12p22b-diafragma)" stroke-width="2" role="button" aria-label="Músculo Iliococcígeo" tabindex="0"/>
+
+      <!-- PUBOCOCCIGEO (LEVANTE CENTRAL) -->
+      <path id="a12p22b-pubococcigeo" class="a12p22b-hs" data-id="pubococcigeo" d="M 310,130 C 270,220 280,380 350,500 L 380,500 C 450,380 460,220 420,130 Z" fill="var(--a12p22b-diafragma)" opacity="0.55" stroke="var(--a12p22b-diafragma)" stroke-width="2" role="button" aria-label="Músculo Pubococcígeo" tabindex="0"/>
+
+      <!-- PUBORRETAL (ALCA U-SHAPED AO REDOR DO HIATO RRETAL) -->
+      <path id="a12p22b-puborretal" class="a12p22b-hs" data-id="puborretal" d="M 330,120 C 300,180 300,340 335,390 C 360,410 370,410 395,390 C 430,340 430,180 400,120 C 375,150 355,150 330,120 Z" fill="var(--a12p22b-diafragma)" opacity="0.8" stroke="var(--a12p22b-diafragma)" stroke-width="3" role="button" aria-label="Músculo Puborretal (Alça Pélvica)" tabindex="0"/>
+    </g>
+
+    <!-- CAMADA 3: DIAFRAGMA UROGENITAL & MEMBRANA PERINEAL -->
+    <g id="a12p22b-layer-membrana">
+      <!-- MEMBRANA PERINEAL (TRIANGULO ANTERIOR) -->
+      <path id="a12p22b-membrana-perineal" class="a12p22b-hs" data-id="membrana-perineal" d="M 335,115 L 430,115 L 475,320 L 290,320 Z" fill="var(--a12p22b-membrana)" opacity="0.45" stroke="var(--a12p22b-membrana)" stroke-width="2" role="button" aria-label="Membrana Perineal e Espaço Profundo" tabindex="0"/>
+
+      <!-- ESFINCTER URETRAL EXTERNO & TRANSVERSO PROFUNDO -->
+      <circle id="a12p22b-esfincter-uretral" class="a12p22b-hs" data-id="esfincter-uretral" cx="365" cy="180" r="14" fill="none" stroke="var(--a12p22b-membrana)" stroke-width="4" stroke-dasharray="3 2" role="button" aria-label="Esfíncter Uretral Externo" tabindex="0"/>
+
+      <!-- TRANSVERSO PROFUNDO DO PERINEO -->
+      <path id="a12p22b-transverso-profundo" class="a12p22b-hs" data-id="transverso-profundo" d="M 295,310 L 435,310" stroke="var(--a12p22b-membrana)" stroke-width="5" stroke-linecap="round" fill="none" role="button" aria-label="Músculo Transverso Profundo do Períneo" tabindex="0"/>
+    </g>
+
+    <!-- CAMADA 4: ESPACO SUPERFICIAL & MUSCULOS PERINEAIS (NIVEL III) -->
+    <g id="a12p22b-layer-perineo">
+      <!-- ISQUIOCAVERNOSO ESQUERDO E DIREITO -->
+      <path id="a12p22b-isquiocavernoso" class="a12p22b-hs" data-id="isquiocavernoso" d="M 315,120 L 265,300 M 415,120 L 465,300" stroke="var(--a12p22b-perineo)" stroke-width="6" stroke-linecap="round" fill="none" role="button" aria-label="Músculo Isquiocavernoso" tabindex="0"/>
+
+      <!-- BULBOESPONJOSO / BULBOCAVERNOSO (ENVOLVE OSTIO VAGINAL) -->
+      <path id="a12p22b-bulboesponjoso" class="a12p22b-hs" data-id="bulboesponjoso" d="M 350,150 C 330,200 330,270 355,315 C 360,320 370,320 375,315 C 400,270 400,200 380,150 Z" fill="var(--a12p22b-perineo)" opacity="0.65" stroke="var(--a12p22b-perineo)" stroke-width="2" role="button" aria-label="Músculo Bulboesponjoso" tabindex="0"/>
+
+      <!-- TRANSVERSO SUPERFICIAL DO PERINEO -->
+      <path id="a12p22b-transverso-superficial" class="a12p22b-hs" data-id="transverso-superficial" d="M 260,325 L 470,325" stroke="var(--a12p22b-perineo)" stroke-width="5.5" stroke-linecap="round" fill="none" role="button" aria-label="Músculo Transverso Superficial do Períneo" tabindex="0"/>
+
+      <!-- ESFINCTER EXTERNO DO ANUS (POSTERIOR NA MUDANCA ANATOMICA) -->
+      <circle id="a12p22b-esfincter-anal" class="a12p22b-hs" data-id="esfincter-anal" cx="365" cy="400" r="26" fill="none" stroke="var(--a12p22b-perineo)" stroke-width="7" role="button" aria-label="Esfíncter Externo do Ânus" tabindex="0"/>
+    </g>
+
+    <!-- CORREDORES DE LINHAS-GUIA E ROTULOS (SEM CRUZAMENTO DE LINHAS) -->
+    <g id="a12p22b-leaders">
+      <!-- CORREDOR ESQUERDO: FASCIA & SINFISE & ESFINCTERES -->
+      <g class="a12p22b-leader">
+        <polyline points="320,80 230,80 180,80" fill="none" stroke="var(--a12p22b-osso)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="320" cy="80" r="3" fill="var(--a12p22b-osso)"/>
+        <text class="a12p22b-label-text" x="172" y="84" font-size="10" font-weight="700" fill="var(--a12p22b-osso)" text-anchor="end">Sínfise Púbica (Âncora Ant.)</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="345,145 220,145 180,145" fill="none" stroke="var(--a12p22b-suspensao)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="345" cy="145" r="3" fill="var(--a12p22b-suspensao)"/>
+        <text class="a12p22b-label-text" x="172" y="149" font-size="10" font-weight="700" fill="var(--a12p22b-suspensao)" text-anchor="end">Lig. Pubovesicouterino</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="280,220 200,220 180,220" fill="none" stroke="var(--a12p22b-fascia)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="280" cy="220" r="3" fill="var(--a12p22b-fascia)"/>
+        <text class="a12p22b-label-text" x="172" y="224" font-size="10" font-weight="700" fill="var(--a12p22b-fascia)" text-anchor="end">Fáscia Endopélvica (Nível I)</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="215,295 190,295 180,295" fill="none" stroke="var(--a12p22b-suspensao)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="215" cy="295" r="3" fill="var(--a12p22b-suspensao)"/>
+        <text class="a12p22b-label-text" x="172" y="299" font-size="10" font-weight="700" fill="var(--a12p22b-suspensao)" text-anchor="end">Lig. Cardinal (Fora do Plano)</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="245,390 190,390 180,390" fill="none" stroke="var(--a12p22b-diafragma)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="245" cy="390" r="3" fill="var(--a12p22b-diafragma)"/>
+        <text class="a12p22b-label-text" x="172" y="394" font-size="10" font-weight="700" fill="var(--a12p22b-diafragma)" text-anchor="end">M. Iliococcígeo</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="345,530 240,530 180,530" fill="none" stroke="var(--a12p22b-osso)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="345" cy="530" r="3" fill="var(--a12p22b-osso)"/>
+        <text class="a12p22b-label-text" x="172" y="534" font-size="10" font-weight="700" fill="var(--a12p22b-osso)" text-anchor="end">Cóccix (Âncora Post.)</text>
+      </g>
+
+      <!-- CORREDOR DIREITO: LEVANTADOR, DIAFRAGMA UG & PERINEO -->
+      <g class="a12p22b-leader">
+        <polyline points="380,180 490,180 540,180" fill="none" stroke="var(--a12p22b-perineo)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="380" cy="180" r="3" fill="var(--a12p22b-perineo)"/>
+        <text class="a12p22b-label-text" x="548" y="184" font-size="10" font-weight="700" fill="var(--a12p22b-perineo)" text-anchor="start">M. Bulboesponjoso</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="370,240 500,240 540,240" fill="none" stroke="var(--a12p22b-diafragma)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="370" cy="240" r="3" fill="var(--a12p22b-diafragma)"/>
+        <text class="a12p22b-label-text" x="548" y="244" font-size="10" font-weight="700" fill="var(--a12p22b-diafragma)" text-anchor="start">M. Puborretal (Alça Pélvica)</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="420,310 510,310 540,310" fill="none" stroke="var(--a12p22b-membrana)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="420" cy="310" r="3" fill="var(--a12p22b-membrana)"/>
+        <text class="a12p22b-label-text" x="548" y="314" font-size="10" font-weight="700" fill="var(--a12p22b-membrana)" text-anchor="start">Membrana Perineal (UG)</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="440,325 515,325 540,325" fill="none" stroke="var(--a12p22b-perineo)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="440" cy="325" r="3" fill="var(--a12p22b-perineo)"/>
+        <text class="a12p22b-label-text" x="548" y="329" font-size="10" font-weight="700" fill="var(--a12p22b-perineo)" text-anchor="start">M. Transverso Sup. do Períneo</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="390,400 500,400 540,400" fill="none" stroke="var(--a12p22b-perineo)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="390" cy="400" r="3" fill="var(--a12p22b-perineo)"/>
+        <text class="a12p22b-label-text" x="548" y="404" font-size="10" font-weight="700" fill="var(--a12p22b-perineo)" text-anchor="start">Esfíncter Externo do Ânus</text>
+      </g>
+
+      <g class="a12p22b-leader">
+        <polyline points="360,450 490,450 540,450" fill="none" stroke="var(--a12p22b-suspensao)" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <circle cx="360" cy="450" r="3" fill="var(--a12p22b-suspensao)"/>
+        <text class="a12p22b-label-text" x="548" y="454" font-size="10" font-weight="700" fill="var(--a12p22b-suspensao)" text-anchor="start">Lig. Uterossacro Posterior</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- PAINEL LATERAL DE LEITURA E CONFERENCIA CLINICA (CONTRATO BAUER #4)     -->
+  <!-- ======================================================================= -->
+  <g id="a12p22b-panel" transform="translate(765, 155)">
+    <!-- CONTAINMENT BOX DO PAINEL -->
+    <rect x="0" y="0" width="395" height="595" rx="10" fill="var(--a12p22b-panel-bg)" stroke="var(--a12p22b-panel-border)" stroke-width="1"/>
+
+    <!-- CABECALHO DO PAINEL DE DETALHAMENTO -->
+    <rect x="15" y="15" width="365" height="30" rx="4" fill="rgba(255,255,255,0.04)"/>
+    <text x="25" y="35" font-size="12" font-weight="700" fill="var(--a12p22b-text-main)">PAINEL DE ANÁLISE E CONFERÊNCIA</text>
+    <rect id="a12p22b-tag-nivel" x="270" y="22" width="100" height="16" rx="8" fill="var(--a12p22b-diafragma)"/>
+    <text id="a12p22b-txt-nivel" x="320" y="34" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">NÍVEL II (DeLancey)</text>
+
+    <!-- NOME DA ESTRUTURA SELECIONADA -->
+    <text id="a12p22b-panel-title" x="25" y="70" font-size="15" font-weight="700" fill="var(--a12p22b-diafragma)">
+      Músculo Puborretal (Alça Pélvica)
+    </text>
+
+    <!-- DESCRICAO ANATOMICA E DE SUSTENTACAO -->
+    <rect x="15" y="82" width="365" height="110" rx="6" fill="rgba(0,0,0,0.2)" stroke="var(--a12p22b-panel-border)" stroke-width="1"/>
+    <text id="a12p22b-panel-desc1" x="25" y="102" font-size="11" fill="var(--a12p22b-text-main)">
+      Camada: Diafragma Pélvico (Levantador do Ânus).
+    </text>
+    <text id="a12p22b-panel-desc2" x="25" y="120" font-size="11" fill="var(--a12p22b-text-muted)">
+      Forma alça muscular em U ancorada na sínfise púbica.
+    </text>
+    <text id="a12p22b-panel-desc3" x="25" y="138" font-size="11" fill="var(--a12p22b-text-muted)">
+      MANTÉM o ângulo anorretal e a continência fecal.
+    </text>
+    <text id="a12p22b-panel-desc4" x="25" y="156" font-size="11" fill="var(--a12p22b-text-muted)">
+      Tonus permanente garante fechamento do hiato urogenital.
+    </text>
+
+    <!-- CAIXA DE CONFERENCIA CLINICA / ANCORA FUNCIONAL -->
+    <rect x="15" y="202" width="365" height="85" rx="6" fill="rgba(85, 184, 137, 0.08)" stroke="var(--a12p22b-diafragma)" stroke-width="1"/>
+    <text x="25" y="220" font-size="10" font-weight="700" fill="var(--a12p22b-diafragma)">ÂNCORA DE CONFERÊNCIA CLÍNICA:</text>
+    <text id="a12p22b-panel-anchor1" x="25" y="240" font-size="11" font-weight="600" fill="var(--a12p22b-text-main)">
+      &quot;O puborretal é o guardião dinâmico do hiato.&quot;
+    </text>
+    <text id="a12p22b-panel-anchor2" x="25" y="258" font-size="10" fill="var(--a12p22b-text-muted)">
+      A avulção no parto vaginal amplia o hiato pélvico e
+    </text>
+    <text id="a12p22b-panel-anchor3" x="25" y="272" font-size="10" fill="var(--a12p22b-text-muted)">
+      predispõe diretamente ao prolapso de órgãos pélvicos (POP).
+    </text>
+
+    <!-- LISTA DE ESTRUTURAS PARA NAVEGACAO RAPIDA (INTERACAO DIRETA) -->
+    <text x="25" y="310" font-size="11" font-weight="700" fill="var(--a12p22b-text-main)">ESTRUTURAS DA PRANCHA DE SÍNTESE:</text>
+    
+    <g transform="translate(15, 320)">
+      <!-- ITEM 1: SINFISE PUBICA -->
+      <g class="a12p22b-item" data-id="sinfise" transform="translate(0,0)">
+        <rect x="0" y="0" width="365" height="24" rx="4" fill="rgba(255,255,255,0.02)"/>
+        <circle cx="12" cy="12" r="4" fill="var(--a12p22b-osso)"/>
+        <text x="25" y="16" font-size="10" fill="var(--a12p22b-text-main)">Sínfise Púbica &amp; Ramos (Âncora Óssea Ant.)</text>
+      </g>
+
+      <!-- ITEM 2: FASCIA ENDOPELVICA -->
+      <g class="a12p22b-item" data-id="fascia-endopelvica" transform="translate(0,27)">
+        <rect x="0" y="0" width="365" height="24" rx="4" fill="rgba(255,255,255,0.02)"/>
+        <circle cx="12" cy="12" r="4" fill="var(--a12p22b-fascia)"/>
+        <text x="25" y="16" font-size="10" fill="var(--a12p22b-text-main)">Fáscia Endopélvica &amp; Cordas (Nível I)</text>
+      </g>
+
+      <!-- ITEM 3: CARDINAL LATERAL -->
+      <g class="a12p22b-item" data-id="cardinal" transform="translate(0,54)">
+        <rect x="0" y="0" width="365" height="24" rx="4" fill="rgba(255,255,255,0.02)"/>
+        <circle cx="12" cy="12" r="4" fill="var(--a12p22b-suspensao)"/>
+        <text x="25" y="16" font-size="10" fill="var(--a12p22b-text-main)">Lig. Cardinal Lateral (Plano Tridimensional)</text>
+      </g>
+
+      <!-- ITEM 4: PUBORRETAL -->
+      <g class="a12p22b-item is-active" data-id="puborretal" transform="translate(0,81)">
+        <rect x="0" y="0" width="365" height="24" rx="4" fill="rgba(255,255,255,0.02)"/>
+        <circle cx="12" cy="12" r="4" fill="var(--a12p22b-diafragma)"/>
+        <text x="25" y="16" font-size="10" font-weight="700" fill="var(--a12p22b-text-main)">M. Puborretal (Diafragma Pélvico - Nível II)</text>
+      </g>
+
+      <!-- ITEM 5: MEMBRANA PERINEAL -->
+      <g class="a12p22b-item" data-id="membrana-perineal" transform="translate(0,108)">
+        <rect x="0" y="0" width="365" height="24" rx="4" fill="rgba(255,255,255,0.02)"/>
+        <circle cx="12" cy="12" r="4" fill="var(--a12p22b-membrana)"/>
+        <text x="25" y="16" font-size="10" fill="var(--a12p22b-text-main)">Membrana Perineal &amp; Espaço Profundo</text>
+      </g>
+
+      <!-- ITEM 6: BULBOESPONJOSO & PERINEO SUPERFICIAL -->
+      <g class="a12p22b-item" data-id="bulboesponjoso" transform="translate(0,135)">
+        <rect x="0" y="0" width="365" height="24" rx="4" fill="rgba(255,255,255,0.02)"/>
+        <circle cx="12" cy="12" r="4" fill="var(--a12p22b-perineo)"/>
+        <text x="25" y="16" font-size="10" fill="var(--a12p22b-text-main)">M. Bulboesponjoso (Espaço Sup. - Nível III)</text>
+      </g>
+
+      <!-- ITEM 7: ESFINCER EXTERNO DO ANUS -->
+      <g class="a12p22b-item" data-id="esfincter-anal" transform="translate(0,162)">
+        <rect x="0" y="0" width="365" height="24" rx="4" fill="rgba(255,255,255,0.02)"/>
+        <circle cx="12" cy="12" r="4" fill="var(--a12p22b-perineo)"/>
+        <text x="25" y="16" font-size="10" fill="var(--a12p22b-text-main)">Esfíncter Externo do Ânus &amp; Corpo Perineal</text>
+      </g>
+
+      <!-- ITEM 8: COCCIX -->
+      <g class="a12p22b-item" data-id="coccix" transform="translate(0,189)">
+        <rect x="0" y="0" width="365" height="24" rx="4" fill="rgba(255,255,255,0.02)"/>
+        <circle cx="12" cy="12" r="4" fill="var(--a12p22b-osso)"/>
+        <text x="25" y="16" font-size="10" fill="var(--a12p22b-text-main)">Cóccix (Âncora Óssea Posterior)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- ENGINE INTERATIVO SELF-CONTAINED (JS INLINE ESTREITO SEM DEPENDENCIA)   -->
+  <!-- ======================================================================= -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // DICIONARIO COMPLETO DE DADOS ANATOMICOS E ANCORAGEM CLINICA
+      var DB = {
+        "sinfise": {
+          title: "Sínfise Púbica e Ramos Púbicos",
+          color: "var(--a12p22b-osso)",
+          nivel: "ÂNCORA ÓSSEA",
+          d1: "Camada: Arcabouço Ósseo Anterior da Pelve.",
+          d2: "Ponto de inserção anterior do diafragma pélvico e urogenital.",
+          d3: "Resiste às forças de tração do arco tendíneo da fáscia pélvica.",
+          d4: "Referência anterior fundamental para medidas do prolapso.",
+          a1: "\"A sínfise púbica fixa a borda anterior do hiato.\"",
+          a2: "A desancoragem anterior compromete a sustentação uretro-vesical",
+          a3: "e provoca hipermotilidade uretral com incontinência aos esforços."
+        },
+        "fascia-endopelvica": {
+          title: "Fáscia Endopélvica (Rede Visceral)",
+          color: "var(--a12p22b-fascia)",
+          nivel: "NÍVEL I (DeLancey)",
+          d1: "Camada: Tecido Conjuntivo Subperitoneal Profundo.",
+          d2: "Envolve as vísceras pélvicas e fixa a cúpula vaginal.",
+          d3: "Forma os eixos ligamentares vesicouterino, cardinal e uterossacro.",
+          d4: "Transmite cargas viscerais diretamente ao arco tendíneo.",
+          a1: "\"O Nível I é a suspensão apical da pelve.\"",
+          a2: "Defeitos isolados no Nível I provocam prolapso de cúpula",
+          a3: "ou uterino severo quando o diafragma pélvico atrofia."
+        },
+        "pubovesico": {
+          title: "Ligamento Pubovesicouterino",
+          color: "var(--a12p22b-suspensao)",
+          nivel: "NÍVEL I / II",
+          d1: "Camada: Condensação Anterior da Fáscia Endopélvica.",
+          d2: "Conecta a parede vesical anterior e colo uterino ao púbis.",
+          d3: "Estabiliza o colo vesical durante o aumento da pressão abdominal.",
+          d4: "Impede a rotação posterior e o descenso do trígono.",
+          a1: "\"Trava anterior do colo vesical e parede anterior.\"",
+          a2: "A avulção pubovesical é causa direta de cistocele",
+          a3: "por defeito de fixação anterior no arco tendíneo."
+        },
+        "cardinal": {
+          title: "Ligamento Cardinal (Mackenrodt)",
+          color: "var(--a12p22b-suspensao)",
+          nivel: "NÍVEL I (Fora do Plano)",
+          d1: "Camada: Condensação Lateral do Paramétrio / Paracólpio.",
+          d2: "Transcorre lateralmente da parede pélvica ao colo uterino.",
+          d3: "Indicado com padrão hachurado por estar fora do plano mediano exato.",
+          d4: "Suporta a maior carga de tração vertical do útero.",
+          a1: "\"O pilar lateral de sustentação apical.\"",
+          a2: "Sua secção na histerectomia exige reancoragem rigorosa",
+          a3: "na cúpula vaginal para evitar eversão pós-operatória."
+        },
+        "uterossacro": {
+          title: "Ligamentos Uterossacros",
+          color: "var(--a12p22b-suspensao)",
+          nivel: "NÍVEL I (Posterior)",
+          d1: "Camada: Condensação Posterior do Paramétrio.",
+          d2: "Tracionam o colo uterino póstero-superiormente em direção ao sacro.",
+          d3: "Mantêm o útero em anteversoflexão fisiológica.",
+          d4: "Servem de eixo axial primário na cirurgia de reconstrução.",
+          a1: "\"Direcionam o colo póstero-superiormente ao sacro.\"",
+          a2: "A integridade dos uterossacros previne que a força",
+          a3: "intra-abdominal incida diretamente sobre o hiato genital."
+        },
+        "pubococcigeo": {
+          title: "Músculo Pubococcígeo",
+          color: "var(--a12p22b-diafragma)",
+          nivel: "NÍVEL II (Diafragma Pélvico)",
+          d1: "Camada: Placa Central do Músculo Levantador do Ânus.",
+          d2: "Origina-se no corpo do púbis e insere-se no cóccix e rafe anal.",
+          d3: "Forma a prancha horizontal que suporta as vísceras pélvicas.",
+          d4: "Eleva o assoalho pélvico na contração voluntária.",
+          a1: "\"A prancha sustentadora da cavidade pélvica.\"",
+          a2: "O estiramento excessivo no parto enfraquece a prancha",
+          a3: "e inclina a placa levantadora, favorecendo a descendência."
+        },
+        "puborretal": {
+          title: "Músculo Puborretal (Alça Pélvica)",
+          color: "var(--a12p22b-diafragma)",
+          nivel: "NÍVEL II (Diafragma Pélvico)",
+          d1: "Camada: Componente Medial do Músculo Levantador do Ânus.",
+          d2: "Forma alça muscular em U ancorada na sínfise púbica.",
+          d3: "MANTÉM o ângulo anorretal e a continência fecal.",
+          d4: "Tonus permanente garante fechamento do hiato urogenital.",
+          a1: "\"O puborretal é o guardião dinâmico do hiato.\"",
+          a2: "A avulção no parto vaginal amplia o hiato pélvico e",
+          a3: "predispõe diretamente ao prolapso de órgãos pélvicos (POP)."
+        },
+        "iliococcigeo": {
+          title: "Músculo Iliococcígeo",
+          color: "var(--a12p22b-diafragma)",
+          nivel: "NÍVEL II (Diafragma Pélvico)",
+          d1: "Camada: Porção Póstero-Lateral do Levantador do Ânus.",
+          d2: "Origina-se no arco tendíneo da fáscia obturatória.",
+          d3: "Insere-se na borda lateral do cóccix e rafe anococcígea.",
+          d4: "Fecha a porção posterior do hiato pélvico.",
+          a1: "\"Fechamento póstero-lateral do hiato abdominal.\"",
+          a2: "Proporciona base de apoio estável para a lâmina de",
+          a3: "fáscia endopélvica e impede a herniação posterior."
+        },
+        "coccigeo": {
+          title: "Músculo Coccígeo (Isquiococcígeo)",
+          color: "var(--a12p22b-diafragma)",
+          nivel: "NÍVEL II (Posterior)",
+          d1: "Camada: Porção Posterior do Diafragma Pélvico.",
+          d2: "Disposto sobre a superfície anterior do ligamento sacroespinhoso.",
+          d3: "Conecta a espinha isquiática às margens do sacro e cóccix.",
+          d4: "Estabiliza a articulação sacroilíaca e o cóccix.",
+          a1: "\"Estabilizador muscular do ligamento sacroespinhoso.\"",
+          a2: "Sua identificação palpatória orienta a fixação",
+          a3: "de cúpula ao ligamento sacroespinhoso na cirurgia de POP."
+        },
+        "membrana-perineal": {
+          title: "Membrana Perineal e Espaço Profundo",
+          color: "var(--a12p22b-membrana)",
+          nivel: "NÍVEL III / II",
+          d1: "Camada: Lâmina Fibromuscular Triangular Anterior.",
+          d2: "Ocupa o arco púbico e separa o espaço profundo do superficial.",
+          d3: "Atravessada pela uretra e pela vagina.",
+          d4: "Ancora o corpo perineal e os corpos cavernosos.",
+          a1: "\"A plataforma de fixação inferior dos órgãos urogenitais.\"",
+          a2: "Sua rotura transversal desancora o diafragma urogenital",
+          a3: "provocando hipermotilidade e rectocele baixa."
+        },
+        "esfincter-uretral": {
+          title: "Esfíncter Uretral Externo",
+          color: "var(--a12p22b-membrana)",
+          nivel: "NÍVEL III (Esfincteriano)",
+          d1: "Camada: Espaço Perineal Profundo.",
+          d2: "Envolve a uretra membranosa com fibras circulares e em alça.",
+          d3: "Garante a continência urinária voluntária sob estresse.",
+          d4: "Inervado pelo nervo pudendo (S2-S4).",
+          a1: "\"Controle esfincteriano voluntário de alta pressão.\"",
+          a2: "Lesões cirúrgicas ou obstétricas levam à perda do selamento",
+          a3: "mucoso e incontinência urinária de esforço severa."
+        },
+        "transverso-profundo": {
+          title: "Músculo Transverso Profundo do Períneo",
+          color: "var(--a12p22b-membrana)",
+          nivel: "NÍVEL III (Profundo)",
+          d1: "Camada: Espaço Perineal Profundo.",
+          d2: "Origina-se no ramo isquiopúbico e insere-se no corpo perineal.",
+          d3: "Estabiliza o centro tendíneo do períneo no plano horizontal.",
+          d4: "Dá suporte à membrana perineal.",
+          a1: "\"Tensionador horizontal do corpo perineal profundo.\"",
+          a2: "Sua integridade evita o afastamento dos ramos púbicos",
+          a3: "e o colapso do diâmetro transverso do triângulo anterior."
+        },
+        "isquiocavernoso": {
+          title: "Músculos Isquiocavernosos",
+          color: "var(--a12p22b-perineo)",
+          nivel: "NÍVEL III (Superficial)",
+          d1: "Camada: Espaço Perineal Superficial.",
+          d2: "Recobrem os ramos dos corpos cavernosos e pilares do clitóris.",
+          d3: "Fixam-se na tuberosidade e ramo isquiopúbico.",
+          d4: "Comprimem os pilares para manutenção da ereção.",
+          a1: "\"Fixadores laterais dos corpos cavernosos nos ramos.\"",
+          a2: "Estabilizan a genitália externa no arco anterior",
+          a3: "durante a tração biomecânica e o esforço vaginal."
+        },
+        "bulboesponjoso": {
+          title: "Músculo Bulboesponjoso / Bulbocavernoso",
+          color: "var(--a12p22b-perineo)",
+          nivel: "NÍVEL III (Superficial)",
+          d1: "Camada: Espaço Perineal Superficial.",
+          d2: "Envolve o óstio vaginal e os bulbos do vestíbulo.",
+          d3: "Insere-se anterior ao clitóris e posterior ao corpo perineal.",
+          d4: "Atua como esfíncter do intrito vaginal.",
+          a1: "\"Constritor voluntário do intrito vaginal.\"",
+          a2: "A laceração de 2º grau afeta diretamente este músculo,",
+          a3: "exigindo reconstituição anatômica para evitar intrito entreaberto."
+        },
+        "transverso-superficial": {
+          title: "Músculo Transverso Superficial do Períneo",
+          color: "var(--a12p22b-perineo)",
+          nivel: "NÍVEL III (Superficial)",
+          d1: "Camada: Espaço Perineal Superficial.",
+          d2: "Faixa muscular estreita que cruza anterior ao ânus.",
+          d3: "Fixa a tuberosidade isquiática ao corpo perineal.",
+          d4: "Estabiliza o centro tendíneo do períneo.",
+          a1: "\"Âncora transversal do corpo perineal superficial.\"",
+          a2: "Sua secção na episiotomia mediolateral requer aproximação",
+          a3: "precisa para manter a simetria da fenda vulvar."
+        },
+        "esfincter-anal": {
+          title: "Esfíncter Externo do Ânus",
+          color: "var(--a12p22b-perineo)",
+          nivel: "NÍVEL III (Posterior)",
+          d1: "Camada: Espaço Perineal Superficial Posterior.",
+          d2: "Anel muscular estriado voluntário ao redor do canal anal.",
+          d3: "Ancorado no corpo perineal anterior e lig. anococcígeo.",
+          d4: "Essencial para a continência fecal a altas pressões.",
+          a1: "\"Controle fecal voluntário e âncora do corpo perineal.\"",
+          a2: "Lacerações obstétricas de 3º e 4º graus seccionam o esfíncter,",
+          a3: "exigindo sutura por sobreposição (overlapping) imediata."
+        },
+        "espinha": {
+          title: "Espinhas Isquiáticas (Bilateral)",
+          color: "var(--a12p22b-osso)",
+          nivel: "ÂNCORA ÓSSEA",
+          d1: "Camada: Arcabouço Ósseo Lateral.",
+          d2: "Ponto de ancoragem dos ligamentos sacroespinhoso e coccígeo.",
+          d3: "Demarca a transição entre o hiato pélvico e o forame isquiático.",
+          d4: "Referência zero para a classificação POP-Q.",
+          a1: "\"A referência anatômica central da pelve.\"",
+          a2: "O plano das espinhas (estágio 0) é a linha de base para",
+          a3: "mensuração de todos os prolapsos de órgãos pélvicos."
+        },
+        "coccix": {
+          title: "Cóccix e Promontório Sacro",
+          color: "var(--a12p22b-osso)",
+          nivel: "ÂNCORA ÓSSEA",
+          d1: "Camada: Arcabouço Ósseo Posterior.",
+          d2: "Ponto de inserção da rafe anococcígea e m. pubococcígeo.",
+          d3: "Recebe a tração posterior do ligamento uterossacro.",
+          d4: "Ancora o vértice inferior da prancha levantadora.",
+          a1: "\"Ancoragem posterior da placa do levantador.\"",
+          a2: "Proporciona o contra-apoio dorsal necessário para que",
+          a3: "a contração muscular eleve as vísceras para frente e para cima."
+        }
+      };
+
+      var activeId = "puborretal";
+
+      function updatePanel(id) {
+        var data = DB[id];
+        if (!data) return;
+        activeId = id;
+
+        // ATUALIZA ELEMENTOS DO PAINEL DE LEITURA
+        var tTitle = document.getElementById("a12p22b-panel-title");
+        var tNivel = document.getElementById("a12p22b-txt-nivel");
+        var bgNivel = document.getElementById("a12p22b-tag-nivel");
+        
+        var d1 = document.getElementById("a12p22b-panel-desc1");
+        var d2 = document.getElementById("a12p22b-panel-desc2");
+        var d3 = document.getElementById("a12p22b-panel-desc3");
+        var d4 = document.getElementById("a12p22b-panel-desc4");
+
+        var a1 = document.getElementById("a12p22b-panel-anchor1");
+        var a2 = document.getElementById("a12p22b-panel-anchor2");
+        var a3 = document.getElementById("a12p22b-panel-anchor3");
+
+        if (tTitle) {
+          tTitle.textContent = data.title;
+          tTitle.setAttribute("fill", data.color);
+        }
+        if (tNivel) tNivel.textContent = data.nivel;
+        if (bgNivel) bgNivel.setAttribute("fill", data.color);
+
+        if (d1) d1.textContent = data.d1;
+        if (d2) d2.textContent = data.d2;
+        if (d3) d3.textContent = data.d3;
+        if (d4) d4.textContent = data.d4;
+
+        if (a1) a1.textContent = data.a1;
+        if (a2) a2.textContent = data.a2;
+        if (a3) a3.textContent = data.a3;
+
+        // ATUALIZA DESTAQUES NAS ESTRUTURAS DO STAGE
+        var allHs = document.querySelectorAll("#a12p22b-svg .a12p22b-hs");
+        for (var i = 0; i < allHs.length; i++) {
+          var el = allHs[i];
+          if (el.getAttribute("data-id") === id) {
+            el.classList.add("is-active");
+            el.setAttribute("stroke-width", "3.5");
+            el.setAttribute("opacity", "1");
+          } else {
+            el.classList.remove("is-active");
+            el.setAttribute("stroke-width", el.getAttribute("data-orig-sw") || "1.5");
+          }
+        }
+
+        // ATUALIZA ITEM ATIVO NA LISTA DO PAINEL
+        var allItems = document.querySelectorAll("#a12p22b-svg .a12p22b-item");
+        for (var j = 0; j < allItems.length; j++) {
+          var item = allItems[j];
+          if (item.getAttribute("data-id") === id) {
+            item.classList.add("is-active");
+          } else {
+            item.classList.remove("is-active");
+          }
+        }
+      }
+
+      // ATTACH CLICK & KEYBOARD EVENTS NAS ESTRUTURAS
+      var hsList = document.querySelectorAll("#a12p22b-svg .a12p22b-hs");
+      for (var k = 0; k < hsList.length; k++) {
+        (function(hs) {
+          var id = hs.getAttribute("data-id");
+          hs.setAttribute("data-orig-sw", hs.getAttribute("stroke-width") || "1.5");
+          
+          hs.addEventListener("click", function() {
+            hs.classList.add("is-revealed");
+            updatePanel(id);
+          });
+
+          hs.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              hs.classList.add("is-revealed");
+              updatePanel(id);
+            }
+          });
+        })(hsList[k]);
+      }
+
+      // ATTACH EVENTS NOS ITENS DA LISTA DO PAINEL
+      var itemList = document.querySelectorAll("#a12p22b-svg .a12p22b-item");
+      for (var m = 0; m < itemList.length; m++) {
+        (function(it) {
+          var id = it.getAttribute("data-id");
+          it.addEventListener("click", function() {
+            var targetHs = document.querySelector("#a12p22b-svg .a12p22b-hs[data-id='" + id + "']");
+            if (targetHs) targetHs.classList.add("is-revealed");
+            updatePanel(id);
+          });
+        })(itemList[m]);
+      }
+
+      // CONTROLE DE MODOS (PREENCHIDO, SEM ROTULOS, CONFERENCIA)
+      var svgRoot = document.getElementById("a12p22b-svg");
+      var btnFull = document.getElementById("a12p22b-btn-full");
+      var btnUnlabeled = document.getElementById("a12p22b-btn-unlabeled");
+      var btnConference = document.getElementById("a12p22b-btn-conference");
+
+      function setMode(mode) {
+        if (!svgRoot) return;
+        svgRoot.setAttribute("data-mode", mode);
+
+        var bgFull = document.getElementById("a12p22b-btn-full-bg");
+        var txFull = document.getElementById("a12p22b-btn-full-tx");
+        var bgUn = document.getElementById("a12p22b-btn-unlabeled-bg");
+        var txUn = document.getElementById("a12p22b-btn-unlabeled-tx");
+        var bgConf = document.getElementById("a12p22b-btn-conference-bg");
+        var txConf = document.getElementById("a12p22b-btn-conference-tx");
+
+        if (mode === "full") {
+          bgFull.setAttribute("fill", "var(--a12p22b-fascia)");
+          txFull.setAttribute("fill", "#FFFFFF");
+          bgUn.setAttribute("fill", "var(--a12p22b-panel-bg)");
+          txUn.setAttribute("fill", "var(--a12p22b-text-muted)");
+          bgConf.setAttribute("fill", "var(--a12p22b-panel-bg)");
+          txConf.setAttribute("fill", "var(--a12p22b-text-muted)");
+        } else if (mode === "unlabeled") {
+          bgFull.setAttribute("fill", "var(--a12p22b-panel-bg)");
+          txFull.setAttribute("fill", "var(--a12p22b-text-muted)");
+          bgUn.setAttribute("fill", "var(--a12p22b-membrana)");
+          txUn.setAttribute("fill", "#FFFFFF");
+          bgConf.setAttribute("fill", "var(--a12p22b-panel-bg)");
+          txConf.setAttribute("fill", "var(--a12p22b-text-muted)");
+        } else if (mode === "conference") {
+          bgFull.setAttribute("fill", "var(--a12p22b-panel-bg)");
+          txFull.setAttribute("fill", "var(--a12p22b-text-muted)");
+          bgUn.setAttribute("fill", "var(--a12p22b-panel-bg)");
+          txUn.setAttribute("fill", "var(--a12p22b-text-muted)");
+          bgConf.setAttribute("fill", "var(--a12p22b-perineo)");
+          txConf.setAttribute("fill", "#FFFFFF");
+        }
+      }
+
+      if (btnFull) {
+        btnFull.addEventListener("click", function() { setMode("full"); });
+        btnFull.addEventListener("keydown", function(e) { if (e.key === "Enter" || e.key === " ") setMode("full"); });
+      }
+      if (btnUnlabeled) {
+        btnUnlabeled.addEventListener("click", function() { setMode("unlabeled"); });
+        btnUnlabeled.addEventListener("keydown", function(e) { if (e.key === "Enter" || e.key === " ") setMode("unlabeled"); });
+      }
+      if (btnConference) {
+        btnConference.addEventListener("click", function() { setMode("conference"); });
+        btnConference.addEventListener("keydown", function(e) { if (e.key === "Enter" || e.key === " ") setMode("conference"); });
+      }
+
+      // INICIALIZA PAINEL E MODOS
+      updatePanel("puborretal");
+      setMode("full");
+    })();
+    ]]>
+  </script>
+</svg>

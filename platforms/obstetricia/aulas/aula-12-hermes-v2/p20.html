@@ -1,0 +1,838 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CHASSI DA PLATAFORMA GO — copie VERBATIM e troque SÓ o que está em {{ }}.
+
+     ⛔ NÃO invente header, footer, menu, CSS nem JS. NÃO crie arquivo .css novo.
+     ⛔ NÃO mexa nos caminhos ../../assets/ — eles apontam para o chassi compartilhado
+        (tokens.css, base.css, components.css) que dá a identidade da plataforma inteira.
+
+     O QUE É SEU: o conteúdo dentro de <main id="main"><div class="reading"> … </div></main>.
+     Ali dentro você decide a cara da página — paleta interna, ritmo, componentes,
+     como monta o card, que interação inventa. O resto é contrato.
+
+     Placeholders:
+       p20        p1, p2, … p22          (index.html é p1)
+       20       1, 2, … 22
+       22          22
+       Três cordas para o útero  título curto desta página
+       Sustentação (chão, músculo) × suspensão (cordas, ligamentos). Três ligamentos: pubovesicouterino, cardinal e uterossacro.      uma frase, para o <meta description>
+       <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20" aria-current="page"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li>     os 22 <li> do menu — repita o padrão de menu-panel__item
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<!doctype html>
+<html lang="pt-BR" data-page="p20">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#171219">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Sustentação (chão, músculo) × suspensão (cordas, ligamentos). Três ligamentos: pubovesicouterino, cardinal e uterossacro.">
+  <title>Três cordas para o útero · Anatomia da pelve feminina (parte 1) — GO Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/img/icon.svg" type="image/svg+xml">
+  <style id="critical-nav-fouc">#home-btn{display:grid;place-items:center;width:40px;height:40px;color:#ecdde6;border-bottom:0}#home-btn svg{display:block;width:20px;height:20px}</style>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/aula-12.css">
+</head>
+<body data-page-id="p20" data-a12-page="p20">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="page-orb" aria-hidden="true"></div><div class="page-orb page-orb--rose" aria-hidden="true"></div>
+  <header class="site-header" id="site-header"><div class="site-header__row">
+    <a class="site-header__brand" href="../../index.html"><span class="site-header__logo">GO</span><span class="site-header__titles"><span class="site-header__title">Anatomia da pelve feminina (parte 1)</span><span class="site-header__subtitle">Ginecologia e Obstetrícia · Aula 12</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress" id="progress">20/22</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub do módulo" title="Hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header>
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas da aula"><p class="menu-panel__title">Aula 12 — Anatomia da pelve feminina (parte 1)</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20" aria-current="page"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li></ul><p class="menu-panel__title">Módulo</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="../../index.html"><span class="menu-panel__index">⌂</span><span>Voltar ao hub do módulo</span></a></li></ul></nav></div>
+  <main id="main"><div class="reading">
+
+  <!-- ▼▼▼ AQUI DENTRO É SEU. O conteúdo da página, com a peça SVG da tabela
+       copiada byte a byte, o quiz, e a didática que você decidir. ▼▼▼ -->
+
+<article data-page="p20" data-layout="a12-p20">
+
+<header class="a12-question-stage" data-opener="E7">
+<div class="a12-question-stage__question">
+<span class="a12-question-stage__eyebrow">Comparação chocante</span>
+<h1 id="p20-title">Três cordas para o útero não bambear — e uma some quando você olha de perfil</h1>
+<p class="a12-question-stage__lead no-indent">Dois aparelhos seguram o útero, e eles são feitos de coisas diferentes e puxam em direções diferentes. Um é músculo: um chão que empurra de baixo para cima e impede que caia. O outro é tecido conjuntivo com fibra elástica e músculo liso: cordas que puxam para trás, para os lados e para a frente, e impedem que balance. Chão que segura × cordas que penduram — e a banca troca os dois nomes de propósito.</p>
+</div>
+</header>
+
+<div class="chipset"><span class="a12-modmark">Obstetrícia</span><span class="chip--topic">Parte C · Cordas</span><span class="chip--topic">Itens 166–181</span><span class="chip--topic">Comparação</span></div>
+
+<div class="a12-topic" data-topic="1">
+<div class="a12-topic__kicker">Tópico 1</div>
+<h2 class="topic-h">O chão resolve a queda; ele não resolve o balanço</h2>
+<div class="prose">
+<p>O chão já resolveu um problema: o útero <strong class="term">fica dentro</strong> da pelve, não desce, não se exterioriza. Mas resolver a queda não resolve tudo — ele <strong class="term">não pode ficar bambeando</strong> ali dentro, mudando de posição a cada esforço.</p>
+<p>Para o útero ficar <strong class="term">em pé, numa topografia correta</strong>, ele necessita de outro sistema: o <strong class="term">aparelho de suspensão</strong>. E esse aparelho é <strong class="term">composto por ligamentos</strong> — são eles que mantêm o órgão na posição adequada.</p>
+</div>
+</div>
+
+<div class="a12-topic" data-topic="2">
+<div class="a12-topic__kicker">Tópico 2</div>
+<h2 class="topic-h">Sustentação e suspensão: dois aparelhos, dois tecidos, duas direções</h2>
+<div class="prose">
+<p>A distinção é cobrada literalmente, e a banca troca os dois nomes de propósito:</p>
+<blockquote>
+<p><strong>SUSTENTAÇÃO = o chão.</strong> Músculos e fáscias — diafragma pélvico, diafragma urogenital, fáscia endopélvica. Um chão que <strong class="term">empurra de baixo para cima</strong> e impede que caia.<br>
+<strong>SUSPENSÃO = as cordas.</strong> <strong class="term">Tecido conjuntivo com fibra elástica e músculo liso</strong>, organizado em três pares de ligamentos que se estendem entre o assoalho pélvico e o peritônio parietal. Cordas que <strong class="term">puxam para trás, para os lados e para a frente</strong>, e impedem que balance.</p>
+</blockquote>
+<p>Repare que os dois se distinguem por <strong class="term">três critérios simultâneos</strong>, e é por isso que a distinção é sólida: <strong class="term">tecido</strong> (músculo × conjuntivo elástico), <strong class="term">direção da força</strong> (empurra de baixo × puxa para os lados) e <strong class="term">efeito</strong> (não cai × não balança). Guardar qualquer um dos três resolve a questão; guardar os três torna a confusão impossível.</p>
+<p>São <strong class="term">três ligamentos</strong> no aparelho de suspensão — um anterior, um lateral de cada lado, um posterior.</p>
+</div>
+</div>
+
+<div class="a12-topic" data-topic="3">
+<div class="a12-topic__kicker">Tópico 3</div>
+<h2 class="topic-h">A corda da frente, e os três nomes que ela tem</h2>
+<div class="prose">
+<p><strong class="term">Ligamento anterior — pubovesicouterino</strong>: sai do <strong class="term">osso púbis</strong>, passa pela <strong class="term">bexiga</strong> e chega ao <strong class="term">útero</strong>.</p>
+<p>E aqui a fonte faz, de propósito, o que os outros nomes desta construção não fizeram: <strong class="term">entrega o trajeto dentro do nome</strong>. <strong class="term">Púbis → vesical → uterino.</strong> O ligamento se chama exatamente por onde passa, na ordem em que passa. É o mesmo mecanismo dos três feixes do levantador, e é por isso que este é o mais fácil dos três ligamentos: <strong class="term">o nome é o mapa.</strong></p>
+<p>Sobre esse feixe da frente, um esclarecimento de nomenclatura que evita uma confusão real — porque ele aparece com três nomes diferentes, e todos apontam para a mesma faixa de tecido:</p>
+<blockquote>
+<p>Quando o foco é a <strong class="term">corda que segura o útero</strong>, chama-se <strong class="term">ligamento pubovesicouterino</strong> — e o nome é o trajeto: púbis → bexiga → útero. Quando o foco é a <strong class="term">lâmina que sustenta a bexiga</strong> sobre a parede vaginal anterior, chama-se <strong class="term">fáscia pubovesicocervical</strong> (ou só <em>pubocervical</em>) — é assim que a cirurgia do prolapso a chama, e é o nome que aparece quando o assunto é correção da parede anterior <a href="#" class="a12-link-forward">↗A8</a>. E quando o foco é só o <strong class="term">trecho mais anterior</strong>, que prende o colo da bexiga ao púbis, chama-se <strong class="term">ligamento pubovesical</strong> — este é o termo formal da Terminologia Anatômica. <strong class="term">Não são três estruturas: é a mesma condensação da fáscia endopélvica do compartimento anterior, nomeada pelo pedaço que interessa a quem está falando.</strong></p>
+</blockquote>
+</div>
+</div>
+
+<div class="a12-topic" data-topic="4">
+<div class="a12-topic__kicker">Tópico 4</div>
+<h2 class="topic-h">A corda de trás, e a corda de cada lado</h2>
+<div class="prose">
+<p><strong class="term">Ligamento posterior — uterossacro</strong>: sai do <strong class="term">útero</strong> e vai até o <strong class="term">osso sacro</strong>. Também aqui o nome é o trajeto, e ele puxa o útero <strong class="term">para trás e para cima</strong>, na direção do sacro.</p>
+<p><strong class="term">Ligamento lateral — cardinal</strong>, também chamado <strong class="term">parametrial</strong>, um de cada lado do útero. <em>(Registro de nomenclatura: este é o que tem mais nomes. <strong class="term">Cardinal</strong>, <strong class="term">de Mackenrodt</strong> e <strong class="term">transverso do colo</strong> são todos corretos e todos aparecem. Quando o texto se refere ao <strong class="term">tecido em volta do colo</strong> em vez de ao ligamento em si, usa <strong class="term">paramétrio</strong> ou <strong class="term">paracérvice</strong>.)</em></p>
+<p>Vale a nota de exclusão, porque é distrator clássico: os ligamentos <strong class="term">redondo</strong> e <strong class="term">largo</strong> também se relacionam ao útero, mas <strong class="term">não fazem parte do aparelho de suspensão</strong> no sentido cobrado. O redondo orienta a anteversoflexão — ele posiciona, não sustenta —, e o largo é uma <strong class="term">prega peritoneal</strong>, não uma corda de suporte.</p>
+</div>
+</div>
+
+<div class="a12-topic" data-topic="5">
+<div class="a12-topic__kicker">Tópico 5</div>
+<h2 class="topic-h">Uma figura só mente: o cardinal some no corte de perfil</h2>
+<div class="prose">
+<p>E agora um ponto que quase nunca é dito e que faz o leitor concluir que perdeu alguma coisa:</p>
+<p><strong class="term">O ligamento cardinal é lateral — e ele não aparece no corte mediano.</strong> Numa figura de perfil, cortada ao meio, veem-se o <strong class="term">pubovesicouterino</strong> à frente e o <strong class="term">uterossacro</strong> atrás. O cardinal, que corre para os lados, <strong class="term">sai do plano do corte e simplesmente não está lá</strong>. Quem o procura na figura sagital não acha, e a conclusão natural — e errada — é que deixou passar alguma coisa.</p>
+<p>Não deixou: <strong class="term">é o ângulo que escondeu</strong>. Para ver os três, é preciso <strong class="term">duas vistas</strong> — o corte de perfil, que mostra o anterior e o posterior, e a <strong class="term">vista de cima</strong>, que mostra as três direções a partir do útero: uma para a frente, uma para cada lado, uma para trás.</p>
+<p>E é aqui que a lição transversal de tudo o que veio até aqui aparece em forma pura: <strong class="term">o ângulo escolhido decide o que existe na figura.</strong> Uma imagem não mente por estar errada; ela mente por estar <strong class="term">sozinha</strong>.</p>
+</div>
+</div>
+
+<figure class="a12-fig">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="100%" height="100%" class="a12-inline-svg a12p20-root" id="a12p20-svg" data-svg-tokenized="true" data-active-cord="all" role="img" aria-labelledby="a12p20-title a12p20-desc">
+  <title id="a12p20-title">Aparelho de Suspensão Uterina: As Três Cordas e a Geometria do Plano</title>
+  <desc id="a12p20-desc">Ilustração médica anatômica em painel duplo comparando o corte sagital mediano e a vista superior transversa do útero, demonstrando os ligamentos pubovesicouterino, cardinal e uterossacro.</desc>
+
+  <style>
+    /* Scope estrito à raiz id #a12p20-svg */
+    #a12p20-svg {
+      --a12p20-bg: var(--bg-1, var(--a12p20-bg-local, #140F15));
+      --a12p20-panel-bg: var(--bg-2, var(--a12p20-panel-bg-local, #1F1821));
+      --a12p20-panel-border: var(--ink-20, var(--a12p20-panel-border-local, #3A2E3C));
+      --a12p20-tinta: var(--a12-tinta, var(--a12p20-tinta-local, #F7F1F5));
+      --a12p20-tinta-sub: var(--ink-70, var(--a12p20-tinta-sub-local, #C5B7C3));
+      --a12p20-osso: var(--a12-osso, var(--a12p20-osso-local, #DCC7B4));
+      --a12p20-anterior: var(--a12-ligamento-anterior, var(--a12p20-anterior-local, #EF7582));
+      --a12p20-lateral: var(--a12-ligamento-lateral, var(--a12p20-lateral-local, #6FA8D6));
+      --a12p20-posterior: var(--a12-ligamento-posterior, var(--a12p20-posterior-local, #A978C7));
+      --a12p20-fora-plano: var(--a12-ouro, var(--a12p20-fora-plano-local, #F3BE5B));
+      --a12p20-atenuado: var(--a12-atenuado, var(--a12p20-atenuado-local, #9D919A));
+      --a12p20-chao: var(--a12p20-chao-local, #5E7A67);
+      --a12p20-utero-fill: var(--a12p20-utero-fill-local, #3D2231);
+      --a12p20-utero-stroke: var(--a12p20-utero-stroke-local, #E89BB6);
+      --a12p20-bexiga-fill: var(--a12p20-bexiga-fill-local, #1A3240);
+      --a12p20-bexiga-stroke: var(--a12p20-bexiga-stroke-local, #5CB6E6);
+      --a12p20-retode-fill: var(--a12p20-retode-fill-local, #362520);
+      --a12p20-retode-stroke: var(--a12p20-retode-stroke-local, #C28B75);
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--a12p20-bg);
+      color: var(--a12p20-tinta);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Suporte a Tema Claro escopado por [data-theme="light"] */
+    :root[data-theme="light"] #a12p20-svg,
+    #a12p20-svg[data-theme="light"] {
+      --a12p20-bg: var(--bg-1, var(--a12p20-bg-local, #FAF7F9));
+      --a12p20-panel-bg: var(--bg-2, var(--a12p20-panel-bg-local, #FFFFFF));
+      --a12p20-panel-border: var(--ink-20, var(--a12p20-panel-border-local, #E5DCE3));
+      --a12p20-tinta: var(--a12-tinta, var(--a12p20-tinta-local, #2B2329));
+      --a12p20-tinta-sub: var(--ink-70, var(--a12p20-tinta-sub-local, #5E525C));
+      --a12p20-osso: var(--a12-osso, var(--a12p20-osso-local, #8C725D));
+      --a12p20-anterior: var(--a12-ligamento-anterior, var(--a12p20-anterior-local, #D9384A));
+      --a12p20-lateral: var(--a12-ligamento-lateral, var(--a12p20-lateral-local, #2575B0));
+      --a12p20-posterior: var(--a12-ligamento-posterior, var(--a12p20-posterior-local, #7B439B));
+      --a12p20-fora-plano: var(--a12-ouro, var(--a12p20-fora-plano-local, #C68A16));
+      --a12p20-atenuado: var(--a12-atenuado, var(--a12p20-atenuado-local, #665C63));
+      --a12p20-chao: var(--a12p20-chao-local, #3B6B48);
+      --a12p20-utero-fill: var(--a12p20-utero-fill-local, #FDE8EF);
+      --a12p20-utero-stroke: var(--a12p20-utero-stroke-local, #B8436C);
+      --a12p20-bexiga-fill: var(--a12p20-bexiga-fill-local, #E3F2FD);
+      --a12p20-bexiga-stroke: var(--a12p20-bexiga-stroke-local, #1976D2);
+      --a12p20-retode-fill: var(--a12p20-retode-fill-local, #F5EBE6);
+      --a12p20-retode-stroke: var(--a12p20-retode-stroke-local, #8D5B4C);
+    }
+
+    /* Painéis e Molduras */
+    #a12p20-svg .a12p20-panel {
+      fill: var(--a12p20-panel-bg);
+      stroke: var(--a12p20-panel-border);
+      stroke-width: 1.5px;
+      rx: 12px;
+    }
+
+    /* Tipografia e Hierarquia Visual */
+    #a12p20-svg .a12p20-title-text {
+      font-size: 19px;
+      font-weight: 800;
+      fill: var(--a12p20-tinta);
+      letter-spacing: 0.5px;
+    }
+
+    #a12p20-svg .a12p20-subtitle-text {
+      font-size: 13px;
+      font-weight: 500;
+      fill: var(--a12p20-tinta-sub);
+    }
+
+    #a12p20-svg .a12p20-panel-header {
+      font-size: 14px;
+      font-weight: 800;
+      fill: var(--a12p20-tinta);
+      letter-spacing: 0.5px;
+    }
+
+    #a12p20-svg .a12p20-panel-sub {
+      font-size: 11.5px;
+      font-weight: 600;
+      fill: var(--a12p20-tinta-sub);
+    }
+
+    #a12p20-svg .a12p20-label {
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--a12p20-tinta);
+    }
+
+    #a12p20-svg .a12p20-label-sub {
+      font-size: 10.5px;
+      font-weight: 500;
+      fill: var(--a12p20-tinta-sub);
+    }
+
+    #a12p20-svg .a12p20-axis-text {
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+
+    /* Traços Anatômicos */
+    #a12p20-svg .a12p20-bone {
+      fill: var(--a12p20-osso);
+      fill-opacity: 0.25;
+      stroke: var(--a12p20-osso);
+      stroke-width: 2px;
+    }
+
+    #a12p20-svg .a12p20-floor-ground {
+      stroke: var(--a12p20-chao);
+      stroke-width: 2.5px;
+      stroke-dasharray: 6 4;
+      fill: none;
+    }
+
+    #a12p20-svg .a12p20-organ-utero {
+      fill: var(--a12p20-utero-fill);
+      stroke: var(--a12p20-utero-stroke);
+      stroke-width: 2px;
+    }
+
+    #a12p20-svg .a12p20-organ-bexiga {
+      fill: var(--a12p20-bexiga-fill);
+      stroke: var(--a12p20-bexiga-stroke);
+      stroke-width: 1.8px;
+    }
+
+    #a12p20-svg .a12p20-organ-sacro {
+      fill: var(--a12p20-retode-fill);
+      stroke: var(--a12p20-retode-stroke);
+      stroke-width: 1.8px;
+    }
+
+    /* Cordas e Vetores */
+    #a12p20-svg .a12p20-cord {
+      transition: opacity 0.3s ease, stroke-width 0.25s ease, filter 0.25s ease;
+      cursor: pointer;
+    }
+
+    #a12p20-svg .a12p20-cord-ant {
+      stroke: var(--a12p20-anterior);
+      fill: none;
+    }
+
+    #a12p20-svg .a12p20-cord-lat {
+      stroke: var(--a12p20-lateral);
+      fill: none;
+    }
+
+    #a12p20-svg .a12p20-cord-post {
+      stroke: var(--a12p20-posterior);
+      fill: none;
+    }
+
+    #a12p20-svg .a12p20-vector-gold {
+      stroke: var(--a12p20-fora-plano);
+      fill: var(--a12p20-fora-plano);
+    }
+
+    #a12p20-svg .a12p20-label-group {
+      transition: opacity 0.3s ease;
+    }
+
+    /* Transições de Estado da Máquina de Interação */
+    #a12p20-svg[data-active-cord="ant"] .a12p20-cord:not(.a12p20-cord-ant),
+    #a12p20-svg[data-active-cord="ant"] .a12p20-label-group:not(.a12p20-lg-ant) {
+      opacity: 0.18;
+    }
+
+    #a12p20-svg[data-active-cord="lat"] .a12p20-cord:not(.a12p20-cord-lat),
+    #a12p20-svg[data-active-cord="lat"] .a12p20-label-group:not(.a12p20-lg-lat) {
+      opacity: 0.18;
+    }
+
+    #a12p20-svg[data-active-cord="post"] .a12p20-cord:not(.a12p20-cord-post),
+    #a12p20-svg[data-active-cord="post"] .a12p20-label-group:not(.a12p20-lg-post) {
+      opacity: 0.18;
+    }
+
+    /* Destaques de Foco e Seleção */
+    #a12p20-svg[data-active-cord="ant"] .a12p20-cord-ant,
+    #a12p20-svg[data-active-cord="lat"] .a12p20-cord-lat,
+    #a12p20-svg[data-active-cord="post"] .a12p20-cord-post {
+      opacity: 1 !important;
+      stroke-width: 6px !important;
+      filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+    }
+
+    #a12p20-svg[data-active-cord="lat"] .a12p20-vector-gold {
+      opacity: 1 !important;
+      filter: drop-shadow(0 0 8px var(--a12p20-fora-plano));
+    }
+
+    /* Botões Seletores */
+    #a12p20-svg .a12p20-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #a12p20-svg .a12p20-btn-bg {
+      fill: var(--a12p20-panel-bg);
+      stroke: var(--a12p20-panel-border);
+      stroke-width: 1.5px;
+      rx: 8px;
+    }
+
+    #a12p20-svg .a12p20-btn-txt {
+      font-size: 11px;
+      font-weight: 700;
+      fill: var(--a12p20-tinta-sub);
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+    #a12p20-svg .a12p20-btn:hover .a12p20-btn-bg {
+      stroke: var(--a12p20-tinta-sub);
+      fill: rgba(255,255,255,0.06);
+    }
+
+    #a12p20-svg[data-active-cord="all"] #a12p20-btn-all .a12p20-btn-bg {
+      fill: var(--a12p20-tinta);
+      stroke: var(--a12p20-tinta);
+    }
+    #a12p20-svg[data-active-cord="all"] #a12p20-btn-all .a12p20-btn-txt {
+      fill: var(--a12p20-bg);
+    }
+
+    #a12p20-svg[data-active-cord="ant"] #a12p20-btn-ant .a12p20-btn-bg {
+      fill: var(--a12p20-anterior);
+      stroke: var(--a12p20-anterior);
+    }
+    #a12p20-svg[data-active-cord="ant"] #a12p20-btn-ant .a12p20-btn-txt {
+      fill: #FFFFFF;
+    }
+
+    #a12p20-svg[data-active-cord="lat"] #a12p20-btn-lat .a12p20-btn-bg {
+      fill: var(--a12p20-lateral);
+      stroke: var(--a12p20-lateral);
+    }
+    #a12p20-svg[data-active-cord="lat"] #a12p20-btn-lat .a12p20-btn-txt {
+      fill: #FFFFFF;
+    }
+
+    #a12p20-svg[data-active-cord="post"] #a12p20-btn-post .a12p20-btn-bg {
+      fill: var(--a12p20-posterior);
+      stroke: var(--a12p20-posterior);
+    }
+    #a12p20-svg[data-active-cord="post"] #a12p20-btn-post .a12p20-btn-txt {
+      fill: #FFFFFF;
+    }
+
+    /* Acessibilidade por Teclado */
+    #a12p20-svg .hs-shape:focus {
+      outline: none;
+    }
+    #a12p20-svg .hs-shape:focus-visible .a12p20-btn-bg,
+    #a12p20-svg .hs-shape:focus-visible circle {
+      stroke: var(--a12p20-fora-plano) !important;
+      stroke-width: 3px !important;
+    }
+  </style>
+
+  <!-- ==================== TOPO: CABEÇALHO E CONTRATO DE LAYOUT ==================== -->
+  <g id="a12p20-header" transform="translate(20, 20)">
+    <text x="0" y="24" class="a12p20-title-text">APARELHO DE SUSPENSÃO UTERINA: AS TRÊS CORDAS E A GEOMETRIA DO PLANO</text>
+    <text x="0" y="46" class="a12p20-subtitle-text">Sustentação = Chão (assoalho pélvico) · Suspensão = Cordas (3 eixos ligamentares). O ligamento cardinal sai do corte sagital.</text>
+  </g>
+
+  <!-- ==================== PAINEL ESQUERDO: CORTE SAGITAL MEDIANO ==================== -->
+  <g id="a12p20-panel-left" transform="translate(20, 80)">
+    <rect width="470" height="490" class="a12p20-panel" />
+    
+    <!-- Título do Painel -->
+    <text x="24" y="32" class="a12p20-panel-header">PAINEL 1: CORTE SAGITAL MEDIANO</text>
+    <text x="24" y="48" class="a12p20-panel-sub">Plano Sagital (X-Z) · Visibilidade de Perfil</text>
+
+    <!-- Estruturas Anatômicas (Base Sagital P3) -->
+    <g id="a12p20-sag-anatomy" transform="translate(20, 30)">
+
+      <!-- Osso Púbico (Anterior - Esquerda) -->
+      <path d="M 50 350 Q 80 340 90 370 Q 85 410 55 400 Z" class="a12p20-bone" />
+      <text x="68" y="380" class="a12p20-label-sub" text-anchor="middle">PÚBIS</text>
+
+      <!-- Sacro / Cóccix (Posterior - Direita) -->
+      <path d="M 400 160 Q 425 240 420 330 Q 405 390 380 420" fill="none" stroke="var(--a12p20-osso)" stroke-width="14" stroke-linecap="round" opacity="0.35" />
+      <text x="405" y="260" class="a12p20-label-sub" text-anchor="middle" transform="rotate(75, 405, 260)">SACRO</text>
+
+      <!-- Assoalho Pélvico (Chão de Sustentação) -->
+      <path d="M 60 400 C 140 450 320 450 385 415" class="a12p20-floor-ground" />
+      <path d="M 60 400 C 140 450 320 450 385 415" fill="none" stroke="var(--a12p20-chao)" stroke-width="12" stroke-linecap="round" opacity="0.15" />
+      <text x="220" y="445" class="a12p20-axis-text" fill="var(--a12p20-chao)" text-anchor="middle">CHÃO (SUSTENTAÇÃO · ASSOALHO PÉLVICO)</text>
+
+      <!-- Bexiga Urinária -->
+      <path d="M 95 360 C 120 315 170 315 190 355 C 175 390 120 395 95 360 Z" class="a12p20-organ-bexiga" />
+      <text x="140" y="355" class="a12p20-label-sub" text-anchor="middle">BEXIGA</text>
+
+      <!-- Reto / Ampola Retal -->
+      <path d="M 370 410 C 310 390 300 300 360 200 L 380 210 C 325 300 335 375 385 395 Z" class="a12p20-organ-sacro" />
+      <text x="345" y="300" class="a12p20-label-sub" text-anchor="middle">RETO</text>
+
+      <!-- Útero (Corpo + Colo) -->
+      <path d="M 185 260 C 225 220 270 250 255 300 C 245 330 225 345 215 385 L 195 385 C 195 345 175 325 185 260 Z" class="a12p20-organ-utero" />
+      <text x="218" y="275" class="a12p20-label" text-anchor="middle" font-weight="700">ÚTERO</text>
+      <text x="205" y="375" class="a12p20-label-sub" text-anchor="middle">COLO</text>
+
+      <!-- Vagina -->
+      <path d="M 195 385 L 180 435 M 215 385 L 200 435" stroke="var(--a12p20-utero-stroke)" stroke-width="2" stroke-dasharray="3 2" />
+
+      <!-- ================= CORDAS NO SAGITAL ================= -->
+      
+      <!-- 1. CORDA ANTERIOR: Pubovesicouterino (Rosa/Vermelho) -->
+      <path d="M 90 365 Q 120 345 195 360" class="a12p20-cord a12p20-cord-ant hs-shape" stroke-width="4.5" stroke-linecap="round" data-hs-cord="ant" role="button" aria-label="Corda Anterior Pubovesicouterino" tabindex="0" />
+      <circle cx="195" cy="360" r="4" fill="var(--a12p20-anterior)" />
+
+      <!-- 2. CORDA POSTERIOR: Uterossacro (Roxo) -->
+      <path d="M 215 365 Q 310 350 405 280" class="a12p20-cord a12p20-cord-post hs-shape" stroke-width="4.5" stroke-linecap="round" data-hs-cord="post" role="button" aria-label="Corda Posterior Uterossacro" tabindex="0" />
+      <circle cx="215" cy="365" r="4" fill="var(--a12p20-posterior)" />
+
+      <!-- 3. CORDA LATERAL / CARDINAL: Vetor saindo do plano (Ouro / Azul) -->
+      <g id="a12p20-sag-cardinal-vector" class="a12p20-cord a12p20-cord-lat hs-shape" data-hs-cord="lat" role="button" aria-label="Corda Lateral Cardinal Saindo do Plano" tabindex="0" transform="translate(205, 362)">
+        <circle cx="0" cy="0" r="16" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-fora-plano)" stroke-width="2.5" class="a12p20-vector-gold" />
+        <circle cx="0" cy="0" r="10" fill="none" stroke="var(--a12p20-lateral)" stroke-width="1.8" stroke-dasharray="3 2" />
+        <circle cx="0" cy="0" r="4" fill="var(--a12p20-fora-plano)" class="a12p20-vector-gold" />
+        <path d="M -22 0 L -16 0 M 22 0 L 16 0 M 0 -22 L 0 -16 M 0 22 L 0 16" stroke="var(--a12p20-fora-plano)" stroke-width="2" stroke-linecap="round" class="a12p20-vector-gold" />
+      </g>
+
+      <!-- ================= RÓTULOS DO CORTE SAGITAL ================= -->
+      
+      <!-- Rótulo Anterior -->
+      <g class="a12p20-label-group a12p20-lg-ant" transform="translate(25, 270)">
+        <line x1="110" y1="60" x2="60" y2="20" stroke="var(--a12p20-anterior)" stroke-width="1.2" stroke-dasharray="3 2" />
+        <rect x="0" y="0" width="135" height="34" rx="6" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-anterior)" stroke-width="1" />
+        <text x="10" y="15" class="a12p20-label" fill="var(--a12p20-anterior)">PUBOVESICOUTERINO</text>
+        <text x="10" y="27" class="a12p20-label-sub">Anterior · Visível no plano</text>
+      </g>
+
+      <!-- Rótulo Posterior -->
+      <g class="a12p20-label-group a12p20-lg-post" transform="translate(310, 160)">
+        <line x1="-15" y1="65" x2="30" y2="35" stroke="var(--a12p20-posterior)" stroke-width="1.2" stroke-dasharray="3 2" />
+        <rect x="20" y="10" width="125" height="34" rx="6" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-posterior)" stroke-width="1" />
+        <text x="30" y="25" class="a12p20-label" fill="var(--a12p20-posterior)">UTEROSSACRO</text>
+        <text x="30" y="37" class="a12p20-label-sub">Posterior · Visível no plano</text>
+      </g>
+
+      <!-- Rótulo Cardinal Verbatim: "sai do plano" -->
+      <g class="a12p20-label-group a12p20-lg-lat" transform="translate(130, 405)">
+        <line x1="75" y1="-25" x2="35" y2="10" stroke="var(--a12p20-fora-plano)" stroke-width="1.5" />
+        <rect x="0" y="0" width="150" height="42" rx="6" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-fora-plano)" stroke-width="1.5" />
+        <text x="10" y="16" class="a12p20-label" fill="var(--a12p20-fora-plano)">CARDINAL (MACKENRODT)</text>
+        <text x="10" y="31" font-size="11px" font-weight="800" fill="var(--a12p20-fora-plano)">sai do plano ☉</text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL DIREITO: VISTA SUPERIOR TRANSVERSA ==================== -->
+  <g id="a12p20-panel-right" transform="translate(510, 80)">
+    <rect width="470" height="490" class="a12p20-panel" />
+    
+    <!-- Título do Painel -->
+    <text x="24" y="32" class="a12p20-panel-header">PAINEL 2: VISTA SUPERIOR TRANSVERSA</text>
+    <text x="24" y="48" class="a12p20-panel-sub">Plano Transverso (X-Y) · Direções Verdadeiras</text>
+
+    <!-- Anatômico Superior (Anel Pélvico + Direções) -->
+    <g id="a12p20-sup-anatomy" transform="translate(235, 275)">
+
+      <!-- Anel Ósseo Pélvico -->
+      <ellipse cx="0" cy="0" rx="190" ry="165" fill="none" stroke="var(--a12p20-osso)" stroke-width="3" stroke-dasharray="8 5" opacity="0.4" />
+      
+      <!-- Púbis (Anterior / Norte) -->
+      <path d="M -40 -165 Q 0 -178 40 -165 Q 30 -150 0 -152 Q -30 -150 -40 -165 Z" class="a12p20-bone" />
+      <!-- Sacro (Posterior / Sul) -->
+      <path d="M -50 160 Q 0 175 50 160 Q 35 145 0 148 Q -35 145 -50 160 Z" class="a12p20-bone" />
+
+      <!-- Bexiga (Norte) -->
+      <ellipse cx="0" cy="-105" rx="55" ry="32" class="a12p20-organ-bexiga" />
+      <text x="0" y="-105" class="a12p20-label-sub" text-anchor="middle" dominant-baseline="middle">BEXIGA</text>
+
+      <!-- Reto (Sul) -->
+      <ellipse cx="0" cy="105" rx="36" ry="26" class="a12p20-organ-sacro" />
+      <text x="0" y="105" class="a12p20-label-sub" text-anchor="middle" dominant-baseline="middle">RETO</text>
+
+      <!-- Útero ao Centro (Fundo + Colo) -->
+      <ellipse cx="0" cy="0" rx="42" ry="56" class="a12p20-organ-utero" />
+      <circle cx="0" cy="0" r="18" fill="none" stroke="var(--a12p20-utero-stroke)" stroke-width="1.5" stroke-dasharray="3 2" />
+      <text x="0" y="-8" class="a12p20-label" text-anchor="middle" font-weight="700">ÚTERO</text>
+      <text x="0" y="10" class="a12p20-label-sub" text-anchor="middle">HUB DO COLO</text>
+
+      <!-- EIXOS E DIREÇÕES OBRIGATÓRIAS DA VISTA SUPERIOR -->
+      <!-- Direção 1: FRENTE -->
+      <text x="0" y="-180" class="a12p20-axis-text" fill="var(--a12p20-anterior)" text-anchor="middle">FRENTE (ANTERIOR)</text>
+      <!-- Direção 2: LATEAIS -->
+      <text x="-195" y="4" class="a12p20-axis-text" fill="var(--a12p20-lateral)" text-anchor="end">LATEAIS</text>
+      <text x="195" y="4" class="a12p20-axis-text" fill="var(--a12p20-lateral)" text-anchor="start">LATERAIS</text>
+      <!-- Direção 3: TRÁS -->
+      <text x="0" y="192" class="a12p20-axis-text" fill="var(--a12p20-posterior)" text-anchor="middle">TRÁS (POSTERIOR)</text>
+
+      <!-- ================= CORDAS NA VISTA SUPERIOR ================= -->
+
+      <!-- 1. CORDA ANTERIOR: Pubovesicouterino (Norte) -->
+      <path d="M 0 -35 L 0 -150" class="a12p20-cord a12p20-cord-ant hs-shape" stroke-width="5" stroke-linecap="round" data-hs-cord="ant" role="button" aria-label="Corda Anterior na Vista Superior" tabindex="0" />
+      <circle cx="0" cy="-35" r="4" fill="var(--a12p20-anterior)" />
+      <circle cx="0" cy="-150" r="4" fill="var(--a12p20-anterior)" />
+
+      <!-- 2. CORDA LATERAL BILATERAL: Cardinal / Mackenrodt (Leste & Oeste) -->
+      <path d="M -30 0 L -175 0" class="a12p20-cord a12p20-cord-lat hs-shape" stroke-width="5" stroke-linecap="round" data-hs-cord="lat" role="button" aria-label="Corda Cardinal Esquerda" tabindex="0" />
+      <path d="M 30 0 L 175 0" class="a12p20-cord a12p20-cord-lat hs-shape" stroke-width="5" stroke-linecap="round" data-hs-cord="lat" role="button" aria-label="Corda Cardinal Direita" tabindex="0" />
+      <circle cx="-30" cy="0" r="4" fill="var(--a12p20-lateral)" />
+      <circle cx="-175" cy="0" r="4" fill="var(--a12p20-lateral)" />
+      <circle cx="30" cy="0" r="4" fill="var(--a12p20-lateral)" />
+      <circle cx="175" cy="0" r="4" fill="var(--a12p20-lateral)" />
+
+      <!-- 3. CORDA POSTERIOR: Uterossacro Bilateral (Sul-Oeste & Sul-Leste) -->
+      <path d="M -18 20 C -25 50 -45 90 -65 145" class="a12p20-cord a12p20-cord-post hs-shape" stroke-width="5" stroke-linecap="round" fill="none" data-hs-cord="post" role="button" aria-label="Corda Uterossacro Esquerda" tabindex="0" />
+      <path d="M 18 20 C 25 50 45 90 65 145" class="a12p20-cord a12p20-cord-post hs-shape" stroke-width="5" stroke-linecap="round" fill="none" data-hs-cord="post" role="button" aria-label="Corda Uterossacro Direita" tabindex="0" />
+      <circle cx="-18" cy="20" r="4" fill="var(--a12p20-posterior)" />
+      <circle cx="-65" cy="145" r="4" fill="var(--a12p20-posterior)" />
+      <circle cx="18" cy="20" r="4" fill="var(--a12p20-posterior)" />
+      <circle cx="65" cy="145" r="4" fill="var(--a12p20-posterior)" />
+
+      <!-- ================= RÓTULOS DA VISTA SUPERIOR ================= -->
+      
+      <!-- Rótulo Cardinal Lateral (Bilateral) -->
+      <g class="a12p20-label-group a12p20-lg-lat" transform="translate(-160, -45)">
+        <rect x="0" y="0" width="140" height="30" rx="5" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-lateral)" stroke-width="1" />
+        <text x="10" y="14" class="a12p20-label" fill="var(--a12p20-lateral)">CARDINAL LATERAL</text>
+        <text x="10" y="24" class="a12p20-label-sub">Parametrial Bilateral</text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ==================== CONTROLES INTERATIVOS E PAINEL DE LEITURA ANCORADO ==================== -->
+  <g id="a12p20-controls-and-reading" transform="translate(20, 585)">
+    
+    <!-- BARRA DE SELEÇÃO DE CORDAS -->
+    <g id="a12p20-selector-bar">
+      <!-- Botão 1: Todas -->
+      <g id="a12p20-btn-all" class="a12p20-btn hs-shape" data-hs-cord="all" role="button" aria-label="Mostrar todas as cordas" tabindex="0" transform="translate(0, 0)">
+        <rect width="110" height="34" class="a12p20-btn-bg" />
+        <text x="55" y="17" class="a12p20-btn-txt">VER TODAS</text>
+      </g>
+
+      <!-- Botão 2: Anterior -->
+      <g id="a12p20-btn-ant" class="a12p20-btn hs-shape" data-hs-cord="ant" role="button" aria-label="Isolar corda anterior" tabindex="0" transform="translate(120, 0)">
+        <rect width="115" height="34" class="a12p20-btn-bg" />
+        <text x="57.5" y="17" class="a12p20-btn-txt">1. ANTERIOR</text>
+      </g>
+
+      <!-- Botão 3: Lateral -->
+      <g id="a12p20-btn-lat" class="a12p20-btn hs-shape" data-hs-cord="lat" role="button" aria-label="Isolar corda lateral cardinal" tabindex="0" transform="translate(245, 0)">
+        <rect width="115" height="34" class="a12p20-btn-bg" />
+        <text x="57.5" y="17" class="a12p20-btn-txt">2. LATERAL</text>
+      </g>
+
+      <!-- Botão 4: Posterior -->
+      <g id="a12p20-btn-post" class="a12p20-btn hs-shape" data-hs-cord="post" role="button" aria-label="Isolar corda posterior" tabindex="0" transform="translate(370, 0)">
+        <rect width="115" height="34" class="a12p20-btn-bg" />
+        <text x="57.5" y="17" class="a12p20-btn-txt">3. POSTERIOR</text>
+      </g>
+    </g>
+
+    <!-- PAINEL DE LEITURA ANCORADO -->
+    <g id="a12p20-reading-card" transform="translate(0, 46)">
+      <rect width="960" height="120" rx="10" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-panel-border)" stroke-width="1.5" />
+      
+      <!-- Indicador Lateral Decorativo -->
+      <rect id="a12p20-read-indicator" x="0" y="0" width="8" height="120" rx="4" fill="var(--a12p20-fora-plano)" />
+
+      <!-- CONTEÚDO DINÂMICO DO PAINEL DE LEITURA -->
+      <g transform="translate(24, 20)">
+        <text id="a12p20-read-title" x="0" y="16" font-size="15px" font-weight="800" fill="var(--a12p20-tinta)">GEOMETRIA DA SUSPENSÃO: PRESENÇA VS. VISIBILIDADE DE PLANO</text>
+        
+        <text id="a12p20-read-line1" x="0" y="42" font-size="12.5px" font-weight="600" fill="var(--a12p20-tinta-sub)">
+          O útero é suspenso por 3 eixos ligamentares (cordas). A sustentação é realizada pelo chão (assoalho pélvico).
+        </text>
+
+        <text id="a12p20-read-line2" x="0" y="64" font-size="12.5px" font-weight="600" fill="var(--a12p20-tinta)">
+          • Por que o Cardinal "desaparece" no Sagital? O plano mediano (X-Z) corta a bacia longitudinalmente; o cardinal corre perpendicularmente (eixo Y).
+        </text>
+
+        <text id="a12p20-read-line3" x="0" y="86" font-size="12px" font-weight="700" fill="var(--a12p20-fora-plano)">
+          ✓ CONCLUSÃO: Ausência no corte sagital 2D não significa inexistência. O cardinal é a principal corda contra a histeroptose.
+        </text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ==================== SCRIPT INLINE SELF-CONTAINED ==================== -->
+  <script>//<![CDATA[
+  (function() {
+    'use strict';
+    var svg = document.getElementById('a12p20-svg');
+    if (!svg) return;
+
+    var readTitle = document.getElementById('a12p20-read-title');
+    var readLine1 = document.getElementById('a12p20-read-line1');
+    var readLine2 = document.getElementById('a12p20-read-line2');
+    var readLine3 = document.getElementById('a12p20-read-line3');
+    var readIndicator = document.getElementById('a12p20-read-indicator');
+
+    var texts = {
+      all: {
+        title: "GEOMETRIA DA SUSPENSÃO: PRESENÇA VS. VISIBILIDADE DE PLANO",
+        line1: "O útero é suspenso por 3 eixos ligamentares (cordas). A sustentação é realizada pelo chão (assoalho pélvico).",
+        line2: "• O ligamento Pubovesicouterino (frente) e Uterossacro (trás) são paralelos ao plano mediano sagital (visíveis no Sagital).",
+        line3: "✓ O ligamento Cardinal (lateral) emerge ortogonalmente ao plano sagital — representado como vetor 3D (☉ sai do plano).",
+        color: "var(--a12p20-fora-plano)"
+      },
+      ant: {
+        title: "CORDA ANTERIOR: LIGAMENTO PUBOVESICOUTERINO",
+        line1: "• Trajeto: Origina-se na face posterior do púbis, contorna a bexiga urinária e insere-se no colo uterino anterior.",
+        line2: "• Visibilidade: Totalmente contido e visível no corte sagital mediano (direção Frente no plano X-Z).",
+        line3: "✓ Função Mecânica: Evita o deslocamento posterior excessivo do colo e orienta a vesicofixação anterior.",
+        color: "var(--a12p20-anterior)"
+      },
+      lat: {
+        title: "CORDA LATERAL: LIGAMENTO CARDINAL (PARAMETRIAL / MACKENRODT)",
+        line1: "• Trajeto: Insere-se no colo uterino e fórnices vaginais laterais, estendendo-se até as paredes pélvicas laterais.",
+        line2: "• Visibilidade no Sagital: AUSENTE COMO LINHA — sai do plano mediano (eixo Y). Representado pelo vetor ortogonal ☉.",
+        line3: "✓ Relevância Clínica: É o principal eixo de suspensão apical. Sua falha é a principal causa de histeroptose grave.",
+        color: "var(--a12p20-lateral)"
+      },
+      post: {
+        title: "CORDA POSTERIOR: LIGAMENTO UTEROSSACRO",
+        line1: "• Trajeto: Origina-se no colo posterior/vagina superior, contorna lateralmente o reto e fixa-se na fáscia pré-sacral (S2-S4).",
+        line2: "• Visibilidade: Totalmente visível no corte sagital mediano (direção Trás no plano X-Z).",
+        line3: "✓ Função Mecânica: Traciona o colo pélvico póstero-superiormente, mantendo o corpo uterino em anteversão fisiológica.",
+        color: "var(--a12p20-posterior)"
+      }
+    };
+
+    function setActiveCord(cord) {
+      if (!texts[cord]) cord = 'all';
+      svg.setAttribute('data-active-cord', cord);
+      
+      var data = texts[cord];
+      if (readTitle) readTitle.textContent = data.title;
+      if (readLine1) readLine1.textContent = data.line1;
+      if (readLine2) readLine2.textContent = data.line2;
+      if (readLine3) readLine3.textContent = data.line3;
+      if (readIndicator) readIndicator.setAttribute('fill', data.color);
+    }
+
+    var targets = svg.querySelectorAll('.hs-shape');
+    targets.forEach(function(el) {
+      function trigger(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var cord = el.getAttribute('data-hs-cord');
+        if (cord) {
+          var current = svg.getAttribute('data-active-cord');
+          if (current === cord && cord !== 'all') {
+            setActiveCord('all');
+          } else {
+            setActiveCord(cord);
+          }
+        }
+      }
+
+      el.addEventListener('click', trigger);
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          trigger(e);
+        }
+      });
+    });
+
+  })();
+  //]]></script>
+</svg>
+<figcaption>Painel duplo: à esquerda, corte sagital mostrando o pubovesicouterino à frente e o uterossacro atrás, com o cardinal marcado como "sai do plano". À direita, vista superior com as três cordas em três direções a partir do útero — frente, laterais, trás.</figcaption>
+</figure>
+
+<div class="a12-topic" data-topic="6">
+<div class="a12-topic__kicker">Tópico 6</div>
+<h2 class="topic-h">A questão que se resolve varrendo as alternativas</h2>
+<div class="prose">
+<p>A questão de banca sobre o tema traz este enunciado:</p>
+<blockquote>
+<p><em>"O aparelho de <strong>suspensão</strong> dos órgãos pélvicos femininos é constituído por tecido conjuntivo elástico e musculatura lisa, entre o assoalho pélvico e o peritônio parietal. São estruturas do aparelho de suspensão:"</em><br>
+<strong>(A)</strong> diafragmas pélvico e urogenital.<br>
+<strong>(B)</strong> <strong>ligamentos pubouretral e pubovesical.</strong> <strong>gabarito</strong><br>
+<strong>(C)</strong> diafragma pélvico e ligamentos cardinais.<br>
+<strong>(D)</strong> ligamentos uterossacros e diafragma urogenital.<br>
+<em>(banca estadual do Rio de Janeiro, 2021 — acesso direto)</em></p>
+</blockquote>
+<p>A resposta é <strong>(B)</strong>, e o caminho para chegar nela é o melhor exercício possível da distinção: <strong class="term">varra as alternativas procurando a palavra "diafragma".</strong> Diafragma é <strong class="term">músculo</strong>, e músculo é <strong class="term">sustentação</strong>. Achou diafragma? Não é suspensão.</p>
+<p>Aplicando: <strong>(A)</strong> traz dois diafragmas — é sustentação pura, e cai. <strong>(C)</strong> mistura um diafragma com um ligamento — basta o diafragma para derrubá-la. <strong>(D)</strong> mistura um ligamento com um diafragma — mesma razão. <strong>(B)</strong> é a <strong class="term">única alternativa inteiramente ligamentar</strong>, e por isso é a única que responde ao que foi perguntado.</p>
+<p><strong class="term">Uma nota de honestidade que precisa aparecer também para o leitor: o gabarito oficial desta questão não foi recuperado na fonte consultada.</strong> A resposta acima é <strong class="term">determinada pela construção do enunciado</strong> — três das quatro alternativas contêm um diafragma, que é músculo, logo sustentação; a (B) é a única totalmente ligamentar. O raciocínio é sólido e a resposta é segura, mas o registro fica declarado.</p>
+<p>Uma nota de escopo, por fim: os ligamentos <strong class="term">cardinais</strong> e <strong class="term">uterossacros</strong> reaparecem na cirurgia que suspende e prende o útero de novo neles <a href="#" class="a12-link-forward">↗A8</a>. Aqui entrega-se a <strong class="term">anatomia</strong>; a técnica é território publicado.</p>
+<p>E vale o reforço, porque este trio cai: os três ligamentos, seus trajetos e a distinção sustentação × suspensão são conteúdo de prova, não de erudição.</p>
+</div>
+</div>
+
+<table class="a12-table">
+<caption>As três cordas — ligamentos do aparelho de suspensão</caption>
+<thead><tr><th>ligamento</th><th>direção a partir do útero</th><th>de onde sai → onde chega</th><th>visível em qual plano</th></tr></thead>
+<tbody>
+<tr><td><strong>pubovesicouterino</strong> <em>(= pubovesical = fáscia pubovesicocervical)</em></td><td><strong>anterior</strong> (à frente)</td><td>púbis → passa pela bexiga → útero</td><td>corte sagital</td></tr>
+<tr><td><strong>cardinal</strong> <em>(parametrial · de Mackenrodt · transverso do colo)</em></td><td><strong>lateral</strong> (de cada lado)</td><td>de cada lado do colo, em direção à parede lateral</td><td><strong>só na vista superior — some no corte sagital</strong></td></tr>
+<tr><td><strong>uterossacro</strong></td><td><strong>posterior</strong> (atrás)</td><td>útero → osso sacro</td><td>corte sagital</td></tr>
+</tbody>
+</table>
+
+<div class="a12-pegadinha-card">
+<h3>Pegadinha de prova</h3>
+<p><strong class="term">Varra procurando "diafragma".</strong> Numa questão que pede estruturas do aparelho de <strong class="term">suspensão</strong>, qualquer alternativa que contenha um <strong class="term">diafragma</strong> (pélvico ou urogenital) está eliminada, porque diafragma é músculo e músculo é <strong class="term">sustentação</strong>. É uma regra de eliminação que resolve a questão inteira sem precisar decorar as quatro alternativas.</p>
+</div>
+
+<section class="quiz" data-quiz-id="a12-p20" aria-labelledby="quiz-p20-title">
+<h2 id="quiz-p20-title">Quiz — fixação</h2>
+<ol class="quiz__questions" style="list-style:none;padding:0;margin:0">
+<li class="quiz__q" data-q="1"><p class="quiz__stem">O aparelho de suspensão dos órgãos pélvicos femininos é constituído por tecido conjuntivo elástico e musculatura lisa, entre o assoalho pélvico e o peritônio parietal. São estruturas do aparelho de suspensão:</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>diafragmas pélvico e urogenital.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>ligamentos pubouretral e pubovesical.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>diafragma pélvico e ligamentos cardinais.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>ligamentos uterossacros e diafragma urogenital.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why"><em>(⚠️ gabarito oficial não recuperado na fonte consultada; resposta determinada pela construção do enunciado — SES-RJ 2021)</em>. O enunciado pede estruturas do <strong class="term">aparelho de suspensão</strong>, e suspensão é feita de <strong class="term">ligamentos</strong> — tecido conjuntivo com fibra elástica e músculo liso. A (B) é a <strong class="term">única alternativa inteiramente ligamentar</strong>, e por isso é a única possível.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">traz <strong class="term">dois diafragmas</strong>: ambos são musculares, ambos são <strong class="term">sustentação</strong> — é a alternativa que testa se o candidato inverteu os dois aparelhos.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">acerta metade (os cardinais são de suspensão) e erra a outra metade (o diafragma pélvico é sustentação); numa questão que pede um conjunto, meia resposta é resposta errada.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">comete o mesmo erro espelhado: os uterossacros são de suspensão, o diafragma urogenital não é.</span></li><li class="is-wrong"><b>Por que cair na (C) ou na (D):</b> <span class="why">as duas contêm um ligamento verdadeiro do aparelho de suspensão, e o olho para na palavra conhecida sem varrer o resto da alternativa. <strong class="term">A técnica que resolve em cinco segundos: procure "diafragma". Diafragma é músculo, músculo é sustentação — achou, eliminou.</strong></span></li></ul></div></li>
+<li class="quiz__q" data-q="2"><p class="quiz__stem">Qual é a diferença essencial entre os aparelhos de sustentação e de suspensão dos órgãos pélvicos?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>sustentação atua durante o esforço; suspensão atua em repouso.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>sustentação é formada por músculos e fáscias e impede a queda; suspensão é formada por ligamentos e impede o deslocamento.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>sustentação é anterior; suspensão é posterior.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>sustentação é congênita; suspensão se desenvolve após a primeira gestação.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why">A separação se dá em três eixos ao mesmo tempo — <strong class="term">tecido</strong> (músculo e fáscia × conjuntivo elástico e músculo liso), <strong class="term">direção da força</strong> (empurra de baixo × puxa para os lados) e <strong class="term">efeito</strong> (impede a queda × impede o balanço). É a distinção que a banca troca de propósito, e ter os três critérios torna a troca impossível.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">inventa uma divisão temporal que não existe: os dois sistemas atuam continuamente e de forma complementar; o esforço solicita ambos.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">confunde os aparelhos com direções anatômicas — a suspensão tem componente <strong class="term">anterior, lateral e posterior</strong>, e a sustentação é um chão que ocupa toda a saída.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">é invenção sem base embriológica ou fisiológica.</span></li><li class="is-wrong"><b>Por que cair na (A):</b> <span class="why">existe uma intuição de que "sustentar" e "suspender" descrevem momentos diferentes do mesmo esforço, e a alternativa aproveita essa sinonímia do português comum. Aqui as duas palavras são <strong class="term">termos técnicos com composição distinta</strong> — e é pelo <strong class="term">tecido</strong>, e não pelo momento, que se separam.</span></li></ul></div></li>
+<li class="quiz__q" data-q="3"><p class="quiz__stem">Numa figura de pelve em corte sagital mediano, um estudante procura o ligamento cardinal e não o encontra. Qual é a explicação correta?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>o ligamento cardinal só existe em mulheres multíparas.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>o ligamento cardinal é lateral e não é seccionado pelo plano mediano — para vê-lo é preciso a vista superior.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>o ligamento cardinal foi omitido por erro da figura.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>o ligamento cardinal não pertence ao aparelho de suspensão.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why">O cardinal corre <strong class="term">lateralmente</strong>, de cada lado do colo em direção à parede pélvica — logo, <strong class="term">sai do plano</strong> de um corte mediano. A figura não está errada: ela está <strong class="term">sozinha</strong>. Para ver os três ligamentos é preciso somar o corte sagital (que mostra o anterior e o posterior) à vista superior (que mostra as três direções a partir do útero).</span></li><li class="is-wrong"><b>(A)</b> <span class="why">é invenção — o ligamento existe independentemente de paridade.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">atribui à figura um defeito que é, na verdade, uma <strong class="term">limitação de plano</strong>: nenhum corte mediano poderia mostrá-lo, por definição geométrica.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">é falsa: ele é justamente o par <strong class="term">lateral</strong> dos três.</span></li><li class="is-wrong"><b>Por que cair na (C):</b> <span class="why">a reação natural diante de algo que "deveria estar ali e não está" é suspeitar de erro. A lição que fica, e que vale para o conteúdo inteiro: <strong class="term">o ângulo escolhido decide o que existe na figura</strong> — uma imagem pode omitir sem avisar, e é por isso que certas estruturas exigem duas vistas.</span></li></ul></div></li>
+</ol></section>
+
+<div class="a12-resumo">
+<h3>Resumo operacional</h3>
+<p><strong class="term">Sustentação</strong> = chão, <strong class="term">músculo e fáscia</strong>, empurra de baixo, impede que <strong class="term">caia</strong>. <strong class="term">Suspensão</strong> = cordas, <strong class="term">conjuntivo elástico e músculo liso</strong>, puxa para os lados, impede que <strong class="term">balance</strong>. <strong class="term">Três ligamentos, e os nomes são trajetos:</strong> <strong class="term">pubovesicouterino</strong> (anterior — púbis → bexiga → útero; = pubovesical = fáscia pubovesicocervical <a href="#" class="a12-link-forward">↗A8</a>) · <strong class="term">cardinal / parametrial / de Mackenrodt / transverso do colo</strong> (lateral — ⚠️ <strong class="term">some no corte sagital</strong>) · <strong class="term">uterossacro</strong> (posterior — útero → sacro). ⚠️ <strong class="term">Redondo e largo não integram a suspensão.</strong> Técnica de prova: <strong class="term">achou "diafragma" na alternativa? não é suspensão.</strong></p>
+</div>
+
+</article>
+
+    <!-- ▲▲▲ FIM DO SEU CONTEÚDO ▲▲▲ -->
+
+  </div></main>
+  <footer class="site-footer"><div class="container"><span>Anatomia da pelve feminina (parte 1) · Aula 12 — conteúdo educacional para residência.</span><span>20 / 22</span></div></footer>
+  <script src="../../assets/js/pwa-bootstrap.js" defer></script>
+  <script src="../../assets/js/app-a12.js" defer></script>
+  <script src="../../assets/js/quiz-a12.js" defer></script>
+  <script src="../../assets/js/aula-12.js" defer></script>
+</body>
+</html>
+
+<!-- Padrão de UM item do menu, para montar <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20" aria-current="page"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li> (22 deles):
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>Título curto</span></a></li>
+     O primeiro aponta para index.html com data-page-id="p1".
+-->

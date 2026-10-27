@@ -1,0 +1,508 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="100%" height="100%" class="a16-inline-svg a16p1-root" id="a16p1-svg">
+  <defs>
+    <style>
+      /*<![CDATA[*/
+      /* Base Scoped Styles */
+      .a16p1-root {
+        --a16p1-bg: var(--bg-1, #0b1329);
+        --a16p1-surface: var(--bg-2, #152238);
+        --a16p1-surface-active: var(--bg-3, #1e293b);
+        --a16p1-border: var(--ink-20, #334155);
+        --a16p1-border-bright: var(--ink-40, #475569);
+        --a16p1-text-main: var(--ink-100, #f8fafc);
+        --a16p1-text-sub: var(--ink-70, #94a3b8);
+        --a16p1-text-muted: var(--ink-50, #64748b);
+        
+        --a16p1-green: var(--kw-green, #10b981);
+        --a16p1-green-bg: var(--kw-green-subtle, rgba(16, 185, 129, 0.12));
+        --a16p1-teal: var(--kw-teal, #14b8a6);
+        --a16p1-teal-bg: var(--kw-teal-subtle, rgba(20, 184, 166, 0.12));
+        --a16p1-gold: var(--kw-amber, #f59e0b);
+        --a16p1-gold-bg: var(--kw-amber-subtle, rgba(245, 158, 11, 0.15));
+        --a16p1-red: var(--kw-red, #ef4444);
+        --a16p1-red-bg: var(--kw-red-subtle, rgba(239, 68, 68, 0.12));
+        
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--a16p1-bg, #0b1329);
+        color: var(--a16p1-text-main, #f8fafc);
+        box-sizing: border-box;
+      }
+
+      /* Light Theme Overrides */
+      :root[data-theme="light"] .a16p1-root,
+      .a16p1-root[data-theme="light"],
+      .a16p1-root.light {
+        --a16p1-bg: var(--bg-1, #f8fafc);
+        --a16p1-surface: var(--bg-2, #ffffff);
+        --a16p1-surface-active: var(--bg-3, #f1f5f9);
+        --a16p1-border: var(--ink-20, #cbd5e1);
+        --a16p1-border-bright: var(--ink-40, #94a3b8);
+        --a16p1-text-main: var(--ink-100, #0f172a);
+        --a16p1-text-sub: var(--ink-70, #334155);
+        --a16p1-text-muted: var(--ink-50, #64748b);
+        
+        --a16p1-green: var(--kw-green, #059669);
+        --a16p1-green-bg: var(--kw-green-subtle, rgba(5, 150, 105, 0.12));
+        --a16p1-teal: var(--kw-teal, #0d9488);
+        --a16p1-teal-bg: var(--kw-teal-subtle, rgba(13, 148, 136, 0.12));
+        --a16p1-gold: var(--kw-amber, #d97706);
+        --a16p1-gold-bg: var(--kw-amber-subtle, rgba(217, 119, 6, 0.15));
+        --a16p1-red: var(--kw-red, #dc2626);
+        --a16p1-red-bg: var(--kw-red-subtle, rgba(220, 38, 38, 0.12));
+      }
+
+      /* Node Interaction Styles */
+      .a16p1-node-group {
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+      .a16p1-node-group:hover {
+        transform: translateY(-2px);
+      }
+      .a16p1-node-card {
+        fill: var(--a16p1-surface, #152238);
+        stroke: var(--a16p1-border, #334155);
+        stroke-width: 1.5px;
+        transition: stroke 0.2s ease, fill 0.2s ease;
+      }
+      .a16p1-node-group.a16p1-active .a16p1-node-card {
+        stroke: var(--a16p1-gold, #f59e0b);
+        stroke-width: 2.5px;
+        fill: var(--a16p1-surface-active, #1e293b);
+      }
+      .a16p1-node-group:focus-visible {
+        outline: none;
+      }
+      .a16p1-node-group:focus-visible .a16p1-node-card {
+        stroke: var(--a16p1-teal, #14b8a6);
+        stroke-width: 3px;
+      }
+      
+      /* Badge and Text styling */
+      .a16p1-title-text {
+        font-size: 18px;
+        font-weight: 700;
+        fill: var(--a16p1-text-main, #f8fafc);
+        letter-spacing: -0.01em;
+      }
+      .a16p1-subtitle-text {
+        font-size: 12px;
+        fill: var(--a16p1-text-sub, #94a3b8);
+      }
+      .a16p1-badge-pill {
+        fill: var(--a16p1-gold-bg, rgba(245, 158, 11, 0.15));
+        stroke: var(--a16p1-gold, #f59e0b);
+        stroke-width: 1px;
+      }
+      .a16p1-badge-text {
+        font-size: 10px;
+        font-weight: 700;
+        fill: var(--a16p1-gold, #f59e0b);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      
+      /* Panel styling */
+      .a16p1-panel-bg {
+        fill: var(--a16p1-surface, #152238);
+        stroke: var(--a16p1-border, #334155);
+        stroke-width: 1.5px;
+        rx: 12px;
+      }
+      .a16p1-panel-header {
+        font-size: 13px;
+        font-weight: 700;
+        fill: var(--a16p1-gold, #f59e0b);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .a16p1-panel-section-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+      .a16p1-panel-body {
+        font-size: 11.5px;
+        fill: var(--a16p1-text-sub, #94a3b8);
+        line-height: 1.45;
+      }
+      .a16p1-takeaway-box {
+        fill: var(--a16p1-gold-bg, rgba(245, 158, 11, 0.12));
+        stroke: var(--a16p1-gold, #f59e0b);
+        stroke-width: 1px;
+        rx: 8px;
+      }
+
+      /* Connectors */
+      .a16p1-connector-line {
+        stroke: var(--a16p1-border-bright, #475569);
+        stroke-width: 2px;
+        stroke-dasharray: 4 4;
+      }
+      .a16p1-connector-active {
+        stroke: var(--a16p1-gold, #f59e0b);
+        stroke-width: 2.5px;
+        stroke-dasharray: none;
+      }
+      /*]]>*/
+    </style>
+    
+    <!-- SVG Filters & Markers -->
+    <filter id="a16p1-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <marker id="a16p1-arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--a16p1-gold, #f59e0b)" />
+    </marker>
+    <marker id="a16p1-arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--a16p1-green, #10b981)" />
+    </marker>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="960" height="560" rx="16" fill="var(--a16p1-bg, #0b1329)"/>
+
+  <!-- Remnant Pelvic Background Contour (A12-A13 Wall Backdrop - Faint) -->
+  <g opacity="0.12" stroke="var(--a16p1-text-sub, #94a3b8)" stroke-width="1.2" fill="none" pointer-events="none">
+    <path d="M 40 480 C 120 440, 200 460, 300 490 C 400 520, 500 450, 600 490" stroke-dasharray="3 3"/>
+    <path d="M 80 430 C 160 390, 240 410, 340 440 C 440 470, 540 400, 640 440" stroke-dasharray="2 4"/>
+    <text x="50" y="515" font-size="9" fill="var(--a16p1-text-muted, #64748b)">Parede remota: Anatomia Pélvica (A12–A13) · Retrospecto de Base</text>
+  </g>
+
+  <!-- Top Title Header -->
+  <g transform="translate(28, 24)">
+    <!-- Pill Badge -->
+    <rect x="0" y="0" width="220" height="22" rx="11" class="a16-inline-svg a16p1-root"/>
+    <text x="110" y="15" text-anchor="middle" class="a16-inline-svg a16p1-root">Trilogia Obstétrica Básica · Arco</text>
+    
+    <!-- Main Title -->
+    <text x="0" y="44" class="a16-inline-svg a16p1-root">A Trilogia Fecha no Pré-Natal Operacional</text>
+    
+    <!-- Subtitle / Legenda de Interpretação -->
+    <text x="0" y="62" class="a16-inline-svg a16p1-root">
+      A14 confirma a gestação → A15 funda a fisiologia adaptativa → A16 opera o rastreamento longitudinal e risco genético (Nó Ativo).
+    </text>
+  </g>
+
+  <!-- Interactive Instruction Hint (Affordance Neutra) -->
+  <g transform="translate(480, 36)">
+    <rect x="0" y="0" width="135" height="20" rx="10" fill="var(--a16p1-teal-bg, rgba(20,184,166,0.12))" stroke="var(--a16p1-teal, #14b8a6)" stroke-width="1"/>
+    <text x="67" y="14" text-anchor="middle" font-size="10" font-weight="600" fill="var(--a16p1-teal, #14b8a6)">Toque nos nós para explorar</text>
+  </g>
+
+  <!-- Main Stage Corridor (Nodes 1, 2, 3) -->
+  <g transform="translate(28, 105)">
+    <!-- Corridor Line Connectors -->
+    <!-- Line 1 -> 2 -->
+    <path d="M 180 180 L 225 180" class="a16-inline-svg a16p1-root" marker-end="url(#a16p1-arrow-green)"/>
+    <text x="202" y="170" text-anchor="middle" font-size="9" font-weight="700" fill="var(--a16p1-green, #10b981)">Adaptação</text>
+
+    <!-- Line 2 -> 3 -->
+    <path d="M 390 180 L 435 180" class="a16-inline-svg a16p1-root" marker-end="url(#a16p1-arrow-gold)"/>
+    <text x="412" y="170" text-anchor="middle" font-size="9" font-weight="700" fill="var(--a16p1-gold, #f59e0b)">Operação</text>
+
+    <!-- NODE 1: A14 - Diagnóstico de Gravidez (CONCLUÍDO) -->
+    <g class="a16-inline-svg a16p1-root" id="a16p1-node-1" data-node="1" tabindex="0" role="button" aria-label="Nó 1: A14 Diagnóstico de Gravidez (Concluído)">
+      <rect x="0" y="30" width="180" height="360" rx="14" class="a16-inline-svg a16p1-root"/>
+      
+      <!-- Node Header -->
+      <rect x="12" y="44" width="70" height="18" rx="9" fill="var(--a16p1-green-bg, rgba(16,185,129,0.12))" stroke="var(--a16p1-green, #10b981)" stroke-width="1"/>
+      <text x="47" y="56" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--a16p1-green, #10b981)">A14 · SELADO</text>
+      
+      <text x="12" y="82" font-size="14" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Diagnóstico de</text>
+      <text x="12" y="98" font-size="14" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Gravidez</text>
+      <text x="12" y="115" font-size="10.5" fill="var(--a16p1-text-muted, #64748b)">Porta 1 · Base Confirmada</text>
+
+      <!-- Sub-Cards / Structural Elements -->
+      <g transform="translate(12, 130)">
+        <!-- Item 1 -->
+        <rect x="0" y="0" width="156" height="52" rx="8" fill="var(--a16p1-bg, #0b1329)" stroke="var(--a16p1-border, #334155)" stroke-width="1"/>
+        <circle cx="16" cy="26" r="10" fill="var(--a16p1-green-bg, rgba(16,185,129,0.15))"/>
+        <text x="16" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="var(--a16p1-green, #10b981)">✓</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Sinais de Certeza</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-text-sub, #94a3b8)">BCF, Movimento, USG</text>
+
+        <!-- Item 2 -->
+        <rect x="0" y="60" width="156" height="52" rx="8" fill="var(--a16p1-bg, #0b1329)" stroke="var(--a16p1-border, #334155)" stroke-width="1"/>
+        <circle cx="16" cy="26" r="10" fill="var(--a16p1-green-bg, rgba(16,185,129,0.15))"/>
+        <text x="16" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="var(--a16p1-green, #10b981)">✓</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Beta-hCG Sérico</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-text-sub, #94a3b8)">Duplicação a cada 48h</text>
+
+        <!-- Item 3 -->
+        <rect x="0" y="120" width="156" height="52" rx="8" fill="var(--a16p1-bg, #0b1329)" stroke="var(--a16p1-border, #334155)" stroke-width="1"/>
+        <circle cx="16" cy="26" r="10" fill="var(--a16p1-green-bg, rgba(16,185,129,0.15))"/>
+        <text x="16" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="var(--a16p1-green, #10b981)">✓</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Marcos Ultrassônicos</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-text-sub, #94a3b8)">SG 5s · VV 6s · BCF &gt;6s</text>
+      </g>
+
+      <!-- Status Footer Badge -->
+      <rect x="12" y="345" width="156" height="24" rx="6" fill="var(--a16p1-green-bg, rgba(16,185,129,0.12))"/>
+      <text x="90" y="361" text-anchor="middle" font-size="10" font-weight="700" fill="var(--a16p1-green, #10b981)">Porta Concluída Dignamente</text>
+    </g>
+
+    <!-- NODE 2: A15 - Modificações Maternas (CONCLUÍDO) -->
+    <g class="a16-inline-svg a16p1-root" id="a16p1-node-2" data-node="2" tabindex="0" role="button" aria-label="Nó 2: A15 Modificações Maternas (Concluído)">
+      <rect x="210" y="30" width="180" height="360" rx="14" class="a16-inline-svg a16p1-root"/>
+      
+      <!-- Node Header -->
+      <rect x="222" y="44" width="70" height="18" rx="9" fill="var(--a16p1-green-bg, rgba(16,185,129,0.12))" stroke="var(--a16p1-green, #10b981)" stroke-width="1"/>
+      <text x="257" y="56" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--a16p1-green, #10b981)">A15 · SELADO</text>
+      
+      <text x="222" y="82" font-size="14" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Modificações</text>
+      <text x="222" y="98" font-size="14" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Maternas</text>
+      <text x="222" y="115" font-size="10.5" fill="var(--a16p1-text-muted, #64748b)">Porta 2 · Fisiologia Fundada</text>
+
+      <!-- Sub-Cards -->
+      <g transform="translate(222, 130)">
+        <!-- Item 1 -->
+        <rect x="0" y="0" width="156" height="52" rx="8" fill="var(--a16p1-bg, #0b1329)" stroke="var(--a16p1-border, #334155)" stroke-width="1"/>
+        <circle cx="16" cy="26" r="10" fill="var(--a16p1-green-bg, rgba(16,185,129,0.15))"/>
+        <text x="16" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="var(--a16p1-green, #10b981)">✓</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Hemodinâmica</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-text-sub, #94a3b8)">↑ Plasma (&gt;Hemácias) → Hb≥11</text>
+
+        <!-- Item 2 -->
+        <rect x="0" y="60" width="156" height="52" rx="8" fill="var(--a16p1-bg, #0b1329)" stroke="var(--a16p1-border, #334155)" stroke-width="1"/>
+        <circle cx="16" cy="26" r="10" fill="var(--a16p1-green-bg, rgba(16,185,129,0.15))"/>
+        <text x="16" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="var(--a16p1-green, #10b981)">✓</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Renal &amp; Filtrado</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-text-sub, #94a3b8)">↑ VFG 50% · ↓ Ureia/Cr · Glicosúria</text>
+
+        <!-- Item 3 -->
+        <rect x="0" y="120" width="156" height="52" rx="8" fill="var(--a16p1-bg, #0b1329)" stroke="var(--a16p1-border, #334155)" stroke-width="1"/>
+        <circle cx="16" cy="26" r="10" fill="var(--a16p1-green-bg, rgba(16,185,129,0.15))"/>
+        <text x="16" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="var(--a16p1-green, #10b981)">✓</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Sistemático &amp; Resp.</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-text-sub, #94a3b8)">Alcalose Resp. Compensada</text>
+      </g>
+
+      <!-- Status Footer Badge -->
+      <rect x="222" y="345" width="156" height="24" rx="6" fill="var(--a16p1-green-bg, rgba(16,185,129,0.12))"/>
+      <text x="300" y="361" text-anchor="middle" font-size="10" font-weight="700" fill="var(--a16p1-green, #10b981)">Porta Concluída Dignamente</text>
+    </g>
+
+    <!-- NODE 3: A16 - Pré-Natal & Genética (NÓ ATIVO / HIGHLIGHTED HERO NODE) -->
+    <g class="a16-inline-svg a16p1-root" id="a16p1-node-3" data-node="3" tabindex="0" role="button" aria-label="Nó 3: A16 Pré-natal e Aconselhamento Genético (Nó Ativo - Arco Fecha Aqui)">
+      <!-- Outer Glow Rectangle -->
+      <rect x="420" y="10" width="190" height="395" rx="16" fill="none" stroke="var(--a16p1-gold, #f59e0b)" stroke-width="1" opacity="0.4" filter="url(#a16p1-glow)"/>
+      <rect x="424" y="14" width="182" height="387" rx="14" class="a16-inline-svg a16p1-root"/>
+      
+      <!-- Gold Ribbon Header -->
+      <rect x="436" y="26" width="158" height="22" rx="11" fill="var(--a16p1-gold-bg, rgba(245,158,11,0.2))" stroke="var(--a16p1-gold, #f59e0b)" stroke-width="1.2"/>
+      <text x="515" y="41" text-anchor="middle" font-size="10" font-weight="800" fill="var(--a16p1-gold, #f59e0b)" letter-spacing="0.04em">VOCÊ ESTÁ AQUI · NÓ ATIVO</text>
+      
+      <text x="436" y="72" font-size="15" font-weight="800" fill="var(--a16p1-text-main, #f8fafc)">Pré-Natal &amp;</text>
+      <text x="436" y="90" font-size="15" font-weight="800" fill="var(--a16p1-text-main, #f8fafc)">Aconselh. Genético</text>
+      <text x="436" y="108" font-size="10.5" font-weight="700" fill="var(--a16p1-gold, #f59e0b)">Porta 3 · O Arco Fecha Aqui</text>
+
+      <!-- Active Content Cards -->
+      <g transform="translate(436, 122)">
+        <!-- Item 1: Rastreamento Aneuploidias -->
+        <rect x="0" y="0" width="158" height="56" rx="8" fill="var(--a16p1-gold-bg, rgba(245,158,11,0.08))" stroke="var(--a16p1-gold, #f59e0b)" stroke-width="1.2"/>
+        <circle cx="16" cy="28" r="10" fill="var(--a16p1-gold, #f59e0b)"/>
+        <text x="16" y="32" text-anchor="middle" font-size="11" font-weight="900" fill="var(--a16p1-bg, #0b1329)">★</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Rastreio Aneuploidias</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-gold, #f59e0b)" font-weight="600">TN ≥ 3mm · DV Onda a-</text>
+        <text x="34" y="49" font-size="8.5" fill="var(--a16p1-text-sub, #94a3b8)">Osso Nasal Ausente · NIPT</text>
+
+        <!-- Item 2: Estratificação de Risco -->
+        <rect x="0" y="64" width="158" height="54" rx="8" fill="var(--a16p1-bg, #0b1329)" stroke="var(--a16p1-border-bright, #475569)" stroke-width="1"/>
+        <circle cx="16" cy="27" r="10" fill="var(--a16p1-teal-bg, rgba(20,184,166,0.2))"/>
+        <text x="16" y="31" text-anchor="middle" font-size="10" font-weight="800" fill="var(--a16p1-teal, #14b8a6)">🔍</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Estratificação Risco</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-text-sub, #94a3b8)">Habitual vs Alto Risco</text>
+
+        <!-- Item 3: Exames Invasivos -->
+        <rect x="0" y="126" width="158" height="54" rx="8" fill="var(--a16p1-bg, #0b1329)" stroke="var(--a16p1-border-bright, #475569)" stroke-width="1"/>
+        <circle cx="16" cy="27" r="10" fill="var(--a16p1-red-bg, rgba(239,68,68,0.2))"/>
+        <text x="16" y="31" text-anchor="middle" font-size="10" font-weight="800" fill="var(--a16p1-red, #ef4444)">⚠️</text>
+        <text x="34" y="22" font-size="11" font-weight="700" fill="var(--a16p1-text-main, #f8fafc)">Diagnóstico Invasivo</text>
+        <text x="34" y="38" font-size="9.5" fill="var(--a16p1-text-sub, #94a3b8)">BVC (&gt;10s) vs Amnio (&gt;15s)</text>
+      </g>
+
+      <!-- Seal Badge Footer -->
+      <rect x="436" y="348" width="158" height="28" rx="6" fill="var(--a16p1-gold, #f59e0b)"/>
+      <text x="515" y="366" text-anchor="middle" font-size="11" font-weight="800" fill="var(--a16p1-bg, #0b1329)" letter-spacing="0.02em">SELO: A TRILOGIA FECHA AQUI</text>
+    </g>
+  </g>
+
+  <!-- Dynamic Side Reading Panel (Caixa de Leitura Clínica e Estrutural) -->
+  <g transform="translate(645, 105)">
+    <rect x="0" y="0" width="288" height="425" rx="14" class="a16-inline-svg a16p1-root"/>
+    
+    <!-- Panel Header -->
+    <g transform="translate(16, 20)">
+      <rect x="0" y="0" width="8" height="16" rx="4" fill="var(--a16p1-gold, #f59e0b)"/>
+      <text x="16" y="13" class="a16-inline-svg a16p1-root" id="a16p1-panel-title">PAINEL DO NÓ SELECIONADO</text>
+    </g>
+    
+    <!-- Dynamic Content Area -->
+    <g transform="translate(16, 48)">
+      <!-- Selected Title & Status -->
+      <text x="0" y="0" font-size="15" font-weight="800" fill="var(--a16p1-gold, #f59e0b)" id="a16p1-dyn-node-title">A16 · PRÉ-NATAL &amp; GENÉTICA</text>
+      <text x="0" y="16" font-size="10.5" font-weight="600" fill="var(--a16p1-text-muted, #64748b)" id="a16p1-dyn-node-status">Status: Nó Operacional Ativo (Fechamento)</text>
+
+      <line x1="0" y1="26" x2="256" y2="26" stroke="var(--a16p1-border, #334155)" stroke-width="1"/>
+
+      <!-- Section A: O QUE ESTE DEGRAU FAZ -->
+      <g transform="translate(0, 38)">
+        <text x="0" y="0" class="a16-inline-svg a16p1-root" fill="var(--a16p1-green, #10b981)">✓ O QUE ESTE DEGRAU FAZ</text>
+        <text x="0" y="16" class="a16-inline-svg a16p1-root" id="a16p1-dyn-faz-1">• Opera o rastreamento longitudinal de riscos.</text>
+        <text x="0" y="32" class="a16-inline-svg a16p1-root" id="a16p1-dyn-faz-2">• Triagem de aneuploidias (TN, NIPT, Ducto Venoso).</text>
+        <text x="0" y="48" class="a16-inline-svg a16p1-root" id="a16p1-dyn-faz-3">• Indicação de exames invasivos (BVC / Amnio).</text>
+      </g>
+
+      <!-- Section B: O QUE NÃO FAZ (DIVISÃO DE FRONTEIRAS) -->
+      <g transform="translate(0, 110)">
+        <text x="0" y="0" class="a16-inline-svg a16p1-root" fill="var(--a16p1-red, #ef4444)">✕ O QUE NÃO FAZ (FRONTEIRA)</text>
+        <text x="0" y="16" class="a16-inline-svg a16p1-root" id="a16p1-dyn-naofaz-1">• NÃO reabre confirmação de gestação (A14).</text>
+        <text x="0" y="32" class="a16-inline-svg a16p1-root" id="a16p1-dyn-naofaz-2">• NÃO reensina adaptação fisiológica materna (A15).</text>
+        <text x="0" y="48" class="a16-inline-svg a16p1-root" id="a16p1-dyn-naofaz-3">• NÃO detalha calendário/doses por semanas (H1).</text>
+      </g>
+
+      <!-- Section C: ÂNCORAS DE PROVA -->
+      <g transform="translate(0, 182)">
+        <text x="0" y="0" class="a16-inline-svg a16p1-root" fill="var(--a16p1-gold, #f59e0b)">⚡ ÂNCORAS DE RESIDÊNCIA</text>
+        <text x="0" y="16" class="a16-inline-svg a16p1-root" id="a16p1-dyn-prova-1">• TN ≥ 3,0mm ou DV 'a' reverso → Cariótipo Fetal.</text>
+        <text x="0" y="32" class="a16-inline-svg a16p1-root" id="a16p1-dyn-prova-2">• BVC precoce (10-13s) vs Amniocentese (≥15s).</text>
+      </g>
+
+      <!-- Core Takeaway Box (Bottom Panel) -->
+      <g transform="translate(0, 248)">
+        <rect x="0" y="0" width="256" height="110" class="a16-inline-svg a16p1-root"/>
+        <text x="12" y="18" font-size="11" font-weight="800" fill="var(--a16p1-gold, #f59e0b)">REGRA DE OURO DA RESIDÊNCIA</text>
+        <text x="12" y="36" font-size="10.5" fill="var(--a16p1-text-main, #f8fafc)" font-weight="600">
+          <tspan x="12" dy="0">O leitor conclui a sequência em 3 atos:</tspan>
+          <tspan x="12" dy="16">1. A14 confirma · 2. A15 adapta · 3. A16 opera.</tspan>
+          <tspan x="12" dy="16">A anatomia pélvica (A12-13) fica remota</tspan>
+          <tspan x="12" dy="16">atrás da parede; o pré-natal fecha o arco!</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Embedded Standalone & Dual-Engine JavaScript -->
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function() {
+      var dataStore = {
+        "1": {
+          title: "A14 · DIAGNÓSTICO DE GRAVIDEZ",
+          status: "Status: Base Selada (Pilar Concluído)",
+          faz: [
+            "• Confirma a presunção, probabilidade e certeza.",
+            "• Identifica BCF, movimentos fetais e Beta-hCG.",
+            "• Define marcos ultrassônicos (SG 5s, VV 6s, BCF &gt;6s)."
+          ],
+          naofaz: [
+            "• NÃO programa rotina de consultas continuadas.",
+            "• NÃO avalia risco genético nem translucência nucal.",
+            "• NÃO analisa adaptações fisiológicas sistêmicas."
+          ],
+          prova: [
+            "• Diferença de prenhez clínica vs ultrassônica.",
+            "• Duplicação esperada do Beta-hCG a cada 48h."
+          ]
+        },
+        "2": {
+          title: "A15 · MODIFICAÇÕES MATERNAS",
+          status: "Status: Fisiologia Fundada (Pilar Concluído)",
+          faz: [
+            "• Fundamenta as adaptações cardiovasculares/renais.",
+            "• Explica hemodiluição (Hb ≥ 11 g/dL é normal).",
+            "• Justifica glicosúria fisiológica e ↑ VFG em 50%."
+          ],
+          naofaz: [
+            "• NÃO faz triagem de infecções congênitas do pré-natal.",
+            "• NÃO rastreia trissomias nem indica cariótipo.",
+            "• NÃO prescreve suplementações do calendário de pré-natal."
+          ],
+          prova: [
+            "• Fosfatase alcalina elevada é placentária (normal).",
+            "• Alcalose respiratória compensada fisiológica."
+          ]
+        },
+        "3": {
+          title: "A16 · PRÉ-NATAL &amp; GENÉTICA",
+          status: "Status: Nó Operacional Ativo (O Arco Fecha Aqui)",
+          faz: [
+            "• Opera o rastreamento longitudinal de riscos.",
+            "• Triagem de aneuploidias (TN, NIPT, Ducto Venoso).",
+            "• Indicação de exames invasivos (BVC / Amnio)."
+          ],
+          naofaz: [
+            "• NÃO reabre confirmação de gestação (A14).",
+            "• NÃO reensina adaptação fisiológica materna (A15).",
+            "• NÃO detalha calendário/doses por semanas (H1)."
+          ],
+          prova: [
+            "• TN ≥ 3,0mm ou DV 'a' reverso → Cariótipo Fetal.",
+            "• BVC precoce (10-13s) vs Amniocentese (≥15s)."
+          ]
+        }
+      };
+
+      function updatePanel(nodeId) {
+        var data = dataStore[nodeId];
+        if (!data) return;
+
+        // Highlight active node
+        var nodes = document.querySelectorAll('.a16p1-node-group');
+        nodes.forEach(function(n) {
+          if (n.getAttribute('data-node') === nodeId) {
+            n.classList.add('a16p1-active');
+          } else {
+            n.classList.remove('a16p1-active');
+          }
+        });
+
+        // Update texts safely
+        var tTitle = document.getElementById('a16p1-dyn-node-title');
+        var tStatus = document.getElementById('a16p1-dyn-node-status');
+        if (tTitle) tTitle.innerHTML = data.title;
+        if (tStatus) tStatus.textContent = data.status;
+
+        for (var i = 0; i < 3; i++) {
+          var elFaz = document.getElementById('a16p1-dyn-faz-' + (i+1));
+          var elNaoFaz = document.getElementById('a16p1-dyn-naofaz-' + (i+1));
+          if (elFaz && data.faz[i]) elFaz.innerHTML = data.faz[i];
+          if (elNaoFaz && data.naofaz[i]) elNaoFaz.innerHTML = data.naofaz[i];
+        }
+
+        for (var j = 0; j < 2; j++) {
+          var elProva = document.getElementById('a16p1-dyn-prova-' + (j+1));
+          if (elProva && data.prova[j]) elProva.innerHTML = data.prova[j];
+        }
+      }
+
+      function init() {
+        var nodes = document.querySelectorAll('.a16p1-node-group');
+        nodes.forEach(function(node) {
+          node.addEventListener('click', function() {
+            var nodeId = this.getAttribute('data-node');
+            updatePanel(nodeId);
+          });
+
+          node.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              var nodeId = this.getAttribute('data-node');
+              updatePanel(nodeId);
+            }
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+    /*]]>*/
+  </script>
+</svg>

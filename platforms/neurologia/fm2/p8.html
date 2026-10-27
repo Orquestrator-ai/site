@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D9488">
+<meta name="description" content="Critérios de McDonald: disseminação no tempo (≥2 surtos, >24h, intervalo ≥1 mês) e no espaço (≥2 locais).">
+<title>McDonald: tempo e espaço — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm2-cara">
+:root,[data-theme="dark"]{--fm2-teal:#14b8a6;--fm2-indigo:#818CF8;--fm2-gelo:#38BDF8;--fm2-ouro:#E0A100;--fm2-coral:#FB7185;--fm2-amber:#F59E0B;--fm2-verde:#34D399}
+[data-theme="light"]{--fm2-teal:#0F766E;--fm2-indigo:#4F46E5;--fm2-gelo:#0284C7;--fm2-ouro:#846006;--fm2-coral:#C81E43;--fm2-amber:#A15206;--fm2-verde:#059669}
+.reading{width:100%;margin:0 auto;padding:0 0 3rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem;margin:0 0 1.25rem;box-shadow:var(--shadow)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--fm2-teal);margin:0 0 .45rem}
+.opener h1{font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 .6rem;color:var(--ink-100)}
+.opener p{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.55}
+.opener--case{border-left:4px solid var(--fm2-indigo)}
+.opener--question{border-left:4px solid var(--fm2-teal)}
+.opener--mnemonic{border-left:4px solid var(--fm2-amber)}
+.opener--impact{border-left:4px solid var(--fm2-coral)}
+.opener--checklist{border-left:4px solid var(--fm2-verde)}
+.opener--vs{border-left:4px solid var(--fm2-gelo)}
+.opener--trap{border-left:4px solid var(--fm2-ouro)}
+.opener--bust{border-left:4px solid var(--fm2-coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.15rem}
+.chip{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.3rem .75rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--fm2-teal);border-color:color-mix(in srgb,var(--fm2-teal) 45%,var(--border))}
+.chip--gold{color:var(--fm2-ouro);border-color:color-mix(in srgb,var(--fm2-ouro) 45%,var(--border))}
+.chip--ok{color:var(--fm2-verde);border-color:color-mix(in srgb,var(--fm2-verde) 45%,var(--border))}
+.chip--no{color:var(--fm2-coral);border-color:color-mix(in srgb,var(--fm2-coral) 45%,var(--border))}
+.chip--series{color:var(--fm2-indigo);border-color:color-mix(in srgb,var(--fm2-indigo) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em;line-height:1.62}
+.prose p.no-indent,.no-indent{text-indent:0}
+.topic-h{font-size:1.12rem;margin:1.4rem 0 .55rem;color:var(--ink-100);font-weight:700}
+.term{color:var(--fm2-indigo);font-weight:700}
+.hl-good{color:var(--fm2-verde);font-weight:700}
+.hl-bad{color:var(--fm2-coral);font-weight:700}
+.hl-warn{color:var(--fm2-amber);font-weight:700}
+.hl-gold{color:var(--fm2-ouro);font-weight:700}
+.nuance{border-left:4px solid var(--fm2-amber);padding:.7rem .9rem;margin:1rem 0;background:color-mix(in srgb,var(--fm2-amber) 9%,var(--bg-2));border-radius:0 10px 10px 0}
+.nuance__title{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--fm2-amber);margin:0 0 .3rem;font-weight:700}
+.nuance p{margin:0;color:var(--ink-80);font-size:.94rem;line-height:1.55}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0}
+.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:300px}
+.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}
+.comparison th{background:var(--bg-3);color:var(--ink-100)}
+.comparison tr:nth-child(even) td{background:var(--bg-2)}
+.exec-card{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.exec-card__title{margin:0 0 .6rem;font-size:1rem;color:var(--fm2-teal);font-weight:700}
+.case-card{border:1px solid var(--border);border-left:4px solid var(--fm2-indigo);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.1rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.case-card h4{margin:0 0 .5rem;color:var(--fm2-indigo)}
+.case-card p{margin:.3rem 0;color:var(--ink-80)}
+.gap-box{border:1px solid var(--border);border-left:4px solid var(--fm2-coral);border-radius:var(--radius-sm);background:color-mix(in srgb,var(--fm2-coral) 8%,var(--bg-2));padding:.9rem 1rem;margin:1.1rem 0}
+.gap-box h4{margin:0 0 .4rem;color:var(--fm2-coral)}
+.gap-box p{margin:0;color:var(--ink-80);font-size:.92rem}
+.continuity{border:1px solid var(--border);border-left:4px solid var(--fm2-gelo);border-radius:var(--radius-sm);background:var(--bg-2);padding:.85rem 1rem;margin:1.2rem 0 0}
+.continuity p{margin:0;color:var(--ink-60);font-size:.92rem}
+.hero-figure{margin:1.5rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.hero-figure__frame{width:100%;display:block;background:var(--bg-1)}
+.hero-figure__cap{padding:.7rem .9rem .9rem;font-size:.8rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.fig__frame{width:100%;display:block;background:var(--bg-1)}
+.fig__frame--svg{padding:.25rem}
+.fm2-inline-svg{display:block;width:100%;height:auto;border-radius:8px}
+.fig__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--fm2-teal);margin-right:.4rem}
+.quiz__alts{list-style:none;margin:0 0 .9rem;padding:0;display:grid;gap:.45rem}
+.alt{display:flex;gap:.6rem;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-3);color:var(--ink-100);padding:.7rem .85rem;cursor:pointer;font:inherit;min-height:44px;line-height:1.45}
+.alt:hover{border-color:var(--fm2-teal);background:var(--bg-4)}
+.alt[aria-checked="true"]{border-color:var(--fm2-gelo);background:color-mix(in srgb,var(--fm2-gelo) 13%,var(--bg-3))}
+.alt.is-correct{border-color:var(--fm2-verde);background:color-mix(in srgb,var(--fm2-verde) 14%,var(--bg-3))}
+.alt.is-correct::after{content:" ✔";color:var(--fm2-verde);font-weight:800;margin-left:auto}
+.alt.is-wrong{border-color:var(--fm2-coral);background:color-mix(in srgb,var(--fm2-coral) 14%,var(--bg-3))}
+.alt.is-wrong::after{content:" ✗";color:var(--fm2-coral);font-weight:800;margin-left:auto}
+.alt.is-marked{border-color:var(--fm2-gelo)}
+.ltr{display:inline-flex;align-items:center;justify-content:center;min-width:1.6rem;height:1.6rem;border-radius:6px;background:var(--bg-4);color:var(--fm2-teal);font-weight:800;font-size:.82rem;flex:0 0 auto}
+.alt.is-correct .ltr{background:var(--fm2-verde);color:#fff}
+.alt.is-wrong .ltr{background:var(--fm2-coral);color:#fff}
+.quiz__btn{display:inline-flex;align-items:center;min-height:44px;padding:.55rem 1rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong);background:var(--bg-3);color:var(--ink-100);cursor:pointer;font:inherit;font-weight:600}
+.quiz__btn:hover:not(:disabled){border-color:var(--fm2-teal);color:var(--fm2-teal)}
+.quiz__btn:disabled{opacity:.6;cursor:default}
+.quiz__explicacao{margin-top:.7rem;padding:.8rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3)}
+.quiz__explicacao[hidden]{display:none}
+.quiz__explicacao p{margin:0 0 .6rem;font-size:.93rem;line-height:1.55}
+.quiz__explicacao p:last-child{margin:0}
+.quiz__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.flow{display:grid;gap:.5rem;margin:.9rem 0}
+.flow__step{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:.7rem .85rem;font-size:.93rem}
+.flow__step strong{color:var(--fm2-teal)}
+.flow__arrow{text-align:center;color:var(--fm2-gelo);font-weight:700}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.9rem 0}
+.stat-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem .9rem;background:var(--bg-2)}
+.stat-card__n{font-size:1.7rem;font-weight:800;color:var(--fm2-teal);line-height:1}
+.stat-card__n--bad{color:var(--fm2-coral)}
+.stat-card__t{display:block;margin-top:.35rem;font-size:.82rem;color:var(--ink-60)}
+.board{display:grid;gap:.5rem;margin:.9rem 0}
+.board__row{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;border:1px solid var(--border);border-radius:var(--radius-sm);padding:.6rem .8rem;background:var(--bg-2)}
+.board__tag{font-weight:800;min-width:1.6rem;text-align:center;border-radius:6px;padding:.15rem .25rem;background:var(--bg-4)}
+.board__tag--ok{background:var(--fm2-verde);color:#fff}
+.board__tag--no{background:var(--fm2-coral);color:#fff}
+.dont-confuse{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.9rem 0}
+.dont-confuse>div{border:1px solid var(--border);border-radius:10px;padding:.65rem .8rem;background:var(--bg-2)}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:560px){.stat-row,.dont-confuse{grid-template-columns:1fr}}
+@media(max-width:420px){.board__row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p8" data-layout="fm2-p08" data-source-ids="087,088,089,090,091,092,093,094,095,096,097,098,099,100,101">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Esclerose múltipla</span>
+        <span class="site-header__subtitle">Neurologia · esclerose múltipla</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">8/12</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<div class="reading">
+  <section class="opener opener--question" aria-labelledby="p8-titulo">
+    <span class="opener__eyebrow">Pergunta central</span>
+    <h1 id="p8-titulo">McDonald: tempo e espaço</h1>
+    <p>O que é disseminação no tempo e no espaço — e como preencher clinicamente? Os Critérios de McDonald organizam as duas dimensões.</p>
+  </section>
+
+  <div class="prose">
+    <h2 class="topic-h">O que é McDonald</h2>
+    <p class="no-indent">A grande forma de fazer o diagnóstico de EM é pelos <strong>Critérios de McDonald</strong>. Esses critérios foram <strong>modificados em 2025</strong> (atualização citada). Mudanças finas importam mais ao neurologista (↑sensibilidade); para o raciocínio de prova o <strong>padrão central se mantém</strong>.</p>
+  </div>
+
+  <div class="nuance" role="note">
+    <span class="nuance__title">Caixa-nuança [088] — atualização disponível</span>
+    <p>A revisão internacional canônica rotula-se <strong>McDonald 2024</strong> (disseminação 2024–2025). O <strong>PCDT BR vigente</strong> ainda ancora o diagnóstico operacional em <strong>McDonald 2017</strong>. Mantém-se o discurso da fonte e a honestidade de versão — o eixo <strong>tempo + espaço</strong> continua o núcleo de prova.</p>
+  </div>
+
+  <div class="prose">
+    <h2 class="topic-h">Tempo</h2>
+    <p class="no-indent"><strong>Disseminação no tempo:</strong> ter <strong>pelos menos duas crises</strong> (mais de um surto) em momentos diferentes. <strong>Surto</strong>, por definição: dura <strong>mais de 24 horas</strong>. <strong>Remissão</strong> / intervalo: <strong>pelo menos 1 mês</strong> entre eventos distintos. Apresentando <strong>mais de um surto</strong> com esse padrão, o eixo temporal fica clinicamente preenchível.</p>
+    <p class="no-indent"><em>Completar mentalmente:</em> surto na ausência de febre/infecção (pseudoexacerbação). Formulação operacional: <strong>intervalo ≥1 mês entre surtos</strong>.</p>
+    <h2 class="topic-h">Espaço</h2>
+    <p class="no-indent"><strong>Disseminação no espaço:</strong> <strong>mais de uma lesão</strong> / localização diferente no SNC.</p>
+    <h2 class="topic-h">Exemplos clínicos</h2>
+    <p class="no-indent">Exemplo: paciente internada <strong>hoje</strong> sem enxergar o olho esquerdo e sem mexer o lado direito — isso dura <strong>&gt;24 h</strong> → <strong>uma crise</strong> atual com <strong>duas lesões</strong> (visão + motricidade). Na história: <strong>quatro meses atrás</strong> também perdeu visão e metade dos movimentos → <strong>segunda crise</strong> no tempo. Critério <strong>tempo</strong> e <strong>espaço</strong> preenchidos.</p>
+    <p class="no-indent">Variante: há quatro meses surto &gt;24 h sem visão; agora surto &gt;24 h com perda de movimento → tempo + espaço (visão num momento, motricidade noutro).</p>
+    <h2 class="topic-h">Tempo e espaço não se excluem</h2>
+    <p class="no-indent">Espaço e tempo <strong>não são mutuamente excludentes</strong>: o espaço pode ser preenchido <strong>ao longo do tempo</strong> (lesões em surtos diferentes) <strong>ou de uma vez só</strong> (duas lesões no mesmo surto). É possível, <strong>só pela história</strong>, já ter disseminado no tempo e no espaço — mas a imagem ainda entra.</p>
+    <p><strong class="hl-gold">Regra de ouro:</strong> EM = doença <strong>disseminada no tempo e no espaço</strong>. Preenche os dois → faz o diagnóstico (no raciocínio de prova + imagem).</p>
+  </div>
+
+  <div class="table-wrap">
+    <table class="comparison">
+      <thead><tr><th>Eixo</th><th>Como preencher</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tempo</strong></td><td>≥2 surtos em momentos diferentes · surto &gt;24 h · intervalo ≥1 mês</td></tr>
+        <tr><td><strong>Espaço</strong></td><td>≥2 locais no SNC (no mesmo surto ou ao longo do tempo)</td></tr>
+        <tr><td><strong>Exemplo</strong></td><td>Hoje: visão OE + hemiparesia D (&gt;24 h, 2 lesões) · 4 meses atrás: visão + fraqueza → 2ª crise no tempo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure class="hero-figure" aria-labelledby="p8-hero-titulo">
+    <div class="hero-figure__frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" width="100%" height="100%" class="fm2-inline-svg fm2p8h-root" id="fm2p8h-svg-root" aria-label="Ilustração interativa dos Critérios McDonald Operacionais em Matriz Tempo por Espaço">
+  <defs>
+    <style type="text/css">
+      /* CSS Reset &amp; Variable Scoping - Standard Bauer Specification */
+      .fm2p8h-root {
+        --fm2p8h-bg: var(--bg-1, #0f172a);
+        --fm2p8h-panel-bg: var(--bg-2, #1e293b);
+        --fm2p8h-panel-border: var(--border, #334155);
+        --fm2p8h-ink-100: var(--ink-100, #f8fafc);
+        --fm2p8h-ink-70: var(--ink-70, #cbd5e1);
+        --fm2p8h-ink-50: var(--ink-50, #64748b);
+        
+        --fm2p8h-tempo: var(--kw-teal, #14b8a6);
+        --fm2p8h-tempo-bg: rgba(20, 184, 166, 0.12);
+        --fm2p8h-tempo-stroke: rgba(20, 184, 166, 0.4);
+        
+        --fm2p8h-espaco: var(--kw-indigo, #6366f1);
+        --fm2p8h-espaco-bg: rgba(99, 102, 241, 0.12);
+        --fm2p8h-espaco-stroke: rgba(99, 102, 241, 0.4);
+        
+        --fm2p8h-check: var(--kw-gold, #f59e0b);
+        --fm2p8h-check-bg: rgba(245, 158, 11, 0.15);
+        --fm2p8h-check-stroke: rgba(245, 158, 11, 0.5);
+        
+        --fm2p8h-amber: var(--kw-amber, #d97706);
+        --fm2p8h-red: var(--kw-red, #ef4444);
+        --fm2p8h-green: var(--kw-green, #22c55e);
+        
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        user-select: none;
+      }
+
+      /* Light Mode Overrides */
+      :root[data-theme="light"] .fm2p8h-root,
+      @media (prefers-color-scheme: light) {
+        .fm2p8h-root {
+          --fm2p8h-bg: var(--bg-1, #f8fafc);
+          --fm2p8h-panel-bg: var(--bg-2, #ffffff);
+          --fm2p8h-panel-border: var(--border, #e2e8f0);
+          --fm2p8h-ink-100: var(--ink-100, #0f172a);
+          --fm2p8h-ink-70: var(--ink-70, #334155);
+          --fm2p8h-ink-50: var(--ink-50, #64748b);
+
+          --fm2p8h-tempo: var(--kw-teal, #0d9488);
+          --fm2p8h-tempo-bg: rgba(13, 148, 136, 0.08);
+          --fm2p8h-tempo-stroke: rgba(13, 148, 136, 0.35);
+
+          --fm2p8h-espaco: var(--kw-indigo, #4f46e5);
+          --fm2p8h-espaco-bg: rgba(79, 70, 229, 0.08);
+          --fm2p8h-espaco-stroke: rgba(79, 70, 229, 0.35);
+
+          --fm2p8h-check: var(--kw-gold, #d97706);
+          --fm2p8h-check-bg: rgba(217, 119, 6, 0.12);
+          --fm2p8h-check-stroke: rgba(217, 119, 6, 0.4);
+        }
+      }
+
+      /* Component Styles */
+      .fm2p8h-card {
+        fill: var(--fm2p8h-panel-bg);
+        stroke: var(--fm2p8h-panel-border);
+        stroke-width: 1.5;
+        rx: 12px;
+      }
+
+      .fm2p8h-title {
+        fill: var(--fm2p8h-ink-100);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+      }
+
+      .fm2p8h-subtitle {
+        fill: var(--fm2p8h-ink-70);
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .fm2p8h-section-head {
+        fill: var(--fm2p8h-ink-100);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .fm2p8h-label-tempo {
+        fill: var(--fm2p8h-tempo);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .fm2p8h-label-espaco {
+        fill: var(--fm2p8h-espaco);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .fm2p8h-cell-box {
+        fill: var(--fm2p8h-panel-bg);
+        stroke: var(--fm2p8h-panel-border);
+        stroke-width: 1.5;
+        rx: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .fm2p8h-cell-box:hover {
+        stroke: var(--fm2p8h-ink-70);
+        filter: brightness(1.08);
+      }
+
+      .fm2p8h-cell-box.active {
+        fill: var(--fm2p8h-check-bg);
+        stroke: var(--fm2p8h-check);
+        stroke-width: 2.5;
+      }
+
+      .fm2p8h-btn {
+        cursor: pointer;
+        rx: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .fm2p8h-btn-bg {
+        fill: var(--fm2p8h-panel-border);
+        stroke: transparent;
+        stroke-width: 1;
+      }
+
+      .fm2p8h-btn:hover .fm2p8h-btn-bg {
+        filter: brightness(1.2);
+        stroke: var(--fm2p8h-ink-70);
+      }
+
+      .fm2p8h-btn.active .fm2p8h-btn-bg {
+        fill: var(--fm2p8h-espaco-bg);
+        stroke: var(--fm2p8h-espaco);
+      }
+
+      .fm2p8h-btn-text {
+        fill: var(--fm2p8h-ink-70);
+        font-size: 11px;
+        font-weight: 600;
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .fm2p8h-btn.active .fm2p8h-btn-text {
+        fill: var(--fm2p8h-ink-100);
+      }
+
+      .fm2p8h-toggle {
+        cursor: pointer;
+      }
+
+      .fm2p8h-toggle-rect {
+        fill: var(--fm2p8h-panel-border);
+        stroke: var(--fm2p8h-panel-border);
+        rx: 10px;
+        transition: all 0.2s ease;
+      }
+
+      .fm2p8h-toggle.active .fm2p8h-toggle-rect {
+        fill: var(--fm2p8h-tempo);
+        stroke: var(--fm2p8h-tempo);
+      }
+
+      .fm2p8h-toggle-circle {
+        fill: #ffffff;
+        transition: all 0.2s ease;
+      }
+
+      .fm2p8h-toggle.active .fm2p8h-toggle-circle {
+        transform: translateX(14px);
+      }
+
+      /* Tooltip Styling */
+      .fm2p8h-tooltip-box {
+        fill: var(--fm2p8h-panel-bg);
+        stroke: var(--fm2p8h-panel-border);
+        stroke-width: 1.5;
+        rx: 6px;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+      }
+
+      .fm2p8h-tooltip-title {
+        fill: var(--fm2p8h-ink-100);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .fm2p8h-tooltip-desc {
+        fill: var(--fm2p8h-ink-70);
+        font-size: 10px;
+        font-weight: 400;
+      }
+
+      .fm2p8h-badge {
+        rx: 4px;
+      }
+
+      .fm2p8h-badge-text {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND BASE -->
+  <rect width="1200" height="780" fill="var(--fm2p8h-bg)" rx="16" />
+
+  <!-- HEADER AREA -->
+  <g transform="translate(30, 25)">
+    <!-- CATEGORY BADGE -->
+    <rect x="0" y="0" width="220" height="20" fill="var(--fm2p8h-tempo-bg)" stroke="var(--fm2p8h-tempo-stroke)" class="fm2p8h-badge" />
+    <text x="110" y="14" fill="var(--fm2p8h-tempo)" class="fm2p8h-badge-text">NEURO-IMUNOLOGIA OPERACIONAL</text>
+
+    <!-- MAIN TITLE -->
+    <text x="0" y="45" class="fm2p8h-title">CRITÉRIOS MCDONALD: MATRIZ TEMPO × ESPAÇO (EM)</text>
+    
+    <!-- SUBTITLE / TAKEAWAY LEGEND -->
+    <text x="0" y="64" class="fm2p8h-subtitle">
+      O diagnóstico definitivo de Esclerose Múltipla exige a comprovação de Disseminação no Tempo (DIT) E no Espaço (DIS).
+    </text>
+    <text x="610" y="64" class="fm2p8h-subtitle" font-weight="600" fill="var(--fm2p8h-check)">
+      ★ Aluno: selecione cenários ou clique nos eixos para ver a conduta clínica e o eco da RM.
+    </text>
+  </g>
+
+  <!-- ==================================================================== -->
+  <!-- PAINEL 1: MATRIZ CLÍNICA (TEMPO x ESPAÇO) [ESQUERDA]                 -->
+  <!-- ==================================================================== -->
+  <g transform="translate(30, 100)">
+    <!-- Panel Backdrop -->
+    <rect width="610" height="570" class="fm2p8h-card" />
+    
+    <!-- Panel Header -->
+    <text x="20" y="30" class="fm2p8h-section-head">PAINEL 1: MATRIZ CLÍNICA TEMPO × ESPAÇO</text>
+    <text x="350" y="30" font-size="11" fill="var(--fm2p8h-ink-50)">Critério Clínico Puro (McDonald 2017/2025)</text>
+    
+    <line x1="20" y1="42" x2="590" y2="42" stroke="var(--fm2p8h-panel-border)" stroke-width="1" />
+
+    <!-- PRESET SCENARIO BUTTONS BAR -->
+    <g transform="translate(20, 52)">
+      <text x="0" y="14" font-size="11" font-weight="600" fill="var(--fm2p8h-ink-70)">Simular Paciente:</text>
+      
+      <!-- Btn 1: CIS -->
+      <g class="fm2p8h-btn" id="fm2p8h-btn-cis" transform="translate(100, 0)">
+        <rect width="110" height="24" class="fm2p8h-btn-bg" rx="5"/>
+        <text x="55" y="16" class="fm2p8h-btn-text">1 Surto + 1 Local (CIS)</text>
+      </g>
+      
+      <!-- Btn 2: Falta Espaço -->
+      <g class="fm2p8h-btn" id="fm2p8h-btn-espaco" transform="translate(218, 0)">
+        <rect width="115" height="24" class="fm2p8h-btn-bg" rx="5"/>
+        <text x="57" y="16" class="fm2p8h-btn-text">2 Surtos + 1 Local</text>
+      </g>
+
+      <!-- Btn 3: Falta Tempo -->
+      <g class="fm2p8h-btn" id="fm2p8h-btn-tempo" transform="translate(341, 0)">
+        <rect width="115" height="24" class="fm2p8h-btn-bg" rx="5"/>
+        <text x="57" y="16" class="fm2p8h-btn-text">1 Surto + 2 Locais</text>
+      </g>
+
+      <!-- Btn 4: EM Fechada -->
+      <g class="fm2p8h-btn" id="fm2p8h-btn-em" transform="translate(464, 0)">
+        <rect width="105" height="24" class="fm2p8h-btn-bg" rx="5"/>
+        <text x="52" y="16" class="fm2p8h-btn-text">★ 2 Surtos + 2 Locais</text>
+      </g>
+    </g>
+
+    <!-- HORIZONTAL AXIS TITLE (ESPAÇO - DIS) -->
+    <g transform="translate(160, 92)">
+      <rect x="0" y="0" width="410" height="24" fill="var(--fm2p8h-espaco-bg)" stroke="var(--fm2p8h-espaco-stroke)" rx="6"/>
+      <text x="205" y="16" text-anchor="middle" class="fm2p8h-label-espaco">EIXO ESPAÇO (DIS): DISSEMINAÇÃO NO ESPAÇO</text>
+    </g>
+
+    <!-- HORIZONTAL AXIS SUB-HEADERS (LOCAIS) -->
+    <g transform="translate(160, 122)">
+      <!-- Col 1 Header -->
+      <g id="fm2p8h-col1-hdr" class="fm2p8h-hs" style="cursor:pointer;" data-title="1 Local Clínico no SNC" data-desc="Ex: Apenas Neurite Óptica (II par) ou Mielite isolada. Não preenche DIS clínica.">
+        <rect x="0" y="0" width="198" height="32" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="6"/>
+        <text x="99" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="var(--fm2p8h-ink-100)">1 Local no SNC</text>
+        <text x="99" y="27" text-anchor="middle" font-size="10" fill="var(--fm2p8h-ink-50)">(Ex: só Neurite Óptica)</text>
+      </g>
+      
+      <!-- Col 2 Header -->
+      <g id="fm2p8h-col2-hdr" class="fm2p8h-hs" style="cursor:pointer;" data-title="≥2 Locais Clínicos no SNC" data-desc="Ex: Histórico de Neurite Óptica + Mielite Transversa. Preenche DIS clínica 100%!">
+        <rect x="212" y="0" width="198" height="32" fill="var(--fm2p8h-espaco-bg)" stroke="var(--fm2p8h-espaco-stroke)" rx="6"/>
+        <text x="311" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="var(--fm2p8h-espaco)">≥2 Locais no SNC ★</text>
+        <text x="311" y="27" text-anchor="middle" font-size="10" fill="var(--fm2p8h-espaco)">(DIS Clínica Cumprida)</text>
+      </g>
+    </g>
+
+    <!-- VERTICAL AXIS TITLE (TEMPO - DIT) [ROTATED] -->
+    <g transform="translate(25, 305) rotate(-90)">
+      <rect x="-140" y="-12" width="280" height="24" fill="var(--fm2p8h-tempo-bg)" stroke="var(--fm2p8h-tempo-stroke)" rx="6"/>
+      <text x="0" y="4" text-anchor="middle" class="fm2p8h-label-tempo">EIXO TEMPO (DIT): DISSEMINAÇÃO NO TEMPO</text>
+    </g>
+
+    <!-- VERTICAL AXIS SUB-HEADERS (SURTOS) -->
+    <!-- Row 1 Header (1 Surto) -->
+    <g transform="translate(50, 160)" id="fm2p8h-row1-hdr" class="fm2p8h-hs" style="cursor:pointer;" data-title="1 Surto Clínico" data-desc="Um único evento desmielinizante agudo (&gt;24h). Falta tempo (DIT) para diagnosticar EM só pela clínica.">
+      <rect x="0" y="0" width="102" height="118" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="6"/>
+      <text x="51" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--fm2p8h-ink-100)">1 Surto</text>
+      <text x="51" y="72" text-anchor="middle" font-size="10" fill="var(--fm2p8h-ink-50)">(Duração &gt;24h)</text>
+    </g>
+
+    <!-- Row 2 Header (≥2 Surtos) -->
+    <g transform="translate(50, 286)" id="fm2p8h-row2-hdr" class="fm2p8h-hs" style="cursor:pointer;" data-title="≥2 Surtos Clínicos Distintos" data-desc="Dois eventos agudos separados por pelo menos 30 dias de intervalo. Preenche DIT clínica 100%!">
+      <rect x="0" y="0" width="102" height="118" fill="var(--fm2p8h-tempo-bg)" stroke="var(--fm2p8h-tempo-stroke)" rx="6"/>
+      <text x="51" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--fm2p8h-tempo)">≥2 Surtos ★</text>
+      <text x="51" y="72" text-anchor="middle" font-size="10" fill="var(--fm2p8h-tempo)">(Intervalo ≥1 mês)</text>
+    </g>
+
+    <!-- ================================================================== -->
+    <!-- THE 2x2 MATRIX INTERACTIVE CELLS                                   -->
+    <!-- ================================================================== -->
+    
+    <!-- CELL (1,1): 1 SURTO x 1 LOCAL (CIS) -->
+    <g id="fm2p8h-cell-1-1" class="fm2p8h-hs" transform="translate(160, 160)" data-title="Matriz: 1 Surto + 1 Local (CIS)" data-desc="Síndrome Clinicamente Isolada. Faltam DIT e DIS. A clínica NÃO fecha EM. Indicação formal de RM encéfalo/medula.">
+      <rect width="198" height="118" class="fm2p8h-cell-box" id="fm2p8h-box-1-1" />
+      <text x="15" y="25" font-size="13" font-weight="700" fill="var(--fm2p8h-ink-100)">Célula [1,1]: CIS</text>
+      <text x="15" y="44" font-size="11" fill="var(--fm2p8h-ink-70)">• 1 Surto Clínico</text>
+      <text x="15" y="60" font-size="11" fill="var(--fm2p8h-ink-70)">• 1 Localização SNC</text>
+      
+      <rect x="15" y="74" width="168" height="28" fill="rgba(239, 68, 68, 0.12)" rx="4" />
+      <text x="99" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="var(--fm2p8h-red)">✖ Clínico Incompleto (CIS)</text>
+    </g>
+
+    <!-- CELL (1,2): 1 SURTO x ≥2 LOCAIS (FALTA TEMPO) -->
+    <g id="fm2p8h-cell-1-2" class="fm2p8h-hs" transform="translate(372, 160)" data-title="Matriz: 1 Surto + ≥2 Locais" data-desc="DIS cumprida pela clínica, mas FALTA DIT (tempo). A RM pode comprovar DIT (lesões com/sem Gd simultâneas) ou LCR (BOC).">
+      <rect width="198" height="118" class="fm2p8h-cell-box" id="fm2p8h-box-1-2" />
+      <text x="15" y="25" font-size="13" font-weight="700" fill="var(--fm2p8h-ink-100)">Célula [1,2]: Falta DIT</text>
+      <text x="15" y="44" font-size="11" fill="var(--fm2p8h-ink-70)">• 1 Surto (Falta Tempo)</text>
+      <text x="15" y="60" font-size="11" fill="var(--fm2p8h-espaco)">• ≥2 Locais (DIS OK ✓)</text>
+      
+      <rect x="15" y="74" width="168" height="28" fill="rgba(217, 119, 6, 0.12)" rx="4" />
+      <text x="99" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="var(--fm2p8h-amber)">⚠ RM busca DIT ou LCR</text>
+    </g>
+
+    <!-- CELL (2,1): ≥2 SURTOS x 1 LOCAL (FALTA ESPAÇO) -->
+    <g id="fm2p8h-cell-2-1" class="fm2p8h-hs" transform="translate(160, 286)" data-title="Matriz: ≥2 Surtos + 1 Local" data-desc="DIT cumprida pela clínica, mas FALTA DIS (espaço). A RM pode comprovar DIS demonstrando lesões T2 em ≥2 sítios anatômicos.">
+      <rect width="198" height="118" class="fm2p8h-cell-box" id="fm2p8h-box-2-1" />
+      <text x="15" y="25" font-size="13" font-weight="700" fill="var(--fm2p8h-ink-100)">Célula [2,1]: Falta DIS</text>
+      <text x="15" y="44" font-size="11" fill="var(--fm2p8h-tempo)">• ≥2 Surtos (DIT OK ✓)</text>
+      <text x="15" y="60" font-size="11" fill="var(--fm2p8h-ink-70)">• 1 Local (Falta Espaço)</text>
+      
+      <rect x="15" y="74" width="168" height="28" fill="rgba(217, 119, 6, 0.12)" rx="4" />
+      <text x="99" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="var(--fm2p8h-amber)">⚠ RM busca DIS (Sítios)</text>
+    </g>
+
+    <!-- CELL (2,2): ≥2 SURTOS x ≥2 LOCAIS (EM FECHADA) -->
+    <g id="fm2p8h-cell-2-2" class="fm2p8h-hs" transform="translate(372, 286)" data-title="Matriz: ≥2 Surtos + ≥2 Locais (Diagnóstico Fechado)" data-desc="DIT e DIS 100% cumpridas puramente pela história e exame físico! Diagnóstico de Esclerose Múltipla fechado sem depender da RM.">
+      <rect width="198" height="118" class="fm2p8h-cell-box" id="fm2p8h-box-2-2" />
+      <text x="15" y="25" font-size="13" font-weight="700" fill="var(--fm2p8h-check)">Célula [2,2]: EM Fechada!</text>
+      <text x="15" y="44" font-size="11" fill="var(--fm2p8h-tempo)">• ≥2 Surtos (DIT OK ✓)</text>
+      <text x="15" y="60" font-size="11" fill="var(--fm2p8h-espaco)">• ≥2 Locais (DIS OK ✓)</text>
+      
+      <rect x="15" y="74" width="168" height="28" fill="var(--fm2p8h-check-bg)" stroke="var(--fm2p8h-check-stroke)" rx="4" />
+      <text x="99" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="var(--fm2p8h-check)">★ DIAGNÓSTICO FECHADO</text>
+    </g>
+
+    <!-- MANDATORY CLINICAL CUTOFF TOGGLES -->
+    <g transform="translate(20, 415)">
+      <rect width="570" height="52" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="8" />
+      <text x="15" y="20" font-size="12" font-weight="700" fill="var(--fm2p8h-ink-100)">Regras de Ouro dos Cutoffs Clínicos (Não Negociáveis):</text>
+      
+      <!-- Cutoff 1: Duração >24h -->
+      <g id="fm2p8h-tg-cutoff24" class="fm2p8h-toggle active fm2p8h-hs" transform="translate(15, 26)" data-title="Cutoff: Duração do Surto &gt;24 Horas" data-desc="Para ser surto desmielinizante verdadeiro, o déficit focal deve durar mais de 24h na ausência de febre/infecção (que seria pseudo-surto).">
+        <rect width="28" height="16" class="fm2p8h-toggle-rect" />
+        <circle cx="8" cy="8" r="6" class="fm2p8h-toggle-circle" />
+        <text x="36" y="13" font-size="11" font-weight="600" fill="var(--fm2p8h-ink-70)">Surto dura &gt;24h (obrigatório)</text>
+      </g>
+
+      <!-- Cutoff 2: Intervalo >= 30 dias -->
+      <g id="fm2p8h-tg-cutoff30" class="fm2p8h-toggle active fm2p8h-hs" transform="translate(280, 26)" data-title="Cutoff: Intervalo entre Surtos ≥1 Mês (30 dias)" data-desc="Dois sintomas que surgem com menos de 30 dias de diferença são considerados manifestações de UM MESMO surto.">
+        <rect width="28" height="16" class="fm2p8h-toggle-rect" />
+        <circle cx="8" cy="8" r="6" class="fm2p8h-toggle-circle" />
+        <text x="36" y="13" font-size="11" font-weight="600" fill="var(--fm2p8h-ink-70)">Intervalo entre surtos ≥30 dias</text>
+      </g>
+    </g>
+
+    <!-- DYNAMIC DIAGNOSTIC INTERPRETATION PANEL -->
+    <g transform="translate(20, 477)">
+      <rect width="570" height="78" fill="var(--fm2p8h-check-bg)" stroke="var(--fm2p8h-check-stroke)" rx="8" id="fm2p8h-readout-bg" />
+      <text x="15" y="22" font-size="11" font-weight="700" fill="var(--fm2p8h-check)">LAUDO DE INTEGRAÇÃO CLÍNICA (INTERPRETAÇÃO DETERMINÍSTICA):</text>
+      <text x="15" y="44" font-size="12" font-weight="700" fill="var(--fm2p8h-ink-100)" id="fm2p8h-readout-title">
+        DIAGNÓSTICO CLINICAMENTE DEFINIDO DE ESCLEROSE MÚLTIPLA
+      </text>
+      <text x="15" y="63" font-size="11" fill="var(--fm2p8h-ink-70)" id="fm2p8h-readout-desc">
+        O paciente possui ≥2 surtos distintos (&gt;24h, sep &gt;30d) em ≥2 locais do SNC. A matriz tempo×espaço está fechada puramente pela clínica!
+      </text>
+    </g>
+  </g>
+
+  <!-- ==================================================================== -->
+  <!-- PAINEL 2: ECO DA IMAGEM E LCR (ZOOM / O QUE A RM FAZ) [DIREITA]       -->
+  <!-- ==================================================================== -->
+  <g transform="translate(655, 100)">
+    <!-- Panel Backdrop -->
+    <rect width="515" height="570" class="fm2p8h-card" />
+    
+    <!-- Panel Header -->
+    <text x="20" y="30" class="fm2p8h-section-head">PAINEL 2: ECO DA RM &amp; LCR (SUBCLÍNICO)</text>
+    <text x="320" y="30" font-size="11" fill="var(--fm2p8h-ink-50)">Suporte para Matriz Incompleta</text>
+    
+    <line x1="20" y1="42" x2="495" y2="42" stroke="var(--fm2p8h-panel-border)" stroke-width="1" />
+
+    <!-- SECTION A: RM COMPROVANDO DIS (ESPAÇO) -->
+    <g transform="translate(20, 52)">
+      <rect width="475" height="185" fill="var(--fm2p8h-espaco-bg)" stroke="var(--fm2p8h-espaco-stroke)" rx="8" />
+      <text x="15" y="22" font-size="12" font-weight="700" fill="var(--fm2p8h-espaco)">
+        1. Comprovação de DIS na RM (≥1 lesão T2 em ≥2 de 4 áreas)
+      </text>
+      <text x="15" y="38" font-size="10" fill="var(--fm2p8h-ink-70)">
+        Se a história clínica só tem 1 local, a RM demonstra lesões assintomáticas nas topografias típicas:
+      </text>
+
+      <!-- Grid of 4 CNS Topographies -->
+      <!-- Topography 1: Periventricular -->
+      <g id="fm2p8h-top-1" class="fm2p8h-hs" transform="translate(15, 48)" data-title="Topografia RM: Periventricular" data-desc="Lesões perpendiculares aos ventrículos laterais (dedos de Dawson). Muito característico de EM.">
+        <rect width="220" height="55" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="6" id="fm2p8h-topbox-1" />
+        <circle cx="24" cy="27" r="14" fill="var(--fm2p8h-espaco-bg)" stroke="var(--fm2p8h-espaco)" />
+        <text x="24" y="31" text-anchor="middle" font-size="11" font-weight="700" fill="var(--fm2p8h-espaco)">PV</text>
+        <text x="48" y="24" font-size="11" font-weight="700" fill="var(--fm2p8h-ink-100)">Periventricular</text>
+        <text x="48" y="40" font-size="10" fill="var(--fm2p8h-ink-50)">Dedos de Dawson em T2/FLAIR</text>
+      </g>
+
+      <!-- Topography 2: Cortical / Juxtacortical -->
+      <g id="fm2p8h-top-2" class="fm2p8h-hs" transform="translate(242, 48)" data-title="Topografia RM: Cortical / Juxtacortical" data-desc="Lesões em U que mechem com a substância cinzenta ou contíguas à substância branca subcortical.">
+        <rect width="220" height="55" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="6" id="fm2p8h-topbox-2" />
+        <circle cx="24" cy="27" r="14" fill="var(--fm2p8h-espaco-bg)" stroke="var(--fm2p8h-espaco)" />
+        <text x="24" y="31" text-anchor="middle" font-size="11" font-weight="700" fill="var(--fm2p8h-espaco)">JC</text>
+        <text x="48" y="24" font-size="11" font-weight="700" fill="var(--fm2p8h-ink-100)">Cortical / Juxtacortical</text>
+        <text x="48" y="40" font-size="10" fill="var(--fm2p8h-ink-50)">Fibras em U subcorticais</text>
+      </g>
+
+      <!-- Topography 3: Infratentorial -->
+      <g id="fm2p8h-top-3" class="fm2p8h-hs" transform="translate(15, 110)" data-title="Topografia RM: Infratentorial" data-desc="Lesões em Tronco Encefálico (ponte, bulbo, pedúnculo) ou Cerebelo.">
+        <rect width="220" height="55" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="6" id="fm2p8h-topbox-3" />
+        <circle cx="24" cy="27" r="14" fill="var(--fm2p8h-espaco-bg)" stroke="var(--fm2p8h-espaco)" />
+        <text x="24" y="31" text-anchor="middle" font-size="11" font-weight="700" fill="var(--fm2p8h-espaco)">IT</text>
+        <text x="48" y="24" font-size="11" font-weight="700" fill="var(--fm2p8h-ink-100)">Infratentorial</text>
+        <text x="48" y="40" font-size="10" fill="var(--fm2p8h-ink-50)">Ponte, pedúnculos, cerebelo</text>
+      </g>
+
+      <!-- Topography 4: Medula Espinhal -->
+      <g id="fm2p8h-top-4" class="fm2p8h-hs" transform="translate(242, 110)" data-title="Topografia RM: Medula Espinhal" data-desc="Lesões hiperintensas em T2, curtas (&lt;2 segmentos vertebrais), periféricas/dorsais.">
+        <rect width="220" height="55" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="6" id="fm2p8h-topbox-4" />
+        <circle cx="24" cy="27" r="14" fill="var(--fm2p8h-espaco-bg)" stroke="var(--fm2p8h-espaco)" />
+        <text x="24" y="31" text-anchor="middle" font-size="11" font-weight="700" fill="var(--fm2p8h-espaco)">ME</text>
+        <text x="48" y="24" font-size="11" font-weight="700" fill="var(--fm2p8h-ink-100)">Medula Espinhal</text>
+        <text x="48" y="40" font-size="10" fill="var(--fm2p8h-ink-50)">Lesões curtas (&lt;2 corpos vert)</text>
+      </g>
+
+      <!-- Toggle RM DIS -->
+      <g id="fm2p8h-tg-rmdis" class="fm2p8h-toggle fm2p8h-hs" transform="translate(15, 170)" data-title="Simular RM Comprovando DIS" data-desc="Clique para simular presença de lesões T2 assintomáticas em ≥2 destas topografias.">
+        <rect width="28" height="16" class="fm2p8h-toggle-rect" />
+        <circle cx="8" cy="8" r="6" class="fm2p8h-toggle-circle" />
+        <text x="36" y="13" font-size="11" font-weight="700" fill="var(--fm2p8h-espaco)">Simular RM Positiva para DIS (Suprime falta de espaço clínico)</text>
+      </g>
+    </g>
+
+    <!-- SECTION B: RM &amp; LCR COMPROVANDO DIT (TEMPO) -->
+    <g transform="translate(20, 247)">
+      <rect width="475" height="165" fill="var(--fm2p8h-tempo-bg)" stroke="var(--fm2p8h-tempo-stroke)" rx="8" />
+      <text x="15" y="22" font-size="12" font-weight="700" fill="var(--fm2p8h-tempo)">
+        2. Comprovação de DIT na RM ou no LCR (Disseminação no Tempo)
+      </text>
+
+      <!-- Subcard 1: RM DIT -->
+      <g transform="translate(15, 32)">
+        <rect width="445" height="42" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="6" />
+        <text x="12" y="18" font-size="11" font-weight="700" fill="var(--fm2p8h-ink-100)">• RM simultânea:</text>
+        <text x="100" y="18" font-size="10" fill="var(--fm2p8h-ink-70)">Lesão captante de Gadolínio (Gd+) + Lesão não-captante (T2)</text>
+        <text x="12" y="33" font-size="11" font-weight="700" fill="var(--fm2p8h-ink-100)">• RM evolutiva:</text>
+        <text x="100" y="33" font-size="10" fill="var(--fm2p8h-ink-70)">Nova lesão T2 em RM de seguimento comparada à baseline</text>
+      </g>
+
+      <!-- Toggle RM DIT -->
+      <g id="fm2p8h-tg-rmdit" class="fm2p8h-toggle fm2p8h-hs" transform="translate(15, 82)" data-title="Simular RM Comprovando DIT" data-desc="Clique para simular lesões com e sem contraste na mesma RM ou nova lesão em RM futura.">
+        <rect width="28" height="16" class="fm2p8h-toggle-rect" />
+        <circle cx="8" cy="8" r="6" class="fm2p8h-toggle-circle" />
+        <text x="36" y="13" font-size="11" font-weight="700" fill="var(--fm2p8h-tempo)">Simular RM Positiva para DIT (Gadolínio ou Nova T2)</text>
+      </g>
+
+      <!-- Subcard 2: LCR PEGADINHA (BOC) -->
+      <g id="fm2p8h-lcr-card" class="fm2p8h-hs" transform="translate(15, 108)" data-title="PEGADINHA DO LCR / BOC (McDonald 2017/2025)" data-desc="A presença de Bandas Oligoclonais (BOC) exclusivas no LCR substitui a DIT (tempo), mas JAMAIS substitui a DIS (espaço)!">
+        <rect width="445" height="46" fill="rgba(245, 158, 11, 0.1)" stroke="var(--fm2p8h-amber)" rx="6" />
+        <text x="12" y="18" font-size="11" font-weight="800" fill="var(--fm2p8h-amber)">★ PEGADINHA DE PROVA: LCR COM BANDAS OLIGOCLONAIS (BOC)</text>
+        <text x="12" y="34" font-size="10" fill="var(--fm2p8h-ink-100)">BOC no LCR substitui o TEMPO (DIT), mas <tspan font-weight="800" fill="var(--fm2p8h-red)">NUNCA PROVA ESPAÇO (DIS)</tspan>!</text>
+      </g>
+
+      <!-- Toggle LCR BOC -->
+      <g id="fm2p8h-tg-lcr" class="fm2p8h-toggle fm2p8h-hs" transform="translate(300, 126)" data-title="Simular LCR Positivo (BOC+)" data-desc="Clique para simular a presença de Bandas Oligoclonais no LCR (cumpre a cota de Tempo).">
+        <rect width="28" height="16" class="fm2p8h-toggle-rect" />
+        <circle cx="8" cy="8" r="6" class="fm2p8h-toggle-circle" />
+        <text x="36" y="13" font-size="11" font-weight="700" fill="var(--fm2p8h-amber)">Ativar LCR BOC+</text>
+      </g>
+    </g>
+
+    <!-- SECTION C: HONESTIDADE DE VERSÃO (MCDONALD 2017 VS 2025) -->
+    <g transform="translate(20, 422)" id="fm2p8h-version-box" class="fm2p8h-hs" data-title="Honestidade de Versão: McDonald 2017 vs 2025" data-desc="O PCDT SUS (Brasil) utiliza McDonald 2017. A revisão recente de 2025 refinou biomarcadores, mas o PILAR MESTRE DIT × DIS PERMANECE INALTERADO!">
+      <rect width="475" height="133" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="8" />
+      <text x="15" y="22" font-size="11" font-weight="700" fill="var(--fm2p8h-amber)">
+        NOTA DE VERSÃO: MCDONALD 2017 (PCDT SUS BR) vs REVISÃO 2025
+      </text>
+      <line x1="15" y1="28" x2="460" y2="28" stroke="var(--fm2p8h-panel-border)" stroke-width="1" />
+      
+      <text x="15" y="46" font-size="10" fill="var(--fm2p8h-ink-100)">
+        • <tspan font-weight="700">PCDT Brasil (SUS):</tspan> Ancorado officially nos Critérios McDonald 2017.
+      </text>
+      <text x="15" y="62" font-size="10" fill="var(--fm2p8h-ink-100)">
+        • <tspan font-weight="700">Atualização 2025:</tspan> Adiciona nervo óptico como 5ª localização de DIS e incorpora
+      </text>
+      <text x="23" y="76" font-size="10" fill="var(--fm2p8h-ink-100)">
+        Cadeias Leves Kappa (KFLC) no LCR para DIT.
+      </text>
+      <text x="15" y="96" font-size="11" font-weight="800" fill="var(--fm2p8h-check)">
+        ★ VETOR INVARIANTE: O eixo TEMPO × ESPAÇO continua sendo o coração
+      </text>
+      <text x="23" y="112" font-size="11" font-weight="800" fill="var(--fm2p8h-check)">
+        inabalável do raciocínio diagnóstico da Esclerose Múltipla.
+      </text>
+    </g>
+  </g>
+
+  <!-- ==================================================================== -->
+  <!-- FOOTER DIAGNOSTIC BAR AND STATUS SUMMARY                             -->
+  <!-- ==================================================================== -->
+  <g transform="translate(30, 680)">
+    <rect width="1140" height="75" fill="var(--fm2p8h-panel-bg)" stroke="var(--fm2p8h-panel-border)" rx="10" />
+    
+    <!-- Legend indicators -->
+    <g transform="translate(20, 15)">
+      <circle cx="8" cy="8" r="6" fill="var(--fm2p8h-tempo)" />
+      <text x="20" y="12" font-size="11" font-weight="700" fill="var(--fm2p8h-tempo)">DIT (Tempo): ≥2 Surtos | Gd+ | Nova T2 | LCR</text>
+
+      <circle cx="310" cy="8" r="6" fill="var(--fm2p8h-espaco)" />
+      <text x="322" y="12" font-size="11" font-weight="700" fill="var(--fm2p8h-espaco)">DIS (Espaço): ≥2 Locais | RM em ≥2 de 4 Sítios</text>
+
+      <circle cx="630" cy="8" r="6" fill="var(--fm2p8h-check)" />
+      <text x="642" y="12" font-size="11" font-weight="700" fill="var(--fm2p8h-check)">Diagnóstico: DIT + DIS Cumpridas Simultaneamente</text>
+    </g>
+
+    <line x1="20" y1="32" x2="1120" y2="32" stroke="var(--fm2p8h-panel-border)" stroke-width="1" />
+
+    <!-- Live Status Text -->
+    <g transform="translate(20, 52)">
+      <text x="0" y="0" font-size="12" font-weight="700" fill="var(--fm2p8h-ink-100)">Status Atual do Simulado:</text>
+      <text x="160" y="0" font-size="12" font-weight="700" fill="var(--fm2p8h-tempo)" id="fm2p8h-status-tempo">DIT: Cumprida (Clínica ★)</text>
+      <text x="380" y="0" font-size="12" font-weight="700" fill="var(--fm2p8h-espaco)" id="fm2p8h-status-espaco">DIS: Cumprida (Clínica ★)</text>
+      <text x="600" y="0" font-size="12" font-weight="800" fill="var(--fm2p8h-check)" id="fm2p8h-status-diag">CONDUTA: EM CLINICAMENTE DEFINIDA FECHADA</text>
+    </g>
+  </g>
+
+  <!-- ==================================================================== -->
+  <!-- TOOLTIP ENGINE (MOUSE-FOLLOW VIA CTM INVERSE)                        -->
+  <!-- ==================================================================== -->
+  <g id="fm2p8h-tooltip" transform="translate(-500, -500)" style="pointer-events: none; opacity: 0; transition: opacity 0.15s ease;">
+    <rect id="fm2p8h-tt-bg" x="0" y="0" width="260" height="60" class="fm2p8h-tooltip-box" />
+    <text id="fm2p8h-tt-title" x="12" y="20" class="fm2p8h-tooltip-title">Título Tooltip</text>
+    <text id="fm2p8h-tt-desc1" x="12" y="36" class="fm2p8h-tooltip-desc">Linha 1 da descrição detalhada.</text>
+    <text id="fm2p8h-tt-desc2" x="12" y="49" class="fm2p8h-tooltip-desc">Linha 2 da descrição detalhada.</text>
+  </g>
+
+  <!-- ==================================================================== -->
+  <!-- INLINE JAVASCRIPT ENGINE (STANDALONE + EMBEDDED DUAL-MODE)           -->
+  <!-- ==================================================================== -->
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function () {
+      'use strict';
+
+      // Application State
+      var state = {
+        activeTempo: 2,    // 1 or 2 surtos
+        activeEspaco: 2,   // 1 or 2 locais
+        cutoff24h: true,   // surto > 24h
+        cutoff30d: true,   // intervalo >= 30 dias
+        rmDIT: false,      // RM com Gd+ ou nova T2
+        rmDIS: false,      // RM com lesões T2 em >=2 dos 4 sítios
+        lcrBOC: false      // LCR com bandas oligoclonais
+      };
+
+      // DOM Elements Cache
+      var svgRoot = document.getElementById('fm2p8h-svg-root');
+      var tooltip = document.getElementById('fm2p8h-tooltip');
+      var ttTitle = document.getElementById('fm2p8h-tt-title');
+      var ttDesc1 = document.getElementById('fm2p8h-tt-desc1');
+      var ttDesc2 = document.getElementById('fm2p8h-tt-desc2');
+      var ttBg = document.getElementById('fm2p8h-tt-bg');
+
+      // Buttons
+      var btnCis = document.getElementById('fm2p8h-btn-cis');
+      var btnEspaco = document.getElementById('fm2p8h-btn-espaco');
+      var btnTempo = document.getElementById('fm2p8h-btn-tempo');
+      var btnEm = document.getElementById('fm2p8h-btn-em');
+
+      // Toggles
+      var tgCutoff24 = document.getElementById('fm2p8h-tg-cutoff24');
+      var tgCutoff30 = document.getElementById('fm2p8h-tg-cutoff30');
+      var tgRmDis = document.getElementById('fm2p8h-tg-rmdis');
+      var tgRmDit = document.getElementById('fm2p8h-tg-rmdit');
+      var tgLcr = document.getElementById('fm2p8h-tg-lcr');
+
+      // Cells
+      var cell11 = document.getElementById('fm2p8h-box-1-1');
+      var cell12 = document.getElementById('fm2p8h-box-1-2');
+      var cell21 = document.getElementById('fm2p8h-box-2-1');
+      var cell22 = document.getElementById('fm2p8h-box-2-2');
+
+      // Topography Boxes
+      var topbox1 = document.getElementById('fm2p8h-topbox-1');
+      var topbox2 = document.getElementById('fm2p8h-topbox-2');
+      var topbox3 = document.getElementById('fm2p8h-topbox-3');
+      var topbox4 = document.getElementById('fm2p8h-topbox-4');
+
+      // Readout Elements
+      var readoutBg = document.getElementById('fm2p8h-readout-bg');
+      var readoutTitle = document.getElementById('fm2p8h-readout-title');
+      var readoutDesc = document.getElementById('fm2p8h-readout-desc');
+
+      // Status Bar Elements
+      var statusTempo = document.getElementById('fm2p8h-status-tempo');
+      var statusEspaco = document.getElementById('fm2p8h-status-espaco');
+      var statusDiag = document.getElementById('fm2p8h-status-diag');
+
+      // Tooltip Mouse-Follow Engine
+      function setupTooltips() {
+        var hsElements = document.querySelectorAll('.fm2p8h-hs');
+        
+        for (var i = 0; i < hsElements.length; i++) {
+          (function (el) {
+            el.addEventListener('mouseenter', function (e) {
+              var title = el.getAttribute('data-title') || '';
+              var desc = el.getAttribute('data-desc') || '';
+              if (!title) return;
+
+              ttTitle.textContent = title;
+              
+              // Split long description into 2 lines
+              if (desc.length > 50) {
+                var mid = desc.lastIndexOf(' ', 50);
+                if (mid === -1) mid = 50;
+                ttDesc1.textContent = desc.substring(0, mid);
+                ttDesc2.textContent = desc.substring(mid + 1);
+              } else {
+                ttDesc1.textContent = desc;
+                ttDesc2.textContent = '';
+              }
+
+              tooltip.style.opacity = '1';
+              positionTooltip(e);
+            });
+
+            el.addEventListener('mousemove', function (e) {
+              positionTooltip(e);
+            });
+
+            el.addEventListener('mouseleave', function () {
+              tooltip.style.opacity = '0';
+              tooltip.setAttribute('transform', 'translate(-500, -500)');
+            });
+          })(hsElements[i]);
+        }
+      }
+
+      function positionTooltip(e) {
+        if (!svgRoot || !tooltip) return;
+        var pt = svgRoot.createSVGPoint();
+        pt.x = e.clientX;
+        pt.y = e.clientY;
+        var ctm = svgRoot.getScreenCTM();
+        if (!ctm) return;
+        var svgPt = pt.matrixTransform(ctm.inverse());
+        
+        var x = svgPt.x + 15;
+        var y = svgPt.y + 15;
+
+        // Keep inside viewBox bounds
+        if (x + 270 > 1180) x = svgPt.x - 275;
+        if (y + 65 > 760) y = svgPt.y - 65;
+
+        tooltip.setAttribute('transform', 'translate(' + x + ', ' + y + ')');
+      }
+
+      // State Calculation & UI Render Engine
+      function updateUI() {
+        // 1. Calculate Effective Tempo & Espaco
+        var tempoClinicoValido = (state.activeTempo === 2) && state.cutoff24h && state.cutoff30d;
+        var espacoClinicoValido = (state.activeEspaco === 2);
+
+        var tempoFinalValido = tempoClinicoValido || state.rmDIT || state.lcrBOC;
+        var espacoFinalValido = espacoClinicoValido || state.rmDIS;
+
+        // 2. Update Preset Buttons Active State
+        btnCis.classList.remove('active');
+        btnEspaco.classList.remove('active');
+        btnTempo.classList.remove('active');
+        btnEm.classList.remove('active');
+
+        if (state.activeTempo === 1 && state.activeEspaco === 1) btnCis.classList.add('active');
+        else if (state.activeTempo === 2 && state.activeEspaco === 1) btnEspaco.classList.add('active');
+        else if (state.activeTempo === 1 && state.activeEspaco === 2) btnTempo.classList.add('active');
+        else if (state.activeTempo === 2 && state.activeEspaco === 2) btnEm.classList.add('active');
+
+        // 3. Update Toggle Switch Visuals
+        updateToggle(tgCutoff24, state.cutoff24h);
+        updateToggle(tgCutoff30, state.cutoff30d);
+        updateToggle(tgRmDis, state.rmDIS);
+        updateToggle(tgRmDit, state.rmDIT);
+        updateToggle(tgLcr, state.lcrBOC);
+
+        // 4. Highlight Selected Matrix Cell
+        cell11.classList.remove('active');
+        cell12.classList.remove('active');
+        cell21.classList.remove('active');
+        cell22.classList.remove('active');
+
+        if (state.activeTempo === 1 && state.activeEspaco === 1) cell11.classList.add('active');
+        if (state.activeTempo === 1 && state.activeEspaco === 2) cell12.classList.add('active');
+        if (state.activeTempo === 2 && state.activeEspaco === 1) cell21.classList.add('active');
+        if (state.activeTempo === 2 && state.activeEspaco === 2) cell22.classList.add('active');
+
+        // 5. Update Topography Boxes when RM DIS is active
+        var topFill = state.rmDIS ? 'var(--fm2p8h-espaco-bg)' : 'var(--fm2p8h-panel-bg)';
+        var topStroke = state.rmDIS ? 'var(--fm2p8h-espaco)' : 'var(--fm2p8h-panel-border)';
+        topbox1.style.fill = topFill; topbox1.style.stroke = topStroke;
+        topbox2.style.fill = topFill; topbox2.style.stroke = topStroke;
+        topbox3.style.fill = topFill; topbox3.style.stroke = topStroke;
+        topbox4.style.fill = topFill; topbox4.style.stroke = topStroke;
+
+        // 6. Update Status Bar
+        if (tempoClinicoValido) {
+          statusTempo.textContent = 'DIT: Cumprida (Clínica ★)';
+          statusTempo.setAttribute('fill', 'var(--fm2p8h-tempo)');
+        } else if (state.rmDIT) {
+          statusTempo.textContent = 'DIT: Cumprida (RM Gd+/T2)';
+          statusTempo.setAttribute('fill', 'var(--fm2p8h-tempo)');
+        } else if (state.lcrBOC) {
+          statusTempo.textContent = 'DIT: Cumprida (LCR BOC+)';
+          statusTempo.setAttribute('fill', 'var(--fm2p8h-amber)');
+        } else {
+          statusTempo.textContent = 'DIT: Faltando (1 surto)';
+          statusTempo.setAttribute('fill', 'var(--fm2p8h-red)');
+        }
+
+        if (espacoClinicoValido) {
+          statusEspaco.textContent = 'DIS: Cumprida (Clínica ★)';
+          statusEspaco.setAttribute('fill', 'var(--fm2p8h-espaco)');
+        } else if (state.rmDIS) {
+          statusEspaco.textContent = 'DIS: Cumprida (RM ≥2 sítios)';
+          statusEspaco.setAttribute('fill', 'var(--fm2p8h-espaco)');
+        } else {
+          statusEspaco.textContent = 'DIS: Faltando (1 local)';
+          statusEspaco.setAttribute('fill', 'var(--fm2p8h-red)');
+        }
+
+        // 7. Update Interpretation Readout Panel & Final Diagnosis Status
+        if (!state.cutoff24h) {
+          readoutBg.style.fill = 'rgba(239, 68, 68, 0.15)';
+          readoutBg.style.stroke = 'var(--fm2p8h-red)';
+          readoutTitle.textContent = 'SINTOMA NENHUM PREENCHE CRITÉRIO DE SURTO (<24H)';
+          readoutTitle.setAttribute('fill', 'var(--fm2p8h-red)');
+          readoutDesc.textContent = 'Descartar mímicas (AIT, enxaqueca com aura) ou pseudo-surtos por infecção/febre (fenômeno de Uhthoff).';
+          statusDiag.textContent = 'CONDUTA: INVESTIGAR MÍMICAS / PSEUDO-SURTO';
+          statusDiag.setAttribute('fill', 'var(--fm2p8h-red)');
+          return;
+        }
+
+        if (state.activeTempo === 2 && !state.cutoff30d) {
+          readoutBg.style.fill = 'rgba(217, 119, 6, 0.15)';
+          readoutBg.style.stroke = 'var(--fm2p8h-amber)';
+          readoutTitle.textContent = 'INTERVALO <30 DIAS: CONSIDERADO UM ÚNICO SURTO!';
+          readoutTitle.setAttribute('fill', 'var(--fm2p8h-amber)');
+          readoutDesc.textContent = 'Eventos neurológicos com menos de 30 dias de diferença contam como manifestações do mesmo surto neurológico.';
+          statusDiag.textContent = 'CONDUTA: RECLASSIFICAR PARA 1 SURTO ÚNICO';
+          statusDiag.setAttribute('fill', 'var(--fm2p8h-amber)');
+          return;
+        }
+
+        if (tempoFinalValido && espacoFinalValido) {
+          readoutBg.style.fill = 'var(--fm2p8h-check-bg)';
+          readoutBg.style.stroke = 'var(--fm2p8h-check)';
+          
+          if (tempoClinicoValido && espacoClinicoValido) {
+            readoutTitle.textContent = 'EM CLINICAMENTE DEFINIDA (MATRIZ CLÍNICA 100% FECHADA)';
+            readoutTitle.setAttribute('fill', 'var(--fm2p8h-check)');
+            readoutDesc.textContent = '≥2 surtos (>24h, sep >30d) em ≥2 locais do SNC. Diagnóstico de Esclerose Múltipla estabelecido puramente pela história e exame físico!';
+            statusDiag.textContent = 'CONDUTA: DIAGNÓSTICO CLÍNICO DE EM FECHADO ★';
+          } else {
+            readoutTitle.textContent = 'DIAGNÓSTICO DE EM CONFIRMADO (CLÍNICA + RM / LCR)';
+            readoutTitle.setAttribute('fill', 'var(--fm2p8h-check)');
+            readoutDesc.textContent = 'A matriz clínica incompleta foi suprimida pelos achados de imagem (RM DIS/DIT) ou suporte liquórico (BOC no LCR).';
+            statusDiag.textContent = 'CONDUTA: DIAGNÓSTICO DE EM CONFIRMADO COM RM/LCR';
+          }
+          statusDiag.setAttribute('fill', 'var(--fm2p8h-check)');
+        } else if (tempoFinalValido && !espacoFinalValido) {
+          readoutBg.style.fill = 'rgba(99, 102, 241, 0.15)';
+          readoutBg.style.stroke = 'var(--fm2p8h-espaco)';
+          readoutTitle.textContent = 'DIT COMPROVADA, FALTANDO DISSEMINAÇÃO NO ESPAÇO (DIS)';
+          readoutTitle.setAttribute('fill', 'var(--fm2p8h-espaco)');
+          readoutDesc.textContent = 'Solicitar RM de encéfalo e medula espinhal para demonstrar lesões assintomáticas em ≥2 das 4 topografias típicas do SNC.';
+          statusDiag.textContent = 'CONDUTA: SOLICITAR RM PARA DEMONSTRAR DIS';
+          statusDiag.setAttribute('fill', 'var(--fm2p8h-espaco)');
+        } else if (!tempoFinalValido && espacoFinalValido) {
+          readoutBg.style.fill = 'rgba(20, 184, 166, 0.15)';
+          readoutBg.style.stroke = 'var(--fm2p8h-tempo)';
+          readoutTitle.textContent = 'DIS COMPROVADA, FALTANDO DISSEMINAÇÃO NO TEMPO (DIT)';
+          readoutTitle.setAttribute('fill', 'var(--fm2p8h-tempo)');
+          readoutDesc.textContent = 'Buscar lesões com e sem gadolínio simultâneas na RM inicial, aguardar nova lesão T2 em RM futura ou pesquisar BOC no LCR.';
+          statusDiag.textContent = 'CONDUTA: SOLICITAR RM COM GD / LCR PARA DIT';
+          statusDiag.setAttribute('fill', 'var(--fm2p8h-tempo)');
+        } else {
+          readoutBg.style.fill = 'rgba(239, 68, 68, 0.12)';
+          readoutBg.style.stroke = 'var(--fm2p8h-red)';
+          readoutTitle.textContent = 'SÍNDROME CLINICAMENTE ISOLADA (CIS) - EM INDEFINIDA';
+          readoutTitle.setAttribute('fill', 'var(--fm2p8h-red)');
+          readoutDesc.textContent = 'Faltam Tempo e Espaço. Paciente necessita de investigação neuroimagem completa (RM encéfalo+medula com contraste) e seguimento.';
+          statusDiag.textContent = 'CONDUTA: INVESTIGAR COM RM COMPLETA (CIS)';
+          statusDiag.setAttribute('fill', 'var(--fm2p8h-red)');
+        }
+      }
+
+      function updateToggle(el, active) {
+        if (!el) return;
+        if (active) el.classList.add('active');
+        else el.classList.remove('active');
+      }
+
+      // Event Listeners Setup
+      function setupEvents() {
+        // Preset Buttons
+        btnCis.addEventListener('click', function () {
+          state.activeTempo = 1; state.activeEspaco = 1;
+          updateUI();
+        });
+        btnEspaco.addEventListener('click', function () {
+          state.activeTempo = 2; state.activeEspaco = 1;
+          updateUI();
+        });
+        btnTempo.addEventListener('click', function () {
+          state.activeTempo = 1; state.activeEspaco = 2;
+          updateUI();
+        });
+        btnEm.addEventListener('click', function () {
+          state.activeTempo = 2; state.activeEspaco = 2;
+          updateUI();
+        });
+
+        // Cells
+        document.getElementById('fm2p8h-cell-1-1').addEventListener('click', function () {
+          state.activeTempo = 1; state.activeEspaco = 1; updateUI();
+        });
+        document.getElementById('fm2p8h-cell-1-2').addEventListener('click', function () {
+          state.activeTempo = 1; state.activeEspaco = 2; updateUI();
+        });
+        document.getElementById('fm2p8h-cell-2-1').addEventListener('click', function () {
+          state.activeTempo = 2; state.activeEspaco = 1; updateUI();
+        });
+        document.getElementById('fm2p8h-cell-2-2').addEventListener('click', function () {
+          state.activeTempo = 2; state.activeEspaco = 2; updateUI();
+        });
+
+        // Toggles
+        tgCutoff24.addEventListener('click', function () {
+          state.cutoff24h = !state.cutoff24h; updateUI();
+        });
+        tgCutoff30.addEventListener('click', function () {
+          state.cutoff30d = !state.cutoff30d; updateUI();
+        });
+        tgRmDis.addEventListener('click', function () {
+          state.rmDIS = !state.rmDIS; updateUI();
+        });
+        tgRmDit.addEventListener('click', function () {
+          state.rmDIT = !state.rmDIT; updateUI();
+        });
+        tgLcr.addEventListener('click', function () {
+          state.lcrBOC = !state.lcrBOC; updateUI();
+        });
+      }
+
+      // Initialize
+      setupTooltips();
+      setupEvents();
+      updateUI();
+    })();
+    /*]]>*/
+  </script>
+</svg>
+
+    </div>
+    <figcaption class="hero-figure__cap" id="p8-hero-titulo"><span class="fig__label" style="color:var(--fm2-indigo)">Herói</span>Matriz TEMPO × ESPAÇO: eixos “≥2 surtos; surto &gt;24 h; intervalo ≥1 mês” e “≥2 locais SNC”; quando ambos cheios = diagnóstico. Passe o mouse nos pontos.</figcaption>
+  </figure>
+
+  <div class="figura-ancorada figura-ancorada--rica">
+    <figure class="figura-ancorada__media">
+      <img src="media/B08-MS-Diagnose-Algorithmus-McDonald-Kriterien-2024-deutsch.jpg" alt="Algoritmo diagnóstico de McDonald 2024 com disseminação no tempo (DIT) e no espaço (DIS) em alemão." loading="lazy" decoding="async">
+      <figcaption class="figura-ancorada__legenda">Algoritmo McDonald 2024 (DIT/DIS) — disseminação no tempo e no espaço. “Zeitliche Dissemination” = tempo; “Läsionen in ≥2 ZNS-Regionen” = espaço.</figcaption>
+      <p class="figura-ancorada__fonte">NeuroimmuneStory · CC0 1.0 · <a href="https://commons.wikimedia.org/wiki/File:MS-Diagnose-Algorithmus-McDonald-Kriterien-2024-deutsch.jpg">Wikimedia Commons</a> · base: Montalban et al., Lancet Neurol. 2025</p>
+    </figure>
+    <div class="figura-ancorada__ancora">
+      <h4>Tempo e espaço no algoritmo</h4>
+      <p>O fluxograma oficial mostra DIT (tempo) e DIS (espaço) como os dois eixos. O PCDT BR ainda opera com McDonald 2017, mas o eixo tempo+espaço permanece o núcleo — é o que a prova cobra.</p>
+    </div>
+  </div>
+
+  <figure class="fig">
+    <div class="fig__frame fig__frame--svg">
+<svg class="fm2-inline-svg fm2p8-root" id="fm2p8-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="100%" height="100%" data-fm2p8-active="all" role="img" aria-label="Mini-Timeline do Exemplo Prático de Critérios de McDonald para Esclerose Múltipla">
+  <defs>
+    <!-- Styles -->
+    <style type="text/css">
+      /*<![CDATA[*/
+      .fm2p8-root {
+        --fm2p8-bg: #0b0f19;
+        --fm2p8-panel: #111827;
+        --fm2p8-panel-border: #1f293d;
+        --fm2p8-text-primary: #f8fafc;
+        --fm2p8-text-secondary: #94a3b8;
+        --fm2p8-text-muted: #64748b;
+        --fm2p8-teal: #14b8a6;
+        --fm2p8-teal-bg: rgba(20, 184, 166, 0.12);
+        --fm2p8-indigo: #6366f1;
+        --fm2p8-indigo-bg: rgba(99, 102, 241, 0.12);
+        --fm2p8-gold: #eab308;
+        --fm2p8-gold-bg: rgba(234, 179, 8, 0.15);
+        --fm2p8-gold-border: rgba(234, 179, 8, 0.4);
+        --fm2p8-red: #ef4444;
+        --fm2p8-green: #22c55e;
+        --fm2p8-shadow: rgba(0, 0, 0, 0.4);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      :root[data-theme="light"] .fm2p8-root, .fm2p8-root[data-theme="light"] {
+        --fm2p8-bg: #f8fafc;
+        --fm2p8-panel: #ffffff;
+        --fm2p8-panel-border: #e2e8f0;
+        --fm2p8-text-primary: #0f172a;
+        --fm2p8-text-secondary: #475569;
+        --fm2p8-text-muted: #64748b;
+        --fm2p8-teal: #0d9488;
+        --fm2p8-teal-bg: rgba(13, 148, 136, 0.1);
+        --fm2p8-indigo: #4f46e5;
+        --fm2p8-indigo-bg: rgba(79, 70, 229, 0.1);
+        --fm2p8-gold: #ca8a04;
+        --fm2p8-gold-bg: rgba(202, 138, 4, 0.12);
+        --fm2p8-gold-border: rgba(202, 138, 4, 0.4);
+        --fm2p8-red: #dc2626;
+        --fm2p8-green: #16a34a;
+        --fm2p8-shadow: rgba(0, 0, 0, 0.06);
+      }
+
+      /* Base Background */
+      #fm2p8-svg .fm2p8-bg-rect {
+        fill: var(--fm2p8-bg, #0b0f19);
+        transition: fill 0.3s ease;
+      }
+
+      /* Typography */
+      #fm2p8-svg .fm2p8-title-main {
+        font-size: 20px;
+        font-weight: 700;
+        fill: var(--fm2p8-text-primary, #f8fafc);
+      }
+      #fm2p8-svg .fm2p8-title-badge {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        fill: var(--fm2p8-teal, #14b8a6);
+      }
+      #fm2p8-svg .fm2p8-legend-box {
+        fill: var(--fm2p8-panel, #111827);
+        stroke: var(--fm2p8-panel-border, #1f293d);
+        stroke-width: 1px;
+        rx: 6px;
+      }
+      #fm2p8-svg .fm2p8-legend-text {
+        font-size: 12px;
+        font-weight: 500;
+        fill: var(--fm2p8-text-secondary, #94a3b8);
+      }
+
+      /* Panels & Cards */
+      #fm2p8-svg .fm2p8-card {
+        fill: var(--fm2p8-panel, #111827);
+        stroke: var(--fm2p8-panel-border, #1f293d);
+        stroke-width: 1.5px;
+        rx: 10px;
+        transition: all 0.3s ease;
+      }
+      #fm2p8-svg .fm2p8-card-header {
+        font-size: 14px;
+        font-weight: 700;
+        fill: var(--fm2p8-text-primary, #f8fafc);
+      }
+      #fm2p8-svg .fm2p8-card-desc {
+        font-size: 11.5px;
+        line-height: 1.4;
+        fill: var(--fm2p8-text-secondary, #94a3b8);
+      }
+      #fm2p8-svg .fm2p8-badge-check {
+        fill: var(--fm2p8-gold-bg, rgba(234, 179, 8, 0.15));
+        stroke: var(--fm2p8-gold-border, rgba(234, 179, 8, 0.4));
+        stroke-width: 1px;
+        rx: 12px;
+      }
+      #fm2p8-svg .fm2p8-badge-check-text {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--fm2p8-gold, #eab308);
+      }
+      #fm2p8-svg .fm2p8-pill {
+        fill: var(--fm2p8-teal-bg, rgba(20, 184, 166, 0.12));
+        stroke: var(--fm2p8-teal, #14b8a6);
+        stroke-width: 1px;
+        rx: 4px;
+      }
+      #fm2p8-svg .fm2p8-pill-text {
+        font-size: 10.5px;
+        font-weight: 600;
+        fill: var(--fm2p8-teal, #14b8a6);
+      }
+
+      /* Buttons & Controls */
+      #fm2p8-svg .fm2p8-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      #fm2p8-svg .fm2p8-btn-bg {
+        fill: var(--fm2p8-panel, #111827);
+        stroke: var(--fm2p8-panel-border, #1f293d);
+        stroke-width: 1.5px;
+        rx: 6px;
+      }
+      #fm2p8-svg .fm2p8-btn-text {
+        font-size: 12px;
+        font-weight: 600;
+        fill: var(--fm2p8-text-secondary, #94a3b8);
+        text-anchor: middle;
+        user-select: none;
+      }
+      #fm2p8-svg .fm2p8-btn:hover .fm2p8-btn-bg {
+        stroke: var(--fm2p8-teal, #14b8a6);
+        fill: var(--fm2p8-teal-bg, rgba(20, 184, 166, 0.12));
+      }
+      #fm2p8-svg .fm2p8-btn:hover .fm2p8-btn-text {
+        fill: var(--fm2p8-teal, #14b8a6);
+      }
+
+      /* Active States */
+      #fm2p8-svg[data-fm2p8-active="all"] #fm2p8-btn-all .fm2p8-btn-bg,
+      #fm2p8-svg[data-fm2p8-active="1"] #fm2p8-btn-ev1 .fm2p8-btn-bg,
+      #fm2p8-svg[data-fm2p8-active="2"] #fm2p8-btn-ev2 .fm2p8-btn-bg {
+        fill: var(--fm2p8-teal-bg, rgba(20, 184, 166, 0.12));
+        stroke: var(--fm2p8-teal, #14b8a6);
+        stroke-width: 2px;
+      }
+
+      #fm2p8-svg[data-fm2p8-active="all"] #fm2p8-btn-all .fm2p8-btn-text,
+      #fm2p8-svg[data-fm2p8-active="1"] #fm2p8-btn-ev1 .fm2p8-btn-text,
+      #fm2p8-svg[data-fm2p8-active="2"] #fm2p8-btn-ev2 .fm2p8-btn-text {
+        fill: var(--fm2p8-teal, #14b8a6);
+        font-weight: 700;
+      }
+
+      /* Event Filtering Opacity */
+      #fm2p8-svg[data-fm2p8-active="1"] .fm2p8-ev2-grp,
+      #fm2p8-svg[data-fm2p8-active="2"] .fm2p8-ev1-grp {
+        opacity: 0.35;
+        transition: opacity 0.3s ease;
+      }
+
+      #fm2p8-svg[data-fm2p8-active="1"] #fm2p8-card-dit,
+      #fm2p8-svg[data-fm2p8-active="2"] #fm2p8-card-dis {
+        stroke: var(--fm2p8-gold, #eab308);
+        stroke-width: 2px;
+      }
+
+      #fm2p8-svg[data-fm2p8-active="all"] #fm2p8-card-dit,
+      #fm2p8-svg[data-fm2p8-active="all"] #fm2p8-card-dis {
+        stroke: var(--fm2p8-gold, #eab308);
+        stroke-width: 1.5px;
+      }
+
+      /* Anatomy Schema */
+      #fm2p8-svg .fm2p8-cns-outline {
+        fill: none;
+        stroke: var(--fm2p8-text-muted, #64748b);
+        stroke-width: 1.5px;
+        stroke-dasharray: 4 4;
+      }
+      #fm2p8-svg .fm2p8-brain-shape {
+        fill: var(--fm2p8-panel-border, #1f293d);
+        stroke: var(--fm2p8-text-muted, #64748b);
+        stroke-width: 1.5px;
+        opacity: 0.6;
+      }
+      #fm2p8-svg .fm2p8-cord-shape {
+        fill: var(--fm2p8-panel-border, #1f293d);
+        stroke: var(--fm2p8-text-muted, #64748b);
+        stroke-width: 1.5px;
+        opacity: 0.6;
+      }
+
+      /* Event Nodes & Hotspots */
+      #fm2p8-svg .fm2p8-node-ev1 {
+        fill: var(--fm2p8-indigo, #6366f1);
+        stroke: #ffffff;
+        stroke-width: 2px;
+        cursor: pointer;
+      }
+      #fm2p8-svg .fm2p8-node-ev2 {
+        fill: var(--fm2p8-indigo, #6366f1);
+        stroke: #ffffff;
+        stroke-width: 2px;
+        cursor: pointer;
+      }
+      #fm2p8-svg .fm2p8-pulse-ring {
+        fill: none;
+        stroke: var(--fm2p8-indigo, #6366f1);
+        stroke-width: 1.5px;
+        opacity: 0.7;
+      }
+
+      /* Timeline Bar */
+      #fm2p8-svg .fm2p8-tl-line {
+        stroke: var(--fm2p8-teal, #14b8a6);
+        stroke-width: 3px;
+        stroke-linecap: round;
+      }
+      #fm2p8-svg .fm2p8-tl-bg-line {
+        stroke: var(--fm2p8-panel-border, #1f293d);
+        stroke-width: 3px;
+        stroke-linecap: round;
+      }
+      #fm2p8-svg .fm2p8-tl-bracket {
+        fill: none;
+        stroke: var(--fm2p8-gold, #eab308);
+        stroke-width: 1.5px;
+        stroke-dasharray: 3 3;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #fm2p8-svg * {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+      /*]]>*/
+    </style>
+
+    <!-- Gradients -->
+    <linearGradient id="fm2p8-grad-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--fm2p8-indigo, #6366f1)" />
+      <stop offset="100%" stop-color="var(--fm2p8-teal, #14b8a6)" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect class="fm2p8-bg-rect" id="fm2p8-bg-rect" x="0" y="0" width="960" height="560" rx="12" />
+
+  <!-- HEADER SECTION -->
+  <g id="fm2p8-header-grp" transform="translate(30, 20)">
+    <text class="fm2p8-title-badge" x="0" y="14">ESCLEROSE MÚLTIPLA · CRITÉRIOS DE MCDONALD</text>
+    <text class="fm2p8-title-main" x="0" y="38">Exemplo Prático: Mini-Timeline "Há 4 meses" vs "Hoje"</text>
+
+    <!-- Interpretation Banner -->
+    <g transform="translate(0, 48)">
+      <rect class="fm2p8-legend-box" x="0" y="0" width="900" height="34" />
+      <circle cx="15" cy="17" r="4" fill="var(--fm2p8-gold, #eab308)" />
+      <text class="fm2p8-legend-text" x="28" y="21">
+        <tspan font-weight="700" fill="var(--fm2p8-text-primary, #f8fafc)">Conclusão Diagnóstica:</tspan>
+        Dois surtos clínicos em momentos distintos (4 meses) e topografias SNC diferentes preenchem
+        <tspan font-weight="700" fill="var(--fm2p8-gold, #eab308)">DIT (Tempo)</tspan> e
+        <tspan font-weight="700" fill="var(--fm2p8-gold, #eab308)">DIS (Espaço)</tspan> sem necessidade de tabela complexa.
+      </text>
+    </g>
+  </g>
+
+  <!-- MAIN CONTENT GRID -->
+  <!-- LEFT COLUMN: Anatomy & Timeline (X: 30..520) -->
+  <g id="fm2p8-left-col" transform="translate(30, 115)">
+    <!-- Sub-card: CNS Anatomy & Topography Visual -->
+    <rect class="fm2p8-card" x="0" y="0" width="490" height="235" />
+    <text class="fm2p8-card-header" x="18" y="28">Acometimento Topográfico no SNC</text>
+    <text class="fm2p8-card-desc" x="18" y="46">Mapeamento anatômico dos dois eventos clínicos distintos</text>
+
+    <!-- CNS Anatomy Diagram (Schematic) -->
+    <g transform="translate(40, 60)" id="fm2p8-anatomy-schematic">
+      <!-- Brain Silhouette -->
+      <path class="fm2p8-brain-shape" d="M 120,40 C 100,10 160,0 200,10 C 240,0 300,10 290,40 C 310,60 300,90 270,100 C 250,110 220,100 200,105 C 180,100 150,110 130,100 C 100,90 90,60 120,40 Z" />
+      <!-- Brainstem & Spinal Cord -->
+      <path class="fm2p8-cord-shape" d="M 190,105 L 210,105 L 208,160 L 192,160 Z" />
+
+      <!-- Optic Nerve schematic (Left side) -->
+      <path class="fm2p8-cns-outline" d="M 150,65 L 90,65 C 80,65 75,70 70,80" />
+      <circle cx="70" cy="80" r="10" fill="none" stroke="var(--fm2p8-text-muted, #64748b)" stroke-width="1.5" />
+      <text x="60" y="105" font-size="10" font-weight="600" fill="var(--fm2p8-text-muted, #64748b)">Olho E</text>
+
+      <!-- Event 1 Highlight: Optic Nerve (Neuritis) -->
+      <g class="fm2p8-ev1-grp" id="fm2p8-ev1-cns-target">
+        <circle class="fm2p8-pulse-ring" cx="110" cy="65" r="16" />
+        <circle class="fm2p8-node-ev1" cx="110" cy="65" r="8" />
+        <!-- Pointer & Label -->
+        <path d="M 110,65 L 60,35" stroke="var(--fm2p8-indigo, #6366f1)" stroke-width="1.5" stroke-dasharray="2 2" />
+        <rect x="5" y="15" width="115" height="28" rx="4" fill="var(--fm2p8-indigo-bg, rgba(99, 102, 241, 0.12))" stroke="var(--fm2p8-indigo, #6366f1)" stroke-width="1" />
+        <text x="12" y="28" font-size="10.5" font-weight="700" fill="var(--fm2p8-indigo, #6366f1)">1. Neurite Óptica E</text>
+        <text x="12" y="38" font-size="9.5" fill="var(--fm2p8-text-secondary, #94a3b8)">Topografia: N. Óptico</text>
+      </g>
+
+      <!-- Event 2 Highlight: Spinal Cord (Myelitis) -->
+      <g class="fm2p8-ev2-grp" id="fm2p8-ev2-cns-target">
+        <circle class="fm2p8-pulse-ring" cx="200" cy="140" r="16" />
+        <circle class="fm2p8-node-ev2" cx="200" cy="140" r="8" opacity="1" />
+        <!-- Pointer & Label -->
+        <path d="M 200,140 L 260,140" stroke="var(--fm2p8-indigo, #6366f1)" stroke-width="1.5" stroke-dasharray="2 2" />
+        <rect x="265" y="125" width="135" height="28" rx="4" fill="var(--fm2p8-indigo-bg, rgba(99, 102, 241, 0.12))" stroke="var(--fm2p8-indigo, #6366f1)" stroke-width="1" />
+        <text x="272" y="138" font-size="10.5" font-weight="700" fill="var(--fm2p8-indigo, #6366f1)">2. Mielite Transversa</text>
+        <text x="272" y="148" font-size="9.5" fill="var(--fm2p8-text-secondary, #94a3b8)">Topografia: Médula Torácica</text>
+      </g>
+    </g>
+
+    <!-- Sub-card: Interactive Timeline (Y: 250..425) -->
+    <rect class="fm2p8-card" x="0" y="250" width="490" height="175" />
+
+    <!-- Timeline Axis Graphic -->
+    <g transform="translate(30, 270)" id="fm2p8-timeline-graphic">
+      <text class="fm2p8-card-header" x="0" y="0">Evolução Temporal dos Surtos</text>
+
+      <!-- Background Line -->
+      <line class="fm2p8-tl-bg-line" x1="40" y1="55" x2="390" y2="55" />
+      <!-- Active Gradient Line -->
+      <line class="fm2p8-tl-line" x1="40" y1="55" x2="390" y2="55" stroke="url(#fm2p8-grad-teal)" />
+
+      <!-- Interval Bracket (Gold) -->
+      <path class="fm2p8-tl-bracket" d="M 40,75 L 40,85 L 390,85 L 390,75" />
+      <rect x="145" y="74" width="140" height="22" rx="11" fill="var(--fm2p8-gold-bg, rgba(234, 179, 8, 0.15))" stroke="var(--fm2p8-gold, #eab308)" stroke-width="1" />
+      <text x="215" y="89" font-size="10.5" font-weight="700" fill="var(--fm2p8-gold, #eab308)" text-anchor="middle">Intervalo = 4 meses (≥1m)</text>
+
+      <!-- Event 1 Timeline Node -->
+      <g class="fm2p8-ev1-grp fm2p8-btn" id="fm2p8-node-tl-ev1" transform="translate(40, 55)" role="button" aria-label="Ver Evento 1: Há 4 meses">
+        <circle cx="0" cy="0" r="14" fill="var(--fm2p8-panel, #111827)" stroke="var(--fm2p8-indigo, #6366f1)" stroke-width="2" />
+        <circle cx="0" cy="0" r="6" fill="var(--fm2p8-indigo, #6366f1)" />
+        <text x="0" y="-22" font-size="12" font-weight="700" fill="var(--fm2p8-text-primary, #f8fafc)" text-anchor="middle">Há ~4 meses</text>
+        <text x="0" y="-38" font-size="10" font-weight="600" fill="var(--fm2p8-indigo, #6366f1)" text-anchor="middle">1º SURTO</text>
+        <text x="0" y="24" font-size="10" font-weight="600" fill="var(--fm2p8-text-muted, #64748b)" text-anchor="middle">Duração &gt; 24h</text>
+      </g>
+
+      <!-- Event 2 Timeline Node -->
+      <g class="fm2p8-ev2-grp fm2p8-btn" id="fm2p8-node-tl-ev2" transform="translate(390, 55)" role="button" aria-label="Ver Evento 2: Hoje">
+        <circle cx="0" cy="0" r="14" fill="var(--fm2p8-panel, #111827)" stroke="var(--fm2p8-indigo, #6366f1)" stroke-width="2" />
+        <circle cx="0" cy="0" r="6" fill="var(--fm2p8-indigo, #6366f1)" />
+        <text x="0" y="-22" font-size="12" font-weight="700" fill="var(--fm2p8-text-primary, #f8fafc)" text-anchor="middle">Hoje</text>
+        <text x="0" y="-38" font-size="10" font-weight="600" fill="var(--fm2p8-indigo, #6366f1)" text-anchor="middle">2º SURTO</text>
+        <text x="0" y="24" font-size="10" font-weight="600" fill="var(--fm2p8-text-muted, #64748b)" text-anchor="middle">Duração &gt; 24h</text>
+      </g>
+    </g>
+
+    <!-- Interactive Mode Toggles -->
+    <g transform="translate(18, 385)" id="fm2p8-controls-grp">
+      <!-- Button All -->
+      <g class="fm2p8-btn" id="fm2p8-btn-all" role="button" aria-label="Mostrar Visão Completa">
+        <rect class="fm2p8-btn-bg" x="0" y="0" width="140" height="28" />
+        <text class="fm2p8-btn-text" x="70" y="18">Visão Completa</text>
+      </g>
+      <!-- Button Event 1 -->
+      <g class="fm2p8-btn" id="fm2p8-btn-ev1" transform="translate(152, 0)" role="button" aria-label="Focar Evento 1">
+        <rect class="fm2p8-btn-bg" x="0" y="0" width="145" height="28" />
+        <text class="fm2p8-btn-text" x="72.5" y="18">1º Surto (Há 4m)</text>
+      </g>
+      <!-- Button Event 2 -->
+      <g class="fm2p8-btn" id="fm2p8-btn-ev2" transform="translate(309, 0)" role="button" aria-label="Focar Evento 2">
+        <rect class="fm2p8-btn-bg" x="0" y="0" width="145" height="28" />
+        <text class="fm2p8-btn-text" x="72.5" y="18">2º Surto (Hoje)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: Diagnostic Reading Cards & Checks (X: 540..930) -->
+  <g id="fm2p8-right-col" transform="translate(540, 115)">
+    <!-- CARD 1: Disseminação no Tempo (DIT) -->
+    <g id="fm2p8-card-dit-grp">
+      <rect class="fm2p8-card" id="fm2p8-card-dit" x="0" y="0" width="390" height="130" />
+
+      <!-- Check Badge -->
+      <g transform="translate(240, 14)">
+        <rect class="fm2p8-badge-check" x="0" y="0" width="135" height="24" />
+        <text class="fm2p8-badge-check-text" x="67.5" y="16" text-anchor="middle">✓ CHECK TEMPO (DIT)</text>
+      </g>
+
+      <text class="fm2p8-card-header" x="18" y="30">Disseminação no Tempo</text>
+
+      <text class="fm2p8-card-desc" x="18" y="52">
+        <tspan x="18" dy="0">Dois surtos clínicos com intervalo de 4 meses.</tspan>
+        <tspan x="18" dy="16">Exigência legal McDonald: <tspan font-weight="700" fill="var(--fm2p8-teal, #14b8a6)">≥ 1 mês entre eventos</tspan>.</tspan>
+        <tspan x="18" dy="16">Ambos os surtos com duração caracteristicamente <tspan font-weight="700" fill="var(--fm2p8-text-primary, #f8fafc)">&gt; 24h</tspan>.</tspan>
+      </text>
+
+      <!-- Metric Pills -->
+      <g transform="translate(18, 96)">
+        <rect class="fm2p8-pill" x="0" y="0" width="150" height="20" />
+        <text class="fm2p8-pill-text" x="75" y="14" text-anchor="middle">Intervalo: 4m (≥ 1m ✓)</text>
+
+        <rect class="fm2p8-pill" x="160" y="0" width="130" height="20" />
+        <text class="fm2p8-pill-text" x="225" y="14" text-anchor="middle">Duração: &gt; 24h ✓</text>
+      </g>
+    </g>
+
+    <!-- CARD 2: Disseminação no Espaço (DIS) -->
+    <g id="fm2p8-card-dis-grp" transform="translate(0, 145)">
+      <rect class="fm2p8-card" id="fm2p8-card-dis" x="0" y="0" width="390" height="130" />
+
+      <!-- Check Badge -->
+      <g transform="translate(235, 14)">
+        <rect class="fm2p8-badge-check" x="0" y="0" width="140" height="24" />
+        <text class="fm2p8-badge-check-text" x="70" y="16" text-anchor="middle">✓ CHECK ESPAÇO (DIS)</text>
+      </g>
+
+      <text class="fm2p8-card-header" x="18" y="30">Disseminação no Espaço</text>
+
+      <text class="fm2p8-card-desc" x="18" y="52">
+        <tspan x="18" dy="0">Surtos comprometendo áreas anatômicas distintas:</tspan>
+        <tspan x="18" dy="16">1. <tspan font-weight="700" fill="var(--fm2p8-indigo, #6366f1)">Nervo Óptico E</tspan> (Neurite Óptica E)</tspan>
+        <tspan x="18" dy="16">2. <tspan font-weight="700" fill="var(--fm2p8-indigo, #6366f1)">Médula Espinhal Torácica</tspan> (Mielite Transversa)</tspan>
+      </text>
+
+      <!-- Metric Pills -->
+      <g transform="translate(18, 96)">
+        <rect class="fm2p8-pill" x="0" y="0" width="165" height="20" />
+        <text class="fm2p8-pill-text" x="82.5" y="14" text-anchor="middle">Local 1: Nervo Óptico</text>
+
+        <rect class="fm2p8-pill" x="175" y="0" width="165" height="20" />
+        <text class="fm2p8-pill-text" x="257.5" y="14" text-anchor="middle">Local 2: Médula Espinhal</text>
+      </g>
+    </g>
+
+    <!-- CARD 3: Diagnóstico Final McDonald -->
+    <g id="fm2p8-card-diag-grp" transform="translate(0, 290)">
+      <rect class="fm2p8-card" id="fm2p8-card-diag" x="0" y="0" width="390" height="135" stroke="var(--fm2p8-teal, #14b8a6)" />
+
+      <!-- Status Header -->
+      <rect x="18" y="14" width="170" height="22" rx="4" fill="var(--fm2p8-teal-bg, rgba(20, 184, 166, 0.12))" stroke="var(--fm2p8-teal, #14b8a6)" stroke-width="1" />
+      <text x="103" y="29" font-size="10.5" font-weight="700" fill="var(--fm2p8-teal, #14b8a6)" text-anchor="middle">DIAGNÓSTICO CLINICO</text>
+
+      <text class="fm2p8-card-header" x="18" y="55">Esclerose Múltipla Definitiva</text>
+
+      <text class="fm2p8-card-desc" x="18" y="74">
+        <tspan x="18" dy="0">Preenchimento inequívoco dos critérios de McDonald</tspan>
+        <tspan x="18" dy="16">apenas pela apresentação clínica (2 surtos + 2 locais).</tspan>
+        <tspan x="18" dy="16" font-weight="600" fill="var(--fm2p8-gold, #eab308)">Não requer exames adicionais para fechar diagnóstico.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- FOOTER & AFFORDANCE -->
+  <g transform="translate(30, 542)">
+    <text font-size="11" font-weight="500" fill="var(--fm2p8-text-muted, #64748b)">
+      Interação: Toque ou clique nos botões ou nos nós da linha do tempo para alternar o foco dos surtos.
+    </text>
+    <!-- Color Legend -->
+    <g transform="translate(680, -10)">
+      <circle cx="0" cy="6" r="4" fill="var(--fm2p8-teal, #14b8a6)" />
+      <text x="10" y="9" font-size="10.5" fill="var(--fm2p8-text-secondary, #94a3b8)">Timeline</text>
+
+      <circle cx="75" cy="6" r="4" fill="var(--fm2p8-indigo, #6366f1)" />
+      <text x="85" y="9" font-size="10.5" fill="var(--fm2p8-text-secondary, #94a3b8)">Surtos</text>
+
+      <circle cx="135" cy="6" r="4" fill="var(--fm2p8-gold, #eab308)" />
+      <text x="145" y="9" font-size="10.5" fill="var(--fm2p8-text-secondary, #94a3b8)">Checks</text>
+    </g>
+  </g>
+
+  <!-- INLINE INTERACTIVE JAVASCRIPT -->
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function() {
+      var svg = document.getElementById('fm2p8-svg');
+      if (!svg) return;
+
+      function setActive(mode) {
+        svg.setAttribute('data-fm2p8-active', mode);
+      }
+
+      var btnAll = document.getElementById('fm2p8-btn-all');
+      var btnEv1 = document.getElementById('fm2p8-btn-ev1');
+      var btnEv2 = document.getElementById('fm2p8-btn-ev2');
+      var nodeEv1 = document.getElementById('fm2p8-node-tl-ev1');
+      var nodeEv2 = document.getElementById('fm2p8-node-tl-ev2');
+
+      if (btnAll) btnAll.addEventListener('click', function() { setActive('all'); });
+      if (btnEv1) btnEv1.addEventListener('click', function() { setActive('1'); });
+      if (btnEv2) btnEv2.addEventListener('click', function() { setActive('2'); });
+      if (nodeEv1) nodeEv1.addEventListener('click', function() { setActive('1'); });
+      if (nodeEv2) nodeEv2.addEventListener('click', function() { setActive('2'); });
+    })();
+    /*]]>*/
+  </script>
+</svg>
+
+    </div>
+    <figcaption class="fig__cap"><span class="fig__label">Piso</span>Mini-timeline “hoje / 4 meses” com checks de tempo e espaço preenchidos.</figcaption>
+  </figure>
+
+  <div class="continuity" aria-label="Continuidade">
+    <p>A clínica motiva; a <strong>RM</strong> confirma.</p>
+  </div>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p8-q1" aria-labelledby="p8-q1-enun">
+    <h3>Quiz</h3>
+    <p class="quiz__enun" id="p8-q1-enun"><b>Q1.</b> Disseminação no <strong>tempo</strong> exige, no núcleo de prova:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Uma única crise de 2 horas</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>≥2 surtos em momentos diferentes (surto &gt;24 h; intervalo ≥1 mês)</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Só uma lesão na RM</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Sempre biópsia</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> Tempo = ≥2 surtos, cada um &gt;24 h, com intervalo ≥1 mês entre eles.</p>
+      <p><b>(A)</b> 2 horas não é surto. <b>(C)</b> uma lesão é espaço, não tempo. <b>(D)</b> não há biópsia na EM.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p8-q2" aria-labelledby="p8-q2-enun">
+    <p class="quiz__enun" id="p8-q2-enun"><b>Q2.</b> Disseminação no <strong>espaço</strong>:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Só pode ser preenchida em surtos diferentes</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>≥2 locais no SNC — no mesmo surto ou ao longo do tempo</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Só no SNP</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Só com LCR</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> Espaço = ≥2 locais no SNC — pode ser no mesmo surto (duas lesões) ou em surtos diferentes.</p>
+      <p><b>(A)</b> pode ser no mesmo surto. <b>(C)</b> EM é SNC, não SNP. <b>(D)</b> LCR não prova espaço.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p8-q3" aria-labelledby="p8-q3-enun">
+    <p class="quiz__enun" id="p8-q3-enun"><b>Q3.</b> Surto, por definição operacional desta fonte:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Qualquer formigamento de minutos</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>Dura mais de 24 horas</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Exige sempre plasmaférese</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>É sinônimo de Uhthoff</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> Surto dura <strong>mais de 24 horas</strong>.</p>
+      <p><b>(A)</b> minutos não é surto. <b>(C)</b> plasmaférese é alternativa, não definição. <b>(D)</b> Uhthoff é piora térmica, não surto.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p7.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Surto-remissão vs 15% progressiva</span></a><a class="next" href="p9.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">RM obrigatória: prova o que a clínica suspeita</span></a></nav>
+</div>
+</main>
+<footer class="rodape">Esclerose múltipla · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm2.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Esclerose múltipla · 12 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="index.html">1. Jaqueline: dois surtos, visão e motor</a></li>
+      <li><a class="menu-panel__link" href="p2.html">2. Espástica = 1º NMS — e o nome da doença</a></li>
+      <li><a class="menu-panel__link" href="p3.html">3. O que é EM: quatro âncoras</a></li>
+      <li><a class="menu-panel__link" href="p4.html">4. Por que o quadro é múltiplo: a mielina</a></li>
+      <li><a class="menu-panel__link" href="p5.html">5. Neurite óptica: o II par é SNC</a></li>
+      <li><a class="menu-panel__link" href="p6.html">6. As três de prova + Uhthoff</a></li>
+      <li><a class="menu-panel__link" href="p7.html">7. Surto-remissão vs 15% progressiva</a></li>
+      <li><a class="menu-panel__link is-current" href="p8.html">8. McDonald: tempo e espaço</a></li>
+      <li><a class="menu-panel__link" href="p9.html">9. RM obrigatória: prova o que a clínica suspeita</a></li>
+      <li><a class="menu-panel__link" href="p10.html">10. LCR e a pegadinha do conversivo</a></li>
+      <li><a class="menu-panel__link" href="p11.html">11. Vignette 25 a: por que é EM</a></li>
+      <li><a class="menu-panel__link" href="p12.html">12. Surto, sequela e PCDT SUS</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

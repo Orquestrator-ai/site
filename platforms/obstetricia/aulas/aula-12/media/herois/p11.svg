@@ -1,0 +1,546 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" id="a12p11h-svg-root" class="a12p11h-root" aria-label="Ilustração Interativa de Pelvimetria Obstétrica e Conjugatas da Bacia">
+  <defs>
+    <!-- Gradientes da Paleta Rosa-Vinho Premium -->
+    <linearGradient id="a12p11h-grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p11h-bg-start, #180914)"/>
+      <stop offset="50%" stop-color="var(--a12p11h-bg-mid, #230c1d)"/>
+      <stop offset="100%" stop-color="var(--a12p11h-bg-end, #140610)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p11h-grad-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p11h-card-top, rgba(55, 18, 44, 0.75))"/>
+      <stop offset="100%" stop-color="var(--a12p11h-card-bot, rgba(32, 10, 25, 0.85))"/>
+    </linearGradient>
+
+    <linearGradient id="a12p11h-grad-bone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p11h-bone-1, #6b284f)"/>
+      <stop offset="50%" stop-color="var(--a12p11h-bone-2, #4a1936)"/>
+      <stop offset="100%" stop-color="var(--a12p11h-bone-3, #2d0d20)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p11h-grad-pubis" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p11h-pub-1, #8a3467)"/>
+      <stop offset="100%" stop-color="var(--a12p11h-pub-2, #471534)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p11h-grad-hand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p11h-hnd-1, #d977a8)"/>
+      <stop offset="100%" stop-color="var(--a12p11h-hnd-2, #8c3b68)"/>
+    </linearGradient>
+
+    <!-- Filtros de Brilho Dinâmico -->
+    <filter id="a12p11h-glow-obs" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="a12p11h-glow-diag" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Estilos CSS Tokenizados com Fallbacks Hex e Suporte a Tema Claro -->
+    <style>
+      .a12p11h-root {
+        --a12p11h-bg-start: #160813;
+        --a12p11h-bg-mid: #220b1c;
+        --a12p11h-bg-end: #12050f;
+        --a12p11h-card-top: rgba(52, 17, 42, 0.82);
+        --a12p11h-card-bot: rgba(28, 8, 22, 0.92);
+        --a12p11h-border: #632148;
+        --a12p11h-txt-title: #fce7f3;
+        --a12p11h-txt-body: #f3c4dd;
+        --a12p11h-txt-muted: #b87b9c;
+        
+        --a12p11h-c-anat: #ec4899;
+        --a12p11h-c-obs: #10b981;
+        --a12p11h-c-diag: #f59e0b;
+        --a12p11h-c-alert: #ef4444;
+        --a12p11h-c-accent: #d946ef;
+        
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        user-select: none;
+      }
+
+      /* Tema Claro via data-theme="light" */
+      [data-theme="light"] .a12p11h-root,
+      .a12p11h-root[data-theme="light"] {
+        --a12p11h-bg-start: #fcf4f7;
+        --a12p11h-bg-mid: #f7e8ef;
+        --a12p11h-bg-end: #efe0e7;
+        --a12p11h-card-top: rgba(255, 255, 255, 0.92);
+        --a12p11h-card-bot: rgba(248, 233, 240, 0.95);
+        --a12p11h-border: #d9aabf;
+        --a12p11h-txt-title: #3b0927;
+        --a12p11h-txt-body: #59193e;
+        --a12p11h-txt-muted: #8c4c70;
+        
+        --a12p11h-c-anat: #db2777;
+        --a12p11h-c-obs: #059669;
+        --a12p11h-c-diag: #d97706;
+        --a12p11h-c-alert: #dc2626;
+      }
+
+      .a12p11h-bg-rect { fill: url(#a12p11h-grad-bg); }
+      .a12p11h-card-bg { fill: url(#a12p11h-grad-card); stroke: var(--a12p11h-border, #632148); stroke-width: 1.25px; rx: 12px; }
+      
+      .a12p11h-title-main { fill: var(--a12p11h-txt-title, #fce7f3); font-size: 20px; font-weight: 800; letter-spacing: 0.5px; }
+      .a12p11h-subtitle { fill: var(--a12p11h-txt-muted, #b87b9c); font-size: 13px; font-weight: 500; }
+      .a12p11h-card-header { fill: var(--a12p11h-txt-title, #fce7f3); font-size: 13px; font-weight: 700; letter-spacing: 0.4px; }
+      
+      /* Linhas Anatômicas */
+      .a12p11h-line-base { stroke-linecap: round; transition: all 0.3s ease; }
+      .a12p11h-line-anat { stroke: var(--a12p11h-c-anat, #ec4899); stroke-width: 2.5px; stroke-dasharray: 6 4; }
+      .a12p11h-line-obs { stroke: var(--a12p11h-c-obs, #10b981); stroke-width: 4px; filter: url(#a12p11h-glow-obs); }
+      .a12p11h-line-diag { stroke: var(--a12p11h-c-diag, #f59e0b); stroke-width: 3.5px; filter: url(#a12p11h-glow-diag); }
+      
+      /* Botões de Modo & Abas */
+      .a12p11h-btn { cursor: pointer; transition: all 0.2s ease; }
+      .a12p11h-btn rect { fill: rgba(99, 33, 72, 0.4); stroke: var(--a12p11h-border, #632148); stroke-width: 1px; rx: 6px; }
+      .a12p11h-btn text { fill: var(--a12p11h-txt-body, #f3c4dd); font-size: 12px; font-weight: 600; text-anchor: middle; }
+      .a12p11h-btn:hover rect, .a12p11h-btn:focus rect { fill: rgba(140, 45, 94, 0.6); stroke: var(--a12p11h-c-anat, #ec4899); }
+      .a12p11h-btn.a12p11h-active rect { fill: var(--a12p11h-border, #632148); stroke: var(--a12p11h-c-anat, #ec4899); stroke-width: 1.5px; }
+      .a12p11h-btn.a12p11h-active text { fill: #ffffff; font-weight: 700; }
+
+      /* Hotspots Interativos */
+      .a12p11h-hotspot { cursor: pointer; }
+      .a12p11h-hotspot circle.a12p11h-hs-core { fill: #ffffff; transition: transform 0.2s ease; }
+      .a12p11h-hotspot circle.a12p11h-hs-ring { fill: none; stroke-width: 2px; opacity: 0.7; animation: a12p11h-pulse 2s infinite; }
+      .a12p11h-hotspot:hover circle.a12p11h-hs-core { transform: scale(1.3); }
+
+      @keyframes a12p11h-pulse {
+        0% { r: 6px; opacity: 0.9; }
+        50% { r: 13px; opacity: 0.2; }
+        100% { r: 6px; opacity: 0.9; }
+      }
+
+      /* Painel Informativo Dinâmico */
+      .a12p11h-info-box { fill: rgba(20, 6, 16, 0.75); stroke: var(--a12p11h-border, #632148); stroke-width: 1px; rx: 8px; }
+      [data-theme="light"] .a12p11h-info-box { fill: rgba(255, 255, 255, 0.85); }
+      
+      .a12p11h-val-badge { font-size: 14px; font-weight: 800; }
+      .a12p11h-status-pass { fill: var(--a12p11h-c-obs, #10b981); }
+      .a12p11h-status-fail { fill: var(--a12p11h-c-alert, #ef4444); }
+
+      /* Modos de Visibilidade */
+      .a12p11h-mode-view { transition: opacity 0.3s ease; }
+      .a12p11h-hidden { opacity: 0; pointer-events: none; }
+    </style>
+  </defs>
+
+  <!-- RETÂNGULO DE FUNDO -->
+  <rect width="1200" height="820" class="a12p11h-bg-rect" />
+
+  <!-- ==================== HEADER (CONTRATO BAUER 1) ==================== -->
+  <g transform="translate(40, 25)">
+    <!-- Título Principal -->
+    <text x="0" y="24" class="a12p11h-title-main">PELVIMETRIA OBSTÉTRICA: CONJUGATAS DO ESTREITO SUPERIOR</text>
+    <!-- Legenda de Interpretação / Dedução -->
+    <text x="0" y="46" class="a12p11h-subtitle">Por que a Conjugata Mensurável ao Toque (Diagonalis) não é a que Decide a Passagem Fetal (Vera Obstétrica)</text>
+    
+    <!-- Abas / Seleção de Modo de Aprendizado -->
+    <g transform="translate(730, 8)">
+      <g id="a12p11h-tab-1" class="a12p11h-btn a12p11h-active" role="button" tabindex="0" aria-label="Visão Anátomo-Clínica e Toque Vaginal">
+        <rect x="0" y="0" width="200" height="36" />
+        <text x="100" y="23">1. Visão Geral &amp; Toque</text>
+      </g>
+      <g id="a12p11h-tab-2" class="a12p11h-btn" transform="translate(210, 0)" role="button" tabindex="0" aria-label="Simulador de Pelvimetria e Escore">
+        <rect x="0" y="0" width="180" height="36" />
+        <text x="90" y="23">2. Simulador &amp; Cálculo</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== PALCO ESQUERDO: CORTE SAGITAL (ESTRUTURA DENSE) ==================== -->
+  <g id="a12p11h-stage-left" transform="translate(40, 90)">
+    <!-- Card Frame Esquerdo -->
+    <rect width="660" height="690" class="a12p11h-card-bg" />
+    <text x="24" y="32" class="a12p11h-card-header">CORTE SAGITALMEDIANO DA PELVE &amp; BIOMECÂNICA DO TOQUE VAGINAL</text>
+    <text x="24" y="50" class="a12p11h-subtitle">Origem comum no Promontório (S1) · As 3 trajetórias ântero-posteriores</text>
+
+    <!-- Desenho Anatômico: Pelve, Sacro, Sínfise e Mão do Examinador -->
+    <g id="a12p11h-anatomy-sagittal" transform="translate(20, 40)">
+
+      <!-- LOMBAR L5 E SACRO/CÓCCIX (VETOR ARTÍSTICO ANATÔMICO) -->
+      <!-- Borda posterior e anterior do sacro -->
+      <path d="M 490 80 
+               C 490 120, 475 160, 460 190 
+               C 440 230, 410 270, 390 310 
+               C 380 330, 370 360, 365 395 
+               C 362 415, 360 430, 362 445
+               L 332 440
+               C 330 420, 332 400, 338 380
+               C 345 350, 360 320, 375 285
+               C 395 245, 420 205, 435 170
+               C 445 145, 450 115, 448 80 Z" 
+            fill="url(#a12p11h-grad-bone)" stroke="#8c2d5e" stroke-width="1.5" />
+      
+      <!-- Vértebras Sacrais Marcadas (S1 a S5) -->
+      <line x1="448" y1="120" x2="486" y2="128" stroke="#4a1936" stroke-width="2" />
+      <line x1="432" y1="170" x2="472" y2="182" stroke="#4a1936" stroke-width="2" />
+      <line x1="408" y1="225" x2="446" y2="240" stroke="#4a1936" stroke-width="2" />
+      <line x1="384" y1="280" x2="418" y2="295" stroke="#4a1936" stroke-width="2" />
+
+      <!-- PROMONTÓRIO SACRO (PONTO ANATÔMICO CRÍTICO S1) -->
+      <!-- Coordenada exata do Promontório: (448, 80) -->
+      <path d="M 435 75 L 448 80 L 440 92 Z" fill="#f59e0b" />
+      <text x="460" y="75" fill="var(--a12p11h-txt-title, #fce7f3)" font-size="13" font-weight="800">PROMONTÓRIO (S1)</text>
+      <text x="460" y="92" fill="var(--a12p11h-txt-muted, #b87b9c)" font-size="11">Ponto fixo posterior comum</text>
+
+      <!-- SÍNFISE PÚBICA (CORTE SAGITAL COM ESPESSURA REAL E PROEMINÊNCIA RETRO PÚBICA) -->
+      <!-- Borda Superior: (175, 235) | Retrosínfise: (192, 265) | Borda Inferior: (218, 320) -->
+      <path d="M 175 235 
+               C 185 240, 195 252, 192 265 
+               C 188 280, 205 305, 218 320 
+               C 210 328, 195 325, 182 310 
+               C 168 290, 160 265, 162 245 Z" 
+            fill="url(#a12p11h-grad-pubis)" stroke="#ec4899" stroke-width="2" />
+      
+      <!-- Cartilagem Interpubiana (Detalhe Anatômico) -->
+      <path d="M 170 240 C 178 260, 185 290, 200 315" fill="none" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="2 2" />
+
+      <!-- RÓTULOS DOS PONTOS ANATÔMICOS DA SÍNFISE -->
+      <!-- 1. Borda Superior -->
+      <circle cx="175" cy="235" r="4" fill="#ec4899" />
+      <line x1="175" y1="235" x2="105" y2="210" stroke="#ec4899" stroke-width="1" stroke-dasharray="2 2" />
+      <rect x="15" y="192" width="125" height="32" rx="4" fill="rgba(30, 8, 22, 0.85)" stroke="#ec4899" stroke-width="1" />
+      <text x="77" y="206" fill="#ec4899" font-size="11" font-weight="700" text-anchor="middle">1. Borda Superior</text>
+      <text x="77" y="219" fill="var(--a12p11h-txt-muted, #b87b9c)" font-size="9.5" text-anchor="middle">Vera Anatômica</text>
+
+      <!-- 2. Retrosínfise / Proeminência Posterior -->
+      <circle cx="192" cy="265" r="4.5" fill="#10b981" />
+      <line x1="192" y1="265" x2="90" y2="275" stroke="#10b981" stroke-width="1" stroke-dasharray="2 2" />
+      <rect x="15" y="260" width="135" height="34" rx="4" fill="rgba(10, 35, 25, 0.9)" stroke="#10b981" stroke-width="1" />
+      <text x="82" y="274" fill="#10b981" font-size="11" font-weight="800" text-anchor="middle">2. Retrosínfise (Proeminência)</text>
+      <text x="82" y="288" fill="#a7f3d0" font-size="9.5" font-weight="700" text-anchor="middle">VERA OBSTÉTRICA (DECISIVA)</text>
+
+      <!-- 3. Borda Inferior -->
+      <circle cx="218" cy="320" r="4" fill="#f59e0b" />
+      <line x1="218" y1="320" x2="120" y2="350" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2 2" />
+      <rect x="15" y="336" width="130" height="32" rx="4" fill="rgba(35, 24, 8, 0.9)" stroke="#f59e0b" stroke-width="1" />
+      <text x="80" y="350" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">3. Borda Inferior</text>
+      <text x="80" y="363" fill="#fde68a" font-size="9.5" text-anchor="middle">Diagonalis (Toque)</text>
+
+      <!-- CANAL VAGINAL & TAPE/ROTA DO TOQUE -->
+      <path d="M 230 420 Q 260 360, 310 350 Q 380 340, 440 200" fill="none" stroke="rgba(244, 114, 182, 0.2)" stroke-width="35" stroke-linecap="round" />
+
+      <!-- MÃO DO EXAMINADOR FAZENDO O TOQUE VAGINAL (VETOR MEDICO DE ALTA FIDELIDADE) -->
+      <!-- O dedo médio se estende até tocar o Promontório (448, 80); a incisura subpúbica apoia na Borda Inferior (218, 320) -->
+      <g id="a12p11h-examiner-hand">
+        <!-- Contorno da Mão e Dedos de Luva Médica -->
+        <path d="M 120 540 
+                 C 140 500, 170 440, 190 400 
+                 C 200 380, 210 345, 215 325
+                 L 235 328
+                 C 240 310, 270 250, 320 200
+                 C 370 150, 415 105, 446 82 
+                 C 449 80, 452 84, 448 88
+                 C 410 120, 350 180, 300 240
+                 C 275 270, 255 310, 250 340
+                 C 245 370, 220 440, 180 550 Z" 
+              fill="url(#a12p11h-grad-hand)" opacity="0.85" stroke="#f472b6" stroke-width="1.5" />
+        
+        <!-- Marcação do Ponto de Contato na Borda Inferior da Sínfise (Incisura Interdigital / Borda Subpúbica) -->
+        <circle cx="218" cy="320" r="7" fill="none" stroke="#f59e0b" stroke-width="2.5" />
+        <line x1="218" y1="320" x2="448" y2="80" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3 3" />
+        
+        <!-- Ponto do Dedo Médio no Promontório -->
+        <circle cx="448" cy="80" r="5" fill="#f59e0b" />
+      </g>
+
+      <!-- ================= AS 3 LINHAS DE CONJUGATA (PARTINDO DO PROMONTÓRIO) ================= -->
+      
+      <!-- 1. VERA ANATÔMICA (Promontório -> Borda Superior Sínfise) -->
+      <line id="a12p11h-line-anat-elem" x1="448" y1="80" x2="175" y2="235" class="a12p11h-line-base a12p11h-line-anat" />
+      
+      <!-- 2. VERA OBSTÉTRICA / ÚTIL (Promontório -> Retrosínfise) [A QUE DECIDE!] -->
+      <line id="a12p11h-line-obs-elem" x1="448" y1="80" x2="192" y2="265" class="a12p11h-line-base a12p11h-line-obs" />
+      
+      <!-- 3. DIAGONALIS (Promontório -> Borda Inferior Sínfise) [MENSURÁVEL] -->
+      <line id="a12p11h-line-diag-elem" x1="448" y1="80" x2="218" y2="320" class="a12p11h-line-base a12p11h-line-diag" />
+
+      <!-- CARDS DE VALOR SOBRE AS LINHAS DA PELVIMETRIA -->
+      <!-- Card Diagonalis (12.0 cm) -->
+      <g transform="translate(325, 220)">
+        <rect x="-55" y="-14" width="110" height="26" rx="13" fill="#1c1004" stroke="#f59e0b" stroke-width="1.5" />
+        <text x="0" y="4" fill="#fde68a" font-size="12" font-weight="800" text-anchor="middle">CD = 12,0 cm</text>
+      </g>
+
+      <!-- Card Vera Obstétrica (10.5 cm) - DESTAQUE VERDE MAX -->
+      <g transform="translate(300, 155)">
+        <rect x="-65" y="-16" width="130" height="30" rx="15" fill="#042014" stroke="#10b981" stroke-width="2" />
+        <text x="0" y="4" fill="#a7f3d0" font-size="13" font-weight="900" text-anchor="middle">CO = 10,5 cm ★</text>
+      </g>
+
+      <!-- Card Vera Anatômica (11.0 cm) -->
+      <g transform="translate(290, 110)">
+        <rect x="-55" y="-13" width="110" height="24" rx="12" fill="#240718" stroke="#ec4899" stroke-width="1" />
+        <text x="0" y="4" fill="#fbcfe8" font-size="11.5" font-weight="700" text-anchor="middle">CA = 11,0 cm</text>
+      </g>
+
+      <!-- ILUSTRAÇÃO DA DIFERENÇA DE 1,5 CM NA SÍNFISE (CHAVE PEDAGÓGICA) -->
+      <g transform="translate(225, 270)">
+        <!-- Arco/Corte mostrando a subtração -->
+        <path d="M -7 -4 L 0 25" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="2 2" />
+        <rect x="10" y="2" width="145" height="42" rx="6" fill="rgba(36, 7, 18, 0.95)" stroke="#ef4444" stroke-width="1.5" />
+        <text x="18" y="20" fill="#fca5a5" font-size="11" font-weight="800">ESPESSURA SÍNFISAL</text>
+        <text x="18" y="35" fill="#ffffff" font-size="12" font-weight="900">Subtrair 1,5 cm sempre!</text>
+      </g>
+
+      <!-- HOTSPOTS INTERATIVOS ANATÔMICOS -->
+      <!-- Hotspot 1: Promontório -->
+      <g class="a12p11h-hotspot" transform="translate(448, 80)" id="a12p11h-hs-promontory" role="button" tabindex="0" aria-label="Informações sobre o Promontório">
+        <circle cx="0" cy="0" r="10" class="a12p11h-hs-ring" stroke="#f59e0b" />
+        <circle cx="0" cy="0" r="4" class="a12p11h-hs-core" />
+      </g>
+
+      <!-- Hotspot 2: Retrosínfise -->
+      <g class="a12p11h-hotspot" transform="translate(192, 265)" id="a12p11h-hs-retrosymphysis" role="button" tabindex="0" aria-label="Informações sobre a Retrosínfise">
+        <circle cx="0" cy="0" r="12" class="a12p11h-hs-ring" stroke="#10b981" />
+        <circle cx="0" cy="0" r="5" class="a12p11h-hs-core" />
+      </g>
+
+      <!-- Hotspot 3: Borda Inferior -->
+      <g class="a12p11h-hotspot" transform="translate(218, 320)" id="a12p11h-hs-inferior" role="button" tabindex="0" aria-label="Informações sobre o Toque na Borda Inferior">
+        <circle cx="0" cy="0" r="10" class="a12p11h-hs-ring" stroke="#f59e0b" />
+        <circle cx="0" cy="0" r="4" class="a12p11h-hs-core" />
+      </g>
+
+    </g> <!-- Fim Anatomia Sagital -->
+
+    <!-- CAIXA DE DEDUÇÃO CLÍNICA INFERIOR (CONTRATO BAUER 4) -->
+    <g transform="translate(20, 530)">
+      <rect width="620" height="135" rx="8" class="a12p11h-info-box" />
+      <text x="20" y="28" fill="var(--a12p11h-c-obs, #10b981)" font-size="14" font-weight="800">DEDUÇÃO ANÁTOMO-CLÍNICA FUNDAMENTAL:</text>
+      
+      <text x="20" y="54" fill="var(--a12p11h-txt-body, #f3c4dd)" font-size="12.5" font-weight="500">
+        1. A <tspan fill="#f59e0b" font-weight="700">Conjugata Diagonalis (12,0 cm)</tspan> é a <tspan font-weight="700">ÚNICA mensurável</tspan> diretamente no toque vaginal.
+      </text>
+      <text x="20" y="76" fill="var(--a12p11h-txt-body, #f3c4dd)" font-size="12.5" font-weight="500">
+        2. O feto atravessa a <tspan fill="#10b981" font-weight="700">Vera Obstétrica (10,5 cm)</tspan>, cujos limites internos o dedo não alcança.
+      </text>
+      <text x="20" y="98" fill="var(--a12p11h-txt-body, #f3c4dd)" font-size="12.5" font-weight="500">
+        3. Para calcular a Obstétrica: <tspan fill="#fca5a5" font-weight="800">Vera Obstétrica = Diagonalis - 1,5 cm</tspan> (desconto constante).
+      </text>
+      <text x="20" y="118" fill="var(--a12p11h-txt-muted, #b87b9c)" font-size="11.5" font-style="italic">
+        ★ Valor Normal Limite da Vera Obstétrica: ≥ 10,5 cm. Abaixo disso = Estreitamento / Risco de Distocia.
+      </text>
+    </g>
+
+  </g> <!-- FIM PALCO ESQUERDO -->
+
+  <!-- ==================== PALCO DIREITO SUPERIOR: ARO PELVIANO / INLET ==================== -->
+  <g id="a12p11h-stage-right-top" transform="translate(720, 90)">
+    <rect width="440" height="340" class="a12p11h-card-bg" />
+    <text x="20" y="30" class="a12p11h-card-header">VISTA SUPERIOR DO ESTREITO SUPERIOR (INLET)</text>
+    <text x="20" y="46" class="a12p11h-subtitle">Bacia Ginecoide · Diâmetros e Anel de Entrada Fetal</text>
+
+    <!-- Desenho do Aro Pelviano Superior -->
+    <g transform="translate(220, 200)">
+      <!-- Anel Pelviano (Linha Terminal / Iliopectínea) -->
+      <path d="M 0 -110 
+               C 70 -105, 150 -60, 160 10 
+               C 165 70, 120 120, 0 130 
+               C -120 120, -165 70, -160 10 
+               C -150 -60, -70 -105, 0 -110 Z" 
+            fill="rgba(107, 40, 79, 0.35)" stroke="#8c2d5e" stroke-width="3" />
+      
+      <!-- Promontório (Anterior na Imagem Superior) -->
+      <circle cx="0" cy="-110" r="7" fill="#f59e0b" />
+      <text x="0" y="-123" fill="#fde68a" font-size="11" font-weight="700" text-anchor="middle">Promontório</text>
+
+      <!-- Sínfise Púbica (Posterior na Imagem Superior) -->
+      <rect x="-25" y="123" width="50" height="14" rx="4" fill="#8a3467" stroke="#ec4899" stroke-width="1.5" />
+      <text x="0" y="152" fill="#fbcfe8" font-size="11" font-weight="700" text-anchor="middle">Sínfise Púbica</text>
+
+      <!-- Diâmetro Ântero-Posterior (Vera Obstétrica) -->
+      <line x1="0" y1="-110" x2="0" y2="123" stroke="#10b981" stroke-width="3" filter="url(#a12p11h-glow-obs)" />
+      <rect x="-55" y="-10" width="110" height="22" rx="11" fill="rgba(4, 32, 20, 0.9)" stroke="#10b981" stroke-width="1.5" />
+      <text x="0" y="5" fill="#a7f3d0" font-size="11.5" font-weight="800" text-anchor="middle">CO = 10,5 cm</text>
+
+      <!-- Diâmetro Transverso (13,0 cm) -->
+      <line x1="-158" y1="10" x2="158" y2="10" stroke="#a855f7" stroke-width="2" stroke-dasharray="5 3" />
+      <rect x="85" y="-3" width="70" height="20" rx="4" fill="rgba(24, 7, 36, 0.85)" stroke="#a855f7" stroke-width="1" />
+      <text x="120" y="11" fill="#e9d5ff" font-size="10.5" font-weight="700" text-anchor="middle">DT = 13,0 cm</text>
+
+      <!-- Diâmetros Oblíquos (12,5 cm) -->
+      <line x1="-110" y1="-70" x2="110" y2="90" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3 3" />
+      <text x="70" y="70" fill="#bfdbfe" font-size="10" font-weight="600">Obíquo = 12,5 cm</text>
+    </g>
+
+    <text x="20" y="415" fill="var(--a12p11h-txt-muted, #b87b9c)" font-size="11" text-anchor="start">
+      * O diâmetro transverso é maior, mas a rotação fetal exige espaço no diâmetro Obstétrico (CO ≥ 10,5 cm).
+    </text>
+  </g>
+
+  <!-- ==================== PALCO DIREITO INFERIOR: SIMULADOR INTERATIVO ==================== -->
+  <g id="a12p11h-stage-right-bottom" transform="translate(720, 450)">
+    <rect width="440" height="330" class="a12p11h-card-bg" />
+    <text x="20" y="30" class="a12p11h-card-header">SIMULADOR CLINICO DE PELVIMETRIA &amp; DIAGNÓSTICO</text>
+    <text x="20" y="46" class="a12p11h-subtitle">Ajuste a Conjugata Diagonalis medida ao toque para avaliar a bacia</text>
+
+    <!-- Controles de Preset do Toque -->
+    <g transform="translate(20, 65)">
+      <text x="0" y="14" fill="var(--a12p11h-txt-body, #f3c4dd)" font-size="12" font-weight="700">Selecione o valor medido no Toque Vaginal (CD):</text>
+
+      <!-- Botões de Seleção -->
+      <g id="a12p11h-preset-10" class="a12p11h-btn" transform="translate(0, 26)" role="button" tabindex="0" aria-label="Diagonalis 10.0 cm">
+        <rect width="90" height="32" />
+        <text x="45" y="20">10.0 cm</text>
+      </g>
+      <g id="a12p11h-preset-11" class="a12p11h-btn" transform="translate(100, 26)" role="button" tabindex="0" aria-label="Diagonalis 11.5 cm">
+        <rect width="90" height="32" />
+        <text x="45" y="20">11.5 cm</text>
+      </g>
+      <g id="a12p11h-preset-12" class="a12p11h-btn a12p11h-active" transform="translate(200, 26)" role="button" tabindex="0" aria-label="Diagonalis 12.0 cm Normal">
+        <rect width="90" height="32" />
+        <text x="45" y="20">12.0 cm (Padrão)</text>
+      </g>
+      <g id="a12p11h-preset-13" class="a12p11h-btn" transform="translate(300, 26)" role="button" tabindex="0" aria-label="Diagonalis 13.0 cm Ampla">
+        <rect width="90" height="32" />
+        <text x="45" y="20">13.0 cm</text>
+      </g>
+    </g>
+
+    <!-- Painel de Cálculo em Tempo Real -->
+    <g transform="translate(20, 145)">
+      <rect width="400" height="160" rx="8" fill="rgba(18, 5, 15, 0.85)" stroke="var(--a12p11h-border, #632148)" stroke-width="1.25" />
+      
+      <!-- Fórmula Visível -->
+      <text x="20" y="30" fill="var(--a12p11h-txt-muted, #b87b9c)" font-size="12" font-weight="600">CÁLCULO AUTOMÁTICO:</text>
+      <text x="20" y="55" fill="var(--a12p11h-txt-body, #f3c4dd)" font-size="14" font-weight="700">
+        CO = <tspan id="a12p11h-calc-cd" fill="#f59e0b">12,0 cm</tspan> (CD) - <tspan fill="#ef4444">1,5 cm</tspan> = <tspan id="a12p11h-calc-co" fill="#10b981" font-size="16" font-weight="900">10,5 cm</tspan>
+      </text>
+
+      <!-- Divisória -->
+      <line x1="20" y1="72" x2="380" y2="72" stroke="var(--a12p11h-border, #632148)" stroke-width="1" stroke-dasharray="4 2" />
+
+      <!-- Status de Diagnóstico da Bacia -->
+      <text x="20" y="94" fill="var(--a12p11h-txt-muted, #b87b9c)" font-size="11.5" font-weight="600">CLASSIFICAÇÃO PELVIMÉTRICA:</text>
+      <text id="a12p11h-diag-status" x="20" y="120" class="a12p11h-val-badge a12p11h-status-pass">
+        ✓ BACIA ADEQUADA (EUNOCÓCICA / NORMAL)
+      </text>
+      <text id="a12p11h-diag-desc" x="20" y="142" fill="var(--a12p11h-txt-body, #f3c4dd)" font-size="11.5">
+        Canal de parto desimpedido para apresentação cefálica fletida.
+      </text>
+    </g>
+
+  </g> <!-- FIM PALCO DIREITO INFERIOR -->
+
+  <!-- ==================== SCRIPT INTERATIVO SELF-CONTAINED (DETERMINÍSTICO) ==================== -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // Estado da Aplicação
+      var state = {
+        mode: 1, // 1: Visão Geral, 2: Simulador
+        cdValue: 12.0
+      };
+
+      // Elementos do DOM
+      var tab1 = document.getElementById('a12p11h-tab-1');
+      var tab2 = document.getElementById('a12p11h-tab-2');
+      
+      var btn10 = document.getElementById('a12p11h-preset-10');
+      var btn11 = document.getElementById('a12p11h-preset-11');
+      var btn12 = document.getElementById('a12p11h-preset-12');
+      var btn13 = document.getElementById('a12p11h-preset-13');
+
+      var calcCd = document.getElementById('a12p11h-calc-cd');
+      var calcCo = document.getElementById('a12p11h-calc-co');
+      var diagStatus = document.getElementById('a12p11h-diag-status');
+      var diagDesc = document.getElementById('a12p11h-diag-desc');
+
+      var lineObs = document.getElementById('a12p11h-line-obs-elem');
+      var lineDiag = document.getElementById('a12p11h-line-diag-elem');
+
+      // Função de Atualização do Cálculo
+      function updateCalculation(val) {
+        state.cdValue = val;
+        var coVal = (val - 1.5).toFixed(1);
+        
+        // Atualiza textos
+        if (calcCd) calcCd.textContent = val.toFixed(1).replace('.', ',') + ' cm';
+        if (calcCo) calcCo.textContent = coVal.replace('.', ',') + ' cm';
+
+        // Atualiza diagnósticos segundo a convenção de cores (Verde=Normal, Vermelho=Alterado)
+        if (coVal >= 10.5) {
+          if (diagStatus) {
+            diagStatus.textContent = '✓ BACIA ADEQUADA (EUNOCÓCICA / NORMAL)';
+            diagStatus.setAttribute('class', 'a12p11h-val-badge a12p11h-status-pass');
+          }
+          if (diagDesc) diagDesc.textContent = 'Vera Obstétrica ≥ 10,5 cm: Canal livre para parto vaginal.';
+          if (calcCo) calcCo.setAttribute('fill', '#10b981');
+        } else if (coVal >= 9.5) {
+          if (diagStatus) {
+            diagStatus.textContent = '⚠ BACIA LIMÍTROFE (ATENÇÃO CLINICA)';
+            diagStatus.setAttribute('class', 'a12p11h-val-badge');
+            diagStatus.setAttribute('fill', '#f59e0b');
+          }
+          if (diagDesc) diagDesc.textContent = 'Vera Obstétrica entre 9,5 e 10,4 cm: Monitorar prova de trabalho de parto.';
+          if (calcCo) calcCo.setAttribute('fill', '#f59e0b');
+        } else {
+          if (diagStatus) {
+            diagStatus.textContent = '✕ PELVE VICIADA / ESTREITAMENTO (ALERTA)';
+            diagStatus.setAttribute('class', 'a12p11h-val-badge a12p11h-status-fail');
+          }
+          if (diagDesc) diagDesc.textContent = 'Vera Obstétrica < 9,5 cm: Alto risco de Desproporção Cefalopélvica (DCP).';
+          if (calcCo) calcCo.setAttribute('fill', '#ef4444');
+        }
+
+        // Destaque dos Botões de Preset
+        [btn10, btn11, btn12, btn13].forEach(function(btn) {
+          if (btn) btn.classList.remove('a12p11h-active');
+        });
+        if (val === 10.0 && btn10) btn10.classList.add('a12p11h-active');
+        if (val === 11.5 && btn11) btn11.classList.add('a12p11h-active');
+        if (val === 12.0 && btn12) btn12.classList.add('a12p11h-active');
+        if (val === 13.0 && btn13) btn13.classList.add('a12p11h-active');
+      }
+
+      // Event Listeners dos Presets
+      if (btn10) btn10.addEventListener('click', function() { updateCalculation(10.0); });
+      if (btn11) btn11.addEventListener('click', function() { updateCalculation(11.5); });
+      if (btn12) btn12.addEventListener('click', function() { updateCalculation(12.0); });
+      if (btn13) btn13.addEventListener('click', function() { updateCalculation(13.0); });
+
+      // Suporte a Teclado nos Botões
+      [btn10, btn11, btn12, btn13, tab1, tab2].forEach(function(elem) {
+        if (elem) {
+          elem.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              elem.click();
+            }
+          });
+        }
+      });
+
+      // Alternância de Abas
+      if (tab1) {
+        tab1.addEventListener('click', function() {
+          tab1.classList.add('a12p11h-active');
+          if (tab2) tab2.classList.remove('a12p11h-active');
+          if (lineObs) lineObs.style.strokeWidth = '4px';
+        });
+      }
+      if (tab2) {
+        tab2.addEventListener('click', function() {
+          tab2.classList.add('a12p11h-active');
+          if (tab1) tab1.classList.remove('a12p11h-active');
+          if (lineObs) lineObs.style.strokeWidth = '6px';
+        });
+      }
+
+      // Inicialização
+      updateCalculation(12.0);
+    })();
+    ]]>
+  </script>
+</svg>

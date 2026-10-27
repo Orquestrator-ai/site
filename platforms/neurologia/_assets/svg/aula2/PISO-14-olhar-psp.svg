@@ -1,0 +1,614 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" class="psp-root" id="psp-p14-svg">
+  <defs>
+    <!-- Gradientes e Efeitos Visuais Premium -->
+    <linearGradient id="iris-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--iris-top, #00d2ff)"/>
+      <stop offset="100%" stop-color="var(--iris-bottom, #0055aa)"/>
+    </linearGradient>
+    <filter id="glow-red">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <style>
+    /* Escopo estrito para evitar vazamento (Style-Leak) */
+    #psp-p14-svg {
+      background-color: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      user-select: none;
+    }
+    
+    #psp-p14-svg .psp-bg {
+      fill: var(--bg);
+    }
+    
+    #psp-p14-svg .psp-card {
+      fill: var(--bg-card);
+      stroke: var(--border);
+      stroke-width: 1.5px;
+    }
+    
+    #psp-p14-svg .title {
+      font-size: 20px;
+      font-weight: 800;
+      fill: var(--text);
+      letter-spacing: 0.5px;
+    }
+    
+    #psp-p14-svg .subtitle {
+      font-size: 13px;
+      font-weight: 500;
+      fill: var(--text-muted);
+    }
+    
+    #psp-p14-svg .face-base {
+      fill: var(--face-bg);
+      opacity: 0.12;
+      stroke: var(--text-muted);
+      stroke-dasharray: 4 4;
+      stroke-width: 1.5px;
+    }
+    
+    #psp-p14-svg .sclera {
+      fill: #ffffff;
+      stroke: var(--text-muted);
+      stroke-width: 2px;
+    }
+    
+    #psp-p14-svg .iris {
+      fill: url(#iris-grad);
+      stroke: #003366;
+      stroke-width: 1px;
+    }
+    
+    #psp-p14-svg .pupil {
+      fill: #09090b;
+    }
+    
+    #psp-p14-svg .pupil-highlight {
+      fill: #ffffff;
+      opacity: 0.8;
+    }
+    
+    #psp-p14-svg .eyebrow {
+      fill: none;
+      stroke: var(--text);
+      stroke-width: 4px;
+      stroke-linecap: round;
+      transition: d 0.3s ease;
+    }
+    
+    #psp-p14-svg .wrinkle {
+      fill: none;
+      stroke: var(--text-muted);
+      stroke-width: 1.5px;
+      stroke-linecap: round;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    #psp-p14-svg .btn {
+      cursor: pointer;
+    }
+    
+    #psp-p14-svg .btn rect {
+      fill: var(--bg-card);
+      stroke: var(--border);
+      stroke-width: 1.5px;
+      transition: all 0.2s ease;
+    }
+    
+    #psp-p14-svg .btn:hover rect {
+      stroke: var(--cyan);
+      fill: var(--btn-hover-bg);
+    }
+    
+    #psp-p14-svg .btn.active rect {
+      stroke: var(--cyan);
+      fill: var(--btn-active-bg);
+      stroke-width: 2px;
+    }
+    
+    #psp-p14-svg .btn text {
+      fill: var(--text);
+      font-size: 11.5px;
+      font-weight: 700;
+      pointer-events: none;
+      text-anchor: middle;
+    }
+    
+    #psp-p14-svg .btn.active text {
+      fill: var(--cyan);
+    }
+    
+    #psp-p14-svg .panel-title {
+      font-size: 15px;
+      font-weight: 800;
+      fill: var(--text);
+      letter-spacing: 0.3px;
+    }
+    
+    #psp-p14-svg .info-text {
+      font-size: 12.5px;
+      fill: var(--text);
+      line-height: 1.5;
+    }
+    
+    #psp-p14-svg .info-label {
+      font-size: 11px;
+      font-weight: bold;
+      fill: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    
+    #psp-p14-svg .legend-text {
+      font-size: 12px;
+      fill: var(--text-muted);
+      font-style: italic;
+    }
+    
+    #psp-p14-svg .node {
+      fill: var(--bg-card);
+      stroke: var(--border);
+      stroke-width: 1.5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    #psp-p14-svg .node:hover {
+      stroke: var(--amber);
+      fill: var(--btn-hover-bg);
+    }
+    
+    #psp-p14-svg .node.active-node {
+      stroke: var(--cyan);
+      fill: var(--btn-active-bg);
+      stroke-width: 2.5px;
+    }
+    
+    #psp-p14-svg #node-lesion.active-node {
+      stroke: var(--red);
+      fill: var(--btn-active-bg);
+      stroke-width: 2.5px;
+    }
+    
+    #psp-p14-svg .node-text {
+      font-size: 10px;
+      fill: var(--text);
+      font-weight: bold;
+      pointer-events: none;
+      text-anchor: middle;
+    }
+    
+    #psp-p14-svg .conn-line {
+      stroke: var(--border);
+      stroke-width: 2px;
+      fill: none;
+    }
+    
+    #psp-p14-svg .lesion-marker {
+      fill: var(--red);
+      stroke: #ffffff;
+      stroke-width: 1.5px;
+      cursor: pointer;
+      filter: url(#glow-red);
+    }
+    
+    #psp-p14-svg .status-badge {
+      font-size: 12px;
+      font-weight: 800;
+      text-anchor: middle;
+      transition: all 0.3s ease;
+    }
+    
+    #psp-p14-svg .badge-bg {
+      transition: fill 0.3s ease;
+    }
+    
+    #psp-p14-svg .badge-red { fill: var(--red); }
+    #psp-p14-svg .badge-green { fill: var(--green); }
+    #psp-p14-svg .badge-amber { fill: var(--amber); }
+    
+    #psp-p14-svg .badge-bg-red { fill: var(--red-alpha, rgba(239, 68, 68, 0.15)); }
+    #psp-p14-svg .badge-bg-green { fill: var(--green-alpha, rgba(34, 197, 94, 0.15)); }
+    #psp-p14-svg .badge-bg-amber { fill: var(--amber-alpha, rgba(217, 119, 6, 0.15)); }
+    
+    /* Configuração de Variáveis de Cores (Suporte Claro e Escuro) */
+    .psp-root {
+      --bg: #121214;
+      --bg-card: #18181f;
+      --border: #2d2d3d;
+      --text: #f1f1f5;
+      --text-muted: #9393a5;
+      --cyan: #00d2ff;
+      --red: #ff5b5b;
+      --amber: #ffb300;
+      --green: #00e676;
+      --face-bg: #a3a3c2;
+      --btn-hover-bg: #22222e;
+      --btn-active-bg: #0f0f14;
+      
+      --red-alpha: rgba(255, 91, 91, 0.15);
+      --green-alpha: rgba(0, 230, 118, 0.15);
+      --amber-alpha: rgba(255, 179, 0, 0.15);
+    }
+    
+    @media (prefers-color-scheme: light) {
+      .psp-root {
+        --bg: #f8f9fa;
+        --bg-card: #ffffff;
+        --border: #cbd5e1;
+        --text: #0f172a;
+        --text-muted: #64748b;
+        --cyan: #0284c7;
+        --red: #ef4444;
+        --amber: #d97706;
+        --green: #22c55e;
+        --face-bg: #475569;
+        --btn-hover-bg: #f1f5f9;
+        --btn-active-bg: #e2e8f0;
+        
+        --red-alpha: rgba(239, 68, 68, 0.12);
+        --green-alpha: rgba(34, 197, 94, 0.12);
+        --amber-alpha: rgba(217, 119, 6, 0.12);
+      }
+    }
+  </style>
+
+  <!-- Retângulo de Fundo Principal -->
+  <rect width="900" height="550" class="psp-bg" />
+
+  <!-- Cabeçalho (Título e Subtítulo) -->
+  <g transform="translate(40, 50)">
+    <text class="title" y="0">PSP: PARALISIA SUPRANUCLEAR PROGRESSIVA</text>
+    <text class="subtitle" y="22">Mecanismo fisiopatológico da paralisia do olhar conjugado vertical</text>
+  </g>
+
+  <!-- Palco Esquerdo: Face e Olhos -->
+  <g id="left-stage">
+    <!-- Grupo da Face Montada (sofre transformações na manobra RVO) -->
+    <g id="face-assembly" style="transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);">
+      <!-- Silhueta da Face Estilizada -->
+      <path class="face-base" d="M 140 120 C 140 70, 440 70, 440 120 C 440 240, 400 370, 290 390 C 180 370, 140 240, 140 120 Z" />
+      
+      <!-- Detalhes Faciais (Nariz e Boca) -->
+      <path d="M 290 230 L 290 290 L 280 295" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" />
+      <path d="M 255 335 Q 290 330 325 335" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" />
+
+      <!-- Linhas/Rugas de Expressão na Testa -->
+      <g id="forehead-wrinkles">
+        <path class="wrinkle" d="M 240 115 Q 290 108 340 115" />
+        <path class="wrinkle" d="M 250 127 Q 290 120 330 127" />
+      </g>
+
+      <!-- Sobrancelhas -->
+      <path id="eyebrow-l" class="eyebrow" d="M 170 170 Q 215 160 260 178" />
+      <path id="eyebrow-r" class="eyebrow" d="M 320 178 Q 365 160 410 170" />
+
+      <!-- Olho Esquerdo (Cavidade e Esclera) -->
+      <g id="eye-left">
+        <path class="sclera" d="M 160 205 C 180 180, 250 180, 270 205 C 250 230, 180 230, 160 205 Z" />
+        <g id="iris-l" style="transition: transform 0.3s ease;">
+          <circle cx="215" cy="205" r="23" class="iris" />
+          <circle cx="215" cy="205" r="10.5" class="pupil" />
+          <circle cx="209" cy="199" r="4" class="pupil-highlight" />
+        </g>
+      </g>
+
+      <!-- Olho Direito (Cavidade e Esclera) -->
+      <g id="eye-right">
+        <path class="sclera" d="M 310 205 C 330 180, 400 180, 420 205 C 400 230, 330 230, 310 205 Z" />
+        <g id="iris-r" style="transition: transform 0.3s ease;">
+          <circle cx="365" cy="205" r="23" class="iris" />
+          <circle cx="365" cy="205" r="10.5" class="pupil" />
+          <circle cx="359" cy="199" r="4" class="pupil-highlight" />
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Botões Clínicos de Interação (Horizontal) -->
+  <g transform="translate(90, 380)">
+    <!-- Botão Olhar para Cima -->
+    <g class="btn" id="btn-up" onclick="setClinicalState('up')" role="button" aria-label="Comando olhar para cima">
+      <rect width="125" height="34" rx="6" />
+      <text x="62.5" y="21">OLHAR PARA CIMA</text>
+    </g>
+
+    <!-- Botão Olhar para Baixo (Tentar) -->
+    <g class="btn" id="btn-down" onclick="setClinicalState('down')" transform="translate(138, 0)" role="button" aria-label="Comando olhar para baixo">
+      <rect width="125" height="34" rx="6" />
+      <text x="62.5" y="21">OLHAR PARA BAIXO</text>
+    </g>
+
+    <!-- Botão Olhos de Boneca (RVO) -->
+    <g class="btn" id="btn-rvo" onclick="setClinicalState('rvo')" transform="translate(276, 0)" role="button" aria-label="Manobra olhos de boneca">
+      <rect width="125" height="34" rx="6" />
+      <text x="62.5" y="21">MANOBRA RVO</text>
+    </g>
+  </g>
+
+  <!-- Diagrama de Conexões Neurais (Base Esquerda) -->
+  <g transform="translate(0, 30)">
+    <!-- Conexões -->
+    <line class="conn-line" x1="175" y1="460" x2="250" y2="460" />
+    <line class="conn-line" x1="360" y1="460" x2="425" y2="460" />
+
+    <!-- Bloco 1: Córtex -->
+    <g class="node" id="node-cortex" onclick="showPathwayDetail('cortex')" transform="translate(90, 442)">
+      <rect width="85" height="35" rx="6" />
+      <text class="node-text" x="42.5" y="21">CÓRTEX MOTOR</text>
+    </g>
+
+    <!-- Marcador de Lesão Supranuclear (X Vermelho) -->
+    <g class="lesion-marker" id="node-lesion" onclick="showPathwayDetail('lesion')" transform="translate(212.5, 460)">
+      <circle r="12" />
+      <line x1="-6" y1="-6" x2="6" y2="6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+      <line x1="6" y1="-6" x2="-6" y2="6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+
+    <!-- Bloco 2: Tronco Cerebral (Núcleos) -->
+    <g class="node" id="node-tronco" onclick="showPathwayDetail('tronco')" transform="translate(250, 442)">
+      <rect width="110" height="35" rx="6" />
+      <text class="node-text" x="55" y="21">NÚCLEOS DO TRONCO</text>
+    </g>
+
+    <!-- Bloco 3: Efetor (Músculos Extraoculares) -->
+    <g class="node" id="node-musculo" onclick="showPathwayDetail('musculo')" transform="translate(425, 442)">
+      <rect width="90" height="35" rx="6" />
+      <text class="node-text" x="45" y="21">M. EXTRAOCULARES</text>
+    </g>
+  </g>
+
+  <!-- Painel de Leitura Lateral (Lado Direito) -->
+  <g transform="translate(540, 90)">
+    <!-- Fundo do Card -->
+    <rect width="320" height="400" rx="10" class="psp-card" />
+    
+    <!-- Header do Card -->
+    <text class="panel-title" x="20" y="32">AVALIAÇÃO CLÍNICA</text>
+    <line x1="20" y1="46" x2="300" y2="46" stroke="var(--border)" stroke-width="1.5" />
+
+    <!-- Status do Teste (Badge) -->
+    <rect id="badge-bg" x="20" y="62" width="280" height="34" rx="6" class="badge-bg-amber" />
+    <text id="status-badge-text" x="160" y="83" class="status-badge badge-amber">CONJUGADO ACIMA</text>
+
+    <!-- Área de Detalhes -->
+    <!-- Título do Detalhe -->
+    <text id="details-title" class="panel-title" x="20" y="132" style="font-size: 13.5px; fill: var(--cyan);">OLHAR VERTICAL SUPERIOR</text>
+    
+    <!-- Linhas de Texto Dinâmicas (Corpo do Card) -->
+    <text id="details-body-1" class="info-text" x="20" y="160">O paciente consegue elevar o olhar voluntariamente.</text>
+    <text id="details-body-2" class="info-text" x="20" y="180">Esse movimento é geralmente mantido no início</text>
+    <text id="details-body-3" class="info-text" x="20" y="200">e fases intermediárias da doença (PSP).</text>
+    
+    <!-- Divisor Interno -->
+    <line x1="20" y1="225" x2="300" y2="225" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3" />
+
+    <text class="info-label" x="20" y="250">FISIOPATOLOGIA &amp; MANOBRAS</text>
+    <text id="details-body-4" class="info-text" x="20" y="275">O tônus extensor cervical (retrocolo) acompanha</text>
+    <text id="details-body-5" class="info-text" x="20" y="295">este achado. O paciente tende a tombar a</text>
+    <text id="details-body-6" class="info-text" x="20" y="315">cabeça para trás para tentar compensar o olhar.</text>
+    <text id="details-body-7" class="info-text" x="20" y="335">Clique nos botões de testes ou nós da via abaixo.</text>
+
+    <!-- Dica de a11y/interação sutil na base do card -->
+    <text x="20" y="375" class="info-label" style="font-size: 9.5px;">* INTERAÇÃO REAL: EXECUTE OS TESTES À ESQUERDA</text>
+  </g>
+
+  <!-- Legenda de Interpretação na Base -->
+  <text class="legend-text" x="40" y="525">
+    Paralisia supranuclear progressiva: o olhar conjugado se prende para cima, não desce. A lesão é "acima dos núcleos" — o sinal que entrega o diagnóstico, ao lado do parkinsonismo.
+  </text>
+
+  <!-- Script Inline Auto-Contido para Gerenciamento de Estados -->
+  <script type="text/javascript">
+    //<![CDATA[
+    const irisL = document.getElementById('iris-l');
+    const irisR = document.getElementById('iris-r');
+    const face = document.getElementById('face-assembly');
+    const browL = document.getElementById('eyebrow-l');
+    const browR = document.getElementById('eyebrow-r');
+    const wrinkles = document.getElementById('forehead-wrinkles');
+    const statusText = document.getElementById('status-badge-text');
+    const statusBg = document.getElementById('badge-bg');
+    
+    const detailsTitle = document.getElementById('details-title');
+    const detailsBody1 = document.getElementById('details-body-1');
+    const detailsBody2 = document.getElementById('details-body-2');
+    const detailsBody3 = document.getElementById('details-body-3');
+    const detailsBody4 = document.getElementById('details-body-4');
+    const detailsBody5 = document.getElementById('details-body-5');
+    const detailsBody6 = document.getElementById('details-body-6');
+    const detailsBody7 = document.getElementById('details-body-7');
+
+    let vibrationInterval = null;
+
+    function setEyes(x, y) {
+      irisL.setAttribute('transform', `translate(${x}, ${y})`);
+      irisR.setAttribute('transform', `translate(${x}, ${y})`);
+    }
+
+    function clearEffects() {
+      clearInterval(vibrationInterval);
+      face.setAttribute('transform', 'translate(0, 0)');
+      
+      // Resetar rugas e sobrancelhas para o estado padrão
+      const wrinkleChildren = wrinkles.getElementsByClassName('wrinkle');
+      for (let i = 0; i < wrinkleChildren.length; i++) {
+        wrinkleChildren[i].style.opacity = '0';
+      }
+      browL.setAttribute('d', 'M 170 170 Q 215 160 260 178');
+      browR.setAttribute('d', 'M 320 178 Q 365 160 410 170');
+    }
+
+    function selectBtn(activeId) {
+      ['btn-up', 'btn-down', 'btn-rvo'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.classList.remove('active');
+      });
+      const activeBtn = document.getElementById(activeId);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    function setClinicalState(state) {
+      clearEffects();
+      
+      if (state === 'up') {
+        selectBtn('btn-up');
+        setEyes(0, -22);
+        
+        statusText.textContent = "CONJUGADO ACIMA";
+        statusText.className.baseVal = "status-badge badge-amber";
+        statusBg.className.baseVal = "badge-bg badge-bg-amber";
+        
+        detailsTitle.textContent = "OLHAR VERTICAL SUPERIOR";
+        detailsTitle.style.fill = "var(--amber)";
+        
+        detailsBody1.textContent = "O paciente consegue elevar o olhar voluntariamente.";
+        detailsBody2.textContent = "Esse movimento é geralmente mantido no início";
+        detailsBody3.textContent = "e fases intermediárias da doença (PSP).";
+        detailsBody4.textContent = "O tônus extensor cervical (retrocolo) acompanha";
+        detailsBody5.textContent = "este achado. O paciente tende a tombar a";
+        detailsBody6.textContent = "cabeça para trás para tentar compensar o olhar.";
+        detailsBody7.textContent = "Clique nos botões de testes ou nós da via abaixo.";
+        
+        showPathwayDetail('cortex', true);
+      } else if (state === 'down') {
+        selectBtn('btn-down');
+        
+        // Posição das sobrancelhas mostrando esforço
+        browL.setAttribute('d', 'M 170 160 Q 215 178 260 172');
+        browR.setAttribute('d', 'M 320 172 Q 365 178 410 160');
+        
+        const wrinkleChildren = wrinkles.getElementsByClassName('wrinkle');
+        for (let i = 0; i < wrinkleChildren.length; i++) {
+          wrinkleChildren[i].style.opacity = '0.95';
+        }
+        
+        // Simulação da tentativa voluntária bloqueada com tremor (nistagmo de esforço)
+        let count = 0;
+        vibrationInterval = setInterval(() => {
+          count++;
+          const dx = (Math.random() - 0.5) * 3;
+          const dy = 2 + (Math.random() - 0.5) * 2; // tenta descer mas vibra
+          setEyes(dx, dy);
+          
+          if (count > 16) {
+            clearInterval(vibrationInterval);
+            // Trava totalmente no desvio superior
+            setEyes(0, -18);
+            
+            statusText.textContent = "PARALISIA VERTICAL";
+            statusText.className.baseVal = "status-badge badge-red";
+            statusBg.className.baseVal = "badge-bg badge-bg-red";
+            
+            detailsTitle.textContent = "FALHA VOLUNTÁRIA PARA BAIXO";
+            detailsTitle.style.fill = "var(--red)";
+            
+            detailsBody1.textContent = "O comando voluntário de descida falha completamente.";
+            detailsBody2.textContent = "Os olhos esboçam leve descida, sofrem tremor";
+            detailsBody3.textContent = "vertical espasmódico e são puxados para cima.";
+            detailsBody4.textContent = "MECANISMO DA PSP:";
+            detailsBody5.textContent = "A degeneração atinge vias supranucleares rostral do";
+            detailsBody6.textContent = "FLM. O estímulo voluntário de descida não alcança";
+            detailsBody7.textContent = "os núcleos do tronco cerebral.";
+            
+            showPathwayDetail('lesion', true);
+          }
+        }, 45);
+      } else if (state === 'rvo') {
+        selectBtn('btn-rvo');
+        
+        // Simula inclinação passiva da cabeça para trás (movimento para cima)
+        face.setAttribute('transform', 'translate(0, -22) scale(0.96) translate(12, 10)');
+        
+        // O Reflexo Vestíbulo-Ocular (RVO) faz os olhos descerem perfeitamente
+        setEyes(0, 22);
+        
+        statusText.textContent = "RVO PRESERVADO";
+        statusText.className.baseVal = "status-badge badge-green";
+        statusBg.className.baseVal = "badge-bg badge-bg-green";
+        
+        detailsTitle.textContent = "REFLEXO VESTÍBULO-OCULAR (RVO)";
+        detailsTitle.style.fill = "var(--green)";
+        
+        detailsBody1.textContent = "Ao estender a cabeça passivamente (olhos de boneca),";
+        detailsBody2.textContent = "o paciente realiza a descida coordenada dos olhos.";
+        detailsBody3.textContent = "Isso comprova a integridade da via de tronco.";
+        detailsBody4.textContent = "VALOR DIAGNÓSTICO:";
+        detailsBody5.textContent = "Os núcleos do III e IV pares e os músculos extraoculares";
+        detailsBody6.textContent = "funcionam perfeitamente. A lesão reside unicamente";
+        detailsBody7.textContent = "acima dos núcleos (paralisia supranuclear).";
+        
+        showPathwayDetail('tronco', true);
+      }
+    }
+
+    function showPathwayDetail(node, fromStateSync = false) {
+      if (!fromStateSync) {
+        clearEffects();
+      }
+      
+      // Remove classe ativa de todos os nós do diagrama
+      ['node-cortex', 'node-lesion', 'node-tronco', 'node-musculo'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active-node');
+      });
+      
+      const activeEl = document.getElementById('node-' + node);
+      if (activeEl) activeEl.classList.add('active-node');
+      
+      if (fromStateSync) return; // Se a chamada veio da sincronização de estado principal, não reescreve
+      
+      if (node === 'cortex') {
+        detailsTitle.textContent = "CÓRTEX MOTOR VERTICAL";
+        detailsTitle.style.fill = "var(--cyan)";
+        detailsBody1.textContent = "Área cortical responsável pela coordenação voluntária";
+        detailsBody2.textContent = "do olhar vertical e conjugado. Envia vias do";
+        detailsBody3.textContent = "trato corticobulbar em direção ao tronco.";
+        detailsBody4.textContent = "ESTRUTURA ACOMETIDA:";
+        detailsBody5.textContent = "Os neurônios corticais de comando estão preservados,";
+        detailsBody6.textContent = "mas a projeção axonal descendente está isolada";
+        detailsBody7.textContent = "pela lesão localizada logo abaixo.";
+      } else if (node === 'lesion') {
+        detailsTitle.textContent = "LESÃO SUPRANUCLEAR";
+        detailsTitle.style.fill = "var(--red)";
+        detailsBody1.textContent = "Lesão característica da Paralisia Supranuclear";
+        detailsBody2.textContent = "Progressiva (PSP) que impede o sinal voluntário";
+        detailsBody3.textContent = "de alcançar os núcleos motores inferiores.";
+        detailsBody4.textContent = "MARCADOR DE PSP:";
+        detailsBody5.textContent = "Indica que o bloqueio motor está 'acima dos núcleos'.";
+        detailsBody6.textContent = "Clinicamente demonstrado pela preservação do reflexo";
+        detailsBody7.textContent = "vestíbulo-ocular passivo (RVO).";
+      } else if (node === 'tronco') {
+        detailsTitle.textContent = "NÚCLEOS DO TRONCO CEREBRAL";
+        detailsTitle.style.fill = "var(--cyan)";
+        detailsBody1.textContent = "O tronco (mesencéfalo) abriga o núcleo do nervo";
+        detailsBody2.textContent = "oculomotor (III par) e o centro gerador vertical";
+        detailsBody3.textContent = "do olhar conjugado (complexo rostral do FLM).";
+        detailsBody4.textContent = "INOCUIDADE DO TRONCO:";
+        detailsBody5.textContent = "Na PSP clássica, estes núcleos e suas vias reflexas";
+        detailsBody6.textContent = "estão preservados, permitindo o movimento reflexo";
+        detailsBody7.textContent = "quando ativados pela via vestibular (RVO).";
+      } else if (node === 'musculo') {
+        detailsTitle.textContent = "EFETOR EXTRAOCULAR";
+        detailsTitle.style.fill = "var(--cyan)";
+        detailsBody1.textContent = "Os músculos extraoculares (reto inferior e oblíquo";
+        detailsBody2.textContent = "superior) realizam a tração mecânica do globo";
+        detailsBody3.textContent = "ocular para permitir o olhar inferior.";
+        detailsBody4.textContent = "AUSÊNCIA DE PARALISIA PERIFÉRICA:";
+        detailsBody5.textContent = "Não há fraqueza muscular ou neuropatia periférica.";
+        detailsBody6.textContent = "A musculatura está totalmente apta para agir,";
+        detailsBody7.textContent = "apenas aguarda um estímulo que chega pelo RVO.";
+      }
+    }
+
+    // Inicialização default
+    setClinicalState('up');
+    //]]>
+  </script>
+</svg>

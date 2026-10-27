@@ -1,0 +1,514 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" id="fm1p6-svg" class="fm1p6-root" role="img" aria-label="Ilustração Interativa do Reflexo Cutâneo-Plantar: Resposta Normal vs Sinal de Babinski">
+  <defs>
+    <style>
+      .fm1p6-root {
+        --fm1p6-bg: var(--bg-1, #0f172a);
+        --fm1p6-card-bg: var(--bg-2, #1e293b);
+        --fm1p6-card-border: var(--ink-20, #334155);
+        --fm1p6-text-main: var(--ink-100, #f8fafc);
+        --fm1p6-text-muted: var(--ink-60, #94a3b8);
+        --fm1p6-text-sub: var(--ink-80, #cbd5e1);
+        
+        --fm1p6-normal-teal: var(--kw-teal, #0d9488);
+        --fm1p6-normal-teal-bg: var(--kw-teal-bg, rgba(13, 148, 136, 0.15));
+        --fm1p6-normal-teal-border: var(--kw-teal-border, #14b8a6);
+        --fm1p6-normal-teal-text: var(--kw-teal-text, #2dd4bf);
+        
+        --fm1p6-patho-coral: var(--kw-coral, #f43f5e);
+        --fm1p6-patho-coral-bg: var(--kw-coral-bg, rgba(244, 63, 94, 0.15));
+        --fm1p6-patho-coral-border: var(--kw-coral-border, #fb7185);
+        --fm1p6-patho-coral-text: var(--kw-coral-text, #fda4af);
+
+        --fm1p6-amber-gold: var(--kw-gold, #f59e0b);
+        --fm1p6-amber-gold-bg: var(--kw-gold-bg, rgba(245, 158, 11, 0.15));
+        --fm1p6-amber-gold-border: var(--kw-gold-border, #fbbf24);
+
+        --fm1p6-indigo-accent: var(--kw-indigo, #6366f1);
+        --fm1p6-foot-fill: var(--kw-foot-bg, #1e293b);
+        --fm1p6-foot-stroke: var(--kw-foot-stroke, #475569);
+        --fm1p6-foot-skin: var(--kw-foot-skin, #3b82f6);
+        
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      :root[data-theme="light"] .fm1p6-root,
+      .fm1p6-root[data-theme="light"] {
+        --fm1p6-bg: var(--bg-1, #f8fafc);
+        --fm1p6-card-bg: var(--bg-2, #ffffff);
+        --fm1p6-card-border: var(--ink-20, #e2e8f0);
+        --fm1p6-text-main: var(--ink-100, #0f172a);
+        --fm1p6-text-muted: var(--ink-60, #64748b);
+        --fm1p6-text-sub: var(--ink-80, #334155);
+        
+        --fm1p6-normal-teal: var(--kw-teal, #0f766e);
+        --fm1p6-normal-teal-bg: var(--kw-teal-bg, #ccfbf1);
+        --fm1p6-normal-teal-border: var(--kw-teal-border, #0d9488);
+        --fm1p6-normal-teal-text: var(--kw-teal-text, #0f766e);
+        
+        --fm1p6-patho-coral: var(--kw-coral, #e11d48);
+        --fm1p6-patho-coral-bg: var(--kw-coral-bg, #ffe4e6);
+        --fm1p6-patho-coral-border: var(--kw-coral-border, #f43f5e);
+        --fm1p6-patho-coral-text: var(--kw-coral-text, #be123c);
+
+        --fm1p6-amber-gold: var(--kw-gold, #d97706);
+        --fm1p6-amber-gold-bg: var(--kw-gold-bg, #fef3c7);
+        --fm1p6-amber-gold-border: var(--kw-gold-border, #f59e0b);
+
+        --fm1p6-indigo-accent: var(--kw-indigo, #4f46e5);
+        --fm1p6-foot-fill: var(--kw-foot-bg, #f1f5f9);
+        --fm1p6-foot-stroke: var(--kw-foot-stroke, #94a3b8);
+        --fm1p6-foot-skin: var(--kw-foot-skin, #2563eb);
+      }
+
+      /* Structural Styles */
+      #fm1p6-svg .fm1p6-bg-rect { fill: var(--fm1p6-bg, #0f172a); }
+      #fm1p6-svg .fm1p6-card { fill: var(--fm1p6-card-bg, #1e293b); stroke: var(--fm1p6-card-border, #334155); stroke-width: 1.5; rx: 12; }
+      #fm1p6-svg .fm1p6-title { fill: var(--fm1p6-text-main, #f8fafc); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+      #fm1p6-svg .fm1p6-subtitle { fill: var(--fm1p6-text-muted, #94a3b8); font-size: 13px; font-weight: 500; }
+      
+      /* Interactive Buttons */
+      #fm1p6-svg .fm1p6-btn { cursor: pointer; transition: all 0.2s ease; }
+      #fm1p6-svg .fm1p6-btn-bg { fill: var(--fm1p6-card-bg, #1e293b); stroke: var(--fm1p6-card-border, #334155); stroke-width: 1.5; rx: 20; }
+      #fm1p6-svg .fm1p6-btn:hover .fm1p6-btn-bg { stroke: var(--fm1p6-indigo-accent, #6366f1); fill: var(--fm1p6-amber-gold-bg, rgba(245, 158, 11, 0.15)); }
+      #fm1p6-svg .fm1p6-btn-text { fill: var(--fm1p6-text-main, #f8fafc); font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+      
+      #fm1p6-svg .fm1p6-btn.fm1p6-active-normal .fm1p6-btn-bg { fill: var(--fm1p6-normal-teal-bg, rgba(13, 148, 136, 0.15)); stroke: var(--fm1p6-normal-teal-border, #14b8a6); }
+      #fm1p6-svg .fm1p6-btn.fm1p6-active-normal .fm1p6-btn-text { fill: var(--fm1p6-normal-teal-text, #2dd4bf); }
+
+      #fm1p6-svg .fm1p6-btn.fm1p6-active-babinski .fm1p6-btn-bg { fill: var(--fm1p6-patho-coral-bg, rgba(244, 63, 94, 0.15)); stroke: var(--fm1p6-patho-coral-border, #fb7185); }
+      #fm1p6-svg .fm1p6-btn.fm1p6-active-babinski .fm1p6-btn-text { fill: var(--fm1p6-patho-coral-text, #fda4af); }
+
+      /* Foot Vector Artwork */
+      #fm1p6-svg .fm1p6-foot-body { fill: var(--fm1p6-foot-fill, #1e293b); stroke: var(--fm1p6-foot-stroke, #475569); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+      #fm1p6-svg .fm1p6-toe-flexed { fill: var(--fm1p6-normal-teal-bg, rgba(13, 148, 136, 0.2)); stroke: var(--fm1p6-normal-teal-border, #14b8a6); stroke-width: 2.5; transition: all 0.4s ease; }
+      #fm1p6-svg .fm1p6-toe-extended { fill: var(--fm1p6-patho-coral-bg, rgba(244, 63, 94, 0.25)); stroke: var(--fm1p6-patho-coral-border, #fb7185); stroke-width: 3; transition: all 0.4s ease; }
+      
+      /* Stimulus Path */
+      #fm1p6-svg .fm1p6-stimulus-line { fill: none; stroke: var(--fm1p6-amber-gold, #f59e0b); stroke-width: 3.5; stroke-dasharray: 6 4; stroke-linecap: round; }
+      #fm1p6-svg .fm1p6-stimulus-head { fill: var(--fm1p6-amber-gold, #f59e0b); stroke: #ffffff; stroke-width: 1.5; }
+      #fm1p6-svg .fm1p6-stimulus-sweep { fill: none; stroke: var(--fm1p6-amber-gold, #f59e0b); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 220; stroke-dashoffset: 220; transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+      
+      #fm1p6-svg .fm1p6-active-sweep .fm1p6-stimulus-sweep { stroke-dashoffset: 0; }
+
+      /* Annotations & Vectors */
+      #fm1p6-svg .fm1p6-vector-arrow { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      #fm1p6-svg .fm1p6-arrow-normal { stroke: var(--fm1p6-normal-teal-border, #14b8a6); }
+      #fm1p6-svg .fm1p6-arrow-patho { stroke: var(--fm1p6-patho-coral-border, #fb7185); }
+      
+      #fm1p6-svg .fm1p6-badge { rx: 6; ry: 6; }
+      #fm1p6-svg .fm1p6-badge-normal { fill: var(--fm1p6-normal-teal-bg, rgba(13, 148, 136, 0.15)); stroke: var(--fm1p6-normal-teal-border, #14b8a6); stroke-width: 1.2; }
+      #fm1p6-svg .fm1p6-badge-patho { fill: var(--fm1p6-patho-coral-bg, rgba(244, 63, 94, 0.15)); stroke: var(--fm1p6-patho-coral-border, #fb7185); stroke-width: 1.2; }
+      #fm1p6-svg .fm1p6-badge-gold { fill: var(--fm1p6-amber-gold-bg, rgba(245, 158, 11, 0.15)); stroke: var(--fm1p6-amber-gold-border, #fbbf24); stroke-width: 1.2; }
+
+      #fm1p6-svg .fm1p6-badge-text-normal { fill: var(--fm1p6-normal-teal-text, #2dd4bf); font-size: 11px; font-weight: 700; text-anchor: middle; }
+      #fm1p6-svg .fm1p6-badge-text-patho { fill: var(--fm1p6-patho-coral-text, #fda4af); font-size: 11px; font-weight: 700; text-anchor: middle; }
+      #fm1p6-svg .fm1p6-badge-text-gold { fill: var(--fm1p6-amber-gold, #f59e0b); font-size: 11px; font-weight: 700; text-anchor: middle; }
+
+      /* Hotspots & Glow Effects */
+      #fm1p6-svg .fm1p6-hotspot { cursor: pointer; opacity: 0.9; transition: opacity 0.2s, transform 0.2s; }
+      #fm1p6-svg .fm1p6-hotspot:hover { opacity: 1; filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5)); }
+      #fm1p6-svg .fm1p6-glow-patho { filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.6)); }
+      #fm1p6-svg .fm1p6-glow-normal { filter: drop-shadow(0 0 8px rgba(13, 148, 136, 0.6)); }
+
+      /* Panel Typography */
+      #fm1p6-svg .fm1p6-panel-header { fill: var(--fm1p6-text-main, #f8fafc); font-size: 14px; font-weight: 700; }
+      #fm1p6-svg .fm1p6-panel-body { fill: var(--fm1p6-text-sub, #cbd5e1); font-size: 12px; line-height: 1.4; }
+      #fm1p6-svg .fm1p6-panel-bold { font-weight: 700; }
+
+      /* Focus / Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        #fm1p6-svg .fm1p6-stimulus-sweep { transition: none !important; }
+        #fm1p6-svg .fm1p6-toe-flexed, #fm1p6-svg .fm1p6-toe-extended { transition: none !important; }
+      }
+    </style>
+
+    <!-- Markers for Vector Arrows -->
+    <marker id="fm1p6-arrowhead-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--kw-teal-border, #14b8a6)"/>
+    </marker>
+    <marker id="fm1p6-arrowhead-coral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--kw-coral-border, #fb7185)"/>
+    </marker>
+    <marker id="fm1p6-arrowhead-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--kw-gold, #f59e0b)"/>
+    </marker>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect class="fm1p6-bg-rect" width="1000" height="640" rx="16"/>
+
+  <!-- HEADER CONTRACT ZONE -->
+  <g transform="translate(40, 42)">
+    <text class="fm1p6-title" x="0" y="0">REFLEXO CUTÂNEO-PLANTAR: PÉ DE MACACO vs SINAL DE BABINSKI</text>
+    <text class="fm1p6-subtitle" x="0" y="22">Legenda de Interpretação: Flexão plantar normal ("segura o galho") vs Extensão do hálux (Babinski+ = Lesão de 1º Neurônio Motor / NMS)</text>
+  </g>
+
+  <!-- INTERACTIVE CONTROLS BAR -->
+  <g transform="translate(620, 25)">
+    <!-- Trigger Stimulus Animation -->
+    <g class="fm1p6-btn" id="fm1p6-btn-stimulate" role="button" aria-label="Simular Estímulo Plantar" tabindex="0" transform="translate(0, 0)">
+      <rect class="fm1p6-btn-bg" width="160" height="36" rx="18"/>
+      <text class="fm1p6-btn-text" x="80" y="19">⚡ Estímulo Plantar</text>
+    </g>
+    <!-- View Switcher: Normal -->
+    <g class="fm1p6-btn fm1p6-active-normal" id="fm1p6-btn-normal" role="button" aria-label="Mostrar Resposta Normal (Flexão)" tabindex="0" transform="translate(170, 0)">
+      <rect class="fm1p6-btn-bg" width="85" height="36" rx="18"/>
+      <text class="fm1p6-btn-text" x="42" y="19">Normal</text>
+    </g>
+    <!-- View Switcher: Babinski+ -->
+    <g class="fm1p6-btn" id="fm1p6-btn-babinski" role="button" aria-label="Mostrar Sinal de Babinski+ (Extensão)" tabindex="0" transform="translate(263, 0)">
+      <rect class="fm1p6-btn-bg" width="95" height="36" rx="18"/>
+      <text class="fm1p6-btn-text" x="47" y="19">Babinski+</text>
+    </g>
+  </g>
+
+  <!-- LEFT STAGE: RESPOSTA FISIOLÓGICA (NORMAL) -->
+  <g id="fm1p6-stage-normal" transform="translate(40, 85)">
+    <rect class="fm1p6-card" width="445" height="425"/>
+    
+    <!-- Stage Header -->
+    <g transform="translate(25, 28)">
+      <rect class="fm1p6-badge fm1p6-badge-normal" width="160" height="26" x="0" y="0"/>
+      <text class="fm1p6-badge-text-normal" x="80" y="17">RESPOSTA FISIOLÓGICA</text>
+      <text class="fm1p6-panel-header" x="0" y="48">Flexão Plantar ("Pé de Macaco")</text>
+      <text class="fm1p6-subtitle" x="0" y="66">Arco reflexo espinal intacto • Sem lesão piramidal</text>
+    </g>
+
+    <!-- Monkey / Branch Metaphor Graphic Motif (Discreet upper right) -->
+    <g transform="translate(345, 25)" opacity="0.85">
+      <rect class="fm1p6-badge fm1p6-badge-gold" width="75" height="54" x="0" y="0" rx="8"/>
+      <path d="M 12 40 C 25 38, 50 38, 63 40" stroke="var(--kw-gold, #f59e0b)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- Small stylized flexed monkey toes gripping branch -->
+      <path d="M 22 28 C 22 38, 28 38, 28 28 M 32 25 C 32 38, 38 38, 38 25 M 42 27 C 42 38, 48 38, 48 27 M 52 30 C 52 38, 57 38, 57 30" stroke="var(--kw-gold, #f59e0b)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <text class="fm1p6-badge-text-gold" x="37" y="16" font-size="9">AGARRA GALHO</text>
+    </g>
+
+    <!-- FOOT ARTWORK - NORMAL (FLEXION) -->
+    <g transform="translate(90, 150)" id="fm1p6-foot-normal-group">
+      <!-- Main Foot Outline (Sole/Plantar view) -->
+      <!-- Heel (Calcâneo) -->
+      <path class="fm1p6-foot-body" d="
+        M 100 290 
+        C 70 290, 50 260, 50 220 
+        C 50 170, 65 120, 75 70 
+        C 80 45, 95 30, 120 30 
+        C 150 30, 185 45, 195 70 
+        C 210 110, 220 170, 215 220 
+        C 210 260, 140 290, 100 290 Z" />
+
+      <!-- Flexed Hallux (1º Dedo) - Curled inward/downward -->
+      <path class="fm1p6-toe-flexed fm1p6-glow-normal" id="fm1p6-normal-hallux" d="
+        M 80 65 
+        C 75 40, 60 25, 48 30 
+        C 38 35, 42 55, 58 68 
+        C 68 76, 78 78, 85 70 Z" 
+        role="button" aria-label="Hálux em flexão plantar (Normal)"/>
+      <path d="M 52 35 C 50 45, 55 55, 62 60" stroke="var(--kw-teal-border, #14b8a6)" stroke-width="1.5" fill="none"/>
+
+      <!-- Flexed Digits 2 to 5 (Dedos II-V flexionados) -->
+      <!-- Dedo 2 -->
+      <path class="fm1p6-toe-flexed" d="M 112 32 C 110 15, 98 8, 90 14 C 84 19, 88 32, 102 38 Z"/>
+      <!-- Dedo 3 -->
+      <path class="fm1p6-toe-flexed" d="M 138 35 C 138 18, 128 10, 120 16 C 114 22, 118 35, 130 40 Z"/>
+      <!-- Dedo 4 -->
+      <path class="fm1p6-toe-flexed" d="M 164 43 C 166 28, 158 20, 150 25 C 144 30, 148 43, 158 47 Z"/>
+      <!-- Dedo 5 -->
+      <path class="fm1p6-toe-flexed" d="M 188 58 C 192 45, 185 38, 178 42 C 172 46, 175 58, 182 62 Z"/>
+
+      <!-- Plantar Creases / Details -->
+      <path d="M 80 100 Q 120 120 180 95" stroke="var(--fm1p6-foot-stroke, #475569)" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <path d="M 90 190 Q 130 205 170 185" stroke="var(--fm1p6-foot-stroke, #475569)" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+      <!-- Flexion Vector Motion Arrows -->
+      <path class="fm1p6-vector-arrow fm1p6-arrow-normal" d="M 45 15 C 35 25, 38 40, 42 50" marker-end="url(#fm1p6-arrowhead-teal)"/>
+      <path class="fm1p6-vector-arrow fm1p6-arrow-normal" d="M 105 5 C 95 10, 92 20, 95 28" marker-end="url(#fm1p6-arrowhead-teal)"/>
+
+      <!-- Plantar Stimulus Trail (Normal Foot) -->
+      <path class="fm1p6-stimulus-line" d="M 100 270 C 185 240, 195 150, 150 105 L 100 95"/>
+      <path class="fm1p6-stimulus-sweep" id="fm1p6-sweep-left" d="M 100 270 C 185 240, 195 150, 150 105 L 100 95"/>
+      <circle class="fm1p6-stimulus-head" cx="100" cy="270" r="5" id="fm1p6-head-left"/>
+    </g>
+
+    <!-- Callout Labels (Normal Side) -->
+    <g transform="translate(25, 230)">
+      <line x1="60" y1="10" x2="110" y2="10" stroke="var(--kw-teal-border, #14b8a6)" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <circle cx="110" cy="10" r="3" fill="var(--kw-teal-border, #14b8a6)"/>
+      <rect class="fm1p6-badge fm1p6-badge-normal" width="130" height="42" x="-70" y="-12"/>
+      <text class="fm1p6-badge-text-normal" x="-5" y="6" text-anchor="middle">Flexão Plantar</text>
+      <text class="fm1p6-badge-text-normal" x="-5" y="20" font-size="9.5px" opacity="0.9" text-anchor="middle">Todos os dedos dobram</text>
+    </g>
+
+    <g transform="translate(320, 370)">
+      <rect class="fm1p6-badge fm1p6-badge-gold" width="105" height="34" x="0" y="0"/>
+      <text class="fm1p6-badge-text-gold" x="52" y="14">ESTÍMULO</text>
+      <text class="fm1p6-badge-text-gold" x="52" y="26" font-size="9px">Calcâneo → Borda Lat.</text>
+    </g>
+  </g>
+
+  <!-- RIGHT STAGE: SINAL DE BABINSKI (PATOLÓGICO / 1º NMS) -->
+  <g id="fm1p6-stage-babinski" transform="translate(515, 85)">
+    <rect class="fm1p6-card" width="445" height="425"/>
+    
+    <!-- Stage Header -->
+    <g transform="translate(25, 28)">
+      <rect class="fm1p6-badge fm1p6-badge-patho" width="165" height="26" x="0" y="0"/>
+      <text class="fm1p6-badge-text-patho" x="82" y="17">SINAL DE BABINSKI (1º NMS)</text>
+      <text class="fm1p6-panel-header" x="0" y="48">Hálux em Extensão (Dorsiflexão)</text>
+      <text class="fm1p6-subtitle" x="0" y="66">Liberação piramidal • Lesão do Trato Corticoespinal</text>
+    </g>
+
+    <!-- Pathological Badge Header Right -->
+    <g transform="translate(340, 25)">
+      <rect class="fm1p6-badge fm1p6-badge-patho" width="80" height="54" x="0" y="0" rx="8"/>
+      <text class="fm1p6-badge-text-patho" x="40" y="22" font-weight="800" font-size="13">BABINSKI+</text>
+      <text class="fm1p6-badge-text-patho" x="40" y="38" font-size="9.5">1º NMS / UMN</text>
+    </g>
+
+    <!-- FOOT ARTWORK - BABINSKI+ (HALLUX EXTENSION + FANNING) -->
+    <g transform="translate(90, 150)" id="fm1p6-foot-babinski-group">
+      <!-- Main Foot Body -->
+      <path class="fm1p6-foot-body" d="
+        M 100 290 
+        C 70 290, 50 260, 50 220 
+        C 50 170, 65 120, 75 70 
+        C 80 45, 95 30, 120 30 
+        C 150 30, 185 45, 195 70 
+        C 210 110, 220 170, 215 220 
+        C 210 260, 140 290, 100 290 Z" />
+
+      <!-- Extended Hallux (Hálux em Extensão Dorsal - "Olhando para o teto") -->
+      <!-- Prominent upward extension pointing towards upper-left -->
+      <path class="fm1p6-toe-extended fm1p6-glow-patho" id="fm1p6-patho-hallux" d="
+        M 82 55 
+        C 70 40, 50 -15, 30 -25 
+        C 12 -32, -2 -10, 15 15 
+        C 32 38, 55 52, 75 68 Z" 
+        role="button" aria-label="Hálux em extensão dorsal (Sinal de Babinski positivo)"/>
+      <!-- Hallux Nail / Anatomic detail -->
+      <path d="M 22 -18 C 18 -10, 24 -2, 32 4" stroke="var(--kw-coral-border, #fb7185)" stroke-width="1.8" fill="none"/>
+
+      <!-- Fanning Digits 2 to 5 (Lequeamento de Dupré / Abdução dos II-V dedos) -->
+      <!-- Dedo 2 - Abducted upward -->
+      <path class="fm1p6-toe-extended" d="M 108 28 C 105 -2, 95 -12, 85 -5 C 78 3, 86 22, 98 32 Z"/>
+      <!-- Dedo 3 - Abducted -->
+      <path class="fm1p6-toe-extended" d="M 136 30 C 142 2, 138 -12, 128 -8 C 118 -3, 120 20, 128 34 Z"/>
+      <!-- Dedo 4 - Abducted laterally -->
+      <path class="fm1p6-toe-extended" d="M 166 40 C 180 18, 178 5, 168 8 C 158 12, 152 30, 158 45 Z"/>
+      <!-- Dedo 5 - Abducted out -->
+      <path class="fm1p6-toe-extended" d="M 192 56 C 215 38, 212 25, 200 28 C 188 32, 180 48, 185 60 Z"/>
+
+      <!-- Plantar Creases -->
+      <path d="M 80 100 Q 120 120 180 95" stroke="var(--fm1p6-foot-stroke, #475569)" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <path d="M 90 190 Q 130 205 170 185" stroke="var(--fm1p6-foot-stroke, #475569)" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+      <!-- Extension Vector Arrow (UPWARDS & BACKWARDS) -->
+      <path class="fm1p6-vector-arrow fm1p6-arrow-patho" d="M 45 -5 C 32 -25, 22 -35, 10 -45" marker-end="url(#fm1p6-arrowhead-coral)"/>
+
+      <!-- Fanning Arrows (Lequeamento) -->
+      <path d="M 95 -18 L 82 -30" stroke="var(--kw-coral-border, #fb7185)" stroke-width="1.8" stroke-dasharray="2 2" marker-end="url(#fm1p6-arrowhead-coral)"/>
+      <path d="M 175 10 L 195 0" stroke="var(--kw-coral-border, #fb7185)" stroke-width="1.8" stroke-dasharray="2 2" marker-end="url(#fm1p6-arrowhead-coral)"/>
+
+      <!-- Plantar Stimulus Trail (Babinski Foot) -->
+      <path class="fm1p6-stimulus-line" d="M 100 270 C 185 240, 195 150, 150 105 L 100 95"/>
+      <path class="fm1p6-stimulus-sweep" id="fm1p6-sweep-right" d="M 100 270 C 185 240, 195 150, 150 105 L 100 95"/>
+      <circle class="fm1p6-stimulus-head" cx="100" cy="270" r="5" id="fm1p6-head-right"/>
+    </g>
+
+    <!-- Callout Labels (Babinski Side) -->
+    <g transform="translate(30, 130)">
+      <line x1="80" y1="0" x2="30" y2="-20" stroke="var(--kw-coral-border, #fb7185)" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <circle cx="30" cy="-20" r="3" fill="var(--kw-coral-border, #fb7185)"/>
+      <rect class="fm1p6-badge fm1p6-badge-patho" width="145" height="42" x="80" y="-22"/>
+      <text class="fm1p6-badge-text-patho" x="152" y="-4" text-anchor="middle">HÁLUX EM EXTENSÃO</text>
+      <text class="fm1p6-badge-text-patho" x="152" y="10" font-size="9.5px" opacity="0.9" text-anchor="middle">"Olhando para o teto"</text>
+    </g>
+
+    <!-- Leque Callout -->
+    <g transform="translate(325, 175)">
+      <rect class="fm1p6-badge fm1p6-badge-patho" width="105" height="34" x="0" y="0"/>
+      <text class="fm1p6-badge-text-patho" x="52" y="14" font-size="10">SINAL DO LEQUE</text>
+      <text class="fm1p6-badge-text-patho" x="52" y="26" font-size="8.5px" opacity="0.85">Abdução dedos II-V</text>
+    </g>
+
+    <g transform="translate(320, 370)">
+      <rect class="fm1p6-badge fm1p6-badge-gold" width="105" height="34" x="0" y="0"/>
+      <text class="fm1p6-badge-text-gold" x="52" y="14">ESTÍMULO</text>
+      <text class="fm1p6-badge-text-gold" x="52" y="26" font-size="9px">Nociceptivo / Tátil</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM CLINICAL CONTRACT PANEL (PAINEL DE LEITURA SEMIÓTICA) -->
+  <g transform="translate(40, 520)">
+    <rect class="fm1p6-card" width="920" height="100"/>
+
+    <!-- Left Column: Dynamic Diagnostic Focus -->
+    <g transform="translate(25, 20)">
+      <text class="fm1p6-panel-header" x="0" y="0">PAINEL DE CORRELAÇÃO TOPOGRÁFICA</text>
+      
+      <g id="fm1p6-dynamic-note-normal" opacity="1" style="transition: opacity 0.3s ease;">
+        <text class="fm1p6-panel-body" x="0" y="24">
+          • <tspan class="fm1p6-panel-bold" fill="var(--kw-teal-text, #2dd4bf)">Resposta Flexora (Normal):</tspan> Dobramento plantar fisiológico dos dedos. Indica trato corticoespinal íntegro.
+        </text>
+        <text class="fm1p6-panel-body" x="0" y="44">
+          • <tspan class="fm1p6-panel-bold" fill="var(--kw-gold, #f59e0b)">Analogia "Pé de Macaco":</tspan> Reflexo primitivo de preensão plantar ("segurar o galho").
+        </text>
+        <text class="fm1p6-panel-body" x="0" y="64">
+          • <tspan class="fm1p6-panel-bold" fill="var(--kw-teal-text, #2dd4bf)">Lesão de 2º Neurônio Motor (NMI):</tspan> Resposta flexora mantida OU arreflexia (sem extensão). NMI NUNCA dá Babinski!
+        </text>
+      </g>
+
+      <g id="fm1p6-dynamic-note-babinski" opacity="0.3" style="transition: opacity 0.3s ease;">
+        <text class="fm1p6-panel-body" x="0" y="24">
+          • <tspan class="fm1p6-panel-bold" fill="var(--kw-coral-text, #fda4af)">Sinal de Babinski (Babinski+):</tspan> Extensão (dorsiflexão) do Hálux ± lequeamento dos dedos II a V.
+        </text>
+        <text class="fm1p6-panel-body" x="0" y="44">
+          • <tspan class="fm1p6-panel-bold" fill="var(--kw-coral-text, #fda4af)">Virada de Sinal Piramidal:</tspan> Patognomônico de <tspan class="fm1p6-panel-bold" fill="var(--kw-coral-border, #fb7185)">Lesão do 1º Neurônio Motor (NMS / Via Corticoespinal)</tspan>.
+        </text>
+        <text class="fm1p6-panel-body" x="0" y="64">
+          • <tspan class="fm1p6-panel-bold" fill="var(--kw-gold, #f59e0b)">Exceção Fisiológica:</tspan> Normal em recém-nascidos/lactentes até 12-18 meses (mielinização incompleta).
+        </text>
+      </g>
+    </g>
+
+    <!-- Right Side Rule of Thumb Box -->
+    <g transform="translate(620, 15)">
+      <rect class="fm1p6-badge fm1p6-badge-gold" width="280" height="70" x="0" y="0" rx="8"/>
+      <text class="fm1p6-badge-text-gold" x="140" y="20" font-size="12" font-weight="800">REGRA DE OURO PARA PROVAS</text>
+      <text class="fm1p6-badge-text-gold" x="140" y="40" font-size="10.5" font-weight="500">1º NMS (Corticoespinal) = Babinski PRESENTE</text>
+      <text class="fm1p6-badge-text-gold" x="140" y="55" font-size="10.5" font-weight="500">2º NMI (Periférico/Corno Ant.) = Babinski AUSENTE</text>
+    </g>
+  </g>
+
+  <!-- SELF-CONTAINED INTERACTION ENGINE (INLINE JS) -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    (function() {
+      var root = document.getElementById('fm1p6-svg');
+      if (!root) return;
+
+      var btnStimulate = root.getElementById('fm1p6-btn-stimulate');
+      var btnNormal = root.getElementById('fm1p6-btn-normal');
+      var btnBabinski = root.getElementById('fm1p6-btn-babinski');
+
+      var stageNormal = root.getElementById('fm1p6-stage-normal');
+      var stageBabinski = root.getElementById('fm1p6-stage-babinski');
+
+      var noteNormal = root.getElementById('fm1p6-dynamic-note-normal');
+      var noteBabinski = root.getElementById('fm1p6-dynamic-note-babinski');
+
+      var normalHallux = root.getElementById('fm1p6-normal-hallux');
+      var pathoHallux = root.getElementById('fm1p6-patho-hallux');
+
+      function setMode(mode) {
+        if (mode === 'normal') {
+          btnNormal.classList.add('fm1p6-active-normal');
+          btnBabinski.classList.remove('fm1p6-active-babinski');
+          
+          stageNormal.setAttribute('opacity', '1');
+          stageBabinski.setAttribute('opacity', '0.45');
+          
+          noteNormal.setAttribute('opacity', '1');
+          noteBabinski.setAttribute('opacity', '0.2');
+        } else if (mode === 'babinski') {
+          btnNormal.classList.remove('fm1p6-active-normal');
+          btnBabinski.classList.add('fm1p6-active-babinski');
+
+          stageNormal.setAttribute('opacity', '0.45');
+          stageBabinski.setAttribute('opacity', '1');
+
+          noteNormal.setAttribute('opacity', '0.2');
+          noteBabinski.setAttribute('opacity', '1');
+        } else {
+          // Compare Both
+          btnNormal.classList.remove('fm1p6-active-normal');
+          btnBabinski.classList.remove('fm1p6-active-babinski');
+
+          stageNormal.setAttribute('opacity', '1');
+          stageBabinski.setAttribute('opacity', '1');
+
+          noteNormal.setAttribute('opacity', '1');
+          noteBabinski.setAttribute('opacity', '1');
+        }
+      }
+
+      function runStimulusAnimation() {
+        stageNormal.classList.remove('fm1p6-active-sweep');
+        stageBabinski.classList.remove('fm1p6-active-sweep');
+        
+        // Force reflow
+        void stageNormal.offsetWidth;
+
+        stageNormal.classList.add('fm1p6-active-sweep');
+        stageBabinski.classList.add('fm1p6-active-sweep');
+
+        // Animate heads along path manually for maximum compatibility
+        var headLeft = root.getElementById('fm1p6-head-left');
+        var headRight = root.getElementById('fm1p6-head-right');
+        
+        var startTime = null;
+        var duration = 1200; // ms
+
+        // Waypoints matching path "M 100 270 C 185 240, 195 150, 150 105 L 100 95"
+        function animateHead(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = (timestamp - startTime) / duration;
+          if (progress > 1) progress = 1;
+
+          // Simple parametric approximation for stimulus sweep
+          var t = progress;
+          var cx, cy;
+          if (t < 0.8) {
+            var nt = t / 0.8;
+            cx = 100 + 95 * Math.sin(nt * Math.PI);
+            cy = 270 - 165 * nt;
+          } else {
+            var nt2 = (t - 0.8) / 0.2;
+            cx = 150 - 50 * nt2;
+            cy = 105 - 10 * nt2;
+          }
+
+          if (headLeft) { headLeft.setAttribute('cx', cx); headLeft.setAttribute('cy', cy); }
+          if (headRight) { headRight.setAttribute('cx', cx); headRight.setAttribute('cy', cy); }
+
+          if (progress < 1) {
+            requestAnimationFrame(animateHead);
+          } else {
+            setTimeout(function() {
+              if (headLeft) { headLeft.setAttribute('cx', 100); headLeft.setAttribute('cy', 270); }
+              if (headRight) { headRight.setAttribute('cx', 100); headRight.setAttribute('cy', 270); }
+            }, 800);
+          }
+        }
+
+        requestAnimationFrame(animateHead);
+      }
+
+      // Event Listeners
+      if (btnNormal) {
+        btnNormal.addEventListener('click', function() { setMode('normal'); });
+        btnNormal.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setMode('normal'); e.preventDefault(); } });
+      }
+
+      if (btnBabinski) {
+        btnBabinski.addEventListener('click', function() { setMode('babinski'); });
+        btnBabinski.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setMode('babinski'); e.preventDefault(); } });
+      }
+
+      if (btnStimulate) {
+        btnStimulate.addEventListener('click', runStimulusAnimation);
+        btnStimulate.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { runStimulusAnimation(); e.preventDefault(); } });
+      }
+
+      if (normalHallux) {
+        normalHallux.addEventListener('click', function() { setMode('normal'); });
+      }
+      if (pathoHallux) {
+        pathoHallux.addEventListener('click', function() { setMode('babinski'); });
+      }
+
+      // Initial state: side by side active comparison
+      setMode('both');
+    })();
+    /* ]]> */
+  </script>
+</svg>

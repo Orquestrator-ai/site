@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Cefaleia (cf1). Crises que se parecem — enxaqueca prévia não imuniza; dor diferente reabre o caso.">
+<title>Crises que se parecem · cf1 · Neurologia</title>
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="cf1-cara">
+/* cf1 — identidade e componentes; a moldura vem do chassi compartilhado.
+   Ajuste 02-08: --ink-mute apontava para --ink-60 (o tom de NOTA/carimbo da casa)
+   e virou a cor de parágrafos de abertura, legendas e respostas — a página inteira
+   ficou cinza e ilegível. Agora --ink-mute aponta para --ink-legenda (texto que se LÊ,
+   nos dois temas). Os poucos usos que SÃO mesmo metadado/carimbo recebem --ink-60
+   direto. Os cards ganham borda visível e inset-highlight (voltam a ser objetos);
+   os alarmes de coral ganham halo próprio (saltam do fundo). */
+:root {
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+  --violet: #a78bfa;
+  --teal: var(--ciano);
+  --gold: var(--amber);
+  --green: var(--verde);
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --r: var(--radius-sm);
+  --r-lg: var(--radius);
+  --font: var(--font-sans);
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  /* membrana do card: borda que se vê + Highlight interno de glass + sombra da casa. */
+  --card-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.035);
+  /* halo dos alarmes: coral suave вокруг do card, sem virar neon. */
+  --alarm-glow: 0 0 30px -12px color-mix(in srgb, var(--coral) 50%, transparent);
+}
+body[data-theme="light"] { --violet: #7c3aed; }
+/* Guarda local: resolve os apelidos da aula no mesmo elemento que recebe os tokens
+   do tema manual, impedindo que card e texto herdem esquemas diferentes. */
+body[data-theme="light"], body[data-theme="dark"] {
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+}
+.page__eyebrow { color: var(--ink-60); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 .5rem; }
+/* Openers */
+.opener {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg);
+  background: var(--card); padding: 1.15rem 1.2rem 1.25rem; margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .opener, .exec-card, .fig, .quiz, .op-summary, .why-matters, .trap, .dont-confuse, .case-card, .gap-box, .hero-figure, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge { background: var(--card-solid); }
+}
+.opener__eyebrow { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); margin-bottom: .35rem; }
+.opener h1, #page-title {
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem); line-height: 1.25; margin: 0 0 .55rem; font-weight: 700;
+}
+.opener__lead, .opener__mnemonic, .opener__bust, .opener__case { margin: 0; color: var(--ink-mute); font-size: 1.02rem; }
+.opener--question { border-left: 4px solid var(--indigo); }
+.opener--case { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 8%, var(--card)); }
+.opener--trap { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.opener--checklist { border-left: 4px solid var(--teal); }
+.opener--mnemonic {
+  border-left: 4px solid var(--gold);
+  background: color-mix(in srgb, var(--gold) 7%, var(--card));
+}
+.opener--mnemonic .opener__mnemonic { font-family: Georgia, "Times New Roman", serif; font-size: 1.18rem; color: var(--ink); }
+.opener--vs { border-left: 4px solid var(--teal); }
+.opener--bust { border-left: 4px solid var(--coral); }
+.strike-wrong { text-decoration: line-through; color: var(--ink-60); }
+.chipset { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.1rem; }
+.chip--topic, .chip, .chip--ok, .chip--no, .chip--series {
+  display: inline-flex; align-items: center; border-radius: 999px; padding: .28rem .7rem;
+  font-size: .78rem; border: 1px solid var(--border); background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+  color: var(--ink); cursor: default;
+}
+.chip--topic { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 35%, var(--border)); }
+.chip--ok { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+.chip--no { color: var(--coral); border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.chip--series { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 35%, var(--border)); cursor: not-allowed; }
+button.chip { cursor: pointer; min-height: 36px; }
+/* Prosa usa a tipografia editorial do chassi. */
+.no-indent { text-indent: 0 !important; }
+.prose-list { margin: 0 0 1em 1.1rem; padding: 0; }
+.prose-list li { margin: .3rem 0; }
+.topic-h { font-size: 1.12rem; margin: 1.35rem 0 .55rem; color: var(--ink); }
+.term { color: var(--indigo); font-weight: 650; }
+[data-theme="light"] .term { color: var(--indigo); }
+.hl-good { color: var(--green); font-weight: 650; }
+.hl-bad { color: var(--coral); font-weight: 650; }
+.hl-warn { color: var(--gold); font-weight: 650; }
+/* Cards */
+.exec-card, .trap, .dont-confuse, .op-summary, .why-matters, .continuity, .gap-box, .hero-figure, .case-card, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge {
+  border: 1px solid var(--border-strong); border-radius: var(--r); background: var(--card);
+  padding: 1rem 1.05rem; margin: 1.1rem 0; box-shadow: var(--card-shadow);
+}
+.exec-card__title, .trap__title, .op-summary__title, .why-matters__title, .flip-deck__title, .ctx-grid__title, .alarm-mini__title, .flow-raias__title, .mantra-row__title, .tabelao__title, .series-bridge__title {
+  margin: 0 0 .65rem; font-size: 1rem; color: var(--teal);
+}
+/* Fecho: corpo em tom legenda (lê confortável nos dois temas); strong segue ink-100 pelo chassi. */
+.op-summary .prosa { color: var(--ink-legenda); }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.checklist label { display: flex; gap: .55rem; align-items: flex-start; cursor: pointer; min-height: 44px; }
+.checklist input { width: 18px; height: 18px; margin-top: .2rem; accent-color: var(--indigo); }
+/* split grave × simples (P1) */
+.split-board { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media (max-width: 560px) { .split-board { grid-template-columns: 1fr; } }
+.split-board__bad, .split-board__good {
+  border-radius: 10px; padding: .8rem .85rem; border: 1px solid var(--border);
+}
+.split-board__bad { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--alarm-glow); }
+.split-board__good { border-color: color-mix(in srgb, var(--green) 45%, var(--border)); background: color-mix(in srgb, var(--green) 6%, var(--card)); }
+.split-board h4 { margin: 0 0 .4rem; font-size: .9rem; }
+.split-board__bad h4 { color: var(--coral); }
+.split-board__good h4 { color: var(--green); }
+.split-board ul { margin: .2rem 0 0; padding-left: 1.1rem; }
+.split-board li { margin: .25rem 0; font-size: .92rem; }
+/* funil-PS toggle (P1/P8) */
+.funil-toggle { display: flex; gap: .5rem; flex-wrap: wrap; margin: .6rem 0 .2rem; }
+.funil-btn {
+  min-height: 44px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .45rem 1rem; cursor: pointer; font: inherit;
+}
+.funil-btn[aria-pressed="true"] { border-color: var(--indigo); color: var(--indigo); background: color-mix(in srgb, var(--indigo) 12%, var(--card-solid)); }
+.funil-btn.funil-btn--alarm[aria-pressed="true"] { border-color: var(--coral); color: var(--coral); background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); }
+.funil-out { font-size: .94rem; color: var(--ink-mute); margin: .5rem 0 0; text-indent: 0; }
+/* flip-cards (P2) */
+.flip-deck { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .flip-deck { grid-template-columns: 1fr; } }
+.flip-card { perspective: 1000px; min-height: 120px; cursor: pointer; }
+.flip-card__inner { position: relative; width: 100%; min-height: 120px; transition: transform .5s; transform-style: preserve-3d; }
+.flip-card[aria-pressed="true"] .flip-card__inner { transform: rotateY(180deg); }
+.flip-card__face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 10px; border: 1px solid var(--border-strong); padding: .8rem .85rem; display: flex; flex-direction: column; gap: .25rem; background: var(--card-solid); }
+.flip-card__face--front { color: var(--ink); }
+.flip-card__face--front .ff-tag { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); }
+.flip-card__face--back { transform: rotateY(180deg); color: var(--ink-mute); font-size: .9rem; }
+.flip-card--primary .flip-card__face--front { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.flip-card--secondary .flip-card__face--front { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.flip-card:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 10px; }
+/* board comparativo (P2) */
+.cmp-board { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .cmp-board { grid-template-columns: 1fr; } }
+.cmp-col { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.cmp-col--p { border-color: color-mix(in srgb, var(--indigo) 40%, var(--border)); }
+.cmp-col--s { border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.cmp-col h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.cmp-col--p h4 { color: var(--indigo); }
+.cmp-col--s h4 { color: var(--coral); }
+.cmp-col .chip { margin: .2rem .2rem .2rem 0; }
+/* timeline crises (P3) — texto simples no DOM reforça o SVG */
+.reopen-banner { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); border-radius: 0 10px 10px 0; padding: .65rem .85rem; margin: .8rem 0; box-shadow: var(--alarm-glow); }
+.reopen-banner b { color: var(--coral); }
+/* mini-tabela 3 alarmes (P4) */
+.alarm-mini { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.alarm-mini__table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.alarm-mini__table th, .alarm-mini__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.alarm-mini__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); }
+.nuance {
+  border-left: 3px solid var(--gold); padding: .7rem .9rem; margin: 1rem 0;
+  background: color-mix(in srgb, var(--gold) 8%, transparent); border-radius: 0 10px 10px 0;
+}
+.nuance__tag { display: inline-block; font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); font-weight: 700; margin-bottom: .25rem; }
+/* curva trovoada toggle (P4) */
+.curve-toggle { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .55rem; }
+.curve-btn {
+  min-height: 40px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .4rem .85rem; cursor: pointer; font: inherit;
+}
+.curve-btn.is-active { border-color: var(--coral); color: var(--coral); }
+.curve-btn.is-active[data-curve="prog"] { border-color: var(--amber); color: var(--amber); }
+.curve-out { font-size: .94rem; color: var(--ink-mute); margin: .4rem 0 0; text-indent: 0; }
+/* herói (P5) */
+.hero-figure { border-left: 4px solid var(--violet); }
+.hero-figure__cap { font-size: .82rem; color: var(--ink-legenda); margin: .5rem 0 0; }
+/* cards sistêmicos (P6) */
+.sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .8rem 0; }
+@media (max-width: 560px) { .sys-grid { grid-template-columns: 1fr; } }
+.sys-card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.sys-card--men { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.sys-card--sys { border-color: color-mix(in srgb, var(--amber) 45%, var(--border)); }
+.sys-card h4 { margin: 0 0 .3rem; font-size: .9rem; }
+.sys-card--men h4 { color: var(--coral); }
+.sys-card--sys h4 { color: var(--amber); }
+.trap { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.trap--despertar { border-left-color: var(--gold); box-shadow: var(--card-shadow); }
+.trap__pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .6rem 0; }
+@media (max-width: 560px) { .trap__pair { grid-template-columns: 1fr; } }
+.trap__phrase { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem .8rem; font-size: .92rem; }
+.trap__phrase--no { border-color: color-mix(in srgb, var(--ink-60) 40%, var(--border)); color: var(--ink-60); }
+.trap__phrase--yes { border-color: color-mix(in srgb, var(--coral) 50%, var(--border)); background: color-mix(in srgb, var(--coral) 8%, var(--card)); }
+.trap__phrase b { color: var(--coral); }
+/* context grid (P7) */
+.ctx-grid { }
+.ctx-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin: .5rem 0; }
+@media (max-width: 640px) { .ctx-cards { grid-template-columns: 1fr; } }
+.ctx-item { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; cursor: pointer; background: var(--card-solid); }
+.ctx-item[aria-expanded="true"] { border-color: var(--violet); }
+.ctx-item__ctx { font-size: .78rem; color: var(--violet); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.ctx-item__q { font-size: .95rem; font-weight: 600; margin: .2rem 0; }
+.ctx-item__a { font-size: .9rem; color: var(--ink-mute); display: none; margin-top: .3rem; }
+.ctx-item[aria-expanded="true"] .ctx-item__a { display: block; }
+.ctx-item:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+/* checklist porta (P8) */
+.checklist--porta .checklist__hint { font-size: .82rem; color: var(--ink-mute); margin-top: .4rem; }
+/* fluxo 4 raias (P9) */
+.flow-raias { }
+.rai { border: 1px solid var(--border-strong); border-radius: 10px; padding: .7rem .85rem; margin: .5rem 0; cursor: pointer; background: var(--card-solid); }
+.rai[aria-pressed="true"] { border-color: var(--indigo); box-shadow: 0 0 0 1px color-mix(in srgb, var(--indigo) 45%, transparent); }
+.rai__top { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.rai__sus { font-weight: 700; color: var(--coral); }
+.rai__arr { color: var(--teal); font-weight: 700; }
+.rai__ex { font-weight: 700; color: var(--indigo); }
+.rai__why { font-size: .9rem; color: var(--ink-mute); margin-top: .35rem; display: none; }
+.rai[aria-pressed="true"] .rai__why { display: block; }
+.rai:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+/* tabelão P10 */
+.tabelao { }
+.tabelao__filters { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .7rem; }
+.filter-btn { min-height: 36px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-solid); color: var(--ink); padding: .3rem .8rem; cursor: pointer; font: inherit; font-size: .82rem; }
+.filter-btn.is-active { border-color: var(--indigo); color: var(--indigo); }
+.tabelao__cards { display: none; flex-direction: column; gap: .5rem; }
+@media (max-width: 640px) { .tabelao__cards { display: flex; } .tabelao__table-wrap { display: none; } }
+.tabelao__card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .6rem .75rem; border-left: 4px solid var(--coral); box-shadow: var(--alarm-glow); }
+.tabelao__card .tc-alarm { font-weight: 700; color: var(--coral); }
+.tabelao__card .tc-row { font-size: .88rem; color: var(--ink-mute); margin-top: .2rem; }
+.tabelao__table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabelao__table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 560px; }
+.tabelao__table th, .tabelao__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.tabelao__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); position: sticky; top: 0; }
+.tabelao__table td.alarme-cell { font-weight: 650; color: var(--coral); }
+/* mantras (P10) */
+.mantra-row { border-left: 4px solid var(--gold); }
+.mantra-row ol { margin: .2rem 0 0; padding-left: 1.3rem; }
+.mantra-row li { margin: .4rem 0; font-weight: 600; }
+.mantra-row li .m-gold { color: var(--gold); }
+/* series bridge chips */
+.series-bridge { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 6%, var(--card)); }
+.series-bridge .chip-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+.dont-confuse__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+.dont-confuse__grid--2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .dont-confuse__grid { grid-template-columns: 1fr; } }
+.dont-confuse__grid > div { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem; }
+.dont-confuse__warn { border-color: color-mix(in srgb, var(--gold) 50%, var(--border)) !important; }
+.dont-confuse h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.gap-box { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 11%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.gap-box h4 { margin: 0 0 .4rem; color: var(--coral); }
+/* Figures */
+.fig { margin: 1.25rem 0; border: 1px solid var(--border-strong); border-radius: var(--r-lg); overflow: hidden; background: var(--card); box-shadow: var(--card-shadow); }
+.fig__frame { width: 100%; display: block; background: var(--bg-1); }
+.fig__frame img {
+  display: block; width: 100%; height: auto; max-width: 100%;
+  object-fit: contain; background: #0a0f18;
+}
+[data-theme="light"] .fig__frame img { background: #e8eef5; }
+.fig__frame--svg { padding: .35rem; }
+.cf1-inline-svg { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; }
+.fig__cap {
+  padding: .7rem .95rem .85rem; font-size: .78rem; color: var(--ink-legenda); line-height: 1.45;
+  border-top: 1px solid var(--border);
+}
+.fig__label {
+  display: inline-block; font-family: var(--mono); font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--gold); margin-right: .4rem;
+}
+.fig__attr { display: block; margin-top: .4rem; padding-top: .35rem; border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent); font-size: .74rem; color: var(--ink-fonte); }
+/* Quiz */
+.quiz {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg); padding: 1.1rem 1rem 1.25rem;
+  background: var(--card); margin: 1.5rem 0 1rem; box-shadow: var(--card-shadow);
+}
+.quiz h2 { margin: 0 0 .85rem; font-size: 1.1rem; }
+.quiz__questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.quiz__stem { margin: 0 0 .55rem; font-weight: 600; text-indent: 0; }
+.quiz__alternatives { display: grid; gap: .4rem; }
+.quiz__alt {
+  text-align: left; border: 1px solid var(--border-strong); border-radius: 10px;
+  background: var(--card-solid); color: var(--ink); padding: .7rem .8rem; cursor: pointer;
+  min-height: 44px; font: inherit;
+}
+.quiz__alt:hover { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.quiz__alt:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.quiz__alt[aria-checked="true"] { border-color: var(--indigo); }
+.quiz__alt.is-correct { border-color: var(--green); background: color-mix(in srgb, var(--green) 12%, var(--card-solid)); }
+.quiz__alt.is-wrong { border-color: var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card-solid)); }
+.quiz__feedback { margin-top: .55rem; padding: .7rem .75rem; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--bg-2); }
+.quiz__feedback[hidden] { display: none; }
+.quiz__verdict { margin: 0 0 .35rem; font-weight: 700; }
+.quiz__verdict.is-ok { color: var(--green); }
+.quiz__verdict.is-bad { color: var(--coral); }
+.quiz__justification, .quiz__distractor { margin: .25rem 0 0; font-size: .92rem; text-indent: 0; }
+.quiz__distractor { color: var(--ink-mute); }
+.page-nav__btn.is-disabled { opacity: .4; pointer-events: none; }
+.page-nav__pos { font-family: var(--mono); font-size: .85rem; color: var(--ink-60); }
+.continuity { border-left: 3px solid var(--teal); }
+</style>
+</head>
+<body data-theme="dark" data-page-id="p3" data-layout="cf1-p03" data-source-ids="016,017,018,019,020,021,022,023,024,025">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <div class="site-header__brand">
+      <span class="site-header__logo">NN</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Cefaleia: abordagem</span>
+        <span class="site-header__subtitle">Neurologia · Cefaleia</span>
+      </span>
+    </div>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress" id="progress">3/10</span>
+    <div class="site-header__actions">
+      <button type="button" class="icon-btn" id="home-btn" aria-label="Página inicial" title="Início" onclick="location.href='index.html'">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" data-theme-btn aria-label="Alternar tema" aria-pressed="false" title="Tema">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">Cefaleia: abordagem sindrômica</p>
+    <ul class="menu-panel__list">
+<li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>A cefaleia que não se erra</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>A dor é a doença</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link is-current" href="p3.html"><span class="menu-panel__index">03</span><span>Crises que se parecem</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Idade, súbito e trovoada</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Progressão e o crânio</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Acordou por causa da dor</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Contexto que muda o jogo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Anamnese e fundo de olho</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html"><span class="menu-panel__index">09</span><span>O exame pela suspeita</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html"><span class="menu-panel__index">10</span><span>Tabelão e mantras</span></a></li>
+    </ul>
+  </nav>
+</div>
+<main id="main">
+  <div class="coluna">
+    <article class="page" data-page="p3" data-layout="cf1-p03" data-source-ids="016,017,018,019,020,021,022,023,024,025">
+      <p class="page__eyebrow">Página 3 · E8</p>
+      <section class="opener opener--trap" data-opener="E8">
+        <span class="opener__eyebrow">Erro comum desmontado</span>
+        <h1 id="page-title">Crises que se parecem</h1>
+        <p class="opener__lead no-indent">Muitos acham que “já tem enxaqueca” fecha o caso. Não fecha — se a dor de agora é <strong>diferente</strong>, o caso reabre.</p>
+      </section>
+      <div class="chipset"><span class="chip--topic">P03</span><span class="chip--topic">E8</span><span class="chip--topic">crises · semelhança</span><span class="chip--no">pegadinha HSA</span></div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose prosa">
+          <h4 class="topic-h">Analogia com epilepsia</h4>
+          <p>As cefaleias primárias caracterizam-se por <strong class="term">crises</strong> — raciocínio análogo ao da epilepsia. O diagnóstico de epilepsia <strong class="term">não</strong> existe porque a pessoa “convulsiona o tempo todo”; existe porque há <strong class="term">crises convulsivas</strong>. Da mesma forma, o diagnóstico de enxaqueca <strong class="term">não</strong> existe porque a pessoa tem dor o tempo inteiro; existe porque há <strong class="term">crises de enxaqueca</strong>.</p>
+
+          <h4 class="topic-h">Plural = recorrência</h4>
+          <p>O plural <strong class="term">crises</strong> carrega a ideia de <strong class="term">recorrência</strong>: não é uma crise única isolada.</p>
+
+          <h4 class="topic-h">Semelhança</h4>
+          <p>As recorrências precisam ter <strong class="term">semelhança entre si</strong>. Pergunta clínica âncora: <em>“Essa cefaleia que você está sentindo agora é <strong>parecida ou igual</strong> à que costuma sentir — ou está <strong>diferente</strong>?”</em></p>
+
+          <h4 class="topic-h">Enxaqueca prévia não imuniza</h4>
+          <p>Nada impede que uma pessoa <strong class="term">já com diagnóstico de enxaqueca</strong> apresente agora uma <strong class="hl-bad">hemorragia subaracnoide</strong>: diagnóstico prévio de primária <strong class="term">não imuniza</strong> contra secundária grave. Dor <strong class="hl-bad">diferente da de sempre</strong> <strong class="term">reabre o caso</strong> — mesmo com enxaqueca prévia.</p>
+
+          <h4 class="topic-h">Exame normal</h4>
+          <p>Ao examinar o paciente com cefaleia primária, na <strong class="term">maioria absoluta</strong> dos casos o exame físico é <strong class="hl-good">absolutamente normal</strong>. Exame físico normal + crises semelhantes recorrentes (<strong class="term">sem</strong> alarme) sustenta o eixo da primária; presença de sinal de alarme empurra para secundária e investigação.</p>
+        </div>
+      </section>
+
+      <aside class="trap" aria-label="Trap-card enxaqueca prévia não imuniza">
+        <h3 class="trap__title">Trap — enxaqueca prévia ≠ imunização</h3>
+        <div class="prose prosa"><p class="no-indent">Diagnóstico prévio de primária <strong class="term">não é escudo</strong>. A pegadinha de prova é tratar “pior da vida” em migranoso como “mais uma crise forte” — e atrasar a TC.</p></div>
+        <div class="reopen-banner"><b>Dor diferente da de sempre → reabrir / suspeitar HSA</b>, mesmo com enxaqueca prévia e exame normal.</div>
+      </aside>
+
+      <figure class="fig fig--real">
+        <div class="fig__frame">
+          <img src="media/B03-kang-fig1-migranea-hsa-com-legenda.png" alt="Figura publicada com quatro painéis e legenda original: A mostra angiografia por ressonância sem aneurisma evidente no terceiro dia após exacerbação de migrânea crônica; B mostra tomografia com hemorragia subaracnóidea no oitavo dia; C mostra pequeno aneurisma no segmento A1 direito indicado por seta; D mostra o território após coiling indicado por ponta de seta." loading="lazy" decoding="async" width="1260" height="1300">
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Imagem real</span> Migrânea crônica mudou de padrão — no oitavo dia, a TC mostrou HSA. A MRA inicial (A) não excluiu a causa secundária; a angiografia (C) localizou o aneurisma A1 tratado por coiling (D).
+          <span class="fig__attr">Lee CH, Wang SJ, Lee BN, Shin BS, Kang HG. “Aneurysmal subarachnoid hemorrhage accompanied by changes in the patterns of chronic migraine: a case report”, Figure 1. <em>Journal of Men’s Health</em>. 2021;17(4):316–319. https://doi.org/10.31083/jomh.2021.054. CC BY 4.0.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="fig fig--svg">
+        <div class="fig__frame fig__frame--svg">
+          <svg class="cf1-inline-svg cf1p3-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%" id="cf1p3-svg" role="group" aria-labelledby="cf1p3-title cf1p3-desc">
+  <title id="cf1p3-title">Mudança de padrão versus recorrência habitual</title>
+  <desc id="cf1p3-desc">A ilustração compara crises semelhantes e recorrentes, compatíveis com cefaleia primária, com uma dor diferente da habitual, que reabre a investigação de causas secundárias.</desc>
+  <defs>
+    <style>
+      .cf1p3-root {
+        --cf1p3-bg: #0f172a;
+        --cf1p3-card-bg: #1e293b;
+        --cf1p3-card-border: #334155;
+        --cf1p3-text-primary: #f8fafc;
+        --cf1p3-text-secondary: #94a3b8;
+        --cf1p3-indigo: #6366f1;
+        --cf1p3-indigo-light: #818cf8;
+        --cf1p3-indigo-bg: rgba(99, 102, 241, 0.15);
+        --cf1p3-coral: #f43f5e;
+        --cf1p3-coral-light: #fb7185;
+        --cf1p3-coral-bg: rgba(244, 63, 94, 0.15);
+        --cf1p3-gold: #fbbf24;
+        --cf1p3-gold-light: #fde047;
+        --cf1p3-gold-bg: rgba(251, 191, 36, 0.15);
+        --cf1p3-green: #10b981;
+        --cf1p3-green-bg: rgba(16, 185, 129, 0.15);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      :root[data-theme="light"] .cf1p3-root {
+        --cf1p3-bg: #f8fafc;
+        --cf1p3-card-bg: #ffffff;
+        --cf1p3-card-border: #e2e8f0;
+        --cf1p3-text-primary: #0f172a;
+        --cf1p3-text-secondary: #475569;
+        --cf1p3-indigo: #4f46e5;
+        --cf1p3-indigo-light: #6366f1;
+        --cf1p3-indigo-bg: rgba(79, 70, 229, 0.1);
+        --cf1p3-coral: #e11d48;
+        --cf1p3-coral-light: #f43f5e;
+        --cf1p3-coral-bg: rgba(225, 29, 72, 0.1);
+        --cf1p3-gold: #d97706;
+        --cf1p3-gold-light: #b45309;
+        --cf1p3-gold-bg: rgba(217, 119, 6, 0.1);
+        --cf1p3-green: #059669;
+        --cf1p3-green-bg: rgba(5, 150, 105, 0.1);
+      }
+
+      @media (prefers-color-scheme: light) {
+        .cf1p3-root {
+          --cf1p3-bg: #f8fafc;
+          --cf1p3-card-bg: #ffffff;
+          --cf1p3-card-border: #e2e8f0;
+          --cf1p3-text-primary: #0f172a;
+          --cf1p3-text-secondary: #475569;
+          --cf1p3-indigo: #4f46e5;
+          --cf1p3-indigo-light: #6366f1;
+          --cf1p3-indigo-bg: rgba(79, 70, 229, 0.1);
+          --cf1p3-coral: #e11d48;
+          --cf1p3-coral-light: #f43f5e;
+          --cf1p3-coral-bg: rgba(225, 29, 72, 0.1);
+          --cf1p3-gold: #d97706;
+          --cf1p3-gold-light: #b45309;
+          --cf1p3-gold-bg: rgba(217, 119, 6, 0.1);
+          --cf1p3-green: #059669;
+          --cf1p3-green-bg: rgba(5, 150, 105, 0.1);
+        }
+      }
+
+      .cf1p3-bg-rect { fill: var(--cf1p3-bg, #0f172a); }
+      .cf1p3-title { fill: var(--cf1p3-text-primary, #f8fafc); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+      .cf1p3-subtitle { fill: var(--cf1p3-text-secondary, #94a3b8); font-size: 13px; font-weight: 500; }
+      .cf1p3-card { fill: var(--cf1p3-card-bg, #1e293b); stroke: var(--cf1p3-card-border, #334155); stroke-width: 1.5px; rx: 12px; }
+
+      .cf1p3-interactive { cursor: pointer; transition: transform 0.2s ease, filter 0.2s ease; }
+      .cf1p3-interactive:hover { filter: brightness(1.2); }
+      .cf1p3-interactive:focus { outline: none; }
+
+      .cf1p3-line-axis { stroke: var(--cf1p3-card-border, #334155); stroke-width: 3px; stroke-dasharray: 6 6; }
+      .cf1p3-line-solid { stroke-width: 3.5px; fill: none; }
+
+      .cf1p3-path-indigo { stroke: var(--cf1p3-indigo, #6366f1); }
+      .cf1p3-path-green { stroke: var(--cf1p3-green, #10b981); }
+      .cf1p3-path-coral { stroke: var(--cf1p3-coral, #f43f5e); }
+      .cf1p3-path-gold { stroke: var(--cf1p3-gold, #fbbf24); }
+
+      .cf1p3-badge-text { font-size: 11px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+
+      .cf1p3-text-heading { fill: var(--cf1p3-text-primary, #f8fafc); font-size: 14px; font-weight: 700; }
+      .cf1p3-text-body { fill: var(--cf1p3-text-secondary, #94a3b8); font-size: 12px; font-weight: 400; line-height: 1.4; }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .cf1p3-pulse-node {
+          animation: cf1p3-pulse 2s infinite ease-in-out;
+        }
+        .cf1p3-coral-dash {
+          stroke-dasharray: 8 4;
+          animation: cf1p3-dash 1.5s linear infinite;
+        }
+      }
+
+      @keyframes cf1p3-pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.08); opacity: 0.85; }
+      }
+
+      @keyframes cf1p3-dash {
+        to { stroke-dashoffset: -24; }
+      }
+    </style>
+
+    <marker id="cf1p3-arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--cf1p3-indigo, #6366f1)" />
+    </marker>
+    <marker id="cf1p3-arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--cf1p3-green, #10b981)" />
+    </marker>
+    <marker id="cf1p3-arrow-coral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--cf1p3-coral, #f43f5e)" />
+    </marker>
+  </defs>
+
+  <rect width="1000" height="700" class="cf1p3-bg-rect" rx="16" />
+
+  <g transform="translate(30, 35)">
+    <rect x="0" y="0" width="160" height="22" rx="4" fill="var(--cf1p3-indigo-bg, rgba(99, 102, 241, 0.15))" stroke="var(--cf1p3-indigo, #6366f1)" stroke-width="1" />
+    <text x="80" y="11" class="cf1p3-badge-text" fill="var(--cf1p3-indigo-light, #818cf8)">FLUXO DE DECISÃO CLÍNICA</text>
+
+    <text x="0" y="46" class="cf1p3-title">ABORDAGEM PRÁTICA DAS CEFALEIAS: MUDANÇA DE PADRÃO vs. RECORRÊNCIA</text>
+    <text x="0" y="68" class="cf1p3-subtitle">Legenda de Interpretação: O histórico de enxaqueca não imuniza contra HSA. Dor de caráter habitual sustenta diagnóstico; dor DIFERENTE obriga reabrir o caso.</text>
+  </g>
+
+  <g transform="translate(30, 130)">
+    <text x="0" y="0" class="cf1p3-text-heading" fill="var(--cf1p3-indigo-light, #818cf8)">1. HISTÓRICO DE CRISES IGUAIS (PADRÃO ESTEREOTIPADO)</text>
+
+    <line x1="40" y1="50" x2="560" y2="50" class="cf1p3-line-solid cf1p3-path-indigo" stroke-dasharray="4 4" opacity="0.6" />
+
+    <g class="cf1p3-interactive" id="cf1p3-node-c1" role="button" tabindex="0" aria-label="Crise 1 (-6 meses): Enxaqueca clássica igual" transform="translate(70, 50)">
+      <circle r="18" fill="var(--cf1p3-card-bg, #1e293b)" stroke="var(--cf1p3-indigo, #6366f1)" stroke-width="3" />
+      <circle r="8" fill="var(--cf1p3-indigo, #6366f1)" />
+      <text x="0" y="32" class="cf1p3-badge-text" fill="var(--cf1p3-text-primary, #f8fafc)">Crise -6m</text>
+      <text x="0" y="46" class="cf1p3-badge-text" fill="var(--cf1p3-text-secondary, #94a3b8)">Pulsátil / Aura</text>
+    </g>
+
+    <g class="cf1p3-interactive" id="cf1p3-node-c2" role="button" tabindex="0" aria-label="Crise 2 (-3 meses): Enxaqueca clássica igual" transform="translate(190, 50)">
+      <circle r="18" fill="var(--cf1p3-card-bg, #1e293b)" stroke="var(--cf1p3-indigo, #6366f1)" stroke-width="3" />
+      <circle r="8" fill="var(--cf1p3-indigo, #6366f1)" />
+      <text x="0" y="32" class="cf1p3-badge-text" fill="var(--cf1p3-text-primary, #f8fafc)">Crise -3m</text>
+      <text x="0" y="46" class="cf1p3-badge-text" fill="var(--cf1p3-text-secondary, #94a3b8)">Mesma intensidade</text>
+    </g>
+
+    <g class="cf1p3-interactive" id="cf1p3-node-c3" role="button" tabindex="0" aria-label="Crise 3 (-1 mês): Enxaqueca clássica igual" transform="translate(310, 50)">
+      <circle r="18" fill="var(--cf1p3-card-bg, #1e293b)" stroke="var(--cf1p3-indigo, #6366f1)" stroke-width="3" />
+      <circle r="8" fill="var(--cf1p3-indigo, #6366f1)" />
+      <text x="0" y="32" class="cf1p3-badge-text" fill="var(--cf1p3-text-primary, #f8fafc)">Crise -1m</text>
+      <text x="0" y="46" class="cf1p3-badge-text" fill="var(--cf1p3-text-secondary, #94a3b8)">Mesmos sintomas</text>
+    </g>
+
+    <g class="cf1p3-interactive cf1p3-pulse-node" id="cf1p3-node-today" role="button" tabindex="0" aria-label="Novo Episódio Hoje: Pergunta Âncora" transform="translate(450, 50)">
+      <polygon points="0,-24 24,0 0,24 -24,0" fill="var(--cf1p3-gold-bg, rgba(251,191,36,0.15))" stroke="var(--cf1p3-gold, #fbbf24)" stroke-width="3" />
+      <text x="0" y="4" class="cf1p3-badge-text" fill="var(--cf1p3-gold-light, #fde047)" font-size="14px">❓</text>
+      <text x="0" y="38" class="cf1p3-badge-text" fill="var(--cf1p3-gold, #fbbf24)" font-weight="800">NOVA CRISE HOJE</text>
+      <text x="0" y="52" class="cf1p3-badge-text" fill="var(--cf1p3-text-secondary, #94a3b8)">Pergunta Âncora</text>
+    </g>
+  </g>
+
+  <g transform="translate(30, 260)">
+    <path d="M 450 -80 C 450 -20, 185 -30, 185 20" class="cf1p3-line-solid cf1p3-path-green" marker-end="url(#cf1p3-arrow-green)" />
+
+    <path d="M 450 -80 C 450 -20, 500 -30, 500 20" class="cf1p3-line-solid cf1p3-path-coral cf1p3-coral-dash" marker-end="url(#cf1p3-arrow-coral)" />
+
+    <rect x="220" y="-70" width="220" height="32" rx="6" fill="var(--cf1p3-card-bg, #1e293b)" stroke="var(--cf1p3-gold, #fbbf24)" stroke-width="1.5" />
+    <text x="330" y="-54" class="cf1p3-badge-text" fill="var(--cf1p3-text-primary, #f8fafc)">"A dor é IGUAL à de sempre?"</text>
+
+    <g class="cf1p3-interactive" id="cf1p3-branch-habitual" role="button" tabindex="0" aria-label="Ramo A: Dor Igual / Parecida à habitual" transform="translate(60, 25)">
+      <rect width="250" height="155" class="cf1p3-card" stroke="var(--cf1p3-green, #10b981)" stroke-width="2" />
+
+      <rect x="12" y="12" width="226" height="24" rx="4" fill="var(--cf1p3-green-bg, rgba(16, 185, 129, 0.15))" />
+      <text x="125" y="24" class="cf1p3-badge-text" fill="var(--cf1p3-green, #10b981)">🟢 RAMO 1: PARECIDA / IGUAL</text>
+
+      <text x="20" y="58" class="cf1p3-text-heading">Recorrência Habitual</text>
+      <text x="20" y="78" class="cf1p3-text-body">• Mantém padrão prévio conhecido</text>
+      <text x="20" y="96" class="cf1p3-text-body">• Intensidade e aura habituais</text>
+      <text x="20" y="114" class="cf1p3-text-body">• Exame neurológico normal</text>
+
+      <rect x="12" y="126" width="226" height="20" rx="4" fill="var(--cf1p3-green-bg, rgba(16, 185, 129, 0.1))" />
+      <text x="125" y="136" class="cf1p3-badge-text" fill="var(--cf1p3-green, #10b981)">CONDUTA: Tratar crise habitual (Sintomáticos)</text>
+    </g>
+
+    <g class="cf1p3-interactive" id="cf1p3-branch-divergent" role="button" tabindex="0" aria-label="Ramo B: Dor Diferente ou Pior da Vida" transform="translate(370, 25)">
+      <rect width="260" height="155" class="cf1p3-card" stroke="var(--cf1p3-coral, #f43f5e)" stroke-width="2.5" />
+
+      <rect x="12" y="12" width="236" height="24" rx="4" fill="var(--cf1p3-coral-bg, rgba(244, 63, 94, 0.15))" />
+      <text x="130" y="24" class="cf1p3-badge-text" fill="var(--cf1p3-coral-light, #fb7185)">⚡ RAMO 2: DIFERENTE / PIOR DA VIDA</text>
+
+      <text x="20" y="58" class="cf1p3-text-heading" fill="var(--cf1p3-coral-light, #fb7185)">Mudança de Padrão (Alarme!)</text>
+      <text x="20" y="78" class="cf1p3-text-body">• Instalação súbita (&lt;1 min / Trovoada)</text>
+      <text x="20" y="96" class="cf1p3-text-body">• Caráter / Localização atípicos</text>
+      <text x="20" y="114" class="cf1p3-text-body">• Resistente a medicação habitual</text>
+
+      <rect x="12" y="126" width="236" height="20" rx="4" fill="var(--cf1p3-coral-bg, rgba(244, 63, 94, 0.2))" />
+      <text x="130" y="136" class="cf1p3-badge-text" fill="var(--cf1p3-coral-light, #fb7185)">🚨 REABRIR INVESTIGAÇÃO (Suspeitar HSA)</text>
+    </g>
+  </g>
+
+  <g class="cf1p3-interactive" id="cf1p3-gold-rule-box" role="button" tabindex="0" aria-label="Pegadinha da Prova: Enxaqueca prévia não imuniza contra HSA" transform="translate(30, 465)">
+    <rect width="600" height="205" class="cf1p3-card" stroke="var(--cf1p3-gold, #fbbf24)" stroke-width="2" />
+
+    <rect x="0" y="0" width="600" height="34" rx="12" fill="var(--cf1p3-gold-bg, rgba(251,191,36,0.18))" />
+    <text x="20" y="22" class="cf1p3-text-heading" fill="var(--cf1p3-gold, #fbbf24)">⚠️ PEGADINHA DE PROVA DE RESIDÊNCIA (OURO DA BANCA)</text>
+
+    <g transform="translate(20, 52)">
+      <circle cx="6" cy="6" r="4" fill="var(--cf1p3-gold, #fbbf24)" />
+      <text x="20" y="10" class="cf1p3-text-heading" font-size="13px" fill="var(--cf1p3-text-primary, #f8fafc)">Enxaqueca prévia NÃO imuniza o paciente contra HSA ou Cefaleia Secundária!</text>
+
+      <circle cx="6" cy="34" r="4" fill="var(--cf1p3-coral, #f43f5e)" />
+      <text x="20" y="38" class="cf1p3-text-body" font-size="12px" fill="var(--cf1p3-text-primary, #f8fafc)">
+        <tspan font-weight="700" fill="var(--cf1p3-coral-light, #fb7185)">Erro Clássico de Prova:</tspan> Assumir que dor intensa é "apenas mais uma crise forte de enxaqueca".
+      </text>
+
+      <circle cx="6" cy="62" r="4" fill="var(--cf1p3-gold, #fbbf24)" />
+      <text x="20" y="66" class="cf1p3-text-body" font-size="12px" fill="var(--cf1p3-text-primary, #f8fafc)">
+        <tspan font-weight="700" fill="var(--cf1p3-gold, #fbbf24)">Exame Prévio Normal não Anula Alarme:</tspan> Tomografia normal no passado NÃO descarta novo evento vascular agudo.
+      </text>
+
+      <circle cx="6" cy="90" r="4" fill="var(--cf1p3-green, #10b981)" />
+      <text x="20" y="94" class="cf1p3-text-body" font-size="12px" fill="var(--cf1p3-text-primary, #f8fafc)">
+        <tspan font-weight="700" fill="var(--cf1p3-green, #10b981)">Regra de Ouro da Conduta:</tspan> Mudou o padrão ou trovoada (&lt;1 min)? Reabre investigação obrigatoriamente.
+      </text>
+    </g>
+
+    <rect x="15" y="165" width="570" height="26" rx="6" fill="var(--cf1p3-coral-bg, rgba(244, 63, 94, 0.12))" stroke="var(--cf1p3-coral, #f43f5e)" stroke-dasharray="3 3" />
+    <text x="300" y="181" class="cf1p3-badge-text" fill="var(--cf1p3-coral-light, #fb7185)">DOR HABITUAL = SUSTENTA DIAGNÓSTICO  │  DOR DIFERENTE = REABRE O CASO</text>
+  </g>
+
+  <g transform="translate(655, 130)" id="cf1p3-reading-panel">
+    <rect width="315" height="540" class="cf1p3-card" stroke="var(--cf1p3-indigo, #6366f1)" stroke-width="1.5" />
+
+    <rect x="0" y="0" width="315" height="42" rx="12" fill="var(--cf1p3-indigo-bg, rgba(99, 102, 241, 0.2))" />
+    <text x="157" y="25" class="cf1p3-badge-text" fill="var(--cf1p3-indigo-light, #818cf8)" font-size="13px">📊 PAINEL DE ANÁLISE CLÍNICA</text>
+
+    <text x="15" y="62" class="cf1p3-text-body" font-size="11px" fill="var(--cf1p3-text-secondary, #94a3b8)">Selecione um evento na linha do tempo para analisar os achados e condutas.</text>
+
+    <g transform="translate(15, 75)">
+      <g class="cf1p3-interactive" id="cf1p3-btn-habitual" role="button" tabindex="0" aria-label="Simular Cenário: Dor Habitual">
+        <rect width="138" height="32" rx="6" fill="var(--cf1p3-green-bg, rgba(16, 185, 129, 0.15))" stroke="var(--cf1p3-green, #10b981)" stroke-width="1.5" />
+        <text x="69" y="20" class="cf1p3-badge-text" fill="var(--cf1p3-green, #10b981)">🟢 Ver Dor Habitual</text>
+      </g>
+
+      <g class="cf1p3-interactive" id="cf1p3-btn-divergent" role="button" tabindex="0" aria-label="Simular Cenário: Dor Diferente (HSA)" transform="translate(147, 0)">
+        <rect width="138" height="32" rx="6" fill="var(--cf1p3-coral-bg, rgba(244, 63, 94, 0.15))" stroke="var(--cf1p3-coral, #f43f5e)" stroke-width="1.5" />
+        <text x="69" y="20" class="cf1p3-badge-text" fill="var(--cf1p3-coral-light, #fb7185)">⚡ Ver Dor Diferente</text>
+      </g>
+    </g>
+
+    <g transform="translate(15, 125)" id="cf1p3-dynamic-content">
+      <text x="0" y="15" class="cf1p3-text-heading" id="cf1p3-panel-title" fill="var(--cf1p3-indigo-light, #818cf8)" font-size="15px">Visão Geral do Caso</text>
+
+      <rect x="0" y="28" width="285" height="24" rx="4" id="cf1p3-panel-badge-bg" fill="var(--cf1p3-indigo-bg, rgba(99, 102, 241, 0.15))" />
+      <text x="142" y="44" class="cf1p3-badge-text" id="cf1p3-panel-badge-text" fill="var(--cf1p3-indigo-light, #818cf8)">ESTADO: ANÁLISE INICIAL</text>
+
+      <line x1="0" y1="64" x2="285" y2="64" stroke="var(--cf1p3-card-border, #334155)" stroke-width="1" />
+
+      <g transform="translate(0, 80)">
+        <text x="0" y="0" class="cf1p3-text-heading" font-size="12px" fill="var(--cf1p3-gold, #fbbf24)">PADRÃO CLÍNICO:</text>
+        <text x="0" y="18" class="cf1p3-text-body" id="cf1p3-panel-desc1" font-size="11.5px">As crises prévias (-6m, -3m, -1m) apresentam padrão esterotipado habitual.</text>
+
+        <text x="0" y="60" class="cf1p3-text-heading" font-size="12px" fill="var(--cf1p3-gold, #fbbf24)">ACHADO CRÍTICO:</text>
+        <text x="0" y="78" class="cf1p3-text-body" id="cf1p3-panel-desc2" font-size="11.5px">A decisão depende estritamente da comparação com as dores prévias.</text>
+
+        <text x="0" y="120" class="cf1p3-text-heading" font-size="12px" fill="var(--cf1p3-gold, #fbbf24)">CONDUTA RECOMENDADA:</text>
+        <text x="0" y="138" class="cf1p3-text-body" id="cf1p3-panel-desc3" font-size="11.5px">Clique nos nós para avaliar cada desfecho clínico e armadilhas da prova.</text>
+      </g>
+
+      <g transform="translate(0, 290)">
+        <rect width="285" height="100" rx="8" id="cf1p3-panel-callout-bg" fill="var(--cf1p3-indigo-bg, rgba(99, 102, 241, 0.12))" stroke="var(--cf1p3-indigo, #6366f1)" stroke-width="1" />
+        <text x="14" y="24" class="cf1p3-text-heading" id="cf1p3-panel-callout-title" fill="var(--cf1p3-indigo-light, #818cf8)" font-size="12px">💡 CONCEITO CHAVE DA BANCA</text>
+        <text x="14" y="44" class="cf1p3-text-body" id="cf1p3-panel-callout-body" font-size="11px" fill="var(--cf1p3-text-primary, #f8fafc)">
+          Cefaleias primárias (enxaqueca) têm evolução estereotipada. Qualquer quebra desse padrão desfaz a segurança do diagnóstico prévio!
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function() {
+      const states = {
+        'initial': {
+          title: 'Visão Geral do Caso',
+          badgeText: 'ESTADO: ANÁLISE INICIAL',
+          badgeBg: 'var(--cf1p3-indigo-bg, rgba(99, 102, 241, 0.15))',
+          badgeColor: 'var(--cf1p3-indigo-light, #818cf8)',
+          desc1: 'Linha do tempo demonstrando 3 crises iguais no passado e o episódio atual.',
+          desc2: 'Pergunta fundamental: a dor atual é a mesma de sempre ou mudou?',
+          desc3: 'Interaja com os elementos para explorar cada decisão médica.',
+          calloutBg: 'var(--cf1p3-indigo-bg, rgba(99, 102, 241, 0.12))',
+          calloutBorder: 'var(--cf1p3-indigo, #6366f1)',
+          calloutTitle: '💡 CONCEITO CHAVE DA BANCA',
+          calloutTitleColor: 'var(--cf1p3-indigo-light, #818cf8)',
+          calloutBody: 'Cefaleias primárias (enxaqueca) têm evolução estereotipada. Qualquer quebra desse padrão desfaz a segurança do diagnóstico prévio!'
+        },
+        'crises_previas': {
+          title: 'Recorrência Habitual (-6m a -1m)',
+          badgeText: 'PADRÃO ESTEREOTIPADO MANTIDO',
+          badgeBg: 'var(--cf1p3-indigo-bg, rgba(99, 102, 241, 0.2))',
+          badgeColor: 'var(--cf1p3-indigo-light, #818cf8)',
+          desc1: 'Crises anteriores com localização, aura, intensidade e duração idênticas.',
+          desc2: 'Confirma o diagnóstico de Cefaleia Primária (ex: Enxaqueca clássica).',
+          desc3: 'Tratamento profilático e resgate sintomático de rotina.',
+          calloutBg: 'var(--cf1p3-indigo-bg, rgba(99, 102, 241, 0.12))',
+          calloutBorder: 'var(--cf1p3-indigo, #6366f1)',
+          calloutTitle: '🔹 CARACTERÍSTICA PRIMÁRIA',
+          calloutTitleColor: 'var(--cf1p3-indigo-light, #818cf8)',
+          calloutBody: 'Repetição idêntica ao longo do tempo é a principal marca de benignidade e primariedade.'
+        },
+        'pergunta_ancora': {
+          title: 'Episódio Atual: Pergunta Âncora',
+          badgeText: 'MOMENTO CRÍTICO DA ANAMNESE',
+          badgeBg: 'var(--cf1p3-gold-bg, rgba(251, 191, 36, 0.2))',
+          badgeColor: 'var(--cf1p3-gold, #fbbf24)',
+          desc1: 'Frente a uma nova dor, a primeira pergunta DEVE ser se a dor é igual à habitual.',
+          desc2: 'Se for IGUAL: segue o fluxo de rotina primária.',
+          desc3: 'Se for DIFERENTE ou PIOR DA VIDA: obriga alarme imediato!',
+          calloutBg: 'var(--cf1p3-gold-bg, rgba(251, 191, 36, 0.15))',
+          calloutBorder: 'var(--cf1p3-gold, #fbbf24)',
+          calloutTitle: '⚡ O PONTO DE BIFURCAÇÃO',
+          calloutTitleColor: 'var(--cf1p3-gold, #fbbf24)',
+          calloutBody: 'Na prova ou no plantão, nunca pule esta pergunta. Ela define a necessidade de neuroimagem urgente.'
+        },
+        'habitual': {
+          title: 'Ramo 1: Dor Habitual',
+          badgeText: '🟢 CEFALEIA PRIMÁRIA CONHECIDA',
+          badgeBg: 'var(--cf1p3-green-bg, rgba(16, 185, 129, 0.2))',
+          badgeColor: 'var(--cf1p3-green, #10b981)',
+          desc1: 'Sintomas mantidos, sem sinais de alarme de novo, sem déficit neurológico focal.',
+          desc2: 'Exame físico e neurológico sem alterações.',
+          desc3: 'Conduta: Sintomáticos específicos (ex: Triptanos / AINEs) e acompanhamento.',
+          calloutBg: 'var(--cf1p3-green-bg, rgba(16, 185, 129, 0.12))',
+          calloutBorder: 'var(--cf1p3-green, #10b981)',
+          calloutTitle: '✅ SEGURANÇA MANTIDA',
+          calloutTitleColor: 'var(--cf1p3-green, #10b981)',
+          calloutBody: 'Não há indicação de neuroimagem de urgência na ausência de novos sinais de alarme.'
+        },
+        'divergent': {
+          title: 'Ramo 2: Dor Diferente / HSA',
+          badgeText: '🚨 ALARME VERMELHO: REABRIR CASO',
+          badgeBg: 'var(--cf1p3-coral-bg, rgba(244, 63, 94, 0.25))',
+          badgeColor: 'var(--cf1p3-coral-light, #fb7185)',
+          desc1: 'Dor de caráter diferente, instalação súbita (&lt;1 min) ou "pior dor da vida".',
+          desc2: 'A enxaqueca prévia NÃO protege contra Hemorragia Subaracnóide (HSA)!',
+          desc3: 'Conduta: TC de Crânio sem contraste imediata. Se TC negativa e forte suspeita: Punção Lombar.',
+          calloutBg: 'var(--cf1p3-coral-bg, rgba(244, 63, 94, 0.15))',
+          calloutBorder: 'var(--cf1p3-coral, #f43f5e)',
+          calloutTitle: '🔥 ARMADILHA MORTAL DA PROVA',
+          calloutTitleColor: 'var(--cf1p3-coral-light, #fb7185)',
+          calloutBody: 'Atribuir uma dor "trovoada" ou diferente a uma enxaqueca prévia é o erro gravíssimo mais cobrado em provas!'
+        },
+        'gold_rule': {
+          title: 'Ouro da Prova: A Pegadinha',
+          badgeText: '⚠️ REGRA INVIOLÁVEL DA BANCA',
+          badgeBg: 'var(--cf1p3-gold-bg, rgba(251, 191, 36, 0.25))',
+          badgeColor: 'var(--cf1p3-gold, #fbbf24)',
+          desc1: 'Ter diagnóstico prévio de enxaqueca NÃO é "passaporte de imunidade" para aneurisma.',
+          desc2: 'Exames normais no passado não descartam complicações vasculares agudas no presente.',
+          desc3: 'Cefaleia em trovoada (pico em segundos) é HSA até que se prove o contrário.',
+          calloutBg: 'var(--cf1p3-gold-bg, rgba(251, 191, 36, 0.15))',
+          calloutBorder: 'var(--cf1p3-gold, #fbbf24)',
+          calloutTitle: '🏆 REGRA-CHAVE',
+          calloutTitleColor: 'var(--cf1p3-gold, #fbbf24)',
+          calloutBody: 'Mudança de padrão = Novo protocolo de investigação. Esqueça o histórico prévio diante da dor diferente!'
+        }
+      };
+
+      function updatePanel(stateKey) {
+        const data = states[stateKey];
+        if (!data) return;
+
+        document.getElementById('cf1p3-panel-title').textContent = data.title;
+
+        const badgeBg = document.getElementById('cf1p3-panel-badge-bg');
+        const badgeText = document.getElementById('cf1p3-panel-badge-text');
+        badgeBg.setAttribute('fill', data.badgeBg);
+        badgeText.setAttribute('fill', data.badgeColor);
+        badgeText.textContent = data.badgeText;
+
+        document.getElementById('cf1p3-panel-desc1').textContent = data.desc1;
+        document.getElementById('cf1p3-panel-desc2').textContent = data.desc2;
+        document.getElementById('cf1p3-panel-desc3').textContent = data.desc3;
+
+        const calloutBg = document.getElementById('cf1p3-panel-callout-bg');
+        const calloutTitle = document.getElementById('cf1p3-panel-callout-title');
+        const calloutBody = document.getElementById('cf1p3-panel-callout-body');
+
+        calloutBg.setAttribute('fill', data.calloutBg);
+        calloutBg.setAttribute('stroke', data.calloutBorder);
+        calloutTitle.setAttribute('fill', data.calloutTitleColor);
+        calloutTitle.textContent = data.calloutTitle;
+        calloutBody.textContent = data.calloutBody;
+      }
+
+      function attachEvents() {
+        const mappings = [
+          { id: 'cf1p3-node-c1', state: 'crises_previas' },
+          { id: 'cf1p3-node-c2', state: 'crises_previas' },
+          { id: 'cf1p3-node-c3', state: 'crises_previas' },
+          { id: 'cf1p3-node-today', state: 'pergunta_ancora' },
+          { id: 'cf1p3-branch-habitual', state: 'habitual' },
+          { id: 'cf1p3-btn-habitual', state: 'habitual' },
+          { id: 'cf1p3-branch-divergent', state: 'divergent' },
+          { id: 'cf1p3-btn-divergent', state: 'divergent' },
+          { id: 'cf1p3-gold-rule-box', state: 'gold_rule' }
+        ];
+
+        mappings.forEach(item => {
+          const el = document.getElementById(item.id);
+          if (el) {
+            el.addEventListener('click', function() { updatePanel(item.state); });
+            el.addEventListener('mouseover', function() { updatePanel(item.state); });
+            el.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                updatePanel(item.state);
+              }
+            });
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachEvents);
+      } else {
+        attachEvents();
+      }
+    })();
+    /*]]>*/
+  </script>
+</svg>
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Ilustração</span> Linha do tempo de crises iguais + ramo “diferente → reabrir / suspeitar HSA”. Toque nos nós para ler o painel.</figcaption>
+      </figure>
+
+      <aside class="op-summary" aria-label="Resumo operacional">
+        <h2 class="op-summary__title">Resumo operacional</h2>
+        <div class="prose prosa"><p class="no-indent">Crises recorrentes <strong class="term">semelhantes</strong> + exame normal sustentam primária; <strong class="hl-bad">dor diferente</strong> reabre o caso.</p></div>
+      </aside>
+
+      <aside class="why-matters">
+        <h2 class="why-matters__title">Por que importa</h2>
+        <div class="prose prosa"><p>A falsa segurança da enxaqueca prévia atrasa a TC na HSA — erro grave de prova e de plantão.</p></div>
+      </aside>
+
+      <aside class="continuity"><div class="prose prosa"><p class="no-indent">Se o padrão muda ou surge alarme temporal, o inventário vascular e etário entra em campo.</p></div></aside>
+
+<section class="quiz" data-quiz-id="cf1-cefaleia-p03" aria-labelledby="quiz-p03-title">
+  <h2 id="quiz-p03-title">Quiz — fixação</h2>
+  <ol class="quiz__questions">
+<li class="quiz__question" data-q="1">
+  <p class="quiz__stem" id="quiz-p03-q1-label">Paciente com enxaqueca há anos chega com “a pior dor da vida”, <strong>diferente</strong> da de sempre. Conduta mental correta:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p03-q1-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Tratar como crise de enxaqueca sem reabrir hipóteses</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Reabrir o caso — primária prévia não imuniza contra HSA/secundária</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Alta com dipirona e retorno em 30 dias</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Fechar tensional por exame normal</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> a <strong class="term">diferença</strong> em relação ao padrão habitual é o gatilho de reabertura; enxaqueca prévia <strong class="term">não</strong> é escudo.</p>
+    <p class="quiz__distractor">(A) é a falsa segurança clássica. (C) alta precoce ignora alarme de intensidade/padrão. (D) exame normal <strong class="term">não</strong> cancela alarme de “pior/diferente”; e tensional não é o enquadramento. Cai em (A) porque “já tem o diagnóstico” vira âncora cognitiva; em (C) por rotina de PS de cefaleia “benigna”.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="2">
+  <p class="quiz__stem" id="quiz-p03-q2-label">O plural “crises” na primária carrega principalmente:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p03-q2-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Que a dor é contínua 24 h</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Recorrência (não evento único isolado)</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Que o exame sempre está alterado</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Que há sempre aura</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> crises = <strong class="term">recorrência</strong> +, a seguir, <strong class="term">semelhança</strong>.</p>
+    <p class="quiz__distractor">(A) primária <strong class="term">não</strong> se define por dor contínua o tempo todo. (C) exame costuma ser <strong>normal</strong>. (D) aura não é requisito de todas as primárias. Cai em (A) por confundir com cefaleia contínua de secundária progressiva.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="3">
+  <p class="quiz__stem" id="quiz-p03-q3-label">“Exame físico normal + crises semelhantes sem alarme sustenta o eixo da primária.”</p>
+  <div role="radiogroup" aria-labelledby="quiz-p03-q3-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Falso: primária exige exame alterado</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Verdadeiro: é o trinômio operacional da primária</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Falso: exame normal não prova nada</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Depende: só se houver aura</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> esse trinômio (padrão de crises semelhantes · sem alarme · exame normal) é o <strong class="term">eixo operacional</strong> da primária.</p>
+    <p class="quiz__distractor">Quem marca falso costuma achar que “primária exige exame especial” ou que normalidade “não prova nada”. Cai no falso por confundir “diagnóstico clínico” com “diagnóstico de exclusão por painel de exames”.</p>
+  </div>
+</li>
+  </ol>
+</section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="page-nav__btn" href="p2.html" rel="prev">← Anterior</a><span class="page-nav__pos">3/10</span><a class="page-nav__btn" href="p4.html" rel="next">Próxima →</a></nav>
+    </article>
+  </div>
+</main>
+<script src="../_assets/app.js" defer></script>
+<script src="cf1.js" defer></script>
+</body>
+</html>

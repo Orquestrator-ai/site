@@ -1,0 +1,529 @@
+<svg id="p11-svg-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" class="active-0" role="img" aria-label="Célula acumulando mutações oncogênicas ao longo do tempo, ilustrando o crescimento do risco de câncer com a idade.">
+  <defs>
+    <!-- Filtros de brilho para os estágios ativos -->
+    <filter id="p11-glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="p11-glow-yellow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="p11-glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="p11-glow-red" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Marcador de ponta de seta para fluxo temporal -->
+    <marker id="p11-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--c-cyan)" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <style>
+    /* Escopo estrito para evitar vazamento (leak) no ecossistema do host */
+    #p11-svg-root {
+      background-color: var(--bg-color, #0f172a);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg-color: #0f172a;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --stroke-color: #334155;
+      
+      --c-green: #10b981;
+      --c-yellow: #f59e0b;
+      --c-orange: #ea580c;
+      --c-red: #ef4444;
+      --c-cyan: #06b6d4;
+      --c-panel-bg: rgba(30, 41, 59, 0.7);
+    }
+    
+    @media (prefers-color-scheme: light) {
+      #p11-svg-root {
+        --bg-color: #f8fafc;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --stroke-color: #cbd5e1;
+        --c-panel-bg: rgba(241, 245, 249, 0.95);
+      }
+    }
+
+    #p11-svg-root .fig-title {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      fill: var(--text-primary);
+    }
+
+    #p11-svg-root .fig-subtitle {
+      font-size: 12px;
+      fill: var(--text-secondary);
+    }
+
+    #p11-svg-root .fig-caption {
+      font-size: 11px;
+      fill: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Grupos celulares e transições */
+    #p11-svg-root .cell-group {
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    #p11-svg-root .cell-group:hover {
+      transform: scale(1.04);
+    }
+
+    /* Estados de ativação acoplados a classe raiz */
+    #p11-svg-root.active-0 #cell-0 { opacity: 1; filter: url(#p11-glow-green); }
+    #p11-svg-root.active-0 #cell-1, #p11-svg-root.active-0 #cell-2, #p11-svg-root.active-0 #cell-3 { opacity: 0.35; }
+    #p11-svg-root.active-0 #info-0 { display: block; }
+    #p11-svg-root.active-0 #info-1, #p11-svg-root.active-0 #info-2, #p11-svg-root.active-0 #info-3 { display: none; }
+
+    #p11-svg-root.active-1 #cell-1 { opacity: 1; filter: url(#p11-glow-yellow); }
+    #p11-svg-root.active-1 #cell-0, #p11-svg-root.active-1 #cell-2, #p11-svg-root.active-1 #cell-3 { opacity: 0.35; }
+    #p11-svg-root.active-1 #info-1 { display: block; }
+    #p11-svg-root.active-1 #info-0, #p11-svg-root.active-1 #info-2, #p11-svg-root.active-1 #info-3 { display: none; }
+
+    #p11-svg-root.active-2 #cell-2 { opacity: 1; filter: url(#p11-glow-orange); }
+    #p11-svg-root.active-2 #cell-0, #p11-svg-root.active-2 #cell-1, #p11-svg-root.active-2 #cell-3 { opacity: 0.35; }
+    #p11-svg-root.active-2 #info-2 { display: block; }
+    #p11-svg-root.active-2 #info-0, #p11-svg-root.active-2 #info-1, #p11-svg-root.active-2 #info-3 { display: none; }
+
+    #p11-svg-root.active-3 #cell-3 { opacity: 1; filter: url(#p11-glow-red); }
+    #p11-svg-root.active-3 #cell-0, #p11-svg-root.active-3 #cell-1, #p11-svg-root.active-3 #cell-2 { opacity: 0.35; }
+    #p11-svg-root.active-3 #info-3 { display: block; }
+    #p11-svg-root.active-3 #info-0, #p11-svg-root.active-3 #info-1, #p11-svg-root.active-3 #info-2 { display: none; }
+
+    /* Mecânica do handle do slider */
+    #p11-svg-root #slider-handle {
+      transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    #p11-svg-root.active-0 #slider-handle { transform: translate(100px, 0); }
+    #p11-svg-root.active-1 #slider-handle { transform: translate(220px, 0); }
+    #p11-svg-root.active-2 #slider-handle { transform: translate(340px, 0); }
+    #p11-svg-root.active-3 #slider-handle { transform: translate(460px, 0); }
+
+    /* Painel explicativo lateral */
+    #p11-svg-root .info-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      fill: var(--c-cyan);
+    }
+    
+    #p11-svg-root .info-stage-name {
+      font-size: 14px;
+      font-weight: 700;
+      fill: var(--text-primary);
+    }
+    
+    #p11-svg-root .info-label {
+      font-size: 9.5px;
+      font-weight: 600;
+      fill: var(--text-secondary);
+      letter-spacing: 0.03em;
+    }
+
+    #p11-svg-root .info-value {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    #p11-svg-root .info-desc {
+      font-size: 10.5px;
+      fill: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Animação determinística de pulso nos focos de mutação */
+    @keyframes p11-pulse {
+      0% { r: 3.5px; opacity: 0.7; }
+      50% { r: 6px; opacity: 1; }
+      100% { r: 3.5px; opacity: 0.7; }
+    }
+    #p11-svg-root .mutation-point {
+      animation: p11-pulse 1.6s infinite ease-in-out;
+      fill: var(--c-red);
+    }
+
+    /* Elementos do Slider */
+    #p11-svg-root .slider-bg {
+      fill: var(--stroke-color);
+    }
+    #p11-svg-root .slider-track-active {
+      fill: var(--c-cyan);
+      transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    #p11-svg-root .slider-tick {
+      fill: var(--stroke-color);
+      cursor: pointer;
+    }
+    #p11-svg-root .slider-tick-label {
+      font-size: 10px;
+      font-weight: 600;
+      fill: var(--text-secondary);
+      text-anchor: middle;
+      cursor: pointer;
+      transition: color 0.3s, font-weight 0.3s;
+    }
+    #p11-svg-root .slider-tick-label.active {
+      fill: var(--c-cyan);
+      font-weight: 700;
+    }
+
+    /* Detalhamento morfológico interno */
+    #p11-svg-root .organelle {
+      opacity: 0.3;
+      fill: none;
+      stroke-width: 1.2;
+    }
+    
+    #p11-svg-root .time-axis-line {
+      stroke: var(--c-cyan);
+      stroke-width: 1.5;
+      stroke-dasharray: 4 4;
+      opacity: 0.4;
+    }
+  </style>
+
+  <!-- Fundo Principal -->
+  <rect width="100%" height="100%" fill="var(--bg-color)" rx="16" />
+
+  <!-- Grid Técnico Médico de Fundo -->
+  <g stroke="var(--stroke-color)" stroke-width="0.5" opacity="0.12">
+    <path d="M 0 50 L 800 50 M 0 100 L 800 100 M 0 150 L 800 150 M 0 200 L 800 200 M 0 250 L 800 250 M 0 300 L 800 300 M 0 350 L 800 350 M 0 400 L 800 400" />
+    <path d="M 100 0 L 100 500 M 200 0 L 200 500 M 300 0 L 300 500 M 400 0 L 400 500 M 500 0 L 500 500 M 600 0 L 600 500 M 700 0 L 700 500" />
+  </g>
+
+  <!-- Título e Subtítulo -->
+  <g transform="translate(40, 0)">
+    <text x="0" y="40" class="fig-title">PISO-11: PROGRESSÃO MUTACIONAL CLONAL E ENVELHECIMENTO</text>
+    <text x="0" y="56" class="fig-subtitle">A relação temporal entre o acúmulo de oncogenes e o risco de transformação neoplásica</text>
+  </g>
+
+  <!-- Eixo do Tempo Celular -->
+  <g>
+    <line x1="60" y1="230" x2="500" y2="230" class="time-axis-line" />
+    <path d="M 155 230 L 165 230" stroke="var(--c-cyan)" stroke-width="1.5" marker-end="url(#p11-arrow)" />
+    <path d="M 275 230 L 285 230" stroke="var(--c-cyan)" stroke-width="1.5" marker-end="url(#p11-arrow)" />
+    <path d="M 395 230 L 405 230" stroke="var(--c-cyan)" stroke-width="1.5" marker-end="url(#p11-arrow)" />
+  </g>
+
+  <!-- ================= CELULAS EM PROGRESSÃO ================= -->
+  
+  <!-- Célula 0: 20 Anos -->
+  <g id="cell-0" class="cell-group" transform="translate(100, 230)" onclick="setStage(0)" role="button" aria-label="Célula aos 20 anos: Normal e saudável.">
+    <!-- Membrana plasmática externa -->
+    <circle cx="0" cy="0" r="45" fill="var(--c-green)" fill-opacity="0.08" stroke="var(--c-green)" stroke-width="2" />
+    <circle cx="0" cy="0" r="41" fill="none" stroke="var(--c-green)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+    
+    <!-- Organelas representativas -->
+    <ellipse cx="-18" cy="-18" rx="7" ry="3.5" transform="rotate(30, -18, -18)" class="organelle" stroke="var(--c-green)"/>
+    <ellipse cx="20" cy="18" rx="8" ry="4" transform="rotate(-20, 20, 18)" class="organelle" stroke="var(--c-green)"/>
+    
+    <!-- Núcleo celular íntegro -->
+    <circle cx="0" cy="0" r="19" fill="var(--c-green)" fill-opacity="0.18" stroke="var(--c-green)" stroke-width="1.5" />
+    
+    <!-- DNA íntegro dupla hélice -->
+    <g stroke="var(--c-green)" stroke-width="1.5" fill="none" opacity="0.9">
+      <path d="M -12 -3 C -8 -9 -4 3 0 -3 C 4 -9 8 3 12 -3" />
+      <path d="M -12 3 C -8 9 -4 -3 0 3 C 4 9 8 -3 12 3" />
+      <line x1="-9" y1="-2" x2="-9" y2="2" stroke-width="0.8" opacity="0.5"/>
+      <line x1="-3" y1="-3" x2="-3" y2="3" stroke-width="0.8" opacity="0.5"/>
+      <line x1="3" y1="-3" x2="3" y2="3" stroke-width="0.8" opacity="0.5"/>
+      <line x1="9" y1="-2" x2="9" y2="2" stroke-width="0.8" opacity="0.5"/>
+    </g>
+    
+    <text x="0" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="var(--c-green)">20 Anos</text>
+    <text x="0" y="78" text-anchor="middle" font-size="9.5" fill="var(--text-secondary)">Hígida / Sem Danos</text>
+  </g>
+
+  <!-- Célula 1: 40 Anos -->
+  <g id="cell-1" class="cell-group" transform="translate(220, 230)" onclick="setStage(1)" role="button" aria-label="Célula aos 40 anos: Mutação primária induzida.">
+    <!-- Membrana plasmática externa -->
+    <circle cx="0" cy="0" r="45" fill="var(--c-yellow)" fill-opacity="0.08" stroke="var(--c-yellow)" stroke-width="2" />
+    <circle cx="0" cy="0" r="41" fill="none" stroke="var(--c-yellow)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+    
+    <!-- Organelas -->
+    <ellipse cx="-18" cy="-18" rx="7" ry="3.5" transform="rotate(30, -18, -18)" class="organelle" stroke="var(--c-yellow)"/>
+    <ellipse cx="20" cy="18" rx="8" ry="4" transform="rotate(-20, 20, 18)" class="organelle" stroke="var(--c-yellow)"/>
+    
+    <!-- Núcleo celular -->
+    <circle cx="0" cy="0" r="19" fill="var(--c-yellow)" fill-opacity="0.18" stroke="var(--c-yellow)" stroke-width="1.5" />
+    
+    <!-- DNA com uma mutação inicial -->
+    <g stroke="var(--c-yellow)" stroke-width="1.5" fill="none" opacity="0.9">
+      <path d="M -12 -3 C -8 -9 -4 3 0 -3 C 4 -9 8 3 12 -3" />
+      <path d="M -12 3 C -8 9 -4 -3 0 3 C 4 9 8 -3 12 3" />
+      <line x1="-9" y1="-2" x2="-9" y2="2" stroke-width="0.8" opacity="0.5"/>
+      <line x1="-3" y1="-3" x2="-3" y2="3" stroke-width="0.8" opacity="0.5"/>
+      <line x1="3" y1="-3" x2="3" y2="3" stroke-width="0.8" opacity="0.5"/>
+      <line x1="9" y1="-2" x2="9" y2="2" stroke-width="0.8" opacity="0.5"/>
+    </g>
+    <!-- Oncogene ativado (Ponto de mutação vermelho) -->
+    <circle cx="0" cy="-2" r="4" class="mutation-point" />
+    
+    <text x="0" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="var(--c-yellow)">40 Anos</text>
+    <text x="0" y="78" text-anchor="middle" font-size="9.5" fill="var(--text-secondary)">Mutação Iniciadora</text>
+  </g>
+
+  <!-- Célula 2: 60 Anos -->
+  <g id="cell-2" class="cell-group" transform="translate(340, 230)" onclick="setStage(2)" role="button" aria-label="Célula aos 60 anos: Múltiplas mutações acumuladas. Lesão pré-maligna.">
+    <!-- Membrana plasmática externa -->
+    <circle cx="0" cy="0" r="46" fill="var(--c-orange)" fill-opacity="0.08" stroke="var(--c-orange)" stroke-width="2" />
+    <circle cx="0" cy="0" r="42" fill="none" stroke="var(--c-orange)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+    
+    <!-- Organelas -->
+    <ellipse cx="-18" cy="-18" rx="7" ry="3.5" transform="rotate(30, -18, -18)" class="organelle" stroke="var(--c-orange)"/>
+    <ellipse cx="20" cy="18" rx="8" ry="4" transform="rotate(-20, 20, 18)" class="organelle" stroke="var(--c-orange)"/>
+    
+    <!-- Núcleo ligeiramente expandido -->
+    <circle cx="0" cy="0" r="21" fill="var(--c-orange)" fill-opacity="0.18" stroke="var(--c-orange)" stroke-width="1.5" />
+    
+    <!-- DNA mostrando fragilidade clonal -->
+    <g stroke="var(--c-orange)" stroke-width="1.5" fill="none" opacity="0.9">
+      <path d="M -12 -3 C -8 -9 -4 3 0 -3 C 4 -9 8 3 12 -3" />
+      <path d="M -12 3 C -8 9 -4 -3 0 3 C 4 9 8 -3 12 3" />
+      <line x1="-9" y1="-2" x2="-9" y2="2" stroke-width="0.8" opacity="0.5"/>
+      <line x1="-3" y1="-3" x2="-3" y2="3" stroke-width="0.8" opacity="0.5"/>
+      <line x1="3" y1="-3" x2="3" y2="3" stroke-width="0.8" opacity="0.5"/>
+      <line x1="9" y1="-2" x2="9" y2="2" stroke-width="0.8" opacity="0.5"/>
+    </g>
+    <!-- Mutação dupla (Acúmulo estocástico) -->
+    <circle cx="-6" cy="-4" r="4" class="mutation-point" />
+    <circle cx="6" cy="2" r="4" class="mutation-point" />
+    
+    <text x="0" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="var(--c-orange)">60 Anos</text>
+    <text x="0" y="78" text-anchor="middle" font-size="9.5" fill="var(--text-secondary)">Danos Acumulados</text>
+  </g>
+
+  <!-- Célula 3: 80 Anos -->
+  <g id="cell-3" class="cell-group" transform="translate(460, 230)" onclick="setStage(3)" role="button" aria-label="Célula aos 80 anos: Transformada. Morfologia irregular e cariótipo disforme.">
+    <!-- Membrana celular aberrante (morfologia atípica/neoplásica) -->
+    <path d="M -48 -6 C -54 -28 -33 -48 -8 -45 C 18 -48 48 -35 45 -4 C 49 22 34 48 8 46 C -18 49 -45 32 -48 -6 Z" fill="var(--c-red)" fill-opacity="0.08" stroke="var(--c-red)" stroke-width="2.5" />
+    
+    <!-- Organelas dispersas e vacuoladas -->
+    <ellipse cx="-16" cy="-21" rx="8" ry="3" transform="rotate(45, -16, -21)" class="organelle" stroke="var(--c-red)" stroke-dasharray="2 1"/>
+    <ellipse cx="22" cy="14" rx="7" ry="5.5" transform="rotate(-35, 22, 14)" class="organelle" stroke="var(--c-red)"/>
+    <circle cx="-25" cy="14" r="2.5" fill="none" stroke="var(--c-red)" opacity="0.3"/>
+    
+    <!-- Núcleo Grande e Deformado -->
+    <path d="M -21 -2 C -25 -15 -14 -24 -2 -21 C 12 -24 23 -14 21 -2 C 24 12 12 23 -2 21 C -14 23 -23 10 -21 -2 Z" fill="var(--c-red)" fill-opacity="0.25" stroke="var(--c-red)" stroke-width="1.5" />
+    
+    <!-- Fragmentação cromossômica / cariótipo instável -->
+    <g stroke="var(--c-red)" stroke-width="1.5" fill="none" opacity="0.8">
+      <!-- DNA Desestruturado -->
+      <path d="M -12 -5 Q -8 -9 -4 -5" />
+      <path d="M -12 2 Q -8 -2 -4 3" stroke-dasharray="1 1" />
+      <path d="M -1 5 Q 3 9 7 4" />
+      <path d="M 10 -4 Q 12 -7 15 -3" />
+    </g>
+    <!-- Mutação massiva (múltiplos focos oncogênicos) -->
+    <circle cx="-10" cy="-6" r="4.5" class="mutation-point" />
+    <circle cx="3" cy="5" r="4.5" class="mutation-point" />
+    <circle cx="11" cy="-4" r="4.5" class="mutation-point" />
+    
+    <text x="0" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="var(--c-red)">80 Anos</text>
+    <text x="0" y="78" text-anchor="middle" font-size="9.5" fill="var(--text-secondary)">Transformação Maligna</text>
+  </g>
+
+  <!-- ================= PAINEL CLÍNICO DE ANÁLISE DETALHADA ================= -->
+  <g transform="translate(560, 80)">
+    <rect x="0" y="0" width="200" height="310" rx="12" fill="var(--c-panel-bg)" stroke="var(--stroke-color)" stroke-width="1.5" />
+    
+    <!-- Título do Painel -->
+    <text x="15" y="25" class="info-title">PERFIL CLÍNICO</text>
+    <line x1="15" y1="32" x2="185" y2="32" stroke="var(--stroke-color)" stroke-width="1" />
+    
+    <!-- Estágio 0 (20 Anos) -->
+    <g id="info-0" class="info-group">
+      <text x="15" y="52" class="info-stage-name" fill="var(--c-green)">Tecido Hígido</text>
+      
+      <text x="15" y="75" class="info-label">CARGA MUTACIONAL</text>
+      <text x="15" y="90" class="info-value" fill="var(--c-green)">Nenhuma (DNA Íntegro)</text>
+      
+      <text x="15" y="115" class="info-label">RISCO ONCOLÓGICO</text>
+      <text x="15" y="130" class="info-value" fill="var(--c-green)">Mínimo (&lt; 1%)</text>
+      
+      <text x="15" y="155" class="info-label">DIRETRIZ CLÍNICA</text>
+      <text x="15" y="170" class="info-value" fill="var(--text-primary)">Hábitos e Prevenção</text>
+      
+      <text x="15" y="195" class="info-label">RESUMO BIOLÓGICO</text>
+      <text x="15" y="210" class="info-desc">Célula jovem e normal.</text>
+      <text x="15" y="224" class="info-desc">Mecanismos de barreira ativa</text>
+      <text x="15" y="238" class="info-desc">(reparo genômico e apoptose)</text>
+      <text x="15" y="252" class="info-desc">plenamente responsivos.</text>
+      
+      <text x="15" y="278" class="info-label">NÍVEL DE INSTABILIDADE</text>
+      <rect x="15" y="285" width="170" height="7" rx="3.5" fill="var(--stroke-color)" />
+      <rect x="15" y="285" width="15" height="7" rx="3.5" fill="var(--c-green)" />
+    </g>
+    
+    <!-- Estágio 1 (40 Anos) -->
+    <g id="info-1" class="info-group" style="display:none;">
+      <text x="15" y="52" class="info-stage-name" fill="var(--c-yellow)">Mutação Inicial</text>
+      
+      <text x="15" y="75" class="info-label">CARGA MUTACIONAL</text>
+      <text x="15" y="90" class="info-value" fill="var(--c-yellow)">1 Oncogene Ativo (ex: RAS)</text>
+      
+      <text x="15" y="115" class="info-label">RISCO ONCOLÓGICO</text>
+      <text x="15" y="130" class="info-value" fill="var(--c-yellow)">Baixo-Moderado (2%)</text>
+      
+      <text x="15" y="155" class="info-label">DIRETRIZ CLÍNICA</text>
+      <text x="15" y="170" class="info-value" fill="var(--text-primary)">Análise de Fatores de Risco</text>
+      
+      <text x="15" y="195" class="info-label">RESUMO BIOLÓGICO</text>
+      <text x="15" y="210" class="info-desc">Dano genômico acumulado</text>
+      <text x="15" y="224" class="info-desc">por carcinogênese estocástica.</text>
+      <text x="15" y="238" class="info-desc">A barreira tumoral do gene p53</text>
+      <text x="15" y="252" class="info-desc">ainda controla a proliferação.</text>
+      
+      <text x="15" y="278" class="info-label">NÍVEL DE INSTABILIDADE</text>
+      <rect x="15" y="285" width="170" height="7" rx="3.5" fill="var(--stroke-color)" />
+      <rect x="15" y="285" width="55" height="7" rx="3.5" fill="var(--c-yellow)" />
+    </g>
+
+    <!-- Estágio 2 (60 Anos) -->
+    <g id="info-2" class="info-group" style="display:none;">
+      <text x="15" y="52" class="info-stage-name" fill="var(--c-orange)">Lesão Pré-Maligna</text>
+      
+      <text x="15" y="75" class="info-label">CARGA MUTACIONAL</text>
+      <text x="15" y="90" class="info-value" fill="var(--c-orange)">Acúmulo (RAS + p53/Rb)</text>
+      
+      <text x="15" y="115" class="info-label">RISCO ONCOLÓGICO</text>
+      <text x="15" y="130" class="info-value" fill="var(--c-orange)">Elevado (15% a 25%)</text>
+      
+      <text x="15" y="155" class="info-label">DIRETRIZ CLÍNICA</text>
+      <text x="15" y="170" class="info-value" fill="var(--c-orange)">Rastreamento Sistemático</text>
+      
+      <text x="15" y="195" class="info-label">RESUMO BIOLÓGICO</text>
+      <text x="15" y="210" class="info-desc">Combinação crítica: ativação</text>
+      <text x="15" y="224" class="info-desc">oncogênica associada à perda</text>
+      <text x="15" y="238" class="info-desc">de genes supressores de tumor.</text>
+      <text x="15" y="252" class="info-desc">Início da displasia tecidual.</text>
+      
+      <text x="15" y="278" class="info-label">NÍVEL DE INSTABILIDADE</text>
+      <rect x="15" y="285" width="170" height="7" rx="3.5" fill="var(--stroke-color)" />
+      <rect x="15" y="285" width="115" height="7" rx="3.5" fill="var(--c-orange)" />
+    </g>
+
+    <!-- Estágio 3 (80 Anos) -->
+    <g id="info-3" class="info-group" style="display:none;">
+      <text x="15" y="52" class="info-stage-name" fill="var(--c-red)">Câncer Clínico</text>
+      
+      <text x="15" y="75" class="info-label">CARGA MUTACIONAL</text>
+      <text x="15" y="90" class="info-value" fill="var(--c-red)">Instabilidade Genômica Geral</text>
+      
+      <text x="15" y="115" class="info-label">RISCO ONCOLÓGICO</text>
+      <text x="15" y="130" class="info-value" fill="var(--c-red)">Crítico (65%+ Clonal)</text>
+      
+      <text x="15" y="155" class="info-label">DIRETRIZ CLÍNICA</text>
+      <text x="15" y="170" class="info-value" fill="var(--c-red)">Tratamento e Intervenção</text>
+      
+      <text x="15" y="195" class="info-label">RESUMO BIOLÓGICO</text>
+      <text x="15" y="210" class="info-desc">Perda completa dos controles</text>
+      <text x="15" y="224" class="info-desc">do ciclo celular. Replicação</text>
+      <text x="15" y="238" class="info-desc">mitótica autônoma, invasão e</text>
+      <text x="15" y="252" class="info-desc">bloqueio à apoptose celular.</text>
+      
+      <text x="15" y="278" class="info-label">NÍVEL DE INSTABILIDADE</text>
+      <rect x="15" y="285" width="170" height="7" rx="3.5" fill="var(--stroke-color)" />
+      <rect x="15" y="285" width="170" height="7" rx="3.5" fill="var(--c-red)" />
+    </g>
+  </g>
+
+  <!-- ================= SLIDER INTERATIVO DO TEMPO ================= -->
+  <g transform="translate(0, 415)">
+    <!-- Título do Slider -->
+    <text x="40" y="0" font-size="10.5" font-weight="700" fill="var(--c-cyan)" letter-spacing="0.08em">EIXO TEMPORAL (IDADE DO PACIENTE)</text>
+    
+    <!-- Trilho de fundo e preenchimento ativo -->
+    <rect x="100" y="8" width="360" height="4" rx="2" class="slider-bg" />
+    <rect id="slider-track-fill" x="100" y="8" width="0" height="4" rx="2" class="slider-track-active" />
+    
+    <!-- Ticks de Decisões Clássicas -->
+    <circle cx="100" cy="10" r="5.5" class="slider-tick" onclick="setStage(0)" role="button" aria-label="Selecionar 20 anos"/>
+    <circle cx="220" cy="10" r="5.5" class="slider-tick" onclick="setStage(1)" role="button" aria-label="Selecionar 40 anos"/>
+    <circle cx="340" cy="10" r="5.5" class="slider-tick" onclick="setStage(2)" role="button" aria-label="Selecionar 60 anos"/>
+    <circle cx="460" cy="10" r="5.5" class="slider-tick" onclick="setStage(3)" role="button" aria-label="Selecionar 80 anos"/>
+    
+    <!-- Rótulos do Slider -->
+    <text x="100" y="27" id="tick-label-0" class="slider-tick-label active" onclick="setStage(0)">20 Anos</text>
+    <text x="220" y="27" id="tick-label-1" class="slider-tick-label" onclick="setStage(1)">40 Anos</text>
+    <text x="340" y="27" id="tick-label-2" class="slider-tick-label" onclick="setStage(2)">60 Anos</text>
+    <text x="460" y="27" id="tick-label-3" class="slider-tick-label" onclick="setStage(3)">80 Anos</text>
+
+    <!-- Handle do Slider -->
+    <g id="slider-handle">
+      <circle cx="0" cy="10" r="8" fill="var(--c-cyan)" stroke="var(--bg-color)" stroke-width="2" style="cursor: pointer;" />
+      <circle cx="0" cy="10" r="3.5" fill="var(--text-primary)"/>
+    </g>
+
+    <!-- Zonas de toque ampliadas para interatividade confiável (Touch/Mouse) -->
+    <rect x="75" y="-12" width="50" height="42" fill="transparent" style="cursor:pointer;" onclick="setStage(0)" role="button" aria-label="Estágio 20 anos"/>
+    <rect x="195" y="-12" width="50" height="42" fill="transparent" style="cursor:pointer;" onclick="setStage(1)" role="button" aria-label="Estágio 40 anos"/>
+    <rect x="315" y="-12" width="50" height="42" fill="transparent" style="cursor:pointer;" onclick="setStage(2)" role="button" aria-label="Estágio 60 anos"/>
+    <rect x="435" y="-12" width="50" height="42" fill="transparent" style="cursor:pointer;" onclick="setStage(3)" role="button" aria-label="Estágio 80 anos"/>
+  </g>
+
+  <!-- Legenda de Interpretação Clássica (Contrato de Layout 1) -->
+  <g transform="translate(40, 480)">
+    <text x="0" y="0" class="fig-caption">Legenda: A cada década o corpo agrega um risco novo: mutações se acumulam na célula. É por isso que o rastreamento segue a linha do tempo.</text>
+  </g>
+
+  <!-- ================= SCRIPTS DE INTERATIVIDADE E COMPORTAMENTO ================= -->
+  <script type="text/javascript">
+    <![CDATA[
+    function setStage(index) {
+      // 1. Atualizar classe no elemento raiz para acionar estilização do estágio
+      var root = document.getElementById('p11-svg-root');
+      root.setAttribute('class', 'active-' + index);
+      
+      // 2. Preenchimento gradual do trilho do slider
+      var trackFill = document.getElementById('slider-track-fill');
+      var fillWidths = [0, 120, 240, 360];
+      trackFill.setAttribute('width', fillWidths[index]);
+      
+      // 3. Atualizar states ativos dos rótulos de tempo
+      for (var i = 0; i < 4; i++) {
+        var label = document.getElementById('tick-label-' + i);
+        if (i === index) {
+          label.setAttribute('class', 'slider-tick-label active');
+        } else {
+          label.setAttribute('class', 'slider-tick-label');
+        }
+      }
+      
+      // 4. Alternar painéis no card clínico lateral
+      for (var j = 0; j < 4; j++) {
+        var infoPanel = document.getElementById('info-' + j);
+        if (j === index) {
+          infoPanel.style.display = 'block';
+        } else {
+          infoPanel.style.display = 'none';
+        }
+      }
+    }
+    
+    // Suporte nativo a navegação acessível por setas do teclado
+    document.addEventListener('keydown', function(event) {
+      var root = document.getElementById('p11-svg-root');
+      var currentClass = root.getAttribute('class') || 'active-0';
+      var currentStage = parseInt(currentClass.replace('active-', '')) || 0;
+      
+      if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+        if (currentStage < 3) setStage(currentStage + 1);
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+        if (currentStage > 0) setStage(currentStage - 1);
+      }
+    });
+    ]]>
+  </script>
+</svg>

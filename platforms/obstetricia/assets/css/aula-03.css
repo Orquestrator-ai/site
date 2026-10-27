@@ -1,0 +1,95 @@
+/* aula-03.css — componentes-Executor próprios da Aula 3 (Fórceps e Vácuo-extrator).
+   ADITIVO e element-scoped: todas as classes usam prefixo .a3- para nunca colidir com
+   base.css / components.css (não regride Aula 1/2). Herda os tokens da casa (rosa-vinho). */
+
+/* Palavra-chave rosa-violeta (§12): nomes de instrumento e mnemônicos (primária GO).
+   Classe nova (não existe em components.css) — não regride nada. */
+.kw-inst { color: var(--rose-hi); font-weight: 700; }
+
+/* ============ Números-chave em linha (comprimentos, cortes) ============ */
+.a3-numline { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-4) 0 var(--sp-5); padding: 0; list-style: none; }
+.a3-numline li { display: inline-flex; align-items: baseline; gap: 6px; margin: 0; padding: 6px 12px;
+  border: 1px solid var(--border-mid); border-radius: var(--r-pill); background: var(--bg-1); font-size: var(--fs-sm); }
+.a3-numline .n { font-family: var(--font-mono); font-weight: 700; color: var(--rose-hi); }
+.a3-numline .l { color: var(--ink-70); }
+
+/* ============ Bandeja comparativa dos 3 fórceps (C-P2) — card-grid ============ */
+.a3-tray { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); margin: var(--sp-5) 0; }
+.a3-tray__card { display: flex; flex-direction: column; border: 1px solid var(--border-mid); border-radius: var(--r-md);
+  background: var(--bg-glass); padding: var(--sp-4); box-shadow: var(--shadow-sm); }
+.a3-tray__card.is-accent { border-color: var(--rose); box-shadow: var(--glow-rose); background: var(--wine-soft); }
+.a3-tray__name { font-family: var(--font-serif); font-weight: 700; font-size: var(--fs-lg); color: var(--rose-hi);
+  margin-bottom: var(--sp-1); line-height: 1.1; }
+.a3-tray__tag { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: var(--sp-3); display: block; }
+.a3-tray__dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px var(--sp-3); }
+.a3-tray__dl dt { font-size: var(--fs-xs); color: var(--ink-70); text-transform: uppercase; letter-spacing: 0.05em; padding-top: 2px; }
+.a3-tray__dl dd { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); }
+.a3-tray__dl dd .num { font-family: var(--font-mono); color: var(--rose-hi); font-weight: 700; }
+@media (max-width: 720px) { .a3-tray { grid-template-columns: 1fr; } }
+
+/* ============ Checklist APLICAR interativo (C-P5) — recuperação ativa ============ */
+.a3-aplicar { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg); overflow: hidden;
+  background: var(--bg-glass); }
+.a3-aplicar__bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid); }
+.a3-aplicar__word { display: flex; gap: 5px; font-family: var(--font-mono); font-weight: 700; }
+.a3-aplicar__word span { display: inline-grid; place-items: center; width: 30px; height: 34px; border-radius: var(--r-sm);
+  background: var(--bg-1); border: 1px solid var(--rose-soft); color: var(--rose-hi); font-size: var(--fs-md); }
+.a3-aplicar__meta { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); }
+.a3-aplicar.is-complete .a3-aplicar__meta { color: var(--kw-green); }
+.a3-aplicar__list { list-style: none; margin: 0; padding: 0; }
+.a3-aplicar__item { border-top: 1px solid var(--border-soft); border-left: 3px solid transparent; }
+.a3-aplicar__item:first-child { border-top: 0; }
+.a3-aplicar__item.is-done { border-left-color: var(--kw-green); background: var(--kw-green-dim); }
+.a3-aplicar__head { display: flex; align-items: center; gap: var(--sp-3); width: 100%; text-align: left;
+  padding: var(--sp-3) var(--sp-5); cursor: pointer; }
+.a3-aplicar__mark { display: inline-grid; place-items: center; width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%;
+  border: 2px solid var(--ink-50); color: transparent; font-size: 0.8rem; transition: color var(--dur-fast), background var(--dur-fast), border-color var(--dur-fast); }
+.a3-aplicar__item.is-done .a3-aplicar__mark { border-color: var(--kw-green); background: var(--kw-green-dim); color: var(--kw-green); }
+.a3-aplicar__letter { font-family: var(--font-mono); font-weight: 700; color: var(--rose); flex-shrink: 0; width: 1.2em; }
+.a3-aplicar__crit { font-weight: 600; color: var(--ink-100); flex: 1; }
+.a3-aplicar__chev { color: var(--ink-70); transition: transform var(--dur-fast) var(--ease-out); flex-shrink: 0; }
+.a3-aplicar__head[aria-expanded="true"] .a3-aplicar__chev { transform: rotate(90deg); color: var(--rose); }
+.a3-aplicar__detail { padding: 0 var(--sp-5) var(--sp-4) calc(var(--sp-5) + 22px + var(--sp-3)); }
+.a3-aplicar__detail p { margin: 0 0 var(--sp-2); font-size: var(--fs-sm); text-align: justify; text-indent: 0; color: var(--ink-90); }
+.a3-aplicar__detail .a3-peg { display: block; font-size: var(--fs-sm); color: var(--kw-amber); font-weight: 600; }
+.a3-aplicar__detail .a3-peg::before { content: "⚠ "; }
+
+/* ============ Scaffold opt-in <details> (P5 — "O que o mnemônico não diz") ============ */
+.a3-details { margin: var(--sp-5) 0; border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-glass); overflow: hidden; }
+.a3-details > summary { cursor: pointer; padding: var(--sp-4) var(--sp-5); font-weight: 600; color: var(--rose-hi); list-style: none;
+  display: flex; align-items: center; gap: var(--sp-3); }
+.a3-details > summary::-webkit-details-marker { display: none; }
+.a3-details > summary::before { content: "＋"; font-family: var(--font-mono); color: var(--rose); font-weight: 700; }
+.a3-details[open] > summary::before { content: "－"; }
+.a3-details[open] > summary { border-bottom: 1px solid var(--border-soft); }
+.a3-details__body { padding: var(--sp-4) var(--sp-5); }
+.a3-details__body p { text-align: justify; text-indent: 0; font-size: var(--fs-sm); }
+.a3-details__body ul { margin: 0; }
+.a3-details__body li { font-size: var(--fs-sm); color: var(--ink-90); }
+
+/* ============ Card do Caso 1 (C-P7) ============ */
+.a3-caso { border: 1px solid var(--wine); border-left: 4px solid var(--rose); border-radius: var(--r-lg);
+  background: var(--bg-glass-strong); padding: var(--sp-5); margin: var(--sp-6) 0; box-shadow: var(--shadow-md); }
+.a3-caso__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--rose); margin-bottom: var(--sp-3); }
+.a3-caso__chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-4); padding: 0; list-style: none; }
+.a3-caso__chips li { display: inline-flex; align-items: center; gap: 6px; margin: 0; padding: 5px 12px; border-radius: var(--r-pill);
+  background: var(--kw-green-dim); border: 1px solid var(--kw-green); color: var(--ink-90); font-size: var(--fs-xs); }
+.a3-caso__chips li::before { content: "✓"; color: var(--kw-green); font-weight: 700; }
+.a3-caso__verdict { border-top: 1px solid var(--border-soft); padding-top: var(--sp-3); text-align: justify; text-indent: 0; margin: 0; }
+.a3-caso__verdict strong { color: var(--rose-hi); }
+
+/* ============ Trio de imagens reais lado a lado (IR1 — Simpson·Kielland·Piper) ============ */
+.a3-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); margin: 0 0 var(--sp-3); }
+.a3-trio__cell { display: flex; flex-direction: column; border: 1px solid var(--border-mid); border-radius: var(--r-md);
+  overflow: hidden; background: var(--bg-1); }
+.a3-trio__cell img { width: 100%; height: 210px; object-fit: contain; background: var(--bg-2); display: block; padding: var(--sp-2); }
+.a3-trio__lbl { padding: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-90); border-top: 1px solid var(--border-soft); }
+.a3-trio__lbl b { color: var(--rose-hi); display: block; font-family: var(--font-serif); }
+@media (max-width: 680px) { .a3-trio { grid-template-columns: 1fr; } .a3-trio__cell img { height: 240px; } }
+
+/* ============ Rodapé-caveat de tabela / componente ============ */
+.a3-caveat { font-size: var(--fs-sm); color: var(--ink-70); font-style: italic; margin: var(--sp-2) 0 0; text-indent: 0; text-align: justify; }
+.a3-caveat b { color: var(--kw-amber); font-style: normal; }

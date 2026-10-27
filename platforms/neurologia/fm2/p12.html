@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D9488">
+<meta name="description" content="Surto = corticoide (metilpred 1 g IV 3–5 d); sequela = alta atividade; PCDT do SUS existe.">
+<title>Surto, sequela e PCDT SUS — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm2-cara">
+:root,[data-theme="dark"]{--fm2-teal:#14b8a6;--fm2-indigo:#818CF8;--fm2-gelo:#38BDF8;--fm2-ouro:#E0A100;--fm2-coral:#FB7185;--fm2-amber:#F59E0B;--fm2-verde:#34D399}
+[data-theme="light"]{--fm2-teal:#0F766E;--fm2-indigo:#4F46E5;--fm2-gelo:#0284C7;--fm2-ouro:#846006;--fm2-coral:#C81E43;--fm2-amber:#A15206;--fm2-verde:#059669}
+.reading{width:100%;margin:0 auto;padding:0 0 3rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem;margin:0 0 1.25rem;box-shadow:var(--shadow)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--fm2-teal);margin:0 0 .45rem}
+.opener h1{font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 .6rem;color:var(--ink-100)}
+.opener p{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.55}
+.opener--case{border-left:4px solid var(--fm2-indigo)}
+.opener--question{border-left:4px solid var(--fm2-teal)}
+.opener--mnemonic{border-left:4px solid var(--fm2-amber)}
+.opener--impact{border-left:4px solid var(--fm2-coral)}
+.opener--checklist{border-left:4px solid var(--fm2-verde)}
+.opener--vs{border-left:4px solid var(--fm2-gelo)}
+.opener--trap{border-left:4px solid var(--fm2-ouro)}
+.opener--bust{border-left:4px solid var(--fm2-coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.15rem}
+.chip{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.3rem .75rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--fm2-teal);border-color:color-mix(in srgb,var(--fm2-teal) 45%,var(--border))}
+.chip--gold{color:var(--fm2-ouro);border-color:color-mix(in srgb,var(--fm2-ouro) 45%,var(--border))}
+.chip--ok{color:var(--fm2-verde);border-color:color-mix(in srgb,var(--fm2-verde) 45%,var(--border))}
+.chip--no{color:var(--fm2-coral);border-color:color-mix(in srgb,var(--fm2-coral) 45%,var(--border))}
+.chip--series{color:var(--fm2-indigo);border-color:color-mix(in srgb,var(--fm2-indigo) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em;line-height:1.62}
+.prose p.no-indent,.no-indent{text-indent:0}
+.topic-h{font-size:1.12rem;margin:1.4rem 0 .55rem;color:var(--ink-100);font-weight:700}
+.term{color:var(--fm2-indigo);font-weight:700}
+.hl-good{color:var(--fm2-verde);font-weight:700}
+.hl-bad{color:var(--fm2-coral);font-weight:700}
+.hl-warn{color:var(--fm2-amber);font-weight:700}
+.hl-gold{color:var(--fm2-ouro);font-weight:700}
+.nuance{border-left:4px solid var(--fm2-amber);padding:.7rem .9rem;margin:1rem 0;background:color-mix(in srgb,var(--fm2-amber) 9%,var(--bg-2));border-radius:0 10px 10px 0}
+.nuance__title{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--fm2-amber);margin:0 0 .3rem;font-weight:700}
+.nuance p{margin:0;color:var(--ink-80);font-size:.94rem;line-height:1.55}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0}
+.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:300px}
+.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}
+.comparison th{background:var(--bg-3);color:var(--ink-100)}
+.comparison tr:nth-child(even) td{background:var(--bg-2)}
+.exec-card{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.exec-card__title{margin:0 0 .6rem;font-size:1rem;color:var(--fm2-teal);font-weight:700}
+.case-card{border:1px solid var(--border);border-left:4px solid var(--fm2-indigo);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.1rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.case-card h4{margin:0 0 .5rem;color:var(--fm2-indigo)}
+.case-card p{margin:.3rem 0;color:var(--ink-80)}
+.gap-box{border:1px solid var(--border);border-left:4px solid var(--fm2-coral);border-radius:var(--radius-sm);background:color-mix(in srgb,var(--fm2-coral) 8%,var(--bg-2));padding:.9rem 1rem;margin:1.1rem 0}
+.gap-box h4{margin:0 0 .4rem;color:var(--fm2-coral)}
+.gap-box p{margin:0;color:var(--ink-80);font-size:.92rem}
+.continuity{border:1px solid var(--border);border-left:4px solid var(--fm2-gelo);border-radius:var(--radius-sm);background:var(--bg-2);padding:.85rem 1rem;margin:1.2rem 0 0}
+.continuity p{margin:0;color:var(--ink-60);font-size:.92rem}
+.hero-figure{margin:1.5rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.hero-figure__frame{width:100%;display:block;background:var(--bg-1)}
+.hero-figure__cap{padding:.7rem .9rem .9rem;font-size:.8rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.fig__frame{width:100%;display:block;background:var(--bg-1)}
+.fig__frame--svg{padding:.25rem}
+.fm2-inline-svg{display:block;width:100%;height:auto;border-radius:8px}
+.fig__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--fm2-teal);margin-right:.4rem}
+.quiz__alts{list-style:none;margin:0 0 .9rem;padding:0;display:grid;gap:.45rem}
+.alt{display:flex;gap:.6rem;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-3);color:var(--ink-100);padding:.7rem .85rem;cursor:pointer;font:inherit;min-height:44px;line-height:1.45}
+.alt:hover{border-color:var(--fm2-teal);background:var(--bg-4)}
+.alt[aria-checked="true"]{border-color:var(--fm2-gelo);background:color-mix(in srgb,var(--fm2-gelo) 13%,var(--bg-3))}
+.alt.is-correct{border-color:var(--fm2-verde);background:color-mix(in srgb,var(--fm2-verde) 14%,var(--bg-3))}
+.alt.is-correct::after{content:" ✔";color:var(--fm2-verde);font-weight:800;margin-left:auto}
+.alt.is-wrong{border-color:var(--fm2-coral);background:color-mix(in srgb,var(--fm2-coral) 14%,var(--bg-3))}
+.alt.is-wrong::after{content:" ✗";color:var(--fm2-coral);font-weight:800;margin-left:auto}
+.alt.is-marked{border-color:var(--fm2-gelo)}
+.ltr{display:inline-flex;align-items:center;justify-content:center;min-width:1.6rem;height:1.6rem;border-radius:6px;background:var(--bg-4);color:var(--fm2-teal);font-weight:800;font-size:.82rem;flex:0 0 auto}
+.alt.is-correct .ltr{background:var(--fm2-verde);color:#fff}
+.alt.is-wrong .ltr{background:var(--fm2-coral);color:#fff}
+.quiz__btn{display:inline-flex;align-items:center;min-height:44px;padding:.55rem 1rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong);background:var(--bg-3);color:var(--ink-100);cursor:pointer;font:inherit;font-weight:600}
+.quiz__btn:hover:not(:disabled){border-color:var(--fm2-teal);color:var(--fm2-teal)}
+.quiz__btn:disabled{opacity:.6;cursor:default}
+.quiz__explicacao{margin-top:.7rem;padding:.8rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3)}
+.quiz__explicacao[hidden]{display:none}
+.quiz__explicacao p{margin:0 0 .6rem;font-size:.93rem;line-height:1.55}
+.quiz__explicacao p:last-child{margin:0}
+.quiz__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.flow{display:grid;gap:.5rem;margin:.9rem 0}
+.flow__step{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:.7rem .85rem;font-size:.93rem}
+.flow__step strong{color:var(--fm2-teal)}
+.flow__arrow{text-align:center;color:var(--fm2-gelo);font-weight:700}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.9rem 0}
+.stat-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem .9rem;background:var(--bg-2)}
+.stat-card__n{font-size:1.7rem;font-weight:800;color:var(--fm2-teal);line-height:1}
+.stat-card__n--bad{color:var(--fm2-coral)}
+.stat-card__t{display:block;margin-top:.35rem;font-size:.82rem;color:var(--ink-60)}
+.board{display:grid;gap:.5rem;margin:.9rem 0}
+.board__row{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;border:1px solid var(--border);border-radius:var(--radius-sm);padding:.6rem .8rem;background:var(--bg-2)}
+.board__tag{font-weight:800;min-width:1.6rem;text-align:center;border-radius:6px;padding:.15rem .25rem;background:var(--bg-4)}
+.board__tag--ok{background:var(--fm2-verde);color:#fff}
+.board__tag--no{background:var(--fm2-coral);color:#fff}
+.dont-confuse{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.9rem 0}
+.dont-confuse>div{border:1px solid var(--border);border-radius:10px;padding:.65rem .8rem;background:var(--bg-2)}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:560px){.stat-row,.dont-confuse{grid-template-columns:1fr}}
+@media(max-width:420px){.board__row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p12" data-layout="fm2-p12" data-source-ids="141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Esclerose múltipla</span>
+        <span class="site-header__subtitle">Neurologia · esclerose múltipla</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">12/12</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<div class="reading">
+  <section class="opener opener--checklist" aria-labelledby="p12-titulo">
+    <span class="opener__eyebrow">Meta + checklist</span>
+    <h1 id="p12-titulo">Surto, sequela e PCDT SUS</h1>
+    <p>Ao final: corticoide no surto · sequela = alta atividade · PCDT · tríade de fechamento.</p>
+  </section>
+
+  <div class="prose">
+    <h2 class="topic-h">Corticoide no surto</h2>
+    <p class="no-indent">Foco de tratamento: forma <strong>remitente-recorrente</strong>. No <strong>surto</strong>, o grande medicamento é <strong>corticoide</strong>. Exemplo clássico: <strong>metilprednisolona 1 g</strong> por <strong>3 a 5 dias</strong> (via <strong>endovenosa</strong>). Pode-se fazer <strong>corticoide oral</strong> (ex.: prednisona) — muitos serviços fazem; a <strong>evidência é menor</strong>, mas é possível.</p>
+    <h2 class="topic-h">Plasmaférese</h2>
+    <p class="no-indent"><strong>Alternativa</strong> ao corticoide no surto: <strong>plasmaférese</strong>.</p>
+    <h2 class="topic-h">Baixa vs alta atividade</h2>
+    <p class="no-indent">Para <strong>manutenção</strong> (evitar novos surtos): drogas <strong>modificadoras de doença</strong>.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table class="comparison">
+      <thead><tr><th>Atividade</th><th>Exemplos</th><th>Perfil</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Baixa</strong></td><td>interferon, glatiramer</td><td>1ª linha: mais seguros, mais tempo de uso, mais fracos</td></tr>
+        <tr><td><strong>Alta</strong></td><td>natalizumabe, cladribina, alentuzumabe</td><td>“tiro de canhão”</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <h2 class="topic-h">Sequela = alta</h2>
+    <p class="no-indent">Critério <strong>simplificado</strong> de alta atividade (para não se perder em critérios longos): a palavrinha <strong>sequela</strong>. <strong>Sequela</strong> = fez o surto, tratou com corticoide e <strong>não melhorou completamente</strong> — deixou sequela residual. Surto + corticoide <strong>sem recuperação completa</strong> → classificar como <strong>alta atividade</strong> e ir para terapia mais forte (ex.: natalizumabe).</p>
+    <h2 class="topic-h">PCDT SUS + tríade de fecho</h2>
+    <p class="no-indent">Isso aparece em prova porque existe <strong>PCDT do SUS</strong> (Protocolo Clínico e Diretrizes Terapêuticas) para esclerose múltipla. O SUS tem <strong>programa</strong> para EM: o paciente <strong>cadastra</strong> e <strong>recebe</strong> o medicamento — <strong>sem precisar judicializar</strong>.</p>
+  </div>
+
+  <div class="exec-card" style="border-left:4px solid var(--fm2-teal)">
+    <p class="exec-card__title">Tríade de fechamento</p>
+    <ol style="margin:.3rem 0 0 1.2rem;color:var(--ink-80)">
+      <li><strong class="hl-gold">Mulher jovem + visão</strong> = EM até provar o contrário</li>
+      <li><strong>Tempo + espaço</strong> (McDonald + RM)</li>
+      <li><strong>Surto = corticoide</strong>; <strong>sequela = alta atividade</strong> (+ PCDT SUS existe)</li>
+    </ol>
+  </div>
+
+  <div class="nuance" role="note" style="border-left-color:var(--fm2-coral);background:color-mix(in srgb,var(--fm2-coral) 9%,var(--bg-2))">
+    <span class="nuance__title" style="color:var(--fm2-coral)">Sequela = alta atividade</span>
+    <p>Não confunda: <strong class="hl-bad">sequela</strong> (surto tratado sem recuperação completa) é o gatilho para escalar para modificadora de alta potência. A 1ª linha (interferon, glatiramer) não é a resposta quando há sequela.</p>
+  </div>
+
+  <div class="figura-ancorada">
+    <figure class="figura-ancorada__media">
+      <img src="media/B12-PCDT-EM-Figura1-algoritmo-MMCD-MS-2024.png" alt="Fluxograma do Protocolo Clínico e Diretrizes Terapêuticas do SUS para esclerose múltipla." loading="lazy" decoding="async">
+      <figcaption class="figura-ancorada__legenda">PCDT EM — algoritmo oficial de tratamento do SUS. O programa existe: cadastra e recebe, sem judicializar.</figcaption>
+      <p class="figura-ancorada__fonte">Ministério da Saúde (Brasil), PCDT Esclerose Múltipla · domínio público (ato oficial) · <a href="https://www.gov.br/saude/pt-br/assuntos/pcdt/e/esclerose-multipla">gov.br/saude</a></p>
+    </figure>
+    <div class="figura-ancorada__ancora">
+      <h4>O programa existe</h4>
+      <p>O fluxograma oficial do SUS organiza tratamento de surto e manutenção. Saber que o PCDT existe é ponto de prova — e muda a vida do paciente, que não precisa judicializar para acessar a modificadora.</p>
+    </div>
+  </div>
+
+  <figure class="fig">
+    <div class="fig__frame fig__frame--svg">
+<svg id="fm2p12-svg" class="fm2-inline-svg fm2p12-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="100%" height="100%">
+  <defs>
+    <style>
+      .fm2p12-root {
+        --fm2p12-bg: #0f172a;
+        --fm2p12-panel-bg: #1e293b;
+        --fm2p12-card-bg: #1e293b;
+        --fm2p12-text-main: #f8fafc;
+        --fm2p12-text-sub: #94a3b8;
+        --fm2p12-border: #334155;
+        --fm2p12-coral-bg: rgba(239, 68, 68, 0.12);
+        --fm2p12-coral-border: #ef4444;
+        --fm2p12-coral-text: #fca5a5;
+        --fm2p12-amber-bg: rgba(245, 158, 11, 0.12);
+        --fm2p12-amber-border: #f59e0b;
+        --fm2p12-amber-text: #fcd34d;
+        --fm2p12-teal-bg: rgba(20, 184, 166, 0.12);
+        --fm2p12-teal-border: #14b8a6;
+        --fm2p12-teal-text: #5eead4;
+        --fm2p12-gold-bg: rgba(234, 179, 8, 0.16);
+        --fm2p12-gold-border: #eab308;
+        --fm2p12-gold-text: #fde047;
+        --fm2p12-green-bg: rgba(34, 197, 94, 0.12);
+        --fm2p12-green-border: #22c55e);
+        --fm2p12-green-text: #86efac;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      [data-theme="light"] .fm2p12-root {
+        --fm2p12-bg: #f8fafc;
+        --fm2p12-panel-bg: #ffffff;
+        --fm2p12-card-bg: #ffffff;
+        --fm2p12-text-main: #0f172a;
+        --fm2p12-text-sub: #475569;
+        --fm2p12-border: #cbd5e1;
+        --fm2p12-coral-bg: #fef2f2;
+        --fm2p12-coral-border: #dc2626;
+        --fm2p12-coral-text: #991b1b;
+        --fm2p12-amber-bg: #fffbeb;
+        --fm2p12-amber-border: #d97706;
+        --fm2p12-amber-text: #92400e;
+        --fm2p12-teal-bg: #f0fdf4;
+        --fm2p12-teal-border: #0d9488;
+        --fm2p12-teal-text: #115e59;
+        --fm2p12-gold-bg: #fefce8;
+        --fm2p12-gold-border: #ca8a04;
+        --fm2p12-gold-text: #854d0e;
+        --fm2p12-green-bg: #f0fdf4;
+        --fm2p12-green-border: #16a34a;
+        --fm2p12-green-text: #166534;
+      }
+
+      #fm2p12-svg .fm2p12-bg-rect { fill: var(--fm2p12-bg, #0f172a); }
+      #fm2p12-svg .fm2p12-title { fill: var(--fm2p12-text-main, #f8fafc); font-size: 18px; font-weight: 700; }
+      #fm2p12-svg .fm2p12-subtitle { fill: var(--fm2p12-text-sub, #94a3b8); font-size: 12px; font-weight: 400; }
+      #fm2p12-svg .fm2p12-card { fill: var(--fm2p12-card-bg, #1e293b); stroke: var(--fm2p12-border, #334155); stroke-width: 1.5; rx: 8px; transition: all 0.2s ease; cursor: pointer; }
+      #fm2p12-svg .fm2p12-card:hover { stroke-width: 2.5; }
+      #fm2p12-svg .fm2p12-card-active { stroke-width: 3; }
+      
+      #fm2p12-svg .fm2p12-node-surto { fill: var(--fm2p12-coral-bg, rgba(239,68,68,0.12)); stroke: var(--fm2p12-coral-border, #ef4444); }
+      #fm2p12-svg .fm2p12-node-reaval { fill: var(--fm2p12-amber-bg, rgba(245,158,11,0.12)); stroke: var(--fm2p12-amber-border, #f59e0b); }
+      #fm2p12-svg .fm2p12-node-baixa { fill: var(--fm2p12-teal-bg, rgba(20,184,166,0.12)); stroke: var(--fm2p12-teal-border, #14b8a6); }
+      #fm2p12-svg .fm2p12-node-alta { fill: var(--fm2p12-gold-bg, rgba(234,179,8,0.16)); stroke: var(--fm2p12-gold-border, #eab308); }
+
+      #fm2p12-svg .fm2p12-badge { rx: 4px; font-size: 10px; font-weight: 700; text-anchor: middle; }
+      #fm2p12-svg .fm2p12-badge-coral { fill: var(--fm2p12-coral-border, #ef4444); fill-opacity: 0.2; stroke: var(--fm2p12-coral-border, #ef4444); }
+      #fm2p12-svg .fm2p12-badge-coral-text { fill: var(--fm2p12-coral-text, #fca5a5); }
+      #fm2p12-svg .fm2p12-badge-gold { fill: var(--fm2p12-gold-border, #eab308); fill-opacity: 0.2; stroke: var(--fm2p12-gold-border, #eab308); }
+      #fm2p12-svg .fm2p12-badge-gold-text { fill: var(--fm2p12-gold-text, #fde047); }
+
+      #fm2p12-svg .fm2p12-txt-bold { fill: var(--fm2p12-text-main, #f8fafc); font-size: 13px; font-weight: 700; }
+      #fm2p12-svg .fm2p12-txt-sub { fill: var(--fm2p12-text-sub, #94a3b8); font-size: 11px; }
+      #fm2p12-svg .fm2p12-arrow { stroke: var(--fm2p12-border, #334155); stroke-width: 2; fill: none; marker-end: url(#fm2p12-arr); }
+      #fm2p12-svg .fm2p12-arrow-active { stroke: var(--fm2p12-gold-border, #eab308); stroke-width: 3; }
+
+      #fm2p12-svg .fm2p12-panel { fill: var(--fm2p12-panel-bg, #1e293b); stroke: var(--fm2p12-border, #334155); stroke-width: 1.5; rx: 10px; }
+      #fm2p12-svg .fm2p12-panel-title { fill: var(--fm2p12-gold-text, #fde047); font-size: 14px; font-weight: 700; }
+      #fm2p12-svg .fm2p12-panel-body { fill: var(--fm2p12-text-main, #f8fafc); font-size: 12px; line-height: 1.5; }
+      
+      #fm2p12-svg .fm2p12-btn { cursor: pointer; rx: 6px; fill: var(--fm2p12-card-bg, #1e293b); stroke: var(--fm2p12-border, #334155); stroke-width: 1.5; transition: all 0.2s ease; }
+      #fm2p12-svg .fm2p12-btn:hover { stroke: var(--fm2p12-gold-border, #eab308); }
+      #fm2p12-svg .fm2p12-btn-active { fill: var(--fm2p12-gold-bg, rgba(234,179,8,0.16)); stroke: var(--fm2p12-gold-border, #eab308); stroke-width: 2; }
+      #fm2p12-svg .fm2p12-btn-text { fill: var(--fm2p12-text-main, #f8fafc); font-size: 11px; font-weight: 600; text-anchor: middle; }
+    </style>
+
+    <marker id="fm2p12-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm2p12-border, #334155)" />
+    </marker>
+    <marker id="fm2p12-arr-active" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm2p12-gold-border, #eab308)" />
+    </marker>
+  </defs>
+
+  <!-- Fundo -->
+  <rect class="fm2p12-bg-rect" x="0" y="0" width="960" height="680" rx="12" />
+
+  <!-- Cabeçalho -->
+  <g transform="translate(24, 32)">
+    <text class="fm2p12-title" x="0" y="0">MANEJO DA ESCLEROSE MÚLTIPLA: SURTO × SEQUELA × PCDT SUS</text>
+    <text class="fm2p12-subtitle" x="0" y="20">Surto aciona corticoide 1g IV 3-5d; a presença de sequela pós-surto determina escalonamento para ALTA ATIVIDADE.</text>
+  </g>
+
+  <!-- SEÇÃO ESQUERDA: FLUXO DE MANEJO (DIAGRAMA INTERATIVO) -->
+  
+  <!-- CONECTORES (LINHAS) -->
+  <path class="fm2p12-arrow" id="fm2p12-line-1" d="M 270 145 L 270 170" />
+  <path class="fm2p12-arrow" id="fm2p12-line-2" d="M 270 245 L 270 270" />
+  <path class="fm2p12-arrow" id="fm2p12-line-3a" d="M 200 345 L 140 385" />
+  <path class="fm2p12-arrow" id="fm2p12-line-3b" d="M 340 345 L 400 385" />
+  <path class="fm2p12-arrow" id="fm2p12-line-4a" d="M 140 475 L 140 505" />
+  <path class="fm2p12-arrow" id="fm2p12-line-4b" d="M 400 475 L 400 505" />
+
+  <!-- NODE 1: SURTO AGUDO -->
+  <g id="fm2p12-node-1" class="fm2p12-step-target" data-step="1" transform="translate(24, 75)">
+    <rect class="fm2p12-card fm2p12-node-surto" id="fm2p12-card-1" x="0" y="0" width="492" height="70" />
+    <rect class="fm2p12-badge fm2p12-badge-coral" x="12" y="12" width="100" height="20" />
+    <text class="fm2p12-badge-coral-text" x="62" y="26" text-anchor="middle" font-size="10" font-weight="700">PORTA DE ENTRADA</text>
+    <text class="fm2p12-txt-bold" x="122" y="26">SURTO AGUDO (Disfunção Focal &gt; 24h)</text>
+    <text class="fm2p12-txt-sub" x="12" y="52">Instalação subaguda de sintoma focal (neurite óptica, mielite, tronco) sem febre/infecção.</text>
+  </g>
+
+  <!-- NODE 2: TRATAMENTO DO SURTO -->
+  <g id="fm2p12-node-2" class="fm2p12-step-target" data-step="2" transform="translate(24, 175)">
+    <rect class="fm2p12-card fm2p12-node-surto" id="fm2p12-card-2" x="0" y="0" width="492" height="70" />
+    <rect class="fm2p12-badge fm2p12-badge-coral" x="12" y="12" width="115" height="20" />
+    <text class="fm2p12-badge-coral-text" x="69" y="26" text-anchor="middle" font-size="10" font-weight="700">1ª LINHA DO SURTO</text>
+    <text class="fm2p12-txt-bold" x="137" y="26">METILPREDNISOLONA 1 g IV 3–5 DIAS</text>
+    <text class="fm2p12-txt-sub" x="12" y="52">Acelera recuperação clínica. Se refratário/grave ⇒ Plasmaférese (PLEX 3-5 sessões).</text>
+  </g>
+
+  <!-- NODE 3: REAVALIAÇÃO / BIFURCAÇÃO -->
+  <g id="fm2p12-node-3" class="fm2p12-step-target" data-step="3" transform="translate(24, 275)">
+    <rect class="fm2p12-card fm2p12-node-reaval" id="fm2p12-card-3" x="0" y="0" width="492" height="70" />
+    <rect class="fm2p12-badge" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" x="12" y="12" width="130" height="20" />
+    <text fill="#fcd34d" x="77" y="26" text-anchor="middle" font-size="10" font-weight="700">PONTO DE BIFURCAÇÃO</text>
+    <text class="fm2p12-txt-bold" x="150" y="26">REAVALIAÇÃO PÓS-CORTICOIDE (30 DIAS)</text>
+    <text class="fm2p12-txt-sub" x="12" y="52">O paciente recuperou totalmente a função neurológica ou permaneceu com sequela residual?</text>
+  </g>
+
+  <!-- NODE 4A: BAIXA ATIVIDADE -->
+  <g id="fm2p12-node-4a" class="fm2p12-step-target" data-step="4" transform="translate(24, 390)">
+    <rect class="fm2p12-card fm2p12-node-baixa" id="fm2p12-card-4a" x="0" y="0" width="230" height="85" />
+    <text class="fm2p12-txt-bold" fill="var(--fm2p12-teal-text, #5eead4)" x="12" y="24">RECUPERAÇÃO COMPLETA</text>
+    <text class="fm2p12-txt-sub" x="12" y="44">Sem sequela motora/funcional</text>
+    <text class="fm2p12-txt-sub" x="12" y="60">Surto único / Baixa carga lesional</text>
+    <text class="fm2p12-txt-bold" x="12" y="76" font-size="11" fill="var(--fm2p12-teal-border, #14b8a6)">➔ PORTA BAIXA ATIVIDADE</text>
+  </g>
+
+  <!-- NODE 4B: ALTA ATIVIDADE -->
+  <g id="fm2p12-node-4b" class="fm2p12-step-target" data-step="5" transform="translate(286, 390)">
+    <rect class="fm2p12-card fm2p12-node-alta" id="fm2p12-card-4b" x="0" y="0" width="230" height="85" />
+    <text class="fm2p12-txt-bold" fill="var(--fm2p12-gold-text, #fde047)" x="12" y="24">SEQUELA RESIDUAL PÓS-CORTICOIDE</text>
+    <text class="fm2p12-txt-sub" x="12" y="44">Regra de Ouro: Perda de autonomia</text>
+    <text class="fm2p12-txt-sub" x="12" y="60">Surto grave / Falha terapêutica</text>
+    <text class="fm2p12-txt-bold" x="12" y="76" font-size="11" fill="var(--fm2p12-gold-border, #eab308)">➔ PORTA ALTA ATIVIDADE</text>
+  </g>
+
+  <!-- NODE 5A: FÁRMACOS BAIXA ATIVIDADE -->
+  <g id="fm2p12-node-5a" class="fm2p12-step-target" data-step="4" transform="translate(24, 510)">
+    <rect class="fm2p12-card" stroke="var(--fm2p12-teal-border, #14b8a6)" x="0" y="0" width="230" height="135" />
+    <text class="fm2p12-txt-bold" fill="var(--fm2p12-teal-text, #5eead4)" x="12" y="22">1ª LINHA PCDT SUS</text>
+    <text class="fm2p12-txt-sub" x="12" y="42">• Betainterferona 1a / 1b</text>
+    <text class="fm2p12-txt-sub" x="12" y="60">• Acetato de Glatirâmer</text>
+    <text class="fm2p12-txt-sub" x="12" y="78">• Teriflunomida (oral)</text>
+    <text class="fm2p12-txt-sub" x="12" y="96">• Dimetilfumarato (oral)</text>
+    <text class="fm2p12-txt-sub" x="12" y="120" font-style="italic" font-size="10">Perfil de imunomodulação inicial</text>
+  </g>
+
+  <!-- NODE 5B: FÁRMACOS ALTA ATIVIDADE -->
+  <g id="fm2p12-node-5b" class="fm2p12-step-target" data-step="5" transform="translate(286, 510)">
+    <rect class="fm2p12-card" stroke="var(--fm2p12-gold-border, #eab308)" x="0" y="0" width="230" height="135" />
+    <text class="fm2p12-txt-bold" fill="var(--fm2p12-gold-text, #fde047)" x="12" y="22">2ª / 3ª LINHA PCDT SUS (ESCALONADO)</text>
+    <text class="fm2p12-txt-sub" x="12" y="42">• Natalizumabe (Anti-VLA4)</text>
+    <text class="fm2p12-txt-sub" x="12" y="60">• Fingolimode (Mod. S1P)</text>
+    <text class="fm2p12-txt-sub" x="12" y="78">• Cladribina / Alemtuzumabe</text>
+    <text class="fm2p12-txt-sub" x="12" y="96">• Anti-CD20 (Ocrelizumabe / Rituxi)</text>
+    <text class="fm2p12-txt-sub" x="12" y="120" font-style="italic" font-size="10">Indicação: Sequela residual ou agressiva</text>
+  </g>
+
+
+  <!-- SEÇÃO DIREITA: PAINEL DE LEITURA E SIMULAÇÃO DE CASOS -->
+  <g transform="translate(540, 75)">
+    <!-- Fundo do Painel -->
+    <rect class="fm2p12-panel" x="0" y="0" width="396" height="570" />
+
+    <!-- Botões de Troca de Estado / Cenário -->
+    <g transform="translate(16, 16)">
+      <text class="fm2p12-txt-sub" x="0" y="12" font-weight="700" font-size="10">SELECIONE O PASSO / CENÁRIO PARA INTERAGIR:</text>
+      
+      <g id="fm2p12-btn-1" class="fm2p12-btn-step" data-step="1" transform="translate(0, 24)">
+        <rect class="fm2p12-btn" x="0" y="0" width="85" height="32" />
+        <text class="fm2p12-btn-text" x="42" y="20">1. Surto</text>
+      </g>
+
+      <g id="fm2p12-btn-2" class="fm2p12-btn-step" data-step="2" transform="translate(93, 24)">
+        <rect class="fm2p12-btn" x="0" y="0" width="85" height="32" />
+        <text class="fm2p12-btn-text" x="42" y="20">2. Corticoide</text>
+      </g>
+
+      <g id="fm2p12-btn-3" class="fm2p12-btn-step" data-step="3" transform="translate(186, 24)">
+        <rect class="fm2p12-btn" x="0" y="0" width="85" height="32" />
+        <text class="fm2p12-btn-text" x="42" y="20">3. Avaliação</text>
+      </g>
+
+      <g id="fm2p12-btn-4" class="fm2p12-btn-step" data-step="4" transform="translate(279, 24)">
+        <rect class="fm2p12-btn" x="0" y="0" width="85" height="32" />
+        <text class="fm2p12-btn-text" x="42" y="20">4. Baixa Ativ.</text>
+      </g>
+    </g>
+
+    <!-- Linha Divisória interna -->
+    <line x1="16" y1="84" x2="380" y2="84" stroke="var(--fm2p12-border, #334155)" stroke-width="1" />
+
+    <!-- Conteúdo Dinâmico do Painel (Variável via JS) -->
+    <g transform="translate(16, 98)">
+      <rect id="fm2p12-info-badge" class="fm2p12-badge fm2p12-badge-gold" x="0" y="0" width="160" height="22" />
+      <text id="fm2p12-info-badge-txt" class="fm2p12-badge-gold-text" x="80" y="15" text-anchor="middle" font-size="11" font-weight="700">REGRA DE OURO DA PROVA</text>
+
+      <text id="fm2p12-info-title" class="fm2p12-panel-title" x="0" y="45" font-size="16">SEQUELA RESIDUAL ⇒ ALTA ATIVIDADE</text>
+
+      <!-- Caixa de Destaque Clínico -->
+      <rect id="fm2p12-info-box" x="0" y="60" width="364" height="115" rx="6" fill="rgba(234,179,8,0.1)" stroke="var(--fm2p12-gold-border, #eab308)" stroke-width="1" />
+      <text id="fm2p12-info-box-t1" class="fm2p12-txt-bold" x="12" y="82" fill="var(--fm2p12-gold-text, #fde047)">Conceito Chave de Prova (PCDT SUS):</text>
+      <text id="fm2p12-info-box-t2" class="fm2p12-txt-sub" x="12" y="102" fill="var(--fm2p12-text-main, #f8fafc)">Se após a pulsoterapia com Metilprednisolona (1g IV 3-5d) o paciente Mantém déficit neurológico sequelar funcional, a doença é classificada diretamente como ALTA ATIVIDADE.</text>
+
+      <!-- Detalhamento Conduta -->
+      <text class="fm2p12-txt-bold" x="0" y="200">ANÁLISE DE PROVA &amp; CONDUTAS:</text>
+      
+      <text id="fm2p12-desc-1" class="fm2p12-txt-sub" x="0" y="225">• <b>Pulsoterapia Padrão:</b> Metilprednisolona 1 g/dia IV por 3 a 5 dias.</text>
+      <text id="fm2p12-desc-2" class="fm2p12-txt-sub" x="0" y="250">• <b>Se Refratário:</b> Plasmaférese (PLEX 3-5 trocas em dias alternados).</text>
+      <text id="fm2p12-desc-3" class="fm2p12-txt-sub" x="0" y="275">• <b>1ª Linha Baixa Atividade:</b> Interferonas, Glatirâmer, Teriflunomida, Dimetilfumarato.</text>
+      <text id="fm2p12-desc-4" class="fm2p12-txt-sub" x="0" y="300">• <b>Escalonamento / Alta Atividade:</b> Natalizumabe, Fingolimode, Cladribina, Alemtuzumabe ou Anti-CD20.</text>
+
+      <!-- Alertas & Armadilhas (Trap Card) -->
+      <g transform="translate(0, 325)">
+        <rect x="0" y="0" width="364" height="120" rx="8" fill="rgba(239, 68, 68, 0.1)" stroke="var(--fm2p12-coral-border, #ef4444)" stroke-width="1.5" />
+        <text class="fm2p12-txt-bold" x="12" y="24" fill="var(--fm2p12-coral-text, #fca5a5)">⚠️ ARMADILHA FREQUENTE EM QUESTÕES:</text>
+        <text class="fm2p12-txt-sub" x="12" y="46" fill="var(--fm2p12-text-main, #f8fafc)">1. NUNCA tratar paciente com sequela residual pós-corticoide como resposta leve de 1ª linha (Baixa Atividade).</text>
+        <text class="fm2p12-txt-sub" x="12" y="70" fill="var(--fm2p12-text-main, #f8fafc)">2. NUNCA inventar posologias não padronizadas de imunomoduladores na prova (o foco é a indicação da classe/PCDT).</text>
+        <text class="fm2p12-txt-sub" x="12" y="94" fill="var(--fm2p12-text-main, #f8fafc)">3. A pulsoterapia encurta o surto, mas NÃO previne novos surtos a longo prazo (exige tratamento de manutenção).</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- SCRIPT DE INTERATIVIDADE PURE SVG -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var currentStep = 5; // Inicia na regra de ouro (Alta atividade)
+
+      var stepsData = {
+        1: {
+          title: "SURTO AGUDO DE ESCLEROSE MÚLTIPLA",
+          badgeText: "DEFINIÇÃO DE SURTO",
+          badgeClass: "fm2p12-badge-coral",
+          badgeTextClass: "fm2p12-badge-coral-text",
+          boxStroke: "var(--fm2p12-coral-border, #ef4444)",
+          boxFill: "rgba(239, 68, 68, 0.1)",
+          boxT1: "Critérios do Surto Neurológico:",
+          boxT2: "Disfunção neurológica focal (ex: neurite óptica, mielite transversa, síndrome de tronco) com duração > 24 horas, na ausência de febre ou infecção.",
+          activeCard: "fm2p12-card-1",
+          lines: ["fm2p12-line-1"]
+        },
+        2: {
+          title: "TRATAMENTO DO SURTO: PULSOTERAPIA",
+          badgeText: "CONDUTA DE EMERGÊNCIA",
+          badgeClass: "fm2p12-badge-coral",
+          badgeTextClass: "fm2p12-badge-coral-text",
+          boxStroke: "var(--fm2p12-coral-border, #ef4444)",
+          boxFill: "rgba(239, 68, 68, 0.1)",
+          boxT1: "Protocolo PCDT / SUS:",
+          boxT2: "Metilprednisolona 1 g/dia IV durante 3 a 5 dias. Reduz edema inflamatório e acelera a recuperação funcional. Se refratário: Plasmaférese (PLEX).",
+          activeCard: "fm2p12-card-2",
+          lines: ["fm2p12-line-1", "fm2p12-line-2"]
+        },
+        3: {
+          title: "REAVALIAÇÃO CLÍNICA (30 DIAS PÓS-SURTO)",
+          badgeText: "AVALIAÇÃO DE RESÍDUO",
+          badgeClass: "fm2p12-badge-gold",
+          badgeTextClass: "fm2p12-badge-gold-text",
+          boxStroke: "var(--fm2p12-amber-border, #f59e0b)",
+          boxFill: "rgba(245, 158, 11, 0.1)",
+          boxT1: "Bifurcação Decisiva de Conduta:",
+          boxT2: "Avalia-se a presença de sequela neurológica funcional persistente pós-pulsoterapia. É este resultado que divide a escolha do esquema de manutenção.",
+          activeCard: "fm2p12-card-3",
+          lines: ["fm2p12-line-1", "fm2p12-line-2", "fm2p12-line-3a", "fm2p12-line-3b"]
+        },
+        4: {
+          title: "PORTA DE BAIXA ATIVIDADE",
+          badgeText: "RECUPERAÇÃO COMPLETA",
+          badgeClass: "fm2p12-badge-gold",
+          badgeTextClass: "fm2p12-badge-gold-text",
+          boxStroke: "var(--fm2p12-teal-border, #14b8a6)",
+          boxFill: "rgba(20, 184, 166, 0.1)",
+          boxT1: "Indicação 1ª Linha PCDT:",
+          boxT2: "Paciente sem sequelas neurológicas funcionais, surto único e baixa carga lesional na RM. Inicia-se imunomodulação inicial (Interferonas, Glatirâmer, Teriflunomida, Dimetilfumarato).",
+          activeCard: "fm2p12-card-4a",
+          lines: ["fm2p12-line-1", "fm2p12-line-2", "fm2p12-line-3a", "fm2p12-line-4a"]
+        },
+        5: {
+          title: "SEQUELA RESIDUAL ⇒ ALTA ATIVIDADE",
+          badgeText: "REGRA DE OURO DA PROVA",
+          badgeClass: "fm2p12-badge-gold",
+          badgeTextClass: "fm2p12-badge-gold-text",
+          boxStroke: "var(--fm2p12-gold-border, #eab308)",
+          boxFill: "rgba(234, 179, 8, 0.1)",
+          boxT1: "Conceito Chave de Prova (PCDT SUS):",
+          boxT2: "Se após a pulsoterapia com Metilprednisolona (1g IV 3-5d) o paciente mantém déficit neurológico sequelar funcional, a doença é classificada diretamente como ALTA ATIVIDADE.",
+          activeCard: "fm2p12-card-4b",
+          lines: ["fm2p12-line-1", "fm2p12-line-2", "fm2p12-line-3b", "fm2p12-line-4b"]
+        }
+      };
+
+      function updateUI(step) {
+        currentStep = step;
+        var data = stepsData[step];
+
+        // Atualizar textos do painel
+        document.getElementById('fm2p12-info-title').textContent = data.title;
+        document.getElementById('fm2p12-info-badge-txt').textContent = data.badgeText;
+        document.getElementById('fm2p12-info-box-t1').textContent = data.boxT1;
+        document.getElementById('fm2p12-info-box-t2').textContent = data.boxT2;
+
+        var boxEl = document.getElementById('fm2p12-info-box');
+        boxEl.setAttribute('stroke', data.boxStroke);
+        boxEl.setAttribute('fill', data.boxFill);
+
+        // Highlight nos cards
+        var allCards = ['fm2p12-card-1', 'fm2p12-card-2', 'fm2p12-card-3', 'fm2p12-card-4a', 'fm2p12-card-4b'];
+        allCards.forEach(function(cardId) {
+          var el = document.getElementById(cardId);
+          if (el) {
+            if (cardId === data.activeCard) {
+              el.classList.add('fm2p12-card-active');
+            } else {
+              el.classList.remove('fm2p12-card-active');
+            }
+          }
+        });
+
+        // Highlight nas linhas
+        var allLines = ['fm2p12-line-1', 'fm2p12-line-2', 'fm2p12-line-3a', 'fm2p12-line-3b', 'fm2p12-line-4a', 'fm2p12-line-4b'];
+        allLines.forEach(function(lineId) {
+          var lineEl = document.getElementById(lineId);
+          if (lineEl) {
+            if (data.lines.indexOf(lineId) !== -1) {
+              lineEl.setAttribute('stroke', 'var(--fm2p12-gold-border, #eab308)');
+              lineEl.setAttribute('stroke-width', '3');
+              lineEl.setAttribute('marker-end', 'url(#fm2p12-arr-active)');
+            } else {
+              lineEl.setAttribute('stroke', 'var(--fm2p12-border, #334155)');
+              lineEl.setAttribute('stroke-width', '2');
+              lineEl.setAttribute('marker-end', 'url(#fm2p12-arr)');
+            }
+          }
+        });
+
+        // Highlight nos botões do painel
+        var btns = document.querySelectorAll('.fm2p12-btn-step');
+        btns.forEach(function(btn) {
+          var btnStep = parseInt(btn.getAttribute('data-step'), 10);
+          var rect = btn.querySelector('.fm2p12-btn');
+          if (rect) {
+            if (btnStep === step || (step === 5 && btnStep === 4)) {
+              rect.classList.add('fm2p12-btn-active');
+            } else {
+              rect.classList.remove('fm2p12-btn-active');
+            }
+          }
+        });
+      }
+
+      // Adicionar listeners aos nós e botões
+      document.addEventListener('DOMContentLoaded', function() {
+        var targets = document.querySelectorAll('.fm2p12-step-target, .fm2p12-btn-step');
+        targets.forEach(function(el) {
+          el.addEventListener('click', function(e) {
+            var step = parseInt(el.getAttribute('data-step'), 10);
+            if (step) updateUI(step);
+          });
+        });
+        
+        // Render inicial
+        updateUI(5);
+      });
+
+      // Executar update inicial imediatamente
+      updateUI(5);
+    })();
+    ]]>
+  </script>
+</svg>
+
+    </div>
+    <figcaption class="fig__cap"><span class="fig__label">Piso</span>Fluxo: SURTO → metilpred 1 g IV 3–5 d (± oral / plasmaférese) → reavaliar recuperação → sequela? → alta atividade.</figcaption>
+  </figure>
+
+  <div class="gap-box" role="note">
+    <h4>Fronteira [156] · fonte-trunca</h4>
+    <p>A fala da fonte encerra sem caso 3 e sem fechamento de série adicional. Nada inventado aqui — a estação fm2 termina com a tríade e o PCDT.</p>
+  </div>
+
+  <div class="continuity" aria-label="Continuidade">
+    <p>Fim da estação fm2 — a matriz de fraqueza e a voz “mulher jovem + visão” ficam hidratadas para a trilha neuromuscular.</p>
+  </div>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p12-q1" aria-labelledby="p12-q1-enun">
+    <h3>Quiz</h3>
+    <p class="quiz__enun" id="p12-q1-enun"><b>Q1.</b> Esquema clássico de corticoide no surto (desta fonte):</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Prednisona 5 mg VO 1 dia</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>Metilprednisolona 1 g IV por 3–5 dias</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Só dipirona</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Só glatiramer no dia do surto</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> Metilprednisolona <strong>1 g IV por 3–5 dias</strong> é a âncora de surto.</p>
+      <p><b>(A)</b> dose/baixa via erradas. <b>(C)</b> dipirona não trata surto. <b>(D)</b> glatiramer é manutenção, não surto.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p12-q2" aria-labelledby="p12-q2-enun">
+    <p class="quiz__enun" id="p12-q2-enun"><b>Q2.</b> Critério simplificado de <strong>alta atividade</strong> aqui:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Qualquer formigamento</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>Sequela residual após surto tratado com corticoide</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Só idade &gt;60</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Só LCR positivo</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> <strong>Sequela</strong> (surto tratado sem recuperação completa) é o gatilho para classificar alta atividade e escalar terapia.</p>
+      <p><b>(A)</b> formigamento não é critério. <b>(C)</b> idade não define. <b>(D)</b> LCR positivo não é o critério simplificado.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p12-q3" aria-labelledby="p12-q3-enun">
+    <p class="quiz__enun" id="p12-q3-enun"><b>Q3.</b> Sobre o SUS/PCDT na EM:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Não existe programa — só judicialização</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>Existe PCDT: cadastra e recebe sem precisar judicializar</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Só cobre progressiva</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Substitui a RM no diagnóstico</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> O PCDT do SUS existe: o paciente <strong>cadastra e recebe</strong> sem judicializar.</p>
+      <p><b>(A)</b> há programa. <b>(C)</b> não é só progressiva. <b>(D)</b> PCDT é tratamento, não substitui RM no diagnóstico.</p>
+      <p><em>Por que se cai na A:</em> erro mental “modificadora = surto” ou achar que só judicializa.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p11.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Vignette 25 a: por que é EM</span></a></nav>
+</div>
+</main>
+<footer class="rodape">Esclerose múltipla · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm2.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Esclerose múltipla · 12 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="index.html">1. Jaqueline: dois surtos, visão e motor</a></li>
+      <li><a class="menu-panel__link" href="p2.html">2. Espástica = 1º NMS — e o nome da doença</a></li>
+      <li><a class="menu-panel__link" href="p3.html">3. O que é EM: quatro âncoras</a></li>
+      <li><a class="menu-panel__link" href="p4.html">4. Por que o quadro é múltiplo: a mielina</a></li>
+      <li><a class="menu-panel__link" href="p5.html">5. Neurite óptica: o II par é SNC</a></li>
+      <li><a class="menu-panel__link" href="p6.html">6. As três de prova + Uhthoff</a></li>
+      <li><a class="menu-panel__link" href="p7.html">7. Surto-remissão vs 15% progressiva</a></li>
+      <li><a class="menu-panel__link" href="p8.html">8. McDonald: tempo e espaço</a></li>
+      <li><a class="menu-panel__link" href="p9.html">9. RM obrigatória: prova o que a clínica suspeita</a></li>
+      <li><a class="menu-panel__link" href="p10.html">10. LCR e a pegadinha do conversivo</a></li>
+      <li><a class="menu-panel__link" href="p11.html">11. Vignette 25 a: por que é EM</a></li>
+      <li><a class="menu-panel__link is-current" href="p12.html">12. Surto, sequela e PCDT SUS</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

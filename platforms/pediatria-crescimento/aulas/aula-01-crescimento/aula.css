@@ -1,0 +1,189 @@
+/* aula.css — Aula 01 "Avaliação do Crescimento" (Pediatria Bauer)
+   Camada por-aula: NÃO toca tokens/base/components globais.
+   Cobre: variantes de opener específicas, figure.med + tarja de privacidade,
+   wrappers de SVG inline (piso + heróis), engines de hotspot dos heróis (A toggle / C tooltip),
+   nota-banca (blindagem SBP discreta), e ajustes finos de identidade por página. */
+
+/* ===== Wrapper de SVG inline (piso e heróis): frame de luxo da casa ===== */
+.figure-svg__embed { margin: var(--sp-6) 0; }
+.figure-svg__embed .figure-svg__frame { position: relative; }
+.figure-svg__embed svg { display: block; width: 100%; height: auto; }
+.figure-svg__embed figcaption { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.figure-svg__embed figcaption strong { color: var(--ink-100); }
+.figure-svg__embed .figure-svg__hint {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--teal-60); margin-top: var(--sp-2);
+}
+
+/* ===== figure.med — tarja de privacidade (criança identificável) ===== */
+.med { position: relative; }
+.med .img-wrap { position: relative; }
+.med__tarja {
+  position: absolute;
+  background: rgba(8, 18, 30, 0.96);
+  border-radius: 3px;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+}
+.med__tarja::after {
+  content: attr(data-label);
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.55); text-transform: uppercase;
+}
+/* posição da tarja por imagem (faixa sobre os olhos, sem cobrir o achado clínico) */
+.med__tarja--p2 { top: 30%; left: 30%; width: 30%; height: 8%; }
+.med__tarja--p5 { top: 14%; left: 56%; width: 20%; height: 5%; }
+.med__tarja--p6 { top: 20%; left: 40%; width: 26%; height: 6%; }
+
+/* ===== nota-banca — blindagem SBP discreta (ledger §0): secundária, recuada, escudo ===== */
+.nota-banca {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--info-blue-dim);
+  border-left: 2px solid var(--info-blue);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-banca__shield { flex-shrink: 0; width: 18px; height: 18px; color: var(--info-blue); margin-top: 2px; }
+.nota-banca__body { flex: 1; }
+.nota-banca__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--info-blue); margin-right: var(--sp-2); }
+.nota-banca p { margin: 0; font-size: var(--fs-sm); }
+.nota-banca strong { color: var(--ink-90); }
+
+/* ===== Lista de fórmula / cálculo destacado ===== */
+.calc {
+  font-family: var(--font-mono);
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--border-mid);
+  border-left: 3px solid var(--teal-50);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: var(--sp-3) var(--sp-4);
+  margin: var(--sp-4) 0;
+  color: var(--ink-100);
+  font-size: var(--fs-md);
+}
+.calc strong { color: var(--teal-60); }
+
+/* ===== sequência de números-âncora (peso/estatura/PC) ===== */
+.seq { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-4) 0; }
+.seq__step {
+  flex: 1; min-width: 70px;
+  text-align: center;
+  padding: var(--sp-3) var(--sp-2);
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-md);
+}
+.seq__step--drop { border-color: var(--err-red); background: var(--err-red-dim); }
+.seq__num { font-family: var(--font-mono); font-size: var(--fs-xl); font-weight: 700; color: var(--teal-60); line-height: 1; }
+.seq__step--drop .seq__num { color: var(--err-red); }
+.seq__lbl { font-size: var(--fs-xs); color: var(--ink-70); margin-top: var(--sp-1); }
+
+/* ===== Bloco de checklist da E5 (P8): preenche ao scroll ===== */
+.opener--checklist .opener__checklist-item code {
+  background: transparent; font-family: var(--font-mono); color: var(--teal-60); padding: 0;
+}
+
+/* ============================================================
+   HERÓI A (P8) — toggle "mostrar lógica única"
+   O SVG usa .hs-shape (engine da casa, interactive.js) + .ha-logic-overlay
+   revelado por .show-logic no stage. O toggle é wired em aula.js.
+   ============================================================ */
+.hero-stage { position: relative; width: 100%; }
+.hero-stage svg { display: block; width: 100%; height: auto; }
+.hero-stage.show-logic .ha-logic-overlay { opacity: 0.92 !important; animation: haDash 1.1s ease forwards; }
+@keyframes haDash { from { stroke-dashoffset: 80; } to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage.show-logic .ha-logic-overlay { animation: none; }
+}
+
+.hero-controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4); margin: var(--sp-3) 0 var(--sp-2); }
+.hero-hint { color: var(--ink-50); font-size: var(--fs-xs); margin-left: auto; }
+@media (max-width: 560px) { .hero-hint { margin-left: 0; } }
+
+/* toggle estilo "switch" (herói A) */
+.toggle-pill {
+  display: inline-flex; gap: var(--sp-3); align-items: center; cursor: pointer; user-select: none;
+  padding: var(--sp-2) var(--sp-4); border: 1px solid var(--border-mid); border-radius: var(--r-pill);
+  background: var(--bg-elevated); font-size: var(--fs-sm); color: var(--ink-90);
+  transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+.toggle-pill:hover, .toggle-pill:focus-within { border-color: var(--teal-40); background: var(--teal-05); }
+.toggle-pill .sw { position: relative; width: 42px; height: 24px; border-radius: 13px; background: var(--border-strong); transition: background var(--dur-fast); flex: 0 0 auto; }
+.toggle-pill .sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--ink-90); transition: transform var(--dur-fast), background var(--dur-fast); }
+.toggle-pill input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.toggle-pill input:checked + .sw { background: var(--teal-60); }
+.toggle-pill input:checked + .sw::after { transform: translateX(18px); background: var(--bg-base); }
+.toggle-pill input:focus-visible + .sw { outline: 2px solid var(--teal-50); outline-offset: 2px; }
+.toggle-pill .toggle-pill__sub { color: var(--ink-50); font-weight: 500; }
+
+/* ============================================================
+   HERÓI C (P12) — engine de tooltip + toggle "por que não é contradição?"
+   O SVG (#heroiC) usa .hs-shape com data-hs-title/class/body/color (schema próprio),
+   e um <g id="contra-overlay"> revelado por .show. Engine dedicado em aula.js.
+   ============================================================ */
+#heroiC .hs-shape { cursor: pointer; outline: none; transition: filter var(--dur-fast) ease, opacity var(--dur-fast) ease; }
+#heroiC .hs-shape:hover, #heroiC .hs-shape.is-active { filter: brightness(1.12) saturate(1.12); }
+#heroiC .hs-shape:focus-visible .hs-ring, #heroiC .hs-shape.is-active .hs-ring { opacity: 1; }
+#heroiC .contra-overlay { opacity: 0; transition: opacity var(--dur-mid) ease; pointer-events: none; }
+#heroiC .contra-overlay.show { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  #heroiC .hs-shape, #heroiC .contra-overlay { transition: none; }
+}
+
+/* tooltip flutuante do herói C (segue o mouse / ancorado no foco) */
+.hc-tooltip {
+  position: fixed; z-index: var(--z-modal);
+  max-width: 300px;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-glass-strong);
+  backdrop-filter: saturate(150%) blur(18px);
+  -webkit-backdrop-filter: saturate(150%) blur(18px);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  opacity: 0; transform: translateY(6px); pointer-events: none;
+  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) ease;
+  font-size: var(--fs-sm); color: var(--ink-90);
+}
+.hc-tooltip.show { opacity: 1; transform: translateY(0); }
+.hc-tooltip__title { display: flex; align-items: center; gap: var(--sp-2); font-weight: 700; color: var(--ink-100); margin-bottom: var(--sp-1); }
+.hc-tooltip__dot { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 auto; border: 1px solid rgba(255,255,255,0.35); }
+.hc-tooltip__class { color: var(--teal-60); font-weight: 600; font-size: var(--fs-sm); }
+.hc-tooltip__body { margin-top: var(--sp-1); color: var(--ink-70); line-height: var(--lh-snug); }
+@media (prefers-reduced-motion: reduce) { .hc-tooltip { transition: none; } }
+
+/* botão toggle (herói C) */
+.toggle-btn {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4); border-radius: var(--r-pill);
+  border: 1px solid var(--teal-30); background: var(--teal-05); color: var(--teal-80);
+  font-size: var(--fs-sm); font-weight: 700; cursor: pointer;
+  transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+.toggle-btn:hover { background: var(--teal-10); color: var(--ink-100); }
+.toggle-btn:focus-visible { outline: 2px solid var(--teal-50); outline-offset: 2px; }
+.toggle-btn[aria-pressed="true"] { background: var(--teal-40); color: var(--ink-100); border-color: var(--teal-40); }
+.toggle-btn .tb-ico { width: 16px; height: 16px; flex: 0 0 auto; }
+
+/* legenda estática (fallback acessível dos heróis) */
+.static-legend { margin: var(--sp-5) 0; padding: var(--sp-4) var(--sp-5); border: 1px solid var(--border-soft); border-radius: var(--r-md); background: var(--bg-elevated); display: grid; gap: var(--sp-3); }
+.static-legend h3 { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-70); font-weight: 600; margin: 0; font-family: var(--font-mono); }
+.leg-row { display: flex; gap: var(--sp-3); align-items: flex-start; font-size: var(--fs-sm); color: var(--ink-90); line-height: var(--lh-snug); }
+.leg-sw { width: 14px; height: 14px; border-radius: 4px; flex: 0 0 auto; margin-top: 3px; border: 1px solid rgba(255,255,255,0.22); }
+.leg-row b { color: var(--ink-100); }
+
+/* ===== Caderneta header da aula (dashboard leve P1) ===== */
+.aula-lede { font-size: var(--fs-lg); color: var(--ink-90); max-width: 62ch; line-height: var(--lh-snug); margin-bottom: var(--sp-5); }
+
+/* ===== identidade por página: barra de acento no page-tag conforme parâmetro ===== */
+.page-tag--weight .page-tag__dot { background: var(--teal-60); box-shadow: 0 0 8px var(--teal-60); }
+.page-tag--height .page-tag__dot { background: #b39af0; box-shadow: 0 0 8px #b39af0; }
+.page-tag--pc .page-tag__dot { background: var(--ok-green); box-shadow: 0 0 8px var(--ok-green); }
+.page-tag--sys .page-tag__dot { background: var(--warn-amber); box-shadow: 0 0 8px var(--warn-amber); }
+.page-tag--case .page-tag__dot { background: var(--coral-60); box-shadow: 0 0 8px var(--coral-60); }

@@ -1,0 +1,452 @@
+<svg id="p4-clock-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" data-state="compare" data-info="default">
+  <defs>
+    <style type="text/css">
+      #p4-clock-svg {
+        background-color: var(--bg-svg, #0f172a);
+        font-family: system-ui, -apple-system, sans-serif;
+        --bg-panel: #1e293b;
+        --bg-svg: #0f172a;
+        --text-primary: #f8fafc;
+        --text-muted: #94a3b8;
+        --color-normal: #10b981;
+        --color-error: #f43f5e;
+        --color-warning: #f59e0b;
+        --clock-face-bg: #1e293b;
+        --clock-face-stroke: #475569;
+        transition: background-color 0.3s ease;
+      }
+
+      @media (prefers-color-scheme: light) {
+        #p4-clock-svg {
+          --bg-panel: #f1f5f9;
+          --bg-svg: #ffffff;
+          --text-primary: #0f172a;
+          --text-muted: #475569;
+          --clock-face-bg: #f8fafc;
+          --clock-face-stroke: #cbd5e1;
+        }
+      }
+
+      #p4-clock-svg text {
+        fill: var(--text-primary);
+        user-select: none;
+      }
+
+      #p4-clock-svg .clock-face {
+        fill: var(--clock-face-bg);
+        stroke-width: 3px;
+        transition: opacity 0.3s ease, filter 0.3s ease;
+      }
+
+      #p4-clock-svg .face-normal {
+        stroke: var(--color-normal);
+      }
+
+      #p4-clock-svg .face-altered {
+        stroke: var(--color-error);
+      }
+
+      #p4-clock-svg .clock-hand {
+        stroke: var(--text-primary);
+        transition: opacity 0.3s ease;
+      }
+
+      #p4-clock-svg .nav-btn {
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      #p4-clock-svg .nav-btn rect {
+        fill: var(--bg-svg);
+        stroke: var(--clock-face-stroke);
+        stroke-width: 1px;
+        transition: fill 0.2s ease, stroke 0.2s ease;
+      }
+
+      #p4-clock-svg .nav-btn text {
+        fill: var(--text-muted);
+        font-size: 11px;
+        font-weight: bold;
+        transition: fill 0.2s ease;
+      }
+
+      #p4-clock-svg .nav-btn:hover rect {
+        stroke: var(--text-primary);
+      }
+
+      #p4-clock-svg .p4-hotspot {
+        cursor: pointer;
+      }
+
+      #p4-clock-svg .pulse-ring {
+        animation: pulse 2s infinite ease-out;
+        transform-origin: center;
+      }
+
+      @keyframes pulse {
+        0% {
+          r: 6;
+          opacity: 0.8;
+        }
+        100% {
+          r: 18;
+          opacity: 0;
+        }
+      }
+
+      #p4-clock-svg .guide-line-group {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      #p4-clock-svg[data-info="err-ponteiro"] #guide-err-ponteiro {
+        display: block;
+        opacity: 1;
+      }
+
+      #p4-clock-svg[data-info="err-aglom"] #guide-err-aglom {
+        display: block;
+        opacity: 1;
+      }
+
+      #p4-clock-svg .info-group {
+        display: none;
+      }
+
+      #p4-clock-svg[data-info="default"] #info-default { display: block; }
+      #p4-clock-svg[data-info="normal"] #info-normal { display: block; }
+      #p4-clock-svg[data-info="alterado"] #info-alterado { display: block; }
+      #p4-clock-svg[data-info="err-aglom"] #info-err-aglom { display: block; }
+      #p4-clock-svg[data-info="err-ponteiro"] #info-err-ponteiro { display: block; }
+      #p4-clock-svg[data-info="ac-simetria"] #info-ac-simetria { display: block; }
+      #p4-clock-svg[data-info="ac-ponteiros"] #info-ac-ponteiros { display: block; }
+
+      #p4-clock-svg[data-state="normal"] #group-clock-alterado {
+        opacity: 0.15;
+        filter: grayscale(80%);
+      }
+
+      #p4-clock-svg[data-state="alterado"] #group-clock-normal {
+        opacity: 0.15;
+        filter: grayscale(80%);
+      }
+
+      #p4-clock-svg[data-state="compare"] #group-clock-normal,
+      #p4-clock-svg[data-state="compare"] #group-clock-alterado {
+        opacity: 1;
+        filter: none;
+      }
+
+      #p4-clock-svg[data-state="compare"] #btn-compare rect {
+        fill: var(--text-primary);
+        stroke: var(--text-primary);
+      }
+
+      #p4-clock-svg[data-state="compare"] #btn-compare text {
+        fill: var(--bg-panel);
+      }
+
+      #p4-clock-svg[data-state="normal"] #btn-normal rect {
+        fill: var(--color-normal);
+        stroke: var(--color-normal);
+      }
+
+      #p4-clock-svg[data-state="normal"] #btn-normal text {
+        fill: var(--bg-panel);
+      }
+
+      #p4-clock-svg[data-state="alterado"] #btn-alterado rect {
+        fill: var(--color-error);
+        stroke: var(--color-error);
+      }
+
+      #p4-clock-svg[data-state="alterado"] #btn-alterado text {
+        fill: var(--bg-panel);
+      }
+    </style>
+  </defs>
+
+  <!-- Titulos e Legenda - Topo -->
+  <g id="header-group">
+    <text x="20" y="32" font-size="16" font-weight="bold" fill="var(--text-primary)">TESTE DO DESENHO DO RELÓGIO (TDR)</text>
+    <text x="20" y="52" font-size="11" fill="var(--text-muted)">
+      <tspan font-weight="bold" fill="var(--color-warning)">LEGENDA DE INTERPRETAÇÃO:</tspan> O TDR avalia funções executivas e visuoespaciais. O achado desorganizado sinaliza déficit cognitivo estrutural (Passo 1).
+    </text>
+  </g>
+
+  <!-- Relogio Normal (Esquerda) -->
+  <g id="group-clock-normal" class="clock-group">
+    <circle cx="160" cy="245" r="90" class="clock-face face-normal" />
+    <circle cx="160" cy="245" r="4" fill="var(--text-primary)" />
+    
+    <!-- Numeros do Relogio Normal -->
+    <g font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="central">
+      <text x="160" y="167">12</text>
+      <text x="200" y="177">1</text>
+      <text x="230" y="207">2</text>
+      <text x="240" y="245">3</text>
+      <text x="230" y="283">4</text>
+      <text x="200" y="313">5</text>
+      <text x="160" y="323">6</text>
+      <text x="120" y="313">7</text>
+      <text x="90" y="283">8</text>
+      <text x="80" y="245">9</text>
+      <text x="90" y="207">10</text>
+      <text x="120" y="177">11</text>
+    </g>
+
+    <!-- Ponteiros Normal (11:10) -->
+    <line x1="160" y1="245" x2="137" y2="206" class="clock-hand" stroke-width="4.5" stroke-linecap="round" />
+    <line x1="160" y1="245" x2="221" y2="210" class="clock-hand" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Selo de Status -->
+    <rect x="115" y="355" width="90" height="20" rx="4" fill="var(--color-normal)" opacity="0.15" />
+    <text x="160" y="369" fill="var(--color-normal)" font-size="10" font-weight="bold" text-anchor="middle">PRESERVADO</text>
+  </g>
+
+  <!-- Relogio Alterado (Direita) -->
+  <g id="group-clock-alterado" class="clock-group">
+    <circle cx="390" cy="245" r="90" class="clock-face face-altered" />
+    <circle cx="390" cy="245" r="4" fill="var(--text-primary)" />
+    
+    <!-- Numeros Aglomerados / Desorganizados -->
+    <g font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="central">
+      <text x="403" y="171">12</text>
+      <text x="428" y="180">1</text>
+      <text x="447" y="197">2</text>
+      <text x="461" y="219">3</text>
+      <text x="465" y="245">4</text>
+      <text x="461" y="271">5</text>
+      <text x="447" y="293">6</text>
+      <text x="428" y="310">7</text>
+      <text x="403" y="319">8</text>
+      <text x="377" y="319">9</text>
+      <text x="353" y="310">10</text>
+      <text x="333" y="293">11</text>
+    </g>
+
+    <!-- Ponteiros Erraticos (Atraidos pelo digito '10') -->
+    <!-- Ponteiro de horas direcionado ao 11 de forma deformada -->
+    <line x1="390" y1="245" x2="352" y2="276" class="clock-hand" stroke-width="4.5" stroke-linecap="round" />
+    <!-- Ponteiro de minutos direcionado ao 10 em vez de 2 -->
+    <line x1="390" y1="245" x2="356" y2="298" class="clock-hand" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Linhas Guia Interativas (Explicativas) -->
+    <g id="guide-err-ponteiro" class="guide-line-group">
+      <line x1="390" y1="245" x2="455" y2="207" stroke="var(--color-warning)" stroke-width="1.5" stroke-dasharray="3,3" />
+      <circle cx="455" cy="207" r="3" fill="var(--color-warning)" />
+      <text x="462" y="202" fill="var(--color-warning)" font-size="9" font-weight="bold">Posição teórica (10 min)</text>
+    </g>
+    <g id="guide-err-aglom" class="guide-line-group">
+      <line x1="390" y1="155" x2="390" y2="335" stroke="var(--color-warning)" stroke-width="1.5" stroke-dasharray="3,3" />
+      <text x="330" y="195" fill="var(--color-warning)" font-size="9" font-weight="bold" text-anchor="middle">
+        <tspan x="330" dy="0">Hemisfério</tspan>
+        <tspan x="330" dy="12">Vazio</tspan>
+      </text>
+    </g>
+
+    <!-- Selo de Status -->
+    <rect x="335" y="355" width="110" height="20" rx="4" fill="var(--color-error)" opacity="0.15" />
+    <text x="390" y="369" fill="var(--color-error)" font-size="10" font-weight="bold" text-anchor="middle">DÉFICIT COGNITIVO</text>
+  </g>
+
+  <!-- Painel de Leitura Lateral -->
+  <g id="reading-panel">
+    <!-- Fundo -->
+    <rect x="550" y="75" width="235" height="350" rx="8" fill="var(--bg-panel)" stroke="var(--clock-face-stroke)" stroke-width="1.5" />
+    <line x1="550" y1="125" x2="785" y2="125" stroke="var(--clock-face-stroke)" stroke-width="1" />
+    
+    <!-- Botoes de Controle -->
+    <g id="btn-compare" class="nav-btn" onclick="setState('compare', 'default')" role="button" aria-label="Mostrar todos">
+      <rect x="558" y="90" width="67" height="24" rx="4" />
+      <text x="591.5" y="106" text-anchor="middle">Todos</text>
+    </g>
+    <g id="btn-normal" class="nav-btn" onclick="setState('normal', 'normal')" role="button" aria-label="Focar no relógio normal">
+      <rect x="633" y="90" width="70" height="24" rx="4" />
+      <text x="668" y="106" text-anchor="middle">Normal</text>
+    </g>
+    <g id="btn-alterado" class="nav-btn" onclick="setState('alterado', 'alterado')" role="button" aria-label="Focar no relógio alterado">
+      <rect x="711" y="90" width="70" height="24" rx="4" />
+      <text x="746" y="106" text-anchor="middle">Alterado</text>
+    </g>
+
+    <!-- Textos Dinamicos (Controlados por data-info) -->
+    <!-- Info Inicial / Geral -->
+    <g id="info-default" class="info-group">
+      <text x="565" y="150" fill="var(--color-warning)" font-size="11" font-weight="bold">PAINEL DE ANÁLISE</text>
+      <text x="565" y="174" font-size="12" font-weight="bold">Rastreamento Cognitivo</text>
+      <text x="565" y="195" font-size="11" fill="var(--text-muted)">
+        <tspan x="565" dy="0">O teste avalia funções</tspan>
+        <tspan x="565" dy="18">executivas de alto nível,</tspan>
+        <tspan x="565" dy="18">planejamento e organização</tspan>
+        <tspan x="565" dy="18">visuoespacial (Passo 1).</tspan>
+      </text>
+      <text x="565" y="290" font-size="11" font-weight="bold">Como Interagir:</text>
+      <text x="565" y="310" font-size="11" fill="var(--text-muted)">
+        <tspan x="565" dy="0">1. Alterne o foco com as abas</tspan>
+        <tspan x="565" dy="16">   "Normal" ou "Alterado".</tspan>
+        <tspan x="565" dy="22">2. Clique nos círculos interativos</tspan>
+        <tspan x="565" dy="16">   nos relógios para detalhes.</tspan>
+      </text>
+    </g>
+
+    <!-- Info Normal Geral -->
+    <g id="info-normal" class="info-group">
+      <text x="565" y="150" fill="var(--color-normal)" font-size="11" font-weight="bold">PONTUAÇÃO: 10 / 10</text>
+      <text x="565" y="174" font-size="12" font-weight="bold">Desempenho Preservado</text>
+      <text x="565" y="195" font-size="11" fill="var(--text-muted)">
+        <tspan x="565" dy="0">Indica integridade neurológica.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--text-primary)">• Desenho do Círculo:</tspan>
+        <tspan x="578" dy="16">Fechado e simétrico.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--text-primary)">• Numerais:</tspan>
+        <tspan x="578" dy="16">Espaçamento radial de 30°.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--text-primary)">• Ponteiros:</tspan>
+        <tspan x="578" dy="16">Marcam 11:10 corretamente.</tspan>
+      </text>
+    </g>
+
+    <!-- Info Alterado Geral -->
+    <g id="info-alterado" class="info-group">
+      <text x="565" y="150" fill="var(--color-error)" font-size="11" font-weight="bold">PONTUAÇÃO: 3 / 10</text>
+      <text x="565" y="174" font-size="12" font-weight="bold">Déficit Executivo Grave</text>
+      <text x="565" y="195" font-size="11" fill="var(--text-muted)">
+        <tspan x="565" dy="0">Disfunção executiva e espacial:</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--color-error)">• Aglomeração de Números:</tspan>
+        <tspan x="578" dy="16">Negligência ou má estruturação.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--color-error)">• Ponteiro em '10':</tspan>
+        <tspan x="578" dy="16">Atração física pelo estímulo.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--text-primary)">• Significado Clínico:</tspan>
+        <tspan x="578" dy="16">Compatível com demências.</tspan>
+      </text>
+    </g>
+
+    <!-- Info Erro Aglomeracao -->
+    <g id="info-err-aglom" class="info-group">
+      <text x="565" y="150" fill="var(--color-error)" font-size="11" font-weight="bold">PLANEJAMENTO ESPACIAL</text>
+      <text x="565" y="174" font-size="12" font-weight="bold">Aglomeração de Números</text>
+      <text x="565" y="195" font-size="11" fill="var(--text-muted)">
+        <tspan x="565" dy="0">Números comprimidos à direita,</tspan>
+        <tspan x="565" dy="16">deixando a metade esquerda vazia.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--text-primary)">Causas Clínicas:</tspan>
+        <tspan x="565" dy="18">1. Falha de planejamento frontal:</tspan>
+        <tspan x="578" dy="16">Falta de preparo espacial.</tspan>
+        <tspan x="565" dy="20">2. Heminegligência visual:</tspan>
+        <tspan x="578" dy="16">Lesão parietal direita que</tspan>
+        <tspan x="578" dy="16">ignora o campo esquerdo.</tspan>
+      </text>
+    </g>
+
+    <!-- Info Erro Ponteiro -->
+    <g id="info-err-ponteiro" class="info-group">
+      <text x="565" y="150" fill="var(--color-error)" font-size="11" font-weight="bold">ABSTRAÇÃO EXECUTIVA</text>
+      <text x="565" y="174" font-size="12" font-weight="bold">Atração pelo Estímulo</text>
+      <text x="565" y="195" font-size="11" fill="var(--text-muted)">
+        <tspan x="565" dy="0">O paciente desenhou o ponteiro de</tspan>
+        <tspan x="565" dy="16">minutos diretamente no número '10'.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--text-primary)">Fisiopatologia:</tspan>
+        <tspan x="565" dy="18">O comando pede '10 minutos'.</tspan>
+        <tspan x="565" dy="16">Traduzir isto para a posição '2'</tspan>
+        <tspan x="565" dy="16">exige abstração. O paciente</tspan>
+        <tspan x="565" dy="16">com lesão frontal perde esta</tspan>
+        <tspan x="565" dy="16">capacidade e é fisicamente</tspan>
+        <tspan x="565" dy="16">atraído pela inscrição '10'.</tspan>
+      </text>
+    </g>
+
+    <!-- Info Acerto Simetria -->
+    <g id="info-ac-simetria" class="info-group">
+      <text x="565" y="150" fill="var(--color-normal)" font-size="11" font-weight="bold">ORGANIZAÇÃO PRESERVADA</text>
+      <text x="565" y="174" font-size="12" font-weight="bold">Simetria de Numeração</text>
+      <text x="565" y="195" font-size="11" fill="var(--text-muted)">
+        <tspan x="565" dy="0">Numerais perfeitamente espaçados</tspan>
+        <tspan x="565" dy="16">e organizados perifericamente.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--text-primary)">Significado:</tspan>
+        <tspan x="565" dy="18">Preservação do córtex parietal</tspan>
+        <tspan x="565" dy="16">responsável pelo processamento</tspan>
+        <tspan x="565" dy="16">visuoespacial e do lobo frontal</tspan>
+        <tspan x="565" dy="16">que gerencia a organização.</tspan>
+      </text>
+    </g>
+
+    <!-- Info Acerto Ponteiros -->
+    <g id="info-ac-ponteiros" class="info-group">
+      <text x="565" y="150" fill="var(--color-normal)" font-size="11" font-weight="bold">PROCESSO DE ABSTRAÇÃO</text>
+      <text x="565" y="174" font-size="12" font-weight="bold">Decodificação de Minutos</text>
+      <text x="565" y="195" font-size="11" fill="var(--text-muted)">
+        <tspan x="565" dy="0">O paciente traduziu corretamente</tspan>
+        <tspan x="565" dy="16">'10 minutos' na posição '2'.</tspan>
+        <tspan x="565" dy="22" font-weight="bold" fill="var(--text-primary)">Evidências:</tspan>
+        <tspan x="565" dy="18">1. Ponteiro longo direcionado no 2.</tspan>
+        <tspan x="565" dy="16">2. Ponteiro curto direcionado no 11.</tspan>
+        <tspan x="565" dy="16">3. Diferença visual de tamanho</tspan>
+        <tspan x="578" dy="16">entre os dois ponteiros.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Hotspots Interativos (Circulos pulsantes) -->
+  <!-- Hotspot 1 (Simetria Normal) -->
+  <g class="p4-hotspot" onclick="setState('normal', 'ac-simetria')" role="button" aria-label="Inspecionar simetria correta">
+    <circle cx="85" cy="205" r="12" class="pulse-ring" fill="var(--color-normal)" opacity="0.4" />
+    <circle cx="85" cy="205" r="5" fill="var(--color-normal)" />
+  </g>
+  
+  <!-- Hotspot 2 (Ponteiros Normal) -->
+  <g class="p4-hotspot" onclick="setState('normal', 'ac-ponteiros')" role="button" aria-label="Inspecionar ponteiros corretos">
+    <circle cx="218" cy="212" r="12" class="pulse-ring" fill="var(--color-normal)" opacity="0.4" />
+    <circle cx="218" cy="212" r="5" fill="var(--color-normal)" />
+  </g>
+
+  <!-- Hotspot 3 (Erro Aglomeração) -->
+  <g class="p4-hotspot" onclick="setState('alterado', 'err-aglom')" role="button" aria-label="Inspecionar erro de aglomeração espacial">
+    <circle cx="452" cy="235" r="12" class="pulse-ring" fill="var(--color-error)" opacity="0.4" />
+    <circle cx="452" cy="235" r="5" fill="var(--color-error)" />
+  </g>
+
+  <!-- Hotspot 4 (Erro Ponteiros) -->
+  <g class="p4-hotspot" onclick="setState('alterado', 'err-ponteiro')" role="button" aria-label="Inspecionar erro de atração pelo estímulo">
+    <circle cx="360" cy="295" r="12" class="pulse-ring" fill="var(--color-error)" opacity="0.4" />
+    <circle cx="360" cy="295" r="5" fill="var(--color-error)" />
+  </g>
+
+  <!-- Nota Clinica / Caso - Base -->
+  <g id="clinical-note">
+    <rect x="20" y="440" width="765" height="45" rx="6" fill="var(--color-warning)" opacity="0.1" />
+    <rect x="20" y="440" width="4" height="45" rx="2" fill="var(--color-warning)" />
+    <text x="35" y="457" fill="var(--color-warning)" font-size="10" font-weight="bold">CASO CLÍNICO DE ANCORAGEM:</text>
+    <text x="35" y="472" fill="var(--text-primary)" font-size="11">
+      <tspan font-weight="bold">Paciente, 76 anos,</tspan> com declínio cognitivo funcional. Apresenta TDR escore <tspan font-weight="bold" fill="var(--color-error)">3/10</tspan> com <tspan font-weight="bold" fill="var(--color-error)">negligência espacial e atração pelo estímulo</tspan>, corroborando disfunção executiva.
+    </text>
+  </g>
+
+  <!-- Script de Interatividade e Acessibilidade -->
+  <script type="text/javascript">
+    <![CDATA[
+    function setState(state, info) {
+      var svg = document.getElementById('p4-clock-svg');
+      if (svg) {
+        svg.setAttribute('data-state', state);
+        svg.setAttribute('data-info', info);
+      }
+    }
+
+    // Adiciona interatividade via teclado para acessibilidade
+    document.addEventListener('DOMContentLoaded', function() {
+      var clickables = document.querySelectorAll('[onclick]');
+      clickables.forEach(function(el) {
+        el.setAttribute('tabindex', '0');
+        if (!el.getAttribute('role')) {
+          el.setAttribute('role', 'button');
+        }
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            el.click();
+          }
+        });
+      });
+    });
+    ]]>
+  </script>
+</svg>

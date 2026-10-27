@@ -1,0 +1,609 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%" id="bauer-med-svg-p1" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">Encéfalo e Lobo Temporal Medial (Hipocampo)</title>
+  <desc id="svg-desc">Ilustração anatômica interativa do encéfalo em vista medial, destacando o lobo temporal medial e o hipocampo com correlação patológica para a Doença de Alzheimer.</desc>
+  
+  <defs>
+    <!-- Gradientes e Filtros de profundidade -->
+    <linearGradient id="grad-brain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fill-brain-start)" />
+      <stop offset="100%" stop-color="var(--fill-brain-end)" />
+    </linearGradient>
+    <linearGradient id="grad-hippo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fill-hippo-start)" />
+      <stop offset="100%" stop-color="var(--fill-hippo-end)" />
+    </linearGradient>
+    <filter id="shadow-panel" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="var(--color-shadow)" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <style>
+    #bauer-med-svg-p1 {
+      --bg-canvas: #ffffff;
+      --bg-panel: #f8fafc;
+      --border-panel: #e2e8f0;
+      --text-title: #0f172a;
+      --text-subtitle: #475569;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --color-shadow: #0f172a;
+      
+      --fill-brain-start: #f8fafc;
+      --fill-brain-end: #e2e8f0;
+      --stroke-brain: #94a3b8;
+      
+      --fill-hippo-start: #00b4d8;
+      --fill-hippo-end: #0077b6;
+      --stroke-hippo: #03045e;
+      --glow-hippo-color: rgba(0, 180, 216, 0.35);
+      
+      --stroke-caloso: #cbd5e1;
+      --fill-caloso: #ffffff;
+      
+      --color-focus: #eab308; /* Ambar bauer */
+      --color-focus-bg: #fef9c3;
+      --color-red: #ef4444;
+      --color-red-bg: #fee2e2;
+      --color-green: #22c55e;
+      --color-green-bg: #dcfce7;
+      
+      background-color: var(--bg-canvas);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #bauer-med-svg-p1 {
+        --bg-canvas: #0f172a;
+        --bg-panel: #1e293b;
+        --border-panel: #334155;
+        --text-title: #f8fafc;
+        --text-subtitle: #cbd5e1;
+        --text-main: #e2e8f0;
+        --text-muted: #94a3b8;
+        --color-shadow: #000000;
+        
+        --fill-brain-start: #1e293b;
+        --fill-brain-end: #0f172a;
+        --stroke-brain: #475569;
+        
+        --fill-hippo-start: #90e0ef;
+        --fill-hippo-end: #00b4d8;
+        --stroke-hippo: #caf0f8;
+        --glow-hippo-color: rgba(144, 224, 239, 0.4);
+        
+        --stroke-caloso: #334155;
+        --fill-caloso: #1e293b;
+        
+        --color-focus: #fbbf24;
+        --color-focus-bg: #451a03;
+        --color-red: #f87171;
+        --color-red-bg: #450a0a;
+        --color-green: #4ade80;
+        --color-green-bg: #064e3b;
+      }
+    }
+
+    #bauer-med-svg-p1 .title-text {
+      font-size: 20px;
+      font-weight: 800;
+      fill: var(--text-title);
+      letter-spacing: -0.02em;
+    }
+    #bauer-med-svg-p1 .subtitle-text {
+      font-size: 13px;
+      font-weight: 500;
+      fill: var(--text-subtitle);
+    }
+    #bauer-med-svg-p1 .label-title {
+      font-size: 10px;
+      font-weight: 700;
+      fill: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    #bauer-med-svg-p1 .panel-rect {
+      fill: var(--bg-panel);
+      stroke: var(--border-panel);
+      stroke-width: 1.5;
+      rx: 12px;
+    }
+    #bauer-med-svg-p1 .panel-header {
+      font-size: 13px;
+      font-weight: 700;
+      fill: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+    #bauer-med-svg-p1 .panel-status-pill {
+      rx: 4px;
+    }
+    #bauer-med-svg-p1 .panel-status-text {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    #bauer-med-svg-p1 .panel-body-title {
+      font-size: 17px;
+      font-weight: 700;
+      fill: var(--text-title);
+    }
+    #bauer-med-svg-p1 .panel-body-desc {
+      font-size: 12px;
+      fill: var(--text-main);
+    }
+    #bauer-med-svg-p1 .panel-clinical-box {
+      rx: 8px;
+    }
+    #bauer-med-svg-p1 .panel-clinical-title {
+      font-size: 12px;
+      font-weight: 700;
+    }
+    #bauer-med-svg-p1 .panel-clinical-desc {
+      font-size: 11px;
+      fill: var(--text-main);
+    }
+    #bauer-med-svg-p1 .panel-case-value {
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--color-red);
+    }
+
+    #bauer-med-svg-p1 .legend-rect {
+      fill: var(--bg-panel);
+      stroke: var(--border-panel);
+      stroke-width: 1.5;
+      rx: 8px;
+    }
+    #bauer-med-svg-p1 .legend-title {
+      font-size: 11px;
+      font-weight: 700;
+      fill: var(--color-focus);
+      letter-spacing: 0.02em;
+    }
+    #bauer-med-svg-p1 .legend-body {
+      font-size: 11px;
+      fill: var(--text-main);
+    }
+
+    #bauer-med-svg-p1 .brain-structure {
+      fill: url(#grad-brain);
+      stroke: var(--stroke-brain);
+      stroke-width: 2;
+      transition: fill 0.3s, stroke 0.3s;
+    }
+    #bauer-med-svg-p1 .brain-sulcus {
+      fill: none;
+      stroke: var(--stroke-brain);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      opacity: 0.4;
+    }
+    #bauer-med-svg-p1 .caloso-structure {
+      fill: var(--fill-caloso);
+      stroke: var(--stroke-caloso);
+      stroke-width: 2;
+    }
+    #bauer-med-svg-p1 .cerebelo-striations {
+      fill: none;
+      stroke: var(--stroke-brain);
+      stroke-width: 1;
+      opacity: 0.5;
+    }
+
+    #bauer-med-svg-p1 .hippocampus-highlight {
+      fill: url(#grad-hippo);
+      stroke: var(--stroke-hippo);
+      stroke-width: 2;
+      filter: drop-shadow(0 0 3px var(--glow-hippo-color));
+      transition: filter 0.3s, stroke-width 0.3s;
+    }
+
+    #bauer-med-svg-p1 .lead-line {
+      fill: none;
+      stroke: var(--stroke-brain);
+      stroke-width: 1.2;
+      stroke-dasharray: 3 3;
+      transition: stroke 0.3s, stroke-width 0.3s;
+    }
+    #bauer-med-svg-p1 .lead-dot {
+      fill: var(--stroke-brain);
+      transition: fill 0.3s, r 0.3s;
+    }
+    #bauer-med-svg-p1 .lead-text {
+      font-size: 11px;
+      font-weight: 600;
+      fill: var(--text-muted);
+      cursor: pointer;
+      transition: fill 0.3s, font-weight 0.3s;
+    }
+
+    #bauer-med-svg-p1 .lead-text-focus {
+      fill: var(--color-focus);
+      font-weight: 700;
+    }
+
+    /* Interatividade e estados ativos */
+    #bauer-med-svg-p1 .clickable-group {
+      cursor: pointer;
+      outline: none;
+    }
+    #bauer-med-svg-p1 .clickable-group:hover .brain-structure {
+      fill: var(--border-panel);
+    }
+    #bauer-med-svg-p1 .clickable-group:hover .lead-line {
+      stroke: var(--text-title);
+      stroke-width: 1.5;
+    }
+    #bauer-med-svg-p1 .clickable-group:hover .lead-dot {
+      fill: var(--text-title);
+      r: 4.5;
+    }
+    #bauer-med-svg-p1 .clickable-group:hover .lead-text {
+      fill: var(--text-title);
+    }
+
+    #bauer-med-svg-p1 .clickable-group.active .brain-structure {
+      fill: var(--border-panel);
+      stroke: var(--color-focus);
+      stroke-width: 2.5;
+    }
+    #bauer-med-svg-p1 .clickable-group.active .hippocampus-highlight {
+      stroke: var(--color-focus);
+      stroke-width: 3;
+      filter: drop-shadow(0 0 6px var(--fill-hippo-start));
+    }
+    #bauer-med-svg-p1 .clickable-group.active .lead-line {
+      stroke: var(--color-focus);
+      stroke-width: 1.8;
+      stroke-dasharray: none;
+    }
+    #bauer-med-svg-p1 .clickable-group.active .lead-dot {
+      fill: var(--color-focus);
+      r: 5;
+    }
+    #bauer-med-svg-p1 .clickable-group.active .lead-text {
+      fill: var(--text-title);
+      font-weight: 700;
+    }
+    #bauer-med-svg-p1 .clickable-group.active .lead-text-focus {
+      fill: var(--color-focus);
+      text-shadow: 0 0 1px var(--color-focus);
+    }
+
+    #bauer-med-svg-p1 .fade-transition {
+      transition: opacity 0.2s ease-in-out;
+      opacity: 1;
+    }
+    #bauer-med-svg-p1 .fade-out {
+      opacity: 0;
+    }
+  </style>
+
+  <!-- TÍTULO DA PEÇA -->
+  <text x="50" y="40" class="title-text">ENCÉFALO E O LOBO TEMPORAL MEDIAL (HIPOCAMPO)</text>
+  <text x="50" y="60" class="subtitle-text">Anatomia regional e a vulnerabilidade seletiva na Doença de Alzheimer</text>
+
+  <!-- GUIA DE INTERAÇÃO -->
+  <text x="290" y="98" text-anchor="middle" font-size="10px" font-weight="700" fill="var(--color-focus)" opacity="0.9" letter-spacing="0.05em">◀ CLIQUE NAS ESTRUTURAS OU RÓTULOS PARA EXPLORAR ▶</text>
+
+  <!-- DESENHO DO CÉREBRO -->
+  <g id="brain-graphic">
+    <!-- LOBO OCCIPITAL -->
+    <g class="clickable-group" id="hs-occipital" role="button" tabindex="0" aria-label="Lobo Occipital">
+      <!-- Córtex Occipital -->
+      <path class="brain-structure" d="M 370,105 C 410,125 450,155 470,195 C 485,230 488,270 472,305 L 390,300 C 370,270 365,220 350,180 Z" />
+      <path class="brain-sulcus" d="M 440,165 Q 400,200 375,215" />
+      <path class="brain-sulcus" d="M 465,225 Q 420,235 390,250" />
+      <!-- Linha de Chamada -->
+      <line class="lead-line" x1="430" y1="210" x2="500" y2="180" />
+      <circle class="lead-dot" cx="430" cy="210" r="3.5" />
+      <text class="lead-text" x="508" y="184" text-anchor="start">Lobo Occipital</text>
+    </g>
+
+    <!-- CEREBELO -->
+    <g class="clickable-group" id="hs-cerebellum" role="button" tabindex="0" aria-label="Cerebelo">
+      <!-- Forma do Cerebelo -->
+      <path class="brain-structure" d="M 315,385 C 335,385 365,375 395,395 C 415,415 410,450 385,465 C 360,480 330,470 315,450 C 305,435 305,405 315,385 Z" />
+      <!-- Estriações -->
+      <path class="cerebelo-striations" d="M 325,395 Q 360,390 395,405" />
+      <path class="cerebelo-striations" d="M 320,412 Q 355,408 400,420" />
+      <path class="cerebelo-striations" d="M 315,430 Q 350,425 395,435" />
+      <path class="cerebelo-striations" d="M 320,448 Q 350,448 380,455" />
+      <!-- Linha de Chamada -->
+      <line class="lead-line" x1="365" y1="430" x2="440" y2="460" />
+      <circle class="lead-dot" cx="365" cy="430" r="3.5" />
+      <text class="lead-text" x="448" y="464" text-anchor="start">Cerebelo</text>
+    </g>
+
+    <!-- TRONCO ENCEFÁLICO -->
+    <g id="stem-structure">
+      <path class="brain-structure" d="M 275,280 C 285,295 278,315 273,325 C 258,340 258,365 273,380 C 283,390 283,400 278,415 C 273,430 268,450 268,475 L 293,475 L 293,435 C 298,420 303,400 303,385 C 308,370 308,345 298,325 C 293,310 298,290 293,280 Z" />
+      <path class="brain-sulcus" d="M 273,325 C 285,335 285,360 273,380" />
+    </g>
+
+    <!-- LOBO FRONTAL -->
+    <g class="clickable-group" id="hs-frontal" role="button" tabindex="0" aria-label="Lobo Frontal">
+      <!-- Córtex Frontal e Parietal -->
+      <path class="brain-structure" d="M 220,330 C 205,330 190,320 175,310 C 145,290 120,260 115,225 C 110,190 125,150 155,120 C 185,90 230,75 280,75 C 330,75 360,82 370,105 L 350,180 C 290,165 235,190 235,220 C 235,250 250,270 250,280 C 250,290 240,320 220,330 Z" />
+      <!-- Sulcos frontais -->
+      <path class="brain-sulcus" d="M 190,135 Q 220,165 240,155" />
+      <path class="brain-sulcus" d="M 150,190 Q 185,200 200,185" />
+      <path class="brain-sulcus" d="M 140,240 Q 180,240 195,235" />
+      <!-- Linha de Chamada -->
+      <line class="lead-line" x1="180" y1="140" x2="110" y2="120" />
+      <circle class="lead-dot" cx="180" cy="140" r="3.5" />
+      <text class="lead-text" x="102" y="124" text-anchor="end">Lobo Frontal</text>
+    </g>
+
+    <!-- CORPO CALOSO -->
+    <g class="clickable-group" id="hs-caloso" role="button" tabindex="0" aria-label="Corpo Caloso">
+      <!-- Corpo Caloso -->
+      <path class="caloso-structure" d="M 215,220 C 215,195 235,175 265,170 C 295,165 325,180 335,200 C 340,210 335,225 325,225 C 315,225 315,210 310,200 C 300,188 280,180 265,185 C 250,190 240,202 240,220 C 240,230 225,230 215,220 Z" />
+      <!-- Linha de Chamada -->
+      <line class="lead-line" x1="270" y1="180" x2="200" y2="150" />
+      <circle class="lead-dot" cx="270" cy="180" r="3.5" />
+      <text class="lead-text" x="192" y="154" text-anchor="end">Corpo Caloso</text>
+    </g>
+
+    <!-- LOBO TEMPORAL MEDIAL / HIPOCAMPO -->
+    <g class="clickable-group" id="hs-hippo" role="button" tabindex="0" aria-label="Lobo Temporal Medial e Hipocampo">
+      <!-- Delimitação do Lobo Temporal Medial -->
+      <path d="M 258,340 C 258,300 288,275 320,275 C 352,275 372,300 372,340 C 372,380 352,390 320,390 C 288,390 258,380 258,340 Z" fill="none" stroke="var(--color-focus)" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.75" />
+      
+      <!-- Hipocampo Destacado -->
+      <path class="hippocampus-highlight" d="M 330,295 C 345,300 353,312 350,325 C 347,338 333,345 318,345 C 300,345 285,335 280,322 C 277,312 287,302 297,307 C 307,312 318,310 324,303 C 328,297 325,293 320,291 Z" />
+      
+      <!-- Detalhes internos do hipocampo -->
+      <path d="M 298,317 Q 315,322 332,312" fill="none" stroke="var(--stroke-hippo)" stroke-width="1" opacity="0.5" />
+      <path d="M 302,328 Q 320,332 338,322" fill="none" stroke="var(--stroke-hippo)" stroke-width="1" opacity="0.5" />
+
+      <!-- Linha de Chamada -->
+      <line class="lead-line" x1="315" y1="325" x2="200" y2="390" />
+      <circle class="lead-dot" cx="315" cy="325" r="4.5" />
+      <text class="lead-text lead-text-focus" x="192" y="394" text-anchor="end">LTM / Hipocampo</text>
+    </g>
+  </g>
+
+  <!-- PAINEL DE LEITURA LATERAL -->
+  <g id="panel-container">
+    <rect x="560" y="80" width="290" height="390" class="panel-rect" filter="url(#shadow-panel)" />
+    
+    <text x="580" y="112" class="panel-header">INSPEÇÃO ESTRUTURAL</text>
+    
+    <!-- Categoria (Pílula Dinâmica) -->
+    <g id="panel-category-group">
+      <rect x="580" y="128" width="130" height="18" class="panel-status-pill" fill="var(--color-focus-bg)" />
+      <text x="588" y="141" class="panel-status-text fade-transition" fill="var(--color-focus)">Estrutura-Âncora</text>
+    </g>
+
+    <!-- Título do Painel -->
+    <text x="580" y="178" class="panel-body-title fade-transition">Hipocampo / LTM</text>
+    
+    <!-- Descrição (4 Linhas Estáticas) -->
+    <g class="fade-transition">
+      <text x="580" y="206" class="panel-body-desc desc-line-1">Localizado profundamente na face mesial do lobo</text>
+      <text x="580" y="224" class="panel-body-desc desc-line-2">temporal, o hipocampo é o componente central do</text>
+      <text x="580" y="242" class="panel-body-desc desc-line-3">sistema límbico, essencial para a consolidação de</text>
+      <text x="580" y="260" class="panel-body-desc desc-line-4">memórias de curto prazo e aprendizado espacial.</text>
+    </g>
+
+    <!-- Caixa Clínica / Fisiopatológica -->
+    <g id="panel-clinical-group">
+      <rect x="580" y="285" width="250" height="112" class="panel-clinical-box fade-transition" fill="var(--color-red-bg)" />
+      <text x="595" y="306" class="panel-clinical-title fade-transition" fill="var(--color-red)">Correlação Fisiopatológica:</text>
+      
+      <!-- Descrição Clínica (4 Linhas Estáticas) -->
+      <g class="fade-transition">
+        <text x="595" y="326" class="panel-clinical-desc alert-line-1">É a estrutura acometida mais precocemente no</text>
+        <text x="595" y="342" class="panel-clinical-desc alert-line-2">Alzheimer. O acúmulo de proteína Tau causa perda</text>
+        <text x="595" y="358" class="panel-clinical-desc alert-line-3">sináptica e atrofia severa, justificando o déficit</text>
+        <text x="595" y="374" class="panel-clinical-desc alert-line-4">característico de memória para fatos recentes.</text>
+      </g>
+    </g>
+
+    <!-- Achado Clínico / Caso -->
+    <text x="580" y="425" class="label-title">Marcador Clínico Associado</text>
+    <text x="580" y="445" class="panel-case-value fade-transition">RM: Atrofia hipocampal bilateral (Scheltens 3).</text>
+  </g>
+
+  <!-- LEGENDA DE INTERPRETAÇÃO INFERIOR -->
+  <g id="legend-container">
+    <rect x="50" y="490" width="800" height="50" class="legend-rect" />
+    <text x="65" y="512" class="legend-title">LEGENDA DE INTERPRETAÇÃO</text>
+    <text x="65" y="529" class="legend-body">O hipocampo, no lobo temporal medial, é a região da memória recente — o ponto onde o Alzheimer começa a bater. Guarde-o: ele reaparece em toda a plataforma.</text>
+  </g>
+
+  <!-- INTERATIVIDADE (JS CDATA) -->
+  <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+      const data = {
+        'hs-hippo': {
+          title: 'Hipocampo / LTM',
+          category: 'Estrutura-Âncora',
+          catColor: 'var(--color-focus)',
+          catBg: 'var(--color-focus-bg)',
+          descLines: [
+            'Localizado profundamente na face mesial do lobo',
+            'temporal, o hipocampo é o componente central do',
+            'sistema límbico, essencial para a consolidação de',
+            'memórias de curto prazo e aprendizado espacial.'
+          ],
+          alertTitle: 'Correlação Fisiopatológica:',
+          alertLines: [
+            'É a estrutura acometida mais precocemente no',
+            'Alzheimer. O acúmulo de proteína Tau causa perda',
+            'sináptica e atrofia severa, justificando o déficit',
+            'característico de memória para fatos recentes.'
+          ],
+          alertColor: 'var(--color-red)',
+          alertBg: 'var(--color-red-bg)',
+          caseText: 'RM: Atrofia hipocampal bilateral (Scheltens 3).'
+        },
+        'hs-frontal': {
+          title: 'Lobo Frontal',
+          category: 'Funções Executivas',
+          catColor: 'var(--text-title)',
+          catBg: 'var(--border-panel)',
+          descLines: [
+            'Sede das funções executivas superiores, como o',
+            'planejamento, tomada de decisões, atenção,',
+            'julgamento social, expressão da personalidade e',
+            'iniciação de comandos motores voluntários.'
+          ],
+          alertTitle: 'Comportamento no Alzheimer:',
+          alertLines: [
+            'Mantém-se estruturalmente íntegro nas fases',
+            'iniciais da doença. O acometimento tardio causa',
+            'sintomas neuropsiquiátricos como apatia severa,',
+            'desinibição, perda de iniciativa e abulia.'
+          ],
+          alertColor: 'var(--text-muted)',
+          alertBg: 'var(--bg-canvas)',
+          caseText: 'Clínica: Preservação de comportamento social no início.'
+        },
+        'hs-occipital': {
+          title: 'Lobo Occipital',
+          category: 'Processamento Sensorial',
+          catColor: 'var(--text-title)',
+          catBg: 'var(--border-panel)',
+          descLines: [
+            'Situado no polo posterior do cérebro, abriga o',
+            'córtex visual primário e de associação. É',
+            'responsável pelo processamento, interpretação e',
+            'reconhecimento de estímulos visuais da retina.'
+          ],
+          alertTitle: 'Comportamento no Alzheimer:',
+          alertLines: [
+            'Altamente preservado no Alzheimer típico. A',
+            'perda de função visual primária é rara. Se houver',
+            'alucinações visuais precoces, deve-se suspeitar',
+            'de Demência por Corpos de Lewy ou outras causas.'
+          ],
+          alertColor: 'var(--color-green)',
+          alertBg: 'var(--color-green-bg)',
+          caseText: 'Exame: Campos visuais normais; sem agnosias primárias.'
+        },
+        'hs-cerebellum': {
+          title: 'Cerebelo',
+          category: 'Coordenação e Equilíbrio',
+          catColor: 'var(--color-green)',
+          catBg: 'var(--color-green-bg)',
+          descLines: [
+            'Estrutura posterior responsável pela modulação do',
+            'movimento voluntário, coordenação motora fina,',
+            'equilíbrio dinâmico, postura e tônus muscular',
+            'através de aferências proprioceptivas.'
+          ],
+          alertTitle: 'Resistência Seletiva:',
+          alertLines: [
+            'Notoriamente poupado pelo processo degenerativo',
+            'do Alzheimer. As vias motoras básicas permanecem',
+            'íntegras até as fases terminais da doença, sem',
+            'sintomas cerebelares primários.'
+          ],
+          alertColor: 'var(--color-green)',
+          alertBg: 'var(--color-green-bg)',
+          caseText: 'Clínica: Marcha independente e reflexos preservados.'
+        },
+        'hs-caloso': {
+          title: 'Corpo Caloso',
+          category: 'Conectividade Neural',
+          catColor: 'var(--text-title)',
+          catBg: 'var(--border-panel)',
+          descLines: [
+            'Formado por mais de 200 milhões de fibras axônicas',
+            'mielinizadas, conecta homologicamente áreas do',
+            'córtex dos hemisférios esquerdo e direito, permitindo',
+            'a transferência de informações inter-hemisféricas.'
+          ],
+          alertTitle: 'Degeneração Secundária:',
+          alertLines: [
+            'Sofre atrofia secundária devido à perda neuronal',
+            'difusa no córtex associativo. A perda dessas conexões',
+            'resulta na lentificação global do processamento de',
+            'informações e declínio cognitivo multidomínio.'
+          ],
+          alertColor: 'var(--text-muted)',
+          alertBg: 'var(--bg-canvas)',
+          caseText: 'Cognitivo: Lentificação global na velocidade de processamento.'
+        }
+      };
+
+      const svg = document.getElementById('bauer-med-svg-p1');
+      const panelTitle = svg.querySelector('.panel-body-title');
+      const panelCat = svg.querySelector('.panel-status-text');
+      const panelCatPill = svg.querySelector('.panel-status-pill');
+      const panelClinTitle = svg.querySelector('.panel-clinical-title');
+      const panelClinBox = svg.querySelector('.panel-clinical-box');
+      const panelCaseValue = svg.querySelector('.panel-case-value');
+      const interactiveGroups = svg.querySelectorAll('.clickable-group');
+      const fadeElements = svg.querySelectorAll('.fade-transition');
+
+      function updatePanel(id) {
+        const info = data[id];
+        if (!info) return;
+
+        fadeElements.forEach(el => el.classList.add('fade-out'));
+
+        setTimeout(() => {
+          panelTitle.textContent = info.title;
+          panelCat.textContent = info.category;
+          panelCat.setAttribute('fill', info.catColor);
+          panelCatPill.setAttribute('fill', info.catBg);
+          
+          const textWidth = panelCat.getComputedTextLength ? panelCat.getComputedTextLength() : 80;
+          panelCatPill.setAttribute('width', (textWidth + 16).toString());
+          
+          [1, 2, 3, 4].forEach(i => {
+            const lineEl = svg.querySelector('.desc-line-' + i);
+            if (lineEl) lineEl.textContent = info.descLines[i - 1] || '';
+          });
+
+          panelClinTitle.textContent = info.alertTitle;
+          panelClinTitle.setAttribute('fill', info.alertColor);
+          panelClinBox.setAttribute('fill', info.alertBg);
+          
+          [1, 2, 3, 4].forEach(i => {
+            const lineEl = svg.querySelector('.alert-line-' + i);
+            if (lineEl) lineEl.textContent = info.alertLines[i - 1] || '';
+          });
+
+          panelCaseValue.textContent = info.caseText;
+          panelCaseValue.setAttribute('fill', info.alertColor);
+
+          fadeElements.forEach(el => el.classList.remove('fade-out'));
+        }, 200);
+      }
+
+      interactiveGroups.forEach(group => {
+        const id = group.getAttribute('id');
+        
+        group.addEventListener('click', () => {
+          interactiveGroups.forEach(g => g.classList.remove('active'));
+          group.classList.add('active');
+          updatePanel(id);
+        });
+
+        group.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            interactiveGroups.forEach(g => g.classList.remove('active'));
+            group.classList.add('active');
+            updatePanel(id);
+          }
+        });
+      });
+
+      // Inicialização
+      const hippoGroup = document.getElementById('hs-hippo');
+      if (hippoGroup) {
+        hippoGroup.classList.add('active');
+        updatePanel('hs-hippo');
+      }
+    })();
+    //]]>
+  </script>
+</svg>

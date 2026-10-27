@@ -1,0 +1,930 @@
+<svg id="a12p1h-svg" class="a12p1h-root" viewBox="0 0 1000 670" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Topografia Pélvica Aplicada: 4 Endereços, 4 Complicações Clínicas" data-a12p1h-active="all">
+  <defs>
+    <!-- Gradientes de Destaque -->
+    <linearGradient id="a12p1h-grad-z1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p1h-z1-color, #ef4444)" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="var(--a12p1h-z1-dark, #991b1b)" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="a12p1h-grad-z2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p1h-z2-color, #f97316)" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="var(--a12p1h-z2-dark, #c2410c)" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="a12p1h-grad-z3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p1h-z3-color, #d946ef)" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="var(--a12p1h-z3-dark, #86198f)" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="a12p1h-grad-z4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p1h-z4-color, #06b6d4)" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="var(--a12p1h-z4-dark, #0e7490)" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Filtros de Brilho -->
+    <filter id="a12p1h-glow-z1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1h-glow-z2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1h-glow-z3" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1h-glow-z4" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Marcadores de Linha Guia -->
+    <marker id="a12p1h-dot-z1" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+      <circle cx="5" cy="5" r="4" fill="var(--a12p1h-z1-color, #ef4444)"/>
+    </marker>
+    <marker id="a12p1h-dot-z2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+      <circle cx="5" cy="5" r="4" fill="var(--a12p1h-z2-color, #f97316)"/>
+    </marker>
+    <marker id="a12p1h-dot-z3" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+      <circle cx="5" cy="5" r="4" fill="var(--a12p1h-z3-color, #d946ef)"/>
+    </marker>
+    <marker id="a12p1h-dot-z4" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+      <circle cx="5" cy="5" r="4" fill="var(--a12p1h-z4-color, #06b6d4)"/>
+    </marker>
+  </defs>
+
+  <style>
+    /* Tokenização e Regras de Estilo Escopadas */
+    .a12p1h-root {
+      --a12p1h-bg: var(--bg-1, #180914);
+      --a12p1h-card-bg: var(--bg-2, #261022);
+      --a12p1h-card-border: var(--ink-20, #4a1d43);
+      --a12p1h-text-main: var(--ink-100, #f5e9f3);
+      --a12p1h-text-sub: var(--ink-70, #c7a4bf);
+      --a12p1h-text-muted: var(--ink-50, #916c88);
+      
+      --a12p1h-z1-color: var(--kw-red, #ef4444);
+      --a12p1h-z1-dark: var(--kw-red-dark, #991b1b);
+      --a12p1h-z1-light: var(--kw-red-light, #fca5a5);
+
+      --a12p1h-z2-color: var(--kw-orange, #f97316);
+      --a12p1h-z2-dark: var(--kw-orange-dark, #c2410c);
+      --a12p1h-z2-light: var(--kw-orange-light, #fed7aa);
+
+      --a12p1h-z3-color: var(--kw-magenta, #d946ef);
+      --a12p1h-z3-dark: var(--kw-magenta-dark, #86198f);
+      --a12p1h-z3-light: var(--kw-magenta-light, #f5d0fe);
+
+      --a12p1h-z4-color: var(--kw-cyan, #06b6d4);
+      --a12p1h-z4-dark: var(--kw-cyan-dark, #0e7490);
+      --a12p1h-z4-light: var(--kw-cyan-light, #a5f3fc);
+
+      --a12p1h-green: var(--kw-green, #22c55e);
+      --a12p1h-yellow: var(--kw-yellow, #eab308);
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    [data-theme="light"] .a12p1h-root {
+      --a12p1h-bg: var(--bg-1, #fcf6fa);
+      --a12p1h-card-bg: var(--bg-2, #ffffff);
+      --a12p1h-card-border: var(--ink-20, #e6cfe3);
+      --a12p1h-text-main: var(--ink-100, #2c0e28);
+      --a12p1h-text-sub: var(--ink-70, #6e4668);
+      --a12p1h-text-muted: var(--ink-50, #967090);
+
+      --a12p1h-z1-color: var(--kw-red, #dc2626);
+      --a12p1h-z1-dark: var(--kw-red-dark, #7f1d1d);
+      --a12p1h-z1-light: var(--kw-red-light, #fee2e2);
+
+      --a12p1h-z2-color: var(--kw-orange, #ea580c);
+      --a12p1h-z2-dark: var(--kw-orange-dark, #7c2d12);
+      --a12p1h-z2-light: var(--kw-orange-light, #ffedd5);
+
+      --a12p1h-z3-color: var(--kw-magenta, #c026d3);
+      --a12p1h-z3-dark: var(--kw-magenta-dark, #701a75);
+      --a12p1h-z3-light: var(--kw-magenta-light, #fae8ff);
+
+      --a12p1h-z4-color: var(--kw-cyan, #0891b2);
+      --a12p1h-z4-dark: var(--kw-cyan-dark, #164e63);
+      --a12p1h-z4-light: var(--kw-cyan-light, #cffaff);
+
+      --a12p1h-green: var(--kw-green, #16a34a);
+      --a12p1h-yellow: var(--kw-yellow, #ca8a04);
+    }
+
+    /* Estrutura de Fundo */
+    .a12p1h-bg-rect {
+      fill: var(--a12p1h-bg, #180914);
+      transition: fill 0.3s ease;
+    }
+
+    /* Tipografia */
+    .a12p1h-title {
+      font-size: 19px;
+      font-weight: 800;
+      fill: var(--a12p1h-text-main, #f5e9f3);
+      letter-spacing: 0.4px;
+    }
+
+    .a12p1h-legend {
+      font-size: 12.5px;
+      font-weight: 500;
+      fill: var(--a12p1h-text-sub, #c7a4bf);
+    }
+
+    /* Contornos Anatômicos Primários */
+    .a12p1h-bone-contour {
+      fill: none;
+      stroke: var(--a12p1h-text-muted, #916c88);
+      stroke-width: 1.5;
+      stroke-dasharray: 4 3;
+      opacity: 0.55;
+    }
+
+    .a12p1h-organ-base {
+      fill: none;
+      stroke: var(--a12p1h-text-sub, #c7a4bf);
+      stroke-width: 1.6;
+      opacity: 0.45;
+    }
+
+    .a12p1h-organ-fill {
+      fill: var(--a12p1h-card-bg, #261022);
+      stroke: var(--a12p1h-text-sub, #c7a4bf);
+      stroke-width: 1.2;
+      opacity: 0.35;
+    }
+
+    /* Territórios e Zonas */
+    .a12p1h-zone {
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      outline: none;
+    }
+
+    .a12p1h-zone-shape {
+      stroke-width: 2;
+      transition: all 0.3s ease;
+    }
+
+    .a12p1h-z1-shape {
+      fill: url(#a12p1h-grad-z1);
+      stroke: var(--a12p1h-z1-color, #ef4444);
+    }
+
+    .a12p1h-z2-shape {
+      fill: url(#a12p1h-grad-z2);
+      stroke: var(--a12p1h-z2-color, #f97316);
+    }
+
+    .a12p1h-z3-shape {
+      fill: url(#a12p1h-grad-z3);
+      stroke: var(--a12p1h-z3-color, #d946ef);
+    }
+
+    .a12p1h-z4-shape {
+      fill: url(#a12p1h-grad-z4);
+      stroke: var(--a12p1h-z4-color, #06b6d4);
+    }
+
+    /* Estados de Ativação por Máquina de Estados */
+    .a12p1h-root[data-a12p1h-active="zone1"] .a12p1h-zone:not(.a12p1h-z1-grp),
+    .a12p1h-root[data-a12p1h-active="zone2"] .a12p1h-zone:not(.a12p1h-z2-grp),
+    .a12p1h-root[data-a12p1h-active="zone3"] .a12p1h-zone:not(.a12p1h-z3-grp),
+    .a12p1h-root[data-a12p1h-active="zone4"] .a12p1h-zone:not(.a12p1h-z4-grp) {
+      opacity: 0.22;
+      filter: grayscale(0.5);
+    }
+
+    .a12p1h-root[data-a12p1h-active="zone1"] .a12p1h-z1-grp,
+    .a12p1h-root[data-a12p1h-active="zone2"] .a12p1h-z2-grp,
+    .a12p1h-root[data-a12p1h-active="zone3"] .a12p1h-z3-grp,
+    .a12p1h-root[data-a12p1h-active="zone4"] .a12p1h-z4-grp {
+      opacity: 1;
+    }
+
+    .a12p1h-root[data-a12p1h-active="zone1"] .a12p1h-z1-shape { filter: url(#a12p1h-glow-z1); stroke-width: 3.5; }
+    .a12p1h-root[data-a12p1h-active="zone2"] .a12p1h-z2-shape { filter: url(#a12p1h-glow-z2); stroke-width: 3.5; }
+    .a12p1h-root[data-a12p1h-active="zone3"] .a12p1h-z3-shape { filter: url(#a12p1h-glow-z3); stroke-width: 3.5; }
+    .a12p1h-root[data-a12p1h-active="zone4"] .a12p1h-z4-shape { filter: url(#a12p1h-glow-z4); stroke-width: 3.5; }
+
+    /* Linhas Líderes e Rótulos Externa (Sem cruzamento) */
+    .a12p1h-leader-line {
+      fill: none;
+      stroke-width: 1.8;
+      stroke-dasharray: 5 3;
+      transition: all 0.3s ease;
+    }
+
+    .a12p1h-z1-leader { stroke: var(--a12p1h-z1-color, #ef4444); marker-start: url(#a12p1h-dot-z1); }
+    .a12p1h-z2-leader { stroke: var(--a12p1h-z2-color, #f97316); marker-start: url(#a12p1h-dot-z2); }
+    .a12p1h-z3-leader { stroke: var(--a12p1h-z3-color, #d946ef); marker-start: url(#a12p1h-dot-z3); }
+    .a12p1h-z4-leader { stroke: var(--a12p1h-z4-color, #06b6d4); marker-start: url(#a12p1h-dot-z4); }
+
+    /* Caixa de Rótulo Externo no Desenho */
+    .a12p1h-label-box {
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .a12p1h-label-bg {
+      fill: var(--a12p1h-card-bg, #261022);
+      stroke-width: 1.5;
+      rx: 6;
+      ry: 6;
+      transition: all 0.25s ease;
+    }
+
+    .a12p1h-z1-label-bg { stroke: var(--a12p1h-z1-color, #ef4444); }
+    .a12p1h-z2-label-bg { stroke: var(--a12p1h-z2-color, #f97316); }
+    .a12p1h-z3-label-bg { stroke: var(--a12p1h-z3-color, #d946ef); }
+    .a12p1h-z4-label-bg { stroke: var(--a12p1h-z4-color, #06b6d4); }
+
+    .a12p1h-label-txt {
+      font-size: 11.5px;
+      font-weight: 700;
+      fill: var(--a12p1h-text-main, #f5e9f3);
+    }
+
+    .a12p1h-label-sub {
+      font-size: 9.5px;
+      font-weight: 500;
+      fill: var(--a12p1h-text-sub, #c7a4bf);
+    }
+
+    /* Hotspot de Toque (≥24px) */
+    .a12p1h-hotspot {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .a12p1h-hotspot-touch {
+      fill: transparent;
+      stroke: transparent;
+    }
+
+    .a12p1h-hotspot-ring {
+      fill: none;
+      stroke-width: 2;
+      animation: a12p1h-pulse 2s infinite;
+    }
+
+    @keyframes a12p1h-pulse {
+      0% { r: 10px; opacity: 0.9; }
+      50% { r: 16px; opacity: 0.3; }
+      100% { r: 10px; opacity: 0.9; }
+    }
+
+    /* Botões de Filtro / Seletor de Modo */
+    .a12p1h-filter-btn {
+      cursor: pointer;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .a12p1h-filter-bg {
+      fill: var(--a12p1h-card-bg, #261022);
+      stroke: var(--a12p1h-card-border, #4a1d43);
+      stroke-width: 1.4;
+      rx: 6;
+      ry: 6;
+    }
+
+    .a12p1h-filter-txt {
+      font-size: 11px;
+      font-weight: 700;
+      fill: var(--a12p1h-text-sub, #c7a4bf);
+      text-anchor: middle;
+    }
+
+    .a12p1h-filter-btn:hover .a12p1h-filter-bg,
+    .a12p1h-filter-btn:focus .a12p1h-filter-bg {
+      stroke: var(--a12p1h-text-main, #f5e9f3);
+    }
+
+    /* Estado Ativo dos Filtros */
+    .a12p1h-root[data-a12p1h-active="all"] #a12p1h-btn-all .a12p1h-filter-bg { fill: var(--a12p1h-card-border, #4a1d43); stroke: var(--a12p1h-text-main, #f5e9f3); }
+    .a12p1h-root[data-a12p1h-active="all"] #a12p1h-btn-all .a12p1h-filter-txt { fill: var(--a12p1h-text-main, #f5e9f3); }
+
+    .a12p1h-root[data-a12p1h-active="zone1"] #a12p1h-btn-z1 .a12p1h-filter-bg { fill: var(--a12p1h-z1-dark, #991b1b); stroke: var(--a12p1h-z1-color, #ef4444); }
+    .a12p1h-root[data-a12p1h-active="zone1"] #a12p1h-btn-z1 .a12p1h-filter-txt { fill: #ffffff; }
+
+    .a12p1h-root[data-a12p1h-active="zone2"] #a12p1h-btn-z2 .a12p1h-filter-bg { fill: var(--a12p1h-z2-dark, #c2410c); stroke: var(--a12p1h-z2-color, #f97316); }
+    .a12p1h-root[data-a12p1h-active="zone2"] #a12p1h-btn-z2 .a12p1h-filter-txt { fill: #ffffff; }
+
+    .a12p1h-root[data-a12p1h-active="zone3"] #a12p1h-btn-z3 .a12p1h-filter-bg { fill: var(--a12p1h-z3-dark, #86198f); stroke: var(--a12p1h-z3-color, #d946ef); }
+    .a12p1h-root[data-a12p1h-active="zone3"] #a12p1h-btn-z3 .a12p1h-filter-txt { fill: #ffffff; }
+
+    .a12p1h-root[data-a12p1h-active="zone4"] #a12p1h-btn-z4 .a12p1h-filter-bg { fill: var(--a12p1h-z4-dark, #0e7490); stroke: var(--a12p1h-z4-color, #06b6d4); }
+    .a12p1h-root[data-a12p1h-active="zone4"] #a12p1h-btn-z4 .a12p1h-filter-txt { fill: #ffffff; }
+
+    /* Painel Lateral Clínico */
+    .a12p1h-panel-bg {
+      fill: var(--a12p1h-card-bg, #261022);
+      stroke: var(--a12p1h-card-border, #4a1d43);
+      stroke-width: 1.5;
+      rx: 10;
+      ry: 10;
+    }
+
+    .a12p1h-panel-title {
+      font-size: 15px;
+      font-weight: 800;
+      fill: var(--a12p1h-text-main, #f5e9f3);
+    }
+
+    .a12p1h-panel-badge {
+      rx: 4;
+      ry: 4;
+    }
+
+    .a12p1h-badge-txt {
+      font-size: 10.5px;
+      font-weight: 800;
+      fill: #ffffff;
+      text-anchor: middle;
+    }
+
+    .a12p1h-section-hdr {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      fill: var(--a12p1h-text-muted, #916c88);
+    }
+
+    .a12p1h-body-txt {
+      font-size: 11.5px;
+      font-weight: 500;
+      fill: var(--a12p1h-text-main, #f5e9f3);
+    }
+
+    .a12p1h-bold-txt {
+      font-weight: 700;
+    }
+
+    .a12p1h-box-alert {
+      rx: 6;
+      ry: 6;
+      stroke-width: 1.2;
+    }
+
+    /* Tabela de Valores / Métricas Médicas */
+    .a12p1h-table-hdr {
+      font-size: 10px;
+      font-weight: 700;
+      fill: var(--a12p1h-text-muted, #916c88);
+    }
+
+    .a12p1h-table-cell {
+      font-size: 10.5px;
+      font-weight: 600;
+      fill: var(--a12p1h-text-main, #f5e9f3);
+    }
+
+    /* Cores de Convenção Médica */
+    .a12p1h-val-normal { fill: var(--a12p1h-green, #22c55e); font-weight: 700; }
+    .a12p1h-val-alert { fill: var(--a12p1h-yellow, #eab308); font-weight: 700; }
+    .a12p1h-val-critical { fill: var(--a12p1h-z1-color, #ef4444); font-weight: 700; }
+
+    .a12p1h-dot-normal { fill: var(--a12p1h-green, #22c55e); }
+    .a12p1h-dot-alert { fill: var(--a12p1h-yellow, #eab308); }
+    .a12p1h-dot-critical { fill: var(--a12p1h-z1-color, #ef4444); }
+  </style>
+
+  <!-- Fundo Principal -->
+  <rect class="a12p1h-bg-rect" x="0" y="0" width="1000" height="670" rx="0" ry="0"/>
+
+  <!-- TOPO: Título e Legenda Interpretativa de Contrato Bauer -->
+  <g id="a12p1h-header" transform="translate(30, 32)">
+    <text class="a12p1h-title" x="0" y="0">TOPOGRAFIA PÉLVICA APLICADA: 4 ENDEREÇOS, 4 COMPLICAÇÕES CLÍNICAS</text>
+    <text class="a12p1h-legend" x="0" y="21">Conclusão prática: O endereço ocupado dita o vaso em risco, a clínica dominante e a conduta imediata. A anatomia orienta a decisão.</text>
+  </g>
+
+  <!-- SEÇÃO ESQUERDA: ILUSTRAÇÃO ANATÔMICA E TERRITÓRIOS -->
+  <g id="a12p1h-stage" transform="translate(25, 75)">
+    <!-- Fundo de Referência da Silhueta Pélvica Sagital -->
+    <g id="a12p1h-anatomy-base">
+      <!-- Sacro e Coccix (Posterior) -->
+      <path class="a12p1h-bone-contour" d="M 120 70 C 130 90, 145 140, 148 190 C 150 230, 140 280, 125 330 C 120 345, 115 360, 110 375" />
+      <text class="a12p1h-label-sub" x="90" y="80">Sacro (S1-S5)</text>
+
+      <!-- Sínfise Púbica (Anterior) -->
+      <path class="a12p1h-bone-contour" d="M 450 330 C 455 350, 452 380, 440 400 C 430 410, 415 415, 400 415" />
+      <text class="a12p1h-label-sub" x="430" y="430">Sínfise Púbica</text>
+
+      <!-- Assoalho Pélvico (Diafragma Pélvico / Levantador do Ânus) -->
+      <path class="a12p1h-bone-contour" d="M 110 375 C 180 430, 320 440, 400 415" />
+      <text class="a12p1h-label-sub" x="220" y="455">M. Levantador do Ânus &amp; Fáscia Endopélvica</text>
+
+      <!-- Bexiga (Anterior) -->
+      <path class="a12p1h-organ-fill" d="M 360 300 C 370 270, 420 275, 435 310 C 445 340, 410 370, 375 365 C 360 360, 355 330, 360 300 Z" />
+      <text class="a12p1h-label-sub" x="385" y="335">Bexiga</text>
+
+      <!-- Canal Vaginal e Colo -->
+      <path class="a12p1h-organ-base" d="M 330 330 L 290 420 M 360 345 L 320 435" />
+      <text class="a12p1h-label-sub" x="335" y="405">Vagina</text>
+
+      <!-- Reto (Posterior) -->
+      <path class="a12p1h-organ-fill" d="M 155 190 C 160 250, 175 310, 160 380 C 155 400, 140 420, 130 435" />
+      <text class="a12p1h-label-sub" x="110" y="240">Reto</text>
+
+      <!-- Útero (Posição Intermediária Antevertida) -->
+      <path class="a12p1h-organ-fill" d="M 270 240 C 265 190, 320 170, 360 200 C 390 220, 370 270, 340 290 C 320 305, 290 310, 275 285 C 265 270, 272 255, 270 240 Z" />
+      <text class="a12p1h-label-sub" x="305" y="225">Útero</text>
+    </g>
+
+    <!-- ZONAS / TERRITÓRIOS DE DECISÃO CLÍNICA -->
+    
+    <!-- ZONA 1: Hemorragia Pós-Parto (Fundo/Corpo Uterino & Leito Placentário) -->
+    <g id="a12p1h-z1-grp" class="a12p1h-zone a12p1h-z1-grp" role="button" tabindex="0" aria-label="Endereço 1: Hemorragia Pós-Parto">
+      <path class="a12p1h-zone-shape a12p1h-z1-shape" d="M 275 235 C 270 185, 325 165, 365 195 C 395 215, 375 260, 345 275 C 325 285, 290 285, 278 265 Z" />
+      <!-- Círculo Hotspot -->
+      <g class="a12p1h-hotspot" transform="translate(325, 220)">
+        <circle class="a12p1h-hotspot-touch" r="20" />
+        <circle class="a12p1h-hotspot-ring" stroke="var(--a12p1h-z1-color, #ef4444)" />
+        <circle r="5" fill="var(--a12p1h-z1-color, #ef4444)" />
+      </g>
+    </g>
+
+    <!-- ZONA 2: Cirurgia Ginecológica + Sangramento Estrutural (Paramétrio & Artéria Uterina / Ureter) -->
+    <g id="a12p1h-z2-grp" class="a12p1h-zone a12p1h-z2-grp" role="button" tabindex="0" aria-label="Endereço 2: Cirurgia Ginecológica e Sangramento Estrutural">
+      <path class="a12p1h-zone-shape a12p1h-z2-shape" d="M 310 280 C 330 270, 365 285, 355 315 C 340 335, 305 330, 295 310 C 290 295, 300 285, 310 280 Z" />
+      <!-- Ilustração do Cruzamento Vaso-Ureteral -->
+      <path d="M 280 300 Q 320 305 360 295" fill="none" stroke="var(--a12p1h-z1-color, #ef4444)" stroke-width="2.5" />
+      <path d="M 325 275 Q 320 310 315 340" fill="none" stroke="var(--a12p1h-yellow, #eab308)" stroke-width="2.2" stroke-dasharray="3 2" />
+      <!-- Círculo Hotspot -->
+      <g class="a12p1h-hotspot" transform="translate(325, 300)">
+        <circle class="a12p1h-hotspot-touch" r="20" />
+        <circle class="a12p1h-hotspot-ring" stroke="var(--a12p1h-z2-color, #f97316)" />
+        <circle r="5" fill="var(--a12p1h-z2-color, #f97316)" />
+      </g>
+    </g>
+
+    <!-- ZONA 3: Endometriose (Compartimento Posterior / Fundo de Saco / Lig. Uterossacro) -->
+    <g id="a12p1h-z3-grp" class="a12p1h-zone a12p1h-z3-grp" role="button" tabindex="0" aria-label="Endereço 3: Endometriose">
+      <path class="a12p1h-zone-shape a12p1h-z3-shape" d="M 230 295 C 265 290, 280 320, 260 350 C 235 375, 195 350, 205 320 Z" />
+      <!-- Focos de Endometriose -->
+      <circle cx="235" cy="315" r="3" fill="#ffffff" />
+      <circle cx="248" cy="330" r="2.5" fill="#ffffff" />
+      <circle cx="225" cy="335" r="3.5" fill="#ffffff" />
+      <!-- Círculo Hotspot -->
+      <g class="a12p1h-hotspot" transform="translate(240, 325)">
+        <circle class="a12p1h-hotspot-touch" r="20" />
+        <circle class="a12p1h-hotspot-ring" stroke="var(--a12p1h-z3-color, #d946ef)" />
+        <circle r="5" fill="var(--a12p1h-z3-color, #d946ef)" />
+      </g>
+    </g>
+
+    <!-- ZONA 4: Incontinência Urinária + Prolapso (Compartimento Anterior & Assoalho Pélvico) -->
+    <g id="a12p1h-z4-grp" class="a12p1h-zone a12p1h-z4-grp" role="button" tabindex="0" aria-label="Endereço 4: Incontinência Urinária e Prolapso">
+      <path class="a12p1h-zone-shape a12p1h-z4-shape" d="M 345 355 C 385 350, 420 375, 395 415 C 350 435, 310 415, 325 380 Z" />
+      <!-- Círculo Hotspot -->
+      <g class="a12p1h-hotspot" transform="translate(365, 390)">
+        <circle class="a12p1h-hotspot-touch" r="20" />
+        <circle class="a12p1h-hotspot-ring" stroke="var(--a12p1h-z4-color, #06b6d4)" />
+        <circle r="5" fill="var(--a12p1h-z4-color, #06b6d4)" />
+      </g>
+    </g>
+
+    <!-- LINHAS LÍDERES E RÓTULOS EXTERNOS (CONTRATO: TERMINAM FORA E NÃO CRUZAM FORMAS) -->
+
+    <!-- Rótulo Z1 (Superior Esquerda/Topo) -->
+    <g id="a12p1h-lbl-z1" class="a12p1h-label-box a12p1h-z1-grp" transform="translate(30, 20)" role="button" tabindex="0">
+      <path class="a12p1h-leader-line a12p1h-z1-leader" d="M 295 185 L 210 100 L 190 100" />
+      <rect class="a12p1h-label-bg a12p1h-z1-label-bg" x="0" y="0" width="210" height="42" />
+      <text class="a12p1h-label-txt" x="12" y="18">Hemorragia pós-parto</text>
+      <text class="a12p1h-label-sub" x="12" y="32">Endereço 1: Miométrio &amp; Vaso Uterino</text>
+    </g>
+
+    <!-- Rótulo Z2 (Superior Direita) -->
+    <g id="a12p1h-lbl-z2" class="a12p1h-label-box a12p1h-z2-grp" transform="translate(320, 90)" role="button" tabindex="0">
+      <path class="a12p1h-leader-line a12p1h-z2-leader" d="M 345 285 L 390 180 L 410 180" />
+      <rect class="a12p1h-label-bg a12p1h-z2-label-bg" x="0" y="0" width="220" height="42" />
+      <text class="a12p1h-label-txt" x="12" y="18">Cirurgia ginecológica + sangramento</text>
+      <text class="a12p1h-label-sub" x="12" y="32">Endereço 2: Paramétrio &amp; Trajeto Ureteral</text>
+    </g>
+
+    <!-- Rótulo Z3 (Inferior Esquerda / Posterior) -->
+    <g id="a12p1h-lbl-z3" class="a12p1h-label-box a12p1h-z3-grp" transform="translate(10, 480)" role="button" tabindex="0">
+      <path class="a12p1h-leader-line a12p1h-z3-leader" d="M 220 340 L 140 440 L 140 480" />
+      <rect class="a12p1h-label-bg a12p1h-z3-label-bg" x="0" y="0" width="210" height="42" />
+      <text class="a12p1h-label-txt" x="12" y="18">Endometriose</text>
+      <text class="a12p1h-label-sub" x="12" y="32">Endereço 3: Compartimento Posterior</text>
+    </g>
+
+    <!-- Rótulo Z4 (Inferior Direita / Anterior) -->
+    <g id="a12p1h-lbl-z4" class="a12p1h-label-box a12p1h-z4-grp" transform="translate(320, 480)" role="button" tabindex="0">
+      <path class="a12p1h-leader-line a12p1h-z4-leader" d="M 385 410 L 420 460 L 420 480" />
+      <rect class="a12p1h-label-bg a12p1h-z4-label-bg" x="0" y="0" width="220" height="42" />
+      <text class="a12p1h-label-txt" x="12" y="18">Incontinência urinária + prolapso</text>
+      <text class="a12p1h-label-sub" x="12" y="32">Endereço 4: Assoalho Pélvico &amp; Fáscia</text>
+    </g>
+
+    <!-- SELETOR DE MODOS / NAVEGAÇÃO DE ENDEREÇOS (AFFORDANCE NEUTRO) -->
+    <g id="a12p1h-controls" transform="translate(15, 545)">
+      <text class="a12p1h-label-sub" x="0" y="-8">Selecione o endereço pélvico para detalhar a correlação clínico-cirúrgica:</text>
+      
+      <!-- Botão Todos -->
+      <g id="a12p1h-btn-all" class="a12p1h-filter-btn" transform="translate(0, 0)" role="button" tabindex="0" aria-label="Ver Todos os Endereços">
+        <rect class="a12p1h-filter-bg" width="95" height="32" />
+        <text class="a12p1h-filter-txt" x="47.5" y="20">Visão Geral</text>
+      </g>
+
+      <!-- Botão Z1 -->
+      <g id="a12p1h-btn-z1" class="a12p1h-filter-btn" transform="translate(103, 0)" role="button" tabindex="0" aria-label="Endereço 1: Hemorragia Pós-Parto">
+        <rect class="a12p1h-filter-bg" width="105" height="32" />
+        <text class="a12p1h-filter-txt" x="52.5" y="20">1. Hemorragia</text>
+      </g>
+
+      <!-- Botão Z2 -->
+      <g id="a12p1h-btn-z2" class="a12p1h-filter-btn" transform="translate(216, 0)" role="button" tabindex="0" aria-label="Endereço 2: Cirurgia Ginecológica">
+        <rect class="a12p1h-filter-bg" width="105" height="32" />
+        <text class="a12p1h-filter-txt" x="52.5" y="20">2. Cirúrgico</text>
+      </g>
+
+      <!-- Botão Z3 -->
+      <g id="a12p1h-btn-z3" class="a12p1h-filter-btn" transform="translate(329, 0)" role="button" tabindex="0" aria-label="Endereço 3: Endometriose">
+        <rect class="a12p1h-filter-bg" width="105" height="32" />
+        <text class="a12p1h-filter-txt" x="52.5" y="20">3. Endometriose</text>
+      </g>
+
+      <!-- Botão Z4 -->
+      <g id="a12p1h-btn-z4" class="a12p1h-filter-btn" transform="translate(442, 0)" role="button" tabindex="0" aria-label="Endereço 4: Incontinência e Prolapso">
+        <rect class="a12p1h-filter-bg" width="105" height="32" />
+        <text class="a12p1h-filter-txt" x="52.5" y="20">4. Prolapso/IUU</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- SEÇÃO DIREITA: PAINEL DE LEITURA CLÍNICO-ANATÔMICO (CONTRATO DE LAYOUT BAUER) -->
+  <g id="a12p1h-panel" transform="translate(585, 80)">
+    <rect class="a12p1h-panel-bg" width="385" height="565" />
+
+    <!-- Cabeçalho Dinâmico do Painel -->
+    <g id="a12p1h-panel-hdr" transform="translate(20, 24)">
+      <rect id="a12p1h-badge-bg" class="a12p1h-panel-badge" x="0" y="0" width="115" height="22" fill="var(--a12p1h-z1-color, #ef4444)" />
+      <text id="a12p1h-badge-txt" class="a12p1h-badge-txt" x="57.5" y="15">4 ENDEREÇOS</text>
+      <text id="a12p1h-p-title" class="a12p1h-panel-title" x="0" y="44">Análise Topográfica Integrada</text>
+    </g>
+
+    <!-- Linha Divisória -->
+    <line x1="20" y1="80" x2="365" y2="80" stroke="var(--a12p1h-card-border, #4a1d43)" stroke-width="1.2" />
+
+    <!-- Conteúdo Dinâmico por Zona -->
+    <g id="a12p1h-panel-body" transform="translate(20, 95)">
+
+      <!-- Bloco 1: Delimitação Anatômica -->
+      <g transform="translate(0, 0)">
+        <text class="a12p1h-section-hdr" x="0" y="0">1. DELIMITAÇÃO ANATÔMICA DO ESPAÇO</text>
+        <text id="a12p1h-txt-space" class="a12p1h-body-txt" x="0" y="20">
+          <tspan x="0" dy="0">Selecione ou passe o mouse sobre um dos 4 endereços pélvicos</tspan>
+          <tspan x="0" dy="16">na figura para visualizar a correlação anatômica precisa</tspan>
+          <tspan x="0" dy="16">e as implicações para a prova de residência médica.</tspan>
+        </text>
+      </g>
+
+      <!-- Bloco 2: Vulnerabilidade Estrutural & Risco Vascular -->
+      <g transform="translate(0, 85)">
+        <text class="a12p1h-section-hdr" x="0" y="0">2. VULNERABILIDADE E RISCO ESTRUTURAL</text>
+        <text id="a12p1h-txt-risk" class="a12p1h-body-txt" x="0" y="20">
+          <tspan x="0" dy="0">Cada compartimento pélvico apresenta um vaso ou nervo</tspan>
+          <tspan x="0" dy="16">crítico adjacente. O conhecimento da zona impede iatrogenias</tspan>
+          <tspan x="0" dy="16">graves e previne sequelas funcionais definitivas.</tspan>
+        </text>
+      </g>
+
+      <!-- Bloco 3: Regra de Conduta Imediata (Destaque Colorido) -->
+      <g transform="translate(0, 170)">
+        <text class="a12p1h-section-hdr" x="0" y="0">3. REGRA DE CONDUTA E DECISÃO CLÍNICA</text>
+        <rect id="a12p1h-alert-bg" class="a12p1h-box-alert" x="0" y="10" width="345" height="75" fill="var(--a12p1h-bg, #180914)" stroke="var(--a12p1h-yellow, #eab308)" />
+        <text id="a12p1h-txt-rule" class="a12p1h-body-txt" x="12" y="32">
+          <tspan x="12" dy="0" class="a12p1h-bold-txt" fill="var(--a12p1h-yellow, #eab308)">Diretriz Geral da Residência:</tspan>
+          <tspan x="12" dy="18">Associe sempre o sintoma ao compartimento anatômico</tspan>
+          <tspan x="12" dy="16">antes de indicar a via de abordagem ou ligadura vascular.</tspan>
+        </text>
+      </g>
+
+      <!-- Bloco 4: Tabela de Parâmetros e Valores de Referência / Achados Clínicos -->
+      <g transform="translate(0, 275)">
+        <text class="a12p1h-section-hdr" x="0" y="0">4. PARÂMETROS E ACHADOS CLÍNICOS DENSOS</text>
+        
+        <!-- Moldura da Tabela -->
+        <rect x="0" y="10" width="345" height="155" rx="6" fill="var(--a12p1h-bg, #180914)" stroke="var(--a12p1h-card-border, #4a1d43)" stroke-width="1.2" />
+
+        <!-- Cabeçalho da Tabela -->
+        <line x1="0" y1="35" x2="345" y2="35" stroke="var(--a12p1h-card-border, #4a1d43)" stroke-width="1" />
+        <text class="a12p1h-table-hdr" x="12" y="27">PARÂMETRO ANÁTOMO-CLÍNICO</text>
+        <text class="a12p1h-table-hdr" x="210" y="27">FAIXA / ACHADO</text>
+        <text class="a12p1h-table-hdr" x="300" y="27">STATUS</text>
+
+        <!-- Linha 1 -->
+        <text id="a12p1h-row1-name" class="a12p1h-table-cell" x="12" y="55">Débito sang. placentário</text>
+        <text id="a12p1h-row1-val" class="a12p1h-table-cell" x="210" y="55">500-700 mL/min</text>
+        <circle id="a12p1h-row1-dot" class="a12p1h-dot-critical" cx="312" cy="51" r="5" />
+
+        <!-- Linha 2 -->
+        <line x1="12" y1="68" x2="333" y2="68" stroke="var(--a12p1h-card-border, #4a1d43)" stroke-width="0.8" stroke-dasharray="2 2" />
+        <text id="a12p1h-row2-name" class="a12p1h-table-cell" x="12" y="86">Distância Ureter-Artéria</text>
+        <text id="a12p1h-row2-val" class="a12p1h-table-cell" x="210" y="86">1.5 - 2.0 cm</text>
+        <circle id="a12p1h-row2-dot" class="a12p1h-dot-alert" cx="312" cy="82" r="5" />
+
+        <!-- Linha 3 -->
+        <line x1="12" y1="99" x2="333" y2="99" stroke="var(--a12p1h-card-border, #4a1d43)" stroke-width="0.8" stroke-dasharray="2 2" />
+        <text id="a12p1h-row3-name" class="a12p1h-table-cell" x="12" y="117">Espessamento Septal</text>
+        <text id="a12p1h-row3-val" class="a12p1h-table-cell" x="210" y="117">&gt; 5 mm (Foco profundo)</text>
+        <circle id="a12p1h-row3-dot" class="a12p1h-dot-critical" cx="312" cy="113" r="5" />
+
+        <!-- Linha 4 -->
+        <line x1="12" y1="130" x2="333" y2="130" stroke="var(--a12p1h-card-border, #4a1d43)" stroke-width="0.8" stroke-dasharray="2 2" />
+        <text id="a12p1h-row4-name" class="a12p1h-table-cell" x="12" y="148">Mobilidade Uretral / POP-Q</text>
+        <text id="a12p1h-row4-val" class="a12p1h-table-cell" x="210" y="148">Ângulo &gt; 30° / Estágio II+</text>
+        <circle id="a12p1h-row4-dot" class="a12p1h-dot-normal" cx="312" cy="144" r="5" />
+      </g>
+    </g>
+  </g>
+
+  <!-- MOTOR DE INTERATIVIDADE DETERMINÍSTICO E SELF-CONTAINED (CDAL-COMPLIANT) -->
+  <script>
+    /*<![CDATA[*/
+    (function() {
+      var root = document.getElementById('a12p1h-svg');
+      if (!root) return;
+
+      // Dados Didáticos dos 4 Endereços Pélvicos
+      var zoneData = {
+        all: {
+          badgeText: "4 ENDEREÇOS",
+          badgeColor: "var(--a12p1h-card-border, #4a1d43)",
+          title: "Análise Topográfica Integrada",
+          spaceLines: [
+            "Visão sintética da pelve feminina dividida em 4 compartimentos",
+            "estratégicos: cada zona possui limites anatômicos rígidos,",
+            "vascularização própria e padrão de acometimento patológico."
+          ],
+          riskLines: [
+            "O erro de localização leva a diagnósticos incorretos e iatrogenia.",
+            "A proximidade entre útero, ureter, reto e assoalho exige",
+            "reconhecimento topográfico imediato antes da intervenção."
+          ],
+          ruleTitle: "Diretriz Geral da Residência:",
+          ruleLines: [
+            "Associe sempre o sintoma ao compartimento anatômico",
+            "antes de indicar a via de abordagem ou ligadura vascular."
+          ],
+          ruleColor: "var(--a12p1h-yellow, #eab308)",
+          table: [
+            { name: "Débito sang. placentário", val: "500-700 mL/min", status: "critical" },
+            { name: "Distância Ureter-Artéria", val: "1.5 - 2.0 cm", status: "alert" },
+            { name: "Espessamento Septal", val: "> 5 mm (Foco profundo)", status: "critical" },
+            { name: "Mobilidade Uretral / POP-Q", val: "Ângulo > 30° / Est. II+", status: "normal" }
+          ]
+        },
+        zone1: {
+          badgeText: "ENDEREÇO 1",
+          badgeColor: "var(--a12p1h-z1-color, #ef4444)",
+          title: "Hemorragia Pós-Parto (HPP)",
+          spaceLines: [
+            "Segmento inferior e corpo uterino (miométrio intramural).",
+            "Sítio de inserção placentária e irrigação primária via ramos",
+            "ascendentes e helicinais da Artéria Uterina."
+          ],
+          riskLines: [
+            "Atonia uterina impede o grampeamento fisiológico (ligaduras de",
+            "Pinard). Débito vascular massivo (até 700 mL/min) conduz rápido",
+            "ao choque hipovolêmico e Coagulação Intravascular Disseminada."
+          ],
+          ruleTitle: "Regra de Ouro (HPP):",
+          ruleLines: [
+            "Inicie ocitócicos e compressão bimanual (Hamilton). Na falha,",
+            "aplique balão de Bakri ou sutura de B-Lynch antes da histerectomia."
+          ],
+          ruleColor: "var(--a12p1h-z1-color, #ef4444)",
+          table: [
+            { name: "Débito Sangue Placentário", val: "600-700 mL/min", status: "critical" },
+            { name: "Perda volêmica tolerada", val: "< 500 mL (Vaginal)", status: "normal" },
+            { name: "Tempo limite balão Bakri", val: "24 horas máximo", status: "alert" },
+            { name: "Pressão de insuflação Bakri", val: "300 - 500 mL SF", status: "normal" }
+          ]
+        },
+        zone2: {
+          badgeText: "ENDEREÇO 2",
+          badgeColor: "var(--a12p1h-z2-color, #f97316)",
+          title: "Cirurgia Ginecológica & Sangramento",
+          spaceLines: [
+            "Paramétrio e ligamento largo (base do ligamento cardinal).",
+            "Zona de cruzamento crítico onde a Artéria Uterina cruza",
+            "SUPERIORMENTE ao Ureter ('Water under the bridge')."
+          ],
+          riskLines: [
+            "Risco de ligadura inadvertida ou transecção do ureter a 1,5 - 2 cm",
+            "lateral ao colo uterino durante o pinçamento do pedículo uterino",
+            "em histerectomias abdominais ou vaginais."
+          ],
+          ruleTitle: "Regra de Ouro (Cirúrgica):",
+          ruleLines: [
+            "Identifique e rebata visivelmente a lâmina ureteral antes de",
+            "qualquer pinçamento ou cauterização no espaço retroperitoneal."
+          ],
+          ruleColor: "var(--a12p1h-z2-color, #f97316)",
+          table: [
+            { name: "Cruzamento Ureter-Artéria", val: "1.5 - 2.0 cm do colo", status: "alert" },
+            { name: "Incidência lesão ureteral", val: "0.5% - 1.5% histerectomias", status: "critical" },
+            { name: "Débito Ureteral Normal", val: "0.5 - 1.0 mL/kg/h", status: "normal" },
+            { name: "Distância limite de cautério", val: "> 10 mm do ureter", status: "alert" }
+          ]
+        },
+        zone3: {
+          badgeText: "ENDEREÇO 3",
+          badgeColor: "var(--a12p1h-z3-color, #d946ef)",
+          title: "Endometriose Profunda",
+          spaceLines: [
+            "Compartimento posterior: fundo de saco de Douglas,",
+            "ligamentos uterossacros, septo retovaginal e alça retossigmoide.",
+            "Zona de infiltração subperitoneal profunda (> 5 mm)."
+          ],
+          riskLines: [
+            "Fibrose densa com obliteração do fundo de saco, encarceramento",
+            "do ureter distal e comprometimento do plexo hipogástrico inferior",
+            "(causando dor pélvica crônica, dispareunia e disquezia)."
+          ],
+          ruleTitle: "Regra de Ouro (Endometriose):",
+          ruleLines: [
+            "O mapeamento pré-operatório por ultrassom com preparo intestinal",
+            "é obrigatório para planejar ressecção discoide ou shaving seguro."
+          ],
+          ruleColor: "var(--a12p1h-z3-color, #d946ef)",
+          table: [
+            { name: "Profundidade de Infiltração", val: "> 5.0 mm (Critério)", status: "critical" },
+            { name: "Acometimento Uterossacro", val: "Presente em 60-70%", status: "alert" },
+            { name: "Margem de Segurança Ner.", val: "> 3 mm do PLEXO", status: "normal" },
+            { name: "Estadiamento ASRM", val: "Grau IV (Severo)", status: "critical" }
+          ]
+        },
+        zone4: {
+          badgeText: "ENDEREÇO 4",
+          badgeColor: "var(--a12p1h-z4-color, #06b6d4)",
+          title: "Incontinência & Prolapso Pélvico",
+          spaceLines: [
+            "Compartimento anterior e apical: fáscia endopélvica (arco tendíneo),",
+            "placa do músculo levantador do ânus (puborretal/pubocóccigeo)",
+            "e suporte de DeLancey (Nível I e Nível II)."
+          ],
+          riskLines: [
+            "Rotura ou avulsão fascial leva à cistocele (defeito central vs lateral)",
+            "e hipermotilidade do colo vesical, resultando em Incontinência",
+            "Urinária de Esforço (IUE) ou prolapso de cúpula."
+          ],
+          ruleTitle: "Regra de Ouro (Uroginecologia):",
+          ruleLines: [
+            "Diferencie hipermotilidade uretral de deficiência esfincteriana",
+            "pelo Teste do Cotonete (Q-tip > 30°) e Estudo Urodinâmico (VLPP)."
+          ],
+          ruleColor: "var(--a12p1h-z4-color, #06b6d4)",
+          table: [
+            { name: "Teste do Q-Tip (Mobilidade)", val: "> 30° (Hipermotilidade)", status: "alert" },
+            { name: "Pressão Perda Esfincteriana", val: "< 60 cmH2O (Defic. Esf.)", status: "critical" },
+            { name: "Força Assoalho (Oxford)", val: "Grau 4-5 (Preservado)", status: "normal" },
+            { name: "Estadiamento POP-Q", val: "Ponto Aa/Ba (+1 a +3)", status: "alert" }
+          ]
+        }
+      };
+
+      // Atualiza os Textos do Painel Dinamicamente
+      function updatePanel(zoneId) {
+        var data = zoneData[zoneId] || zoneData.all;
+        
+        // Badge e Título
+        var badgeBg = document.getElementById('a12p1h-badge-bg');
+        var badgeTxt = document.getElementById('a12p1h-badge-txt');
+        var pTitle = document.getElementById('a12p1h-p-title');
+
+        if (badgeBg) badgeBg.setAttribute('fill', data.badgeColor);
+        if (badgeTxt) badgeTxt.textContent = data.badgeText;
+        if (pTitle) pTitle.textContent = data.title;
+
+        // Texto do Espaço
+        var txtSpace = document.getElementById('a12p1h-txt-space');
+        if (txtSpace) {
+          txtSpace.innerHTML = '';
+          data.spaceLines.forEach(function(line, idx) {
+            var tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+            tspan.setAttribute('x', '0');
+            tspan.setAttribute('dy', idx === 0 ? '0' : '16');
+            tspan.textContent = line;
+            txtSpace.appendChild(tspan);
+          });
+        }
+
+        // Texto do Risco
+        var txtRisk = document.getElementById('a12p1h-txt-risk');
+        if (txtRisk) {
+          txtRisk.innerHTML = '';
+          data.riskLines.forEach(function(line, idx) {
+            var tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+            tspan.setAttribute('x', '0');
+            tspan.setAttribute('dy', idx === 0 ? '0' : '16');
+            tspan.textContent = line;
+            txtRisk.appendChild(tspan);
+          });
+        }
+
+        // Regra de Conduta
+        var alertBg = document.getElementById('a12p1h-alert-bg');
+        var txtRule = document.getElementById('a12p1h-txt-rule');
+        if (alertBg) alertBg.setAttribute('stroke', data.ruleColor);
+        if (txtRule) {
+          txtRule.innerHTML = '';
+          
+          var tspanTitle = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+          tspanTitle.setAttribute('x', '12');
+          tspanTitle.setAttribute('dy', '0');
+          tspanTitle.setAttribute('class', 'a12p1h-bold-txt');
+          tspanTitle.setAttribute('fill', data.ruleColor);
+          tspanTitle.textContent = data.ruleTitle;
+          txtRule.appendChild(tspanTitle);
+
+          data.ruleLines.forEach(function(line) {
+            var tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+            tspan.setAttribute('x', '12');
+            tspan.setAttribute('dy', '18');
+            tspan.textContent = line;
+            txtRule.appendChild(tspan);
+          });
+        }
+
+        // Tabela Dinâmica
+        data.table.forEach(function(row, idx) {
+          var num = idx + 1;
+          var nameEl = document.getElementById('a12p1h-row' + num + '-name');
+          var valEl = document.getElementById('a12p1h-row' + num + '-val');
+          var dotEl = document.getElementById('a12p1h-row' + num + '-dot');
+
+          if (nameEl) nameEl.textContent = row.name;
+          if (valEl) valEl.textContent = row.val;
+          if (dotEl) {
+            dotEl.setAttribute('class', 'a12p1h-dot-' + row.status);
+          }
+        });
+      }
+
+      // Função de Troca de Estado Ativo
+      function setActiveZone(zoneId) {
+        root.setAttribute('data-a12p1h-active', zoneId);
+        updatePanel(zoneId);
+      }
+
+      // Atribuição de Eventos de Clique e Teclado
+      function bindZoneEvents(selector, zoneId) {
+        var elements = root.querySelectorAll(selector);
+        elements.forEach(function(el) {
+          el.addEventListener('click', function(e) {
+            e.stopPropagation();
+            setActiveZone(zoneId);
+          });
+
+          el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setActiveZone(zoneId);
+            }
+          });
+        });
+      }
+
+      // Vincular Hotspots, Shapes e Rótulos Externos
+      bindZoneEvents('.a12p1h-z1-grp', 'zone1');
+      bindZoneEvents('.a12p1h-z2-grp', 'zone2');
+      bindZoneEvents('.a12p1h-z3-grp', 'zone3');
+      bindZoneEvents('.a12p1h-z4-grp', 'zone4');
+
+      // Vincular Botões de Filtro
+      var btnAll = document.getElementById('a12p1h-btn-all');
+      var btnZ1 = document.getElementById('a12p1h-btn-z1');
+      var btnZ2 = document.getElementById('a12p1h-btn-z2');
+      var btnZ3 = document.getElementById('a12p1h-btn-z3');
+      var btnZ4 = document.getElementById('a12p1h-btn-z4');
+
+      if (btnAll) btnAll.addEventListener('click', function() { setActiveZone('all'); });
+      if (btnZ1) btnZ1.addEventListener('click', function() { setActiveZone('zone1'); });
+      if (btnZ2) btnZ2.addEventListener('click', function() { setActiveZone('zone2'); });
+      if (btnZ3) btnZ3.addEventListener('click', function() { setActiveZone('zone3'); });
+      if (btnZ4) btnZ4.addEventListener('click', function() { setActiveZone('zone4'); });
+
+      // Suporte a Teclado nos Botões
+      [btnAll, btnZ1, btnZ2, btnZ3, btnZ4].forEach(function(btn) {
+        if (!btn) return;
+        btn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+
+      // Inicialização
+      updatePanel('all');
+    })();
+    /*]]>*/
+  </script>
+</svg>

@@ -1,0 +1,672 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" id="fm1p7-svg" class="fm1p7-root" aria-label="Timeline da Organização Piramidal na Lesão do 1º Neurônio Motor">
+  <defs>
+    <!-- Gradientes de Cores Sanitizados com Fallback -->
+    <linearGradient id="fm1p7-grad-header" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--fm1p7-indigo, #6366f1)" stop-opacity="0.15" />
+      <stop offset="50%" stop-color="var(--fm1p7-teal, #14b8a6)" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="var(--fm1p7-bg, #0f172a)" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="fm1p7-grad-coral" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#dc2626" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="fm1p7-grad-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="fm1p7-grad-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.05" />
+    </linearGradient>
+
+    <filter id="fm1p7-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+
+    <filter id="fm1p7-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="fm1p7-glow-indigo" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    /* Scope estrito: NUNCA usar seletor de elemento nu */
+    #fm1p7-svg.fm1p7-root {
+      --fm1p7-bg: #0f172a;
+      --fm1p7-card: #1e293b;
+      --fm1p7-card-border: #334155;
+      --fm1p7-text-main: #f8fafc;
+      --fm1p7-text-muted: #94a3b8;
+      --fm1p7-coral: #ef4444;
+      --fm1p7-coral-bg: rgba(239, 68, 68, 0.12);
+      --fm1p7-amber: #f59e0b;
+      --fm1p7-amber-bg: rgba(245, 158, 11, 0.12);
+      --fm1p7-teal: #14b8a6;
+      --fm1p7-teal-bg: rgba(20, 184, 166, 0.12);
+      --fm1p7-indigo: #6366f1;
+      --fm1p7-indigo-bg: rgba(99, 102, 241, 0.12);
+      --fm1p7-green: #10b981;
+      --fm1p7-line-inactive: #334155;
+      --fm1p7-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--fm1p7-font-family, system-ui, sans-serif);
+      background-color: var(--fm1p7-bg, #0f172a);
+      color: var(--fm1p7-text-main, #f8fafc);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    [data-theme="light"] #fm1p7-svg.fm1p7-root {
+      --fm1p7-bg: #f8fafc;
+      --fm1p7-card: #ffffff;
+      --fm1p7-card-border: #cbd5e1;
+      --fm1p7-text-main: #0f172a;
+      --fm1p7-text-muted: #475569;
+      --fm1p7-coral: #dc2626;
+      --fm1p7-coral-bg: rgba(220, 38, 38, 0.08);
+      --fm1p7-amber: #d97706;
+      --fm1p7-amber-bg: rgba(217, 119, 6, 0.08);
+      --fm1p7-teal: #0d9488;
+      --fm1p7-teal-bg: rgba(13, 148, 136, 0.08);
+      --fm1p7-indigo: #4f46e5;
+      --fm1p7-indigo-bg: rgba(79, 70, 229, 0.08);
+      --fm1p7-green: #059669;
+      --fm1p7-line-inactive: #cbd5e1;
+    }
+
+    #fm1p7-svg .fm1p7-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      fill: var(--fm1p7-text-main, #f8fafc);
+    }
+
+    #fm1p7-svg .fm1p7-subtitle {
+      font-size: 13px;
+      font-weight: 500;
+      fill: var(--fm1p7-text-muted, #94a3b8);
+    }
+
+    #fm1p7-svg .fm1p7-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      fill: var(--fm1p7-indigo, #6366f1);
+    }
+
+    #fm1p7-svg .fm1p7-card-bg {
+      fill: var(--fm1p7-card, #1e293b);
+      stroke: var(--fm1p7-card-border, #334155);
+      stroke-width: 1.5px;
+      rx: 12px;
+    }
+
+    #fm1p7-svg .fm1p7-timeline-node {
+      cursor: pointer;
+      transition: transform 0.2s ease, fill 0.2s ease;
+    }
+
+    #fm1p7-svg .fm1p7-timeline-node:hover {
+      filter: brightness(1.2);
+    }
+
+    #fm1p7-svg .fm1p7-timeline-node:focus {
+      outline: none;
+    }
+
+    #fm1p7-svg .fm1p7-node-btn {
+      cursor: pointer;
+    }
+
+    #fm1p7-svg .fm1p7-node-btn rect {
+      transition: all 0.2s ease;
+    }
+
+    #fm1p7-svg .fm1p7-node-btn:hover rect {
+      stroke-width: 2.5px;
+      filter: brightness(1.1);
+    }
+
+    #fm1p7-svg .fm1p7-btn-nav {
+      cursor: pointer;
+    }
+
+    #fm1p7-svg .fm1p7-btn-nav rect {
+      fill: var(--fm1p7-card, #1e293b);
+      stroke: var(--fm1p7-card-border, #334155);
+      stroke-width: 1.5px;
+      rx: 6px;
+      transition: all 0.2s ease;
+    }
+
+    #fm1p7-svg .fm1p7-btn-nav:hover rect {
+      stroke: var(--fm1p7-indigo, #6366f1);
+      fill: var(--fm1p7-indigo-bg, rgba(99,102,241,0.12));
+    }
+
+    #fm1p7-svg .fm1p7-btn-nav text {
+      fill: var(--fm1p7-text-main, #f8fafc);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    #fm1p7-svg .fm1p7-txt-label {
+      font-size: 12px;
+      font-weight: 600;
+      fill: var(--fm1p7-text-main, #f8fafc);
+    }
+
+    #fm1p7-svg .fm1p7-txt-sub {
+      font-size: 11px;
+      font-weight: 400;
+      fill: var(--fm1p7-text-muted, #94a3b8);
+    }
+
+    #fm1p7-svg .fm1p7-gauge-bg {
+      fill: var(--fm1p7-bg, #0f172a);
+      stroke: var(--fm1p7-card-border, #334155);
+      stroke-width: 1px;
+      rx: 4px;
+    }
+
+    #fm1p7-svg .fm1p7-tooltip {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    #fm1p7-svg .fm1p7-tooltip.fm1p7-visible {
+      opacity: 1;
+    }
+
+    #fm1p7-svg .fm1p7-pulse-dot {
+      animation: fm1p7-pulse 2s infinite;
+    }
+
+    @keyframes fm1p7-pulse {
+      0% { r: 6px; opacity: 0.9; }
+      50% { r: 10px; opacity: 0.4; }
+      100% { r: 6px; opacity: 0.9; }
+    }
+  </style>
+
+  <!-- Fundo Geral -->
+  <rect width="960" height="640" fill="var(--fm1p7-bg, #0f172a)" rx="16" />
+
+  <!-- Cabeçalho (Top Banner) -->
+  <g transform="translate(24, 20)">
+    <rect width="912" height="65" fill="url(#fm1p7-grad-header)" rx="10" />
+    <text x="16" y="20" class="fm1p7-badge">EIXO NEUROLOGIA · SÍNDROME DO PRIMEIRO NEURÔNIO MOTOR (1º NMS)</text>
+    <text x="16" y="42" class="fm1p7-title">TIMELINE DA ORGANIZAÇÃO PIRAMIDAL</text>
+    <text x="540" y="42" class="fm1p7-subtitle" text-anchor="end">Fase Hiperaguda Flácida vs Fase Crônica Espástica</text>
+  </g>
+
+  <!-- Legenda de Interpretação / Alerta de Conceito Chave -->
+  <g transform="translate(24, 92)">
+    <rect width="912" height="52" class="fm1p7-card-bg" style="fill: var(--fm1p7-amber-bg, rgba(245,158,11,0.12)); stroke: var(--fm1p7-amber, #f59e0b);" />
+    <circle cx="28" cy="26" r="14" fill="var(--fm1p7-amber, #f59e0b)" opacity="0.2" />
+    <text x="28" y="31" text-anchor="middle" fill="var(--fm1p7-amber, #f59e0b)" font-weight="900" font-size="14">⚠️</text>
+    
+    <text x="52" y="22" class="fm1p7-txt-label" fill="var(--fm1p7-amber, #f59e0b)" font-size="12">LEGENDA DE INTERPRETAÇÃO (ARMADILHA TEMPORAL NO AVE):</text>
+    <text x="52" y="38" class="fm1p7-txt-sub" font-size="11">
+      No minuto zero do AVE / Trauma, a perda súbita do drive motor gera <tspan font-weight="700" fill="var(--fm1p7-coral, #ef4444)">CHOQUE NEUROGÊNICO / DIASSQUISE</tspan> (flacidez e arreflexia = <tspan font-weight="700" fill="var(--fm1p7-coral, #ef4444)">FALSO 2º NMS</tspan>). A Síndrome do 1º NMS real (hiperreflexia e espasticidade) leva <tspan font-weight="700" fill="var(--fm1p7-indigo, #6366f1)">DIAS A SEMANAS</tspan> para se organizar!
+    </text>
+  </g>
+
+  <!-- BARRA DA TIMELINE INTERATIVA (CONTROLLER) -->
+  <g transform="translate(24, 154)" id="fm1p7-timeline-controller">
+    <rect width="912" height="85" class="fm1p7-card-bg" />
+    
+    <text x="20" y="24" class="fm1p7-txt-label" font-size="11" fill="var(--fm1p7-text-muted, #94a3b8)">EVOLUÇÃO TEMPORAL DA LESÃO (TOQUE NOS MARCOS PARA NAVEGAR):</text>
+
+    <!-- Trilha de Conexão Ativa / Inativa -->
+    <line x1="80" y1="52" x2="720" y2="52" stroke="var(--fm1p7-line-inactive, #334155)" stroke-width="4" stroke-linecap="round" />
+    <line id="fm1p7-progress-bar" x1="80" y1="52" x2="80" y2="52" stroke="var(--fm1p7-coral, #ef4444)" stroke-width="4" stroke-linecap="round" style="transition: all 0.4s ease;" />
+
+    <!-- Botão Step 0: Minutos -->
+    <g class="fm1p7-node-btn" id="fm1p7-btn-step-0" transform="translate(80, 52)" role="button" tabindex="0" aria-label="Marco 0 minutos: Fase Hiperaguda Flácida">
+      <circle r="16" id="fm1p7-node-circle-0" fill="var(--fm1p7-coral, #ef4444)" stroke="var(--fm1p7-card, #1e293b)" stroke-width="3" filter="url(#fm1p7-glow-coral)" />
+      <text y="4" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="800">0m</text>
+      <text y="-22" text-anchor="middle" class="fm1p7-txt-label" font-size="11" fill="var(--fm1p7-coral, #ef4444)">Minutos (0-30m)</text>
+      <text y="28" text-anchor="middle" class="fm1p7-txt-sub" font-size="9">Choque Flácido</text>
+    </g>
+
+    <!-- Botão Step 1: Horas -->
+    <g class="fm1p7-node-btn" id="fm1p7-btn-step-1" transform="translate(240, 52)" role="button" tabindex="0" aria-label="Marco Horas: Transição Inicial">
+      <circle r="14" id="fm1p7-node-circle-1" fill="var(--fm1p7-card, #1e293b)" stroke="var(--fm1p7-amber, #f59e0b)" stroke-width="3" />
+      <text y="4" text-anchor="middle" fill="var(--fm1p7-text-main, #f8fafc)" font-size="10" font-weight="800">24h</text>
+      <text y="-22" text-anchor="middle" class="fm1p7-txt-label" font-size="11">Horas (1-24h)</text>
+      <text y="28" text-anchor="middle" class="fm1p7-txt-sub" font-size="9">Transição Arreflexa</text>
+    </g>
+
+    <!-- Botão Step 2: Dias -->
+    <g class="fm1p7-node-btn" id="fm1p7-btn-step-2" transform="translate(400, 52)" role="button" tabindex="0" aria-label="Marco Dias: Início da Organização">
+      <circle r="14" id="fm1p7-node-circle-2" fill="var(--fm1p7-card, #1e293b)" stroke="var(--fm1p7-teal, #14b8a6)" stroke-width="3" />
+      <text y="4" text-anchor="middle" fill="var(--fm1p7-text-main, #f8fafc)" font-size="10" font-weight="800">7d</text>
+      <text y="-22" text-anchor="middle" class="fm1p7-txt-label" font-size="11">Dias (1-7d)</text>
+      <text y="28" text-anchor="middle" class="fm1p7-txt-sub" font-size="9">Organização Inicial</text>
+    </g>
+
+    <!-- Botão Step 3: Semanas -->
+    <g class="fm1p7-node-btn" id="fm1p7-btn-step-3" transform="translate(560, 52)" role="button" tabindex="0" aria-label="Marco Semanas: Espasticidade Instalada">
+      <circle r="14" id="fm1p7-node-circle-3" fill="var(--fm1p7-card, #1e293b)" stroke="var(--fm1p7-indigo, #6366f1)" stroke-width="3" />
+      <text y="4" text-anchor="middle" fill="var(--fm1p7-text-main, #f8fafc)" font-size="10" font-weight="800">4sem</text>
+      <text y="-22" text-anchor="middle" class="fm1p7-txt-label" font-size="11">Semanas (2-4s)</text>
+      <text y="28" text-anchor="middle" class="fm1p7-txt-sub" font-size="9">Hipertonia Espástica</text>
+    </g>
+
+    <!-- Botão Step 4: Meses -->
+    <g class="fm1p7-node-btn" id="fm1p7-btn-step-4" transform="translate(720, 52)" role="button" tabindex="0" aria-label="Marco Meses: Síndrome Piramidal Completa">
+      <circle r="14" id="fm1p7-node-circle-4" fill="var(--fm1p7-card, #1e293b)" stroke="var(--fm1p7-indigo, #6366f1)" stroke-width="3" />
+      <text y="4" text-anchor="middle" fill="var(--fm1p7-text-main, #f8fafc)" font-size="10" font-weight="800">6m</text>
+      <text y="-22" text-anchor="middle" class="fm1p7-txt-label" font-size="11">Meses (&gt; 1m)</text>
+      <text y="28" text-anchor="middle" class="fm1p7-txt-sub" font-size="9">Piramidal Definitiva</text>
+    </g>
+
+    <!-- Controles da Timeline (Anterior / Próximo) -->
+    <g class="fm1p7-btn-nav" id="fm1p7-btn-prev" transform="translate(775, 28)" role="button" tabindex="0" aria-label="Voltar etapa anterior">
+      <rect width="55" height="32" />
+      <text x="27.5" y="20" text-anchor="middle">◄ Ant</text>
+    </g>
+    <g class="fm1p7-btn-nav" id="fm1p7-btn-next" transform="translate(838, 28)" role="button" tabindex="0" aria-label="Avançar próxima etapa">
+      <rect width="55" height="32" />
+      <text x="27.5" y="20" text-anchor="middle">Próx ►</text>
+    </g>
+  </g>
+
+  <!-- CONTEÚDO PRINCIPAL (SPLIT PANEL: ESQUERDA DIAGRAMA / DIREITA PAINEL CLÍNICO) -->
+  <g transform="translate(24, 248)">
+    
+    <!-- PAINEL ESQUERDO: DIAGRAMA NEUROANATÔMICO & FISIOPATOLOGIA (X: 0 -> 445, Y: 0 -> 330) -->
+    <g id="fm1p7-panel-diagram">
+      <rect width="445" height="330" class="fm1p7-card-bg" />
+      
+      <text x="16" y="24" class="fm1p7-txt-label" font-size="12">ESQUEMA NEUROFISIOLÓGICO DA LESÃO</text>
+      <text x="16" y="40" class="fm1p7-txt-sub" font-size="10">Trato Corticospinal (1º NMS) e Cuerno Anterior da Medula (2º NMS)</text>
+
+      <!-- Representação do Córtex / Lesão Aguda -->
+      <g transform="translate(25, 55)">
+        <rect width="395" height="55" rx="8" fill="var(--fm1p7-bg, #0f172a)" stroke="var(--fm1p7-card-border, #334155)" />
+        <circle cx="30" cy="27" r="16" fill="var(--fm1p7-coral, #ef4444)" opacity="0.2" />
+        <text x="30" y="32" text-anchor="middle" font-size="14">🧠</text>
+        <text x="56" y="22" class="fm1p7-txt-label" font-size="11" id="fm1p7-cortex-title">Córtex Motor / Trato Corticospinal (1º NMS)</text>
+        <text x="56" y="38" class="fm1p7-txt-sub" font-size="10" id="fm1p7-cortex-status" fill="var(--fm1p7-coral, #ef4444)">Status: Isquemia / Interrupção súbita do drive descendente</text>
+      </g>
+
+      <!-- Vias Descendentes Corticospinais (Linha de Comunicação Medular) -->
+      <g transform="translate(200, 110)">
+        <line x1="0" y1="0" x2="0" y2="40" id="fm1p7-spinal-tract-line" stroke="var(--fm1p7-coral, #ef4444)" stroke-width="4" stroke-dasharray="6,4" />
+        <polygon points="-5,38 5,38 0,46" id="fm1p7-spinal-arrow" fill="var(--fm1p7-coral, #ef4444)" />
+        <text x="12" y="24" class="fm1p7-txt-sub" font-size="9" id="fm1p7-tract-label">Drive Facilitador: 0% (Silêncio Descendente)</text>
+      </g>
+
+      <!-- Representação da Medula Espinal & Motoneurônio Alfa (2º NMS) -->
+      <g transform="translate(25, 160)">
+        <rect width="395" height="95" rx="8" fill="var(--fm1p7-bg, #0f172a)" stroke="var(--fm1p7-card-border, #334155)" />
+        
+        <!-- Borboleta Medular Esquemática -->
+        <path d="M 30,20 Q 50,45 30,70 Q 60,50 80,70 Q 70,45 80,20 Q 60,40 30,20 Z" fill="var(--fm1p7-card-border, #334155)" opacity="0.4" />
+        <text x="55" y="48" text-anchor="middle" font-size="12">🦴</text>
+        
+        <text x="100" y="25" class="fm1p7-txt-label" font-size="11">Cuerno Anterior Medular &amp; Arco Reflexo Miotático</text>
+
+        <!-- Status Fisiopatológico Ativo -->
+        <rect x="100" y="34" width="280" height="50" rx="6" id="fm1p7-medula-box" fill="var(--fm1p7-coral-bg, rgba(239,68,68,0.12))" stroke="var(--fm1p7-coral, #ef4444)" stroke-width="1" />
+        <text x="110" y="50" class="fm1p7-txt-label" font-size="10" id="fm1p7-medula-state-title" fill="var(--fm1p7-coral, #ef4444)">ESTADO MEDULAR: CHOQUE ESPINAL / DIASSQUISE</text>
+        <text x="110" y="66" class="fm1p7-txt-sub" font-size="9" id="fm1p7-medula-state-desc">Perda do tonus de repouso dos motoneurônios alfa. Arco reflexo abolido.</text>
+      </g>
+
+      <!-- Efetor Muscular (Periferia) -->
+      <g transform="translate(25, 265)">
+        <rect width="395" height="50" rx="8" fill="var(--fm1p7-bg, #0f172a)" stroke="var(--fm1p7-card-border, #334155)" />
+        <circle cx="30" cy="25" r="14" fill="var(--fm1p7-indigo, #6366f1)" opacity="0.2" />
+        <text x="30" y="30" text-anchor="middle" font-size="13">💪</text>
+        <text x="55" y="20" class="fm1p7-txt-label" font-size="11">Resposta Periférica / Músculo Esquelético</text>
+        <text x="55" y="36" class="fm1p7-txt-sub" font-size="10" id="fm1p7-muscle-status" fill="var(--fm1p7-coral, #ef4444)">Tônus Muscular: Flácido (Atonia / Hipotonia Severa)</text>
+      </g>
+    </g>
+
+    <!-- PAINEL DIREITO: ANALISADOR CLÍNICO & GAUGE DE EXAME FÍSICO (X: 460 -> 912, Y: 0 -> 330) -->
+    <g transform="translate(460, 0)" id="fm1p7-panel-clinical">
+      <rect width="452" height="330" class="fm1p7-card-bg" />
+
+      <text x="16" y="24" class="fm1p7-txt-label" font-size="12">PAINEL DE ACHADOS CLÍNICOS E QUADRO COMPARATIVO</text>
+      <text x="16" y="40" class="fm1p7-txt-sub" font-size="10">Exame Neurológico no Marco Selecionado</text>
+
+      <!-- Card 1: Tônus Muscular & Reflexos Profundos -->
+      <g transform="translate(16, 52)">
+        <rect width="420" height="75" rx="8" fill="var(--fm1p7-bg, #0f172a)" stroke="var(--fm1p7-card-border, #334155)" />
+        
+        <!-- Gauge de Tônus Muscular -->
+        <text x="14" y="20" class="fm1p7-txt-label" font-size="11">Tônus Muscular:</text>
+        <text x="120" y="20" class="fm1p7-txt-label" font-size="11" id="fm1p7-txt-tonus-val" fill="var(--fm1p7-coral, #ef4444)">0 / 4+ (Flácido)</text>
+        <rect x="14" y="26" width="180" height="8" class="fm1p7-gauge-bg" />
+        <rect id="fm1p7-bar-tonus" x="14" y="26" width="10" height="8" fill="var(--fm1p7-coral, #ef4444)" rx="4" style="transition: all 0.4s ease;" />
+
+        <!-- Gauge de Reflexos Profundos (ROT) -->
+        <text x="220" y="20" class="fm1p7-txt-label" font-size="11">Reflexos Miotáticos (ROT):</text>
+        <text x="360" y="20" class="fm1p7-txt-label" font-size="11" id="fm1p7-txt-reflex-val" fill="var(--fm1p7-coral, #ef4444)">0 / 4+ (Arreflexia)</text>
+        <rect x="220" y="26" width="180" height="8" class="fm1p7-gauge-bg" />
+        <rect id="fm1p7-bar-reflex" x="220" y="26" width="10" height="8" fill="var(--fm1p7-coral, #ef4444)" rx="4" style="transition: all 0.4s ease;" />
+
+        <!-- Detalhe Descritivo do Tônus -->
+        <text x="14" y="52" class="fm1p7-txt-sub" font-size="10" id="fm1p7-tonus-desc">
+          Resistência ao estiramento passivo ausente ou reduzida. Imita lesão de 2º NMS!
+        </text>
+      </g>
+
+      <!-- Card 2: Sinais Piramidais Chave & Diferencial -->
+      <g transform="translate(16, 135)">
+        <rect width="420" height="80" rx="8" fill="var(--fm1p7-bg, #0f172a)" stroke="var(--fm1p7-card-border, #334155)" />
+
+        <text x="14" y="20" class="fm1p7-txt-label" font-size="11">Sinal de Babinski (Cutâneo-Plantar):</text>
+        <text x="210" y="20" class="fm1p7-txt-label" font-size="11" id="fm1p7-txt-babinski" fill="var(--fm1p7-amber, #f59e0b)">Ausente / Indeterminado</text>
+
+        <text x="14" y="40" class="fm1p7-txt-label" font-size="11">Clonus / Hoffmann / Sinal do Canivete:</text>
+        <text x="230" y="40" class="fm1p7-txt-label" font-size="11" id="fm1p7-txt-clonus" fill="var(--fm1p7-text-muted, #94a3b8)">Ausente</text>
+
+        <text x="14" y="60" class="fm1p7-txt-label" font-size="11">Fasciculações &amp; Atrofia Muscular:</text>
+        <text x="220" y="60" class="fm1p7-txt-label" font-size="11" fill="var(--fm1p7-green, #10b981)">SEMPRE AUSENTES (Diferencial 2º NMS)</text>
+      </g>
+
+      <!-- Card 3: Caixas de Alerta de Topografia & Armadilha Clínica -->
+      <g transform="translate(16, 222)">
+        <rect id="fm1p7-alert-box" width="420" height="92" rx="8" fill="var(--fm1p7-coral-bg, rgba(239,68,68,0.12))" stroke="var(--fm1p7-coral, #ef4444)" stroke-width="1.5" />
+        
+        <text x="14" y="22" class="fm1p7-txt-label" font-size="11" id="fm1p7-alert-title" fill="var(--fm1p7-coral, #ef4444)">🚨 DIAGNÓSTICO TOPOGRÁFICO: FALSO 2º NEURÔNIO MOTOR</text>
+        <text x="14" y="38" class="fm1p7-txt-sub" font-size="10" id="fm1p7-alert-line1">
+          • CUIDADO NA PROVA: O déficit motor focal agudo (ex: hemiplegia) com flacidez NÃO indica lesão nervosa periférica.
+        </text>
+        <text x="14" y="54" class="fm1p7-txt-sub" font-size="10" id="fm1p7-alert-line2">
+          • Mecanismo: Choque por perda da facilitação supraespinal.
+        </text>
+        <text x="14" y="72" class="fm1p7-txt-label" font-size="10" id="fm1p7-alert-action" fill="var(--fm1p7-amber, #f59e0b)">
+          👉 CONDUTA: Mantenha a suspeita de AVE/Trauma Medular! A espasticidade virá depois.
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RODAPÉ: NOTA TÉCNICA E REGRA DE OURO -->
+  <g transform="translate(24, 590)">
+    <rect width="912" height="38" class="fm1p7-card-bg" style="fill: var(--fm1p7-indigo-bg, rgba(99,102,241,0.08)); stroke: var(--fm1p7-indigo, #6366f1);" />
+    <text x="16" y="23" class="fm1p7-txt-label" font-size="11" fill="var(--fm1p7-indigo, #6366f1)">📌 REGRA DE OURO DA RESIDÊNCIA:</text>
+    <text x="195" y="23" class="fm1p7-txt-sub" font-size="11">
+      Lesão de 1º NMS no AVE/Trauma: <tspan font-weight="700" fill="var(--fm1p7-coral, #ef4444)">Agudo = Flácido + Arreflexia (Choque)</tspan> ➔ <tspan font-weight="700" fill="var(--fm1p7-indigo, #6366f1)">Crônico = Espástico + Hiperreflexia + Babinski (+)</tspan>.
+    </text>
+  </g>
+
+  <!-- ENGINE INTERATIVO SELF-CONTAINED (PURE JS INLINE) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // Dados estritos deterministicos de cada etapa temporal (0-4)
+      var stepsData = [
+        {
+          progress: 80,
+          color: "var(--fm1p7-coral, #ef4444)",
+          cortexTitle: "Córtex Motor / Trato Corticospinal (1º NMS)",
+          cortexStatus: "Status: ISQUEMIA AGUDA / Interrupção súbita do drive descendente (0-30 min)",
+          tractLabel: "Drive Descendente: 0% (Silêncio Cortical Agudo)",
+          medulaTitle: "ESTADO MEDULAR: CHOQUE ESPINAL / DIASSQUISE AGUDA",
+          medulaDesc: "Perda súbita da facilitação descendente. Motoneurônios alfa hipoexcitáveis.",
+          muscleStatus: "Tônus Muscular: Flácido (Atonia ou Hipotonia Severa)",
+          tonusVal: "0 / 4+ (Atonia / Flacidez)",
+          tonusBarWidth: 12,
+          tonusDesc: "Flacidez completa. Resistência passiva ausente. Simulador de 2º NMS!",
+          reflexVal: "0 / 4+ (Arreflexia)",
+          reflexBarWidth: 12,
+          babinski: "Ausente ou Indeterminado",
+          babinskiColor: "var(--fm1p7-amber, #f59e0b)",
+          clonus: "Ausente",
+          clonusColor: "var(--fm1p7-text-muted, #94a3b8)",
+          alertTitle: "🚨 DIAGNÓSTICO TOPOGRÁFICO: FALSO 2º NEURÔNIO MOTOR",
+          alertLine1: "• CUIDADO NA PROVA: O déficit motor agudo com flacidez NÃO indica lesão periférica/2º NMS.",
+          alertLine2: "• Fisiopatologia: Choque espinal por perda súbita do drive trófico supraespinal.",
+          alertAction: "👉 CONDUTA: Mantenha a suspeita de AVE/Trauma Medular! A espasticidade virá depois.",
+          alertBg: "var(--fm1p7-coral-bg, rgba(239,68,68,0.12))",
+          alertBorder: "var(--fm1p7-coral, #ef4444)",
+          alertTitleColor: "var(--fm1p7-coral, #ef4444)"
+        },
+        {
+          progress: 240,
+          color: "var(--fm1p7-amber, #f59e0b)",
+          cortexTitle: "Córtex Motor / Trato Corticospinal (1º NMS)",
+          cortexStatus: "Status: Necrose focal estabelecida; edema peri-lesional (1-24 horas)",
+          tractLabel: "Drive Descendente: 0% (Interrupção mantida)",
+          medulaTitle: "ESTADO MEDULAR: TRANSIÇÃO E INÍCIO DA REORGANIZAÇÃO",
+          medulaDesc: "Lenta recuperação da excitabilidade intrínseca interneuronada espinal.",
+          muscleStatus: "Tônus Muscular: Flácido / Hipotônico em resolução",
+          tonusVal: "1+ / 4+ (Hipotonia Leve)",
+          tonusBarWidth: 45,
+          tonusDesc: "Mínimo tônus detectável. Ausência de espasticidade nesta fase.",
+          reflexVal: "1+ / 4+ (Hiporreflexia)",
+          reflexBarWidth: 45,
+          babinski: "Duvidoso / Em esboço",
+          babinskiColor: "var(--fm1p7-amber, #f59e0b)",
+          clonus: "Ausente",
+          clonusColor: "var(--fm1p7-text-muted, #94a3b8)",
+          alertTitle: "⚠️ JANELA DE TRANSIÇÃO: REORGANIZAÇÃO MEDULAR EM ANDAMENTO",
+          alertLine1: "• O choque espinal começa a ceder nas primeiras 24 horas.",
+          alertLine2: "• Brotamento sináptico denervacional inicia nos motoneurônios alfa.",
+          alertAction: "👉 AVALIAÇÃO: Sinais piramidais ainda discretos. Não feche diagnóstico definitivo de reflexo.",
+          alertBg: "var(--fm1p7-amber-bg, rgba(245,158,11,0.12))",
+          alertBorder: "var(--fm1p7-amber, #f59e0b)",
+          alertTitleColor: "var(--fm1p7-amber, #f59e0b)"
+        },
+        {
+          progress: 400,
+          color: "var(--fm1p7-teal, #14b8a6)",
+          cortexTitle: "Córtex Motor / Trato Corticospinal (1º NMS)",
+          cortexStatus: "Status: Cicatriz glial em formação; degeneração walleriana distal (1-7 dias)",
+          tractLabel: "Drive Descendente: Ausente (Degeneração do Trato Descendente)",
+          medulaTitle: "ESTADO MEDULAR: BROTAMENTO COLATERAL & HIPEREXCITABILIDADE",
+          medulaDesc: "Receptores medulares hipersensíveis à denervação. Arco reflexo em desinibição.",
+          muscleStatus: "Tônus Muscular: Reabastecimento Tônico (Normotonia -> Hipertonia)",
+          tonusVal: "2+ / 4+ (Normotonia / Hipertonia Leve)",
+          tonusBarWidth: 95,
+          tonusDesc: "Retorno da resistência ao estiramento passivo. Início da liberação do arco reflexo.",
+          reflexVal: "2+ a 3+ / 4+ (Normo a Hiperreflexia)",
+          reflexBarWidth: 110,
+          babinski: "PRESENTE (Reflexo Extensor +)",
+          babinskiColor: "var(--fm1p7-teal, #14b8a6)",
+          clonus: "Esgotável (1-3 batimentos)",
+          clonusColor: "var(--fm1p7-teal, #14b8a6)",
+          alertTitle: "⚡ ORGANIZAÇÃO PIRAMIDAL: O 1º NMS COMEÇA A SE REVELAR",
+          alertLine1: "• Aparecimento inequívoco do Sinal de Babinski (Reflexo cutâneo-plantar extensor).",
+          alertLine2: "• Hiperreflexia profundas instalando-se gradativamente nos membros afetados.",
+          alertAction: "✅ CONFIRMAÇÃO: Topografia de 1º NMS (Central) consolida-se clinicamente!",
+          alertBg: "var(--fm1p7-teal-bg, rgba(20,184,166,0.12))",
+          alertBorder: "var(--fm1p7-teal, #14b8a6)",
+          alertTitleColor: "var(--fm1p7-teal, #14b8a6)"
+        },
+        {
+          progress: 560,
+          color: "var(--fm1p7-indigo, #6366f1)",
+          cortexTitle: "Córtex Motor / Trato Corticospinal (1º NMS)",
+          cortexStatus: "Status: Lesão crônica consolidada; perda de inibição supraespinal (2-4 semanas)",
+          tractLabel: "Drive Descendente: Inibição Cortical PERDIDA",
+          medulaTitle: "ESTADO MEDULAR: HIPERATIVIDADE DO ARCO REFLEXO MIOTÁTICO",
+          medulaDesc: "Loop miotático desinibido; hiperexcitabilidade de motoneurônios alfa e gama.",
+          muscleStatus: "Tônus Muscular: ESPASTICIDADE EM MOLA DE CANIVETE",
+          tonusVal: "3+ / 4+ (Hipertonia Espástica)",
+          tonusBarWidth: 145,
+          tonusDesc: "Resistência inicial rápida com liberação súbita (Sinal do Canivete). Padrão piramidal!",
+          reflexVal: "3+ a 4+ / 4+ (Hiperreflexia Vivaz)",
+          reflexBarWidth: 155,
+          babinski: "PRESENTE (Clássico Extensor)",
+          babinskiColor: "var(--fm1p7-indigo, #6366f1)",
+          clonus: "Inesgotável / Vivaz",
+          clonusColor: "var(--fm1p7-indigo, #6366f1)",
+          alertTitle: "🛡️ SÍNDROME DO 1º NMS INSTALADA (ESPASTICIDADE)",
+          alertLine1: "• Quadro clássico completo: Hipertonia espástica + Hiperreflexia + Babinski.",
+          alertLine2: "• Ausência continuada de fasciculações confirma integridade do 2º NMS periférico.",
+          alertAction: "✅ DIAGNÓSTICO DEFINITIVO: Síndrome Piramidal (1º NMS) Plena.",
+          alertBg: "var(--fm1p7-indigo-bg, rgba(99,102,241,0.12))",
+          alertBorder: "var(--fm1p7-indigo, #6366f1)",
+          alertTitleColor: "var(--fm1p7-indigo, #6366f1)"
+        },
+        {
+          progress: 720,
+          color: "var(--fm1p7-indigo, #6366f1)",
+          cortexTitle: "Córtex Motor / Trato Corticospinal (1º NMS)",
+          cortexStatus: "Status: Sequela crônica estável; reorganização plástica máxima (> 1 mês)",
+          tractLabel: "Drive Descendente: Sequela Piramidal Fixa",
+          medulaTitle: "ESTADO MEDULAR: CIRCUITO ESPINAL CRÔNICO DEFINITIVO",
+          medulaDesc: "Hiper-reflexia permanente por perda sustentada do controle inibitório piramidal.",
+          muscleStatus: "Tônus Muscular: Espasticidade Crônica / Encurtamento Muscular",
+          tonusVal: "4+ / 4+ (Espasticidade Grave / Rigidez Piramidal)",
+          tonusBarWidth: 180,
+          tonusDesc: "Hipertonia espástica fixa. Padrão flexor em membro superior / extensor em inferior.",
+          reflexVal: "4+ / 4+ (Hiperreflexia + Clonus Inesgotável)",
+          reflexBarWidth: 180,
+          babinski: "PRESENTE + Sinal de Hoffmann (+)",
+          babinskiColor: "var(--fm1p7-indigo, #6366f1)",
+          clonus: "Clonus Inesgotável + Hoffmann (+)",
+          clonusColor: "var(--fm1p7-indigo, #6366f1)",
+          alertTitle: "🏛️ SÍNDROME PIRAMIDAL DEFINITIVA FIXADA",
+          alertLine1: "• Estágio crônico final da lesão do 1º NMS. Espasticidade established.",
+          alertLine2: "• Atrofia muscular pode surgir por DESUSO (nunca por denervação como no 2º NMS).",
+          alertAction: "📌 CONSOLIDAÇÃO: Padrão definitivo para diferencial em provas de residência.",
+          alertBg: "var(--fm1p7-indigo-bg, rgba(99,102,241,0.12))",
+          alertBorder: "var(--fm1p7-indigo, #6366f1)",
+          alertTitleColor: "var(--fm1p7-indigo, #6366f1)"
+        }
+      ];
+
+      var currentStep = 0;
+
+      function updateUI(step) {
+        currentStep = step;
+        var d = stepsData[step];
+
+        // 1. Atualiza Barra de Progresso
+        var progressBar = document.getElementById("fm1p7-progress-bar");
+        if (progressBar) {
+          progressBar.setAttribute("x2", d.progress);
+          progressBar.setAttribute("stroke", d.color);
+        }
+
+        // 2. Atualiza Estilo dos Círculos dos Botões
+        for (var i = 0; i < 5; i++) {
+          var circle = document.getElementById("fm1p7-node-circle-" + i);
+          if (circle) {
+            if (i === step) {
+              circle.setAttribute("fill", d.color);
+              circle.setAttribute("r", "16");
+              circle.setAttribute("filter", "url(#fm1p7-glow-indigo)");
+            } else if (i < step) {
+              circle.setAttribute("fill", "var(--fm1p7-card, #1e293b)");
+              circle.setAttribute("r", "12");
+              circle.removeAttribute("filter");
+            } else {
+              circle.setAttribute("fill", "var(--fm1p7-card, #1e293b)");
+              circle.setAttribute("r", "12");
+              circle.removeAttribute("filter");
+            }
+          }
+        }
+
+        // 3. Atualiza Painel Esquerdo (Diagrama)
+        document.getElementById("fm1p7-cortex-title").textContent = d.cortexTitle;
+        document.getElementById("fm1p7-cortex-status").textContent = d.cortexStatus;
+        document.getElementById("fm1p7-cortex-status").setAttribute("fill", d.color);
+        
+        document.getElementById("fm1p7-spinal-tract-line").setAttribute("stroke", d.color);
+        document.getElementById("fm1p7-spinal-arrow").setAttribute("fill", d.color);
+        document.getElementById("fm1p7-tract-label").textContent = d.tractLabel;
+
+        document.getElementById("fm1p7-medula-box").setAttribute("fill", d.alertBg);
+        document.getElementById("fm1p7-medula-box").setAttribute("stroke", d.color);
+        document.getElementById("fm1p7-medula-state-title").textContent = d.medulaTitle;
+        document.getElementById("fm1p7-medula-state-title").setAttribute("fill", d.color);
+        document.getElementById("fm1p7-medula-state-desc").textContent = d.medulaDesc;
+
+        document.getElementById("fm1p7-muscle-status").textContent = d.muscleStatus;
+        document.getElementById("fm1p7-muscle-status").setAttribute("fill", d.color);
+
+        // 4. Atualiza Painel Direito (Achados Clínicos)
+        document.getElementById("fm1p7-txt-tonus-val").textContent = d.tonusVal;
+        document.getElementById("fm1p7-txt-tonus-val").setAttribute("fill", d.color);
+        document.getElementById("fm1p7-bar-tonus").setAttribute("width", d.tonusBarWidth);
+        document.getElementById("fm1p7-bar-tonus").setAttribute("fill", d.color);
+        document.getElementById("fm1p7-tonus-desc").textContent = d.tonusDesc;
+
+        document.getElementById("fm1p7-txt-reflex-val").textContent = d.reflexVal;
+        document.getElementById("fm1p7-txt-reflex-val").setAttribute("fill", d.color);
+        document.getElementById("fm1p7-bar-reflex").setAttribute("width", d.reflexBarWidth);
+        document.getElementById("fm1p7-bar-reflex").setAttribute("fill", d.color);
+
+        document.getElementById("fm1p7-txt-babinski").textContent = d.babinski;
+        document.getElementById("fm1p7-txt-babinski").setAttribute("fill", d.babinskiColor);
+
+        document.getElementById("fm1p7-txt-clonus").textContent = d.clonus;
+        document.getElementById("fm1p7-txt-clonus").setAttribute("fill", d.clonusColor);
+
+        // 5. Atualiza Caixa de Alerta / Topografia
+        document.getElementById("fm1p7-alert-box").setAttribute("fill", d.alertBg);
+        document.getElementById("fm1p7-alert-box").setAttribute("stroke", d.alertBorder);
+        document.getElementById("fm1p7-alert-title").textContent = d.alertTitle;
+        document.getElementById("fm1p7-alert-title").setAttribute("fill", d.alertTitleColor);
+        document.getElementById("fm1p7-alert-line1").textContent = d.alertLine1;
+        document.getElementById("fm1p7-alert-line2").textContent = d.alertLine2;
+        document.getElementById("fm1p7-alert-action").textContent = d.alertAction;
+      }
+
+      // Event Listeners nos Botões da Timeline
+      for (var i = 0; i < 5; i++) {
+        (function(index) {
+          var btn = document.getElementById("fm1p7-btn-step-" + index);
+          if (btn) {
+            btn.addEventListener("click", function() { updateUI(index); });
+            btn.addEventListener("keydown", function(e) {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                updateUI(index);
+              }
+            });
+          }
+        })(i);
+      }
+
+      // Botões Anterior / Próximo
+      var btnPrev = document.getElementById("fm1p7-btn-prev");
+      if (btnPrev) {
+        btnPrev.addEventListener("click", function() {
+          if (currentStep > 0) updateUI(currentStep - 1);
+        });
+        btnPrev.addEventListener("keydown", function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            if (currentStep > 0) updateUI(currentStep - 1);
+          }
+        });
+      }
+
+      var btnNext = document.getElementById("fm1p7-btn-next");
+      if (btnNext) {
+        btnNext.addEventListener("click", function() {
+          if (currentStep < 4) updateUI(currentStep + 1);
+        });
+        btnNext.addEventListener("keydown", function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            if (currentStep < 4) updateUI(currentStep + 1);
+          }
+        });
+      }
+
+      // Inicializa no Step 0 (Hiperagudo Flácido)
+      updateUI(0);
+    })();
+    ]]>
+  </script>
+</svg>

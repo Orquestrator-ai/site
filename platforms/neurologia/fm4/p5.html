@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="ELA (fm4). Progressão obrigatória, sobrevida média ~3 anos, gastrostomia e ventilação prolongam — e a mente fica intacta.">
+<title>Três anos, o motor e a mente intacta · Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm4-cara">
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.5}
+.opener--stat{border-left:4px solid var(--coral)}.opener--stat .opener__eyebrow{color:var(--coral)}
+.opener--stat .stat__big{font-size:clamp(2.4rem,7vw,3.6rem);font-weight:800;color:var(--coral);line-height:1;margin:.2rem 0 .4rem;letter-spacing:-.02em}
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip,.chip--topic,.chip--no,.chip--ok,.chip--gold{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ink-60)}
+.chip--no{color:var(--coral);border-color:color-mix(in srgb,var(--coral) 45%,var(--border))}
+.chip--ok{color:var(--verde);border-color:color-mix(in srgb,var(--verde) 45%,var(--border))}
+.chip--gold{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}
+.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose ul,.prose-list{margin:0 0 1em 1.1rem;padding:0}
+.prose ul li,.prose-list li{margin:.3rem 0}
+.prose strong,.term{color:var(--ink-100)}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.hl-bad{color:var(--coral);font-weight:700}.hl-good{color:var(--verde);font-weight:700}
+.exec-card,.continuity,.nuance{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.exec-card__title{margin:0 0 .65rem;font-size:1rem;color:var(--ciano)}
+.continuity{border-left:3px solid var(--indigo)}
+.nuance{border-left:4px solid var(--amber);background:color-mix(in srgb,var(--amber) 8%,var(--bg-3))}
+.nuance__tag{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);font-weight:800;margin-bottom:.35rem}
+.nuance p{margin:0;font-size:.92rem;line-height:1.55;color:var(--ink-80)}
+.timeline{display:grid;grid-template-columns:auto 1fr;gap:.5rem .8rem;margin:.6rem 0 0;font-size:.92rem}
+.timeline dt{color:var(--ink-60);font-weight:700;border-right:2px solid var(--border);padding-right:.8rem}
+.timeline dd{margin:0;color:var(--ink-80);line-height:1.5}
+.timeline dd .hl-bad,.timeline dd .hl-good{font-weight:700}
+.loss-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.6rem 0}
+.loss-cell{border:1px solid var(--border);border-radius:10px;padding:.6rem .75rem;background:var(--bg-3)}
+.loss-cell--off{border-color:color-mix(in srgb,var(--coral) 40%,var(--border))}
+.loss-cell--on{border-color:color-mix(in srgb,var(--verde) 40%,var(--border))}
+.loss-cell h4{margin:0 0 .25rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.loss-cell--off h4{color:var(--coral)}.loss-cell--on h4{color:var(--verde)}
+.loss-cell p{margin:0;font-size:.9rem;color:var(--ink-80);line-height:1.4}
+.fig{margin:1.25rem 0}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ciano);margin-bottom:.3rem;font-weight:800}
+.fig__svg-frame{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-1);box-shadow:var(--shadow)}
+.fm4-inline-svg{display:block;width:100%;height:auto;border-radius:var(--radius-sm)}
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.quiz h2{margin:0 0 .85rem;font-size:1.1rem;color:var(--ink-100)}
+.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}
+.quiz__stem{margin:0 0 .55rem;font-weight:600;color:var(--ink-100);line-height:1.45}
+.quiz__alternatives{display:grid;gap:.4rem}
+.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit;line-height:1.4}
+.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}
+.quiz__alt.is-correct{border-color:var(--verde);background:color-mix(in srgb,var(--verde) 14%,var(--bg-3))}
+.quiz__alt.is-wrong{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 12%,var(--bg-3))}
+.quiz__feedback{margin-top:.6rem;padding:.75rem .8rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}
+.quiz__feedback[hidden]{display:none}
+.quiz__verdict{margin:0 0 .4rem;font-weight:800}
+.quiz__verdict.is-ok{color:var(--verde)}.quiz__verdict.is-bad{color:var(--coral)}
+.quiz__justification,.quiz__distractor{margin:.3rem 0 0;font-size:.92rem;line-height:1.5;color:var(--ink-80)}
+.page-nav{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.page-nav a{display:inline-flex;flex-direction:column;min-height:44px;padding:.5rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);text-decoration:none;color:var(--ink-100)}
+.page-nav a:hover{background:var(--bg-4)}
+.page-nav .nav-dir{font-size:.72rem;color:var(--ink-60)}.page-nav .nav-ttl{font-size:.86rem}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:640px){.loss-row{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.timeline dt{border-right:0;border-bottom:1px solid var(--border);padding:0 0 .2rem}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p5" data-layout="fm4-p05" data-source-ids="040,041,042,043,044,045,046">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html"><span class="site-header__logo" aria-hidden="true">NE</span><span class="site-header__titles"><span class="site-header__title">ELA: esclerose lateral amiotrófica</span><span class="site-header__subtitle">Neurologia · esclerose lateral amiotrófica</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress">5/8</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+  <div class="reading">
+    <article class="page" data-page="p5" data-layout="fm4-p05" data-source-ids="040,041,042,043,044,045,046">
+      <p class="page__eyebrow">Página 5 · Dado impactante</p>
+
+      <section class="opener opener--stat" data-opener="E2">
+        <span class="opener__eyebrow">Dado impactante</span>
+        <p class="stat__big">~3 anos</p>
+        <h1 id="page-title">Três anos, o motor e a mente intacta</h1>
+        <p class="opener__lead no-indent">Sobrevida média de cerca de três anos — e o que a ELA tira do corpo sem tocar a consciência.</p>
+      </section>
+
+      <div class="chipset">
+        <span class="chip--no">progressão obrigatória</span><span class="chip--ok">mente intacta</span>
+      </div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h2 class="topic-h">Progressão obrigatória</h2>
+          <p>A clínica da ELA é <strong class="term">progressiva</strong>: <strong class="term">obrigatoriamente</strong> progride.</p>
+
+          <h2 class="topic-h">Sobrevida e o que se perde</h2>
+          <p>Sobrevida média: cerca de <strong class="term">três anos</strong>. Ao final de cerca de três anos, em média, o paciente <strong class="term">não consegue mais se mexer</strong>. Perde, em média: <strong class="hl-bad">andar</strong>, <strong class="hl-bad">falar</strong>, <strong class="hl-bad">engolir/comer</strong>, <strong class="hl-bad">respirar</strong>.</p>
+
+          <h2 class="topic-h">Prolongar</h2>
+          <p>Para viver <strong class="term">mais tempo</strong> que isso: <strong class="term">gastrostomia</strong> + <strong class="term">ventilação mecânica</strong> (suporte artificial) — o paciente consegue prolongar a sobrevida.</p>
+
+          <h2 class="topic-h">Mente intacta</h2>
+          <p>Tragédia cognitiva da doença: perde <strong>só a motricidade</strong> — a <strong class="term">cabeça / mente continua funcionando</strong> (<strong class="hl-good">mente intacta</strong> no eixo motor). É doença <strong class="term">muito triste</strong> nesse sentido: o motor desliga e a consciência permanece.</p>
+          <p class="no-indent">Chip: <strong class="term">“a cabeça continua; o motor desliga”</strong>.</p>
+        </div>
+      </section>
+
+      <aside class="nuance" aria-label="Sobrevida — PCDT e valor clássico">
+        <span class="nuance__tag">Atenção — sobrevida</span>
+        <p>PCDT MS/CONITEC: sobrevida média oficial <strong>3–5 anos</strong> (faixa). O valor clássico ensinado permanece <strong>~3 anos</strong> — polo dentro dessa faixa.</p>
+      </aside>
+
+      <aside class="exec-card" aria-label="Linha do tempo da perda na ELA">
+        <h3 class="exec-card__title">Linha do tempo — o que a ELA tira</h3>
+        <dl class="timeline">
+          <dt>Curso</dt><dd>Progressão <strong>obrigatória</strong></dd>
+          <dt>Sobrevida média</dt><dd><strong>~3 anos</strong></dd>
+          <dt>Funções que caem</dt><dd>Andar → falar → engolir → respirar (ordem ilustrativa)</dd>
+          <dt>Prolongar</dt><dd>Gastrostomia + ventilação mecânica</dd>
+          <dt>Preservado</dt><dd><strong class="hl-good">Mente / cabeça intacta</strong></dd>
+        </dl>
+        <div class="loss-row">
+          <div class="loss-cell loss-cell--off"><h4>Motor desliga</h4><p>Andar · falar · engolir · respirar</p></div>
+          <div class="loss-cell loss-cell--on"><h4>Mente fica</h4><p>Consciência permanece — a tragédia cognitiva</p></div>
+        </div>
+      </aside>
+
+      <!-- FIGURA REAL — R5 VNI -->
+      <div class="figura-ancorada">
+        <figure class="figura-ancorada__media">
+          <img src="media/B05-bipap-ventilacao-nao-invasiva.jpg" alt="Paciente adulto usando máscara facial completa conectada a ventilador para ventilação não-invasiva (BiPAP) em contexto clínico." loading="lazy" decoding="async">
+          <figcaption class="figura-ancorada__legenda"><b>Ventilação não-invasiva</b> — máscara e ventilador. Suporte que prolonga a sobrevida quando a respiração falha.</figcaption>
+          <p class="figura-ancorada__fonte">By James Heilman, MD, via Wikimedia Commons · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:BIPAP.JPG" rel="noopener">fonte</a></p>
+        </figure>
+        <div class="figura-ancorada__ancora">
+          <h4>Prolongar, não curar</h4>
+          <p>A VNI (e a gastrostomia) não revertem a ELA — compram tempo quando a respiração e a deglutição começam a falhar. O dispositivo ensina o ponto da página: <strong>suporte é o que faz a sobrevida passar de três anos</strong>, com a cabeça intacta o tempo todo.</p>
+        </div>
+      </div>
+
+      <!-- Figura: dual motor / mente -->
+      <figure class="fig">
+        <span class="fig__label">Curso motor e mente intacta</span>
+        <div class="fig__svg-frame">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" class="fm4-inline-svg fm4p5-root" id="fm4p5-svg-root" aria-label="Curso da ELA: perdas motoras e mente intacta">
+  <title>Curso da ELA: perdas motoras e mente intacta</title>
+  <desc>Progressão obrigatória com sobrevida média de cerca de três anos; perdas ilustrativas de andar, falar, engolir e respirar; mente intacta; gastrostomia e ventilação mecânica prolongam a sobrevida.</desc>
+
+  <defs>
+    <style>
+      .fm4p5-root {
+        --fm4p5-bg: #0f172a;
+        --fm4p5-panel: #1e293b;
+        --fm4p5-card: #334155;
+        --fm4p5-border: #475569;
+        --fm4p5-text-main: #f8fafc;
+        --fm4p5-text-sub: #cbd5e1;
+        --fm4p5-text-muted: #94a3b8;
+        --fm4p5-green: #10b981;
+        --fm4p5-green-glow: rgba(16, 185, 129, 0.25);
+        --fm4p5-green-bg: #064e3b;
+        --fm4p5-red: #f43f5e;
+        --fm4p5-red-glow: rgba(244, 63, 94, 0.25);
+        --fm4p5-red-bg: #4c0519;
+        --fm4p5-teal: #14b8a6;
+        --fm4p5-teal-glow: rgba(20, 184, 166, 0.25);
+        --fm4p5-teal-bg: #042f2e;
+        --fm4p5-amber: #f59e0b;
+        --fm4p5-amber-bg: #451a03;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--fm4p5-bg, #0f172a);
+        color: var(--fm4p5-text-main, #f8fafc);
+        box-sizing: border-box;
+      }
+
+      .fm4p5-root[data-theme="light"], :root[data-theme="light"] .fm4p5-root {
+        --fm4p5-bg: #f8fafc;
+        --fm4p5-panel: #ffffff;
+        --fm4p5-card: #f1f5f9;
+        --fm4p5-border: #cbd5e1;
+        --fm4p5-text-main: #0f172a;
+        --fm4p5-text-sub: #334155;
+        --fm4p5-text-muted: #64748b;
+        --fm4p5-green: #059669;
+        --fm4p5-green-glow: rgba(5, 150, 105, 0.15);
+        --fm4p5-green-bg: #d1fae5;
+        --fm4p5-red: #e11d48;
+        --fm4p5-red-glow: rgba(225, 29, 72, 0.15);
+        --fm4p5-red-bg: #ffe4e6;
+        --fm4p5-teal: #0d9488;
+        --fm4p5-teal-glow: rgba(13, 148, 136, 0.15);
+        --fm4p5-teal-bg: #ccfbf1;
+        --fm4p5-amber: #d97706;
+        --fm4p5-amber-bg: #fef3c7;
+      }
+
+      .fm4p5-root .fm4p5-title {
+        font-size: 18px;
+        font-weight: 700;
+        fill: var(--fm4p5-text-main, #f8fafc);
+        letter-spacing: -0.02em;
+      }
+
+      .fm4p5-root .fm4p5-subtitle {
+        font-size: 12px;
+        fill: var(--fm4p5-text-sub, #cbd5e1);
+      }
+
+      .fm4p5-root .fm4p5-box {
+        fill: var(--fm4p5-panel, #1e293b);
+        stroke: var(--fm4p5-border, #475569);
+        stroke-width: 1px;
+        rx: 8px;
+      }
+
+      .fm4p5-root .fm4p5-subbox {
+        fill: var(--fm4p5-card, #334155);
+        stroke: var(--fm4p5-border, #475569);
+        stroke-width: 1px;
+        rx: 6px;
+      }
+
+      .fm4p5-root .fm4p5-label-title {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .fm4p5-root .fm4p5-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .fm4p5-root .fm4p5-btn:hover rect {
+        filter: brightness(1.15);
+        stroke-width: 2px;
+      }
+
+      .fm4p5-root .fm4p5-btn.fm4p5-active rect {
+        stroke-width: 2px;
+      }
+
+      .fm4p5-root .fm4p5-btn-text {
+        font-size: 11px;
+        font-weight: 600;
+        text-anchor: middle;
+        dominant-baseline: central;
+        pointer-events: none;
+      }
+
+      .fm4p5-root .fm4p5-chip {
+        rx: 12px;
+        stroke-width: 1px;
+      }
+
+      .fm4p5-root .fm4p5-chip-text {
+        font-size: 10px;
+        font-weight: 700;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+
+      .fm4p5-root .fm4p5-axis-line {
+        stroke: var(--fm4p5-border, #475569);
+        stroke-width: 1.5px;
+        stroke-dasharray: 4 4;
+      }
+
+      .fm4p5-root .fm4p5-axis-text {
+        font-size: 10px;
+        fill: var(--fm4p5-text-muted, #94a3b8);
+      }
+
+      .fm4p5-root .fm4p5-curve-natural {
+        fill: none;
+        stroke: var(--fm4p5-red, #f43f5e);
+        stroke-width: 3.5px;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.5s ease;
+      }
+
+      .fm4p5-root .fm4p5-curve-support {
+        fill: none;
+        stroke: var(--fm4p5-teal, #14b8a6);
+        stroke-width: 3.5px;
+        stroke-dasharray: 6 4;
+        stroke-linecap: round;
+        opacity: 0.3;
+        transition: opacity 0.3s ease;
+      }
+
+      .fm4p5-root .fm4p5-curve-mind {
+        fill: none;
+        stroke: var(--fm4p5-green, #10b981);
+        stroke-width: 2.5px;
+        stroke-dasharray: 2 2;
+      }
+
+      .fm4p5-root .fm4p5-node {
+        cursor: pointer;
+        transition: transform 0.2s ease, r 0.2s ease;
+      }
+
+      .fm4p5-root .fm4p5-node:hover {
+        r: 10px;
+      }
+
+      .fm4p5-root .fm4p5-node-active {
+        r: 11px;
+        stroke-width: 3px;
+      }
+
+      .fm4p5-root .fm4p5-pulse {
+        animation: fm4p5-glow 2s infinite alternate;
+      }
+
+      @keyframes fm4p5-glow {
+        0% { opacity: 0.4; }
+        100% { opacity: 0.9; }
+      }
+    </style>
+
+    <linearGradient id="fm4p5-brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p5-green, #10b981)" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="var(--fm4p5-green, #10b981)" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <linearGradient id="fm4p5-motorDegradation" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p5-green, #10b981)"/>
+      <stop offset="35%" stop-color="var(--fm4p5-amber, #f59e0b)"/>
+      <stop offset="100%" stop-color="var(--fm4p5-red, #f43f5e)"/>
+    </linearGradient>
+
+    <filter id="fm4p5-glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="fm4p5-glowRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- HEADER -->
+  <g transform="translate(20, 20)">
+    <text x="0" y="16" class="fm4p5-title">PROGNÓSTICO NA ELA: CURVA DE PERDAS, SOBREVIDA E INTACÇÃO COGNITIVA</text>
+    <text x="0" y="36" class="fm4p5-subtitle">
+      <tspan x="0" dy="0">Degeneração motora progressiva (andar → falar → engolir → respirar) com cognição preservada (mente acesa).</tspan>
+      <tspan x="0" dy="16">Gastrostomia + ventilação mecânica prolongam a sobrevida além da média de ~3 anos.</tspan>
+    </text>
+  </g>
+
+  <!-- LEFT TOP PANEL: SCHEMATIC HEAD & NEURAL DUALITY (X: 20..270, Y: 80..300) -->
+  <g transform="translate(20, 80)">
+    <rect width="250" height="220" class="fm4p5-box"/>
+    
+    <!-- Title -->
+    <text x="15" y="24" class="fm4p5-label-title" fill="var(--fm4p5-text-sub, #cbd5e1)">DUALIDADE PATOFISIOLÓGICA</text>
+    
+    <!-- Brain / Mind Schematic (GREEN = PRESERVED) -->
+    <g id="fm4p5-mind-group" transform="translate(15, 35)">
+      <!-- Outer Head Silhouette -->
+      <path d="M 50,20 C 25,20 15,40 15,65 C 15,90 25,115 45,125 L 45,140 L 75,140 L 75,125 C 95,115 105,90 105,65 C 105,40 95,20 70,20 Z" 
+            fill="none" stroke="var(--fm4p5-border, #475569)" stroke-width="2" stroke-dasharray="3 3"/>
+      
+      <!-- Cortex / Brain structure (Bright Green = Active Thinking Mind) -->
+      <path id="fm4p5-cortex-shape" d="M 45,28 C 30,28 22,42 22,60 C 22,78 30,88 45,88 C 55,88 60,82 70,82 C 80,82 85,88 95,88 C 102,88 108,78 108,60 C 108,42 98,28 85,28 C 75,28 70,34 65,34 C 60,34 55,28 45,28 Z" 
+            fill="url(#fm4p5-brainGradient)" stroke="var(--fm4p5-green, #10b981)" stroke-width="2" filter="url(#fm4p5-glowGreen)" class="fm4p5-pulse"/>
+
+      <!-- Synapse / Thought sparkles in Brain -->
+      <circle cx="42" cy="48" r="2.5" fill="#ffffff"/>
+      <circle cx="65" cy="42" r="3" fill="#ffffff"/>
+      <circle cx="82" cy="52" r="2.5" fill="#ffffff"/>
+      <circle cx="55" cy="68" r="2.5" fill="#ffffff"/>
+      <circle cx="75" cy="70" r="2" fill="#ffffff"/>
+      <line x1="42" y1="48" x2="65" y2="42" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <line x1="65" y1="42" x2="82" y2="52" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <line x1="65" y1="42" x2="55" y2="68" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+
+      <!-- Mind Label -->
+      <rect x="118" y="32" width="105" height="42" rx="4" fill="var(--fm4p5-green-bg, #064e3b)" stroke="var(--fm4p5-green, #10b981)"/>
+      <text x="124" y="48" font-size="10" font-weight="700" fill="var(--fm4p5-green, #10b981)">MENTE ACESA</text>
+      <text x="124" y="62" font-size="9" fill="var(--fm4p5-text-sub, #cbd5e1)">Cognição e Sensibilidade</text>
+      <text x="124" y="71" font-size="9" font-weight="700" fill="var(--fm4p5-green, #10b981)">MENTE INTACTA</text>
+    </g>
+
+    <!-- Motor Pathway Schematic (RED = DEGENERATING) -->
+    <g id="fm4p5-motor-group" transform="translate(15, 125)">
+      <!-- Corticospinal Tract / Anterior Horn / Peripheral Nerve -->
+      <path id="fm4p5-tract-path" d="M 60,10 L 60,75 M 60,35 L 30,55 M 60,50 L 90,65" 
+            fill="none" stroke="url(#fm4p5-motorDegradation)" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- Degenerating Motor Neuron Nodes -->
+      <circle cx="60" cy="15" r="4" fill="var(--fm4p5-green, #10b981)"/>
+      <circle cx="60" cy="45" r="4.5" fill="var(--fm4p5-amber, #f59e0b)"/>
+      <circle cx="60" cy="72" r="5" fill="var(--fm4p5-red, #f43f5e)" filter="url(#fm4p5-glowRed)"/>
+
+      <!-- Motor Label -->
+      <rect x="118" y="25" width="105" height="42" rx="4" fill="var(--fm4p5-red-bg, #4c0519)" stroke="var(--fm4p5-red, #f43f5e)"/>
+      <text x="124" y="41" font-size="10" font-weight="700" fill="var(--fm4p5-red, #f43f5e)">MOTOR DESLIGA</text>
+      <text x="124" y="55" font-size="9" fill="var(--fm4p5-text-sub, #cbd5e1)">1º e 2º Neurônios</text>
+      <text x="124" y="64" font-size="9" font-weight="700" fill="var(--fm4p5-red, #f43f5e)">DEGENERAÇÃO PARALISANTE</text>
+    </g>
+  </g>
+
+  <!-- LEFT BOTTOM GRAPH: EVOLUTIONARY CURVE & TIMELINE (X: 20..580, Y: 315..620) -->
+  <g transform="translate(20, 315)">
+    <rect width="570" height="305" class="fm4p5-box"/>
+    
+    <text x="15" y="22" class="fm4p5-label-title" fill="var(--fm4p5-text-sub, #cbd5e1)">CURSO: PERDAS ILUSTRATIVAS · ~3 ANOS</text>
+
+    <!-- Graph Coordinates: Origin (50, 240), Max X (530), Max Y (40) -->
+    
+    <!-- Y-Axis Grid & Labels (qualitativo — sem percentuais inventados) -->
+    <line x1="50" y1="40" x2="540" y2="40" class="fm4p5-axis-line"/>
+    <text x="42" y="44" class="fm4p5-axis-text" text-anchor="end">Plena</text>
+
+    <line x1="50" y1="90" x2="540" y2="90" class="fm4p5-axis-line"/>
+    <text x="42" y="94" class="fm4p5-axis-text" text-anchor="end">Alta</text>
+
+    <line x1="50" y1="140" x2="540" y2="140" class="fm4p5-axis-line"/>
+    <text x="42" y="144" class="fm4p5-axis-text" text-anchor="end">Média</text>
+
+    <line x1="50" y1="190" x2="540" y2="190" class="fm4p5-axis-line"/>
+    <text x="42" y="194" class="fm4p5-axis-text" text-anchor="end">Baixa</text>
+
+    <line x1="50" y1="240" x2="540" y2="240" stroke="var(--fm4p5-border, #475569)" stroke-width="2"/>
+    <text x="42" y="244" class="fm4p5-axis-text" text-anchor="end">Perdida</text>
+
+    <!-- Y-Axis Title -->
+    <text x="-140" y="16" class="fm4p5-axis-text" transform="rotate(-90)" font-weight="600" text-anchor="middle">Motricidade (ilustrativo)</text>
+
+    <!-- X-Axis Milestone Lines & Labels (só marcos lastreados) -->
+    <line x1="60" y1="40" x2="60" y2="240" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="60" y="258" class="fm4p5-axis-text" text-anchor="middle">Início</text>
+
+    <line x1="160" y1="40" x2="160" y2="240" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="160" y="258" class="fm4p5-axis-text" text-anchor="middle">Andar</text>
+
+    <line x1="260" y1="40" x2="260" y2="240" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="260" y="258" class="fm4p5-axis-text" text-anchor="middle">Falar·Engolir</text>
+
+    <!-- ~3 Anos (X=360) - sobrevida média lastreada -->
+    <rect x="325" y="32" width="70" height="215" fill="var(--fm4p5-amber-bg, #451a03)" opacity="0.3"/>
+    <line x1="360" y1="32" x2="360" y2="240" stroke="var(--fm4p5-amber, #f59e0b)" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <text x="360" y="258" class="fm4p5-axis-text" fill="var(--fm4p5-amber, #f59e0b)" font-weight="700" text-anchor="middle">~3 Anos</text>
+    <text x="360" y="270" font-size="8.5" fill="var(--fm4p5-amber, #f59e0b)" text-anchor="middle">(sobrevida média)</text>
+
+    <!-- Suporte prolonga (sem quantificar anos inventados) -->
+    <line x1="480" y1="40" x2="480" y2="240" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="480" y="258" class="fm4p5-axis-text" text-anchor="middle">Suporte</text>
+    <text x="480" y="270" font-size="8.5" fill="var(--fm4p5-teal, #14b8a6)" text-anchor="middle">(prolonga)</text>
+
+    <!-- CURVES -->
+    <!-- 1. Mind / Cognition Line (green flat — mente intacta) -->
+    <path d="M 60,40 L 520,40" class="fm4p5-curve-mind"/>
+    <text x="525" y="43" font-size="9" font-weight="700" fill="var(--fm4p5-green, #10b981)">Mente intacta</text>
+
+    <!-- 2. Supported Curve (Teal Dashed - Extends curve) -->
+    <path id="fm4p5-path-support" d="M 60,45 C 140,55 230,120 300,165 C 340,185 410,195 510,205" class="fm4p5-curve-support"/>
+
+    <!-- 3. Natural Curve (Coral Red Solid - Drops to 0 at ~3 years) -->
+    <path id="fm4p5-path-natural" d="M 60,45 C 140,55 220,120 300,175 C 330,200 350,225 365,238" class="fm4p5-curve-natural"/>
+
+    <!-- INTERACTIVE NODES / LOSS STAGES ON THE CURVE -->
+    <!-- Stage 1: ANDAR (X=110, Y=65) -->
+    <g id="fm4p5-node-1" class="fm4p5-node" transform="translate(110, 65)">
+      <circle cx="0" cy="0" r="8" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-red, #f43f5e)" stroke-width="2"/>
+      <text x="0" y="1" font-size="10" font-weight="700" fill="var(--fm4p5-text-main, #f8fafc)" text-anchor="middle" dominant-baseline="central">1</text>
+      <!-- Label below -->
+      <rect x="-25" y="12" width="50" height="16" rx="3" fill="var(--fm4p5-panel, #1e293b)" stroke="var(--fm4p5-border, #475569)"/>
+      <text x="0" y="20" font-size="9" font-weight="600" fill="var(--fm4p5-red, #f43f5e)" text-anchor="middle" dominant-baseline="central">ANDAR</text>
+    </g>
+
+    <!-- Stage 2: FALAR (X=200, Y=110) -->
+    <g id="fm4p5-node-2" class="fm4p5-node" transform="translate(200, 110)">
+      <circle cx="0" cy="0" r="8" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-red, #f43f5e)" stroke-width="2"/>
+      <text x="0" y="1" font-size="10" font-weight="700" fill="var(--fm4p5-text-main, #f8fafc)" text-anchor="middle" dominant-baseline="central">2</text>
+      <rect x="-25" y="12" width="50" height="16" rx="3" fill="var(--fm4p5-panel, #1e293b)" stroke="var(--fm4p5-border, #475569)"/>
+      <text x="0" y="20" font-size="9" font-weight="600" fill="var(--fm4p5-red, #f43f5e)" text-anchor="middle" dominant-baseline="central">FALAR</text>
+    </g>
+
+    <!-- Stage 3: ENGOLIR (X=280, Y=160) - PEG INTERVENTION -->
+    <g id="fm4p5-node-3" class="fm4p5-node" transform="translate(280, 160)">
+      <circle cx="0" cy="0" r="9" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-amber, #f59e0b)" stroke-width="2.5"/>
+      <text x="0" y="1" font-size="10" font-weight="700" fill="var(--fm4p5-text-main, #f8fafc)" text-anchor="middle" dominant-baseline="central">3</text>
+      <rect x="-28" y="13" width="56" height="16" rx="3" fill="var(--fm4p5-amber-bg, #451a03)" stroke="var(--fm4p5-amber, #f59e0b)"/>
+      <text x="0" y="21" font-size="8.5" font-weight="700" fill="var(--fm4p5-amber, #f59e0b)" text-anchor="middle" dominant-baseline="central">ENGOLIR</text>
+    </g>
+
+    <!-- Stage 4: RESPIRAR (X=350, Y=225) - VM INTERVENTION -->
+    <g id="fm4p5-node-4" class="fm4p5-node" transform="translate(350, 225)">
+      <circle cx="0" cy="0" r="9.5" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-red, #f43f5e)" stroke-width="2.5"/>
+      <text x="0" y="1" font-size="10" font-weight="700" fill="var(--fm4p5-text-main, #f8fafc)" text-anchor="middle" dominant-baseline="central">4</text>
+      <rect x="-30" y="-25" width="60" height="16" rx="3" fill="var(--fm4p5-red-bg, #4c0519)" stroke="var(--fm4p5-red, #f43f5e)"/>
+      <text x="0" y="-17" font-size="8.5" font-weight="700" fill="var(--fm4p5-red, #f43f5e)" text-anchor="middle" dominant-baseline="central">RESPIRAR</text>
+    </g>
+
+    <!-- Support Extended Node (X=460, Y=198) -->
+    <g id="fm4p5-node-support" class="fm4p5-node" transform="translate(460, 198)" style="opacity: 0.5;">
+      <circle cx="0" cy="0" r="8" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-teal, #14b8a6)" stroke-width="2"/>
+      <text x="0" y="1" font-size="10" font-weight="700" fill="var(--fm4p5-teal, #14b8a6)" text-anchor="middle" dominant-baseline="central">+</text>
+      <rect x="-34" y="12" width="68" height="16" rx="3" fill="var(--fm4p5-teal-bg, #042f2e)" stroke="var(--fm4p5-teal, #14b8a6)"/>
+      <text x="0" y="20" font-size="8.5" font-weight="700" fill="var(--fm4p5-teal, #14b8a6)" text-anchor="middle" dominant-baseline="central">SOBREVIDA+</text>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: INTERACTIVE READOUT & CLINICAL CONSOLE (X: 610..940, Y: 80..620) -->
+  <g transform="translate(610, 80)">
+    <rect width="330" height="540" class="fm4p5-box"/>
+    
+    <!-- Console Header -->
+    <text x="15" y="24" class="fm4p5-label-title" fill="var(--fm4p5-text-sub, #cbd5e1)">PAINEL DE ANÁLISE PROGNÓSTICA</text>
+
+    <!-- STAGE SELECTION CONTROLS (BUTTONS) -->
+    <g transform="translate(15, 38)">
+      <!-- Stage 1 Btn -->
+      <g id="fm4p5-btn-1" class="fm4p5-btn fm4p5-active" transform="translate(0, 0)">
+        <rect width="68" height="30" rx="4" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-red, #f43f5e)"/>
+        <text x="34" y="15" class="fm4p5-btn-text" fill="var(--fm4p5-text-main, #f8fafc)">1. Andar</text>
+      </g>
+      <!-- Stage 2 Btn -->
+      <g id="fm4p5-btn-2" class="fm4p5-btn" transform="translate(74, 0)">
+        <rect width="68" height="30" rx="4" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-border, #475569)"/>
+        <text x="34" y="15" class="fm4p5-btn-text" fill="var(--fm4p5-text-sub, #cbd5e1)">2. Falar</text>
+      </g>
+      <!-- Stage 3 Btn -->
+      <g id="fm4p5-btn-3" class="fm4p5-btn" transform="translate(148, 0)">
+        <rect width="74" height="30" rx="4" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-border, #475569)"/>
+        <text x="37" y="15" class="fm4p5-btn-text" fill="var(--fm4p5-text-sub, #cbd5e1)">3. Engolir</text>
+      </g>
+      <!-- Stage 4 Btn -->
+      <g id="fm4p5-btn-4" class="fm4p5-btn" transform="translate(226, 0)">
+        <rect width="74" height="30" rx="4" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-border, #475569)"/>
+        <text x="37" y="15" class="fm4p5-btn-text" fill="var(--fm4p5-text-sub, #cbd5e1)">4. Respirar</text>
+      </g>
+    </g>
+
+    <!-- SUPPORT MODE TOGGLE -->
+    <g id="fm4p5-btn-support" class="fm4p5-btn" transform="translate(15, 78)">
+      <rect width="300" height="32" rx="6" fill="var(--fm4p5-card, #334155)" stroke="var(--fm4p5-teal, #14b8a6)" stroke-dasharray="4 2"/>
+      <text id="fm4p5-support-toggle-label" x="150" y="16" class="fm4p5-btn-text" fill="var(--fm4p5-teal, #14b8a6)" font-weight="700">
+        [ SIMULAR SUPORTE: GASTROSTOMIA + VM ]
+      </text>
+    </g>
+
+    <!-- LIVE READOUT DISPLAY BOX -->
+    <g transform="translate(15, 122)">
+      <rect width="300" height="230" class="fm4p5-subbox"/>
+      
+      <!-- Stage Title & Status Chip -->
+      <text id="fm4p5-panel-stage-title" x="15" y="24" font-size="13" font-weight="700" fill="var(--fm4p5-red, #f43f5e)">
+        PERDA 1: ANDAR
+      </text>
+
+      <!-- Status Grid -->
+      <!-- Cognition Status -->
+      <g transform="translate(15, 36)">
+        <text x="0" y="12" font-size="9.5" fill="var(--fm4p5-text-muted, #94a3b8)">Mente / cabeça:</text>
+        <rect x="0" y="18" width="270" height="22" rx="4" fill="var(--fm4p5-green-bg, #064e3b)" stroke="var(--fm4p5-green, #10b981)"/>
+        <text id="fm4p5-status-mind" x="10" y="32" font-size="10" font-weight="700" fill="var(--fm4p5-green, #10b981)">
+          MENTE INTACTA · consciência permanece
+        </text>
+      </g>
+
+      <!-- Motor Status -->
+      <g transform="translate(15, 80)">
+        <text x="0" y="12" font-size="9.5" fill="var(--fm4p5-text-muted, #94a3b8)">Motricidade:</text>
+        <rect x="0" y="18" width="270" height="22" rx="4" fill="var(--fm4p5-red-bg, #4c0519)" stroke="var(--fm4p5-red, #f43f5e)"/>
+        <text id="fm4p5-status-motor" x="10" y="32" font-size="10" font-weight="700" fill="var(--fm4p5-red, #f43f5e)">
+          PERDE ANDAR · motricidade cai
+        </text>
+      </g>
+
+      <!-- Survival Expectancy -->
+      <g transform="translate(15, 124)">
+        <text x="0" y="12" font-size="9.5" fill="var(--fm4p5-text-muted, #94a3b8)">Sobrevida média:</text>
+        <rect x="0" y="18" width="270" height="22" rx="4" fill="var(--fm4p5-amber-bg, #451a03)" stroke="var(--fm4p5-amber, #f59e0b)"/>
+        <text id="fm4p5-status-survival" x="10" y="32" font-size="10" font-weight="700" fill="var(--fm4p5-amber, #f59e0b)">
+          ~3 ANOS (sobrevida média)
+        </text>
+      </g>
+
+      <!-- Detailed Description Text -->
+      <text id="fm4p5-panel-desc" x="15" y="185" font-size="9.5" fill="var(--fm4p5-text-sub, #cbd5e1)">
+        <tspan x="15" dy="0">Curso progressivo: em média, ao final de cerca de</tspan>
+        <tspan x="15" dy="13">três anos, perde-se a capacidade de andar.</tspan>
+        <tspan x="15" dy="13">Ordem ilustrativa: andar → falar → engolir → respirar.</tspan>
+      </text>
+    </g>
+
+    <!-- KEY EXAM TAKEAWAY / ANCHOR BOX (DESTAQUE PROVA DE RESIDÊNCIA) -->
+    <g transform="translate(15, 362)">
+      <rect width="300" height="162" rx="6" fill="var(--fm4p5-panel, #1e293b)" stroke="var(--fm4p5-amber, #f59e0b)" stroke-width="1.5"/>
+      
+      <rect x="12" y="-10" width="165" height="18" rx="3" fill="var(--fm4p5-amber-bg, #451a03)" stroke="var(--fm4p5-amber, #f59e0b)"/>
+      <text x="94" y="0" font-size="9" font-weight="700" fill="var(--fm4p5-amber, #f59e0b)" text-anchor="middle" dominant-baseline="central">
+        CHAVE PROVA DE RESIDÊNCIA
+      </text>
+
+      <text x="15" y="24" font-size="9.5" fill="var(--fm4p5-text-main, #f8fafc)">
+        <tspan x="15" dy="0" font-weight="700" fill="var(--fm4p5-green, #10b981)">1. MENTE INTACTA:</tspan>
+        <tspan font-weight="400"> A cabeça / mente continua</tspan>
+        <tspan x="15" dy="13">funcionando — só a motricidade cai.</tspan>
+
+        <tspan x="15" dy="17" font-weight="700" fill="var(--fm4p5-red, #f43f5e)">2. O QUE SE PERDE:</tspan>
+        <tspan font-weight="400"> Em média, ao final de ~3 anos:</tspan>
+        <tspan x="15" dy="13">andar, falar, engolir/comer, respirar.</tspan>
+
+        <tspan x="15" dy="17" font-weight="700" fill="var(--fm4p5-teal, #14b8a6)">3. PROLONGAR:</tspan>
+
+        <tspan x="22" dy="13" font-weight="600" fill="var(--fm4p5-teal, #14b8a6)">• Gastrostomia:</tspan>
+        <tspan font-weight="400"> suporte que prolonga a sobrevida.</tspan>
+
+        <tspan x="22" dy="13" font-weight="600" fill="var(--fm4p5-teal, #14b8a6)">• Ventilação mecânica:</tspan>
+        <tspan font-weight="400"> junto com gastrostomia, prolonga.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED INLINE SCRIPT (PURE SVG DETERMINISTIC ENGINE) -->
+  <script>//<![CDATA[
+    (function() {
+      var activeStage = 1;
+      var supportActive = false;
+
+      var stagesData = {
+        1: {
+          title: "PERDA 1: ANDAR",
+          color: "var(--fm4p5-red, #f43f5e)",
+          mind: "MENTE INTACTA · consciência permanece",
+          motor: "PERDE ANDAR · motricidade cai",
+          survival: "~3 ANOS (sobrevida média)",
+          desc: [
+            "Curso progressivo: em média, ao final de cerca de",
+            "três anos, perde-se a capacidade de andar.",
+            "Ordem ilustrativa: andar → falar → engolir → respirar."
+          ]
+        },
+        2: {
+          title: "PERDA 2: FALAR",
+          color: "var(--fm4p5-red, #f43f5e)",
+          mind: "MENTE INTACTA · consciência permanece",
+          motor: "PERDE FALAR · motricidade cai",
+          survival: "~3 ANOS (sobrevida média)",
+          desc: [
+            "Entre as funções que caem, em média: falar.",
+            "O motor desliga; a cabeça / mente continua",
+            "funcionando (mente intacta no eixo motor)."
+          ]
+        },
+        3: {
+          title: "PERDA 3: ENGOLIR / COMER",
+          color: "var(--fm4p5-amber, #f59e0b)",
+          mind: "MENTE INTACTA · consciência permanece",
+          motor: "PERDE ENGOLIR · deglutição cai",
+          survival: "~3 ANOS (sobrevida média)",
+          desc: [
+            "Perde-se engolir / comer — uma das perdas médias",
+            "do curso. Gastrostomia é suporte que prolonga",
+            "a sobrevida (junto com ventilação mecânica)."
+          ]
+        },
+        4: {
+          title: "PERDA 4: RESPIRAR",
+          color: "var(--fm4p5-red, #f43f5e)",
+          mind: "MENTE INTACTA · consciência permanece",
+          motor: "PERDE RESPIRAR · força ventilatória cai",
+          survival: "~3 ANOS (sobrevida média)",
+          desc: [
+            "Perde-se a capacidade de respirar — uma das perdas",
+            "médias do curso. Ventilação mecânica (com gastrostomia)",
+            "prolonga a sobrevida; não reverte a doença."
+          ]
+        }
+      };
+
+      function updateUI() {
+        // Update Buttons
+        for (var i = 1; i <= 4; i++) {
+          var btn = document.getElementById("fm4p5-btn-" + i);
+          var node = document.getElementById("fm4p5-node-" + i);
+          if (btn) {
+            var rect = btn.querySelector("rect");
+            var txt = btn.querySelector("text");
+            if (i === activeStage) {
+              btn.setAttribute("class", "fm4p5-btn fm4p5-active");
+              rect.setAttribute("stroke", "var(--fm4p5-red, #f43f5e)");
+              rect.setAttribute("stroke-width", "2");
+              txt.setAttribute("fill", "var(--fm4p5-text-main, #f8fafc)");
+            } else {
+              btn.setAttribute("class", "fm4p5-btn");
+              rect.setAttribute("stroke", "var(--fm4p5-border, #475569)");
+              rect.setAttribute("stroke-width", "1");
+              txt.setAttribute("fill", "var(--fm4p5-text-sub, #cbd5e1)");
+            }
+          }
+          if (node) {
+            var circle = node.querySelector("circle");
+            if (i === activeStage) {
+              circle.setAttribute("r", "11");
+              circle.setAttribute("stroke-width", "3");
+            } else {
+              circle.setAttribute("r", "8");
+              circle.setAttribute("stroke-width", "2");
+            }
+          }
+        }
+
+        // Update Panel Content
+        var st = stagesData[activeStage];
+        var titleEl = document.getElementById("fm4p5-panel-stage-title");
+        var mindEl = document.getElementById("fm4p5-status-mind");
+        var motorEl = document.getElementById("fm4p5-status-motor");
+        var survEl = document.getElementById("fm4p5-status-survival");
+        var descEl = document.getElementById("fm4p5-panel-desc");
+
+        if (titleEl) {
+          titleEl.textContent = st.title;
+          titleEl.setAttribute("fill", st.color);
+        }
+        if (mindEl) mindEl.textContent = st.mind;
+        if (motorEl) motorEl.textContent = st.motor;
+        
+        if (survEl) {
+          if (supportActive && (activeStage === 3 || activeStage === 4)) {
+            survEl.textContent = "PROLONGA · gastrostomia + VM";
+            survEl.parentNode.querySelector("rect").setAttribute("fill", "var(--fm4p5-teal-bg, #042f2e)");
+            survEl.parentNode.querySelector("rect").setAttribute("stroke", "var(--fm4p5-teal, #14b8a6)");
+            survEl.setAttribute("fill", "var(--fm4p5-teal, #14b8a6)");
+          } else {
+            survEl.textContent = st.survival;
+            survEl.parentNode.querySelector("rect").setAttribute("fill", "var(--fm4p5-amber-bg, #451a03)");
+            survEl.parentNode.querySelector("rect").setAttribute("stroke", "var(--fm4p5-amber, #f59e0b)");
+            survEl.setAttribute("fill", "var(--fm4p5-amber, #f59e0b)");
+          }
+        }
+
+        if (descEl) {
+          var tspans = descEl.querySelectorAll("tspan");
+          for (var k = 0; k < tspans.length; k++) {
+            if (st.desc[k]) tspans[k].textContent = st.desc[k];
+          }
+        }
+
+        // Support Mode Visual updates
+        var pathSup = document.getElementById("fm4p5-path-support");
+        var btnSup = document.getElementById("fm4p5-btn-support");
+        var labelSup = document.getElementById("fm4p5-support-toggle-label");
+        var nodeSup = document.getElementById("fm4p5-node-support");
+
+        if (pathSup && btnSup && labelSup) {
+          if (supportActive) {
+            pathSup.style.opacity = "1";
+            btnSup.querySelector("rect").setAttribute("fill", "var(--fm4p5-teal-bg, #042f2e)");
+            btnSup.querySelector("rect").setAttribute("stroke-width", "2");
+            labelSup.textContent = "[ SUPORTE ATIVO: GASTROSTOMIA + VM PROLONGAM ]";
+            if (nodeSup) nodeSup.style.opacity = "1";
+          } else {
+            pathSup.style.opacity = "0.3";
+            btnSup.querySelector("rect").setAttribute("fill", "var(--fm4p5-card, #334155)");
+            btnSup.querySelector("rect").setAttribute("stroke-width", "1");
+            labelSup.textContent = "[ SIMULAR SUPORTE: GASTROSTOMIA + VM ]";
+            if (nodeSup) nodeSup.style.opacity = "0.4";
+          }
+        }
+      }
+
+      // Attach Event Handlers
+      for (var j = 1; j <= 4; j++) {
+        (function(stageNum) {
+          var btn = document.getElementById("fm4p5-btn-" + stageNum);
+          var node = document.getElementById("fm4p5-node-" + stageNum);
+          
+          if (btn) {
+            btn.addEventListener("click", function() {
+              activeStage = stageNum;
+              updateUI();
+            });
+          }
+          if (node) {
+            node.addEventListener("click", function() {
+              activeStage = stageNum;
+              updateUI();
+            });
+          }
+        })(j);
+      }
+
+      var btnSupport = document.getElementById("fm4p5-btn-support");
+      var nodeSupport = document.getElementById("fm4p5-node-support");
+      
+      if (btnSupport) {
+        btnSupport.addEventListener("click", function() {
+          supportActive = !supportActive;
+          updateUI();
+        });
+      }
+      if (nodeSupport) {
+        nodeSupport.addEventListener("click", function() {
+          supportActive = !supportActive;
+          updateUI();
+        });
+      }
+
+      // Initial Call
+      updateUI();
+    })();
+  //]]></script>
+</svg>
+
+        </div>
+        <p class="figura-ancorada__fonte" style="margin:.5rem .9rem .7rem">Painel dual “motor desliga / mente ligada” com setas de perda funcional — tipografia sóbria, sem cartoon de “prisão”.</p>
+      </figure>
+
+      <aside class="continuity">
+        <div class="prose">
+          <p class="no-indent"><strong>Por que importa na prática:</strong> conversa franca de prognóstico e indicação precoce de suporte (fono, nutrição, ventilação) sem vender cura.</p>
+          <p class="no-indent"><strong>Resumo operacional:</strong> progride · ~3 a · motor cai · mente fica · gastrostomia+VM prolongam.</p>
+          <p class="no-indent">Com liquor e RM normais — o que fecha o diagnóstico? E o que separa de Guillain-Barré?</p>
+        </div>
+      </aside>
+
+      <!-- QUIZ P5 -->
+      <section class="quiz" data-quiz-id="fm4-ela-p05" aria-labelledby="quiz-p05-title">
+        <h2 id="quiz-p05-title">Quiz — fixação</h2>
+        <ol class="quiz__questions">
+          <li class="quiz__question" data-q="1">
+            <p class="quiz__stem">Sobre o curso da ELA:</p>
+            <div role="radiogroup" aria-label="Q1" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Pode estabilizar indefinidamente sem suporte</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Progride obrigatoriamente; sobrevida média ~3 anos</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Remite com corticoide</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Só atinge cognição, poupa o motor</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> Progressão é regra; o número ancora expectativa.</p>
+              <p class="quiz__distractor">(A) nega a progressão obrigatória. (C) confunde com inflamatória. (D) inverte mente×motor. Cai em D porque “neurodegenerativa” vira sinônimo de demência — aqui o motor é o alvo.</p>
+            </div>
+          </li>
+          <li class="quiz__question" data-q="2">
+            <p class="quiz__stem">O que marca a “tragédia” cognitiva da ELA?</p>
+            <div role="radiogroup" aria-label="Q2" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Demência precoce universal</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Perde motricidade com mente/cabeça intacta</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Coma de início</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Alucinações predominantes</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> Consciência preservada enquanto o corpo desliga.</p>
+              <p class="quiz__distractor">(A) associação DFT existe (P6), mas não é o ponto desta frase. (C)/(D) fora do recorte. Cai em A porque confunde associação possível com regra universal do prognóstico motor.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p4.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Fasciculação: inespecífica na vida, ímã na prova</span></a><a class="next" href="p6.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Clínica manda · não é GBS · DFT</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="rodape">ELA: esclerose lateral amiotrófica.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm4.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">ELA · 8 páginas</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>Jairo: do “estresse” ao pé que arrasta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>Um neurônio sozinho não basta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>ELA: a neurodegenerativa dos dois neurônios</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Fasciculação: inespecífica na vida, ímã na prova</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" aria-current="page"><span class="menu-panel__index">05</span><span>Três anos, o motor e a mente intacta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Clínica manda · não é GBS · DFT</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Suporte no chão; riluzole e edaravone compram meses</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Mantra + vignette 72 a: tenar, clonos, bulbar</span></a></li></ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

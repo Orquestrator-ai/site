@@ -1,0 +1,514 @@
+<svg id="exv-root" viewBox="0 0 900 580" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Estilos CSS embutidos para comportamento self-contained e responsivo -->
+    <style>
+      :root {
+        --bg-color: #0f172a;
+        --panel-bg: #1e293b;
+        --text-primary: #f8fafc;
+        --text-muted: #94a3b8;
+        --c-green: #10b981;
+        --c-red: #ef4444;
+        --c-amber: #f59e0b;
+        --c-blue: #0ea5e9;
+        --border-color: #334155;
+        --hotspot-pulse: rgba(245, 158, 11, 0.4);
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg-color: #f8fafc;
+          --panel-bg: #ffffff;
+          --text-primary: #0f172a;
+          --text-muted: #64748b;
+          --c-green: #059669;
+          --c-red: #dc2626;
+          --c-amber: #d97706;
+          --c-blue: #0284c7;
+          --border-color: #e2e8f0;
+          --hotspot-pulse: rgba(217, 119, 6, 0.3);
+        }
+      }
+
+      #exv-root {
+        background-color: var(--bg-color);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: var(--text-primary);
+        user-select: none;
+      }
+
+      /* Transições e Opacidades dos Estados */
+      .exv-only-inicial, .exv-only-avancado {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      }
+
+      #exv-root:not(.exv-is-advanced) .exv-only-avancado {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #exv-root:not(.exv-is-advanced) .exv-only-inicial {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      #exv-root.exv-is-advanced .exv-only-inicial {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #exv-root.exv-is-advanced .exv-only-avancado {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Toggle de Estados */
+      .exv-toggle-container {
+        fill: var(--panel-bg);
+        stroke: var(--border-color);
+        stroke-width: 1.5px;
+      }
+
+      .exv-toggle-bg {
+        fill: var(--c-blue);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .exv-btn {
+        cursor: pointer;
+      }
+
+      #exv-root:not(.exv-is-advanced) #exv-btn-init text {
+        fill: #ffffff;
+        font-weight: 600;
+      }
+
+      #exv-root:not(.exv-is-advanced) #exv-btn-adv text {
+        fill: var(--text-muted);
+      }
+
+      #exv-root.exv-is-advanced #exv-btn-init text {
+        fill: var(--text-muted);
+      }
+
+      #exv-root.exv-is-advanced #exv-btn-adv text {
+        fill: #ffffff;
+        font-weight: 600;
+      }
+
+      #exv-root.exv-is-advanced .exv-toggle-bg {
+        transform: translate(186px, 0);
+      }
+
+      /* Painel de Dados Comparativos */
+      .exv-col-saudavel, .exv-col-alzheimer {
+        transition: fill-opacity 0.3s, stroke 0.3s;
+      }
+
+      #exv-root:not(.exv-is-advanced) .exv-col-saudavel {
+        fill-opacity: 0.08;
+        stroke: var(--c-green);
+        stroke-width: 1.5px;
+      }
+
+      #exv-root:not(.exv-is-advanced) .exv-col-alzheimer {
+        fill-opacity: 0.01;
+        stroke: transparent;
+      }
+
+      #exv-root.exv-is-advanced .exv-col-saudavel {
+        fill-opacity: 0.01;
+        stroke: transparent;
+      }
+
+      #exv-root.exv-is-advanced .exv-col-alzheimer {
+        fill-opacity: 0.08;
+        stroke: var(--c-red);
+        stroke-width: 1.5px;
+      }
+
+      /* Painel Lateral Alternado (Default vs Hotspot) */
+      .exv-default-panel {
+        transition: opacity 0.3s ease;
+      }
+
+      .exv-hotspot-panel {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translateY(10px);
+      }
+
+      #exv-root.exv-show-hotspot .exv-default-panel {
+        opacity: 0.05;
+        pointer-events: none;
+      }
+
+      #exv-root.exv-show-hotspot .exv-hotspot-panel {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      /* Pulsação do Hotspot */
+      @keyframes exv-pulse {
+        0% { r: 10px; opacity: 0.8; }
+        50% { r: 18px; opacity: 0.2; }
+        100% { r: 10px; opacity: 0.8; }
+      }
+
+      .exv-pulse-ring {
+        animation: exv-pulse 2s infinite ease-in-out;
+        fill: var(--c-amber);
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .exv-hotspot-trigger {
+        cursor: pointer;
+      }
+
+      .exv-hotspot-trigger:hover .exv-pulse-ring {
+        animation-duration: 1s;
+      }
+
+      /* Líderes e Rótulos */
+      .exv-leader-line {
+        stroke: var(--text-muted);
+        stroke-opacity: 0.4;
+        stroke-width: 1.2px;
+        stroke-dasharray: 2 2;
+        fill: none;
+      }
+
+      .exv-leader-dot {
+        fill: var(--text-muted);
+        opacity: 0.7;
+      }
+
+      .exv-label {
+        font-size: 11px;
+        fill: var(--text-primary);
+      }
+
+      .exv-highlight-amber {
+        fill: var(--c-amber);
+        font-weight: 600;
+      }
+    </style>
+
+    <!-- Hemisfério Saudável Esquerdo (âncora X=250) -->
+    <path id="exv-hemi-healthy" d="M 250,120 
+      C 235,120 225,125 220,132 
+      C 215,138 222,148 215,155
+      C 205,160 195,152 188,160
+      C 180,168 185,185 178,192
+      C 170,198 160,205 155,215
+      C 150,225 158,235 152,245
+      C 145,255 130,260 125,272
+      C 120,285 132,295 130,305
+      C 128,315 120,325 122,335
+      C 125,350 140,360 145,372
+      C 150,385 142,398 152,408
+      C 165,420 200,420 250,420 Z" />
+      
+    <!-- Hemisfério Atrófico Esquerdo (âncora X=250) -->
+    <path id="exv-hemi-atrophy" d="M 250,135 
+      C 238,135 230,145 225,152
+      C 220,158 230,172 215,178
+      C 200,182 185,170 178,182
+      C 170,192 178,212 168,222
+      C 158,230 145,238 140,250
+      C 135,262 148,275 140,288
+      C 132,300 115,308 112,322
+      C 110,335 125,348 122,360
+      C 120,372 110,385 115,398
+      C 125,410 140,410 152,410
+      C 165,410 190,405 250,405 Z" />
+  </defs>
+
+  <!-- Fundo Geral do Painel -->
+  <rect width="100%" height="100%" fill="var(--bg-color)" />
+
+  <!-- Título Principal -->
+  <text x="450" y="42" text-anchor="middle" font-size="20" font-weight="700" fill="var(--text-primary)" letter-spacing="0.5">
+    Mecanismo da Hidrocefalia Ex-Vacuo
+  </text>
+
+  <!-- CONTROLE DE ESTADOS (TOGGLE PURE-SVG) -->
+  <g transform="translate(260, 64)">
+    <rect x="0" y="0" width="380" height="36" rx="18" ry="18" class="exv-toggle-container"/>
+    <rect x="4" y="4" width="186" height="28" rx="14" ry="14" class="exv-toggle-bg"/>
+    
+    <!-- Botão Inicial -->
+    <g id="exv-btn-init" class="exv-btn" role="button" aria-label="Visualizar Cérebro Preservado">
+      <rect x="0" y="0" width="190" height="36" rx="18" fill="transparent" pointer-events="all"/>
+      <text x="95" y="22" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">1. Cérebro Preservado</text>
+    </g>
+    
+    <!-- Botão Avançado -->
+    <g id="exv-btn-adv" class="exv-btn" role="button" aria-label="Visualizar Alzheimer Avançado com Atrofia Ex-Vacuo">
+      <rect x="190" y="0" width="190" height="36" rx="18" fill="transparent" pointer-events="all"/>
+      <text x="285" y="22" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">2. Atrofia (Ex-Vacuo)</text>
+    </g>
+  </g>
+
+  <!-- ================= PALCO ANATÔMICO (ESQUERDA) ================= -->
+  <g transform="translate(0, 20)">
+    <!-- Cavidade Craniana com Líquor de fundo (azul claro de preenchimento) -->
+    <path d="M 250,110 C 120,110 110,180 110,270 C 110,360 120,430 150,430 C 170,430 210,430 250,430 C 290,430 330,430 350,430 C 380,430 390,360 390,270 C 390,180 380,110 250,110 Z" fill="var(--c-blue)" fill-opacity="0.12"/>
+    
+    <!-- 1. CAMADA: ESTADO SAUDÁVEL -->
+    <g class="exv-only-inicial">
+      <!-- Parênquima esquerdo e direito -->
+      <use href="#exv-hemi-healthy" fill="var(--c-green)" fill-opacity="0.8" stroke="var(--c-green)" stroke-width="2"/>
+      <use href="#exv-hemi-healthy" fill="var(--c-green)" fill-opacity="0.8" stroke="var(--c-green)" stroke-width="2" transform="translate(500, 0) scale(-1, 1)"/>
+      
+      <!-- Ventrículos Laterais (azul) -->
+      <path d="M 248,230 C 248,205 240,195 230,195 C 220,195 215,205 210,215 C 205,225 215,235 225,235 C 235,235 245,230 248,230 Z" fill="var(--c-blue)" stroke="var(--text-primary)" stroke-opacity="0.15"/>
+      <path d="M 252,230 C 252,205 260,195 270,195 C 280,195 285,205 290,215 C 295,225 285,235 275,235 C 265,235 255,230 252,230 Z" fill="var(--c-blue)" stroke="var(--text-primary)" stroke-opacity="0.15"/>
+      
+      <!-- Terceiro Ventrículo -->
+      <ellipse cx="250" cy="245" rx="4" ry="12" fill="var(--c-blue)"/>
+
+      <!-- Líderes e Rótulos - Saudável -->
+      <path class="exv-leader-line" d="M 80,140 L 140,140 L 220,132"/>
+      <circle class="exv-leader-dot" cx="220" cy="132" r="3"/>
+      <text class="exv-label" x="75" y="144" text-anchor="end">Sulcos estreitos e preservados</text>
+
+      <path class="exv-leader-line" d="M 80,340 L 105,340 L 130,305"/>
+      <circle class="exv-leader-dot" cx="130" cy="305" r="3"/>
+      <text class="exv-label" x="75" y="344" text-anchor="end">Córtex cerebral volumoso</text>
+
+      <path class="exv-leader-line" d="M 420,200 L 330,200 L 280,215"/>
+      <circle class="exv-leader-dot" cx="280" cy="215" r="3"/>
+      <text class="exv-label" x="425" y="204" text-anchor="start">Ventrículos laterais normais</text>
+    </g>
+
+    <!-- 2. CAMADA: ESTADO ATRÓFICO (ALZHEIMER AVANÇADO) -->
+    <g class="exv-only-avancado">
+      <!-- Parênquima esquerdo e direito -->
+      <use href="#exv-hemi-atrophy" fill="var(--c-red)" fill-opacity="0.75" stroke="var(--c-red)" stroke-width="2"/>
+      <use href="#exv-hemi-atrophy" fill="var(--c-red)" fill-opacity="0.75" stroke="var(--c-red)" stroke-width="2" transform="translate(500, 0) scale(-1, 1)"/>
+      
+      <!-- Ventrículos Laterais Dilatados (ex-vacuo) -->
+      <path d="M 248,240 C 248,185 228,165 210,165 C 190,165 178,190 172,215 C 165,240 185,265 210,265 C 230,265 245,255 248,240 Z" fill="var(--c-blue)" stroke="var(--text-primary)" stroke-opacity="0.15"/>
+      <path d="M 252,240 C 252,185 272,165 290,165 C 310,165 322,190 328,215 C 335,240 315,265 290,265 C 270,265 255,255 252,240 Z" fill="var(--c-blue)" stroke="var(--text-primary)" stroke-opacity="0.15"/>
+      
+      <!-- Terceiro Ventrículo Dilatado -->
+      <ellipse cx="250" cy="245" rx="8" ry="18" fill="var(--c-blue)"/>
+      
+      <!-- Setas de Atrofia (Forças centrípetas de retração do parênquima) -->
+      <!-- Esquerda -->
+      <path d="M 125,160 L 140,172 M 140,172 L 135,172 M 140,172 L 140,167" stroke="var(--c-red)" stroke-width="2" fill="none"/>
+      <path d="M 105,250 L 120,252 M 120,252 L 115,250 M 120,252 L 119,247" stroke="var(--c-red)" stroke-width="2" fill="none"/>
+      <!-- Direita -->
+      <path d="M 375,160 L 360,172 M 360,172 L 365,172 M 360,172 L 360,167" stroke="var(--c-red)" stroke-width="2" fill="none"/>
+      <path d="M 395,250 L 380,252 M 380,252 L 385,250 M 380,252 L 381,247" stroke="var(--c-red)" stroke-width="2" fill="none"/>
+      
+      <!-- Setas de Expansão Ventricular Passiva (Acomodação) -->
+      <path d="M 215,215 L 195,210 M 195,210 L 201,208 M 195,210 L 200,214" stroke="var(--c-amber)" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M 285,215 L 305,210 M 305,210 L 299,208 M 305,210 L 300,214" stroke="var(--c-amber)" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+      <!-- Líderes e Rótulos - Avançado/Atrofia -->
+      <path class="exv-leader-line" d="M 80,140 L 140,140 L 225,152"/>
+      <circle class="exv-leader-dot" cx="225" cy="152" r="3"/>
+      <text class="exv-label" x="75" y="144" text-anchor="end" fill="var(--c-red)" font-weight="600">Sulcos e fissuras alargados</text>
+
+      <path class="exv-leader-line" d="M 80,340 L 105,340 L 112,322"/>
+      <circle class="exv-leader-dot" cx="112" cy="322" r="3"/>
+      <text class="exv-label" x="75" y="344" text-anchor="end" fill="var(--c-red)" font-weight="600">Atrofia e perda cortical</text>
+
+      <path class="exv-leader-line" d="M 420,200 L 350,200 L 315,205"/>
+      <circle class="exv-leader-dot" cx="315" cy="205" r="3"/>
+      <text class="exv-label" x="425" y="204" text-anchor="start" fill="var(--c-red)" font-weight="600">Dilatação ex-vacuo (passiva)</text>
+
+      <!-- Rótulo de Atrofia/Vácuo central -->
+      <rect x="180" y="306" width="140" height="42" rx="6" fill="var(--panel-bg)" stroke="var(--c-amber)" stroke-width="1.5"/>
+      <text x="250" y="322" text-anchor="middle" font-size="11" class="exv-highlight-amber">ACOMODAÇÃO PASSIVA</text>
+      <text x="250" y="338" text-anchor="middle" font-size="9" fill="var(--text-muted)">Sem aumento de pressão</text>
+
+      <!-- HOTSPOTS DE INTERAÇÃO (SOBRE OS VENTRÍCULOS) -->
+      <!-- Ventrículo Esquerdo -->
+      <g class="exv-hotspot-trigger" role="button" aria-label="Ver biofísica do ventrículo esquerdo">
+        <circle cx="210" cy="215" r="28" fill="transparent" pointer-events="all"/>
+        <circle cx="210" cy="215" r="14" class="exv-pulse-ring"/>
+        <circle cx="210" cy="215" r="6" fill="var(--c-amber)"/>
+      </g>
+      
+      <!-- Ventrículo Direito -->
+      <g class="exv-hotspot-trigger" role="button" aria-label="Ver biofísica do ventrículo direito">
+        <circle cx="290" cy="215" r="28" fill="transparent" pointer-events="all"/>
+        <circle cx="290" cy="215" r="14" class="exv-pulse-ring"/>
+        <circle cx="290" cy="215" r="6" fill="var(--c-amber)"/>
+      </g>
+
+      <!-- Instrução de Clique no Ventrículo -->
+      <text x="250" y="148" text-anchor="middle" font-size="10" fill="var(--c-amber)" font-weight="600" letter-spacing="0.5">ℹ CLIQUE NOS VENTRÍCULOS DILATADOS</text>
+    </g>
+
+    <!-- Crânio Externo Comum (caixa óssea protetora rígida) -->
+    <path d="M 250,110 C 120,110 110,180 110,270 C 110,360 120,430 150,430 C 170,430 210,430 250,430 C 290,430 330,430 350,430 C 380,430 390,360 390,270 C 390,180 380,110 250,110 Z" fill="none" stroke="var(--text-muted)" stroke-width="10" stroke-opacity="0.3"/>
+    <path d="M 250,110 C 120,110 110,180 110,270 C 110,360 120,430 150,430 C 170,430 210,430 250,430 C 290,430 330,430 350,430 C 380,430 390,360 390,270 C 390,180 380,110 250,110 Z" fill="none" stroke="var(--text-primary)" stroke-width="1" stroke-opacity="0.15"/>
+  </g>
+
+  <!-- ================= PAINEL DE LEITURA E DADOS (DIREITA) ================= -->
+  <g transform="translate(470, 120)">
+    <!-- Container do Painel -->
+    <rect width="380" height="360" rx="16" fill="var(--panel-bg)" stroke="var(--border-color)" stroke-width="1.5"/>
+
+    <!-- PAINEL PADRÃO (TABELA + DESCRIÇÕES DE ESTADO) -->
+    <g class="exv-default-panel">
+      <text x="20" y="30" font-size="14" font-weight="700" fill="var(--text-primary)" letter-spacing="0.5">AVALIAÇÃO MORFOFUNCIONAL</text>
+      
+      <!-- Colunas de Destaque Traseiras -->
+      <rect x="180" y="50" width="90" height="150" rx="8" class="exv-col-saudavel" fill="var(--c-green)" />
+      <rect x="275" y="50" width="90" height="150" rx="8" class="exv-col-alzheimer" fill="var(--c-red)" />
+
+      <!-- Cabeçalhos de Tabela -->
+      <text x="20" y="68" font-size="11" font-weight="600" fill="var(--text-muted)">PARÂMETRO</text>
+      <text x="225" y="68" font-size="11" font-weight="600" fill="var(--text-muted)" text-anchor="middle">SAUDÁVEL</text>
+      <text x="320" y="68" font-size="11" font-weight="600" fill="var(--text-muted)" text-anchor="middle">ALZHEIMER</text>
+      
+      <line x1="20" y1="78" x2="360" y2="78" stroke="var(--border-color)" stroke-width="1"/>
+
+      <!-- Linha 1: Volume Encefálico -->
+      <text x="20" y="102" font-size="11" fill="var(--text-primary)">Vol. Encefálico</text>
+      <text x="225" y="102" font-size="11" fill="var(--c-green)" font-weight="600" text-anchor="middle">Normal</text>
+      <text x="320" y="102" font-size="11" fill="var(--c-red)" font-weight="600" text-anchor="middle">Reduzido</text>
+      
+      <line x1="20" y1="112" x2="360" y2="112" stroke="var(--border-color)" stroke-width="0.5"/>
+
+      <!-- Linha 2: Volume Ventricular -->
+      <text x="20" y="134" font-size="11" fill="var(--text-primary)">Vol. Ventricular</text>
+      <text x="225" y="134" font-size="11" fill="var(--c-green)" font-weight="600" text-anchor="middle">Preservado</text>
+      <text x="320" y="134" font-size="11" fill="var(--c-red)" font-weight="600" text-anchor="middle">Dilatado</text>
+      
+      <line x1="20" y1="144" x2="360" y2="144" stroke="var(--border-color)" stroke-width="0.5"/>
+
+      <!-- Linha 3: Pressão Intracraniana (PIC) -->
+      <text x="20" y="166" font-size="11" fill="var(--text-primary)">Pressão (PIC)</text>
+      <text x="225" y="166" font-size="11" fill="var(--c-green)" font-weight="600" text-anchor="middle">10 mmHg</text>
+      <text x="320" y="166" font-size="11" fill="var(--c-green)" font-weight="600" text-anchor="middle">10 mmHg</text>
+      
+      <line x1="20" y1="176" x2="360" y2="176" stroke="var(--border-color)" stroke-width="0.5"/>
+
+      <!-- Linha 4: Causa Física -->
+      <text x="20" y="194" font-size="11" fill="var(--text-primary)">Força de Expansão</text>
+      <text x="225" y="194" font-size="11" fill="var(--text-muted)" text-anchor="middle">Nenhuma</text>
+      <text x="320" y="194" font-size="11" fill="var(--c-amber)" font-weight="600" text-anchor="middle">Vácuo Passivo</text>
+
+      <!-- Textos de Descrição Dinâmicos -->
+      <g class="exv-only-inicial" transform="translate(20, 225)">
+        <rect width="340" height="110" rx="8" fill="var(--bg-color)" fill-opacity="0.4" stroke="var(--border-color)" stroke-width="1"/>
+        <text x="15" y="24" font-size="11" font-weight="700" fill="var(--c-green)">CÉREBRO SAUDÁVEL (CONTROLE):</text>
+        <text x="15" y="44" font-size="11" fill="var(--text-primary)">O parênquima cerebral preenche quase toda a cavidade</text>
+        <text x="15" y="60" font-size="11" fill="var(--text-primary)">craniana, mantendo uma faixa fina periférica de líquor.</text>
+        <text x="15" y="76" font-size="11" fill="var(--text-primary)">Os ventrículos laterais possuem tamanho normal e ideal</text>
+        <text x="15" y="92" font-size="11" fill="var(--text-primary)">sob pressão intracraniana (PIC) perfeitamente estável.</text>
+      </g>
+
+      <g class="exv-only-avancado" transform="translate(20, 225)">
+        <rect width="340" height="110" rx="8" fill="var(--bg-color)" fill-opacity="0.4" stroke="var(--border-color)" stroke-width="1"/>
+        <text x="15" y="24" font-size="11" font-weight="700" fill="var(--c-red)">ALZHEIMER AVANÇADO (ATROFIA):</text>
+        <text x="15" y="44" font-size="11" fill="var(--text-primary)">A perda generalizada de neurônios reduz a massa global.</text>
+        <text x="15" y="60" font-size="11" fill="var(--text-primary)">Por ser o crânio rígido e indeformável, o espaço livre</text>
+        <text x="15" y="76" font-size="11" fill="var(--text-primary)">é ocupado passivamente pela dilatação dos ventrículos</text>
+        <text x="15" y="92" font-size="11" fill="var(--text-primary)">e dos sulcos (ex-vacuo). Sem hipertensão liquórica.</text>
+      </g>
+    </g>
+
+    <!-- PAINEL DO HOTSPOT DETALHADO (SE ATIVADO PELO CLIQUE) -->
+    <g class="exv-hotspot-panel">
+      <rect width="380" height="360" rx="16" fill="var(--panel-bg)" stroke="var(--border-color)" stroke-width="1.5"/>
+      <text x="20" y="32" font-size="14" font-weight="700" fill="var(--c-amber)" letter-spacing="0.5">MECANISMO DA DILATAÇÃO EX-VACUO</text>
+      
+      <g transform="translate(20, 52)">
+        <rect width="340" height="236" rx="8" fill="var(--bg-color)" fill-opacity="0.4" stroke="var(--border-color)" stroke-width="1"/>
+        
+        <text x="15" y="24" font-size="11" font-weight="700" fill="var(--c-amber)">FÍSICA DA ACOMODAÇÃO DO ESPAÇO:</text>
+        <text x="15" y="46" font-size="11" fill="var(--text-primary)">A dilatação ex-vacuo é passiva. O parênquima retrai</text>
+        <text x="15" y="62" font-size="11" fill="var(--text-primary)">como consequência da atrofia cortical acelerada.</text>
+        <text x="15" y="78" font-size="11" fill="var(--text-primary)">O líquor funciona apenas como preenchedor de espaço,</text>
+        <text x="15" y="94" font-size="11" fill="var(--text-primary)">não exercendo qualquer força mecânica destrutiva.</text>
+
+        <text x="15" y="122" font-size="11" font-weight="700" fill="var(--c-red)">DIFERENÇA PARA A HIDROCEFALIA ATIVA:</text>
+        <text x="15" y="144" font-size="11" fill="var(--text-primary)">Na obstrutiva ou hipertensiva, há aumento real da</text>
+        <text x="15" y="160" font-size="11" fill="var(--text-primary)">pressão (PIC) que comprime ativamente o cérebro.</text>
+        <text x="15" y="176" font-size="11" fill="var(--text-primary)">Tentar tratar a dilatação ex-vacuo com drenagem ou</text>
+        <text x="15" y="192" font-size="11" fill="var(--text-primary)">derivação (DVP) é inútil e perigoso ao paciente.</text>
+        
+        <text x="15" y="218" font-size="10" fill="var(--c-amber)" font-weight="600">Achado tardio secundário • Pressão normal (PIC ~10 mmHg)</text>
+      </g>
+
+      <!-- Botão Voltar -->
+      <g id="exv-hotspot-close" class="exv-btn" role="button" aria-label="Voltar para a análise geral">
+        <rect x="20" y="304" width="340" height="36" rx="8" fill="var(--c-blue)" />
+        <text x="190" y="326" text-anchor="middle" font-size="12" font-weight="600" fill="#ffffff">Voltar para Análise Geral</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= LEGENDA DE INTERPRETAÇÃO CLÍNICA (RODAPÉ) ================= -->
+  <g transform="translate(50, 500)">
+    <rect x="0" y="0" width="800" height="56" rx="10" fill="var(--panel-bg)" stroke="var(--border-color)" stroke-width="1.5"/>
+    <text x="400" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="var(--text-primary)">
+      Diagnóstico de Exclusão: Hidrocefalia ex-vacuo (Alzheimer Avançado)
+    </text>
+    <text x="400" y="40" text-anchor="middle" font-size="11" fill="var(--text-muted)">
+      O cérebro encolhe e o ventrículo ocupa a sobra — não é líquor demais nem sob pressão. Contar com este achado tardio para diagnóstico precoce é chegar atrasado.
+    </text>
+  </g>
+
+  <!-- ================= SCRIPTS DE INTERATIVIDADE INTERNA (CDATA) ================= -->
+  <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+      function init() {
+        const svg = document.getElementById("exv-root");
+        if (!svg || svg.hasAttribute("data-init-done")) return;
+        svg.setAttribute("data-init-done", "true");
+        
+        const btnInit = svg.getElementById("exv-btn-init");
+        const btnAdv = svg.getElementById("exv-btn-adv");
+        const hotspots = svg.querySelectorAll(".exv-hotspot-trigger");
+        const closeBtn = svg.getElementById("exv-hotspot-close");
+        
+        if (btnInit) {
+          btnInit.addEventListener("click", () => {
+            svg.classList.remove("exv-is-advanced");
+            svg.classList.remove("exv-show-hotspot");
+          });
+        }
+        
+        if (btnAdv) {
+          btnAdv.addEventListener("click", () => {
+            svg.classList.add("exv-is-advanced");
+          });
+        }
+        
+        hotspots.forEach(hotspot => {
+          hotspot.addEventListener("click", (e) => {
+            e.stopPropagation();
+            svg.classList.add("exv-is-advanced");
+            svg.classList.add("exv-show-hotspot");
+          });
+        });
+        
+        if (closeBtn) {
+          closeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            svg.classList.remove("exv-show-hotspot");
+          });
+        }
+      }
+      
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+    //]]>
+  </script>
+</svg>

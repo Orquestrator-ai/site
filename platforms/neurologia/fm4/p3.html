@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="ELA (fm4). A neurodegenerativa do 1º e do 2º neurônio motor — idoso, assimétrica, fraqueza progressiva.">
+<title>ELA: a neurodegenerativa dos dois neurônios · Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm4-cara">
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.5}
+.opener--vs{border-left:4px solid var(--coral)}.opener--vs .opener__eyebrow{color:var(--coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip,.chip--topic,.chip--1,.chip--2,.chip--gold{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ink-60)}
+.chip--1{color:var(--indigo);border-color:color-mix(in srgb,var(--indigo) 45%,var(--border))}
+.chip--2{color:var(--ciano);border-color:color-mix(in srgb,var(--ciano) 45%,var(--border))}
+.chip--gold{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}
+.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose ul,.prose-list{margin:0 0 1em 1.1rem;padding:0}
+.prose ul li,.prose-list li{margin:.3rem 0}
+.prose strong,.term{color:var(--ink-100)}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.hl-1{color:var(--indigo);font-weight:700}.hl-2{color:var(--ciano);font-weight:700}
+.exec-card,.case-card,.continuity,.nuance{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.exec-card__title{margin:0 0 .65rem;font-size:1rem;color:var(--ciano)}
+.continuity{border-left:3px solid var(--indigo)}
+.def-card{border:1px solid color-mix(in srgb,var(--coral) 40%,var(--border));border-radius:var(--radius);background:var(--bg-2);padding:1.1rem 1.2rem;margin:1.2rem 0;box-shadow:var(--shadow);border-left:4px solid var(--coral);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.def-card h2{margin:0 0 .5rem;font-size:1.15rem;color:var(--ink-100)}
+.def-card p{margin:0;color:var(--ink-80);line-height:1.55}
+.nms-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:.7rem 0}
+.nms-cell{border:1px solid var(--border);border-radius:10px;padding:.7rem .8rem;background:var(--bg-3)}
+.nms-cell--1{border-color:color-mix(in srgb,var(--indigo) 42%,var(--border))}
+.nms-cell--2{border-color:color-mix(in srgb,var(--ciano) 42%,var(--border))}
+.nms-cell h4{margin:0 0 .35rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.nms-cell--1 h4{color:var(--indigo)}.nms-cell--2 h4{color:var(--ciano)}
+.nms-cell ul{margin:.2rem 0 0 1rem;padding:0}.nms-cell li{font-size:.9rem;margin:.2rem 0}
+.fig{margin:1.25rem 0}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ciano);margin-bottom:.3rem;font-weight:800}
+.fig__svg-frame{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-1);box-shadow:var(--shadow)}
+.fm4-inline-svg{display:block;width:100%;height:auto;border-radius:var(--radius-sm)}
+.hero-figure{margin:1.6rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.hero-figure__head{padding:1rem 1.2rem .6rem;border-bottom:1px solid var(--border)}
+.hero-figure__tag{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);font-weight:800;margin-right:.5rem}
+.hero-figure__head h2{display:inline;margin:0;font-size:1.05rem;color:var(--ink-100)}
+.hero-figure__svg{background:var(--bg-1);overflow:hidden}
+.hero-figure__cap{padding:.7rem 1.2rem .9rem;font-size:.82rem;color:var(--ink-60);line-height:1.5;border-top:1px solid var(--border)}
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.quiz h2{margin:0 0 .85rem;font-size:1.1rem;color:var(--ink-100)}
+.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}
+.quiz__stem{margin:0 0 .55rem;font-weight:600;color:var(--ink-100);line-height:1.45}
+.quiz__alternatives{display:grid;gap:.4rem}
+.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit;line-height:1.4}
+.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}
+.quiz__alt.is-correct{border-color:var(--verde);background:color-mix(in srgb,var(--verde) 14%,var(--bg-3))}
+.quiz__alt.is-wrong{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 12%,var(--bg-3))}
+.quiz__feedback{margin-top:.6rem;padding:.75rem .8rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}
+.quiz__feedback[hidden]{display:none}
+.quiz__verdict{margin:0 0 .4rem;font-weight:800}
+.quiz__verdict.is-ok{color:var(--verde)}.quiz__verdict.is-bad{color:var(--coral)}
+.quiz__justification,.quiz__distractor{margin:.3rem 0 0;font-size:.92rem;line-height:1.5;color:var(--ink-80)}
+.page-nav{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.page-nav a{display:inline-flex;flex-direction:column;min-height:44px;padding:.5rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);text-decoration:none;color:var(--ink-100)}
+.page-nav a:hover{background:var(--bg-4)}
+.page-nav .nav-dir{font-size:.72rem;color:var(--ink-60)}.page-nav .nav-ttl{font-size:.86rem}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:640px){.nms-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p3" data-layout="fm4-p03" data-source-ids="027,028,029,030,031,032,033,034">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html"><span class="site-header__logo" aria-hidden="true">NE</span><span class="site-header__titles"><span class="site-header__title">ELA: esclerose lateral amiotrófica</span><span class="site-header__subtitle">Neurologia · esclerose lateral amiotrófica</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress">3/8</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+  <div class="reading">
+    <article class="page" data-page="p3" data-layout="fm4-p03" data-source-ids="027,028,029,030,031,032,033,034">
+      <p class="page__eyebrow">Página 3 · Comparação</p>
+
+      <section class="opener opener--vs" data-opener="E7">
+        <span class="opener__eyebrow">Comparação chocante</span>
+        <h1 id="page-title">ELA: a neurodegenerativa dos dois neurônios</h1>
+        <p class="opener__lead no-indent">1º grita piramidal · 2º cospe fasciculação e atrofia — e a doença pega os dois. Esse é o molde da esclerose lateral amiotrófica.</p>
+      </section>
+
+      <div class="chipset">
+        <span class="chip--1">1º NMS</span><span class="chip--2">2º NMS</span><span class="chip--gold">idoso · assimétrica</span>
+      </div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h2 class="topic-h">Nome e natureza</h2>
+          <p>A doença capaz de pegar um paciente <strong class="term">idoso</strong> e atacar <strong class="term">especificamente</strong> o 1º e o 2º neurônio motor (e <strong>mais nada</strong>) é a <strong class="term">esclerose lateral amiotrófica (ELA)</strong>.</p>
+          <p>ELA é doença <strong class="term">neurodegenerativa</strong> do <strong class="term">primeiro e do segundo</strong> neurônio motor.</p>
+
+          <h2 class="topic-h">Idoso e assimetria</h2>
+          <p>Perfil epidemiológico clássico de boa doença neurodegenerativa: <strong class="term">idoso</strong>. Como boa doença neurodegenerativa, a ELA <strong class="term">tende a ser assimétrica</strong>.</p>
+
+          <h2 class="topic-h">Clínica nuclear</h2>
+          <p><strong>Fraqueza</strong> — progressiva, misturando clínica de 1º e de 2º, de forma <strong>mais ou menos assimétrica</strong>.</p>
+          <p><strong class="hl-1">Clínica do 1º:</strong> Babinski, espasticidade, hiperreflexia.</p>
+          <p><strong class="hl-2">Clínica do 2º</strong> que mais chama atenção: <strong>fasciculações</strong>, <strong>cãibras</strong> (mesmo contexto de perda de inervação / desnervação) e <strong>atrofia pronunciada</strong>. As cãibras entram no mesmo saco da desnervação: se se perde a inervação do músculo, também pode haver cãibras.</p>
+        </div>
+      </section>
+
+      <div class="def-card">
+        <h2>ELA</h2>
+        <p>Neurodegenerativa do <strong class="hl-1">1º</strong> e do <strong class="hl-2">2º</strong> NMS · idoso · assimétrica · fraqueza progressiva.</p>
+      </div>
+
+      <aside class="exec-card" aria-label="Clínica nuclear 1º e 2º">
+        <h3 class="exec-card__title">Clínica 1º × clínica 2º</h3>
+        <div class="nms-grid">
+          <div class="nms-cell nms-cell--1"><h4>1º NMS</h4><ul><li>Babinski</li><li>Espasticidade</li><li>Hiperreflexia</li></ul></div>
+          <div class="nms-cell nms-cell--2"><h4>2º NMS</h4><ul><li>Fasciculações</li><li>Cãibras</li><li>Atrofia pronunciada</li></ul></div>
+        </div>
+      </aside>
+
+      <!-- FIGURA REAL — R3 atrofia -->
+      <div class="figura-ancorada">
+        <figure class="figura-ancorada__media">
+          <img src="media/B03-als-clinical-atrophy-limb-tongue.png" alt="Paciente adulto com esclerose lateral amiotrófica: emagrecimento e atrofia muscular de membros com necessidade de apoio; atrofia avançada da língua; atrofia de cintura escapular e tronco, com sinal de Babinski; atrofia tenar avançada da mão." loading="lazy" decoding="async">
+          <figcaption class="figura-ancorada__legenda"><b>Atrofia na ELA</b> — membro, tronco e língua. Painel clínico de caso real: o 2º visível na foto, o 1º convive no exame.</figcaption>
+          <p class="figura-ancorada__fonte">From Okumiya K et al., BMJ Open 2014 (case ALS 12), via Wikimedia Commons · CC BY 3.0 · <a href="https://commons.wikimedia.org/wiki/File:ALS_clinical_picture.png" rel="noopener">fonte</a> · <a href="https://bmjopen.bmj.com/content/4/4/e004353" rel="noopener">artigo</a></p>
+        </figure>
+        <div class="figura-ancorada__ancora">
+          <h4>O 2º que se vê</h4>
+          <p>A atrofia (de membro, tronco e língua) é a face do 2º neurônio — a peça que o olho reconhece na clínica. Mas a foto é do mesmo corpo que tem Babinski: o 1º não aparece na imagem, aparece no exame. ELA é a doença que <strong>precisa dos dois</strong> para ser nomeada.</p>
+        </div>
+      </div>
+
+      <!-- Figura: dois andares simples -->
+      <figure class="fig">
+        <span class="fig__label">Dois andares atingidos na ELA</span>
+        <div class="fig__svg-frame">
+          <svg id="fm4p3piso-svg" class="fm4-inline-svg fm4p3piso-root" viewBox="0 0 880 540" width="100%" height="100%" data-scene="both" xmlns="http://www.w3.org/2000/svg">
+  <title>Dois andares motores atingidos na ELA</title>
+  <desc>Esquema simples do trato do primeiro neurônio e do corno anterior do segundo, ambos marcados como atingidos na esclerose lateral amiotrófica.</desc>
+
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="fm4p3piso-grad-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p3piso-indigo, #818cf8)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="var(--fm4p3piso-indigo, #818cf8)" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="fm4p3piso-grad-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p3piso-teal, #2dd4bf)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="var(--fm4p3piso-teal, #2dd4bf)" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="fm4p3piso-grad-coral" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p3piso-coral, #fb7185)" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="var(--fm4p3piso-coral, #fb7185)" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Filters for Glow -->
+    <filter id="fm4p3piso-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    /*<![CDATA[*/
+    /* Scope strictly to root */
+    .fm4p3piso-root {
+      --fm4p3piso-bg: var(--bg-1, #0f172a);
+      --fm4p3piso-card: var(--bg-2, #1e293b);
+      --fm4p3piso-card-sub: var(--bg-3, #0f172a);
+      --fm4p3piso-border: var(--ink-20, #334155);
+      --fm4p3piso-border-focus: var(--ink-40, #64748b);
+      --fm4p3piso-text-100: var(--ink-100, #f8fafc);
+      --fm4p3piso-text-70: var(--ink-70, #94a3b8);
+      --fm4p3piso-text-40: var(--ink-40, #64748b);
+      
+      --fm4p3piso-indigo: var(--kw-indigo, #818cf8);
+      --fm4p3piso-indigo-bg: rgba(129, 140, 248, 0.12);
+      --fm4p3piso-teal: var(--kw-teal, #2dd4bf);
+      --fm4p3piso-teal-bg: rgba(45, 212, 191, 0.12);
+      --fm4p3piso-coral: var(--kw-coral, #fb7185);
+      --fm4p3piso-coral-bg: rgba(251, 113, 133, 0.15);
+      --fm4p3piso-amber: var(--kw-amber, #fbbf24);
+      --fm4p3piso-green: var(--kw-green, #34d399);
+
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--fm4p3piso-bg);
+      color: var(--fm4p3piso-text-100);
+      box-sizing: border-box;
+    }
+
+    /* Light Theme Overrides */
+    [data-theme="light"] .fm4p3piso-root,
+    :root[data-theme="light"] .fm4p3piso-root {
+      --fm4p3piso-bg: var(--bg-1, #f8fafc);
+      --fm4p3piso-card: var(--bg-2, #ffffff);
+      --fm4p3piso-card-sub: var(--bg-3, #f1f5f9);
+      --fm4p3piso-border: var(--ink-20, #e2e8f0);
+      --fm4p3piso-border-focus: var(--ink-40, #cbd5e1);
+      --fm4p3piso-text-100: var(--ink-100, #0f172a);
+      --fm4p3piso-text-70: var(--ink-70, #475569);
+      --fm4p3piso-text-40: var(--ink-40, #94a3b8);
+      
+      --fm4p3piso-indigo: var(--kw-indigo, #4f46e5);
+      --fm4p3piso-indigo-bg: rgba(79, 70, 229, 0.08);
+      --fm4p3piso-teal: var(--kw-teal, #0d9488);
+      --fm4p3piso-teal-bg: rgba(13, 148, 136, 0.08);
+      --fm4p3piso-coral: var(--kw-coral, #e11d48);
+      --fm4p3piso-coral-bg: rgba(225, 29, 72, 0.08);
+      --fm4p3piso-amber: var(--kw-amber, #d97706);
+      --fm4p3piso-green: var(--kw-green, #059669);
+    }
+
+    /* Interactive UI Controls */
+    .fm4p3piso-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    .fm4p3piso-btn:hover {
+      filter: brightness(1.1);
+    }
+    .fm4p3piso-btn:focus-visible rect {
+      stroke: var(--fm4p3piso-indigo);
+      stroke-width: 2px;
+    }
+
+    /* Scene Transitions and Visibility */
+    .fm4p3piso-layer-1st,
+    .fm4p3piso-layer-2nd,
+    .fm4p3piso-layer-both,
+    .fm4p3piso-panel-1st,
+    .fm4p3piso-panel-2nd,
+    .fm4p3piso-panel-both {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* State Matrix Control */
+    /* BOTH (Default) */
+    .fm4p3piso-root[data-scene="both"] .fm4p3piso-layer-1st { opacity: 1; }
+    .fm4p3piso-root[data-scene="both"] .fm4p3piso-layer-2nd { opacity: 1; }
+    .fm4p3piso-root[data-scene="both"] .fm4p3piso-layer-both { opacity: 1; }
+    .fm4p3piso-root[data-scene="both"] .fm4p3piso-panel-both { opacity: 1; display: block; }
+    .fm4p3piso-root[data-scene="both"] .fm4p3piso-panel-1st { opacity: 0.5; }
+    .fm4p3piso-root[data-scene="both"] .fm4p3piso-panel-2nd { opacity: 0.5; }
+
+    /* 1ST ONLY */
+    .fm4p3piso-root[data-scene="1st"] .fm4p3piso-layer-1st { opacity: 1; }
+    .fm4p3piso-root[data-scene="1st"] .fm4p3piso-layer-2nd { opacity: 0.25; }
+    .fm4p3piso-root[data-scene="1st"] .fm4p3piso-layer-both { opacity: 0; }
+    .fm4p3piso-root[data-scene="1st"] .fm4p3piso-panel-1st { opacity: 1; border-color: var(--fm4p3piso-indigo); }
+    .fm4p3piso-root[data-scene="1st"] .fm4p3piso-panel-2nd { opacity: 0.3; }
+    .fm4p3piso-root[data-scene="1st"] .fm4p3piso-panel-both { opacity: 0.2; }
+
+    /* 2ND ONLY */
+    .fm4p3piso-root[data-scene="2nd"] .fm4p3piso-layer-1st { opacity: 0.25; }
+    .fm4p3piso-root[data-scene="2nd"] .fm4p3piso-layer-2nd { opacity: 1; }
+    .fm4p3piso-root[data-scene="2nd"] .fm4p3piso-layer-both { opacity: 0; }
+    .fm4p3piso-root[data-scene="2nd"] .fm4p3piso-panel-1st { opacity: 0.3; }
+    .fm4p3piso-root[data-scene="2nd"] .fm4p3piso-panel-2nd { opacity: 1; border-color: var(--fm4p3piso-teal); }
+    .fm4p3piso-root[data-scene="2nd"] .fm4p3piso-panel-both { opacity: 0.2; }
+
+    /* Active Button Highlights */
+    .fm4p3piso-root[data-scene="1st"] #fm4p3piso-btn-1st rect {
+      fill: var(--fm4p3piso-indigo-bg);
+      stroke: var(--fm4p3piso-indigo);
+      stroke-width: 2px;
+    }
+    .fm4p3piso-root[data-scene="2nd"] #fm4p3piso-btn-2nd rect {
+      fill: var(--fm4p3piso-teal-bg);
+      stroke: var(--fm4p3piso-teal);
+      stroke-width: 2px;
+    }
+    .fm4p3piso-root[data-scene="both"] #fm4p3piso-btn-both rect {
+      fill: var(--fm4p3piso-coral-bg);
+      stroke: var(--fm4p3piso-coral);
+      stroke-width: 2px;
+    }
+
+    /* Motion accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .fm4p3piso-layer-1st,
+      .fm4p3piso-layer-2nd,
+      .fm4p3piso-layer-both,
+      .fm4p3piso-panel-1st,
+      .fm4p3piso-panel-2nd,
+      .fm4p3piso-panel-both {
+        transition: none !important;
+      }
+    }
+    /*]]>*/
+  </style>
+
+  <!-- HEADER COMPONENT -->
+  <g id="fm4p3piso-header">
+    <text x="25" y="32" font-size="16" font-weight="800" fill="var(--fm4p3piso-text-100)" letter-spacing="0.5">
+      ESCLEROSE LATERAL AMIOTRÓFICA (ELA) · DOIS ANDARES ATINGIDOS
+    </text>
+    <text x="25" y="52" font-size="13" font-weight="500" fill="var(--fm4p3piso-text-70)">
+      Legenda: Acometimento simultâneo do 1º Neurônio Motor (Central) + 2º Neurônio Motor (Periférico)
+    </text>
+  </g>
+
+  <!-- LEFT MAIN DIAGRAM CONTAINER -->
+  <g id="fm4p3piso-stage">
+    <!-- Stage Background Card -->
+    <rect x="25" y="72" width="470" height="445" rx="12" fill="var(--fm4p3piso-card)" stroke="var(--fm4p3piso-border)" stroke-width="1.5"/>
+
+    <!-- INTERACTIVE MODE SWITCHER BUTTONS -->
+    <g id="fm4p3piso-controls">
+      <!-- Button 1: 1st NM -->
+      <g id="fm4p3piso-btn-1st" class="fm4p3piso-btn" role="button" tabindex="0" aria-label="Isolar 1º Neurônio Motor">
+        <rect x="37" y="85" width="130" height="34" rx="6" fill="var(--fm4p3piso-card-sub)" stroke="var(--fm4p3piso-border)" stroke-width="1"/>
+        <circle cx="53" cy="102" r="5" fill="var(--fm4p3piso-indigo)"/>
+        <text x="66" y="106" font-size="12" font-weight="700" fill="var(--fm4p3piso-text-100)">1º NM (Trato)</text>
+      </g>
+
+      <!-- Button 2: 2nd NM -->
+      <g id="fm4p3piso-btn-2nd" class="fm4p3piso-btn" role="button" tabindex="0" aria-label="Isolar 2º Neurônio Motor">
+        <rect x="175" y="85" width="130" height="34" rx="6" fill="var(--fm4p3piso-card-sub)" stroke="var(--fm4p3piso-border)" stroke-width="1"/>
+        <circle cx="191" cy="102" r="5" fill="var(--fm4p3piso-teal)"/>
+        <text x="204" y="106" font-size="12" font-weight="700" fill="var(--fm4p3piso-text-100)">2º NM (Corno)</text>
+      </g>
+
+      <!-- Button 3: BOTH (ELA) -->
+      <g id="fm4p3piso-btn-both" class="fm4p3piso-btn" role="button" tabindex="0" aria-label="Ver Ambos os Andares (ELA)">
+        <rect x="313" y="85" width="170" height="34" rx="6" fill="var(--fm4p3piso-card-sub)" stroke="var(--fm4p3piso-border)" stroke-width="1"/>
+        <circle cx="329" cy="102" r="5" fill="var(--fm4p3piso-coral)"/>
+        <text x="342" y="106" font-size="12" font-weight="800" fill="var(--fm4p3piso-coral)">AMBOS (ELA)</text>
+      </g>
+    </g>
+
+    <!-- ANATOMICAL DIAGRAM CONTENT -->
+    
+    <!-- 1º ANDAR: ENCÉFALO E CÓRTEX MOTOR (TOP ANATOMY) -->
+    <g id="fm4p3piso-anatomy-1st" class="fm4p3piso-layer-1st">
+      <!-- Cortex Contour -->
+      <path d="M 70 200 C 70 145, 120 135, 170 135 C 220 135, 250 160, 250 200 C 250 230, 230 245, 200 250 C 180 253, 140 253, 110 245 C 80 238, 70 220, 70 200 Z" 
+            fill="none" stroke="var(--fm4p3piso-border)" stroke-width="1.5" stroke-dasharray="4 3"/>
+      
+      <!-- Primary Motor Cortex Area (Giro Pré-Central / Área 4) -->
+      <path d="M 140 136 C 160 136, 185 142, 195 160 L 175 220 C 160 215, 145 205, 135 180 Z" 
+            fill="var(--fm4p3piso-indigo-bg)" stroke="var(--fm4p3piso-indigo)" stroke-width="1.5"/>
+      <text x="148" y="152" font-size="10" font-weight="700" fill="var(--fm4p3piso-indigo)">Córtex Motor</text>
+
+      <!-- 1º Neurônio Motor (Soma Piramidal - Célula de Betz) -->
+      <path d="M 160 170 L 168 182 L 152 182 Z" fill="var(--fm4p3piso-indigo)" stroke="var(--fm4p3piso-text-100)" stroke-width="1"/>
+      <circle cx="160" cy="177" r="2.5" fill="var(--fm4p3piso-text-100)"/>
+
+      <!-- Axônio Corticoespinal Descedente -->
+      <!-- Trecho 1: Córtex até Cápsula Interna / Tronco Encefálico -->
+      <path d="M 160 182 Q 160 210, 185 240 T 215 280 T 210 320" 
+            fill="none" stroke="var(--fm4p3piso-indigo)" stroke-width="3.5" stroke-linecap="round"/>
+
+      <!-- Decussação das Pirâmides / Cruzamento Bulbar -->
+      <path d="M 215 280 L 225 295 L 210 320" fill="none" stroke="var(--fm4p3piso-indigo)" stroke-width="2" stroke-dasharray="3 2"/>
+
+      <!-- Badge Label 1º NM -->
+      <rect x="42" y="140" width="84" height="22" rx="4" fill="var(--fm4p3piso-indigo)" opacity="0.9"/>
+      <text x="84" y="155" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">1º NEURÔNIO</text>
+
+      <!-- MARCA DE LESÃO DO 1º NM (TRATO CORTICOESPINAL) -->
+      <g id="fm4p3piso-lesion-1st" filter="url(#fm4p3piso-glow-coral)">
+        <circle cx="185" cy="240" r="14" fill="var(--fm4p3piso-coral-bg)" stroke="var(--fm4p3piso-coral)" stroke-width="2"/>
+        <path d="M 178 233 L 192 247 M 192 233 L 178 247" stroke="var(--fm4p3piso-coral)" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      
+      <text x="206" y="244" font-size="11" font-weight="700" fill="var(--fm4p3piso-coral)">Lesão no Trato Corticoespinal</text>
+      <text x="206" y="257" font-size="9" font-weight="500" fill="var(--fm4p3piso-text-70)">(Degeneração Piramidal / 1º Andar)</text>
+    </g>
+
+    <!-- CONECTOR INTERMEDIAL DO TRATO (MEDULA) -->
+    <path d="M 210 320 L 210 380 Q 210 405, 185 410" 
+          fill="none" stroke="var(--fm4p3piso-indigo)" stroke-width="3.5" stroke-linecap="round" class="fm4p3piso-layer-1st"/>
+
+    <!-- 2º ANDAR: MEDULA ESPINAL E CORNO ANTERIOR (BOTTOM ANATOMY) -->
+    <g id="fm4p3piso-anatomy-2nd" class="fm4p3piso-layer-2nd">
+      <!-- Section Base: Corte Medular Transversal (H Medular) -->
+      <g transform="translate(80, 340)">
+        <!-- Medula Espinal Outer Contour (Substância Branca) -->
+        <path d="M 50 50 C 50 15, 130 15, 130 50 C 130 55, 135 60, 140 60 C 170 60, 200 80, 180 120 C 160 150, 120 150, 90 150 C 60 150, 20 150, 0 120 C -20 80, 10 60, 40 60 C 45 60, 50 55, 50 50 Z" 
+              fill="var(--fm4p3piso-card-sub)" stroke="var(--fm4p3piso-border)" stroke-width="2"/>
+        
+        <!-- Substância Cinzenta (H Medular) -->
+        <path d="M 65 55 Q 90 70, 115 55 Q 110 80, 125 90 Q 140 100, 145 125 Q 120 115, 105 125 Q 90 100, 75 125 Q 60 115, 35 125 Q 40 100, 55 90 Q 70 80, 65 55 Z" 
+              fill="var(--fm4p3piso-border)" opacity="0.4"/>
+
+        <!-- CORNO ANTERIOR DA MEDULA (DESTACADO EM TEAL) -->
+        <!-- Corno Anterior Esquerdo/Ventral -->
+        <path d="M 40 105 Q 60 100, 70 120 Q 55 128, 35 125 Z" 
+              fill="var(--fm4p3piso-teal-bg)" stroke="var(--fm4p3piso-teal)" stroke-width="2"/>
+        
+        <!-- Corno Anterior Direito -->
+        <path d="M 140 105 Q 120 100, 110 120 Q 125 128, 145 125 Z" 
+              fill="var(--fm4p3piso-teal-bg)" stroke="var(--fm4p3piso-teal)" stroke-width="1"/>
+
+        <text x="25" y="145" font-size="10" font-weight="700" fill="var(--fm4p3piso-teal)">Corno Anterior</text>
+
+        <!-- 2º Neurônio Motor (Soma Estrelado no Corno Anterior) -->
+        <circle cx="52" cy="114" r="5" fill="var(--fm4p3piso-teal)" stroke="var(--fm4p3piso-text-100)" stroke-width="1.5"/>
+        
+        <!-- Synapse Point between 1st NM and 2nd NM -->
+        <circle cx="185" cy="410" transform="translate(-80, -340)" r="3" fill="var(--fm4p3piso-indigo)"/>
+
+        <!-- Axônio do 2º NM saindo pela Raiz Ventral/Nervo Periférico -->
+        <path d="M 54 118 Q 65 140, 120 155 T 230 155" 
+              fill="none" stroke="var(--fm4p3piso-teal)" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- Músculo Esquelético Efetuador (Miótomo Target) -->
+        <g transform="translate(230, 130)">
+          <!-- Muscle Belly Shape -->
+          <path d="M 0 25 Q 35 5, 70 25 Q 35 45, 0 25 Z" fill="var(--fm4p3piso-teal-bg)" stroke="var(--fm4p3piso-teal)" stroke-width="1.5"/>
+          <path d="M 15 25 Q 35 15, 55 25" fill="none" stroke="var(--fm4p3piso-teal)" stroke-width="1" opacity="0.6"/>
+          <!-- Placa Motora / Junção Neuromuscular -->
+          <circle cx="10" cy="25" r="3" fill="var(--fm4p3piso-amber)"/>
+          <text x="20" y="52" font-size="10" font-weight="700" fill="var(--fm4p3piso-text-70)">Músculo / Miótomo</text>
+        </g>
+
+        <!-- MARCA DE LESÃO DO 2º NM (CORNO ANTERIOR) -->
+        <g id="fm4p3piso-lesion-2nd" transform="translate(52, 114)" filter="url(#fm4p3piso-glow-coral)">
+          <circle cx="0" cy="0" r="14" fill="var(--fm4p3piso-coral-bg)" stroke="var(--fm4p3piso-coral)" stroke-width="2"/>
+          <path d="M -7 -7 L 7 7 M 7 -7 L -7 7" stroke="var(--fm4p3piso-coral)" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- Badge Label 2º NM -->
+        <rect x="-40" y="70" width="84" height="22" rx="4" fill="var(--fm4p3piso-teal)" opacity="0.9"/>
+        <text x="2" y="85" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">2º NEURÔNIO</text>
+      </g>
+      
+      <text x="250" y="475" font-size="11" font-weight="700" fill="var(--fm4p3piso-coral)">Lesão no Corno Anterior</text>
+      <text x="250" y="488" font-size="9" font-weight="500" fill="var(--fm4p3piso-text-70)">(Perda de Motoneurônio Alfa / 2º Andar)</text>
+    </g>
+
+    <!-- "DUPLO X" HIGHLIGHT CONNECTOR (VISIBLE IN 'BOTH' ELA MODE) -->
+    <g id="fm4p3piso-both-connector" class="fm4p3piso-layer-both">
+      <!-- Arc connecting Lesion 1 and Lesion 2 -->
+      <path d="M 185 240 Q 120 310, 132 454" 
+            fill="none" stroke="var(--fm4p3piso-coral)" stroke-width="2.5" stroke-dasharray="6 4" filter="url(#fm4p3piso-glow-coral)"/>
+
+      <!-- Central Seal "AMBOS ATINGIDOS" -->
+      <g transform="translate(48, 305)">
+        <rect x="0" y="0" width="165" height="32" rx="16" fill="var(--fm4p3piso-coral)" stroke="var(--fm4p3piso-text-100)" stroke-width="1.5" filter="url(#fm4p3piso-glow-coral)"/>
+        <text x="82.5" y="20" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">
+          ★ ELA: DUPLO X (1º + 2º)
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT READING PANEL / PAINEL DE LEITURA (BAUER CONTRACT) -->
+  <g id="fm4p3piso-panel">
+    <!-- Panel Background Card -->
+    <rect x="515" y="72" width="340" height="445" rx="12" fill="var(--fm4p3piso-card)" stroke="var(--fm4p3piso-border)" stroke-width="1.5"/>
+
+    <!-- PANEL TITLE AND STATUS HEADER -->
+    <g id="fm4p3piso-panel-header">
+      <rect x="530" y="87" width="310" height="46" rx="8" fill="var(--fm4p3piso-card-sub)" stroke="var(--fm4p3piso-border)" stroke-width="1"/>
+      
+      <text x="542" y="105" font-size="10" font-weight="800" fill="var(--fm4p3piso-amber)" letter-spacing="0.8">
+        MAPA 1º + 2º NEURÔNIO
+      </text>
+      <text x="542" y="123" font-size="14" font-weight="900" fill="var(--fm4p3piso-text-100)">
+        ELA = 1º ANDAR + 2º ANDAR
+      </text>
+    </g>
+
+    <!-- SECTION 1: 1º NEURÔNIO MOTOR CARD -->
+    <g id="fm4p3piso-card-1st" class="fm4p3piso-panel-1st" transform="translate(530, 145)">
+      <rect x="0" y="0" width="310" height="92" rx="8" fill="var(--fm4p3piso-card-sub)" stroke="var(--fm4p3piso-indigo)" stroke-width="1.5"/>
+      <rect x="0" y="0" width="6" height="92" rx="3" fill="var(--fm4p3piso-indigo)"/>
+      
+      <text x="16" y="20" font-size="12" font-weight="800" fill="var(--fm4p3piso-indigo)">
+        1º NEURÔNIO MOTOR (CENTRAL)
+      </text>
+      <text x="16" y="36" font-size="10" font-weight="600" fill="var(--fm4p3piso-text-70)">
+        Trato Corticoespinal / Córtex Motor
+      </text>
+
+      <!-- Key Clinical Findings -->
+      <g transform="translate(16, 44)">
+        <text x="0" y="14" font-size="11" font-weight="700" fill="var(--fm4p3piso-coral)">Sinais Piramidais:</text>
+        <text x="0" y="30" font-size="10" font-weight="500" fill="var(--fm4p3piso-text-100)">
+          • Hiperreflexia (ex: Babinski +) • Espasticidade
+        </text>
+        <text x="0" y="42" font-size="10" font-weight="500" fill="var(--fm4p3piso-text-100)">
+          • Perda de controle motor fino (liberação)
+        </text>
+      </g>
+    </g>
+
+    <!-- SECTION 2: 2º NEURÔNIO MOTOR CARD -->
+    <g id="fm4p3piso-card-2nd" class="fm4p3piso-panel-2nd" transform="translate(530, 247)">
+      <rect x="0" y="0" width="310" height="92" rx="8" fill="var(--fm4p3piso-card-sub)" stroke="var(--fm4p3piso-teal)" stroke-width="1.5"/>
+      <rect x="0" y="0" width="6" height="92" rx="3" fill="var(--fm4p3piso-teal)"/>
+      
+      <text x="16" y="20" font-size="12" font-weight="800" fill="var(--fm4p3piso-teal)">
+        2º NEURÔNIO MOTOR (PERIFÉRICO)
+      </text>
+      <text x="16" y="36" font-size="10" font-weight="600" fill="var(--fm4p3piso-text-70)">
+        Corno Anterior da Medula / Tronco
+      </text>
+
+      <!-- Key Clinical Findings -->
+      <g transform="translate(16, 44)">
+        <text x="0" y="14" font-size="11" font-weight="700" fill="var(--fm4p3piso-coral)">Clínica do 2º:</text>
+        <text x="0" y="30" font-size="10" font-weight="500" fill="var(--fm4p3piso-text-100)">
+          • Fasciculações • Cãibras
+        </text>
+        <text x="0" y="42" font-size="10" font-weight="500" fill="var(--fm4p3piso-text-100)">
+          • Atrofia pronunciada
+        </text>
+      </g>
+    </g>
+
+    <!-- SECTION 3: CONCLUSION / LEGENDA DE INTERPRETAÇÃO (TAKEAWAY) -->
+    <g id="fm4p3piso-card-conclusion" transform="translate(530, 350)">
+      <rect x="0" y="0" width="310" height="152" rx="8" fill="var(--fm4p3piso-coral-bg)" stroke="var(--fm4p3piso-coral)" stroke-width="1.5"/>
+      
+      <text x="14" y="22" font-size="11" font-weight="900" fill="var(--fm4p3piso-coral)" letter-spacing="0.5">
+        LEGENDA DE INTERPRETAÇÃO CLÍNICA
+      </text>
+      
+      <text x="14" y="42" font-size="10" font-weight="700" fill="var(--fm4p3piso-text-100)">
+        1. A ELA exige o DUPLO COMPROMETIMENTO:
+      </text>
+      <text x="24" y="56" font-size="10" font-weight="500" fill="var(--fm4p3piso-text-70)">
+        Degeneração combinada de 1º (cortical) E 2º
+      </text>
+      <text x="24" y="68" font-size="10" font-weight="500" fill="var(--fm4p3piso-text-70)">
+        (corno anterior) neurônios motores.
+      </text>
+
+      <text x="14" y="88" font-size="10" font-weight="700" fill="var(--fm4p3piso-text-100)">
+        2. Um neurônio sozinho não basta:
+      </text>
+      <text x="24" y="102" font-size="10" font-weight="500" fill="var(--fm4p3piso-text-70)">
+        • Só 1º: Babinski / espasticidade / hiperreflexia
+      </text>
+      <text x="24" y="114" font-size="10" font-weight="500" fill="var(--fm4p3piso-text-70)">
+        • Só 2º: fasciculação / atrofia / cãibras
+      </text>
+
+      <text x="14" y="136" font-size="10" font-weight="800" fill="var(--fm4p3piso-coral)">
+        ➔ ELA = 1º e 2º no mesmo corpo
+      </text>
+    </g>
+  </g>
+
+  <!-- EMBEDDED INTERACTIVE SCRIPT (SELF-CONTAINED) -->
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function() {
+      var svg = document.getElementById('fm4p3piso-svg');
+      if (!svg) return;
+
+      var btn1st = document.getElementById('fm4p3piso-btn-1st');
+      var btn2nd = document.getElementById('fm4p3piso-btn-2nd');
+      var btnBoth = document.getElementById('fm4p3piso-btn-both');
+
+      function setScene(scene) {
+        svg.setAttribute('data-scene', scene);
+      }
+
+      function attachEvents(btn, scene) {
+        if (!btn) return;
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          setScene(scene);
+        });
+        btn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setScene(scene);
+          }
+        });
+      }
+
+      attachEvents(btn1st, '1st');
+      attachEvents(btn2nd, '2nd');
+      attachEvents(btnBoth, 'both');
+    })();
+    /*]]>*/
+  </script>
+</svg>
+
+        </div>
+        <p class="figura-ancorada__fonte" style="margin:.5rem .9rem .7rem">Dois andares atingidos — trato (1º) e corno anterior (2º) com X em ambos. Diagrama simples, sem o mapa denso completo.</p>
+      </figure>
+
+      <!-- Figura principal: mapa denso 1º+2º -->
+      <figure class="hero-figure" aria-labelledby="hero-p03-title">
+        <div class="hero-figure__head">
+          <span class="hero-figure__tag">Mapa denso da ELA</span>
+          <h2 id="hero-p03-title">Mapa denso 1º + 2º na ELA</h2>
+        </div>
+        <div class="hero-figure__svg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="100%" height="100%" class="fm4-inline-svg fm4p3h-root" id="fm4p3h-svg-root" data-scene="all" data-cue="on" role="img" aria-label="Síntese da Esclerose Lateral Amiotrófica (ELA) demonstrando a degeneração simultânea do 1º e 2º neurônios motores">
+  <title>ELA: 1º e 2º neurônios no mesmo corpo</title>
+  <desc>Mapa clínico-anatômico da ELA mostrando degeneração simultânea do primeiro e do segundo neurônio motor, com chips de Babinski, espasticidade, hiperreflexia, fasciculação, atrofia e cãibras.</desc>
+
+  <defs>
+    <style type="text/css">
+      /* CSS Reset e Tokens de Tema */
+      .fm4p3h-root {
+        --fm4p3h-bg: #0f172a;
+        --fm4p3h-card-bg: #1e293b;
+        --fm4p3h-card-border: #334155;
+        --fm4p3h-text-main: #f8fafc;
+        --fm4p3h-text-muted: #94a3b8;
+        --fm4p3h-indigo: #6366f1;
+        --fm4p3h-indigo-light: #818cf8;
+        --fm4p3h-indigo-bg: rgba(99, 102, 241, 0.15);
+        --fm4p3h-teal: #0d9488;
+        --fm4p3h-teal-light: #22d3ee;
+        --fm4p3h-teal-bg: rgba(13, 148, 136, 0.15);
+        --fm4p3h-coral: #f43f5e;
+        --fm4p3h-coral-light: #fb7185;
+        --fm4p3h-coral-bg: rgba(244, 63, 94, 0.15);
+        --fm4p3h-gold: #eab308;
+        --fm4p3h-gold-bg: rgba(234, 179, 8, 0.15);
+        --fm4p3h-panel-inner: #090d16;
+        --fm4p3h-stroke-glow: rgba(244, 63, 94, 0.4);
+
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--kw-bg-1, var(--fm4p3h-bg));
+        color: var(--kw-ink-90, var(--fm4p3h-text-main));
+        user-select: none;
+      }
+
+      /* Tematização para Modo Claro */
+      :root[data-theme="light"] .fm4p3h-root,
+      .fm4p3h-root.fm4p3h-light {
+        --fm4p3h-bg: #f8fafc;
+        --fm4p3h-card-bg: #ffffff;
+        --fm4p3h-card-border: #cbd5e1;
+        --fm4p3h-text-main: #0f172a;
+        --fm4p3h-text-muted: #475569;
+        --fm4p3h-indigo: #4f46e5;
+        --fm4p3h-indigo-light: #6366f1;
+        --fm4p3h-indigo-bg: rgba(79, 70, 229, 0.1);
+        --fm4p3h-teal: #0f766e;
+        --fm4p3h-teal-light: #0891b2;
+        --fm4p3h-teal-bg: rgba(15, 118, 110, 0.1);
+        --fm4p3h-coral: #e11d48;
+        --fm4p3h-coral-light: #f43f5e;
+        --fm4p3h-coral-bg: rgba(225, 29, 72, 0.1);
+        --fm4p3h-gold: #ca8a04;
+        --fm4p3h-gold-bg: rgba(202, 138, 4, 0.12);
+        --fm4p3h-panel-inner: #f1f5f9;
+        --fm4p3h-stroke-glow: rgba(225, 29, 72, 0.3);
+      }
+
+      @media (prefers-color-scheme: light) {
+        .fm4p3h-root:not(.fm4p3h-dark) {
+          --fm4p3h-bg: #f8fafc;
+          --fm4p3h-card-bg: #ffffff;
+          --fm4p3h-card-border: #cbd5e1;
+          --fm4p3h-text-main: #0f172a;
+          --fm4p3h-text-muted: #475569;
+          --fm4p3h-indigo: #4f46e5;
+          --fm4p3h-indigo-light: #6366f1;
+          --fm4p3h-indigo-bg: rgba(79, 70, 229, 0.1);
+          --fm4p3h-teal: #0f766e;
+          --fm4p3h-teal-light: #0891b2;
+          --fm4p3h-teal-bg: rgba(15, 118, 110, 0.1);
+          --fm4p3h-coral: #e11d48;
+          --fm4p3h-coral-light: #f43f5e;
+          --fm4p3h-coral-bg: rgba(225, 29, 72, 0.1);
+          --fm4p3h-gold: #ca8a04;
+          --fm4p3h-gold-bg: rgba(202, 138, 4, 0.12);
+          --fm4p3h-panel-inner: #f1f5f9;
+          --fm4p3h-stroke-glow: rgba(225, 29, 72, 0.3);
+        }
+      }
+
+      /* Estilização Geral de Elementos */
+      .fm4p3h-bg-rect { fill: var(--kw-bg-1, var(--fm4p3h-bg)); }
+      .fm4p3h-card { fill: var(--kw-card-bg, var(--fm4p3h-card-bg)); stroke: var(--kw-border, var(--fm4p3h-card-border)); stroke-width: 1.5; rx: 10px; }
+      .fm4p3h-inner-panel { fill: var(--fm4p3h-panel-inner); stroke: var(--kw-border, var(--fm4p3h-card-border)); stroke-width: 1; rx: 8px; }
+      
+      .fm4p3h-title { font-size: 20px; font-weight: 800; fill: var(--kw-ink-100, var(--fm4p3h-text-main)); letter-spacing: 0.3px; }
+      .fm4p3h-subtitle { font-size: 12.5px; fill: var(--kw-ink-70, var(--fm4p3h-text-muted)); font-weight: 500; }
+      .fm4p3h-label { font-size: 13px; font-weight: 700; fill: var(--kw-ink-90, var(--fm4p3h-text-main)); }
+      .fm4p3h-sublabel { font-size: 11px; fill: var(--kw-ink-70, var(--fm4p3h-text-muted)); }
+
+      /* Interatividade e Hotspots */
+      .fm4p3h-hotspot { cursor: pointer; transition: all 0.2s ease; }
+      .fm4p3h-hotspot:hover .fm4p3h-hs-shape,
+      .fm4p3h-hotspot:focus .fm4p3h-hs-shape { stroke: var(--fm4p3h-gold); stroke-width: 2.5px; filter: drop-shadow(0 0 6px var(--fm4p3h-gold)); }
+      .fm4p3h-hotspot.fm4p3h-active .fm4p3h-hs-shape { stroke: var(--fm4p3h-coral-light); stroke-width: 3px; fill: var(--fm4p3h-coral-bg); }
+
+      .fm4p3h-chip-umn { fill: var(--fm4p3h-indigo-bg); stroke: var(--fm4p3h-indigo); stroke-width: 1.5; rx: 8px; }
+      .fm4p3h-chip-lmn { fill: var(--fm4p3h-teal-bg); stroke: var(--fm4p3h-teal); stroke-width: 1.5; rx: 8px; }
+      
+      /* Animações e Linhas Fisiológicas */
+      .fm4p3h-deg-line { stroke: var(--fm4p3h-coral); stroke-dasharray: 6 4; stroke-width: 3.5; stroke-linecap: round; animation: fm4p3h-dash 15s linear infinite; }
+      .fm4p3h-norm-line { stroke: var(--fm4p3h-indigo); stroke-width: 3; stroke-linecap: round; }
+      .fm4p3h-lmn-line { stroke: var(--fm4p3h-teal); stroke-width: 3; stroke-linecap: round; }
+
+      @keyframes fm4p3h-dash {
+        to { stroke-dashoffset: -100; }
+      }
+
+      /* Estados Dinâmicos de Filtro (Foco 1º NM vs 2º NM) */
+      .fm4p3h-root[data-scene="umn"] .fm4p3h-lmn-group { opacity: 0.25; filter: grayscale(80%); }
+      .fm4p3h-root[data-scene="lmn"] .fm4p3h-umn-group { opacity: 0.25; filter: grayscale(80%); }
+      
+      /* Cueing / Modo Treino */
+      .fm4p3h-cue { transition: opacity 0.3s ease; }
+      .fm4p3h-quiz-prompt { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; font-size: 13px; font-weight: 700; fill: var(--fm4p3h-gold); }
+      .fm4p3h-root[data-cue="off"] .fm4p3h-cue { opacity: 0; pointer-events: none; }
+      .fm4p3h-root[data-cue="off"] .fm4p3h-quiz-prompt { opacity: 1; }
+
+      /* Botões de Controle */
+      .fm4p3h-btn { cursor: pointer; fill: var(--fm4p3h-card-bg); stroke: var(--kw-border, var(--fm4p3h-card-border)); stroke-width: 1.5; rx: 6px; }
+      .fm4p3h-btn:hover { fill: var(--fm4p3h-indigo-bg); stroke: var(--fm4p3h-indigo); }
+      .fm4p3h-btn.fm4p3h-btn-active { fill: var(--fm4p3h-indigo); stroke: var(--fm4p3h-indigo-light); }
+      .fm4p3h-btn.fm4p3h-btn-active text { fill: #ffffff !important; font-weight: 800; }
+      .fm4p3h-btn text { font-size: 11px; font-weight: 700; fill: var(--kw-ink-90, var(--fm4p3h-text-main)); pointer-events: none; }
+
+      /* Tooltip Follower */
+      .fm4p3h-tooltip { pointer-events: none; opacity: 0; transition: opacity 0.15s ease-in-out; }
+      .fm4p3h-tooltip-box { fill: #0f172a; stroke: var(--fm4p3h-gold); stroke-width: 1.5; rx: 6px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5)); }
+      .fm4p3h-tooltip-text { font-size: 11px; fill: #f8fafc; font-weight: 600; }
+    </style>
+
+    <!-- Gradientes Anatômicos -->
+    <linearGradient id="fm4p3h-grad-brain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <linearGradient id="fm4p3h-grad-cord" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <filter id="fm4p3h-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Fundo Principal -->
+  <rect width="1000" height="780" class="fm4p3h-bg-rect" />
+
+  <!-- ==================== HEADER (CONTRATO DE LAYOUT BAUER #1) ==================== -->
+  <g transform="translate(30, 25)">
+    <text x="0" y="20" class="fm4p3h-title">ESCLEROSE LATERAL AMIOTRÓFICA (ELA) — DEGENERAÇÃO COMBINADA</text>
+    <rect x="0" y="32" width="940" height="42" fill="var(--fm4p3h-coral-bg)" stroke="var(--fm4p3h-coral)" stroke-width="1" rx="6"/>
+    <text x="14" y="48" font-size="12" font-weight="700" fill="var(--fm4p3h-coral-light)">LEGENDA DIAGNÓSTICA PARADIGMÁTICA:</text>
+    <text x="14" y="64" class="fm4p3h-subtitle" font-size="11.5">
+      A ELA é a doença neurodegenerativa dos <tspan fill="var(--fm4p3h-coral-light)" font-weight="800">DOIS NEURÔNIOS MOTORES</tspan> (1º e 2º). Idoso, tendência assimétrica, fraqueza progressiva mista — e mais nada.
+    </text>
+  </g>
+
+  <!-- ==================== PAINEL ESQUERDO: 1º NEURÔNIO MOTOR (UMN) ==================== -->
+  <g transform="translate(30, 90)" class="fm4p3h-umn-group">
+    <rect width="210" height="530" class="fm4p3h-card"/>
+    <!-- Header Card 1º NM -->
+    <rect x="10" y="12" width="190" height="38" fill="var(--fm4p3h-indigo-bg)" stroke="var(--fm4p3h-indigo)" stroke-width="1.5" rx="6"/>
+    <text x="105" y="28" font-size="13" font-weight="800" fill="var(--fm4p3h-indigo-light)" text-anchor="middle">1º NEURÔNIO MOTOR</text>
+    <text x="105" y="42" font-size="10" font-weight="600" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" text-anchor="middle">SÍNDROME PIRAMIDAL (UMN)</text>
+
+    <!-- Subtítulo / Localização -->
+    <text x="15" y="72" font-size="11" font-weight="700" fill="var(--kw-ink-90, var(--fm4p3h-text-main))">ORIGEM &amp; TRAJETO:</text>
+    <text x="15" y="88" font-size="10.5" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))">• Córtex motor → trato</text>
+    <text x="15" y="103" font-size="10.5" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))">• Via do 1º neurônio motor</text>
+    <text x="15" y="118" font-size="10.5" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))">• Clínica: Babinski · espasticidade · hiperreflexia</text>
+
+    <line x1="15" y1="132" x2="195" y2="132" stroke="var(--kw-border, var(--fm4p3h-card-border))" stroke-width="1"/>
+
+    <!-- Seção de Chips de Sinais Clínicos 1º NM -->
+    <text x="15" y="152" font-size="11.5" font-weight="800" fill="var(--fm4p3h-indigo-light)">SINAIS PIRAMIDAIS CHAVE:</text>
+
+    <!-- Chip 1: Babinski -->
+    <g class="fm4p3h-hotspot" id="fm4p3h-hs-babinski" data-info="babinski" tabindex="0" role="button" aria-label="Sinal de Babinski: Reflexo cutâneo-plantar em extensão">
+      <rect x="12" y="165" width="186" height="95" class="fm4p3h-hs-shape fm4p3h-chip-umn"/>
+      <text x="24" y="185" font-size="12" font-weight="800" fill="var(--fm4p3h-indigo-light)">• SINAL DE BABINSKI</text>
+      <text x="24" y="202" font-size="10.5" font-weight="600" fill="var(--kw-ink-90, var(--fm4p3h-text-main))" class="fm4p3h-cue">Cutâneo-Plantar Extensor</text>
+      <text x="24" y="217" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">Dorsiflexão hálux + leque</text>
+      <text x="24" y="245" font-size="10" font-weight="700" fill="var(--fm4p3h-gold)">[Clique para detalhar]</text>
+    </g>
+
+    <!-- Chip 2: Espasticidade -->
+    <g class="fm4p3h-hotspot" id="fm4p3h-hs-espasticidade" data-info="espasticidade" transform="translate(0, 105)" tabindex="0" role="button" aria-label="Espasticidade: achado de 1º neurônio motor">
+      <rect x="12" y="170" width="186" height="100" class="fm4p3h-hs-shape fm4p3h-chip-umn"/>
+      <text x="24" y="190" font-size="12" font-weight="800" fill="var(--fm4p3h-indigo-light)">• ESPASTICIDADE</text>
+      <text x="24" y="207" font-size="10.5" font-weight="600" fill="var(--kw-ink-90, var(--fm4p3h-text-main))" class="fm4p3h-cue">Achado de 1º neurônio</text>
+      <text x="24" y="222" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">Com Babinski e hiperreflexia</text>
+      <text x="24" y="237" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">No mesmo corpo que o 2º</text>
+      <text x="24" y="255" font-size="10" font-weight="700" fill="var(--fm4p3h-gold)">[Clique para detalhar]</text>
+    </g>
+
+    <!-- Chip 3: Hiperreflexia -->
+    <g class="fm4p3h-hotspot" id="fm4p3h-hs-hiperreflexia" data-info="hiperreflexia" transform="translate(0, 220)" tabindex="0" role="button" aria-label="Hiperreflexia: Exaltação de reflexos miotáticos profundos">
+      <rect x="12" y="170" width="186" height="100" class="fm4p3h-hs-shape fm4p3h-chip-umn"/>
+      <text x="24" y="190" font-size="12" font-weight="800" fill="var(--fm4p3h-indigo-light)">• HIPERREFLEXIA</text>
+      <text x="24" y="207" font-size="10.5" font-weight="600" fill="var(--kw-ink-90, var(--fm4p3h-text-main))" class="fm4p3h-cue">Reflexos vivos / exagerados</text>
+      <text x="24" y="222" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">Pacote do 1º com Babinski</text>
+      <text x="24" y="237" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">No mesmo corpo que o 2º atrofia</text>
+      <text x="24" y="255" font-size="10" font-weight="700" fill="var(--fm4p3h-gold)">[Clique para detalhar]</text>
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL CENTRAL (ANATOMIA MACRO + ZOOM) ==================== -->
+  <g transform="translate(255, 90)">
+    <!-- Card de Fundo Central -->
+    <rect width="480" height="530" class="fm4p3h-card"/>
+
+    <!-- ===== SEÇÃO MACRO (CÓRTEX & TRATO CÓRTICO-ESPINAL) [y: 10 to 240] ===== -->
+    <g id="fm4p3h-macro-section" class="fm4p3h-umn-group">
+      <text x="20" y="28" class="fm4p3h-label" font-size="13">PAINEL MACRO 1: CÓRTEX MOTOR &amp; TRATO PIRAMIDAL</text>
+      
+      <!-- Desenho Anatômico do Córtex Motor -->
+      <path d="M 60,70 C 60,45 90,35 130,38 C 170,40 200,50 220,70 C 235,85 240,110 220,125 C 200,140 180,135 150,135 C 110,135 60,120 60,70 Z" 
+            fill="url(#fm4p3h-grad-brain)" stroke="var(--fm4p3h-indigo)" stroke-width="1.5"/>
+      <text x="140" y="65" font-size="11" font-weight="800" fill="var(--fm4p3h-indigo-light)" text-anchor="middle">Giro Pré-Central</text>
+      <text x="140" y="78" font-size="9.5" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" text-anchor="middle">(Córtex motor · 1º)</text>
+
+      <!-- Hotspot Córtex / Soma do 1º NM -->
+      <g class="fm4p3h-hotspot" id="fm4p3h-hs-cortex" data-info="cortex" tabindex="0" role="button" aria-label="Córtex Motor: Soma do 1º Neurônio Motor">
+        <circle cx="140" cy="100" r="16" class="fm4p3h-hs-shape" fill="var(--fm4p3h-indigo)" stroke="#ffffff" stroke-width="2"/>
+        <text x="140" y="104" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">1º NM</text>
+      </g>
+
+      <!-- Trato Córtico-Espinal Descendendo (Trajeto Anatômico) -->
+      <!-- Axônio normal vs Degenerado -->
+      <path d="M 140,116 L 140,145 C 140,165 170,175 170,195 L 170,225" class="fm4p3h-deg-line"/>
+      <circle cx="170" cy="195" r="4" fill="var(--fm4p3h-coral)"/>
+
+      <text x="245" y="110" font-size="10.5" font-weight="700" fill="var(--fm4p3h-indigo-light)">• CÁPSULA INTERNA</text>
+      <text x="245" y="150" font-size="10.5" font-weight="700" fill="var(--fm4p3h-indigo-light)">• TRONCO CEREBRAL</text>
+      <text x="245" y="195" font-size="10.5" font-weight="700" fill="var(--fm4p3h-coral-light)">• DECUSSAÇÃO DAS PIRÂMIDES</text>
+      <text x="245" y="210" font-size="9.5" fill="var(--fm4p3h-coral)" font-weight="600">(Via do 1º neurônio motor)</text>
+
+      <!-- Hotspot Trato Piramidal -->
+      <g class="fm4p3h-hotspot" id="fm4p3h-hs-trato" data-info="trato" transform="translate(170, 160)" tabindex="0" role="button" aria-label="Trato Córtico-Espinal: Degeneração do axônio do 1º NM">
+        <rect x="-40" y="-12" width="80" height="24" rx="12" class="fm4p3h-hs-shape" fill="var(--fm4p3h-coral-bg)" stroke="var(--fm4p3h-coral)" stroke-width="1.5"/>
+        <text x="0" y="4" font-size="10" font-weight="800" fill="var(--fm4p3h-coral-light)" text-anchor="middle">TRATO C-E</text>
+      </g>
+    </g>
+
+    <!-- ===== SELO CENTRAL DE INTERSECÇÃO (DEGENERAÇÃO COMBINADA) [y: 235 to 275] ===== -->
+    <g transform="translate(15, 235)">
+      <rect width="450" height="42" fill="var(--fm4p3h-coral-bg)" stroke="var(--fm4p3h-coral)" stroke-width="2" rx="8" filter="url(#fm4p3h-glow)"/>
+      <text x="225" y="20" font-size="13" font-weight="900" fill="var(--fm4p3h-coral-light)" text-anchor="middle" letter-spacing="0.5">
+        ⚡ AMBOS MORREM — SÍNDROME MISTA DE 1º E 2º NMs ⚡
+      </text>
+      <text x="225" y="34" font-size="10" font-weight="700" fill="var(--kw-ink-90, var(--fm4p3h-text-main))" text-anchor="middle">
+        1º no trato/córtex + 2º no corno anterior — ambos morrem
+      </text>
+    </g>
+
+    <!-- ===== SEÇÃO ZOOM (MEDULA ESPINAL & UNIDADE MOTORA) [y: 290 to 515] ===== -->
+    <g id="fm4p3h-zoom-section" class="fm4p3h-lmn-group" transform="translate(0, 285)">
+      <text x="20" y="22" class="fm4p3h-label" font-size="13">PAINEL ZOOM 2: MEDULA ESPINAL (CORNO ANTERIOR) &amp; MÚSCULO</text>
+
+      <!-- Desenho Anatômico da Medula Espinal (Corte Transversal) -->
+      <!-- Contorno Medular Externa -->
+      <path d="M 40,90 C 40,40 220,40 220,90 C 220,140 40,140 40,90 Z" 
+            fill="url(#fm4p3h-grad-cord)" stroke="var(--kw-border, var(--fm4p3h-card-border))" stroke-width="1.5"/>
+      
+      <!-- Borboleta de Substância Cinzenta (Corno Anterior Destaque) -->
+      <!-- Corno Anterior destacado em Teal/Coral -->
+      <path d="M 110,90 C 90,70 70,65 60,75 C 50,85 55,105 70,115 C 85,125 105,115 110,90 Z" 
+            fill="var(--fm4p3h-teal-bg)" stroke="var(--fm4p3h-teal)" stroke-width="2"/>
+      <path d="M 150,90 C 170,70 190,65 200,75 C 210,85 205,105 190,115 C 175,125 155,115 150,90 Z" 
+            fill="var(--fm4p3h-teal-bg)" stroke="var(--fm4p3h-teal)" stroke-width="1"/>
+
+      <text x="72" y="52" font-size="10" font-weight="800" fill="var(--fm4p3h-teal-light)">Corno Anterior</text>
+
+      <!-- Hotspot 2º Neurônio Motor (Soma no Corno Anterior) -->
+      <g class="fm4p3h-hotspot" id="fm4p3h-hs-corno" data-info="corno" transform="translate(70, 95)" tabindex="0" role="button" aria-label="Corno Anterior da Medula: Soma do 2º Neurônio Motor">
+        <circle cx="0" cy="0" r="14" class="fm4p3h-hs-shape" fill="var(--fm4p3h-teal)" stroke="#ffffff" stroke-width="2"/>
+        <text x="0" y="4" font-size="9.5" font-weight="800" fill="#ffffff" text-anchor="middle">2º NM</text>
+      </g>
+
+      <!-- Conexão Synáptica do 1º NM chegando ao Corno Anterior -->
+      <path d="M 170,-60 L 170,-10 C 170,10 90,40 75,82" stroke="var(--fm4p3h-coral)" stroke-dasharray="4 3" stroke-width="2.5" fill="none"/>
+      <polygon points="73,85 80,78 78,87" fill="var(--fm4p3h-coral)"/>
+
+      <!-- Axônio Periférico Emergindo para a Raiz Ventral e Músculo -->
+      <path d="M 70,109 C 70,140 120,165 180,165 L 260,165" class="fm4p3h-lmn-line" stroke-dasharray="6 3"/>
+
+      <!-- Músculo Estriado Desnervado e Atrofiado -->
+      <g transform="translate(260, 125)">
+        <!-- Ventre Muscular com Atrofia (fibras colapsadas) -->
+        <path d="M 0,40 C 20,10 60,10 80,40 C 60,70 20,70 0,40 Z" fill="rgba(244, 63, 94, 0.2)" stroke="var(--fm4p3h-coral)" stroke-width="1.5"/>
+        <!-- Fibras Atrofiadas Internas -->
+        <line x1="20" y1="35" x2="60" y2="35" stroke="var(--fm4p3h-coral)" stroke-width="1" stroke-dasharray="2 2"/>
+        <line x1="15" y1="45" x2="65" y2="45" stroke="var(--fm4p3h-coral)" stroke-width="1.5"/>
+        
+        <text x="40" y="15" font-size="11" font-weight="800" fill="var(--fm4p3h-coral-light)" text-anchor="middle">Músculo Atrofiado</text>
+        <text x="40" y="75" font-size="9" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" text-anchor="middle">Desnervação e Perda de Placas</text>
+      </g>
+
+      <!-- Hotspot Músculo / Placa Motora -->
+      <g class="fm4p3h-hotspot" id="fm4p3h-hs-musculo" data-info="musculo" transform="translate(300, 165)" tabindex="0" role="button" aria-label="Placa Motora &amp; Músculo: Perda da Inervação e Atrofia">
+        <rect x="-35" y="-12" width="70" height="24" rx="6" class="fm4p3h-hs-shape" fill="var(--fm4p3h-teal-bg)" stroke="var(--fm4p3h-teal)" stroke-width="1.5"/>
+        <text x="0" y="4" font-size="10" font-weight="800" fill="var(--fm4p3h-teal-light)" text-anchor="middle">PLACA/MÚSC</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL DIREITO: 2º NEURÔNIO MOTOR (LMN) ==================== -->
+  <g transform="translate(760, 90)" class="fm4p3h-lmn-group">
+    <rect width="210" height="530" class="fm4p3h-card"/>
+    <!-- Header Card 2º NM -->
+    <rect x="10" y="12" width="190" height="38" fill="var(--fm4p3h-teal-bg)" stroke="var(--fm4p3h-teal)" stroke-width="1.5" rx="6"/>
+    <text x="105" y="28" font-size="13" font-weight="800" fill="var(--fm4p3h-teal-light)" text-anchor="middle">2º NEURÔNIO MOTOR</text>
+    <text x="105" y="42" font-size="10" font-weight="600" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" text-anchor="middle">CORNO ANTERIOR (LMN)</text>
+
+    <!-- Subtítulo / Localização -->
+    <text x="15" y="72" font-size="11" font-weight="700" fill="var(--kw-ink-90, var(--fm4p3h-text-main))">ORIGEM &amp; TRAJETO:</text>
+    <text x="15" y="88" font-size="10.5" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))">• Corno Anterior da Medula</text>
+    <text x="15" y="103" font-size="10.5" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))">• Raiz Anterior / Nervo Periférico</text>
+    <text x="15" y="118" font-size="10.5" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))">• Junção Mioneural &amp; Músculo</text>
+
+    <line x1="15" y1="132" x2="195" y2="132" stroke="var(--kw-border, var(--fm4p3h-card-border))" stroke-width="1"/>
+
+    <!-- Seção de Chips de Sinais Clínicos 2º NM -->
+    <text x="15" y="152" font-size="11.5" font-weight="800" fill="var(--fm4p3h-teal-light)">SINAIS DE CORNO ANTERIOR:</text>
+
+    <!-- Chip 1: Fasciculações -->
+    <g class="fm4p3h-hotspot" id="fm4p3h-hs-fasciculacao" data-info="fasciculacao" tabindex="0" role="button" aria-label="Fasciculações: Contrações involuntárias espontâneas de unidades motoras">
+      <rect x="12" y="165" width="186" height="95" class="fm4p3h-hs-shape fm4p3h-chip-lmn"/>
+      <text x="24" y="185" font-size="12" font-weight="800" fill="var(--fm4p3h-teal-light)">• FASCICULAÇÕES</text>
+      <text x="24" y="202" font-size="10.5" font-weight="600" fill="var(--kw-ink-90, var(--fm4p3h-text-main))" class="fm4p3h-cue">Contração Involuntária Espontânea</text>
+      <text x="24" y="217" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">Clínica do 2º que mais chama atenção</text>
+      <text x="24" y="245" font-size="10" font-weight="700" fill="var(--fm4p3h-gold)">[Clique para detalhar]</text>
+    </g>
+
+    <!-- Chip 2: Atrofia Muscular -->
+    <g class="fm4p3h-hotspot" id="fm4p3h-hs-atrofia" data-info="atrofia" transform="translate(0, 105)" tabindex="0" role="button" aria-label="Atrofia Muscular: Perda severa de massa muscular por desnervação">
+      <rect x="12" y="170" width="186" height="100" class="fm4p3h-hs-shape fm4p3h-chip-lmn"/>
+      <text x="24" y="190" font-size="12" font-weight="800" fill="var(--fm4p3h-teal-light)">• ATROFIA MUSCULAR</text>
+      <text x="24" y="207" font-size="10.5" font-weight="600" fill="var(--kw-ink-90, var(--fm4p3h-text-main))" class="fm4p3h-cue">Perda Significativa de Massa</text>
+      <text x="24" y="222" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">Perda de inervação / desnervação</text>
+      <text x="24" y="237" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">Tendência assimétrica</text>
+      <text x="24" y="255" font-size="10" font-weight="700" fill="var(--fm4p3h-gold)">[Clique para detalhar]</text>
+    </g>
+
+    <!-- Chip 3: Cãibras -->
+    <g class="fm4p3h-hotspot" id="fm4p3h-hs-caibras" data-info="caibras" transform="translate(0, 220)" tabindex="0" role="button" aria-label="Cãibras: no mesmo contexto de desnervação / perda de inervação">
+      <rect x="12" y="170" width="186" height="100" class="fm4p3h-hs-shape fm4p3h-chip-lmn"/>
+      <text x="24" y="190" font-size="12" font-weight="800" fill="var(--fm4p3h-teal-light)">• CÃIBRAS</text>
+      <text x="24" y="207" font-size="10.5" font-weight="600" fill="var(--kw-ink-90, var(--fm4p3h-text-main))" class="fm4p3h-cue">Clínica do 2º neurônio motor</text>
+      <text x="24" y="222" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">Mesmo saco da desnervação</text>
+      <text x="24" y="237" font-size="10" fill="var(--kw-ink-70, var(--fm4p3h-text-muted))" class="fm4p3h-cue">Perda de inervação do músculo</text>
+      <text x="24" y="255" font-size="10" font-weight="700" fill="var(--fm4p3h-gold)">[Clique para detalhar]</text>
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL INFERIOR: INTERATIVIDADE E LEITURA CLÍNICA ==================== -->
+  <g transform="translate(30, 635)">
+    <rect width="940" height="130" class="fm4p3h-card"/>
+
+    <!-- Barra Superior de Botões de Filtro de Cenas -->
+    <g transform="translate(15, 12)">
+      <text x="0" y="16" font-size="11" font-weight="800" fill="var(--kw-ink-90, var(--fm4p3h-text-main))">FILTRO DE VISÃO:</text>
+
+      <g class="fm4p3h-btn fm4p3h-btn-active" id="fm4p3h-btn-all" data-filter="all" transform="translate(100, 0)" tabindex="0" role="button" aria-label="Visão Completa">
+        <rect width="110" height="24"/>
+        <text x="55" y="16" text-anchor="middle">VISÃO COMPLETA</text>
+      </g>
+
+      <g class="fm4p3h-btn" id="fm4p3h-btn-umn" data-filter="umn" transform="translate(220, 0)" tabindex="0" role="button" aria-label="Foco no 1º Neurônio Motor">
+        <rect width="110" height="24"/>
+        <text x="55" y="16" text-anchor="middle">FOCO 1º NM (UMN)</text>
+      </g>
+
+      <g class="fm4p3h-btn" id="fm4p3h-btn-lmn" data-filter="lmn" transform="translate(340, 0)" tabindex="0" role="button" aria-label="Foco no 2º Neurônio Motor">
+        <rect width="110" height="24"/>
+        <text x="55" y="16" text-anchor="middle">FOCO 2º NM (LMN)</text>
+      </g>
+
+      <g class="fm4p3h-btn" id="fm4p3h-btn-cue" data-filter="cue" transform="translate(460, 0)" tabindex="0" role="button" aria-label="Alternar Modo Treino">
+        <rect width="140" height="24"/>
+        <text x="70" y="16" text-anchor="middle">MODO TREINO (ON/OFF)</text>
+      </g>
+    </g>
+
+    <!-- Caixa Dinâmica de Texto do Leitor Diagnóstico -->
+    <g transform="translate(15, 45)">
+      <rect width="910" height="55" class="fm4p3h-inner-panel"/>
+      <text x="15" y="20" font-size="12" font-weight="800" fill="var(--fm4p3h-gold)" id="fm4p3h-detail-title">PAINEL DIAGNÓSTICO INTEGRADO (INTERATIVO)</text>
+      <text x="15" y="38" font-size="11" fill="var(--kw-ink-90, var(--fm4p3h-text-main))" id="fm4p3h-detail-body">
+        Selecione qualquer elemento anatômico ou sinal clínico acima para ver o achado e o andar correspondente.
+      </text>
+    </g>
+
+    <!-- Rodapé de Perfil Clínico da ELA -->
+    <text x="25" y="118" font-size="10.5" font-weight="700" fill="var(--fm4p3h-coral-light)">
+      PERFIL CLÍNICO CLÁSSICO: <tspan fill="var(--kw-ink-90, var(--fm4p3h-text-main))" font-weight="500">Idoso/Meia-idade · Fraqueza progressiva e assimétrica · <tspan font-weight="800" fill="var(--fm4p3h-teal-light)">PRESERVAÇÃO SENSITIVA E ESFINCTERIANA</tspan> (Sem déficit de sensibilidade).</tspan>
+    </text>
+  </g>
+
+  <!-- ==================== TOOLTIP FLUTUANTE (MOUSE FOLLOW) ==================== -->
+  <g class="fm4p3h-tooltip" id="fm4p3h-tooltip-layer" transform="translate(0, 0)">
+    <rect width="220" height="42" class="fm4p3h-tooltip-box" id="fm4p3h-tt-box"/>
+    <text x="12" y="18" class="fm4p3h-tooltip-text" font-weight="800" fill="var(--fm4p3h-gold)" id="fm4p3h-tt-head">Estrutura Interativa</text>
+    <text x="12" y="32" class="fm4p3h-tooltip-text" id="fm4p3h-tt-body">Toque para inspecionar os detalhes.</text>
+  </g>
+
+  <!-- ==================== ENGINE JS INLINE (SELF-CONTAINED) ==================== -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      'use strict';
+
+      // Base de Conhecimento Clínica Fisiopatológica
+      const DB = {
+        cortex: {
+          title: "1º NEURÔNIO MOTOR — Córtex / trato",
+          text: "A ELA ataca o primeiro neurônio motor. No exame, o 1º grita piramidal: Babinski, espasticidade e hiperreflexia."
+        },
+        trato: {
+          title: "TRATO — Via do 1º neurônio motor",
+          text: "Parte do mapa do 1º neurônio. A doença pega o 1º e o 2º — e mais nada."
+        },
+        corno: {
+          title: "2º NEURÔNIO MOTOR — Corpo no corno anterior",
+          text: "O problema do 2º na ELA está no corpo do segundo neurônio (corno anterior) — não no axônio como neuropatia clássica."
+        },
+        musculo: {
+          title: "MÚSCULO — Atrofia por perda de inervação",
+          text: "Com a morte do 2º, o músculo perde inervação: atrofia pronunciada e, no mesmo contexto, fasciculações e cãibras."
+        },
+        babinski: {
+          title: "SINAL DE BABINSKI — Clínica do 1º",
+          text: "Achado de primeiro neurônio motor. No pacote com espasticidade e hiperreflexia, o 1º grita piramidal."
+        },
+        espasticidade: {
+          title: "ESPASTICIDADE — Clínica do 1º",
+          text: "Achado de primeiro neurônio motor, junto com Babinski e hiperreflexia."
+        },
+        hiperreflexia: {
+          title: "HIPERREFLEXIA — Clínica do 1º",
+          text: "Achado de primeiro neurônio motor. No quadro misto, o 1º eleva o reflexo no mesmo corpo em que o 2º atrofia."
+        },
+        fasciculacao: {
+          title: "FASCICULAÇÕES — Clínica do 2º",
+          text: "Achado de segundo neurônio motor que mais chama atenção, junto com cãibras e atrofia pronunciada."
+        },
+        atrofia: {
+          title: "ATROFIA — Clínica do 2º",
+          text: "Atrofia pronunciada por perda de inervação (desnervação). Tendência assimétrica, como boa doença neurodegenerativa."
+        },
+        caibras: {
+          title: "CÃIBRAS — Desnervação / perda de inervação",
+          text: "As cãibras entram no mesmo saco da desnervação: se se perde a inervação do músculo, também pode haver cãibras. O 2º sofre no corpo do neurônio (corno anterior)."
+        }
+      };
+
+      const svg = document.getElementById('fm4p3h-svg-root');
+      const tooltip = document.getElementById('fm4p3h-tooltip-layer');
+      const ttHead = document.getElementById('fm4p3h-tt-head');
+      const ttBody = document.getElementById('fm4p3h-tt-body');
+      const detailTitle = document.getElementById('fm4p3h-detail-title');
+      const detailBody = document.getElementById('fm4p3h-detail-body');
+
+      let activeHotspot = null;
+
+      // Utilitário para conversão de coordenadas SVG mouse-follow
+      function getSvgCoords(e) {
+        const pt = svg.createSVGPoint();
+        pt.x = e.clientX;
+        pt.y = e.clientY;
+        const ctm = svg.getScreenCTM();
+        return ctm ? pt.matrixTransform(ctm.inverse()) : { x: e.clientX, y: e.clientY };
+      }
+
+      // Atualizar Tooltip no MouseMove
+      function handleMouseMove(e) {
+        const coords = getSvgCoords(e);
+        let x = coords.x + 12;
+        let y = coords.y + 12;
+        
+        // Evitar vazamento nas bordas
+        if (x > 760) x = coords.x - 230;
+        if (y > 720) y = coords.y - 50;
+
+        tooltip.setAttribute('transform', `translate(${x}, ${y})`);
+      }
+
+      // Eventos nos Hotspots
+      const hotspots = svg.querySelectorAll('.fm4p3h-hotspot');
+      hotspots.forEach(hs => {
+        const infoKey = hs.getAttribute('data-info');
+        const data = DB[infoKey];
+
+        hs.addEventListener('mouseenter', (e) => {
+          if (data) {
+            ttHead.textContent = data.title.split('—')[0];
+            ttBody.textContent = "Clique para ver o achado e o andar correspondente.";
+            tooltip.style.opacity = '1';
+          }
+        });
+
+        hs.addEventListener('mouseleave', () => {
+          tooltip.style.opacity = '0';
+        });
+
+        hs.addEventListener('mousemove', handleMouseMove);
+
+        const selectHotspot = () => {
+          hotspots.forEach(h => h.classList.remove('fm4p3h-active'));
+          hs.classList.add('fm4p3h-active');
+          activeHotspot = hs;
+
+          if (data) {
+            detailTitle.textContent = data.title;
+            detailBody.textContent = data.text;
+          }
+        };
+
+        hs.addEventListener('click', selectHotspot);
+        hs.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectHotspot();
+          }
+        });
+      });
+
+      // Botões de Filtro / Cena
+      const btns = svg.querySelectorAll('.fm4p3h-btn');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          if (filter === 'cue') {
+            const currentCue = svg.getAttribute('data-cue');
+            svg.setAttribute('data-cue', currentCue === 'off' ? 'on' : 'off');
+            btn.classList.toggle('fm4p3h-btn-active');
+            return;
+          }
+
+          btns.forEach(b => {
+            if (b.getAttribute('data-filter') !== 'cue') {
+              b.classList.remove('fm4p3h-btn-active');
+            }
+          });
+          btn.classList.add('fm4p3h-btn-active');
+
+          svg.setAttribute('data-scene', filter);
+        });
+      });
+
+    })();
+    ]]>
+  </script>
+</svg>
+
+        </div>
+        <p class="hero-figure__cap">Córtex → trato (1º) e corno anterior (2º) no mesmo esquema; chips clínicos Babinski/espasticidade/hiperreflexia de um lado, fasciculação/atrofia/cãibra do outro. Ambos morrem — esse é o retrato que sela a identidade da ELA.</p>
+      </figure>
+
+      <aside class="continuity">
+        <div class="prose">
+          <p class="no-indent"><strong>Por que importa na prática:</strong> acertar o nome cedo muda prognóstico, suporte e o que se promete (não é neuropatia “curável” com imunoterapia).</p>
+          <p class="no-indent"><strong>Resumo operacional:</strong> ELA = 1º <strong>e</strong> 2º · idoso · assimétrica · fraqueza progressiva mista.</p>
+          <p class="no-indent">Fasciculação não é específica na vida — e ainda assim a banca a ama.</p>
+        </div>
+      </aside>
+
+      <!-- QUIZ P3 -->
+      <section class="quiz" data-quiz-id="fm4-ela-p03" aria-labelledby="quiz-p03-title">
+        <h2 id="quiz-p03-title">Quiz — fixação</h2>
+        <ol class="quiz__questions">
+          <li class="quiz__question" data-q="1">
+            <p class="quiz__stem">A ELA, no recorte desta plataforma, é melhor definida como:</p>
+            <div role="radiogroup" aria-label="Q1" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Neuropatia periférica desmielinizante aguda</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Neurodegenerativa do 1º e do 2º neurônio motor</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Doença só do 1º NMS</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Doença só do músculo</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> A identidade da ELA é a <strong>mistura</strong> dos dois neurônios — e mais nada.</p>
+              <p class="quiz__distractor">(A) é território GBS. (C)/(D) perdem metade (ou todo) o alvo. Cai em A porque ambas “pegam motor”; o sítio (neurônio vs nervo) é o discriminador (volta em P6).</p>
+            </div>
+          </li>
+          <li class="quiz__question" data-q="2">
+            <p class="quiz__stem">Qual perfil combina com a ELA clássica?</p>
+            <div role="radiogroup" aria-label="Q2" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Jovem, simétrica, sensitiva</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Idoso, tendência assimétrica, fraqueza progressiva mista 1º+2º</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Criança, flácida arreflexa pós-diarreia</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Adulto jovem com diplopia flutuante</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> Idoso + assimetria + mistura 1º/2º = molde da neurodegenerativa motora.</p>
+              <p class="quiz__distractor">(A) invertido. (C) cheira GBS. (D) cheira placa/MG. Cai em C porque “fraqueza + progressão” sem o filtro etário/topográfico.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p2.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Um neurônio sozinho não basta</span></a><a class="next" href="p4.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Fasciculação: inespecífica na vida, ímã na prova</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="rodape">ELA: esclerose lateral amiotrófica.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm4.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">ELA · 8 páginas</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>Jairo: do “estresse” ao pé que arrasta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>Um neurônio sozinho não basta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" aria-current="page"><span class="menu-panel__index">03</span><span>ELA: a neurodegenerativa dos dois neurônios</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Fasciculação: inespecífica na vida, ímã na prova</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Três anos, o motor e a mente intacta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Clínica manda · não é GBS · DFT</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Suporte no chão; riluzole e edaravone compram meses</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Mantra + vignette 72 a: tenar, clonos, bulbar</span></a></li></ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

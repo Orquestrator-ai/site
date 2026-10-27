@@ -1,0 +1,549 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 550" class="clock-interactive-root" id="clock-svg-p3" role="img" aria-label="Teste do desenho do relógio: à esquerda, relógio normal marcando cinco horas; à direita, relógio com desorganização espacial dos números e ponteiros, com hotspots nos erros.">
+  <defs>
+    <style>
+      #clock-svg-p3 {
+        --bg-canvas: #090e1a;
+        --bg-panel: #151b2d;
+        --c-green: #10b981;
+        --c-green-bg: rgba(16, 185, 129, 0.1);
+        --c-red: #fb7185;
+        --c-red-bg: rgba(251, 113, 133, 0.1);
+        --c-amber: #fbbf24;
+        --c-amber-bg: rgba(251, 191, 36, 0.08);
+        --c-text-primary: #f3f4f6;
+        --c-text-secondary: #9ca3af;
+        --c-border: #1e293b;
+        --c-clock-face: #121826;
+        
+        background-color: var(--bg-canvas);
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        user-select: none;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      @media (prefers-color-scheme: light) {
+        #clock-svg-p3 {
+          --bg-canvas: #f8fafc;
+          --bg-panel: #ffffff;
+          --c-green: #059669;
+          --c-green-bg: rgba(5, 150, 105, 0.08);
+          --c-red: #e11d48;
+          --c-red-bg: rgba(225, 29, 72, 0.08);
+          --c-amber: #d97706;
+          --c-amber-bg: rgba(217, 119, 6, 0.06);
+          --c-text-primary: #0f172a;
+          --c-text-secondary: #475569;
+          --c-border: #e2e8f0;
+          --c-clock-face: #f1f5f9;
+        }
+      }
+
+      #clock-svg-p3.theme-light,
+      #clock-svg-p3[data-theme="light"] {
+        --bg-canvas: #f8fafc;
+        --bg-panel: #ffffff;
+        --c-green: #059669;
+        --c-green-bg: rgba(5, 150, 105, 0.08);
+        --c-red: #e11d48;
+        --c-red-bg: rgba(225, 29, 72, 0.08);
+        --c-amber: #d97706;
+        --c-amber-bg: rgba(217, 119, 6, 0.06);
+        --c-text-primary: #0f172a;
+        --c-text-secondary: #475569;
+        --c-border: #e2e8f0;
+        --c-clock-face: #f1f5f9;
+      }
+
+      #clock-svg-p3 .title {
+        fill: var(--c-text-primary);
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+
+      #clock-svg-p3 .subtitle {
+        fill: var(--c-text-secondary);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      #clock-svg-p3 .badge {
+        fill: var(--c-amber-bg);
+        stroke: var(--c-amber);
+        stroke-width: 1;
+      }
+
+      #clock-svg-p3 .badge-text {
+        fill: var(--c-amber);
+        font-size: 11px;
+        font-weight: 700;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+
+      #clock-svg-p3 .clock-title {
+        font-size: 15px;
+        font-weight: 800;
+        text-anchor: middle;
+      }
+
+      #clock-svg-p3 .clock-desc {
+        font-size: 11px;
+        fill: var(--c-text-secondary);
+        text-anchor: middle;
+      }
+
+      #clock-svg-p3 .clock-dial {
+        fill: var(--c-clock-face);
+        stroke-width: 3.5;
+        transition: fill 0.3s;
+      }
+
+      #clock-svg-p3 .clock-number {
+        font-size: 13px;
+        font-weight: 700;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+
+      #clock-svg-p3 .panel-bg {
+        fill: var(--bg-panel);
+        stroke: var(--c-border);
+        stroke-width: 1.5;
+        transition: fill 0.3s, stroke 0.3s;
+      }
+
+      #clock-svg-p3 .panel-title {
+        fill: var(--c-text-primary);
+        font-size: 13px;
+        font-weight: 800;
+        text-anchor: middle;
+        letter-spacing: 1px;
+      }
+
+      #clock-svg-p3 .info-card {
+        display: none;
+      }
+
+      #clock-svg-p3 .info-card.active {
+        display: block;
+      }
+
+      #clock-svg-p3 .info-title {
+        fill: var(--c-text-primary);
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      #clock-svg-p3 .error-title {
+        fill: var(--c-red);
+      }
+
+      #clock-svg-p3 .info-subtitle {
+        fill: var(--c-text-secondary);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      #clock-svg-p3 .info-body {
+        fill: var(--c-text-primary);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      #clock-svg-p3 .info-body-sub {
+        fill: var(--c-text-secondary);
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      #clock-svg-p3 .highlight-red {
+        fill: var(--c-red);
+        font-weight: 700;
+      }
+
+      #clock-svg-p3 .guide-line {
+        transition: opacity 0.3s ease;
+      }
+
+      #clock-svg-p3 .guide-line.active {
+        opacity: 0.8 !important;
+      }
+
+      #clock-svg-p3 .hotspot {
+        outline: none;
+        cursor: pointer;
+      }
+
+      #clock-svg-p3 .hotspot circle.hotspot-center {
+        transition: fill 0.2s, stroke 0.2s;
+      }
+
+      #clock-svg-p3 .hotspot:hover circle.hotspot-center,
+      #clock-svg-p3 .hotspot.active circle.hotspot-center {
+        fill: var(--c-amber) !important;
+        stroke: #ffffff !important;
+      }
+
+      #clock-svg-p3 .legend-card {
+        fill: var(--c-amber-bg);
+        stroke: var(--c-amber);
+        stroke-width: 1.5;
+        transition: fill 0.3s, stroke 0.3s;
+      }
+
+      #clock-svg-p3 .legend-title {
+        fill: var(--c-amber);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+
+      #clock-svg-p3 .legend-body {
+        fill: var(--c-text-primary);
+        font-size: 12px;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="var(--bg-canvas)" />
+
+  <!-- HEADER -->
+  <g transform="translate(40, 45)">
+    <text x="0" y="0" class="title">TESTE DO DESENHO DO RELÓGIO (TDR)</text>
+    <text x="0" y="22" class="subtitle">Cognição: o número que não fecha diagnóstico</text>
+    <g transform="translate(450, -8)">
+      <rect width="70" height="20" rx="4" class="badge" />
+      <text x="35" y="10" class="badge-text">PISO-03</text>
+    </g>
+  </g>
+
+  <!-- CLOCK 1: NORMAL (Left side) -->
+  <g transform="translate(190, 255)">
+    <!-- Title -->
+    <text x="0" y="-140" class="clock-title" fill="var(--c-green)">Relógio Normal (5:00)</text>
+    <text x="0" y="-120" class="clock-desc">Planejamento e execução íntegros</text>
+
+    <!-- Dial -->
+    <circle cx="0" cy="0" r="110" class="clock-dial" stroke="var(--c-green)" />
+    
+    <!-- Outer accent rings -->
+    <circle cx="0" cy="0" r="102" fill="none" stroke="var(--c-green)" stroke-width="0.5" opacity="0.3" />
+
+    <!-- Numbers -->
+    <g fill="var(--c-text-primary)" class="clock-number">
+      <text x="0" y="-85">12</text>
+      <text x="42.5" y="-73.6">1</text>
+      <text x="73.6" y="-42.5">2</text>
+      <text x="85" y="0">3</text>
+      <text x="73.6" y="42.5">4</text>
+      <text x="42.5" y="73.6" fill="var(--c-green)" font-weight="900">5</text>
+      <text x="0" y="85">6</text>
+      <text x="-42.5" y="73.6">7</text>
+      <text x="-73.6" y="42.5">8</text>
+      <text x="-85" y="0">9</text>
+      <text x="-73.6" y="-42.5">10</text>
+      <text x="-42.5" y="-73.6">11</text>
+    </g>
+
+    <!-- Hands -->
+    <!-- Hour Hand (pointing to 5) -->
+    <line x1="0" y1="0" x2="27.5" y2="47.6" stroke="var(--c-green)" stroke-width="5" stroke-linecap="round" />
+    <!-- Minute Hand (pointing to 12) -->
+    <line x1="0" y1="0" x2="0" y2="-80" stroke="var(--c-green)" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Center Pin -->
+    <circle cx="0" cy="0" r="6" fill="var(--c-green)" stroke="#ffffff" stroke-width="1.5" />
+
+    <!-- Normal description text -->
+    <text x="0" y="135" class="clock-desc">Números ordenados, espaçamento simétrico</text>
+    <text x="0" y="150" class="clock-desc">e ponteiros indicando a hora correta.</text>
+  </g>
+
+  <!-- CLOCK 2: ALTERED (Center-right side) -->
+  <g transform="translate(460, 255)">
+    <!-- Title -->
+    <text x="0" y="-140" class="clock-title" fill="var(--c-red)">Relógio Alterado</text>
+    <text x="0" y="-120" class="clock-desc">Déficit de planejamento e negligência</text>
+
+    <!-- Interactive Guide Zones (Rendered behind clock elements) -->
+    <!-- Neglect Zone (Left hemisphere) -->
+    <path id="neglect-zone" d="M 0,0 L 19.9,-113.2 A 115,115 0 0,0 -20.7,113.1 Z" fill="var(--c-red-bg)" stroke="var(--c-red)" stroke-dasharray="4,4" stroke-width="1.5" opacity="0" class="guide-line" />
+    
+    <!-- Spacing Zone (Right hemisphere squeezed) -->
+    <path id="spacing-zone" d="M 0,0 L 19.9,-113.2 A 115,115 0 0,1 -20.7,113.1 Z" fill="var(--c-red-bg)" stroke="var(--c-red)" stroke-dasharray="4,4" stroke-width="1.5" opacity="0" class="guide-line" />
+
+    <!-- Hands Glow -->
+    <circle id="hands-glow" cx="38" cy="-7" r="48" fill="var(--c-red-bg)" stroke="var(--c-red)" stroke-dasharray="4,4" stroke-width="1.5" opacity="0" class="guide-line" />
+
+    <!-- Dial -->
+    <circle cx="0" cy="0" r="110" class="clock-dial" stroke="var(--c-red)" />
+    
+    <!-- Outer accent rings -->
+    <circle cx="0" cy="0" r="102" fill="none" stroke="var(--c-red)" stroke-width="0.5" opacity="0.3" />
+
+    <!-- Squeezed/Disorganized Numbers -->
+    <g fill="var(--c-text-primary)" class="clock-number">
+      <!-- Squeezed clockwise layout on the right half -->
+      <text x="14.7" y="-83.7">1</text>
+      <text x="37.8" y="-76.1">2</text>
+      <text x="57.7" y="-62.4">3</text>
+      <text x="73.0" y="-43.5">4</text>
+      <!-- Stimulus target highlighted -->
+      <text x="82.3" y="-21.1" fill="var(--c-red)" font-weight="900">5</text>
+      <text x="84.9" y="3.0">6</text>
+      <text x="80.7" y="26.8">7</text>
+      <text x="69.8" y="48.5">8</text>
+      <text x="53.3" y="66.2">9</text>
+      <text x="32.4" y="78.6">10</text>
+      <text x="8.9" y="84.5">11</text>
+      <text x="-15.3" y="83.6">12</text>
+    </g>
+
+    <!-- Incorrect Hands (Stimulus-bound: both point to 5) -->
+    <!-- Hour Hand -->
+    <line x1="0" y1="0" x2="58.1" y2="-14.9" stroke="var(--c-red)" stroke-width="5" stroke-linecap="round" />
+    <!-- Minute Hand -->
+    <line x1="0" y1="0" x2="75.5" y2="-19.4" stroke="var(--c-red)" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Center Pin -->
+    <circle cx="0" cy="0" r="6" fill="var(--c-red)" stroke="#ffffff" stroke-width="1.5" />
+
+    <!-- Descriptions -->
+    <text x="0" y="135" class="clock-desc">Números amontoados à direita,</text>
+    <text x="0" y="150" class="clock-desc">ponteiros atraídos pelo número "5".</text>
+  </g>
+
+  <!-- HOTSPOTS (Overlaying the Altered Clock) -->
+  <!-- Hotspot 1: Neglect (Left side empty area) -->
+  <g class="hotspot" id="hs-neglect" tabindex="0" role="button" aria-label="Analisar negligência espacial esquerda" transform="translate(390, 255)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="var(--c-red)" stroke-width="2">
+      <animate attributeName="r" values="8;25" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="7" fill="var(--c-red)" stroke="#ffffff" stroke-width="1.5" class="hotspot-center" />
+    <circle cx="0" cy="0" r="28" fill="transparent" />
+  </g>
+
+  <!-- Hotspot 2: Hands (Execution/Stimulus Bound) -->
+  <g class="hotspot" id="hs-hands" tabindex="0" role="button" aria-label="Analisar erro de ponteiros" transform="translate(498, 248)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="var(--c-red)" stroke-width="2">
+      <animate attributeName="r" values="8;25" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="7" fill="var(--c-red)" stroke="#ffffff" stroke-width="1.5" class="hotspot-center" />
+    <circle cx="0" cy="0" r="28" fill="transparent" />
+  </g>
+
+  <!-- Hotspot 3: Spacing (Right side clustering) -->
+  <g class="hotspot" id="hs-spacing" tabindex="0" role="button" aria-label="Analisar desorganização de espaçamento" transform="translate(525, 200)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="var(--c-red)" stroke-width="2">
+      <animate attributeName="r" values="8;25" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="7" fill="var(--c-red)" stroke="#ffffff" stroke-width="1.5" class="hotspot-center" />
+    <circle cx="0" cy="0" r="28" fill="transparent" />
+  </g>
+
+  <!-- READING PANEL / SIDEBAR (Right side) -->
+  <g transform="translate(625, 105)">
+    <!-- Panel Card Background -->
+    <rect x="0" y="0" width="295" height="320" rx="12" class="panel-bg" />
+    
+    <!-- Panel Header Border line -->
+    <line x1="20" y1="45" x2="275" y2="45" stroke="var(--c-border)" stroke-width="1" />
+    <text x="147" y="28" class="panel-title">PAINEL DE ANÁLISE CLÍNICA</text>
+
+    <!-- CONTENT CARDS (Toggled by JS) -->
+    
+    <!-- 0. Default State -->
+    <g id="card-default" class="info-card active">
+      <text x="25" y="80" class="info-title">Como interpretar?</text>
+      <text x="25" y="115" class="info-body">O Teste do Desenho do Relógio (TDR)</text>
+      <text x="25" y="135" class="info-body">avalia múltiplos domínios cognitivos.</text>
+      
+      <text x="25" y="175" class="info-body">1. Observe o relógio normal à esquerda.</text>
+      <text x="25" y="195" class="info-body">2. Compare com as distorções à direita.</text>
+      <text x="25" y="215" class="info-body">3. Interaja com os alertas vermelhos</text>
+      <text x="25" y="235" class="info-body">   no mostrador para analisar as</text>
+      <text x="25" y="255" class="info-body">   principais falhas de execução.</text>
+      
+      <text x="25" y="295" class="info-body-sub" font-style="italic">Clique em qualquer hotspot para fixar a análise.</text>
+    </g>
+
+    <!-- 1. Neglect Card -->
+    <g id="card-neglect" class="info-card">
+      <text x="25" y="80" class="info-title error-title">Heminegligência</text>
+      <text x="25" y="100" class="info-subtitle">Lobo Parietal Direito</text>
+      
+      <text x="25" y="135" class="info-body highlight-red">• O que é observado:</text>
+      <text x="25" y="155" class="info-body-sub">O paciente ignora completamente a metade</text>
+      <text x="25" y="173" class="info-body-sub">esquerda do mostrador, aglomerando os</text>
+      <text x="25" y="191" class="info-body-sub">números apenas no lado direito.</text>
+      
+      <text x="25" y="225" class="info-body highlight-red">• Significado Clínico:</text>
+      <text x="25" y="245" class="info-body-sub">Déficit visuoespacial por lesão estrutural</text>
+      <text x="25" y="263" class="info-body-sub">ou degenerativa do lobo parietal direito</text>
+      <text x="25" y="281" class="info-body-sub">(comum em sequelas de AVC e Alzheimer).</text>
+    </g>
+
+    <!-- 2. Hands Card -->
+    <g id="card-hands" class="info-card">
+      <text x="25" y="80" class="info-title error-title">Disfunção Executiva</text>
+      <text x="25" y="100" class="info-subtitle">Córtex Pré-Frontal</text>
+      
+      <text x="25" y="135" class="info-body highlight-red">• O que é observado:</text>
+      <text x="25" y="155" class="info-body-sub">Ponteiros desenhados diretamente para o</text>
+      <text x="25" y="173" class="info-body-sub">número "5" (atração pelo estímulo visual)</text>
+      <text x="25" y="191" class="info-body-sub">ou ponteiros sem conexão no centro.</text>
+      
+      <text x="25" y="225" class="info-body highlight-red">• Significado Clínico:</text>
+      <text x="25" y="245" class="info-body-sub">Comprometimento de funções executivas,</text>
+      <text x="25" y="263" class="info-body-sub">como planejamento, controle inibitório e</text>
+      <text x="25" y="281" class="info-body-sub">capacidade de abstração conceitual.</text>
+    </g>
+
+    <!-- 3. Spacing Card -->
+    <g id="card-spacing" class="info-card">
+      <text x="25" y="80" class="info-title error-title">Desorganização Espacial</text>
+      <text x="25" y="100" class="info-subtitle">Conectividade Cortical Global</text>
+      
+      <text x="25" y="135" class="info-body highlight-red">• O que é observado:</text>
+      <text x="25" y="155" class="info-body-sub">Distribuição caótica dos algarismos,</text>
+      <text x="25" y="173" class="info-body-sub">espaçamento irregular e sobreposição</text>
+      <text x="25" y="191" class="info-body-sub">dos números ao longo da borda.</text>
+      
+      <text x="25" y="225" class="info-body highlight-red">• Significado Clínico:</text>
+      <text x="25" y="245" class="info-body-sub">Apraxia construtiva, desorganização da</text>
+      <text x="25" y="263" class="info-body-sub">memória de trabalho e deterioração</text>
+      <text x="25" y="281" class="info-body-sub">cognitiva global progressiva (demências).</text>
+    </g>
+  </g>
+
+  <!-- LEGEND (Bottom banner) -->
+  <g transform="translate(40, 455)">
+    <!-- Legend Card Background -->
+    <rect x="0" y="0" width="880" height="65" rx="8" class="legend-card" />
+    
+    <!-- Legend text inside -->
+    <text x="20" y="25" class="legend-title">LEGENDA DE INTERPRETAÇÃO CLÍNICA</text>
+    <text x="20" y="45" class="legend-body">
+      <tspan fill="var(--c-amber)" font-weight="800">Relógio desorganizado sinaliza comprometimento cognitivo — o TDR é RASTREIO, abre investigação; NÃO é diagnóstico de demência.</tspan>
+      O teste é altamente sensível e deve ser complementado com exames laboratoriais, de imagem e avaliações neuropsicológicas estruturadas.
+    </text>
+  </g>
+
+  <!-- JAVASCRIPT CONTROLLER -->
+  <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+      const init = () => {
+        const hotspots = {
+          'hs-neglect': { card: 'card-neglect', guide: 'neglect-zone' },
+          'hs-hands': { card: 'card-hands', guide: 'hands-glow' },
+          'hs-spacing': { card: 'card-spacing', guide: 'spacing-zone' }
+        };
+        
+        let currentActive = null;
+
+        function deactivateAll() {
+          Object.keys(hotspots).forEach(id => {
+            const hsEl = document.getElementById(id);
+            const cardEl = document.getElementById(hotspots[id].card);
+            const guideEl = document.getElementById(hotspots[id].guide);
+            if (hsEl) hsEl.classList.remove('active');
+            if (cardEl) cardEl.classList.remove('active');
+            if (guideEl) guideEl.classList.remove('active');
+          });
+          const defCard = document.getElementById('card-default');
+          if (defCard) defCard.classList.add('active');
+          currentActive = null;
+        }
+
+        function activate(id) {
+          deactivateAll();
+          const hsEl = document.getElementById(id);
+          const cardEl = document.getElementById(hotspots[id].card);
+          const guideEl = document.getElementById(hotspots[id].guide);
+          
+          if (hsEl) hsEl.classList.add('active');
+          if (cardEl) cardEl.classList.add('active');
+          if (guideEl) guideEl.classList.add('active');
+          
+          const defCard = document.getElementById('card-default');
+          if (defCard) defCard.classList.remove('active');
+          currentActive = id;
+        }
+
+        Object.keys(hotspots).forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          
+          // Click Interaction
+          el.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentActive === id) {
+              deactivateAll();
+            } else {
+              activate(id);
+            }
+          });
+          
+          // Keyboard Accessibility
+          el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              if (currentActive === id) {
+                deactivateAll();
+              } else {
+                activate(id);
+              }
+            }
+          });
+          
+          // Hover Preview
+          el.addEventListener('mouseenter', () => {
+            if (!currentActive) {
+              const cardEl = document.getElementById(hotspots[id].card);
+              const guideEl = document.getElementById(hotspots[id].guide);
+              const defCard = document.getElementById('card-default');
+              if (cardEl) cardEl.classList.add('active');
+              if (guideEl) guideEl.classList.add('active');
+              if (defCard) defCard.classList.remove('active');
+            }
+          });
+          
+          el.addEventListener('mouseleave', () => {
+            if (!currentActive) {
+              const cardEl = document.getElementById(hotspots[id].card);
+              const guideEl = document.getElementById(hotspots[id].guide);
+              const defCard = document.getElementById('card-default');
+              if (cardEl) cardEl.classList.remove('active');
+              if (guideEl) guideEl.classList.remove('active');
+              if (defCard) defCard.classList.add('active');
+            }
+          });
+        });
+        
+        // Click canvas to clear active selection
+        const svgEl = document.getElementById('clock-svg-p3');
+        if (svgEl) {
+          svgEl.addEventListener('click', () => {
+            deactivateAll();
+          });
+        }
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+    //]]>
+  </script>
+</svg>

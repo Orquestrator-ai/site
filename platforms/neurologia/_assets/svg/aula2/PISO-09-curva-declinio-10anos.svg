@@ -1,0 +1,686 @@
+<svg id="piso09-marcha-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 625" width="100%" height="100%">
+  <defs>
+    <style>
+      #piso09-marcha-svg {
+        background-color: var(--bg-main, #0b0f19);
+        font-family: system-ui, -apple-system, sans-serif;
+        user-select: none;
+        --bg-main: #0b0f19;
+        --bg-panel: #141b2d;
+        --panel-border: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --cyan-axis: #06b6d4;
+        --cyan-axis-light: rgba(6, 182, 212, 0.1);
+        --red-coral: #f87171;
+        --amber-warning: #fbbf24;
+        --green-normal: #4ade80;
+        --grid-line: #1e293b;
+        --curve-bg: #334155;
+        --slider-track: #1e293b;
+        transition: background-color 0.3s;
+      }
+
+      @media (prefers-color-scheme: light) {
+        #piso09-marcha-svg {
+          --bg-main: #f8fafc;
+          --bg-panel: #ffffff;
+          --panel-border: #cbd5e1;
+          --text-main: #0f172a;
+          --text-muted: #64748b;
+          --cyan-axis: #0891b2;
+          --cyan-axis-light: rgba(8, 145, 178, 0.08);
+          --red-coral: #dc2626;
+          --amber-warning: #d97706;
+          --green-normal: #16a34a;
+          --grid-line: #e2e8f0;
+          --curve-bg: #cbd5e1;
+          --slider-track: #e2e8f0;
+        }
+      }
+
+      #piso09-marcha-svg .title-text {
+        font-size: 22px;
+        font-weight: 800;
+        fill: var(--text-main);
+        letter-spacing: 0.5px;
+      }
+
+      #piso09-marcha-svg .subtitle-text {
+        font-size: 13px;
+        fill: var(--text-muted);
+      }
+
+      #piso09-marcha-svg .panel-rect {
+        fill: var(--bg-panel);
+        stroke: var(--panel-border);
+        stroke-width: 1.5;
+      }
+
+      #piso09-marcha-svg .panel-title-text {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--cyan-axis);
+        letter-spacing: 1px;
+      }
+
+      #piso09-marcha-svg .panel-body-text {
+        font-size: 11px;
+        fill: var(--text-main);
+        line-height: 1.5;
+      }
+
+      #piso09-marcha-svg .highlight-green {
+        fill: var(--green-normal);
+        font-weight: bold;
+      }
+
+      #piso09-marcha-svg .highlight-red {
+        fill: var(--red-coral);
+        font-weight: bold;
+      }
+
+      #piso09-marcha-svg .highlight-amber {
+        fill: var(--amber-warning);
+        font-weight: bold;
+      }
+
+      #piso09-marcha-svg .glow-amber {
+        fill: var(--amber-warning);
+        filter: drop-shadow(0 0 4px var(--amber-warning));
+        font-weight: bold;
+        transition: filter 0.2s, fill 0.2s;
+      }
+
+      #piso09-marcha-svg .phase-subtitle {
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      #piso09-marcha-svg .grid-line {
+        stroke: var(--grid-line);
+        stroke-width: 1;
+        stroke-dasharray: 4 4;
+      }
+
+      #piso09-marcha-svg .axis-line {
+        stroke: var(--cyan-axis);
+        stroke-width: 1.5;
+      }
+
+      #piso09-marcha-svg .axis-label-text {
+        font-size: 10px;
+        font-weight: bold;
+        fill: var(--text-muted);
+      }
+
+      #piso09-marcha-svg .axis-title-text {
+        font-size: 11px;
+        font-weight: bold;
+        fill: var(--cyan-axis);
+      }
+
+      #piso09-marcha-svg .declinio-path-bg {
+        fill: none;
+        stroke: var(--curve-bg);
+        stroke-width: 4;
+        stroke-linecap: round;
+      }
+
+      #piso09-marcha-svg .declinio-path-active {
+        fill: none;
+        stroke-width: 5;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.1s ease-out;
+      }
+
+      #piso09-marcha-svg .marker-node {
+        stroke: var(--bg-main);
+        stroke-width: 2;
+        cursor: pointer;
+        transition: r 0.2s, stroke-width 0.2s, opacity 0.2s, fill 0.2s;
+      }
+
+      #piso09-marcha-svg .marker-node.active {
+        stroke: var(--text-main);
+        stroke-width: 2.5;
+      }
+
+      #piso09-marcha-svg .connector-line {
+        stroke-width: 1;
+        stroke-dasharray: 2 2;
+        transition: opacity 0.2s, stroke 0.2s;
+      }
+
+      #piso09-marcha-svg .marker-label {
+        font-size: 9.5px;
+        font-weight: bold;
+        transition: opacity 0.2s, fill 0.2s;
+      }
+
+      #piso09-marcha-svg .slider-track-line {
+        stroke: var(--slider-track);
+        stroke-width: 6;
+        stroke-linecap: round;
+      }
+
+      #piso09-marcha-svg .slider-handle-circle {
+        fill: var(--cyan-axis);
+        stroke: var(--text-main);
+        stroke-width: 2.5;
+        cursor: grab;
+        transition: transform 0.1s, fill 0.2s;
+      }
+
+      #piso09-marcha-svg .slider-handle-circle:active {
+        cursor: grabbing;
+        transform: scale(1.2);
+      }
+      
+      #piso09-marcha-svg .slider-handle-circle:focus {
+        stroke: var(--amber-warning);
+        stroke-width: 3.5;
+        outline: none;
+      }
+
+      #piso09-marcha-svg .footer-rect {
+        fill: var(--bg-panel);
+        stroke: var(--panel-border);
+        stroke-width: 1;
+      }
+
+      #piso09-marcha-svg .footer-text {
+        font-size: 11.5px;
+        fill: var(--text-main);
+      }
+      
+      #piso09-marcha-svg .phase-description {
+        transition: opacity 0.15s ease-in-out;
+      }
+    </style>
+    
+    <linearGradient id="curve-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--green-normal)" />
+      <stop offset="25%" stop-color="var(--red-coral)" />
+      <stop offset="50%" stop-color="var(--amber-warning)" />
+      <stop offset="75%" stop-color="var(--red-coral)" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo Principal -->
+  <rect width="1050" height="625" fill="var(--bg-main)" rx="10" />
+
+  <!-- Tópico e Título -->
+  <g transform="translate(0, 0)">
+    <text x="525" y="40" class="title-text" text-anchor="middle">CURVA DE DECLÍNIO FUNCIONAL: A MARCHA DE DEZ ANOS</text>
+    <text x="525" y="65" class="subtitle-text" text-anchor="middle">A ordem cronológica das perdas no Alzheimer como pilar fundamental do diagnóstico diferencial</text>
+    <text x="525" y="82" class="subtitle-text" text-anchor="middle" font-weight="bold">Interação: Arraste a timeline de anos para avançar a curva de curso clínico</text>
+  </g>
+
+  <!-- PAINEL ESQUERDO: CASO CLÍNICO ANCORADO -->
+  <g class="clinical-case-box">
+    <rect x="20" y="110" width="180" height="360" rx="8" class="panel-rect" />
+    <text x="35" y="135" class="panel-title-text">CASO CLÍNICO ANCORADO</text>
+    <text x="35" y="160" class="panel-body-text">
+      <tspan x="35" dy="0" font-weight="bold" fill="var(--cyan-axis)">Paciente de 72 anos:</tspan>
+      <tspan x="35" dy="20">Trazido por familiares por</tspan>
+      <tspan x="35" dy="16">perda de memória recente</tspan>
+      <tspan x="35" dy="16">há 2 anos (Ano 0 na curva),</tspan>
+      <tspan x="35" dy="16">mantendo independência.</tspan>
+      <tspan x="35" dy="22">Apresentou declínio verbal</tspan>
+      <tspan x="35" dy="16">(afasia) e práxico (apraxia)</tspan>
+      <tspan x="35" dy="16">nos anos seguintes.</tspan>
+      <tspan x="35" dy="22" id="case-highlight-5">Atualmente (Ano 5), iniciou</tspan>
+      <tspan x="35" dy="16">desorientação espacial e</tspan>
+      <tspan x="35" dy="16">temporal grave.</tspan>
+      <tspan x="35" dy="22">A ordem cronológica tardia</tspan>
+      <tspan x="35" dy="16">desta perda confirma</tspan>
+      <tspan x="35" dy="16">Doença de Alzheimer.</tspan>
+    </text>
+  </g>
+
+  <!-- ÁREA CENTRAL: O GRÁFICO -->
+  <g class="chart-area">
+    <!-- Gridlines Horizontais -->
+    <line x1="240" y1="130" x2="840" y2="130" class="grid-line" />
+    <line x1="240" y1="210" x2="840" y2="210" class="grid-line" />
+    <line x1="240" y1="290" x2="840" y2="290" class="grid-line" />
+    <line x1="240" y1="370" x2="840" y2="370" class="grid-line" />
+    <line x1="240" y1="450" x2="840" y2="450" class="grid-line" />
+
+    <!-- Eixo Y (Funcionalidade) -->
+    <line x1="240" y1="130" x2="240" y2="450" class="axis-line" />
+    <text x="230" y="134" class="axis-label-text" text-anchor="end">100% (Independência)</text>
+    <text x="230" y="214" class="axis-label-text" text-anchor="end">Declínio Leve</text>
+    <text x="230" y="294" class="axis-label-text" text-anchor="end">Declínio Moderado</text>
+    <text x="230" y="374" class="axis-label-text" text-anchor="end">Declínio Grave</text>
+    <text x="230" y="454" class="axis-label-text" text-anchor="end">0% (Dependência/Óbito)</text>
+    <text x="215" y="290" class="axis-title-text" text-anchor="middle" transform="rotate(-90 215 290)">FUNCIONALIDADE E COGNIÇÃO</text>
+
+    <!-- Curva de Declínio - Fundo (Curso Clínico Completo) -->
+    <path id="declinio-path" class="declinio-path-bg" d="M 240 130 C 380 140, 480 210, 540 298 S 760 445, 840 450" />
+    
+    <!-- Curva de Declínio - Ativa (Preenchimento Dinâmico) -->
+    <path id="declinio-path-active" class="declinio-path-active" stroke="url(#curve-gradient)" d="M 240 130 C 380 140, 480 210, 540 298 S 760 445, 840 450" stroke-dasharray="0 1000" />
+
+    <!-- Linhas Conectoras e Nós (Anos 0 a 10) -->
+    <!-- Serão posicionados em runtime com precisão matemática no script -->
+    <g class="connectors">
+      <line id="connector-0" class="connector-line" stroke="var(--green-normal)" />
+      <line id="connector-2" class="connector-line" stroke="var(--red-coral)" />
+      <line id="connector-5" class="connector-line" stroke="var(--amber-warning)" />
+      <line id="connector-7" class="connector-line" stroke="var(--red-coral)" />
+      <line id="connector-9" class="connector-line" stroke="var(--red-coral)" />
+    </g>
+
+    <!-- Rótulos flutuantes de Marcos -->
+    <g class="labels">
+      <text id="label-0" class="marker-label" text-anchor="middle" fill="var(--green-normal)">Amnésia Recente</text>
+      <text id="label-2" class="marker-label" text-anchor="middle" fill="var(--red-coral)">Afasia / Apraxia</text>
+      <text id="label-5" class="marker-label" text-anchor="middle" fill="var(--amber-warning)">Desorientação Tardia</text>
+      <text id="label-7" class="marker-label" text-anchor="middle" fill="var(--red-coral)">Incontinência</text>
+      <text id="label-9" class="marker-label" text-anchor="middle" fill="var(--red-coral)">Imobilidade (Óbito)</text>
+    </g>
+
+    <!-- Nós de Foco de Cada Ano -->
+    <g class="nodes">
+      <circle id="node-0" class="marker-node" fill="var(--green-normal)" r="6" />
+      <circle id="node-1" class="marker-node" fill="var(--red-coral)" r="6" />
+      <circle id="node-2" class="marker-node" fill="var(--red-coral)" r="6" />
+      <circle id="node-3" class="marker-node" fill="var(--red-coral)" r="6" />
+      <circle id="node-4" class="marker-node" fill="var(--amber-warning)" r="6" />
+      <circle id="node-5" class="marker-node" fill="var(--amber-warning)" r="6" />
+      <circle id="node-6" class="marker-node" fill="var(--amber-warning)" r="6" />
+      <circle id="node-7" class="marker-node" fill="var(--red-coral)" r="6" />
+      <circle id="node-8" class="marker-node" fill="var(--red-coral)" r="6" />
+      <circle id="node-9" class="marker-node" fill="var(--red-coral)" r="6" />
+      <circle id="node-10" class="marker-node" fill="var(--red-coral)" r="6" />
+    </g>
+
+    <!-- Indicador Pulsante de Seleção Ativa -->
+    <circle id="selection-glow" r="14" fill="none" stroke="var(--cyan-axis)" stroke-width="2" opacity="0" pointer-events="none" stroke-dasharray="3 3">
+      <animate attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- PAINEL DIREITO: DETALHES DAS FASES (DINÂMICO) -->
+  <g class="phase-detail-box">
+    <rect x="860" y="110" width="170" height="360" rx="8" class="panel-rect" />
+    <text x="875" y="135" class="panel-title-text">DETALHES DA FASE</text>
+    
+    <!-- Fase 0: Amnésia Recente (Ano 0) -->
+    <g id="phase-0-desc" class="phase-description">
+      <text x="875" y="165" class="phase-subtitle highlight-green">Amnésia Inicial</text>
+      <text x="875" y="190" class="panel-body-text">
+        <tspan x="875" dy="0" font-weight="bold" fill="var(--cyan-axis)">Marco: Ano 0</tspan>
+        <tspan x="875" dy="22">Incapacidade de fixar</tspan>
+        <tspan x="875" dy="16">novas informações e</tspan>
+        <tspan x="875" dy="16">lembrar de fatos</tspan>
+        <tspan x="875" dy="16">recentes do cotidiano.</tspan>
+        <tspan x="875" dy="24" font-weight="bold">Autonomia:</tspan>
+        <tspan x="875" dy="16">Completamente intacta.</tspan>
+        <tspan x="875" dy="16">Paciente gerencia vida</tspan>
+        <tspan x="875" dy="16">social, finanças e</tspan>
+        <tspan x="875" dy="16">autocuidado básico.</tspan>
+      </text>
+    </g>
+
+    <!-- Fase 1: Perda Cortical (Anos 1-3) -->
+    <g id="phase-1-desc" class="phase-description" style="display:none">
+      <text x="875" y="165" class="phase-subtitle highlight-red">Declínio Cortical</text>
+      <text x="875" y="190" class="panel-body-text">
+        <tspan x="875" dy="0" font-weight="bold" fill="var(--cyan-axis)">Marcos: Anos 1 a 3</tspan>
+        <tspan x="875" dy="22">Surgem os déficits de</tspan>
+        <tspan x="875" dy="16">córtex associativo:</tspan>
+        <tspan x="875" dy="18" font-weight="bold">- Afasia:</tspan>
+        <tspan x="890" dy="16">dificuldade verbal.</tspan>
+        <tspan x="875" dy="18" font-weight="bold">- Apraxia:</tspan>
+        <tspan x="890" dy="16">erro em atos motores.</tspan>
+        <tspan x="875" dy="18" font-weight="bold">- Agnosia:</tspan>
+        <tspan x="890" dy="16">não reconhecimento.</tspan>
+        <tspan x="875" dy="24" font-weight="bold">Autonomia:</tspan>
+        <tspan x="875" dy="16">Perda gradual em</tspan>
+        <tspan x="875" dy="16">atividades complexas.</tspan>
+      </text>
+    </g>
+
+    <!-- Fase 2: Desorientação Tardia (Anos 4-6) -->
+    <g id="phase-2-desc" class="phase-description" style="display:none">
+      <text x="875" y="165" class="phase-subtitle highlight-amber">Desorientação</text>
+      <text x="875" y="190" class="panel-body-text">
+        <tspan x="875" dy="0" font-weight="bold" fill="var(--cyan-axis)">Marcos: Anos 4 a 6</tspan>
+        <tspan x="875" dy="22" font-weight="bold" fill="var(--amber-warning)">⚠ REGRA MÉDICA:</tspan>
+        <tspan x="875" dy="16">A desorientação grave</tspan>
+        <tspan x="875" dy="16">é TARDIA no Alzheimer.</tspan>
+        <tspan x="875" dy="20" font-weight="bold" fill="var(--red-coral)">Se for precoce:</tspan>
+        <tspan x="875" dy="16">pense em Demência</tspan>
+        <tspan x="875" dy="16">Vascular ou FTD,</tspan>
+        <tspan x="875" dy="16">afastando Alzheimer.</tspan>
+        <tspan x="875" dy="22">Perda de orientação</tspan>
+        <tspan x="875" dy="16">no tempo e espaço,</tspan>
+        <tspan x="875" dy="16">mesmo em locais de</tspan>
+        <tspan x="875" dy="16">convívio histórico.</tspan>
+      </text>
+    </g>
+
+    <!-- Fase 3: Incontinência (Anos 7-8) -->
+    <g id="phase-3-desc" class="phase-description" style="display:none">
+      <text x="875" y="165" class="phase-subtitle highlight-red">Incontinência</text>
+      <text x="875" y="190" class="panel-body-text">
+        <tspan x="875" dy="0" font-weight="bold" fill="var(--cyan-axis)">Marcos: Anos 7 e 8</tspan>
+        <tspan x="875" dy="22">Fase de declínio</tspan>
+        <tspan x="875" dy="16">funcional grave.</tspan>
+        <tspan x="875" dy="20">Perda de controle de</tspan>
+        <tspan x="875" dy="16">esfíncteres urinário</tspan>
+        <tspan x="875" dy="16">e fecal.</tspan>
+        <tspan x="875" dy="22">Instabilidade motora</tspan>
+        <tspan x="875" dy="16">grave, com quedas</tspan>
+        <tspan x="875" dy="16">frequentes.</tspan>
+        <tspan x="875" dy="22" font-weight="bold">Dependência:</tspan>
+        <tspan x="875" dy="16">Total para qualquer</tspan>
+        <tspan x="875" dy="16">atividade básica.</tspan>
+      </text>
+    </g>
+
+    <!-- Fase 4: Terminal (Anos 9-10) -->
+    <g id="phase-4-desc" class="phase-description" style="display:none">
+      <text x="875" y="165" class="phase-subtitle highlight-red">Fase Terminal</text>
+      <text x="875" y="190" class="panel-body-text">
+        <tspan x="875" dy="0" font-weight="bold" fill="var(--cyan-axis)">Marcos: Anos 9 e 10</tspan>
+        <tspan x="875" dy="22">Imobilidade terminal.</tspan>
+        <tspan x="875" dy="16">Confinamento ao</tspan>
+        <tspan x="875" dy="16">leito ou cadeira.</tspan>
+        <tspan x="875" dy="20">Mutismo, disfagia</tspan>
+        <tspan x="875" dy="16">grave e disfonia.</tspan>
+        <tspan x="875" dy="22" font-weight="bold" fill="var(--red-coral)">Causa de Óbito:</tspan>
+        <tspan x="875" dy="16">Complicações da</tspan>
+        <tspan x="875" dy="16">imobilidade (pneumonia</tspan>
+        <tspan x="875" dy="16">aspirativa ou escaras</tspan>
+        <tspan x="875" dy="16">infectadas).</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- CONTROLES: TIMELINE & SLIDER (INTERATIVO) -->
+  <g class="timeline-controls" transform="translate(0, 480)">
+    <!-- Trilho do Slider -->
+    <line x1="240" y1="25" x2="840" y2="25" class="slider-track-line" />
+    
+    <!-- Ticks e Rótulos do Slider -->
+    <!-- Loops estáticos gerados para compatibilidade e semântica -->
+    <g id="ticks">
+      <line x1="240" y1="20" x2="240" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="240" y="47" class="axis-label-text" text-anchor="middle">Ano 0</text>
+      
+      <line x1="300" y1="20" x2="300" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="300" y="47" class="axis-label-text" text-anchor="middle">Ano 1</text>
+      
+      <line x1="360" y1="20" x2="360" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="360" y="47" class="axis-label-text" text-anchor="middle">Ano 2</text>
+      
+      <line x1="420" y1="20" x2="420" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="420" y="47" class="axis-label-text" text-anchor="middle">Ano 3</text>
+      
+      <line x1="480" y1="20" x2="480" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="480" y="47" class="axis-label-text" text-anchor="middle">Ano 4</text>
+      
+      <line x1="540" y1="20" x2="540" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="540" y="47" class="axis-label-text" text-anchor="middle" font-weight="bold" fill="var(--amber-warning)">Ano 5</text>
+      
+      <line x1="600" y1="20" x2="600" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="600" y="47" class="axis-label-text" text-anchor="middle">Ano 6</text>
+      
+      <line x1="660" y1="20" x2="660" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="660" y="47" class="axis-label-text" text-anchor="middle">Ano 7</text>
+      
+      <line x1="720" y1="20" x2="720" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="720" y="47" class="axis-label-text" text-anchor="middle">Ano 8</text>
+      
+      <line x1="780" y1="20" x2="780" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="780" y="47" class="axis-label-text" text-anchor="middle">Ano 9</text>
+      
+      <line x1="840" y1="20" x2="840" y2="30" stroke="var(--cyan-axis)" stroke-width="1.5" />
+      <text x="840" y="47" class="axis-label-text" text-anchor="middle">Ano 10</text>
+    </g>
+
+    <!-- Handle do Slider (Acessível) -->
+    <circle id="slider-handle" cx="240" cy="25" r="11" class="slider-handle-circle" role="slider" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" aria-label="Eixo temporal de declínio em anos" tabindex="0" />
+
+    <!-- Zona Quente do Scrub para Cliques e Arrasto Suaves -->
+    <rect id="timeline-hotzone" x="220" y="-5" width="640" height="60" fill="transparent" style="cursor: ew-resize;" />
+  </g>
+
+  <!-- LEGENDA DE INTERPRETAÇÃO (CONTRATO BAUER) -->
+  <g class="footer-box" transform="translate(0, 555)">
+    <rect x="20" y="0" width="1010" height="52" rx="6" class="footer-rect" />
+    <text x="35" y="21" class="footer-text">
+      <tspan font-weight="bold" fill="var(--amber-warning)">Legenda de Interpretação:</tspan>
+      A marcha do Alzheimer segue uma ordem cronológica rígida: amnésia recente primeiro, depois afasia/apraxia/agnosia,
+    </text>
+    <text x="35" y="39" class="footer-text">
+      e apenas tardiamente (Anos 4-6) a desorientação espacial grave. Desorientação precoce descarta o diagnóstico de Alzheimer (suspeite de Demência Vascular ou FTD).
+    </text>
+  </g>
+
+  <!-- MOTOR INTERATIVO CDATA -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      const svg = document.getElementById('piso09-marcha-svg');
+      const path = svg.querySelector('#declinio-path');
+      const pathActive = svg.querySelector('#declinio-path-active');
+      const sliderHandle = svg.querySelector('#slider-handle');
+      const selectionGlow = svg.querySelector('#selection-glow');
+      const hotzone = svg.querySelector('#timeline-hotzone');
+      const caseHighlight = svg.querySelector('#case-highlight-5');
+
+      let currentYear = 0;
+      let isDragging = false;
+
+      const startX = 240;
+      const stepX = 60;
+      const yearsCount = 10;
+      const nodeCoords = [];
+
+      // Pesquisa binária exata para encontrar a coordenada Y no path dada a coordenada X
+      function getYForX(targetX) {
+        let min = 0;
+        let max = path.getTotalLength();
+        let point;
+        for (let i = 0; i < 12; i++) {
+          const percent = (min + max) / 2;
+          point = path.getPointAtLength(percent);
+          if (point.x < targetX) {
+            min = percent;
+          } else {
+            max = percent;
+          }
+        }
+        return point.y;
+      }
+
+      // Calcula as posições dos marcos biológicos e conectoras na curva
+      function initCoordinates() {
+        for (let year = 0; year <= yearsCount; year++) {
+          const x = startX + year * stepX;
+          const y = getYForX(x);
+          nodeCoords.push({ x, y });
+
+          const node = svg.querySelector('#node-' + year);
+          if (node) {
+            node.setAttribute('cx', x);
+            node.setAttribute('cy', y);
+            
+            // Permite clicar nos próprios círculos da curva
+            node.addEventListener('click', () => {
+              updateYear(year);
+            });
+          }
+
+          const conn = svg.querySelector('#connector-' + year);
+          const label = svg.querySelector('#label-' + year);
+          if (conn && label) {
+            conn.setAttribute('x1', x);
+            conn.setAttribute('y1', y);
+            conn.setAttribute('x2', x);
+            
+            const labelY = y - 35;
+            conn.setAttribute('y2', labelY + 8);
+            label.setAttribute('x', x);
+            label.setAttribute('y', labelY);
+            
+            label.style.cursor = 'pointer';
+            label.addEventListener('click', () => {
+              updateYear(year);
+            });
+          }
+        }
+      }
+
+      // Atualiza a máquina de estados baseada no ano selecionado
+      function updateYear(year) {
+        currentYear = Math.max(0, Math.min(yearsCount, year));
+        
+        const activeX = startX + currentYear * stepX;
+        const activeY = nodeCoords[currentYear].y;
+
+        // 1. Deslocamento do cursor da timeline
+        sliderHandle.setAttribute('cx', activeX);
+        sliderHandle.setAttribute('aria-valuenow', currentYear);
+
+        // 2. Revela a curva gradualmente até o ponto ativo
+        const pathLength = path.getTotalLength();
+        let min = 0;
+        let max = pathLength;
+        for (let i = 0; i < 12; i++) {
+          const percent = (min + max) / 2;
+          const pt = path.getPointAtLength(percent);
+          if (pt.x < activeX) {
+            min = percent;
+          } else {
+            max = percent;
+          }
+        }
+        const activeLength = (min + max) / 2;
+        pathActive.setAttribute('stroke-dasharray', activeLength + ' ' + pathLength);
+
+        // 3. Posiciona o indicador pulsante
+        selectionGlow.setAttribute('cx', activeX);
+        selectionGlow.setAttribute('cy', activeY);
+        selectionGlow.setAttribute('opacity', '1');
+
+        // 4. Modifica opacidade e realce das marcas biológicas
+        for (let i = 0; i <= yearsCount; i++) {
+          const node = svg.querySelector('#node-' + i);
+          const conn = svg.querySelector('#connector-' + i);
+          const label = svg.querySelector('#label-' + i);
+
+          if (node) {
+            if (i === currentYear) {
+              node.classList.add('active');
+              node.setAttribute('r', '9');
+            } else {
+              node.classList.remove('active');
+              node.setAttribute('r', '5.5');
+            }
+
+            if (i > currentYear) {
+              node.style.opacity = '0.25';
+              if (conn) conn.style.opacity = '0.05';
+              if (label) label.style.opacity = '0.15';
+            } else {
+              node.style.opacity = '1';
+              if (conn) conn.style.opacity = (i === currentYear) ? '0.8' : '0.25';
+              if (label) label.style.opacity = (i === currentYear) ? '1' : '0.45';
+            }
+          }
+        }
+
+        // 5. Determina a fase ativa para atualização textual
+        let activePhase = 0;
+        if (currentYear === 0) activePhase = 0;
+        else if (currentYear >= 1 && currentYear <= 3) activePhase = 1;
+        else if (currentYear >= 4 && currentYear <= 6) activePhase = 2;
+        else if (currentYear >= 7 && currentYear <= 8) activePhase = 3;
+        else if (currentYear >= 9 && currentYear <= 10) activePhase = 4;
+
+        for (let i = 0; i <= 4; i++) {
+          const desc = svg.querySelector('#phase-' + i + '-desc');
+          if (desc) {
+            if (i === activePhase) {
+              desc.style.display = 'block';
+              desc.style.opacity = '1';
+            } else {
+              desc.style.display = 'none';
+              desc.style.opacity = '0';
+            }
+          }
+        }
+
+        // 6. Alerta em Âmbar no caso clínico se o ano selecionado for o marco crítico da desorientação (Ano 5)
+        if (caseHighlight) {
+          if (currentYear === 5) {
+            caseHighlight.classList.add('glow-amber');
+          } else {
+            caseHighlight.classList.remove('glow-amber');
+          }
+        }
+      }
+
+      // Converte coordenadas do mouse/pointer para o viewBox
+      function getMouseX(e) {
+        const p = svg.createSVGPoint();
+        p.x = e.clientX;
+        p.y = e.clientY;
+        const svgP = p.matrixTransform(svg.getScreenCTM().inverse());
+        return svgP.x;
+      }
+
+      function handlePointer(e) {
+        const x = getMouseX(e);
+        let year = Math.round((x - startX) / stepX);
+        year = Math.max(0, Math.min(yearsCount, year));
+        updateYear(year);
+      }
+
+      // Eventos de Scrubbing
+      hotzone.addEventListener('pointerdown', function(e) {
+        isDragging = true;
+        hotzone.setPointerCapture(e.pointerId);
+        handlePointer(e);
+      });
+
+      hotzone.addEventListener('pointermove', function(e) {
+        if (isDragging) {
+          handlePointer(e);
+        }
+      });
+
+      hotzone.addEventListener('pointerup', function(e) {
+        isDragging = false;
+        hotzone.releasePointerCapture(e.pointerId);
+      });
+
+      hotzone.addEventListener('pointercancel', function(e) {
+        isDragging = false;
+      });
+
+      // Acessibilidade por teclado
+      sliderHandle.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+          updateYear(currentYear + 1);
+          e.preventDefault();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+          updateYear(currentYear - 1);
+          e.preventDefault();
+        }
+      });
+
+      // Inicialização da curva e sincronia das coordenadas
+      initCoordinates();
+      updateYear(0);
+    })();
+    ]]>
+  </script>
+</svg>

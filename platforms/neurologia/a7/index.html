@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>João e o desligar que a Ritalina não explicou — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="a7-cara">
+/* A cara da aula é minha — paleta neuro + componentes, sem inventar arquivo .css */
+.a7-ouro{color:#FBBF24}.a7-indigo{color:#818CF8}.a7-cyan{color:#22D3EE}.a7-coral{color:#F87171}.a7-teal{color:#2DD4BF}
+.faixa--ouro{background:rgba(251,191,36,.14);color:#FBBF24;border-color:rgba(251,191,36,.55)}
+.faixa--indigo{background:rgba(129,140,248,.14);color:#818CF8;border-color:rgba(129,140,248,.5)}
+[data-theme="light"] .faixa--ouro{background:rgba(217,119,6,.12);color:#B45309;border-color:rgba(180,83,9,.45)}
+[data-theme="light"] .faixa--indigo{background:rgba(79,70,229,.1);color:#4338CA;border-color:rgba(67,56,202,.4)}
+.kw--ouro{color:#FBBF24}[data-theme="light"] .kw--ouro{color:#B45309}
+.a7-chip{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .65rem;border-radius:999px;border:1px solid var(--border);background:var(--bg-3);font-size:.8rem;font-weight:600;line-height:1.2}
+.a7-chip--indigo{border-color:rgba(129,140,248,.6);color:#818CF8}
+.a7-chip--cyan{border-color:rgba(34,211,238,.6);color:#22D3EE}
+.a7-chip--gold{border-color:rgba(251,191,36,.6);color:#FBBF24}
+.a7-chip--coral{border-color:rgba(248,113,113,.6);color:#F87171}
+.a7-chip--teal{border-color:rgba(45,212,191,.6);color:#2DD4BF}
+[data-theme="light"] .a7-chip--indigo{border-color:rgba(67,56,202,.5);color:#4338CA}
+[data-theme="light"] .a7-chip--cyan{border-color:rgba(8,145,178,.5);color:#0E7490}
+[data-theme="light"] .a7-chip--gold{border-color:rgba(180,83,9,.5);color:#B45309}
+[data-theme="light"] .a7-chip--coral{border-color:rgba(220,38,38,.5);color:#DC2626}
+.a7-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:9px;border:1px dashed rgba(248,113,113,.6);color:#F87171;font-weight:700;font-size:.82rem;text-decoration:none}
+.a7-pill--teal{border-color:rgba(45,212,191,.6);color:#2DD4BF}
+.a7-pill:hover{transform:translateY(-1px)}
+.a7-split{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.a7-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:640px){.a7-split,.a7-grid3{grid-template-columns:1fr}}
+.a7-tabelao{width:100%;border-collapse:collapse;font-size:.9rem}
+.a7-tabelao th,.a7-tabelao td{padding:.55rem .6rem;border:1px solid var(--border);text-align:left;vertical-align:top}
+.a7-tabelao th{background:var(--bg-3);font-weight:700}
+.a7-tabelao caption{caption-side:bottom;font-size:.8rem;color:var(--ink-60,#94A3B8);padding-top:.4rem}
+.a7-fluxo{display:flex;flex-wrap:wrap;gap:.5rem;align-items:stretch}
+.a7-fluxo__no{flex:1 1 150px;border:1px solid var(--border);border-radius:10px;padding:.7rem .8rem;background:var(--bg-3)}
+.a7-fluxo__seta{align-self:center;color:var(--ciano,#22D3EE);font-weight:700}
+.a7-revelar{margin:.4rem 0}
+.a7-revelar summary{cursor:pointer;font-weight:700;color:var(--ciano,#22D3EE)}
+.a7-heroi{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--bg-3)}
+.a7-heroi figcaption{padding:.6rem .8rem;font-size:.85rem;border-top:1px solid var(--border)}
+</style>
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Epilepsia — Aula 7</span>
+        <span class="site-header__subtitle">Neurologia · Aula 7</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">1/20</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<article data-layout="a7-p01" data-source-ids="001 002 003 004 005 006 007">
+  <p class="kicker">Caso clínico · Pág. 01 de 20</p>
+  <h1>João e o desligar que a Ritalina não explicou</h1>
+  <p class="lead">Um menino atento passa a <em>desligar</em> dezenas de vezes por dia. A escola lê TDAH e entrega Ritalina; um mês depois, nada mudou. A pista que ficou de fora é o padrão temporal — e é por ela que a neurologia entra antes do rótulo.</p>
+
+  <!-- COMPONENTE-EXECUTOR: case-card João (E3 caso em abertura) -->
+  <div class="card card--membrane" data-componente="case-card-joao">
+    <h3 class="card__titulo">João, 8 anos — a ficha que ainda não fecha</h3>
+    <div class="grid4" role="list" aria-label="Dados do caso de João">
+      <div class="celula" role="listitem"><b>8 anos</b><span>escolar, ex-atento</span></div>
+      <div class="celula" role="listitem"><b>Olhar fixo</b><span>segundos, ~30×/dia</span></div>
+      <div class="celula" role="listitem"><b>Notas em queda</b><span>futebol perdido</span></div>
+      <div class="celula" role="listitem"><b>Ritalina 1 mês</b><span>zero resposta</span></div>
+    </div>
+    <p style="margin:.5rem 0 0"><span class="faixa faixa--ouro">Hipótese em aberto — o desfecho volta na página 15</span></p>
+  </div>
+
+  <h2>O aluno que “não é mais o mesmo”</h2>
+  <div class="prosa">
+    <p><strong>João, 8 anos</strong>, sempre foi elogiado por ser <strong>atento e participativo</strong>. Nas reuniões de pais a queixa muda de tom: “não é mais o mesmo”, parece <strong>não prestar atenção</strong> em sala; <strong>as notas caem</strong> e o desinteresse pelas matérias cresce.</p>
+  </div>
+
+  <h2>Olhar fixo, dezenas de vezes ao dia</h2>
+  <div class="prosa">
+    <p>No futebol, o ex-craque do colégio parece <strong>perdido no campo</strong>; os amigos não o querem no time. A mãe vigia e descreve o que vê: episódios de <strong>olhar fixo</strong> e “desligar do mundo” por <strong>segundos</strong>, cerca de <strong>30 vezes por dia</strong>.</p>
+  </div>
+
+  <!-- ILUSTRAÇÃO PISO S1: sequência desligar (inline, byte a byte) -->
+  <figure class="frame frame--glow">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 560" role="img" aria-labelledby="a7p1-title a7p1-desc" class="a7-inline-svg a7p1-root">
+  <title id="a7p1-title">Desligar em segundos: atento, fixo e retoma</title>
+  <desc id="a7p1-desc">Criança de cerca de 8 anos atenta que passa a olhar fixo por 5 a 20 segundos e retoma o estado prévio. O padrão se repete dezenas de vezes ao dia. O psicoestimulante não interrompe a sequência. Diagnóstico etiológico permanece aberto nesta peça.</desc>
+  <defs>
+    <linearGradient id="a7p1-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a7p1-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a7p1-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a7p1-glow" cx="28%" cy="32%" r="55%">
+      <stop offset="0%" stop-color="var(--a7p1-indigo, #6366F1)" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="var(--a7p1-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a7p1-skin" cx="42%" cy="35%" r="62%">
+      <stop offset="0%" stop-color="var(--a7p1-skinHi, #E8C4A8)"/>
+      <stop offset="100%" stop-color="var(--a7p1-skinLo, #C99574)"/>
+    </radialGradient>
+    <radialGradient id="a7p1-irisAtt" cx="40%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="var(--a7p1-cyan, #22D3EE)"/>
+      <stop offset="55%" stop-color="var(--a7p1-indigo, #6366F1)"/>
+      <stop offset="100%" stop-color="var(--a7p1-indigoDeep, #312E81)"/>
+    </radialGradient>
+    <radialGradient id="a7p1-irisFix" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="var(--a7p1-fixHi, #94A3B8)"/>
+      <stop offset="70%" stop-color="var(--a7p1-fixMid, #475569)"/>
+      <stop offset="100%" stop-color="var(--a7p1-fixLo, #1E293B)"/>
+    </radialGradient>
+    <filter id="a7p1-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a7p1-blurPulse" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="g">
+        <animate id="a7p1-blurAnim" attributeName="stdDeviation" values="0;2.4;0" dur="1.4s" begin="indefinite" fill="freeze"/>
+      </feGaussianBlur>
+    </filter>
+    <clipPath id="a7p1-faceClip">
+      <ellipse cx="210" cy="248" rx="92" ry="112"/>
+    </clipPath>
+    <style>
+      .a7p1-root {
+        --a7p1-bg0: #0B1220;
+        --a7p1-bg1: #07111F;
+        --a7p1-card: #111A2B;
+        --a7p1-card2: #152033;
+        --a7p1-border: rgba(148,163,184,0.18);
+        --a7p1-ink: #F4F7FB;
+        --a7p1-muted: #94A3B8;
+        --a7p1-soft: #B8C0CC;
+        --a7p1-indigo: #818CF8;
+        --a7p1-indigoDeep: #4F46E5;
+        --a7p1-cyan: #22D3EE;
+        --a7p1-cyanDim: #0891B2;
+        --a7p1-gold: #FBBF24;
+        --a7p1-goldDim: #B45309;
+        --a7p1-coral: #F87171;
+        --a7p1-ok: #34D399;
+        --a7p1-skinHi: #E8C4A8;
+        --a7p1-skinLo: #C99574;
+        --a7p1-hair: #2A2438;
+        --a7p1-fixHi: #94A3B8;
+        --a7p1-fixMid: #475569;
+        --a7p1-fixLo: #1E293B;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a7p1-root {
+        --a7p1-bg0: #F8F6F2;
+        --a7p1-bg1: #EEF2F7;
+        --a7p1-card: #FFFFFF;
+        --a7p1-card2: #F1F5F9;
+        --a7p1-border: rgba(15,23,42,0.10);
+        --a7p1-ink: #0F172A;
+        --a7p1-muted: #64748B;
+        --a7p1-soft: #475569;
+        --a7p1-indigo: #4F46E5;
+        --a7p1-indigoDeep: #3730A3;
+        --a7p1-cyan: #0891B2;
+        --a7p1-cyanDim: #0E7490;
+        --a7p1-gold: #D97706;
+        --a7p1-goldDim: #92400E;
+        --a7p1-coral: #DC2626;
+        --a7p1-ok: #059669;
+        --a7p1-skinHi: #F0D0B8;
+        --a7p1-skinLo: #D4A07E;
+        --a7p1-hair: #3F3A4A;
+        --a7p1-fixHi: #64748B;
+        --a7p1-fixMid: #334155;
+        --a7p1-fixLo: #0F172A;
+      }
+      .a7p1-root .a7p1-phase { cursor: pointer; }
+      .a7p1-root .a7p1-phase:focus { outline: none; }
+      .a7p1-root .a7p1-phase:focus .a7p1-phase-ring { opacity: 1; }
+      .a7p1-root .a7p1-btn { cursor: pointer; }
+      .a7p1-root .a7p1-btn:focus { outline: none; }
+      .a7p1-root .a7p1-btn:focus .a7p1-btn-ring { opacity: 1; }
+      .a7p1-root .a7p1-chip { cursor: pointer; }
+      .a7p1-root .a7p1-chip:focus { outline: none; }
+      .a7p1-root .a7p1-chip:focus .a7p1-chip-ring { opacity: 1; }
+      .a7p1-root .a7p1-eye-att, .a7p1-root .a7p1-eye-fix, .a7p1-root .a7p1-expr-att, .a7p1-root .a7p1-expr-fix, .a7p1-root .a7p1-phase-fill, .a7p1-root .a7p1-phase-label, .a7p1-root .a7p1-day-tick, .a7p1-root .a7p1-veil { transition: opacity 0.35s ease, fill 0.35s ease, stroke 0.35s ease, transform 0.35s ease; }
+      .a7p1-root .a7p1-tip { pointer-events: none; }
+      .a7p1-root[data-phase="0"] .a7p1-eye-fix, .a7p1-root[data-phase="2"] .a7p1-eye-fix, .a7p1-root[data-phase="0"] .a7p1-expr-fix, .a7p1-root[data-phase="2"] .a7p1-expr-fix { opacity: 0; }
+      .a7p1-root[data-phase="1"] .a7p1-eye-att, .a7p1-root[data-phase="1"] .a7p1-expr-att { opacity: 0; }
+      .a7p1-root[data-phase="1"] .a7p1-eye-fix, .a7p1-root[data-phase="1"] .a7p1-expr-fix { opacity: 1; }
+      .a7p1-root[data-phase="1"] .a7p1-veil { opacity: 0.55; }
+      .a7p1-root[data-phase="0"] .a7p1-veil, .a7p1-root[data-phase="2"] .a7p1-veil { opacity: 0; }
+      .a7p1-root[data-phase="0"] .a7p1-p0 .a7p1-phase-fill, .a7p1-root[data-phase="1"] .a7p1-p1 .a7p1-phase-fill, .a7p1-root[data-phase="2"] .a7p1-p2 .a7p1-phase-fill { opacity: 1; }
+      .a7p1-root[data-phase="0"] .a7p1-p0 .a7p1-phase-label, .a7p1-root[data-phase="1"] .a7p1-p1 .a7p1-phase-label, .a7p1-root[data-phase="2"] .a7p1-p2 .a7p1-phase-label { fill: var(--a7p1-ink, #F4F7FB); font-weight: 700; }
+      .a7p1-root[data-phase="1"] .a7p1-status { fill: var(--a7p1-cyan, #22D3EE); }
+      .a7p1-root[data-phase="0"] .a7p1-status, .a7p1-root[data-phase="2"] .a7p1-status { fill: var(--a7p1-ok, #34D399); }
+      .a7p1-root[data-phase="1"] .a7p1-timer-arc { stroke: var(--a7p1-cyan, #22D3EE); }
+      @media (prefers-reduced-motion: reduce) {
+        .a7p1-root .a7p1-eye-att, .a7p1-root .a7p1-eye-fix, .a7p1-root .a7p1-expr-att, .a7p1-root .a7p1-expr-fix, .a7p1-root .a7p1-phase-fill, .a7p1-root .a7p1-phase-label, .a7p1-root .a7p1-day-tick, .a7p1-root .a7p1-veil { transition: none; }
+        .a7p1-root .a7p1-pulse-dot { animation: none !important; }
+      }
+      .a7p1-root .a7p1-pulse-dot { transform-origin: 210px 248px; }
+      .a7p1-root[data-playing="1"] .a7p1-pulse-dot { animation: a7p1-pulse 1.2s ease-in-out infinite; }
+      @keyframes a7p1-pulse { 0%, 100% { opacity: 0.35; r: 4; } 50% { opacity: 1; r: 7; } }
+    </style>
+  </defs>
+
+  <rect width="840" height="560" rx="20" fill="url(#a7p1-bg)"/>
+  <rect width="840" height="560" rx="20" fill="url(#a7p1-glow)" pointer-events="none"/>
+
+  <text x="36" y="42" fill="var(--a7p1-indigo, #818CF8)" font-size="12" font-weight="700" letter-spacing="2.2">NEUROLOGIA PEDIÁTRICA · PADRÃO TEMPORAL</text>
+  <text x="36" y="72" fill="var(--a7p1-ink, #F4F7FB)" font-size="24" font-weight="700" letter-spacing="-0.4">O desligar que a escola rotula errado</text>
+  <text x="36" y="96" fill="var(--a7p1-muted, #94A3B8)" font-size="13.5" font-weight="500">Atento → olhar fixo 5–20 s → retoma. Dezenas de vezes ao dia. Ritalina não toca o mecanismo.</text>
+
+  <g id="a7p1-chips" transform="translate(36,114)">
+    <g class="a7p1-chip" id="a7p1-chip-age" tabindex="0" role="button" aria-label="Oito anos">
+      <rect class="a7p1-chip-ring" x="-2" y="-2" width="92" height="32" rx="16" fill="none" stroke="var(--a7p1-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect width="88" height="28" rx="14" fill="var(--a7p1-card, #111A2B)" stroke="var(--a7p1-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+      <text x="44" y="18" text-anchor="middle" fill="var(--a7p1-soft, #B8C0CC)" font-size="12" font-weight="600">8 anos</text>
+    </g>
+    <g class="a7p1-chip" id="a7p1-chip-freq" tabindex="0" role="button" aria-label="Cerca de trinta episódios por dia" transform="translate(98,0)">
+      <rect class="a7p1-chip-ring" x="-2" y="-2" width="108" height="32" rx="16" fill="none" stroke="var(--a7p1-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect width="104" height="28" rx="14" fill="var(--a7p1-card, #111A2B)" stroke="var(--a7p1-cyanDim, #0891B2)" stroke-width="1.2" opacity="0.95"/>
+      <text x="52" y="18" text-anchor="middle" fill="var(--a7p1-cyan, #22D3EE)" font-size="12" font-weight="700">~30×/dia</text>
+    </g>
+    <g class="a7p1-chip" id="a7p1-chip-rit" tabindex="0" role="button" aria-label="Ritalina falha: psicoestimulante não interrompe o padrão" transform="translate(212,0)">
+      <rect class="a7p1-chip-ring" x="-2" y="-2" width="132" height="32" rx="16" fill="none" stroke="var(--a7p1-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect width="128" height="28" rx="14" fill="var(--a7p1-card, #111A2B)" stroke="var(--a7p1-gold, #FBBF24)" stroke-width="1.4"/>
+      <circle cx="16" cy="14" r="4" fill="var(--a7p1-gold, #FBBF24)"/>
+      <text x="72" y="18" text-anchor="middle" fill="var(--a7p1-gold, #FBBF24)" font-size="12" font-weight="700">Ritalina falha</text>
+    </g>
+  </g>
+
+  <g id="a7p1-portrait">
+    <rect x="28" y="158" width="364" height="372" rx="18" fill="var(--a7p1-card, #111A2B)" stroke="var(--a7p1-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <text x="48" y="186" fill="var(--a7p1-muted, #94A3B8)" font-size="11" font-weight="700" letter-spacing="1.6">FACE · VIDA NO TEMPO</text>
+    <text id="a7p1-status" class="a7p1-status" x="48" y="210" fill="var(--a7p1-ok, #34D399)" font-size="16" font-weight="700">Atento · engajado</text>
+
+    <ellipse cx="210" cy="248" rx="100" ry="118" fill="none" stroke="var(--a7p1-indigo, #818CF8)" stroke-width="1" opacity="0.25"/>
+    <circle class="a7p1-pulse-dot" cx="210" cy="132" r="5" fill="var(--a7p1-cyan, #22D3EE)" opacity="0.5"/>
+
+    <g id="a7p1-child" filter="url(#a7p1-soft)">
+      <path d="M148 318 C142 360 152 400 178 418 C196 430 224 432 242 418 C268 400 278 360 272 318 Z" fill="var(--a7p1-hair, #2A2438)" opacity="0.9"/>
+      <ellipse cx="210" cy="248" rx="92" ry="112" fill="url(#a7p1-skin)"/>
+      <path d="M130 220 C140 160 170 132 210 128 C250 132 280 160 290 220 C278 188 250 168 210 166 C170 168 142 188 130 220 Z" fill="var(--a7p1-hair, #2A2438)"/>
+      <path d="M138 250 C132 290 140 330 162 348 C148 300 148 268 156 242 Z" fill="var(--a7p1-hair, #2A2438)" opacity="0.85"/>
+      <path d="M282 250 C288 290 280 330 258 348 C272 300 272 268 264 242 Z" fill="var(--a7p1-hair, #2A2438)" opacity="0.85"/>
+
+      <g class="a7p1-eye-att" id="a7p1-eyes-att">
+        <ellipse cx="178" cy="242" rx="18" ry="12" fill="var(--a7p1-ink, #F4F7FB)" opacity="0.92"/>
+        <ellipse cx="242" cy="242" rx="18" ry="12" fill="var(--a7p1-ink, #F4F7FB)" opacity="0.92"/>
+        <circle cx="182" cy="242" r="8.5" fill="url(#a7p1-irisAtt)"/>
+        <circle cx="246" cy="242" r="8.5" fill="url(#a7p1-irisAtt)"/>
+        <circle cx="185" cy="239" r="2.6" fill="var(--a7p1-ink, #F4F7FB)" opacity="0.95"/>
+        <circle cx="249" cy="239" r="2.6" fill="var(--a7p1-ink, #F4F7FB)" opacity="0.95"/>
+        <path d="M160 228 Q178 220 196 228" fill="none" stroke="var(--a7p1-hair, #2A2438)" stroke-width="2.2" stroke-linecap="round" opacity="0.55"/>
+        <path d="M224 228 Q242 220 260 228" fill="none" stroke="var(--a7p1-hair, #2A2438)" stroke-width="2.2" stroke-linecap="round" opacity="0.55"/>
+      </g>
+
+      <g class="a7p1-eye-fix" id="a7p1-eyes-fix" opacity="0">
+        <ellipse cx="178" cy="244" rx="17" ry="13" fill="var(--a7p1-ink, #F4F7FB)" opacity="0.75"/>
+        <ellipse cx="242" cy="244" rx="17" ry="13" fill="var(--a7p1-ink, #F4F7FB)" opacity="0.75"/>
+        <circle cx="178" cy="244" r="9" fill="url(#a7p1-irisFix)"/>
+        <circle cx="242" cy="244" r="9" fill="url(#a7p1-irisFix)"/>
+        <circle cx="178" cy="244" r="3.2" fill="var(--a7p1-fixLo, #1E293B)"/>
+        <circle cx="242" cy="244" r="3.2" fill="var(--a7p1-fixLo, #1E293B)"/>
+        <path d="M160 230 Q178 232 196 230" fill="none" stroke="var(--a7p1-hair, #2A2438)" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+        <path d="M224 230 Q242 232 260 230" fill="none" stroke="var(--a7p1-hair, #2A2438)" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+      </g>
+
+      <g class="a7p1-expr-att" id="a7p1-mouth-att">
+        <path d="M190 292 Q210 304 230 292" fill="none" stroke="var(--a7p1-goldDim, #B45309)" stroke-width="2.4" stroke-linecap="round" opacity="0.75"/>
+      </g>
+      <g class="a7p1-expr-fix" id="a7p1-mouth-fix" opacity="0">
+        <path d="M192 296 Q210 298 228 296" fill="none" stroke="var(--a7p1-muted, #94A3B8)" stroke-width="2.2" stroke-linecap="round" opacity="0.8"/>
+      </g>
+
+      <ellipse class="a7p1-veil" cx="210" cy="248" rx="92" ry="112" fill="var(--a7p1-indigoDeep, #4F46E5)" opacity="0" pointer-events="none"/>
+    </g>
+
+    <g id="a7p1-context" transform="translate(48,430)">
+      <rect width="324" height="78" rx="12" fill="var(--a7p1-card2, #152033)" stroke="var(--a7p1-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+      <text x="16" y="24" fill="var(--a7p1-muted, #94A3B8)" font-size="11" font-weight="600" letter-spacing="1">CONTEXTO</text>
+      <text x="16" y="46" fill="var(--a7p1-ink, #F4F7FB)" font-size="13" font-weight="600">Sala de aula · futebol · conversa</text>
+      <text x="16" y="66" fill="var(--a7p1-soft, #B8C0CC)" font-size="12">O episódio interrompe e a vida retoma no mesmo ponto.</text>
+    </g>
+  </g>
+
+  <g id="a7p1-timeline" transform="translate(412,158)">
+    <rect width="400" height="200" rx="18" fill="var(--a7p1-card, #111A2B)" stroke="var(--a7p1-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <text x="20" y="30" fill="var(--a7p1-muted, #94A3B8)" font-size="11" font-weight="700" letter-spacing="1.6">SEQUÊNCIA · UM EPISÓDIO</text>
+    <text id="a7p1-timer-label" x="20" y="54" fill="var(--a7p1-ink, #F4F7FB)" font-size="15" font-weight="700">0 s · consciência engajada</text>
+
+    <g transform="translate(20,78)">
+      <line x1="28" y1="36" x2="332" y2="36" stroke="var(--a7p1-border, rgba(148,163,184,0.18))" stroke-width="3" stroke-linecap="round"/>
+      <line id="a7p1-progress" x1="28" y1="36" x2="28" y2="36" stroke="var(--a7p1-cyan, #22D3EE)" stroke-width="3" stroke-linecap="round"/>
+
+      <g class="a7p1-phase a7p1-p0" id="a7p1-phase0" tabindex="0" role="button" aria-label="Fase atento" data-phase="0">
+        <circle class="a7p1-phase-ring" cx="28" cy="36" r="22" fill="none" stroke="var(--a7p1-ok, #34D399)" stroke-width="2" opacity="0"/>
+        <circle cx="28" cy="36" r="16" fill="var(--a7p1-card2, #152033)" stroke="var(--a7p1-ok, #34D399)" stroke-width="1.6"/>
+        <circle class="a7p1-phase-fill" cx="28" cy="36" r="9" fill="var(--a7p1-ok, #34D399)" opacity="0.35"/>
+        <text class="a7p1-phase-label" x="28" y="72" text-anchor="middle" fill="var(--a7p1-muted, #94A3B8)" font-size="12" font-weight="600">Atento</text>
+      </g>
+
+      <g class="a7p1-phase a7p1-p1" id="a7p1-phase1" tabindex="0" role="button" aria-label="Fase olhar fixo de 5 a 20 segundos" data-phase="1">
+        <circle class="a7p1-phase-ring" cx="180" cy="36" r="22" fill="none" stroke="var(--a7p1-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+        <circle cx="180" cy="36" r="16" fill="var(--a7p1-card2, #152033)" stroke="var(--a7p1-cyan, #22D3EE)" stroke-width="1.6"/>
+        <circle class="a7p1-phase-fill" cx="180" cy="36" r="9" fill="var(--a7p1-cyan, #22D3EE)" opacity="0.35"/>
+        <text class="a7p1-phase-label" x="180" y="72" text-anchor="middle" fill="var(--a7p1-muted, #94A3B8)" font-size="12" font-weight="600">Fixo 5–20 s</text>
+      </g>
+
+      <g class="a7p1-phase a7p1-p2" id="a7p1-phase2" tabindex="0" role="button" aria-label="Fase retoma" data-phase="2">
+        <circle class="a7p1-phase-ring" cx="332" cy="36" r="22" fill="none" stroke="var(--a7p1-ok, #34D399)" stroke-width="2" opacity="0"/>
+        <circle cx="332" cy="36" r="16" fill="var(--a7p1-card2, #152033)" stroke="var(--a7p1-ok, #34D399)" stroke-width="1.6"/>
+        <circle class="a7p1-phase-fill" cx="332" cy="36" r="9" fill="var(--a7p1-ok, #34D399)" opacity="0.35"/>
+        <text class="a7p1-phase-label" x="332" y="72" text-anchor="middle" fill="var(--a7p1-muted, #94A3B8)" font-size="12" font-weight="600">Retoma</text>
+      </g>
+    </g>
+
+    <g class="a7p1-btn" id="a7p1-play" tabindex="0" role="button" aria-label="Simular um episódio de desligar" transform="translate(20,158)">
+      <rect class="a7p1-btn-ring" x="-2" y="-2" width="188" height="36" rx="12" fill="none" stroke="var(--a7p1-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+      <rect width="184" height="32" rx="10" fill="var(--a7p1-indigoDeep, #4F46E5)" opacity="0.95"/>
+      <path d="M18 10 L18 22 L28 16 Z" fill="var(--a7p1-ink, #F4F7FB)"/>
+      <text x="104" y="21" text-anchor="middle" fill="var(--a7p1-ink, #F4F7FB)" font-size="13" font-weight="700">Simular desligar</text>
+    </g>
+
+    <g class="a7p1-btn" id="a7p1-reset" tabindex="0" role="button" aria-label="Voltar ao estado atento" transform="translate(216,158)">
+      <rect class="a7p1-btn-ring" x="-2" y="-2" width="148" height="36" rx="12" fill="none" stroke="var(--a7p1-muted, #94A3B8)" stroke-width="2" opacity="0"/>
+      <rect width="144" height="32" rx="10" fill="var(--a7p1-card2, #152033)" stroke="var(--a7p1-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+      <text x="72" y="21" text-anchor="middle" fill="var(--a7p1-soft, #B8C0CC)" font-size="13" font-weight="600">Reiniciar</text>
+    </g>
+  </g>
+
+  <g id="a7p1-day" transform="translate(412,374)">
+    <rect width="400" height="156" rx="18" fill="var(--a7p1-card, #111A2B)" stroke="var(--a7p1-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <text x="20" y="28" fill="var(--a7p1-muted, #94A3B8)" font-size="11" font-weight="700" letter-spacing="1.6">DIA ESCOLAR · FREQUÊNCIA</text>
+    <text x="20" y="50" fill="var(--a7p1-ink, #F4F7FB)" font-size="14" font-weight="600">Dezenas de picos breves, não um lapso vago</text>
+
+    <g id="a7p1-day-track" transform="translate(20,68)">
+      <rect width="360" height="36" rx="8" fill="var(--a7p1-card2, #152033)"/>
+      <line x1="0" y1="18" x2="360" y2="18" stroke="var(--a7p1-border, rgba(148,163,184,0.18))" stroke-width="1.5"/>
+      <text x="0" y="54" fill="var(--a7p1-muted, #94A3B8)" font-size="10" font-weight="500">manhã</text>
+      <text x="180" y="54" text-anchor="middle" fill="var(--a7p1-muted, #94A3B8)" font-size="10" font-weight="500">tarde</text>
+      <text x="360" y="54" text-anchor="end" fill="var(--a7p1-muted, #94A3B8)" font-size="10" font-weight="500">noite</text>
+    </g>
+
+    <text x="20" y="142" fill="var(--a7p1-soft, #B8C0CC)" font-size="12">Cada traço ciano = um desligar de segundos. Padrão denso, recuperável.</text>
+  </g>
+
+  <g id="a7p1-tip" class="a7p1-tip" opacity="0" transform="translate(0,0)" aria-hidden="true">
+    <rect id="a7p1-tip-bg" x="0" y="0" width="260" height="56" rx="10" fill="var(--a7p1-card2, #152033)" stroke="var(--a7p1-gold, #FBBF24)" stroke-width="1.3"/>
+    <text id="a7p1-tip-t1" x="14" y="22" fill="var(--a7p1-gold, #FBBF24)" font-size="12.5" font-weight="700">Pegadinha escolar</text>
+    <text id="a7p1-tip-t2" x="14" y="42" fill="var(--a7p1-soft, #B8C0CC)" font-size="11.5">Psicoestimulante não interrompe o desligar.</text>
+  </g>
+
+  <text id="a7p1-live" aria-live="polite" x="-9999" y="-9999" font-size="1" fill="var(--a7p1-bg0, #0B1220)">Estado atento. Criança engajada.</text>
+
+  <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.currentScript && document.currentScript.ownerSVGElement
+    ? document.currentScript.ownerSVGElement
+    : (typeof document !== 'undefined' ? document.querySelector('.a7p1-root') : null);
+  if(!root) return;
+
+  var Q = function(sel){ return root.querySelector(sel); };
+  var phase = 0;
+  var playing = false;
+  var timers = [];
+  var reduce = false;
+  try {
+    reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch(e) { reduce = false; }
+
+  var statusEl = Q('#a7p1-status');
+  var timerEl = Q('#a7p1-timer-label');
+  var liveEl = Q('#a7p1-live');
+  var progress = Q('#a7p1-progress');
+  var tip = Q('#a7p1-tip');
+  var dayTrack = Q('#a7p1-day-track');
+  var playBtn = Q('#a7p1-play');
+  var resetBtn = Q('#a7p1-reset');
+
+  var phaseCopy = [
+    { status: 'Atento · engajado', timer: '0 s · consciência engajada', live: 'Estado atento. Criança engajada com a atividade.', x2: 28 },
+    { status: 'Desligar · olhar fixo', timer: '5–20 s · contato interrompido', live: 'Olhar fixo por segundos. Atividade mental interrompida; retomará sem confusão prolongada.', x2: 180 },
+    { status: 'Retoma · mesmo ponto', timer: 'fim · volta ao estado prévio', live: 'Retomada ao estado prévio. O episódio foi breve; o dia continua com novos picos.', x2: 332 }
+  ];
+
+  function clearTimers(){
+    for(var i=0;i<timers.length;i++){ clearTimeout(timers[i]); }
+    timers = [];
+    playing = false;
+    root.setAttribute('data-playing','0');
+  }
+
+  function setPhase(p, fromSim){
+    phase = p;
+    root.setAttribute('data-phase', String(p));
+    var c = phaseCopy[p];
+    if(statusEl) statusEl.textContent = c.status;
+    if(timerEl) timerEl.textContent = c.timer;
+    if(liveEl) liveEl.textContent = c.live;
+    if(progress) progress.setAttribute('x2', String(c.x2));
+    if(!fromSim && p === 1){ highlightTicks(true); }
+    if(p === 0){ highlightTicks(false); }
+  }
+
+  function highlightTicks(on){
+    var ticks = root.querySelectorAll('.a7p1-day-tick');
+    for(var i=0;i<ticks.length;i++){
+      ticks[i].setAttribute('opacity', on ? (i % 3 === 0 ? '1' : '0.55') : '0.75');
+      ticks[i].setAttribute('stroke-width', on && i % 4 === 0 ? '2.4' : '1.6');
+    }
+  }
+
+  function buildDayTicks(){
+    if(!dayTrack) return;
+    var xs = [8,18,30,42,55,68,80,92,108,120,135,148,162,175,188,200,214,228,242,255,268,282,295,308,320,332,345,352];
+    for(var i=0;i<xs.length;i++){
+      var h = (i % 5 === 0) ? 22 : (i % 2 === 0 ? 16 : 12);
+      var y = 18 - h/2;
+      var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('class','a7p1-day-tick');
+      line.setAttribute('x1', String(xs[i]));
+      line.setAttribute('x2', String(xs[i]));
+      line.setAttribute('y1', String(y));
+      line.setAttribute('y2', String(y+h));
+      line.setAttribute('stroke','var(--a7p1-cyan, #22D3EE)');
+      line.setAttribute('stroke-width','1.6');
+      line.setAttribute('stroke-linecap','round');
+      line.setAttribute('opacity','0.75');
+      dayTrack.appendChild(line);
+    }
+  }
+
+  function simulate(){
+    clearTimers();
+    playing = true;
+    root.setAttribute('data-playing','1');
+    setPhase(0, true);
+    if(reduce){
+      setPhase(1, true);
+      highlightTicks(true);
+      timers.push(setTimeout(function(){
+        setPhase(2, true);
+        timers.push(setTimeout(function(){
+          setPhase(0, true);
+          playing = false;
+          root.setAttribute('data-playing','0');
+        }, 700));
+      }, 900));
+      return;
+    }
+    timers.push(setTimeout(function(){ setPhase(1, true); highlightTicks(true); }, 500));
+    timers.push(setTimeout(function(){ setPhase(2, true); }, 2200));
+    timers.push(setTimeout(function(){ setPhase(0, true); playing = false; root.setAttribute('data-playing','0'); }, 3200));
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx; pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x:cx, y:cy};
+    var p = pt.matrixTransform(m.inverse());
+    return {x:p.x, y:p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip) return;
+    var t1el = Q('#a7p1-tip-t1');
+    var t2el = Q('#a7p1-tip-t2');
+    var bg = Q('#a7p1-tip-bg');
+    if(t1el) t1el.textContent = t1;
+    if(t2el) t2el.textContent = t2;
+    if(bg) bg.setAttribute('stroke', stroke || 'var(--a7p1-gold, #FBBF24)');
+    var p = clientToSvg(cx, cy);
+    var w = 260, h = 56, off = 14;
+    var x = p.x + off, y = p.y + off;
+    if(x + w > 820) x = p.x - w - off;
+    if(y + h > 540) y = p.y - h - off;
+    if(x < 8) x = 8;
+    if(y < 8) y = 8;
+    tip.setAttribute('transform','translate('+x.toFixed(1)+','+y.toFixed(1)+')');
+    tip.setAttribute('opacity','1');
+    tip.setAttribute('aria-hidden','false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity','0');
+    tip.setAttribute('aria-hidden','true');
+  }
+
+  function bindPhase(el){
+    if(!el) return;
+    el.addEventListener('click', function(){ clearTimers(); setPhase(parseInt(el.getAttribute('data-phase'),10) || 0, false); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); clearTimers(); setPhase(parseInt(el.getAttribute('data-phase'),10) || 0, false); }
+    });
+  }
+
+  bindPhase(Q('#a7p1-phase0'));
+  bindPhase(Q('#a7p1-phase1'));
+  bindPhase(Q('#a7p1-phase2'));
+
+  if(playBtn){
+    playBtn.addEventListener('click', simulate);
+    playBtn.addEventListener('keydown', function(ev){ if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); simulate(); } });
+  }
+  if(resetBtn){
+    resetBtn.addEventListener('click', function(){ clearTimers(); setPhase(0,false); });
+    resetBtn.addEventListener('keydown', function(ev){ if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); clearTimers(); setPhase(0,false); } });
+  }
+
+  var tips = {
+    age: ['Idade didática', 'Criança em idade escolar — padrão diário denso.', 'var(--a7p1-indigo, #818CF8)'],
+    freq: ['Frequência', 'Dezenas de episódios breves no mesmo dia.', 'var(--a7p1-cyan, #22D3EE)'],
+    rit: ['Ritalina falha', 'Psicoestimulante não interrompe o desligar.', 'var(--a7p1-gold, #FBBF24)']
+  };
+
+  function bindChip(id, key){
+    var el = Q(id);
+    if(!el) return;
+    var data = tips[key];
+    function go(ev){
+      var cx = (ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 14;
+      showTip(cx, cy, data[0], data[1], data[2]);
+      if(liveEl) liveEl.textContent = data[0] + '. ' + data[1];
+    }
+    el.addEventListener('mouseenter', go);
+    el.addEventListener('mousemove', function(ev){ if(tip && tip.getAttribute('opacity')==='1') go(ev); });
+    el.addEventListener('mouseleave', hideTip);
+    el.addEventListener('focus', function(){ var b = el.getBoundingClientRect(); showTip(b.left + b.width/2, b.top + b.height/2, data[0], data[1], data[2]); });
+    el.addEventListener('blur', hideTip);
+    el.addEventListener('click', go);
+    el.addEventListener('keydown', function(ev){ if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); go(ev); } });
+  }
+  bindChip('#a7p1-chip-age','age');
+  bindChip('#a7p1-chip-freq','freq');
+  bindChip('#a7p1-chip-rit','rit');
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    var chips = Q('#a7p1-chips');
+    if(chips && chips.contains(t)) return;
+    hideTip();
+  });
+
+  buildDayTicks();
+  setPhase(0, false);
+})();
+  ]]></script>
+</svg>
+    <figcaption><strong>Atento → olhar fixo 5–20 s → retoma</strong> — e isso se repete dezenas de vezes ao dia. Use <em>Simular desligar</em> para ver o episódio; toque nos pontos da linha do tempo para inspecionar cada fase.</figcaption>
+  </figure>
+
+  <h2>A Ritalina que falha</h2>
+  <div class="prosa">
+    <p>A conduta inicial do caso foi o desvio: <strong>Ritalina</strong> e observação por <strong>um mês</strong> — <strong>sem resolução</strong>; os episódios continuam. O fármaco do rótulo escolar não toca o mecanismo que produz o desligar.</p>
+  </div>
+
+  <!-- IMAGEM REAL B01: EEG ponta-onda 3 Hz (ausência) -->
+  <figure class="frame">
+    <img class="frame__media" src="media/B01-EEG_Absence_seizure.png" loading="lazy" alt="EEG 3 Hz ponta-onda (ausência típica)">
+    <figcaption><strong>EEG — ponta-onda generalizada ~3 Hz</strong>, assinatura da ausência. É o achado que o relato da mãe antecipa — guardado para fechar o caso mais adiante.
+      <span class="atr">Bromfield EB, Cavazos JE, Sirven JI (eds.), <cite>An Introduction to Epilepsy</cite>, American Epilepsy Society, 2006 (NCBI Bookshelf NBK2511, fig. A157). Licença CC Attribution (conteúdo do título) · <a href="https://www.ncbi.nlm.nih.gov/books/NBK2511/figure/A157/" target="_blank" rel="noopener">fonte</a></span>
+    </figcaption>
+  </figure>
+
+  <h2>A hipótese que a escola não rotula</h2>
+  <div class="prosa">
+    <p>Qual a <strong>hipótese diagnóstica mais provável</strong> diante desse padrão? A abordagem sindrômica começa pelo <strong>padrão temporal e neurológico</strong> da queixa — <strong>não</strong> pelo rótulo escolar. O desfecho do João fecha depois, quando o EEG e a síndrome entrarem no mapa.</p>
+  </div>
+
+  <div class="card card--amber">
+    <h3 class="card__titulo">Por que importa</h3>
+    <p>A banca e a clínica empurram TDAH; o <strong>padrão de desligar</strong> muda o exame e o EEG. Tratar o rótulo antes de ler o padrão é a origem do erro.</p>
+  </div>
+
+  <div class="card card--membrane">
+    <h3 class="card__titulo">Resumo operacional</h3>
+    <p>Desatenção escolar com episódios de <strong>olhar fixo recorrentes</strong> <strong>não</strong> fecha TDAH até o padrão neurológico ser lido.</p>
+  </div>
+
+  <details class="card card--membrane">
+    <summary><strong>Revisão ativa</strong> — três perguntas antes de seguir</summary>
+    <ol>
+      <li>O que no <strong>padrão temporal</strong> diferencia “desatenção” de desligar epiléptico?</li>
+      <li>Por que a <strong>falha da Ritalina</strong> reforça (e não fecha) o raciocínio?</li>
+      <li>Que informação da <strong>testemunha</strong> (mãe/colegas) você pediria na primeira consulta?</li>
+    </ol>
+  </details>
+
+  <section class="quiz" aria-label="Quiz da página">
+    <h3>Quiz</h3>
+    <form class="quiz__q" data-quiz data-gabarito="C" data-quiz-id="a7-p1-q1">
+      <p class="quiz__enun">1. João, 8 anos: olhar fixo por segundos, ~30×/dia, piora escolar, Ritalina sem efeito. A melhor primeira leitura é:</p>
+      <ul class="quiz__alts">
+        <li><label class="alt"><input type="radio" name="a7p1q1" value="A"><span>A) TDAH típico — manter psicoestimulante e subir a dose.</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p1q1" value="B"><span>B) TEA — priorizar conduta comportamental isolada.</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p1q1" value="C"><span>C) Padrão de desligamentos recorrentes → epilepsia no diferencial sindrômico.</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p1q1" value="D"><span>D) Síncope vasovagal escolar — alta sem investigação.</span></label></li>
+      </ul>
+      <button class="quiz__btn" type="button" data-quiz-verificar>Verificar resposta</button>
+      <span class="quiz__live" data-quiz-live role="status" aria-live="polite"></span>
+      <div class="quiz__explicacao" data-quiz-explicacao hidden>
+        <p><strong class="kw kw--verde">Gabarito: C.</strong> A virada é o <strong>padrão</strong>: episódios <strong>súbitos, breves, muito frequentes</strong>, com impacto escolar — não o rótulo da reunião de pais. <strong>(A)</strong> erra ao tratar a falha da Ritalina como subdose; a fonte do caso é o <strong>desligar</strong>, não o déficit de atenção puro. <em>Por que cair:</em> associa “escola + desatenção” a TDAH por hábito. <strong>(B)</strong> TEA não se define por dezenas de desligamentos diários de segundos com retomada imediata. <em>Por que cair:</em> “bagunça/notas” vira guarda-chuva. <strong>(D)</strong> síncope não costuma dar dezenas de eventos diários de segundos com olhar fixo e sem pródromo postural. <em>Por que cair:</em> “apagou” genérico.</p>
+      </div>
+    </form>
+
+    <form class="quiz__q" data-quiz data-gabarito="B" data-quiz-id="a7-p1-q2">
+      <p class="quiz__enun">2. A conduta Ritalina + 1 mês no caso de João foi inadequada principalmente porque:</p>
+      <ul class="quiz__alts">
+        <li><label class="alt"><input type="radio" name="a7p1q2" value="A"><span>A) Ritalina é proibida em crianças de 8 anos.</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p1q2" value="B"><span>B) O padrão de desligar frequente pede raciocínio neurológico antes do rótulo escolar.</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p1q2" value="C"><span>C) Toda queda de nota exige EEG imediato.</span></label></li>
+        <li><label class="alt"><input type="radio" name="a7p1q2" value="D"><span>D) Futebol é critério diagnóstico de epilepsia.</span></label></li>
+      </ul>
+      <button class="quiz__btn" type="button" data-quiz-verificar>Verificar resposta</button>
+      <span class="quiz__live" data-quiz-live role="status" aria-live="polite"></span>
+      <div class="quiz__explicacao" data-quiz-explicacao hidden>
+        <p><strong class="kw kw--verde">Gabarito: B.</strong> O desligar frequente é pista neurológica e pede ser lido antes do rótulo. <strong>(A)</strong> falso absoluto — não é o argumento. <em>Por que cair:</em> moraliza o fármaco. <strong>(C)</strong> exagera: o ponto é o <strong>padrão</strong>, não “nota = EEG”. <em>Por que cair:</em> checklist cego. <strong>(D)</strong> o futebol só <strong>contextualiza</strong> hiperventilação/esforço — não diagnostica. <em>Por que cair:</em> confunde gatilho com critério.</p>
+      </div>
+    </form>
+  </section>
+
+  <div class="card card--membrane">
+    <h3 class="card__titulo">Conexão</h3>
+    <p>O mesmo “desligar” é só um ponto no espectro: qualquer manifestação neurológica súbita e transitória entra no diferencial.</p>
+  </div>
+
+  <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="../index.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Hub da trilha</span></a><a class="next" href="./p2.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Qualquer súbito e transitório entra no diferencial</span></a></nav>
+</article>
+</main>
+<footer class="rodape">Epilepsia — Aula 7 · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Aula 7 · 20 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="./index.html" aria-current="page"><span class="menu-panel__index">01</span><span>João e o desligar que a Ritalina não explicou</span></a></li>
+      <li><a class="menu-panel__link" href="./p2.html"><span class="menu-panel__index">02</span><span>Qualquer súbito e transitório entra no diferencial</span></a></li>
+      <li><a class="menu-panel__link" href="./p3.html"><span class="menu-panel__index">03</span><span>Epilepsia em três vias — e o que uma crise única não prova</span></a></li>
+      <li><a class="menu-panel__link" href="./p4.html"><span class="menu-panel__index">04</span><span>Provocada × não provocada: a meningite dual</span></a></li>
+      <li><a class="menu-panel__link" href="./p5.html"><span class="menu-panel__index">05</span><span>A alma da crise: hiperexcitação por domínio</span></a></li>
+      <li><a class="menu-panel__link" href="./p6.html"><span class="menu-panel__index">06</span><span>AED deprime; o que falta no comprimido é adesão</span></a></li>
+      <li><a class="menu-panel__link" href="./p7.html"><span class="menu-panel__index">07</span><span>Etiologia por idade: o tabelão que muda a conduta</span></a></li>
+      <li><a class="menu-panel__link" href="./p8.html"><span class="menu-panel__index">08</span><span>O início classifica — dois braços na rua não fecham generalizada</span></a></li>
+      <li><a class="menu-panel__link" href="./p9.html"><span class="menu-panel__index">09</span><span>TCG: tônico, clônico (fadiga) e o marco dos 5 minutos</span></a></li>
+      <li><a class="menu-panel__link" href="./p10.html"><span class="menu-panel__index">10</span><span>Mioclônica, atônica e ausência: três generalizadas que não são TCG</span></a></li>
+      <li><a class="menu-panel__link" href="./p11.html"><span class="menu-panel__index">11</span><span>Anamnese, ponta-onda e quando a RM é inegociável</span></a></li>
+      <li><a class="menu-panel__link" href="./p12.html"><span class="menu-panel__index">12</span><span>Tratar = epiléptico: monoterapia, nível sérico e quando parar</span></a></li>
+      <li><a class="menu-panel__link" href="./p13.html"><span class="menu-panel__index">13</span><span>Tabelão AED: a mesma droga salva a focal e piora a mioclonia</span></a></li>
+      <li><a class="menu-panel__link" href="./p14.html"><span class="menu-panel__index">14</span><span>West e Lennox-Gastaut: espasmo, hipsarritmia e o 20%</span></a></li>
+      <li><a class="menu-panel__link" href="./p15.html"><span class="menu-panel__index">15</span><span>Ausência infantil: 3 Hz, hiperventilação e o João resolvido</span></a></li>
+      <li><a class="menu-panel__link" href="./p16.html"><span class="menu-panel__index">16</span><span>Rolândica: boca, sono e “às vezes só acompanhar”</span></a></li>
+      <li><a class="menu-panel__link" href="./p17.html"><span class="menu-panel__index">17</span><span>Mioclônica juvenil: susto ao despertar e 4–6 Hz</span></a></li>
+      <li><a class="menu-panel__link" href="./p18.html"><span class="menu-panel__index">18</span><span>Lobo temporal: aura epigástrica, automatismos e hipocampo</span></a></li>
+      <li><a class="menu-panel__link" href="./p19.html"><span class="menu-panel__index">19</span><span>Banco de raciocínio I — rolândica e ELT</span></a></li>
+      <li><a class="menu-panel__link" href="./p20.html"><span class="menu-panel__index">20</span><span>Banco II — ausência, TCG adulto, DDx e fronteiras do eixo</span></a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){
+    var p=ov.querySelector('.menu-panel');
+    if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha();
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

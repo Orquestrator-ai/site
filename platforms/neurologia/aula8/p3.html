@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>Duas de quatro: focal × generalizada — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="a8-cara">
+.a8-ouro{color:#FBBF24}.a8-indigo{color:#818CF8}.a8-cyan{color:#38BDF8}.a8-coral{color:#F87171}.a8-teal{color:#2DD4BF}
+[data-theme="light"] .a8-ouro{color:#B45309}[data-theme="light"] .a8-indigo{color:#4338CA}[data-theme="light"] .a8-cyan{color:#0E7490}[data-theme="light"] .a8-coral{color:#DC2626}[data-theme="light"] .a8-teal{color:#0F766E}
+.faixa{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-3);font-size:.82rem;font-weight:600;line-height:1.2}
+.faixa--ouro{background:rgba(251,191,36,.14);color:#FBBF24;border-color:rgba(251,191,36,.55)}
+.faixa--indigo{background:rgba(129,140,248,.14);color:#818CF8;border-color:rgba(129,140,248,.5)}
+.faixa--cyan{background:rgba(56,189,248,.14);color:#38BDF8;border-color:rgba(56,189,248,.5)}
+.faixa--coral{background:rgba(248,113,113,.14);color:#F87171;border-color:rgba(248,113,113,.5)}
+.faixa--teal{background:rgba(45,212,191,.14);color:#2DD4BF;border-color:rgba(45,212,191,.5)}
+[data-theme="light"] .faixa--ouro{background:rgba(217,119,6,.12);color:#B45309;border-color:rgba(180,83,9,.45)}
+[data-theme="light"] .faixa--indigo{background:rgba(79,70,229,.1);color:#4338CA;border-color:rgba(67,56,202,.4)}
+[data-theme="light"] .faixa--cyan{background:rgba(8,145,178,.1);color:#0E7490;border-color:rgba(8,145,178,.4)}
+[data-theme="light"] .faixa--coral{background:rgba(220,38,38,.1);color:#DC2626;border-color:rgba(220,38,38,.4)}
+[data-theme="light"] .faixa--teal{background:rgba(15,118,110,.1);color:#0F766E;border-color:rgba(15,118,110,.4)}
+.kw{font-weight:700}.kw--ouro{color:#FBBF24}.kw--coral{color:#F87171}.kw--indigo{color:#818CF8}.kw--teal{color:#2DD4BF}.kw--cyan{color:#38BDF8}
+[data-theme="light"] .kw--ouro{color:#B45309}[data-theme="light"] .kw--coral{color:#DC2626}[data-theme="light"] .kw--indigo{color:#4338CA}[data-theme="light"] .kw--teal{color:#0F766E}[data-theme="light"] .kw--cyan{color:#0E7490}
+.a8-chip{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .65rem;border-radius:999px;border:1px solid var(--border);background:var(--bg-3);font-size:.8rem;font-weight:600;line-height:1.2}
+.a8-chip--indigo{border-color:rgba(129,140,248,.6);color:#818CF8}.a8-chip--cyan{border-color:rgba(56,189,248,.6);color:#38BDF8}.a8-chip--gold{border-color:rgba(251,191,36,.6);color:#FBBF24}.a8-chip--coral{border-color:rgba(248,113,113,.6);color:#F87171}.a8-chip--teal{border-color:rgba(45,212,191,.6);color:#2DD4BF}
+[data-theme="light"] .a8-chip--indigo{border-color:rgba(67,56,202,.5);color:#4338CA}[data-theme="light"] .a8-chip--cyan{border-color:rgba(8,145,178,.5);color:#0E7490}[data-theme="light"] .a8-chip--gold{border-color:rgba(180,83,9,.5);color:#B45309}[data-theme="light"] .a8-chip--coral{border-color:rgba(220,38,38,.5);color:#DC2626}[data-theme="light"] .a8-chip--teal{border-color:rgba(15,118,110,.5);color:#0F766E}
+.a8-split{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:720px){.a8-split{grid-template-columns:1fr}}
+.a8-col{border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;background:var(--bg-3)}
+.a8-col--focal{border-top:4px solid #818CF8}
+.a8-col--gen{border-top:4px solid #38BDF8}
+[data-theme="light"] .a8-col--focal{border-top-color:#4338CA}[data-theme="light"] .a8-col--gen{border-top-color:#0E7490}
+.a8-col__h{font-weight:800;margin:0 0 .3rem;font-size:1.05rem}
+.a8-tabelao{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:.6rem}
+.a8-tabelao th,.a8-tabelao td{padding:.5rem .6rem;border:1px solid var(--border);text-align:left;vertical-align:top}
+.a8-tabelao th{background:var(--bg-3);font-weight:700}
+.a8-gap{border:1px solid rgba(251,191,36,.6);border-radius:14px;padding:.9rem 1.1rem;background:rgba(251,191,36,.06)}
+[data-theme="light"] .a8-gap{border-color:rgba(180,83,9,.5);background:rgba(217,119,6,.06)}
+.a8-cap{font-size:.82rem;color:var(--ink-60,#94A3B8);line-height:1.45}
+.a8-cap b{color:var(--ink,#E5E7EB)}
+.a8-inline-svg{width:100%;height:auto;display:block;border-radius:14px}
+.a8-pergunta{border-left:4px solid #38BDF8;padding:.2rem 0 .2rem 1rem;margin:.4rem 0 1rem;font-size:1.15rem;font-weight:700;line-height:1.4}
+[data-theme="light"] .a8-pergunta{border-left-color:#0E7490}
+.prosa p{text-align:justify;text-indent:1.4em;hyphens:auto}
+.prosa h2+p,.prosa .a8-pergunta+p,.prosa .a8-gap+p{text-indent:0}
+.lead{text-indent:0}
+</style>
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Epilepsia — Aula 8</span>
+        <span class="site-header__subtitle">Neurologia · Aula 8</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">3/7</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<article data-layout="a8-p03" data-source-ids="029 030 031 032 033 034">
+  <p class="kicker"><span class="a8-chip a8-chip--cyan">Pergunta central · Pág. 03 de 07</span></p>
+  <h1>Duas de quatro: o que separa focal de generalizada</h1>
+
+  <!-- ABERTURA E1 (pergunta central) -->
+  <p class="a8-pergunta">O que separa focal de generalizada no <span class="a8-cyan">primeiro segundo</span> da crise?</p>
+  <p class="lead">A classificação começa no <span class="kw kw--ouro">início</span>, não no meio do abalo. É o discriminador que tudo o que vem depois depende.</p>
+
+  <div class="prosa">
+    <h2>Por que classificar</h2>
+    <p>A classificação das crises é <strong>muito importante</strong>: o <span class="kw kw--teal">tratamento</span> depende dela e o <span class="kw kw--teal">pensamento sindrômico</span> também. Classificar mal é escolher mal o caminho terapêutico e o diagnóstico de síndrome.</p>
+
+    <h2>Quatro citadas, duas ensinadas (gap honesto)</h2>
+    <p>Existem, na contemporaneidade, <strong>quatro classificações</strong> das crises. Neste eixo ensinam-se <strong>duas</strong> classificações operacionais; as outras duas <strong>não são desenvolvidas</strong> aqui — <span class="kw kw--ouro">não inventar</span>.</p>
+    <p>Os dois eixos principais ensinados: crise <span class="kw kw--indigo">focal</span> ou crise <span class="kw kw--cyan">generalizada</span>.</p>
+  </div>
+
+  <!-- COMPONENTE-EXECUTOR: split focal|gen -->
+  <div class="a8-split" role="region" aria-label="Split focal versus generalizada">
+    <div class="a8-col a8-col--focal">
+      <p class="a8-col__h"><span class="kw kw--indigo">Focal</span> <span style="color:var(--ink-60,#94A3B8);font-weight:600;font-size:.85rem">(ex-“parcial”)</span></p>
+      <p style="margin:.3rem 0"><span class="a8-chip a8-chip--indigo">Início · 1 hemisfério</span></p>
+      <p style="margin:.3rem 0 0">Definição-chave: <strong>um lado só</strong>. O fenômeno nasce em um hemisfério.</p>
+    </div>
+    <div class="a8-col a8-col--gen">
+      <p class="a8-col__h"><span class="kw kw--cyan">Generalizada</span></p>
+      <p style="margin:.3rem 0"><span class="a8-chip a8-chip--cyan">Início · 2 hemisférios</span></p>
+      <p style="margin:.3rem 0 0">Definição-chave: <strong>início bilateral</strong>. A crise começa nos dois.</p>
+    </div>
+  </div>
+
+  <!-- ILUSTRAÇÃO PISO S3 -->
+  <figure class="a8-frame">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 640" role="img" aria-labelledby="a8p3-title a8p3-desc" class="a8-inline-svg a8p3-root">
+      <title id="a8p3-title">Duas de quatro: focal × generalizada</title>
+      <desc id="a8p3-desc">Bipartição operacional do início da crise: focal nasce em um hemisfério; generalizada nasce nos dois. Quatro classificações contemporâneas citadas; neste eixo operam duas. O discriminador é onde o fenômeno nasce, não o que o abalo faz depois.</desc>
+      <defs>
+        <linearGradient id="a8p3-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="var(--a8p3-bg0, #0B1220)"/><stop offset="100%" stop-color="var(--a8p3-bg1, #07111F)"/></linearGradient>
+        <linearGradient id="a8p3-brainFill" x1="0.2" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="var(--a8p3-brainHi, #1E293B)"/><stop offset="55%" stop-color="var(--a8p3-brainMid, #152033)"/><stop offset="100%" stop-color="var(--a8p3-brainLo, #0F172A)"/></linearGradient>
+        <radialGradient id="a8p3-focalGlow" cx="32%" cy="42%" r="48%"><stop offset="0%" stop-color="var(--a8p3-indigo, #818CF8)" stop-opacity="0.72"/><stop offset="45%" stop-color="var(--a8p3-indigoDeep, #4F46E5)" stop-opacity="0.32"/><stop offset="100%" stop-color="var(--a8p3-bg0, #0B1220)" stop-opacity="0"/></radialGradient>
+        <radialGradient id="a8p3-genGlowL" cx="30%" cy="44%" r="42%"><stop offset="0%" stop-color="var(--a8p3-cyan, #22D3EE)" stop-opacity="0.58"/><stop offset="55%" stop-color="var(--a8p3-indigo, #818CF8)" stop-opacity="0.22"/><stop offset="100%" stop-color="var(--a8p3-bg0, #0B1220)" stop-opacity="0"/></radialGradient>
+        <radialGradient id="a8p3-genGlowR" cx="70%" cy="44%" r="42%"><stop offset="0%" stop-color="var(--a8p3-cyan, #22D3EE)" stop-opacity="0.58"/><stop offset="55%" stop-color="var(--a8p3-indigo, #818CF8)" stop-opacity="0.22"/><stop offset="100%" stop-color="var(--a8p3-bg0, #0B1220)" stop-opacity="0"/></radialGradient>
+        <linearGradient id="a8p3-syncBar" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="var(--a8p3-cyan, #22D3EE)" stop-opacity="0"/><stop offset="20%" stop-color="var(--a8p3-cyan, #22D3EE)"/><stop offset="50%" stop-color="var(--a8p3-indigo, #818CF8)"/><stop offset="80%" stop-color="var(--a8p3-cyan, #22D3EE)"/><stop offset="100%" stop-color="var(--a8p3-cyan, #22D3EE)" stop-opacity="0"/></linearGradient>
+        <linearGradient id="a8p3-gapFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="var(--a8p3-gold, #FBBF24)" stop-opacity="0.22"/><stop offset="100%" stop-color="var(--a8p3-card, #111A2B)" stop-opacity="0.9"/></linearGradient>
+        <filter id="a8p3-soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="a8p3-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <clipPath id="a8p3-hemiL"><path d="M 0 -92 C -18 -92, -52 -80, -78 -48 C -102 -12, -108 28, -92 62 C -78 90, -42 100, 0 100 L 0 -92 Z"/></clipPath>
+        <clipPath id="a8p3-hemiR"><path d="M 0 -92 C 18 -92, 52 -80, 78 -48 C 102 -12, 108 28, 92 62 C 78 90, 42 100, 0 100 L 0 -92 Z"/></clipPath>
+        <clipPath id="a8p3-brainClip"><ellipse cx="0" cy="6" rx="116" ry="96"/></clipPath>
+        <style>
+          .a8p3-root {
+            --a8p3-bg0:#0B1220;--a8p3-bg1:#07111F;--a8p3-card:#111A2B;--a8p3-card2:#152033;
+            --a8p3-border:rgba(148,163,184,0.18);--a8p3-ink:#F4F7FB;--a8p3-muted:#94A3B8;--a8p3-soft:#B8C0CC;
+            --a8p3-indigo:#818CF8;--a8p3-indigoDeep:#4F46E5;--a8p3-cyan:#22D3EE;--a8p3-cyanDim:#0891B2;
+            --a8p3-teal:#2DD4BF;--a8p3-gold:#FBBF24;--a8p3-goldDim:#B45309;
+            --a8p3-brainHi:#1E293B;--a8p3-brainMid:#152033;--a8p3-brainLo:#0F172A;--a8p3-quiet:#0F172A;
+            font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Segoe UI",system-ui,sans-serif;
+          }
+          [data-theme="light"] .a8p3-root {
+            --a8p3-bg0:#F8F6F2;--a8p3-bg1:#EEF2F7;--a8p3-card:#FFFFFF;--a8p3-card2:#F1F5F9;
+            --a8p3-border:rgba(15,23,42,0.10);--a8p3-ink:#0F172A;--a8p3-muted:#64748B;--a8p3-soft:#475569;
+            --a8p3-indigo:#4F46E5;--a8p3-indigoDeep:#3730A3;--a8p3-cyan:#0891B2;--a8p3-cyanDim:#0E7490;
+            --a8p3-teal:#0D9488;--a8p3-gold:#D97706;--a8p3-goldDim:#92400E;
+            --a8p3-brainHi:#E2E8F0;--a8p3-brainMid:#CBD5E1;--a8p3-brainLo:#94A3B8;--a8p3-quiet:#E2E8F0;
+          }
+          .a8p3-root .a8p3-hs { cursor:pointer; }
+          .a8p3-root .a8p3-hs:focus { outline:none; }
+          .a8p3-root .a8p3-hs:focus .a8p3-hs-ring { opacity:1; }
+          .a8p3-root .a8p3-hs-ring { opacity:0; transition:opacity 0.22s ease; }
+          .a8p3-root .a8p3-panel-bg,.a8p3-root .a8p3-onset-dot,.a8p3-root .a8p3-focal-fire,
+          .a8p3-root .a8p3-gen-fire,.a8p3-root .a8p3-sync-line,.a8p3-root .a8p3-quiet-hemi,
+          .a8p3-root .a8p3-gap-chip,.a8p3-root .a8p3-axis-chip { transition:opacity 0.28s ease,fill 0.28s ease,stroke 0.28s ease,stroke-width 0.28s ease,transform 0.28s ease; }
+          .a8p3-root .a8p3-tip { pointer-events:none; opacity:0; transition:opacity 0.18s ease; }
+          .a8p3-root[data-tip="on"] .a8p3-tip { opacity:1; }
+          .a8p3-root .a8p3-panel-bg { fill:var(--a8p3-card,#111A2B); stroke:var(--a8p3-border,rgba(148,163,184,0.18)); stroke-width:1.2; }
+          .a8p3-root[data-mode="focal"] .a8p3-p-focal .a8p3-panel-bg { stroke:var(--a8p3-indigo,#818CF8); stroke-width:2.2; }
+          .a8p3-root[data-mode="gen"] .a8p3-p-gen .a8p3-panel-bg { stroke:var(--a8p3-cyan,#22D3EE); stroke-width:2.2; }
+          .a8p3-root[data-mode="gap"] .a8p3-gap-chip { stroke:var(--a8p3-gold,#FBBF24); stroke-width:2.2; }
+          .a8p3-root[data-mode="axis"] .a8p3-axis-chip { stroke:var(--a8p3-teal,#2DD4BF); stroke-width:2.2; }
+          .a8p3-root[data-mode="focal"] .a8p3-p-gen { opacity:0.42; }
+          .a8p3-root[data-mode="gen"] .a8p3-p-focal { opacity:0.42; }
+          .a8p3-root[data-mode="focal"] .a8p3-focal-fire { opacity:1; }
+          .a8p3-root[data-mode="gen"] .a8p3-gen-fire,.a8p3-root[data-mode="gen"] .a8p3-sync-line { opacity:1; }
+          .a8p3-root .a8p3-focal-fire { opacity:0.88; }
+          .a8p3-root .a8p3-gen-fire { opacity:0.82; }
+          .a8p3-root .a8p3-sync-line { opacity:0.7; }
+          .a8p3-root .a8p3-quiet-hemi { opacity:0.55; }
+          .a8p3-root[data-mode="focal"] .a8p3-p-focal .a8p3-quiet-hemi { opacity:0.38; }
+          .a8p3-root[data-mode="gen"] .a8p3-p-gen .a8p3-quiet-hemi { opacity:0.28; }
+          .a8p3-root .a8p3-pulse { transform-box:fill-box; transform-origin:center; }
+          @media (prefers-reduced-motion: no-preference) {
+            .a8p3-root[data-mode="focal"] .a8p3-p-focal .a8p3-pulse { animation:a8p3-pulse 1.6s ease-in-out infinite; }
+            .a8p3-root[data-mode="gen"] .a8p3-p-gen .a8p3-pulse { animation:a8p3-pulse 1.4s ease-in-out infinite; }
+            .a8p3-root[data-mode="gen"] .a8p3-sync-dash { animation:a8p3-dash 1.8s linear infinite; }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .a8p3-root .a8p3-panel-bg,.a8p3-root .a8p3-onset-dot,.a8p3-root .a8p3-focal-fire,
+            .a8p3-root .a8p3-gen-fire,.a8p3-root .a8p3-sync-line,.a8p3-root .a8p3-quiet-hemi,
+            .a8p3-root .a8p3-gap-chip,.a8p3-root .a8p3-axis-chip,.a8p3-root .a8p3-hs-ring,.a8p3-root .a8p3-tip { transition:none; }
+            .a8p3-root .a8p3-pulse,.a8p3-root .a8p3-sync-dash { animation:none; }
+          }
+          @keyframes a8p3-pulse { 0%,100%{opacity:0.72;} 50%{opacity:1;} }
+          @keyframes a8p3-dash { to { stroke-dashoffset:-28; } }
+        </style>
+      </defs>
+
+      <rect width="840" height="640" rx="20" fill="url(#a8p3-bg)"/>
+      <text x="28" y="34" fill="var(--a8p3-ink, #F4F7FB)" font-size="20" font-weight="700" letter-spacing="-0.3">Duas de quatro: focal × generalizada</text>
+      <text x="28" y="56" fill="var(--a8p3-soft, #B8C0CC)" font-size="13" font-weight="500">Discriminador = onde nasce · não o que o abalo faz depois</text>
+
+      <g class="a8p3-hs a8p3-axis-chip" data-mode="axis" tabindex="0" role="button" aria-label="Eixo operacional: neste recorte ensinam-se duas classificações de início, entre quatro citadas" transform="translate(548, 18)">
+        <rect class="a8p3-axis-chip" x="0" y="0" width="264" height="44" rx="12" fill="var(--a8p3-card, #111A2B)" stroke="var(--a8p3-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+        <rect class="a8p3-hs-ring" x="-3" y="-3" width="270" height="50" rx="14" fill="none" stroke="var(--a8p3-teal, #2DD4BF)" stroke-width="2"/>
+        <circle cx="22" cy="22" r="8" fill="var(--a8p3-teal, #2DD4BF)" opacity="0.2" stroke="var(--a8p3-teal, #2DD4BF)" stroke-width="1.4"/>
+        <text x="22" y="26" text-anchor="middle" fill="var(--a8p3-teal, #2DD4BF)" font-size="11" font-weight="700">2</text>
+        <text x="40" y="20" fill="var(--a8p3-ink, #F4F7FB)" font-size="12" font-weight="700">eixo de início</text>
+        <text x="40" y="36" fill="var(--a8p3-muted, #94A3B8)" font-size="10" font-weight="500">duas operacionais · quatro citadas</text>
+      </g>
+
+      <g class="a8p3-hs a8p3-p-focal" data-mode="focal" tabindex="0" role="button" aria-label="Focal: início em um hemisfério. O outro permanece quieto no nascimento do fenômeno." transform="translate(28, 78)">
+        <rect class="a8p3-panel-bg" x="0" y="0" width="384" height="360" rx="16"/>
+        <rect class="a8p3-hs-ring" x="-3" y="-3" width="390" height="366" rx="18" fill="none" stroke="var(--a8p3-indigo, #818CF8)" stroke-width="2"/>
+        <text x="192" y="30" text-anchor="middle" fill="var(--a8p3-indigo, #818CF8)" font-size="13" font-weight="700" letter-spacing="0.6">FOCAL</text>
+        <text x="192" y="50" text-anchor="middle" fill="var(--a8p3-muted, #94A3B8)" font-size="11" font-weight="500">ex-“parcial” · 1 hemisfério</text>
+        <g transform="translate(192, 188)">
+          <ellipse cx="0" cy="6" rx="118" ry="98" fill="url(#a8p3-brainFill)" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.6" opacity="0.95"/>
+          <path d="M 0 -90 C -8 -70, -6 -40, 0 -10 C 6 -40, 8 -70, 0 -90" fill="none" stroke="var(--a8p3-bg0, #0B1220)" stroke-width="2.2" opacity="0.6"/>
+          <path d="M -95 -10 C -70 -28, -40 -35, -8 -30" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.1" opacity="0.32"/>
+          <path d="M -90 20 C -65 8, -35 2, -8 8" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.1" opacity="0.28"/>
+          <path d="M 95 -10 C 70 -28, 40 -35, 8 -30" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.1" opacity="0.32"/>
+          <path d="M 90 20 C 65 8, 35 2, 8 8" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.1" opacity="0.28"/>
+          <path d="M -40 70 C -20 88, 20 88, 40 70" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.2" opacity="0.38"/>
+          <ellipse cx="0" cy="78" rx="22" ry="14" fill="var(--a8p3-brainLo, #0F172A)" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1" opacity="0.5"/>
+          <g class="a8p3-quiet-hemi" clip-path="url(#a8p3-hemiR)"><ellipse cx="0" cy="6" rx="116" ry="96" fill="var(--a8p3-quiet, #0F172A)" opacity="0.35"/></g>
+          <g class="a8p3-focal-fire a8p3-pulse" clip-path="url(#a8p3-hemiL)">
+            <ellipse cx="-42" cy="-8" rx="78" ry="70" fill="url(#a8p3-focalGlow)" filter="url(#a8p3-glow)"/>
+            <circle class="a8p3-onset-dot" cx="-48" cy="-18" r="11" fill="var(--a8p3-indigo, #818CF8)" opacity="0.95" filter="url(#a8p3-soft)"/>
+            <circle cx="-48" cy="-18" r="5" fill="var(--a8p3-ink, #F4F7FB)" opacity="0.9"/>
+            <path d="M -70 -40 Q -52 -28, -48 -18" fill="none" stroke="var(--a8p3-indigo, #818CF8)" stroke-width="1.6" opacity="0.55"/>
+            <path d="M -30 8 Q -40 -6, -48 -18" fill="none" stroke="var(--a8p3-indigo, #818CF8)" stroke-width="1.4" opacity="0.4"/>
+            <circle cx="-62" cy="-6" r="3.2" fill="var(--a8p3-indigo, #818CF8)" opacity="0.55"/>
+            <circle cx="-36" cy="4" r="2.4" fill="var(--a8p3-indigo, #818CF8)" opacity="0.45"/>
+          </g>
+          <text x="-58" y="-58" text-anchor="middle" fill="var(--a8p3-indigo, #818CF8)" font-size="11" font-weight="700">início</text>
+          <text x="58" y="-58" text-anchor="middle" fill="var(--a8p3-muted, #94A3B8)" font-size="11" font-weight="500">quieto</text>
+        </g>
+        <g transform="translate(28, 312)">
+          <rect x="0" y="0" width="328" height="32" rx="10" fill="var(--a8p3-card2, #152033)" stroke="var(--a8p3-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+          <circle cx="18" cy="16" r="5" fill="var(--a8p3-indigo, #818CF8)"/>
+          <text x="34" y="20" fill="var(--a8p3-ink, #F4F7FB)" font-size="12" font-weight="600">Nasce em 1 hemisfério</text>
+        </g>
+      </g>
+
+      <g class="a8p3-hs a8p3-p-gen" data-mode="gen" tabindex="0" role="button" aria-label="Generalizada: início sincronizado nos dois hemisférios. Não é cérebro inteiro aceso." transform="translate(428, 78)">
+        <rect class="a8p3-panel-bg" x="0" y="0" width="384" height="360" rx="16"/>
+        <rect class="a8p3-hs-ring" x="-3" y="-3" width="390" height="366" rx="18" fill="none" stroke="var(--a8p3-cyan, #22D3EE)" stroke-width="2"/>
+        <text x="192" y="30" text-anchor="middle" fill="var(--a8p3-cyan, #22D3EE)" font-size="13" font-weight="700" letter-spacing="0.6">GENERALIZADA</text>
+        <text x="192" y="50" text-anchor="middle" fill="var(--a8p3-muted, #94A3B8)" font-size="11" font-weight="500">início bilateral · 2 hemisférios</text>
+        <g transform="translate(192, 188)">
+          <ellipse cx="0" cy="6" rx="118" ry="98" fill="url(#a8p3-brainFill)" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.6" opacity="0.95"/>
+          <path d="M 0 -90 C -8 -70, -6 -40, 0 -10 C 6 -40, 8 -70, 0 -90" fill="none" stroke="var(--a8p3-bg0, #0B1220)" stroke-width="2.2" opacity="0.6"/>
+          <path d="M -95 -10 C -70 -28, -40 -35, -8 -30" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.1" opacity="0.32"/>
+          <path d="M -90 20 C -65 8, -35 2, -8 8" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.1" opacity="0.28"/>
+          <path d="M 95 -10 C 70 -28, 40 -35, 8 -30" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.1" opacity="0.32"/>
+          <path d="M 90 20 C 65 8, 35 2, 8 8" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.1" opacity="0.28"/>
+          <path d="M -40 70 C -20 88, 20 88, 40 70" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.2" opacity="0.38"/>
+          <ellipse cx="0" cy="78" rx="22" ry="14" fill="var(--a8p3-brainLo, #0F172A)" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1" opacity="0.5"/>
+          <g class="a8p3-gen-fire a8p3-pulse" clip-path="url(#a8p3-brainClip)">
+            <ellipse cx="-46" cy="-10" rx="58" ry="52" fill="url(#a8p3-genGlowL)" filter="url(#a8p3-glow)"/>
+            <ellipse cx="46" cy="-10" rx="58" ry="52" fill="url(#a8p3-genGlowR)" filter="url(#a8p3-glow)"/>
+            <circle class="a8p3-onset-dot" cx="-48" cy="-16" r="9" fill="var(--a8p3-cyan, #22D3EE)" opacity="0.95" filter="url(#a8p3-soft)"/>
+            <circle class="a8p3-onset-dot" cx="48" cy="-16" r="9" fill="var(--a8p3-cyan, #22D3EE)" opacity="0.95" filter="url(#a8p3-soft)"/>
+            <circle cx="-48" cy="-16" r="4" fill="var(--a8p3-ink, #F4F7FB)" opacity="0.9"/>
+            <circle cx="48" cy="-16" r="4" fill="var(--a8p3-ink, #F4F7FB)" opacity="0.9"/>
+            <circle cx="-62" cy="6" r="2.6" fill="var(--a8p3-cyan, #22D3EE)" opacity="0.5"/>
+            <circle cx="62" cy="6" r="2.6" fill="var(--a8p3-cyan, #22D3EE)" opacity="0.5"/>
+          </g>
+          <g class="a8p3-sync-line">
+            <path class="a8p3-sync-dash" d="M -38 -16 C -12 -28, 12 -28, 38 -16" fill="none" stroke="url(#a8p3-syncBar)" stroke-width="2.4" stroke-dasharray="6 4" stroke-linecap="round"/>
+            <path d="M -38 -16 C -12 -4, 12 -4, 38 -16" fill="none" stroke="var(--a8p3-cyan, #22D3EE)" stroke-width="1.2" opacity="0.35"/>
+            <circle cx="0" cy="-22" r="4" fill="var(--a8p3-cyan, #22D3EE)" opacity="0.85"/>
+          </g>
+          <g class="a8p3-quiet-hemi">
+            <path d="M -30 48 C -10 62, 10 62, 30 48" fill="none" stroke="var(--a8p3-muted, #94A3B8)" stroke-width="1.2" opacity="0.35"/>
+            <text x="0" y="78" text-anchor="middle" fill="var(--a8p3-muted, #94A3B8)" font-size="10" font-weight="500" opacity="0.85">não é flood 100%</text>
+          </g>
+          <text x="-58" y="-58" text-anchor="middle" fill="var(--a8p3-cyan, #22D3EE)" font-size="11" font-weight="700">início</text>
+          <text x="58" y="-58" text-anchor="middle" fill="var(--a8p3-cyan, #22D3EE)" font-size="11" font-weight="700">início</text>
+        </g>
+        <g transform="translate(28, 312)">
+          <rect x="0" y="0" width="328" height="32" rx="10" fill="var(--a8p3-card2, #152033)" stroke="var(--a8p3-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+          <circle cx="18" cy="16" r="5" fill="var(--a8p3-cyan, #22D3EE)"/>
+          <circle cx="32" cy="16" r="5" fill="var(--a8p3-cyan, #22D3EE)" opacity="0.85"/>
+          <text x="48" y="20" fill="var(--a8p3-ink, #F4F7FB)" font-size="12" font-weight="600">Nasce nos 2 · sincronia</text>
+        </g>
+      </g>
+
+      <g class="a8p3-hs" data-mode="gap" tabindex="0" role="button" aria-label="Gap honesto: quatro classificações citadas; neste eixo operam duas. As outras não se inventam aqui." transform="translate(28, 454)">
+        <rect class="a8p3-gap-chip" x="0" y="0" width="784" height="72" rx="14" fill="url(#a8p3-gapFill)" stroke="var(--a8p3-gold, #FBBF24)" stroke-width="1.4" opacity="0.95"/>
+        <rect class="a8p3-hs-ring" x="-3" y="-3" width="790" height="78" rx="16" fill="none" stroke="var(--a8p3-gold, #FBBF24)" stroke-width="2"/>
+        <rect x="16" y="16" width="52" height="40" rx="10" fill="var(--a8p3-gold, #FBBF24)" opacity="0.18" stroke="var(--a8p3-gold, #FBBF24)" stroke-width="1.4"/>
+        <text x="42" y="42" text-anchor="middle" fill="var(--a8p3-gold, #FBBF24)" font-size="14" font-weight="800">GAP</text>
+        <text x="84" y="34" fill="var(--a8p3-ink, #F4F7FB)" font-size="14" font-weight="700">4 classificações citadas · 2 operacionais neste eixo</text>
+        <text x="84" y="54" fill="var(--a8p3-soft, #B8C0CC)" font-size="12" font-weight="500">As outras duas não se inventam aqui · gap honesto, sem taxonomia forçada</text>
+      </g>
+
+      <g transform="translate(28, 540)">
+        <rect x="0" y="0" width="784" height="72" rx="14" fill="var(--a8p3-card, #111A2B)" stroke="var(--a8p3-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+        <text id="a8p3-status" x="20" y="28" fill="var(--a8p3-teal, #2DD4BF)" font-size="13" font-weight="700">Toque ou passe · 1 hemisfério vs 2</text>
+        <text id="a8p3-detail" x="20" y="50" fill="var(--a8p3-soft, #B8C0CC)" font-size="12" font-weight="500">Classificar importa para tratamento e pensamento sindrômico · o nascimento define</text>
+      </g>
+
+      <text id="a8p3-live" x="28" y="628" fill="var(--a8p3-muted, #94A3B8)" font-size="1" opacity="0">Bipartição focal versus generalizada pelo sítio de início da crise.</text>
+
+      <g id="a8p3-tip" class="a8p3-tip" transform="translate(0,0)" opacity="0" aria-hidden="true">
+        <rect id="a8p3-tip-bg" x="0" y="0" width="280" height="68" rx="12" fill="var(--a8p3-card2, #152033)" stroke="var(--a8p3-indigo, #818CF8)" stroke-width="1.6" opacity="0.97"/>
+        <text id="a8p3-tip-t1" x="14" y="28" fill="var(--a8p3-ink, #F4F7FB)" font-size="13" font-weight="700">—</text>
+        <text id="a8p3-tip-t2" x="14" y="50" fill="var(--a8p3-soft, #B8C0CC)" font-size="11" font-weight="500">—</text>
+      </g>
+
+      <script type="text/ecmascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a8p3-root');
+  if(!root){ var scripts = document.getElementsByTagName('script'); var s = scripts[scripts.length - 1]; root = s && s.ownerSVGElement ? s.ownerSVGElement : null; }
+  if(!root) return;
+  function Q(sel){ return root.querySelector(sel); }
+  function QA(sel){ return Array.prototype.slice.call(root.querySelectorAll(sel)); }
+  var statusEl = Q('#a8p3-status'); var detailEl = Q('#a8p3-detail'); var liveEl = Q('#a8p3-live');
+  var tip = Q('#a8p3-tip'); var tipBg = Q('#a8p3-tip-bg'); var tipT1 = Q('#a8p3-tip-t1'); var tipT2 = Q('#a8p3-tip-t2');
+  var mode = '';
+  var copy = {
+    focal: { status:'Focal · início em 1 hemisfério', detail:'O fenômeno nasce em um lado. O outro hemisfério não acende no início. Classificar pelo nascimento, não pelo meio do abalo.', live:'Crise focal: início em um hemisfério. Discriminador é o sítio de nascimento.', tip1:'Focal · 1 hemisfério', tip2:'Nasce de um lado · o outro quieto', stroke:'var(--a8p3-indigo, #818CF8)' },
+    gen: { status:'Generalizada · início nos 2 hemisférios', detail:'Nascimento bilateral e sincronizado. Não é flood fill do cérebro inteiro — é o início nos dois, juntos.', live:'Crise generalizada: início sincronizado nos dois hemisférios, sem encher 100% do córtex.', tip1:'Generalizada · 2 hemisférios', tip2:'Início bilateral · não flood 100%', stroke:'var(--a8p3-cyan, #22D3EE)' },
+    gap: { status:'GAP · 4 citadas · 2 neste eixo', detail:'Quatro classificações contemporâneas são citadas. Neste recorte operam duas. As outras não se inventam aqui.', live:'Gap honesto: quatro classificações citadas; duas operacionais neste eixo de início.', tip1:'GAP 4 → 2', tip2:'Não inventar as outras duas', stroke:'var(--a8p3-gold, #FBBF24)' },
+    axis: { status:'Eixo de início · bipartição operacional', detail:'Tratamento e pensamento sindrômico dependem desta bipartição. Focal versus generalizada decide o raciocínio.', live:'Eixo operacional: focal versus generalizada pelo sítio de início da crise.', tip1:'Eixo de início', tip2:'Decide tratamento e raciocínio', stroke:'var(--a8p3-teal, #2DD4BF)' }
+  };
+  var idle = { status:'Toque ou passe · 1 hemisfério vs 2', detail:'Classificar importa para tratamento e pensamento sindrômico · o nascimento define', live:'Bipartição focal versus generalizada pelo sítio de início da crise.' };
+  function setMode(m, fromFocus){
+    mode = m || ''; root.setAttribute('data-mode', mode);
+    var c = mode && copy[mode] ? copy[mode] : idle;
+    if(statusEl) statusEl.textContent = c.status; if(detailEl) detailEl.textContent = c.detail; if(liveEl) liveEl.textContent = c.live;
+    if(mode && copy[mode]){ showTip(copy[mode]); root.setAttribute('data-tip','on'); } else if(!fromFocus){ hideTip(); root.setAttribute('data-tip','off'); }
+  }
+  function showTip(c){ if(!tip||!c) return; if(tipT1)tipT1.textContent=c.tip1; if(tipT2)tipT2.textContent=c.tip2; if(tipBg)tipBg.setAttribute('stroke',c.stroke); tip.setAttribute('opacity','1'); tip.setAttribute('aria-hidden','false'); }
+  function hideTip(){ if(!tip) return; tip.setAttribute('opacity','0'); tip.setAttribute('aria-hidden','true'); }
+  function clientToSvg(cx,cy){ var pt=root.createSVGPoint(); pt.x=cx; pt.y=cy; var m=root.getScreenCTM(); if(!m) return {x:cx,y:cy}; return pt.matrixTransform(m.inverse()); }
+  function placeTip(cx,cy){ if(!tip) return; var p=clientToSvg(cx,cy); var tw=280,th=68; var x=p.x+16; var y=p.y-th-12; if(x+tw>820)x=p.x-tw-12; if(x<12)x=12; if(y<12)y=p.y+18; if(y+th>620)y=620-th; tip.setAttribute('transform','translate('+x+','+y+')'); }
+  function placeTipSvg(sx,sy){ if(!tip) return; var tw=280,th=68; var x=sx+12; var y=sy-th-8; if(x+tw>820)x=sx-tw-8; if(x<12)x=12; if(y<12)y=sy+20; tip.setAttribute('transform','translate('+x+','+y+')'); }
+  function bindHs(el){
+    if(!el) return; var m=el.getAttribute('data-mode'); el.style.cursor='pointer';
+    el.addEventListener('mouseenter', function(ev){ setMode(m,false); placeTip(ev.clientX,ev.clientY); });
+    el.addEventListener('mousemove', function(ev){ if(mode===m) placeTip(ev.clientX,ev.clientY); });
+    el.addEventListener('mouseleave', function(){ if(mode===m) setMode('',false); });
+    el.addEventListener('focus', function(){ setMode(m,true); try{ var bb=el.getBBox(); placeTipSvg(bb.x+bb.width/2,bb.y);}catch(e){} });
+    el.addEventListener('blur', function(){ if(mode===m) setMode('',false); });
+    el.addEventListener('click', function(ev){ setMode(m,false); if(ev.clientX) placeTip(ev.clientX,ev.clientY); });
+    el.addEventListener('keydown', function(ev){ if(ev.key==='Enter'||ev.key===' '||ev.key==='Spacebar'){ ev.preventDefault(); setMode(mode===m?'':m,true);} });
+  }
+  QA('.a8p3-hs').forEach(bindHs);
+  root.setAttribute('data-mode',''); root.setAttribute('data-tip','off'); setMode('',false);
+})();
+]]></script>
+</svg>
+    <figcaption class="a8-cap">Split de hemisférios. Passe o cursor (ou Tab + Enter) em cada painel: <span class="kw kw--indigo">focal</span> nasce em um hemisfério (o outro fica quieto); <span class="kw kw--cyan">generalizada</span> nasce nos dois, sincronizada — sem flood 100%. O chip dourado é o <span class="kw kw--ouro">GAP</span> honesto.</figcaption>
+  </figure>
+
+  <div class="prosa">
+    <h2>A definição pelo início</h2>
+    <p><strong>Crise focal</strong> (antigamente “<strong>parcial</strong>”): inicia em <span class="kw kw--indigo">um só hemisfério</span>.</p>
+    <p>Se a crise <strong>começa nos dois hemisférios</strong>, é, por definição, <span class="kw kw--cyan">generalizada</span>.</p>
+    <p>O discriminador é o <span class="kw kw--ouro">primeiro segundo</span> — onde o fenômeno <strong>nasce</strong> — não o que se vê depois que o abalo se espalhou.</p>
+  </div>
+
+  <!-- COMPONENTE-EXECUTOR: split tabela + chip GAP -->
+  <div class="a8-gap" role="note" aria-label="Chip GAP 4 classificações 2 ensinadas">
+    <p style="margin:0"><span class="faixa faixa--ouro">GAP · 4 classificações citadas · 2 ensinadas</span> — não inventar as outras duas.</p>
+  </div>
+
+  <table class="a8-tabelao" aria-label="Definição focal versus generalizada">
+    <caption>Definição-chave pelo início.</caption>
+    <thead><tr><th></th><th>Focal (ex-parcial)</th><th>Generalizada</th></tr></thead>
+    <tbody>
+      <tr><td>Início</td><td><span class="kw kw--indigo">1</span> hemisfério</td><td><span class="kw kw--cyan">2</span> hemisférios</td></tr>
+      <tr><td>Definição-chave</td><td>um lado só</td><td>início bilateral</td></tr>
+    </tbody>
+  </table>
+
+  <!-- IMAGEM REAL R3 -->
+  <figure class="a8-frame">
+    <img src="./media/B03-ilae-2017-seizure-types-basic-cureus.jpg" alt="Quadro ILAE 2017 Classification of Seizure Types: Basic Version, com as classes Focal e Generalized onset." loading="lazy" style="width:100%;height:auto;border-radius:12px;border:1px solid var(--border)">
+    <figcaption class="a8-cap"><b>ILAE 2017 — Classification of Seizure Types (Basic Version)</b>. Quadro operacional de início: colunas <span class="kw kw--indigo">FOCAL</span> e <span class="kw kw--cyan">GENERALIZED</span>. <b>Fonte:</b> Cureus / PMC (PMC7575300, Fig. 1) · licença <b>CC BY 4.0</b>.</figcaption>
+  </figure>
+
+  <div class="card card--membrane" role="note" aria-label="O que a banca quer">
+    <h3 class="card__titulo">O que a banca quer</h3>
+    <p style="margin:0">Saber que “parcial” é nomenclatura <strong>antiga</strong> de focal, e que a chave é o <span class="kw kw--ouro">hemisfério de início</span>.</p>
+  </div>
+
+  <!-- REVISÃO ATIVA -->
+  <section class="card card--membrane" aria-label="Revisão ativa">
+    <h3 class="card__titulo">Revisão ativa</h3>
+    <ol style="margin:0;padding-left:1.2rem;line-height:1.6">
+      <li>Qual o discriminador temporal de focal vs generalizada?</li>
+      <li>O que fazer com as “outras duas” classificações citadas mas não ensinadas?</li>
+      <li>Por que o tratamento depende dessa bipartição?</li>
+    </ol>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="card card--membrane" aria-label="Quiz final">
+    <h3 class="card__titulo">Quiz</h3>
+    <form class="quiz__q" data-quiz data-quiz-id="a8p03q1" data-gabarito="B">
+      <p class="quiz__enun"><strong>Q1.</strong> Crise que <strong>inicia</strong> em um único hemisfério classifica-se como:</p>
+      <label class="alt"><input type="radio" name="a8p03q1" value="A"><span>Generalizada, se depois houver abalos bilaterais</span></label>
+      <label class="alt"><input type="radio" name="a8p03q1" value="B"><span>Focal (antiga “parcial”)</span></label>
+      <label class="alt"><input type="radio" name="a8p03q1" value="C"><span>Sempre ausência</span></label>
+      <label class="alt"><input type="radio" name="a8p03q1" value="D"><span>Impossível classificar sem AED</span></label>
+      <p style="margin:.4rem 0"><button type="button" class="btn" data-quiz-verificar>Verificar resposta</button></p>
+      <p class="quiz__live" data-quiz-live aria-live="polite"></p>
+      <div class="quiz__explicacao" data-quiz-explicacao hidden>
+        <p><strong class="kw kw--teal">Gabarito: B.</strong> A virada: <strong>início em 1 hemisfério = focal</strong>, independentemente do que o abalo faça depois.</p>
+        <p><strong>(A)</strong> confunde evolução com início (pegadinha que volta). <em>Por que cair:</em> olha o meio da crise.</p>
+        <p><strong>(C)</strong> ausência é fenótipo generalizado, não sinônimo de “1 hemisfério”. <em>Por que cair:</em> lista decorada.</p>
+        <p><strong>(D)</strong> classificação <strong>precede</strong> e <strong>orienta</strong> fármaco — não depende dele. <em>Por que cair:</em> inverte a ordem.</p>
+      </div>
+    </form>
+    <form class="quiz__q" data-quiz data-quiz-id="a8p03q2" data-gabarito="B">
+      <p class="quiz__enun"><strong>Q2.</strong> Sobre “existem quatro classificações” neste recorte:</p>
+      <label class="alt"><input type="radio" name="a8p03q2" value="A"><span>Deve-se inventar as outras duas a partir de memória</span></label>
+      <label class="alt"><input type="radio" name="a8p03q2" value="B"><span>Operam-se <strong>duas</strong> (focal × generalizada); as outras <strong>não</strong> se desenvolvem aqui</span></label>
+      <label class="alt"><input type="radio" name="a8p03q2" value="C"><span>Só existe uma classificação</span></label>
+      <label class="alt"><input type="radio" name="a8p03q2" value="D"><span>As quatro são sinônimos de TCG</span></label>
+      <p style="margin:.4rem 0"><button type="button" class="btn" data-quiz-verificar>Verificar resposta</button></p>
+      <p class="quiz__live" data-quiz-live aria-live="polite"></p>
+      <div class="quiz__explicacao" data-quiz-explicacao hidden>
+        <p><strong class="kw kw--teal">Gabarito: B.</strong></p>
+        <p><strong>(A)</strong> viola o gap declarado. <em>Por que cair:</em> horror ao vazio.</p>
+        <p><strong>(C)</strong> apaga o eixo ensinado. <em>Por que cair:</em> simplifica demais.</p>
+        <p><strong>(D)</strong> confunde classificação com um fenótipo. <em>Por que cair:</em> monólito TCG.</p>
+      </div>
+    </form>
+  </section>
+
+  <div class="card card--membrane">
+    <h3 class="card__titulo">Conexão</h3>
+    <p>A focal ainda se abre em consciência e motor — e pode terminar em TCG.</p>
+  </div>
+
+  <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="./p2.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Idoso: a cicatriz do AVE</span></a><a class="next" href="./p4.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Focal: tremer e conversar — consciência e lateralidade</span></a></nav>
+</article>
+</main>
+<footer class="rodape">Epilepsia — Aula 8 · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Aula 8 · 7 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="./index.html"><span class="menu-panel__index">01</span><span>Dois picos e o vale do adulto: quando a imagem muda o jogo</span></a></li>
+      <li><a class="menu-panel__link" href="./p2.html"><span class="menu-panel__index">02</span><span>Idoso: a cicatriz do AVE, não o AVE abrindo a crise</span></a></li>
+      <li><a class="menu-panel__link" href="./p3.html" aria-current="page"><span class="menu-panel__index">03</span><span>Duas de quatro: o que separa focal de generalizada</span></a></li>
+      <li><a class="menu-panel__link" href="./p4.html"><span class="menu-panel__index">04</span><span>Focal: tremer e conversar — consciência e lateralidade</span></a></li>
+      <li><a class="menu-panel__link" href="./p5.html"><span class="menu-panel__index">05</span><span>Dois braços na rua — o início classifica</span></a></li>
+      <li><a class="menu-panel__link" href="./p6.html"><span class="menu-panel__index">06</span><span>Generalizada: grupamentos bilaterais, não cérebro 100%</span></a></li>
+      <li><a class="menu-panel__link" href="./p7.html"><span class="menu-panel__index">07</span><span>TCG: duro → abalos → névoa pós-ictal</span></a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

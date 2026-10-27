@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Fraqueza muscular — guia sindrômico (fm1). Neoplasia, ENMG e corticoide">
+<title>Neoplasia, ENMG e corticoide · fm1 Fraqueza · Neurologia</title>
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm1-cara">
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+.opener,.exec-card,.trap,.dont-confuse,.hero-figure,.case-card,.gap-box,.continuity{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.opener{padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ciano);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead,.opener__mnemonic,.opener__bust{margin:0;color:var(--ink-60);font-size:1.02rem}
+.opener--question{border-left:4px solid var(--indigo)}.opener--case{border-left:4px solid #8b5cf6}.opener--trap{border-left:4px solid var(--amber)}.opener--checklist{border-left:4px solid var(--ciano)}.opener--mnemonic{border-left:4px solid var(--amber)}.opener--vs{border-left:4px solid var(--ciano)}.opener--bust{border-left:4px solid var(--coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip--topic,.chip,.chip--ok,.chip--no,.chip--series{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ciano);border-color:var(--ciano-line)}.chip--ok{color:var(--verde)}.chip--no{color:var(--coral)}.chip--series{color:var(--indigo)}
+button.chip{cursor:pointer;min-height:36px}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose-list{margin:0 0 1em 1.1rem;padding:0}.prose-list li{margin:.3rem 0}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.term{color:var(--indigo);font-weight:700}.hl-good,.hl-cell{color:var(--verde);font-weight:700}.hl-bad,.hl-cell-bad{color:var(--coral);font-weight:700}.hl-warn{color:var(--amber);font-weight:700}
+.exec-card__title,.trap__title{margin:0 0 .65rem;font-size:1rem;color:var(--ciano)}
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}.checklist label{display:flex;gap:.55rem;align-items:flex-start;cursor:pointer;min-height:44px}.checklist input{width:18px;height:18px;margin-top:.2rem;accent-color:var(--ciano)}
+.split-board,.chip-cols,.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.split-board__bad,.split-board__good,.posture-card{border-radius:10px;padding:.75rem;border:1px solid var(--border)}.split-board__bad{border-color:color-mix(in srgb,var(--coral) 45%,var(--border))}.split-board__good{border-color:color-mix(in srgb,var(--verde) 45%,var(--border))}
+.labs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:.85rem}.lab{border-radius:10px;border:1px solid var(--border);padding:.55rem .6rem;text-align:center;background:var(--bg-3)}.lab--key{border-color:var(--amber)}.lab__k{display:block;font-size:.68rem;color:var(--ink-60);text-transform:uppercase}.lab__v{display:block;font-size:1.05rem;font-weight:700;color:var(--amber)}
+.tendon-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.7rem}.dont-confuse__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}.dont-confuse__grid--2{grid-template-columns:1fr 1fr}.dont-confuse__grid>div{border:1px solid var(--border);border-radius:10px;padding:.65rem}.dont-confuse__warn{border-color:var(--amber)!important}.trap{border-left:4px solid var(--amber)}.trap--jo1{border-left-color:var(--amber)}
+.curve-toggle{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.55rem}.curve-btn{min-height:40px;border-radius:999px;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100);padding:.4rem .85rem;cursor:pointer}.curve-btn.is-active{border-color:var(--ciano);color:var(--ciano)}.curve-out{color:var(--ink-80)}
+.flow-nodes{margin:0;padding-left:1.2rem}.flow-nodes li{margin:.4rem 0}.case-card h4{margin:0 0 .4rem;color:var(--indigo)}.gap-box{border-left:4px solid var(--coral)}.gap-box h4{color:var(--coral)}.nuance{border-left:3px solid var(--amber);padding:.65rem .85rem;margin:1rem 0;background:rgba(245,158,11,.08);border-radius:0 10px 10px 0}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.75rem 0}.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:280px}.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}.comparison th{background:var(--bg-3)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}.fig__frame{width:100%;display:block;background:var(--bg-1)}.fig__frame img{display:block;width:100%;height:auto;object-fit:contain}.fig__frame--svg{padding:.35rem}.fm1-inline-svg{display:block;width:100%;height:auto;border-radius:10px}.fig__cap,.hero-figure__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--amber);margin-right:.4rem}
+.chain-hero{display:grid;gap:.35rem}.chain-hero__floor{text-align:left;border:1px solid var(--border);border-radius:12px;padding:.75rem .85rem;background:var(--bg-3);color:var(--ink-100);cursor:pointer;min-height:64px;display:grid;gap:.15rem}.chain-hero__floor[aria-pressed="true"]{border-color:var(--ciano)}.chain-hero__n{font-weight:700;color:var(--ciano)}.chain-hero__ex,.chain-hero__note{font-size:.78rem;color:var(--ink-60)}.chain-hero__arrow{text-align:center;color:var(--ciano);font-weight:700}
+.posture-split{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.75rem}.posture-card__t{display:block;font-weight:700;margin-bottom:.25rem}.posture-card--spastic{border-color:var(--indigo)}.posture-card--flaccid{border-color:var(--ciano)}.posture-card--warn{border-color:var(--amber)}
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow)}.quiz h2{margin:0 0 .85rem;font-size:1.1rem}.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}.quiz__stem{margin:0 0 .55rem;font-weight:600}.quiz__alternatives{display:grid;gap:.4rem}.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit}.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}.quiz__alt.is-correct{border-color:var(--verde);background:rgba(52,211,153,.12)}.quiz__alt.is-wrong{border-color:var(--coral);background:rgba(251,113,133,.10)}.quiz__feedback{margin-top:.55rem;padding:.7rem .75rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}.quiz__feedback[hidden]{display:none}.quiz__verdict{margin:0 0 .35rem;font-weight:700}.quiz__verdict.is-ok{color:var(--verde)}.quiz__verdict.is-bad{color:var(--coral)}.quiz__justification,.quiz__distractor{margin:.25rem 0 0;font-size:.92rem}
+.page-nav__btn.is-disabled{display:inline-flex;align-items:center;min-height:44px;padding:.55rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);opacity:.45}.page-nav__pos{align-self:center;font-size:.85rem;color:var(--ink-60)}.seal,.juvenile{margin-top:.65rem}.continuity{border-left:3px solid var(--ciano)}.menu-panel__link.is-current{background:rgba(34,211,238,.10);color:var(--ink-100);font-weight:600}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}@media(max-width:640px){.dont-confuse__grid,.posture-split{grid-template-columns:1fr}}@media(max-width:560px){.split-board,.chip-cols,.case-grid{grid-template-columns:1fr}.labs-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:420px){.page-nav{flex-wrap:wrap}.page-nav a{min-width:0;flex:1 1 calc(50% - 6px);padding:.7rem .65rem}.page-nav__pos{order:3;width:100%;text-align:center}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p11" data-layout="fm1-p11" data-source-ids="127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <div class="site-header__brand">
+      <span class="site-header__logo">NN</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Fraqueza muscular: guia</span>
+        <span class="site-header__subtitle">Neurologia · fraqueza muscular</span>
+      </span>
+    </div>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress" id="progress">11/12</span>
+    <div class="site-header__actions">
+      <button type="button" class="icon-btn" id="home-btn" aria-label="Início do guia" title="Início" onclick="location.href='index.html'">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Alternar tema" aria-pressed="false" title="Tema">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas do guia">
+    <p class="menu-panel__title">Fraqueza muscular: guia</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>Porta da fraqueza</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>Caso Jussara</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>Quantidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>4 andares</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Reflexos</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Matriz 1º×2º</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Agudo flácido</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Placa</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html"><span class="menu-panel__index">09</span><span>Músculo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html"><span class="menu-panel__index">10</span><span>DM pele</span></a></li><li class="menu-panel__item"><a class="menu-panel__link is-current" href="p11.html"><span class="menu-panel__index">11</span><span>Neoplasia/ENMG</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html"><span class="menu-panel__index">12</span><span>Jo-1 / fecho</span></a></li></ul>
+  </nav>
+</div>
+<main class="coluna" id="main">
+  <div class="reading">
+    <!-- Página 11 — Estratégia: E5 -->
+    <article class="page" data-page="p11" data-layout="fm1-p11" data-source-ids="127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143">
+      <p class="page__eyebrow">Página 11 · E5</p>
+      <section class="opener opener--checklist" data-opener="E5">
+          <span class="opener__eyebrow">Conduta prática</span>
+          <h1 id="page-title">Neoplasia, ENMG e corticoide</h1>
+          <p class="opener__lead no-indent">“Neoplasia no adulto, exame dirigido, ENMG versus RM e corticoide sem dose inventada.”</p>
+        </section>
+      <div class="chipset"><span class="chip--topic">P11</span><span class="chip--topic">E5</span><span class="chip--topic">fm1</span></div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h3 class="topic-h">Associação com neoplasia</h3>
+<p>DM tem <strong class="term">associação com neoplasia</strong> — pode funcionar como síndrome paraneoplásica ligada a diversos cânceres. Temporalidade: DM pode <strong class="term">preceder</strong>, <strong class="term">coincidir</strong> ou <strong class="term">seguir</strong> o diagnóstico do câncer; o que importa é a <strong class="term">associação</strong>.</p>
+<p>DM nova → pensar em investigar neoplasia; <strong class="term">não</strong> faz sentido imagem de corpo inteiro cega (“body scan”/PET sem critério). Investigação: lab inflamatório mínimo da doença autoimune sistêmica (hemograma, VHS e correlatos) + <strong class="term">conversa dirigida</strong> a sintomas de outros sistemas (nódulo mamário, tosse, alteração de hábito intestinal etc.) para guiar exames. Além da queixa dirigida, cumprir <strong class="term">rastreio oncológico etário</strong> (ex.: &gt;50 anos — colorretal; mama e colo uterino conforme sexo/idade).</p>
+<p class="no-indent"><strong class="term">Dermatomiosite juvenil:</strong> quadro clínico semelhante na criança; <strong class="term">sem</strong> associação com neoplasia — “esqueça” a busca paraneoplásica como no adulto.</p>
+<div class="table-wrap"><table class="comparison"><thead><tr><th>Pedir / fazer</th><th>Não fazer</th></tr></thead><tbody><tr><td>Lab inflamatório mínimo</td><td>Body-scan/PET cego de rotina</td></tr><tr><td>Anamnese de sistemas + exame dirigido</td><td>Ignorar nódulo/queixa local</td></tr><tr><td>Rastreio etário (mama, colo, colorretal…)</td><td>Assumir DM juvenil = mesma lógica de câncer do adulto</td></tr></tbody></table></div>
+<h3 class="topic-h">Exames por andar</h3>
+<p>Diagnóstico complementar: <strong class="term">enzimas musculares</strong> (padrão miopático).   <strong class="term">ENMG:</strong> avalia nervo (2º NMS), placa e músculo — <strong class="term">não</strong> avalia o 1º NMS.   Suspeita de placa ou músculo → <strong class="term">não</strong> faz sentido RM de crânio por default; RM de crânio no contexto de fraqueza topografa sobretudo o <strong class="term">1º NMS</strong>.   Neuropatia periférica, placa e músculo → <strong class="term">ENMG</strong>; 1º NMS → imagem de SNC quando indicada.   <strong class="term">Biópsia muscular:</strong> padrão-ouro, <strong class="term">nem sempre</strong> necessária.   Autoanticorpos / anti-miosite aumentam especificidade; <strong class="term">FAN</strong> pode ser positivo mas é <strong class="term">inespecífico</strong> (colagenose).</p>
+<div class="table-wrap"><table class="comparison"><thead><tr><th>Topografia</th><th>Exame que “vê”</th></tr></thead><tbody><tr><td>1º NMS</td><td>RM/imagem de SNC (quando indicada)</td></tr><tr><td>2º / placa / músculo</td><td>ENMG</td></tr><tr><td>Músculo (confirmação)</td><td>Enzimas; biópsia se necessário</td></tr></tbody></table></div>
+<h3 class="topic-h">Tratamento cobrado em prova</h3>
+<p>Base: <strong class="term">corticoide</strong>, avaliando necessidade de outra imunoterapia; em geral responde bem ao corticoide. DM <strong class="term">paraneoplásica</strong> tende a ser <strong class="term">mais difícil</strong> de manejar / menos responsiva ao corticoide do que a DM isolada. O mais importante em prova sobre DM é a <strong class="term">identificação clínica</strong> (padrão muscular + pele ± neoplasia).</p>
+<p>Fecho do caso 1: fraqueza insidiosa + lesão de pele + nódulo mamário suspeito + enzimas ↑ → dermatomiosite; em discursiva, completar <strong class="term">DM associada a neoplasia</strong> quando houver suspeita de câncer.</p>
+        </div>
+      </section>
+
+      
+<aside class="exec-card">
+  <h3 class="exec-card__title">Pedir × não pedir · DM adulto</h3>
+  <div class="table-wrap"><table class="comparison">
+    <thead><tr><th>Pedir / fazer</th><th>Não fazer</th></tr></thead>
+    <tbody>
+      <tr><td>Lab inflamatório mínimo</td><td>Body-scan / PET cego</td></tr>
+      <tr><td>Anamnese de sistemas + exame dirigido</td><td>Ignorar nódulo/queixa local</td></tr>
+      <tr><td>Rastreio etário</td><td>DM juvenil = caça oncológica de adulto</td></tr>
+    </tbody>
+  </table></div>
+  <p class="juvenile no-indent"><strong class="term">DM juvenil:</strong> clínica semelhante; <strong class="hl-bad">sem</strong> associação com neoplasia como no adulto.</p>
+</aside>
+
+      <figure class="fig fig--real">
+        <div class="fig__frame">
+          <img src="media/B11-SECONDROUTE-frenzel2024-ncs-median-sural.jpg" loading="lazy" decoding="async" width="1200" height="800" alt="Montagem de estudo de condução nervosa sensitiva com eletrodos nos nervos mediano e sural.">
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Imagem real</span> Montagens de condução nervosa sensitiva ortodrômica dos nervos mediano e sural. Frenzel T et al., Clinical Neurophysiology Practice 2024;9:63–68, Figure 1. CC BY 4.0. Fonte.</figcaption>
+      </figure>
+
+      <figure class="fig fig--svg">
+        <div class="fig__frame fig__frame--svg">
+          <svg class="fm1-inline-svg fm1p11-root" id="fm1p11-svg" viewBox="0 0 960 610" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa Topográfico Exame x Andar Motor: RM e ENMG">
+  <defs>
+    <style>
+      .fm1p11-root {
+        --fm1p11-bg: var(--kw-bg-1, #0f172a);
+        --fm1p11-card: var(--kw-card, #1e293b);
+        --fm1p11-card-border: var(--kw-border, #334155);
+        --fm1p11-text-main: var(--kw-text-main, #f8fafc);
+        --fm1p11-text-muted: var(--kw-text-muted, #94a3b8);
+        --fm1p11-teal: var(--kw-teal, #0d9488);
+        --fm1p11-teal-glow: var(--kw-teal-glow, #14b8a6);
+        --fm1p11-indigo: var(--kw-indigo, #6366f1);
+        --fm1p11-indigo-glow: var(--kw-indigo-glow, #818cf8);
+        --fm1p11-coral: var(--kw-coral, #f43f5e);
+        --fm1p11-coral-glow: var(--kw-coral-glow, #fb7185);
+        --fm1p11-green: var(--kw-green, #10b981);
+        --fm1p11-amber: var(--kw-amber, #f59e0b);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--fm1p11-bg, #0f172a);
+        color: var(--fm1p11-text-main, #f8fafc);
+        user-select: none;
+      }
+
+      [data-theme="light"] .fm1p11-root {
+        --fm1p11-bg: var(--kw-bg-1-light, #f8fafc);
+        --fm1p11-card: var(--kw-card-light, #ffffff);
+        --fm1p11-card-border: var(--kw-border-light, #cbd5e1);
+        --fm1p11-text-main: var(--kw-text-main-light, #0f172a);
+        --fm1p11-text-muted: var(--kw-text-muted-light, #475569);
+        --fm1p11-teal: var(--kw-teal-light, #0d9488);
+        --fm1p11-teal-glow: var(--kw-teal-glow-light, #0f766e);
+        --fm1p11-indigo: var(--kw-indigo-light, #4f46e5);
+        --fm1p11-indigo-glow: var(--kw-indigo-glow-light, #4338ca);
+        --fm1p11-coral: var(--kw-coral-light, #e11d48);
+        --fm1p11-coral-glow: var(--kw-coral-glow-light, #be123c);
+        --fm1p11-green: var(--kw-green-light, #059669);
+        --fm1p11-amber: var(--kw-amber-light, #d97706);
+      }
+
+      .fm1p11-card-bg {
+        fill: var(--fm1p11-card, #1e293b);
+        stroke: var(--fm1p11-card-border, #334155);
+        stroke-width: 1.5;
+        rx: 10px;
+      }
+
+      .fm1p11-title-text {
+        font-size: 16px;
+        font-weight: 700;
+        fill: var(--fm1p11-text-main, #f8fafc);
+        letter-spacing: 0.5px;
+      }
+
+      .fm1p11-subtitle-text {
+        font-size: 12px;
+        fill: var(--fm1p11-text-muted, #94a3b8);
+      }
+
+      .fm1p11-section-header {
+        font-size: 12px;
+        font-weight: 700;
+        fill: var(--fm1p11-teal-glow, #14b8a6);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .fm1p11-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .fm1p11-btn-bg {
+        fill: var(--fm1p11-card, #1e293b);
+        stroke: var(--fm1p11-card-border, #334155);
+        stroke-width: 1.5px;
+        rx: 8px;
+      }
+
+      .fm1p11-btn:hover .fm1p11-btn-bg, .fm1p11-btn:focus .fm1p11-btn-bg {
+        stroke: var(--fm1p11-teal, #0d9488);
+        filter: drop-shadow(0 0 4px rgba(13, 148, 136, 0.4));
+      }
+
+      .fm1p11-btn.fm1p11-active .fm1p11-btn-bg {
+        fill: rgba(13, 148, 136, 0.15);
+        stroke: var(--fm1p11-teal-glow, #14b8a6);
+        stroke-width: 2px;
+      }
+
+      .fm1p11-btn-exam.fm1p11-exam-rm.fm1p11-active .fm1p11-btn-bg {
+        fill: rgba(99, 102, 241, 0.15);
+        stroke: var(--fm1p11-indigo-glow, #818cf8);
+        stroke-width: 2px;
+      }
+
+      .fm1p11-btn-exam.fm1p11-exam-enmg.fm1p11-active .fm1p11-btn-bg {
+        fill: rgba(16, 185, 129, 0.15);
+        stroke: var(--fm1p11-green, #10b981);
+        stroke-width: 2px;
+      }
+
+      .fm1p11-btn-text {
+        font-size: 12px;
+        font-weight: 600;
+        fill: var(--fm1p11-text-main, #f8fafc);
+      }
+
+      .fm1p11-btn-subtext {
+        font-size: 10px;
+        fill: var(--fm1p11-text-muted, #94a3b8);
+      }
+
+      .fm1p11-floor-node {
+        transition: all 0.3s ease;
+      }
+
+      .fm1p11-floor-node.fm1p11-selected {
+        filter: drop-shadow(0 0 8px rgba(20, 184, 166, 0.5));
+      }
+
+      .fm1p11-badge-success {
+        fill: rgba(16, 185, 129, 0.2);
+        stroke: var(--fm1p11-green, #10b981);
+        stroke-width: 1.5;
+        rx: 6px;
+      }
+
+      .fm1p11-badge-error {
+        fill: rgba(244, 63, 94, 0.2);
+        stroke: var(--fm1p11-coral, #f43f5e);
+        stroke-width: 1.5;
+        rx: 6px;
+      }
+
+      .fm1p11-badge-warning {
+        fill: rgba(245, 158, 11, 0.2);
+        stroke: var(--fm1p11-amber, #f59e0b);
+        stroke-width: 1.5;
+        rx: 6px;
+      }
+
+      .fm1p11-tooltip-bg {
+        fill: #0f172a;
+        stroke: #334155;
+        stroke-width: 1px;
+        rx: 4px;
+        opacity: 0.95;
+      }
+
+      .fm1p11-tooltip-text {
+        font-size: 11px;
+        fill: #f8fafc;
+        font-weight: 500;
+      }
+
+      .fm1p11-connector-line {
+        stroke-dasharray: 4,4;
+        animation: fm1p11-dash 20s linear infinite;
+        transition: stroke 0.3s, stroke-width 0.3s, opacity 0.3s;
+      }
+
+      @keyframes fm1p11-dash {
+        to {
+          stroke-dashoffset: -100;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fm1p11-connector-line {
+          animation: none;
+        }
+      }
+    </style>
+
+    <linearGradient id="fm1p11-grad-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p11-indigo, #6366f1)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="fm1p11-grad-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p11-teal, #0d9488)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f766e" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="fm1p11-grad-coral" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p11-coral, #f43f5e)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#be123c" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <marker id="fm1p11-arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--fm1p11-green, #10b981)"/>
+    </marker>
+    <marker id="fm1p11-arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--fm1p11-coral, #f43f5e)"/>
+    </marker>
+    <marker id="fm1p11-arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--fm1p11-amber, #f59e0b)"/>
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND CARD CONTAINER -->
+  <rect x="10" y="10" width="940" height="590" class="fm1p11-card-bg"/>
+
+  <!-- HEADER CONTRACT RULE 1 -->
+  <g transform="translate(30, 32)">
+    <text class="fm1p11-title-text" x="0" y="0">MAPA TOPOGRÁFICO: EXAME × ANDAR MOTOR</text>
+    <text class="fm1p11-subtitle-text" x="0" y="18">Regra de Ouro: RM/TC para 1º NMS (SNC) · ENMG para 2º NMS, Placa e Músculo. Evite o erro da RM default!</text>
+  </g>
+
+  <!-- COLUMN 1: MOTOR PATHWAY ANDARS (x: 30 .. 340) -->
+  <g transform="translate(30, 75)">
+    <rect x="0" y="0" width="310" height="445" class="fm1p11-card-bg" style="fill: rgba(15,23,42,0.3);"/>
+    <text class="fm1p11-section-header" x="15" y="24">1. SELECIONE O ANDAR MOTOR</text>
+
+    <!-- FLOOR 1 BUTTON & DIAGRAM -->
+    <g id="fm1p11-btn-f1" class="fm1p11-btn fm1p11-active" transform="translate(15, 38)" role="button" aria-label="Andar 1: 1º NMS Corticoespinal" tabindex="0">
+      <rect class="fm1p11-btn-bg" x="0" y="0" width="280" height="85"/>
+      <!-- Brain / Spine Icon representation -->
+      <path d="M 25 22 C 15 22 15 38 22 42 C 15 48 20 60 30 58 C 32 64 45 64 47 58 C 55 58 58 45 52 38 C 55 25 40 20 35 25 C 30 20 20 20 25 22 Z" fill="url(#fm1p11-grad-indigo)" stroke="var(--fm1p11-indigo-glow, #818cf8)" stroke-width="1.5"/>
+      <path d="M 35 58 L 35 75" stroke="var(--fm1p11-indigo-glow, #818cf8)" stroke-width="3" stroke-dasharray="2,2"/>
+      <text class="fm1p11-btn-text" x="65" y="28">1º NMS (Corticoespinal)</text>
+      <text class="fm1p11-btn-subtext" x="65" y="45">Córtex Motor / Tronco / Medula</text>
+      <text class="fm1p11-btn-subtext" x="65" y="60" style="fill: var(--fm1p11-indigo-glow, #818cf8); font-weight:700;">Exame: Imagem SNC (RM/TC)</text>
+    </g>
+
+    <!-- FLOOR 2 BUTTON & DIAGRAM -->
+    <g id="fm1p11-btn-f2" class="fm1p11-btn" transform="translate(15, 135)" role="button" aria-label="Andar 2: 2º NMI Corno Anterior e Nervo Periférico" tabindex="0">
+      <rect class="fm1p11-btn-bg" x="0" y="0" width="280" height="85"/>
+      <!-- Motor Neuron & Nerve Icon -->
+      <circle cx="35" cy="30" r="10" fill="url(#fm1p11-grad-teal)" stroke="var(--fm1p11-teal-glow, #14b8a6)" stroke-width="1.5"/>
+      <path d="M 35 40 L 35 72 M 35 50 L 48 62 M 35 58 L 22 70" stroke="var(--fm1p11-teal-glow, #14b8a6)" stroke-width="2"/>
+      <text class="fm1p11-btn-text" x="65" y="28">2º NMI (Nervo Periférico)</text>
+      <text class="fm1p11-btn-subtext" x="65" y="45">Corno Anterior / Raiz / Plexo / Nervo</text>
+      <text class="fm1p11-btn-subtext" x="65" y="60" style="fill: var(--fm1p11-teal-glow, #14b8a6); font-weight:700;">Exame: ENMG (Condução + Agulha)</text>
+    </g>
+
+    <!-- FLOOR 3 BUTTON & DIAGRAM -->
+    <g id="fm1p11-btn-f3" class="fm1p11-btn" transform="translate(15, 232)" role="button" aria-label="Andar 3: Placa Neuromuscular Junção Mioneural" tabindex="0">
+      <rect class="fm1p11-btn-bg" x="0" y="0" width="280" height="85"/>
+      <!-- Synaptic Cleft Icon -->
+      <path d="M 20 28 L 50 28" stroke="var(--fm1p11-teal-glow, #14b8a6)" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="28" cy="42" r="3" fill="var(--fm1p11-amber, #f59e0b)"/>
+      <circle cx="36" cy="40" r="3" fill="var(--fm1p11-amber, #f59e0b)"/>
+      <circle cx="44" cy="43" r="3" fill="var(--fm1p11-amber, #f59e0b)"/>
+      <path d="M 20 56 L 50 56" stroke="var(--fm1p11-text-muted, #94a3b8)" stroke-width="4" stroke-linecap="round"/>
+      <text class="fm1p11-btn-text" x="65" y="28">Placa Neuromuscular</text>
+      <text class="fm1p11-btn-subtext" x="65" y="45">Junção Mioneural (Pré/Pós-sináptica)</text>
+      <text class="fm1p11-btn-subtext" x="65" y="60" style="fill: var(--fm1p11-teal-glow, #14b8a6); font-weight:700;">Exame: ENMG (Est. Repetitiva)</text>
+    </g>
+
+    <!-- FLOOR 4 BUTTON & DIAGRAM -->
+    <g id="fm1p11-btn-f4" class="fm1p11-btn" transform="translate(15, 329)" role="button" aria-label="Andar 4: Músculo Esquelético Fibra Miógena" tabindex="0">
+      <rect class="fm1p11-btn-bg" x="0" y="0" width="280" height="85"/>
+      <!-- Muscle Fiber Icon -->
+      <rect x="20" y="25" width="30" height="40" rx="4" fill="url(#fm1p11-grad-teal)" stroke="var(--fm1p11-teal-glow, #14b8a6)" stroke-width="1.5"/>
+      <line x1="20" y1="35" x2="50" y2="35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <line x1="20" y1="45" x2="50" y2="45" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <line x1="20" y1="55" x2="50" y2="55" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <text class="fm1p11-btn-text" x="65" y="28">Músculo Esquelético</text>
+      <text class="fm1p11-btn-subtext" x="65" y="45">Fibra Miógena / Sarcolema</text>
+      <text class="fm1p11-btn-subtext" x="65" y="60" style="fill: var(--fm1p11-teal-glow, #14b8a6); font-weight:700;">Exame: ENMG (Padrão Miopático)</text>
+    </g>
+  </g>
+
+  <!-- COLUMN 2: EXAM SELECTION & CONNECTIVE PATHWAY MATRIX (x: 355 .. 635) -->
+  <g transform="translate(355, 75)">
+    <rect x="0" y="0" width="280" height="445" class="fm1p11-card-bg" style="fill: rgba(15,23,42,0.3);"/>
+    <text class="fm1p11-section-header" x="15" y="24">2. SOLICITAR EXAME COMPLEMENTAR</text>
+
+    <!-- EXAM BUTTON: RM / TC CRÂNIO & MEDULA -->
+    <g id="fm1p11-btn-rm" class="fm1p11-btn fm1p11-btn-exam fm1p11-exam-rm fm1p11-active" transform="translate(15, 38)" role="button" aria-label="Solicitar RM ou TC de Crânio e Medula (Neuroimagem)" tabindex="0">
+      <rect class="fm1p11-btn-bg" x="0" y="0" width="250" height="70"/>
+      <circle cx="35" cy="35" r="16" fill="rgba(99, 102, 241, 0.2)" stroke="var(--fm1p11-indigo-glow, #818cf8)" stroke-width="1.5"/>
+      <text x="35" y="40" text-anchor="middle" font-size="11" font-weight="800" fill="var(--fm1p11-indigo-glow, #818cf8)">RM</text>
+      <text class="fm1p11-btn-text" x="62" y="32">RM / TC (Neuroimagem)</text>
+      <text class="fm1p11-btn-subtext" x="62" y="48">Avalia Estrutura de SNC (1º NMS)</text>
+    </g>
+
+    <!-- EXAM BUTTON: ELETRONEUROMIOGRAFIA (ENMG) -->
+    <g id="fm1p11-btn-enmg" class="fm1p11-btn fm1p11-btn-exam fm1p11-exam-enmg" transform="translate(15, 120)" role="button" aria-label="Solicitar Eletroneuromiografia ENMG" tabindex="0">
+      <rect class="fm1p11-btn-bg" x="0" y="0" width="250" height="70"/>
+      <circle cx="35" cy="35" r="16" fill="rgba(16, 185, 129, 0.2)" stroke="var(--fm1p11-green, #10b981)" stroke-width="1.5"/>
+      <path d="M 25 35 L 30 35 L 33 25 L 37 45 L 41 32 L 45 35" fill="none" stroke="var(--fm1p11-green, #10b981)" stroke-width="1.5"/>
+      <text class="fm1p11-btn-text" x="62" y="32">ENMG (Eletroneuromiografia)</text>
+      <text class="fm1p11-btn-subtext" x="62" y="48">Avalia 2º NMI, Placa e Músculo</text>
+    </g>
+
+    <!-- DYNAMIC FLOW VISUALIZATION CONTAINER -->
+    <g transform="translate(15, 205)">
+      <rect x="0" y="0" width="250" height="225" rx="8" fill="var(--fm1p11-card, #1e293b)" stroke="var(--fm1p11-card-border, #334155)"/>
+      <text x="125" y="24" text-anchor="middle" font-size="11" font-weight="700" fill="var(--fm1p11-text-muted, #94a3b8)">FLUXO DE AVALIAÇÃO DIAGNÓSTICA</text>
+
+      <!-- CONNECTIVE DYNAMIC LINES -->
+      <path id="fm1p11-flow-path" d="M 30 70 L 220 70" fill="none" stroke="var(--fm1p11-green, #10b981)" stroke-width="3" class="fm1p11-connector-line" marker-end="url(#fm1p11-arrow-green)"/>
+
+      <!-- CENTRAL DYNAMIC GRAPHIC SCHEMATIC -->
+      <g id="fm1p11-flow-graphic" transform="translate(25, 50)">
+        <!-- Node Left (Selected Floor) -->
+        <rect id="fm1p11-node-floor-bg" x="0" y="0" width="85" height="120" rx="6" fill="rgba(99,102,241,0.15)" stroke="var(--fm1p11-indigo, #6366f1)" stroke-width="1.5"/>
+        <text id="fm1p11-node-floor-txt1" x="42" y="30" text-anchor="middle" font-size="10" font-weight="700" fill="var(--fm1p11-text-main, #f8fafc)">1º NMS</text>
+        <text id="fm1p11-node-floor-txt2" x="42" y="46" text-anchor="middle" font-size="9" fill="var(--fm1p11-text-muted, #94a3b8)">Córtex/Medula</text>
+
+        <!-- Node Right (Selected Exam) -->
+        <rect id="fm1p11-node-exam-bg" x="115" y="0" width="85" height="120" rx="6" fill="rgba(99,102,241,0.15)" stroke="var(--fm1p11-indigo, #6366f1)" stroke-width="1.5"/>
+        <text id="fm1p11-node-exam-txt1" x="157" y="30" text-anchor="middle" font-size="10" font-weight="700" fill="var(--fm1p11-text-main, #f8fafc)">RM Crânio</text>
+        <text id="fm1p11-node-exam-txt2" x="157" y="46" text-anchor="middle" font-size="9" fill="var(--fm1p11-text-muted, #94a3b8)">Neuroimagem</text>
+
+        <!-- Result Connection Status Overlay -->
+        <g transform="translate(0, 135)">
+          <rect id="fm1p11-flow-status-bg" x="0" y="0" width="200" height="32" rx="4" class="fm1p11-badge-success"/>
+          <text id="fm1p11-flow-status-txt" x="100" y="20" text-anchor="middle" font-size="11" font-weight="800" fill="var(--fm1p11-green, #10b981)">✓ INDICAÇÃO DE OURO</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- COLUMN 3: PAINEL DE LEITURA & INTERPRETAÇÃO CLÍNICA (CONTRACT RULE 4) (x: 650 .. 930) -->
+  <g transform="translate(650, 75)">
+    <rect x="0" y="0" width="280" height="445" class="fm1p11-card-bg"/>
+    <text class="fm1p11-section-header" x="15" y="24">3. RACIOCÍNIO &amp; LAUDO ESPERADO</text>
+
+    <!-- STATUS BADGE LARGE -->
+    <g transform="translate(15, 38)">
+      <rect id="fm1p11-card-badge-bg" x="0" y="0" width="250" height="36" class="fm1p11-badge-success"/>
+      <text id="fm1p11-card-badge-txt" x="125" y="23" text-anchor="middle" font-size="12" font-weight="800" fill="var(--fm1p11-green, #10b981)">✓ INDICAÇÃO PERFEITA</text>
+    </g>
+
+    <!-- RATIONALE TITLE & BODY -->
+    <g transform="translate(15, 88)">
+      <text id="fm1p11-card-title" font-size="13" font-weight="700" fill="var(--fm1p11-text-main, #f8fafc)" x="0" y="0">1º NMS × RM Crânio/Encefalopatia</text>
+      <rect x="0" y="10" width="250" height="1" fill="var(--fm1p11-card-border, #334155)"/>
+
+      <foreignObject x="0" y="18" width="250" height="150">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 11px; color: var(--fm1p11-text-main, #f8fafc); line-height: 1.45;">
+          <p id="fm1p11-card-desc" style="margin: 0 0 8px 0;">O 1º Neurônio Motor Superior (Corticoespinal) situa-se inteiramente no Sistema Nervoso Central. A <strong>RM ou TC de Encéfalo/Medula</strong> é o exame de escolha para visualizar lesões estruturais (AVC, desmielinização, tumores).</p>
+          <p id="fm1p11-card-alert" style="margin: 0; color: var(--fm1p11-green, #10b981); font-weight: 600;">ENMG não tem utilidade aqui, pois avalia apenas o SNP a partir do corno anterior.</p>
+        </div>
+      </foreignObject>
+    </g>
+
+    <!-- CLINICAL ANCHOR BOX -->
+    <g transform="translate(15, 260)">
+      <rect x="0" y="0" width="250" height="165" rx="6" fill="rgba(15, 23, 42, 0.6)" stroke="var(--fm1p11-card-border, #334155)"/>
+      <text x="12" y="20" font-size="10" font-weight="700" fill="var(--fm1p11-amber, #f59e0b)" letter-spacing="0.5px">CASO DE PROVA &amp; PEGADINHA</text>
+
+      <foreignObject x="12" y="28" width="226" height="125">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 10.5px; color: var(--fm1p11-text-main, #f8fafc); line-height: 1.4;">
+          <p id="fm1p11-case-text" style="margin: 0 0 6px 0;"><strong>Cenário:</strong> Paciente com hemiparesia espástica, hiperreflexia e sinal de Babinski presente.</p>
+          <p id="fm1p11-case-action" style="margin: 0; color: var(--fm1p11-indigo-glow, #818cf8);"><strong>Conduta Correta:</strong> Solicitar RM de Crânio/Encéfalo. A síndome é de 1º NMS (Central).</p>
+        </div>
+      </foreignObject>
+    </g>
+  </g>
+
+  <!-- BOTTOM FOOTER & LEGEND CONTRACT RULES 2, 3 & 5 -->
+  <g transform="translate(30, 532)">
+    <rect x="0" y="0" width="900" height="60" class="fm1p11-card-bg"/>
+
+    <!-- COLOR CONVENTION LEGEND -->
+    <g transform="translate(15, 15)">
+      <!-- Item 1: 1º NMS / RM -->
+      <circle cx="10" cy="12" r="6" fill="var(--fm1p11-indigo, #6366f1)"/>
+      <text x="22" y="16" font-size="11" font-weight="600" fill="var(--fm1p11-text-main, #f8fafc)">1º NMS (SNC) = RM / TC</text>
+
+      <!-- Item 2: 2º / Placa / Músculo = ENMG -->
+      <circle cx="210" cy="12" r="6" fill="var(--fm1p11-green, #10b981)"/>
+      <text x="222" y="16" font-size="11" font-weight="600" fill="var(--fm1p11-text-main, #f8fafc)">2º / Placa / Músculo = ENMG</text>
+
+      <!-- Item 3: RM Default (Erro) -->
+      <circle cx="430" cy="12" r="6" fill="var(--fm1p11-coral, #f43f5e)"/>
+      <text x="442" y="16" font-size="11" font-weight="600" fill="var(--fm1p11-text-main, #f8fafc)">RM Crânio em 2º NMI = ERRO CLÁSSICO</text>
+
+      <!-- Item 4: Regra Prática -->
+      <circle cx="700" cy="12" r="6" fill="var(--fm1p11-amber, #f59e0b)"/>
+      <text x="712" y="16" font-size="11" font-weight="600" fill="var(--fm1p11-text-main, #f8fafc)">Atenção à Topografia</text>
+    </g>
+
+    <text x="15" y="46" font-size="10" fill="var(--fm1p11-text-muted, #94a3b8)">Nota: ENMG é cega para o 1º NMS (SNC). RM de Crânio é completamente normal em polineuropatias, miastenia e miopatias isoladas.</text>
+  </g>
+
+  <!-- TOOLTIP CONTAINER -->
+  <g id="fm1p11-tooltip" visibility="hidden" pointer-events="none" transform="translate(0,0)">
+    <rect id="fm1p11-tooltip-rect" class="fm1p11-tooltip-bg" x="0" y="0" width="140" height="26"/>
+    <text id="fm1p11-tooltip-txt" class="fm1p11-tooltip-text" x="10" y="17">Dica do Exame</text>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED JAVASCRIPT ENGINE -->
+  <script><![CDATA[
+    (function() {
+      var activeFloor = 1;
+      var activeExam = 'rm';
+
+      var dataStore = {
+        1: {
+          name: "1º NMS (Corticoespinal)",
+          sub: "Córtex Motor / Tronco / Medula",
+          rm: {
+            status: "success",
+            badge: "✓ INDICAÇÃO PERFEITA",
+            title: "1º NMS × RM/TC Crânio-Medular",
+            desc: "O 1º NMS situa-se inteiramente no SNC. A RM ou TC de Encéfalo/Medula é o exame de escolha para diagnosticar lesões estruturais (AVC, desmielinização, tumores, mielopatias).",
+            alert: "Exame de Ouro! Visualiza parênquima cerebral e medular com alta resolução.",
+            alertColor: "var(--fm1p11-green, #10b981)",
+            caseTitle: "Hemiparesia espástica + Babinski (+)",
+            caseAction: "Conduta: Solicitar RM de Encéfalo. Lesão de 1º NMS no SNC."
+          },
+          enmg: {
+            status: "warning",
+            badge: "⚠️ FORA DE INDICAÇÃO",
+            title: "1º NMS × Eletroneuromiografia",
+            desc: "A ENMG avalia estritamente o Sistema Nervoso Periférico (a partir do corno anterior da medula). Não é capaz de avaliar tratos corticoespinais centrais.",
+            alert: "A ENMG estará NORMAL ou com alterações inespecíficas de via central.",
+            alertColor: "var(--fm1p11-amber, #f59e0b)",
+            caseTitle: "Suspeita de Mielopatia ou AVC",
+            caseAction: "Erro de Solicitação: ENMG não avalia 1º NMS. Troque por Neuroimagem (RM/TC)."
+          }
+        },
+        2: {
+          name: "2º NMI (Nervo Periférico)",
+          sub: "Corno Anterior / Raiz / Plexo / Nervo",
+          rm: {
+            status: "error",
+            badge: "❌ ERRO CLÁSSICO DE PROVA!",
+            title: "2º NMI × RM de Crânio Default",
+            desc: "Solicitar RM de Crânio para lesão de 2º NMI (ex: Guillain-Barré, polineuropatias, radiculopatias) é um erro comum de prática. A RM de Crânio virá NORMAL!",
+            alert: "Desperdício de recurso e atraso diagnóstico! O foco é o SNP.",
+            alertColor: "var(--fm1p11-coral, #f43f5e)",
+            caseTitle: "Tetraparesia flácida arreflexa ascendente (GBS)",
+            caseAction: "ERRO GRAVE: Pedir RM crânio! O exame correto de rastreio/confirmação é a ENMG."
+          },
+          enmg: {
+            status: "success",
+            badge: "✓ INDICAÇÃO PERFEITA",
+            title: "2º NMI × Eletroneuromiografia",
+            desc: "A ENMG é o padrão-ouro para avaliar a integridade do 2º NMI: estuda condução nervosa motora/sensitiva e sinais de desnervação no músculo por agulha.",
+            alert: "Diferencia neuropatia axonal vs desmielinizante, radiculopatia e ELA.",
+            alertColor: "var(--fm1p11-green, #10b981)",
+            caseTitle: "Paresia distal simétrica com arreflexia",
+            caseAction: "Conduta Correta: Solicitar ENMG (Estudo de Condução + Agulha)."
+          }
+        },
+        3: {
+          name: "Placa Neuromuscular",
+          sub: "Junção Mioneural (Pré/Pós-sináptica)",
+          rm: {
+            status: "error",
+            badge: "❌ ERRO CLÁSSICO DE PROVA!",
+            title: "Placa Neuromuscular × RM Crânio",
+            desc: "Em força variável com o uso, a RM de crânio não examina a fenda sináptica.",
+            alert: "A RM de crânio não enxerga a fenda sináptica nem os receptores de ACh!",
+            alertColor: "var(--fm1p11-coral, #f43f5e)",
+            caseTitle: "Ptose palpebral flutuante que piora ao final do dia",
+            caseAction: "ERRO: Pedir RM crânio. O correto é ENMG com estimulação repetitiva."
+          },
+          enmg: {
+            status: "success",
+            badge: "✓ INDICAÇÃO PERFEITA",
+            title: "Placa Neuromuscular × ENMG",
+            desc: "A ENMG ajuda a avaliar a transmissão neuromuscular conforme a hipótese e não é exame do 1º NMS.",
+            alert: "ENMG localiza 2º NMS, placa e músculo; interpretar no contexto.",
+            alertColor: "var(--fm1p11-green, #10b981)",
+            caseTitle: "Fatigabilidade muscular com uso sustentado",
+            caseAction: "Conduta: considerar ENMG quando a topografia estiver na placa."
+          }
+        },
+        4: {
+          name: "Músculo Esquelético",
+          sub: "Fibra Miógena / Sarcolema",
+          rm: {
+            status: "error",
+            badge: "❌ ERRO CLÁSSICO DE PROVA!",
+            title: "Músculo × RM de Crânio Default",
+            desc: "Fraqueza proximal simétrica + CPK elevada aponta para músculo; RM de crânio não avalia esse tecido.",
+            alert: "RM de crânio não exclui topografia muscular.",
+            alertColor: "var(--fm1p11-coral, #f43f5e)",
+            caseTitle: "Dificuldade para subir escadas + CPK elevada",
+            caseAction: "ERRO: Solicitar RM crânio. A investigação exige ENMG e/ou biópsia muscular."
+          },
+          enmg: {
+            status: "success",
+            badge: "✓ INDICAÇÃO PERFEITA",
+            title: "Músculo Esquelético × ENMG",
+            desc: "A ENMG de agulha caracteriza o Padrão Miopático: potenciais de ação de unidade motora (PAMUs) de curta duração, baixa amplitude e recrutamento precoce.",
+            alert: "Confirma o comprometimento miógeno e guia o local ideal para biópsia!",
+            alertColor: "var(--fm1p11-green, #10b981)",
+            caseTitle: "Fraqueza de cintura pélvica/escapular + mialgia",
+            caseAction: "Conduta Correta: Solicitar ENMG de Agulha (Padrão Miógeno)."
+          }
+        }
+      };
+
+      function updateView() {
+        // Update floor button styles
+        for (var i = 1; i <= 4; i++) {
+          var btn = document.getElementById('fm1p11-btn-f' + i);
+          if (btn) {
+            if (i === activeFloor) {
+              btn.classList.add('fm1p11-active');
+            } else {
+              btn.classList.remove('fm1p11-active');
+            }
+          }
+        }
+
+        // Update exam button styles
+        var btnRm = document.getElementById('fm1p11-btn-rm');
+        var btnEnmg = document.getElementById('fm1p11-btn-enmg');
+        if (btnRm && btnEnmg) {
+          if (activeExam === 'rm') {
+            btnRm.classList.add('fm1p11-active');
+            btnEnmg.classList.remove('fm1p11-active');
+          } else {
+            btnRm.classList.remove('fm1p11-active');
+            btnEnmg.classList.add('fm1p11-active');
+          }
+        }
+
+        // Fetch data
+        var floorData = dataStore[activeFloor];
+        var config = floorData[activeExam];
+
+        // Update Central Flow Nodes
+        var txtFloor1 = document.getElementById('fm1p11-node-floor-txt1');
+        var txtFloor2 = document.getElementById('fm1p11-node-floor-txt2');
+        var txtExam1 = document.getElementById('fm1p11-node-exam-txt1');
+        var txtExam2 = document.getElementById('fm1p11-node-exam-txt2');
+
+        if (txtFloor1) txtFloor1.textContent = "Andar " + activeFloor;
+        if (txtFloor2) txtFloor2.textContent = floorData.name.split(' ')[0] + " " + (floorData.name.split(' ')[1] || '');
+        if (txtExam1) txtExam1.textContent = (activeExam === 'rm' ? 'RM/TC SNC' : 'ENMG');
+        if (txtExam2) txtExam2.textContent = (activeExam === 'rm' ? 'Neuroimagem' : 'Eletroneuro');
+
+        // Flow Line and Badge Colors
+        var flowPath = document.getElementById('fm1p11-flow-path');
+        var flowStatusBg = document.getElementById('fm1p11-flow-status-bg');
+        var flowStatusTxt = document.getElementById('fm1p11-flow-status-txt');
+
+        var cardBadgeBg = document.getElementById('fm1p11-card-badge-bg');
+        var cardBadgeTxt = document.getElementById('fm1p11-card-badge-txt');
+
+        var strokeColor = "var(--fm1p11-green, #10b981)";
+        var markerEnd = "url(#fm1p11-arrow-green)";
+        var badgeClass = "fm1p11-badge-success";
+
+        if (config.status === 'error') {
+          strokeColor = "var(--fm1p11-coral, #f43f5e)";
+          markerEnd = "url(#fm1p11-arrow-red)";
+          badgeClass = "fm1p11-badge-error";
+        } else if (config.status === 'warning') {
+          strokeColor = "var(--fm1p11-amber, #f59e0b)";
+          markerEnd = "url(#fm1p11-arrow-amber)";
+          badgeClass = "fm1p11-badge-warning";
+        }
+
+        if (flowPath) {
+          flowPath.setAttribute('stroke', strokeColor);
+          flowPath.setAttribute('marker-end', markerEnd);
+        }
+
+        if (flowStatusBg) flowStatusBg.setAttribute('class', badgeClass);
+        if (flowStatusTxt) {
+          flowStatusTxt.textContent = config.badge;
+          flowStatusTxt.setAttribute('fill', strokeColor);
+        }
+
+        if (cardBadgeBg) cardBadgeBg.setAttribute('class', badgeClass);
+        if (cardBadgeTxt) {
+          cardBadgeTxt.textContent = config.badge;
+          cardBadgeTxt.setAttribute('fill', strokeColor);
+        }
+
+        // Update Right Panel Content
+        var cardTitle = document.getElementById('fm1p11-card-title');
+        var cardDesc = document.getElementById('fm1p11-card-desc');
+        var cardAlert = document.getElementById('fm1p11-card-alert');
+        var caseText = document.getElementById('fm1p11-case-text');
+        var caseAction = document.getElementById('fm1p11-case-action');
+
+        if (cardTitle) cardTitle.textContent = config.title;
+        if (cardDesc) cardDesc.innerHTML = config.desc;
+        if (cardAlert) {
+          cardAlert.textContent = config.alert;
+          cardAlert.style.color = config.alertColor;
+        }
+
+        if (caseText) caseText.innerHTML = "<strong>Cenário:</strong> " + config.caseTitle;
+        if (caseAction) {
+          caseAction.innerHTML = "<strong>Resultado / Conduta:</strong> " + config.caseAction;
+          caseAction.style.color = strokeColor;
+        }
+      }
+
+      // Event Listeners for Floor Buttons
+      [1, 2, 3, 4].forEach(function(f) {
+        var btn = document.getElementById('fm1p11-btn-f' + f);
+        if (btn) {
+          btn.addEventListener('click', function() {
+            activeFloor = f;
+            updateView();
+          });
+          btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              activeFloor = f;
+              updateView();
+            }
+          });
+        }
+      });
+
+      // Event Listeners for Exam Buttons
+      var btnRm = document.getElementById('fm1p11-btn-rm');
+      if (btnRm) {
+        btnRm.addEventListener('click', function() {
+          activeExam = 'rm';
+          updateView();
+        });
+        btnRm.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            activeExam = 'rm';
+            updateView();
+          }
+        });
+      }
+
+      var btnEnmg = document.getElementById('fm1p11-btn-enmg');
+      if (btnEnmg) {
+        btnEnmg.addEventListener('click', function() {
+          activeExam = 'enmg';
+          updateView();
+        });
+        btnEnmg.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            activeExam = 'enmg';
+            updateView();
+          }
+        });
+      }
+
+      // Tooltip Engine
+      var svg = document.getElementById('fm1p11-svg');
+      var tooltip = document.getElementById('fm1p11-tooltip');
+      var tooltipTxt = document.getElementById('fm1p11-tooltip-txt');
+      var tooltipRect = document.getElementById('fm1p11-tooltip-rect');
+
+      function showTooltip(evt, text) {
+        if (!tooltip || !svg) return;
+        tooltipTxt.textContent = text;
+        var bbox = tooltipTxt.getBBox();
+        tooltipRect.setAttribute('width', bbox.width + 20);
+
+        var pt = svg.createSVGPoint();
+        pt.x = evt.clientX;
+        pt.y = evt.clientY;
+        var cursor = pt.matrixTransform(svg.getScreenCTM().inverse());
+
+        tooltip.setAttribute('transform', 'translate(' + (cursor.x + 12) + ',' + (cursor.y + 12) + ')');
+        tooltip.setAttribute('visibility', 'visible');
+      }
+
+      function hideTooltip() {
+        if (tooltip) tooltip.setAttribute('visibility', 'hidden');
+      }
+
+      // Tooltip triggers
+      [
+        { id: 'fm1p11-btn-f1', text: 'Andar 1: Córtex e Mielopatias → Neuroimagem' },
+        { id: 'fm1p11-btn-f2', text: 'Andar 2: Corno Anterior e Nervos → ENMG' },
+        { id: 'fm1p11-btn-f3', text: 'Andar 3: Placa → ENMG conforme a hipótese' },
+        { id: 'fm1p11-btn-f4', text: 'Andar 4: Miopatias → ENMG Padrão Miógeno' },
+        { id: 'fm1p11-btn-rm', text: 'RM/TC: Exame de Escolha para SNC' },
+        { id: 'fm1p11-btn-enmg', text: 'ENMG: Exame de Escolha para SNP / Placa / Músculo' }
+      ].forEach(function(item) {
+        var el = document.getElementById(item.id);
+        if (el) {
+          el.addEventListener('mousemove', function(e) { showTooltip(e, item.text); });
+          el.addEventListener('mouseleave', hideTooltip);
+        }
+      });
+
+      // Initial render
+      updateView();
+    })();
+  ]]></script>
+</svg>
+
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Ilustração</span> Exame por andar: RM investiga o 1º NMS; ENMG ajuda a localizar 2º NMS, placa e músculo.</figcaption>
+      </figure>
+
+      
+
+      <aside class="op-summary" aria-label="Resumo operacional">
+        <h2 class="op-summary__title">Resumo operacional</h2>
+        <div class="prose"><p class="no-indent"><strong class="term">Investigação guiada + rastreio etário. ENMG ≠ 1º NMS. Corticoide; paraneoplasia responde pior. Identificação clínica manda na prova.</strong></p></div>
+      </aside>
+
+      <aside class="why-matters">
+        <h2 class="why-matters__title">Por que importa</h2>
+        <div class="prose"><p>Evita PET cego, RM de crânio inútil e achar que criança com DM precisa da mesma caça oncológica do adulto.</p></div>
+      </aside>
+
+      <aside class="continuity"><div class="prose"><p>A pegadinha final: parece DM, mas Jo-1+ muda o alvo para o <strong class="term">pulmão intersticial</strong>.</p></div></aside>
+
+      
+<section class="quiz" data-quiz-id="fm1-fraqueza-p11" aria-labelledby="quiz-p11-title">
+  <h2 id="quiz-p11-title">Quiz — fixação</h2>
+  <ol class="quiz__questions">
+<li class="quiz__question" data-q="1">
+  <p class="quiz__stem" id="quiz-p11-q1-label">DM do adulto recém-diagnosticada. Conduta cognitiva correta sobre câncer:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p11-q1-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — PET de corpo inteiro em todo mundo, sem critério  </button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Pensar associação; investigar de forma <strong class="term">guiada</strong> + rastreio etário  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Ignorar câncer se houver heliótropo  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Só investigar se FAN for negativo  </button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> associação sim; body-scan cego não.</p>
+    <p class="quiz__distractor">A transforma associação em rastreio cego; C/D inventam filtros. “paraneoplasia = imagem total”.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="2">
+  <p class="quiz__stem" id="quiz-p11-q2-label">ENMG <strong class="term">não</strong> avalia:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p11-q2-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — 2º NMS  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">B — Placa  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Músculo  </button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">D — 1º NMS  </button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito D.</strong> ENMG cobre 2º/placa/músculo.</p>
+    <p class="quiz__distractor">A–C estão no escopo da ENMG. achar que “eletro vê tudo que é neuro”.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="3">
+  <p class="quiz__stem" id="quiz-p11-q3-label">DM juvenil e neoplasia:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p11-q3-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Mesma lógica de caça oncológica do adulto  </button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — <strong class="term">Sem</strong> associação com neoplasia como no adulto  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Sempre paraneoplásica de pulmão  </button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Exige biópsia cerebral  </button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> dermatomiosite juvenil existe; rastreio oncológico do adulto não deve ser transplantado automaticamente.</p>
+    <p class="quiz__distractor">A é o erro; C/D inventam. copiar protocolo de adulto para criança.</p>
+  </div>
+</li></ol>
+</section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="page-nav__btn" href="p10.html" rel="prev">← Anterior</a><span class="page-nav__pos">11/12</span><a class="page-nav__btn" href="p12.html" rel="next">Próxima →</a></nav>
+    </article>
+  </div>
+</main>
+<script src="fm1.js" defer></script>
+</body>
+</html>

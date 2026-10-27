@@ -1,0 +1,74 @@
+/* aula-01.css — componentes específicos da Aula 1 (Sofrimento fetal crônico).
+   Importado APÓS tokens/base/components (Opção C: nunca redefine token canônico,
+   nunca toca base/components/pages da aula 2). Só adiciona o que a aula 1 pede:
+   opener E2 (dado impactante), Corredor de Casos, calculadoras card-ouro,
+   par de imagem real, badge de licença NC, linha *ghosted* do Tabelão. */
+
+/* ===== E2 — Dado impactante (opener--stat) — o único opener que faltava ===== */
+.opener--stat {
+  text-align: center; padding: var(--sp-6) var(--sp-5); border-radius: var(--r-lg);
+  background: radial-gradient(120% 120% at 50% 0%, var(--kw-red-dim), transparent 72%);
+  border: 1px solid var(--border-mid); border-left: 4px solid var(--kw-red);
+}
+.opener--stat .opener__big { font-family: var(--font-mono); font-size: var(--fs-display);
+  color: var(--rose-hi); line-height: 1; font-weight: 700; }
+.opener--stat .opener__ctx { font-family: var(--font-serif); font-size: var(--fs-lg); color: var(--ink-90);
+  margin: var(--sp-3) auto 0; max-width: 46ch; }
+
+/* ===== Corredor de Casos (paciente-fio: Dona Terezinha) ===== */
+.corredor { border: 1px solid var(--wine); border-left: 4px solid var(--rose); border-radius: var(--r-md);
+  background: linear-gradient(180deg, var(--wine-soft), transparent 90%); padding: var(--sp-4) var(--sp-5); margin: var(--sp-5) 0; }
+.corredor__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--rose); display: flex; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-2); }
+.corredor__label::before { content: "\25C8"; }
+.corredor p { margin: 0; text-align: justify; text-indent: 0; color: var(--ink-90); }
+.corredor dl { display: grid; grid-template-columns: auto 1fr; gap: 4px var(--sp-4); margin: var(--sp-3) 0 0; }
+.corredor dt { color: var(--ink-70); font-size: var(--fs-sm); }
+.corredor dd { margin: 0; color: var(--ink-100); font-weight: 600; font-size: var(--fs-sm); }
+
+/* ===== Calculadora card-ouro (ILA na P8 · relação U/C na P14) ===== */
+.calc { border: 1px solid var(--rose); background: var(--bg-glass); border-radius: var(--r-lg);
+  padding: var(--sp-5); margin: var(--sp-5) 0; box-shadow: var(--glow-rose); }
+.calc__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--rose); margin-bottom: var(--sp-3); display: flex; align-items: center; gap: var(--sp-2); }
+.calc__label::before { content: "\2318"; }
+.calc__inputs { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: flex-end; }
+.calc__field { display: flex; flex-direction: column; gap: 4px; }
+.calc__field label { font-size: var(--fs-xs); color: var(--ink-70); }
+.calc__field input { width: 92px; font-family: var(--font-mono); font-size: var(--fs-md); padding: var(--sp-2) var(--sp-3);
+  background: var(--bg-1); border: 1px solid var(--border-mid); border-radius: var(--r-sm); color: var(--ink-100); }
+.calc__field input:focus-visible { border-color: var(--rose); outline: 2px solid var(--rose); outline-offset: 1px; }
+.calc__out { margin-top: var(--sp-4); padding: var(--sp-4) var(--sp-5); border-radius: var(--r-md); background: var(--bg-1);
+  border: 1px solid var(--border-mid); display: flex; align-items: baseline; gap: var(--sp-4); flex-wrap: wrap; }
+.calc__eq { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--ink-70); }
+.calc__sum { font-family: var(--font-mono); font-size: var(--fs-2xl); font-weight: 700; color: var(--ink-100); }
+.calc__class { font-weight: 700; padding: 3px 12px; border-radius: var(--r-pill); font-size: var(--fs-sm); border: 1px solid transparent; }
+.calc__class.oligo, .calc__class.central { background: var(--kw-red-dim); color: var(--kw-red); border-color: var(--kw-red); }
+.calc__class.dim { background: var(--kw-amber-dim); color: var(--kw-amber); border-color: var(--kw-amber); }
+.calc__class.normal { background: var(--kw-green-dim); color: var(--kw-green); border-color: var(--kw-green); }
+.calc__hint { font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono); margin-top: var(--sp-3); text-indent: 0; text-align: left; }
+
+/* ===== Imagem real: par lado a lado (normal × alterado) + badge de licença NC ===== */
+.real-duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.real-duo .duo-cell { display: flex; flex-direction: column; border: 1px solid var(--border-soft); border-radius: var(--r-md); overflow: hidden; background: var(--bg-1); }
+.real-duo .duo-cell img { width: 100%; height: auto; display: block; background: var(--bg-2); }
+.real-duo .duo-lbl { font-size: var(--fs-xs); color: var(--ink-90); padding: var(--sp-2) var(--sp-3); }
+.real-duo .duo-lbl b { color: var(--rose-hi); }
+@media (max-width: 560px) { .real-duo { grid-template-columns: 1fr; } }
+.real__nc { display: inline-block; font-size: var(--fs-xs); color: var(--kw-amber); border: 1px solid var(--kw-amber);
+  background: var(--kw-amber-dim); border-radius: var(--r-pill); padding: 2px 10px; margin-bottom: var(--sp-2);
+  font-family: var(--font-mono); }
+
+/* ===== Tabelão: linha *ghosted* (handoff → aula 2) ===== */
+.tabelao__row.ghost { opacity: 0.6; }
+.tabelao__row.ghost .t-name { color: var(--ink-70); }
+.tabelao__row.ghost .t-state { background: var(--bg-1); color: var(--ink-50); border: 1px dashed var(--border-mid); }
+
+/* ===== Grade de dois vasos / medidores (P14 razão visual em texto de apoio) ===== */
+.ratio-box { display: grid; grid-template-columns: 1fr auto 1fr; gap: var(--sp-3); align-items: center; margin: var(--sp-4) 0; }
+.ratio-box .rb-cell { text-align: center; padding: var(--sp-4); border-radius: var(--r-md); border: 1px solid var(--border-mid); background: var(--bg-1); }
+.ratio-box .rb-cell .rb-n { font-family: var(--font-mono); font-size: var(--fs-2xl); font-weight: 700; }
+.ratio-box .rb-cell.big .rb-n { color: var(--kw-red); }
+.ratio-box .rb-cell.small .rb-n { color: var(--ink-90); }
+.ratio-box .rb-op { font-family: var(--font-serif); font-weight: 700; color: var(--rose); font-size: var(--fs-2xl); }
+@media (max-width: 560px) { .ratio-box { grid-template-columns: 1fr; } }

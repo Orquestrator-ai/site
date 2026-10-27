@@ -1,0 +1,686 @@
+<svg id="a12p13-svg" class="a12p13-root" data-svg-tokenized="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" aria-labelledby="a12p13-title a12p13-desc" role="img">
+  <title id="a12p13-title">Pelvimetria Clínica: Inspeção Sequencial dos Três Aros Pelvinos</title>
+  <desc id="a12p13-desc">Ilustração médica interativa do exame vaginomanual da pelve obstétrica em cinco alvos anatômicos ao longo dos três aros pelvinos (Entrada, Meio e Saída).</desc>
+
+  <style>
+    /* <![CDATA[ */
+    .a12p13-root {
+      /* Palette Tokens with Fallbacks */
+      --a12p13-bg: var(--bg-1, #0F172A);
+      --a12p13-card: var(--bg-2, #1E293B);
+      --a12p13-card-border: var(--ink-20, rgba(255, 255, 255, 0.12));
+      --a12p13-tinta: var(--a12-tinta, var(--a12p13-tinta-local, #F7F1F5));
+      --a12p13-subtext: var(--ink-70, #94A3B8);
+      --a12p13-osso: var(--a12-osso, var(--a12p13-osso-local, #DCC7B4));
+      --a12p13-osso-stroke: var(--a12-osso-stroke, #B3957B);
+      --a12p13-mao: var(--a12-pele-esquema, var(--a12p13-mao-local, #C99074));
+      --a12p13-mao-stroke: #A3684E;
+
+      /* Straits and Focus Tokens */
+      --a12p13-entrada: var(--a12-estreito-superior, var(--a12p13-entrada-local, #6FA8D6));
+      --a12p13-meio: var(--a12-estreito-medio, var(--a12p13-meio-local, #E56C7B));
+      --a12p13-saida: var(--a12-estreito-inferior, var(--a12p13-saida-local, #8C76C5));
+      --a12p13-foco: var(--a12-ouro, var(--a12p13-foco-local, #F3BE5B));
+
+      /* Clinical Meaning Colors */
+      --a12p13-green: var(--kw-green, #4E9F6E);
+      --a12p13-green-bg: rgba(78, 159, 110, 0.12);
+      --a12p13-red: var(--kw-red, #E56C7B);
+      --a12p13-red-bg: rgba(229, 108, 123, 0.12);
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--a12p13-bg);
+      color: var(--a12p13-tinta);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Light Theme Support via Host Data-Attribute */
+    [data-theme="light"] .a12p13-root {
+      --a12p13-bg: var(--bg-1, #F8FAFC);
+      --a12p13-card: var(--bg-2, #FFFFFF);
+      --a12p13-card-border: var(--ink-20, rgba(0, 0, 0, 0.12));
+      --a12p13-tinta: var(--a12-tinta, var(--a12p13-tinta-local, #0F172A));
+      --a12p13-subtext: var(--ink-70, #475569);
+      --a12p13-osso: var(--a12-osso, var(--a12p13-osso-local, #CBB29C));
+      --a12p13-osso-stroke: #8C6D53;
+      --a12p13-green-bg: rgba(78, 159, 110, 0.15);
+      --a12p13-red-bg: rgba(229, 108, 123, 0.15);
+    }
+
+    /* Typography and Structure */
+    .a12p13-title-text { font-size: 16px; font-weight: 700; fill: var(--a12p13-tinta); }
+    .a12p13-subtitle-text { font-size: 11px; font-weight: 500; fill: var(--a12p13-subtext); }
+
+    /* Interactive Target Rings and Buttons */
+    .a12p13-target-group { cursor: pointer; }
+    .a12p13-target-bg { fill: var(--a12p13-card); stroke: var(--a12p13-subtext); stroke-width: 2px; transition: all 0.25s ease; }
+    .a12p13-target-num { font-size: 12px; font-weight: 800; fill: var(--a12p13-tinta); text-anchor: middle; dominant-baseline: central; }
+    .a12p13-target-pulse { fill: none; stroke: var(--a12p13-foco); stroke-width: 2px; opacity: 0; transition: all 0.3s ease; }
+
+    .a12p13-target-group:hover .a12p13-target-bg { stroke: var(--a12p13-foco); transform: scale(1.1); transform-origin: center; }
+    .a12p13-target-group.is-active .a12p13-target-bg { fill: var(--a12p13-foco); stroke: #FFFFFF; stroke-width: 2.5px; }
+    .a12p13-target-group.is-active .a12p13-target-num { fill: #0F172A; }
+    .a12p13-target-group.is-active .a12p13-target-pulse { animation: a12p13-pulse-anim 1.8s infinite; opacity: 1; }
+
+    @keyframes a12p13-pulse-anim {
+      0% { r: 14px; opacity: 0.9; stroke-width: 2px; }
+      100% { r: 28px; opacity: 0; stroke-width: 0.5px; }
+    }
+
+    /* Hand Animation and Anatomy Styling */
+    .a12p13-hand { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .a12p13-bone { fill: var(--a12p13-osso); stroke: var(--a12p13-osso-stroke); stroke-width: 2px; stroke-linejoin: round; }
+    .a12p13-strait-line { stroke-dasharray: 4 4; stroke-width: 2.5px; opacity: 0.65; transition: opacity 0.3s, stroke-width 0.3s; }
+    .a12p13-strait-line.is-active { stroke-dasharray: none; stroke-width: 4px; opacity: 1; filter: drop-shadow(0 0 6px currentColor); }
+
+    /* Interactive Buttons */
+    .a12p13-btn { cursor: pointer; fill: var(--a12p13-card); stroke: var(--a12p13-card-border); stroke-width: 1.5px; rx: 6px; transition: all 0.2s; }
+    .a12p13-btn:hover { fill: rgba(243, 190, 91, 0.15); stroke: var(--a12p13-foco); }
+    .a12p13-btn.is-active { fill: var(--a12p13-foco); stroke: var(--a12p13-foco); }
+    .a12p13-btn-txt { font-size: 11px; font-weight: 700; fill: var(--a12p13-tinta); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+    .a12p13-btn.is-active + .a12p13-btn-txt { fill: #0F172A; }
+
+    /* Clinical Panel Cards */
+    .a12p13-panel-box { fill: var(--a12p13-card); stroke: var(--a12p13-card-border); stroke-width: 1px; rx: 10px; }
+    .a12p13-card-normal { fill: var(--a12p13-green-bg); stroke: var(--a12p13-green); stroke-width: 1.5px; rx: 8px; }
+    .a12p13-card-altered { fill: var(--a12p13-red-bg); stroke: var(--a12p13-red); stroke-width: 1.5px; rx: 8px; }
+
+    /* Summary Table Styling */
+    .a12p13-table-header { fill: rgba(255, 255, 255, 0.05); }
+    .a12p13-table-row { transition: fill 0.2s; }
+    .a12p13-table-row.is-active { fill: rgba(243, 190, 91, 0.18); font-weight: bold; }
+    .a12p13-table-cell { font-size: 10px; fill: var(--a12p13-tinta); dominant-baseline: middle; }
+    .a12p13-table-cell-sub { font-size: 9.5px; fill: var(--a12p13-subtext); dominant-baseline: middle; }
+
+    /* Label Corridor Anchor Lines */
+    .a12p13-corridor-line { stroke: var(--a12p13-subtext); stroke-width: 1px; stroke-dasharray: 2 2; opacity: 0.5; }
+    .a12p13-target-group.is-active .a12p13-corridor-line { stroke: var(--a12p13-foco); stroke-width: 1.5px; stroke-dasharray: none; opacity: 1; }
+    /* ]]> */
+  </style>
+
+  <!-- ==================== HEADER (LAYOUT CONTRACT ITEM 1) ==================== -->
+  <g id="a12p13-header" transform="translate(30, 25)">
+    <text class="a12p13-title-text" x="0" y="0">PELVIMETRIA CLÍNICA: INSPEÇÃO SEQUENCIAL DOS TRÊS AROS PELVINOS</text>
+    <text class="a12p13-subtitle-text" x="0" y="18">Exame vaginomanual do canal de parto em 5 etapas anatômicas ordenadas (Entrada &#x2794; Meio &#x2794; Saída)</text>
+  </g>
+
+  <!-- ==================== MAIN ANATOMICAL STAGE (LEFT SIDE) ==================== -->
+  <g id="a12p13-stage" transform="translate(30, 60)">
+    <!-- Stage Background and Border Frame -->
+    <rect width="560" height="490" rx="12" fill="var(--a12p13-card)" stroke="var(--a12p13-card-border)" stroke-width="1" />
+
+    <!-- Straits Legend / Color Badges -->
+    <g id="a12p13-straits-legend" transform="translate(15, 15)">
+      <rect x="0" y="0" width="115" height="22" rx="4" fill="var(--a12p13-entrada)" opacity="0.25"/>
+      <circle cx="12" cy="11" r="5" fill="var(--a12p13-entrada)"/>
+      <text x="24" y="11" font-size="10" font-weight="700" fill="var(--a12p13-tinta)" dominant-baseline="central">1. ENTRADA (Superior)</text>
+
+      <rect x="125" y="0" width="105" height="22" rx="4" fill="var(--a12p13-meio)" opacity="0.25"/>
+      <circle cx="137" cy="11" r="5" fill="var(--a12p13-meio)"/>
+      <text x="149" y="11" font-size="10" font-weight="700" fill="var(--a12p13-tinta)" dominant-baseline="central">2. MEIO (Médio)</text>
+
+      <rect x="240" y="0" width="110" height="22" rx="4" fill="var(--a12p13-saida)" opacity="0.25"/>
+      <circle cx="252" cy="11" r="5" fill="var(--a12p13-saida)"/>
+      <text x="264" y="11" font-size="10" font-weight="700" fill="var(--a12p13-tinta)" dominant-baseline="central">3. SAÍDA (Inferior)</text>
+    </g>
+
+    <!-- SAGITTAL PELVIS ANATOMY DRAWING -->
+    <g id="a12p13-anatomy" transform="translate(30, 35)">
+
+      <!-- Pelvic Straits Lines (Aros Pelvinos) -->
+      <!-- Aro 1: Entrada / Estreito Superior (Sínfise Púbica Sup -> Promontório S1) -->
+      <line id="a12p13-strait-1" class="a12p13-strait-line" x1="330" y1="210" x2="160" y2="110" stroke="var(--a12p13-entrada)"/>
+
+      <!-- Aro 2: Meio / Estreito Médio (Sínfise Púbica Inf -> Espinhas -> Concavidade Sacra S4-S5) -->
+      <line id="a12p13-strait-2" class="a12p13-strait-line" x1="315" y1="275" x2="145" y2="255" stroke="var(--a12p13-meio)"/>
+
+      <!-- Aro 3: Saída / Estreito Inferior (Sínfise Púbica Inf -> Cóccix e Tuberosidade) -->
+      <line id="a12p13-strait-3" class="a12p13-strait-line" x1="315" y1="275" x2="175" y2="330" stroke="var(--a12p13-saida)"/>
+
+      <!-- Sequential Canal Path Track (Trilha Anatômica Contínua) -->
+      <path id="a12p13-canal-track" d="M 330 380 C 330 330, 315 285, 250 225 C 210 185, 175 140, 160 110"
+            fill="none" stroke="var(--a12p13-subtext)" stroke-width="2" stroke-dasharray="3 4" opacity="0.4"/>
+
+      <!-- SACRUM AND COCCYX (Posterior Pelvic Wall) -->
+      <path class="a12p13-bone" d="
+        M 160 110
+        C 150 100, 135 110, 130 125
+        C 115 170, 115 230, 135 285
+        L 155 330 L 175 330 L 165 310
+        C 145 260, 145 200, 155 150
+        C 158 135, 155 120, 160 110 Z
+      " />
+      <!-- Promontory Landmark Highlight (S1) -->
+      <path d="M 160 110 L 175 125 L 155 135 Z" fill="#E56C7B" opacity="0.8" />
+      <text x="110" y="105" font-size="10" font-weight="700" fill="var(--a12p13-tinta)">Promontório (S1)</text>
+
+      <!-- Sacral Concavity Label -->
+      <text x="75" y="215" font-size="10" font-weight="700" fill="var(--a12p13-tinta)">Concavidade Sacra</text>
+      <path d="M 120 215 L 138 215" stroke="var(--a12p13-subtext)" stroke-width="1" stroke-dasharray="2 2"/>
+
+      <!-- PUBIC SYMPHYSIS (Anterior Pelvic Wall) -->
+      <path class="a12p13-bone" d="
+        M 320 205
+        C 335 205, 345 215, 340 230
+        L 325 280
+        C 320 290, 305 290, 305 275
+        L 310 220
+        C 310 210, 315 205, 320 205 Z
+      " />
+      <text x="350" y="210" font-size="10" font-weight="700" fill="var(--a12p13-tinta)">Sínfise Púbica (Sup)</text>
+      <text x="335" y="295" font-size="10" font-weight="700" fill="var(--a12p13-tinta)">Sínfise (Inf)</text>
+
+      <!-- ISCHIAL SPINE (Mid-Pelvic Landmark) -->
+      <path class="a12p13-bone" d="
+        M 245 220
+        C 255 225, 260 230, 255 240
+        L 240 250
+        C 235 245, 235 230, 245 220 Z
+      " />
+      <!-- Sharp spine process tip -->
+      <polygon points="255,230 268,235 253,242" fill="var(--a12p13-osso-stroke)"/>
+      <text x="275" y="240" font-size="10" font-weight="700" fill="var(--a12p13-tinta)">Espinha Isquiática</text>
+
+      <!-- ISCHIAL TUBEROSITY AND PUBIC ARCH (Outlet Landmark) -->
+      <path class="a12p13-bone" d="
+        M 305 280
+        C 290 320, 270 350, 280 370
+        C 290 385, 315 385, 325 365
+        C 335 345, 320 290, 305 280 Z
+      " />
+      <text x="310" y="395" font-size="10" font-weight="700" fill="var(--a12p13-tinta)">Tuberosidade Isquiática</text>
+
+      <!-- EXAMINER'S HAND AND FINGERS (Drawn Medical Hand) -->
+      <!-- Smooth CS-based positioning via script transform -->
+      <g id="a12p13-hand-group" class="a12p13-hand" transform="translate(250, 310) rotate(-20)">
+        <!-- Forearm / Wrist -->
+        <path d="M 90 120 L 50 40 C 45 30, 35 25, 25 30 L 15 35 L 50 130 Z"
+              fill="var(--a12p13-mao)" stroke="var(--a12p13-mao-stroke)" stroke-width="2" />
+        <!-- Palm Body -->
+        <path d="M 50 40 C 45 25, 30 15, 10 20 L -10 25 C -25 30, -35 45, -30 65 L -10 100 L 40 90 Z"
+              fill="var(--a12p13-mao)" stroke="var(--a12p13-mao-stroke)" stroke-width="2" />
+        <!-- Index and Middle Fingers Extended (Examining fingers) -->
+        <path id="a12p13-fingers-extended" d="
+          M 10 20
+          L -60 -35 C -68 -42, -78 -35, -72 -25 L -10 32
+          M -5 18
+          L -75 -25 C -83 -32, -90 -22, -82 -12 L -22 42
+        " fill="var(--a12p13-mao)" stroke="var(--a12p13-mao-stroke)" stroke-width="2" stroke-linecap="round"/>
+        <!-- Folded Ring and Little Fingers -->
+        <path d="M -10 40 C -25 35, -30 55, -15 60 M -15 60 C -28 58, -32 75, -15 80"
+              fill="none" stroke="var(--a12p13-mao-stroke)" stroke-width="2" stroke-linecap="round"/>
+        <!-- Examiner's Glove / Cuff Line -->
+        <path d="M 45 115 L 85 105" stroke="#FFFFFF" stroke-width="3" opacity="0.6"/>
+      </g>
+
+      <!-- ==================== THE 5 INTERACTIVE TARGETS ==================== -->
+
+      <!-- ALVO 1: Promontório (Entrada / Estreito Superior) -->
+      <g id="a12p13-target-1" class="a12p13-target-group is-active" transform="translate(160, 110)"
+         role="button" tabindex="0" aria-label="Alvo 1: Promontório sacral (Estreito Superior)">
+        <line class="a12p13-corridor-line" x1="0" y1="0" x2="-40" y2="-40" />
+        <circle class="a12p13-target-pulse" cx="0" cy="0" r="18" />
+        <circle class="a12p13-target-bg" cx="0" cy="0" r="14" />
+        <text class="a12p13-target-num" x="0" y="0">1</text>
+        <!-- External Corridor Label Box -->
+        <g transform="translate(-145, -60)">
+          <rect width="135" height="32" rx="6" fill="var(--a12p13-card)" stroke="var(--a12p13-entrada)" stroke-width="1.5"/>
+          <text x="10" y="11" font-size="10" font-weight="800" fill="var(--a12p13-entrada)">ALVO 1: PROMONTÓRIO</text>
+          <text x="10" y="23" font-size="9" fill="var(--a12p13-subtext)">Alcança ao toque?</text>
+        </g>
+      </g>
+
+      <!-- ALVO 2: Espinhas Isquiáticas (Meio / Estreito Médio) -->
+      <g id="a12p13-target-2" class="a12p13-target-group" transform="translate(255, 235)"
+         role="button" tabindex="0" aria-label="Alvo 2: Espinhas isquiáticas (Estreito Médio)">
+        <line class="a12p13-corridor-line" x1="0" y1="0" x2="45" y2="-30" />
+        <circle class="a12p13-target-pulse" cx="0" cy="0" r="18" />
+        <circle class="a12p13-target-bg" cx="0" cy="0" r="14" />
+        <text class="a12p13-target-num" x="0" y="0">2</text>
+        <!-- External Corridor Label Box -->
+        <g transform="translate(50, -50)">
+          <rect width="135" height="32" rx="6" fill="var(--a12p13-card)" stroke="var(--a12p13-meio)" stroke-width="1.5"/>
+          <text x="10" y="11" font-size="10" font-weight="800" fill="var(--a12p13-meio)">ALVO 2: ESPINHAS</text>
+          <text x="10" y="23" font-size="9" fill="var(--a12p13-subtext)">Proeminentes ao toque?</text>
+        </g>
+      </g>
+
+      <!-- ALVO 3: Concavidade Sacral (Meio / Estreito Médio) -->
+      <g id="a12p13-target-3" class="a12p13-target-group" transform="translate(145, 220)"
+         role="button" tabindex="0" aria-label="Alvo 3: Concavidade sacral (Estreito Médio)">
+        <line class="a12p13-corridor-line" x1="0" y1="0" x2="-45" y2="25" />
+        <circle class="a12p13-target-pulse" cx="0" cy="0" r="18" />
+        <circle class="a12p13-target-bg" cx="0" cy="0" r="14" />
+        <text class="a12p13-target-num" x="0" y="0">3</text>
+        <!-- External Corridor Label Box -->
+        <g transform="translate(-145, 25)">
+          <rect width="135" height="32" rx="6" fill="var(--a12p13-card)" stroke="var(--a12p13-meio)" stroke-width="1.5"/>
+          <text x="10" y="11" font-size="10" font-weight="800" fill="var(--a12p13-meio)">ALVO 3: CONCAVIDADE</text>
+          <text x="10" y="23" font-size="9" fill="var(--a12p13-subtext)">Sacro curvo e profundo?</text>
+        </g>
+      </g>
+
+      <!-- ALVO 4: Ângulo Subpúbico (Saída / Estreito Inferior) -->
+      <g id="a12p13-target-4" class="a12p13-target-group" transform="translate(315, 275)"
+         role="button" tabindex="0" aria-label="Alvo 4: Ângulo subpúbico (Estreito Inferior)">
+        <line class="a12p13-corridor-line" x1="0" y1="0" x2="45" y2="35" />
+        <circle class="a12p13-target-pulse" cx="0" cy="0" r="18" />
+        <circle class="a12p13-target-bg" cx="0" cy="0" r="14" />
+        <text class="a12p13-target-num" x="0" y="0">4</text>
+        <!-- External Corridor Label Box -->
+        <g transform="translate(50, 25)">
+          <rect width="135" height="32" rx="6" fill="var(--a12p13-card)" stroke="var(--a12p13-saida)" stroke-width="1.5"/>
+          <text x="10" y="11" font-size="10" font-weight="800" fill="var(--a12p13-saida)">ALVO 4: ÂNGULO SUBPÚBICO</text>
+          <text x="10" y="23" font-size="9" fill="var(--a12p13-subtext)">Arco amplo &#x2265; 90°?</text>
+        </g>
+      </g>
+
+      <!-- ALVO 5: Tuberosidades Isquiáticas (Saída / Estreito Inferior) -->
+      <g id="a12p13-target-5" class="a12p13-target-group" transform="translate(295, 365)"
+         role="button" tabindex="0" aria-label="Alvo 5: Tuberosidades isquiáticas (Estreito Inferior)">
+        <line class="a12p13-corridor-line" x1="0" y1="0" x2="-45" y2="40" />
+        <circle class="a12p13-target-pulse" cx="0" cy="0" r="18" />
+        <circle class="a12p13-target-bg" cx="0" cy="0" r="14" />
+        <text class="a12p13-target-num" x="0" y="0">5</text>
+        <!-- External Corridor Label Box -->
+        <g transform="translate(-145, 40)">
+          <rect width="135" height="32" rx="6" fill="var(--a12p13-card)" stroke="var(--a12p13-saida)" stroke-width="1.5"/>
+          <text x="10" y="11" font-size="10" font-weight="800" fill="var(--a12p13-saida)">ALVO 5: TUBEROSIDADES</text>
+          <text x="10" y="23" font-size="9" fill="var(--a12p13-subtext)">Punho fechado cabe?</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- FRONT INSET: SUBPUBIC ANGLE AND TUBEROSITIES (BOTTOM RIGHT INSET) -->
+    <g id="a12p13-inset" transform="translate(385, 310)">
+      <rect width="160" height="120" rx="8" fill="var(--a12p13-bg)" stroke="var(--a12p13-card-border)" stroke-width="1.5"/>
+      <rect x="0" y="0" width="160" height="20" rx="8" fill="rgba(255,255,255,0.05)"/>
+      <text x="10" y="13" font-size="9" font-weight="700" fill="var(--a12p13-subtext)">INSET FRONTAL: SAÍDA</text>
+
+      <!-- Frontal Subpubic Arch Scheme -->
+      <g transform="translate(80, 65)">
+        <!-- Pubic Symphysis Frontal -->
+        <rect x="-10" y="-35" width="20" height="12" rx="3" fill="var(--a12p13-osso)"/>
+        <!-- Ischiopubic Rami Arch -->
+        <path d="M -8 -23 L -45 25 C -48 30, -50 35, -45 38 C -40 40, -35 35, -30 25 L -5 -15" fill="var(--a12p13-osso)"/>
+        <path d="M 8 -23 L 45 25 C 48 30, 50 35, 45 38 C 40 40, 35 35, 30 25 L 5 -15" fill="var(--a12p13-osso)"/>
+
+        <!-- Inset Target 4 View: Angle Indicator (>= 90°) -->
+        <g id="a12p13-inset-t4-graphic">
+          <path d="M -25 15 L 0 -15 L 25 15" fill="none" stroke="var(--a12p13-green)" stroke-width="2"/>
+          <path d="M -15 5 A 18 18 0 0 1 15 5" fill="none" stroke="var(--a12p13-foco)" stroke-width="2" stroke-dasharray="2 2"/>
+          <text x="0" y="-2" font-size="10" font-weight="800" fill="var(--a12p13-green)" text-anchor="middle">&#x2265; 90°</text>
+        </g>
+
+        <!-- Inset Target 5 View: Fist Between Tuberosities (>= 8.5 cm) -->
+        <g id="a12p13-inset-t5-graphic" opacity="0.3">
+          <circle cx="0" cy="20" r="18" fill="var(--a12p13-mao)" stroke="var(--a12p13-mao-stroke)" stroke-width="1.5"/>
+          <line x1="-35" y1="20" x2="35" y2="20" stroke="var(--a12p13-foco)" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <text x="0" y="38" font-size="9" font-weight="800" fill="var(--a12p13-foco)" text-anchor="middle">&#x2265; 8,5 cm (Punho)</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- SEQUENTIAL STEPPER AND SWEEP CONTROLS (BOTTOM LEFT) -->
+    <g id="a12p13-controls" transform="translate(15, 440)">
+      <text x="5" y="0" font-size="10" font-weight="600" fill="var(--a12p13-subtext)">CONTROLE DE VARREDURA SEQUENCIAL DO CANAL:</text>
+
+      <!-- 5 Step Buttons (Order 1 -> 5 preserved) -->
+      <g transform="translate(0, 12)">
+        <!-- Step 1 Button -->
+        <rect id="a12p13-btn-1" class="a12p13-btn is-active" x="0" y="0" width="100" height="26" />
+        <text class="a12p13-btn-txt" x="50" y="13">1. Promontório</text>
+
+        <!-- Step 2 Button -->
+        <rect id="a12p13-btn-2" class="a12p13-btn" x="106" y="0" width="100" height="26" />
+        <text class="a12p13-btn-txt" x="156" y="13">2. Espinhas</text>
+
+        <!-- Step 3 Button -->
+        <rect id="a12p13-btn-3" class="a12p13-btn" x="212" y="0" width="100" height="26" />
+        <text class="a12p13-btn-txt" x="262" y="13">3. Concavidade</text>
+
+        <!-- Step 4 Button -->
+        <rect id="a12p13-btn-4" class="a12p13-btn" x="318" y="0" width="100" height="26" />
+        <text class="a12p13-btn-txt" x="368" y="13">4. Ângulo Subpúb.</text>
+
+        <!-- Step 5 Button -->
+        <rect id="a12p13-btn-5" class="a12p13-btn" x="424" y="0" width="105" height="26" />
+        <text class="a12p13-btn-txt" x="476" y="13">5. Tuberosidades</text>
+      </g>
+
+      <!-- Neutral Affordance Text (Rule ✓4 and Brief 6.8) -->
+      <text x="5" y="46" font-size="9.5" fill="var(--a12p13-subtext)">
+        Selecione um alvo ou use o teclado (teclas 1 a 5 ou setas &#x25C0; &#x25B6;) para varrer a anatomia.
+      </text>
+    </g>
+
+  </g>
+
+  <!-- ==================== CLINICAL READING PANEL (RIGHT SIDE - LAYOUT CONTRACT ITEM 4) ==================== -->
+  <g id="a12p13-reading-panel" transform="translate(605, 60)">
+    <rect class="a12p13-panel-box" width="325" height="490" />
+
+    <g transform="translate(15, 15)">
+
+      <!-- Strait Badge Header -->
+      <g id="a12p13-strait-badge" transform="translate(0, 0)">
+        <rect id="a12p13-strait-badge-bg" x="0" y="0" width="295" height="24" rx="4" fill="var(--a12p13-entrada)" opacity="0.3"/>
+        <text id="a12p13-strait-badge-txt" x="12" y="12" font-size="11" font-weight="800" fill="var(--a12p13-tinta)" dominant-baseline="central">ARO 1: ENTRADA (Estreito Superior)</text>
+      </g>
+
+      <!-- Active Target Title and Clinical Question -->
+      <text id="a12p13-target-title" x="0" y="42" font-size="13" font-weight="800" fill="var(--a12p13-foco)">
+        ALVO 1: PROMONTÓRIO SACRAL (S1)
+      </text>
+      <text id="a12p13-target-question" x="0" y="58" font-size="11" font-weight="600" fill="var(--a12p13-subtext)">
+        Pergunta clínica: É alcançável pelo toque vaginal?
+      </text>
+
+      <!-- FISIOLÓGICO / NORMAL CARD (VERDE) -->
+      <g transform="translate(0, 72)">
+        <rect class="a12p13-card-normal" width="295" height="70" />
+        <circle cx="15" cy="15" r="7" fill="var(--a12p13-green)" />
+        <path d="M 12 15 L 14 17 L 18 13" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+        <text x="28" y="15" font-size="11" font-weight="800" fill="var(--a12p13-green)" dominant-baseline="central">
+          NORMAL (Pelve Ginecoide / Adequada)
+        </text>
+
+        <text id="a12p13-normal-val" x="12" y="36" font-size="11" font-weight="700" fill="var(--a12p13-tinta)">
+          Achado: NÃO ALCANÇÁVEL
+        </text>
+        <text id="a12p13-normal-desc" x="12" y="52" font-size="9.5" fill="var(--a12p13-tinta)">
+          Conjugado Diagonal &gt; 11,5 cm (Conjugado Obstétrico &gt; 10,0 cm). Insinuação cefálica livre.
+        </text>
+      </g>
+
+      <!-- PATOLÓGICO / ALTERADO CARD (VERMELHO) -->
+      <g transform="translate(0, 150)">
+        <rect class="a12p13-card-altered" width="295" height="70" />
+        <circle cx="15" cy="15" r="7" fill="var(--a12p13-red)" />
+        <path d="M 15 11 L 15 16 M 15 18 L 15 19" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+        <text x="28" y="15" font-size="11" font-weight="800" fill="var(--a12p13-red)" dominant-baseline="central">
+          ALTERADO / RISCO (Pelve Viciada)
+        </text>
+
+        <text id="a12p13-altered-val" x="12" y="36" font-size="11" font-weight="700" fill="var(--a12p13-tinta)">
+          Achado: ALCANÇÁVEL COM FACILIDADE
+        </text>
+        <text id="a12p13-altered-desc" x="12" y="52" font-size="9.5" fill="var(--a12p13-tinta)">
+          Conjugado Diagonal &lt; 11,5 cm. Risco de vício da entrada e distocia de insinuação.
+        </text>
+      </g>
+
+      <!-- SUMMARY TABLE OF ALL 5 TARGETS AND 3 STRAITS (BAUER DENSITY CONTRACT ITEM 4) -->
+      <g transform="translate(0, 230)">
+        <text x="0" y="-5" font-size="10" font-weight="700" fill="var(--a12p13-tinta)">
+          QUADRO DE INTERPRETAÇÃO DOS 5 ALVOS:
+        </text>
+        <rect width="295" height="150" rx="6" fill="rgba(0,0,0,0.2)" stroke="var(--a12p13-card-border)"/>
+
+        <!-- Header Row -->
+        <rect class="a12p13-table-header" x="0" y="0" width="295" height="22" rx="6"/>
+        <text class="a12p13-table-cell" x="8" y="11" font-weight="800">Alvo / Aro</text>
+        <text class="a12p13-table-cell" x="110" y="11" font-weight="800">Achado Normal (&#x2713;)</text>
+        <text class="a12p13-table-cell" x="210" y="11" font-weight="800">Achado Alterado (&#x2717;)</text>
+        <line x1="0" y1="22" x2="295" y2="22" stroke="var(--a12p13-card-border)"/>
+
+        <!-- Row 1: Promontório -->
+        <g id="a12p13-trow-1" class="a12p13-table-row is-active" transform="translate(0, 23)">
+          <rect x="1" y="0" width="293" height="24" fill="none"/>
+          <text class="a12p13-table-cell" x="8" y="12" font-weight="700">1. Promontório</text>
+          <text class="a12p13-table-cell-sub" x="110" y="12" fill="var(--a12p13-green)">Não alcançável</text>
+          <text class="a12p13-table-cell-sub" x="210" y="12" fill="var(--a12p13-red)">Alcançável (&lt;11.5)</text>
+          <line x1="0" y1="24" x2="295" y2="24" stroke="var(--a12p13-card-border)" opacity="0.4"/>
+        </g>
+
+        <!-- Row 2: Espinhas -->
+        <g id="a12p13-trow-2" class="a12p13-table-row" transform="translate(0, 48)">
+          <rect x="1" y="0" width="293" height="24" fill="none"/>
+          <text class="a12p13-table-cell" x="8" y="12" font-weight="700">2. Espinhas Isq.</text>
+          <text class="a12p13-table-cell-sub" x="110" y="12" fill="var(--a12p13-green)">Rombas (&#x2265;10cm)</text>
+          <text class="a12p13-table-cell-sub" x="210" y="12" fill="var(--a12p13-red)">Proeminentes (&lt;10)</text>
+          <line x1="0" y1="24" x2="295" y2="24" stroke="var(--a12p13-card-border)" opacity="0.4"/>
+        </g>
+
+        <!-- Row 3: Concavidade -->
+        <g id="a12p13-trow-3" class="a12p13-table-row" transform="translate(0, 73)">
+          <rect x="1" y="0" width="293" height="24" fill="none"/>
+          <text class="a12p13-table-cell" x="8" y="12" font-weight="700">3. Concavidade</text>
+          <text class="a12p13-table-cell-sub" x="110" y="12" fill="var(--a12p13-green)">Curva / Profunda</text>
+          <text class="a12p13-table-cell-sub" x="210" y="12" fill="var(--a12p13-red)">Sacro plano / reto</text>
+          <line x1="0" y1="24" x2="295" y2="24" stroke="var(--a12p13-card-border)" opacity="0.4"/>
+        </g>
+
+        <!-- Row 4: Ângulo Subpúbico -->
+        <g id="a12p13-trow-4" class="a12p13-table-row" transform="translate(0, 98)">
+          <rect x="1" y="0" width="293" height="24" fill="none"/>
+          <text class="a12p13-table-cell" x="8" y="12" font-weight="700">4. Ângulo Subpúb.</text>
+          <text class="a12p13-table-cell-sub" x="110" y="12" fill="var(--a12p13-green)">Amplo (&#x2265; 90°)</text>
+          <text class="a12p13-table-cell-sub" x="210" y="12" fill="var(--a12p13-red)">Agudo (&lt; 90°)</text>
+          <line x1="0" y1="24" x2="295" y2="24" stroke="var(--a12p13-card-border)" opacity="0.4"/>
+        </g>
+
+        <!-- Row 5: Tuberosidades -->
+        <g id="a12p13-trow-5" class="a12p13-table-row" transform="translate(0, 123)">
+          <rect x="1" y="0" width="293" height="24" fill="none"/>
+          <text class="a12p13-table-cell" x="8" y="12" font-weight="700">5. Tuberosidades</text>
+          <text class="a12p13-table-cell-sub" x="110" y="12" fill="var(--a12p13-green)">Punho cabe (&#x2265;8.5)</text>
+          <text class="a12p13-table-cell-sub" x="210" y="12" fill="var(--a12p13-red)">Punho não cabe</text>
+        </g>
+      </g>
+
+      <!-- CLINICAL INTERPRETATION BOX (BAUER CONTRACT ITEM 1) -->
+      <g transform="translate(0, 392)">
+        <rect width="295" height="62" rx="6" fill="rgba(243, 190, 91, 0.08)" stroke="var(--a12p13-foco)" stroke-width="1"/>
+        <text x="10" y="14" font-size="9.5" font-weight="800" fill="var(--a12p13-foco)">
+          LEGENDA DE INTERPRETAÇÃO PELVIMÉTRICA:
+        </text>
+        <text x="10" y="29" font-size="8.5" fill="var(--a12p13-tinta)">
+          A pelvimetria confirma prognóstico de parto vaginal. O canal é considerado
+        </text>
+        <text x="10" y="41" font-size="8.5" fill="var(--a12p13-tinta)">
+          propício quando NENHUM dos 3 aros apresenta estreitamento crítico.
+        </text>
+        <text x="10" y="53" font-size="8.5" font-weight="700" fill="var(--a12p13-green)">
+          Prognóstico Fisiológico: Pelve Ginecoide Ampla nos 3 Estratos.
+        </text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ==================== SELF-CONTAINED INTERACTIVE SCRIPT (F2 MAIN-LOOP ENGINE) ==================== -->
+  <script>
+    /* <![CDATA[ */
+    (function() {
+      // 5 Target Data Definitions (Clinical parameters and Straits)
+      var targetsData = {
+        1: {
+          strait: "ARO 1: ENTRADA (Estreito Superior)",
+          straitColor: "var(--a12p13-entrada)",
+          straitId: "a12p13-strait-1",
+          title: "ALVO 1: PROMONTÓRIO SACRAL (S1)",
+          question: "Pergunta clínica: É alcançável pelo toque vaginal?",
+          normalVal: "Achado: NÃO ALCANÇÁVEL",
+          normalDesc: "Conjugado Diagonal >= 11,5 cm (Obstétrico >= 10 cm). Insinuação livre.",
+          alteredVal: "Achado: ALCANÇÁVEL FACILMENTE",
+          alteredDesc: "Conjugado Diagonal < 11,5 cm. Risco de distocia no plano de entrada.",
+          handTransform: "translate(165, 115) rotate(-35)",
+          insetT4Opacity: "0.2",
+          insetT5Opacity: "0.2"
+        },
+        2: {
+          strait: "ARO 2: MEIO (Estreito Médio)",
+          straitColor: "var(--a12p13-meio)",
+          straitId: "a12p13-strait-2",
+          title: "ALVO 2: ESPINHAS ISQUIÁTICAS",
+          question: "Pergunta clínica: Apresentam-se proeminentes ao toque?",
+          normalVal: "Achado: ROMBAS / POUCO PROEMINENTES",
+          normalDesc: "Diâmetro Interespinha >= 10,0 cm. Paredes pélvicas paralelas.",
+          alteredVal: "Achado: PROEMINENTES / PONTIAGUDAS",
+          alteredDesc: "Diâmetro Interespinha < 10,0 cm. Risco de parada de descida no meio.",
+          handTransform: "translate(260, 240) rotate(-15)",
+          insetT4Opacity: "0.2",
+          insetT5Opacity: "0.2"
+        },
+        3: {
+          strait: "ARO 2: MEIO (Estreito Médio)",
+          straitColor: "var(--a12p13-meio)",
+          straitId: "a12p13-strait-2",
+          title: "ALVO 3: CONCAVIDADE SACRAL",
+          question: "Pergunta clínica: Sacro é curvo e profundo?",
+          normalVal: "Achado: CURVATURA REGULAR E PROFUNDA",
+          normalDesc: "Sacro escavado permite a rotação interna da apresentação fetal.",
+          alteredVal: "Achado: SACRO PLANO / RETILÍNEO",
+          alteredDesc: "Redução do diâmetro anteroposterior médio. Dificulta a rotação.",
+          handTransform: "translate(150, 225) rotate(-45)",
+          insetT4Opacity: "0.2",
+          insetT5Opacity: "0.2"
+        },
+        4: {
+          strait: "ARO 3: SAÍDA (Estreito Inferior)",
+          straitColor: "var(--a12p13-saida)",
+          straitId: "a12p13-strait-3",
+          title: "ALVO 4: ÂNGULO SUBPÚBICO",
+          question: "Pergunta clínica: Ângulo do arco subpúbico é >= 90°?",
+          normalVal: "Achado: ARCO AMPLO (>= 90°)",
+          normalDesc: "Acomoda confortavelmente 2 dedos abertos sob a sínfise púbica.",
+          alteredVal: "Achado: ARCO AGUDO (< 90°)",
+          alteredDesc: "Estreitamento do arco pubiano. Risco de deflexão e distocia de saída.",
+          handTransform: "translate(320, 280) rotate(10)",
+          insetT4Opacity: "1.0",
+          insetT5Opacity: "0.2"
+        },
+        5: {
+          strait: "ARO 3: SAÍDA (Estreito Inferior)",
+          straitColor: "var(--a12p13-saida)",
+          straitId: "a12p13-strait-3",
+          title: "ALVO 5: TUBEROSIDADES ISQUIÁTICAS",
+          question: "Pergunta clínica: O punho fechado cabe entre as tuberosidades?",
+          normalVal: "Achado: PUNHO CABE (>= 8,5 cm)",
+          normalDesc: "Diâmetro intertuberoso amplo. Permitirá o desprendimento cefálico.",
+          alteredVal: "Achado: PUNHO NÃO CABE (< 8,5 cm)",
+          alteredDesc: "Estreitamento do plano de saída vaginal. Indica distocia de saída.",
+          handTransform: "translate(300, 370) rotate(30)",
+          insetT4Opacity: "0.2",
+          insetT5Opacity: "1.0"
+        }
+      };
+
+      var activeTarget = 1;
+
+      function setActiveTarget(id) {
+        if (!targetsData[id]) return;
+        activeTarget = id;
+
+        // 1. Update Target Groups Active Classes
+        for (var t = 1; t <= 5; t++) {
+          var tg = document.getElementById("a12p13-target-" + t);
+          var btn = document.getElementById("a12p13-btn-" + t);
+          var trow = document.getElementById("a12p13-trow-" + t);
+
+          if (t === id) {
+            if (tg) tg.classList.add("is-active");
+            if (btn) btn.classList.add("is-active");
+            if (trow) trow.classList.add("is-active");
+          } else {
+            if (tg) tg.classList.remove("is-active");
+            if (btn) btn.classList.remove("is-active");
+            if (trow) trow.classList.remove("is-active");
+          }
+        }
+
+        // 2. Update Pelvic Strait Active Highlight
+        var activeStraitId = targetsData[id].straitId;
+        for (var s = 1; s <= 3; s++) {
+          var straitEl = document.getElementById("a12p13-strait-" + s);
+          if (straitEl) {
+            if ("a12p13-strait-" + s === activeStraitId) {
+              straitEl.classList.add("is-active");
+            } else {
+              straitEl.classList.remove("is-active");
+            }
+          }
+        }
+
+        // 3. Move Hand Group to Anatomical Target
+        var handGroup = document.getElementById("a12p13-hand-group");
+        if (handGroup) {
+          handGroup.setAttribute("transform", targetsData[id].handTransform);
+        }
+
+        // 4. Update Inset Graphics Opacity
+        var insetT4 = document.getElementById("a12p13-inset-t4-graphic");
+        var insetT5 = document.getElementById("a12p13-inset-t5-graphic");
+        if (insetT4) insetT4.setAttribute("opacity", targetsData[id].insetT4Opacity);
+        if (insetT5) insetT5.setAttribute("opacity", targetsData[id].insetT5Opacity);
+
+        // 5. Update Reading Panel Texts
+        var badgeBg = document.getElementById("a12p13-strait-badge-bg");
+        var badgeTxt = document.getElementById("a12p13-strait-badge-txt");
+        var tTitle = document.getElementById("a12p13-target-title");
+        var tQuestion = document.getElementById("a12p13-target-question");
+        var nVal = document.getElementById("a12p13-normal-val");
+        var nDesc = document.getElementById("a12p13-normal-desc");
+        var aVal = document.getElementById("a12p13-altered-val");
+        var aDesc = document.getElementById("a12p13-altered-desc");
+
+        if (badgeBg) badgeBg.setAttribute("fill", targetsData[id].straitColor);
+        if (badgeTxt) badgeTxt.textContent = targetsData[id].strait;
+        if (tTitle) tTitle.textContent = targetsData[id].title;
+        if (tQuestion) tQuestion.textContent = targetsData[id].question;
+        if (nVal) nVal.textContent = targetsData[id].normalVal;
+        if (nDesc) nDesc.textContent = targetsData[id].normalDesc;
+        if (aVal) aVal.textContent = targetsData[id].alteredVal;
+        if (aDesc) aDesc.textContent = targetsData[id].alteredDesc;
+      }
+
+      // Bind Clicks and Keydown to Targets and Buttons
+      function bindEvents() {
+        for (var i = 1; i <= 5; i++) {
+          (function(targetId) {
+            var tg = document.getElementById("a12p13-target-" + targetId);
+            var btn = document.getElementById("a12p13-btn-" + targetId);
+            var trow = document.getElementById("a12p13-trow-" + targetId);
+
+            var handler = function(e) {
+              e.preventDefault();
+              setActiveTarget(targetId);
+            };
+
+            if (tg) {
+              tg.addEventListener("click", handler);
+              tg.addEventListener("keydown", function(e) {
+                if (e.key === "Enter" || e.key === " ") handler(e);
+              });
+            }
+            if (btn) btn.addEventListener("click", handler);
+            if (trow) {
+              trow.style.cursor = "pointer";
+              trow.addEventListener("click", handler);
+            }
+          })(i);
+        }
+
+        // Global Keyboard Navigation (1..5 and Left/Right Arrows)
+        document.addEventListener("keydown", function(e) {
+          if (e.key >= "1" && e.key <= "5") {
+            setActiveTarget(parseInt(e.key, 10));
+          } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+            var next = activeTarget >= 5 ? 1 : activeTarget + 1;
+            setActiveTarget(next);
+          } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+            var prev = activeTarget <= 1 ? 5 : activeTarget - 1;
+            setActiveTarget(prev);
+          }
+        });
+      }
+
+      // Initialize on load
+      bindEvents();
+      setActiveTarget(1);
+    })();
+    /* ]]> */
+  </script>
+</svg>

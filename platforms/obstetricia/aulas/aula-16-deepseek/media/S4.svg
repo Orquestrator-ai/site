@@ -1,0 +1,435 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 740" width="100%" height="auto" class="a16-inline-svg a16p4-root" id="a16p4-svg">
+  <defs>
+    <style>
+      .a16p4-root {
+        --a16p4-bg: var(--bg-1, #0b0f19);
+        --a16p4-card-bg: var(--bg-2, #131c2e);
+        --a16p4-card-border: var(--ink-20, #1e2d4a);
+        --a16p4-text-main: var(--ink-100, #f8fafc);
+        --a16p4-text-sub: var(--ink-70, #94a3b8);
+        --a16p4-gold: var(--kw-gold, #f59e0b);
+        --a16p4-gold-bg: rgba(245, 158, 11, 0.12);
+        --a16p4-gold-border: rgba(245, 158, 11, 0.35);
+        --a16p4-teal: var(--kw-teal, #14b8a6);
+        --a16p4-teal-bg: rgba(20, 184, 166, 0.12);
+        --a16p4-green: var(--kw-green, #10b981);
+        --a16p4-green-bg: rgba(16, 185, 129, 0.12);
+        --a16p4-green-border: rgba(16, 185, 129, 0.35);
+        --a16p4-rose: var(--kw-rose, #f43f5e);
+        --a16p4-rose-bg: rgba(244, 63, 94, 0.12);
+        --a16p4-rose-border: rgba(244, 63, 94, 0.35);
+        --a16p4-blue: var(--kw-blue, #3b82f6);
+        --a16p4-blue-bg: rgba(59, 130, 246, 0.12);
+        --a16p4-blue-border: rgba(59, 130, 246, 0.35);
+        --a16p4-muted-opacity: 0.35;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a16p4-bg, #0b0f19);
+      }
+
+      .a16p4-root[data-theme="light"],
+      [data-theme="light"] .a16p4-root {
+        --a16p4-bg: #f8fafc;
+        --a16p4-card-bg: #ffffff;
+        --a16p4-card-border: #cbd5e1;
+        --a16p4-text-main: #0f172a;
+        --a16p4-text-sub: #475569;
+        --a16p4-gold: #d97706;
+        --a16p4-gold-bg: #fef3c7;
+        --a16p4-gold-border: #fcd34d;
+        --a16p4-teal: #0d9488;
+        --a16p4-teal-bg: #ccfbf1;
+        --a16p4-green: #059669;
+        --a16p4-green-bg: #d1fae5;
+        --a16p4-green-border: #6ee7b7;
+        --a16p4-rose: #e11d48;
+        --a16p4-rose-bg: #ffe4e6;
+        --a16p4-rose-border: #fca5a5;
+        --a16p4-blue: #2563eb;
+        --a16p4-blue-bg: #dbeafe;
+        --a16p4-blue-border: #93c5fd;
+        --a16p4-muted-opacity: 0.45;
+      }
+
+      .a16p4-card {
+        fill: var(--a16p4-card-bg, #131c2e);
+        stroke: var(--a16p4-card-border, #1e2d4a);
+        stroke-width: 1.5;
+        transition: opacity 0.3s ease, stroke 0.3s ease, transform 0.3s ease;
+      }
+
+      .a16p4-title {
+        fill: var(--a16p4-text-main, #f8fafc);
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      .a16p4-subtitle {
+        fill: var(--a16p4-text-sub, #94a3b8);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .a16p4-badge-text {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .a16p4-tab-btn {
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .a16p4-tab-rect {
+        fill: var(--a16p4-card-bg, #131c2e);
+        stroke: var(--a16p4-card-border, #1e2d4a);
+        stroke-width: 1;
+        rx: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .a16p4-tab-btn:hover .a16p4-tab-rect {
+        stroke: var(--a16p4-teal, #14b8a6);
+      }
+
+      .a16p4-tab-btn.a16p4-active .a16p4-tab-rect {
+        fill: var(--a16p4-teal-bg, rgba(20, 184, 166, 0.12));
+        stroke: var(--a16p4-teal, #14b8a6);
+        stroke-width: 2;
+      }
+
+      .a16p4-tab-text {
+        fill: var(--a16p4-text-sub, #94a3b8);
+        font-size: 12px;
+        font-weight: 600;
+        pointer-events: none;
+      }
+
+      .a16p4-tab-btn.a16p4-active .a16p4-tab-text {
+        fill: var(--a16p4-teal, #14b8a6);
+        font-weight: 700;
+      }
+
+      .a16p4-section-title {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .a16p4-body-text {
+        fill: var(--a16p4-text-main, #f8fafc);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .a16p4-sub-text {
+        fill: var(--a16p4-text-sub, #94a3b8);
+        font-size: 12px;
+      }
+
+      .a16p4-pill-box {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .a16p4-pill-box:hover {
+        transform: translateY(-2px);
+      }
+
+      /* State Machine Dimming */
+      #a16p4-stage[data-mode="ms"] .a16p4-card-febrasgo {
+        opacity: var(--a16p4-muted-opacity, 0.35);
+      }
+
+      #a16p4-stage[data-mode="febrasgo"] .a16p4-card-ms {
+        opacity: var(--a16p4-muted-opacity, 0.35);
+      }
+
+      #a16p4-stage[data-mode="ms"] .a16p4-card-ms {
+        stroke: var(--a16p4-green, #10b981);
+        stroke-width: 2.5;
+      }
+
+      #a16p4-stage[data-mode="febrasgo"] .a16p4-card-febrasgo {
+        stroke: var(--a16p4-rose, #f43f5e);
+        stroke-width: 2.5;
+      }
+
+      /* Tooltip Box */
+      .a16p4-tooltip {
+        fill: var(--a16p4-card-bg, #131c2e);
+        stroke: var(--a16p4-gold, #f59e0b);
+        stroke-width: 1.5;
+        rx: 8px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .a16p4-tooltip.a16p4-visible {
+        opacity: 1;
+      }
+    </style>
+  </defs>
+
+  <g id="a16p4-stage" data-mode="both">
+    <!-- TOP HEADER -->
+    <text x="20" y="32" class="a16-inline-svg a16p4-root">CÁLCIO NA GESTAÇÃO: DUAS VOZES NA MESMA GESTAÇÃO</text>
+    <text x="20" y="52" class="a16-inline-svg a16p4-root">Divergência de Diretrizes (MS × FEBRASGO) em Prevenção de Pré-Eclâmpsia (PE)</text>
+
+    <!-- INTERPRETATION LEGEND BOX -->
+    <rect x="530" y="16" width="410" height="44" rx="8" fill="var(--a16p4-gold-bg, rgba(245, 158, 11, 0.12))" stroke="var(--a16p4-gold-border, rgba(245, 158, 11, 0.35))" stroke-width="1"/>
+    <text x="542" y="33" fill="var(--a16p4-gold, #f59e0b)" font-size="11px" font-weight="700">📌 LEGENDA DE INTERPRETAÇÃO (PROVAS DE RESIDÊNCIA):</text>
+    <text x="542" y="48" fill="var(--a16p4-text-main, #f8fafc)" font-size="11px" font-weight="500">A conduta de suplementação depende da fonte cobrada no enunciado!</text>
+
+    <!-- MODE CONTROLS / TABS -->
+    <g transform="translate(20, 72)">
+      <text x="0" y="24" fill="var(--a16p4-text-sub, #94a3b8)" font-size="12px" font-weight="700">MODO DE VISÃO:</text>
+      
+      <g class="a16-inline-svg a16p4-root" id="a16p4-btn-both" role="button" aria-label="Visão Comparativa Lado a Lado" transform="translate(110, 4)">
+        <rect class="a16-inline-svg a16p4-root" width="160" height="32"/>
+        <text class="a16-inline-svg a16p4-root" x="80" y="20" text-anchor="middle">⚡ Comparativo Lado a Lado</text>
+      </g>
+
+      <g class="a16-inline-svg a16p4-root" id="a16p4-btn-ms" role="button" aria-label="Focar Ministério da Saúde" transform="translate(280, 4)">
+        <rect class="a16-inline-svg a16p4-root" width="160" height="32"/>
+        <text class="a16-inline-svg a16p4-root" x="80" y="20" text-anchor="middle">🟢 Foco MS (SUS)</text>
+      </g>
+
+      <g class="a16-inline-svg a16p4-root" id="a16p4-btn-febrasgo" role="button" aria-label="Focar FEBRASGO 2026" transform="translate(450, 4)">
+        <rect class="a16-inline-svg a16p4-root" width="170" height="32"/>
+        <text class="a16-inline-svg a16p4-root" x="85" y="20" text-anchor="middle">🔴 Foco FEBRASGO 2026</text>
+      </g>
+
+      <text x="635" y="24" fill="var(--a16p4-text-sub, #94a3b8)" font-size="11px" font-style="italic">Toque para alternar o foco</text>
+    </g>
+
+    <!-- MAIN COMPARISON CARDS ROW -->
+    <!-- LEFT CARD: MINISTÉRIO DA SAÚDE -->
+    <g class="a16-inline-svg a16p4-root" transform="translate(20, 122)">
+      <rect class="a16-inline-svg a16p4-root" width="445" height="355" rx="12"/>
+      
+      <!-- CARD HEADER -->
+      <rect x="16" y="16" width="160" height="24" rx="4" fill="var(--a16p4-green-bg, rgba(16, 185, 129, 0.12))" stroke="var(--a16p4-green-border, rgba(16, 185, 129, 0.35))"/>
+      <text x="24" y="32" class="a16-inline-svg a16p4-root" fill="var(--a16p4-green, #10b981)">MINISTÉRIO DA SAÚDE</text>
+      
+      <text x="16" y="66" class="a16-inline-svg a16p4-root" fill="var(--a16p4-green, #10b981)">Suplementação Universal de Cálcio</text>
+      <text x="16" y="85" class="a16-inline-svg a16p4-root">Cadernos de Atenção Básica / Manual de Gestação de Alto Risco</text>
+
+      <!-- KEY DATA BOX 1: DOSE -->
+      <g transform="translate(16, 100)">
+        <rect width="413" height="52" rx="8" fill="var(--a16p4-green-bg, rgba(16, 185, 129, 0.08))" stroke="var(--a16p4-green-border, rgba(16, 185, 129, 0.25))"/>
+        <text x="14" y="22" font-size="11px" font-weight="700" fill="var(--a16p4-text-sub, #94a3b8)">DOSE RECOMENDADA (ELEMENTAR):</text>
+        <text x="14" y="42" font-size="20px" font-weight="800" fill="var(--a16p4-green, #10b981)">1.000 mg / dia (1 g/dia)</text>
+        <text x="240" y="32" font-size="11px" font-weight="600" fill="var(--a16p4-text-main, #f8fafc)">A partir de ~12 semanas</text>
+        <text x="240" y="45" font-size="10px" fill="var(--a16p4-text-sub, #94a3b8)">de idade gestacional</text>
+      </g>
+
+      <!-- KEY DATA BOX 2: PRACTICAL SCHEME & PILL VISUAL -->
+      <g transform="translate(16, 162)">
+        <rect width="413" height="110" rx="8" fill="var(--a16p4-card-bg, #131c2e)" stroke="var(--a16p4-card-border, #1e2d4a)"/>
+        <text x="14" y="22" font-size="11px" font-weight="700" fill="var(--a16p4-gold, #f59e0b)">ESQUEMA PRÁTICO MS (PRESCRITOR):</text>
+        
+        <!-- Tablets Graphic -->
+        <g class="a16-inline-svg a16p4-root" id="a16p4-pills-trigger" transform="translate(14, 32)">
+          <!-- Tablet 1 -->
+          <rect x="0" y="0" width="75" height="34" rx="17" fill="var(--a16p4-teal-bg, rgba(20, 184, 166, 0.15))" stroke="var(--a16p4-teal, #14b8a6)" stroke-width="1.5"/>
+          <text x="37" y="21" font-size="10px" font-weight="800" fill="var(--a16p4-teal, #14b8a6)" text-anchor="middle">1.250 mg</text>
+          <!-- Plus Sign -->
+          <text x="84" y="22" font-size="14px" font-weight="800" fill="var(--a16p4-text-sub, #94a3b8)">+</text>
+          <!-- Tablet 2 -->
+          <rect x="94" y="0" width="75" height="34" rx="17" fill="var(--a16p4-teal-bg, rgba(20, 184, 166, 0.15))" stroke="var(--a16p4-teal, #14b8a6)" stroke-width="1.5"/>
+          <text x="131" y="21" font-size="10px" font-weight="800" fill="var(--a16p4-teal, #14b8a6)" text-anchor="middle">1.250 mg</text>
+        </g>
+
+        <!-- Equals & Explanation -->
+        <text x="195" y="52" font-size="12px" font-weight="700" fill="var(--a16p4-text-main, #f8fafc)">= 2 comp Carbonato de Cálcio</text>
+        <text x="195" y="68" font-size="11px" font-weight="800" fill="var(--a16p4-green, #10b981)">TOMADOS DE UMA VEZ SÓ!</text>
+
+        <!-- Critical Prescribing Warning -->
+        <rect x="14" y="74" width="385" height="26" rx="4" fill="var(--a16p4-rose-bg, rgba(244, 63, 94, 0.12))" stroke="var(--a16p4-rose-border, rgba(244, 63, 94, 0.3))"/>
+        <text x="22" y="91" font-size="10.5px" font-weight="700" fill="var(--a16p4-rose, #f43f5e)">⚠️ PEGADINHA: NÃO fracionar em 12/12h! MS orienta dose única diária.</text>
+      </g>
+
+      <!-- CLINICAL INDICATION FOOTER -->
+      <g transform="translate(16, 282)">
+        <rect width="413" height="58" rx="8" fill="var(--a16p4-green-bg, rgba(16, 185, 129, 0.05))" stroke="var(--a16p4-green-border, rgba(16, 185, 129, 0.2))"/>
+        <text x="14" y="22" font-size="11px" font-weight="700" fill="var(--a16p4-green, #10b981)">FINALIDADE NO PROTOCOLO MS:</text>
+        <text x="14" y="40" font-size="11.5px" fill="var(--a16p4-text-main, #f8fafc)">Prevenção de Pré-Eclâmpsia em gestantes de baixo e alto risco no SUS,</text>
+        <text x="14" y="52" font-size="11px" fill="var(--a16p4-text-sub, #94a3b8)">visando suprir o déficit de ingestão dietética da população brasileira.</text>
+      </g>
+    </g>
+
+    <!-- RIGHT CARD: FEBRASGO / RBEHG 2026 -->
+    <g class="a16-inline-svg a16p4-root" transform="translate(495, 122)">
+      <rect class="a16-inline-svg a16p4-root" width="445" height="355" rx="12"/>
+      
+      <!-- CARD HEADER -->
+      <rect x="16" y="16" width="180" height="24" rx="4" fill="var(--a16p4-rose-bg, rgba(244, 63, 94, 0.12))" stroke="var(--a16p4-rose-border, rgba(244, 63, 94, 0.35))"/>
+      <text x="24" y="32" class="a16-inline-svg a16p4-root" fill="var(--a16p4-rose, #f43f5e)">FEBRASGO / RBEHG (2026)</text>
+      
+      <text x="16" y="66" class="a16-inline-svg a16p4-root" fill="var(--a16p4-rose, #f43f5e)">NÃO Indica Cálcio de Rotina</text>
+      <text x="16" y="85" class="a16-inline-svg a16p4-root">Posicionamento Oficial 2026 / Diretriz Cochrane Atualizada</text>
+
+      <!-- KEY DATA BOX 1: CONDUTA REVISADA -->
+      <g transform="translate(16, 100)">
+        <rect width="413" height="52" rx="8" fill="var(--a16p4-rose-bg, rgba(244, 63, 94, 0.08))" stroke="var(--a16p4-rose-border, rgba(244, 63, 94, 0.25))"/>
+        <text x="14" y="22" font-size="11px" font-weight="700" fill="var(--a16p4-text-sub, #94a3b8)">CONDUTA QUANTO À PRÉ-ECLÂMPSIA (PE):</text>
+        <text x="14" y="42" font-size="18px" font-weight="800" fill="var(--a16p4-rose, #f43f5e)">🚫 NÃO RECOMENDADO DE ROTINA</text>
+        <text x="270" y="32" font-size="11px" font-weight="700" fill="var(--a16p4-rose, #f43f5e)">Sem Indicação</text>
+        <text x="270" y="45" font-size="10px" fill="var(--a16p4-text-sub, #94a3b8)">Universal de PE</text>
+      </g>
+
+      <!-- KEY DATA BOX 2: RATIONALE & EVIDENCE -->
+      <g transform="translate(16, 162)">
+        <rect width="413" height="110" rx="8" fill="var(--a16p4-card-bg, #131c2e)" stroke="var(--a16p4-card-border, #1e2d4a)"/>
+        <text x="14" y="22" font-size="11px" font-weight="700" fill="var(--a16p4-gold, #f59e0b)">JUSTIFICATIVA DA MUDANÇA (2026):</text>
+        
+        <text x="14" y="42" font-size="11.5px" fill="var(--a16p4-text-main, #f8fafc)">Ensaios clínicos recentes de alta qualidade e revisões Cochrane</text>
+        <text x="14" y="57" font-size="11.5px" fill="var(--a16p4-text-main, #f8fafc)">não demonstraram redução significante de PE com suplementação</text>
+        <text x="14" y="72" font-size="11.5px" fill="var(--a16p4-text-main, #f8fafc)">de cálcio em populações sem hipocalcemia prévia grave.</text>
+
+        <rect x="14" y="80" width="385" height="22" rx="4" fill="var(--a16p4-rose-bg, rgba(244, 63, 94, 0.08))"/>
+        <text x="22" y="95" font-size="10px" font-weight="600" fill="var(--a16p4-text-sub, #94a3b8)">Parou a recomendação rotineira profilática na pré-eclâmpsia.</text>
+      </g>
+
+      <!-- CLINICAL INDICATION FOOTER -->
+      <g transform="translate(16, 282)">
+        <rect width="413" height="58" rx="8" fill="var(--a16p4-rose-bg, rgba(244, 63, 94, 0.05))" stroke="var(--a16p4-rose-border, rgba(244, 63, 94, 0.2))"/>
+        <text x="14" y="22" font-size="11px" font-weight="700" fill="var(--a16p4-rose, #f43f5e)">SITUAÇÃO EM PROVAS DE RESIDÊNCIA:</text>
+        <text x="14" y="40" font-size="11.5px" fill="var(--a16p4-text-main, #f8fafc)">Se o enunciado citar FEBRASGO ou atualização 2026, a resposta</text>
+        <text x="14" y="52" font-size="11px" font-weight="700" fill="var(--a16p4-rose, #f43f5e)">CORRETA é NÃO prescrever cálcio profilático para PE.</text>
+      </g>
+    </g>
+
+    <!-- MIDDLE DIVERGENCE ALERT BANNER (GOLD ALERT) -->
+    <g transform="translate(20, 487)">
+      <rect width="920" height="68" rx="10" fill="var(--a16p4-gold-bg, rgba(245, 158, 11, 0.12))" stroke="var(--a16p4-gold, #f59e0b)" stroke-width="1.5"/>
+      <circle cx="36" cy="34" r="16" fill="var(--a16p4-gold, #f59e0b)"/>
+      <text x="36" y="40" font-size="18px" font-weight="900" fill="#000000" text-anchor="middle">!</text>
+      
+      <text x="65" y="28" font-size="13px" font-weight="800" fill="var(--a16p4-gold, #f59e0b)">ÂNCORA DE PROVA — TENSÃO DE REGRAS MS × FEBRASGO (NÃO UNIFICAR ENUNCIADOS):</text>
+      <text x="65" y="46" font-size="12px" fill="var(--a16p4-text-main, #f8fafc)">• Citou <tspan font-weight="700" fill="var(--a16p4-green, #10b981)">MS / SUS</tspan>: Marcar <tspan font-weight="700">1 g/dia (2 comp 1.250 mg de uma vez)</tspan> a partir de 12 sem.</text>
+      <text x="65" y="60" font-size="12px" fill="var(--a16p4-text-main, #f8fafc)">• Citou <tspan font-weight="700" fill="var(--a16p4-rose, #f43f5e)">FEBRASGO / 2026</tspan>: Marcar <tspan font-weight="700">NÃO indicado</tspan> para prevenção de Pré-Eclâmpsia.</text>
+    </g>
+
+    <!-- BOTTOM ROW: REGRAS COMPLEMENTARES DE ABSORÇÃO E OUTROS NUTRIENTES -->
+    <!-- PANEL 1: INTERAÇÃO CÁLCIO X FERRO -->
+    <g transform="translate(20, 565)">
+      <rect class="a16-inline-svg a16p4-root" width="445" height="150" rx="10"/>
+      <rect x="14" y="12" width="190" height="22" rx="4" fill="var(--a16p4-blue-bg, rgba(59, 130, 246, 0.12))" stroke="var(--a16p4-blue-border, rgba(59, 130, 246, 0.35))"/>
+      <text x="22" y="27" class="a16-inline-svg a16p4-root" fill="var(--a16p4-blue, #3b82f6)">INTERAÇÃO CÁLCIO × FERRO</text>
+
+      <text x="14" y="54" font-size="13px" font-weight="700" fill="var(--a16p4-rose, #f43f5e)">🚫 PROIBIDO TOMAR JUNTO!</text>
+      <text x="14" y="72" font-size="11.5px" fill="var(--a16p4-text-main, #f8fafc)">O Cálcio inibe competitivamente a absorção intestinal do Ferro.</text>
+
+      <g transform="translate(14, 82)">
+        <rect width="417" height="54" rx="6" fill="var(--a16p4-blue-bg, rgba(59, 130, 246, 0.06))" stroke="var(--a16p4-blue-border, rgba(59, 130, 246, 0.2))"/>
+        <text x="12" y="20" font-size="11px" font-weight="700" fill="var(--a16p4-blue, #3b82f6)">CONDUTA DE PRESCRIÇÃO PRÁTICA:</text>
+        <text x="12" y="36" font-size="11.5px" font-weight="600" fill="var(--a16p4-text-main, #f8fafc)">Separar as tomadas por no mínimo 2 HORAS de intervalo.</text>
+        <text x="12" y="48" font-size="10.5px" fill="var(--a16p4-text-sub, #94a3b8)">Exemplo: Ferro no almoço/jejum  |  Cálcio no jantar.</text>
+      </g>
+    </g>
+
+    <!-- PANEL 2: VITAMINA B12 -->
+    <g transform="translate(495, 565)">
+      <rect class="a16-inline-svg a16p4-root" width="445" height="150" rx="10"/>
+      <rect x="14" y="12" width="200" height="22" rx="4" fill="var(--a16p4-teal-bg, rgba(20, 184, 166, 0.12))" stroke="var(--a16p4-teal, #14b8a6)" stroke-width="1"/>
+      <text x="22" y="27" class="a16-inline-svg a16p4-root" fill="var(--a16p4-teal, #14b8a6)">VITAMINA B12 NA GESTAÇÃO</text>
+
+      <text x="14" y="54" font-size="13px" font-weight="700" fill="var(--a16p4-gold, #f59e0b)">⚠️ INDICAÇÃO SELETIVA (NÃO É ROTINA)</text>
+      <text x="14" y="72" font-size="11.5px" fill="var(--a16p4-text-main, #f8fafc)">A Vitamina B12 NÃO é indicada para todas as gestantes.</text>
+
+      <g transform="translate(14, 82)">
+        <rect width="417" height="54" rx="6" fill="var(--a16p4-teal-bg, rgba(20, 184, 166, 0.06))" stroke="var(--a16p4-teal, #14b8a6)" stroke-width="0.5"/>
+        <text x="12" y="20" font-size="11px" font-weight="700" fill="var(--a16p4-teal, #14b8a6)">GRUPOS COM INDICAÇÃO DE SUPLEMENTAÇÃO:</text>
+        <text x="12" y="36" font-size="11.5px" font-weight="600" fill="var(--a16p4-text-main, #f8fafc)">• Dieta estritamente vegetariana ou vegana</text>
+        <text x="12" y="48" font-size="11px" fill="var(--a16p4-text-sub, #94a3b8)">• Cirurgia bariátrica prévia ou síndrome disabsortiva</text>
+      </g>
+    </g>
+
+    <!-- DYNAMIC INTERACTIVE TOOLTIP PANEL -->
+    <g transform="translate(240, 240)">
+      <rect id="a16p4-tooltip-bg" class="a16-inline-svg a16p4-root" width="480" height="90" x="0" y="0"/>
+      <text id="a16p4-tooltip-title" x="20" y="30" font-size="13px" font-weight="800" fill="var(--a16p4-gold, #f59e0b)" opacity="0" pointer-events="none"></text>
+      <text id="a16p4-tooltip-body1" x="20" y="50" font-size="11.5px" fill="var(--a16p4-text-main, #f8fafc)" opacity="0" pointer-events="none"></text>
+      <text id="a16p4-tooltip-body2" x="20" y="68" font-size="11px" fill="var(--a16p4-text-sub, #94a3b8)" opacity="0" pointer-events="none"></text>
+    </g>
+
+    <!-- INTERACTIVE JAVASCRIPT ENGINE -->
+    <script>
+      /*<![CDATA[*/
+      (function() {
+        var stage = document.getElementById('a16p4-stage');
+        var btnBoth = document.getElementById('a16p4-btn-both');
+        var btnMs = document.getElementById('a16p4-btn-ms');
+        var btnFebrasgo = document.getElementById('a16p4-btn-febrasgo');
+        var pillsTrigger = document.getElementById('a16p4-pills-trigger');
+        
+        var tooltipBg = document.getElementById('a16p4-tooltip-bg');
+        var tooltipTitle = document.getElementById('a16p4-tooltip-title');
+        var tooltipBody1 = document.getElementById('a16p4-tooltip-body1');
+        var tooltipBody2 = document.getElementById('a16p4-tooltip-body2');
+
+        function setMode(mode) {
+          stage.setAttribute('data-mode', mode);
+          
+          btnBoth.classList.remove('a16p4-active');
+          btnMs.classList.remove('a16p4-active');
+          btnFebrasgo.classList.remove('a16p4-active');
+
+          if (mode === 'both') btnBoth.classList.add('a16p4-active');
+          if (mode === 'ms') btnMs.classList.add('a16p4-active');
+          if (mode === 'febrasgo') btnFebrasgo.classList.add('a16p4-active');
+
+          hideTooltip();
+        }
+
+        function showTooltip(title, line1, line2) {
+          tooltipTitle.textContent = title;
+          tooltipBody1.textContent = line1;
+          tooltipBody2.textContent = line2;
+
+          tooltipBg.classList.add('a16p4-visible');
+          tooltipTitle.setAttribute('opacity', '1');
+          tooltipBody1.setAttribute('opacity', '1');
+          tooltipBody2.setAttribute('opacity', '1');
+        }
+
+        function hideTooltip() {
+          tooltipBg.classList.remove('a16p4-visible');
+          tooltipTitle.setAttribute('opacity', '0');
+          tooltipBody1.setAttribute('opacity', '0');
+          tooltipBody2.setAttribute('opacity', '0');
+        }
+
+        if (btnBoth) btnBoth.addEventListener('click', function() { setMode('both'); });
+        if (btnMs) btnMs.addEventListener('click', function() { setMode('ms'); });
+        if (btnFebrasgo) btnFebrasgo.addEventListener('click', function() { setMode('febrasgo'); });
+
+        if (pillsTrigger) {
+          pillsTrigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (tooltipBg.classList.contains('a16p4-visible')) {
+              hideTooltip();
+            } else {
+              showTooltip(
+                "💡 DETALHE FARMACODINÂMICO DO CARBONATO DE CÁLCIO (MS):",
+                "Cada comprimido de 1.250 mg de Carbonato de Cálcio fornece 500 mg de Cálcio Elementar.",
+                "Portanto, 2 comprimidos fornecem exatamente a dose recomendada de 1.000 mg (1 g) de cálcio elementar."
+              );
+            }
+          });
+        }
+
+        document.addEventListener('click', function(e) {
+          if (pillsTrigger && e.target !== pillsTrigger && !pillsTrigger.contains(e.target)) {
+            hideTooltip();
+          }
+        });
+      })();
+      /*]]>*/
+    </script>
+  </g>
+</svg>

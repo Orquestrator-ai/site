@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-platform="cirurgia-oncologica-2">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0a1f1d">
+  <meta name="description" content="Cirurgia Oncológica 2 Bauer — oncologia cirúrgica do tubo digestivo para residência médica. Esôfago e estômago: do caso clínico à conduta.">
+  <title>Cirurgia Oncológica 2 Bauer — Plataforma</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-512.png">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <style>
+    /* ===== UPGRADE DE LUXO — ESCOPO HUB (não toca tokens globais; aulas intactas) =====
+       Técnicas absorvidas: hero assimétrico + stat-panel (Codex) · page-orb animado (HIV)
+       · glow no acento + sombras largas + raios 28-30px (tosse-crônica) · dourado de acento (Codex).
+       Cor da casa preservada: teal. Jogo de luzes em modo sutil (texto soberano). */
+    :root[data-platform-hub] {
+      --gold: #d8b25a;            /* acento de luxo (joalheria sobre petróleo) */
+      --gold-soft: rgba(216, 178, 90, 0.14);
+      --r-lux: 28px;
+      --shadow-lux: 0 30px 80px rgba(4, 14, 13, 0.5);
+      --shadow-lux-soft: 0 16px 44px rgba(4, 14, 13, 0.36);
+      --glow-teal: 0 0 36px rgba(79, 214, 192, 0.28);
+    }
+    /* Fundo petróleo um pouco mais quente, só na capa */
+    body.hub {
+      background:
+        radial-gradient(120% 80% at 12% -10%, rgba(79,214,192,0.06), transparent 55%),
+        radial-gradient(120% 80% at 100% 0%, rgba(216,178,90,0.05), transparent 55%),
+        var(--bg-base);
+    }
+    :root[data-theme="light"] body.hub {
+      background:
+        radial-gradient(120% 80% at 12% -10%, rgba(15,125,112,0.07), transparent 55%),
+        radial-gradient(120% 80% at 100% 0%, rgba(176,122,26,0.06), transparent 55%),
+        var(--bg-base);
+    }
+    /* Dot grid (pontinhos) no HUB — mesma identidade das aulas (herda size/mask/position do base.css). */
+    body.hub::before {
+      background-image: radial-gradient(circle, rgba(243,239,230,0.22) 1.3px, transparent 1.7px) !important;
+    }
+    :root[data-theme="light"] body.hub::before {
+      background-image: radial-gradient(circle, rgba(21,38,42,0.16) 1.3px, transparent 1.7px) !important;
+    }
+
+    /* ===== page-orb: halo de luz que respira (técnica HIV, modo sutil) ===== */
+    .page-orb {
+      position: fixed;
+      left: 60%; top: -24vh;
+      width: 78vh; height: 78vh;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79,214,192,0.65) 0%, transparent 66%);
+      opacity: 0.24;
+      filter: blur(82px);
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: screen;
+      animation: orbBreath 16s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+    .page-orb--gold {
+      left: 2%; top: 36vh;
+      width: 58vh; height: 58vh;
+      background: radial-gradient(circle, rgba(216,178,90,0.58) 0%, transparent 68%);
+      opacity: 0.17;
+      animation-duration: 20s;
+      animation-delay: -6s;
+    }
+    @keyframes orbBreath {
+      0%   { transform: translate(0, 0) scale(1);          opacity: 0.18; }
+      20%  { transform: translate(-2vw, 9px) scale(1.03);  opacity: 0.24; }
+      40%  { transform: translate(-1vw, 21px) scale(1.07); opacity: 0.32; }
+      60%  { transform: translate(2vw, 15px) scale(1.06);  opacity: 0.31; }
+      80%  { transform: translate(1.4vw, 6px) scale(1.02); opacity: 0.23; }
+      100% { transform: translate(0, 0) scale(1);          opacity: 0.18; }
+    }
+    :root[data-theme="light"] .page-orb { opacity: 0.26; mix-blend-mode: multiply; }
+    :root[data-theme="light"] .page-orb--gold { opacity: 0.20; }
+    @media (prefers-reduced-motion: reduce) { .page-orb { animation: none; } }
+
+    main#main { position: relative; z-index: var(--z-content); }
+
+    /* ===== HERO ASSIMÉTRICO (estilo Codex): título à esquerda + painel de stats à direita ===== */
+    .hero { padding: var(--sp-8) 0 var(--sp-6); }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: var(--sp-6);
+      align-items: stretch;
+    }
+    .hero__main {
+      background: linear-gradient(155deg, var(--bg-elevated) 0%, var(--bg-elevated-2) 100%);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--r-lux);
+      padding: var(--sp-7) var(--sp-6);
+      box-shadow: var(--shadow-lux);
+    }
+    .hero__eyebrow { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--gold); text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: var(--sp-3); }
+    .hero__title { font-size: var(--fs-display); line-height: 1.02; margin-bottom: var(--sp-4); max-width: 16ch; }
+    .hero__title em { color: var(--teal-60); font-style: normal; }
+    .hero__lede { font-size: var(--fs-lg); color: var(--ink-90); max-width: 56ch; }
+    .hero__cta-row { display: flex; gap: var(--sp-3); margin-top: var(--sp-5); flex-wrap: wrap; }
+    .cta {
+      display: inline-flex; align-items: center; gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-5);
+      border-radius: 14px;
+      font-size: var(--fs-md); font-weight: 600;
+      border-bottom: 0;
+      transition: transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+    }
+    .cta--primary { background: linear-gradient(135deg, var(--teal-40), var(--teal-30)); color: var(--ink-100); border: 1px solid var(--teal-40); }
+    .cta--primary:hover, .cta--primary:focus-visible { transform: translateY(-2px); box-shadow: var(--glow-teal); border-color: var(--teal-50); color: var(--ink-100); }
+    .cta--secondary { background: var(--bg-elevated); color: var(--ink-90); border: 1px solid var(--border-mid); }
+    .cta--secondary:hover, .cta--secondary:focus-visible { color: var(--teal-60); border-color: var(--teal-40); transform: translateY(-2px); }
+
+    /* Painel "Trilha ativa" — stat-cards (estilo Codex) */
+    .hero__panel {
+      background: var(--bg-glass);
+      backdrop-filter: saturate(140%) blur(18px);
+      -webkit-backdrop-filter: saturate(140%) blur(18px);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--r-lux);
+      padding: var(--sp-5);
+      box-shadow: var(--shadow-lux-soft);
+      display: flex; flex-direction: column; gap: var(--sp-3);
+    }
+    .hero__panel-title { font-size: var(--fs-md); font-weight: 700; margin: 0 0 var(--sp-2); }
+    .stat {
+      display: flex; align-items: baseline; gap: var(--sp-4);
+      padding: var(--sp-3) var(--sp-4);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      transition: border-color var(--dur-fast), transform var(--dur-fast);
+    }
+    .stat:hover { border-color: var(--teal-30); transform: translateX(3px); }
+    .stat__num { font-family: var(--font-mono); font-size: var(--fs-2xl); font-weight: 700; color: var(--teal-60); line-height: 1; min-width: 2.6em; }
+    .stat__num--gold { color: var(--gold); }
+    .stat__label { font-size: var(--fs-sm); color: var(--ink-70); }
+    @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+
+    /* ===== Âncoras conceituais ===== */
+    .anchors { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); margin: var(--sp-7) 0 var(--sp-6); }
+    .anchor { padding: var(--sp-5); background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--r-md); box-shadow: var(--shadow-lux-soft); transition: border-color var(--dur-fast), transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast); }
+    .anchor:hover { border-color: var(--teal-30); transform: translateY(-3px); box-shadow: var(--glow-teal); }
+    .anchor__num { font-family: var(--font-mono); font-size: var(--fs-2xl); color: var(--gold); line-height: 1; margin-bottom: var(--sp-2); }
+    .anchor__ctx { font-size: var(--fs-sm); color: var(--ink-90); }
+    @media (max-width: 720px) { .anchors { grid-template-columns: 1fr; } }
+
+    .compact-mantra { margin: var(--sp-6) 0; padding: var(--sp-6) var(--sp-5); background: linear-gradient(135deg, var(--teal-10) 0%, var(--teal-05) 100%); border: 1px solid var(--teal-30); border-radius: var(--r-lux); text-align: center; box-shadow: var(--shadow-lux-soft); }
+    .compact-mantra__quote { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-xl); color: var(--ink-100); margin: 0; max-width: 62ch; margin-inline: auto; }
+    .compact-mantra__quote em { color: var(--teal-60); font-style: normal; font-weight: 700; }
+
+    /* ===== Sumário ===== */
+    .syllabus { margin: var(--sp-7) 0; }
+    .syllabus__title { font-size: var(--fs-2xl); margin-bottom: var(--sp-2); }
+    .syllabus__intro { color: var(--ink-70); margin-bottom: var(--sp-5); max-width: 60ch; }
+    .syllabus__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-4); }
+    .lesson {
+      position: relative;
+      display: flex; flex-direction: column;
+      padding: var(--sp-5);
+      background: linear-gradient(160deg, var(--bg-elevated) 0%, var(--bg-elevated-2) 120%);
+      border: 1px solid var(--border-soft); border-radius: var(--r-lux);
+      text-decoration: none; color: var(--ink-100); border-bottom: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-lux-soft);
+      transition: border-color var(--dur-fast), transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast), background var(--dur-fast);
+    }
+    .lesson:hover, .lesson:focus-visible { border-color: var(--teal-40); transform: translateY(-4px); box-shadow: var(--glow-teal); }
+    .lesson[data-status="soon"] { opacity: 0.5; pointer-events: none; cursor: not-allowed; }
+    .lesson__row { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-3); }
+    .lesson__num { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; }
+    .lesson__chip { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; padding: var(--sp-1) var(--sp-3); border-radius: var(--r-pill); }
+    .lesson__chip--ready { color: var(--ok-green); border: 1px solid var(--ok-green); background: var(--ok-green-dim); }
+    .lesson__chip--soon { color: var(--ink-70); border: 1px solid var(--border-mid); background: var(--bg-elevated-2); }
+    .lesson__sigla {
+      position: absolute; top: var(--sp-5); right: var(--sp-5);
+      width: 46px; height: 46px; border-radius: 14px;
+      display: grid; place-items: center;
+      font-family: var(--font-mono); font-weight: 700; font-size: var(--fs-sm);
+      color: var(--teal-60); background: var(--teal-05); border: 1px solid var(--teal-20);
+    }
+    .lesson__title { font-size: var(--fs-lg); font-weight: 700; margin-bottom: var(--sp-2); padding-right: 52px; }
+    .lesson__desc { font-size: var(--fs-sm); color: var(--ink-70); margin-bottom: var(--sp-4); }
+    .lesson__tags { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: auto; }
+    .lesson__tag { font-size: var(--fs-xs); color: var(--ink-90); padding: var(--sp-1) var(--sp-3); border-radius: var(--r-pill); background: var(--bg-elevated-2); border: 1px solid var(--border-soft); }
+    .lesson__enter { margin-top: var(--sp-4); align-self: flex-start; font-size: var(--fs-sm); font-weight: 700; color: var(--ink-100); padding: var(--sp-2) var(--sp-4); border-radius: 12px; background: linear-gradient(135deg, var(--teal-40), var(--teal-30)); border: 1px solid var(--teal-40); }
+  </style>
+</head>
+<body class="hub">
+  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+  <div class="page-orb" aria-hidden="true"></div>
+  <div class="page-orb page-orb--gold" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__row">
+      <a class="site-header__brand" href="#main" aria-label="Cirurgia Oncológica 2 Bauer — capa da plataforma">
+        <span class="site-header__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M19.5 5.5v12.2a6.3 6.3 0 1 1-6.3-6.3" stroke="#4fd6c0" stroke-width="3.1" stroke-linecap="round"/><circle cx="19.5" cy="6.2" r="3.1" fill="#4fd6c0"/></svg>
+        </span>
+        <span class="site-header__titles">
+          <span class="site-header__title">Cirurgia Oncológica 2</span>
+          <span class="site-header__subtitle">Oncologia cirúrgica do tubo digestivo</span>
+        </span>
+      </a>
+      <div class="site-header__spacer"></div>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a class="cta cta--secondary" href="aulas/aula-01/index.html">Abrir Aula 1</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__main">
+            <div class="hero__eyebrow">Plataforma Bauer · Módulo de tubo digestivo</div>
+            <h1 class="hero__title">A oncologia digestiva se decide pela <em>profundidade</em>.</h1>
+            <p class="hero__lede">Uma trilha premium para transformar casos de esôfago e estômago em raciocínio de residência: suspeita, confirmação, estadiamento, tratamento e armadilhas de prova.</p>
+            <div class="hero__cta-row">
+              <a class="cta cta--primary" href="aulas/aula-01/index.html">Começar pela Aula 1</a>
+              <a class="cta cta--secondary" href="#syllabus">Ver sumário</a>
+            </div>
+          </div>
+          <aside class="hero__panel" aria-label="Trilha ativa">
+            <h2 class="hero__panel-title">Trilha ativa</h2>
+            <div class="stat"><span class="stat__num">5</span><span class="stat__label">aulas no hub</span></div>
+            <div class="stat"><span class="stat__num">68</span><span class="stat__label">páginas soberanas</span></div>
+            <div class="stat"><span class="stat__num">120</span><span class="stat__label">questões comentadas</span></div>
+            <div class="stat"><span class="stat__num stat__num--gold">100%</span><span class="stat__label">sem resumo automático</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="anchors">
+        <div class="anchor">
+          <div class="anchor__num">2</div>
+          <div class="anchor__ctx"><strong>tipos no esôfago</strong> — escamoso (externo) e adenocarcinoma (interno). Cada um com seus fatores de risco e seu terço.</div>
+        </div>
+        <div class="anchor">
+          <div class="anchor__num">3</div>
+          <div class="anchor__ctx"><strong>vias de disseminação</strong> — linfática, hematogênica e transcelômica. O estômago é mestre na terceira: o "tumor praga".</div>
+        </div>
+        <div class="anchor">
+          <div class="anchor__num">T</div>
+          <div class="anchor__ctx"><strong>profundidade de invasão</strong> — a USE define até que camada o tumor chegou; é o eixo que comanda toda a conduta.</div>
+        </div>
+      </div>
+
+      <div class="compact-mantra">
+        <p class="compact-mantra__quote">Disfagia que evolui em <em>anos</em> é funcional; disfagia que evolui em <em>meses</em>, com perda de peso, é câncer até prova em contrário.</p>
+      </div>
+
+      <section class="syllabus" id="syllabus" aria-labelledby="syllabus-title">
+        <h2 class="syllabus__title" id="syllabus-title">Sumário do módulo</h2>
+        <p class="syllabus__intro">A oncologia cirúrgica do tubo digestivo, órgão por órgão. Esôfago, estômago e colorretal formam a trilogia das vias de disseminação; a aula bônus de tumores hepáticos ensina a ler a TC dinâmica; e a aula de pólipos e síndromes hereditárias intercepta o colorretal antes mesmo de ele virar câncer.</p>
+        <div class="syllabus__grid">
+          <a class="lesson" href="aulas/aula-01/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CE</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 1</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer de esôfago</div>
+            <div class="lesson__desc">Do caso do Sr. Aurelino à conduta: dois tipos pelo macete externo/interno, regra de ouro da biópsia, contiguidade sem serosa, estadiamento USE/TC e ressecabilidade.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">12 páginas</span>
+              <span class="lesson__tag">24 questões</span>
+              <span class="lesson__tag">EDA · USE · TC reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-02/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CG</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 2</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer gástrico</div>
+            <div class="lesson__desc">Caso da mulher de 46 anos · tumor praga e via transcelômica · os 5 sinais de incurabilidade (Virchow) · Borrmann × Lauren (anel de sinete) · carcinomatose e VLP · mucosectomia × precoce · gastrectomia, margens e D2.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">14 páginas</span>
+              <span class="lesson__tag">26 questões</span>
+              <span class="lesson__tag">Imagem real + histologia</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-03/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CR</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 3</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Endocardite e câncer colorretal</div>
+            <div class="lesson__desc">Caso do Sr. Luiz · endocardite por S. bovis (gallolyticus) obriga investigar o cólon · mecanismo do elo · rastreio aos 50 · clínica por topografia (direito/esquerdo/reto) · colonoscopia e CEA · "carteiro do mal" e estadiamento · cólon opera × reto faz neoadjuvância · RAB × RAP (Miles) · metástase hepática que cura.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">14 páginas</span>
+              <span class="lesson__tag">26 questões</span>
+              <span class="lesson__tag">SVG interativo + imagem real</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-04/index.html">
+            <span class="lesson__sigla" aria-hidden="true">TH</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 4 · bônus</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Tumores hepáticos</div>
+            <div class="lesson__desc">Caso da enfermeira com adenoma roto · por que o fígado não se biopsia · ler a TC dinâmica trifásica (captação + washout) · os 4 padrões · hemangioma × HNF × adenoma (Primovist) · hepatocarcinoma (cirrose, alfa-fetoproteína, washout, Child/Milão) · metástases colorretais e a volumetria que faz o fígado crescer para operar.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">14 páginas</span>
+              <span class="lesson__tag">26 questões</span>
+              <span class="lesson__tag">SVG interativo · TC dinâmica</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-05/index.html">
+            <span class="lesson__sigla" aria-hidden="true">PC</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 5</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Pólipos e câncer colorretal</div>
+            <div class="lesson__desc">O pré-câncer do CCR · sequência adenoma-carcinoma (gene APC) · pediculado × séssil e tubular × viloso (o vilão é o viloso) · Haggitt/Kikuchi e o limite SM1 · os 6 critérios de cura da polipectomia · vigilância (10/5/3/1/0,5 anos) · síndromes hereditárias (PAF/APC, Gardner, Turcot, Peutz-Jeghers/STK11, Lynch com Amsterdam e BRAF) · rastreamento por risco e seguimento pós-CCR.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">14 páginas</span>
+              <span class="lesson__tag">26 questões</span>
+              <span class="lesson__tag">9 SVG interativos</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-06-ca-pulmao/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CP</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 6</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Nódulo pulmonar e câncer de pulmão</div>
+            <div class="lesson__desc">O nódulo pulmonar solitário (≤3 cm) e a pegadinha-Harrison · probabilidade de malignidade (idade, carga tabágica, bordas espiculadas, calcificação — pipoca é do bem) · seguimento Fleischner (≤8 mm acompanha / &gt;8 mm investiga) · os 4 histológicos (adeno periférico, escamoso central que cavita, oat cell neuroendócrino, grandes células) · síndromes paraneoplásicas (Cushing/SIADH/Eaton-Lambert no oat cell, PTHrP no escamoso, Pancoast/Horner/VCS) · estadiamento TNM 8ª e o trio irressecável (T4/N3/M1) · rastreio low-dose CT (50-80 / 20 maços-ano).</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">22 páginas</span>
+              <span class="lesson__tag">66 questões</span>
+              <span class="lesson__tag">26 SVG interativos</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-07-ca-tireoide/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CT</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 7</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Nódulo e câncer de tireoide</div>
+            <div class="lesson__desc">O nódulo de tireoide do US (TI-RADS, achados ANEI) à PAAF e Bethesda I-VI · os 4 tipos (papilífero linfático/psamomatoso/Orphan Annie, folicular hematogênico/invasão capsular que não se vê na PAAF/Hürthle, medular de célula C/calcitonina/NEM2-RET/screening de feocromocitoma antes de operar, anaplásico do idoso) · cintilografia quente × fria · conduta cirúrgica por tamanho (lobectomia × tireoidectomia total, ATA 2025) · radioiodo, supressão de TSH e tireoglobulina no seguimento. Interativos: calculadora de conduta, slider de agressividade, tabela dinâmica do Bethesda.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">14 páginas</span>
+              <span class="lesson__tag">interativos variados</span>
+              <span class="lesson__tag">14 imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-08-ca-prostata/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CP</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 8</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer de próstata</div>
+            <div class="lesson__desc">Do rastreio (PSA + toque retal, a divergência MS × SBU) ao diagnóstico · refinamento do PSA (densidade, velocidade, relação livre/total) · anatomia zonal (a zona periférica é a do câncer e a do toque) · biópsia e Gleason (soma do dominante + pior; a pegadinha 4+3 &gt; 3+4) · estratificação de risco por PSA + Gleason · RM multiparamétrica (PI-RADS) · tratamento localizado (vigilância ativa, prostatectomia radical, radioterapia) e avançado (bloqueio androgênico, orquiectomia) · metástase óssea blástica e PSA no seguimento. Interativos: calculadora de risco e de Gleason, slider de PI-RADS, tabelas dinâmicas.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">14 páginas</span>
+              <span class="lesson__tag">interativos variados</span>
+              <span class="lesson__tag">imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+        </div>
+
+        <h3 class="syllabus__title" id="extras-title" style="font-size: var(--fs-xl); margin: var(--sp-7) 0 var(--sp-2);">Aulas Extras</h3>
+        <p class="syllabus__intro">Páginas-ouro fora da trilha principal — temas pontuais de alto rendimento em prova, no mesmo padrão de caso, visual interativo e questões comentadas.</p>
+        <div class="syllabus__grid" aria-labelledby="extras-title">
+          <a class="lesson" href="aulas/aula-extra-01-gist/index.html">
+            <span class="lesson__sigla" aria-hidden="true">GI</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 1</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">GIST gástrico</div>
+            <div class="lesson__desc">O sarcoma do estômago em três páginas-ouro: o abaulamento submucoso que se diagnostica pelo aspecto (e dispensa a pinça), a cirurgia que tira a lesão com margem livre sem linfadenectomia (metástase hematogênica → fígado e peritônio) e a régua de risco tamanho × mitoses que indica o imatinibe adjuvante.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">3 páginas</span>
+              <span class="lesson__tag">9 questões</span>
+              <span class="lesson__tag">3 SVG interativos · imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-02-apendice/index.html">
+            <span class="lesson__sigla" aria-hidden="true">AP</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 2</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Tumores de apêndice</div>
+            <div class="lesson__desc">Três tumores, dois momentos de decisão, uma régua que salva a prova: neuroendócrino (o mais comum) e a síndrome carcinoide pelo filtro hepático · adenocarcinoma silencioso (apêndice é cólon) · mucinoso e o pseudomixoma de quem fura a mucocele · a régua dos três critérios intraoperatórios (um SIM → hemicolectomia) · citorredução e HIPEC · e o histopatológico que comanda a conduta pós-op tipo a tipo.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">8 páginas</span>
+              <span class="lesson__tag">24 questões</span>
+              <span class="lesson__tag">12 SVG/fluxogramas · imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-03-canal-anal/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CA</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 3</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer de canal anal</div>
+            <div class="lesson__desc">O tumor do tubo digestivo que não se opera: carcinoma escamoso (não adenocarcinoma) cuja histologia comanda tudo · o eixo HPV e o tripé orofaringe/canal anal/colo · o ponto-chave do estadiamento — o linfonodo inguinal que se punciona (DST × neoplasia) · RM na pelve, TC no resto · o pulo do gato: quimiorradioterapia exclusiva (esquema Nigro) que preserva o esfíncter, com químio antes da rádio por radiossensibilização · e a cirurgia de Miles como resgate, não primeira linha · fecha com o caso AMRIGS e as quatro armadilhas.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">9 páginas</span>
+              <span class="lesson__tag">27 questões</span>
+              <span class="lesson__tag">9 SVG interativos · imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-04-cisticas/index.html">
+            <span class="lesson__sigla" aria-hidden="true">NC</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 4</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Neoplasias císticas do pâncreas</div>
+            <div class="lesson__desc">Quatro diagnósticos separados de olhos fechados por um único fio — origem da lesão → o que produz → como aparece na imagem → o que se faz: serosa (favo de mel, septo fino, benigna, observa) · mucinosa (macrocística, septo grosseiro, a mais comum e a que mais preocupa) · IPMN (mucinosa intraductal, dilatação ductal, amilase alta no líquido) · tumor de Frantz (sólido-cístico, mulher jovem) · a dedução de amilase e CEA pela origem · conduta por sítio (corpo-caudal + esplenectomia × Whipple) · e o manejo aprofundado do IPMN secundário (worrisome features × high-risk stigmata, PAAF e seguimento por tamanho).</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">14 páginas</span>
+              <span class="lesson__tag">42 questões</span>
+              <span class="lesson__tag">14 SVG interativos · imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-05-hpb/index.html">
+            <span class="lesson__sigla" aria-hidden="true">HP</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 5</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Hiperplasia prostática benigna</div>
+            <div class="lesson__desc">Urologia benigna em 16 páginas-ouro, com um fio categórico: quem entende a fisiopatologia entende os sintomas e o tratamento. Da próstata de 20–30 g embaixo da bexiga aos 4 trechos da uretra e os 2 traumas ("bubu da bulbar") · zona de transição × periférica (sintoma cedo × tarde, sem rastreio) · a fisiopatologia tripla — estática/androgênica, dinâmica/adrenérgica, colinérgica — mapeada em 3 fármacos (5-ARI, α-bloqueador, anticolinérgico) · LUTS obstrutivos × irritativos e o IPSS (0–35, corte 8) · conduta escalonada e ejaculação retrógrada · indicações de cirurgia e a falência pós-renal · retenção aguda → CVD (nunca Jelco 14) · RTU × aberta no corte de 80 g e a síndrome pós-RTU (hiponatremia dilucional) · toque retal (1 polpa ≈ 10 g) · e fecha nos casos UNIFESP e UEPA.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">16 páginas</span>
+              <span class="lesson__tag">48 questões</span>
+              <span class="lesson__tag">16 SVG interativos · imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-06-ca-rim/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CR</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 6</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer de rim — carcinoma de células renais</div>
+            <div class="lesson__desc">Urologia oncológica em 11 páginas, organizada por raciocínio de prova com dois vínculos cerebrais cravados: varicocele aguda em jovem → câncer de rim, e fosfatase alcalina alta sem metástase → síndrome de Stauffer. Fatores de risco (tabagismo, cádmio/benzeno, a pegadinha de SP) · VHL (células claras no jovem) × esclerose tuberosa (angiomiolipoma) · tríade clássica rara (&lt;5–10%) e por que a massa palpável já é doença avançada · a anatomia venosa que explica o lado esquerdo (gonadal E → renal E; gonadal D → cava) e o trombo mural · diagnóstico por imagem (achado acidental, uro-TC/uro-RM) · lesão sólida = cirurgia sem biópsia (contraste com a bexiga) · a escada de Bozniak (1≈0% / 2&lt;5% / 2F até 25% / 3 45–60% / 4 até 95%) · e a decisão que mais cai — nefrectomia parcial (poupadora de néfrons, isquemia quente ~30 min) × radical — fechando em três casos resolvidos.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">11 páginas</span>
+              <span class="lesson__tag">29 questões</span>
+              <span class="lesson__tag">7 SVG interativos · 5 imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-07-ca-bexiga/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CB</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 7</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer de bexiga — carcinoma urotelial</div>
+            <div class="lesson__desc">Uro-oncologia em 12 páginas, organizada inteira ao redor de um divisor de águas: o <strong>T2 — invasão da camada muscular (detrusor)</strong> — que separa o não-músculo-invasivo conservador do músculo-invasivo radical. O paradoxo de prova (raro na vida, abundante na prova; incidência homem 3,5% × mulher 1,5%) · tabagismo (50% / 40%) e a bexiga como "piscina de toxina" pelo tempo de contato · aminas aromáticas ocupacionais (tinta/couro/borracha/corante/têxtil) e o cálculo vesical · urotélio "transicional" entre os dois epitélios vizinhos · a pegadinha-mãe da hematúria macroscópica indolor, autolimitada e recorrente (a falsa melhora) e a regra dos 40/60 anos · vegetante × carcinoma in situ "tapete" (a silenciosa é a pior) · tríade diagnóstica com cistoscopia + biópsia como padrão-ouro e a falha de enchimento na uro-TC · estadiamento T (Ta/Tis/T1 → T2 → T3a/T3b → T4) · NMI (baixo risco RTU+QT × alto risco RTU→re-RTU→BCG, e o refratário que vira cirúrgico) × MI (cistectomia radical, homem × mulher, cisplatina neoadjuvante) · fechando nas pontes com a HPB (estase) e o CA de rim (a bexiga biopsia, o rim sólido não).</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">12 páginas</span>
+              <span class="lesson__tag">30 questões</span>
+              <span class="lesson__tag">12 SVG interativos · 7 mapas · 5 imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-08-testiculo/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CT</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 8</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer de testículo — tumor de células germinativas</div>
+            <div class="lesson__desc">Uro-oncologia do homem jovem em 12 páginas, montada inteira ao redor de uma sequência de conduta que decide 80% das questões: <strong>USG + marcadores tumorais → orquiectomia inguinal radical → estadiamento depois</strong>. O gatilho do enunciado (homem <strong>20–40 anos</strong>, <strong>criptorquidia</strong>, <strong>massa testicular indolor</strong>) · <strong>95% tumores de células germinativas</strong>, seminomatoso × não-seminomatoso (frequentemente misto) · a criptorquidia como grande fator de risco (<strong>4–6×</strong>) e o contralateral que também sobe (<strong>até 2×</strong>) · a hierarquia familiar (irmão <strong>8–12×</strong> &gt; pai <strong>2–4×</strong>) e a história pessoal prévia (<strong>12×</strong>) · a massa <strong>indolor, endurecida, bem delimitada</strong> ao exame bimanual, a ginecomastia do <strong>β-hCG</strong> e a disseminação pelo <strong>canal inguinal → retroperitônio → supraclavicular</strong> · a USG hipoecogênica/heterogênea ("carne de peixe") com Doppler bilateral · os marcadores que separam os subtipos (<strong>AFP nunca no seminoma</strong>, <strong>β-hCG pode em ambos</strong>, <strong>LDH inespecífico</strong>) e a leitura pré/pós-op para prognóstico · a <strong>orquiectomia inguinal radical</strong> com cordão espermático e o erro fatal da via escrotal (semeia metástase) · a quimioterapia à base de <strong>cisplatina</strong> que tira o "atestado de óbito" da metástase · o estadiamento <strong>depois</strong> da cirurgia (TC de abdome com contraste se marcador não cai) · e o diagnóstico diferencial que a banca arma — <strong>torção</strong> e <strong>orquiepididimite doem; testículo retrátil não é fator de risco</strong>.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">12 páginas</span>
+              <span class="lesson__tag">24 questões</span>
+              <span class="lesson__tag">12 SVG interativos · 12 imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-09-onco-pediatrica/index.html">
+            <span class="lesson__sigla" aria-hidden="true">OP</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 9</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Oncologia pediátrica — tumores abdominais da infância</div>
+            <div class="lesson__desc">Os dois tumores abdominais que decidem a oncologia pediátrica de prova, montados ao redor de uma única bifurcação: <strong>neuroblastoma × tumor de Wilms</strong>. A hierarquia dos "mais comuns" que a banca usa para confundir (<strong>leucemia</strong> = neoplasia mais comum da infância · <strong>SNC</strong> = tumor sólido mais comum · <strong>neuroblastoma</strong> = sólido mais comum fora do SNC e neoplasia nº 1 do menor de 1 ano · <strong>Wilms</strong> = tumor renal primário mais comum, 2ª causa de massa abdominal) · o <strong>neuroblastoma</strong> da crista neural (medula adrenal <strong>~50%</strong>, gânglios simpáticos retroperitoneais <strong>25%</strong>), com a massa <strong>dura, irregular, que cruza a linha média</strong>, a liberação de <strong>catecolaminas</strong> (HAS, sudorese, rubor, palpitação), a <strong>síndrome de Horner</strong>, a <strong>opsoclonia-mioclonia</strong> (síndrome de Kinsbourne) paraneoplásica, o <strong>sinal do guaxinim</strong> periorbitário, as metástases para <strong>fígado, medula óssea e linfonodos — nunca pulmão</strong> · o diagnóstico por <strong>calcificações</strong> na imagem e <strong>catecolaminas urinárias (VMA e HVA)</strong> · o <strong>Wilms/nefroblastoma</strong> associado a <strong>WAGR</strong> e <strong>Beckwith-Wiedemann</strong>, à <strong>aniridia</strong> e <strong>hemi-hipertrofia</strong> isoladas, à criança em <strong>bom estado geral</strong> com massa <strong>firme, que não cruza a linha média</strong>, achada no banho, à <strong>palpação delicada</strong> que evita a ruptura, à metástase <strong>pulmonar</strong>, e à <strong>anaplasia</strong> como principal fator de pior prognóstico · fechado nas próprias questões reais de pediatria que a banca repete.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">9 páginas</span>
+              <span class="lesson__tag">18 questões</span>
+              <span class="lesson__tag">9 SVG interativos · 9 imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-10-mediastino/index.html">
+            <span class="lesson__sigla" aria-hidden="true">TM</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 10</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Tumores do mediastino — estatística de prova + timoma a fundo</div>
+            <div class="lesson__desc">Um tema curto e cirúrgico de prova: o mediastino quase nunca cobra conduta ou estadiamento — cobra <strong>estatística</strong>. A aula se organiza ao redor de uma única pergunta de banca repetida à exaustão: <strong>qual o tumor mais comum de cada compartimento</strong>. O mediastino dividido em três (anterossuperior, médio, posterior) · os <strong>quatro "T" do mediastino anterior</strong> (timoma, teratoma, tireoide/bócio mergulhante, terrível linfoma) e por que o quinto "T" do aneurisma é uma armadilha · os <strong>cistos de duplicação</strong> do médio (broncogênico, pericárdico, entérico) · os <strong>tumores neurogênicos</strong> do posterior (schwannoma &gt; neurofibroma) · o ranking de ouro: <strong>timoma o mais comum de todos, linfoma o segundo</strong> · e o aprofundamento no timoma — a relação com a <strong>miastenia gravis</strong> como única clínica, a <strong>classificação de Masaoka</strong> (I-II bom × III-IV ruim), a diferença fina entre invasão por <strong>contiguidade (grau III)</strong> e <strong>implante à distância (grau IVA)</strong>, e quando a cirurgia basta (R0 + timoma benigno) versus quando entra adjuvância (carcinoma tímico, R1/R2, grau III-IV).</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">9 páginas</span>
+              <span class="lesson__tag">18 questões</span>
+              <span class="lesson__tag">9 SVG interativos · 9 imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-extra-11-sarcomas/index.html">
+            <span class="lesson__sigla" aria-hidden="true">SA</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula Extra 11</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Sarcomas — partes moles, retroperitônio e o tumor desmoide</div>
+            <div class="lesson__desc">Um dos temas mais fáceis da cirurgia depois que você entende a lógica — e um dos que mais derruba quem nunca parou para estudá-lo. A aula constrói o sarcoma a partir de três perguntas de prova que se repetem: <strong>onde</strong> ele aparece, <strong>qual o tipo histológico</strong> mais comum e <strong>como</strong> se obtém o material para histopatologia. O tripé das localizações — <strong>extremidades</strong> (a mais comum, com a coxa na ponta), tronco e retroperitônio — e o exame certo para cada uma (<strong>RM</strong> na extremidade, <strong>TC</strong> no tronco e no retroperitônio) · o tipo histológico campeão: <strong>lipossarcoma</strong> no adulto (rabdomiossarcoma alveolar na criança) · por que o sarcoma mata — só com metástase, e ela vai para o <strong>pulmão</strong>, não para o fígado (sem primeira passagem hepática, daí a TC de tórax no estadiamento) · quando investigar um caroço (<strong>&gt;5 cm</strong> ou profundo/aderido) e o exame de escolha, a <strong>core biópsia</strong> (agulha grossa, Tru-Cut — não PAAF) · o tratamento de partes moles: <strong>ressecção radical com preservação de membro</strong>, margem de 1-2 cm, e a radioquimioterapia adjuvante quando &gt;5 cm, alto grau ou avançado · o capítulo à parte do <strong>sarcoma de retroperitônio</strong>: diagnóstico só por TC, sem biópsia (biopsiar espalha), o diferencial pré-operatório (LDH para linfoma, βHCG + alfafetoproteína para tumor de células germinativas), a <strong>ressecção em bloco</strong> (invadiu o rim, tira o rim), a recorrência altíssima e por que não se faz radioterapia ali · e o fechamento com o <strong>tumor desmoide</strong> — localmente agressivo mas sem metástase, ligado a gestação e à polipose adenomatosa familiar / síndrome de Gardner.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">8 páginas</span>
+              <span class="lesson__tag">16 questões</span>
+              <span class="lesson__tag">8 SVG interativos · 10 imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>Plataforma Bauer · Cirurgia Oncológica 2 · 2026</div>
+      <div>Conteúdo educacional · Não substitui diretriz oficial</div>
+    </div>
+  </footer>
+
+  <script>
+    // ativa escopo de tokens do HUB + tema (compartilha chave com as aulas)
+    document.documentElement.setAttribute('data-platform-hub', '');
+    (function () {
+      var KEY = 'cironco2-theme';
+      if (localStorage.getItem(KEY) === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      var btn = document.getElementById('theme-toggle');
+      btn && btn.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        if (cur === 'light') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem(KEY, 'dark'); }
+        else { document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem(KEY, 'light'); }
+      });
+    })();
+  </script>
+  <script src="assets/js/pwa-bootstrap.js"></script>
+</body>
+</html>

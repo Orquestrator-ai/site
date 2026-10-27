@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-platform="neonatologia">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0a1826">
+  <meta name="description" content="Pediatria Bauer — puericultura e crescimento para residência médica. Da curva da OMS ao escore-Z, do caso real ao diagnóstico do distúrbio do crescimento.">
+  <title>Pediatria Bauer — Plataforma</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-512.png">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <style>
+    /* ===== UPGRADE DE LUXO — ESCOPO HUB (não toca tokens globais; aulas intactas) =====
+       Técnicas absorvidas: hero assimétrico + stat-panel (Codex) · page-orb animado (HIV)
+       · glow no acento + sombras largas + raios 28-30px (tosse-crônica) · dourado de acento (Codex).
+       Cor da casa preservada: teal. Jogo de luzes em modo sutil (texto soberano). */
+    :root[data-platform-hub] {
+      --gold: #ffb088;            /* acento de luxo pediátrico (pêssego quente sobre azul-noite) */
+      --gold-soft: rgba(255, 176, 136, 0.16);
+      --r-lux: 28px;
+      --shadow-lux: 0 30px 80px rgba(4, 14, 13, 0.5);
+      --shadow-lux-soft: 0 16px 44px rgba(4, 14, 13, 0.36);
+      --glow-teal: 0 0 36px rgba(98, 189, 243, 0.30);
+    }
+    /* Fundo petróleo um pouco mais quente, só na capa */
+    body.hub {
+      background:
+        radial-gradient(120% 80% at 12% -10%, rgba(98,189,243,0.07), transparent 55%),
+        radial-gradient(120% 80% at 100% 0%, rgba(255,170,140,0.05), transparent 55%),
+        var(--bg-base);
+    }
+    :root[data-theme="light"] body.hub {
+      background:
+        radial-gradient(120% 80% at 12% -10%, rgba(31,127,194,0.08), transparent 55%),
+        radial-gradient(120% 80% at 100% 0%, rgba(230,130,90,0.06), transparent 55%),
+        var(--bg-base);
+    }
+    /* Grid QUADRICULADO em LINHAS no HUB (vertical + horizontal) — mais evidente. Herda size/mask do base.css. */
+    body.hub::before {
+      background-image:
+        linear-gradient(rgba(231,240,250,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(231,240,250,0.085) 1px, transparent 1px) !important;
+    }
+    :root[data-theme="light"] body.hub::before {
+      background-image:
+        linear-gradient(rgba(15,36,56,0.11) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,36,56,0.09) 1px, transparent 1px) !important;
+    }
+
+    /* ===== page-orb: halo de luz que respira (técnica HIV, modo sutil) ===== */
+    .page-orb {
+      position: fixed;
+      left: 60%; top: -24vh;
+      width: 78vh; height: 78vh;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(98,189,243,0.62) 0%, transparent 66%);
+      opacity: 0.24;
+      filter: blur(82px);
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: screen;
+      animation: orbBreath 16s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+    .page-orb--gold {
+      left: 2%; top: 36vh;
+      width: 58vh; height: 58vh;
+      background: radial-gradient(circle, rgba(255,170,140,0.50) 0%, transparent 68%);
+      opacity: 0.16;
+      animation-duration: 20s;
+      animation-delay: -6s;
+    }
+    @keyframes orbBreath {
+      0%   { transform: translate(0, 0) scale(1);          opacity: 0.18; }
+      20%  { transform: translate(-2vw, 9px) scale(1.03);  opacity: 0.24; }
+      40%  { transform: translate(-1vw, 21px) scale(1.07); opacity: 0.32; }
+      60%  { transform: translate(2vw, 15px) scale(1.06);  opacity: 0.31; }
+      80%  { transform: translate(1.4vw, 6px) scale(1.02); opacity: 0.23; }
+      100% { transform: translate(0, 0) scale(1);          opacity: 0.18; }
+    }
+    :root[data-theme="light"] .page-orb { opacity: 0.26; mix-blend-mode: multiply; }
+    :root[data-theme="light"] .page-orb--gold { opacity: 0.20; }
+    @media (prefers-reduced-motion: reduce) { .page-orb { animation: none; } }
+
+    main#main { position: relative; z-index: var(--z-content); }
+
+    /* ===== HERO ASSIMÉTRICO (estilo Codex): título à esquerda + painel de stats à direita ===== */
+    .hero { padding: var(--sp-8) 0 var(--sp-6); }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: var(--sp-6);
+      align-items: stretch;
+    }
+    .hero__main {
+      background: linear-gradient(155deg, var(--bg-elevated) 0%, var(--bg-elevated-2) 100%);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--r-lux);
+      padding: var(--sp-7) var(--sp-6);
+      box-shadow: var(--shadow-lux);
+    }
+    .hero__eyebrow { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--gold); text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: var(--sp-3); }
+    .hero__title { font-size: var(--fs-display); line-height: 1.02; margin-bottom: var(--sp-4); max-width: 16ch; }
+    .hero__title em { color: var(--teal-60); font-style: normal; }
+    .hero__lede { font-size: var(--fs-lg); color: var(--ink-90); max-width: 56ch; }
+    .hero__cta-row { display: flex; gap: var(--sp-3); margin-top: var(--sp-5); flex-wrap: wrap; }
+    .cta {
+      display: inline-flex; align-items: center; gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-5);
+      border-radius: 14px;
+      font-size: var(--fs-md); font-weight: 600;
+      border-bottom: 0;
+      transition: transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+    }
+    .cta--primary { background: linear-gradient(135deg, var(--teal-40), var(--teal-30)); color: var(--ink-100); border: 1px solid var(--teal-40); }
+    .cta--primary:hover, .cta--primary:focus-visible { transform: translateY(-2px); box-shadow: var(--glow-teal); border-color: var(--teal-50); color: var(--ink-100); }
+    .cta--secondary { background: var(--bg-elevated); color: var(--ink-90); border: 1px solid var(--border-mid); }
+    .cta--secondary:hover, .cta--secondary:focus-visible { color: var(--teal-60); border-color: var(--teal-40); transform: translateY(-2px); }
+
+    /* Painel "Trilha ativa" — stat-cards (estilo Codex) */
+    .hero__panel {
+      background: var(--bg-glass);
+      backdrop-filter: saturate(140%) blur(18px);
+      -webkit-backdrop-filter: saturate(140%) blur(18px);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--r-lux);
+      padding: var(--sp-5);
+      box-shadow: var(--shadow-lux-soft);
+      display: flex; flex-direction: column; gap: var(--sp-3);
+    }
+    .hero__panel-title { font-size: var(--fs-md); font-weight: 700; margin: 0 0 var(--sp-2); }
+    .stat {
+      display: flex; align-items: baseline; gap: var(--sp-4);
+      padding: var(--sp-3) var(--sp-4);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      transition: border-color var(--dur-fast), transform var(--dur-fast);
+    }
+    .stat:hover { border-color: var(--teal-30); transform: translateX(3px); }
+    .stat__num { font-family: var(--font-mono); font-size: var(--fs-2xl); font-weight: 700; color: var(--teal-60); line-height: 1; min-width: 2.6em; }
+    .stat__num--gold { color: var(--gold); }
+    .stat__label { font-size: var(--fs-sm); color: var(--ink-70); }
+    @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+
+    /* ===== Âncoras conceituais ===== */
+    .anchors { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); margin: var(--sp-7) 0 var(--sp-6); }
+    .anchor { padding: var(--sp-5); background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--r-md); box-shadow: var(--shadow-lux-soft); transition: border-color var(--dur-fast), transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast); }
+    .anchor:hover { border-color: var(--teal-30); transform: translateY(-3px); box-shadow: var(--glow-teal); }
+    .anchor__num { font-family: var(--font-mono); font-size: var(--fs-2xl); color: var(--gold); line-height: 1; margin-bottom: var(--sp-2); }
+    .anchor__ctx { font-size: var(--fs-sm); color: var(--ink-90); }
+    @media (max-width: 720px) { .anchors { grid-template-columns: 1fr; } }
+
+    .compact-mantra { margin: var(--sp-6) 0; padding: var(--sp-6) var(--sp-5); background: linear-gradient(135deg, var(--teal-10) 0%, var(--teal-05) 100%); border: 1px solid var(--teal-30); border-radius: var(--r-lux); text-align: center; box-shadow: var(--shadow-lux-soft); }
+    .compact-mantra__quote { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-xl); color: var(--ink-100); margin: 0; max-width: 62ch; margin-inline: auto; }
+    .compact-mantra__quote em { color: var(--teal-60); font-style: normal; font-weight: 700; }
+
+    /* ===== Sumário ===== */
+    .syllabus { margin: var(--sp-7) 0; }
+    .syllabus__title { font-size: var(--fs-2xl); margin-bottom: var(--sp-2); }
+    .syllabus__intro { color: var(--ink-70); margin-bottom: var(--sp-5); max-width: 60ch; }
+    .syllabus__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-4); }
+    .lesson {
+      position: relative;
+      display: flex; flex-direction: column;
+      padding: var(--sp-5);
+      background: linear-gradient(160deg, var(--bg-elevated) 0%, var(--bg-elevated-2) 120%);
+      border: 1px solid var(--border-soft); border-radius: var(--r-lux);
+      text-decoration: none; color: var(--ink-100); border-bottom: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-lux-soft);
+      transition: border-color var(--dur-fast), transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast), background var(--dur-fast);
+    }
+    .lesson:hover, .lesson:focus-visible { border-color: var(--teal-40); transform: translateY(-4px); box-shadow: var(--glow-teal); }
+    .lesson[data-status="soon"] { opacity: 0.5; pointer-events: none; cursor: not-allowed; }
+    .lesson__row { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-3); }
+    .lesson__num { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; }
+    .lesson__chip { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; padding: var(--sp-1) var(--sp-3); border-radius: var(--r-pill); }
+    .lesson__chip--ready { color: var(--ok-green); border: 1px solid var(--ok-green); background: var(--ok-green-dim); }
+    .lesson__chip--soon { color: var(--ink-70); border: 1px solid var(--border-mid); background: var(--bg-elevated-2); }
+    .lesson__chip--bonus { color: var(--gold); border: 1px solid var(--gold); background: var(--gold-soft); }
+
+    /* ===== Aulas bônus — seção separada do núcleo, acento dourado ===== */
+    .syllabus--bonus { margin-top: var(--sp-6); padding-top: var(--sp-6); border-top: 1px solid var(--border-soft); }
+    .syllabus--bonus .syllabus__title { display: inline-flex; align-items: center; gap: var(--sp-3); }
+    .bonus-flag { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); padding: var(--sp-1) var(--sp-3); border-radius: var(--r-pill); border: 1px solid var(--gold); background: var(--gold-soft); }
+    .lesson--bonus { border-left: 2px solid var(--gold); }
+    .lesson--bonus .lesson__sigla { color: var(--gold); background: var(--gold-soft); border-color: var(--gold); }
+    .lesson__sigla {
+      position: absolute; top: var(--sp-5); right: var(--sp-5);
+      width: 46px; height: 46px; border-radius: 14px;
+      display: grid; place-items: center;
+      font-family: var(--font-mono); font-weight: 700; font-size: var(--fs-sm);
+      color: var(--teal-60); background: var(--teal-05); border: 1px solid var(--teal-20);
+    }
+    .lesson__title { font-size: var(--fs-lg); font-weight: 700; margin-bottom: var(--sp-2); padding-right: 52px; }
+    .lesson__desc { font-size: var(--fs-sm); color: var(--ink-70); margin-bottom: var(--sp-4); }
+    .lesson__tags { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: auto; }
+    .lesson__tag { font-size: var(--fs-xs); color: var(--ink-90); padding: var(--sp-1) var(--sp-3); border-radius: var(--r-pill); background: var(--bg-elevated-2); border: 1px solid var(--border-soft); }
+    .lesson__enter { margin-top: var(--sp-4); align-self: flex-start; font-size: var(--fs-sm); font-weight: 700; color: var(--ink-100); padding: var(--sp-2) var(--sp-4); border-radius: 12px; background: linear-gradient(135deg, var(--teal-40), var(--teal-30)); border: 1px solid var(--teal-40); }
+
+    /* ===== Animated Mesh Gradient (técnica Gemini · paleta azul-céu SUTIL) — teste no HUB =====
+       Camadas: mesh fluido (z1, blur gigante) < grid em linhas (z2) < conteúdo (z3).
+       Tons da casa, baixa opacidade: "plataforma viva processando" sem gritar mais que o texto. */
+    .mesh-bg { position: fixed; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; filter: blur(120px); }
+    .mesh-blob { position: absolute; border-radius: 50%; opacity: 0.40; animation: meshMove 15s infinite alternate ease-in-out; will-change: transform; }
+    .mesh-blob--1 { width: 60vw; height: 60vw; background: #3aa6e8; top: -18%; left: -8%; animation-delay: 0s; }
+    .mesh-blob--2 { width: 52vw; height: 52vw; background: #0e3558; bottom: -20%; right: -10%; animation-duration: 19s; opacity: 0.46; }
+    .mesh-blob--3 { width: 44vw; height: 44vw; background: #1a6cab; top: 34%; left: 42%; animation-duration: 13s; opacity: 0.32; }
+    /* motion mais vivo/perceptível (Bauer) — sem exagero: ciclos mais curtos + deslocamento maior */
+    @keyframes meshMove {
+      0%   { transform: translate(0,0) scale(1); }
+      25%  { transform: translate(11vw, 7vh) scale(1.12); }
+      50%  { transform: translate(-7vw, 15vh) scale(0.90); }
+      75%  { transform: translate(9vw, -6vh) scale(1.14); }
+      100% { transform: translate(-4vw, 9vh) scale(1.06); }
+    }
+    @media (prefers-reduced-motion: reduce) { .mesh-blob { animation: none; } }
+    /* estratificação: grid e conteúdo na frente do fluido */
+    body.hub::before { z-index: 2; }
+    body.hub > main, body.hub > .site-header, body.hub > .site-footer { position: relative; z-index: 3; }
+    body.hub .page-orb { display: none; } /* teste: o mesh substitui os orbs */
+    /* light: tons sky claros, multiply, mais sutil */
+    :root[data-theme="light"] .mesh-blob { mix-blend-mode: multiply; opacity: 0.28; }
+    :root[data-theme="light"] .mesh-blob--1 { background: #62bdf3; }
+    :root[data-theme="light"] .mesh-blob--2 { background: #9fc9ee; opacity: 0.34; }
+    :root[data-theme="light"] .mesh-blob--3 { background: #7fb8e6; }
+    /* HEADER — alvo de toque a 320px (Style Director 2026-06-10, G-20/G-27).
+       O .icon-btn (38px fixo) sem flex-shrink:0 colapsava p/ ~15px quando o
+       brand + CTA estouravam a linha em telas estreitas. Trava o ícone e, no
+       muito estreito, recolhe o subtítulo do brand e a CTA textual do header
+       (a CTA principal continua no herói logo abaixo). Escopado ao HUB. */
+    body.hub .site-header__row .icon-btn { flex-shrink: 0; }
+    @media (max-width: 480px) {
+      body.hub .site-header .cta--secondary { display: none; }
+      body.hub .site-header__subtitle { display: none; }
+    }
+  </style>
+</head>
+<body class="hub">
+  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+  <div class="page-orb" aria-hidden="true"></div>
+  <div class="page-orb page-orb--gold" aria-hidden="true"></div>
+  <div class="mesh-bg" aria-hidden="true">
+    <span class="mesh-blob mesh-blob--1"></span>
+    <span class="mesh-blob mesh-blob--2"></span>
+    <span class="mesh-blob mesh-blob--3"></span>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__row">
+      <a class="site-header__brand" href="#main" aria-label="Pediatria Bauer — capa da plataforma">
+        <span class="site-header__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M19.5 5.5v12.2a6.3 6.3 0 1 1-6.3-6.3" stroke="#62bdf3" stroke-width="3.1" stroke-linecap="round"/><circle cx="19.5" cy="6.2" r="3.1" fill="#62bdf3"/></svg>
+        </span>
+        <span class="site-header__titles">
+          <span class="site-header__title">Pediatria</span>
+          <span class="site-header__subtitle">Puericultura · Crescimento</span>
+        </span>
+      </a>
+      <div class="site-header__spacer"></div>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a class="cta cta--secondary" href="aulas/aula-01-crescimento/index.html">Abrir Aula 1</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__main">
+            <div class="hero__eyebrow">Plataforma Bauer · Pediatria</div>
+            <h1 class="hero__title">A pediatria se decide na <em>curva</em>.</h1>
+            <p class="hero__lede">Uma trilha premium de puericultura e crescimento: do caso real à interpretação da curva da OMS, do escore-Z ao diagnóstico do distúrbio — com a minúcia que a prova cobra.</p>
+            <div class="hero__cta-row">
+              <a class="cta cta--primary" href="aulas/aula-01-crescimento/index.html">Começar pela Aula 1</a>
+              <a class="cta cta--secondary" href="#syllabus">Ver sumário</a>
+            </div>
+          </div>
+          <aside class="hero__panel" aria-label="Trilha ativa">
+            <h2 class="hero__panel-title">Trilha ativa</h2>
+            <div class="stat"><span class="stat__num">8</span><span class="stat__label">aulas no núcleo</span></div>
+            <div class="stat"><span class="stat__num">Z</span><span class="stat__label">escore-Z &amp; percentil</span></div>
+            <div class="stat"><span class="stat__num">OMS</span><span class="stat__label">curvas de referência</span></div>
+            <div class="stat"><span class="stat__num stat__num--gold">100%</span><span class="stat__label">sem resumo automático</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="anchors">
+        <div class="anchor">
+          <div class="anchor__num">3</div>
+          <div class="anchor__ctx"><strong>parâmetros antropométricos</strong> — peso, estatura e perímetro cefálico, cada um com sua velocidade por faixa etária e seu significado.</div>
+        </div>
+        <div class="anchor">
+          <div class="anchor__num">P</div>
+          <div class="anchor__ctx"><strong>percentil &amp; escore-Z</strong> — a mesma criança lida em dois idiomas; converter um no outro é meio caminho da questão.</div>
+        </div>
+        <div class="anchor">
+          <div class="anchor__num">Z</div>
+          <div class="anchor__ctx"><strong>o canal de crescimento</strong> — a criança anda no próprio canal; <em>cruzar linhas</em> é o alarme, não o valor isolado.</div>
+        </div>
+      </div>
+
+      <div class="compact-mantra">
+        <p class="compact-mantra__quote">Não é o ponto na curva que assusta — é a <em>mudança de canal</em>. A criança que cruza percentis para baixo fala antes de qualquer número.</p>
+      </div>
+
+      <section class="syllabus" id="syllabus" aria-labelledby="syllabus-title">
+        <h2 class="syllabus__title" id="syllabus-title">Sumário do módulo</h2>
+        <p class="syllabus__intro">A avaliação do crescimento, do caso ambulatorial à curva da OMS. Antropometria, velocidades por faixa etária, escore-Z × percentil e a classificação nutricional — a base de toda a puericultura.</p>
+        <div class="syllabus__grid">
+          <a class="lesson" href="aulas/aula-01-crescimento/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CR</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 1</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Avaliação do crescimento</div>
+            <div class="lesson__desc">Puericultura do crescimento, do caso real à curva: os três parâmetros antropométricos e suas velocidades por faixa etária, a leitura da curva da OMS, escore-Z × percentil e a classificação nutricional do MS — fechando no caso de Josias, do achado ao diagnóstico.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">13 páginas</span>
+              <span class="lesson__tag">2 figuras-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-02-desnutricao/index.html">
+            <span class="lesson__sigla" aria-hidden="true">DG</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 2</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Desnutrição grave</div>
+            <div class="lesson__desc">Quando o corpo para de funcionar: o colapso metabólico, as duas formas clínicas — marasmo (consome) × kwashiorkor (acumula) — e as três portas da OMS; o tratamento em três fases (semáforo) com as pegadinhas que matam paciente e derrubam aluno (sódio que não se repõe, ferro que espera, hipofosfatemia da realimentação) — do caso de Josué à conduta.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">11 páginas</span>
+              <span class="lesson__tag">figura-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-03-baixa-estatura/index.html">
+            <span class="lesson__sigla" aria-hidden="true">BE</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 3</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Baixa estatura</div>
+            <div class="lesson__desc">Ser baixa nem sempre é doença. Do diagnóstico sindrômico (< P3 / Z-2) à bifurcação fisiológico × patológico pela velocidade de crescimento; as variantes normais (familiar × atraso constitucional), as causas patológicas (desnutrição, hipotireoidismo e a pegadinha do GH, acondroplasia, Turner) e as quatro ferramentas — estatura, velocidade, alvo genético, idade óssea — fechando no fluxograma de dois passos e no caso da Manu.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">15 páginas</span>
+              <span class="lesson__tag">2 figuras-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-04-obesidade-infantil/index.html">
+            <span class="lesson__sigla" aria-hidden="true">OB</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 4</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Obesidade infantil</div>
+            <div class="lesson__desc">O número solto engana, o gráfico decide. Da obesidade como diagnóstico numérico (IMC = peso ÷ estatura², nunca a ectoscopia) aos dois sistemas que coexistem — Ministério por escore-Z em duas faixas (o mesmo Z muda de nome com a idade) × CDC por percentil —, passando pelo mapa comorbidade → exame (HAS→PA, dislipidemia→lipidograma, esteatose→ALT, diabetes→glicemia, síndrome metabólica→circunferência abdominal) e pela escada de tratamento por idade × comorbidade — fechando no caso da Maju, a irmã da Manu.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">11 páginas</span>
+              <span class="lesson__tag">figura-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-05-sindromes-geneticas/index.html">
+            <span class="lesson__sigla" aria-hidden="true">SG</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 5 · Bônus</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Síndromes genéticas</div>
+            <div class="lesson__desc">Cada síndrome, seu cromossomo e o achado que a entrega. A Down em profundidade (três mecanismos — trissomia livre/translocação 14;21/mosaico —, fenótipo, DSAV, comorbidades e o seguimento com periodicidade exata: cariótipo/ECO/TSH/hemograma + instabilidade atlanto-axial), o Turner (45,X, baixa estatura + disgenesia gonadal, hipogonadismo hipergonadotrófico, linfedema neonatal, coarc-Turner), o Klinefelter (47,XXY, eunucoide, ginecomastia) e as trissomias graves Edwards-18 (dedos sobrepostos) e Patau-13 (linha média) — fixados na ponte síndrome ↔ cromossomo ↔ achado.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">15 páginas</span>
+              <span class="lesson__tag">2 figuras-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="syllabus" id="semana-2" aria-labelledby="semana2-title">
+        <h2 class="syllabus__title" id="semana2-title">Semana 2</h2>
+        <p class="syllabus__intro">A continuação do núcleo da puericultura. Abre com a puberdade fisiológica e os distúrbios puberais — relógio ou doença? — no mesmo nível de densidade das aulas 1–5.</p>
+        <div class="syllabus__grid">
+          <a class="lesson" href="aulas/aula-07-puberdade/index.html">
+            <span class="lesson__sigla" aria-hidden="true">PB</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 7</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Puberdade</div>
+            <div class="lesson__desc">Relógio ou doença? A decisão fisiológico × distúrbio por estadiamento de Tanner cruzado com crescimento e evento hormonal — nunca pela idade. Os dois motores: gonadarca (eixo HHG, GnRH pulsátil → LH/FSH → volume gonadal + esteroides, reativação após a minipuberdade) × adrenarca (eixo HHA, zona reticular → DHEA/S-DHEA/androstenediona). O calendário do crescimento (3 fases, número mágico 8/9, picos ♀ M3 8-9 / ♂ G4 9-10), Tanner de 1 a 5 (M1-M5 com duplo contorno M4, P1-P5, G1-G5), orquidômetro de Prader e o corte testicular ≥ 4 mL = G2, sequência ♀ telarca→pubarca→menarca (tardia, M4), ginecomastia puberal × Klinefelter — fechando no Mapa de Tanner completo com Blair, Serena e Dan plotados.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">13 páginas</span>
+              <span class="lesson__tag">2 figuras-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-08-puberdade-precoce/index.html">
+            <span class="lesson__sigla" aria-hidden="true">PP</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 8</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Puberdade precoce</div>
+            <div class="lesson__desc">Sinal puberal sozinho não basta. A definição que separa doença de variante benigna (caractere sexual + aceleração, abaixo do corte ♀ &lt; 8 · ♂ &lt; 9 — prova = 8), o paradoxo da estatura (alta agora, baixa depois) e a grande bifurcação central (GnRH-dependente, "verdadeira", isossexual, LH↑) × periférica (GnRH-independente, "pseudopuberdade", iso ou hetero, LH suprimido). Etiologia por sexo (♀ ~90% idiopática × ♂ &gt; 50% lesão do SNC, com o craniofaringioma que atrasa) e por fonte (cisto ovariano × adrenal: tumor com virilização + Cushing, HAC 21-hidroxilase). Idade óssea, RM, USG; o LH como juiz e o teste de estímulo; o atalho do menino (volume testicular ≥ 4 mL). Telarca × adrenarca (que não viriliza). O agonista do GnRH (leuprorrelina) que freia por dessensibilização — fechando na Árvore Central × Periférica e em Bela (7a, M4 P3) resolvida como central idiopática.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">12 páginas</span>
+              <span class="lesson__tag">2 figuras-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-09-desenvolvimento-neuropsicomotor/index.html">
+            <span class="lesson__sigla" aria-hidden="true">DN</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 9</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Desenvolvimento neuropsicomotor</div>
+            <div class="lesson__desc">Avaliar desenvolvimento é qualitativo, não quantitativo — e por isso pede método, não chute. A moldura (4 áreas — motor grosseiro, fino-adaptativo, pessoal-social, linguagem — e as 2 leis: sequencial/não-pula-etapa × crânio-caudal) e a ferramenta-mestre: o Instrumento de Vigilância da Caderneta (MS) — acha a idade, desce a coluna, avalia os 4 quadradinhos; faz tudo? encerra; faltou? olha a faixa anterior. Os marcos faixa a faixa de 1 a 15 meses, com a divergência MS × Nelson como conteúdo de prova (sorriso social 2m × espontâneo 1m; cubital 4m/radial 6m; transferência 9m × 7m; com apoio 12m × sem apoio 15m; palavra 15m × 12m). A classificação que vira conduta — adequado/puericultura · alerta/30 dias · provável atraso/encaminhar — com os cortes (PC ±2 escore-z; ≥3 fenótipos; ≥2/≥1 marcos da faixa anterior). Sofia (9m, alerta), Paulo (4m15d, adequado) e Carlos (10m, provável atraso) plotados na tabela viva. Os reflexos primitivos (Moro, RTCA/esgrimista, preensões — tripé presente/simétrico/some; persistência = doença) e o paraquedista, o reflexo postural que surge no fim do 1º ano e fica para a vida — fechando no mapa-mestre marcos + reflexos + condutas.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">13 páginas</span>
+              <span class="lesson__tag">1 figura-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="syllabus syllabus--bonus" id="bonus" aria-labelledby="bonus-title">
+        <h2 class="syllabus__title" id="bonus-title">Aulas bônus <span class="bonus-flag">extra</span></h2>
+        <p class="syllabus__intro">Temas de alto valor que estendem o módulo — fora do núcleo 1–5, no mesmo nível de densidade. Caem menos em prova que o núcleo; priorize o high-yield e use estes como aprofundamento.</p>
+        <div class="syllabus__grid">
+          <a class="lesson lesson--bonus" href="aulas/aula-06-carencia-de-vitaminas/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CV</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 6 · Bônus</span>
+              <span class="lesson__chip lesson__chip--bonus">Bônus</span>
+            </div>
+            <div class="lesson__title">Carência de vitaminas</div>
+            <div class="lesson__desc">A associação clínica ↔ deficiência que resolve a prova. Lipossolúveis ADEK — A (visão: Bitot, nictalopia; megadose e profilaxia N/NE), D em profundidade (eixo PTH, raquitismo, cortes &lt;12/&lt;20 ng/mL, profilaxia 400/600 UI), E (prematuro hemolítico com edema), K (fatores 2-7-9-10 e as 3 formas da doença hemorrágica do RN; teste de APT) — e hidrossolúveis B+C — C (escorbuto, posição de RAM), B1 (beri-béri e Wernicke), B3 (pelagra, 3 Ds, colar de Casal), B6 (convulsão neonatal), B9/B12 (megaloblástica) — fechando no Tabelão das vitaminas.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">13 páginas</span>
+              <span class="lesson__tag">2 figuras-herói</span>
+              <span class="lesson__tag">quiz por página</span>
+            </div>
+            <span class="lesson__enter">Abrir aula →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>Plataforma Bauer · Pediatria · 2026</div>
+      <div>Conteúdo educacional · Não substitui diretriz oficial</div>
+    </div>
+  </footer>
+
+  <script>
+    // ativa escopo de tokens do HUB + tema (compartilha chave com as aulas)
+    document.documentElement.setAttribute('data-platform-hub', '');
+    (function () {
+      var KEY = 'neonato-theme';
+      if (localStorage.getItem(KEY) === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      var btn = document.getElementById('theme-toggle');
+      btn && btn.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        if (cur === 'light') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem(KEY, 'dark'); }
+        else { document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem(KEY, 'light'); }
+      });
+    })();
+  </script>
+  <script src="assets/js/pwa-bootstrap.js"></script>
+</body>
+</html>

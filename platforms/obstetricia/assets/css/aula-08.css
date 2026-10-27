@@ -1,0 +1,264 @@
+/* aula-08.css — componentes-Executor da Aula 8 (Ginecologia · Módulo III):
+   Prolapsos / distopia genital. ADITIVO e element-scoped: prefixo .a8- para nunca colidir com
+   base.css / components.css nem regredir as Aulas 1–7. Herda os tokens da casa (rosa-vinho) —
+   NÃO reskin; só declara tokens NOVOS (--a8-*). Carrega só nas páginas da Aula 8. */
+
+:root {
+  --a8-axis: rgba(255, 135, 171, 0.30);   /* eixo POP-Q neutro */
+  --a8-in:  #37d6a0;                        /* dentro (−) = suportado/normal */
+  --a8-out: #ff5b70;                        /* fora (+)  = prolapso */
+  --a8-empty: rgba(250, 244, 248, 0.05);
+}
+:root[data-theme="light"] {
+  --a8-axis: rgba(176, 42, 95, 0.22);
+  --a8-in:  #17976a;
+  --a8-out: #cf3450;
+  --a8-empty: rgba(34, 16, 25, 0.045);
+}
+
+/* ============ BLINDAGEM contra vazamento de <style> dos SVG (defensiva, idem A7) ============ */
+.site-header svg, .icon-btn svg, .menu-panel svg, .page-nav svg,
+.crack-field svg, .site-footer svg {
+  background: transparent !important; background-color: transparent !important;
+}
+.site-header svg, .icon-btn svg, .menu-panel svg, .page-nav svg { color: inherit !important; }
+
+/* ============ Selo de trilha PRINCIPAL — Módulo III · Ginecologia (rosa, NÃO âmbar) ============ */
+.a8-modmark { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono);
+  font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--rose-hi); border: 1px solid var(--rose); background: var(--wine-soft);
+  border-radius: var(--r-pill); padding: 3px 11px; }
+.a8-modmark::before { content: "III"; font-size: 0.78em; opacity: 0.85; }
+
+/* ============ Olho-de-banca (callout "aqui te derrubam") — P3/P5/P7/P8/P10/P11 ============ */
+.a8-lens { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-4); align-items: center;
+  border: 1px solid var(--kw-amber); border-left: 4px solid var(--kw-amber); border-radius: var(--r-md);
+  background: var(--kw-amber-dim); padding: var(--sp-4) var(--sp-5); margin: var(--sp-5) 0; }
+.a8-lens__eye { font-size: 1.5rem; line-height: 1; display: grid; place-items: center; width: 44px; height: 44px;
+  border-radius: 50%; background: var(--bg-glass-strong); border: 1px solid var(--kw-amber); }
+.a8-lens__b .a8-lens__k { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--kw-amber); display: block; margin-bottom: 2px; }
+.a8-lens__b p { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; text-indent: 0; }
+@media (max-width: 520px) { .a8-lens { grid-template-columns: 1fr; } .a8-lens__eye { width: 40px; height: 40px; } }
+
+/* ============ Nota de licença / vista honesta (real com CC) ============ */
+.a8-attr { font-size: var(--fs-xs); color: var(--ink-70); text-indent: 0; text-align: left; }
+.a8-attr a { color: var(--ink-70); }
+.a8-note-honest { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-xs); font-family: var(--font-mono);
+  color: var(--ink-70); border: 1px solid var(--border-mid); border-radius: var(--r-pill); padding: 1px 9px; margin-top: 4px; background: var(--bg-1); }
+
+/* ============ Contenção de altura das imagens reais (retratos altos / densos) ============ */
+.reading figure.real .real__frame { display: flex; justify-content: center; background: var(--bg-2); }
+.reading figure.real .real__frame img { max-height: 580px; width: auto; max-width: 100%; object-fit: contain; }
+
+/* ============ Reflow 320px: token longo em alternativa de quiz não estoura a coluna ============ */
+.quiz__alt { min-width: 0; }
+.quiz__alt > span:not(.letter) { min-width: 0; overflow-wrap: anywhere; }
+
+/* ============ Card-caso do Corredor (Lurdinha) — carrega P1, fecha P13 ============ */
+.a8-caso { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg);
+  background: var(--bg-glass); overflow: hidden; box-shadow: var(--glow-rose); }
+.a8-caso__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; border-bottom: 1px solid var(--border-mid); }
+.a8-caso__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); font-family: var(--font-serif); }
+.a8-caso__badge { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--rose-hi);
+  border: 1px solid var(--rose); border-radius: var(--r-pill); padding: 2px 10px; background: var(--bg-1); }
+.a8-caso__body { display: grid; grid-template-columns: max-content 1fr; gap: var(--sp-3) var(--sp-4); padding: var(--sp-5); }
+.a8-caso__body dt { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--rose-hi); font-weight: 700; }
+.a8-caso__body dd { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; text-indent: 0; }
+.a8-caso__body dd strong { color: var(--ink-100); }
+.a8-caso.is-resolved { border-color: var(--kw-green); box-shadow: 0 0 0 1px rgba(55,214,160,0.28), 0 10px 40px rgba(23,151,106,0.4); }
+.a8-caso.is-resolved .a8-caso__head { background: var(--kw-green-dim); }
+.a8-caso.is-resolved .a8-caso__head h4 { color: var(--kw-green); }
+.a8-caso.is-resolved .a8-caso__badge { color: var(--kw-green); border-color: var(--kw-green); }
+.a8-caso__foot { padding: var(--sp-3) var(--sp-5); border-top: 1px solid var(--border-soft);
+  font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono); display: flex; align-items: center; gap: var(--sp-2); }
+.a8-caso__foot .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--kw-green); flex-shrink: 0; box-shadow: 0 0 8px var(--kw-green); }
+@media (max-width: 520px) { .a8-caso__body { grid-template-columns: 1fr; gap: 2px var(--sp-4); } .a8-caso__body dd { margin-bottom: var(--sp-2); } }
+
+/* ============ Mapa do Assoalho Pélvico — HIDRATA a versão anatômica (P2) ============ */
+.a8-mapa { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--glow-rose); }
+.a8-mapa__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; }
+.a8-mapa__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); font-family: var(--font-serif); }
+.a8-mapa__meta { font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono); }
+.a8-mapa__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); padding: var(--sp-4) var(--sp-5) var(--sp-5); }
+.a8-mapa__col { border: 1px solid var(--kw-green); border-radius: var(--r-md); background: var(--kw-green-dim); overflow: hidden; }
+.a8-mapa__col h5 { margin: 0; padding: var(--sp-3) var(--sp-4); font-size: var(--fs-sm); font-family: var(--font-mono);
+  text-transform: uppercase; letter-spacing: 0.05em; color: var(--kw-green); border-bottom: 1px solid var(--kw-green); background: var(--bg-1); }
+.a8-mapa__col dl { margin: 0; padding: var(--sp-3) var(--sp-4); display: grid; gap: var(--sp-2); }
+.a8-mapa__col dt { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-70); }
+.a8-mapa__col dd { margin: 0 0 var(--sp-2); font-size: var(--fs-sm); color: var(--ink-90); }
+.a8-mapa__col dd b { color: var(--ink-100); }
+.a8-mapa__col dd .pt { font-family: var(--font-mono); color: var(--kw-green); font-weight: 700; }
+@media (max-width: 720px) { .a8-mapa__cols { grid-template-columns: 1fr; } }
+
+/* toque de hidratação parcial do Mapa (P6/P7/P8/P9/P10/P12) */
+.a8-mapa-touch { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: center;
+  border: 1px dashed var(--rose); border-radius: var(--r-md); background: var(--wine-soft);
+  padding: var(--sp-3) var(--sp-5); margin: var(--sp-5) 0; }
+.a8-mapa-touch .ic { font-size: 1.3rem; color: var(--rose); }
+.a8-mapa-touch p { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); text-indent: 0; text-align: justify; }
+.a8-mapa-touch .k { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--rose); display: block; margin-bottom: 2px; }
+
+/* ============ RÉGUA POP-Q (o interativo-estrela) — casca comum ============ */
+.a8-regua { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg);
+  background: var(--bg-glass); overflow: hidden; box-shadow: var(--glow-rose); }
+.a8-regua__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid);
+  display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; }
+.a8-regua__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); }
+.a8-regua__head .a8-regua__unit { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--ink-70); }
+
+/* — modo leitura (P1): eixo horizontal com os 7 números plotados — */
+.a8-regua__plot { padding: var(--sp-7) var(--sp-5) var(--sp-6); }
+.a8-regua__track { position: relative; height: 4px; border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--a8-in), var(--a8-axis) 50%, var(--a8-out)); margin: 0 12px; }
+.a8-regua__caruncula { position: absolute; top: -10px; width: 2px; height: 24px; background: var(--kw-amber);
+  transform: translateX(-50%); }
+.a8-regua__caruncula::after { content: "0 · carúncula himenal"; position: absolute; top: 26px; left: 50%;
+  transform: translateX(-50%); white-space: nowrap; font-family: var(--font-mono); font-size: 0.68rem; color: var(--kw-amber); }
+.a8-regua__pt { position: absolute; top: -12px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; }
+.a8-regua__pt .dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--bg-0); box-shadow: var(--shadow-sm); }
+.a8-regua__pt.is-out .dot { background: var(--a8-out); }
+.a8-regua__pt.is-in  .dot { background: var(--a8-in); }
+.a8-regua__pt .lbl { margin-top: 4px; font-family: var(--font-mono); font-size: 0.66rem; color: var(--ink-90); white-space: nowrap; }
+.a8-regua__pt .lbl b { color: var(--ink-100); }
+.a8-regua__pt:nth-child(even) { top: 6px; }
+.a8-regua__pt:nth-child(even) .lbl { order: -1; margin-top: 0; margin-bottom: 4px; }
+.a8-regua__legend { display: flex; flex-wrap: wrap; gap: var(--sp-4); padding: 0 var(--sp-5) var(--sp-5); font-size: var(--fs-xs); color: var(--ink-70); }
+.a8-regua__legend .in b { color: var(--a8-in); } .a8-regua__legend .out b { color: var(--a8-out); }
+.a8-regua__legend .zero b { color: var(--kw-amber); }
+
+/* ============ RÉGUA-CALCULADORA — P10 (inputs → estágio calculado) ============ */
+.a8-calc { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg);
+  background: var(--bg-glass); overflow: hidden; box-shadow: var(--glow-rose); }
+.a8-calc__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid);
+  display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; }
+.a8-calc__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); }
+.a8-calc__head button { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--rose-hi);
+  border: 1px solid var(--rose); border-radius: var(--r-pill); padding: 4px 12px; background: var(--bg-1); }
+.a8-calc__head button:hover { background: var(--bg-2); border-color: var(--rose-hi); }
+.a8-calc__inputs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); padding: var(--sp-5); }
+.a8-calc__field { display: flex; flex-direction: column; gap: 4px; }
+.a8-calc__field label { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--rose-hi); text-transform: uppercase; letter-spacing: 0.04em; }
+.a8-calc__field .sub { font-size: 0.64rem; color: var(--ink-70); text-transform: none; letter-spacing: 0; }
+.a8-calc__in { font-family: var(--font-mono); font-size: var(--fs-lg); text-align: center; padding: var(--sp-2);
+  border-radius: var(--r-md); border: 1px solid var(--border-mid); background: var(--bg-1); color: var(--ink-100); width: 100%; }
+.a8-calc__in:focus-visible { border-color: var(--rose); }
+.a8-calc__out { margin: 0 var(--sp-5) var(--sp-5); border-radius: var(--r-md); border: 1px solid var(--border-mid);
+  background: var(--bg-1); padding: var(--sp-4) var(--sp-5); transition: border-color var(--dur-fast), background var(--dur-fast); }
+.a8-calc__row { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: baseline; }
+.a8-calc__stage { font-family: var(--font-serif); font-size: var(--fs-2xl); font-weight: 800; color: var(--ink-100); line-height: 1; }
+.a8-calc__kv { font-size: var(--fs-sm); color: var(--ink-70); }
+.a8-calc__kv b { font-family: var(--font-mono); color: var(--rose-hi); }
+.a8-calc__stage-txt { margin: var(--sp-3) 0 0; font-size: var(--fs-sm); color: var(--ink-90); text-indent: 0; text-align: justify; }
+.a8-calc__veto { margin: var(--sp-3) 0 0; font-size: var(--fs-sm); color: var(--ink-70); text-indent: 0; text-align: justify;
+  padding: var(--sp-2) var(--sp-3); border-radius: var(--r-sm); border-left: 3px solid var(--border-mid); background: var(--bg-glass); }
+.a8-calc__veto.is-warn { border-left-color: var(--kw-amber); color: var(--kw-amber); }
+.a8-calc__veto.is-ok   { border-left-color: var(--kw-green); color: var(--ink-90); }
+.a8-calc__out.is-s0 { border-color: var(--kw-green); background: var(--kw-green-dim); }
+.a8-calc__out.is-s0 .a8-calc__stage { color: var(--kw-green); }
+.a8-calc__out.is-s1 { border-color: var(--kw-green); }
+.a8-calc__out.is-s1 .a8-calc__stage { color: var(--kw-green); }
+.a8-calc__out.is-s2 { border-color: var(--kw-amber); background: var(--kw-amber-dim); }
+.a8-calc__out.is-s2 .a8-calc__stage { color: var(--kw-amber); }
+.a8-calc__out.is-s3 { border-color: var(--kw-amber); }
+.a8-calc__out.is-s3 .a8-calc__stage { color: var(--kw-amber); }
+.a8-calc__out.is-s4 { border-color: var(--kw-red); background: var(--kw-red-dim); }
+.a8-calc__out.is-s4 .a8-calc__stage { color: var(--kw-red); }
+.a8-calc__note { padding: 0 var(--sp-5) var(--sp-5); margin: 0; font-size: var(--fs-xs); color: var(--ink-70); text-indent: 0; text-align: justify; }
+.a8-calc__note b { color: var(--kw-amber); }
+@media (max-width: 620px) { .a8-calc__inputs { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============ BONECO POP-Q — P9 (6 pontos clicáveis + leitura) ============ */
+.a8-boneco { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg);
+  background: var(--bg-glass); overflow: hidden; box-shadow: var(--glow-rose); }
+.a8-boneco__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid); }
+.a8-boneco__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); }
+.a8-boneco__head p { margin: 4px 0 0; font-size: var(--fs-xs); color: var(--ink-70); text-indent: 0; text-align: left; }
+.a8-boneco__grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--sp-2); padding: var(--sp-5) var(--sp-5) var(--sp-3); }
+.a8-boneco__pt { padding: var(--sp-3) var(--sp-2); border-radius: var(--r-md); border: 1px solid var(--border-mid);
+  background: var(--bg-1); text-align: center; transition: border-color var(--dur-fast), background var(--dur-fast), transform var(--dur-fast); }
+.a8-boneco__pt:hover { border-color: var(--rose); transform: translateY(-2px); }
+.a8-boneco__pt.on { border-color: var(--rose); background: var(--wine-soft); box-shadow: inset 0 0 0 1px var(--rose); }
+.a8-boneco__pt .code { display: block; font-family: var(--font-mono); font-size: var(--fs-lg); font-weight: 800; color: var(--rose-hi); }
+.a8-boneco__pt .zone { display: block; font-size: 0.62rem; color: var(--ink-70); margin-top: 2px; }
+.a8-boneco__read { margin: 0 var(--sp-5) var(--sp-5); padding: var(--sp-4) var(--sp-5); border-radius: var(--r-md);
+  border: 1px dashed var(--border-mid); background: var(--bg-glass); min-height: 68px; }
+.a8-boneco__read.show { border-style: solid; border-color: var(--rose); }
+.a8-boneco__pt-name { font-family: var(--font-serif); font-weight: 700; color: var(--rose-hi); font-size: var(--fs-md); display: block; }
+.a8-boneco__pt-mede { display: block; margin-top: 4px; font-size: var(--fs-sm); color: var(--ink-90); }
+.a8-boneco__pt-sinal { display: block; margin-top: 4px; font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono); }
+@media (max-width: 560px) { .a8-boneco__grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ============ SIMULADOR POP-Q — P11 (desafios com reveal) ============ */
+.a8-sim { margin: var(--sp-6) 0; display: grid; gap: var(--sp-4); }
+.a8-sim__case { border: 1px solid var(--border-mid); border-radius: var(--r-lg); background: var(--bg-glass); overflow: hidden; }
+.a8-sim__case.is-normal { border-color: var(--kw-green); }
+.a8-sim__ch { padding: var(--sp-3) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; }
+.a8-sim__ch h5 { margin: 0; color: var(--rose); font-size: var(--fs-md); }
+.a8-sim__tag { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--rose-hi); border: 1px solid var(--rose); border-radius: var(--r-pill); padding: 1px 9px; }
+.a8-sim__case.is-normal .a8-sim__tag { color: var(--kw-green); border-color: var(--kw-green); }
+.a8-sim__pts { list-style: none; margin: 0; padding: var(--sp-4) var(--sp-5); display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.a8-sim__pts li { font-family: var(--font-mono); font-size: var(--fs-sm); padding: 4px 10px; border-radius: var(--r-sm);
+  border: 1px solid var(--border-soft); background: var(--bg-1); color: var(--ink-90); }
+.a8-sim__pts li b { color: var(--rose-hi); }
+.a8-sim__veto { margin: 0 var(--sp-5) var(--sp-3); font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); }
+.a8-sim__veto.is-warn { color: var(--kw-amber); } .a8-sim__veto.is-ok { color: var(--kw-green); }
+.a8-sim__reveal { margin: 0 var(--sp-5) var(--sp-4); font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--rose-hi);
+  border: 1px solid var(--rose); border-radius: var(--r-pill); padding: 6px 16px; background: var(--bg-1); }
+.a8-sim__reveal:hover { background: var(--bg-2); }
+.a8-sim__fb { display: none; padding: 0 var(--sp-5) var(--sp-5); }
+.a8-sim__fb.show { display: block; animation: pageIn var(--dur-mid) var(--ease-out); }
+.a8-sim__fb .dx { font-weight: 700; color: var(--ink-100); margin-bottom: var(--sp-2); }
+.a8-sim__fb .cd { font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; text-indent: 0; margin: 0; }
+.a8-sim__fb.good .dx { color: var(--kw-green); }
+
+/* ============ Cartões-veredito — P5 (Caso A × Caso B) ============ */
+.a8-veredito { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin: var(--sp-6) 0; }
+.a8-veredito__card { border: 1px solid var(--border-mid); border-radius: var(--r-lg); background: var(--bg-glass); overflow: hidden; }
+.a8-veredito__card.permite { border-color: var(--kw-green); }
+.a8-veredito__card.bloqueia { border-color: var(--kw-amber); }
+.a8-veredito__top { padding: var(--sp-3) var(--sp-5); border-bottom: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); }
+.a8-veredito__card.permite .a8-veredito__top { background: var(--kw-green-dim); }
+.a8-veredito__card.bloqueia .a8-veredito__top { background: var(--kw-amber-dim); }
+.a8-veredito__top h5 { margin: 0; font-size: var(--fs-md); color: var(--ink-100); }
+.a8-veredito__stamp { font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 700; padding: 2px 10px; border-radius: var(--r-pill); white-space: nowrap; }
+.a8-veredito__card.permite .a8-veredito__stamp { color: var(--kw-green); border: 1px solid var(--kw-green); background: var(--bg-1); }
+.a8-veredito__card.bloqueia .a8-veredito__stamp { color: var(--kw-amber); border: 1px solid var(--kw-amber); background: var(--bg-1); }
+.a8-veredito__body { padding: var(--sp-4) var(--sp-5); }
+.a8-veredito__body ul { margin: 0; padding-left: var(--sp-4); }
+.a8-veredito__body li { font-size: var(--fs-sm); color: var(--ink-90); }
+.a8-veredito__body li .flag { color: var(--kw-amber); font-weight: 700; }
+.a8-veredito__body li .risk { color: var(--kw-red); font-weight: 700; }
+@media (max-width: 620px) { .a8-veredito { grid-template-columns: 1fr; } }
+
+/* ============ Escada dos 4 graus de rotura — P12 (gradua por profundidade) ============ */
+.a8-grade { display: flex; flex-direction: column-reverse; gap: var(--sp-2); margin: var(--sp-6) 0; }
+.a8-grade__step { padding: var(--sp-4) var(--sp-5); border-radius: var(--r-md); border: 1px solid var(--border-mid); background: var(--bg-glass); }
+.a8-grade__step h5 { margin: 0 0 4px; font-size: var(--fs-md); display: flex; align-items: baseline; gap: var(--sp-2); }
+.a8-grade__step h5 .g { font-family: var(--font-mono); font-weight: 800; }
+.a8-grade__step p { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); text-indent: 0; text-align: left; }
+.a8-grade__step.g1 { border-left: 5px solid var(--kw-green); }
+.a8-grade__step.g1 h5 .g { color: var(--kw-green); }
+.a8-grade__step.g2 { border-left: 5px solid var(--kw-amber); background: var(--kw-amber-dim); margin-right: 5%; }
+.a8-grade__step.g2 h5 .g { color: var(--kw-amber); }
+.a8-grade__step.g3 { border-left: 5px solid var(--kw-red); background: var(--kw-red-dim); margin-right: 10%; }
+.a8-grade__step.g3 h5 .g { color: var(--kw-red); }
+.a8-grade__step.g4 { border-left: 5px solid var(--kw-red); background: var(--kw-red-dim); margin-right: 15%; box-shadow: inset 0 0 0 1px var(--kw-red); }
+.a8-grade__step.g4 h5 .g { color: var(--kw-red); }
+.a8-grade details { margin: var(--sp-3) 0 0; border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-1); padding: 0 var(--sp-4); }
+.a8-grade details summary { cursor: pointer; padding: var(--sp-3) 0; font-size: var(--fs-sm); font-weight: 600; color: var(--rose-hi); }
+.a8-grade details[open] summary { border-bottom: 1px solid var(--border-soft); margin-bottom: var(--sp-3); }
+.a8-grade details ul { margin: 0 0 var(--sp-3); }
+.a8-grade details li { font-size: var(--fs-sm); color: var(--ink-90); }
+
+/* ============ Números-chave dos 7 pontos da Lurdinha (síntese P13) ============ */
+.a8-popq7 { list-style: none; margin: var(--sp-5) 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: var(--sp-2); }
+.a8-popq7 li { text-align: center; padding: var(--sp-3) var(--sp-1); border-radius: var(--r-md); border: 1px solid var(--border-mid); background: var(--bg-1); }
+.a8-popq7 .pt { display: block; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); text-transform: uppercase; }
+.a8-popq7 .val { display: block; font-family: var(--font-mono); font-size: var(--fs-xl); font-weight: 800; line-height: 1.1; margin-top: 2px; }
+.a8-popq7 li.out .val { color: var(--kw-red); } .a8-popq7 li.in .val { color: var(--kw-green); } .a8-popq7 li.ref .val { color: var(--rose-hi); }
+@media (max-width: 620px) { .a8-popq7 { grid-template-columns: repeat(4, 1fr); } }

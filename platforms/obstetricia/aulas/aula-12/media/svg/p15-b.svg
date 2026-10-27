@@ -1,0 +1,669 @@
+<svg class="a12p15b-root" id="a12p15b-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 670" data-svg-tokenized="true" aria-labelledby="a12p15b-title a12p15b-desc" role="img">
+  <title id="a12p15b-title">Anatomia do Elevador do Ânus: Decomposição Origem-Destino dos Feixes Pélvicos</title>
+  <desc id="a12p15b-desc">Ilustração médica interativa do assoalho pélvico mostrando a decomposição funcional dos feixes puborretal, pubococcígeo, iliococcígeo e coccígeo em corte sagital mediano e vista inferior endopélvica.</desc>
+
+  <defs>
+    <style type="text/css">
+      .a12p15b-root {
+        --a12p15b-bg: var(--bg-1, #121016);
+        --a12p15b-card-bg: var(--bg-2, #1B1622);
+        --a12p15b-card-border: var(--ink-20, #352B3F);
+        --a12p15b-ink-main: var(--a12-tinta, var(--a12p15-tinta, #F7F1F5));
+        --a12p15b-ink-muted: var(--ink-70, #B8AABF);
+        --a12p15b-ink-subtle: var(--ink-50, #7B6B85);
+        --a12p15b-osso: var(--a12-osso, var(--a12p15-osso, #DCC7B4));
+        --a12p15b-osso-stroke: #8C735D;
+        
+        --a12p15b-pubococcigeo: var(--a12-pubococcigeo, var(--a12p15-pubococcigeo, #EF7582));
+        --a12p15b-iliococcigeo: var(--a12-iliococcigeo, var(--a12p15-iliococcigeo, #5DA9D6));
+        --a12p15b-puborretal: var(--a12-puborretal, var(--a12p15-puborretal, #A978C7));
+        --a12p15b-coccigeo: var(--a12-coccigeo, var(--a12p15-coccigeo, #55B889));
+        --a12p15b-angulo: var(--a12-ouro, var(--a12p15-angulo, #F3BE5B));
+        
+        --a12p15b-viscera-bg: #2C2136;
+        --a12p15b-viscera-stroke: #6E537F;
+        --a12p15b-active-glow: rgba(243, 190, 91, 0.25);
+        
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a12p15b-bg);
+      }
+
+      :root[data-theme="light"] .a12p15b-root {
+        --a12p15b-bg: var(--bg-1, #FAF7FA);
+        --a12p15b-card-bg: var(--bg-2, #FFFFFF);
+        --a12p15b-card-border: var(--ink-20, #E4D9E8);
+        --a12p15b-ink-main: var(--ink-100, #1E1726);
+        --a12p15b-ink-muted: var(--ink-70, #4E4158);
+        --a12p15b-ink-subtle: var(--ink-50, #80718A);
+        --a12p15b-osso: var(--a12-osso, var(--a12p15-osso, #CBB199));
+        --a12p15b-osso-stroke: #6E5440;
+        
+        --a12p15b-pubococcigeo: var(--a12-pubococcigeo, var(--a12p15-pubococcigeo, #D64353));
+        --a12p15b-iliococcigeo: var(--a12-iliococcigeo, var(--a12p15-iliococcigeo, #247BB2));
+        --a12p15b-puborretal: var(--a12-puborretal, var(--a12p15-puborretal, #8042AF));
+        --a12p15b-coccigeo: var(--a12-coccigeo, var(--a12p15-coccigeo, #288C5C));
+        --a12p15b-angulo: var(--a12-ouro, var(--a12p15-angulo, #D99516));
+        
+        --a12p15b-viscera-bg: #EFE7F5;
+        --a12p15b-viscera-stroke: #9275A8;
+        --a12p15b-active-glow: rgba(217, 149, 22, 0.2);
+      }
+
+      .a12p15b-card {
+        fill: var(--a12p15b-card-bg);
+        stroke: var(--a12p15b-card-border);
+        stroke-width: 1.5;
+        rx: 10px;
+      }
+
+      .a12p15b-title-text {
+        fill: var(--a12p15b-ink-main);
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .a12p15b-legend-text {
+        fill: var(--a12p15b-ink-muted);
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .a12p15b-badge-title {
+        fill: var(--a12p15b-ink-main);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+      }
+
+      .a12p15b-plane-label {
+        fill: var(--a12p15b-ink-subtle);
+        font-size: 10.5px;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      .a12p15b-bone {
+        fill: var(--a12p15b-osso);
+        stroke: var(--a12p15b-osso-stroke);
+        stroke-width: 1.5;
+        stroke-linejoin: round;
+      }
+
+      .a12p15b-bone-subtle {
+        fill: var(--a12p15b-osso);
+        opacity: 0.45;
+        stroke: var(--a12p15b-osso-stroke);
+        stroke-width: 1;
+      }
+
+      .a12p15b-viscera {
+        fill: var(--a12p15b-viscera-bg);
+        stroke: var(--a12p15b-viscera-stroke);
+        stroke-width: 1.5;
+      }
+
+      /* Muscle Bundles Base Styles */
+      .a12p15b-bundle {
+        cursor: pointer;
+        transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+      }
+
+      .a12p15b-bundle:hover, .a12p15b-bundle:focus {
+        filter: drop-shadow(0 0 6px var(--a12p15b-active-glow));
+        outline: none;
+      }
+
+      .a12p15b-bundle-path {
+        stroke-width: 3;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        transition: stroke-width 0.25s ease, opacity 0.25s ease;
+      }
+
+      .a12p15b-puborretal-fill { fill: var(--a12p15b-puborretal); stroke: var(--a12p15b-puborretal); }
+      .a12p15b-pubococcigeo-fill { fill: var(--a12p15b-pubococcigeo); stroke: var(--a12p15b-pubococcigeo); }
+      .a12p15b-iliococcigeo-fill { fill: var(--a12p15b-iliococcigeo); stroke: var(--a12p15b-iliococcigeo); }
+      .a12p15b-coccigeo-fill { fill: var(--a12p15b-coccigeo); stroke: var(--a12p15b-coccigeo); }
+
+      /* Vector track animations */
+      .a12p15b-vector-line {
+        fill: none;
+        stroke-width: 2.5;
+        stroke-dasharray: 6 4;
+        opacity: 0.3;
+        transition: opacity 0.3s ease, stroke-width 0.3s ease;
+      }
+
+      .a12p15b-vector-active {
+        opacity: 1;
+        stroke-dasharray: 8 4;
+        stroke-width: 3.5;
+        animation: a12p15b-dash 1.2s linear infinite;
+      }
+
+      @keyframes a12p15b-dash {
+        to { stroke-dashoffset: -24; }
+      }
+
+      /* Angle Arc & Indicator */
+      .a12p15b-angle-arc {
+        fill: none;
+        stroke: var(--a12p15b-angulo);
+        stroke-width: 3;
+        stroke-linecap: round;
+        transition: d 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .a12p15b-angle-text {
+        fill: var(--a12p15b-angulo);
+        font-size: 13px;
+        font-weight: 800;
+        text-anchor: middle;
+      }
+
+      /* Selection State Dimming */
+      .a12p15b-root[data-active-bundle="puborretal"] .a12p15b-bundle:not([data-bundle="puborretal"]),
+      .a12p15b-root[data-active-bundle="pubococcigeo"] .a12p15b-bundle:not([data-bundle="pubococcigeo"]),
+      .a12p15b-root[data-active-bundle="iliococcigeo"] .a12p15b-bundle:not([data-bundle="iliococcigeo"]),
+      .a12p15b-root[data-active-bundle="coccigeo"] .a12p15b-bundle:not([data-bundle="coccigeo"]) {
+        opacity: 0.35;
+      }
+
+      .a12p15b-root[data-active-bundle="puborretal"] .a12p15b-bundle[data-bundle="puborretal"],
+      .a12p15b-root[data-active-bundle="pubococcigeo"] .a12p15b-bundle[data-bundle="pubococcigeo"],
+      .a12p15b-root[data-active-bundle="iliococcigeo"] .a12p15b-bundle[data-bundle="iliococcigeo"],
+      .a12p15b-root[data-active-bundle="coccigeo"] .a12p15b-bundle[data-bundle="coccigeo"] {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px var(--a12p15b-active-glow));
+      }
+
+      /* Interactive Panel Text */
+      .a12p15b-panel-title {
+        fill: var(--a12p15b-ink-main);
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .a12p15b-formula-box {
+        fill: var(--a12p15b-bg);
+        stroke: var(--a12p15b-card-border);
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      .a12p15b-formula-prefix {
+        font-weight: 800;
+        font-size: 13px;
+      }
+
+      .a12p15b-formula-arrow {
+        fill: var(--a12p15b-ink-subtle);
+        font-size: 13px;
+      }
+
+      .a12p15b-detail-label {
+        fill: var(--a12p15b-ink-subtle);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .a12p15b-detail-val {
+        fill: var(--a12p15b-ink-main);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      /* Text Leader Line */
+      .a12p15b-leader {
+        fill: none;
+        stroke: var(--a12p15b-ink-subtle);
+        stroke-width: 1.2;
+        stroke-dasharray: 2 2;
+      }
+
+      .a12p15b-leader-dot {
+        fill: var(--a12p15b-ink-muted);
+      }
+
+      /* Inset styles */
+      .a12p15b-inset-bg {
+        fill: var(--a12p15b-bg);
+        stroke: var(--a12p15b-card-border);
+        stroke-width: 1;
+        rx: 6px;
+      }
+    </style>
+
+    <!-- Marker Arrow Defs -->
+    <marker id="a12p15b-arr-puborretal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--a12p15b-puborretal)" />
+    </marker>
+    <marker id="a12p15b-arr-pubococcigeo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--a12p15b-pubococcigeo)" />
+    </marker>
+    <marker id="a12p15b-arr-iliococcigeo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--a12p15b-iliococcigeo)" />
+    </marker>
+    <marker id="a12p15b-arr-coccigeo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--a12p15b-coccigeo)" />
+    </marker>
+    <marker id="a12p15b-arr-ouro" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--a12p15b-angulo)" />
+    </marker>
+
+    <!-- Pattern Hatching for Texture Discrimination -->
+    <pattern id="a12p15b-pattern-hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(255,255,255,0.25)" stroke-width="2" />
+    </pattern>
+    <pattern id="a12p15b-pattern-dots" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1" fill="rgba(255,255,255,0.3)" />
+    </pattern>
+  </defs>
+
+  <!-- ==================== HEADER CARD & LEGENDA ==================== -->
+  <g id="a12p15b-group-header">
+    <rect class="a12p15b-card" x="20" y="15" width="940" height="70" />
+    <text class="a12p15b-title-text" x="40" y="40">ANATOMIA DO ELEVADOR DO ÂNUS: DECOMPOSIÇÃO ORIGEM–DESTINO</text>
+    <text class="a12p15b-legend-text" x="40" y="60">
+      <tspan font-weight="700" fill="var(--a12p15b-ink-main)">LEGENDA ANATÔMICA:</tspan> Cada feixe muscular estampa seu vetor funcional no próprio nome (Origem ➔ Destino). A alça do m. puborretal flete
+    </text>
+    <text class="a12p15b-legend-text" x="40" y="74">
+      anteriormente a junção anorretal, mantendo o ângulo continente (~92° em repouso / ~70° na contração voluntária).
+    </text>
+  </g>
+
+  <!-- ==================== PAINEL I: CORTE SAGITAL MEDIANO ==================== -->
+  <g id="a12p15b-group-panel1">
+    <rect class="a12p15b-card" x="20" y="95" width="465" height="425" />
+    <text class="a12p15b-badge-title" x="40" y="122">PAINEL I · CORTE SAGITAL MEDIANO</text>
+    <text class="a12p15b-plane-label" x="40" y="138">Plano Paramediano (Visão Medial da Pelve Direita)</text>
+
+    <!-- Estruturas Ósseas (Sagital) -->
+    <!-- Símfise Púbica (Anterior / Esquerda) -->
+    <g id="a12p15b-sag-pubis">
+      <path class="a12p15b-bone" d="M 60 210 C 65 190, 85 190, 95 205 C 105 220, 100 260, 90 280 C 80 295, 60 285, 55 260 Z" />
+      <text x="75" y="242" fill="var(--a12p15b-osso-stroke)" font-size="10" font-weight="800" text-anchor="middle">PÚBIS</text>
+      <!-- Rótulo Anterior -->
+      <text x="40" y="200" fill="var(--a12p15b-ink-subtle)" font-size="10" font-weight="700">ANTERIOR</text>
+    </g>
+
+    <!-- Sacro e Cóccix (Posterior / Direita) -->
+    <g id="a12p15b-sag-sacro">
+      <!-- Promontório ao Cóccix -->
+      <path class="a12p15b-bone" d="M 400 160 C 420 190, 425 240, 410 290 L 395 340 C 390 355, 380 360, 375 350 C 380 335, 395 295, 390 240 C 385 200, 375 175, 390 155 Z" />
+      <!-- Segmentos coccígeos detalhados -->
+      <path class="a12p15b-bone" d="M 375 350 C 370 365, 360 375, 350 380 C 345 375, 355 360, 365 348 Z" />
+      <text x="420" y="230" fill="var(--a12p15b-osso-stroke)" font-size="10" font-weight="800" text-anchor="middle">SACRO</text>
+      <text x="390" y="380" fill="var(--a12p15b-osso-stroke)" font-size="10" font-weight="800">CÓCCIX</text>
+      <text x="415" y="145" fill="var(--a12p15b-ink-subtle)" font-size="10" font-weight="700">POSTERIOR</text>
+    </g>
+
+    <!-- Visceras (Reto e Canal Anal) -->
+    <g id="a12p15b-sag-viscera">
+      <!-- Reto vindo de cima, dobrando na alça puborretal e descendo pelo canal anal -->
+      <path class="a12p15b-viscera" d="M 320 170 C 315 220, 290 270, 260 330 C 245 365, 240 400, 235 440 L 265 445 C 270 410, 275 375, 290 340 C 320 280, 345 220, 350 170 Z" />
+      <text x="325" y="240" fill="var(--a12p15b-viscera-stroke)" font-size="11" font-weight="700">Ampola Retal</text>
+      <text x="210" y="435" fill="var(--a12p15b-viscera-stroke)" font-size="10" font-weight="700">Canal Anal</text>
+    </g>
+
+    <!-- FEIXES MUSCULARES (SAGITAL MEDIANO) -->
+    <!-- 1. Puborretal (Alça contornando o reto) -->
+    <g class="a12p15b-bundle" data-bundle="puborretal" id="a12p15b-sag-puborretal-group" tabindex="0" role="button" aria-label="Feixe Puborretal no corte sagital">
+      <!-- Músculo espesso abraçando o reto -->
+      <path class="a12p15b-bundle-path a12p15b-puborretal-fill" d="M 90 265 C 140 280, 200 310, 250 335 C 265 343, 275 348, 275 332 C 265 315, 200 285, 95 250 Z" />
+      <path class="a12p15b-bundle-path a12p15b-puborretal-fill" d="M 275 332 C 285 320, 290 330, 280 345 C 265 358, 245 345, 250 335 Z" opacity="0.9" />
+      <!-- Vetor de tração (seta de tração anterior) -->
+      <path class="a12p15b-vector-line" id="a12p15b-vec-puborretal-sag" d="M 270 336 L 100 260" stroke="var(--a12p15b-puborretal)" marker-end="url(#a12p15b-arr-puborretal)" />
+    </g>
+
+    <!-- 2. Pubococcígeo (Do púbis ao cóccix) -->
+    <g class="a12p15b-bundle" data-bundle="pubococcigeo" id="a12p15b-sag-pubococcigeo-group" tabindex="0" role="button" aria-label="Feixe Pubococcígeo no corte sagital">
+      <path class="a12p15b-bundle-path a12p15b-pubococcigeo-fill" d="M 90 270 C 160 295, 260 340, 355 365 L 360 355 C 260 330, 160 285, 92 258 Z" />
+      <path class="a12p15b-vector-line" id="a12p15b-vec-pubococcigeo-sag" d="M 95 272 L 350 360" stroke="var(--a12p15b-pubococcigeo)" marker-end="url(#a12p15b-arr-pubococcigeo)" />
+    </g>
+
+    <!-- 3. Iliococcígeo (Parede lateral ao cóccix) -->
+    <g class="a12p15b-bundle" data-bundle="iliococcigeo" id="a12p15b-sag-iliococcigeo-group" tabindex="0" role="button" aria-label="Feixe Iliococcígeo no corte sagital">
+      <path class="a12p15b-bundle-path a12p15b-iliococcigeo-fill" d="M 160 240 C 220 275, 300 325, 360 360 L 365 350 C 300 315, 220 265, 162 230 Z" />
+      <path class="a12p15b-vector-line" id="a12p15b-vec-iliococcigeo-sag" d="M 165 238 L 355 352" stroke="var(--a12p15b-iliococcigeo)" marker-end="url(#a12p15b-arr-iliococcigeo)" />
+    </g>
+
+    <!-- 4. Coccígeo / Isquiococcígeo (Espinha ao cóccix/sacro) -->
+    <g class="a12p15b-bundle" data-bundle="coccigeo" id="a12p15b-sag-coccigeo-group" tabindex="0" role="button" aria-label="Feixe Coccígeo no corte sagital">
+      <path class="a12p15b-bundle-path a12p15b-coccigeo-fill" d="M 230 245 L 380 340 L 385 330 L 235 235 Z" />
+      <path class="a12p15b-vector-line" id="a12p15b-vec-coccigeo-sag" d="M 235 240 L 375 335" stroke="var(--a12p15b-coccigeo)" marker-end="url(#a12p15b-arr-coccigeo)" />
+    </g>
+
+    <!-- ÂNGULO ANORRETAL DINÂMICO -->
+    <g id="a12p15b-sag-angle-group">
+      <!-- Linha do Eixo do Reto -->
+      <line x1="310" y1="220" x2="270" y2="335" stroke="var(--a12p15b-angulo)" stroke-width="1.5" stroke-dasharray="3 3" />
+      <!-- Linha do Eixo do Canal Anal -->
+      <line id="a12p15b-anal-axis" x1="270" y1="335" x2="245" y2="435" stroke="var(--a12p15b-angulo)" stroke-width="1.5" stroke-dasharray="3 3" />
+      <!-- Arco Vetorial do Ângulo -->
+      <path class="a12p15b-angle-arc" id="a12p15b-angle-arc-path" d="M 292 272 A 40 40 0 0 1 258 385" />
+      <rect x="290" y="325" width="56" height="24" rx="4" fill="var(--a12p15b-card-bg)" stroke="var(--a12p15b-angulo)" stroke-width="1" />
+      <text class="a12p15b-angle-text" id="a12p15b-angle-value" x="318" y="341">92°</text>
+      <!-- Rotulo do Ângulo -->
+      <text x="352" y="340" fill="var(--a12p15b-angulo)" font-size="10" font-weight="700">Ângulo Anorretal</text>
+    </g>
+
+    <!-- Líderes de Rotulo Ativos (Painel Sagital) - Max 4 por painel -->
+    <g id="a12p15b-sag-labels">
+      <!-- 1. Puborretal -->
+      <path class="a12p15b-leader" d="M 270 340 L 220 370 L 140 370" />
+      <circle class="a12p15b-leader-dot" cx="270" cy="340" r="2.5" />
+      <text x="135" y="366" fill="var(--a12p15b-puborretal)" font-size="11" font-weight="800" text-anchor="end">m. puborretal</text>
+      <text x="135" y="378" fill="var(--a12p15b-ink-subtle)" font-size="9.5" font-weight="600" text-anchor="end">(alça de continência)</text>
+
+      <!-- 2. Pubococcígeo -->
+      <path class="a12p15b-leader" d="M 180 302 L 140 320 L 60 320" />
+      <circle class="a12p15b-leader-dot" cx="180" cy="302" r="2.5" />
+      <text x="55" y="316" fill="var(--a12p15b-pubococcigeo)" font-size="11" font-weight="800" text-anchor="end">m. pubococcígeo</text>
+
+      <!-- 3. Iliococcígeo -->
+      <path class="a12p15b-leader" d="M 280 290 L 240 260 L 160 260" />
+      <circle class="a12p15b-leader-dot" cx="280" cy="290" r="2.5" />
+      <text x="155" y="256" fill="var(--a12p15b-iliococcigeo)" font-size="11" font-weight="800" text-anchor="end">m. iliococcígeo</text>
+
+      <!-- 4. Coccígeo -->
+      <path class="a12p15b-leader" d="M 330 280 L 370 270 L 440 270" />
+      <circle class="a12p15b-leader-dot" cx="330" cy="280" r="2.5" />
+      <text x="445" y="266" fill="var(--a12p15b-coccigeo)" font-size="11" font-weight="800">m. coccígeo</text>
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL II: VISTA INFERIOR (ENDOPÉLVICA) ==================== -->
+  <g id="a12p15b-group-panel2">
+    <rect class="a12p15b-card" x="495" y="95" width="465" height="425" />
+    <text class="a12p15b-badge-title" x="515" y="122">PAINEL II · VISTA INFERIOR (ASSOALHO PÉLVICO)</text>
+    <text class="a12p15b-plane-label" x="515" y="138">Visão Endopélvica / Perineal (De baixo para cima)</text>
+
+    <!-- INSET DE REORIENTAÇÃO ANATÔMICA -->
+    <g id="a12p15b-inset-reorientation" transform="translate(830, 110)">
+      <rect class="a12p15b-inset-bg" x="0" y="0" width="115" height="85" />
+      <text x="57" y="16" fill="var(--a12p15b-ink-subtle)" font-size="9" font-weight="700" text-anchor="middle">REORIENTAÇÃO</text>
+      <!-- Diagrama de Pelve Simples com Vetor de Olhar -->
+      <ellipse cx="57" cy="45" rx="35" ry="20" fill="none" stroke="var(--a12p15b-osso-stroke)" stroke-width="1" stroke-dasharray="2 2" />
+      <path d="M 57 72 L 57 48" stroke="var(--a12p15b-angulo)" stroke-width="2" marker-end="url(#a12p15b-arr-ouro)" />
+      <circle cx="57" cy="74" r="3" fill="var(--a12p15b-angulo)" />
+      <text x="57" y="81" fill="var(--a12p15b-angulo)" font-size="8.5" font-weight="800" text-anchor="middle">VISTA INFERIOR</text>
+    </g>
+
+    <!-- Estruturas Ósseas da Bacia (Visão Inferior) -->
+    <!-- Arco Púbico (Anterior / Topo) -->
+    <g id="a12p15b-inf-pubis">
+      <path class="a12p15b-bone" d="M 640 185 C 670 165, 760 165, 790 185 C 810 200, 815 220, 800 230 C 770 210, 660 210, 630 230 C 615 220, 620 200, 640 185 Z" />
+      <text x="715" y="180" fill="var(--a12p15b-osso-stroke)" font-size="10" font-weight="800" text-anchor="middle">SÍMFISE PÚBICA (ANT)</text>
+    </g>
+
+    <!-- Espinhas Isquiáticas (Laterais) -->
+    <g id="a12p15b-inf-espinhas">
+      <path class="a12p15b-bone-subtle" d="M 565 310 C 550 315, 545 330, 560 340 C 585 335, 595 320, 580 310 Z" />
+      <path class="a12p15b-bone-subtle" d="M 865 310 C 880 315, 885 330, 870 340 C 845 335, 835 320, 850 310 Z" />
+      <text x="535" y="325" fill="var(--a12p15b-ink-subtle)" font-size="9" font-weight="700">Esp. Isquiática</text>
+      <text x="895" y="325" fill="var(--a12p15b-ink-subtle)" font-size="9" font-weight="700">Esp. Isquiática</text>
+    </g>
+
+    <!-- Sacro/Cóccix (Posterior / Base) -->
+    <g id="a12p15b-inf-coccyx">
+      <path class="a12p15b-bone" d="M 685 440 C 700 425, 730 425, 745 440 C 735 460, 695 460, 685 440 Z" />
+      <text x="715" y="472" fill="var(--a12p15b-osso-stroke)" font-size="10" font-weight="800" text-anchor="middle">CÓCCIX (POST)</text>
+    </g>
+
+    <!-- Hiato Urogenital e Anal (Abertura Central) -->
+    <g id="a12p15b-inf-hiatos">
+      <!-- Hiato Urogenital (Anterior) -->
+      <ellipse cx="715" cy="245" rx="25" ry="18" fill="var(--a12p15b-viscera-bg)" stroke="var(--a12p15b-viscera-stroke)" stroke-dasharray="3 2" />
+      <text x="715" y="248" fill="var(--a12p15b-viscera-stroke)" font-size="9" font-weight="700" text-anchor="middle">Hiato Urogenital</text>
+      
+      <!-- Canal Anal / Reto (Posterior) -->
+      <circle cx="715" cy="320" r="18" fill="var(--a12p15b-viscera-bg)" stroke="var(--a12p15b-viscera-stroke)" stroke-width="2" />
+      <circle cx="715" cy="320" r="10" fill="none" stroke="var(--a12p15b-viscera-stroke)" stroke-width="1" />
+      <text x="715" y="323" fill="var(--a12p15b-viscera-stroke)" font-size="8.5" font-weight="800" text-anchor="middle">RETO</text>
+    </g>
+
+    <!-- FEIXES MUSCULARES (VISTA INFERIOR - SIMÉTRICOS) -->
+
+    <!-- 1. PUBORRETAL (Alça em U abraçando o reto anteriormente do púbis) -->
+    <g class="a12p15b-bundle" data-bundle="puborretal" id="a12p15b-inf-puborretal-group" tabindex="0" role="button" aria-label="Feixe Puborretal na vista inferior">
+      <!-- Lado Esquerdo -->
+      <path class="a12p15b-bundle-path a12p15b-puborretal-fill" d="M 675 205 C 670 240, 680 290, 700 335 C 708 348, 722 348, 730 335 C 750 290, 760 240, 755 205 L 740 205 C 745 240, 735 285, 715 322 C 695 285, 685 240, 690 205 Z" />
+      <!-- Textura de Padrão Hatching -->
+      <path d="M 675 205 C 670 240, 680 290, 700 335 C 708 348, 722 348, 730 335 C 750 290, 760 240, 755 205 Z" fill="url(#a12p15b-pattern-hatch)" pointer-events="none" />
+      <!-- Vetor de Tração Origem->Destino -->
+      <path class="a12p15b-vector-line" id="a12p15b-vec-puborretal-inf" d="M 682 210 C 675 260, 690 310, 715 338 C 740 310, 755 260, 748 210" stroke="var(--a12p15b-puborretal)" marker-end="url(#a12p15b-arr-puborretal)" />
+    </g>
+
+    <!-- 2. PUBOCOCCÍGEO (Púbis ao Cóccix / Rafe Anococcígea) -->
+    <g class="a12p15b-bundle" data-bundle="pubococcigeo" id="a12p15b-inf-pubococcigeo-group" tabindex="0" role="button" aria-label="Feixe Pubococcígeo na vista inferior">
+      <!-- Lado Esquerdo -->
+      <path class="a12p15b-bundle-path a12p15b-pubococcigeo-fill" d="M 655 208 C 640 250, 650 330, 705 430 L 715 430 C 675 350, 665 270, 675 208 Z" />
+      <!-- Lado Direito -->
+      <path class="a12p15b-bundle-path a12p15b-pubococcigeo-fill" d="M 775 208 C 790 250, 780 330, 725 430 L 715 430 C 755 350, 765 270, 755 208 Z" />
+      <!-- Vetor Origem->Destino -->
+      <path class="a12p15b-vector-line" id="a12p15b-vec-pubococcigeo-inf" d="M 662 212 L 712 425" stroke="var(--a12p15b-pubococcigeo)" marker-end="url(#a12p15b-arr-pubococcigeo)" />
+    </g>
+
+    <!-- 3. ILIOCOCCÍGEO (Arco Tendíneo ATFP ao Cóccix) -->
+    <g class="a12p15b-bundle" data-bundle="iliococcigeo" id="a12p15b-inf-iliococcigeo-group" tabindex="0" role="button" aria-label="Feixe Iliococcígeo na vista inferior">
+      <!-- Lado Esquerdo -->
+      <path class="a12p15b-bundle-path a12p15b-iliococcigeo-fill" d="M 625 235 C 585 275, 580 320, 700 435 L 705 425 C 600 325, 605 285, 640 230 Z" />
+      <!-- Lado Direito -->
+      <path class="a12p15b-bundle-path a12p15b-iliococcigeo-fill" d="M 805 235 C 845 275, 850 320, 730 435 L 725 425 C 830 325, 825 285, 790 230 Z" />
+      <!-- Textura de Pontos -->
+      <path d="M 625 235 C 585 275, 580 320, 700 435 L 730 435 C 850 320, 845 275, 805 235 Z" fill="url(#a12p15b-pattern-dots)" pointer-events="none" />
+      <!-- Vetor Origem->Destino -->
+      <path class="a12p15b-vector-line" id="a12p15b-vec-iliococcigeo-inf" d="M 600 295 L 705 430" stroke="var(--a12p15b-iliococcigeo)" marker-end="url(#a12p15b-arr-iliococcigeo)" />
+    </g>
+
+    <!-- 4. COCCÍGEO / ISQUIOCOCCÍGEO (Espinha Isquiática ao Sacro/Cóccix) -->
+    <g class="a12p15b-bundle" data-bundle="coccigeo" id="a12p15b-inf-coccigeo-group" tabindex="0" role="button" aria-label="Feixe Coccígeo na vista inferior">
+      <!-- Lado Esquerdo -->
+      <path class="a12p15b-bundle-path a12p15b-coccigeo-fill" d="M 570 330 L 690 438 L 685 445 L 560 335 Z" />
+      <!-- Lado Direito -->
+      <path class="a12p15b-bundle-path a12p15b-coccigeo-fill" d="M 860 330 L 740 438 L 745 445 L 870 335 Z" />
+      <!-- Vetor Origem->Destino -->
+      <path class="a12p15b-vector-line" id="a12p15b-vec-coccigeo-inf" d="M 572 332 L 688 440" stroke="var(--a12p15b-coccigeo)" marker-end="url(#a12p15b-arr-coccigeo)" />
+    </g>
+
+    <!-- Líderes de Rótulo Ativos (Painel Inferior) - Max 4 por painel -->
+    <g id="a12p15b-inf-labels">
+      <!-- 1. Puborretal -->
+      <path class="a12p15b-leader" d="M 685 310 L 610 300 L 525 300" />
+      <circle class="a12p15b-leader-dot" cx="685" cy="310" r="2.5" />
+      <text x="520" y="296" fill="var(--a12p15b-puborretal)" font-size="11" font-weight="800" text-anchor="end">m. puborretal</text>
+      <text x="520" y="308" fill="var(--a12p15b-ink-subtle)" font-size="9" font-weight="600" text-anchor="end">(Alça em U Púbis➔Reto)</text>
+
+      <!-- 2. Pubococcígeo -->
+      <path class="a12p15b-leader" d="M 660 250 L 590 250 L 515 250" />
+      <circle class="a12p15b-leader-dot" cx="660" cy="250" r="2.5" />
+      <text x="510" y="246" fill="var(--a12p15b-pubococcigeo)" font-size="11" font-weight="800" text-anchor="end">m. pubococcígeo</text>
+
+      <!-- 3. Iliococcígeo -->
+      <path class="a12p15b-leader" d="M 795 280 L 860 280 L 935 280" />
+      <circle class="a12p15b-leader-dot" cx="795" cy="280" r="2.5" />
+      <text x="940" y="276" fill="var(--a12p15b-iliococcigeo)" font-size="11" font-weight="800">m. iliococcígeo</text>
+      <text x="940" y="288" fill="var(--a12p15b-ink-subtle)" font-size="9" font-weight="600">(Arco tendíneo➔Cóccix)</text>
+
+      <!-- 4. Coccígeo -->
+      <path class="a12p15b-leader" d="M 800 380 L 870 380 L 935 380" />
+      <circle class="a12p15b-leader-dot" cx="800" cy="380" r="2.5" />
+      <text x="940" y="376" fill="var(--a12p15b-coccigeo)" font-size="11" font-weight="800">m. coccígeo</text>
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL INFERIOR INTERATIVO DE INTERPRETAÇÃO ==================== -->
+  <g id="a12p15b-group-interactive-panel">
+    <rect class="a12p15b-card" x="20" y="530" width="940" height="125" />
+    
+    <!-- Título do Feixe Selecionado -->
+    <text class="a12p15b-panel-title" id="a12p15b-display-title" x="40" y="558">MÚSCULO PUBORRETAL (SELECIONADO)</text>
+    
+    <!-- Caixa da Fórmula Nomenclatural Sincronizada -->
+    <g id="a12p15b-formula-container" transform="translate(480, 542)">
+      <rect class="a12p15b-formula-box" x="0" y="0" width="460" height="30" />
+      <text x="15" y="20" class="a12p15b-formula-prefix" id="a12p15b-display-prefix" fill="var(--a12p15b-puborretal)">PUBO-</text>
+      <text x="70" y="20" class="a12p15b-formula-arrow">(Púbis)</text>
+      <text x="135" y="20" class="a12p15b-formula-arrow">➔</text>
+      <text x="160" y="20" class="a12p15b-formula-prefix" id="a12p15b-display-suffix" fill="var(--a12p15b-puborretal)">-RRETAL</text>
+      <text x="235" y="20" class="a12p15b-formula-arrow">(Alça posterior no Reto)</text>
+    </g>
+
+    <!-- Linha 1: Origem e Destino -->
+    <text class="a12p15b-detail-label" x="40" y="585">ORIGEM (PROXIMAL):</text>
+    <text class="a12p15b-detail-val" id="a12p15b-display-origem" x="170" y="585">Face posterior do corpo do púbis (bilateral)</text>
+
+    <text class="a12p15b-detail-label" x="500" y="585">DESTINO (DISTAL):</text>
+    <text class="a12p15b-detail-val" id="a12p15b-display-destino" x="620" y="585">Alça muscular contínua contornando o reto posteriormente</text>
+
+    <!-- Linha 2: Mecanismo Funcional -->
+    <text class="a12p15b-detail-label" x="40" y="612">VETOR DE TRAÇÃO:</text>
+    <text class="a12p15b-detail-val" id="a12p15b-display-mecanismo" x="170" y="612">Traciona a junção anorretal para a frente, agudizando o ângulo continente (92° ➔ 70°).</text>
+
+    <!-- Dica Neutra de Affordance -->
+    <text x="40" y="640" fill="var(--a12p15b-ink-subtle)" font-size="10.5" font-weight="600">
+      * Selecione qualquer feixe nos painéis para rastrear o vetor origem-destino e a resposta angular.
+    </text>
+  </g>
+
+  <!-- ==================== SCRIPT INTERATIVO SELF-CONTAINED ==================== -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('a12p15b-svg');
+      
+      // Banco de dados anatômico determinístico por feixe
+      var bundleData = {
+        puborretal: {
+          title: "MÚSCULO PUBORRETAL",
+          prefix: "PUBO-",
+          prefixDesc: "(Púbis)",
+          suffix: "-RRETAL",
+          suffixDesc: "(Alça atrás do Reto)",
+          color: "var(--a12p15b-puborretal)",
+          origem: "Face posterior do corpo do púbis (bilateral)",
+          destino: "Alça muscular contínua contornando a junção anorretal",
+          mecanismo: "Traciona o reto anteriorizando-o. Esfíncter mecânico principal: agudiza o ângulo anorretal (92° Laxe ➔ 70° Contração).",
+          angle: "70°",
+          arcD: "M 292 272 A 40 40 0 0 1 245 375"
+        },
+        pubococcigeo: {
+          title: "MÚSCULO PUBOCOCCÍGEO",
+          prefix: "PUBO-",
+          prefixDesc: "(Púbis)",
+          suffix: "-COCCÍGEO",
+          suffixDesc: "(Cóccix / Rafe)",
+          color: "var(--a12p15b-pubococcigeo)",
+          origem: "Face posterior do púbis (lateral ao puborretal)",
+          destino: "Cóccix e ligamento anococcígeo (rafe mediana)",
+          mecanismo: "Sustentação direta das vísceras pélvicas sexuais e urinárias. Eleva o assoalho pélvico no sentido ântero-superior.",
+          angle: "92°",
+          arcD: "M 292 272 A 40 40 0 0 1 258 385"
+        },
+        iliococcigeo: {
+          title: "MÚSCULO ILIOCOCCÍGEO",
+          prefix: "ILIO-",
+          prefixDesc: "(Arco Tendíneo / Ílio)",
+          suffix: "-COCCÍGEO",
+          suffixDesc: "(Cóccix)",
+          color: "var(--a12p15b-iliococcigeo)",
+          origem: "Arco tendíneo do músculo elevador do ânus (ATFP) e espinha isquiática",
+          destino: "Últimos segmentos do cóccix e rafe anococcígea",
+          mecanismo: "Forma o diafragma muscular posterior rígido (plano inclinado). Suporta a pressão intra-abdominal sustentada.",
+          angle: "92°",
+          arcD: "M 292 272 A 40 40 0 0 1 258 385"
+        },
+        coccigeo: {
+          title: "MÚSCULO COCCÍGEO (ISQUIOCOCCÍGEO)",
+          prefix: "ISQUIO / ILIO-",
+          prefixDesc: "(Espinha Isquiática)",
+          suffix: "-COCCÍGEO",
+          suffixDesc: "(Sacro e Cóccix)",
+          color: "var(--a12p15b-coccigeo)",
+          origem: "Espinha isquiática e superfície profunda do ligamento sacroespinal",
+          destino: "Bordas laterais do segmento inferior do sacro e cóccix",
+          mecanismo: "Traciona o cóccix anteriormente após a defecação/parto. Estabiliza a articulação sacroatóide posterior.",
+          angle: "92°",
+          arcD: "M 292 272 A 40 40 0 0 1 258 385"
+        }
+      };
+
+      // Elementos da Interface
+      var displayTitle = document.getElementById('a12p15b-display-title');
+      var displayPrefix = document.getElementById('a12p15b-display-prefix');
+      var displaySuffix = document.getElementById('a12p15b-display-suffix');
+      var displayOrigem = document.getElementById('a12p15b-display-origem');
+      var displayDestino = document.getElementById('a12p15b-display-destino');
+      var displayMecanismo = document.getElementById('a12p15b-display-mecanismo');
+      var angleValue = document.getElementById('a12p15b-angle-value');
+      var angleArc = document.getElementById('a12p15b-angle-arc-path');
+      
+      var vectors = [
+        'a12p15b-vec-puborretal-sag', 'a12p15b-vec-pubococcigeo-sag', 'a12p15b-vec-iliococcigeo-sag', 'a12p15b-vec-coccigeo-sag',
+        'a12p15b-vec-puborretal-inf', 'a12p15b-vec-pubococcigeo-inf', 'a12p15b-vec-iliococcigeo-inf', 'a12p15b-vec-coccigeo-inf'
+      ];
+
+      function selectBundle(bundleKey) {
+        var data = bundleData[bundleKey];
+        if (!data) return;
+
+        // Atualiza Estado na Raiz SVG
+        root.setAttribute('data-active-bundle', bundleKey);
+
+        // Atualiza Textos do Painel Interativo
+        displayTitle.textContent = data.title + " (SELECIONADO)";
+        displayPrefix.textContent = data.prefix;
+        displayPrefix.setAttribute('fill', data.color);
+        displaySuffix.textContent = data.suffix;
+        displaySuffix.setAttribute('fill', data.color);
+        
+        displayOrigem.textContent = data.origem;
+        displayDestino.textContent = data.destino;
+        displayMecanismo.textContent = data.mecanismo;
+
+        // Animação Dinâmica do Ângulo Anorretal
+        angleValue.textContent = data.angle;
+        if (angleArc) {
+          angleArc.setAttribute('d', data.arcD);
+        }
+
+        // Ativação dos Vetores tracejados em movimento
+        vectors.forEach(function(id) {
+          var vec = document.getElementById(id);
+          if (vec) {
+            if (id.indexOf(bundleKey) !== -1) {
+              vec.classList.add('a12p15b-vector-active');
+            } else {
+              vec.classList.remove('a12p15b-vector-active');
+            }
+          }
+        });
+      }
+
+      // Event Listeners para Clique e Teclado
+      var bundles = document.querySelectorAll('.a12p15b-bundle');
+      bundles.forEach(function(el) {
+        var key = el.getAttribute('data-bundle');
+        
+        el.addEventListener('click', function() {
+          selectBundle(key);
+        });
+
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectBundle(key);
+          }
+        });
+      });
+
+      // Inicializa com Puborretal Ativo por Padrão
+      selectBundle('puborretal');
+    })();
+    ]]>
+  </script>
+</svg>

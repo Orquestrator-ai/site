@@ -1,0 +1,91 @@
+/* aula-16.css — Pré-natal e aconselhamento genético · A16 */
+.a16-modmark{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .7rem;border-radius:var(--r-pill);border:1px solid color-mix(in srgb,var(--rose) 45%,transparent);background:color-mix(in srgb,var(--rose) 12%,transparent);color:var(--rose-hi);font:700 var(--fs-xs)/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase}
+
+/* Bússola global A16 — 5 faixas (A12–A13 base remota · A14 diag · A15 fisio · A16 pré-natal · genética) */
+.a16-compass{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.25rem}
+.a16-compass__band{display:inline-flex;align-items:center;gap:.35rem;padding:.32rem .62rem;border-radius:var(--r-pill);border:1px solid var(--border-mid);background:var(--bg-glass);font:700 var(--fs-xs)/1.1 var(--font-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-70)}
+.a16-compass__band[data-state="active"]{border-color:var(--rose);color:var(--rose-hi);background:var(--wine-soft)}
+.a16-compass__band[data-state="done"]{border-color:var(--kw-green);color:var(--kw-green)}
+.a16-compass__band[data-state="cont"]{opacity:.72}
+.a16-linkback{color:var(--rose-hi);text-decoration:underline;text-underline-offset:2px;font-weight:700}
+.a16-linkback:hover{color:var(--kw-amber)}
+.a16-linkforward{color:var(--kw-amber);text-decoration:underline;text-underline-offset:2px;font-weight:700}
+.a16-linkforward:hover{color:var(--rose-hi)}
+
+/* Openers E1–E8 */
+.a16-opener{margin:0 0 clamp(1.8rem,5vw,3.2rem)}
+
+/* Herói P1 e P14 */
+.a16-hero-frame{margin:clamp(1.4rem,3.5vw,2.2rem) 0;padding:.9rem;border:1px solid var(--border-mid);border-radius:1.25rem;background:var(--bg-glass);box-shadow:var(--shadow-md)}
+.a16-hero-frame figcaption{margin-top:.6rem}
+
+/* Tópicos */
+.a16-topic{margin:clamp(1.8rem,4vw,3rem) 0}
+.a16-topic__kicker{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;color:var(--rose);font:800 var(--fs-xs)/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
+.a16-topic__kicker::after{content:"";flex:1;height:1px;background:var(--border-soft)}
+
+/* Prosa */
+.prose p{text-align:justify;text-indent:1.25em;hyphens:auto;width:100%;max-width:none}
+.prose p.no-indent,.prose p:first-child{text-indent:0}
+.prose strong.term{color:var(--rose-hi);font-weight:700}
+.prose strong.hl-good{color:var(--kw-green)}
+.prose strong.hl-bad{color:var(--kw-red)}
+.prose strong.hl-warn{color:var(--kw-amber)}
+
+/* SVG inline (uma única class combinada) */
+.a16-inline-svg{width:100%;height:auto;display:block}
+.fig .fig__frame svg{width:100%;height:auto;display:block}
+
+/* Tabelas A16 */
+.a16-data-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:var(--fs-sm)}
+.a16-data-table th,.a16-data-table td{padding:.55rem .65rem;border:1px solid var(--border-mid);text-align:left;vertical-align:top}
+.a16-data-table th{background:var(--bg-2);color:var(--rose-hi);font-weight:700}
+.a16-data-table td.hl-red{color:var(--kw-red);font-weight:600}
+.a16-data-table td.hl-green{color:var(--kw-green);font-weight:600}
+.a16-data-table td.hl-amber{color:var(--kw-amber);font-weight:600}
+
+/* Mapa mínimo da trilogia (P1) */
+.a16-minmap-card{margin:1.2rem 0;padding:1.1rem;border:1px solid var(--border-mid);border-radius:1rem;background:var(--bg-glass)}
+.a16-minmap-card__title{font:800 var(--fs-sm)/1.2 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--rose);margin:0 0 .7rem}
+.a16-minmap-chain{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem}
+.a16-minmap-chain .chip{display:inline-flex;align-items:center;min-height:40px;padding:.4rem .75rem;border:1px solid var(--rose);border-radius:var(--r-pill);background:var(--wine-soft);color:var(--rose-hi);font:700 var(--fs-sm)/1 var(--font-mono)}
+.a16-minmap-chain .arrow{color:var(--rose);font-weight:800}
+
+/* Cards específicos */
+.a16-trap-card{margin:1.2rem 0;padding:1rem 1.1rem;border:1px solid color-mix(in srgb,var(--kw-amber) 50%,var(--border-mid));border-left:4px solid var(--kw-amber);border-radius:0 var(--r-md) var(--r-md) 0;background:color-mix(in srgb,var(--kw-amber) 8%,var(--bg-glass))}
+.a16-trap-card__label{display:inline-block;margin-bottom:.5rem;padding:.25rem .6rem;border:1px solid var(--kw-amber);border-radius:var(--r-pill);color:var(--kw-amber);font:800 var(--fs-xs)/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+
+/* Callout nuança (laudo) */
+.a16-nuance-box{margin:1.1rem 0;padding:.9rem 1.1rem;border:1px dashed var(--kw-cyan);border-radius:var(--r-md);background:color-mix(in srgb,var(--kw-cyan) 6%,var(--bg-glass))}
+.a16-nuance-box__label{display:inline-block;margin-bottom:.4rem;font:800 var(--fs-xs)/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--kw-cyan)}
+
+/* Split texto / imagem */
+.a16-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.1rem;align-items:start;margin:1.2rem 0}
+
+/* Banner parte */
+.a16-part-banner{margin:0 0 1rem;padding:.7rem 1rem;border-radius:var(--r-md);border:1px dashed var(--border-mid);color:var(--ink-70);font:700 var(--fs-xs)/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+
+/* Caso clínico (E3 opener) */
+.a16-case-card{margin:1.2rem 0;padding:1.1rem 1.2rem;border:1px solid var(--border-mid);border-left:4px solid var(--rose);border-radius:0 var(--r-md) var(--r-md) 0;background:var(--bg-glass)}
+.a16-case-card__label{display:inline-block;margin-bottom:.5rem;padding:.25rem .6rem;border:1px solid var(--rose);border-radius:var(--r-pill);color:var(--rose);font:800 var(--fs-xs)/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+
+/* Chipset calendário */
+.a16-cal-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0}
+.a16-cal-chips .chip{display:inline-flex;align-items:center;padding:.4rem .7rem;border:1px solid var(--border-mid);border-radius:var(--r-pill);background:var(--bg-1);font:700 var(--fs-xs)/1 var(--font-mono);text-transform:uppercase;letter-spacing:.05em}
+
+/* Card checklist */
+.a16-checklist-card{margin:1.2rem 0;padding:1rem 1.1rem;border:1px solid var(--border-mid);border-radius:1rem;background:var(--bg-glass)}
+.a16-checklist-card h4{margin:0 0 .6rem;color:var(--rose);font-size:var(--fs-md)}
+.a16-checklist-card ul{list-style:none;padding:0;margin:0}
+.a16-checklist-card li{position:relative;padding:.35rem 0 .35rem 1.4rem;color:var(--ink-90)}
+.a16-checklist-card li::before{content:"○";position:absolute;left:0;color:var(--rose);font-weight:700}
+
+@media (max-width:860px){
+  .a16-split{grid-template-columns:1fr}
+}
+@media (max-width:390px){
+  .quiz__alt{min-height:44px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}

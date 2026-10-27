@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D9488">
+<meta name="description" content="Fraqueza espástica, 1º neurônio motor, SNC e múltiplas lesões centrais — o nome da doença.">
+<title>Espástica = 1º NMS — e o nome da doença — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm2-cara">
+:root,[data-theme="dark"]{--fm2-teal:#14b8a6;--fm2-indigo:#818CF8;--fm2-gelo:#38BDF8;--fm2-ouro:#E0A100;--fm2-coral:#FB7185;--fm2-amber:#F59E0B;--fm2-verde:#34D399}
+[data-theme="light"]{--fm2-teal:#0F766E;--fm2-indigo:#4F46E5;--fm2-gelo:#0284C7;--fm2-ouro:#846006;--fm2-coral:#C81E43;--fm2-amber:#A15206;--fm2-verde:#059669}
+.reading{width:100%;margin:0 auto;padding:0 0 3rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem;margin:0 0 1.25rem;box-shadow:var(--shadow)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--fm2-teal);margin:0 0 .45rem}
+.opener h1{font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 .6rem;color:var(--ink-100)}
+.opener p{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.55}
+.opener--case{border-left:4px solid var(--fm2-indigo)}
+.opener--question{border-left:4px solid var(--fm2-teal)}
+.opener--mnemonic{border-left:4px solid var(--fm2-amber)}
+.opener--impact{border-left:4px solid var(--fm2-coral)}
+.opener--checklist{border-left:4px solid var(--fm2-verde)}
+.opener--vs{border-left:4px solid var(--fm2-gelo)}
+.opener--trap{border-left:4px solid var(--fm2-ouro)}
+.opener--bust{border-left:4px solid var(--fm2-coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.15rem}
+.chip{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.3rem .75rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--fm2-teal);border-color:color-mix(in srgb,var(--fm2-teal) 45%,var(--border))}
+.chip--gold{color:var(--fm2-ouro);border-color:color-mix(in srgb,var(--fm2-ouro) 45%,var(--border))}
+.chip--ok{color:var(--fm2-verde);border-color:color-mix(in srgb,var(--fm2-verde) 45%,var(--border))}
+.chip--no{color:var(--fm2-coral);border-color:color-mix(in srgb,var(--fm2-coral) 45%,var(--border))}
+.chip--series{color:var(--fm2-indigo);border-color:color-mix(in srgb,var(--fm2-indigo) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em;line-height:1.62}
+.prose p.no-indent,.no-indent{text-indent:0}
+.topic-h{font-size:1.12rem;margin:1.4rem 0 .55rem;color:var(--ink-100);font-weight:700}
+.term{color:var(--fm2-indigo);font-weight:700}
+.hl-good{color:var(--fm2-verde);font-weight:700}
+.hl-bad{color:var(--fm2-coral);font-weight:700}
+.hl-warn{color:var(--fm2-amber);font-weight:700}
+.hl-gold{color:var(--fm2-ouro);font-weight:700}
+.nuance{border-left:4px solid var(--fm2-amber);padding:.7rem .9rem;margin:1rem 0;background:color-mix(in srgb,var(--fm2-amber) 9%,var(--bg-2));border-radius:0 10px 10px 0}
+.nuance__title{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--fm2-amber);margin:0 0 .3rem;font-weight:700}
+.nuance p{margin:0;color:var(--ink-80);font-size:.94rem;line-height:1.55}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0}
+.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:300px}
+.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}
+.comparison th{background:var(--bg-3);color:var(--ink-100)}
+.comparison tr:nth-child(even) td{background:var(--bg-2)}
+.exec-card{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.exec-card__title{margin:0 0 .6rem;font-size:1rem;color:var(--fm2-teal);font-weight:700}
+.case-card{border:1px solid var(--border);border-left:4px solid var(--fm2-indigo);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.1rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.case-card h4{margin:0 0 .5rem;color:var(--fm2-indigo)}
+.case-card p{margin:.3rem 0;color:var(--ink-80)}
+.gap-box{border:1px solid var(--border);border-left:4px solid var(--fm2-coral);border-radius:var(--radius-sm);background:color-mix(in srgb,var(--fm2-coral) 8%,var(--bg-2));padding:.9rem 1rem;margin:1.1rem 0}
+.gap-box h4{margin:0 0 .4rem;color:var(--fm2-coral)}
+.gap-box p{margin:0;color:var(--ink-80);font-size:.92rem}
+.continuity{border:1px solid var(--border);border-left:4px solid var(--fm2-gelo);border-radius:var(--radius-sm);background:var(--bg-2);padding:.85rem 1rem;margin:1.2rem 0 0}
+.continuity p{margin:0;color:var(--ink-60);font-size:.92rem}
+.hero-figure{margin:1.5rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.hero-figure__frame{width:100%;display:block;background:var(--bg-1)}
+.hero-figure__cap{padding:.7rem .9rem .9rem;font-size:.8rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.fig__frame{width:100%;display:block;background:var(--bg-1)}
+.fig__frame--svg{padding:.25rem}
+.fm2-inline-svg{display:block;width:100%;height:auto;border-radius:8px}
+.fig__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--fm2-teal);margin-right:.4rem}
+.quiz__alts{list-style:none;margin:0 0 .9rem;padding:0;display:grid;gap:.45rem}
+.alt{display:flex;gap:.6rem;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-3);color:var(--ink-100);padding:.7rem .85rem;cursor:pointer;font:inherit;min-height:44px;line-height:1.45}
+.alt:hover{border-color:var(--fm2-teal);background:var(--bg-4)}
+.alt[aria-checked="true"]{border-color:var(--fm2-gelo);background:color-mix(in srgb,var(--fm2-gelo) 13%,var(--bg-3))}
+.alt.is-correct{border-color:var(--fm2-verde);background:color-mix(in srgb,var(--fm2-verde) 14%,var(--bg-3))}
+.alt.is-correct::after{content:" ✔";color:var(--fm2-verde);font-weight:800;margin-left:auto}
+.alt.is-wrong{border-color:var(--fm2-coral);background:color-mix(in srgb,var(--fm2-coral) 14%,var(--bg-3))}
+.alt.is-wrong::after{content:" ✗";color:var(--fm2-coral);font-weight:800;margin-left:auto}
+.alt.is-marked{border-color:var(--fm2-gelo)}
+.ltr{display:inline-flex;align-items:center;justify-content:center;min-width:1.6rem;height:1.6rem;border-radius:6px;background:var(--bg-4);color:var(--fm2-teal);font-weight:800;font-size:.82rem;flex:0 0 auto}
+.alt.is-correct .ltr{background:var(--fm2-verde);color:#fff}
+.alt.is-wrong .ltr{background:var(--fm2-coral);color:#fff}
+.quiz__btn{display:inline-flex;align-items:center;min-height:44px;padding:.55rem 1rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong);background:var(--bg-3);color:var(--ink-100);cursor:pointer;font:inherit;font-weight:600}
+.quiz__btn:hover:not(:disabled){border-color:var(--fm2-teal);color:var(--fm2-teal)}
+.quiz__btn:disabled{opacity:.6;cursor:default}
+.quiz__explicacao{margin-top:.7rem;padding:.8rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3)}
+.quiz__explicacao[hidden]{display:none}
+.quiz__explicacao p{margin:0 0 .6rem;font-size:.93rem;line-height:1.55}
+.quiz__explicacao p:last-child{margin:0}
+.quiz__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.flow{display:grid;gap:.5rem;margin:.9rem 0}
+.flow__step{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:.7rem .85rem;font-size:.93rem}
+.flow__step strong{color:var(--fm2-teal)}
+.flow__arrow{text-align:center;color:var(--fm2-gelo);font-weight:700}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.9rem 0}
+.stat-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem .9rem;background:var(--bg-2)}
+.stat-card__n{font-size:1.7rem;font-weight:800;color:var(--fm2-teal);line-height:1}
+.stat-card__n--bad{color:var(--fm2-coral)}
+.stat-card__t{display:block;margin-top:.35rem;font-size:.82rem;color:var(--ink-60)}
+.board{display:grid;gap:.5rem;margin:.9rem 0}
+.board__row{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;border:1px solid var(--border);border-radius:var(--radius-sm);padding:.6rem .8rem;background:var(--bg-2)}
+.board__tag{font-weight:800;min-width:1.6rem;text-align:center;border-radius:6px;padding:.15rem .25rem;background:var(--bg-4)}
+.board__tag--ok{background:var(--fm2-verde);color:#fff}
+.board__tag--no{background:var(--fm2-coral);color:#fff}
+.dont-confuse{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.9rem 0}
+.dont-confuse>div{border:1px solid var(--border);border-radius:10px;padding:.65rem .8rem;background:var(--bg-2)}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:560px){.stat-row,.dont-confuse{grid-template-columns:1fr}}
+@media(max-width:420px){.board__row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p2" data-layout="fm2-p02" data-source-ids="016,017,018,019,020,021,022,023,024,025,026,027,028,029">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Esclerose múltipla</span>
+        <span class="site-header__subtitle">Neurologia · esclerose múltipla</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">2/12</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<div class="reading">
+  <section class="opener opener--question" aria-labelledby="p2-titulo">
+    <span class="opener__eyebrow">Pergunta central</span>
+    <h1 id="p2-titulo">Espástica = 1º NMS — e o nome da doença</h1>
+    <p>Fraqueza espástica + tremor + visão + sensitivo — onde vive a lesão e por que o nome da doença ajuda?</p>
+  </section>
+
+  <div class="prose">
+    <h2 class="topic-h">Fraqueza primeiro</h2>
+    <p class="no-indent">O raciocínio começa pela <strong>fraqueza</strong>, porque o caso é situação neurológica vivida com paresia. A pergunta topográfica: <span class="term">primeiro neurônio</span>, <span class="term">segundo neurônio</span>, <span class="term">placa</span> ou <span class="term">músculo</span>?</p>
+    <h2 class="topic-h">Espástica = 1º NMS = SNC</h2>
+    <p class="no-indent">O dado que entrega a topografia: a fraqueza é <strong>espástica</strong> → problema no <strong>primeiro neurônio motor</strong>. É doença <strong>neurológica pura</strong> (só manifestações neurológicas — não um quadro sistêmico tipo dermatomiosite). O primeiro neurônio motor <strong>vive no sistema nervoso central</strong>. <span class="term">SNC</span> = estruturas <strong>completamente cercadas pela meninge</strong>: cérebro, cerebelo, tronco encefálico e medula espinhal. <span class="term">SNP</span> = raízes, nervos periféricos e plexos. Doença puramente neurológica que pega o <strong>primeiro neurônio</strong> = doença <strong>dentro do SNC</strong>.</p>
+    <h2 class="topic-h">Mais que um sítio</h2>
+    <p class="no-indent">Além do 1º neurônio, o quadro inclui: <strong>cerebelo</strong> (tremor), <strong>nervo óptico</strong> (↓visão) e <strong>sensibilidade</strong> alterada. Essas informações <strong>compõem</strong> o diagnóstico: não é uma topografia isolada.</p>
+    <h2 class="topic-h">Nome e a regra de prova</h2>
+    <p class="no-indent">Diagnóstico de moça jovem com <strong>múltiplas lesões no SNC</strong> (1º NMS + visão + cerebelo + sensitivo): <strong>esclerose múltipla</strong>. O <strong>nome ajuda</strong>: esclerose <strong>múltipla</strong> = doença neurológica central com <strong>múltiplas</strong> apresentações.</p>
+  </div>
+
+  <div class="exec-card" style="border-left:4px solid var(--fm2-ouro);background:color-mix(in srgb,var(--fm2-ouro) 8%,var(--bg-2))">
+    <p class="exec-card__title" style="color:var(--fm2-ouro)">Regra de ouro de prova</p>
+    <p class="no-indent"><strong class="hl-gold">Mulher jovem na prova perdendo visão</strong> = parar tudo e <strong>afastar esclerose múltipla até prova em contrário</strong>.</p>
+  </div>
+
+  <div class="prose">
+    <p><strong class="hl-warn">Por que importa:</strong> topografar “espástica = 1º” sem juntar os outros sítios deixa o diagnóstico pela metade. <strong>Resumo operacional:</strong> espástica → 1º NMS → SNC + outros sítios = EM; mulher jovem + visão = EM até provar o contrário.</p>
+  </div>
+
+  <div class="figura-ancorada">
+    <figure class="figura-ancorada__media">
+      <img src="media/B02-corticospinal-pathway-OpenStax-CNX.jpg" alt="Esquema do trato corticoespinhal descendo do córtex pelo tronco até a medula." loading="lazy" decoding="async">
+      <figcaption class="figura-ancorada__legenda">Trato corticoespinhal (via piramidal) — o 1º NMS mora no SNC, do córtex à medula.</figcaption>
+      <p class="figura-ancorada__fonte">OpenStax College, <em>Anatomy &amp; Physiology</em> · CC BY 3.0 · <a href="https://commons.wikimedia.org/wiki/File:1426_Corticospinal_Pathway.jpg">fonte</a></p>
+    </figure>
+    <div class="figura-ancorada__ancora">
+      <h4>Onde vive o 1º</h4>
+      <p>O trato corticoespinhal é o caminho do 1º neurônio motor — todo ele dentro do SNC. Espástica aponta para aqui, não para raiz/nervo/plexo do SNP.</p>
+    </div>
+  </div>
+
+  <figure class="fig">
+    <div class="fig__frame fig__frame--svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 690" width="100%" height="100%" class="fm2-inline-svg fm2p2-root" id="fm2p2-svg-root" role="img" aria-label="Mapa Topografico SNC 1º NMS vs SNP 2º NMS">
+  <defs>
+    <!-- Gradientes para SNC e Lesoes -->
+    <linearGradient id="fm2p2-grad-snc" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p2-teal-glow, #2dd4bf)" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="var(--fm2p2-teal-main, #0d9488)" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="fm2p2-grad-tract" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p2-indigo-glow, #a5b4fc)"/>
+      <stop offset="50%" stop-color="var(--fm2p2-indigo-main, #6366f1)"/>
+      <stop offset="100%" stop-color="var(--fm2p2-indigo-dark, #4338ca)"/>
+    </linearGradient>
+
+    <radialGradient id="fm2p2-grad-lesion" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm2p2-coral-bright, #ff6b6b)" stop-opacity="1"/>
+      <stop offset="60%" stop-color="var(--fm2p2-coral-main, #f43f5e)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="var(--fm2p2-coral-dark, #be123c)" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="fm2p2-grad-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--fm2p2-gold-bright, #fbbf24)"/>
+      <stop offset="100%" stop-color="var(--fm2p2-gold-main, #d97706)"/>
+    </linearGradient>
+
+    <!-- Filtros de Brilho Neon e Sombra -->
+    <filter id="fm2p2-glow-snc" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="fm2p2-glow-lesion" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur1" />
+      <feGaussianBlur stdDeviation="8" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="fm2p2-shadow-card" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* Estilos escopados exclusivamente a raiz do SVG */
+    .fm2p2-root {
+      --fm2p2-bg: #0f172a;
+      --fm2p2-card-bg: #1e293b;
+      --fm2p2-card-bg-subtle: #182234;
+      --fm2p2-card-border: #334155;
+      --fm2p2-text-title: #f8fafc;
+      --fm2p2-text-main: #e2e8f0;
+      --fm2p2-text-muted: #94a3b8;
+      
+      --fm2p2-teal-main: #0d9488;
+      --fm2p2-teal-glow: #2dd4bf;
+      --fm2p2-teal-bg: rgba(13, 148, 136, 0.15);
+      
+      --fm2p2-indigo-main: #6366f1;
+      --fm2p2-indigo-glow: #818cf8;
+      --fm2p2-indigo-bg: rgba(99, 102, 241, 0.15);
+      
+      --fm2p2-coral-main: #f43f5e;
+      --fm2p2-coral-glow: #fb7185;
+      --fm2p2-coral-bg: rgba(244, 63, 94, 0.15);
+      
+      --fm2p2-gray-main: #64748b;
+      --fm2p2-gray-dim: #334155;
+      --fm2p2-gray-bg: rgba(100, 116, 139, 0.1);
+      
+      --fm2p2-gold-main: #d97706;
+      --fm2p2-gold-glow: #fbbf24;
+      --fm2p2-gold-bg: rgba(217, 119, 6, 0.18);
+      
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--fm2p2-bg, #0f172a);
+      box-sizing: border-box;
+    }
+
+    /* Suporte a Tema Claro via data-theme */
+    [data-theme="light"] .fm2p2-root,
+    .fm2p2-root.is-light {
+      --fm2p2-bg: #f8fafc;
+      --fm2p2-card-bg: #ffffff;
+      --fm2p2-card-bg-subtle: #f1f5f9;
+      --fm2p2-card-border: #cbd5e1;
+      --fm2p2-text-title: #0f172a;
+      --fm2p2-text-main: #334155;
+      --fm2p2-text-muted: #64748b;
+      
+      --fm2p2-teal-main: #0f766e;
+      --fm2p2-teal-glow: #14b8a6;
+      --fm2p2-teal-bg: rgba(15, 118, 110, 0.1);
+      
+      --fm2p2-indigo-main: #4f46e5;
+      --fm2p2-indigo-glow: #6366f1;
+      --fm2p2-indigo-bg: rgba(79, 70, 229, 0.1);
+      
+      --fm2p2-coral-main: #e11d48;
+      --fm2p2-coral-glow: #f43f5e;
+      --fm2p2-coral-bg: rgba(225, 29, 72, 0.1);
+      
+      --fm2p2-gray-main: #64748b;
+      --fm2p2-gray-dim: #cbd5e1;
+      --fm2p2-gray-bg: rgba(100, 116, 139, 0.08);
+      
+      --fm2p2-gold-main: #b45309;
+      --fm2p2-gold-glow: #d97706;
+      --fm2p2-gold-bg: rgba(180, 83, 9, 0.12);
+    }
+
+    /* Elementos Estruturais */
+    .fm2p2-root .fm2p2-bg-rect { fill: var(--fm2p2-bg, #0f172a); }
+    .fm2p2-root .fm2p2-card { fill: var(--fm2p2-card-bg, #1e293b); stroke: var(--fm2p2-card-border, #334155); stroke-width: 1.5; rx: 10px; }
+    .fm2p2-root .fm2p2-card-subtle { fill: var(--fm2p2-card-bg-subtle, #182234); stroke: var(--fm2p2-card-border, #334155); stroke-width: 1; rx: 6px; }
+
+    /* Tipografia */
+    .fm2p2-root .fm2p2-title { fill: var(--fm2p2-text-title, #f8fafc); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+    .fm2p2-root .fm2p2-subtitle { fill: var(--fm2p2-text-muted, #94a3b8); font-size: 13px; font-weight: 500; }
+    .fm2p2-root .fm2p2-section-head { fill: var(--fm2p2-teal-glow, #2dd4bf); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    .fm2p2-root .fm2p2-text-body { fill: var(--fm2p2-text-main, #e2e8f0); font-size: 12px; line-height: 1.4; }
+    .fm2p2-root .fm2p2-text-subtext { fill: var(--fm2p2-text-muted, #94a3b8); font-size: 11px; }
+
+    /* Chips e Badges */
+    .fm2p2-root .fm2p2-badge-gold { fill: var(--fm2p2-gold-bg, rgba(217, 119, 6, 0.18)); stroke: var(--fm2p2-gold-main, #d97706); stroke-width: 1.5; rx: 6px; }
+    .fm2p2-root .fm2p2-gold-text { fill: var(--fm2p2-gold-glow, #fbbf24); font-size: 12px; font-weight: 800; letter-spacing: 0.02em; }
+    
+    .fm2p2-root .fm2p2-badge-teal { fill: var(--fm2p2-teal-bg, rgba(13, 148, 136, 0.15)); stroke: var(--fm2p2-teal-main, #0d9488); stroke-width: 1; rx: 4px; }
+    .fm2p2-root .fm2p2-teal-text { fill: var(--fm2p2-teal-glow, #2dd4bf); font-size: 11px; font-weight: 700; }
+
+    /* Interatividade e Filtros */
+    .fm2p2-root .fm2p2-btn { cursor: pointer; transition: all 0.2s ease; }
+    .fm2p2-root .fm2p2-btn:hover .fm2p2-btn-bg { fill: var(--fm2p2-indigo-main, #6366f1); stroke: var(--fm2p2-indigo-glow, #818cf8); }
+    .fm2p2-root .fm2p2-btn:hover .fm2p2-btn-text { fill: #ffffff; }
+    .fm2p2-root .fm2p2-btn-bg { fill: var(--fm2p2-card-bg-subtle, #182234); stroke: var(--fm2p2-card-border, #334155); stroke-width: 1.5; rx: 6px; }
+    .fm2p2-root .fm2p2-btn-text { fill: var(--fm2p2-text-main, #e2e8f0); font-size: 11px; font-weight: 600; text-anchor: middle; }
+    
+    .fm2p2-root .fm2p2-btn.is-active .fm2p2-btn-bg { fill: var(--fm2p2-indigo-main, #6366f1); stroke: var(--fm2p2-indigo-glow, #818cf8); }
+    .fm2p2-root .fm2p2-btn.is-active .fm2p2-btn-text { fill: #ffffff; font-weight: 700; }
+
+    /* Anatomia SNC vs SNP */
+    .fm2p2-root .fm2p2-snc-organ { fill: url(#fm2p2-grad-snc); stroke: var(--fm2p2-teal-glow, #2dd4bf); stroke-width: 1.5; transition: opacity 0.3s, stroke-width 0.3s; }
+    .fm2p2-root .fm2p2-tract-path { fill: none; stroke: url(#fm2p2-grad-tract); stroke-width: 3.5; stroke-dasharray: 6 3; animation: fm2p2-dash 20s linear infinite; }
+    .fm2p2-root .fm2p2-lesion-node { fill: url(#fm2p2-grad-lesion); stroke: var(--fm2p2-coral-bright, #ff6b6b); stroke-width: 1.5; filter: url(#fm2p2-glow-lesion); cursor: pointer; }
+    
+    .fm2p2-root .fm2p2-snp-nerve { fill: none; stroke: var(--fm2p2-gray-main, #64748b); stroke-width: 1.8; stroke-dasharray: 4 2; opacity: 0.45; transition: opacity 0.3s, stroke 0.3s; }
+    .fm2p2-root .fm2p2-snp-label { fill: var(--fm2p2-text-muted, #94a3b8); font-size: 10px; font-weight: 500; opacity: 0.6; }
+
+    /* Hotspots Anatomicos */
+    .fm2p2-root .fm2p2-hs-group { cursor: pointer; }
+    .fm2p2-root .fm2p2-hs-group:hover .fm2p2-hs-circle { transform: scale(1.25); fill: var(--fm2p2-gold-bright, #fbbf24); }
+    .fm2p2-root .fm2p2-hs-circle { fill: var(--fm2p2-indigo-main, #6366f1); stroke: #ffffff; stroke-width: 1.5; transition: transform 0.2s, fill 0.2s; transform-origin: center; }
+    .fm2p2-root .fm2p2-hs-num { fill: #ffffff; font-size: 10px; font-weight: 800; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+
+    /* Estados Visuais por Foco (SNC vs SNP) */
+    .fm2p2-root[data-focus="snc"] .fm2p2-snp-nerve { opacity: 0.15; stroke: var(--fm2p2-gray-dim, #334155); }
+    .fm2p2-root[data-focus="snc"] .fm2p2-snc-organ { opacity: 1; filter: url(#fm2p2-glow-snc); }
+    
+    .fm2p2-root[data-focus="snp"] .fm2p2-snc-organ { opacity: 0.35; filter: none; }
+    .fm2p2-root[data-focus="snp"] .fm2p2-snp-nerve { opacity: 1; stroke: var(--fm2p2-gold-main, #d97706); stroke-width: 2.2; stroke-dasharray: none; }
+    .fm2p2-root[data-focus="snp"] .fm2p2-snp-label { opacity: 1; fill: var(--fm2p2-gold-glow, #fbbf24); font-weight: 700; }
+
+    .fm2p2-root[data-focus="lesions"] .fm2p2-lesion-node { transform: scale(1.3); transform-origin: center; }
+    .fm2p2-root[data-focus="lesions"] .fm2p2-snc-organ { opacity: 0.6; }
+
+    /* Tabela Semiotica */
+    .fm2p2-root .fm2p2-tbl-header { fill: var(--fm2p2-card-bg-subtle, #182234); font-weight: 700; font-size: 11px; }
+    .fm2p2-root .fm2p2-tbl-cell { font-size: 11px; fill: var(--fm2p2-text-main, #e2e8f0); }
+    .fm2p2-root .fm2p2-tbl-hl-snc { fill: var(--fm2p2-coral-glow, #fb7185); font-weight: 700; }
+    .fm2p2-root .fm2p2-tbl-hl-snp { fill: var(--fm2p2-gray-main, #64748b); }
+
+    @keyframes fm2p2-dash {
+      to { stroke-dashoffset: -180; }
+    }
+  </style>
+
+  <!-- Fundo Principal -->
+  <rect width="1000" height="690" class="fm2p2-bg-rect" rx="12"/>
+
+  <!-- Cabecalho da Ilustracao -->
+  <g transform="translate(25, 20)">
+    <!-- Tag Superior -->
+    <rect x="0" y="0" width="220" height="20" class="fm2p2-badge-teal"/>
+    <text x="110" y="14" class="fm2p2-teal-text" text-anchor="middle">TOPOGRAFIA NEUROLÓGICA · SEMIÓTICA</text>
+    
+    <!-- Titulo Principal -->
+    <text x="0" y="45" class="fm2p2-title">Mapeamento SNC (1º NMS) × SNP (2º NMS)</text>
+    <text x="0" y="63" class="fm2p2-subtitle">Localização anatômica da síndrome motora e correlação com lesões centrais multifocais (Esclerose Múltipla)</text>
+  </g>
+
+  <!-- Chip de Ouro: Regra Inviolavel -->
+  <g transform="translate(560, 22)">
+    <rect x="0" y="0" width="415" height="58" class="fm2p2-badge-gold" filter="url(#fm2p2-shadow-card)"/>
+    <text x="15" y="24" class="fm2p2-gold-text">⚡ CHIP DE OURO DA TOPOGRAFIA NEUROLÓGICA</text>
+    <text x="15" y="44" class="fm2p2-text-body" font-weight="700">FRAQUEZA ESPÁSTICA + HIPERREFLEXIA = LESÃO NO SNC (1º NMS)</text>
+  </g>
+
+  <!-- Painel Esquerdo: Mapa Anatomico SNC vs SNP -->
+  <g transform="translate(25, 95)">
+    <!-- Card de Fundo do Mapa Anatomico -->
+    <rect x="0" y="0" width="515" height="520" class="fm2p2-card"/>
+    <text x="20" y="30" class="fm2p2-section-head">TERRITÓRIO ANATÔMICO DO SISTEMA NERVOSO</text>
+    <text x="20" y="46" class="fm2p2-text-subtext">SNC aceso (teal/índigo) vs SNP resfriado/apagado (cinza)</text>
+
+    <!-- Botoes de Controle de Filtro de Foco -->
+    <g id="fm2p2-filters" transform="translate(200, 15)">
+      <g class="fm2p2-btn is-active" id="fm2p2-btn-all" data-focus="all" role="button" tabindex="0" aria-label="Visualizar Visao Geral">
+        <rect x="0" y="0" width="65" height="24" class="fm2p2-btn-bg"/>
+        <text x="32" y="16" class="fm2p2-btn-text">Geral</text>
+      </g>
+      <g class="fm2p2-btn" id="fm2p2-btn-snc" data-focus="snc" role="button" tabindex="0" aria-label="Focar em Sistema Nervoso Central">
+        <rect x="72" y="0" width="70" height="24" class="fm2p2-btn-bg"/>
+        <text x="107" y="16" class="fm2p2-btn-text">SNC (1º)</text>
+      </g>
+      <g class="fm2p2-btn" id="fm2p2-btn-snp" data-focus="snp" role="button" tabindex="0" aria-label="Focar em Sistema Nervoso Periferico">
+        <rect x="149" y="0" width="70" height="24" class="fm2p2-btn-bg"/>
+        <text x="184" y="16" class="fm2p2-btn-text">SNP (2º)</text>
+      </g>
+      <g class="fm2p2-btn" id="fm2p2-btn-lesions" data-focus="lesions" role="button" tabindex="0" aria-label="Focar em Placas de Lesao Central EM">
+        <rect x="226" y="0" width="75" height="24" class="fm2p2-btn-bg"/>
+        <text x="263" y="16" class="fm2p2-btn-text">Placas EM</text>
+      </g>
+    </g>
+
+    <!-- Anatomia Vetorial -->
+    <g transform="translate(20, 60)">
+
+      <!-- Estrutura do SNC (Cerebro, Tronco, Cerebelo, Medula) -->
+      
+      <!-- Cerebro / Cortex Cerebral -->
+      <path id="fm2p2-snc-brain" class="fm2p2-snc-organ" d="
+        M 210 50 
+        C 170 50, 140 80, 140 120 
+        C 140 150, 160 170, 185 175 
+        C 195 177, 210 175, 220 180 
+        C 225 185, 230 195, 235 205 
+        L 255 205 
+        C 260 195, 265 185, 270 180 
+        C 280 175, 295 177, 305 175 
+        C 330 170, 350 150, 350 120 
+        C 350 80, 320 50, 280 50 
+        Z" />
+      
+      <!-- Sulcos Corticais Ilustrativos -->
+      <path d="M 235 52 C 230 80, 238 110, 235 140" fill="none" stroke="var(--fm2p2-teal-glow, #2dd4bf)" stroke-width="1.2" opacity="0.6"/>
+      <path d="M 210 65 C 205 90, 215 120, 210 145" fill="none" stroke="var(--fm2p2-teal-glow, #2dd4bf)" stroke-width="1" opacity="0.4"/>
+      <path d="M 270 65 C 275 90, 265 120, 270 145" fill="none" stroke="var(--fm2p2-teal-glow, #2dd4bf)" stroke-width="1" opacity="0.4"/>
+
+      <!-- Cerebelo -->
+      <path id="fm2p2-snc-cerebellum" class="fm2p2-snc-organ" d="
+        M 275 185 
+        C 305 185, 325 200, 325 220 
+        C 325 240, 300 250, 275 245 
+        C 265 243, 260 235, 258 225 
+        C 258 205, 265 185, 275 185 Z" />
+      <path d="M 275 195 C 295 198, 310 210, 315 225" fill="none" stroke="var(--fm2p2-teal-glow, #2dd4bf)" stroke-width="0.8" opacity="0.5"/>
+      <path d="M 270 210 C 285 212, 300 220, 305 235" fill="none" stroke="var(--fm2p2-teal-glow, #2dd4bf)" stroke-width="0.8" opacity="0.5"/>
+
+      <!-- Tronco Encefalico -->
+      <path id="fm2p2-snc-stem" class="fm2p2-snc-organ" d="
+        M 235 205 
+        L 255 205 
+        L 258 225 
+        C 265 235, 262 250, 255 255 
+        L 255 280 
+        L 235 280 
+        L 235 255 
+        C 228 250, 225 235, 232 225 Z" />
+
+      <!-- Medula Espinhal -->
+      <path id="fm2p2-snc-spine" class="fm2p2-snc-organ" d="
+        M 237 280 
+        L 253 280 
+        L 253 430 
+        C 253 440, 248 448, 245 450 
+        C 242 448, 237 440, 237 430 Z" />
+
+      <!-- Segmentos Medulares -->
+      <line x1="237" y1="320" x2="253" y2="320" stroke="var(--fm2p2-teal-glow, #2dd4bf)" stroke-width="0.8" opacity="0.5"/>
+      <line x1="237" y1="360" x2="253" y2="360" stroke="var(--fm2p2-teal-glow, #2dd4bf)" stroke-width="0.8" opacity="0.5"/>
+      <line x1="237" y1="400" x2="253" y2="400" stroke="var(--fm2p2-teal-glow, #2dd4bf)" stroke-width="0.8" opacity="0.5"/>
+
+      <!-- Via Corticoespinal (1º NMS) -->
+      <path class="fm2p2-tract-path" d="
+        M 220 80 
+        Q 235 120, 242 160 
+        L 243 230 
+        C 243 260, 247 270, 245 278 
+        L 245 425" />
+      <path class="fm2p2-tract-path" d="
+        M 270 80 
+        Q 255 120, 248 160 
+        L 247 230 
+        C 247 260, 243 270, 245 278 
+        L 245 425" />
+
+      <!-- Lesoes Centrais / Placas de EM -->
+      <!-- Placa 1: Periventricular / Subcortical -->
+      <circle cx="215" cy="130" r="9" class="fm2p2-lesion-node" id="fm2p2-lesion-1" data-title="Placa Subcortical / Periventricular (SNC)" />
+      <!-- Placa 2: Tronco Encefalico -->
+      <circle cx="248" cy="245" r="7.5" class="fm2p2-lesion-node" id="fm2p2-lesion-2" data-title="Placa de Tronco Encefálico (SNC)" />
+      <!-- Placa 3: Medula Espinhal Cervical -->
+      <circle cx="245" cy="335" r="8" class="fm2p2-lesion-node" id="fm2p2-lesion-3" data-title="Placa Medular Cervical (SNC)" />
+
+      <!-- Sistema Nervoso Periferico - SNP (Resfriado) -->
+      <g id="fm2p2-snp-upper">
+        <!-- Lado Esquerdo -->
+        <path d="M 237 310 C 200 305, 150 315, 110 330" class="fm2p2-snp-nerve"/>
+        <path d="M 237 325 C 195 325, 145 340, 105 365" class="fm2p2-snp-nerve"/>
+        <path d="M 237 340 C 190 345, 140 365, 100 395" class="fm2p2-snp-nerve"/>
+        <!-- Lado Direito -->
+        <path d="M 253 310 C 290 305, 340 315, 380 330" class="fm2p2-snp-nerve"/>
+        <path d="M 253 325 C 295 325, 345 340, 385 365" class="fm2p2-snp-nerve"/>
+        <path d="M 253 340 C 300 345, 350 365, 390 395" class="fm2p2-snp-nerve"/>
+      </g>
+
+      <g id="fm2p2-snp-lower">
+        <!-- Lado Esquerdo -->
+        <path d="M 240 420 C 210 435, 170 455, 130 490" class="fm2p2-snp-nerve"/>
+        <path d="M 242 435 C 215 455, 175 480, 140 515" class="fm2p2-snp-nerve"/>
+        <!-- Lado Direito -->
+        <path d="M 250 420 C 280 435, 320 455, 360 490" class="fm2p2-snp-nerve"/>
+        <path d="M 248 435 C 275 455, 315 480, 350 515" class="fm2p2-snp-nerve"/>
+      </g>
+
+      <!-- Rotulos Anatomicos -->
+      <line x1="330" y1="90" x2="390" y2="90" stroke="var(--fm2p2-teal-main, #0d9488)" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <circle cx="330" cy="90" r="3" fill="var(--fm2p2-teal-glow, #2dd4bf)"/>
+      <text x="395" y="94" class="fm2p2-teal-text" font-size="12">SNC: CÉREBRO (Córtex Motor)</text>
+
+      <line x1="320" y1="215" x2="390" y2="215" stroke="var(--fm2p2-teal-main, #0d9488)" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <circle cx="320" cy="215" r="3" fill="var(--fm2p2-teal-glow, #2dd4bf)"/>
+      <text x="395" y="219" class="fm2p2-teal-text" font-size="11">CEREBELO (Coordenação)</text>
+
+      <line x1="160" y1="245" x2="235" y2="245" stroke="var(--fm2p2-teal-main, #0d9488)" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <circle cx="235" cy="245" r="3" fill="var(--fm2p2-teal-glow, #2dd4bf)"/>
+      <text x="65" y="249" class="fm2p2-teal-text" font-size="11">TRONCO ENCEFÁLICO</text>
+
+      <line x1="160" y1="370" x2="237" y2="370" stroke="var(--fm2p2-teal-main, #0d9488)" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <circle cx="237" cy="370" r="3" fill="var(--fm2p2-teal-glow, #2dd4bf)"/>
+      <text x="40" y="374" class="fm2p2-teal-text" font-size="11">MEDULA ESPINHAL (Cervical/Torácica)</text>
+
+      <text x="395" y="340" class="fm2p2-snp-label">SNP: Raízes &amp; Plexo Braquial</text>
+      <text x="365" y="505" class="fm2p2-snp-label">SNP: Nervo Periférico (2º NMS)</text>
+      <text x="35" y="505" class="fm2p2-snp-label">SNP: Fibras Motoras Periféricas</text>
+
+      <!-- Hotspots Interativos Anatomicos -->
+      <g class="fm2p2-hs-group" id="fm2p2-hs-1" transform="translate(245, 90)" role="button" tabindex="0" aria-label="Inspecionar Cortex Cerebral (SNC)">
+        <circle cx="0" cy="0" r="11" class="fm2p2-hs-circle"/>
+        <text x="0" y="0" class="fm2p2-hs-num">1</text>
+      </g>
+      
+      <g class="fm2p2-hs-group" id="fm2p2-hs-2" transform="translate(245, 215)" role="button" tabindex="0" aria-label="Inspecionar Tronco Encefalico (SNC)">
+        <circle cx="0" cy="0" r="11" class="fm2p2-hs-circle"/>
+        <text x="0" y="0" class="fm2p2-hs-num">2</text>
+      </g>
+
+      <g class="fm2p2-hs-group" id="fm2p2-hs-3" transform="translate(245, 380)" role="button" tabindex="0" aria-label="Inspecionar Medula Espinhal (SNC)">
+        <circle cx="0" cy="0" r="11" class="fm2p2-hs-circle"/>
+        <text x="0" y="0" class="fm2p2-hs-num">3</text>
+      </g>
+
+      <g class="fm2p2-hs-group" id="fm2p2-hs-4" transform="translate(340, 440)" role="button" tabindex="0" aria-label="Inspecionar Nervos Perifericos (SNP)">
+        <circle cx="0" cy="0" r="11" class="fm2p2-hs-circle" fill="var(--fm2p2-gray-main, #64748b)"/>
+        <text x="0" y="0" class="fm2p2-hs-num">4</text>
+      </g>
+
+    </g> <!-- Fim Anatomia -->
+  </g> <!-- Fim Painel Esquerdo -->
+
+
+  <!-- Painel Direito: Leitura Semiotica -->
+  <g transform="translate(560, 95)">
+    <rect x="0" y="0" width="415" height="520" class="fm2p2-card"/>
+
+    <!-- Secao 1: Análise Topografica -->
+    <g transform="translate(20, 20)">
+      <text x="0" y="15" class="fm2p2-section-head">PAINEL DE ANÁLISE TOPOGRÁFICA</text>
+      
+      <rect x="0" y="28" width="375" height="72" class="fm2p2-card-subtle"/>
+      <text x="15" y="48" class="fm2p2-gold-text" id="fm2p2-info-title">SNC: VISÃO GERAL DA CORRELAÇÃO MOTORAS</text>
+      <text x="15" y="68" class="fm2p2-text-body" id="fm2p2-info-desc">O 1º NMS reside exclusivamente no SNC (Cérebro → Tronco → Medula). A lesão do 1º NMS gera a clássica Síndrome Espástica.</text>
+      <text x="15" y="86" class="fm2p2-text-subtext" id="fm2p2-info-sub">Clique nos números 1-4 ou use os filtros superiores para alternar o foco.</text>
+    </g>
+
+    <!-- Secao 2: Tabela Comparativa 1º NMS vs 2º NMS -->
+    <g transform="translate(20, 135)">
+      <text x="0" y="15" class="fm2p2-section-head">SEMIÓTICA TOPOGRÁFICA: 1º NMS (SNC) × 2º NMS (SNP)</text>
+      
+      <g transform="translate(0, 25)">
+        <rect x="0" y="0" width="375" height="24" class="fm2p2-tbl-header" rx="4"/>
+        <text x="10" y="16" class="fm2p2-text-title" font-size="11">ACHADO CLÍNICO</text>
+        <text x="140" y="16" class="fm2p2-coral-glow" font-size="11" font-weight="800">1º NMS (SNC)</text>
+        <text x="270" y="16" class="fm2p2-text-muted" font-size="11" font-weight="700">2º NMS (SNP)</text>
+
+        <rect x="0" y="26" width="375" height="26" class="fm2p2-card-subtle"/>
+        <text x="10" y="43" class="fm2p2-tbl-cell" font-weight="700">Tônus Motor</text>
+        <text x="140" y="43" class="fm2p2-tbl-hl-snc">Espástico ("Canivete")</text>
+        <text x="270" y="43" class="fm2p2-tbl-hl-snp">Hipotonia Flácida</text>
+
+        <rect x="0" y="54" width="375" height="26" class="fm2p2-card-subtle"/>
+        <text x="10" y="71" class="fm2p2-tbl-cell" font-weight="700">Reflexos Miotáticos</text>
+        <text x="140" y="71" class="fm2p2-tbl-hl-snc">Hiperreflexia + Clônus</text>
+        <text x="270" y="71" class="fm2p2-tbl-hl-snp">Hipo / Arreflexia</text>
+
+        <rect x="0" y="82" width="375" height="26" class="fm2p2-card-subtle"/>
+        <text x="10" y="99" class="fm2p2-tbl-cell" font-weight="700">Cutâneo-Plantar</text>
+        <text x="140" y="99" class="fm2p2-tbl-hl-snc">Sinal de Babinski (+)</text>
+        <text x="270" y="99" class="fm2p2-tbl-hl-snp">Resposta Flexora (Nl)</text>
+
+        <rect x="0" y="110" width="375" height="26" class="fm2p2-card-subtle"/>
+        <text x="10" y="127" class="fm2p2-tbl-cell" font-weight="700">Atrofia Muscular</text>
+        <text x="140" y="127" class="fm2p2-tbl-cell">Ausente (ou por desuso)</text>
+        <text x="270" y="127" class="fm2p2-tbl-hl-snp">Precoce e Intensa</text>
+
+        <rect x="0" y="138" width="375" height="26" class="fm2p2-card-subtle"/>
+        <text x="10" y="155" class="fm2p2-tbl-cell" font-weight="700">Fasciculações</text>
+        <text x="140" y="155" class="fm2p2-tbl-cell">Ausentes</text>
+        <text x="270" y="155" class="fm2p2-tbl-hl-snp">Presentes (Denervação)</text>
+      </g>
+    </g>
+
+    <!-- Secao 3: Raciocinio Clinico EM -->
+    <g transform="translate(20, 335)">
+      <text x="0" y="15" class="fm2p2-section-head">DISSEMINAÇÃO ESPACIAL NO SNC (ESCLEROSE MÚLTIPLA)</text>
+      <rect x="0" y="24" width="375" height="145" class="fm2p2-card-subtle" stroke="var(--fm2p2-coral-main, #f43f5e)" stroke-opacity="0.4"/>
+
+      <g transform="translate(15, 38)">
+        <circle cx="6" cy="6" r="4" fill="var(--fm2p2-coral-glow, #fb7185)"/>
+        <text x="18" y="10" class="fm2p2-text-body" font-weight="700">Multiplicidade de Sítios Centrais:</text>
+        <text x="18" y="25" class="fm2p2-text-subtext">A lesão desmielinizante da EM acomete encéfalo, tronco e medula.</text>
+
+        <circle cx="6" cy="45" r="4" fill="var(--fm2p2-coral-glow, #fb7185)"/>
+        <text x="18" y="49" class="fm2p2-text-body" font-weight="700">Preservação Estrita do SNP:</text>
+        <text x="18" y="64" class="fm2p2-text-subtext">A bainha de mielina periférica (Células de Schwann) não sofre ataque.</text>
+
+        <circle cx="6" cy="84" r="4" fill="var(--fm2p2-gold-glow, #fbbf24)"/>
+        <text x="18" y="88" class="fm2p2-gold-text" font-size="11">Conclusão Prática de Prova:</text>
+        <text x="18" y="103" class="fm2p2-text-body" font-size="11">Quadros multifocais com espasticidade e surtos espaciais = SNC = EM!</text>
+      </g>
+    </g>
+
+  </g> <!-- Fim Painel Direito -->
+
+  <!-- Rodape com Legenda de Interpretacao -->
+  <g transform="translate(25, 625)">
+    <rect x="0" y="0" width="950" height="48" class="fm2p2-card-subtle" stroke="var(--fm2p2-teal-main, #0d9488)" stroke-width="1"/>
+    <text x="15" y="20" class="fm2p2-teal-text" font-size="11">💡 LEGENDA DE INTERPRETAÇÃO CLÍNICA:</text>
+    <text x="15" y="36" class="fm2p2-text-body" font-size="11.5">
+      O achado de síndrome espástica (1º NMS) restringe topograficamente a lesão ao <tspan fill="var(--fm2p2-teal-glow, #2dd4bf)" font-weight="700">SNC</tspan>. A lesão no <tspan fill="var(--fm2p2-gray-main, #64748b)" font-weight="700">SNP</tspan> é flácida. Múltiplos focos centrais assíncronos orientam a investigação para <tspan fill="var(--fm2p2-coral-glow, #fb7185)" font-weight="700">Esclerose Múltipla</tspan>.
+    </text>
+  </g>
+
+  <!-- Script Interativo Self-Contained -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('fm2p2-svg-root');
+      var infoTitle = document.getElementById('fm2p2-info-title');
+      var infoDesc = document.getElementById('fm2p2-info-desc');
+      var infoSub = document.getElementById('fm2p2-info-sub');
+
+      var territoryData = {
+        all: {
+          title: "SNC: VISÃO GERAL DA CORRELAÇÃO MOTORAS",
+          desc: "O 1º NMS reside exclusivamente no SNC (Cérebro → Tronco → Medula). A lesão do 1º NMS gera a clássica Síndrome Espástica.",
+          sub: "Clique nos números 1-4 ou use os filtros superiores para alternar o foco.",
+          focus: "all"
+        },
+        snc: {
+          title: "SISTEMA NERVOSO CENTRAL (1º NMS)",
+          desc: "Engloba Córtex Motor, Tronco Encefálico e Medula Espinhal. O dano ao trato corticoespinal resulta em Espasticidade, Hiperreflexia e Sinal de Babinski.",
+          sub: "O SNP permanece frouxo/resfriado neste cenário.",
+          focus: "snc"
+        },
+        snp: {
+          title: "SISTEMA NERVOSO PERIFÉRICO (2º NMS)",
+          desc: "Compreende Raízes, Plexos e Nervos Periféricos. A lesão aqui causa Síndrome do 2º NMS: Hipotonia Flácida, Arreflexia e Atrofia precoce.",
+          sub: "A Espasticidade NUNCA mora no SNP!",
+          focus: "snp"
+        },
+        lesions: {
+          title: "PLACAS DESMIELINIZANTES NO SNC (EM)",
+          desc: "Lesões multifocais no SNC (subcortical, tronco, medula cervical). A desmielinização central por ataque a oligodendrócitos poupa o SNP.",
+          sub: "Disseminação espacial no SNC = Forte indício de Esclerose Múltipla.",
+          focus: "lesions"
+        },
+        hs1: {
+          title: "1. CÓRTEX CEREBRAL & CÁPSULA INTERNA (SNC)",
+          desc: "Origem dos corpos celulares do 1º Neurônio Motor Superior (Giro Pré-Central). Lesões capsulares causam hemiplegia espástica contralateral.",
+          sub: "Topografia 100% Central (SNC).",
+          focus: "snc"
+        },
+        hs2: {
+          title: "2. TRONCO ENCEFÁLICO (MESENCÉFALO, PONTE, BULBO)",
+          desc: "Local de passagem das vias corticoespinais e decussação das pirâmides no bulbo. Placas de EM aqui causam quadros de tronco e síndrome espástica.",
+          sub: "Topografia Central de Fossa Posterior.",
+          focus: "snc"
+        },
+        hs3: {
+          title: "3. MEDULA ESPINHAL (CERVICAL & TORÁCICA)",
+          desc: "O trato corticoespinal lateral desce pela medula. Lesões medulares centrais levam a tetraparesia ou paraparesia espástica com nível sensitivo.",
+          sub: "Comum na Esclerose Múltipla (Mielite Transversa parcial).",
+          focus: "snc"
+        },
+        hs4: {
+          title: "4. RAÍZES & NERVOS PERIFÉRICOS (SNP)",
+          desc: "Axônios do 2º NMS que emergem do corno anterior da medula. Lesões isoladas de nervo geram paresia flácida e arreflexia regional.",
+          sub: "Fora do domínio da Esclerose Múltipla.",
+          focus: "snp"
+        }
+      };
+
+      function setFocusState(key) {
+        var data = territoryData[key] || territoryData['all'];
+        
+        root.setAttribute('data-focus', data.focus);
+
+        if (infoTitle) infoTitle.textContent = data.title;
+        if (infoDesc) infoDesc.textContent = data.desc;
+        if (infoSub) infoSub.textContent = data.sub;
+
+        var btnIds = ['all', 'snc', 'snp', 'lesions'];
+        btnIds.forEach(function(bId) {
+          var btn = document.getElementById('fm2p2-btn-' + bId);
+          if (btn) {
+            if (bId === data.focus || (data.focus === 'all' && bId === 'all')) {
+              btn.classList.add('is-active');
+            } else {
+              btn.classList.remove('is-active');
+            }
+          }
+        });
+      }
+
+      var btnAll = document.getElementById('fm2p2-btn-all');
+      var btnSnc = document.getElementById('fm2p2-btn-snc');
+      var btnSnp = document.getElementById('fm2p2-btn-snp');
+      var btnLesions = document.getElementById('fm2p2-btn-lesions');
+
+      if (btnAll) btnAll.addEventListener('click', function() { setFocusState('all'); });
+      if (btnSnc) btnSnc.addEventListener('click', function() { setFocusState('snc'); });
+      if (btnSnp) btnSnp.addEventListener('click', function() { setFocusState('snp'); });
+      if (btnLesions) btnLesions.addEventListener('click', function() { setFocusState('lesions'); });
+
+      for (var i = 1; i <= 4; i++) {
+        (function(num) {
+          var hs = document.getElementById('fm2p2-hs-' + num);
+          if (hs) {
+            hs.addEventListener('click', function() { setFocusState('hs' + num); });
+            hs.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setFocusState('hs' + num);
+              }
+            });
+          }
+        })(i);
+      }
+
+      for (var j = 1; j <= 3; j++) {
+        (function(num) {
+          var lesion = document.getElementById('fm2p2-lesion-' + num);
+          if (lesion) {
+            lesion.addEventListener('click', function() { setFocusState('lesions'); });
+          }
+        })(j);
+      }
+
+      var allBtns = document.querySelectorAll('.fm2p2-btn');
+      allBtns.forEach(function(b) {
+        b.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            b.click();
+          }
+        });
+      });
+
+    })();
+    ]]>
+  </script>
+</svg>
+
+    </div>
+    <figcaption class="fig__cap"><span class="fig__label">Piso</span>Mapa SNC (cérebro/cerebelo/tronco/medula) × SNP (raízes/plexos/nervos). Espástica = 1º NMS = SNC.</figcaption>
+  </figure>
+
+  <div class="continuity" aria-label="Continuidade">
+    <p>Agora formalizar o que a EM <strong>é</strong> — imunomediada, desmielinizante, só SNC.</p>
+  </div>
+
+  <section class="quiz" data-quiz data-gabarito="C" data-quiz-id="p2-q1" aria-labelledby="p2-q1-enun">
+    <h3>Quiz</h3>
+    <p class="quiz__enun" id="p2-q1-enun"><b>Q1.</b> Fraqueza <strong>espástica</strong> aponta prioritariamente para:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Placa neuromuscular</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>Músculo</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Primeiro neurônio motor (SNC)</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Segundo neurônio no nervo periférico</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: C.</b> Espasticidade é a assinatura do <strong>1º NMS</strong> — e o 1º vive no <strong>SNC</strong>.</p>
+      <p><b>(A)(B)</b> não dão espasticidade piramidal clássica como eixo. <b>(D)</b> 2º tende a flácido/hiporreflexo/atrofia.</p>
+      <p><em>Por que se cai na D:</em> confundir “nervo” com qualquer fraqueza.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p2-q2" aria-labelledby="p2-q2-enun">
+    <p class="quiz__enun" id="p2-q2-enun"><b>Q2.</b> Mulher jovem com perda de visão na prova deve:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Fechar enxaqueca com aura visual e encerrar</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>Afastar EM até prova em contrário</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Fechar ELA</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Fechar só neuropatia óptica isquêmica do idoso</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> A regra é de <strong>suspensão diagnóstica ativa</strong>, não de etiqueta automática.</p>
+      <p><b>(A)</b> pode coexistir com DDx, mas não encerra. <b>(C)</b> perfil demográfico/sindrômico errado. <b>(D)</b> outro perfil etário.</p>
+      <p><em>Por que se cai na A:</em> aura “explica” visão e o raciocínio para cedo.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="index.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Jaqueline: dois surtos, visão e motor</span></a><a class="next" href="p3.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">O que é EM: quatro âncoras</span></a></nav>
+</div>
+</main>
+<footer class="rodape">Esclerose múltipla · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm2.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Esclerose múltipla · 12 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="index.html">1. Jaqueline: dois surtos, visão e motor</a></li>
+      <li><a class="menu-panel__link is-current" href="p2.html">2. Espástica = 1º NMS — e o nome da doença</a></li>
+      <li><a class="menu-panel__link" href="p3.html">3. O que é EM: quatro âncoras</a></li>
+      <li><a class="menu-panel__link" href="p4.html">4. Por que o quadro é múltiplo: a mielina</a></li>
+      <li><a class="menu-panel__link" href="p5.html">5. Neurite óptica: o II par é SNC</a></li>
+      <li><a class="menu-panel__link" href="p6.html">6. As três de prova + Uhthoff</a></li>
+      <li><a class="menu-panel__link" href="p7.html">7. Surto-remissão vs 15% progressiva</a></li>
+      <li><a class="menu-panel__link" href="p8.html">8. McDonald: tempo e espaço</a></li>
+      <li><a class="menu-panel__link" href="p9.html">9. RM obrigatória: prova o que a clínica suspeita</a></li>
+      <li><a class="menu-panel__link" href="p10.html">10. LCR e a pegadinha do conversivo</a></li>
+      <li><a class="menu-panel__link" href="p11.html">11. Vignette 25 a: por que é EM</a></li>
+      <li><a class="menu-panel__link" href="p12.html">12. Surto, sequela e PCDT SUS</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

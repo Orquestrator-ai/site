@@ -1,0 +1,682 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" id="a12p13b-svg" class="a12p13b-root" data-svg-tokenized="true" aria-labelledby="a12p13b-title a12p13b-desc" role="img">
+  <title id="a12p13b-title">Pelvimetria Clínica: Percurso Espacial Sequencial pelo Canal do Parto</title>
+  <desc id="a12p13b-desc">Esquema anatômico interativo em corte sagital e inset frontal demonstrando a exploração tátil dos três aros pélvicos (Estreito Superior, Médio e Inferior) através de cinco manobras de pelvimetria interna e externa.</desc>
+
+  <defs>
+    <!-- Filtro de sombra suave para painéis e destaques -->
+    <filter id="a12p13b-drop-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <filter id="a12p13b-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Gradientes anatômicos para os aros -->
+    <linearGradient id="a12p13b-grad-entrada" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6FA8D6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#6FA8D6" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <linearGradient id="a12p13b-grad-meio" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E56C7B" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E56C7B" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <linearGradient id="a12p13b-grad-saida" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8C76C5" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#8C76C5" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Scope estrito à raiz do SVG para evitar vazamento */
+    .a12p13b-root {
+      --a12p13b-bg-1: var(--bg-1, #0F172A);
+      --a12p13b-bg-2: var(--bg-2, #1E293B);
+      --a12p13b-bg-card: var(--bg-card, #1A2234);
+      --a12p13b-ink-90: var(--ink-90, #F8FAFC);
+      --a12p13b-ink-70: var(--ink-70, #94A3B8);
+      --a12p13b-ink-30: var(--ink-30, #334155);
+      --a12p13b-border: var(--border, #334155);
+
+      /* Tokens da Paleta Médica */
+      --a12p13b-tinta: var(--a12-tinta, var(--a12p13-tinta, #F7F1F5));
+      --a12p13b-osso: var(--a12-osso, var(--a12p13-osso, #DCC7B4));
+      --a12p13b-osso-dark: #B89B82;
+      --a12p13b-mao: var(--a12-pele-esquema, var(--a12p13-mao, #C99074));
+      --a12p13b-entrada: var(--a12-estreito-superior, var(--a12p13-entrada, #6FA8D6));
+      --a12p13b-meio: var(--a12-estreito-medio, var(--a12p13-meio, #E56C7B));
+      --a12p13b-saida: var(--a12-estreito-inferior, var(--a12p13-saida, #8C76C5));
+      --a12p13b-foco: var(--a12-ouro, var(--a12p13-foco, #F3BE5B));
+      --a12p13b-normal: #34D399;
+      --a12p13b-alerta: #F87171;
+
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--a12p13b-bg-1);
+      color: var(--a12p13b-ink-90);
+    }
+
+    /* Suporte a Tema Claro */
+    :root[data-theme="light"] .a12p13b-root,
+    [data-theme="light"] .a12p13b-root {
+      --a12p13b-bg-1: var(--bg-1, #FFFFFF);
+      --a12p13b-bg-2: var(--bg-2, #F1F5F9);
+      --a12p13b-bg-card: var(--bg-card, #FFFFFF);
+      --a12p13b-ink-90: var(--ink-90, #0F172A);
+      --a12p13b-ink-70: var(--ink-70, #475569);
+      --a12p13b-ink-30: var(--ink-30, #CBD5E1);
+      --a12p13b-border: var(--border, #E2E8F0);
+      --a12p13b-osso: #C5A48A;
+      --a12p13b-osso-dark: #9A765B;
+    }
+
+    /* Estilos das Camadas da Pela */
+    .a12p13b-bg-rect { fill: var(--a12p13b-bg-1); }
+    .a12p13b-card-bg { fill: var(--a12p13b-bg-card); stroke: var(--a12p13b-border); stroke-width: 1.5; }
+    
+    /* Tipografia */
+    .a12p13b-title-text { fill: var(--a12p13b-ink-90); font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
+    .a12p13b-subtitle-text { fill: var(--a12p13b-ink-70); font-size: 13px; font-weight: 400; }
+    .a12p13b-label-header { fill: var(--a12p13b-ink-70); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Osteologia e Anatomia */
+    .a12p13b-bone { fill: var(--a12p13b-osso); stroke: var(--a12p13b-osso-dark); stroke-width: 2; stroke-linejoin: round; }
+    .a12p13b-bone-joint { fill: none; stroke: var(--a12p13b-ink-30); stroke-width: 2; stroke-dasharray: 3 3; }
+    .a12p13b-canal-path { fill: none; stroke: var(--a12p13b-ink-70); stroke-width: 2.5; stroke-dasharray: 6 6; }
+    
+    /* Zonas dos Aros */
+    .a12p13b-zone-line { stroke-width: 3; stroke-dasharray: 4 4; opacity: 0.8; }
+    .a12p13b-zone-entrada { stroke: var(--a12p13b-entrada); }
+    .a12p13b-zone-meio { stroke: var(--a12p13b-meio); }
+    .a12p13b-zone-saida { stroke: var(--a12p13b-saida); }
+
+    /* Mão do Examinador */
+    .a12p13b-hand { fill: var(--a12p13b-mao); stroke: #8F573F; stroke-width: 2; stroke-linejoin: round; transition: all 0.4s ease; }
+    .a12p13b-hand-group { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; }
+
+    /* Alvos Interativos / Hotspots */
+    .a12p13b-target-group { cursor: pointer; }
+    .a12p13b-target-ring { fill: none; stroke-width: 2.5; transition: all 0.3s ease; }
+    .a12p13b-target-pulse { fill: none; stroke-width: 1.5; opacity: 0; transition: all 0.3s ease; }
+    .a12p13b-target-center { transition: all 0.3s ease; }
+
+    .a12p13b-target-group:hover .a12p13b-target-ring { transform: scale(1.15); transform-origin: center; }
+    .a12p13b-target-group:focus { outline: none; }
+    .a12p13b-target-group:focus-visible .a12p13b-target-ring { stroke: var(--a12p13b-foco); stroke-width: 4; }
+
+    /* Estado Ativo do Alvo */
+    .a12p13b-target-group.is-active .a12p13b-target-pulse { opacity: 1; animation: a12p13b-ping 1.8s infinite; }
+    .a12p13b-target-group.is-active .a12p13b-target-center { fill: var(--a12p13b-foco) !important; r: 8; }
+
+    @keyframes a12p13b-ping {
+      0% { r: 14; opacity: 0.8; }
+      100% { r: 28; opacity: 0; }
+    }
+
+    /* Botões de Passo na Barra Superior */
+    .a12p13b-step-btn { cursor: pointer; transition: all 0.2s ease; }
+    .a12p13b-step-rect { fill: var(--a12p13b-bg-2); stroke: var(--a12p13b-border); stroke-width: 1.5; rx: 8px; }
+    .a12p13b-step-num { font-size: 13px; font-weight: 700; fill: var(--a12p13b-ink-70); }
+    .a12p13b-step-text { font-size: 11px; font-weight: 600; fill: var(--a12p13b-ink-70); }
+
+    .a12p13b-step-btn:hover .a12p13b-step-rect { stroke: var(--a12p13b-foco); fill: var(--a12p13b-bg-card); }
+    .a12p13b-step-btn.is-active .a12p13b-step-rect { fill: var(--a12p13b-foco); stroke: var(--a12p13b-foco); }
+    .a12p13b-step-btn.is-active .a12p13b-step-num { fill: #0F172A; }
+    .a12p13b-step-btn.is-active .a12p13b-step-text { fill: #0F172A; font-weight: 700; }
+
+    /* Botões de Navegação (Anterior/Próximo) */
+    .a12p13b-nav-btn { cursor: pointer; fill: var(--a12p13b-bg-2); stroke: var(--a12p13b-border); stroke-width: 1.5; rx: 6px; transition: all 0.2s ease; }
+    .a12p13b-nav-btn:hover { fill: var(--a12p13b-foco); stroke: var(--a12p13b-foco); }
+    .a12p13b-nav-btn:hover text { fill: #0F172A; }
+    .a12p13b-nav-text { font-size: 12px; font-weight: 700; fill: var(--a12p13b-ink-90); pointer-events: none; }
+
+    /* Badges de Aro */
+    .a12p13b-badge-entrada { fill: rgba(111, 168, 214, 0.2); stroke: var(--a12p13b-entrada); }
+    .a12p13b-badge-meio { fill: rgba(229, 108, 123, 0.2); stroke: var(--a12p13b-meio); }
+    .a12p13b-badge-saida { fill: rgba(140, 118, 197, 0.2); stroke: var(--a12p13b-saida); }
+    
+    .a12p13b-badge-text-entrada { fill: var(--a12p13b-entrada); }
+    .a12p13b-badge-text-meio { fill: var(--a12p13b-meio); }
+    .a12p13b-badge-text-saida { fill: var(--a12p13b-saida); }
+
+    /* Inset Frontal */
+    .a12p13b-inset-bone { fill: var(--a12p13b-osso); stroke: var(--a12p13b-osso-dark); stroke-width: 2; }
+    .a12p13b-arch-line { fill: none; stroke: var(--a12p13b-saida); stroke-width: 3; stroke-dasharray: 4 2; }
+  </style>
+
+  <!-- Fundo Principal -->
+  <rect class="a12p13b-bg-rect" width="1000" height="680" rx="12"/>
+
+  <!-- CABEÇALHO (CONTRATO DE LAYOUT REGRA 1) -->
+  <g id="a12p13b-header" transform="translate(24, 20)">
+    <text class="a12p13b-title-text" x="0" y="22">PELVIMETRIA CLÍNICA: PERCURSO ESPACIAL PELO CANAL DO PARTO</text>
+    <text class="a12p13b-subtitle-text" x="0" y="44">Avaliação tátil sequencial dos três aros anatômicos (Entrada, Meio e Saída) para determinação da adequação pélvica vaginal.</text>
+  </g>
+
+  <!-- CORTE SAGITAL PRINCIPAL (ÁREA ESQUERDA) -->
+  <g id="a12p13b-sagittal-stage" transform="translate(24, 75)">
+    <!-- Moldura do Palco Anatômico -->
+    <rect class="a12p13b-card-bg" x="0" y="0" width="530" height="540" rx="12"/>
+    
+    <text class="a12p13b-label-header" x="20" y="30">VISTA SAGITAL · CORTE MEDIANO DA BACIA FEMININA</text>
+
+    <!-- FAIXAS DE SOMBREADO DOS TRÊS AROS ANATÔMICOS -->
+    <!-- Aro Superior / Entrada -->
+    <polygon points="120,310 270,170 330,220 150,330" fill="url(#a12p13b-grad-entrada)" opacity="0.7"/>
+    <!-- Aro Médio / Meio -->
+    <polygon points="135,335 340,310 320,380 150,370" fill="url(#a12p13b-grad-meio)" opacity="0.7"/>
+    <!-- Aro Inferior / Saída -->
+    <polygon points="150,375 320,380 230,480 165,430" fill="url(#a12p13b-grad-saida)" opacity="0.7"/>
+
+    <!-- LINHAS DOS PLANOS / AROS -->
+    <!-- Entrada (Promontório -> Borda Superior da Sínfise) -->
+    <line class="a12p13b-zone-line a12p13b-zone-entrada" x1="270" y1="175" x2="135" y2="305"/>
+    <text x="210" y="230" fill="var(--a12p13b-entrada)" font-size="11" font-weight="700" transform="rotate(-40, 210, 230)">ARO DE ENTRADA (11,0 cm)</text>
+
+    <!-- Meio (Espinhas Isquiáticas -> S3/Sínfise Médio) -->
+    <line class="a12p13b-zone-line a12p13b-zone-meio" x1="335" y1="315" x2="140" y2="350"/>
+    <text x="235" y="325" fill="var(--a12p13b-meio)" font-size="11" font-weight="700" transform="rotate(-10, 235, 325)">ARO MÉDIO (10,5 cm)</text>
+
+    <!-- Saída (CÓCCIX / Tuberosidade -> Borda Inferior Sínfise) -->
+    <line class="a12p13b-zone-line a12p13b-zone-saida" x1="305" y1="395" x2="160" y2="400"/>
+    <text x="230" y="390" fill="var(--a12p13b-saida)" font-size="11" font-weight="700">ARO DE SAÍDA (11,0 cm)</text>
+
+    <!-- ANATOMIA OSSEA EM CORTE SAGITAL -->
+    <!-- Coluna Lombar L5 + Sacro (S1 a S5) + Cóccix -->
+    <path class="a12p13b-bone" d="
+      M 260,110 
+      L 290,115 C 295,130 290,140 285,150 
+      L 310,155 L 270,175 
+      C 295,200 325,230 340,280 
+      C 355,320 345,360 325,390 
+      C 315,405 305,415 295,420 
+      L 290,410 C 300,400 310,385 315,375 
+      C 330,345 330,315 320,275 
+      C 305,235 280,210 260,190 
+      Z
+    "/>
+
+    <!-- Promontório Destaque Ósseo -->
+    <path d="M 270,175 C 265,182 258,185 252,185 C 258,178 264,172 270,175 Z" fill="#B89B82"/>
+
+    <!-- Concavidade Sacral (Sombreado Interno) -->
+    <path d="M 270,175 C 295,205 320,240 330,280 C 340,320 330,355 315,375" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="4"/>
+
+    <!-- Sínfise Púbica (Anterior) -->
+    <path class="a12p13b-bone" d="
+      M 130,300 
+      C 145,295 155,305 155,320 
+      L 165,380 
+      C 165,395 155,410 140,410 
+      C 125,405 125,390 125,370 
+      L 120,320 
+      Z
+    "/>
+
+    <!-- Cartilagem da Sínfise Púbica -->
+    <path class="a12p13b-bone-joint" d="M 135,300 L 142,408"/>
+
+    <!-- Ramos Isquiopúbicos e Tuberosidade Isquiática -->
+    <path class="a12p13b-bone" d="
+      M 140,410 
+      C 160,430 180,450 200,475 
+      C 220,500 240,505 255,490 
+      C 265,475 260,455 240,440 
+      C 215,425 185,415 165,380
+    "/>
+
+    <!-- Espinha Isquiática (Proeminência na Parede Lateral/Posterior) -->
+    <path class="a12p13b-bone" d="
+      M 290,345 
+      C 270,355 255,360 260,365 
+      C 270,368 285,365 295,360 
+      Z
+    "/>
+
+    <!-- TRILHA DO CANAL DO PARTO (Curva J Anatômica de Hodge) -->
+    <path id="a12p13b-path-canal" class="a12p13b-canal-path" d="
+      M 210,230 
+      C 235,290 245,340 230,390 
+      C 215,440 185,475 140,530
+    "/>
+
+    <!-- MÃO DO EXAMINADOR (GRUPO COM TRANSITION DE TRANSFORMAÇÃO) -->
+    <!-- Posicionamento dinâmico controlado por JS no grupo #a12p13b-hand-group -->
+    <g id="a12p13b-hand-group" class="a12p13b-hand-group" transform="translate(0, 0)">
+      <!-- Punho / Pulso -->
+      <path class="a12p13b-hand" d="
+        M 40,570 
+        L 90,520 
+        C 110,500 130,480 150,450 
+        L 170,420 
+        C 180,405 195,370 210,330 
+        L 235,270 
+        C 240,255 248,235 252,200 
+        C 254,190 258,185 264,185 
+        C 270,185 272,192 268,205 
+        L 248,275 
+        C 240,300 230,340 220,370 
+        L 200,410 
+        C 185,440 165,470 145,500 
+        L 95,550 
+        Z
+      "/>
+      
+      <!-- Detalhes das falanges (Dedo Indicador e Médio estendidos) -->
+      <path d="M 235,270 L 264,185" stroke="#7A4532" stroke-width="1.5" fill="none"/>
+      <path d="M 220,370 C 235,320 248,270 256,220" stroke="#7A4532" stroke-width="1" fill="none" opacity="0.6"/>
+      <!-- Sombra do indicador sobre o médio -->
+      <path d="M 150,450 C 170,420 195,370 215,320" stroke="#7A4532" stroke-width="1.5" fill="none"/>
+    </g>
+
+    <!-- ALVOS ANATÔMICOS INTERATIVOS (HOTSPOTS 1 A 5) -->
+
+    <!-- ALVO 1: PROMONTÓRIO (ESTREITO SUPERIOR / ENTRADA) -->
+    <g id="a12p13b-target-1" class="a12p13b-target-group is-active" tabindex="0" role="button" aria-label="Alvo 1: Promontório Ósseo (Estreito Superior)">
+      <circle class="a12p13b-target-pulse" cx="270" cy="175" r="18" stroke="var(--a12p13b-entrada)"/>
+      <circle class="a12p13b-target-ring" cx="270" cy="175" r="12" stroke="var(--a12p13b-entrada)" fill="rgba(111,168,214,0.3)"/>
+      <circle class="a12p13b-target-center" cx="270" cy="175" r="5" fill="var(--a12p13b-entrada)"/>
+      <!-- Rótulo de linha -->
+      <line x1="270" y1="175" x2="360" y2="140" stroke="var(--a12p13b-entrada)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="360" y="122" width="150" height="34" rx="6" fill="var(--a12p13b-bg-2)" stroke="var(--a12p13b-entrada)" stroke-width="1"/>
+      <text x="368" y="138" fill="var(--a12p13b-ink-90)" font-size="11" font-weight="700">1. PROMONTÓRIO</text>
+      <text x="368" y="150" fill="var(--a12p13b-entrada)" font-size="10" font-weight="600">Alcançável? (Aro Entrada)</text>
+    </g>
+
+    <!-- ALVO 2: ESPINHAS ISQUIÁTICAS (ESTREITO MÉDIO / MEIO) -->
+    <g id="a12p13b-target-2" class="a12p13b-target-group" tabindex="0" role="button" aria-label="Alvo 2: Espinhas Isquiáticas (Estreito Médio)">
+      <circle class="a12p13b-target-pulse" cx="260" cy="360" r="18" stroke="var(--a12p13b-meio)"/>
+      <circle class="a12p13b-target-ring" cx="260" cy="360" r="12" stroke="var(--a12p13b-meio)" fill="rgba(229,108,123,0.3)"/>
+      <circle class="a12p13b-target-center" cx="260" cy="360" r="5" fill="var(--a12p13b-meio)"/>
+      <!-- Rótulo de linha -->
+      <line x1="260" y1="360" x2="380" y2="350" stroke="var(--a12p13b-meio)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="375" y="332" width="145" height="34" rx="6" fill="var(--a12p13b-bg-2)" stroke="var(--a12p13b-meio)" stroke-width="1"/>
+      <text x="383" y="348" fill="var(--a12p13b-ink-90)" font-size="11" font-weight="700">2. ESPINHAS ISQUIÁTICAS</text>
+      <text x="383" y="360" fill="var(--a12p13b-meio)" font-size="10" font-weight="600">Proeminentes? (Aro Médio)</text>
+    </g>
+
+    <!-- ALVO 3: CONCAVIDADE SACRAL (ESTREITO MÉDIO / MEIO) -->
+    <g id="a12p13b-target-3" class="a12p13b-target-group" tabindex="0" role="button" aria-label="Alvo 3: Concavidade Sacral (Estreito Médio)">
+      <circle class="a12p13b-target-pulse" cx="330" cy="290" r="18" stroke="var(--a12p13b-meio)"/>
+      <circle class="a12p13b-target-ring" cx="330" cy="290" r="12" stroke="var(--a12p13b-meio)" fill="rgba(229,108,123,0.3)"/>
+      <circle class="a12p13b-target-center" cx="330" cy="290" r="5" fill="var(--a12p13b-meio)"/>
+      <!-- Rótulo de linha -->
+      <line x1="330" y1="290" x2="380" y2="245" stroke="var(--a12p13b-meio)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="375" y="228" width="145" height="34" rx="6" fill="var(--a12p13b-bg-2)" stroke="var(--a12p13b-meio)" stroke-width="1"/>
+      <text x="383" y="244" fill="var(--a12p13b-ink-90)" font-size="11" font-weight="700">3. SACRO / CURVATURA</text>
+      <text x="383" y="256" fill="var(--a12p13b-meio)" font-size="10" font-weight="600">Preservada? (Aro Médio)</text>
+    </g>
+
+    <!-- ALVO 4: ÂNGULO SUBPÚBICO (ESTREITO INFERIOR / SAÍDA) -->
+    <g id="a12p13b-target-4" class="a12p13b-target-group" tabindex="0" role="button" aria-label="Alvo 4: Ângulo Subpúbico (Estreito Inferior)">
+      <circle class="a12p13b-target-pulse" cx="150" cy="425" r="18" stroke="var(--a12p13b-saida)"/>
+      <circle class="a12p13b-target-ring" cx="150" cy="425" r="12" stroke="var(--a12p13b-saida)" fill="rgba(140,118,197,0.3)"/>
+      <circle class="a12p13b-target-center" cx="150" cy="425" r="5" fill="var(--a12p13b-saida)"/>
+      <!-- Rótulo de linha -->
+      <line x1="150" y1="425" x2="45" y2="445" stroke="var(--a12p13b-saida)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="15" y="430" width="140" height="34" rx="6" fill="var(--a12p13b-bg-2)" stroke="var(--a12p13b-saida)" stroke-width="1"/>
+      <text x="23" y="446" fill="var(--a12p13b-ink-90)" font-size="11" font-weight="700">4. ÂNGULO SUBPÚBICO</text>
+      <text x="23" y="458" fill="var(--a12p13b-saida)" font-size="10" font-weight="600">≥ 90°? (Aro Saída)</text>
+    </g>
+
+    <!-- ALVO 5: TUBEROSIDADES ISQUIÁTICAS (ESTREITO INFERIOR / SAÍDA) -->
+    <g id="a12p13b-target-5" class="a12p13b-target-group" tabindex="0" role="button" aria-label="Alvo 5: Tuberosidades Isquiáticas (Estreito Inferior)">
+      <circle class="a12p13b-target-pulse" cx="230" cy="485" r="18" stroke="var(--a12p13b-saida)"/>
+      <circle class="a12p13b-target-ring" cx="230" cy="485" r="12" stroke="var(--a12p13b-saida)" fill="rgba(140,118,197,0.3)"/>
+      <circle class="a12p13b-target-center" cx="230" cy="485" r="5" fill="var(--a12p13b-saida)"/>
+      <!-- Rótulo de linha -->
+      <line x1="230" y1="485" x2="310" y2="495" stroke="var(--a12p13b-saida)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <rect x="310" y="478" width="150" height="34" rx="6" fill="var(--a12p13b-bg-2)" stroke="var(--a12p13b-saida)" stroke-width="1"/>
+      <text x="318" y="494" fill="var(--a12p13b-ink-90)" font-size="11" font-weight="700">5. TUBEROSIDADES</text>
+      <text x="318" y="506" fill="var(--a12p13b-saida)" font-size="10" font-weight="600">Punho cabe? (Aro Saída)</text>
+    </g>
+  </g>
+
+  <!-- PAINEL DIREITO: INSET FRONTAL + CONTROLES + LEITURA CLÍNICA -->
+  
+  <!-- INSET FRONTAL: ARCADA SUBPÚBICA E TUBEROSIDADES (ÁREA DIREITA SUPERIOR) -->
+  <g id="a12p13b-inset-stage" transform="translate(575, 75)">
+    <rect class="a12p13b-card-bg" x="0" y="0" width="400" height="190" rx="12"/>
+    <text class="a12p13b-label-header" x="16" y="26">INSET FRONTAL · ARO DE SAÍDA (ÂNGULO &amp; PUNHO DE GREENHILL)</text>
+
+    <!-- Desenho da Arcada Púbica em Vista Frontal -->
+    <g transform="translate(120, 35)">
+      <!-- Sínfise Púbica Superior -->
+      <rect x="65" y="10" width="30" height="20" rx="4" fill="var(--a12p13b-osso)" stroke="var(--a12p13b-osso-dark)" stroke-width="1.5"/>
+      <line x1="80" y1="10" x2="80" y2="30" stroke="var(--a12p13b-ink-30)" stroke-width="2" stroke-dasharray="2 2"/>
+
+      <!-- Ramos Pubianos Esquerdo e Direito -->
+      <path class="a12p13b-inset-bone" d="M 65,25 C 45,45 25,75 15,100 C 25,105 40,95 50,75 C 60,60 70,35 70,35 Z"/>
+      <path class="a12p13b-inset-bone" d="M 95,25 C 115,45 135,75 145,100 C 135,105 120,95 110,75 C 100,60 90,35 90,35 Z"/>
+
+      <!-- Tuberosidades Isquiáticas (Bases) -->
+      <ellipse cx="15" cy="105" rx="16" ry="10" class="a12p13b-inset-bone"/>
+      <ellipse cx="145" cy="105" rx="16" ry="10" class="a12p13b-inset-bone"/>
+
+      <!-- Arco de Medição do Ângulo Subpúbico -->
+      <path id="a12p13b-arch-angle-path" class="a12p13b-arch-line" d="M 40,80 Q 80,38 120,80"/>
+      <text x="80" y="60" text-anchor="middle" fill="var(--a12p13b-foco)" font-size="12" font-weight="800">≥ 90°</text>
+
+      <!-- Linha do Diâmetro Bi-isquiático (Punho de Greenhill) -->
+      <line id="a12p13b-line-biisquiatico" x1="20" y1="118" x2="140" y2="118" stroke="var(--a12p13b-saida)" stroke-width="2" stroke-dasharray="3 3"/>
+      <polygon points="18,118 25,114 25,122" fill="var(--a12p13b-saida)"/>
+      <polygon points="142,118 135,114 135,122" fill="var(--a12p13b-saida)"/>
+      <text x="80" y="132" text-anchor="middle" fill="var(--a12p13b-saida)" font-size="11" font-weight="700">Diâmetro Bi-isquiático (≥ 8,5 cm)</text>
+
+      <!-- Ícone do Punho Fechado de Greenhill (Exame Externo) -->
+      <g id="a12p13b-greenhill-fist" opacity="0.85" transform="translate(60, 95)">
+        <rect x="0" y="0" width="40" height="24" rx="6" fill="var(--a12p13b-mao)" stroke="#7A4532" stroke-width="1.5"/>
+        <!-- Nós dos dedos do punho -->
+        <circle cx="8" cy="12" r="3" fill="#7A4532"/>
+        <circle cx="16" cy="12" r="3" fill="#7A4532"/>
+        <circle cx="24" cy="12" r="3" fill="#7A4532"/>
+        <circle cx="32" cy="12" r="3" fill="#7A4532"/>
+      </g>
+    </g>
+
+    <!-- Legenda Informativa do Inset -->
+    <rect x="290" y="45" width="95" height="125" rx="8" fill="var(--a12p13b-bg-2)" stroke="var(--a12p13b-border)" stroke-width="1"/>
+    <text x="300" y="65" fill="var(--a12p13b-ink-70)" font-size="10" font-weight="700">REFERÊNCIA</text>
+    <text x="300" y="85" fill="var(--a12p13b-normal)" font-size="11" font-weight="700">Ginecoide</text>
+    <text x="300" y="98" fill="var(--a12p13b-ink-70)" font-size="10">Ângulo amplo</text>
+    <text x="300" y="125" fill="var(--a12p13b-alerta)" font-size="11" font-weight="700">Androide</text>
+    <text x="300" y="138" fill="var(--a12p13b-ink-70)" font-size="10">Ângulo agudo</text>
+  </g>
+
+  <!-- BARRA DE SELEÇÃO DOS 5 PASSOS (ÁREA DIREITA MEIO) -->
+  <g id="a12p13b-controls-stage" transform="translate(575, 280)">
+    <rect class="a12p13b-card-bg" x="0" y="0" width="400" height="65" rx="12"/>
+    <text class="a12p13b-label-header" x="16" y="20">SEQUÊNCIA DO PERCURSO TÁTIL (1 → 5)</text>
+
+    <g id="a12p13b-step-buttons" transform="translate(16, 28)">
+      <!-- Passo 1 -->
+      <g id="a12p13b-btn-1" class="a12p13b-step-btn is-active" tabindex="0" role="button" aria-label="Ir para Passo 1: Promontório">
+        <rect class="a12p13b-step-rect" x="0" y="0" width="55" height="28"/>
+        <text class="a12p13b-step-num" x="10" y="18">1</text>
+        <text class="a12p13b-step-text" x="22" y="18">ENT</text>
+      </g>
+
+      <!-- Passo 2 -->
+      <g id="a12p13b-btn-2" class="a12p13b-step-btn" tabindex="0" role="button" aria-label="Ir para Passo 2: Espinhas Isquiáticas">
+        <rect class="a12p13b-step-rect" x="63" y="0" width="55" height="28"/>
+        <text class="a12p13b-step-num" x="73" y="18">2</text>
+        <text class="a12p13b-step-text" x="85" y="18">ESP</text>
+      </g>
+
+      <!-- Passo 3 -->
+      <g id="a12p13b-btn-3" class="a12p13b-step-btn" tabindex="0" role="button" aria-label="Ir para Passo 3: Sacro">
+        <rect class="a12p13b-step-rect" x="126" y="0" width="55" height="28"/>
+        <text class="a12p13b-step-num" x="136" y="18">3</text>
+        <text class="a12p13b-step-text" x="148" y="18">SAC</text>
+      </g>
+
+      <!-- Passo 4 -->
+      <g id="a12p13b-btn-4" class="a12p13b-step-btn" tabindex="0" role="button" aria-label="Ir para Passo 4: Ângulo Subpúbico">
+        <rect class="a12p13b-step-rect" x="189" y="0" width="55" height="28"/>
+        <text class="a12p13b-step-num" x="199" y="18">4</text>
+        <text class="a12p13b-step-text" x="211" y="18">ANG</text>
+      </g>
+
+      <!-- Passo 5 -->
+      <g id="a12p13b-btn-5" class="a12p13b-step-btn" tabindex="0" role="button" aria-label="Ir para Passo 5: Tuberosidades">
+        <rect class="a12p13b-step-rect" x="252" y="0" width="55" height="28"/>
+        <text class="a12p13b-step-num" x="262" y="18">5</text>
+        <text class="a12p13b-step-text" x="274" y="18">TUB</text>
+      </g>
+    </g>
+
+    <!-- Botões Anterior / Próximo -->
+    <g id="a12p13b-nav-prev" class="a12p13b-nav-btn" transform="translate(332, 28)" tabindex="0" role="button" aria-label="Passo Anterior">
+      <rect width="26" height="28" rx="6" fill="none"/>
+      <text class="a12p13b-nav-text" x="9" y="18">◄</text>
+    </g>
+    <g id="a12p13b-nav-next" class="a12p13b-nav-btn" transform="translate(362, 28)" tabindex="0" role="button" aria-label="Próximo Passo">
+      <rect width="26" height="28" rx="6" fill="none"/>
+      <text class="a12p13b-nav-text" x="9" y="18">►</text>
+    </g>
+  </g>
+
+  <!-- PAINEL DE LEITURA CLÍNICA E INTERPRETAÇÃO (ÁREA DIREITA INFERIOR) -->
+  <g id="a12p13b-readout-stage" transform="translate(575, 360)">
+    <rect class="a12p13b-card-bg" x="0" y="0" width="400" height="255" rx="12"/>
+    
+    <!-- Cabeçalho do Card Dinâmico -->
+    <g id="a12p13b-card-header" transform="translate(20, 20)">
+      <!-- Badge do Aro Anatômico -->
+      <rect id="a12p13b-badge-bg" class="a12p13b-badge-entrada" x="0" y="0" width="130" height="24" rx="12"/>
+      <text id="a12p13b-badge-text" class="a12p13b-badge-text-entrada" x="14" y="16" font-size="11" font-weight="800">ESTREITO SUPERIOR</text>
+      
+      <!-- Título do Alvo Atual -->
+      <text id="a12p13b-card-title" x="0" y="48" fill="var(--a12p13b-ink-90)" font-size="16" font-weight="800">1. TOQUE DO PROMONTÓRIO ÓSSEO</text>
+    </g>
+
+    <!-- Linha Divisória Divisora -->
+    <line x1="20" y1="80" x2="380" y2="80" stroke="var(--a12p13b-border)" stroke-width="1"/>
+
+    <!-- Seção de Detalhes Médicos Dinâmicos (com ARIA Live) -->
+    <g id="a12p13b-card-body" transform="translate(20, 95)" aria-live="polite">
+      <!-- Item 1: Técnica Tátil -->
+      <text x="0" y="12" fill="var(--a12p13b-ink-70)" font-size="11" font-weight="700">TÉCNICA DE EXPOSIÇÃO TÁTIL:</text>
+      <text id="a12p13b-info-tecnica" x="0" y="30" fill="var(--a12p13b-ink-90)" font-size="12" font-weight="500">Dedos indicador e médio penetram até o fundo de saco posterior tentando atingir a proeminência de S1.</text>
+
+      <!-- Item 2: Critério de Normalidade & Valor Clínico -->
+      <text x="0" y="62" fill="var(--a12p13b-ink-70)" font-size="11" font-weight="700">CRITÉRIO CLÍNICO &amp; VALOR ESPERADO:</text>
+      <rect x="0" y="70" width="360" height="32" rx="6" fill="var(--a12p13b-bg-2)" stroke="var(--a12p13b-border)" stroke-width="1"/>
+      <text id="a12p13b-info-criterio" x="12" y="90" fill="var(--a12p13b-normal)" font-size="12" font-weight="700">Promontório INALCANÇÁVEL (Conjugada Diagonal &gt; 11,5 cm)</text>
+
+      <!-- Item 3: Prognóstico Obstétrico -->
+      <text x="0" y="124" fill="var(--a12p13b-ink-70)" font-size="11" font-weight="700">IMPACTO NO PROGNÓSTICO DO PARTO:</text>
+      <text id="a12p13b-info-prognostico" x="0" y="142" fill="var(--a12p13b-ink-90)" font-size="12" font-weight="400">Se inalcançável, a conjugada obstétrica é &#8805; 10,0 cm, garantindo passagem da apresentação fetal pela entrada.</text>
+    </g>
+  </g>
+
+  <!-- RODAPÉ DE AFFORDANCE (CONTRATO DE LAYOUT REGRA 5 & REGRA TECLA NEUTRA) -->
+  <g id="a12p13b-footer" transform="translate(24, 630)">
+    <rect class="a12p13b-card-bg" x="0" y="0" width="952" height="32" rx="8"/>
+    <text x="20" y="20" fill="var(--a12p13b-ink-70)" font-size="11" font-weight="600">DICA DE NAVEGAÇÃO: Clique nos alvos (1 a 5), use as teclas numéricas 1-5 ou utilize as setas ◄ / ► do teclado para percorrer o canal.</text>
+  </g>
+
+  <!-- MOTOR JAVASCRIPT EMBUTIDO (SELF-CONTAINED INLINE CDATA) -->
+  <script><![CDATA[
+    (function() {
+      'use strict';
+
+      // Dados Clínicos dos 5 Alvos da Pelvimetria
+      const stepsData = [
+        {
+          id: 1,
+          aroBadge: 'ESTREITO SUPERIOR',
+          aroClass: 'entrada',
+          title: '1. TOQUE DO PROMONTÓRIO ÓSSEO',
+          tecnica: 'Dedos indicador e médio avançam profundamente até o fundo de saco vaginal posterior buscando atingir S1.',
+          criterio: 'Promontório INALCANÇÁVEL (Conjugada Diagonal > 11,5 cm)',
+          criterioColor: 'var(--a12p13b-normal)',
+          prognostico: 'Se o promontório não é atingido, a Conjugada Obstétrica é ≥ 10,0 cm, confirmando entrada pélvica adequada.',
+          handTransform: 'translate(10, -180) rotate(-15, 200, 300)'
+        },
+        {
+          id: 2,
+          aroBadge: 'ESTREITO MÉDIO',
+          aroClass: 'meio',
+          title: '2. ESPINHAS ISQUIÁTICAS',
+          tecnica: 'Varredura tátil nas paredes pélvicas laterais ao nível do plano de menor diâmetro (Estreito Médio).',
+          criterio: 'Espinhas NÃO PROEMINENTES (Diâmetro Interespinhoso ≥ 10,5 cm)',
+          criterioColor: 'var(--a12p13b-normal)',
+          prognostico: 'Espinhas rombas/aplanadas evitam parada da rotação interna do polo cefálico fetal na altura de plano 0 de De Lee.',
+          handTransform: 'translate(15, 0) rotate(5, 200, 300)'
+        },
+        {
+          id: 3,
+          aroBadge: 'ESTREITO MÉDIO',
+          aroClass: 'meio',
+          title: '3. CONCAVIDADE SACRAL',
+          tecnica: 'Deslizamento da polpa dos dedos pela face anterior do sacro, avaliando a curvatura de S1 a S5.',
+          criterio: 'Sacro BEM ESCAVADO (Curvatura sacral fisiológica mantida)',
+          criterioColor: 'var(--a12p13b-normal)',
+          prognostico: 'Sacro plano ou em rampa projeta a espinha posteriormente, reduzindo a cavidade e dificultando a descida.',
+          handTransform: 'translate(80, -60) rotate(-10, 200, 300)'
+        },
+        {
+          id: 4,
+          aroBadge: 'ESTREITO INFERIOR',
+          aroClass: 'saida',
+          title: '4. ÂNGULO SUBPÚBICO',
+          tecnica: 'Posicionamento de dois dedos abertos sob a sínfise púbica para palpação dos ramos isquiopúbicos.',
+          criterio: 'Ângulo Subpúbico AMPLO (≥ 90° - Pélvis Ginecoide/Antropoide)',
+          criterioColor: 'var(--a12p13b-normal)',
+          prognostico: 'Ângulos agudos (< 90°, tipo androide) empurram o polo fetal para trás contra o cóccix, travando o aro de saída.',
+          handTransform: 'translate(-80, 50) rotate(25, 200, 300)'
+        },
+        {
+          id: 5,
+          aroBadge: 'ESTREITO INFERIOR',
+          aroClass: 'saida',
+          title: '5. TUBEROSIDADES ISQUIÁTICAS',
+          tecnica: 'Compressão externa com o punho fechado (Manobra de Greenhill) no pericentro entre os dois ísquios.',
+          criterio: 'Punho CABE COM FOLGA (Diâmetro Bi-isquiático ≥ 8,5 cm)',
+          criterioColor: 'var(--a12p13b-normal)',
+          prognostico: 'Acomodação completa do punho assegura que o diâmetro transverso do estreito inferior permite o desprendimento fetal.',
+          handTransform: 'translate(0, 110) rotate(40, 200, 300)'
+        }
+      ];
+
+      let currentStep = 0;
+
+      function updateStep(index) {
+        if (index < 0) index = stepsData.length - 1;
+        if (index >= stepsData.length) index = 0;
+        currentStep = index;
+
+        const data = stepsData[currentStep];
+
+        // 1. Atualizar Mão do Examinador (Transformação Anatômica)
+        const handGroup = document.getElementById('a12p13b-hand-group');
+        if (handGroup) {
+          handGroup.setAttribute('transform', data.handTransform);
+        }
+
+        // 2. Atualizar Hotspots no Palco Anatômico
+        for (let i = 1; i <= 5; i++) {
+          const targetEl = document.getElementById('a12p13b-target-' + i);
+          const btnEl = document.getElementById('a12p13b-btn-' + i);
+          
+          if (targetEl) {
+            if (i === currentStep + 1) {
+              targetEl.classList.add('is-active');
+              targetEl.setAttribute('aria-selected', 'true');
+            } else {
+              targetEl.classList.remove('is-active');
+              targetEl.setAttribute('aria-selected', 'false');
+            }
+          }
+
+          if (btnEl) {
+            if (i === currentStep + 1) {
+              btnEl.classList.add('is-active');
+            } else {
+              btnEl.classList.remove('is-active');
+            }
+          }
+        }
+
+        // 3. Atualizar Painel de Leitura Clínica
+        const badgeBg = document.getElementById('a12p13b-badge-bg');
+        const badgeText = document.getElementById('a12p13b-badge-text');
+        const cardTitle = document.getElementById('a12p13b-card-title');
+        const infoTecnica = document.getElementById('a12p13b-info-tecnica');
+        const infoCriterio = document.getElementById('a12p13b-info-criterio');
+        const infoPrognostico = document.getElementById('a12p13b-info-prognostico');
+
+        if (badgeBg && badgeText) {
+          badgeBg.setAttribute('class', 'a12p13b-badge-' + data.aroClass);
+          badgeText.setAttribute('class', 'a12p13b-badge-text-' + data.aroClass);
+          badgeText.textContent = data.aroBadge;
+        }
+
+        if (cardTitle) cardTitle.textContent = data.title;
+        if (infoTecnica) infoTecnica.textContent = data.tecnica;
+        
+        if (infoCriterio) {
+          infoCriterio.textContent = data.criterio;
+          infoCriterio.setAttribute('fill', data.criterioColor);
+        }
+        
+        if (infoPrognostico) infoPrognostico.textContent = data.prognostico;
+
+        // 4. Destaque no Inset Frontal quando nos Passos 4 ou 5
+        const archPath = document.getElementById('a12p13b-arch-angle-path');
+        const lineBi = document.getElementById('a12p13b-line-biisquiatico');
+        const fistGroup = document.getElementById('a12p13b-greenhill-fist');
+
+        if (archPath) archPath.setAttribute('stroke-width', currentStep === 3 ? '4' : '3');
+        if (lineBi) lineBi.setAttribute('stroke-width', currentStep === 4 ? '3' : '2');
+        if (fistGroup) fistGroup.setAttribute('opacity', currentStep === 4 ? '1.0' : '0.4');
+      }
+
+      // Event Listeners nos Alvos Anatômicos
+      for (let i = 1; i <= 5; i++) {
+        (function(stepIndex) {
+          const target = document.getElementById('a12p13b-target-' + stepIndex);
+          const btn = document.getElementById('a12p13b-btn-' + stepIndex);
+
+          if (target) {
+            target.addEventListener('click', function() { updateStep(stepIndex - 1); });
+            target.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                updateStep(stepIndex - 1);
+              }
+            });
+          }
+
+          if (btn) {
+            btn.addEventListener('click', function() { updateStep(stepIndex - 1); });
+            btn.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                updateStep(stepIndex - 1);
+              }
+            });
+          }
+        })(i);
+      }
+
+      // Botões de Navegação Próximo/Anterior
+      const prevBtn = document.getElementById('a12p13b-nav-prev');
+      const nextBtn = document.getElementById('a12p13b-nav-next');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() { updateStep(currentStep - 1); });
+        prevBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); updateStep(currentStep - 1); }
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() { updateStep(currentStep + 1); });
+        nextBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); updateStep(currentStep + 1); }
+        });
+      }
+
+      // Suporte Global de Teclado (Setas Esquerda/Direita e Números 1-5)
+      const svgRoot = document.getElementById('a12p13b-svg');
+      if (svgRoot) {
+        window.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            updateStep(currentStep + 1);
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            updateStep(currentStep - 1);
+          } else if (e.key >= '1' && e.key <= '5') {
+            updateStep(parseInt(e.key, 10) - 1);
+          }
+        });
+      }
+
+      // Inicialização no Passo 1
+      updateStep(0);
+    })();
+  ]]></script>
+</svg>

@@ -1,0 +1,1060 @@
+/* ============================================================
+   NEUROLOGIA — SÍNDROMES DEMENCIAIS · chassi Bauer
+   Casa = CIANO #22D3EE · companheira íNDIGO #818CF8
+   Semântica: verde #34D399 (normal) · vermelho-coral #FB7185 (alterado/risco) · âmbar #F59E0B (regra/pegadinha/nota)
+   CLB: coluna única, flush, measure 60–72ch, tipografia editorial.
+   ============================================================ */
+
+:root{
+  /* paleta da casa */
+  --ciano:#22D3EE; --ciano-soft:rgba(34,211,238,.16); --ciano-line:rgba(34,211,238,.42);
+  --indigo:#818CF8; --indigo-soft:rgba(129,140,248,.16);
+  --verde:#34D399; --coral:#FB7185; --amber:#F59E0B;
+  --rose-glow:rgba(251,113,133,.55);
+
+  /* superfícies (dark default) */
+  --bg-0:#070b14;            /* fundo mais profundo */
+  --bg-1:#0b1220;            /* base */
+  --bg-2:rgba(17,26,46,.66); /* card membrana */
+  --bg-3:rgba(23,34,58,.78); /* card interno */
+  --bg-4:rgba(30,44,74,.90); /* card sólido / hover */
+  --ink-100:#eaf2ff; --ink-80:#c5d2ee; --ink-60:#94a3c4; --ink-40:#6b7a99;
+  --border:rgba(148,170,212,.16); --border-strong:rgba(148,170,212,.32);
+  --glass-blur:14px;
+
+  /* tipografia */
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --measure:68ch; --coluna:760px;
+  --radius:1.4rem; --radius-sm:.9rem;
+  --shadow:0 10px 40px -18px rgba(0,0,0,.55), 0 2px 8px -4px rgba(0,0,0,.35);
+  --glow-rose-ciano:0 0 0 1px rgba(251,113,133,.20), 0 0 28px -10px rgba(34,211,238,.55);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg-0:#eef2f8; --bg-1:#f6f8fc;
+    --bg-2:rgba(255,255,255,.72); --bg-3:rgba(255,255,255,.86); --bg-4:#ffffff;
+    --ink-100:#0d1626; --ink-80:#2a3a55; --ink-60:#56627e; --ink-40:#7b86a0;
+    --border:rgba(20,30,55,.14); --border-strong:rgba(20,30,55,.26);
+    --shadow:0 12px 36px -20px rgba(35,52,90,.30), 0 2px 8px -4px rgba(35,52,90,.16);
+    --glass-blur:10px;
+    --glow-rose-ciano:0 0 0 1px rgba(251,113,133,.28), 0 0 26px -10px rgba(34,211,238,.45);
+  }
+}
+/* toggle manual de tema (body[data-theme]) sobrepõe prefers */
+:root[data-theme="dark"],
+body[data-theme="dark"]{
+  --bg-0:#070b14; --bg-1:#0b1220; --bg-2:rgba(17,26,46,.66); --bg-3:rgba(23,34,58,.78); --bg-4:rgba(30,44,74,.90);
+  --ink-100:#eaf2ff; --ink-80:#c5d2ee; --ink-60:#94a3c4; --ink-40:#6b7a99;
+  --border:rgba(148,170,212,.16); --border-strong:rgba(148,170,212,.32);
+}
+:root[data-theme="light"],
+body[data-theme="light"]{
+  --bg-0:#eef2f8; --bg-1:#f6f8fc; --bg-2:rgba(255,255,255,.72); --bg-3:rgba(255,255,255,.86); --bg-4:#ffffff;
+  --ink-100:#0d1626; --ink-80:#2a3a55; --ink-60:#56627e; --ink-40:#7b86a0;
+  --border:rgba(20,30,55,.14); --border-strong:rgba(20,30,55,.26);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+
+body{
+  font-family:var(--font-sans);
+  background:var(--bg-0);
+  color:var(--ink-100);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* ===== ambiente grid+orbs (fundo) ===== */
+.orbs{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.orbs::before,.orbs::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;
+}
+.orbs::before{
+  width:46vw;height:46vw;left:-12vw;top:-10vh;
+  background:radial-gradient(circle at 30% 30%,var(--ciano),transparent 62%);
+}
+.orbs::after{
+  width:52vw;height:52vw;right:-14vw;bottom:-14vh;
+  background:radial-gradient(circle at 70% 70%,var(--indigo),transparent 64%);
+}
+.grid-fundo{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.32;
+  background-image:
+    linear-gradient(var(--border) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:54px 54px;
+  mask-image:radial-gradient(ellipse at 50% 30%,#000 0%,transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 0%,transparent 78%);
+}
+@media (prefers-color-scheme: light){ .grid-fundo{opacity:.22} }
+:root[data-theme="light"] .grid-fundo,
+body[data-theme="light"] .grid-fundo{opacity:.22}
+:root[data-theme="dark"] .grid-fundo,
+body[data-theme="dark"] .grid-fundo{opacity:.32}
+
+/* ===== layout / CLB ===== */
+.coluna{
+  width:100%;margin-inline:auto;
+  padding-block:clamp(1rem,3vw,2rem);
+}
+.coluna--aperta{max-width:680px}
+.coluna--solta{max-width:840px}
+.measure{max-width:var(--measure)}
+
+/* ===== topbar / header sticky glass ===== */
+.topbar{
+  position:sticky;top:0;z-index:20;
+  background:linear-gradient(180deg,var(--bg-2),var(--bg-1));
+  backdrop-filter:blur(var(--glass-blur)) saturate(1.2);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.2);
+  border-bottom:1px solid var(--border);
+}
+.topbar__inner{
+  max-width:var(--coluna);margin-inline:auto;padding:.5rem clamp(1rem,4vw,2rem);
+  display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;
+}
+.topbar__marca{display:flex;align-items:center;gap:.55rem;font-weight:700;letter-spacing:.2px;color:var(--ink-100);text-decoration:none}
+.topbar__marca .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--ciano),var(--indigo));box-shadow:0 0 14px -2px var(--ciano)}
+.topbar__marca small{font-weight:500;color:var(--ink-60);font-size:.78rem}
+.topbar__spacer{flex:1}
+.topbar__btn{
+  appearance:none;border:1px solid var(--border-strong);background:var(--bg-3);color:var(--ink-80);
+  border-radius:999px;padding:.4rem .85rem;font-size:.82rem;cursor:pointer;transition:.2s;
+}
+.topbar__btn:hover{background:var(--bg-4);color:var(--ink-100);border-color:var(--ciano-line)}
+.topbar__btn[aria-pressed="true"]{background:var(--ciano-soft);border-color:var(--ciano-line);color:var(--ink-100)}
+.menu-hub{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.4rem}
+
+/* ===== glass cards ===== */
+.card{
+  background:var(--bg-3);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:clamp(1rem,2.4vw,1.6rem);margin-block:1.4rem;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.card--membrane{background:var(--bg-2);border-color:var(--border)}
+.card--solid{background:var(--bg-4)}
+.card--flush{margin-inline:0} /* CLB: nada ragged */
+.card__titulo{margin:0 0 .6rem;font-size:1.05rem;letter-spacing:.2px;color:var(--ink-80);font-weight:700}
+
+/* card âmbar (callout: regra-de-ouro, pegadinha, não-confunda, divergência, decisão-pendente) */
+.card--amber{
+  border-color:rgba(245,158,11,.42);
+  background:linear-gradient(180deg,rgba(245,158,11,.12),var(--bg-3));
+  border-left:4px solid var(--amber);
+}
+.card--amber .card__titulo{color:var(--acento-board)}
+.card--verde{border-color:rgba(52,211,153,.40);border-left:4px solid var(--verde);background:linear-gradient(180deg,rgba(52,211,153,.10),var(--bg-3))}
+.card--coral{border-color:rgba(251,113,133,.40);border-left:4px solid var(--coral);background:linear-gradient(180deg,rgba(251,113,133,.10),var(--bg-3))}
+
+/* faixa-regra âmbar curta */
+.faixa{
+  display:inline-block;border-radius:999px;padding:.28rem .8rem;font-size:.8rem;font-weight:700;
+  letter-spacing:.3px;border:1px solid var(--border-strong);background:var(--bg-3);
+}
+.faixa--amber{color:var(--acento-nuance);border-color:rgba(245,158,11,.45);background:rgba(245,158,11,.10)}
+.faixa--verde{color:var(--acento-ok);border-color:rgba(52,211,153,.45);background:rgba(52,211,153,.10)}
+.faixa--coral{color:var(--acento-alerta);border-color:rgba(251,113,133,.45);background:rgba(251,113,133,.10)}
+.faixa--ciano{color:var(--acento-fig);border-color:var(--ciano-line);background:var(--ciano-soft)}
+
+/* ===== tipografia editorial ===== */
+h1,h2,h3,h4{font-family:var(--font-sans);font-weight:800;letter-spacing:-.01em;color:var(--ink-100);line-height:1.18}
+h1{font-size:clamp(1.6rem,4.4vw,2.3rem);margin:.2rem 0 .4rem}
+h2{font-size:clamp(1.2rem,3vw,1.55rem);margin:2rem 0 .6rem}
+h3{font-size:1.05rem;margin:1.4rem 0 .4rem;color:var(--ink-80)}
+p{margin:0 0 1rem}
+.prosa{
+  font-family:var(--font-serif);
+  text-align:justify;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+  text-justify:inter-character;
+  text-wrap:pretty;
+  max-width:var(--measure);
+}
+.prosa p+p{margin-top:1.4rem;text-indent:1.6em}
+.prosa strong{color:var(--ink-100);font-weight:700}
+@media (max-width:680px){ .prosa{text-align:start;hyphens:none} .prosa p+p{text-indent:0} }
+.ui,.legenda,.lista,.tabela,figure,figcaption,code{ text-align:start }
+.kicker{color:var(--acento-fig);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.3rem}
+.lead{font-size:1.08rem;color:var(--ink-80);margin-bottom:1.2rem}
+
+/* palavras-chave coloridas */
+.kw{font-weight:700;border-bottom:2px solid currentColor;padding-bottom:.05em}
+.kw--ciano{color:var(--acento-fig)} .kw--indigo{color:var(--acento-caso)} .kw--verde{color:var(--acento-ok)}
+.kw--coral{color:var(--acento-alerta)} .kw--amber{color:var(--acento-nuance)}
+
+/* ===== molduras de imagem / ilustração (flush na coluna) ===== */
+.frame{
+  margin:1.6rem 0;border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--border-strong);background:var(--bg-2);
+  box-shadow:var(--shadow);
+}
+.frame--glow{box-shadow:var(--glow-rose-ciano),var(--shadow)}
+.frame__media{display:block;width:100%;height:auto;border:0;background:var(--bg-1)}
+.frame object,.frame embed,.frame img{display:block;width:100%;height:auto;border:0}
+.frame--svg object{min-height:340px}
+.frame figcaption{
+  padding:.7rem .9rem;font-size:.84rem;color:var(--ink-60);line-height:1.45;
+  border-top:1px solid var(--border);background:var(--bg-2);
+}
+.frame figcaption strong{color:var(--ink-80)}
+.atr{display:block;margin-top:.25rem;font-size:.76rem;color:var(--ink-40)}
+.atr a{color:var(--acento-fig);text-decoration:none;border-bottom:1px dotted var(--ciano-line)}
+.alt-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ===== tabelas (largura da coluna, scroll horizontal no mobile) ===== */
+.tabela{width:100%;border-collapse:collapse;font-size:.92rem;margin:1.2rem 0;overflow:hidden;border-radius:var(--radius-sm)}
+.tabela-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-sm);margin:1.2rem 0}
+.tabela caption{caption-side:top;text-align:start;color:var(--ink-60);font-size:.82rem;padding:.4rem .2rem}
+.tabela th,.tabela td{padding:.62rem .8rem;border-bottom:1px solid var(--border);text-align:start;vertical-align:top}
+.tabela thead th{background:var(--bg-2);color:var(--ink-80);font-weight:700;border-bottom:1px solid var(--border-strong)}
+.tabela tbody tr:nth-child(even){background:var(--bg-2)}
+.tabela td .kw--amber{white-space:nowrap}
+
+/* listas */
+.lista{padding-left:1.2rem;margin:1rem 0}
+.lista li{margin:.5rem 0}
+.lista--check{list-style:none;padding-left:0}
+.lista--check li{position:relative;padding-left:1.8rem}
+.lista--check li::before{content:"✓";position:absolute;left:0;top:0;color:var(--acento-ok);font-weight:800}
+
+/* fluxograma / cascata / timeline (componentes) */
+.fluxo{display:flex;flex-direction:column;gap:.5rem;margin:1.2rem 0}
+.fluxo__no{
+  display:flex;align-items:center;gap:.7rem;padding:.7rem .9rem;border-radius:var(--radius-sm);
+  border:1px solid var(--border-strong);background:var(--bg-3);font-weight:600;
+}
+.fluxo__seta{align-self:center;color:var(--ink-40);font-size:1.2rem;line-height:1}
+.g-1{border-color:rgba(52,211,153,.45)}.g-2{border-color:rgba(245,158,11,.45)}.g-3{border-color:rgba(251,113,133,.5);background:rgba(251,113,133,.10)}
+.timeline{display:flex;flex-direction:column;gap:.6rem;margin:1.2rem 0}
+.timeline__no{padding:.6rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong);background:var(--bg-3)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0}
+@media (max-width:620px){.grid2{grid-template-columns:1fr}}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.2rem 0}
+@media (max-width:760px){.grid4{grid-template-columns:1fr 1fr}}
+.celula{padding:1rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong);background:var(--bg-3);min-height:84px;display:flex;flex-direction:column;gap:.3rem}
+.celula b{color:var(--ink-100)}
+.celula span{color:var(--ink-60);font-size:.86rem}
+
+/* espectro horizontal */
+.espectro{display:grid;grid-template-columns:repeat(3,1fr);margin:1.2rem 0;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border-strong)}
+.espectro div{padding:.8rem;text-align:center;color:var(--ink-100)}
+.espectro div:nth-child(1){background:rgba(52,211,153,.18)}
+.espectro div:nth-child(2){background:rgba(245,158,11,.18)}
+.espectro div:nth-child(3){background:rgba(251,113,133,.18)}
+
+/* card comparativo duas colunas */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0}
+@media (max-width:620px){.compare{grid-template-columns:1fr}}
+.compare__col{padding:1rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong)}
+.compare__col h4{margin:0 0 .5rem;font-size:.9rem;text-transform:uppercase;letter-spacing:.1em}
+.compare__jovem{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4)}
+.compare__jovem h4{color:var(--acento-ok)}
+.compare__idoso{background:rgba(251,113,133,.10);border-color:rgba(251,113,133,.4)}
+.compare__idoso h4{color:var(--acento-alerta)}
+.compare ul{margin:.4rem 0 0;padding-left:1.1rem}
+.compare li{margin:.4rem 0}
+
+/* hero (figura-herói no parâmetro: margem um pouco maior, figura um pouco menor) */
+.heroi{margin:1.8rem 0}
+.heroi .frame{max-width:600px;margin-inline:auto}
+.heroi figcaption{font-size:.82rem}
+
+/* nav-pé entre páginas */
+.nav-pe{display:flex;justify-content:space-between;gap:1rem;margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.nav-pe a{color:var(--acento-fig);text-decoration:none;font-weight:600}
+.nav-pe a:hover{text-decoration:underline}
+.nav-pe .proximo{text-align:end}
+
+/* rodapé */
+.rodape{max-width:var(--coluna);margin:2rem auto;padding:2rem clamp(1rem,4vw,2rem);color:var(--ink-fonte);font-size:.82rem;border-top:1px solid var(--border)}
+
+/* util */
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--bg-4);color:var(--ink-100);padding:.6rem 1rem;border-radius:0 0 8px 0;z-index:50}
+.skip-link:focus{left:0}
+:focus-visible{outline:2px solid var(--ciano);outline-offset:2px;border-radius:4px}
+
+/* HUB */
+.hub{margin-inline:auto;padding-block:clamp(1.2rem,3vw,2.4rem)}
+.hub__hero{padding:2.2rem 0 1.4rem}
+.hub__hero h1{font-size:clamp(2rem,6vw,3.2rem);letter-spacing:-.02em;background:linear-gradient(120deg,var(--acento-fig),var(--acento-caso) 60%,var(--ink-100));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hub__hero p{font-size:1.1rem;color:var(--ink-60);max-width:60ch}
+.aula-bloco{margin:2.4rem 0}
+.aula-bloco__tit{display:flex;align-items:baseline;gap:.7rem;margin:0 0 1rem;border-bottom:1px solid var(--border);padding-bottom:.6rem}
+.aula-bloco__tit h2{margin:0;font-size:1.4rem}
+.aula-bloco__tit small{color:var(--ink-40);font-size:.82rem}
+.paginas{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem}
+.pagina-card{
+  display:block;text-decoration:none;color:inherit;background:var(--bg-3);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:.9rem 1rem;transition:.18s;
+}
+.pagina-card:hover{background:var(--bg-4);border-color:var(--ciano-line);transform:translateY(-2px)}
+.pagina-card .n{font-size:.74rem;color:var(--acento-fig);font-weight:700;letter-spacing:.12em}
+.pagina-card .t{display:block;margin-top:.25rem;color:var(--ink-100);font-weight:600;line-height:1.3}
+.pagina-card[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
+.pagina-card[aria-disabled="true"]:hover{transform:none;border-color:var(--border)}
+.pagina-card.visitada{border-color:var(--ciano-line)}
+.pagina-card.visitada .n::after{content:" ✓";color:var(--acento-ok)}
+
+/* ===== quiz universal ===== */
+.quiz{margin:2rem 0;padding:1.2rem 1.3rem;border:1px solid var(--border-strong);border-radius:var(--radius);background:var(--bg-2)}
+.quiz > h3{margin:0 0 1rem;color:var(--acento-fig);font-size:1rem;letter-spacing:.06em;text-transform:uppercase}
+.quiz__q{margin:1.1rem 0;padding-block:.4rem;border-bottom:1px dashed var(--border)}
+.quiz__q:last-of-type{border-bottom:0}
+.quiz__enun{font-weight:600;color:var(--ink-100);margin:0 0 .7rem;line-height:1.45}
+.quiz__alts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.quiz__alts label{display:flex;gap:.6rem;align-items:flex-start;padding:.6rem .8rem;border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;background:var(--bg-3);transition:.15s;line-height:1.45}
+.quiz__alts label:hover{border-color:var(--ciano-line);background:var(--bg-4)}
+.quiz__alts input{margin-top:.18rem;accent-color:var(--ciano);flex:0 0 auto}
+.quiz__alts label.alt--certa{border-color:var(--verde);background:rgba(52,211,153,.14)}
+.quiz__alts label.alt--marcada{border-color:var(--coral);background:rgba(251,113,133,.14)}
+.quiz__alts label.alt--certa::after{content:" ✔";color:var(--acento-ok);font-weight:800;margin-left:auto}
+.quiz__alts label.alt--marcada::after{content:" ✗";color:var(--acento-alerta);font-weight:800;margin-left:auto}
+.quiz__btn{
+  margin-top:.9rem;appearance:none;border:1px solid var(--ciano-line);background:var(--ciano-soft);
+  color:var(--ink-100);font-weight:700;padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.18s;
+}
+.quiz__btn:hover{background:var(--bg-4);border-color:var(--ciano)}
+.quiz__btn:disabled{opacity:.6;cursor:default}
+.quiz__explicacao{
+  margin-top:.9rem;padding:1rem 1.1rem;border-radius:var(--radius-sm);
+  border:1px solid var(--border-strong);background:var(--bg-3);
+  border-left:4px solid var(--ciano);line-height:1.55;
+}
+.quiz__explicacao p{margin:0 0 .7rem}
+.quiz__explicacao p:last-child{margin:0}
+.quiz__explicacao em{color:var(--acento-nuance);font-style:italic}
+.quiz__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* ═══════════════════════════════════════════════════════════════════════════
+   CHASSI v2 — 2026-08-01
+   Porta a ESTRUTURA do chassi de Ginecologia e Obstetrícia, mantendo a paleta
+   ciano/índigo da neurologia. Bloco ADITIVO: sobrescreve por cascata, não apaga
+   nada acima — remover daqui até o fim do arquivo devolve o chassi antigo.
+
+   Pedidos dele (01/08), um a um:
+   · "as margens estão muito pequenas"            → --reading-pad dobrado
+   · "quero o botão home"                         → #home-btn no header
+   · "não é em cima que ficam as páginas ...
+      elas ficam dentro do menu hambúrguer"       → .menu-overlay + números fora do topo
+   · "no final tem que ter os botões de passar
+      para frente e para trás"                    → .page-nav
+   · "os botões existem, só personalize eles
+      para virarem botões de verdade"             → .quiz__btn repaginado
+   · "quadradinhos menores e bem evidentes ...
+      a rede brilhasse em choque"                 → .grid-fundo 22px + descarga
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --container-max:980px;
+  --reading-pad:clamp(20px,5vw,64px);   /* era clamp(1rem,4vw,2rem) = teto de 32px */
+  --grid-gap:22px;                      /* era 54px */
+  --grid-line:rgba(148,170,212,.22);
+  --z-sticky:20; --z-menu:100;
+  --dur-fast:150ms; --dur-mid:260ms;
+  --ease-out:cubic-bezier(.2,.8,.2,1);
+}
+
+/* ── LARGURA E RESPIRO ─────────────────────────────────────────────────── */
+.coluna{ max-width:var(--container-max); padding-inline:var(--reading-pad); }
+.coluna > *{ max-width:var(--measure); margin-inline:auto; }   /* texto continua legível */
+.hub{ max-width:var(--container-max); padding-inline:var(--reading-pad); }
+
+/* ── HEADER ────────────────────────────────────────────────────────────── */
+.site-header{
+  position:sticky; top:calc(max(12px,env(safe-area-inset-top)) + 8px); z-index:var(--z-sticky);
+  width:min(var(--container-max),calc(100% - 2*var(--reading-pad)));
+  margin:12px auto 0; padding:12px 16px;
+  background:var(--bg-2); backdrop-filter:saturate(150%) blur(22px);
+  -webkit-backdrop-filter:saturate(150%) blur(22px);
+  border:1px solid var(--border-strong); border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.site-header__row{ display:flex; align-items:center; gap:12px; }
+.site-header__brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; min-width:0; }
+.site-header__logo{
+  width:40px; height:40px; border-radius:var(--radius-sm); flex:0 0 auto; display:grid; place-items:center;
+  background:linear-gradient(135deg,var(--indigo),var(--bg-1));
+  border:1px solid var(--ciano-line); color:var(--ink-100);
+  font-weight:700; font-size:.95rem; letter-spacing:.02em;
+  box-shadow:inset 0 0 12px rgba(34,211,238,.25);
+}
+.site-header__titles{ display:flex; flex-direction:column; min-width:0; }
+.site-header__title{ font-weight:700; font-size:1rem; color:var(--ink-100); line-height:1.2; }
+.site-header__subtitle{ font-size:.78rem; color:var(--ink-60); line-height:1.3; }
+.site-header__spacer{ flex:1 1 auto; }
+.site-header__progress{
+  font-variant-numeric:tabular-nums; font-size:.82rem; color:var(--ink-60);
+  padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px; white-space:nowrap;
+}
+.site-header__actions{ display:flex; gap:8px; flex:0 0 auto; }
+.icon-btn{
+  width:40px; height:40px; border-radius:var(--radius-sm); display:grid; place-items:center; flex:0 0 auto;
+  color:var(--ink-80); border:1px solid var(--border); background:var(--bg-3); cursor:pointer;
+  transition:color var(--dur-fast),border-color var(--dur-fast),background var(--dur-fast),transform var(--dur-fast);
+}
+.icon-btn svg{ width:20px; height:20px; }
+.icon-btn:hover,.icon-btn:focus-visible{
+  color:var(--acento-fig); border-color:var(--ciano-line); background:var(--bg-4); transform:translateY(-1px);
+}
+.topbar{ display:none; }   /* o header antigo sai de cena sem ser apagado das páginas */
+
+/* ── MENU DE PÁGINAS (o lugar dos números) ─────────────────────────────── */
+.menu-overlay{
+  position:fixed; inset:0; z-index:var(--z-menu); display:grid; place-items:start center;
+  padding:clamp(1rem,6vh,4rem) 1rem; background:rgba(7,11,20,.72);
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  opacity:1; transition:opacity var(--dur-mid) var(--ease-out);
+}
+.menu-overlay[aria-hidden="true"]{ opacity:0; pointer-events:none; }
+.menu-panel{
+  width:min(560px,100%); max-height:80vh; overflow:auto;
+  background:var(--bg-4); border:1px solid var(--border-strong);
+  border-radius:var(--radius); box-shadow:var(--shadow); padding:1.2rem;
+}
+.menu-panel__title{ margin:0 0 .9rem; font-weight:700; color:var(--ink-100); }
+.menu-panel__list{ list-style:none; margin:0; padding:0; display:grid; gap:.35rem; }
+.menu-panel__link{
+  display:flex; align-items:center; gap:.75rem; padding:.6rem .75rem;
+  border-radius:var(--radius-sm); border:1px solid transparent;
+  color:var(--ink-80); text-decoration:none; transition:.15s;
+}
+.menu-panel__link:hover,.menu-panel__link[aria-current="page"]{
+  background:var(--bg-3); border-color:var(--ciano-line); color:var(--ink-100);
+}
+.menu-panel__index{
+  font-variant-numeric:tabular-nums; font-size:.78rem; color:var(--acento-fig);
+  min-width:2.1rem; text-align:right; flex:0 0 auto;
+}
+
+/* a fileira de números no topo some — o lugar dela é dentro do menu */
+.paginas-topo,.page-numbers,.pager-topo{ display:none; }
+/* ⚠️ o seletor por aria-label escondia TAMBÉM a navegação de rodapé, que usa
+   aria-label="Navegação entre páginas". Ficou só por classe, que é o que
+   distingue de verdade a fileira do topo dos botões do rodapé. */
+
+/* ── NAVEGAÇÃO ANTERIOR / PRÓXIMO ──────────────────────────────────────── */
+.nav-pe,.page-nav{
+  display:flex; justify-content:space-between; gap:12px;
+  margin:3rem 0 1rem; padding-top:1.5rem; border-top:1px solid var(--border);
+}
+.nav-pe a,.page-nav a{
+  display:inline-flex; flex-direction:column; gap:2px; min-width:140px;
+  padding:.75rem 1.2rem; border:1px solid var(--border-strong); border-radius:var(--radius-sm);
+  background:var(--bg-3); color:var(--ink-80); text-decoration:none;
+  transition:border-color var(--dur-fast),transform var(--dur-fast);
+}
+.nav-pe a:hover,.page-nav a:hover{ border-color:var(--ciano); transform:translateY(-1px); color:var(--ink-100); }
+.nav-pe .proximo,.page-nav .next{ text-align:right; margin-left:auto; }
+.page-nav .nav-dir{ font-size:.74rem; letter-spacing:.04em; color:var(--ink-ciano); }
+.page-nav .nav-ttl{ font-size:.9rem; font-weight:600; }
+.page-nav a:hover,.page-nav a:focus-visible{ border-color:var(--ink-ciano); }
+.page-nav a:focus-visible{ outline-color:var(--ink-ciano); }
+
+/* ── BOTÕES DE VERDADE ─────────────────────────────────────────────────── */
+.quiz__btn{
+  padding:.7rem 1.4rem; font-weight:700; letter-spacing:.01em;
+  border:1px solid var(--ciano-line); border-radius:999px;
+  background:linear-gradient(180deg,var(--bg-4),var(--bg-3));
+  color:var(--ink-100); cursor:pointer;
+  box-shadow:0 1px 0 rgba(255,255,255,.06) inset, 0 6px 18px -10px rgba(34,211,238,.55);
+  transition:transform var(--dur-fast),border-color var(--dur-fast),box-shadow var(--dur-fast);
+}
+.quiz__btn:hover:not(:disabled){
+  transform:translateY(-1px); border-color:var(--ciano);
+  box-shadow:0 1px 0 rgba(255,255,255,.08) inset, 0 10px 26px -12px rgba(34,211,238,.75);
+}
+.quiz__btn:active:not(:disabled){ transform:translateY(0); box-shadow:0 2px 8px -6px rgba(0,0,0,.6) inset; }
+
+/* ── FUNDO: malha fina e evidente, com descarga ────────────────────────── */
+.grid-fundo{
+  opacity:1;
+  background-image:
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:var(--grid-gap) var(--grid-gap);
+  mask-image:radial-gradient(ellipse at 50% 30%,#000 0%,rgba(0,0,0,.55) 55%,transparent 85%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 0%,rgba(0,0,0,.55) 55%,transparent 85%);
+}
+/* ⛔ DESCARGA REMOVIDA — 01/08/2026, ordem dele.
+ *
+ * O pedido era "como se a rede brilhasse em choque a cada alguns segundos". Eu li como
+ * MECÂNICA e escrevi um pulso literal: banda diagonal varrendo a malha, ciclo de 7s com o
+ * clarão vivo entre 88% e 100% — dois décimos de segundo. Palavras dele:
+ *   "tira esse efeito... ele interpretou literal demais, o choque passa tão rápido que
+ *    nem dá pra ver, vou pensar em algo melhor."
+ *
+ * A lição é a mesma do prompt-herói e vale para CSS igual vale para brief de imagem:
+ * EFEITO para forma, LISTA para fato. "Choque" é a SENSAÇÃO de uma rede viva — não um
+ * relâmpago cronometrado. Prescrever a mecânica deu um flash que ninguém vê.
+ * [[feedback-prompt-heroi-abertura-vs-controle]]
+ *
+ * A malha (.grid-fundo) FICA — ele aprovou o fundo quadriculado. Só o pulso saiu.
+ * A versão do GLM segue em /tmp/choque-glm/choque-glm.css, nunca ligada.
+ * Ele vai decidir o que entra no lugar.
+ */
+
+/* .coluna--aperta existia antes do v2 e servia para estreitar páginas específicas.
+   O v2 tem a mesma especificidade e vinha depois, anulando o aperto. Devolvido aqui,
+   agora explícito em vez de por ordem. */
+.coluna.coluna--aperta{ max-width:min(880px,var(--container-max)); }
+
+/* ── HUB v2: cards de AULA, não lista de páginas ───────────────────────────
+   Pedido dele (01/08): "as páginas das aulas não são para ficarem à mostra...
+   em cards e sem apresentar as páginas, bem organizados, leve descrição,
+   iluminação ao passar o mouse". */
+.aula-grid{
+  display:grid; gap:1.1rem; margin-top:1.4rem;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+}
+.aula-card{
+  position:relative; display:flex; flex-direction:column; gap:.7rem;
+  padding:1.5rem 1.6rem 1.3rem; text-decoration:none; color:inherit;
+  background:var(--bg-2); border:1px solid var(--border-strong);
+  border-radius:var(--radius); overflow:hidden;
+  transition:border-color var(--dur-mid) var(--ease-out),
+             transform var(--dur-mid) var(--ease-out),
+             box-shadow var(--dur-mid) var(--ease-out);
+}
+/* a iluminação: um halo que acende de dentro ao passar o mouse */
+.aula-card::before{
+  content:""; position:absolute; inset:-1px; border-radius:inherit; pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 0%,rgba(34,211,238,.16),transparent 62%);
+  opacity:0; transition:opacity var(--dur-mid) var(--ease-out);
+}
+.aula-card:hover,.aula-card:focus-visible{
+  border-color:var(--ciano); transform:translateY(-3px);
+  box-shadow:0 0 0 1px rgba(34,211,238,.22), 0 18px 44px -20px rgba(34,211,238,.55);
+}
+.aula-card:hover::before,.aula-card:focus-visible::before{ opacity:1; }
+.aula-card__n{
+  font-size:.76rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--acento-fig); font-variant-numeric:tabular-nums;
+}
+.aula-card__t{ font-size:1.22rem; font-weight:700; line-height:1.25; color:var(--ink-100); }
+.aula-card__d{ font-size:.92rem; line-height:1.55; color:var(--ink-60); flex:1 1 auto; }
+.aula-card__foot{ display:flex; align-items:center; justify-content:space-between; gap:.8rem; margin-top:.4rem; }
+.aula-card__status{
+  font-size:.78rem; padding:.32rem .8rem; border-radius:999px;
+  border:1px solid var(--ciano-line); color:var(--acento-fig); background:var(--ciano-soft);
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.aula-card__seta{ color:var(--acento-fig); font-size:1.1rem; transition:transform var(--dur-fast); }
+.aula-card:hover .aula-card__seta{ transform:translateX(4px); }
+/* as que ainda não existem: presentes, mas apagadas e sem resposta ao mouse */
+.aula-card--espera{ opacity:.42; cursor:default; }
+.aula-card--espera:hover{ transform:none; border-color:var(--border-strong); box-shadow:none; }
+.aula-card--espera:hover::before{ opacity:0; }
+.aula-card--espera .aula-card__status{
+  border-color:var(--border-strong); color:var(--ink-60); background:transparent;
+}
+
+/* A largura vinha de 1140px e comia a margem lateral — o oposto do pedido.
+   980px é o que as aulas a6/a7/a8, aprovadas por ele, usam de fato. O header
+   acompanha a coluna para não ficar mais largo que o conteúdo que ele encima. */
+.site-header{ width:min(980px,calc(100% - 2*var(--reading-pad))); }
+
+/* ── MARGENS: as das aulas a6/a7/a8, com um respiro a mais ─────────────────
+   Regra de origem (a7.css):
+     .a7-wrap{max-width:980px; margin:0 auto;
+              padding:clamp(16px,4vw,40px) clamp(14px,3.6vw,32px) 96px}
+   Ele pediu "as das aulas" e depois "pode aumentar mais um pouquinho" — então
+   a coluna recua de 980 para 920px, o que devolve 30px de margem em cada lado,
+   e o padding lateral é o das aulas.
+   Calibrar aqui: --container-max é o único lugar que decide isso. */
+:root{
+  --container-max:920px;
+  --reading-pad:clamp(14px,3.6vw,32px);
+}
+.coluna,.hub{ padding-block:clamp(16px,4vw,40px); }
+.hub{ padding-bottom:96px; }
+.site-header{ width:min(var(--container-max),calc(100% - 2*var(--reading-pad))); }
+
+/* ── ALVO FINAL: as medidas do gineco, com o header um pouco maior ─────────
+   Ordem dele (01/08): "deixa o header e as margens do tamanho dos de gineco,
+   o header tem que ser maior um pouco".
+
+   Valores lidos de obstetricia-premium/plataforma/assets/css/tokens.css:
+     --container-max: 1140px
+     --reading-pad:   clamp(20px,5vw,64px)
+   O header da GO usa padding 12px/16px e logo de 40px; aqui vai um degrau
+   acima — 18px/22px e logo de 46px — que é o "maior um pouco" pedido. */
+:root{
+  --container-max:1140px;
+  --reading-pad:clamp(20px,5vw,64px);
+}
+.coluna,.hub{ padding-block:clamp(1.2rem,3vw,2.4rem); }
+.hub{ padding-bottom:96px; }
+
+.site-header{
+  width:min(var(--container-max),calc(100% - 2*var(--reading-pad)));
+  padding:18px 22px;
+}
+.site-header__logo{ width:46px; height:46px; font-size:1.02rem; }
+.site-header__title{ font-size:1.1rem; }
+.site-header__subtitle{ font-size:.82rem; }
+.icon-btn{ width:44px; height:44px; }
+.icon-btn svg{ width:21px; height:21px; }
+
+/* Header menos gordo e com saída suave ao rolar (ele pediu os dois em 01/08).
+   Estava 18px/22px com logo 46 — recua para 14px/20px com logo 42, que fica
+   entre o gineco (12/16, logo 40) e o que estava. */
+.site-header{ padding:14px 20px; will-change:transform; }
+.site-header__logo{ width:42px; height:42px; font-size:.98rem; }
+.icon-btn{ width:42px; height:42px; }
+.icon-btn svg{ width:20px; height:20px; }
+.site-header--oculto{ transform:translateY(calc(-100% - 24px)); }
+@media (prefers-reduced-motion:reduce){
+  .site-header{ transition:none; }
+  .site-header--oculto{ transform:none; }   /* sem movimento, ele simplesmente fica */
+}
+
+/* ── O texto vai de margem a margem ────────────────────────────────────────
+   Pedido dele (01/08): "as margens dos textos precisam encontrar o outro lado".
+   Duas regras prendiam o texto em 68ch dentro de um container de 1140px, e
+   sobrava vazio dos dois lados:
+     linha 366  .coluna > *   { max-width:var(--measure) }   ← eu pus, hoje
+     linha 177  .prosa        { max-width:var(--measure) }   ← já existia
+   O respiro agora é o do container (--reading-pad); dentro dele, o texto ocupa
+   a largura toda. A justificação e o recuo de parágrafo continuam intactos. */
+.coluna > *{ max-width:none; }
+.prosa{ max-width:none; }
+.measure{ max-width:none; }
+
+/* ══ MENU: dropdown ancorado no botão, não modal no meio ═══════════════════
+   Ele (01/08): "isso não é o que eu entendo de menu hambúrguer — ele deve abrir
+   de onde eu clico e recolher do mesmo. Melhore esse design, talvez algo mais
+   translúcido, com divisão fina entre os selecionados. E quero tudo muito fluido."
+
+   O painel passa a nascer do canto superior direito — onde o botão está — e a
+   recolher para lá. Sem JS de posicionamento: o header tem largura conhecida,
+   então o alinhamento sai do mesmo cálculo que centraliza a coluna. */
+
+.menu-overlay{
+  position:fixed; inset:0; z-index:var(--z-menu);
+  display:block; place-items:unset; padding:0;
+  background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;
+  transition:background var(--dur-mid) var(--ease-out);
+}
+.menu-overlay[aria-hidden="false"]{ background:rgba(7,11,20,.34); }
+
+.menu-panel{
+  position:absolute;
+  /* alinhado à borda direita do header, logo abaixo dele */
+  top:calc(max(12px,env(safe-area-inset-top)) + 8px + 74px);
+  right:max(var(--reading-pad),calc((100vw - var(--container-max))/2 + var(--reading-pad)));
+  width:min(420px,calc(100vw - 2*var(--reading-pad)));
+  max-height:min(70vh,620px); overflow:auto; overscroll-behavior:contain;
+
+  /* translúcido de verdade — o conteúdo atravessa por baixo */
+  background:color-mix(in srgb, var(--bg-1) 62%, transparent);
+  backdrop-filter:blur(26px) saturate(180%);
+  -webkit-backdrop-filter:blur(26px) saturate(180%);
+  border:1px solid rgba(148,170,212,.22);
+  border-radius:18px; padding:.5rem;
+  box-shadow:0 24px 70px -28px rgba(0,0,0,.85), 0 0 0 1px rgba(34,211,238,.06);
+
+  /* nasce do canto do botão */
+  transform-origin:100% 0;
+  transform:scale(.94) translateY(-10px); opacity:0;
+  transition:transform 260ms cubic-bezier(.16,1,.3,1),
+             opacity 180ms cubic-bezier(.16,1,.3,1);
+}
+.menu-overlay[aria-hidden="false"] .menu-panel{ transform:scale(1) translateY(0); opacity:1; }
+
+.menu-panel__title{
+  margin:.35rem .65rem .5rem; padding-bottom:.55rem;
+  font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--ink-60); border-bottom:1px solid rgba(148,170,212,.14);
+}
+.menu-panel__list{ display:block; }
+/* a divisão fina entre os itens — o pedido dele */
+.menu-panel__list > li + li{ border-top:1px solid rgba(148,170,212,.09); }
+
+.menu-panel__link{
+  position:relative; border:0; border-radius:10px;
+  padding:.62rem .7rem; gap:.7rem;
+  transition:background 160ms var(--ease-out), color 160ms var(--ease-out), padding-left 160ms var(--ease-out);
+}
+.menu-panel__link:hover{ background:rgba(34,211,238,.07); padding-left:.95rem; }
+/* o selecionado: barra fina à esquerda, sem caixa pesada */
+.menu-panel__link[aria-current="page"]{
+  background:rgba(34,211,238,.10); color:var(--ink-100); font-weight:600;
+}
+.menu-panel__link[aria-current="page"]::before{
+  content:""; position:absolute; left:0; top:22%; bottom:22%;
+  width:2px; border-radius:2px; background:var(--ciano);
+  box-shadow:0 0 10px rgba(34,211,238,.7);
+}
+.menu-panel__index{ min-width:1.9rem; opacity:.75; font-size:.74rem; }
+
+@media (max-width:620px){
+  .menu-panel{ right:var(--reading-pad); left:var(--reading-pad); width:auto; }
+}
+@media (prefers-reduced-motion:reduce){
+  .menu-panel{ transition:opacity 120ms linear; transform:none; }
+  .menu-overlay[aria-hidden="false"] .menu-panel{ transform:none; }
+}
+
+/* ── HERO EM CARD, com a figura ao lado ────────────────────────────────────
+   Ele (01/08): "muda essa neurologia, coloca dentro de um card, do lado uma
+   imagem de ressonância bem bonita, ou de uma demência, ou de um foco
+   epiléptico". A figura entra quando o buscador fechar; até lá o card já se
+   sustenta sozinho, com um vazio elegante no lugar dela. */
+.hub__hero{
+  display:grid; grid-template-columns:1.25fr .9fr; gap:0;
+  align-items:stretch; overflow:hidden;
+  background:var(--bg-2); border:1px solid var(--border-strong);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:0; margin-bottom:2rem;
+}
+.hub__hero-texto{ padding:clamp(1.6rem,3.5vw,2.8rem); display:flex; flex-direction:column; justify-content:center; gap:.5rem; }
+.hub__hero-texto .kicker{ margin:0 0 .3rem; }
+.hub__hero-texto h1{ margin:0 0 .6rem; }
+.hub__hero-texto .lead{ margin:0; max-width:56ch; }
+
+.hub__hero-figura{
+  position:relative; min-height:300px; overflow:hidden;
+  background:linear-gradient(140deg,var(--bg-3),var(--bg-1));
+  border-left:1px solid var(--border);
+}
+.hub__hero-figura img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  filter:saturate(.92) contrast(1.06);
+}
+/* a figura entra pela borda do card, não colada: um véu do lado do texto
+   costura a imagem ao fundo em vez de deixar um corte reto */
+.hub__hero-figura::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(90deg,var(--bg-2) 0%,rgba(11,18,32,.35) 28%,transparent 60%);
+}
+.hub__hero-figura figcaption{
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  padding:.5rem .8rem; font-size:.68rem; line-height:1.35; color:var(--ink-40);
+  background:linear-gradient(0deg,rgba(7,11,20,.86),transparent);
+}
+.hub__hero-figura figcaption a{ color:var(--ink-60); }
+/* placeholder enquanto a imagem não chega */
+.hub__hero-figura--vazia::before{
+  content:""; position:absolute; inset:12%;
+  border:1px dashed var(--border-strong); border-radius:var(--radius-sm);
+  background:radial-gradient(circle at 50% 45%,rgba(34,211,238,.07),transparent 62%);
+}
+@media (max-width:820px){
+  .hub__hero{ grid-template-columns:1fr; }
+  .hub__hero-figura{ min-height:190px; border-left:0; border-top:1px solid var(--border); }
+  .hub__hero-figura::after{ background:linear-gradient(0deg,var(--bg-2) 0%,transparent 55%); }
+}
+
+/* ── HERO com imagem real (02/08) — o placeholder pontilhado sai de cena ────
+   RM coronal T1 com atrofia hipocampal MTA 3 (Vernooij & van Buchem, CC BY 4.0).
+   Legenda MÍNIMA, uma linha: é capa, não é página de aula — ordem dele. */
+.hub__hero-figura{ margin:0; display:flex; flex-direction:column; gap:.6rem }
+.hub__hero-figura img{
+  width:100%; height:auto; display:block; border-radius:14px;
+  border:1px solid rgba(148,163,184,.18);
+  box-shadow:0 18px 48px rgba(0,0,0,.45);
+  filter:contrast(1.04) brightness(1.02);
+}
+.hub__hero-figura figcaption{
+  font-size:.78rem; color:var(--ink-40,#94a3b8); letter-spacing:.01em; line-height:1.4;
+}
+
+/* ══ FIGURA ANCORADA — imagem real com texto ao lado, dentro de card ═══════════
+   Ordem dele, 02/08, mostrando o contraste: a ilustração cabe inteira na tela;
+   o fluxograma de status epilepticus custava DOIS prints de uma tela de 16".
+   Palavras dele: "a solução é muito simples: põe texto do lado, por isso o texto
+   âncora que eu solicitei. O executor deve traçar um tamanho máximo para a imagem,
+   colocar a legenda bonitinho pra ficar simétrico com o texto ao lado, coloca tudo
+   dentro de um card tipo o que fizemos com o HUB e pronto, mágica feita."
+
+   A âncora não é enfeite: ela divide a linha com a imagem e por isso a ENCOLHE,
+   e obriga a imagem a ter propósito — se não dá para escrever a âncora, a imagem
+   não serve. */
+.figura-ancorada{
+  display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+  gap:clamp(1rem,2.2vw,1.6rem); align-items:start;
+  background:var(--bg-3); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:clamp(1rem,2.4vw,1.5rem); margin-block:1.6rem;
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+}
+.figura-ancorada__media{ margin:0; display:flex; flex-direction:column; gap:.55rem; min-width:0 }
+.figura-ancorada__media img{
+  width:100%; height:auto; display:block; border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  /* O TETO. É isto que impede a imagem de custar dois prints. */
+  max-height:min(62vh, 520px); object-fit:contain;
+  background:var(--bg-1);
+}
+.figura-ancorada__legenda{
+  font-size:.8rem; line-height:1.45; color:var(--ink-60);
+  border-left:2px solid var(--ciano-line); padding-left:.65rem;
+}
+.figura-ancorada__legenda b,.figura-ancorada__legenda strong{ color:var(--ink-80) }
+.figura-ancorada__fonte{ font-size:.72rem; color:var(--ink-fonte); line-height:1.4 }
+.figura-ancorada__fonte a{ color:var(--ink-ciano) }
+/* a ÂNCORA — o texto que amarra o achado ao conteúdo da página */
+.figura-ancorada__ancora{ min-width:0; align-self:center }
+.figura-ancorada__ancora h4{
+  margin:0 0 .5rem; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-ciano); font-weight:800;
+}
+.figura-ancorada__ancora p{ margin:0 0 .7rem; font-size:.95rem; line-height:1.6; color:var(--ink-80) }
+.figura-ancorada__ancora p:last-child{ margin-bottom:0 }
+
+/* IMAGEM RICA — exceção, só após avaliação: ocupa a largura toda, teto maior.
+   Ordem dele: "se a didática exigir um tamanho maior, ele coloca; talvez seja uma
+   imagem muito rica. Mas após minuciosa avaliação." */
+.figura-ancorada--rica{ grid-template-columns:1fr }
+.figura-ancorada--rica .figura-ancorada__media img{ max-height:min(78vh,760px) }
+.figura-ancorada--rica .figura-ancorada__ancora{ align-self:start }
+
+@media (max-width:820px){
+  .figura-ancorada{ grid-template-columns:1fr }
+  .figura-ancorada__media img{ max-height:52vh }
+}
+
+/* ── PAR COMPARATIVO — normal × alterado, lado a lado ──────────────────────
+   Ordem dele, 02/08, vendo EEG normal e hipsarritmia EMPILHADOS: "podia ter
+   posto uma ao lado da outra já que são duas imagens".
+   Empilhado, o olho compara de memória. Lado a lado, o CONTRASTE é a lição —
+   e é justamente o contraste que ensina a reconhecer o achado. */
+.figura-par{
+  background:var(--bg-3); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:clamp(1rem,2.4vw,1.5rem); margin-block:1.6rem;
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+}
+.figura-par__dupla{
+  display:grid; grid-template-columns:1fr 1fr; gap:clamp(.8rem,1.8vw,1.2rem);
+  align-items:start;
+}
+.figura-par__lado{ margin:0; display:flex; flex-direction:column; gap:.5rem; min-width:0 }
+.figura-par__lado img{
+  width:100%; height:auto; display:block; border-radius:var(--radius-sm);
+  border:1px solid var(--border); background:var(--bg-1);
+  /* teto menor que o da figura única: são duas dividindo a linha */
+  max-height:min(46vh,400px); object-fit:contain;
+}
+.figura-par__rotulo{
+  font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:800;
+}
+.figura-par__lado--normal  .figura-par__rotulo{ color:var(--acento-ok) }
+.figura-par__lado--alterado .figura-par__rotulo{ color:var(--acento-alerta) }
+.figura-par__lado figcaption{ font-size:.78rem; line-height:1.45; color:var(--ink-60) }
+.figura-par__fonte{ font-size:.7rem; color:var(--ink-40); line-height:1.4; margin:.2rem 0 0 }
+/* a âncora do par explica O QUE MUDA de um lado para o outro */
+.figura-par__ancora{
+  margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--border);
+}
+.figura-par__ancora h4{
+  margin:0 0 .45rem; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--acento-fig); font-weight:800;
+}
+.figura-par__ancora p{ margin:0; font-size:.95rem; line-height:1.6; color:var(--ink-80) }
+
+@media (max-width:820px){
+  .figura-par__dupla{ grid-template-columns:1fr }
+  .figura-par__lado img{ max-height:40vh }
+}
+
+/* ── LEGENDA DE FIGURA — token próprio, com contraste garantido ────────────
+   Ordem dele, 02/08, sobre a cf1: "não gostei do visual cinza, não consigo ler.
+   Por que o GLM escolheu essa cor? Não tem nada a ver com o bloco."
+   O executor não escolheu cor: criou o apelido --ink-mute: var(--ink-60) e o usou
+   167 vezes nas legendas. O --ink-60 (#94a3c4) foi feito para NOTA e METADADO —
+   texto que se passa o olho. Legenda de figura é texto que se LÊ.
+   Este token existe para não deixar essa escolha para o executor. */
+:root{
+  --ink-legenda:#c5d2ee;   /* = ink-80: lê no escuro, sobre card e sobre imagem */
+  --ink-fonte:#94a3c4;     /* = ink-60: attribution e DOI, aí sim discreto       */
+  --ink-ciano:#22d3ee;     /* ciano usado como texto, com variante legível       */
+}
+@media (prefers-color-scheme: light){
+  :root{ --ink-legenda:#2a3a55; --ink-fonte:#56627e; --ink-ciano:#0e708b }
+}
+:root[data-theme="light"],
+body[data-theme="light"]{ --ink-legenda:#2a3a55; --ink-fonte:#56627e; --ink-ciano:#0e708b }
+:root[data-theme="dark"],
+body[data-theme="dark"]{  --ink-legenda:#c5d2ee; --ink-fonte:#94a3c4; --ink-ciano:#22d3ee }
+
+/* apelidos que executores inventaram, redirecionados para o valor CERTO.
+   Rede de segurança: enquanto houver página usando --ink-mute, ela lê. */
+:root{ --ink-mute:var(--ink-legenda) }
+
+/* ── ACENTOS DE TEXTO — mesma matiz, luminosidade própria por tema ────────
+   Os tons vivos são a identidade no escuro. No claro, cada papel recebe a
+   variante escurecida da mesma matiz; nenhuma aula precisa fixar outro hex.
+   Piso de cálculo: 4.8:1 contra #FAFBFD, #FDFDFE e #EEF2F8 reais. Nos selos
+   de executor, o cálculo já inclui a opacidade .82 aplicada ao componente. */
+:root{
+  --acento-fig:#22D3EE;
+  --acento-exec:#22D3EE;
+  --acento-opener:#34D399;
+  --acento-ok:#34D399;
+  --acento-nuance:#F59E0B;
+  --acento-board:#F59E0B;
+  --acento-caso:#818CF8;
+  --acento-bridge:#818CF8;
+  --acento-alerta:#FB7185;
+  --texto-topo-off:#94A3C4;
+  --exec-tag-claude:#C9A6E9;
+  --exec-tag-grok:#8FD3F4;
+  --exec-tag-glm:#7EE0C0;
+  --exec-tag-minimax:#F5B971;
+  --exec-tag-kimi:#F291B8;
+  --exec-tag-deepseek:#9FB4F2;
+  --exec-tag-copilot:#B8C4D4;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --acento-fig:#0E708B;
+    --acento-exec:#0E708B;
+    --acento-opener:#047653;
+    --acento-ok:#047653;
+    --acento-nuance:#A64D09;
+    --acento-board:#A64D09;
+    --acento-caso:#4F46E5;
+    --acento-bridge:#4F46E5;
+    --acento-alerta:#BE123C;
+    --texto-topo-off:#56627E;
+    --exec-tag-claude:#6C2AA8;
+    --exec-tag-grok:#0B5072;
+    --exec-tag-glm:#145540;
+    --exec-tag-minimax:#6F4008;
+    --exec-tag-kimi:#A4134E;
+    --exec-tag-deepseek:#1941B9;
+    --exec-tag-copilot:#3A4A60;
+  }
+}
+:root[data-theme="light"],
+body[data-theme="light"]{
+  --acento-fig:#0E708B;
+  --acento-exec:#0E708B;
+  --acento-opener:#047653;
+  --acento-ok:#047653;
+  --acento-nuance:#A64D09;
+  --acento-board:#A64D09;
+  --acento-caso:#4F46E5;
+  --acento-bridge:#4F46E5;
+  --acento-alerta:#BE123C;
+  --texto-topo-off:#56627E;
+  --exec-tag-claude:#6C2AA8;
+  --exec-tag-grok:#0B5072;
+  --exec-tag-glm:#145540;
+  --exec-tag-minimax:#6F4008;
+  --exec-tag-kimi:#A4134E;
+  --exec-tag-deepseek:#1941B9;
+  --exec-tag-copilot:#3A4A60;
+}
+:root[data-theme="dark"],
+body[data-theme="dark"]{
+  --acento-fig:#22D3EE;
+  --acento-exec:#22D3EE;
+  --acento-opener:#34D399;
+  --acento-ok:#34D399;
+  --acento-nuance:#F59E0B;
+  --acento-board:#F59E0B;
+  --acento-caso:#818CF8;
+  --acento-bridge:#818CF8;
+  --acento-alerta:#FB7185;
+  --texto-topo-off:#94A3C4;
+  --exec-tag-claude:#C9A6E9;
+  --exec-tag-grok:#8FD3F4;
+  --exec-tag-glm:#7EE0C0;
+  --exec-tag-minimax:#F5B971;
+  --exec-tag-kimi:#F291B8;
+  --exec-tag-deepseek:#9FB4F2;
+  --exec-tag-copilot:#B8C4D4;
+}
+
+/* A abertura conserva a matiz semântica de cada estratégia. */
+body .opener--case{ --acento-opener:var(--acento-caso) }
+body .opener--question{ --acento-opener:var(--acento-fig) }
+body :is(.opener--trap,.opener--finding,.opener--mnemonic){ --acento-opener:var(--acento-nuance) }
+body :is(.opener--vs,.opener--stat){ --acento-opener:var(--acento-alerta) }
+
+/* O seletor termina sempre no texto colorido — nunca no ancestral de tema. */
+body .fig__label{ color:var(--acento-fig) }
+body .exec-card__title{ color:var(--acento-exec) }
+body .opener .opener__eyebrow{ color:var(--acento-opener) }
+body .nuance__tag{ color:var(--acento-nuance) }
+body .board__title{ color:var(--acento-board) }
+body .case-card__title{ color:var(--acento-caso) }
+body .bridge-card h3{ color:var(--acento-bridge) }
+/* AS DUAS IRMÃS, e é por isso que estão na mesma linha: a varredura de 05/08 pegou
+   `.topo-mini__off` e deixou passar `.topo__off` — mesmo papel, mesmo tom, nome sem o
+   "mini". Sobrou como os 2 últimos blocos ilegíveis da fm4 (4.23:1 no escuro, 3.53:1 no
+   claro), depois de 31 terem sido resolvidos. Classe irmã com nome quase igual é o
+   ponto cego natural de qualquer varredura — inclusive de quem pediu que fosse por padrão. */
+body :is(.topo-mini__off,.topo__off){ color:var(--texto-topo-off) }
+
+/* Rede central para o CSS inline das aulas. O `body` acrescenta especificidade
+   sem `!important`: vence o hex/tom fixo local e preserva bordas e fundos vivos. */
+body :is(
+  .chip--2,.badge--info,.tag--info,.label--info,
+  .cmp__head--gbs,.hl-2,.nms-cell--2 h4,.tenar-card h3,
+  .topo-mini__2,.topo__2
+){ color:var(--acento-fig) }
+
+body :is(
+  .chip--1,.chip--series,.chip--neutro,
+  .badge--neutro,.tag--neutro,.label--neutro,
+  .case-row__eixo,.cmp__head--ela,.hl-1,
+  .layer--mid .layer__tag,.nms-cell--1 h4,.topo-mini__1,.topo__1
+){ color:var(--acento-caso) }
+
+body :is(
+  .chip--ok,.badge--ok,.badge--success,.tag--ok,.tag--success,.label--ok,
+  .hl-good,.layer--base .layer__tag,.loss-cell--on h4,
+  .quiz__verdict.is-ok,.faixa--verde
+){ color:var(--acento-ok) }
+body .opener--checklist .checklist-inline li::before{ color:var(--acento-ok) }
+
+body :is(
+  .chip--no,.chip--bad,.badge--bad,.badge--danger,.tag--bad,.tag--danger,.label--bad,
+  .hl-bad,.loss-cell--off h4,.opener--stat .stat__big,
+  .quiz__verdict.is-bad,.faixa--coral
+){ color:var(--acento-alerta) }
+
+body :is(
+  .chip--gold,.chip--warn,.badge--warn,.tag--warn,.label--warn,
+  .dft-card h3,.hero-figure__tag,.hl-warn,.layer--top .layer__tag,
+  .trap__chip,.trap__col--prova h4,.trap__title,
+  .card--amber .card__titulo,.faixa--amber,.quiz__explicacao em
+){ color:var(--acento-nuance) }
+
+
+/* ── BANCADA DE EXECUTORES ────────────────────────────────────────────────
+   Cada card diz QUEM materializou a aula. O hub deixa de ser vitrine e vira
+   bancada: dá para ler a consistência de um motor batendo o olho na trilha
+   inteira, sem abrir log nem git. Pedido dele em 02/08: "quero o nome de quem
+   executou cada aula, pois farei teste de estabilidade e não só de variedade". */
+.exec-tag{
+  display:inline-flex; align-items:center; gap:.36em;
+  font-family:var(--font-mono,ui-monospace,SFMono-Regular,Menlo,monospace);
+  font-size:.68rem; letter-spacing:.04em; line-height:1;
+  padding:.34em .6em; border-radius:6px;
+  border:1px solid currentColor; opacity:.82;
+  white-space:nowrap;
+}
+.exec-tag::before{ content:"▸"; opacity:.6; font-size:.9em }
+.exec-tag--claude   { color:var(--exec-tag-claude) }
+.exec-tag--grok     { color:var(--exec-tag-grok) }
+.exec-tag--glm      { color:var(--exec-tag-glm) }
+.exec-tag--minimax  { color:var(--exec-tag-minimax) }
+.exec-tag--kimi     { color:var(--exec-tag-kimi) }
+.exec-tag--deepseek { color:var(--exec-tag-deepseek) }
+.exec-tag--copilot  { color:var(--exec-tag-copilot) }
+.aula-card__foot{ flex-wrap:wrap; gap:.5em }

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>TCG: duro → abalos → névoa pós-ictal — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="a8-cara">
+.a8-ouro{color:#FBBF24}.a8-indigo{color:#818CF8}.a8-cyan{color:#38BDF8}.a8-coral{color:#F87171}.a8-teal{color:#2DD4BF}
+[data-theme="light"] .a8-ouro{color:#B45309}[data-theme="light"] .a8-indigo{color:#4338CA}[data-theme="light"] .a8-cyan{color:#0E7490}[data-theme="light"] .a8-coral{color:#DC2626}[data-theme="light"] .a8-teal{color:#0F766E}
+.faixa{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-3);font-size:.82rem;font-weight:600;line-height:1.2}
+.faixa--ouro{background:rgba(251,191,36,.14);color:#FBBF24;border-color:rgba(251,191,36,.55)}
+.faixa--cyan{background:rgba(56,189,248,.14);color:#38BDF8;border-color:rgba(56,189,248,.5)}
+.faixa--indigo{background:rgba(129,140,248,.14);color:#818CF8;border-color:rgba(129,140,248,.5)}
+.faixa--coral{background:rgba(248,113,113,.14);color:#F87171;border-color:rgba(248,113,113,.5)}
+[data-theme="light"] .faixa--ouro{background:rgba(217,119,6,.12);color:#B45309;border-color:rgba(180,83,9,.45)}
+[data-theme="light"] .faixa--cyan{background:rgba(8,145,178,.1);color:#0E7490;border-color:rgba(8,145,178,.4)}
+[data-theme="light"] .faixa--indigo{background:rgba(79,70,229,.1);color:#4338CA;border-color:rgba(67,56,202,.4)}
+[data-theme="light"] .faixa--coral{background:rgba(220,38,38,.1);color:#DC2626;border-color:rgba(220,38,38,.4)}
+.kw{font-weight:700}.kw--ouro{color:#FBBF24}.kw--coral{color:#F87171}.kw--indigo{color:#818CF8}.kw--teal{color:#2DD4BF}.kw--cyan{color:#38BDF8}
+[data-theme="light"] .kw--ouro{color:#B45309}[data-theme="light"] .kw--coral{color:#DC2626}[data-theme="light"] .kw--indigo{color:#4338CA}[data-theme="light"] .kw--teal{color:#0F766E}[data-theme="light"] .kw--cyan{color:#0E7490}
+.a8-chip{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .65rem;border-radius:999px;border:1px solid var(--border);background:var(--bg-3);font-size:.8rem;font-weight:600;line-height:1.2}
+.a8-chip--gold{border-color:rgba(251,191,36,.6);color:#FBBF24}.a8-chip--cyan{border-color:rgba(56,189,248,.6);color:#38BDF8}.a8-chip--indigo{border-color:rgba(129,140,248,.6);color:#818CF8}
+[data-theme="light"] .a8-chip--gold{border-color:rgba(180,83,9,.5);color:#B45309}[data-theme="light"] .a8-chip--cyan{border-color:rgba(8,145,178,.5);color:#0E7490}[data-theme="light"] .a8-chip--indigo{border-color:rgba(67,56,202,.5);color:#4338CA}
+.a8-cap{font-size:.82rem;color:var(--ink-60,#94A3B8);line-height:1.45}
+.a8-cap b{color:var(--ink,#E5E7EB)}
+.a8-inline-svg{width:100%;height:auto;display:block;border-radius:14px}
+/* checklist E5 */
+.a8-check{border:1px solid var(--border);border-left:4px solid #818CF8;border-radius:12px;padding:.9rem 1.1rem;background:var(--bg-3)}
+[data-theme="light"] .a8-check{border-left-color:#4338CA}
+.a8-check__h{font-weight:800;margin:0 0 .4rem}
+.a8-check ol{margin:0;padding-left:1.2rem;line-height:1.6}
+/* stepper */
+.a8-stepper{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;counter-reset:step}
+@media(max-width:720px){.a8-stepper{grid-template-columns:1fr 1fr}}
+.a8-step{position:relative;border:1px solid var(--border);border-radius:12px;padding:.7rem .8rem;background:var(--bg-3)}
+.a8-step::before{counter-increment:step;content:counter(step);position:absolute;top:-10px;left:.7rem;width:22px;height:22px;border-radius:50%;background:#0B1220;border:1.5px solid #38BDF8;color:#38BDF8;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+[data-theme="light"] .a8-step::before{background:#fff;border-color:#0E7490;color:#0E7490}
+.a8-step h4{margin:.2rem 0 .15rem;font-size:.92rem}
+.a8-step p{margin:0;font-size:.78rem;color:var(--ink-60,#94A3B8);line-height:1.4}
+.a8-nuanca{border:1px solid rgba(251,191,36,.55);border-left:4px solid #FBBF24;border-radius:10px;padding:.8rem 1rem;background:rgba(251,191,36,.06)}
+[data-theme="light"] .a8-nuanca{border-color:rgba(180,83,9,.5);border-left-color:#B45309;background:rgba(217,119,6,.06)}
+.a8-trunca{border:1px dashed rgba(248,113,113,.6);border-radius:10px;padding:.8rem 1rem;background:rgba(248,113,113,.06)}
+[data-theme="light"] .a8-trunca{border-color:rgba(220,38,38,.5);background:rgba(220,38,38,.06)}
+.prosa p{text-align:justify;text-indent:1.4em;hyphens:auto}
+.prosa h2+p{text-indent:0}
+.lead{text-indent:0}
+</style>
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Epilepsia — Aula 8</span>
+        <span class="site-header__subtitle">Neurologia · Aula 8</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">7/7</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<article data-layout="a8-p07" data-source-ids="072 073 074 075 076 077 078 079 080 081 082 083 084 085 086 087 088 089 090 091 092 093">
+  <p class="kicker"><span class="a8-chip a8-chip--indigo">Meta · Pág. 07 de 07</span></p>
+  <h1>TCG: duro → abalos → névoa pós-ictal</h1>
+
+  <!-- ABERTURA E5 (meta + checklist) -->
+  <div class="a8-check" role="region" aria-label="Meta da página">
+    <p class="a8-check__h">Ao final desta página você vai saber:</p>
+    <ol>
+      <li>por que o corpo fica <span class="kw kw--indigo">duro</span>;</li>
+      <li>por que os abalos clônicos sinalizam <span class="kw kw--ouro">fadiga</span>;</li>
+      <li>por que parar o movimento <strong>≠</strong> consciência de volta;</li>
+      <li>a ordem de grandeza do <span class="kw kw--cyan">pós-ictal</span> — sem inventar status.</li>
+    </ol>
+  </div>
+
+  <div class="prosa">
+    <h2>Por que a TCG “chama”</h2>
+    <p>A <strong>crise tônico-clônica generalizada</strong> é a crise que se vê com frequência, a que <strong>qualquer uma pode terminar como ela</strong>, e a que <strong>chamam para atender</strong>. Contextos: rua/SAMU, emergência, enfermaria, CTI — paciente “passando mal” recolhido.</p>
+    <p>Na TCG atingem-se a <span class="kw kw--indigo">via motora</span> e a <strong>via da consciência</strong>. A <strong>consciência é perdida</strong>. Há <strong>hiperativação</strong> da via motora.</p>
+
+    <h2>Fase tônica: o corpo duro</h2>
+    <p>Neurônios motores hiperativos, em atividade excessiva <strong>sem parar</strong>, geram <strong>contração muscular</strong>. Contração sustentada → paciente <span class="kw kw--indigo">duro</span> → <span class="kw kw--indigo">fase tônica</span>. Fase tônica = hiperfuncionamento dos neurônios motores; corpo <strong>todo duro</strong>.</p>
+    <p>Não se consegue <strong>inibir</strong> de imediato esses neurônios “muito potentes”. É preciso <strong>esperar os neurônios se cansarem</strong> — esgotar a energia deles.</p>
+
+    <h2>Fase clônica: fadiga em ondas</h2>
+    <p>O esgotamento <strong>não é imediato e linear</strong>: eles dão uma esgotadinha e se recuperam, repetidamente. Sequência: duro → esgota um pouco → <strong>mole</strong> → recupera → <strong>duro</strong> de novo → esgota → mole → duro…</p>
+    <p>Nesse processo de tentar parar, o neurônio <strong>ativa e desativa</strong> ciclicamente. Sai-se da fase completamente dura e entra-se na fase <strong>mole-duro-mole-duro</strong> = <span class="kw kw--ouro">abalos clônicos</span>.</p>
+    <p><span class="kw kw--ouro">Regra de ouro:</span> os <strong>abalos clônicos</strong> mostram que o neurônio <strong>começou a fadigar</strong> e que <strong>essa crise vai acabar</strong>.</p>
+    <p>História natural: neurônios que precisam ser <strong>cansados</strong> até o fim dos movimentos. Quando o neurônio se cansa de vez, <strong>acabam os movimentos</strong>.</p>
+
+    <h2>Fim do movimento ≠ consciência de volta</h2>
+    <p>Fim dos movimentos <strong>≠</strong> recuperação imediata da consciência: os neurônios ainda precisam se <strong>restabelecer</strong>. No pós-ictal imediato: completamente perdido, <strong>sem consciência ainda</strong>, sem saber o que aconteceu; recuperação <strong>aos poucos</strong>.</p>
+
+    <h2>Pós-ictal: minutos a horas (fonte truncada)</h2>
+    <p>Recuperação pós-ictal: de <strong>minutos</strong> a, às vezes, <strong>horas</strong>. No pós-ictal: não sabe onde está, o que está fazendo, quem o levou, o próprio <strong>nome</strong>, o <strong>endereço</strong>; aos poucos lembra quem é, depois que está fora de casa…</p>
+  </div>
+
+  <!-- CAIXA-NUANÇA · VFP [091] -->
+  <div class="a8-nuanca" role="note" aria-label="Nuança do pós-ictal">
+    <p style="margin:0 0 .3rem"><span class="faixa faixa--ouro">CAIXA-NUANÇA · VFP [091]</span></p>
+    <p style="margin:0 0 .4rem"><strong>Canon da fatia:</strong> <span class="kw kw--cyan">minutos a horas</span> (ordem de grandeza didática da TCG típica).</p>
+    <p style="margin:0 0 .4rem"><strong>Nuance LBE:</strong> o envelope pode ir de <strong>segundos a dias</strong> (média &lt;24 h); em <strong>idosos</strong> o pós-ictal pode se prolongar bastante.</p>
+    <p style="margin:0">Isso <strong>não</strong> vira cutoff de alta nem protocolo de observação — só enriquece a ordem de grandeza <strong>sem</strong> substituir o VFP.</p>
+  </div>
+
+  <!-- Fronteira · FONTE-TRUNCA [093] -->
+  <div class="a8-trunca" role="note" aria-label="Fronteira fonte trunca">
+    <p style="margin:0 0 .3rem"><span class="faixa faixa--coral">Fronteira · FONTE-TRUNCA [093]</span></p>
+    <p style="margin:0">A recuperação pós-ictal <strong>corta mid-sentence</strong> no recorte. Inventário clínico/protocolo de <strong>status</strong>, TCG &gt;5 min e <strong>doses</strong> <strong>não</strong> fecha aqui — fronteira <span class="kw kw--coral">A9</span>.</p>
+  </div>
+
+  <!-- ILUSTRAÇÃO PISO S7 (peça-herói da timeline TCG) -->
+  <figure class="a8-frame">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 680" role="img" aria-labelledby="a8p7-title a8p7-desc" class="a8-inline-svg a8p7-root">
+      <title id="a8p7-title">TCG enxuta: tônico, clônico, pós-ictal</title>
+      <desc id="a8p7-desc">História natural enxuta da crise tônico-clônica generalizada: fase tônica com corpo rígido por hiperativação motora sustentada e consciência perdida; fase clônica com abalos cíclicos de fadiga neuronal, sinal de que a crise vai acabar; fim do movimento motor ainda sem consciência plena; névoa pós-ictal com desorientação por minutos a horas.</desc>
+      <defs>
+        <linearGradient id="a8p7-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="var(--a8p7-bg0, #0B1220)"/><stop offset="100%" stop-color="var(--a8p7-bg1, #07111F)"/></linearGradient>
+        <linearGradient id="a8p7-track" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="var(--a8p7-indigo, #818CF8)"/><stop offset="48%" stop-color="var(--a8p7-gold, #FBBF24)"/><stop offset="100%" stop-color="var(--a8p7-cyan, #22D3EE)"/></linearGradient>
+        <linearGradient id="a8p7-tonicFill" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="var(--a8p7-indigo, #818CF8)" stop-opacity="0.38"/><stop offset="100%" stop-color="var(--a8p7-indigoDeep, #4F46E5)" stop-opacity="0.08"/></linearGradient>
+        <linearGradient id="a8p7-clonicFill" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="var(--a8p7-gold, #FBBF24)" stop-opacity="0.36"/><stop offset="100%" stop-color="var(--a8p7-indigo, #818CF8)" stop-opacity="0.08"/></linearGradient>
+        <linearGradient id="a8p7-postFill" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="var(--a8p7-cyan, #22D3EE)" stop-opacity="0.28"/><stop offset="100%" stop-color="var(--a8p7-muted, #94A3B8)" stop-opacity="0.06"/></linearGradient>
+        <radialGradient id="a8p7-fog" cx="50%" cy="42%" r="62%"><stop offset="0%" stop-color="var(--a8p7-cyan, #22D3EE)" stop-opacity="0.22"/><stop offset="55%" stop-color="var(--a8p7-muted, #94A3B8)" stop-opacity="0.14"/><stop offset="100%" stop-color="var(--a8p7-bg0, #0B1220)" stop-opacity="0"/></radialGradient>
+        <linearGradient id="a8p7-goldBar" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="var(--a8p7-gold, #FBBF24)" stop-opacity="0"/><stop offset="12%" stop-color="var(--a8p7-gold, #FBBF24)"/><stop offset="88%" stop-color="var(--a8p7-gold, #FBBF24)"/><stop offset="100%" stop-color="var(--a8p7-gold, #FBBF24)" stop-opacity="0"/></linearGradient>
+        <filter id="a8p7-soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="a8p7-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <marker id="a8p7-arrIndigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 Z" fill="var(--a8p7-indigo, #818CF8)"/></marker>
+        <marker id="a8p7-arrGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 Z" fill="var(--a8p7-gold, #FBBF24)"/></marker>
+        <marker id="a8p7-arrCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 Z" fill="var(--a8p7-cyan, #22D3EE)"/></marker>
+        <style>
+          .a8p7-root {
+            --a8p7-bg0:#0B1220;--a8p7-bg1:#07111F;--a8p7-card:#111A2B;--a8p7-card2:#152033;
+            --a8p7-border:rgba(148,163,184,0.18);--a8p7-ink:#F4F7FB;--a8p7-muted:#94A3B8;--a8p7-soft:#B8C0CC;
+            --a8p7-indigo:#818CF8;--a8p7-indigoDeep:#4F46E5;--a8p7-cyan:#22D3EE;--a8p7-cyanDim:#0891B2;
+            --a8p7-gold:#FBBF24;--a8p7-goldDim:#B45309;--a8p7-coral:#F87171;--a8p7-body:#CBD5E1;--a8p7-bodyDim:#64748B;
+            font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Segoe UI",system-ui,sans-serif;
+          }
+          [data-theme="light"] .a8p7-root {
+            --a8p7-bg0:#F8F6F2;--a8p7-bg1:#EEF2F7;--a8p7-card:#FFFFFF;--a8p7-card2:#F1F5F9;
+            --a8p7-border:rgba(15,23,42,0.10);--a8p7-ink:#0F172A;--a8p7-muted:#64748B;--a8p7-soft:#475569;
+            --a8p7-indigo:#4F46E5;--a8p7-indigoDeep:#3730A3;--a8p7-cyan:#0891B2;--a8p7-cyanDim:#0E7490;
+            --a8p7-gold:#D97706;--a8p7-goldDim:#92400E;--a8p7-coral:#DC2626;--a8p7-body:#334155;--a8p7-bodyDim:#94A3B8;
+          }
+          .a8p7-root .a8p7-hs { cursor:pointer; }
+          .a8p7-root .a8p7-hs:focus { outline:none; }
+          .a8p7-root .a8p7-hs:focus .a8p7-hs-ring { opacity:1; }
+          .a8p7-root .a8p7-hs-ring { opacity:0; transition:opacity 0.22s ease; }
+          .a8p7-root .a8p7-panel-bg,.a8p7-root .a8p7-chip-bg,.a8p7-root .a8p7-body-shape,.a8p7-root .a8p7-wave,.a8p7-root .a8p7-node,.a8p7-root .a8p7-fog-layer { transition:opacity 0.28s ease,fill 0.28s ease,stroke 0.28s ease,stroke-width 0.28s ease; }
+          .a8p7-root .a8p7-tip { pointer-events:none; opacity:0; transition:opacity 0.18s ease; }
+          .a8p7-root[data-tip="on"] .a8p7-tip { opacity:1; }
+          .a8p7-root .a8p7-panel-bg { fill:var(--a8p7-card,#111A2B); stroke:var(--a8p7-border,rgba(148,163,184,0.18)); stroke-width:1.2; }
+          .a8p7-root[data-mode="tonic"] .a8p7-p-tonic .a8p7-panel-bg { stroke:var(--a8p7-indigo,#818CF8); stroke-width:2.4; }
+          .a8p7-root[data-mode="clonic"] .a8p7-p-clonic .a8p7-panel-bg { stroke:var(--a8p7-gold,#FBBF24); stroke-width:2.4; }
+          .a8p7-root[data-mode="post"] .a8p7-p-post .a8p7-panel-bg { stroke:var(--a8p7-cyan,#22D3EE); stroke-width:2.4; }
+          .a8p7-root[data-mode="rule"] .a8p7-rule-chip .a8p7-chip-bg { stroke:var(--a8p7-gold,#FBBF24); stroke-width:2.4; }
+          .a8p7-root[data-mode="end"] .a8p7-end-bar .a8p7-chip-bg { stroke:var(--a8p7-cyan,#22D3EE); stroke-width:2.2; }
+          .a8p7-root[data-mode="tonic"] .a8p7-p-clonic,.a8p7-root[data-mode="tonic"] .a8p7-p-post { opacity:0.48; }
+          .a8p7-root[data-mode="clonic"] .a8p7-p-tonic,.a8p7-root[data-mode="clonic"] .a8p7-p-post { opacity:0.48; }
+          .a8p7-root[data-mode="post"] .a8p7-p-tonic,.a8p7-root[data-mode="post"] .a8p7-p-clonic { opacity:0.48; }
+          .a8p7-root[data-mode="rule"] .a8p7-p-tonic,.a8p7-root[data-mode="rule"] .a8p7-p-post { opacity:0.52; }
+          .a8p7-root[data-mode="rule"] .a8p7-p-clonic { opacity:1; }
+          .a8p7-root[data-mode="end"] .a8p7-p-tonic,.a8p7-root[data-mode="end"] .a8p7-p-clonic { opacity:0.5; }
+          .a8p7-root .a8p7-node { opacity:0.85; }
+          .a8p7-root[data-mode="tonic"] .a8p7-n-tonic,.a8p7-root[data-mode="clonic"] .a8p7-n-clonic,.a8p7-root[data-mode="post"] .a8p7-n-post,.a8p7-root[data-mode="rule"] .a8p7-n-clonic { opacity:1; }
+          .a8p7-root .a8p7-stiff { transform-box:fill-box; transform-origin:center bottom; }
+          .a8p7-root .a8p7-jerk { transform-box:fill-box; transform-origin:center bottom; }
+          .a8p7-root .a8p7-fog-layer { opacity:0.72; }
+          .a8p7-root[data-mode="post"] .a8p7-fog-layer { opacity:1; }
+          @media (prefers-reduced-motion: no-preference) {
+            .a8p7-root[data-mode="tonic"] .a8p7-stiff,.a8p7-root:not([data-mode]) .a8p7-stiff,.a8p7-root[data-mode=""] .a8p7-stiff { animation:a8p7-hold 2.2s ease-in-out infinite; }
+            .a8p7-root[data-mode="clonic"] .a8p7-jerk,.a8p7-root[data-mode="rule"] .a8p7-jerk,.a8p7-root:not([data-mode]) .a8p7-jerk,.a8p7-root[data-mode=""] .a8p7-jerk { animation:a8p7-jerk 0.55s ease-in-out infinite; }
+            .a8p7-root[data-mode="clonic"] .a8p7-wave-clonic,.a8p7-root[data-mode="rule"] .a8p7-wave-clonic,.a8p7-root:not([data-mode]) .a8p7-wave-clonic,.a8p7-root[data-mode=""] .a8p7-wave-clonic { animation:a8p7-waveFade 1.8s ease-in-out infinite; }
+            .a8p7-root[data-mode="post"] .a8p7-fog-layer,.a8p7-root:not([data-mode]) .a8p7-fog-layer,.a8p7-root[data-mode=""] .a8p7-fog-layer { animation:a8p7-fogDrift 3.2s ease-in-out infinite; }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .a8p7-root .a8p7-panel-bg,.a8p7-root .a8p7-chip-bg,.a8p7-root .a8p7-body-shape,.a8p7-root .a8p7-wave,.a8p7-root .a8p7-node,.a8p7-root .a8p7-fog-layer,.a8p7-root .a8p7-hs-ring,.a8p7-root .a8p7-tip { transition:none; }
+            .a8p7-root .a8p7-stiff,.a8p7-root .a8p7-jerk,.a8p7-root .a8p7-wave-clonic,.a8p7-root .a8p7-fog-layer { animation:none; }
+          }
+          @keyframes a8p7-hold { 0%,100%{opacity:0.92;} 50%{opacity:1;} }
+          @keyframes a8p7-jerk { 0%,100%{transform:rotate(-2.4deg) translateY(0);} 25%{transform:rotate(2.6deg) translateY(1px);} 50%{transform:rotate(-1.8deg) translateY(0);} 75%{transform:rotate(2.2deg) translateY(1px);} }
+          @keyframes a8p7-waveFade { 0%,100%{opacity:0.72;} 50%{opacity:1;} }
+          @keyframes a8p7-fogDrift { 0%,100%{opacity:0.68;} 50%{opacity:0.95;} }
+        </style>
+      </defs>
+
+      <rect width="840" height="680" rx="20" fill="url(#a8p7-bg)"/>
+      <text x="28" y="34" fill="var(--a8p7-ink, #F4F7FB)" font-size="20" font-weight="700" letter-spacing="-0.3">TCG enxuta</text>
+      <text x="28" y="56" fill="var(--a8p7-soft, #B8C0CC)" font-size="13" font-weight="500">tônico → clônico → pós-ictal · motor + consciência perdida</text>
+
+      <g transform="translate(28, 72)">
+        <rect x="0" y="0" width="784" height="40" rx="12" fill="var(--a8p7-card2, #152033)" stroke="var(--a8p7-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+        <circle cx="22" cy="20" r="7" fill="var(--a8p7-indigo, #818CF8)" opacity="0.9"/>
+        <path d="M18 20 h8 M22 16 v8" stroke="var(--a8p7-bg0, #0B1220)" stroke-width="1.6" stroke-linecap="round"/>
+        <text x="40" y="17" fill="var(--a8p7-indigo, #818CF8)" font-size="12" font-weight="700">Via motora</text>
+        <text x="40" y="32" fill="var(--a8p7-muted, #94A3B8)" font-size="11" font-weight="500">hiperativação</text>
+        <rect x="148" y="12" width="1" height="16" fill="var(--a8p7-border, rgba(148,163,184,0.18))"/>
+        <circle cx="176" cy="20" r="7" fill="none" stroke="var(--a8p7-muted, #94A3B8)" stroke-width="1.6"/>
+        <circle cx="176" cy="20" r="2.5" fill="var(--a8p7-muted, #94A3B8)" opacity="0.55"/>
+        <text x="192" y="17" fill="var(--a8p7-soft, #B8C0CC)" font-size="12" font-weight="700">Consciência</text>
+        <text x="192" y="32" fill="var(--a8p7-muted, #94A3B8)" font-size="11" font-weight="500">perdida no eixo</text>
+        <rect x="332" y="12" width="1" height="16" fill="var(--a8p7-border, rgba(148,163,184,0.18))"/>
+        <rect x="352" y="17" width="72" height="3" rx="1.5" fill="url(#a8p7-goldBar)"/>
+        <text x="434" y="24" fill="var(--a8p7-gold, #FBBF24)" font-size="12" font-weight="700">clônicos = fadiga · crise vai acabar</text>
+      </g>
+
+      <g transform="translate(28, 130)">
+        <path d="M 40 18 H 744" fill="none" stroke="url(#a8p7-track)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+        <g class="a8p7-node a8p7-n-tonic"><circle cx="40" cy="18" r="11" fill="var(--a8p7-card, #111A2B)" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="2.2"/><circle cx="40" cy="18" r="5" fill="var(--a8p7-indigo, #818CF8)"/><text x="40" y="44" text-anchor="middle" fill="var(--a8p7-indigo, #818CF8)" font-size="11" font-weight="700">1 · tônica</text></g>
+        <g class="a8p7-node a8p7-n-clonic"><circle cx="392" cy="18" r="11" fill="var(--a8p7-card, #111A2B)" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="2.2"/><circle cx="392" cy="18" r="5" fill="var(--a8p7-gold, #FBBF24)"/><text x="392" y="44" text-anchor="middle" fill="var(--a8p7-gold, #FBBF24)" font-size="11" font-weight="700">2 · clônica</text></g>
+        <g class="a8p7-node a8p7-n-post"><circle cx="744" cy="18" r="11" fill="var(--a8p7-card, #111A2B)" stroke="var(--a8p7-cyan, #22D3EE)" stroke-width="2.2"/><circle cx="744" cy="18" r="5" fill="var(--a8p7-cyan, #22D3EE)"/><text x="744" y="44" text-anchor="middle" fill="var(--a8p7-cyan, #22D3EE)" font-size="11" font-weight="700">3 · pós-ictal</text></g>
+      </g>
+
+      <g class="a8p7-hs a8p7-p-tonic" data-mode="tonic" tabindex="0" role="button" aria-label="Fase tônica: corpo duro por hiperativação motora sustentada. Consciência perdida." transform="translate(28, 190)">
+        <rect class="a8p7-panel-bg" x="0" y="0" width="248" height="300" rx="16"/>
+        <rect class="a8p7-hs-ring" x="-3" y="-3" width="254" height="306" rx="18" fill="none" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="2"/>
+        <rect x="0" y="0" width="248" height="46" rx="16" fill="url(#a8p7-tonicFill)"/>
+        <rect x="0" y="30" width="248" height="16" fill="url(#a8p7-tonicFill)"/>
+        <text x="124" y="28" text-anchor="middle" fill="var(--a8p7-indigo, #818CF8)" font-size="14" font-weight="700">Tônica</text>
+        <g class="a8p7-stiff a8p7-body-shape" transform="translate(124, 168)">
+          <ellipse cx="0" cy="-62" rx="16" ry="18" fill="var(--a8p7-body, #CBD5E1)" opacity="0.92"/>
+          <rect x="-7" y="-46" width="14" height="22" rx="4" fill="var(--a8p7-indigo, #818CF8)" opacity="0.75"/>
+          <path d="M -7 -40 L -34 -18" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+          <path d="M 7 -40 L 34 -18" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+          <path d="M -4 -24 L -10 36" stroke="var(--a8p7-body, #CBD5E1)" stroke-width="9" stroke-linecap="round" opacity="0.95"/>
+          <path d="M 4 -24 L 10 36" stroke="var(--a8p7-body, #CBD5E1)" stroke-width="9" stroke-linecap="round" opacity="0.95"/>
+          <path d="M -10 36 L -12 58" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="7" stroke-linecap="round" opacity="0.88"/>
+          <path d="M 10 36 L 12 58" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="7" stroke-linecap="round" opacity="0.88"/>
+          <line x1="-42" y1="-8" x2="42" y2="-8" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.45"/>
+          <text x="0" y="78" text-anchor="middle" fill="var(--a8p7-indigo, #818CF8)" font-size="12" font-weight="700">corpo duro</text>
+        </g>
+        <g class="a8p7-wave" transform="translate(24, 252)"><rect x="0" y="0" width="200" height="34" rx="8" fill="var(--a8p7-card2, #152033)" stroke="var(--a8p7-border, rgba(148,163,184,0.18))" stroke-width="1"/><path d="M 12 26 H 28 V 8 H 172 V 26 H 188" fill="none" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><text x="100" y="48" text-anchor="middle" fill="var(--a8p7-muted, #94A3B8)" font-size="10" font-weight="500">motor sustentado</text></g>
+      </g>
+
+      <g class="a8p7-hs a8p7-p-clonic" data-mode="clonic" tabindex="0" role="button" aria-label="Fase clônica: abalos por fadiga neuronal cíclica. Clônicos sinalizam que a crise vai acabar." transform="translate(296, 190)">
+        <rect class="a8p7-panel-bg" x="0" y="0" width="248" height="300" rx="16"/>
+        <rect class="a8p7-hs-ring" x="-3" y="-3" width="254" height="306" rx="18" fill="none" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="2"/>
+        <rect x="0" y="0" width="248" height="46" rx="16" fill="url(#a8p7-clonicFill)"/>
+        <rect x="0" y="30" width="248" height="16" fill="url(#a8p7-clonicFill)"/>
+        <text x="124" y="28" text-anchor="middle" fill="var(--a8p7-gold, #FBBF24)" font-size="14" font-weight="700">Clônica</text>
+        <g class="a8p7-jerk a8p7-body-shape" transform="translate(124, 168)">
+          <ellipse cx="0" cy="-60" rx="16" ry="18" fill="var(--a8p7-body, #CBD5E1)" opacity="0.92"/>
+          <rect x="-7" y="-44" width="14" height="20" rx="4" fill="var(--a8p7-gold, #FBBF24)" opacity="0.55"/>
+          <path d="M -6 -38 L -38 -28" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="6.5" stroke-linecap="round" opacity="0.95"/>
+          <path d="M 6 -38 L 36 -12" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="6.5" stroke-linecap="round" opacity="0.9"/>
+          <path d="M -3 -24 L -18 30" stroke="var(--a8p7-body, #CBD5E1)" stroke-width="8.5" stroke-linecap="round" opacity="0.95"/>
+          <path d="M 4 -24 L 20 28" stroke="var(--a8p7-body, #CBD5E1)" stroke-width="8.5" stroke-linecap="round" opacity="0.95"/>
+          <path d="M -18 30 L -8 54" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="6.5" stroke-linecap="round" opacity="0.9"/>
+          <path d="M 20 28 L 8 54" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="6.5" stroke-linecap="round" opacity="0.88"/>
+          <path d="M -46 -22 Q -40 -10, -46 2" fill="none" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="1.4" opacity="0.55"/>
+          <path d="M 46 -8 Q 40 4, 46 16" fill="none" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="1.4" opacity="0.5"/>
+          <text x="0" y="78" text-anchor="middle" fill="var(--a8p7-gold, #FBBF24)" font-size="12" font-weight="700">abalos mole-duro</text>
+        </g>
+        <g class="a8p7-wave a8p7-wave-clonic" transform="translate(24, 252)"><rect x="0" y="0" width="200" height="34" rx="8" fill="var(--a8p7-card2, #152033)" stroke="var(--a8p7-border, rgba(148,163,184,0.18))" stroke-width="1"/><path d="M 12 17 L 28 6 L 44 28 L 60 8 L 76 26 L 92 10 L 108 24 L 124 12 L 140 22 L 156 14 L 172 19 L 188 17" fill="none" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><text x="100" y="48" text-anchor="middle" fill="var(--a8p7-muted, #94A3B8)" font-size="10" font-weight="500">ativa / desativa · fadiga</text></g>
+      </g>
+
+      <g class="a8p7-hs a8p7-p-post" data-mode="post" tabindex="0" role="button" aria-label="Pós-ictal: fim do motor ainda sem consciência plena. Névoa e desorientação por minutos a horas." transform="translate(564, 190)">
+        <rect class="a8p7-panel-bg" x="0" y="0" width="248" height="300" rx="16"/>
+        <rect class="a8p7-hs-ring" x="-3" y="-3" width="254" height="306" rx="18" fill="none" stroke="var(--a8p7-cyan, #22D3EE)" stroke-width="2"/>
+        <rect x="0" y="0" width="248" height="46" rx="16" fill="url(#a8p7-postFill)"/>
+        <rect x="0" y="30" width="248" height="16" fill="url(#a8p7-postFill)"/>
+        <text x="124" y="28" text-anchor="middle" fill="var(--a8p7-cyan, #22D3EE)" font-size="14" font-weight="700">Pós-ictal</text>
+        <ellipse class="a8p7-fog-layer" cx="124" cy="150" rx="92" ry="78" fill="url(#a8p7-fog)"/>
+        <g class="a8p7-body-shape" transform="translate(124, 168)" opacity="0.88">
+          <ellipse cx="4" cy="-48" rx="16" ry="17" fill="var(--a8p7-bodyDim, #64748B)" opacity="0.85"/>
+          <path d="M 0 -34 Q 28 -20, 42 -8" stroke="var(--a8p7-bodyDim, #64748B)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.8"/>
+          <path d="M -4 -34 Q -22 -8, -18 20" stroke="var(--a8p7-bodyDim, #64748B)" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <path d="M -6 -22 Q 8 10, 6 40" stroke="var(--a8p7-muted, #94A3B8)" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.75"/>
+          <path d="M 6 40 Q 22 48, 36 42" stroke="var(--a8p7-muted, #94A3B8)" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.7"/>
+          <path d="M -18 20 Q -8 40, -2 52" stroke="var(--a8p7-bodyDim, #64748B)" stroke-width="6.5" stroke-linecap="round" fill="none" opacity="0.75"/>
+          <circle cx="-36" cy="-2" r="3" fill="var(--a8p7-cyan, #22D3EE)" opacity="0.35"/>
+          <circle cx="48" cy="12" r="2.5" fill="var(--a8p7-cyan, #22D3EE)" opacity="0.3"/>
+          <circle cx="-20" cy="-58" r="2" fill="var(--a8p7-cyan, #22D3EE)" opacity="0.28"/>
+          <text x="0" y="78" text-anchor="middle" fill="var(--a8p7-cyan, #22D3EE)" font-size="12" font-weight="700">névoa</text>
+        </g>
+        <g class="a8p7-wave" transform="translate(24, 252)"><rect x="0" y="0" width="200" height="34" rx="8" fill="var(--a8p7-card2, #152033)" stroke="var(--a8p7-border, rgba(148,163,184,0.18))" stroke-width="1"/><path d="M 12 18 H 188" fill="none" stroke="var(--a8p7-cyan, #22D3EE)" stroke-width="2" stroke-linecap="round" opacity="0.75"/><circle cx="56" cy="18" r="2.2" fill="var(--a8p7-cyan, #22D3EE)" opacity="0.45"/><circle cx="120" cy="18" r="2.2" fill="var(--a8p7-cyan, #22D3EE)" opacity="0.35"/><text x="100" y="48" text-anchor="middle" fill="var(--a8p7-muted, #94A3B8)" font-size="10" font-weight="500">minutos a horas</text></g>
+      </g>
+
+      <path d="M 276 340 H 292" fill="none" stroke="var(--a8p7-indigo, #818CF8)" stroke-width="2" marker-end="url(#a8p7-arrIndigo)" opacity="0.7"/>
+      <path d="M 544 340 H 560" fill="none" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="2" marker-end="url(#a8p7-arrGold)" opacity="0.75"/>
+
+      <g class="a8p7-hs a8p7-rule-chip" data-mode="rule" tabindex="0" role="button" aria-label="Regra de ouro: clônicos são fadiga neuronal e anunciam que a crise vai acabar. Não são piora." transform="translate(28, 508)">
+        <rect class="a8p7-chip-bg" x="0" y="0" width="508" height="52" rx="14" fill="var(--a8p7-card, #111A2B)" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="1.6"/>
+        <rect class="a8p7-hs-ring" x="-3" y="-3" width="514" height="58" rx="16" fill="none" stroke="var(--a8p7-gold, #FBBF24)" stroke-width="2"/>
+        <rect x="14" y="24" width="56" height="4" rx="2" fill="url(#a8p7-goldBar)"/>
+        <text x="86" y="22" fill="var(--a8p7-gold, #FBBF24)" font-size="13" font-weight="700">Clônicos = crise vai acabar</text>
+        <text x="86" y="40" fill="var(--a8p7-soft, #B8C0CC)" font-size="12" font-weight="500">fadiga cíclica · não é piora · neurônio cansando</text>
+      </g>
+      <g class="a8p7-hs a8p7-end-bar" data-mode="end" tabindex="0" role="button" aria-label="Fim do movimento motor não devolve consciência. Pós-ictal ainda sem orientação plena." transform="translate(548, 508)">
+        <rect class="a8p7-chip-bg" x="0" y="0" width="264" height="52" rx="14" fill="var(--a8p7-card, #111A2B)" stroke="var(--a8p7-cyan, #22D3EE)" stroke-width="1.6"/>
+        <rect class="a8p7-hs-ring" x="-3" y="-3" width="270" height="58" rx="16" fill="none" stroke="var(--a8p7-cyan, #22D3EE)" stroke-width="2"/>
+        <text x="132" y="22" text-anchor="middle" fill="var(--a8p7-cyan, #22D3EE)" font-size="13" font-weight="700">fim do motor ≠ consciência</text>
+        <text x="132" y="40" text-anchor="middle" fill="var(--a8p7-soft, #B8C0CC)" font-size="11" font-weight="500">ainda sem orientação plena</text>
+      </g>
+
+      <g transform="translate(28, 576)"><rect x="0" y="0" width="784" height="68" rx="14" fill="var(--a8p7-card, #111A2B)" stroke="var(--a8p7-border, rgba(148,163,184,0.18))" stroke-width="1"/><text id="a8p7-status" x="20" y="28" fill="var(--a8p7-cyan, #22D3EE)" font-size="13" font-weight="700">Toque ou passe · tônica / clônica / pós-ictal / regra / fim motor</text><text id="a8p7-detail" x="20" y="50" fill="var(--a8p7-soft, #B8C0CC)" font-size="12" font-weight="500">Corpo duro → abalos de fadiga (vai acabar) → névoa pós-motor. Parar de tremer não devolve a consciência.</text></g>
+      <text id="a8p7-live" x="28" y="662" fill="var(--a8p7-muted, #94A3B8)" font-size="1" opacity="0">História natural enxuta da TCG: tônica, clônica como fadiga e pós-ictal com desorientação.</text>
+      <text x="28" y="668" fill="var(--a8p7-muted, #94A3B8)" font-size="11" font-weight="500">Stepper TCG · ordem das fases · clônicos = fadiga · pós-ictal minutos a horas</text>
+      <g id="a8p7-tip" class="a8p7-tip" transform="translate(0,0)" opacity="0" aria-hidden="true"><rect id="a8p7-tip-bg" x="0" y="0" width="300" height="68" rx="12" fill="var(--a8p7-card2, #152033)" stroke="var(--a8p7-cyan, #22D3EE)" stroke-width="1.6" opacity="0.97"/><text id="a8p7-tip-t1" x="14" y="28" fill="var(--a8p7-ink, #F4F7FB)" font-size="13" font-weight="700">—</text><text id="a8p7-tip-t2" x="14" y="50" fill="var(--a8p7-soft, #B8C0CC)" font-size="11" font-weight="500">—</text></g>
+      <script type="text/ecmascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a8p7-root');
+  if(!root){ var scripts = document.getElementsByTagName('script'); var s = scripts[scripts.length - 1]; root = s && s.ownerSVGElement ? s.ownerSVGElement : null; }
+  if(!root) return;
+  function Q(sel){ return root.querySelector(sel); }
+  function QA(sel){ return Array.prototype.slice.call(root.querySelectorAll(sel)); }
+  var statusEl = Q('#a8p7-status'); var detailEl = Q('#a8p7-detail'); var liveEl = Q('#a8p7-live');
+  var tip = Q('#a8p7-tip'); var tipBg = Q('#a8p7-tip-bg'); var tipT1 = Q('#a8p7-tip-t1'); var tipT2 = Q('#a8p7-tip-t2');
+  var mode = '';
+  var copy = {
+    tonic: { status:'Tônica · corpo duro', detail:'Hiperativação motora sustentada: tronco e membros em rigidez. Via motora no máximo e consciência já perdida.', live:'Fase tônica: contração sustentada, corpo rígido, consciência perdida.', tip1:'Tônica · corpo duro', tip2:'Motor sustentado · consciência OFF', stroke:'var(--a8p7-indigo, #818CF8)' },
+    clonic: { status:'Clônica · fadiga, não piora', detail:'Abalos ativa/desativa: o neurônio motor cansa. Ritmo mole-duro anuncia o fim — clônicos = crise vai acabar.', live:'Fase clônica: abalos de fadiga neuronal; a crise caminha para o fim.', tip1:'Clônica · fadiga cíclica', tip2:'Vai acabar · não é piora', stroke:'var(--a8p7-gold, #FBBF24)' },
+    post: { status:'Pós-ictal · névoa', detail:'Motor parou; orientação ainda não. Desorientação (onde/quem/nome/endereço) por minutos a horas.', live:'Pós-ictal: fim do motor com névoa e desorientação por minutos a horas.', tip1:'Pós-ictal · névoa', tip2:'Minutos a horas · sem orientação plena', stroke:'var(--a8p7-cyan, #22D3EE)' },
+    rule: { status:'Regra · clônicos = vai acabar', detail:'Clônicos não são agravamento: são fadiga do circuito motor. Quem lê o ritmo já espera o fim da crise.', live:'Regra de ouro: clônicos são fadiga e anunciam o fim da crise.', tip1:'Clônicos = vai acabar', tip2:'Fadiga · não piora', stroke:'var(--a8p7-gold, #FBBF24)' },
+    end: { status:'Fim do motor ≠ consciência', detail:'Quando o tremor cessa, o cérebro ainda não devolveu orientação. Não liberar mental no segundo zero pós-motor.', live:'Fim do movimento motor não devolve consciência nem orientação.', tip1:'Fim do motor ≠ consciência', tip2:'Ainda pós-ictal', stroke:'var(--a8p7-cyan, #22D3EE)' }
+  };
+  var idle = { status:'Toque ou passe · tônica / clônica / pós-ictal / regra / fim motor', detail:'Corpo duro → abalos de fadiga (vai acabar) → névoa pós-motor. Parar de tremer não devolve a consciência.', live:'História natural enxuta da TCG: tônica, clônica como fadiga e pós-ictal com desorientação.' };
+  function setMode(m, fromFocus){
+    mode = m || ''; root.setAttribute('data-mode', mode);
+    var c = mode && copy[mode] ? copy[mode] : idle;
+    if(statusEl) statusEl.textContent = c.status; if(detailEl) detailEl.textContent = c.detail; if(liveEl) liveEl.textContent = c.live;
+    if(mode && copy[mode]){ showTip(copy[mode]); root.setAttribute('data-tip','on'); } else if(!fromFocus){ hideTip(); root.setAttribute('data-tip','off'); }
+  }
+  function showTip(c){ if(!tip||!c) return; if(tipT1)tipT1.textContent=c.tip1; if(tipT2)tipT2.textContent=c.tip2; if(tipBg)tipBg.setAttribute('stroke',c.stroke); tip.setAttribute('opacity','1'); tip.setAttribute('aria-hidden','false'); }
+  function hideTip(){ if(!tip) return; tip.setAttribute('opacity','0'); tip.setAttribute('aria-hidden','true'); }
+  function clientToSvg(cx,cy){ var pt=root.createSVGPoint(); pt.x=cx; pt.y=cy; var m=root.getScreenCTM(); if(!m) return {x:cx,y:cy}; return pt.matrixTransform(m.inverse()); }
+  function placeTip(cx,cy){ if(!tip) return; var p=clientToSvg(cx,cy); var tw=300,th=68; var x=p.x+16; var y=p.y-th-12; if(x+tw>820)x=p.x-tw-12; if(x<12)x=12; if(y<12)y=p.y+18; if(y+th>660)y=660-th; tip.setAttribute('transform','translate('+x+','+y+')'); }
+  function placeTipSvg(sx,sy){ if(!tip) return; var tw=300,th=68; var x=sx+12; var y=sy-th-8; if(x+tw>820)x=sx-tw-8; if(x<12)x=12; if(y<12)y=sy+20; tip.setAttribute('transform','translate('+x+','+y+')'); }
+  function bindHs(el){
+    if(!el) return; var m=el.getAttribute('data-mode'); el.style.cursor='pointer';
+    el.addEventListener('mouseenter', function(ev){ setMode(m,false); placeTip(ev.clientX,ev.clientY); });
+    el.addEventListener('mousemove', function(ev){ if(mode===m) placeTip(ev.clientX,ev.clientY); });
+    el.addEventListener('mouseleave', function(){ if(mode===m) setMode('',false); });
+    el.addEventListener('focus', function(){ setMode(m,true); try{ var bb=el.getBBox(); placeTipSvg(bb.x+bb.width/2,bb.y);}catch(e){} });
+    el.addEventListener('blur', function(){ if(mode===m) setMode('',false); });
+    el.addEventListener('click', function(ev){ setMode(m,false); if(ev.clientX) placeTip(ev.clientX,ev.clientY); });
+    el.addEventListener('keydown', function(ev){ if(ev.key==='Enter'||ev.key===' '||ev.key==='Spacebar'){ ev.preventDefault(); setMode(mode===m?'':m,true);} });
+  }
+  QA('.a8p7-hs').forEach(bindHs);
+  root.setAttribute('data-mode',''); root.setAttribute('data-tip','off'); setMode('',false);
+})();
+]]></script>
+</svg>
+    <figcaption class="a8-cap">Stepper da história natural da TCG. Passe o cursor (ou Tab + Enter) em cada painel: <span class="kw kw--indigo">tônica</span> = corpo duro; <span class="kw kw--ouro">clônica</span> = abalos de fadiga (mole-duro), sinal de que vai acabar; <span class="kw kw--cyan">pós-ictal</span> = névoa, sem orientação, minutos a horas. Os chips fixam a regra (clônicos = fadiga) e o alerta (fim do motor ≠ consciência).</figcaption>
+  </figure>
+
+  <!-- IMAGEM REAL R7 -->
+  <figure class="a8-frame">
+    <img src="./media/B07-gtcs-ictal-eeg-cureus-fig1.jpg" alt="EEG ictal de crise tônico-clônica generalizada: sequência com onset de ondas rápidas generalizadas após polispikes." loading="lazy" style="width:100%;height:auto;border-radius:12px;border:1px solid var(--border)">
+    <figcaption class="a8-cap"><b>EEG ictal — crise tônico-clônica generalizada</b>. Onset com ondas rápidas generalizadas após polispikes, evoluindo para a sequência semiológica das fases. Reconhecimento de padrão, não stock. <b>Fonte:</b> Cureus / PMC — Sasaki et al. 2023, Fig. 1 · licença <b>CC BY 4.0</b>.</figcaption>
+  </figure>
+
+  <!-- COMPONENTE-EXECUTOR: stepper 4 fases + chip fadiga + aviso truncado -->
+  <h2>Stepper das 4 fases</h2>
+  <div class="a8-stepper" role="region" aria-label="Stepper tônica clônica fim motor pós-ictal">
+    <div class="a8-step"><h4><span class="kw kw--indigo">Tônica</span></h4><p>Contração sustentada → duro</p></div>
+    <div class="a8-step"><h4><span class="kw kw--ouro">Clônica</span></h4><p>Ativa/desativa (fadiga) → abalos; sinal de que vai acabar</p></div>
+    <div class="a8-step"><h4><span class="kw kw--teal">Fim motor</span></h4><p>Movimentos param</p></div>
+    <div class="a8-step"><h4><span class="kw kw--cyan">Pós-ictal</span></h4><p>Restabelecimento (min–horas); desorientação (onde/quem/endereço)</p></div>
+  </div>
+  <p style="margin:.6rem 0 0"><span class="a8-chip a8-chip--gold">Clônicos = neurônio fadigando · crise vai acabar.</span></p>
+  <p style="margin:.4rem 0 0"><span class="a8-chip a8-chip--cyan">[FONTE-TRUNCA] — não inventar cutoff de alta nem protocolo de status</span></p>
+
+  <div class="card card--membrane" role="note" aria-label="Achado típico">
+    <h3 class="card__titulo">Achado típico</h3>
+    <p style="margin:0">Abalos clônicos <strong>não</strong> são “piora misteriosa” — são o cérebro <strong>cansando</strong>.</p>
+  </div>
+
+  <div class="card card--membrane" role="note" aria-label="Erro comum desmontado">
+    <h3 class="card__titulo">Erro comum desmontado</h3>
+    <p style="margin:0">“Parou de tremer = já está normal” — <span class="kw kw--coral">falso</span>; o pós-ictal ainda rouba orientação e identidade por minutos a horas.</p>
+  </div>
+
+  <!-- REVISÃO ATIVA -->
+  <section class="card card--membrane" aria-label="Revisão ativa">
+    <h3 class="card__titulo">Revisão ativa</h3>
+    <ol style="margin:0;padding-left:1.2rem;line-height:1.6">
+      <li>O que a fase tônica representa no neurônio motor?</li>
+      <li>Por que clônicos são sinal de que a crise vai acabar?</li>
+      <li>O que a fonte <strong>não</strong> autoriza a inventar depois do pós-ictal?</li>
+    </ol>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="card card--membrane" aria-label="Quiz final">
+    <h3 class="card__titulo">Quiz</h3>
+    <form class="quiz__q" data-quiz data-quiz-id="a8p07q1" data-gabarito="B">
+      <p class="quiz__enun"><strong>Q1.</strong> Na TCG, abalos clônicos (mole-duro-mole-duro) indicam principalmente:</p>
+      <label class="alt"><input type="radio" name="a8p07q1" value="A"><span>Início de nova doença paralela</span></label>
+      <label class="alt"><input type="radio" name="a8p07q1" value="B"><span>Neurônio em <strong>fadiga</strong> cíclica — a crise <strong>vai acabar</strong></span></label>
+      <label class="alt"><input type="radio" name="a8p07q1" value="C"><span>Que a consciência já voltou</span></label>
+      <label class="alt"><input type="radio" name="a8p07q1" value="D"><span>Que a imagem é dispensável</span></label>
+      <p style="margin:.4rem 0"><button type="button" class="btn" data-quiz-verificar>Verificar resposta</button></p>
+      <p class="quiz__live" data-quiz-live aria-live="polite"></p>
+      <div class="quiz__explicacao" data-quiz-explicacao hidden>
+        <p><strong class="kw kw--teal">Gabarito: B.</strong> A virada mecânica: clônico = <strong>ativa/desativa</strong> por esgotamento, não “outra entidade”.</p>
+        <p><strong>(A)</strong> fragmenta a história natural. <em>Por que cair:</em> trata fases como diagnósticos.</p>
+        <p><strong>(C)</strong> consciência volta no <strong>pós-ictal</strong>, não no auge clônico. <em>Por que cair:</em> confunde motor com consciência.</p>
+        <p><strong>(D)</strong> mistura eixos. <em>Por que cair:</em> recicla a primeira página.</p>
+      </div>
+    </form>
+    <form class="quiz__q" data-quiz data-quiz-id="a8p07q2" data-gabarito="B">
+      <p class="quiz__enun"><strong>Q2.</strong> Paciente parou os movimentos da TCG há 2 minutos; não sabe nome nem endereço. Interpretação:</p>
+      <label class="alt"><input type="radio" name="a8p07q2" value="A"><span>Já está recuperado — alta imediata mental</span></label>
+      <label class="alt"><input type="radio" name="a8p07q2" value="B"><span><strong>Pós-ictal</strong> — recuperação em <strong>minutos a horas</strong>; consciência ainda se restabelece</span></label>
+      <label class="alt"><input type="radio" name="a8p07q2" value="C"><span>Prova de que nunca houve crise</span></label>
+      <label class="alt"><input type="radio" name="a8p07q2" value="D"><span>Status epiléptico por definição automática neste recorte</span></label>
+      <p style="margin:.4rem 0"><button type="button" class="btn" data-quiz-verificar>Verificar resposta</button></p>
+      <p class="quiz__live" data-quiz-live aria-live="polite"></p>
+      <div class="quiz__explicacao" data-quiz-explicacao hidden>
+        <p><strong class="kw kw--teal">Gabarito: B.</strong> Fim do movimento ≠ fim do comprometimento; faixa <strong>min–horas</strong> (VFP).</p>
+        <p><strong>(A)</strong> erro de porta. <em>Por que cair:</em> alivia o motor e esquece a cognição.</p>
+        <p><strong>(C)</strong> absurdo. <em>Por que cair:</em> negacionismo.</p>
+        <p><strong>(D)</strong> status/TCG prolongada <strong>fora</strong> deste recorte (A9); a fonte <strong>trunca</strong> e não autoriza fechar status aqui. <em>Por que cair:</em> completa o truncamento com memória de protocolo.</p>
+      </div>
+    </form>
+  </section>
+
+  <div class="card card--membrane">
+    <h3 class="card__titulo">Conexão</h3>
+    <p>TCG prolongada / status / doses → fronteira <span class="kw kw--coral">A9</span> (fora deste recorte).</p>
+  </div>
+
+  <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="./p6.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Generalizada: grupamentos bilaterais</span></a><a class="next" href="../index.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Hub da trilha</span></a></nav>
+</article>
+</main>
+<footer class="rodape">Epilepsia — Aula 8 · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Aula 8 · 7 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="./index.html"><span class="menu-panel__index">01</span><span>Dois picos e o vale do adulto: quando a imagem muda o jogo</span></a></li>
+      <li><a class="menu-panel__link" href="./p2.html"><span class="menu-panel__index">02</span><span>Idoso: a cicatriz do AVE, não o AVE abrindo a crise</span></a></li>
+      <li><a class="menu-panel__link" href="./p3.html"><span class="menu-panel__index">03</span><span>Duas de quatro: o que separa focal de generalizada</span></a></li>
+      <li><a class="menu-panel__link" href="./p4.html"><span class="menu-panel__index">04</span><span>Focal: tremer e conversar — consciência e lateralidade</span></a></li>
+      <li><a class="menu-panel__link" href="./p5.html"><span class="menu-panel__index">05</span><span>Dois braços na rua — o início classifica</span></a></li>
+      <li><a class="menu-panel__link" href="./p6.html"><span class="menu-panel__index">06</span><span>Generalizada: grupamentos bilaterais, não cérebro 100%</span></a></li>
+      <li><a class="menu-panel__link" href="./p7.html" aria-current="page"><span class="menu-panel__index">07</span><span>TCG: duro → abalos → névoa pós-ictal</span></a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

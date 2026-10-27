@@ -1,0 +1,91 @@
+/* aula.css — Aula 03 "Baixa estatura" (Pediatria Bauer)
+   Camada por-aula: NÃO toca tokens/base/components globais.
+   Cobre: wrappers de SVG inline (piso + heróis self-contained), figure.med + tarja de
+   privacidade, nota-banca (blindagem SBP) + nota-valor (bônus de número de prova),
+   e a identidade por página (page-tag = eixo fisiológico verde × patológico vermelho). */
+
+/* ===== Wrapper de SVG inline (piso e heróis): frame de luxo da casa ===== */
+.figure-svg__embed { margin: var(--sp-6) 0; }
+.figure-svg__embed .figure-svg__frame { position: relative; }
+.figure-svg__embed svg { display: block; width: 100%; height: auto; }
+.figure-svg__embed figcaption { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.figure-svg__embed figcaption strong { color: var(--ink-100); }
+.figure-svg__embed .figure-svg__hint {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--teal-60); margin-top: var(--sp-2);
+}
+
+/* heróis P14/P15 self-contained: o stage só dá o palco; a interação vive no <script> do SVG */
+.hero-stage { position: relative; width: 100%; }
+.hero-stage svg { display: block; width: 100%; height: auto; }
+
+/* ===== figure.med — tarja de privacidade (criança/paciente identificável) ===== */
+.med { position: relative; }
+.med .img-wrap { position: relative; }
+.med__tarja {
+  position: absolute;
+  background: rgba(8, 18, 30, 0.96);
+  border-radius: 3px;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+}
+.med__tarja::after {
+  content: attr(data-label);
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.55); text-transform: uppercase;
+}
+/* posição da tarja por imagem (faixa sobre os olhos, sem cobrir o achado clínico) */
+.med__tarja--p1   { top: 12%; left: 30%; width: 36%; height: 4.5%; }
+.med__tarja--p3   { top: 16%; left: 16%; width: 70%; height: 6%; }
+.med__tarja--p6   { top: 20%; left: 30%; width: 34%; height: 8%; }
+.med__tarja--p6b  { top: 14%; left: 28%; width: 44%; height: 9%; }
+.med__tarja--p7   { top: 6%;  left: 36%; width: 30%; height: 4.5%; }
+.med__tarja--p8b  { top: 8%;  left: 30%; width: 46%; height: 9%; }
+.med__tarja--p9   { top: 14%; left: 30%; width: 36%; height: 5%; }
+
+/* ===== nota-banca — blindagem SBP discreta (ledger §0): secundária, recuada, escudo ===== */
+.nota-banca {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--info-blue-dim);
+  border-left: 2px solid var(--info-blue);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-banca__shield { flex-shrink: 0; width: 18px; height: 18px; color: var(--info-blue); margin-top: 2px; }
+.nota-banca__body { flex: 1; }
+.nota-banca__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--info-blue); margin-right: var(--sp-2); }
+.nota-banca p { margin: 0; font-size: var(--fs-sm); }
+.nota-banca strong { color: var(--ink-90); }
+
+/* ===== nota-valor — bônus de número de prova (ledger §0): ícone "+", acento da casa ===== */
+.nota-valor {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--teal-05);
+  border-left: 2px solid var(--teal-50);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-valor__plus { flex-shrink: 0; width: 18px; height: 18px; color: var(--teal-60); margin-top: 2px; }
+.nota-valor__body { flex: 1; }
+.nota-valor__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-60); margin-right: var(--sp-2); }
+.nota-valor p { margin: 0; font-size: var(--fs-sm); }
+.nota-valor strong { color: var(--ink-90); }
+
+/* ===== identidade por página: ponto do page-tag conforme eixo da matéria =====
+   Eixo cromático da aula = fisiológico (verde) × patológico (vermelho), com a zona
+   cinzenta em âmbar e o caso-âncora da Manu em coral:
+   case = coral (Manu/clínica), sys = âmbar (conceito/método/zona cinzenta),
+   fisio = verde (variantes normais / ferramentas), pato = coral-quente (doenças). */
+.page-tag--sys .page-tag__dot   { background: var(--warn-amber); box-shadow: 0 0 8px var(--warn-amber); }
+.page-tag--case .page-tag__dot  { background: var(--coral-60); box-shadow: 0 0 8px var(--coral-60); }
+.page-tag--fisio .page-tag__dot { background: var(--ok-green); box-shadow: 0 0 8px var(--ok-green); }
+.page-tag--pato .page-tag__dot  { background: var(--err-red); box-shadow: 0 0 8px var(--err-red); }

@@ -1,0 +1,631 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 860" width="100%" height="100%" id="a12p10h-svg-root" class="a12p10h-root" data-mode="pistas" data-theme="dark">
+  <defs>
+    <!-- Master Gradients -->
+    <linearGradient id="a12p10h-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p10h-bg-stop1, #120410)" />
+      <stop offset="50%" stop-color="var(--a12p10h-bg-stop2, #1c0819)" />
+      <stop offset="100%" stop-color="var(--a12p10h-bg-stop3, #0d020c)" />
+    </linearGradient>
+
+    <linearGradient id="a12p10h-title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p10h-tgrad-1, #ff6b9d)" />
+      <stop offset="50%" stop-color="var(--a12p10h-tgrad-2, #ffa26b)" />
+      <stop offset="100%" stop-color="var(--a12p10h-tgrad-3, #ffd166)" />
+    </linearGradient>
+
+    <linearGradient id="a12p10h-bone-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p10h-bone-1, #5c2347)" />
+      <stop offset="40%" stop-color="var(--a12p10h-bone-2, #401631)" />
+      <stop offset="100%" stop-color="var(--a12p10h-bone-3, #290a1f)" />
+    </linearGradient>
+
+    <linearGradient id="a12p10h-spine-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p10h-gold-1, #f59e0b)" />
+      <stop offset="100%" stop-color="var(--a12p10h-gold-2, #d97706)" />
+    </linearGradient>
+
+    <linearGradient id="a12p10h-tuber-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p10h-cyan-1, #06b6d4)" />
+      <stop offset="100%" stop-color="var(--a12p10h-cyan-2, #0284c7)" />
+    </linearGradient>
+
+    <linearGradient id="a12p10h-lig-espinhal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p10h-lig1-a, #ec4899)" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="var(--a12p10h-lig1-b, #f59e0b)" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="a12p10h-lig-tuberal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p10h-lig2-a, #8b5cf6)" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="var(--a12p10h-lig2-b, #06b6d4)" stop-opacity="0.85" />
+    </linearGradient>
+
+    <filter id="a12p10h-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="a12p10h-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <!-- Markers for Dimension Arrows -->
+    <marker id="a12p10h-arrow-gold-start" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M 7 1 L 1 4 L 7 7 Z" fill="var(--a12p10h-gold-1, #f59e0b)" />
+    </marker>
+    <marker id="a12p10h-arrow-gold-end" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="var(--a12p10h-gold-1, #f59e0b)" />
+    </marker>
+    <marker id="a12p10h-arrow-cyan-start" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M 7 1 L 1 4 L 7 7 Z" fill="var(--a12p10h-cyan-1, #06b6d4)" />
+    </marker>
+    <marker id="a12p10h-arrow-cyan-end" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="var(--a12p10h-cyan-1, #06b6d4)" />
+    </marker>
+  </defs>
+
+  <style type="text/css">
+    /* Theme tokens with fallback hex values */
+    .a12p10h-root {
+      --a12p10h-bg-main: #120410;
+      --a12p10h-bg-card: rgba(30, 10, 26, 0.85);
+      --a12p10h-bg-card-hover: rgba(45, 14, 38, 0.95);
+      --a12p10h-border-card: rgba(140, 45, 95, 0.35);
+      --a12p10h-border-active: #ff548e;
+      --a12p10h-txt-main: #ffffff;
+      --a12p10h-txt-sub: #dfb2d0;
+      --a12p10h-txt-muted: #9c6c8d;
+      --a12p10h-bone-fill: #3b142d;
+      --a12p10h-bone-stroke: #803060;
+      --a12p10h-spine-color: #f59e0b;
+      --a12p10h-tuber-color: #06b6d4;
+      --a12p10h-delee-color: #10b981;
+      --a12p10h-pudendo-color: #ef4444;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .a12p10h-root[data-theme="light"] {
+      --a12p10h-bg-main: #fcf4f7;
+      --a12p10h-bg-card: rgba(255, 255, 255, 0.92);
+      --a12p10h-bg-card-hover: #ffffff;
+      --a12p10h-border-card: rgba(200, 100, 150, 0.3);
+      --a12p10h-border-active: #d91b5c;
+      --a12p10h-txt-main: #2b0b20;
+      --a12p10h-txt-sub: #592044;
+      --a12p10h-txt-muted: #8c4c74;
+      --a12p10h-bone-fill: #f3dbe8;
+      --a12p10h-bone-stroke: #b3568b;
+      --a12p10h-spine-color: #b45309;
+      --a12p10h-tuber-color: #0284c7;
+      --a12p10h-delee-color: #047857;
+      --a12p10h-pudendo-color: #dc2626;
+    }
+
+    /* Container Background */
+    #a12p10h-bg {
+      fill: var(--a12p10h-bg-main, #120410);
+      transition: fill 0.3s ease;
+    }
+
+    /* UI Cards */
+    .a12p10h-card-bg {
+      fill: var(--a12p10h-bg-card, rgba(30, 10, 26, 0.85));
+      stroke: var(--a12p10h-border-card, rgba(140, 45, 95, 0.35));
+      stroke-width: 1.5;
+      rx: 12;
+      transition: all 0.3s ease;
+    }
+
+    /* Typography */
+    .a12p10h-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      fill: url(#a12p10h-title-grad);
+    }
+
+    .a12p10h-subtitle {
+      font-size: 13px;
+      font-weight: 400;
+      fill: var(--a12p10h-txt-sub, #dfb2d0);
+    }
+
+    .a12p10h-card-header {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .a12p10h-body-txt {
+      font-size: 12px;
+      fill: var(--a12p10h-txt-sub, #dfb2d0);
+      line-height: 1.4;
+    }
+
+    .a12p10h-label-bold {
+      font-weight: 700;
+      fill: var(--a12p10h-txt-main, #ffffff);
+    }
+
+    /* Toggle Button */
+    .a12p10h-btn {
+      cursor: pointer;
+      user-select: none;
+    }
+    .a12p10h-btn-rect {
+      fill: var(--a12p10h-bg-card, rgba(40, 15, 35, 0.9));
+      stroke: var(--a12p10h-border-active, #ff548e);
+      stroke-width: 1.5;
+      rx: 20;
+      transition: all 0.25s ease;
+    }
+    .a12p10h-btn:hover .a12p10h-btn-rect {
+      fill: var(--a12p10h-bg-card-hover, #ffffff);
+      filter: drop-shadow(0 0 8px rgba(255, 84, 142, 0.4));
+    }
+    .a12p10h-btn-txt {
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--a12p10h-txt-main, #ffffff);
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+
+    /* Bone Anatomy Drawing */
+    .a12p10h-bone-path {
+      fill: url(#a12p10h-bone-grad);
+      stroke: var(--a12p10h-bone-stroke, #803060);
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+      transition: all 0.3s ease;
+    }
+
+    .a12p10h-bone-subline {
+      fill: none;
+      stroke: var(--a12p10h-bone-stroke, #803060);
+      stroke-width: 1.2;
+      stroke-dasharray: 3 3;
+      opacity: 0.6;
+    }
+
+    /* Interactive Features &amp; Hotspots */
+    .a12p10h-feature {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .a12p10h-spine-shape {
+      fill: url(#a12p10h-spine-glow);
+      stroke: #ffffff;
+      stroke-width: 2;
+      transition: all 0.3s ease;
+    }
+
+    .a12p10h-tuber-shape {
+      fill: url(#a12p10h-tuber-glow);
+      stroke: #ffffff;
+      stroke-width: 2;
+      transition: all 0.3s ease;
+    }
+
+    /* Pulse / Highlight Effects */
+    .a12p10h-feature:hover .a12p10h-spine-shape,
+    .a12p10h-feature.a12p10h-active .a12p10h-spine-shape {
+      filter: url(#a12p10h-glow);
+      stroke-width: 3.5;
+    }
+
+    .a12p10h-feature:hover .a12p10h-tuber-shape,
+    .a12p10h-feature.a12p10h-active .a12p10h-tuber-shape {
+      filter: url(#a12p10h-glow);
+      stroke-width: 3.5;
+    }
+
+    /* Target Hotspot Rings */
+    .a12p10h-target-ring {
+      fill: none;
+      stroke-width: 2;
+      stroke-dasharray: 4 4;
+      opacity: 0.7;
+    }
+
+    /* Feature Cards on Right Panel */
+    .a12p10h-info-card {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .a12p10h-info-card:hover {
+      transform: translateX(-4px);
+    }
+    .a12p10h-info-card.a12p10h-active .a12p10h-card-bg {
+      stroke: var(--a12p10h-border-active, #ff548e);
+      stroke-width: 2.5;
+      fill: var(--a12p10h-bg-card-hover, rgba(50, 16, 42, 0.95));
+      filter: drop-shadow(0 4px 15px rgba(230, 57, 115, 0.25));
+    }
+
+    /* Mode Dependent Visibility */
+    .a12p10h-root[data-mode="quiz"] .a12p10h-anatomy-label {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .a12p10h-root[data-mode="quiz"] .a12p10h-quiz-prompt {
+      opacity: 1;
+    }
+    .a12p10h-quiz-prompt {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Badges &amp; Pills */
+    .a12p10h-badge {
+      rx: 6;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .a12p10h-badge-gold {
+      fill: rgba(245, 158, 11, 0.2);
+      stroke: #f59e0b;
+      stroke-width: 1;
+    }
+    .a12p10h-badge-cyan {
+      fill: rgba(6, 182, 212, 0.2);
+      stroke: #06b6d4;
+      stroke-width: 1;
+    }
+
+    /* Lines &amp; Arrows */
+    .a12p10h-dim-line-gold {
+      stroke: var(--a12p10h-spine-color, #f59e0b);
+      stroke-width: 2;
+      marker-start: url(#a12p10h-arrow-gold-start);
+      marker-end: url(#a12p10h-arrow-gold-end);
+    }
+    .a12p10h-dim-line-cyan {
+      stroke: var(--a12p10h-tuber-color, #06b6d4);
+      stroke-width: 2;
+      marker-start: url(#a12p10h-arrow-cyan-start);
+      marker-end: url(#a12p10h-arrow-cyan-end);
+    }
+
+    /* De Lee &amp; Pudendo Lines */
+    .a12p10h-delee-line {
+      stroke: var(--a12p10h-delee-color, #10b981);
+      stroke-width: 2.5;
+      stroke-dasharray: 6 4;
+    }
+    .a12p10h-pudendo-nerve {
+      fill: none;
+      stroke: var(--a12p10h-pudendo-color, #ef4444);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 4 3;
+      filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.6));
+    }
+  </style>
+
+  <!-- Background Rect -->
+  <rect id="a12p10h-bg" width="1280" height="860" rx="16" />
+
+  <!-- TOP HEADER CONTAINER -->
+  <g id="a12p10h-header" transform="translate(30, 24)">
+    <text x="0" y="24" class="a12p10h-title">PELVIMETRIA OBSTÉTRICA: BICO E BLOCO</text>
+    <text x="0" y="48" class="a12p10h-subtitle">
+      <tspan x="0" dy="0">Diferenciação tátil-visual dos pontos de referência no assoalho pélvico. A Espinha Isquiática (bico) marca o Estreito Médio</tspan>
+      <tspan x="0" dy="18">(Plano 0 de De Lee), enquanto a Tuberosidade Isquiática (bloco) delimita o Estreito Inferior (saída da bacia).</tspan>
+    </text>
+
+    <!-- MODE TOGGLE BUTTON -->
+    <g id="a12p10h-mode-toggle" class="a12p10h-btn" transform="translate(980, 8)" role="button" aria-label="Alternar modo de estudo" tabindex="0">
+      <rect class="a12p10h-btn-rect" x="0" y="0" width="240" height="42" />
+      <text id="a12p10h-toggle-txt" class="a12p10h-btn-txt" x="120" y="21">MODO: COM PISTAS (PADRÃO)</text>
+    </g>
+  </g>
+
+  <!-- MAIN ANATOMY STAGE (LEFT PANEL) -->
+  <g id="a12p10h-stage" transform="translate(30, 115)">
+    <!-- Stage Card Background -->
+    <rect class="a12p10h-card-bg" x="0" y="0" width="770" height="715" />
+
+    <!-- Quiz Banner Prompt (Visible in Quiz mode) -->
+    <g id="a12p10h-quiz-banner" class="a12p10h-quiz-prompt" transform="translate(20, 20)">
+      <rect x="0" y="0" width="730" height="38" rx="8" fill="rgba(245, 158, 11, 0.15)" stroke="#f59e0b" stroke-width="1.5" />
+      <text x="365" y="23" font-size="13" font-weight="700" fill="#fbbf24" text-anchor="middle">
+        Modo Treine o Olho: Toque nas estruturas anatômicas para revelar a forma, estreito e medida.
+      </text>
+    </g>
+
+    <!-- ANATOMICAL PELVIS DRAWING (Medial / Posterolateral View of Hemipelvis) -->
+    <g id="a12p10h-pelvis-art" transform="translate(60, 40)">
+      <!-- Background Grid/Radial Accent -->
+      <circle cx="340" cy="320" r="260" fill="rgba(230, 57, 115, 0.03)" stroke="rgba(230,57,115,0.08)" stroke-width="1" />
+
+      <!-- SACRUM &amp; COCCYX (Posterior wall on the right) -->
+      <path id="a12p10h-sacrum" class="a12p10h-bone-path" d="M 490,120 C 520,150 540,200 545,260 C 550,320 540,380 520,430 C 505,465 485,490 470,510 C 460,522 455,535 450,545 C 445,535 440,520 442,505 C 455,480 470,450 480,410 C 495,350 500,290 492,230 C 485,180 470,145 450,130 Z" />
+      <!-- Sacral Foramina accents -->
+      <g opacity="0.4">
+        <ellipse cx="510" cy="210" rx="8" ry="12" fill="#120410" stroke="#803060" />
+        <ellipse cx="512" cy="270" rx="8" ry="12" fill="#120410" stroke="#803060" />
+        <ellipse cx="505" cy="330" rx="7" ry="11" fill="#120410" stroke="#803060" />
+        <ellipse cx="492" cy="390" rx="6" ry="9" fill="#120410" stroke="#803060" />
+      </g>
+
+      <!-- ILIUM, ISCHIUM, PUBIS (Main Hemipelvis Structure) -->
+      <path id="a12p10h-hemipelvis" class="a12p10h-bone-path" d="M 220,110 C 280,80 370,85 440,115 C 460,125 450,150 430,175 C 390,225 355,270 345,300 C 335,330 345,350 370,360 C 410,375 435,395 440,410 C 445,415 450,425 462,430 C 475,435 470,442 450,448 C 438,452 420,460 410,480 C 395,510 385,550 385,580 C 385,620 375,645 350,650 C 310,655 270,640 260,600 C 255,580 270,555 295,540 C 315,530 330,510 320,485 C 305,450 265,410 240,380 C 200,330 170,250 185,190 C 195,150 205,125 220,110 Z" />
+
+      <!-- ACETABULUM &amp; ISCHIOPUBIC RAMUS DETAILS -->
+      <path class="a12p10h-bone-subline" d="M 270,330 C 310,330 330,370 310,410 C 280,440 240,410 250,360 Z" />
+      <path class="a12p10h-bone-subline" d="M 440,115 C 380,180 330,280 320,380" />
+      <path class="a12p10h-bone-subline" d="M 295,540 C 340,550 370,580 375,620" />
+
+      <!-- LIGAMENTO SACROESPINHAL (Triangular band sacrum to ischial spine) -->
+      <path id="a12p10h-lig-sacroespinhal" class="a12p10h-feature" d="M 480,410 L 462,430 L 472,444 L 450,500 Z" fill="url(#a12p10h-lig-espinhal)" stroke="#f59e0b" stroke-width="1.5" opacity="0.85" role="button" aria-label="Ligamento Sacroespinhal" tabindex="0">
+        <title>Ligamento Sacroespinhal (conecta sacro à espinha isquiática)</title>
+      </path>
+
+      <!-- LIGAMENTO SACROTUBERAL (Long thick band sacrum to ischial tuberosity) -->
+      <path id="a12p10h-lig-sacrotuberal" class="a12p10h-feature" d="M 490,260 C 510,340 480,480 350,650 C 330,645 340,620 460,450 C 485,380 475,300 465,240 Z" fill="url(#a12p10h-lig-tuberal)" stroke="#06b6d4" stroke-width="1.5" opacity="0.8" role="button" aria-label="Ligamento Sacrotuberal" tabindex="0">
+        <title>Ligamento Sacrotuberal (conecta sacro à tuberosidade isquiática)</title>
+      </path>
+
+      <!-- NERVO PUDENDO (Red dashed nerve curving behind spine) -->
+      <path id="a12p10h-pudendo-path" class="a12p10h-pudendo-nerve" d="M 485,360 C 475,400 470,425 458,432 C 445,440 435,455 425,490" />
+      <!-- Pudendo Nerve Glow / Target indicator -->
+      <circle cx="458" cy="432" r="6" fill="#ef4444" filter="url(#a12p10h-glow)" />
+
+      <!-- DE LEE PLANO 0 (HORIZONTAL REFERENCE LINE across spine) -->
+      <line id="a12p10h-delee-line-elem" class="a12p10h-delee-line" x1="120" y1="432" x2="560" y2="432" />
+      <g transform="translate(130, 410)">
+        <rect x="0" y="0" width="135" height="20" rx="4" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="1" />
+        <text x="67.5" y="14" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">PLANO 0 DE DE LEE</text>
+      </g>
+
+      <!-- BIESPINHAL DIMENSION LINE (10.5 cm) -->
+      <g transform="translate(0, 0)" class="a12p10h-anatomy-label">
+        <line class="a12p10h-dim-line-gold" x1="280" y1="390" x2="455" y2="428" />
+        <rect x="330" y="388" width="90" height="22" rx="4" fill="rgba(245, 158, 11, 0.25)" stroke="#f59e0b" stroke-width="1" />
+        <text x="375" y="403" font-size="11" font-weight="800" fill="#fbbf24" text-anchor="middle">10,5 cm (Estreito Médio)</text>
+      </g>
+
+      <!-- BITUBEROSO DIMENSION LINE (11.0 cm) -->
+      <g transform="translate(0, 0)" class="a12p10h-anatomy-label">
+        <line class="a12p10h-dim-line-cyan" x1="200" y1="630" x2="330" y2="630" />
+        <rect x="220" y="640" width="90" height="22" rx="4" fill="rgba(6, 182, 212, 0.25)" stroke="#06b6d4" stroke-width="1" />
+        <text x="265" y="655" font-size="11" font-weight="800" fill="#38bdf8" text-anchor="middle">11,0 cm (Saída)</text>
+      </g>
+
+      <!-- HIGHLIGHTED SALIENCY 1: ESPINHA ISQUIÁTICA (BICO) -->
+      <g id="a12p10h-feature-espinha" class="a12p10h-feature a12p10h-active" transform="translate(462, 430)" role="button" aria-label="Espinha Isquiática - Bico" tabindex="0">
+        <!-- Sharp Beak Shape -->
+        <path class="a12p10h-spine-shape" d="M 0,0 L -22,-2 L 5,16 Z" />
+        <circle class="a12p10h-target-ring" cx="-6" cy="6" r="24" stroke="#f59e0b" />
+        <circle cx="-6" cy="6" r="5" fill="#ffffff" />
+
+        <!-- Pointer &amp; Label (Visible in Pistas mode) -->
+        <g class="a12p10h-anatomy-label" transform="translate(30, -30)">
+          <path d="M -25,25 L -5,5 L 80,5" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+          <rect x="80" y="-12" width="150" height="34" rx="6" fill="rgba(30, 10, 26, 0.9)" stroke="#f59e0b" stroke-width="1.5" />
+          <text x="90" y="2" font-size="12" font-weight="800" fill="#fbbf24">ESPINHA ISQUIÁTICA</text>
+          <text x="90" y="16" font-size="10" font-weight="700" fill="#dfb2d0">"BICO" (Interno / Agudo)</text>
+        </g>
+      </g>
+
+      <!-- HIGHLIGHTED SALIENCY 2: TUBEROSIDADE ISQUIÁTICA (BLOCO) -->
+      <g id="a12p10h-feature-tuberosidade" class="a12p10h-feature" transform="translate(330, 630)" role="button" aria-label="Tuberosidade Isquiática - Bloco" tabindex="0">
+        <!-- Blunt Rounded Mass Shape -->
+        <path class="a12p10h-tuber-shape" d="M -30,-20 C 0,-30 40,-10 35,15 C 30,30 -10,30 -30,10 Z" />
+        <circle class="a12p10h-target-ring" cx="2" cy="0" r="32" stroke="#06b6d4" />
+        <circle cx="2" cy="0" r="6" fill="#ffffff" />
+
+        <!-- Pointer &amp; Label (Visible in Pistas mode) -->
+        <g class="a12p10h-anatomy-label" transform="translate(-160, 30)">
+          <path d="M 140,-20 L 110,10 L 0,10" fill="none" stroke="#06b6d4" stroke-width="1.5" />
+          <rect x="-10" y="-8" width="155" height="34" rx="6" fill="rgba(30, 10, 26, 0.9)" stroke="#06b6d4" stroke-width="1.5" />
+          <text x="0" y="6" font-size="12" font-weight="800" fill="#38bdf8">TUBEROSIDADE ISQUIÁTICA</text>
+          <text x="0" y="20" font-size="10" font-weight="700" fill="#dfb2d0">"BLOCO" (Rombo / Inferior)</text>
+        </g>
+      </g>
+
+      <!-- ANATOMY LABELS FOR LIGAMENTS &amp; NERVE -->
+      <g class="a12p10h-anatomy-label" transform="translate(480, 310)">
+        <line x1="0" y1="0" x2="-40" y2="40" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="2 2" />
+        <rect x="-160" y="-12" width="155" height="24" rx="4" fill="rgba(20, 10, 30, 0.85)" stroke="#8b5cf6" stroke-width="1" />
+        <text x="-82.5" y="4" font-size="10" font-weight="700" fill="#c084fc" text-anchor="middle">Ligamento Sacrotuberal</text>
+      </g>
+
+      <g class="a12p10h-anatomy-label" transform="translate(540, 460)">
+        <line x1="-30" y1="-15" x2="-75" y2="-25" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 2" />
+        <rect x="-25" y="-26" width="145" height="24" rx="4" fill="rgba(35, 10, 20, 0.85)" stroke="#ef4444" stroke-width="1" />
+        <text x="47.5" y="-10" font-size="10" font-weight="700" fill="#f87171" text-anchor="middle">Nervo Pudendo (Bloqueio)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT SIDE INTERACTIVE READOUT PANEL -->
+  <g id="a12p10h-right-panel" transform="translate(820, 115)">
+
+    <!-- CARD 1: ESPINHA ISQUIÁTICA (BICO) -->
+    <g id="a12p10h-card-espinha" class="a12p10h-info-card a12p10h-active" transform="translate(0, 0)" role="button" aria-label="Ver detalhes da Espinha Isquiática" tabindex="0">
+      <rect class="a12p10h-card-bg" x="0" y="0" width="430" height="260" />
+      <rect class="a12p10h-badge a12p10h-badge-gold" x="16" y="16" width="120" height="22" />
+      <text x="76" y="31" font-size="11" font-weight="800" fill="#f59e0b" text-anchor="middle">ESTREITO MÉDIO</text>
+
+      <text x="150" y="32" class="a12p10h-card-header" fill="#f59e0b">ESPINHA ISQUIÁTICA (BICO)</text>
+
+      <g transform="translate(16, 52)">
+        <text x="0" y="14" class="a12p10h-body-txt">
+          <tspan class="a12p10h-label-bold" fill="#fbbf24">• Forma &amp; Posição:</tspan> Saliente agudo (bico), pequeno, voltado para dentro e acima.
+        </text>
+        <text x="0" y="34" class="a12p10h-body-txt">
+          <tspan class="a12p10h-label-bold" fill="#fbbf24">• Medida Crítica:</tspan> Diâmetro Biespinhal = <tspan font-weight="800" fill="#f59e0b">10,5 cm</tspan> (menor diâmetro da bacia).
+        </text>
+
+        <!-- 4 Anchored Functions Box -->
+        <rect x="0" y="48" width="398" height="142" rx="8" fill="rgba(245, 158, 11, 0.08)" stroke="rgba(245, 158, 11, 0.25)" stroke-width="1" />
+        <text x="12" y="66" font-size="11" font-weight="800" fill="#f59e0b">4 FUNÇÕES DA ESPINHA ISQUIÁTICA:</text>
+
+        <text x="12" y="86" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          <tspan font-weight="700" fill="#34d399">1. Zero da Descida:</tspan> Marco anatômico do Plano 0 de De Lee.
+        </text>
+        <text x="12" y="104" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          <tspan font-weight="700" fill="#fbbf24">2. Estreito Médio:</tspan> Diâmetro biespinhal de 10,5 cm delimita a maior gargalo.
+        </text>
+        <text x="12" y="122" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          <tspan font-weight="700" fill="#f87171">3. Bloqueio do Pudendo:</tspan> Referência palpatória p/ anestesia perineal.
+        </text>
+        <text x="12" y="140" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          <tspan font-weight="700" fill="#38bdf8">4. Proeminência:</tspan> Transição entre estreito superior e inferior.
+        </text>
+      </g>
+    </g>
+
+    <!-- CARD 2: TUBEROSIDADE ISQUIÁTICA (BLOCO) -->
+    <g id="a12p10h-card-tuberosidade" class="a12p10h-info-card" transform="translate(0, 275)" role="button" aria-label="Ver detalhes da Tuberosidade Isquiática" tabindex="0">
+      <rect class="a12p10h-card-bg" x="0" y="0" width="430" height="230" />
+      <rect class="a12p10h-badge a12p10h-badge-cyan" x="16" y="16" width="120" height="22" />
+      <text x="76" y="31" font-size="11" font-weight="800" fill="#06b6d4" text-anchor="middle">ESTREITO INFERIOR</text>
+
+      <text x="150" y="32" class="a12p10h-card-header" fill="#06b6d4">TUBEROSIDADE ISQUIÁTICA (BLOCO)</text>
+
+      <g transform="translate(16, 52)">
+        <text x="0" y="14" class="a12p10h-body-txt">
+          <tspan class="a12p10h-label-bold" fill="#38bdf8">• Forma &amp; Posição:</tspan> Massa romba (bloco), espessa, rugosa, inferior e posterior.
+        </text>
+        <text x="0" y="34" class="a12p10h-body-txt">
+          <tspan class="a12p10h-label-bold" fill="#38bdf8">• Medida Crítica:</tspan> Diâmetro Bituberoso = <tspan font-weight="800" fill="#06b6d4">11,0 cm</tspan> (saída do canal).
+        </text>
+
+        <!-- Functions Box -->
+        <rect x="0" y="48" width="398" height="114" rx="8" fill="rgba(6, 182, 212, 0.08)" stroke="rgba(6, 182, 212, 0.25)" stroke-width="1" />
+        <text x="12" y="66" font-size="11" font-weight="800" fill="#06b6d4">FUNÇÃO &amp; CLÍNICA DA TUBEROSIDADE:</text>
+
+        <text x="12" y="86" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          <tspan font-weight="700" fill="#38bdf8">1. Saída da Bacia:</tspan> Delimita o diâmetro bituberoso no estreito inferior.
+        </text>
+        <text x="12" y="104" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          <tspan font-weight="700" fill="#38bdf8">2. Inserção Ligamentar:</tspan> Ancoragem do ligamento sacrotuberal.
+        </text>
+        <text x="12" y="122" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          <tspan font-weight="700" fill="#38bdf8">3. Pelvimetria Externa:</tspan> Palpável nas nádegas (regra do punho de Thoms).
+        </text>
+      </g>
+    </g>
+
+    <!-- CARD 3: GOLDEN RULE MNEMONIC (PAINEL ANCORADO DE REGRAS) -->
+    <g id="a12p10h-card-rule" transform="translate(0, 520)">
+      <rect class="a12p10h-card-bg" x="0" y="0" width="430" height="195" stroke="#f59e0b" stroke-width="2" />
+      
+      <!-- Gold Badge Header -->
+      <rect x="16" y="16" width="398" height="28" rx="6" fill="rgba(245, 158, 11, 0.2)" stroke="#f59e0b" stroke-width="1" />
+      <text x="215" y="34" font-size="12" font-weight="800" fill="#fbbf24" text-anchor="middle">REGRA DE OURO DA PELVIMETRIA</text>
+
+      <g transform="translate(24, 62)">
+        <text x="0" y="16" font-size="14" font-weight="800" fill="#ffffff">
+          "ESPINHA É MEIO <tspan fill="#f59e0b">(10,5 cm · Plano 0)</tspan>"
+        </text>
+        <text x="0" y="38" font-size="14" font-weight="800" fill="#ffffff">
+          "TUBEROSIDADE É SAÍDA <tspan fill="#06b6d4">(11,0 cm · Bituberoso)</tspan>"
+        </text>
+
+        <path d="M 0,54 L 382,54" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+
+        <text x="0" y="74" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          <tspan font-weight="700" fill="#34d399">Dica de Prova:</tspan> Na De Lee, a espinha é a referência ZERO.
+        </text>
+        <text x="0" y="92" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          Acima da espinha = valores negativos (-1 a -5 cm).
+        </text>
+        <text x="0" y="110" font-size="11" fill="var(--a12p10h-txt-sub, #dfb2d0)">
+          Abaixo da espinha = valores positivos (+1 a +5 cm).
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE INLINE JAVASCRIPT ENGINE (SELF-CONTAINED) -->
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function() {
+      'use strict';
+
+      var root = document.getElementById('a12p10h-svg-root');
+      var toggleBtn = document.getElementById('a12p10h-mode-toggle');
+      var toggleTxt = document.getElementById('a12p10h-toggle-txt');
+
+      var featEspinha = document.getElementById('a12p10h-feature-espinha');
+      var featTuberosidade = document.getElementById('a12p10h-feature-tuberosidade');
+      var cardEspinha = document.getElementById('a12p10h-card-espinha');
+      var cardTuberosidade = document.getElementById('a12p10h-card-tuberosidade');
+
+      var currentMode = 'pistas';
+
+      function toggleMode() {
+        if (currentMode === 'pistas') {
+          currentMode = 'quiz';
+          root.setAttribute('data-mode', 'quiz');
+          toggleTxt.textContent = 'MODO: TREINE O OLHO (SEM PISTAS)';
+        } else {
+          currentMode = 'pistas';
+          root.setAttribute('data-mode', 'pistas');
+          toggleTxt.textContent = 'MODO: COM PISTAS (PADRÃO)';
+        }
+      }
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', toggleMode);
+        toggleBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMode();
+          }
+        });
+      }
+
+      function selectFeature(target) {
+        featEspinha.classList.remove('a12p10h-active');
+        featTuberosidade.classList.remove('a12p10h-active');
+        cardEspinha.classList.remove('a12p10h-active');
+        cardTuberosidade.classList.remove('a12p10h-active');
+
+        if (target === 'espinha') {
+          featEspinha.classList.add('a12p10h-active');
+          cardEspinha.classList.add('a12p10h-active');
+        } else if (target === 'tuberosidade') {
+          featTuberosidade.classList.add('a12p10h-active');
+          cardTuberosidade.classList.add('a12p10h-active');
+        }
+      }
+
+      if (featEspinha) featEspinha.addEventListener('click', function() { selectFeature('espinha'); });
+      if (cardEspinha) cardEspinha.addEventListener('click', function() { selectFeature('espinha'); });
+
+      if (featTuberosidade) featTuberosidade.addEventListener('click', function() { selectFeature('tuberosidade'); });
+      if (cardTuberosidade) cardTuberosidade.addEventListener('click', function() { selectFeature('tuberosidade'); });
+
+      [featEspinha, cardEspinha].forEach(function(el) {
+        if (el) {
+          el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              selectFeature('espinha');
+            }
+          });
+        }
+      });
+
+      [featTuberosidade, cardTuberosidade].forEach(function(el) {
+        if (el) {
+          el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              selectFeature('tuberosidade');
+            }
+          });
+        }
+      });
+
+    })();
+    /*]]>*/
+  </script>
+</svg>

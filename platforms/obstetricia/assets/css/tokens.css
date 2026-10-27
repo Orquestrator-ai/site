@@ -1,0 +1,153 @@
+/* ============================================================
+   Design tokens — Plataforma Ginecologia e Obstetrícia (Bauer)
+   Assinatura GO: escuro CLAREADO cinza-vinho + rosa neon.
+   Modo escuro é o PRINCIPAL (onde vai o capricho). Claro sóbrio opt-in.
+   Nomes --bg-0/--wine/--rose/--kw-* são compartilhados com os SVGs
+   (piso auto-escopa os seus; heróis herdam estes = tema-adaptativos).
+   ============================================================ */
+
+:root {
+  /* --- Fundo: escuro clareado cinza-vinho (nunca preto puro) --- */
+  --bg-0: #171219;            /* fundo base — carvão-vinho profundo */
+  --bg-1: #211a28;            /* card padrão */
+  --bg-2: #2b2033;            /* card sobre card */
+  --bg-glass: rgba(33, 26, 40, 0.60);
+  --bg-glass-strong: rgba(21, 16, 26, 0.86);
+
+  /* --- Tinta (texto) off-white quente → cinza-rosado --- */
+  --ink-100: #faf4f8;
+  --ink-90:  #ecdde6;
+  --ink-70:  #b3a2ad;
+  --ink-50:  #85748020;    /* placeholder (sobrescrito abaixo) */
+  --ink-50:  #877482;
+  --ink-30:  #5a4d57;
+
+  /* --- Acentos da casa --- */
+  --wine: #c0356a;            /* vinho brilhante (acento profundo) */
+  --wine-soft: rgba(192, 53, 106, 0.16);
+  --rose: #ff5c8a;            /* rosa neon (acento primário / glow) */
+  --rose-hi: #ff87ab;         /* rosa claro p/ destaque tipográfico */
+  --rose-soft: rgba(255, 92, 138, 0.15);
+  --crack: rgba(255, 108, 158, 0.85);   /* rachaduras neon rosa */
+
+  /* --- Grade de fundo (dot-grid) + grade dos heróis --- */
+  --grid-dot: rgba(255, 108, 158, 0.30);
+  --grid-gap: 24px;
+  --grid: rgba(255, 111, 165, 0.10);
+  --grid2: rgba(255, 111, 165, 0.20);
+
+  /* --- Cor semântica das palavras-chave (§12) — carrega significado --- */
+  --kw-red:   #ff5b70;        /* sangue / perigo / asfixia */
+  --kw-red-dim: rgba(255, 91, 112, 0.16);
+  --kw-amber: #ffc24a;        /* alarme / pegadinha */
+  --kw-amber-dim: rgba(255, 194, 74, 0.16);
+  --kw-green: #37d6a0;        /* tranquilizador / normal / conduta que acalma */
+  --kw-green-dim: rgba(55, 214, 160, 0.15);
+  --kw-white: #ffffff;        /* apoio neutro */
+
+  /* --- Bordas / divisórias --- */
+  --border-soft: rgba(250, 244, 248, 0.09);
+  --border-mid:  rgba(250, 244, 248, 0.16);
+  --border-strong: rgba(250, 244, 248, 0.30);
+
+  /* --- Sombras (com glow rosa) --- */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.52);
+  --shadow-lg: 0 20px 52px rgba(0,0,0,0.62);
+  --glow-rose: 0 0 0 1px rgba(255,92,138,0.28), 0 10px 40px rgba(192,53,106,0.50);
+  --glow-white: 0 0 0 1px rgba(255,255,255,0.10), 0 10px 34px rgba(255,255,255,0.10);
+
+  /* --- Tipografia --- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-serif: ui-serif, "Lora", "Iowan Old Style", Georgia, serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-xs: clamp(0.74rem, 0.72rem + 0.1vw, 0.78rem);
+  --fs-sm: clamp(0.86rem, 0.83rem + 0.15vw, 0.92rem);
+  --fs-md: clamp(1.00rem, 0.97rem + 0.2vw, 1.09rem);
+  --fs-lg: clamp(1.12rem, 1.05rem + 0.4vw, 1.30rem);
+  --fs-xl: clamp(1.36rem, 1.20rem + 0.7vw, 1.64rem);
+  --fs-2xl: clamp(1.72rem, 1.45rem + 1.1vw, 2.24rem);
+  --fs-3xl: clamp(2.15rem, 1.80rem + 1.7vw, 2.9rem);
+  --fs-display: clamp(2.4rem, 4vw + 1rem, 3.9rem);
+
+  --lh-tight: 1.16;
+  --lh-snug:  1.34;
+  --lh-base:  1.62;    /* corpo respira (§4.1 margens/respiro) */
+  --lh-loose: 1.74;
+
+  /* --- Raios --- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  /* --- Espaçamento --- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 72px; --sp-9: 96px;
+
+  /* --- Container (margens MAIORES — §4.1.3) --- */
+  --container-max: 1140px;
+  --container-text: 68ch;     /* coluna de leitura folgada */
+  --reading-pad: clamp(20px, 5vw, 64px);   /* respiro lateral generoso */
+
+  /* --- Z-index canônico --- */
+  --z-content: 1;
+  --z-sticky: 20;
+  --z-banner: 50;
+  --z-menu: 100;
+  --z-modal: 200;
+  --z-install: 300;
+  --z-update: 400;
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms; --dur-mid: 260ms; --dur-slow: 460ms;
+}
+
+/* === Tema claro (opt-in) — claro iluminado com o mesmo rosa === */
+:root[data-theme="light"] {
+  --bg-0: #f7f0f4;
+  --bg-1: #ffffff;
+  --bg-2: #f2e7ee;
+  --bg-glass: rgba(255, 255, 255, 0.74);
+  --bg-glass-strong: rgba(255, 255, 255, 0.93);
+
+  --ink-100: #221019;
+  --ink-90:  #3a2531;
+  --ink-70:  #6a5560;
+  --ink-50:  #927b87;
+  --ink-30:  #c0aab5;
+
+  --wine: #b02a5f;
+  --wine-soft: rgba(176, 42, 95, 0.12);
+  --rose: #d63b78;
+  --rose-hi: #b02a5f;
+  --rose-soft: rgba(214, 59, 120, 0.14);
+  --crack: rgba(214, 59, 120, 0.55);
+
+  --grid-dot: rgba(176, 42, 95, 0.16);
+  --grid: rgba(176, 42, 95, 0.10);
+  --grid2: rgba(176, 42, 95, 0.18);
+
+  --kw-red:   #cf3450;
+  --kw-red-dim: rgba(207, 52, 80, 0.12);
+  --kw-amber: #a8770f;
+  --kw-amber-dim: rgba(168, 119, 15, 0.13);
+  --kw-green: #17976a;
+  --kw-green-dim: rgba(23, 151, 106, 0.13);
+  --kw-white: #221019;
+
+  --border-soft: rgba(34, 16, 25, 0.10);
+  --border-mid:  rgba(34, 16, 25, 0.18);
+  --border-strong: rgba(34, 16, 25, 0.30);
+
+  --glow-rose: 0 0 0 1px rgba(214,59,120,0.18), 0 10px 34px rgba(214,59,120,0.14);
+  --glow-white: 0 0 0 1px rgba(34,16,25,0.08), 0 10px 30px rgba(34,16,25,0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-mid: 0ms; --dur-slow: 0ms; }
+}

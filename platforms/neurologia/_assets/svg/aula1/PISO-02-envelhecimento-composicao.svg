@@ -1,0 +1,615 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" id="bauer-p2-svg" width="100%" height="100%">
+  <defs>
+    <!-- Clip Paths for Body Compartments -->
+    <clipPath id="p2-clip-adult">
+      <path d="M 159,166 C 145,168 135,175 131,185 L 125,265 C 123,272 128,274 132,272 L 139,215 L 145,280 C 143,305 143,320 143,340 L 149,425 L 143,430 C 143,435 157,435 159,430 L 159,340 L 165,320 L 171,340 L 171,430 C 171,435 185,435 187,430 L 181,425 L 187,340 C 187,320 187,305 185,280 L 191,215 L 198,272 C 202,274 207,272 205,265 L 199,185 C 195,175 185,168 171,166 Z" />
+    </clipPath>
+    <clipPath id="p2-clip-elder">
+      <path d="M 389,166 C 375,168 365,175 361,185 L 358,265 C 356,271 360,273 364,271 L 371,215 L 371,280 C 369,305 369,320 369,340 L 382,425 L 377,430 C 377,435 388,435 390,430 L 390,340 L 395,320 L 400,340 L 400,430 C 400,435 411,435 413,430 L 408,425 L 421,340 C 421,320 421,305 419,280 L 419,215 L 426,271 C 430,273 434,271 432,265 L 429,185 C 425,175 415,168 401,166 Z" />
+    </clipPath>
+  </defs>
+
+  <style>
+    #bauer-p2-svg {
+      /* Default Theme (Dark) */
+      --bg-color: #121214;
+      --bg-card: #202024;
+      --bg-card-border: #323238;
+      --bg-inner: #18181c;
+      --ink-color: #e1e1e6;
+      --ink-muted: #8d8d99;
+      
+      --c-amber: #fba919;
+      --c-coral: #f75a68;
+      --c-cyan: #00b3a4;
+      --c-neutral-text: #7c7c8a;
+      --c-green: #00b37e;
+      --c-red: #f75a68;
+      
+      --c-neutral-fat: #3f3f46;
+      --c-neutral-muscle: #52525b;
+      --c-neutral-water: #27272a;
+      
+      --c-amber-fat: #d97706;
+      --c-coral-muscle: #b91c1c;
+      --c-coral-water: #ef4444;
+
+      background-color: var(--bg-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      user-select: none;
+    }
+
+    @media (prefers-color-scheme: light) {
+      #bauer-p2-svg {
+        /* Light Theme */
+        --bg-color: #ffffff;
+        --bg-card: #f7f7f9;
+        --bg-card-border: #e1e1e6;
+        --bg-inner: #f0f0f4;
+        --ink-color: #121214;
+        --ink-muted: #6b7280;
+        
+        --c-amber: #d97706;
+        --c-coral: #dc2626;
+        --c-cyan: #0d9488;
+        --c-neutral-text: #4b5563;
+        --c-green: #16a34a;
+        --c-red: #dc2626;
+        
+        --c-neutral-fat: #e4e4e7;
+        --c-neutral-muscle: #d4d4d8;
+        --c-neutral-water: #a1a1aa;
+        
+        --c-amber-fat: #f59e0b;
+        --c-coral-muscle: #ef4444;
+        --c-coral-water: #60a5fa;
+      }
+    }
+
+    #bauer-p2-svg .p2-main-title {
+      font-size: 20px;
+      font-weight: 800;
+      fill: var(--ink-color);
+      letter-spacing: 0.5px;
+    }
+
+    #bauer-p2-svg .p2-sub-title {
+      font-size: 13px;
+      fill: var(--ink-muted);
+    }
+
+    #bauer-p2-svg .p2-col-title {
+      font-size: 13px;
+      font-weight: 700;
+      fill: var(--ink-color);
+      letter-spacing: 0.5px;
+    }
+
+    #bauer-p2-svg .p2-compartment-label {
+      font-size: 11px;
+      font-weight: 600;
+      fill: var(--ink-muted);
+    }
+
+    #bauer-p2-svg .p2-panel-title {
+      font-size: 15px;
+      font-weight: 800;
+      fill: var(--ink-color);
+      letter-spacing: 0.5px;
+    }
+
+    #bauer-p2-svg .p2-panel-subtitle {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    #bauer-p2-svg .p2-panel-text {
+      font-size: 12px;
+      fill: var(--ink-color);
+    }
+
+    #bauer-p2-svg .p2-organ-shape {
+      fill: none;
+      stroke: var(--c-neutral-text);
+      stroke-width: 1.5;
+      transition: stroke-width 0.2s, stroke 0.2s, filter 0.2s;
+    }
+
+    #bauer-p2-svg .p2-organ-shape.p2-glowing {
+      stroke-width: 3.5;
+      stroke: var(--c-cyan) !important;
+      filter: drop-shadow(0 0 4px var(--c-cyan));
+    }
+
+    #bauer-p2-svg .p2-compartment {
+      transition: y 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.5s ease, opacity 0.5s ease;
+    }
+
+    #bauer-p2-svg .p2-silhouette-group {
+      transition: opacity 0.3s ease;
+    }
+
+    #bauer-p2-svg .p2-pulse-ring {
+      fill: none;
+      stroke: var(--c-cyan);
+      stroke-width: 1.5;
+      pointer-events: none;
+    }
+
+    @keyframes p2-pulse {
+      0% { r: 12; opacity: 0.8; }
+      100% { r: 26; opacity: 0; }
+    }
+
+    #bauer-p2-svg .p2-active-pulse {
+      animation: p2-pulse 1.8s infinite;
+    }
+
+    #bauer-p2-svg .p2-toggle-btn {
+      cursor: pointer;
+    }
+
+    #bauer-p2-svg .p2-toggle-btn text {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: fill 0.3s ease;
+    }
+
+    #bauer-p2-svg #p2-toggle-slider {
+      transition: x 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.3s ease;
+    }
+
+    #bauer-p2-svg .p2-hotspot {
+      cursor: pointer;
+    }
+
+    #bauer-p2-svg .p2-hotspot:hover .p2-organ-shape {
+      stroke-width: 2.5;
+      stroke: var(--c-cyan);
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="var(--bg-color)" />
+
+  <!-- Header -->
+  <g transform="translate(0, 0)">
+    <text x="480" y="32" class="p2-main-title" text-anchor="middle">FISIOLOGIA DO ENVELHECIMENTO &amp; FARMACOCINÉTICA</text>
+    <text x="480" y="52" class="p2-sub-title" text-anchor="middle">Modificações na Composição Corporal e Declínio Orgânico Renal/Hepático</text>
+  </g>
+
+  <!-- Toggle Control -->
+  <g transform="translate(0, 0)">
+    <rect x="150" y="80" width="260" height="32" rx="16" fill="var(--bg-card)" stroke="var(--bg-card-border)" stroke-width="1.5" />
+    <rect id="p2-toggle-slider" x="282" y="82" width="126" height="28" rx="14" fill="var(--c-cyan)" />
+    
+    <!-- Adult Toggle Button -->
+    <g class="p2-toggle-btn" role="button" aria-label="Selecionar Adulto" onclick="selectComposition('adult')">
+      <rect x="152" y="82" width="126" height="28" rx="14" />
+      <text id="p2-btn-adult-text" x="215" y="100" text-anchor="middle" fill="var(--ink-muted)">ADULTO JOVEM</text>
+    </g>
+    
+    <!-- Elder Toggle Button -->
+    <g class="p2-toggle-btn" role="button" aria-label="Selecionar Idoso" onclick="selectComposition('elder')">
+      <rect x="282" y="82" width="126" height="28" rx="14" />
+      <text id="p2-btn-elder-text" x="345" y="100" text-anchor="middle" fill="var(--bg-color)">IDOSO (SENESCENTE)</text>
+    </g>
+  </g>
+
+  <!-- LEFT COLUMN: Adult Silhouette -->
+  <g id="p2-group-adult" class="p2-silhouette-group" opacity="0.45">
+    <text x="165" y="145" class="p2-col-title" text-anchor="middle" fill="var(--ink-color)">ADULTO REFERÊNCIA</text>
+    
+    <!-- Base Silhouette Background -->
+    <path d="M 159,166 C 145,168 135,175 131,185 L 125,265 C 123,272 128,274 132,272 L 139,215 L 145,280 C 143,305 143,320 143,340 L 149,425 L 143,430 C 143,435 157,435 159,430 L 159,340 L 165,320 L 171,340 L 171,430 C 171,435 185,435 187,430 L 181,425 L 187,340 C 187,320 187,305 185,280 L 191,215 L 198,272 C 202,274 207,272 205,265 L 199,185 C 195,175 185,168 171,166 Z" fill="var(--bg-inner)" stroke="var(--bg-card-border)" stroke-width="1" />
+    <circle cx="165" cy="150" r="16" fill="var(--bg-inner)" stroke="var(--bg-card-border)" stroke-width="1" />
+
+    <!-- Clipped Body Compartments (Adult - Neutral colors) -->
+    <g clip-path="url(#p2-clip-adult)">
+      <rect id="p2-adult-water" x="110" y="277" width="110" height="153" fill="var(--c-neutral-water)" class="p2-compartment" />
+      <rect id="p2-adult-muscle" x="110" y="213" width="110" height="64" fill="var(--c-neutral-muscle)" class="p2-compartment" />
+      <rect id="p2-adult-fat" x="110" y="175" width="110" height="38" fill="var(--c-neutral-fat)" class="p2-compartment" />
+    </g>
+    
+    <!-- Silhouette Outer Overlay Stroke for Crisp Borders -->
+    <path d="M 159,166 C 145,168 135,175 131,185 L 125,265 C 123,272 128,274 132,272 L 139,215 L 145,280 C 143,305 143,320 143,340 L 149,425 L 143,430 C 143,435 157,435 159,430 L 159,340 L 165,320 L 171,340 L 171,430 C 171,435 185,435 187,430 L 181,425 L 187,340 C 187,320 187,305 185,280 L 191,215 L 198,272 C 202,274 207,272 205,265 L 199,185 C 195,175 185,168 171,166 Z" fill="none" stroke="var(--ink-muted)" stroke-width="1.5" />
+    <circle cx="165" cy="150" r="16" fill="none" stroke="var(--ink-muted)" stroke-width="1.5" />
+
+    <!-- Organs (Adult - Neutral) -->
+    <path id="p2-adult-liver" d="M 150,225 C 150,220 170,220 178,226 C 182,230 172,238 160,238 C 153,238 150,232 150,225 Z" class="p2-organ-shape" />
+    <path id="p2-adult-kidney-l" d="M 152,252 C 148,254 148,262 152,264 C 155,264 155,252 152,252 Z" class="p2-organ-shape" />
+    <path id="p2-adult-kidney-r" d="M 178,252 C 182,254 182,262 178,264 C 175,264 175,252 178,252 Z" class="p2-organ-shape" />
+
+    <!-- Pulse Rings (Hidden by default) -->
+    <circle id="p2-adult-liver-ring" cx="164" cy="228" r="16" class="p2-pulse-ring" opacity="0" />
+    <circle id="p2-adult-kidney-ring" cx="165" cy="258" r="18" class="p2-pulse-ring" opacity="0" />
+
+    <!-- Divider lines & Labels (Adult) -->
+    <line x1="140" y1="175" x2="105" y2="175" stroke="var(--ink-muted)" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="100" y="178" class="p2-compartment-label" text-anchor="end">Gordura (15%)</text>
+    
+    <line x1="140" y1="213" x2="105" y2="213" stroke="var(--ink-muted)" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="100" y="216" class="p2-compartment-label" text-anchor="end">Músculo (25%)</text>
+    
+    <line x1="140" y1="277" x2="105" y2="277" stroke="var(--ink-muted)" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="100" y="280" class="p2-compartment-label" text-anchor="end">Água (60%)</text>
+
+    <!-- Invisible Hotspots to trigger composition click -->
+    <path d="M 130,170 H 200 V 430 H 130 Z" fill="transparent" onclick="selectComposition('adult')" cursor="pointer" />
+  </g>
+
+  <!-- CENTER COLUMN: Elder Silhouette -->
+  <g id="p2-group-elder" class="p2-silhouette-group" opacity="1">
+    <text x="395" y="145" class="p2-col-title" text-anchor="middle" fill="var(--ink-color)">IDOSO (SENESCENTE)</text>
+
+    <!-- Base Silhouette Background -->
+    <path d="M 389,166 C 375,168 365,175 361,185 L 358,265 C 356,271 360,273 364,271 L 371,215 L 371,280 C 369,305 369,320 369,340 L 382,425 L 377,430 C 377,435 388,435 390,430 L 390,340 L 395,320 L 400,340 L 400,430 C 400,435 411,435 413,430 L 408,425 L 421,340 C 421,320 421,305 419,280 L 419,215 L 426,271 C 430,273 434,271 432,265 L 429,185 C 425,175 415,168 401,166 Z" fill="var(--bg-inner)" stroke="var(--bg-card-border)" stroke-width="1" />
+    <circle cx="395" cy="150" r="16" fill="var(--bg-inner)" stroke="var(--bg-card-border)" stroke-width="1" />
+
+    <!-- Clipped Body Compartments (Elder - Semantic colors) -->
+    <g clip-path="url(#p2-clip-elder)">
+      <rect id="p2-elder-water" x="340" y="300" width="110" height="130" fill="var(--c-coral-water)" class="p2-compartment" />
+      <rect id="p2-elder-muscle" x="340" y="260" width="110" height="40" fill="var(--c-coral-muscle)" class="p2-compartment" />
+      <rect id="p2-elder-fat" x="340" y="165" width="110" height="95" fill="var(--c-amber-fat)" class="p2-compartment" />
+    </g>
+
+    <!-- Silhouette Outer Overlay Stroke -->
+    <path d="M 389,166 C 375,168 365,175 361,185 L 358,265 C 356,271 360,273 364,271 L 371,215 L 371,280 C 369,305 369,320 369,340 L 382,425 L 377,430 C 377,435 388,435 390,430 L 390,340 L 395,320 L 400,340 L 400,430 C 400,435 411,435 413,430 L 408,425 L 421,340 C 421,320 421,305 419,280 L 419,215 L 426,271 C 430,273 434,271 432,265 L 429,185 C 425,175 415,168 401,166 Z" fill="none" stroke="var(--ink-color)" stroke-width="1.5" />
+    <circle cx="395" cy="150" r="16" fill="none" stroke="var(--ink-color)" stroke-width="1.5" />
+
+    <!-- Organs (Elder - Cyan Highlighted) -->
+    <path id="p2-elder-liver" d="M 380,225 C 380,220 400,220 408,226 C 412,230 402,238 390,238 C 383,238 380,232 380,225 Z" class="p2-organ-shape" stroke="var(--c-cyan)" stroke-width="2" />
+    <path id="p2-elder-kidney-l" d="M 382,252 C 378,254 378,262 382,264 C 385,264 385,252 382,252 Z" class="p2-organ-shape" stroke="var(--c-cyan)" stroke-width="2" />
+    <path id="p2-elder-kidney-r" d="M 408,252 C 412,254 412,262 408,264 C 405,264 405,252 408,252 Z" class="p2-organ-shape" stroke="var(--c-cyan)" stroke-width="2" />
+
+    <!-- Pulse Rings (Pulsing around interactive organs) -->
+    <circle id="p2-elder-liver-ring" cx="394" cy="228" r="16" class="p2-pulse-ring p2-active-pulse" />
+    <circle id="p2-elder-kidney-ring" cx="395" cy="258" r="18" class="p2-pulse-ring p2-active-pulse" />
+
+    <!-- Clearance Decline Arrows (Semantic Red) -->
+    <g transform="translate(364, 222)">
+      <path d="M 0,0 L 0,8 M -2.5,5.5 L 0,8 L 2.5,5.5" fill="none" stroke="var(--c-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+    <g transform="translate(422, 252)">
+      <path d="M 0,0 L 0,8 M -2.5,5.5 L 0,8 L 2.5,5.5" fill="none" stroke="var(--c-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+
+    <!-- Divider lines & Labels (Elder) -->
+    <line x1="420" y1="165" x2="455" y2="165" stroke="var(--c-amber)" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="460" y="168" class="p2-compartment-label" text-anchor="start" fill="var(--c-amber)">Gordura (35% ↑)</text>
+    
+    <line x1="420" y1="260" x2="455" y2="260" stroke="var(--c-coral)" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="460" y="263" class="p2-compartment-label" text-anchor="start" fill="var(--c-coral)">Músculo (15% ↓)</text>
+    
+    <line x1="420" y1="300" x2="455" y2="300" stroke="var(--c-coral)" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="460" y="303" class="p2-compartment-label" text-anchor="start" fill="var(--c-coral)">Água (50% ↓)</text>
+
+    <!-- Invisible Hotspots for Composition / Liver / Kidney -->
+    <!-- Body Composition Area click handler -->
+    <path d="M 360,170 H 430 V 430 H 360 Z" fill="transparent" onclick="selectComposition('elder')" cursor="pointer" />
+    
+    <!-- Liver Hotspot (Bigger clickable area) -->
+    <circle cx="394" cy="228" r="22" fill="transparent" class="p2-hotspot" onclick="selectOrgan('liver'); event.stopPropagation();" aria-label="Analisar Fígado" role="button" />
+    
+    <!-- Kidneys Hotspot (Bigger clickable area) -->
+    <circle cx="395" cy="258" r="24" fill="transparent" class="p2-hotspot" onclick="selectOrgan('kidney'); event.stopPropagation();" aria-label="Analisar Rim" role="button" />
+  </g>
+
+  <!-- Compartment Summary Grid -->
+  <g transform="translate(0, 0)">
+    <rect x="60" y="445" width="410" height="60" rx="8" fill="var(--bg-card)" stroke="var(--bg-card-border)" stroke-width="1.5" />
+    <line x1="197" y1="445" x2="197" y2="505" stroke="var(--bg-card-border)" stroke-width="1" />
+    <line x1="332" y1="445" x2="332" y2="505" stroke="var(--bg-card-border)" stroke-width="1" />
+    
+    <!-- Gordura Col -->
+    <g transform="translate(130, 0)">
+      <text x="0" y="462" font-size="9" font-weight="800" fill="var(--ink-muted)" text-anchor="middle">GORDURA CORPORAL</text>
+      <text x="0" y="478" font-size="11" fill="var(--ink-muted)" text-anchor="middle">15% (Referência)</text>
+      <text x="0" y="493" font-size="12" font-weight="800" fill="var(--c-amber)" text-anchor="middle">35% (Aumentado ↑)</text>
+    </g>
+
+    <!-- Músculo Col -->
+    <g transform="translate(265, 0)">
+      <text x="0" y="462" font-size="9" font-weight="800" fill="var(--ink-muted)" text-anchor="middle">MASSA MUSCULAR</text>
+      <text x="0" y="478" font-size="11" fill="var(--ink-muted)" text-anchor="middle">30% (Referência)</text>
+      <text x="0" y="493" font-size="12" font-weight="800" fill="var(--c-coral)" text-anchor="middle">15% (Sarcopenia ↓)</text>
+    </g>
+
+    <!-- Água Col -->
+    <g transform="translate(400, 0)">
+      <text x="0" y="462" font-size="9" font-weight="800" fill="var(--ink-muted)" text-anchor="middle">ÁGUA TOTAL</text>
+      <text x="0" y="478" font-size="11" fill="var(--ink-muted)" text-anchor="middle">60% (Referência)</text>
+      <text x="0" y="493" font-size="12" font-weight="800" fill="var(--c-coral)" text-anchor="middle">50% (Reduzida ↓)</text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: Interactive Reading Panel -->
+  <g transform="translate(0, 0)">
+    <rect x="520" y="80" width="380" height="400" rx="12" fill="var(--bg-card)" stroke="var(--bg-card-border)" stroke-width="1.5" />
+    
+    <!-- State 0: Overview Panel (Default/Initial) -->
+    <g id="p2-panel-overview">
+      <text x="545" y="115" class="p2-panel-title" fill="var(--ink-color)">ANÁLISE FARMACOCINÉTICA</text>
+      <text x="545" y="136" class="p2-panel-subtitle" fill="var(--ink-muted)">Fisiologia de Sistemas no Idoso</text>
+      <line x1="545" y1="148" x2="875" y2="148" stroke="var(--bg-card-border)" stroke-width="1.2" />
+      
+      <text x="545" y="175" class="p2-panel-text" fill="var(--ink-color)">
+        <tspan x="545" dy="0" font-weight="bold" fill="var(--c-cyan)">Por que o idoso responde diferente?</tspan>
+        <tspan x="545" dy="22" fill="var(--ink-muted)">O envelhecimento reduz a reserva fisiológica e</tspan>
+        <tspan x="545" dy="18" fill="var(--ink-muted)">altera a distribuição e excreção dos fármacos.</tspan>
+        <tspan x="545" dy="22" fill="var(--ink-muted)">Isso estreita a janela terapêutica e eleva as</tspan>
+        <tspan x="545" dy="18" fill="var(--ink-muted)">taxas de reações adversas graves.</tspan>
+      </text>
+      
+      <rect x="545" y="275" width="330" height="180" rx="8" fill="var(--bg-inner)" stroke="var(--bg-card-border)" stroke-width="1" stroke-dasharray="3 3" />
+      <text x="710" y="315" class="p2-panel-text" text-anchor="middle">
+        <tspan x="710" dy="0" font-weight="bold" fill="var(--c-cyan)">COMO EXPLORAR:</tspan>
+        <tspan x="710" dy="30" fill="var(--ink-color)">1. Use o controle superior para alternar</tspan>
+        <tspan x="710" dy="20" fill="var(--ink-muted)">a visualização de composição corporal.</tspan>
+        <tspan x="710" dy="30" fill="var(--ink-color)">2. Clique no Fígado ou Rim do idoso</tspan>
+        <tspan x="710" dy="20" fill="var(--ink-muted)">para ver detalhes de depuração.</tspan>
+      </text>
+    </g>
+
+    <!-- State 1: Adult Panel -->
+    <g id="p2-panel-adult" style="display: none;">
+      <text x="545" y="115" class="p2-panel-title" fill="var(--ink-color)">PACIENTE ADULTO JOVEM</text>
+      <text x="545" y="136" class="p2-panel-subtitle" fill="var(--ink-muted)">Homeostase e Depuração Plena</text>
+      <line x1="545" y1="148" x2="875" y2="148" stroke="var(--bg-card-border)" stroke-width="1.2" />
+      
+      <text x="545" y="175" class="p2-panel-text" fill="var(--ink-color)">
+        <tspan x="545" dy="0" font-weight="bold" fill="var(--ink-color)">Distribuição Fisiológica Padrão:</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--ink-color)">• Água Corporal (~60%):</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Distribuição uniforme de solutos hidrossolúveis.</tspan>
+        
+        <tspan x="545" dy="24" font-weight="bold" fill="var(--ink-color)">• Tecido Adiposo (~15%):</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Sem acúmulo patológico de lipossolúveis.</tspan>
+        
+        <tspan x="545" dy="24" font-weight="bold" fill="var(--ink-color)">• Depuração Renal &amp; Hepática:</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Eliminação regular em taxas de 100%.</tspan>
+      </text>
+      
+      <rect x="545" y="375" width="330" height="85" rx="8" fill="var(--bg-inner)" stroke="var(--bg-card-border)" stroke-width="1" />
+      <text x="560" y="400" class="p2-panel-text">
+        <tspan x="560" dy="0" font-weight="bold" fill="var(--c-green)">CORRELAÇÃO CLÍNICA:</tspan>
+        <tspan x="560" dy="20" fill="var(--ink-muted)">Janela terapêutica ideal. Previsibilidade total de</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">meia-vida e tempo de depuração de fármacos.</tspan>
+      </text>
+    </g>
+
+    <!-- State 2: Elder Panel -->
+    <g id="p2-panel-elder" style="display: none;">
+      <text x="545" y="115" class="p2-panel-title" fill="var(--ink-color)">COMPOSIÇÃO NO IDOSO</text>
+      <text x="545" y="136" class="p2-panel-subtitle" fill="var(--c-amber)">Redistribuição de Compartimentos</text>
+      <line x1="545" y1="148" x2="875" y2="148" stroke="var(--bg-card-border)" stroke-width="1.2" />
+      
+      <text x="545" y="175" class="p2-panel-text" fill="var(--ink-color)">
+        <tspan x="545" dy="0" font-weight="bold" fill="var(--c-amber)">Impactos Cinéticos Principais:</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--c-amber)">• ↑ Gordura Adiposa (35%):</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Retém fármacos altamente lipossolúveis</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">(ex: Diazepam) → prolonga a meia-vida (T1/2).</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--c-coral)">• ↓ Água Corporal (50%):</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Menor volume de distribuição para hidrossolúveis</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">(ex: Lítio) → aumenta risco de picos tóxicos.</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--c-coral)">• ↓ Massa Muscular (15%):</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Diminui a creatinina sérica de base. Mascara</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">e subestima o declínio da função renal.</tspan>
+      </text>
+      
+      <rect x="545" y="375" width="330" height="85" rx="8" fill="var(--bg-inner)" stroke="var(--c-amber)" stroke-width="1.5" />
+      <text x="560" y="400" class="p2-panel-text">
+        <tspan x="560" dy="0" font-weight="bold" fill="var(--c-amber)">REGRA CLÍNICA GERIÁTRICA:</tspan>
+        <tspan x="560" dy="20" fill="var(--ink-color)">"Start low and go slow" (Inicie baixo e progrida</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-color)">lentamente) para mitigar riscos de intoxicação.</tspan>
+      </text>
+    </g>
+
+    <!-- State 3: Liver Hotspot Panel -->
+    <g id="p2-panel-liver" style="display: none;">
+      <text x="545" y="115" class="p2-panel-title" fill="var(--ink-color)">FUNÇÃO HEPÁTICA (IDOSO)</text>
+      <text x="545" y="136" class="p2-panel-subtitle" fill="var(--c-cyan)">Senescência e Metabolismo Reduzido</text>
+      <line x1="545" y1="148" x2="875" y2="148" stroke="var(--bg-card-border)" stroke-width="1.2" />
+      
+      <text x="545" y="175" class="p2-panel-text" fill="var(--ink-color)">
+        <tspan x="545" dy="0" font-weight="bold" fill="var(--c-cyan)">Fisiopatologia do Envelhecimento:</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--ink-color)">• Massa e Fluxo Diminuídos:</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Redução de 30% a 40% no peso do fígado</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">e no fluxo sanguíneo portal.</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--ink-color)">• CYP450 Lento (Fase I):</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Retardo na oxidação, redução e hidrólise.</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Aumenta biodisponibilidade de drogas ativas.</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--ink-color)">• Primeira Passagem Hepática ↓:</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Maior pico sérico inicial oral de fármacos</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">com alta taxa de extração (ex: Propranolol).</tspan>
+      </text>
+      
+      <rect x="545" y="375" width="330" height="85" rx="8" fill="var(--bg-inner)" stroke="var(--c-red)" stroke-width="1.5" />
+      <text x="560" y="400" class="p2-panel-text">
+        <tspan x="560" dy="0" font-weight="bold" fill="var(--c-red)">ALERTA DE SEGURANÇA:</tspan>
+        <tspan x="560" dy="20" fill="var(--ink-muted)">Benzodiazepínicos de ação longa acumulam e</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">causam sonolência, ataxia e quedas graves.</tspan>
+      </text>
+    </g>
+
+    <!-- State 4: Kidney Hotspot Panel -->
+    <g id="p2-panel-kidney" style="display: none;">
+      <text x="545" y="115" class="p2-panel-title" fill="var(--ink-color)">FUNÇÃO RENAL (IDOSO)</text>
+      <text x="545" y="136" class="p2-panel-subtitle" fill="var(--c-cyan)">Declínio Glomerular e Excreção Lenta</text>
+      <line x1="545" y1="148" x2="875" y2="148" stroke="var(--bg-card-border)" stroke-width="1.2" />
+      
+      <text x="545" y="175" class="p2-panel-text" fill="var(--ink-color)">
+        <tspan x="545" dy="0" font-weight="bold" fill="var(--c-cyan)">Fisiopatologia do Envelhecimento:</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--ink-color)">• Filtração Glomerular (RFG) ↓:</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Redução de ~1 mL/min/ano após os 40 anos.</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Queda de até 50% na capacidade de filtração.</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--ink-color)">• Clearance de Fármacos ↓:</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Excreção retardada de hidrossolúveis sem</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">metabolização (ex: Digoxina, Alopurinol).</tspan>
+        
+        <tspan x="545" dy="26" font-weight="bold" fill="var(--ink-color)">• Janela Terapêutica Estreita:</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">Rápido acúmulo sistêmico com risco de</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">toxicidade cumulativa e injúria renal aguda.</tspan>
+      </text>
+      
+      <rect x="545" y="375" width="330" height="85" rx="8" fill="var(--bg-inner)" stroke="var(--c-red)" stroke-width="1.5" />
+      <text x="560" y="400" class="p2-panel-text">
+        <tspan x="560" dy="0" font-weight="bold" fill="var(--c-red)">AJUSTE TERAPÊUTICO:</tspan>
+        <tspan x="560" dy="20" fill="var(--ink-muted)">Calcule a depuração estimada (Cockcroft-Gault)</tspan>
+        <tspan x="560" dy="18" fill="var(--ink-muted)">e ajuste a posologia de hidrossolúveis.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Interactive Legend and Note at the Bottom -->
+  <g transform="translate(0, 0)">
+    <rect x="60" y="515" width="840" height="32" rx="6" fill="var(--bg-card)" stroke="var(--bg-card-border)" stroke-width="1.5" />
+    <text x="480" y="535" text-anchor="middle" font-size="11.5" font-style="italic" fill="var(--ink-color)">
+      Legenda: Mais gordura, menos músculo, menos água, rim e fígado mais lentos: o mesmo comprimido do adulto dura mais e bate mais forte no idoso.
+    </text>
+  </g>
+
+  <!-- Embedded Interaction Logic -->
+  <script type="text/javascript">
+    //<![CDATA[
+    function selectPatient(type) {
+      const slider = document.getElementById('p2-toggle-slider');
+      const btnAdultText = document.getElementById('p2-btn-adult-text');
+      const btnElderText = document.getElementById('p2-btn-elder-text');
+      const groupAdult = document.getElementById('p2-group-adult');
+      const groupElder = document.getElementById('p2-group-elder');
+
+      if (type === 'adult') {
+        slider.setAttribute('x', '152');
+        slider.setAttribute('fill', 'var(--c-neutral-text)');
+        btnAdultText.setAttribute('fill', 'var(--bg-color)');
+        btnElderText.setAttribute('fill', 'var(--ink-muted)');
+        groupAdult.setAttribute('opacity', '1');
+        groupElder.setAttribute('opacity', '0.45');
+        updateCompartments('adult');
+      } else {
+        slider.setAttribute('x', '282');
+        slider.setAttribute('fill', 'var(--c-cyan)');
+        btnAdultText.setAttribute('fill', 'var(--ink-muted)');
+        btnElderText.setAttribute('fill', 'var(--bg-color)');
+        groupAdult.setAttribute('opacity', '0.45');
+        groupElder.setAttribute('opacity', '1');
+        updateCompartments('elder');
+      }
+    }
+
+    function selectComposition(patient) {
+      selectPatient(patient);
+      // Clear specific organ highlights on click of general composition
+      document.querySelectorAll('.p2-organ-shape').forEach(el => el.classList.remove('p2-glowing'));
+      document.querySelectorAll('.p2-pulse-ring').forEach(el => el.setAttribute('opacity', '0'));
+      
+      if (patient === 'adult') {
+        showPanelContent('adult');
+      } else {
+        showPanelContent('elder');
+      }
+    }
+
+    function selectOrgan(organ) {
+      // De-highlight general composition but make sure elder group is selected/active
+      selectPatient('elder');
+      
+      // Reset all organ highlights
+      document.querySelectorAll('.p2-organ-shape').forEach(el => el.classList.remove('p2-glowing'));
+      document.querySelectorAll('.p2-pulse-ring').forEach(el => el.setAttribute('opacity', '0'));
+      
+      // Highlight the organ in both silhouettes
+      if (organ === 'liver') {
+        document.getElementById('p2-adult-liver').classList.add('p2-glowing');
+        document.getElementById('p2-elder-liver').classList.add('p2-glowing');
+        document.getElementById('p2-adult-liver-ring').setAttribute('opacity', '1');
+        document.getElementById('p2-elder-liver-ring').setAttribute('opacity', '1');
+        showPanelContent('liver');
+      } else if (organ === 'kidney') {
+        document.getElementById('p2-adult-kidney-l').classList.add('p2-glowing');
+        document.getElementById('p2-adult-kidney-r').classList.add('p2-glowing');
+        document.getElementById('p2-elder-kidney-l').classList.add('p2-glowing');
+        document.getElementById('p2-elder-kidney-r').classList.add('p2-glowing');
+        document.getElementById('p2-adult-kidney-ring').setAttribute('opacity', '1');
+        document.getElementById('p2-elder-kidney-ring').setAttribute('opacity', '1');
+        showPanelContent('kidney');
+      }
+    }
+
+    function showPanelContent(state) {
+      const states = ['overview', 'adult', 'elder', 'liver', 'kidney'];
+      states.forEach(s => {
+        const el = document.getElementById('p2-panel-' + s);
+        if (el) {
+          el.style.display = (s === state) ? 'inline' : 'none';
+        }
+      });
+    }
+
+    function updateCompartments(type) {
+      const adultWater = document.getElementById('p2-adult-water');
+      const adultMuscle = document.getElementById('p2-adult-muscle');
+      const adultFat = document.getElementById('p2-adult-fat');
+      
+      const elderWater = document.getElementById('p2-elder-water');
+      const elderMuscle = document.getElementById('p2-elder-muscle');
+      const elderFat = document.getElementById('p2-elder-fat');
+
+      if (type === 'adult') {
+        // Reset elder compartments to baseline or slightly dimmed
+        elderWater.setAttribute('opacity', '0.4');
+        elderMuscle.setAttribute('opacity', '0.4');
+        elderFat.setAttribute('opacity', '0.4');
+        
+        // Animate adult compartments to full
+        adultWater.setAttribute('opacity', '1');
+        adultMuscle.setAttribute('opacity', '1');
+        adultFat.setAttribute('opacity', '1');
+        
+        adultWater.setAttribute('y', '430'); adultWater.setAttribute('height', '0');
+        adultMuscle.setAttribute('y', '430'); adultMuscle.setAttribute('height', '0');
+        adultFat.setAttribute('y', '430'); adultFat.setAttribute('height', '0');
+        
+        setTimeout(() => {
+          adultWater.setAttribute('y', '277'); adultWater.setAttribute('height', '153');
+          adultMuscle.setAttribute('y', '213'); adultMuscle.setAttribute('height', '64');
+          adultFat.setAttribute('y', '175'); adultFat.setAttribute('height', '38');
+        }, 50);
+      } else if (type === 'elder') {
+        // Reset adult compartments
+        adultWater.setAttribute('opacity', '0.4');
+        adultMuscle.setAttribute('opacity', '0.4');
+        adultFat.setAttribute('opacity', '0.4');
+        
+        // Animate elder compartments to full
+        elderWater.setAttribute('opacity', '1');
+        elderMuscle.setAttribute('opacity', '1');
+        elderFat.setAttribute('opacity', '1');
+        
+        elderWater.setAttribute('y', '430'); elderWater.setAttribute('height', '0');
+        elderMuscle.setAttribute('y', '430'); elderMuscle.setAttribute('height', '0');
+        elderFat.setAttribute('y', '430'); elderFat.setAttribute('height', '0');
+        
+        setTimeout(() => {
+          elderWater.setAttribute('y', '300'); elderWater.setAttribute('height', '130');
+          elderMuscle.setAttribute('y', '260'); elderMuscle.setAttribute('height', '40');
+          elderFat.setAttribute('y', '165'); elderFat.setAttribute('height', '95');
+        }, 50);
+      }
+    }
+
+    // Run initialization immediately on load
+    selectPatient('elder');
+    //]]>
+  </script>
+</svg>

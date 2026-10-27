@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>Prova, fecho e escada final — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Manejo da Crise / Status Epiléptico</span>
+        <span class="site-header__subtitle">Neurologia · Aula 9</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">11/11</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<style>
+.a9-l11{--i:#818CF8;--c:#38BDF8;--r:#F87171;--g:#FBBF24;--t:#2DD4BF;--gr:#4ADE80;--ink:var(--ink,#F4F7FB);--mu:var(--muted,#94A3B8);--ca:var(--card-bg,rgba(17,26,43,0.72));--c2:var(--card-bg2,rgba(21,32,51,0.65));--b:var(--border,rgba(148,163,184,0.14));max-width:820px;margin:0 auto;padding:0 20px;}
+[data-theme="light"] .a9-l11{--ink:#0F172A;--mu:#64748B;--ca:rgba(255,255,255,0.82);--c2:rgba(241,245,249,0.78);--b:rgba(15,23,42,0.10);}
+.a9-l11 h1{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;color:var(--ink);margin:32px 0 6px;line-height:1.2;}
+.a9-l11 .a9-sub{font-size:.9rem;color:var(--mu);margin-bottom:20px;}
+.a9-l11 .a9-prose{text-align:justify;text-indent:1.5em;hyphens:auto;color:var(--ink);line-height:1.75;font-size:.95rem;}
+.a9-l11 .a9-prose p{margin:0 0 12px;}
+.a9-l11 .a9-prose h3{text-indent:0;font-size:1.1rem;font-weight:700;color:var(--i);margin:24px 0 8px;}
+.a9-l11 .a9-prose strong{color:var(--r);}
+.a9-l11 .a9-fecho{background:var(--ca);border:2px solid var(--gr);border-radius:14px;padding:20px;margin:20px 0;text-align:center;}
+.a9-l11 .a9-fecho h3{font-size:1rem;font-weight:700;color:var(--gr);margin:0 0 8px;text-indent:0;}
+.a9-l11 .a9-fecho p{font-size:.92rem;color:var(--ink);text-indent:0;margin:0;}
+.a9-l11 .a9-board{overflow-x:auto;margin:16px 0;border-radius:12px;background:var(--ca);border:1px solid var(--b);}
+.a9-l11 .a9-board table{width:100%;border-collapse:collapse;font-size:.88rem;}
+.a9-l11 .a9-board th{background:var(--c2);color:var(--i);font-weight:700;padding:10px 12px;text-align:left;border-bottom:2px solid var(--b);}
+.a9-l11 .a9-board td{padding:10px 12px;border-bottom:1px solid var(--b);color:var(--ink);}
+.a9-l11 .a9-onepager{background:var(--ca);border:1px solid var(--b);border-radius:16px;padding:24px;margin:20px 0;font-family:monospace;font-size:.85rem;line-height:1.8;color:var(--ink);white-space:pre;}
+.a9-l11 .a9-inter{background:var(--c2);border-radius:12px;padding:16px 20px;margin:18px 0;border-left:3px solid var(--c);}
+.a9-l11 .a9-inter .a9-inter-l{font-size:.78rem;font-weight:700;color:var(--c);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.a9-l11 .a9-inter p{margin:0;font-size:.88rem;color:var(--ink);text-indent:0;line-height:1.6;}
+.a9-l11 .a9-svg-wrap,.a9-l11 .a9-img-wrap{margin:24px 0;border-radius:16px;overflow:hidden;background:var(--ca);border:1px solid var(--b);}
+.a9-l11 .a9-svg-wrap svg,.a9-l11 .a9-img-wrap img{display:block;width:100%;height:auto;}
+.a9-l11 .a9-img-wrap .a9-cap{padding:10px 16px;font-size:.78rem;color:var(--mu);line-height:1.5;border-top:1px solid var(--b);}
+.a9-l11 .a9-why{background:var(--c2);border-radius:12px;padding:16px 20px;margin:18px 0;border-left:3px solid var(--t);}
+.a9-l11 .a9-why .a9-why-l{font-size:.78rem;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l11 .a9-why p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l11 .a9-resumo{background:var(--ca);border:1px solid var(--t);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.a9-l11 .a9-resumo .a9-res-l{font-size:.78rem;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.a9-l11 .a9-resumo p{margin:0;font-size:.9rem;color:var(--ink);text-indent:0;}
+.a9-l11 .a9-quiz{margin:28px 0;}
+.a9-l11 .a9-quiz h3{font-size:1.05rem;font-weight:700;color:var(--g);margin:0 0 16px;}
+.a9-l11 .a9-qb{background:var(--ca);border:1px solid var(--b);border-radius:14px;padding:20px;margin-bottom:16px;}
+.a9-l11 .a9-qb .a9-qe{font-weight:700;color:var(--ink);margin-bottom:12px;font-size:.92rem;}
+.a9-l11 .a9-qb .a9-qo{display:flex;flex-direction:column;gap:8px;}
+.a9-l11 .a9-qb .a9-opt{padding:10px 14px;border-radius:10px;background:var(--c2);border:1px solid var(--b);cursor:pointer;font-size:.88rem;color:var(--ink);transition:all .2s;min-height:44px;display:flex;align-items:center;}
+.a9-l11 .a9-qb .a9-opt:hover{border-color:var(--i);}
+.a9-l11 .a9-qb .a9-opt.chosen{border-color:var(--i);background:rgba(129,140,248,0.12);}
+.a9-l11 .a9-qb .a9-opt.correct{border-color:var(--gr);background:rgba(74,222,128,0.15);}
+.a9-l11 .a9-qb .a9-opt.wrong{border-color:var(--r);background:rgba(248,113,113,0.12);}
+.a9-l11 .a9-qfb{margin-top:12px;padding:14px 16px;border-radius:10px;font-size:.85rem;line-height:1.6;display:none;}
+.a9-l11 .a9-qfb.show{display:block;}
+.a9-l11 .a9-qfb.cok{background:rgba(74,222,128,0.1);border:1px solid var(--gr);color:var(--ink);}
+.a9-l11 .a9-qfb.er{background:rgba(248,113,113,0.1);border:1px solid var(--r);color:var(--ink);}
+@media(max-width:600px){.a9-l11 h1{font-size:1.4rem;}}
+</style>
+<div class="a9-l11" data-layout="a9-p11">
+<h1>Prova, fecho e escada final</h1>
+<p class="a9-sub">Fecho Cláudio · Q 8a/7 min · Q vias · one-pager · ponte febril</p>
+
+<div class="a9-fecho"><h3>✅ Fecho do caso Cláudio</h3><p><strong>40 minutos</strong> de crise tônico-clônica, já estabilizado clinicamente — medicamento inicial = <strong>benzodiazepínico</strong> (ex.: <strong>diazepam venoso</strong>).</p></div>
+
+<div class="a9-prose">
+<h3>1. Questão: criança 8 anos, TCG ~7 minutos</h3>
+<p>Criança de <strong>8 anos</strong> chega ao PA em crise <strong>TCG</strong> há aproximadamente <strong>7 minutos</strong>. 7 minutos = <strong>mais de 5 minutos</strong> → já está em status operacional → <strong>tem que tratar</strong>. Ainda com atividade convulsiva; <strong>sem</strong> história prévia de epilepsia conhecida; sinais vitais <strong>estáveis</strong>.</p>
+<p>Primeira intervenção: <strong>benzodiazepínico</strong> — única resposta possível como 1º. <strong>Fenitoína</strong> seria a <strong>segunda</strong>; <strong>ácido valproico</strong> seria a <strong>segunda</strong>; o terceiro degrau (anestesia) <strong>não</strong> é o imediato. O mais importante imediato: <strong>tirar da crise</strong>.</p>
+
+<h3>2. Questão: menino 3 anos — medicação e via</h3>
+<p>Menino de <strong>3 anos</strong>, previamente hígido, admitido <strong>convulsionando</strong>. História de <strong>tosse, coriza e febre</strong> há 1 dia. Exame: FC <strong>154</strong>, FR <strong>38</strong>, T axilar <strong>36,1 °C</strong>, SpO₂ <strong>96%</strong>; ar responsivo; pupilas isocóricas e fotorreagentes; movimentos tônico-clônicos.</p>
+<p>A questão pede a <strong>medicação e a via</strong>. Tempo de crise não foi explicitado, mas o enunciado <strong>já pede</strong> para tirar da crise — resposta = <strong>benzodiazepínico</strong>.</p>
+<p>Opções corretas de via: <strong>diazepam EV ou retal</strong> <strong>ou</strong> <strong>midazolam EV / IM / spray nasal</strong>. <strong>Não</strong> marcar <strong>diazepam intramuscular</strong>. <strong>Não</strong> marcar midazolam como <strong>"inalatório"</strong> — o correto é <strong>spray nasal</strong> (absorção capilar).</p>
+</div>
+
+<div class="a9-board"><table>
+<tr><th>Vinheta</th><th>Quer agora</th><th>Não marcar</th></tr>
+<tr><td>8 a · TCG 7 min · SV ok</td><td><strong>Benzo 1º</strong></td><td>PHT/VPA como 1º; anestesia de cara</td></tr>
+<tr><td>3 a em crise · vias</td><td>DZP <strong>EV/retal</strong> ou MDZ <strong>EV/IM/nasal</strong></td><td>DZP <strong>IM</strong>; MDZ <strong>"inalatório"</strong></td></tr>
+<tr><td>Cláudio 40′ estabilizado</td><td><strong>Benzo</strong> (ex. DZP IV)</td><td>Só repor AED oral</td></tr>
+</table></div>
+
+<div class="a9-prose"><h3>3. Escada one-pager</h3></div>
+<div class="a9-onepager" aria-label="Escada final one-pager">Estabiliza + glicemia
+  → >5 min (ou ≥2 sem recovery)
+    → Benzo (vias/tetos BR)
+      → 2º PHT 20/50 (se falha ou recorrência)
+        → refratário = anestesia
+Exceções laterais: neonatal · eclâmpsia · glicose · intox/cocaína</div>
+
+<div class="a9-inter"><div class="a9-inter-l">🔄 Interleaving (reativação)</div><p>7 min reativa <strong>5 age</strong> (P2). Vias reativam matriz DZP/MDZ (P5). "PHT/VPA = 2ª" reativa escada (P7–P9).</p></div>
+
+<div class="a9-svg-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 780" role="img" aria-labelledby="a9p11-title a9p11-desc" class="a9-inline-svg a9p11-root">
+  <title id="a9p11-title">Escada final de status: estabiliza, benzo, PHT, refratário</title>
+  <desc id="a9p11-desc">One-pager operacional de status epiléptico. Porta estabiliza via aérea, circulação e glicemia. Critério maior que cinco minutos ou duas crises sem recovery trata como status. Primeiro benzodiazepínico. Segundo fenitoína vinte miligramas por quilo até cinquenta miligramas por minuto com atenção ao coração. Falha de dois sobe a refratário e anestesia. Exceções laterais: neonatal, eclâmpsia, hipoglicemia e intoxicação. Prova: criança de sete minutos recebe benzo primeiro; diazepam EV ou retal, midazolam EV IM ou nasal; não diazepam IM; nasal não é inalatório.</desc>
+  <defs>
+    <linearGradient id="a9p11-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a9p11-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a9p11-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a9p11-auroraL" cx="12%" cy="18%" r="52%">
+      <stop offset="0%" stop-color="var(--a9p11-teal, #2DD4BF)" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="var(--a9p11-indigo, #818CF8)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p11-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p11-auroraR" cx="90%" cy="14%" r="48%">
+      <stop offset="0%" stop-color="var(--a9p11-coral, #F87171)" stop-opacity="0.24"/>
+      <stop offset="55%" stop-color="var(--a9p11-gold, #FBBF24)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p11-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a9p11-cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p11-card, #111A2B)"/>
+      <stop offset="100%" stop-color="var(--a9p11-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p11-tealFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p11-tealDeepCard, #0F2926)"/>
+      <stop offset="100%" stop-color="var(--a9p11-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p11-indigoFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p11-indigoDeepCard, #1A1840)"/>
+      <stop offset="100%" stop-color="var(--a9p11-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p11-coralFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p11-coralDeepCard, #2A1518)"/>
+      <stop offset="100%" stop-color="var(--a9p11-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p11-goldFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a9p11-goldDeepCard, #2A2310)"/>
+      <stop offset="100%" stop-color="var(--a9p11-cardDeep, #0E1A2A)"/>
+    </linearGradient>
+    <linearGradient id="a9p11-rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--a9p11-teal, #2DD4BF)" stop-opacity="0.85"/>
+      <stop offset="45%" stop-color="var(--a9p11-indigo, #818CF8)" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="var(--a9p11-coral, #F87171)" stop-opacity="0.95"/>
+    </linearGradient>
+    <radialGradient id="a9p11-glowTeal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p11-teal, #2DD4BF)" stop-opacity="0.50"/>
+      <stop offset="70%" stop-color="var(--a9p11-teal, #2DD4BF)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p11-teal, #2DD4BF)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p11-glowGold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p11-gold, #FBBF24)" stop-opacity="0.52"/>
+      <stop offset="70%" stop-color="var(--a9p11-gold, #FBBF24)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p11-gold, #FBBF24)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p11-glowIndigo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p11-indigo, #818CF8)" stop-opacity="0.50"/>
+      <stop offset="70%" stop-color="var(--a9p11-indigo, #818CF8)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a9p11-indigo, #818CF8)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a9p11-glowCoral" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a9p11-coral, #F87171)" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="var(--a9p11-coral, #F87171)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="var(--a9p11-coral, #F87171)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="a9p11-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a9p11-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a9p11-arrTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p11-teal, #2DD4BF)"/>
+    </marker>
+    <marker id="a9p11-arrGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p11-gold, #FBBF24)"/>
+    </marker>
+    <marker id="a9p11-arrIndigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p11-indigo, #818CF8)"/>
+    </marker>
+    <marker id="a9p11-arrCoral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a9p11-coral, #F87171)"/>
+    </marker>
+    <style>
+      .a9p11-root {
+        --a9p11-bg0: #0B1220;
+        --a9p11-bg1: #07111F;
+        --a9p11-card: #111A2B;
+        --a9p11-card2: #152033;
+        --a9p11-cardDeep: #0E1A2A;
+        --a9p11-tealDeepCard: #0F2926;
+        --a9p11-indigoDeepCard: #1A1840;
+        --a9p11-coralDeepCard: #2A1518;
+        --a9p11-goldDeepCard: #2A2310;
+        --a9p11-border: rgba(148,163,184,0.18);
+        --a9p11-ink: #F4F7FB;
+        --a9p11-muted: #94A3B8;
+        --a9p11-soft: #B8C0CC;
+        --a9p11-teal: #2DD4BF;
+        --a9p11-tealHi: #99F6E4;
+        --a9p11-tealDeep: #0F766E;
+        --a9p11-indigo: #818CF8;
+        --a9p11-indigoHi: #C7D2FE;
+        --a9p11-indigoDeep: #4338CA;
+        --a9p11-coral: #F87171;
+        --a9p11-coralHi: #FECACA;
+        --a9p11-coralDeep: #B91C1C;
+        --a9p11-gold: #FBBF24;
+        --a9p11-goldHi: #FDE68A;
+        --a9p11-goldDeep: #B45309;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a9p11-root {
+        --a9p11-bg0: #F8F6F2;
+        --a9p11-bg1: #EEF2F7;
+        --a9p11-card: #FFFFFF;
+        --a9p11-card2: #F1F5F9;
+        --a9p11-cardDeep: #F8FAFC;
+        --a9p11-tealDeepCard: #ECFDF8;
+        --a9p11-indigoDeepCard: #EEF2FF;
+        --a9p11-coralDeepCard: #FEF2F2;
+        --a9p11-goldDeepCard: #FFFBEB;
+        --a9p11-border: rgba(15,23,42,0.10);
+        --a9p11-ink: #0F172A;
+        --a9p11-muted: #64748B;
+        --a9p11-soft: #475569;
+        --a9p11-teal: #0D9488;
+        --a9p11-tealHi: #CCFBF1;
+        --a9p11-tealDeep: #115E59;
+        --a9p11-indigo: #6366F1;
+        --a9p11-indigoHi: #E0E7FF;
+        --a9p11-indigoDeep: #3730A3;
+        --a9p11-coral: #DC2626;
+        --a9p11-coralHi: #FEE2E2;
+        --a9p11-coralDeep: #991B1B;
+        --a9p11-gold: #D97706;
+        --a9p11-goldHi: #FEF3C7;
+        --a9p11-goldDeep: #92400E;
+      }
+      .a9p11-root .a9p11-hs,
+      .a9p11-root .a9p11-chip {
+        cursor: pointer;
+      }
+      .a9p11-root .a9p11-hs:focus,
+      .a9p11-root .a9p11-chip:focus {
+        outline: none;
+      }
+      .a9p11-root .a9p11-hs:focus .a9p11-hs-ring,
+      .a9p11-root .a9p11-chip:focus .a9p11-chip-ring {
+        opacity: 1;
+      }
+      .a9p11-root .a9p11-tip {
+        pointer-events: none;
+      }
+      .a9p11-root .a9p11-hs,
+      .a9p11-root .a9p11-chip,
+      .a9p11-root .a9p11-node-est,
+      .a9p11-root .a9p11-node-crit,
+      .a9p11-root .a9p11-node-benzo,
+      .a9p11-root .a9p11-node-pht,
+      .a9p11-root .a9p11-node-ref,
+      .a9p11-root .a9p11-node-exc,
+      .a9p11-root .a9p11-node-prova {
+        transition: opacity 0.22s ease, filter 0.22s ease;
+      }
+      .a9p11-root .a9p11-chip-fill {
+        opacity: 0.72;
+      }
+      .a9p11-root[data-phase="est"] .a9p11-node-est {
+        filter: url(#a9p11-glow);
+      }
+      .a9p11-root[data-phase="est"] .a9p11-chip-est .a9p11-chip-fill { opacity: 1; }
+      .a9p11-root[data-phase="est"] .a9p11-node-crit,
+      .a9p11-root[data-phase="est"] .a9p11-node-benzo,
+      .a9p11-root[data-phase="est"] .a9p11-node-pht,
+      .a9p11-root[data-phase="est"] .a9p11-node-ref,
+      .a9p11-root[data-phase="est"] .a9p11-node-exc,
+      .a9p11-root[data-phase="est"] .a9p11-node-prova { opacity: 0.38; }
+      .a9p11-root[data-phase="crit"] .a9p11-node-crit {
+        filter: url(#a9p11-glow);
+      }
+      .a9p11-root[data-phase="crit"] .a9p11-chip-crit .a9p11-chip-fill { opacity: 1; }
+      .a9p11-root[data-phase="crit"] .a9p11-node-est,
+      .a9p11-root[data-phase="crit"] .a9p11-node-benzo,
+      .a9p11-root[data-phase="crit"] .a9p11-node-pht,
+      .a9p11-root[data-phase="crit"] .a9p11-node-ref,
+      .a9p11-root[data-phase="crit"] .a9p11-node-exc,
+      .a9p11-root[data-phase="crit"] .a9p11-node-prova { opacity: 0.38; }
+      .a9p11-root[data-phase="benzo"] .a9p11-node-benzo {
+        filter: url(#a9p11-glow);
+      }
+      .a9p11-root[data-phase="benzo"] .a9p11-chip-benzo .a9p11-chip-fill { opacity: 1; }
+      .a9p11-root[data-phase="benzo"] .a9p11-node-est,
+      .a9p11-root[data-phase="benzo"] .a9p11-node-crit,
+      .a9p11-root[data-phase="benzo"] .a9p11-node-pht,
+      .a9p11-root[data-phase="benzo"] .a9p11-node-ref,
+      .a9p11-root[data-phase="benzo"] .a9p11-node-exc,
+      .a9p11-root[data-phase="benzo"] .a9p11-node-prova { opacity: 0.38; }
+      .a9p11-root[data-phase="pht"] .a9p11-node-pht {
+        filter: url(#a9p11-glow);
+      }
+      .a9p11-root[data-phase="pht"] .a9p11-chip-pht .a9p11-chip-fill { opacity: 1; }
+      .a9p11-root[data-phase="pht"] .a9p11-node-est,
+      .a9p11-root[data-phase="pht"] .a9p11-node-crit,
+      .a9p11-root[data-phase="pht"] .a9p11-node-benzo,
+      .a9p11-root[data-phase="pht"] .a9p11-node-ref,
+      .a9p11-root[data-phase="pht"] .a9p11-node-exc,
+      .a9p11-root[data-phase="pht"] .a9p11-node-prova { opacity: 0.38; }
+      .a9p11-root[data-phase="ref"] .a9p11-node-ref {
+        filter: url(#a9p11-glow);
+      }
+      .a9p11-root[data-phase="ref"] .a9p11-chip-ref .a9p11-chip-fill { opacity: 1; }
+      .a9p11-root[data-phase="ref"] .a9p11-node-est,
+      .a9p11-root[data-phase="ref"] .a9p11-node-crit,
+      .a9p11-root[data-phase="ref"] .a9p11-node-benzo,
+      .a9p11-root[data-phase="ref"] .a9p11-node-pht,
+      .a9p11-root[data-phase="ref"] .a9p11-node-exc,
+      .a9p11-root[data-phase="ref"] .a9p11-node-prova { opacity: 0.38; }
+      .a9p11-root[data-phase="exc"] .a9p11-node-exc {
+        filter: url(#a9p11-glow);
+      }
+      .a9p11-root[data-phase="exc"] .a9p11-chip-exc .a9p11-chip-fill { opacity: 1; }
+      .a9p11-root[data-phase="exc"] .a9p11-node-est,
+      .a9p11-root[data-phase="exc"] .a9p11-node-crit,
+      .a9p11-root[data-phase="exc"] .a9p11-node-benzo,
+      .a9p11-root[data-phase="exc"] .a9p11-node-pht,
+      .a9p11-root[data-phase="exc"] .a9p11-node-ref,
+      .a9p11-root[data-phase="exc"] .a9p11-node-prova { opacity: 0.38; }
+      .a9p11-root[data-phase="prova"] .a9p11-node-prova {
+        filter: url(#a9p11-glow);
+      }
+      .a9p11-root[data-phase="prova"] .a9p11-chip-prova .a9p11-chip-fill { opacity: 1; }
+      .a9p11-root[data-phase="prova"] .a9p11-node-est,
+      .a9p11-root[data-phase="prova"] .a9p11-node-crit,
+      .a9p11-root[data-phase="prova"] .a9p11-node-benzo,
+      .a9p11-root[data-phase="prova"] .a9p11-node-pht,
+      .a9p11-root[data-phase="prova"] .a9p11-node-ref,
+      .a9p11-root[data-phase="prova"] .a9p11-node-exc { opacity: 0.38; }
+      .a9p11-root[data-phase="ladder"] .a9p11-chip-ladder .a9p11-chip-fill { opacity: 1; }
+      @media (prefers-reduced-motion: reduce) {
+        .a9p11-root .a9p11-hs,
+        .a9p11-root .a9p11-chip,
+        .a9p11-root .a9p11-node-est,
+        .a9p11-root .a9p11-node-crit,
+        .a9p11-root .a9p11-node-benzo,
+        .a9p11-root .a9p11-node-pht,
+        .a9p11-root .a9p11-node-ref,
+        .a9p11-root .a9p11-node-exc,
+        .a9p11-root .a9p11-node-prova {
+          transition: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="840" height="780" fill="url(#a9p11-bg)"/>
+  <rect width="840" height="780" fill="url(#a9p11-auroraL)"/>
+  <rect width="840" height="780" fill="url(#a9p11-auroraR)"/>
+
+  <text x="28" y="36" fill="var(--a9p11-ink, #F4F7FB)" font-size="20" font-weight="700" letter-spacing="-0.3">Escada final de status</text>
+  <text x="28" y="58" fill="var(--a9p11-muted, #94A3B8)" font-size="13" font-weight="500">estabiliza → &gt;5 → benzo → PHT → refratário · exceções laterais · prova</text>
+  <text id="a9p11-status-text" x="812" y="42" text-anchor="end" fill="var(--a9p11-teal, #2DD4BF)" font-size="13" font-weight="600">5 degraus · uma respiração</text>
+
+  <path d="M78 198 H762" fill="none" stroke="url(#a9p11-rail)" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+  <circle cx="78" cy="198" r="5" fill="var(--a9p11-teal, #2DD4BF)"/>
+  <circle cx="762" cy="198" r="5" fill="var(--a9p11-coral, #F87171)"/>
+
+  <g id="a9p11-node-est" class="a9p11-hs a9p11-node-est" tabindex="0" role="button" aria-label="Porta: estabiliza e glicemia">
+    <rect class="a9p11-hs-ring" x="24" y="88" width="148" height="220" rx="16" fill="none" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+    <ellipse cx="98" cy="198" rx="52" ry="28" fill="url(#a9p11-glowTeal)" opacity="0.55"/>
+    <rect x="32" y="96" width="132" height="156" rx="16" fill="url(#a9p11-tealFace)" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.8" filter="url(#a9p11-soft)"/>
+    <circle cx="98" cy="124" r="18" fill="var(--a9p11-tealDeepCard, #0F2926)" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.6"/>
+    <text x="98" y="129" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="14" font-weight="700">1</text>
+    <text x="98" y="158" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="11" font-weight="600">PORTA</text>
+    <text x="98" y="180" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="16" font-weight="700">Estabiliza</text>
+    <text x="98" y="202" text-anchor="middle" fill="var(--a9p11-soft, #B8C0CC)" font-size="12" font-weight="500">VA · circ</text>
+    <text x="98" y="222" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="12" font-weight="600">glicemia</text>
+    <g transform="translate(78, 232)" opacity="0.92">
+      <rect x="0" y="0" width="40" height="12" rx="4" fill="var(--a9p11-teal, #2DD4BF)" opacity="0.35"/>
+      <path d="M6 6 H34" stroke="var(--a9p11-tealHi, #99F6E4)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <path d="M164 198 H196" fill="none" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="2.2" stroke-linecap="round" marker-end="url(#a9p11-arrGold)" opacity="0.9"/>
+
+  <g id="a9p11-node-crit" class="a9p11-hs a9p11-node-crit" tabindex="0" role="button" aria-label="Critério operacional maior que cinco minutos">
+    <rect class="a9p11-hs-ring" x="188" y="88" width="148" height="220" rx="16" fill="none" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+    <ellipse cx="262" cy="198" rx="52" ry="28" fill="url(#a9p11-glowGold)" opacity="0.50"/>
+    <path d="M262 104 L324 166 L262 228 L200 166 Z" fill="url(#a9p11-goldFace)" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="1.9" filter="url(#a9p11-soft)"/>
+    <text x="262" y="152" text-anchor="middle" fill="var(--a9p11-goldHi, #FDE68A)" font-size="11" font-weight="600">CRITÉRIO</text>
+    <text x="262" y="176" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="22" font-weight="700">&gt; 5 min</text>
+    <text x="262" y="198" text-anchor="middle" fill="var(--a9p11-soft, #B8C0CC)" font-size="12" font-weight="500">ou ≥ 2</text>
+    <text x="262" y="216" text-anchor="middle" fill="var(--a9p11-goldHi, #FDE68A)" font-size="11" font-weight="600">sem recovery</text>
+    <rect x="214" y="248" width="96" height="28" rx="10" fill="url(#a9p11-goldFace)" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="1.3"/>
+    <text x="262" y="267" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="12" font-weight="700">= status</text>
+  </g>
+
+  <path d="M328 198 H360" fill="none" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="2.2" stroke-linecap="round" marker-end="url(#a9p11-arrTeal)" opacity="0.9"/>
+
+  <g id="a9p11-node-benzo" class="a9p11-hs a9p11-node-benzo" tabindex="0" role="button" aria-label="Primeiro: benzodiazepínico">
+    <rect class="a9p11-hs-ring" x="352" y="88" width="148" height="220" rx="16" fill="none" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+    <ellipse cx="426" cy="198" rx="52" ry="28" fill="url(#a9p11-glowTeal)" opacity="0.55"/>
+    <rect x="360" y="96" width="132" height="156" rx="16" fill="url(#a9p11-tealFace)" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.8" filter="url(#a9p11-soft)"/>
+    <circle cx="426" cy="124" r="18" fill="var(--a9p11-tealDeepCard, #0F2926)" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.6"/>
+    <text x="426" y="129" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="14" font-weight="700">2</text>
+    <text x="426" y="158" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="11" font-weight="600">1º FÁRMACO</text>
+    <text x="426" y="182" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="18" font-weight="700">Benzo</text>
+    <text x="426" y="204" text-anchor="middle" fill="var(--a9p11-soft, #B8C0CC)" font-size="12" font-weight="500">sempre 1º</text>
+    <text x="426" y="226" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="11" font-weight="600">exceto S10</text>
+    <g transform="translate(406, 236)" opacity="0.95">
+      <path d="M4 2 C10 -2 16 2 16 8 C16 14 10 18 10 18 C10 18 4 14 4 8 C4 2 10 -2 16 2" fill="none" stroke="var(--a9p11-tealHi, #99F6E4)" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <path d="M492 198 H524" fill="none" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="2.2" stroke-linecap="round" marker-end="url(#a9p11-arrIndigo)" opacity="0.9"/>
+
+  <g id="a9p11-node-pht" class="a9p11-hs a9p11-node-pht" tabindex="0" role="button" aria-label="Segundo: fenitoína com atenção ao coração">
+    <rect class="a9p11-hs-ring" x="516" y="88" width="148" height="220" rx="16" fill="none" stroke="var(--a9p11-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+    <ellipse cx="590" cy="198" rx="52" ry="28" fill="url(#a9p11-glowIndigo)" opacity="0.52"/>
+    <rect x="524" y="96" width="132" height="156" rx="16" fill="url(#a9p11-indigoFace)" stroke="var(--a9p11-indigo, #818CF8)" stroke-width="1.8" filter="url(#a9p11-soft)"/>
+    <circle cx="590" cy="124" r="18" fill="var(--a9p11-indigoDeepCard, #1A1840)" stroke="var(--a9p11-indigo, #818CF8)" stroke-width="1.6"/>
+    <text x="590" y="129" text-anchor="middle" fill="var(--a9p11-indigoHi, #C7D2FE)" font-size="14" font-weight="700">3</text>
+    <text x="590" y="158" text-anchor="middle" fill="var(--a9p11-indigoHi, #C7D2FE)" font-size="11" font-weight="600">2º PRÁTICO</text>
+    <text x="590" y="180" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="18" font-weight="700">PHT</text>
+    <text x="590" y="200" text-anchor="middle" fill="var(--a9p11-soft, #B8C0CC)" font-size="12" font-weight="500">20 mg/kg</text>
+    <text x="590" y="218" text-anchor="middle" fill="var(--a9p11-indigoHi, #C7D2FE)" font-size="11" font-weight="600">≤ 50 mg/min</text>
+    <g transform="translate(574, 228)">
+      <path d="M16 6 C16 2 12 0 9 2 C6 0 2 2 2 6 C2 12 9 18 16 24 C23 18 30 12 30 6 C30 2 26 0 23 2 C20 0 16 2 16 6 Z" fill="var(--a9p11-coral, #F87171)" opacity="0.92"/>
+    </g>
+  </g>
+
+  <path d="M656 198 H688" fill="none" stroke="var(--a9p11-indigo, #818CF8)" stroke-width="2.2" stroke-linecap="round" marker-end="url(#a9p11-arrCoral)" opacity="0.9"/>
+
+  <g id="a9p11-node-ref" class="a9p11-hs a9p11-node-ref" tabindex="0" role="button" aria-label="Refratário: falha de dois e anestesia">
+    <rect class="a9p11-hs-ring" x="680" y="88" width="140" height="220" rx="16" fill="none" stroke="var(--a9p11-coral, #F87171)" stroke-width="2" opacity="0"/>
+    <ellipse cx="750" cy="198" rx="50" ry="28" fill="url(#a9p11-glowCoral)" opacity="0.55"/>
+    <rect x="688" y="96" width="124" height="156" rx="16" fill="url(#a9p11-coralFace)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.9" filter="url(#a9p11-soft)"/>
+    <circle cx="750" cy="124" r="18" fill="var(--a9p11-coralDeepCard, #2A1518)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.6"/>
+    <text x="750" y="129" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="14" font-weight="700">4</text>
+    <text x="750" y="158" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="11" font-weight="600">FALHA DE 2</text>
+    <text x="750" y="180" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="15" font-weight="700">Refratário</text>
+    <text x="750" y="200" text-anchor="middle" fill="var(--a9p11-soft, #B8C0CC)" font-size="12" font-weight="500">anestesia</text>
+    <text x="750" y="218" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="11" font-weight="600">boot · via</text>
+    <g transform="translate(736, 230)" opacity="0.95">
+      <rect x="0" y="0" width="28" height="18" rx="5" fill="var(--a9p11-card, #111A2B)" stroke="var(--a9p11-coralHi, #FECACA)" stroke-width="1.3"/>
+      <line x1="14" y1="4" x2="14" y2="14" stroke="var(--a9p11-coral, #F87171)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g id="a9p11-node-exc" class="a9p11-hs a9p11-node-exc" tabindex="0" role="button" aria-label="Exceções laterais ao primeiro da lógica usual">
+    <rect class="a9p11-hs-ring" x="24" y="328" width="792" height="108" rx="16" fill="none" stroke="var(--a9p11-coral, #F87171)" stroke-width="2" opacity="0"/>
+    <rect x="28" y="332" width="784" height="100" rx="16" fill="url(#a9p11-cardFace)" stroke="var(--a9p11-border, rgba(148,163,184,0.18))" stroke-width="1.4"/>
+    <text x="48" y="358" fill="var(--a9p11-coralHi, #FECACA)" font-size="12" font-weight="700">EXCEÇÕES LATERAIS</text>
+    <text x="200" y="358" fill="var(--a9p11-muted, #94A3B8)" font-size="12" font-weight="500">cortam o 1º usual · sem doses inventadas</text>
+
+    <g transform="translate(48, 372)">
+      <rect width="168" height="44" rx="12" fill="url(#a9p11-coralFace)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.4"/>
+      <text x="84" y="19" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="11" font-weight="600">Neonatal</text>
+      <text x="84" y="35" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="12" font-weight="700">1º fenobarbital</text>
+    </g>
+    <g transform="translate(232, 372)">
+      <rect width="168" height="44" rx="12" fill="url(#a9p11-coralFace)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.4"/>
+      <text x="84" y="19" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="11" font-weight="600">Eclâmpsia</text>
+      <text x="84" y="35" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="12" font-weight="700">1º MgSO₄</text>
+    </g>
+    <g transform="translate(416, 372)">
+      <rect width="168" height="44" rx="12" fill="url(#a9p11-coralFace)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.4"/>
+      <text x="84" y="19" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="11" font-weight="600">Hipoglicemia</text>
+      <text x="84" y="35" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="12" font-weight="700">glicose · ≠ AED</text>
+    </g>
+    <g transform="translate(600, 372)">
+      <rect width="188" height="44" rx="12" fill="url(#a9p11-coralFace)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.4"/>
+      <text x="94" y="19" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="11" font-weight="600">Intox / cocaína</text>
+      <text x="94" y="35" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="12" font-weight="700">≠ PHT como 2º usual</text>
+    </g>
+  </g>
+
+  <g id="a9p11-node-prova" class="a9p11-hs a9p11-node-prova" tabindex="0" role="button" aria-label="Âncoras de prova: criança sete minutos e vias">
+    <rect class="a9p11-hs-ring" x="24" y="452" width="792" height="118" rx="16" fill="none" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+    <rect x="28" y="456" width="784" height="110" rx="16" fill="url(#a9p11-goldFace)" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="1.6"/>
+    <text x="48" y="482" fill="var(--a9p11-goldHi, #FDE68A)" font-size="12" font-weight="700">PROVA · âncoras de gabarito</text>
+    <text x="48" y="508" fill="var(--a9p11-ink, #F4F7FB)" font-size="15" font-weight="700">Criança 7 min → benzo 1º</text>
+    <text x="48" y="530" fill="var(--a9p11-soft, #B8C0CC)" font-size="12" font-weight="500">não esperar 30 · não pular para 2º</text>
+
+    <g transform="translate(320, 474)">
+      <rect width="220" height="72" rx="12" fill="var(--a9p11-card, #111A2B)" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.4" opacity="0.92"/>
+      <text x="110" y="22" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="11" font-weight="600">VIAS CERTAS</text>
+      <text x="110" y="42" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="12" font-weight="700">DZP EV · retal</text>
+      <text x="110" y="60" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="12" font-weight="700">MDZ EV · IM · nasal</text>
+    </g>
+
+    <g transform="translate(556, 474)">
+      <rect width="232" height="72" rx="12" fill="var(--a9p11-coralDeepCard, #2A1518)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.5"/>
+      <text x="116" y="22" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="11" font-weight="600">PROIBIDO / PEGADINHA</text>
+      <text x="116" y="42" text-anchor="middle" fill="var(--a9p11-ink, #F4F7FB)" font-size="13" font-weight="700">✗ DZP IM</text>
+      <text x="116" y="60" text-anchor="middle" fill="var(--a9p11-goldHi, #FDE68A)" font-size="12" font-weight="600">nasal ≠ inalatório</text>
+    </g>
+  </g>
+
+  <g id="a9p11-chips" transform="translate(28, 592)">
+    <g id="a9p11-chip-ladder" class="a9p11-chip a9p11-chip-ladder" transform="translate(0,0)" tabindex="0" role="button" aria-label="Visão da escada completa">
+      <rect class="a9p11-chip-ring" x="-2" y="-2" width="100" height="36" rx="10" fill="none" stroke="var(--a9p11-indigo, #818CF8)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p11-chip-fill" width="96" height="32" rx="8" fill="var(--a9p11-indigoDeepCard, #1A1840)" stroke="var(--a9p11-indigo, #818CF8)" stroke-width="1.3"/>
+      <text x="48" y="21" text-anchor="middle" fill="var(--a9p11-indigoHi, #C7D2FE)" font-size="12" font-weight="700">Escada</text>
+    </g>
+    <g id="a9p11-chip-est" class="a9p11-chip a9p11-chip-est" transform="translate(108,0)" tabindex="0" role="button" aria-label="Porta estabiliza">
+      <rect class="a9p11-chip-ring" x="-2" y="-2" width="108" height="36" rx="10" fill="none" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p11-chip-fill" width="104" height="32" rx="8" fill="var(--a9p11-tealDeepCard, #0F2926)" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.3"/>
+      <text x="52" y="21" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="12" font-weight="700">Estabiliza</text>
+    </g>
+    <g id="a9p11-chip-crit" class="a9p11-chip a9p11-chip-crit" transform="translate(224,0)" tabindex="0" role="button" aria-label="Critério maior que cinco">
+      <rect class="a9p11-chip-ring" x="-2" y="-2" width="84" height="36" rx="10" fill="none" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p11-chip-fill" width="80" height="32" rx="8" fill="var(--a9p11-goldDeepCard, #2A2310)" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="1.3"/>
+      <text x="40" y="21" text-anchor="middle" fill="var(--a9p11-goldHi, #FDE68A)" font-size="12" font-weight="700">&gt; 5 min</text>
+    </g>
+    <g id="a9p11-chip-benzo" class="a9p11-chip a9p11-chip-benzo" transform="translate(320,0)" tabindex="0" role="button" aria-label="Benzo primeiro">
+      <rect class="a9p11-chip-ring" x="-2" y="-2" width="84" height="36" rx="10" fill="none" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p11-chip-fill" width="80" height="32" rx="8" fill="var(--a9p11-tealDeepCard, #0F2926)" stroke="var(--a9p11-teal, #2DD4BF)" stroke-width="1.3"/>
+      <text x="40" y="21" text-anchor="middle" fill="var(--a9p11-tealHi, #99F6E4)" font-size="12" font-weight="700">Benzo</text>
+    </g>
+    <g id="a9p11-chip-pht" class="a9p11-chip a9p11-chip-pht" transform="translate(416,0)" tabindex="0" role="button" aria-label="Fenitoína segundo">
+      <rect class="a9p11-chip-ring" x="-2" y="-2" width="72" height="36" rx="10" fill="none" stroke="var(--a9p11-indigo, #818CF8)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p11-chip-fill" width="68" height="32" rx="8" fill="var(--a9p11-indigoDeepCard, #1A1840)" stroke="var(--a9p11-indigo, #818CF8)" stroke-width="1.3"/>
+      <text x="34" y="21" text-anchor="middle" fill="var(--a9p11-indigoHi, #C7D2FE)" font-size="12" font-weight="700">PHT</text>
+    </g>
+    <g id="a9p11-chip-ref" class="a9p11-chip a9p11-chip-ref" transform="translate(500,0)" tabindex="0" role="button" aria-label="Refratário">
+      <rect class="a9p11-chip-ring" x="-2" y="-2" width="108" height="36" rx="10" fill="none" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p11-chip-fill" width="104" height="32" rx="8" fill="var(--a9p11-coralDeepCard, #2A1518)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.3"/>
+      <text x="52" y="21" text-anchor="middle" fill="var(--a9p11-coralHi, #FECACA)" font-size="12" font-weight="700">Refratário</text>
+    </g>
+    <g id="a9p11-chip-exc" class="a9p11-chip a9p11-chip-exc" transform="translate(620,0)" tabindex="0" role="button" aria-label="Exceções">
+      <rect class="a9p11-chip-ring" x="-2" y="-2" width="96" height="36" rx="10" fill="none" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p11-chip-fill" width="92" height="32" rx="8" fill="var(--a9p11-card2, #152033)" stroke="var(--a9p11-coral, #F87171)" stroke-width="1.3"/>
+      <text x="46" y="21" text-anchor="middle" fill="var(--a9p11-soft, #B8C0CC)" font-size="12" font-weight="700">Exceções</text>
+    </g>
+    <g id="a9p11-chip-prova" class="a9p11-chip a9p11-chip-prova" transform="translate(728,0)" tabindex="0" role="button" aria-label="Prova">
+      <rect class="a9p11-chip-ring" x="-2" y="-2" width="80" height="36" rx="10" fill="none" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="1.8" opacity="0"/>
+      <rect class="a9p11-chip-fill" width="76" height="32" rx="8" fill="var(--a9p11-goldDeepCard, #2A2310)" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="1.3"/>
+      <text x="38" y="21" text-anchor="middle" fill="var(--a9p11-goldHi, #FDE68A)" font-size="12" font-weight="700">Prova</text>
+    </g>
+  </g>
+
+  <text id="a9p11-live" x="28" y="658" fill="var(--a9p11-muted, #94A3B8)" font-size="12" font-weight="500">Toque na escada. Ordem operacional: estabiliza e glicose → &gt;5 (ou ≥2) → benzo 1º → PHT com coração → falha de dois = refratário/anestesia.</text>
+  <text x="28" y="682" fill="var(--a9p11-muted, #94A3B8)" font-size="11" font-weight="500">Sem dose pediátrica inventada de benzo · sem MgSO₄/fenobarbital em mg/kg · sem fechar febril · sem NORSE/EEG inventado</text>
+  <text x="28" y="704" fill="var(--a9p11-muted, #94A3B8)" font-size="11" font-weight="500">Se a legenda sumir: teal porta+1º · ouro &gt;5 · índigo PHT com coração coral · coral no cume = refratário · ouro na base = prova.</text>
+  <text x="28" y="726" fill="var(--a9p11-muted, #94A3B8)" font-size="11" font-weight="500">Ponte só: classificação e febril ficam nas estações próprias — aqui é a ordem que fecha a prova.</text>
+  <text x="28" y="752" fill="var(--a9p11-muted, #94A3B8)" font-size="11" font-weight="500">Cor: teal = fluxo · ouro = critério/pegadinha · índigo = 2º · coral = proibido/refratário/exceção.</text>
+
+  <g id="a9p11-tip" class="a9p11-tip" transform="translate(0,0)" opacity="0" aria-hidden="true">
+    <rect id="a9p11-tip-bg" x="0" y="0" width="300" height="56" rx="12" fill="var(--a9p11-card, #111A2B)" stroke="var(--a9p11-gold, #FBBF24)" stroke-width="1.6" opacity="0.96"/>
+    <text id="a9p11-tip-t1" x="14" y="22" fill="var(--a9p11-ink, #F4F7FB)" font-size="13" font-weight="700"></text>
+    <text id="a9p11-tip-t2" x="14" y="42" fill="var(--a9p11-soft, #B8C0CC)" font-size="12" font-weight="500"></text>
+  </g>
+
+  <script type="text/ecmascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a9p11-root');
+  if(!root) return;
+  if(root.ownerSVGElement) root = root.ownerSVGElement;
+  var svg = root.tagName && root.tagName.toLowerCase() === 'svg' ? root : (root.closest ? root.closest('svg') : null);
+  if(!svg) svg = root;
+  root = svg.classList && svg.classList.contains('a9p11-root') ? svg : svg.querySelector('.a9p11-root') || svg;
+  if(root.setAttribute) root.setAttribute('data-phase', 'ladder');
+
+  function Q(sel){ return root.querySelector(sel); }
+  var tip = Q('#a9p11-tip');
+  var tipBg = Q('#a9p11-tip-bg');
+  var tipT1 = Q('#a9p11-tip-t1');
+  var tipT2 = Q('#a9p11-tip-t2');
+  var statusEl = Q('#a9p11-status-text');
+  var liveEl = Q('#a9p11-live');
+
+  var labels = {
+    ladder: {
+      phase: 'ladder',
+      status: '5 degraus · uma respiração',
+      fill: 'var(--a9p11-teal, #2DD4BF)',
+      live: 'Ordem completa: estabiliza e glicose → >5 (ou ≥2 sem recovery) → benzo 1º → PHT 20 mg/kg ≤50 mg/min com coração → falha de dois = refratário/anestesia.',
+      tip1: 'Escada final',
+      tip2: 'estabiliza → >5 → benzo → PHT → ref.',
+      stroke: 'var(--a9p11-teal, #2DD4BF)'
+    },
+    est: {
+      phase: 'est',
+      status: 'Porta · VA · circ · glicemia',
+      fill: 'var(--a9p11-teal, #2DD4BF)',
+      live: 'Porta: estabiliza via aérea e circulação e mede glicemia antes de abrir a escada de AED. Hipoglicemia vira ramo de glicose, não de benzo genérico.',
+      tip1: 'Estabiliza + glicemia',
+      tip2: 'VA · circ · capilar',
+      stroke: 'var(--a9p11-teal, #2DD4BF)'
+    },
+    crit: {
+      phase: 'crit',
+      status: '>5 min ou ≥2 · trata como status',
+      fill: 'var(--a9p11-gold, #FBBF24)',
+      live: 'Critério operacional: crise >5 min ou ≥2 crises sem recovery entre elas → tratar como status. Não esperar 30 min para começar benzo.',
+      tip1: '>5 min ou ≥2',
+      tip2: 'sem recovery = status',
+      stroke: 'var(--a9p11-gold, #FBBF24)'
+    },
+    benzo: {
+      phase: 'benzo',
+      status: '1º = benzo · vias certas',
+      fill: 'var(--a9p11-teal, #2DD4BF)',
+      live: 'Primeiro fármaco: benzodiazepínico. DZP EV ou retal; MDZ EV, IM ou nasal. Não DZP IM. Nasal é capilar, não inalatório. Exceções laterais em coral.',
+      tip1: 'Benzo 1º',
+      tip2: 'DZP EV/retal · MDZ EV/IM/nasal',
+      stroke: 'var(--a9p11-teal, #2DD4BF)'
+    },
+    pht: {
+      phase: 'pht',
+      status: 'PHT 20 mg/kg · ≤50 mg/min · coração',
+      fill: 'var(--a9p11-indigo, #818CF8)',
+      live: 'Segundo prático: fenitoína 20 mg/kg IV a ≤50 mg/min. Coração antes do cérebro — infusão rápida arrisca arritmia. Onset central em minutos cumulativos, não bolus mágico.',
+      tip1: 'PHT 20 mg/kg',
+      tip2: '≤50 mg/min · coração primeiro',
+      stroke: 'var(--a9p11-indigo, #818CF8)'
+    },
+    ref: {
+      phase: 'ref',
+      status: 'Refratário = falha de dois',
+      fill: 'var(--a9p11-coral, #F87171)',
+      live: 'Refratário: falha de dois (benzo + 2º). Sobe para anestesia e suporte de via — não pule do 1º para o 3º por pânico nem chame refratário só por >5 min.',
+      tip1: 'Falha de dois',
+      tip2: 'anestesia · boot · via',
+      stroke: 'var(--a9p11-coral, #F87171)'
+    },
+    exc: {
+      phase: 'exc',
+      status: 'Exceções · 1º certo no contexto',
+      fill: 'var(--a9p11-coral, #F87171)',
+      live: 'Exceções laterais: neonatal (fenobarbital), eclâmpsia (MgSO₄), hipoglicemia (glicose), intox/cocaína (não PHT como 2º da lógica usual). Sem doses inventadas nesta peça.',
+      tip1: 'Exceções laterais',
+      tip2: 'neo · eclâmpsia · hipo · intox',
+      stroke: 'var(--a9p11-coral, #F87171)'
+    },
+    prova: {
+      phase: 'prova',
+      status: 'Criança 7 min · vias · pegadinhas',
+      fill: 'var(--a9p11-gold, #FBBF24)',
+      live: 'Prova: criança em crise há 7 min → benzo 1º. Vias certas DZP EV/retal e MDZ EV/IM/nasal. Proibido DZP IM. Nasal ≠ inalatório. Não tratar só aos 30.',
+      tip1: 'Criança 7 min → benzo',
+      tip2: '✗ DZP IM · nasal ≠ inalatório',
+      stroke: 'var(--a9p11-gold, #FBBF24)'
+    }
+  };
+
+  function setPhase(p){
+    if(root && root.setAttribute) root.setAttribute('data-phase', p || 'ladder');
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = svg.createSVGPoint();
+    pt.x = cx; pt.y = cy;
+    var ctm = svg.getScreenCTM();
+    if(!ctm) return { x: cx, y: cy };
+    var inv = ctm.inverse();
+    var p = pt.matrixTransform(inv);
+    return { x: p.x, y: p.y };
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip || !tipT1 || !tipT2 || !tipBg) return;
+    tipT1.textContent = t1 || '';
+    tipT2.textContent = t2 || '';
+    tipBg.setAttribute('stroke', stroke || 'var(--a9p11-gold, #FBBF24)');
+    var w = 290;
+    if(t2 && t2.length > 34) w = 320;
+    if(t1 && t1.length > 28) w = Math.max(w, 310);
+    tipBg.setAttribute('width', String(w));
+    var p = clientToSvg(cx, cy);
+    var x = p.x + 16;
+    var y = p.y - 64;
+    if(x + w > 820) x = p.x - w - 12;
+    if(x < 8) x = 8;
+    if(y < 8) y = p.y + 18;
+    if(y > 700) y = 700;
+    tip.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+    tip.setAttribute('opacity', '1');
+    tip.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity', '0');
+    tip.setAttribute('aria-hidden', 'true');
+  }
+
+  function applyLabel(key, cx, cy){
+    var L = labels[key];
+    if(!L) return;
+    setPhase(L.phase || key);
+    if(statusEl){
+      statusEl.textContent = L.status;
+      statusEl.setAttribute('fill', L.fill || 'var(--a9p11-teal, #2DD4BF)');
+    }
+    if(liveEl) liveEl.textContent = L.live;
+    if(cx != null && cy != null) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+  }
+
+  function bind(el, key){
+    if(!el) return;
+    var L = labels[key];
+    function go(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      applyLabel(key, cx, cy);
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      applyLabel(key, ev.clientX, ev.clientY);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      if(tip && tip.getAttribute('opacity') === '1' && L){
+        showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+      }
+    });
+    el.addEventListener('mouseleave', function(ev){
+      if(ev && ev.stopPropagation) ev.stopPropagation();
+      hideTip();
+    });
+    el.addEventListener('click', go);
+    el.addEventListener('focus', function(){
+      var b = el.getBoundingClientRect();
+      applyLabel(key, b.left + b.width/2, b.top + b.height/2);
+    });
+    el.addEventListener('blur', function(){ hideTip(); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){
+        ev.preventDefault();
+        go(ev);
+      }
+    });
+  }
+
+  bind(Q('#a9p11-chip-ladder'), 'ladder');
+  bind(Q('#a9p11-chip-est'), 'est');
+  bind(Q('#a9p11-node-est'), 'est');
+  bind(Q('#a9p11-chip-crit'), 'crit');
+  bind(Q('#a9p11-node-crit'), 'crit');
+  bind(Q('#a9p11-chip-benzo'), 'benzo');
+  bind(Q('#a9p11-node-benzo'), 'benzo');
+  bind(Q('#a9p11-chip-pht'), 'pht');
+  bind(Q('#a9p11-node-pht'), 'pht');
+  bind(Q('#a9p11-chip-ref'), 'ref');
+  bind(Q('#a9p11-node-ref'), 'ref');
+  bind(Q('#a9p11-chip-exc'), 'exc');
+  bind(Q('#a9p11-node-exc'), 'exc');
+  bind(Q('#a9p11-chip-prova'), 'prova');
+  bind(Q('#a9p11-node-prova'), 'prova');
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    if(!t) return;
+    var keep = false;
+    var nodes = root.querySelectorAll('.a9p11-hs, .a9p11-chip');
+    for(var i = 0; i < nodes.length; i++){
+      if(nodes[i].contains(t) || nodes[i] === t){ keep = true; break; }
+    }
+    if(!keep) hideTip();
+  });
+
+  setPhase('ladder');
+  if(statusEl){
+    statusEl.textContent = '5 degraus · uma respiração';
+    statusEl.setAttribute('fill', 'var(--a9p11-teal, #2DD4BF)');
+  }
+  if(liveEl){
+    liveEl.textContent = 'Toque na escada. Ordem operacional: estabiliza e glicose → >5 (ou ≥2) → benzo 1º → PHT com coração → falha de dois = refratário/anestesia.';
+  }
+})();
+  ]]></script>
+</svg>
+</div>
+
+<div class="a9-img-wrap">
+  <img src="media/B11-pediatric-se-benzo-first-becker2023.jpg" alt="Algoritmo de tratamento para status epilepticus convulsivo pediátrico: fase 0 de estabilização, fase 1 com benzodiazepínico após 5 minutos, fase 2 com segunda dose de benzo IV, fase 3 com antiepilépticos de segunda linha, e fase 4 com coma farmacológico em UTI." loading="lazy">
+  <div class="a9-cap">Manejo de crise pediátrica na emergência: benzo 1º após 5 min. Becker et al. 2023 · <em>Front Neurol</em> · CC BY 4.0 · PMC10343462. <strong>>5 min → tratar</strong></div>
+</div>
+
+<div class="a9-why"><div class="a9-why-l">Por que importa</div><p>Integra a estação inteira em formato de banca.</p></div>
+
+<div class="a9-resumo"><div class="a9-res-l">📌 Resumo operacional</div><p>Cláudio 40′ → <strong>benzo</strong>. Criança 7′ TCG → <strong>benzo</strong> (não PHT/VPA como 1º). Vias: DZP EV/retal ou MDZ EV/IM/nasal; <strong>não</strong> DZP IM; <strong>não</strong> "inalatório". Próximo bloco natural da série: <strong>crise febril</strong>.</p></div>
+
+<div class="a9-quiz" id="quiz-p11"><h3>🧠 Quiz</h3>
+<div class="a9-qb" data-q="0"><div class="a9-qe">Q1. Criança 8 a, TCG há 7 min, SV estáveis, sem epilepsia prévia. 1ª intervenção:</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) Fenitoína 20 mg/kg</button>
+<button class="a9-opt" data-opt="B">B) Benzodiazepínico</button>
+<button class="a9-opt" data-opt="C">C) Ácido valproico EV como 1º</button>
+<button class="a9-opt" data-opt="D">D) Tiopental de cara</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+<div class="a9-qb" data-q="1"><div class="a9-qe">Q2. Menino 3 a em crise; pede-se medicação <strong>e via</strong>. Resposta correta:</div><div class="a9-qo">
+<button class="a9-opt" data-opt="A">A) Diazepam IM</button>
+<button class="a9-opt" data-opt="B">B) Midazolam inalatório</button>
+<button class="a9-opt" data-opt="C">C) Diazepam EV ou retal ou midazolam EV/IM/nasal</button>
+<button class="a9-opt" data-opt="D">D) Fenitoína oral</button>
+</div><div class="a9-qfb" aria-live="polite"></div></div>
+</div>
+</div>
+<script>
+(function(){
+var A={'0':{c:'B',f:'<strong>Gabarito: B.</strong> 7 > 5 → status operacional → <strong>tirar da crise</strong> com benzo.<br><br><strong>A, C:</strong> são 2ª linha. <em>Por que cair:</em> associa "já passou de 5" a 2º de cara.<br><strong>D:</strong> refratário precoce. <em>Por que cair:</em> tempo ≠ falha de dois.'},'1':{c:'C',f:'<strong>Gabarito: C.</strong><br><br><strong>A:</strong> absorção errática — <strong>errado</strong>. <em>Por que cair:</em> generaliza IM de outros fármacos.<br><strong>B:</strong> confunde nasal com pulmonar. <em>Por que cair:</em> palavra "inalatório" seduz.<br><strong>D:</strong> via e classe erradas. <em>Por que cair:</em> mistura manutenção.'}};
+var S='p2-status:a9:p11:quiz:v1',s=null;
+try{var r=localStorage.getItem(S);if(r)s=JSON.parse(r);}catch(e){}
+document.querySelectorAll('.a9-qb').forEach(function(b){
+var i=b.getAttribute('data-q'),a=A[i];if(!a)return;
+var f=b.querySelector('.a9-qfb'),o=b.querySelectorAll('.a9-opt');
+function F(c,ch){
+o.forEach(function(x){x.classList.remove('chosen','correct','wrong');if(x.getAttribute('data-opt')===c)x.classList.add('correct');if(x.getAttribute('data-opt')===ch&&ch!==c)x.classList.add('wrong');if(x.getAttribute('data-opt')===ch)x.classList.add('chosen');x.disabled=true;});
+f.className='a9-qfb show '+(ch===c?'cok':'er');f.innerHTML=a.f;
+}
+if(s&&s[i]!==undefined)F(a.c,s[i]);
+o.forEach(function(x){x.addEventListener('click',function(){if(x.disabled)return;var ch=x.getAttribute('data-opt');F(a.c,ch);var st=s?JSON.parse(JSON.stringify(s)):{};st[i]=ch;try{localStorage.setItem(S,JSON.stringify(st));}catch(e){}});});
+});
+})();
+</script>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p10.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Exceções que matam gabarito</span></a><a class="next" href="p11.html" aria-disabled="true" style="visibility:hidden"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl"></span></a></nav>
+</main>
+<footer class="rodape">Manejo da Crise / Status Epiléptico · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas desta aula"><p class="menu-panel__title">Aula 9 · 11 páginas</p><ul class="menu-panel__list"><li><a href="index.html">1 · Cláudio Honor</a></li><li><a href="p2.html">2 · Cinco age, trinta lesa</a></li><li><a href="p3.html">3 · Status convulsivo × não convulsivo</a></li><li><a href="p4.html">4 · Estabiliza e mede glicose</a></li><li><a href="p5.html">5 · Benzo: o 1º, as vias, o Brasil</a></li><li><a href="p6.html">6 · Dose, teto e o medo de intubar</a></li><li><a href="p7.html">7 · Segundo fármaco</a></li><li><a href="p8.html">8 · Fenitoína: 20 mg/kg, 50 mg/min</a></li><li><a href="p9.html">9 · Status refratário</a></li><li><a href="p10.html">10 · Exceções que matam gabarito</a></li><li><a href="p11.html">11 · Prova, fecho e escada final</a></li></ul></nav></div>
+<script>(function(){var btn=document.getElementById('menu-toggle'),ov=document.getElementById('menu-overlay');if(!btn||!ov)return;function fecha(){ov.setAttribute('aria-hidden','true');btn.setAttribute('aria-expanded','false');document.body.style.overflow='';}function abre(){ov.setAttribute('aria-hidden','false');btn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}btn.addEventListener('click',function(){ov.getAttribute('aria-hidden')==='false'?fecha():abre();});document.addEventListener('click',function(e){var p=ov.querySelector('.menu-panel');if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target))fecha();});document.addEventListener('keydown',function(e){if(e.key==='Escape')fecha();});})();</script>
+</body>
+</html>

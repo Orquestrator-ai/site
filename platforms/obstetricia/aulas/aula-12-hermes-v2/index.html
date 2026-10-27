@@ -1,0 +1,789 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CHASSI DA PLATAFORMA GO — copie VERBATIM e troque SÓ o que está em {{ }}.
+
+     ⛔ NÃO invente header, footer, menu, CSS nem JS. NÃO crie arquivo .css novo.
+     ⛔ NÃO mexa nos caminhos ../../assets/ — eles apontam para o chassi compartilhado
+        (tokens.css, base.css, components.css) que dá a identidade da plataforma inteira.
+
+     O QUE É SEU: o conteúdo dentro de <main id="main"><div class="reading"> … </div></main>.
+     Ali dentro você decide a cara da página — paleta interna, ritmo, componentes,
+     como monta o card, que interação inventa. O resto é contrato.
+
+     Placeholders:
+       p1        p1, p2, … p22          (index.html é p1)
+       1       1, 2, … 22
+       22          22
+       Quatro decisões clínicas  título curto desta página
+       Anatomia decide conduta em cinco situações clínicas concretas — e a pelvimetria interna fica como dívida declarada.      uma frase, para o <meta description>
+       <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1" aria-current="page"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li>     os 22 <li> do menu — repita o padrão de menu-panel__item
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<!doctype html>
+<html lang="pt-BR" data-page="p1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#171219">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Anatomia decide conduta em cinco situações clínicas concretas — e a pelvimetria interna fica como dívida declarada.">
+  <title>Quatro decisões clínicas · Anatomia da pelve feminina (parte 1) — GO Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/img/icon.svg" type="image/svg+xml">
+  <style id="critical-nav-fouc">#home-btn{display:grid;place-items:center;width:40px;height:40px;color:#ecdde6;border-bottom:0}#home-btn svg{display:block;width:20px;height:20px}</style>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/aula-12.css">
+</head>
+<body data-page-id="p1" data-a12-page="p01">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="page-orb" aria-hidden="true"></div><div class="page-orb page-orb--rose" aria-hidden="true"></div>
+  <header class="site-header" id="site-header"><div class="site-header__row">
+    <a class="site-header__brand" href="../../index.html"><span class="site-header__logo">GO</span><span class="site-header__titles"><span class="site-header__title">Anatomia da pelve feminina (parte 1)</span><span class="site-header__subtitle">Ginecologia e Obstetrícia · Aula 12</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress" id="progress">1/22</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub do módulo" title="Hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header>
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas da aula"><p class="menu-panel__title">Aula 12 — Anatomia da pelve feminina (parte 1)</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1" aria-current="page"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li></ul><p class="menu-panel__title">Módulo</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="../../index.html"><span class="menu-panel__index">⌂</span><span>Voltar ao hub do módulo</span></a></li></ul></nav></div>
+  <main id="main"><div class="reading">
+
+  <!-- ▼▼▼ AQUI DENTRO É SEU. O conteúdo da página, com a peça SVG da tabela
+       copiada byte a byte, o quiz, e a didática que você decidir. ▼▼▼ -->
+
+  <article class="page is-active" data-page="p1" data-layout="a12-p01" data-item-range="001–017" data-source-ids="001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017"><p class="page__eyebrow">Página 1 · Parte A · Paredes</p>
+<header class="a12-question-stage a12-question-debt" data-opener="E1"><div class="a12-question-stage__question"><span class="a12-question-stage__eyebrow">Pergunta central</span><h1 id="p01-title">Quatro decisões clínicas que dependem só de saber onde as coisas estão</h1><p class="a12-question-stage__lead no-indent">Anatomia se decora no primeiro ano e se esquece no terceiro. Então por que ela reaparece, do nada, na preparação para a residência — e por que ela reaparece decidindo conduta?</p></div><aside class="a12-open-question-debt" aria-label="Resposta adiada"><span class="a12-open-question-debt__stamp">Resposta adiada</span><strong>Estreito + diâmetro</strong><p class="no-indent">A figura da pelvimetria interna fica em aberto até haver estreito, diâmetro e conjugata.</p><p class="a12-open-question-debt__rule no-indent">Dívida declarada — paga na manobra, não na pressa.</p></aside></header>
+<div class="chipset"><span class="a12-modmark">Obstetrícia</span><span class="chip--topic">Parte A · Paredes</span><span class="chip--topic">Itens 001–017</span><span class="chip--topic">Pergunta central</span></div>
+<div class="a12-topic" data-topic="1">
+<div class="a12-topic__kicker">Tópico 1</div>
+<h4 class="topic-h">A pergunta que todo mundo faz antes de começar</h4>
+<div class="prose">
+<p style="text-align: justify;"> Vale a pena estudar anatomia pensando em prova de residência? A pergunta merece ser feita em voz alta, antes de qualquer conteúdo, porque quase todo mundo a faz em silêncio. E ela tem um motivo honesto: anatomia é vista no começo do curso, no formato mais decoreba e mais maçante que existe, some do dia a dia por anos — e reaparece, do nada, exatamente quando o tempo de estudo ficou mais caro. Quem já atravessou essa preparação conhece o medo, a angústia e a ansiedade que ela produz, e sabe que a pergunta não é preguiça: é economia de esforço. Ninguém quer gastar semanas com um assunto que não volta.</p>
+</div></div>
+<div class="a12-topic" data-topic="2">
+<div class="a12-topic__kicker">Tópico 2</div>
+<h4 class="topic-h">Quatro situações em que a decisão depende só de onde as coisas estão</h4>
+<div class="prose">
+<p style="text-align: justify;"> A resposta é sim — e ela não vem por afirmação, vem por demonstração. Não é "estude porque é importante": são <strong class="term">quatro situações clínicas concretas</strong> em que a decisão depende só de anatomia, e nada mais.</p>
+<p style="text-align: justify;"> A primeira é obstétrica e é a assistência ao trabalho de parto. Uma das principais intercorrências do parto é a <strong class="term">hemorragia pós-parto</strong>, e nas fases mais tardias da abordagem, quando as medidas iniciais não resolveram, uma das saídas é a <strong class="term">ligadura da artéria uterina</strong> <a class="a12-link-forward" href="#">↗A5</a>. E aqui está a frase que justifica o gancho inteiro: para planejar essa ligadura, é preciso <strong class="term">entender onde essa artéria está</strong>. A anatomia precede o gesto — <strong class="term">não se liga o que não se sabe localizar</strong>. O endereço exato da artéria uterina, o ponto em que ela cruza o ureter e por que esse cruzamento é o que torna o gesto perigoso são assunto da continuação, junto com o restante da mobília pélvica. Fica registrado como promessa datada, e não como dívida silenciosa: o gancho é anatômico, o percurso da artéria vem com as vísceras e os vasos.</p>
+<p style="text-align: justify;"> A segunda é a cirurgia ginecológica, em que o domínio anatômico não é diferencial, é requisito de entrada. A terceira é o <strong class="term">sangramento uterino anormal</strong>, principalmente nos quadros <strong class="term">estruturais</strong> — são exatamente eles que exigem saber o que está onde, porque a causa é uma alteração de estrutura e não de eixo hormonal. A quarta é a <strong class="term">endometriose</strong>, e ela é o exemplo mais direto de todos: uma das suas manifestações é a <strong class="term">distorção da anatomia pélvica</strong>. O que dá a esses quatro ganchos uma mesma raiz é uma frase curta, e ela é a resposta mais forte à pergunta que abriu tudo: <strong class="term">é preciso entender o que é o normal para saber como é o alterado</strong>. Só reconhece o que está fora do lugar quem sabe onde é o lugar.</p>
+<p style="text-align: justify;"> E há um quinto gancho, que é o mais pesado em prova: <strong class="term">incontinência urinária</strong> <a class="a12-link-forward" href="#">↗A7</a> e <strong class="term">prolapso de órgãos pélvicos</strong> <a class="a12-link-forward" href="#">↗A8</a>. É assunto que despenca em residência e é <strong class="term">pura anatomia</strong> — quem tem o chão da pelve na cabeça responde a maior parte dessas questões sem precisar decorar conduta.</p>
+</div></div>
+<section class="a12-clinical-hook-grid" aria-label="Cinco ganchos clínicos"><button type="button" class="a12-hook" data-hook-target="h1" aria-pressed="false"><span class="a12-hook__n">01</span><strong>Hemorragia tardia</strong><small>Ligadura da artéria uterina: sem endereço não há gesto.</small></button><button type="button" class="a12-hook" data-hook-target="h2" aria-pressed="false"><span class="a12-hook__n">02</span><strong>Cirurgia ginecológica</strong><small>Anatomia como requisito de entrada, não diferencial.</small></button><button type="button" class="a12-hook" data-hook-target="h3" aria-pressed="false"><span class="a12-hook__n">03</span><strong>Sangramento estrutural</strong><small>A causa é alteração de estrutura, não de eixo hormonal.</small></button><button type="button" class="a12-hook" data-hook-target="h4" aria-pressed="false"><span class="a12-hook__n">04</span><strong>Endometriose</strong><small>Distorção: só vê o fora do lugar quem sabe o lugar.</small></button><button type="button" class="a12-hook" data-hook-target="h5" aria-pressed="false"><span class="a12-hook__n">05</span><strong>Incontinência e prolapso</strong><small>O gancho mais pesado em prova — pura anatomia.</small></button></section>
+<div class="a12-topic" data-topic="3">
+<div class="a12-topic__kicker">Tópico 3</div>
+<h4 class="topic-h">A resposta não é uma afirmação: é uma figura que você ainda não consegue ler</h4>
+<div class="prose">
+<p style="text-align: justify;"> Uma questão de banca traz a figura de uma <strong class="term">avaliação da bacia pela pelvimetria interna</strong> — o examinador com os dedos dentro do canal, alcançando um ponto lá atrás — e pede que se assinale <strong class="term">o estreito e o diâmetro que estão sendo avaliados</strong> naquela situação. A questão fica aqui, <strong class="term">sem resposta</strong>, de propósito. E ela já prova alguma coisa antes mesmo de ser respondida: <strong class="term">basta bater o olho nas alternativas para ver que ela é puramente anatômica</strong>. Não há dose, não há hormônio, não há conduta — há nome de estreito e nome de diâmetro. Se hoje ela parece indecifrável, é porque faltam três coisas que ainda não foram construídas: o que é um estreito, quais são os diâmetros que se medem e por que um deles só pode ser estimado. Quando essas três estiverem no lugar, esta questão vira leitura direta.</p>
+</div></div>
+<figure class="a12-fig">
+<figcaption>Quatro problemas, quatro endereços, o mesmo espaço — silhueta de pelve feminina com os cinco ganchos clínicos mapeados.</figcaption>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" class="a12-inline-svg a12p01-root" data-svg-tokenized="true" data-active="all" role="img" aria-labelledby="a12p1-title a12p1-desc">
+  <title id="a12p1-title">Anatomia Topográfica e Decisão Clínica na Pelve Feminina</title>
+  <desc id="a12p1-desc">Ilustração médica interativa mapeando 4 territórios pélvicos e os respectivos impactos na conduta cirúrgica e médica.</desc>
+
+  <defs>
+    <!-- Filter effects namespaced -->
+    <filter id="a12p1-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1-glow-ameixa" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1-glow-suporte" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p1-glow-linha" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .a12p1-root {
+      --a12p1-bg: var(--bg-1, #141017);
+      --a12p1-tinta: var(--a12-tinta, var(--a12p1-tinta-local, #F7F1F5));
+      --a12p1-osso: var(--a12-osso, var(--a12p1-osso-local, #D9C4B2));
+      --a12p1-hemorragia: var(--a12-coral, var(--a12p1-hemorragia-local, #F06A78));
+      --a12p1-endometriose: var(--a12-ameixa, var(--a12p1-endometriose-local, #9B6BC2));
+      --a12p1-suporte: var(--a12-petroleo-claro, var(--a12p1-suporte-local, #4CB7B0));
+      --a12p1-linha: var(--a12-linha, var(--a12p1-linha-local, #A99BA6));
+      --a12p1-panel-bg: var(--bg-2, #1C1622);
+      --a12p1-panel-border: var(--ink-20, #3A2F45);
+      --a12p1-panel-card-bg: var(--bg-3, #251E2D);
+      --a12p1-subtext: var(--ink-70, #C5B9C9);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-1, var(--a12p1-bg-fallback, #141017));
+    }
+
+    [data-theme="light"] .a12p1-root {
+      --a12p1-bg: var(--bg-1, #F8F6F9);
+      --a12p1-tinta: var(--a12-tinta, var(--a12p1-tinta-local, #1C1622));
+      --a12p1-osso: var(--a12-osso, var(--a12p1-osso-local, #8A725D));
+      --a12p1-hemorragia: var(--a12-coral, var(--a12p1-hemorragia-local, #D93848));
+      --a12p1-endometriose: var(--a12-ameixa, var(--a12p1-endometriose-local, #7B44A8));
+      --a12p1-suporte: var(--a12-petroleo-claro, var(--a12p1-suporte-local, #268C85));
+      --a12p1-linha: var(--a12-linha, var(--a12p1-linha-local, #6E5E6C));
+      --a12p1-panel-bg: var(--bg-2, #FFFFFF);
+      --a12p1-panel-border: var(--ink-20, #E4DCE6);
+      --a12p1-panel-card-bg: var(--bg-3, #F2EDF3);
+      --a12p1-subtext: var(--ink-70, #4D4252);
+    }
+
+    .a12p1-title-main {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      fill: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+    }
+
+    .a12p1-title-sub {
+      font-size: 12px;
+      font-weight: 500;
+      fill: var(--a12-linha, var(--a12p1-linha, #A99BA6));
+    }
+
+    /* Pelvic Girdle and Anatomical Background */
+    .a12p1-pelvis-bone {
+      fill: none;
+      stroke: var(--a12-osso, var(--a12p1-osso, #D9C4B2));
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.55;
+    }
+
+    .a12p1-pelvis-soft {
+      fill: none;
+      stroke: var(--a12-linha, var(--a12p1-linha, #A99BA6));
+      stroke-width: 1.25;
+      stroke-dasharray: 4 3;
+      opacity: 0.35;
+    }
+
+    /* Interactive Territory Shapes */
+    .a12p1-territory {
+      cursor: pointer;
+      transition: opacity 0.25s ease, stroke-width 0.25s ease, filter 0.25s ease;
+      outline: none;
+    }
+
+    .a12p1-territory:hover, .a12p1-territory:focus-visible {
+      stroke-width: 2.5px;
+    }
+
+    .a12p1-territory:focus-visible {
+      stroke-dasharray: 6 3;
+    }
+
+    /* State-based Opacity and Highlight Control */
+    .a12p1-root[data-active="hemorragia"] .a12p1-territory:not([data-id="hemorragia"]),
+    .a12p1-root[data-active="cirurgia"] .a12p1-territory:not([data-id="cirurgia"]),
+    .a12p1-root[data-active="endometriose"] .a12p1-territory:not([data-id="endometriose"]),
+    .a12p1-root[data-active="prolapso"] .a12p1-territory:not([data-id="prolapso"]) {
+      opacity: 0.22 !important;
+    }
+
+    .a12p1-root[data-active="hemorragia"] .a12p1-leader-group:not([data-id="hemorragia"]),
+    .a12p1-root[data-active="cirurgia"] .a12p1-leader-group:not([data-id="cirurgia"]),
+    .a12p1-root[data-active="endometriose"] .a12p1-leader-group:not([data-id="endometriose"]),
+    .a12p1-root[data-active="prolapso"] .a12p1-leader-group:not([data-id="prolapso"]) {
+      opacity: 0.3 !important;
+    }
+
+    .a12p1-root[data-active="hemorragia"] .a12p1-territory[data-id="hemorragia"],
+    .a12p1-root[data-active="cirurgia"] .a12p1-territory[data-id="cirurgia"],
+    .a12p1-root[data-active="endometriose"] .a12p1-territory[data-id="endometriose"],
+    .a12p1-root[data-active="prolapso"] .a12p1-territory[data-id="prolapso"] {
+      opacity: 1.0 !important;
+      stroke-width: 3px !important;
+    }
+
+    /* Leader Lines and Label Boxes */
+    .a12p1-leader-line {
+      fill: none;
+      stroke-width: 1.5;
+      stroke-dasharray: 3 3;
+      transition: opacity 0.25s ease, stroke-width 0.25s ease;
+    }
+
+    .a12p1-label-box {
+      rx: 6;
+      ry: 6;
+      stroke-width: 1.25;
+      cursor: pointer;
+      transition: opacity 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
+    }
+
+    .a12p1-label-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .a12p1-label-sub {
+      font-size: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      fill: var(--a12-linha, var(--a12p1-linha, #A99BA6));
+    }
+
+    /* Right Panel Styles */
+    .a12p1-panel-bg-rect {
+      fill: var(--a12p1-panel-bg, #1C1622);
+      stroke: var(--a12p1-panel-border, #3A2F45);
+      stroke-width: 1;
+      rx: 10;
+      ry: 10;
+    }
+
+    .a12p1-tab-btn {
+      cursor: pointer;
+      rx: 5;
+      ry: 5;
+      stroke-width: 1;
+      transition: fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease;
+      outline: none;
+    }
+
+    .a12p1-tab-btn:focus-visible {
+      stroke-width: 2px;
+      stroke: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+    }
+
+    .a12p1-tab-text {
+      font-size: 10px;
+      font-weight: 700;
+      text-anchor: middle;
+      cursor: pointer;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .a12p1-card-bg {
+      fill: var(--a12p1-panel-card-bg, #251E2D);
+      stroke: var(--a12p1-panel-border, #3A2F45);
+      stroke-width: 1;
+      rx: 8;
+      ry: 8;
+    }
+
+    .a12p1-card {
+      display: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .a12p1-root[data-active="all"] .a12p1-card[data-id="all"],
+    .a12p1-root[data-active="hemorragia"] .a12p1-card[data-id="hemorragia"],
+    .a12p1-root[data-active="cirurgia"] .a12p1-card[data-id="cirurgia"],
+    .a12p1-root[data-active="endometriose"] .a12p1-card[data-id="endometriose"],
+    .a12p1-root[data-active="prolapso"] .a12p1-card[data-id="prolapso"] {
+      display: block;
+    }
+
+    /* Active tab button highlight */
+    .a12p1-root[data-active="all"] .a12p1-tab-btn[data-id="all"],
+    .a12p1-root[data-active="hemorragia"] .a12p1-tab-btn[data-id="hemorragia"],
+    .a12p1-root[data-active="cirurgia"] .a12p1-tab-btn[data-id="cirurgia"],
+    .a12p1-root[data-active="endometriose"] .a12p1-tab-btn[data-id="endometriose"],
+    .a12p1-root[data-active="prolapso"] .a12p1-tab-btn[data-id="prolapso"] {
+      stroke-width: 2px !important;
+      opacity: 1.0 !important;
+    }
+
+    .a12p1-card-header {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .a12p1-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      fill: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+    }
+
+    .a12p1-card-val {
+      font-size: 11px;
+      font-weight: 500;
+      fill: var(--a12p1-subtext, #C5B9C9);
+    }
+
+    .a12p1-badge {
+      rx: 4;
+      ry: 4;
+    }
+
+    .a12p1-badge-text {
+      font-size: 9.5px;
+      font-weight: 700;
+      fill: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+      text-anchor: middle;
+    }
+
+    .a12p1-footer-text {
+      font-size: 11px;
+      font-weight: 600;
+      fill: var(--a12-tinta, var(--a12p1-tinta, #F7F1F5));
+    }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect x="0" y="0" width="960" height="620" fill="var(--bg-1, var(--a12p1-bg-fallback, #141017))" />
+
+  <!-- HEADER -->
+  <g transform="translate(40, 35)">
+    <text x="0" y="0" class="a12p1-title-main">TOPOGRAFIA DA PELVE &amp; DECISÃO CLÍNICA</text>
+    <text x="0" y="20" class="a12p1-title-sub">Quatro endereços pélvicos específicos determinam quatro grupos de conduta médica e cirúrgica independentes.</text>
+  </g>
+
+  <!-- PELVIC MAP &amp; ANATOMY STAGE (Left/Center: x=40 to 560, y=70 to 520) -->
+  <g id="a12p1-pelvis-stage">
+    <!-- Outer Stage Frame / Grid Guide -->
+    <rect x="40" y="70" width="520" height="450" rx="10" ry="10" fill="none" stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" stroke-width="1" opacity="0.2" />
+
+    <!-- Pelvic Bone Contour (Simplified Frontal Silhouette) -->
+    <g class="a12p1-pelvis-bone">
+      <!-- Sacrum / Spine Central Axis -->
+      <path d="M290,115 L290,175 M280,125 L300,125 M282,140 L298,140 M284,155 L296,155 M286,170 L294,170" />
+      <!-- Iliac Crest Left -->
+      <path d="M280,125 C220,110 160,140 145,190 C135,225 150,260 175,285 C190,300 205,310 220,335" />
+      <!-- Iliac Crest Right -->
+      <path d="M300,125 C360,110 420,140 435,190 C445,225 430,260 405,285 C390,300 375,310 360,335" />
+      <!-- Pelvic Brim / Inlet Ring -->
+      <path d="M220,235 C220,200 360,200 360,235 C360,280 220,280 220,235 Z" stroke-dasharray="3 3" opacity="0.4" />
+      <!-- Acetabulum &amp; Ischial Spines Left -->
+      <path d="M175,285 C165,310 170,340 190,360 C210,380 225,410 240,430" />
+      <!-- Acetabulum &amp; Ischial Spines Right -->
+      <path d="M405,285 C415,310 410,340 390,360 C370,380 355,410 340,430" />
+      <!-- Pubic Symphysis &amp; Arch -->
+      <path d="M240,430 C265,445 290,447 290,447 C290,447 315,445 340,430 M290,425 L290,447" />
+    </g>
+
+    <!-- Soft Anatomical Guide Lines (Orientational backdrop - Unlabeled organs/axises) -->
+    <g class="a12p1-pelvis-soft">
+      <!-- Uterine / Vaginal Axis Contour -->
+      <path d="M290,200 C265,200 265,260 275,300 C280,325 285,360 290,380 C295,360 300,325 305,300 C315,260 315,200 290,200 Z" />
+      <!-- Broad Ligament / Parametrial Lateral Wings -->
+      <path d="M210,245 C240,245 265,240 265,250 M370,245 C340,245 315,240 315,250" />
+      <!-- Bladder Anterior Curve -->
+      <path d="M245,340 C270,325 310,325 335,340" />
+      <!-- Rectum Posterior Line -->
+      <path d="M290,175 C310,210 315,270 310,330" />
+    </g>
+
+    <!-- 4 CLINICAL TERRITORIES (INTERACTIVE TARGETS) -->
+    <!-- Territory 1: Hemorragia pós-parto (Zona Miometrial / Vascular Inferior) -->
+    <g class="a12p1-territory" data-id="hemorragia" role="button" tabindex="0" aria-label="Território de Hemorragia pós-parto: Zona miometrial e vascular inferior" filter="url(#a12p1-glow-coral)">
+      <!-- Outer Pulsing Segment -->
+      <path d="M262,215 C262,198 275,188 290,188 C305,188 318,198 318,215 C318,245 308,272 290,272 C272,272 262,245 262,215 Z" 
+            fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" fill-opacity="0.3"
+            stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" stroke-width="2" />
+      <!-- Inner Core Vascular Pattern -->
+      <circle cx="290" cy="225" r="14" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" fill-opacity="0.5" />
+      <path d="M282,225 L298,225 M290,217 L290,233" stroke="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))" stroke-width="2" />
+    </g>
+
+    <!-- Territory 2: Cirurgia ginecológica + sangramento estrutural (Zona Retroperitoneal / Parede Lateral) -->
+    <g class="a12p1-territory" data-id="cirurgia" role="button" tabindex="0" aria-label="Território de Cirurgia ginecológica e sangramento estrutural: Parede pélvica lateral e espaço retroperitoneal" filter="url(#a12p1-glow-linha)">
+      <!-- Left Sidewall Band -->
+      <path d="M192,250 C185,280 190,320 208,345 C220,335 218,295 208,255 Z" 
+            fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" fill-opacity="0.35"
+            stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" stroke-width="2" />
+      <!-- Right Sidewall Band -->
+      <path d="M388,250 C395,280 390,320 372,345 C360,335 362,295 372,255 Z" 
+            fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" fill-opacity="0.35"
+            stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" stroke-width="2" />
+      <!-- Danger Cross Hashing Marks -->
+      <path d="M195,270 L205,280 M195,300 L205,310 M375,270 L385,280 M375,300 L385,310" stroke="var(--a12-osso, var(--a12p1-osso, #D9C4B2))" stroke-width="1.75" />
+    </g>
+
+    <!-- Territory 3: Endometriose (Zona Posterior / Fundo de Saco / Septo Retovaginal) -->
+    <g class="a12p1-territory" data-id="endometriose" role="button" tabindex="0" aria-label="Território de Endometriose: Fundo de saco posterior e compartimento retovaginal" filter="url(#a12p1-glow-ameixa)">
+      <!-- Posterior Cul-de-Sac Crescent -->
+      <path d="M298,280 C322,280 348,292 354,312 C358,332 332,348 304,342 C324,324 316,298 298,280 Z" 
+            fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" fill-opacity="0.4"
+            stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" stroke-width="2" />
+      <!-- Nodular Focal Marks -->
+      <circle cx="330" cy="310" r="5" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+      <circle cx="340" cy="324" r="4" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+    </g>
+
+    <!-- Territory 4: Incontinência urinária + prolapso (Zona Anterior / Assoalho Pélvico / Suporte Apical) -->
+    <g class="a12p1-territory" data-id="prolapso" role="button" tabindex="0" aria-label="Território de Incontinência urinária e prolapso: Compartimento anterior e assoalho pélvico" filter="url(#a12p1-glow-suporte)">
+      <!-- Pelvic Floor Support Hammock -->
+      <path d="M225,365 C255,392 325,392 355,365 C368,388 340,418 290,418 C240,418 212,388 225,365 Z" 
+            fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" fill-opacity="0.4"
+            stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" stroke-width="2" />
+      <!-- Support Vector Lines -->
+      <path d="M250,380 Q290,400 330,380" fill="none" stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" stroke-width="2" stroke-dasharray="4 2" />
+    </g>
+
+    <!-- LEADER LINES &amp; OUTSIDE LABEL BOXES (STRICTLY NON-CROSSING) -->
+
+    <!-- Label 1: Hemorragia pós-parto (Top Left) -->
+    <g class="a12p1-leader-group" data-id="hemorragia">
+      <!-- Leader Line: Outside shape from (260,200) -> (210,155) -> (180,133) -->
+      <path d="M260,200 L210,155 L180,133" class="a12p1-leader-line" stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+      <circle cx="260" cy="200" r="3" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+      
+      <!-- Label Box -->
+      <g transform="translate(50, 95)" class="a12p1-territory" data-id="hemorragia" role="button" tabindex="0" aria-label="Selecionar Hemorragia pós-parto">
+        <rect x="0" y="0" width="220" height="64" class="a12p1-label-box" 
+              fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+              stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+        <rect x="0" y="0" width="6" height="64" rx="3" ry="3" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+        <text x="16" y="24" class="a12p1-label-title" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">Hemorragia pós-parto</text>
+        <text x="16" y="42" class="a12p1-label-sub">Segmento uterino &amp; miométrio</text>
+        <text x="16" y="54" class="a12p1-label-sub">Falha de hemostasia miometrial</text>
+      </g>
+    </g>
+
+    <!-- Label 2: Cirurgia ginecológica + sangramento estrutural (Bottom Left) -->
+    <g class="a12p1-leader-group" data-id="cirurgia">
+      <!-- Leader Line: Outside shape from (190,300) -> (140,360) -> (180,440) -->
+      <path d="M190,300 L140,360 L180,440" class="a12p1-leader-line" stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+      <circle cx="190" cy="300" r="3" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+
+      <!-- Label Box -->
+      <g transform="translate(50, 435)" class="a12p1-territory" data-id="cirurgia" role="button" tabindex="0" aria-label="Selecionar Cirurgia ginecológica e sangramento estrutural">
+        <rect x="0" y="0" width="220" height="64" class="a12p1-label-box" 
+              fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+              stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+        <rect x="0" y="0" width="6" height="64" rx="3" ry="3" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+        <text x="16" y="20" class="a12p1-label-title" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">Cirurgia ginecológica &amp;</text>
+        <text x="16" y="34" class="a12p1-label-title" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))">sangramento estrutural</text>
+        <text x="16" y="52" class="a12p1-label-sub">Parede lateral &amp; retroperitônio</text>
+      </g>
+    </g>
+
+    <!-- Label 3: Endometriose (Top Right / Mid Right) -->
+    <g class="a12p1-leader-group" data-id="endometriose">
+      <!-- Leader Line: Outside shape from (355,310) -> (395,230) -> (370,158) -->
+      <path d="M355,310 L395,230 L370,158" class="a12p1-leader-line" stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+      <circle cx="355" cy="310" r="3" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+
+      <!-- Label Box -->
+      <g transform="translate(330, 95)" class="a12p1-territory" data-id="endometriose" role="button" tabindex="0" aria-label="Selecionar Endometriose">
+        <rect x="0" y="0" width="210" height="64" class="a12p1-label-box" 
+              fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+              stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+        <rect x="0" y="0" width="6" height="64" rx="3" ry="3" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+        <text x="16" y="24" class="a12p1-label-title" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">Endometriose</text>
+        <text x="16" y="42" class="a12p1-label-sub">Fundo de saco posterior &amp;</text>
+        <text x="16" y="54" class="a12p1-label-sub">compartimento retovaginal</text>
+      </g>
+    </g>
+
+    <!-- Label 4: Incontinência urinária + prolapso (Bottom Right) -->
+    <g class="a12p1-leader-group" data-id="prolapso">
+      <!-- Leader Line: Outside shape from (355,385) -> (385,410) -> (360,435) -->
+      <path d="M355,385 L385,410 L360,435" class="a12p1-leader-line" stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+      <circle cx="355" cy="385" r="3" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+
+      <!-- Label Box -->
+      <g transform="translate(330, 435)" class="a12p1-territory" data-id="prolapso" role="button" tabindex="0" aria-label="Selecionar Incontinência urinária e prolapso">
+        <rect x="0" y="0" width="210" height="64" class="a12p1-label-box" 
+              fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+              stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+        <rect x="0" y="0" width="6" height="64" rx="3" ry="3" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+        <text x="16" y="20" class="a12p1-label-title" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">Incontinência urinária &amp;</text>
+        <text x="16" y="34" class="a12p1-label-title" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">prolapso</text>
+        <text x="16" y="52" class="a12p1-label-sub">Assoalho pélvico &amp; suporte</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT READING PANEL (x=580 to 920, y=70 to 520) -->
+  <g id="a12p1-reading-panel" transform="translate(580, 70)">
+    <!-- Panel Background Card -->
+    <rect x="0" y="0" width="340" height="450" class="a12p1-panel-bg-rect" />
+
+    <!-- Panel Header Title -->
+    <text x="20" y="30" class="a12p1-card-header" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">PAINEL DE LEITURA TOPOGRÁFICA</text>
+    <line x1="20" y1="42" x2="320" y2="42" stroke="var(--a12p1-panel-border, #3A2F45)" stroke-width="1" />
+
+    <!-- Interactive Filter Selector Tabs -->
+    <g transform="translate(20, 52)">
+      <!-- Tab All -->
+      <g class="a12p1-tab-btn" data-id="all" role="button" tabindex="0" aria-label="Ver todos os territórios">
+        <rect x="0" y="0" width="56" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" opacity="0.8" />
+        <text x="28" y="16" class="a12p1-tab-text" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">TODOS</text>
+      </g>
+      <!-- Tab Hemorragia -->
+      <g transform="translate(60, 0)" class="a12p1-tab-btn" data-id="hemorragia" role="button" tabindex="0" aria-label="Filtrar Hemorragia">
+        <rect x="0" y="0" width="56" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" opacity="0.6" />
+        <text x="28" y="16" class="a12p1-tab-text" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">HEMO</text>
+      </g>
+      <!-- Tab Cirurgia -->
+      <g transform="translate(120, 0)" class="a12p1-tab-btn" data-id="cirurgia" role="button" tabindex="0" aria-label="Filtrar Cirurgia">
+        <rect x="0" y="0" width="56" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" opacity="0.6" />
+        <text x="28" y="16" class="a12p1-tab-text" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))">CIRURGIA</text>
+      </g>
+      <!-- Tab Endometriose -->
+      <g transform="translate(180, 0)" class="a12p1-tab-btn" data-id="endometriose" role="button" tabindex="0" aria-label="Filtrar Endometriose">
+        <rect x="0" y="0" width="56" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" opacity="0.6" />
+        <text x="28" y="16" class="a12p1-tab-text" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">ENDOM</text>
+      </g>
+      <!-- Tab Prolapso -->
+      <g transform="translate(240, 0)" class="a12p1-tab-btn" data-id="prolapso" role="button" tabindex="0" aria-label="Filtrar Prolapso e Incontinência">
+        <rect x="0" y="0" width="60" height="24" rx="4" ry="4" 
+              fill="var(--bg-3, var(--a12p1-panel-card-bg, #251E2D))" 
+              stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" opacity="0.6" />
+        <text x="30" y="16" class="a12p1-tab-text" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">PROLAPSO</text>
+      </g>
+    </g>
+
+    <!-- CARD CONTENT AREA (x=20, y=90, width=300, height=340) -->
+
+    <!-- CARD 0: ALL (Overview State) -->
+    <g class="a12p1-card" data-id="all" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" />
+      <text x="16" y="26" class="a12p1-card-header" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">VISÃO GERAL DOS 4 ENDEREÇOS</text>
+      <text x="16" y="44" class="a12p1-card-val">Selecione uma área no mapa ou nos botões</text>
+      <text x="16" y="58" class="a12p1-card-val">para isolar a análise médica e cirúrgica.</text>
+      
+      <!-- Mini Summary Rows -->
+      <!-- Row 1 -->
+      <g transform="translate(16, 75)">
+        <rect x="0" y="0" width="268" height="54" rx="6" ry="6" fill="var(--bg-1, #141017)" stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" stroke-width="0.75" />
+        <circle cx="15" cy="27" r="6" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+        <text x="30" y="22" class="a12p1-card-label" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">Hemorragia pós-parto</text>
+        <text x="30" y="38" class="a12p1-card-val">Segmento inferior &amp; miométrio: atonia e hemostasia</text>
+      </g>
+      <!-- Row 2 -->
+      <g transform="translate(16, 137)">
+        <rect x="0" y="0" width="268" height="54" rx="6" ry="6" fill="var(--bg-1, #141017)" stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" stroke-width="0.75" />
+        <circle cx="15" cy="27" r="6" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+        <text x="30" y="22" class="a12p1-card-label" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">Cirurgia ginecológica + sangramento</text>
+        <text x="30" y="38" class="a12p1-card-val">Parede lateral &amp; retroperitônio: ureter e vasos</text>
+      </g>
+      <!-- Row 3 -->
+      <g transform="translate(16, 199)">
+        <rect x="0" y="0" width="268" height="54" rx="6" ry="6" fill="var(--bg-1, #141017)" stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" stroke-width="0.75" />
+        <circle cx="15" cy="27" r="6" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+        <text x="30" y="22" class="a12p1-card-label" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">Endometriose profunda</text>
+        <text x="30" y="38" class="a12p1-card-val">Compartimento posterior: retovaginal e fibrose</text>
+      </g>
+      <!-- Row 4 -->
+      <g transform="translate(16, 261)">
+        <rect x="0" y="0" width="268" height="54" rx="6" ry="6" fill="var(--bg-1, #141017)" stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" stroke-width="0.75" />
+        <circle cx="15" cy="27" r="6" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+        <text x="30" y="22" class="a12p1-card-label" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">Incontinência + prolapso</text>
+        <text x="30" y="38" class="a12p1-card-val">Assoalho pélvico: vetores de suporte e fascia</text>
+      </g>
+    </g>
+
+    <!-- CARD 1: HEMORRAGIA -->
+    <g class="a12p1-card" data-id="hemorragia" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" stroke="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+      
+      <!-- Title &amp; Badge -->
+      <text x="16" y="28" class="a12p1-card-header" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">HEMORRAGIA PÓS-PARTO</text>
+      <rect x="16" y="38" width="110" height="18" class="a12p1-badge" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" fill-opacity="0.25" />
+      <text x="71" y="51" class="a12p1-badge-text" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))">EMERGÊNCIA VASCULAR</text>
+
+      <!-- Sections -->
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" class="a12p1-card-label">1. Endereço Anátomo-Topográfico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Segmento uterino inferior e corpo miometrial.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Leito placentário e ramos uterinos inferiores.</text>
+      </g>
+
+      <g transform="translate(16, 140)">
+        <text x="0" y="0" class="a12p1-card-label">2. Impacto e Mecanismo Clínico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Falha da ligadura fisiológica (globo de Pinard).</text>
+        <text x="0" y="30" class="a12p1-card-val">• Atonia uterina e sangramento de alto débito.</text>
+        <text x="0" y="44" class="a12p1-card-val">• Exige resposta sequencial em escala imediata.</text>
+      </g>
+
+      <g transform="translate(16, 218)">
+        <text x="0" y="0" class="a12p1-card-label">3. Regra Determinante de Decisão:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Uterotônicos → Balão de tamponamento →</text>
+        <text x="0" y="30" class="a12p1-card-val">  Suturas de compressão (B-Lynch) →</text>
+        <text x="0" y="44" class="a12p1-card-val">  Embolização ou ligadura vascular / histerectomia.</text>
+      </g>
+    </g>
+
+    <!-- CARD 2: CIRURGIA GINECOLÓGICA -->
+    <g class="a12p1-card" data-id="cirurgia" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" stroke="var(--a12-linha, var(--a12p1-linha, #A99BA6))" />
+      
+      <text x="16" y="28" class="a12p1-card-header" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">CIRURGIA &amp; SANGRAMENTO</text>
+      <rect x="16" y="38" width="125" height="18" class="a12p1-badge" fill="var(--a12-linha, var(--a12p1-linha, #A99BA6))" fill-opacity="0.25" />
+      <text x="78" y="51" class="a12p1-badge-text" fill="var(--a12-tinta, var(--a12p1-tinta, #F7F1F5))">PAREDE PÉLVICA LATERAL</text>
+
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" class="a12p1-card-label">1. Endereço Anátomo-Topográfico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Espaço retroperitoneal e parede pélvica lateral.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Trajeto do ureter e vasos ilíacos internos.</text>
+      </g>
+
+      <g transform="translate(16, 140)">
+        <text x="0" y="0" class="a12p1-card-label">2. Impacto e Mecanismo Clínico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Cruzamento crítico: artéria uterina sobre o ureter.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Risco elevado de ligadura ou laceração ureteral.</text>
+        <text x="0" y="44" class="a12p1-card-val">• Hemorragia de difícil acesso sob retroperitônio.</text>
+      </g>
+
+      <g transform="translate(16, 218)">
+        <text x="0" y="0" class="a12p1-card-label">3. Regra Determinante de Decisão:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Obrigatoriedade de abertura do espaço retroperitoneal.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Identificação visual direta do ureter antes</text>
+        <text x="0" y="44" class="a12p1-card-val">  de qualquer clampeamento vascular lateral.</text>
+      </g>
+    </g>
+
+    <!-- CARD 3: ENDOMETRIOSE -->
+    <g class="a12p1-card" data-id="endometriose" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" stroke="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" />
+      
+      <text x="16" y="28" class="a12p1-card-header" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">ENDOMETRIOSE PROFUNDA</text>
+      <rect x="16" y="38" width="130" height="18" class="a12p1-badge" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))" fill-opacity="0.25" />
+      <text x="81" y="51" class="a12p1-badge-text" fill="var(--a12-ameixa, var(--a12p1-endometriose, #9B6BC2))">COMPARTIMENTO POSTERIOR</text>
+
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" class="a12p1-card-label">1. Endereço Anátomo-Topográfico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Fundo de saco de Douglas, ligamentos uterossacros</text>
+        <text x="0" y="30" class="a12p1-card-val">  e septo retovaginal.</text>
+      </g>
+
+      <g transform="translate(16, 140)">
+        <text x="0" y="0" class="a12p1-card-label">2. Impacto e Mecanismo Clínico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Fibrose invasiva, aderências e obliteração do fundo</text>
+        <text x="0" y="30" class="a12p1-card-val">  de saco com acometimento da parede retal.</text>
+        <text x="0" y="44" class="a12p1-card-val">• Envolvimento potencial do ureter distal.</text>
+      </g>
+
+      <g transform="translate(16, 218)">
+        <text x="0" y="0" class="a12p1-card-label">3. Regra Determinante de Decisão:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Planejamento multidisciplinar (Ginecologia + Coloprocto).</text>
+        <text x="0" y="30" class="a12p1-card-val">• Necessidade de ureterólise e ressecção discoide</text>
+        <text x="0" y="44" class="a12p1-card-val">  ou segmentar de reto conforme invasão.</text>
+      </g>
+    </g>
+
+    <!-- CARD 4: PROLAPSO &amp; INCONTINENCIA -->
+    <g class="a12p1-card" data-id="prolapso" transform="translate(20, 90)">
+      <rect x="0" y="0" width="300" height="340" class="a12p1-card-bg" stroke="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" />
+      
+      <text x="16" y="28" class="a12p1-card-header" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">INCONTINÊNCIA &amp; PROLAPSO</text>
+      <rect x="16" y="38" width="135" height="18" class="a12p1-badge" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))" fill-opacity="0.25" />
+      <text x="83" y="51" class="a12p1-badge-text" fill="var(--a12-petroleo-claro, var(--a12p1-suporte, #4CB7B0))">ASSOALHO &amp; SUPORTE APICAL</text>
+
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" class="a12p1-card-label">1. Endereço Anátomo-Topográfico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Assoalho pélvico (m. levantador do ânus), fáscia</text>
+        <text x="0" y="30" class="a12p1-card-val">  pubocervical e complexo cardinal-uterossacro.</text>
+      </g>
+
+      <g transform="translate(16, 140)">
+        <text x="0" y="0" class="a12p1-card-label">2. Impacto e Mecanismo Clínico:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Desancoragem dos níveis de DeLancey (I, II ou III).</text>
+        <text x="0" y="30" class="a12p1-card-val">• Hipermotilidade uretral e/ou descenso de cúpula.</text>
+        <text x="0" y="44" class="a12p1-card-val">• Alteração de vetores de pressão intra-abdominal.</text>
+      </g>
+
+      <g transform="translate(16, 218)">
+        <text x="0" y="0" class="a12p1-card-label">3. Regra Determinante de Decisão:</text>
+        <text x="0" y="16" class="a12p1-card-val">• Quantificação objetiva pelo sistema POP-Q.</text>
+        <text x="0" y="30" class="a12p1-card-val">• Escolha cirúrgica: Sling suburetral (IUE) vs</text>
+        <text x="0" y="44" class="a12p1-card-val">  Fixação sacroespinhosa / Promontofixação (Prolapso).</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- FOOTER / CONCLUSION BANNER (y=540 to 590) -->
+  <g transform="translate(40, 545)">
+    <rect x="0" y="0" width="880" height="42" rx="8" ry="8" 
+          fill="var(--bg-2, var(--a12p1-panel-bg, #1C1622))" 
+          stroke="var(--a12p1-panel-border, #3A2F45)" stroke-width="1" />
+    <circle cx="20" cy="21" r="5" fill="var(--a12-coral, var(--a12p1-hemorragia, #F06A78))" />
+    <text x="35" y="25" class="a12p1-footer-text">
+      CONCLUSÃO TOPOGRÁFICA: A localização anatômica na pelve pré-determina a abordagem cirúrgica, a via de acesso e a equipe necessária.
+    </text>
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED JAVASCRIPT STATE ENGINE -->
+  <script>
+    <![CDATA[
+    (function() {
+      var root = document.querySelector('.a12p1-root');
+      if (!root) return;
+
+      function setActive(id) {
+        root.setAttribute('data-active', id);
+      }
+
+      // Add click and keyboard handlers for territory shapes and label boxes
+      var clickables = root.querySelectorAll('.a12p1-territory, .a12p1-tab-btn');
+      clickables.forEach(function(el) {
+        var id = el.getAttribute('data-id');
+        if (!id) return;
+
+        var handler = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var current = root.getAttribute('data-active');
+          // If clicking the currently active specific tab/shape, return to 'all', else activate id
+          if (current === id && id !== 'all') {
+            setActive('all');
+          } else {
+            setActive(id);
+          }
+        };
+
+        el.addEventListener('click', handler);
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handler(e);
+          }
+        });
+      });
+    })();
+    ]]>
+  </script>
+</svg>
+
+</figure>
+<section class="quiz" data-quiz-id="a12-p01" aria-labelledby="quiz-p01-title">
+<h2 id="quiz-p01-title">Quiz — fixação</h2>
+<ol class="quiz__questions" style="list-style:none;padding:0;margin:0">
+<li class="quiz__q" data-q="1"><p class="quiz__stem">Entre as situações abaixo, qual delas se resolve por <strong class="term">domínio topográfico</strong> e não por conhecimento farmacológico, hormonal ou de esquema terapêutico?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>escolha do uterotônico nas medidas iniciais da atonia uterina.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>planejamento da ligadura da artéria uterina na hemorragia que não cedeu.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>escolha do esquema hormonal em uma paciente com sangramento disfuncional.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>indicação de antibiótico em uma endometrite puerperal.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why">A virada aqui é perceber que <strong class="term">anatomia entra quando o problema deixa de ser "o que dar" e passa a ser "onde ir"</strong>. A ligadura vascular é um gesto dirigido a um endereço: sem saber por onde a artéria corre e o que corre junto dela, não há como planejar o acesso — e é por isso que a decisão é anatômica antes de ser cirúrgica.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">é decisão farmacológica pura: escolher entre uterotônicos depende de contraindicação e disponibilidade, não de topografia; o gesto é sistêmico, não dirigido a um ponto.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">é decisão de eixo hormonal — o alvo é o endométrio por via endócrina, e não há estrutura a localizar.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">é decisão microbiológica: o alvo é o agente, não o lugar.</span></li><li class="is-wrong"><b>Por que cair na (A):</b> <span class="why">as duas moram na mesma cena clínica — a paciente sangrando no pós-parto — e o aluno associa o cenário inteiro a um único tipo de raciocínio. Só que dentro da mesma cena convivem decisões de naturezas diferentes, e <strong class="term">é a fase tardia, quando o gesto passa a ser dirigido a um vaso, que vira anatomia</strong>.</span></li></ul></div></li>
+<li class="quiz__q" data-q="2"><p class="quiz__stem">Uma das manifestações da endometriose é a distorção da anatomia pélvica. Por que isso transforma a anatomia normal em pré-requisito, e não em detalhe de erudição?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>porque a distorção anatômica é o critério que define o estádio da doença.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">B</span><span>porque a endometriose só é diagnosticada por marcador sérico, e a anatomia entra depois.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">C</span><span>porque só reconhece o que está fora do lugar quem sabe onde é o lugar.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>porque a endometriose contraindica qualquer abordagem cirúrgica.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito C.</b> <span class="why">É a formulação exata do princípio que sustenta os cinco ganchos: <strong class="term">entender o normal é a condição para identificar o alterado</strong>. Distorção é, por definição, um desvio em relação a uma referência — sem a referência na cabeça, o achado não existe como achado; vira só "uma pelve difícil".</span></li><li class="is-wrong"><b>(A)</b> <span class="why">confunde consequência com critério: a distorção <strong class="term">acompanha</strong> a doença avançada, mas o estadiamento não se reduz a ela, e mesmo que se reduzisse a alternativa não responderia <em>por que a anatomia normal é pré-requisito</em>.</span></li><li class="is-wrong"><b>(B)</b> <span class="why">é falsa na premissa — não há marcador sérico que feche o diagnóstico de endometriose — e, além disso, inverteria a ordem do raciocínio: colocaria a anatomia como conferência posterior, quando ela é o que permite enxergar.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">é clinicamente errada: a cirurgia é justamente uma das abordagens da doença, e é nela que a anatomia distorcida cobra mais caro.</span></li><li class="is-wrong"><b>Por que cair na (A):</b> <span class="why">"distorção" é uma palavra que soa a critério objetivo, e o reflexo de prova é procurar onde encaixar um sistema de classificação. A pergunta, porém, não é sobre classificar — é sobre <strong class="term">o que torna o achado visível</strong>.</span></li></ul></div></li>
+</ol></section>
+<section class="a12-resumo" aria-label="Resumo operacional">
+<h3>Resumo operacional</h3>
+<p style="text-align: justify;">Anatomia volta a valer porque <strong class="term">cinco decisões clínicas dependem de topografia</strong>: ligadura vascular na hemorragia tardia <a class="a12-link-forward" href="#">↗A5</a>, cirurgia ginecológica, sangramento uterino estrutural, endometriose e — o mais cobrado — incontinência <a class="a12-link-forward" href="#">↗A7</a> e prolapso <a class="a12-link-forward" href="#">↗A8</a>. A frase que resume: <strong class="term">é preciso entender o normal para saber como é o alterado</strong>. E há uma questão de pelvimetria interna em dívida, indecifrável hoje, que se torna leitura direta quando estreito, diâmetro e conjugata estiverem no lugar.</p>
+</section>
+</article>
+  
+
+  <!-- ▲▲▲ FIM DO SEU CONTEÚDO ▲▲▲ -->
+
+  </div></main>
+  <footer class="site-footer"><div class="container"><span>Anatomia da pelve feminina (parte 1) · Aula 12 — conteúdo educacional para residência.</span><span>1 / 22</span></div></footer>
+  <script src="../../assets/js/pwa-bootstrap.js" defer></script>
+  <script src="../../assets/js/app-a12.js" defer></script>
+  <script src="../../assets/js/quiz-a12.js" defer></script>
+  <script src="../../assets/js/aula-12.js" defer></script>
+</body>
+</html>
+
+<!-- Padrão de UM item do menu, para montar <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1" aria-current="page"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li> (22 deles):
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>Título curto</span></a></li>
+     O primeiro aponta para index.html com data-page-id="p1".
+-->

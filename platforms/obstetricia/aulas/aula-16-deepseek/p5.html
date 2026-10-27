@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="pt-BR" data-page="p5">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1329">
+  <title>Rotina do 1º trimestre: TESTAR — GO Bauer</title>
+  <link rel="stylesheet" href="aula-16.css">
+</head>
+<body data-page-id="p5" data-layout="a16-p05" data-source-ids="045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header" id="site-header"><div class="site-header__row">
+    <a class="site-header__brand" href="index.html"><span class="site-header__logo">GO</span><span class="site-header__titles"><span class="site-header__title">Pré-natal e Aconselhamento Genético</span><span class="site-header__subtitle">Ginecologia e Obstetrícia · Aula 16</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress" id="progress">5/15</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="index.html" aria-label="Início da aula" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header>
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas da aula"><p class="menu-panel__title">Aula 16 — Pré-natal e Aconselhamento Genético</p><ul class="menu-panel__list">
+<li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>A trilogia fecha: calendário de consultas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>Ferro: profilaxia e reposição</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Ácido fólico: janela do tubo neural</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Cálcio MS × FEBRASGO e B12</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5" aria-current="page"><span class="menu-panel__index">05</span><span>Rotina do 1º trimestre: TESTAR</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>REZA, TOTG e a lei do ultrassom</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>Toxoplasmose: paradoxo trimestral</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>Avidez e o alvo do tratamento</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>GBS: swab e IAP no parto</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Cinco vacinas e vivas proibidas</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Rastreio × diagnóstico genético</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Translucência nucal</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Duplo, triplo, quádruplo e NIPT</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>BAQUE: invasivos e riscos</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Caso: TN 3,2 mm</span></a></li>
+</ul></nav></div>
+  <main id="main"><div class="reading">
+  <article class="page is-active" data-page="p5" data-layout="a16-p05" data-source-ids="045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065">
+<p class="page__eyebrow">Página 5 · Parte C · Exames</p>
+<nav class="a16-compass" aria-label="Bússola da sequência obstétrica"><span class="a16-compass__band" data-state="done">A12–A13 ANATOMIA</span><span class="a16-compass__band" data-state="done">A14 DIAGNÓSTICO</span><span class="a16-compass__band" data-state="done">A15 MODIFICAÇÕES</span><span class="a16-compass__band" aria-current="page">A16 PRÉ-NATAL</span></nav>
+<header class="a16-opener a16-opener--e6">
+  <p class="a16-opener__mnemonic">TESTAR</p>
+  <h1>Rotina do 1º trimestre: TESTAR</h1>
+  <p class="a16-opener__lead">O mnemônico que organiza a bateria inicial de exames do pré-natal — e o que não entra nela.</p>
+</header>
+<div class="chipset"><span class="chip">Parte C · Exames</span><span class="chip">IDs 045–065</span><span class="chip">E6 · Mnemônico</span></div>
+
+<div class="prose">
+<h4>Lista da primeira rotina</h4>
+<p class="no-indent">Rotina de exames do <strong>1º trimestre</strong> é <strong>clássico de prova</strong> — precisão máxima. Entram: <strong>tipagem e Rh</strong>; <strong>hemograma</strong>; <strong>glicemia de jejum</strong>; <strong>sífilis</strong> (teste rápido <strong>e</strong>, se possível, <strong>VDRL</strong> — ideal os dois); <strong>HIV</strong> (anti-HIV ou teste rápido); <strong>HBsAg</strong>; <strong>anti-HCV</strong>; <strong>HTLV</strong> na primeira rotina (tempo para confirmatório — se positivo na triagem, <strong>Western blot</strong>); <strong>eletroforese de hemoglobina</strong> (<strong>MS recomenda</strong> rastrear hemoglobinopatias); <strong>EAS</strong>; <strong>urocultura</strong> (bacteriúria assintomática); <strong>sorologia para toxoplasmose</strong>.</p>
+
+<h4>Mnemônico TESTAR</h4>
+<p class="no-indent">
+<strong>T</strong>ipagem + Rh (+ Coombs se Rh− pelo MS)<br>
+<strong>E</strong>AS + urocultura + <strong>E</strong>letroforese de Hb<br>
+<strong>S</strong>exuais: HTLV, HIV, sífilis, hepatite B, hepatite C<br>
+<strong>T</strong>oxoplasmose IgG/IgM<br>
+<strong>A</strong>nemia e <strong>A</strong>çúcar = hemograma + glicemia de jejum
+</p>
+<p>O "A" de TESTAR é forçado de propósito — serve de memória, não de taxonomia científica.</p>
+
+<h4>O que <strong>não</strong> entra na rotina básica do MS</h4>
+<p class="no-indent"><strong>Citomegalovírus, rubéola e parvovírus</strong> <strong>não</strong> entram na <strong>rotina básica do MS</strong> — a infecção da rotina citada é <strong>toxoplasmose</strong>. Pegadinha de prova.</p>
+
+<h4>Coombs: MS Rh− × prática de pedir a todas</h4>
+<p class="no-indent"><strong>Coombs indireto:</strong> no <strong>MS</strong>, para gestante <strong>Rh negativo</strong>; na <strong>prática</strong>, pedir para <strong>todas</strong> (outros anticorpos irregulares / outras doenças hemolíticas). Mesmo Rh positivo pode ter <strong>outros anticorpos irregulares</strong> relevantes.</p>
+</div>
+
+<div class="a16-summary"><strong>Resumo operacional:</strong> TESTAR = Tipagem+Rh, EAS+urocultura+Eletroforese, Sexuais (HTLV,HIV,sífilis,HBV,HCV), Toxo, Anemia+Açúcar. CMV/rubéola/parvo NÃO entram.</div>
+
+<figure class="fig"><div class="fig__frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 670" width="100%" height="100%" class="a16-inline-svg a16p5-root" id="a16p5-svg-main">
+  <defs>
+    <style>
+      .a16p5-root {
+        --a16p5-bg: var(--bg-1, #0b132b);
+        --a16p5-card-bg: var(--bg-2, #1c2541);
+        --a16p5-card-inner: var(--bg-3, #131c35);
+        --a16p5-border: var(--ink-20, #3a506b);
+        --a16p5-text: var(--ink-100, #f8fafc);
+        --a16p5-muted: var(--ink-60, #94a3b8);
+        --a16p5-teal: var(--kw-teal, #06b6d4);
+        --a16p5-teal-bg: rgba(6, 182, 212, 0.12);
+        --a16p5-green: var(--kw-green, #10b981);
+        --a16p5-green-bg: rgba(16, 185, 129, 0.12);
+        --a16p5-red: var(--kw-red, #ef4444);
+        --a16p5-red-bg: rgba(239, 68, 68, 0.12);
+        --a16p5-amber: var(--kw-amber, #f59e0b);
+        --a16p5-amber-bg: rgba(245, 158, 11, 0.12);
+        --a16p5-gold: var(--kw-gold, #eab308);
+        --a16p5-gold-bg: rgba(234, 179, 8, 0.15);
+        --a16p5-shadow: rgba(0, 0, 0, 0.35);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      .a16p5-root[data-theme="light"],
+      :root[data-theme="light"] .a16p5-root {
+        --a16p5-bg: #f8fafc;
+        --a16p5-card-bg: #ffffff;
+        --a16p5-card-inner: #f1f5f9;
+        --a16p5-border: #cbd5e1;
+        --a16p5-text: #0f172a;
+        --a16p5-muted: #475569;
+        --a16p5-teal: #0284c7;
+        --a16p5-teal-bg: rgba(2, 132, 199, 0.08);
+        --a16p5-green: #15803d;
+        --a16p5-green-bg: rgba(21, 128, 61, 0.08);
+        --a16p5-red: #dc2626;
+        --a16p5-red-bg: rgba(220, 38, 38, 0.08);
+        --a16p5-amber: #d97706;
+        --a16p5-amber-bg: rgba(217, 119, 6, 0.08);
+        --a16p5-gold: #b45309;
+        --a16p5-gold-bg: rgba(180, 83, 9, 0.12);
+        --a16p5-shadow: rgba(0, 0, 0, 0.06);
+      }
+
+      .a16p5-bg-rect { fill: var(--a16p5-bg, #0b132b); }
+      .a16p5-card { fill: var(--a16p5-card-bg, #1c2541); stroke: var(--a16p5-border, #3a506b); stroke-width: 1.5; rx: 10px; }
+      .a16p5-card-sub { fill: var(--a16p5-card-inner, #131c35); stroke: var(--a16p5-border, #3a506b); stroke-width: 1; rx: 8px; }
+      
+      .a16p5-title-main { fill: var(--a16p5-text, #f8fafc); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+      .a16p5-subtitle { fill: var(--a16p5-muted, #94a3b8); font-size: 13px; font-weight: 500; }
+      .a16p5-badge { fill: var(--a16p5-teal, #06b6d4); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+      .a16p5-badge-bg { fill: var(--a16p5-teal-bg, rgba(6,182,212,0.12)); stroke: var(--a16p5-teal, #06b6d4); stroke-width: 1; rx: 4px; }
+
+      .a16p5-tab-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .a16p5-tab-btn rect {
+        fill: var(--a16p5-card-bg, #1c2541);
+        stroke: var(--a16p5-border, #3a506b);
+        stroke-width: 1.5;
+        rx: 8px;
+      }
+      .a16p5-tab-btn:hover rect {
+        stroke: var(--a16p5-teal, #06b6d4);
+        filter: drop-shadow(0 2px 6px var(--a16p5-shadow, rgba(0,0,0,0.3)));
+      }
+      .a16p5-tab-btn.a16p5-active rect {
+        fill: var(--a16p5-teal-bg, rgba(6,182,212,0.12));
+        stroke: var(--a16p5-teal, #06b6d4);
+        stroke-width: 2.5;
+      }
+      .a16p5-tab-letter {
+        fill: var(--a16p5-text, #f8fafc);
+        font-size: 18px;
+        font-weight: 900;
+        text-anchor: middle;
+      }
+      .a16p5-tab-btn.a16p5-active .a16p5-tab-letter {
+        fill: var(--a16p5-teal, #06b6d4);
+      }
+      .a16p5-tab-label {
+        fill: var(--a16p5-muted, #94a3b8);
+        font-size: 11px;
+        font-weight: 600;
+        text-anchor: middle;
+      }
+      .a16p5-tab-btn.a16p5-active .a16p5-tab-label {
+        fill: var(--a16p5-text, #f8fafc);
+        font-weight: 700;
+      }
+
+      /* Exclusion Tab Special Gold Style */
+      .a16p5-tab-exc rect {
+        fill: var(--a16p5-card-bg, #1c2541);
+        stroke: var(--a16p5-gold, #eab308);
+        stroke-dasharray: 4 2;
+        stroke-width: 1.5;
+        rx: 8px;
+      }
+      .a16p5-tab-exc:hover rect {
+        stroke-width: 2;
+        filter: drop-shadow(0 2px 6px rgba(234,179,8,0.3));
+      }
+      .a16p5-tab-exc.a16p5-active rect {
+        fill: var(--a16p5-gold-bg, rgba(234,179,8,0.15));
+        stroke-dasharray: none;
+        stroke: var(--a16p5-gold, #eab308);
+        stroke-width: 2.5;
+      }
+      .a16p5-tab-exc .a16p5-tab-letter {
+        fill: var(--a16p5-gold, #eab308);
+      }
+
+      /* Dynamic Content Panels */
+      .a16p5-panel {
+        display: none;
+      }
+      .a16p5-panel.a16p5-visible {
+        display: block;
+      }
+
+      /* Text Utilities */
+      .a16p5-h2 { fill: var(--a16p5-text, #f8fafc); font-size: 16px; font-weight: 700; }
+      .a16p5-h3 { fill: var(--a16p5-text, #f8fafc); font-size: 14px; font-weight: 700; }
+      .a16p5-p { fill: var(--a16p5-text, #f8fafc); font-size: 12px; font-weight: 400; line-height: 1.4; }
+      .a16p5-p-muted { fill: var(--a16p5-muted, #94a3b8); font-size: 12px; font-weight: 400; }
+      .a16p5-bold { font-weight: 700; }
+
+      /* Color Tags & Badges */
+      .a16p5-tag-green { fill: var(--a16p5-green, #10b981); font-size: 11px; font-weight: 700; }
+      .a16p5-tag-green-bg { fill: var(--a16p5-green-bg, rgba(16,185,129,0.12)); stroke: var(--a16p5-green, #10b981); stroke-width: 1; rx: 4px; }
+      
+      .a16p5-tag-red { fill: var(--a16p5-red, #ef4444); font-size: 11px; font-weight: 700; }
+      .a16p5-tag-red-bg { fill: var(--a16p5-red-bg, rgba(239,68,68,0.12)); stroke: var(--a16p5-red, #ef4444); stroke-width: 1; rx: 4px; }
+      
+      .a16p5-tag-amber { fill: var(--a16p5-amber, #f59e0b); font-size: 11px; font-weight: 700; }
+      .a16p5-tag-amber-bg { fill: var(--a16p5-amber-bg, rgba(245,158,11,0.12)); stroke: var(--a16p5-amber, #f59e0b); stroke-width: 1; rx: 4px; }
+
+      .a16p5-tag-gold { fill: var(--a16p5-gold, #eab308); font-size: 11px; font-weight: 700; }
+      .a16p5-tag-gold-bg { fill: var(--a16p5-gold-bg, rgba(234,179,8,0.15)); stroke: var(--a16p5-gold, #eab308); stroke-width: 1; rx: 4px; }
+
+      /* Flow Chart Box */
+      .a16p5-box-node { fill: var(--a16p5-card-inner, #131c35); stroke: var(--a16p5-border, #3a506b); stroke-width: 1; rx: 6px; }
+      .a16p5-arrow { stroke: var(--a16p5-muted, #94a3b8); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    </style>
+
+    <marker id="a16p5-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--a16p5-muted, #94a3b8)"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="980" height="670" class="a16-inline-svg a16p5-root" rx="12"/>
+
+  <!-- HEADER AREA -->
+  <g transform="translate(25, 20)">
+    <!-- Badge MS -->
+    <rect x="0" y="0" width="280" height="22" class="a16-inline-svg a16p5-root"/>
+    <text x="12" y="15" class="a16-inline-svg a16p5-root">PRE-NATAL MS · 1º TRIMESTRE</text>
+
+    <!-- Main Title -->
+    <text x="0" y="46" class="a16-inline-svg a16p5-root">BATERIA DE EXAMES — MNEMÔNICO TESTAR</text>
+    
+    <!-- Legend / Interpretation sentence -->
+    <text x="0" y="65" class="a16-inline-svg a16p5-root">
+      <tspan class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Interpretação clínica:</tspan> O mnemônico TESTAR reúne a rotina laboratorial do 1ºT do MS. Toque nas letras para abrir condutas e exclusões.
+    </text>
+  </g>
+
+  <!-- NAVIGATION SHELF / TABS (Y: 98 to 158) -->
+  <g transform="translate(25, 95)" id="a16p5-tabs">
+    <!-- Tab T1: Toxoplasmose & Tipagem -->
+    <g class="a16-inline-svg a16p5-root" id="a16p5-btn-T1" onclick="a16p5SelectTab('T1')" role="button" aria-label="Letra T: Toxoplasmose e Tipagem Sanguínea">
+      <rect x="0" y="0" width="122" height="56"/>
+      <text x="61" y="26" class="a16-inline-svg a16p5-root">T</text>
+      <text x="61" y="44" class="a16-inline-svg a16p5-root">Toxo &amp; Tipagem</text>
+    </g>
+
+    <!-- Tab E: EAS & Urocultura -->
+    <g class="a16-inline-svg a16p5-root" id="a16p5-btn-E" onclick="a16p5SelectTab('E')" role="button" aria-label="Letra E: EAS e Urocultura">
+      <rect x="132" y="0" width="122" height="56"/>
+      <text x="193" y="26" class="a16-inline-svg a16p5-root">E</text>
+      <text x="193" y="44" class="a16-inline-svg a16p5-root">EAS &amp; Urocultura</text>
+    </g>
+
+    <!-- Tab S: Sífilis & Sorologias -->
+    <g class="a16-inline-svg a16p5-root" id="a16p5-btn-S" onclick="a16p5SelectTab('S')" role="button" aria-label="Letra S: Sífilis e Sorologias">
+      <rect x="264" y="0" width="122" height="56"/>
+      <text x="325" y="26" class="a16-inline-svg a16p5-root">S</text>
+      <text x="325" y="44" class="a16-inline-svg a16p5-root">Sífilis &amp; Sorologias</text>
+    </g>
+
+    <!-- Tab T2: Testes Rápidos -->
+    <g class="a16-inline-svg a16p5-root" id="a16p5-btn-T2" onclick="a16p5SelectTab('T2')" role="button" aria-label="Letra T: Testes Rápidos">
+      <rect x="396" y="0" width="122" height="56"/>
+      <text x="457" y="26" class="a16-inline-svg a16p5-root">T</text>
+      <text x="457" y="44" class="a16-inline-svg a16p5-root">Testes Rápidos</text>
+    </g>
+
+    <!-- Tab A: Anemia & Açúcar -->
+    <g class="a16-inline-svg a16p5-root" id="a16p5-btn-A" onclick="a16p5SelectTab('A')" role="button" aria-label="Letra A: Anemia e Açúcar">
+      <rect x="528" y="0" width="122" height="56"/>
+      <text x="589" y="26" class="a16-inline-svg a16p5-root">A</text>
+      <text x="589" y="44" class="a16-inline-svg a16p5-root">Anemia &amp; Açúcar</text>
+    </g>
+
+    <!-- Tab R: Rh & Coombs -->
+    <g class="a16-inline-svg a16p5-root" id="a16p5-btn-R" onclick="a16p5SelectTab('R')" role="button" aria-label="Letra R: Rh e Coombs Indireto">
+      <rect x="660" y="0" width="122" height="56"/>
+      <text x="721" y="26" class="a16-inline-svg a16p5-root">R</text>
+      <text x="721" y="44" class="a16-inline-svg a16p5-root">Rh &amp; Coombs Ind.</text>
+    </g>
+
+    <!-- Tab Special: EXCLUSÕES DO MS -->
+    <g class="a16-inline-svg a16p5-root" id="a16p5-btn-EXC" onclick="a16p5SelectTab('EXC')" role="button" aria-label="Exclusões da rotina MS: CMV, Rubéola e Parvovírus">
+      <rect x="792" y="0" width="138" height="56"/>
+      <text x="861" y="24" class="a16-inline-svg a16p5-root" font-size="14px">⚠️ FORA MS</text>
+      <text x="861" y="44" class="a16-inline-svg a16p5-root" fill="var(--a16p5-gold, #eab308)">CMV / Rubéola / Parvo</text>
+    </g>
+  </g>
+
+  <!-- ==================== DYNAMIC PANELS CONTAINER (Y: 165 to 615) ==================== -->
+  
+  <!-- PANEL T1: TOXOPLASMOSE E TIPAGEM -->
+  <g class="a16-inline-svg a16p5-root" id="a16p5-panel-T1" transform="translate(25, 168)">
+    <!-- Main Left Card (Width: 590, Height: 440) -->
+    <rect x="0" y="0" width="590" height="440" class="a16-inline-svg a16p5-root"/>
+    <text x="20" y="32" class="a16-inline-svg a16p5-root">EIXO T (1) — Toxoplasmose (IgG/IgM) &amp; Tipagem Sanguínea</text>
+
+    <!-- Sub-card 1: Sorologia Toxoplasmose Flowchart -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="550" height="240" class="a16-inline-svg a16p5-root"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Fluxograma de Conduta na Toxoplasmose Gestacional</text>
+
+      <!-- Row 1: Suscetível -->
+      <g transform="translate(15, 40)">
+        <rect x="0" y="0" width="120" height="36" class="a16-inline-svg a16p5-root"/>
+        <text x="60" y="22" class="a16-inline-svg a16p5-root" text-anchor="middle">IgG (-) e IgM (-)</text>
+        <path d="M 125 18 L 160 18" class="a16-inline-svg a16p5-root" marker-end="url(#a16p5-arrowhead)"/>
+        <rect x="165" y="0" width="355" height="36" class="a16-inline-svg a16p5-root"/>
+        <text x="175" y="22" class="a16-inline-svg a16p5-root"><tspan class="a16p5-bold" fill="var(--a16p5-green, #10b981)">Suscetível:</tspan> Orientação profilática + Repetir sorologia no 2º e 3ºT.</text>
+      </g>
+
+      <!-- Row 2: Imune -->
+      <g transform="translate(15, 85)">
+        <rect x="0" y="0" width="120" height="36" class="a16-inline-svg a16p5-root"/>
+        <text x="60" y="22" class="a16-inline-svg a16p5-root" text-anchor="middle">IgG (+) e IgM (-)</text>
+        <path d="M 125 18 L 160 18" class="a16-inline-svg a16p5-root" marker-end="url(#a16p5-arrowhead)"/>
+        <rect x="165" y="0" width="355" height="36" class="a16-inline-svg a16p5-root"/>
+        <text x="175" y="22" class="a16-inline-svg a16p5-root"><tspan class="a16p5-bold" fill="var(--a16p5-green, #10b981)">Imune:</tspan> Infecção prévia. Sem risco de transmissão. Alta sorológica.</text>
+      </g>
+
+      <!-- Row 3: Infecção Aguda / Dúvida -->
+      <g transform="translate(15, 130)">
+        <rect x="0" y="0" width="120" height="36" class="a16-inline-svg a16p5-root"/>
+        <text x="60" y="22" class="a16-inline-svg a16p5-root" text-anchor="middle">IgG (-) e IgM (+)</text>
+        <path d="M 125 18 L 160 18" class="a16-inline-svg a16p5-root" marker-end="url(#a16p5-arrowhead)"/>
+        <rect x="165" y="0" width="355" height="36" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-red, #ef4444)"/>
+        <text x="175" y="22" class="a16-inline-svg a16p5-root"><tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">Infecção Aguda:</tspan> Tratar imediatamente com Espiramicina 3g/dia!</text>
+      </g>
+
+      <!-- Row 4: Teste de Avidez -->
+      <g transform="translate(15, 175)">
+        <rect x="0" y="0" width="120" height="48" class="a16-inline-svg a16p5-root"/>
+        <text x="60" y="20" class="a16-inline-svg a16p5-root" text-anchor="middle">IgG (+) e IgM (+)</text>
+        <text x="60" y="36" class="a16-inline-svg a16p5-root" font-size="10px" text-anchor="middle">Solicitar Avidez</text>
+        <path d="M 125 24 L 160 24" class="a16-inline-svg a16p5-root" marker-end="url(#a16p5-arrowhead)"/>
+        <rect x="165" y="0" width="355" height="48" class="a16-inline-svg a16p5-root"/>
+        <text x="175" y="20" class="a16-inline-svg a16p5-root"><tspan class="a16p5-bold" fill="var(--a16p5-green, #10b981)">Alta Avidez (&gt;60% &lt;16sem):</tspan> Infecção antiga pré-gestacional.</text>
+        <text x="175" y="38" class="a16-inline-svg a16p5-root"><tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">Baixa Avidez (&lt;50%):</tspan> Infecção aguda na gestação -&gt; Tratar!</text>
+      </g>
+    </g>
+
+    <!-- Sub-card 2: Tipagem Sanguínea -->
+    <g transform="translate(20, 305)">
+      <rect x="0" y="0" width="550" height="115" class="a16-inline-svg a16p5-root"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Tipagem Sanguínea ABO e Fator Rh</text>
+      <text x="15" y="48" class="a16-inline-svg a16p5-root">Determinação obrigatória do grupo ABO e Rh no primeiro atendimento.</text>
+      <text x="15" y="70" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-green, #10b981)">Se Rh Positivo (+):</tspan> Rotina encerrada para isoimunização. Sem necessidade de Coombs.</text>
+      <text x="15" y="92" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-amber, #f59e0b)">Se Rh Negativo (-):</tspan> OBRIGATÓRIO solicitar <tspan class="a16p5-bold" fill="var(--a16p5-teal, #06b6d4)">Coombs Indireto</tspan> (Ver Eixo R).</text>
+    </g>
+
+    <!-- Right Residency Case Panel (Width: 320, Height: 440) -->
+    <g transform="translate(610, 0)">
+      <rect x="0" y="0" width="320" height="440" class="a16-inline-svg a16p5-root"/>
+      <!-- Header -->
+      <rect x="0" y="0" width="320" height="42" fill="var(--a16p5-teal-bg, rgba(6,182,212,0.12))" rx="10"/>
+      <text x="15" y="26" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">📌 PEGADINHA DE PROVA (T1)</text>
+
+      <g transform="translate(15, 55)">
+        <text x="0" y="16" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">Quando pedir o Teste de Avidez?</text>
+        <text x="0" y="38" class="a16-inline-svg a16p5-root" width="290">O Teste de Avidez de IgG SÓ tem valor diagnóstico se realizado com <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">&lt; 16 semanas</tspan> de gestação!</text>
+
+        <rect x="0" y="65" width="290" height="75" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-amber, #f59e0b)"/>
+        <text x="10" y="85" class="a16-inline-svg a16p5-root" font-size="11px"><tspan class="a16p5-bold" fill="var(--a16p5-amber, #f59e0b)">⚠️ Regra da Prova:</tspan></text>
+        <text x="10" y="102" class="a16-inline-svg a16p5-root" font-size="11px">Se IgG(+) / IgM(+) colhidos após 16 semanas, NÃO peça avidez: considere infecção aguda e <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">INICIE ESPIRAMICINA</tspan>.</text>
+
+        <!-- Treatment Schema Box -->
+        <rect x="0" y="155" width="290" height="210" class="a16-inline-svg a16p5-root"/>
+        <text x="12" y="178" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Esquema Terapêutico MS</text>
+        <text x="12" y="200" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold">Espiramicina (3g/dia):</tspan> Não atravessa placenta em níveis terapêuticos; previne infecção fetal.</text>
+        <text x="12" y="240" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">Se infecção fetal confirmada</tspan> (Amniocentesis PCR+ ou USG alterado após 18 sem):</text>
+        <text x="22" y="278" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">Esquema Triplo: Sulfadiazina + Pirimetamina + Ácido Folínico.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- PANEL E: EAS E UROCULTURA -->
+  <g class="a16-inline-svg a16p5-root" id="a16p5-panel-E" transform="translate(25, 168)">
+    <rect x="0" y="0" width="590" height="440" class="a16-inline-svg a16p5-root"/>
+    <text x="20" y="32" class="a16-inline-svg a16p5-root">EIXO E — EAS (Urina tipo 1) &amp; Urocultura com Antibiograma</text>
+
+    <!-- Sub-card 1: EAS -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="550" height="110" class="a16-inline-svg a16p5-root"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">EAS (Elementos Anormais e Sedimento)</text>
+      <text x="15" y="48" class="a16-inline-svg a16p5-root">Exame de triagem rápida de urina no 1º e 3º trimestres.</text>
+      <text x="15" y="70" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-amber, #f59e0b)">Proteinúria:</tspan> Rastreio de doença renal prévia ou pré-eclâmpsia (após 20 sem).</text>
+      <text x="15" y="90" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-amber, #f59e0b)">Leucocitúria / Nitrito (+):</tspan> Sugere ITU, mas NÃO substitui a Urocultura!</text>
+    </g>
+
+    <!-- Sub-card 2: Bacteriuria Assintomatica -->
+    <g transform="translate(20, 175)">
+      <rect x="0" y="0" width="550" height="245" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-red, #ef4444)"/>
+      <text x="15" y="26" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">🚨 BACTERIÚRIA ASSINTOMÁTICA (BA) — REGRA DE PROVA</text>
+      
+      <rect x="15" y="38" width="520" height="42" class="a16-inline-svg a16p5-root"/>
+      <text x="25" y="63" class="a16-inline-svg a16p5-root" font-size="12px">Definição: Urocultura ≥ 10⁵ UFC/mL de germe único em gestante SEM sintomas urinários.</text>
+
+      <text x="15" y="105" class="a16-inline-svg a16p5-root" font-weight="700" fill="var(--a16p5-amber, #f59e0b)">POR QUE A BACTERIÚRIA ASSINTOMÁTICA SEMPRE DEVE SER TRATADA NA GESTANTE?</text>
+      <text x="15" y="128" class="a16-inline-svg a16p5-root">1. Risco de <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">Pielonefrite Aguda (20 a 40%)</tspan> devido à hipotonia ureteral por progesterona.</text>
+      <text x="15" y="148" class="a16-inline-svg a16p5-root">2. Aumento expressivo de <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">Trabalho de Parto Prematuro (TPP)</tspan> e Baixo Peso ao Nascer.</text>
+
+      <text x="15" y="178" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Conduta &amp; Esquema de Tratamento (7 a 10 dias):</text>
+      <text x="15" y="198" class="a16-inline-svg a16p5-root">• Nitrofurantoína 100mg 6/6h | Amoxicilina 500mg 8/8h | Cefalexina 500mg 6/6h | Fosfomicina 3g DU.</text>
+      <text x="15" y="220" class="a16-inline-svg a16p5-root" fill="var(--a16p5-green, #10b981)"><tspan class="a16p5-bold">Urocultura de Controle (Teste de Cura):</tspan> OBRIGATÓRIA 7 a 14 dias após o término!</text>
+    </g>
+
+    <!-- Right Residency Case Panel (E) -->
+    <g transform="translate(610, 0)">
+      <rect x="0" y="0" width="320" height="440" class="a16-inline-svg a16p5-root"/>
+      <rect x="0" y="0" width="320" height="42" fill="var(--a16p5-amber-bg, rgba(245,158,11,0.12))" rx="10"/>
+      <text x="15" y="26" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">📌 CASO PRÁTICO (EAS / UROCULTURA)</text>
+
+      <g transform="translate(15, 55)">
+        <text x="0" y="16" class="a16-inline-svg a16p5-root" font-style="italic">"Gestante de 10 semanas, assintomática, traz exames de pré-natal. EAS normal. Urocultura revela 150.000 UFC/mL de E. coli. Qual a conduta?"</text>
+
+        <rect x="0" y="65" width="290" height="110" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-green, #10b981)"/>
+        <text x="10" y="85" class="a16-inline-svg a16p5-root" fill="var(--a16p5-green, #10b981)">✓ Conduta Correta:</text>
+        <text x="10" y="105" class="a16-inline-svg a16p5-root">Tratar IMEDIATAMENTE com antibiótico oral por 7 dias + Agendar Urocultura de controle pós-tratamento.</text>
+        <text x="10" y="155" class="a16-inline-svg a16p5-root" font-size="11px" fill="var(--a16p5-red, #ef4444)"><tspan class="a16p5-bold">Errado na prova:</tspan> Não tratar por ser assintomática ou aguardar sintomas!</text>
+
+        <rect x="0" y="190" width="290" height="175" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="212" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Resumo Clínico Prova</text>
+        <text x="10" y="234" class="a16-inline-svg a16p5-root">• Urocultura é feita no <tspan class="a16p5-bold">1ºT e 3ºT</tspan>.</text>
+        <text x="10" y="256" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">Pielonefrite</tspan> na gestante exige internação hospitalar e ATB parenteral (Ceftriaxone)!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- PANEL S: SÍFILIS E SOROLOGIAS -->
+  <g class="a16-inline-svg a16p5-root" id="a16p5-panel-S" transform="translate(25, 168)">
+    <rect x="0" y="0" width="590" height="440" class="a16-inline-svg a16p5-root"/>
+    <text x="20" y="32" class="a16-inline-svg a16p5-root">EIXO S — Sífilis (VDRL/TR), HIV &amp; Hepatites B e C</text>
+
+    <!-- Sub-card 1: Sifilis -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="550" height="195" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-red, #ef4444)"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">Sífilis na Gestação — Diagnóstico &amp; Tratamento Imediato</text>
+      <text x="15" y="46" class="a16-inline-svg a16p5-root">Rastreio no <tspan class="a16p5-bold">1ºT, 3ºT e Admissão no Parto/Aborto</tspan>. Teste Rápido (+) = Tratar!</text>
+
+      <g transform="translate(15, 60)">
+        <!-- Stage 1 -->
+        <rect x="0" y="0" width="250" height="55" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="20" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Sífilis Recente (&lt;1 ano):</text>
+        <text x="10" y="38" class="a16-inline-svg a16p5-root">Penicilina Benzatina <tspan class="a16p5-bold" fill="var(--a16p5-green, #10b981)">2,4 milhões UI</tspan> (Dose única).</text>
+
+        <!-- Stage 2 -->
+        <rect x="265" y="0" width="255" height="55" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="20" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">Sífilis Tardia / Indeterminada:</text>
+        <text x="10" y="38" class="a16-inline-svg a16p5-root">Penicilina Benzatina <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">7,2 milhões UI</tspan> (3x 2,4M UI).</text>
+      </g>
+
+      <text x="15" y="140" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)"><tspan class="a16p5-bold">⚠️ Tratamento Adequado da Mãe:</tspan> Feito com Penicilina Benzatina, iniciado até 30 dias antes do parto, esquema correto conforme o estágio e tratamento concomitante do parceiro!</text>
+    </g>
+
+    <!-- Sub-card 2: HIV & Hepatites -->
+    <g transform="translate(20, 255)">
+      <rect x="0" y="0" width="550" height="165" class="a16-inline-svg a16p5-root"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">HIV &amp; Hepatites Virais (HBV / HCV)</text>
+
+      <text x="15" y="48" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">HIV:</tspan> Teste Rápido / Sorologia. Se positivo, iniciar TARV tripla imediatamente. Carga viral indetectável reduz transmissão vertical para &lt;1%.</text>
+      <text x="15" y="85" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-amber, #f59e0b)">Hepatite B (HBsAg):</tspan> Se HBsAg(+), solicitar HBeAg e Carga Viral. No RN: aplicar <tspan class="a16p5-bold" fill="var(--a16p5-green, #10b981)">Vacina + Imunoglobulina (IGHAHB)</tspan> nas primeiras 12 horas de vida!</text>
+      <text x="15" y="122" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-teal, #06b6d4)">Hepatite C (Anti-HCV):</tspan> Rastreio sorológico de rotina no pré-natal.</text>
+    </g>
+
+    <!-- Right Residency Case Panel (S) -->
+    <g transform="translate(610, 0)">
+      <rect x="0" y="0" width="320" height="440" class="a16-inline-svg a16p5-root"/>
+      <rect x="0" y="0" width="320" height="42" fill="var(--a16p5-red-bg, rgba(239,68,68,0.12))" rx="10"/>
+      <text x="15" y="26" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">📌 CONCEITO CRÍTICO DE PROVA</text>
+
+      <g transform="translate(15, 55)">
+        <text x="0" y="16" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">Penicilina é o ÚNICO tratamento!</text>
+        <text x="0" y="38" class="a16-inline-svg a16p5-root">Se a gestante for alérgica à penicilina com sífilis confirmada:</text>
+
+        <rect x="0" y="60" width="290" height="100" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-red, #ef4444)"/>
+        <text x="10" y="80" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">🚨 CONDUTA OBRIGATÓRIA:</text>
+        <text x="10" y="100" class="a16-inline-svg a16p5-root"><tspan class="a16p5-bold">DESENSIBILIZAÇÃO HOSPITALAR</tspan> à Penicilina! Nenhum outro antibiótico (Eritromicina, Ceftriaxone, Azitromicina) trata adequadamente o feto!</text>
+
+        <rect x="0" y="175" width="290" height="190" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="198" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Seguimento do VDRL</text>
+        <text x="10" y="220" class="a16-inline-svg a16p5-root">• Controle mensal do VDRL na gestante.</text>
+        <text x="10" y="242" class="a16-inline-svg a16p5-root">• Sucesso terapêutico: Queda de <tspan class="a16p5-bold" fill="var(--a16p5-green, #10b981)">2 titulações (4 vezes)</tspan> em 3 meses (ex: de 1:32 para 1:8).</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- PANEL T2: TESTES RÁPIDOS -->
+  <g class="a16-inline-svg a16p5-root" id="a16p5-panel-T2" transform="translate(25, 168)">
+    <rect x="0" y="0" width="590" height="440" class="a16-inline-svg a16p5-root"/>
+    <text x="20" y="32" class="a16-inline-svg a16p5-root">EIXO T (2) — Testes Rápidos na Atenção Primária à Saúde</text>
+
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="550" height="370" class="a16-inline-svg a16p5-root"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Painel de Testes Rápidos (TR) no 1º Trimestre</text>
+      <text x="15" y="46" class="a16-inline-svg a16p5-root">Realizados à beira do leito na primeira consulta pré-natal. Resultado em até 30 min.</text>
+
+      <g transform="translate(15, 65)">
+        <!-- TR Sifilis -->
+        <rect x="0" y="0" width="250" height="85" class="a16-inline-svg a16p5-root"/>
+        <text x="12" y="22" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">1. TR Sífilis (Treponêmico)</text>
+        <text x="12" y="42" class="a16-inline-svg a16p5-root">• Se (+): Iniciar Penicilina imediatamente!</text>
+        <text x="12" y="60" class="a16-inline-svg a16p5-root">• Solicitar VDRL para quantificação.</text>
+
+        <!-- TR HIV -->
+        <rect x="270" y="0" width="250" height="85" class="a16-inline-svg a16p5-root"/>
+        <text x="12" y="22" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">2. TR HIV</text>
+        <text x="12" y="42" class="a16-inline-svg a16p5-root">• Se (+): Fazer 2º teste rápido diferente.</text>
+        <text x="12" y="60" class="a16-inline-svg a16p5-root">• Confirmado: Iniciar TARV imediatamente.</text>
+      </g>
+
+      <g transform="translate(15, 165)">
+        <!-- TR HBV -->
+        <rect x="0" y="0" width="250" height="85" class="a16-inline-svg a16p5-root"/>
+        <text x="12" y="22" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">3. TR HBsAg (Hepatite B)</text>
+        <text x="12" y="42" class="a16-inline-svg a16p5-root">• Rastreio da infecção pelo vírus B.</text>
+        <text x="12" y="60" class="a16-inline-svg a16p5-root">• Define imunoprofilaxia no RN.</text>
+
+        <!-- TR HCV -->
+        <rect x="270" y="0" width="250" height="85" class="a16-inline-svg a16p5-root"/>
+        <text x="12" y="22" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">4. TR Anti-HCV (Hepatite C)</text>
+        <text x="12" y="42" class="a16-inline-svg a16p5-root">• Rastreio da Hepatite C.</text>
+        <text x="12" y="60" class="a16-inline-svg a16p5-root">• Encaminhar para carga viral se (+).</text>
+      </g>
+
+      <rect x="15" y="265" width="520" height="80" class="a16-inline-svg a16p5-root"/>
+      <text x="25" y="288" class="a16-inline-svg a16p5-root" font-size="12px">💡 Vantagem Clínica de Impacto no Pré-Natal:</text>
+      <text x="25" y="310" class="a16-inline-svg a16p5-root">Permite início do tratamento na <tspan class="a16p5-bold">PRIMEIRA CONSULTA</tspan>, reduzindo vertiginosamente a transmissão vertical de sífilis e HIV sem esperar semanas pelo laudo de laboratório!</text>
+    </g>
+
+    <!-- Right Residency Case Panel (T2) -->
+    <g transform="translate(610, 0)">
+      <rect x="0" y="0" width="320" height="440" class="a16-inline-svg a16p5-root"/>
+      <rect x="0" y="0" width="320" height="42" fill="var(--a16p5-teal-bg, rgba(6,182,212,0.12))" rx="10"/>
+      <text x="15" y="26" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">📌 DICA DE OURO MS</text>
+
+      <g transform="translate(15, 55)">
+        <text x="0" y="16" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">TR Positivo = Tratamento Imediato</text>
+        <text x="0" y="38" class="a16-inline-svg a16p5-root">Em gestantes com TR Sífilis (+), NÃO aguarde o resultado do VDRL para aplicar a 1ª dose de Penicilina Benzatina!</text>
+
+        <rect x="0" y="80" width="290" height="120" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-red, #ef4444)"/>
+        <text x="10" y="100" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">⚠️ Exceção de Prova:</text>
+        <text x="10" y="122" class="a16-inline-svg a16p5-root">Se a gestante já teve sífilis e foi comprovadamente tratada no passado, o TR treponêmico permanece (+) por toda a vida ("cicatriz serológica"). Nesses casos, o VDRL é indispensável para diferenciar infecção ativa de cicatriz!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- PANEL A: ANEMIA E AÇÚCAR (GLICEMIA) -->
+  <g class="a16-inline-svg a16p5-root" id="a16p5-panel-A" transform="translate(25, 168)">
+    <rect x="0" y="0" width="590" height="440" class="a16-inline-svg a16p5-root"/>
+    <text x="20" y="32" class="a16-inline-svg a16p5-root">EIXO A — Anemia (Hemograma) &amp; Açúcar (Glicemia de Jejum)</text>
+
+    <!-- Sub-card 1: Hemograma & Anemia -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="550" height="175" class="a16-inline-svg a16p5-root"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Hemograma completo &amp; Condutas na Anemia Ferropriva (Hb)</text>
+
+      <g transform="translate(15, 38)">
+        <!-- Normal -->
+        <rect x="0" y="0" width="520" height="36" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="22" class="a16-inline-svg a16p5-root">Hb ≥ 11 g/dL (Normal):</text>
+        <text x="170" y="22" class="a16-inline-svg a16p5-root">Manter profilaxia com Ferro (40mg Fe elem/dia) a partir da 20ª semana.</text>
+      </g>
+
+      <g transform="translate(15, 80)">
+        <!-- Mild/Mod -->
+        <rect x="0" y="0" width="520" height="36" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="22" class="a16-inline-svg a16p5-root">Hb 8 a 10,9 g/dL (Anemia Leve/Mod):</text>
+        <text x="230" y="22" class="a16-inline-svg a16p5-root">Ferro Terapêutico (120-200mg Fe elem/dia). Repetir em 30-60d.</text>
+      </g>
+
+      <g transform="translate(15, 122)">
+        <!-- Severe -->
+        <rect x="0" y="0" width="520" height="36" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="22" class="a16-inline-svg a16p5-root">Hb &lt; 8 g/dL (Anemia Grave):</text>
+        <text x="190" y="22" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)"><tspan class="a16p5-bold">ALTO RISCO!</tspan> Encaminhar imediatamente para pré-natal especializado.</text>
+      </g>
+    </g>
+
+    <!-- Sub-card 2: Glicemia de Jejum -->
+    <g transform="translate(20, 235)">
+      <rect x="0" y="0" width="550" height="185" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-amber, #f59e0b)"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">Glicemia de Jejum no 1º Trimestre (Critérios MS)</text>
+
+      <g transform="translate(15, 38)">
+        <!-- < 92 -->
+        <rect x="0" y="0" width="520" height="40" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-green, #10b981)">&lt; 92 mg/dL (Normal):</text>
+        <text x="170" y="24" class="a16-inline-svg a16p5-root">Solicitar TOTG 75g entre 24 e 28 semanas de gestação.</text>
+
+        <!-- 92 - 125 DMG -->
+        <rect x="0" y="46" width="520" height="42" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="71" class="a16-inline-svg a16p5-root" font-size="13px">92 a 125 mg/dL:</text>
+        <text x="140" y="71" class="a16-inline-svg a16p5-root" font-weight="700" fill="var(--a16p5-amber, #f59e0b)">DIABETES MELLITUS GESTACIONAL (DMG)! <tspan font-weight="400">(NÃO pede TOTG!)</tspan></text>
+
+        <!-- >= 126 DM Previo -->
+        <rect x="0" y="94" width="520" height="40" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="118" class="a16-inline-svg a16p5-root" font-size="13px">≥ 126 mg/dL:</text>
+        <text x="120" y="118" class="a16-inline-svg a16p5-root" font-weight="700" fill="var(--a16p5-red, #ef4444)">DIABETES MELLITUS PRÉVIO (Pré-gestacional / Overt Diabetes)!</text>
+      </g>
+    </g>
+
+    <!-- Right Residency Case Panel (A) -->
+    <g transform="translate(610, 0)">
+      <rect x="0" y="0" width="320" height="440" class="a16-inline-svg a16p5-root"/>
+      <rect x="0" y="0" width="320" height="42" fill="var(--a16p5-amber-bg, rgba(245,158,11,0.12))" rx="10"/>
+      <text x="15" y="26" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">📌 CASO CLÁSSICO DE PROVA</text>
+
+      <g transform="translate(15, 55)">
+        <text x="0" y="16" class="a16-inline-svg a16p5-root" font-style="italic">"Gestante de 9 semanas realiza glicemia de jejum = 95 mg/dL. Qual a conduta?"</text>
+
+        <rect x="0" y="60" width="290" height="115" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-amber, #f59e0b)"/>
+        <text x="10" y="80" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">✓ Diagnóstico: DMG</text>
+        <text x="10" y="100" class="a16-inline-svg a16p5-root">Iniciar orientação dietética + atividade física + perfil glicêmico.</text>
+        <text x="10" y="150" class="a16-inline-svg a16p5-root" font-size="11px" fill="var(--a16p5-red, #ef4444)"><tspan class="a16p5-bold">PEGADINHA:</tspan> Não solicitar TOTG de 24-28 sem! O diagnóstico de DMG já está dado.</text>
+
+        <rect x="0" y="190" width="290" height="180" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="212" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Suplementação de Ácido Fólico</text>
+        <text x="10" y="234" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold">0,4 mg/dia:</tspan> Pré-concepcional até 12ª sem (Prevenção de Defeito do Tubo Neural).</text>
+        <text x="10" y="276" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">5,0 mg/dia:</tspan> Se filho prévio com DTN ou uso de anticonvulsivantes!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- PANEL R: RH E COOMBS INDIRETO -->
+  <g class="a16-inline-svg a16p5-root" id="a16p5-panel-R" transform="translate(25, 168)">
+    <rect x="0" y="0" width="590" height="440" class="a16-inline-svg a16p5-root"/>
+    <text x="20" y="32" class="a16-inline-svg a16p5-root">EIXO R — Fator Rh &amp; Coombs Indireto (Isoimunização Rh)</text>
+
+    <!-- Sub-card 1: Coombs Flowchart -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="550" height="370" class="a16-inline-svg a16p5-root"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Mãe Rh Negativo (-) &amp; Pai Rh (+) ou Desconhecido</text>
+
+      <g transform="translate(15, 45)">
+        <!-- Step 1 -->
+        <rect x="0" y="0" width="520" height="40" class="a16-inline-svg a16p5-root"/>
+        <text x="15" y="25" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">1º Passo:</text>
+        <text x="90" y="25" class="a16-inline-svg a16p5-root">Solicitar <tspan class="a16p5-bold">Coombs Indireto (CI)</tspan> na primeira consulta pré-natal.</text>
+
+        <!-- Branch 1: CI Negativo -->
+        <g transform="translate(0, 50)">
+          <rect x="0" y="0" width="520" height="110" class="a16-inline-svg a16p5-root"/>
+          <text x="15" y="24" class="a16-inline-svg a16p5-root" font-size="13px">Coombs Indireto NEGATIVO (Gestante Não Sensitizada):</text>
+          <text x="15" y="48" class="a16-inline-svg a16p5-root">• Repetir Coombs Indireto nas semanas: <tspan class="a16p5-bold" fill="var(--a16p5-green, #10b981)">28, 32, 36 e 40</tspan>.</text>
+          <text x="15" y="70" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-teal, #06b6d4)">Imunoglobulina Anti-D (300 mcg):</tspan> Administrar profilaticamente na <tspan class="a16p5-bold">28ª semana</tspan> e em até 72h após o parto se o RN for Rh(+).</text>
+          <text x="15" y="92" class="a16-inline-svg a16p5-root" font-size="11px" fill="var(--a16p5-muted, #94a3b8)">*Também indicar Anti-D pós-abortamento, sangramentos ou procedimentos invasivos.</text>
+        </g>
+
+        <!-- Branch 2: CI Positivo -->
+        <g transform="translate(0, 170)">
+          <rect x="0" y="0" width="520" height="135" class="a16-inline-svg a16p5-root"/>
+          <text x="15" y="24" class="a16-inline-svg a16p5-root" font-size="13px">Coombs Indireto POSITIVO (Gestante Sensitizada): Titular Anticorpo</text>
+          <text x="15" y="50" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-amber, #f59e0b)">Titulação &lt; 1:16:</tspan> Baixo risco de hidropsia fetal. Repetir CI mensalmente.</text>
+          <text x="15" y="76" class="a16-inline-svg a16p5-root" font-size="13px" fill="var(--a16p5-red, #ef4444)">• <tspan class="a16p5-bold">Titulação ≥ 1:16 (TITULAÇÃO CRÍTICA!):</tspan></text>
+          <text x="25" y="98" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">Encaminhar para Alto Risco + Rastreio de Anemia Fetal com <tspan class="a16p5-bold">Doppler de ACM (VMAX &gt; 1,5 MoM)</tspan>!</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right Residency Case Panel (R) -->
+    <g transform="translate(610, 0)">
+      <rect x="0" y="0" width="320" height="440" class="a16-inline-svg a16p5-root"/>
+      <rect x="0" y="0" width="320" height="42" fill="var(--a16p5-red-bg, rgba(239,68,68,0.12))" rx="10"/>
+      <text x="15" y="26" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">📌 NUANCE MS vs PRÁTICA</text>
+
+      <g transform="translate(15, 55)">
+        <text x="0" y="16" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">Titulação Crítica do Coombs</text>
+        <text x="0" y="38" class="a16-inline-svg a16p5-root">A titulação crítica clássica das bancadas de residência é <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">1:16</tspan> (alguns serviços adotam 1:8).</text>
+
+        <rect x="0" y="65" width="290" height="120" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-red, #ef4444)"/>
+        <text x="10" y="85" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">🚨 O que FAZER se ≥ 1:16?</text>
+        <text x="10" y="105" class="a16-inline-svg a16p5-root">NÃO fazer cordocentese de cara!</text>
+        <text x="10" y="125" class="a16-inline-svg a16p5-root">O exame não-invasivo de escolha para investigar anemia fetal é a <tspan class="a16p5-bold" fill="var(--a16p5-teal, #06b6d4)">Dopplervelocimetria da Artéria Cerebral Média (ACM)</tspan>!</text>
+
+        <rect x="0" y="195" width="290" height="175" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="218" class="a16-inline-svg a16p5-root" fill="var(--a16p5-green, #10b981)">Profilaxia com Anti-D</text>
+        <text x="10" y="240" class="a16-inline-svg a16p5-root">• Aplica-se APENAS em gestantes com <tspan class="a16p5-bold">Coombs Indireto NEGATIVO</tspan>.</text>
+        <text x="10" y="280" class="a16-inline-svg a16p5-root" fill="var(--a16p5-red, #ef4444)">• Se a gestante já é Coombs Indireto (+), a imunoglobulina NÃO tem mais efeito!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- PANEL EXC: EXCLUSÕES DA ROTINA MS (CARD OURO) -->
+  <g class="a16-inline-svg a16p5-root" id="a16p5-panel-EXC" transform="translate(25, 168)">
+    <rect x="0" y="0" width="590" height="440" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-gold, #eab308)"/>
+    <text x="20" y="32" class="a16-inline-svg a16p5-root" fill="var(--a16p5-gold, #eab308)">⚠️ CARD DE EXCLUSÃO — O QUE NÃO É ROTINA DO MS!</text>
+
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="550" height="370" class="a16-inline-svg a16p5-root"/>
+      <text x="15" y="24" class="a16-inline-svg a16p5-root" fill="var(--a16p5-gold, #eab308)">3 Exames Frequentes em Provas que NÃO fazem parte do Pré-Natal MS</text>
+
+      <!-- Exclusion 1: CMV -->
+      <g transform="translate(15, 40)">
+        <rect x="0" y="0" width="520" height="95" class="a16-inline-svg a16p5-root"/>
+        <text x="15" y="24" class="a16-inline-svg a16p5-root" font-size="14px">❌ 1. Citomegalovírus (CMV) — Sorologia IgG / IgM</text>
+        <text x="15" y="46" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold">Por que NÃO pedir?</tspan> Alta soroprevalência na população, reativações/reinfeções podem ocorrer mesmo com IgG(+), e não há vacina ou tratamento profilático universal eficaz validado no pré-natal.</text>
+        <text x="15" y="80" class="a16-inline-svg a16p5-root" fill="var(--a16p5-amber, #f59e0b)">• Indicação: Apenas se houver suspeita clínica ou achados de malformação no ultrassom.</text>
+      </g>
+
+      <!-- Exclusion 2: Rubeola -->
+      <g transform="translate(15, 145)">
+        <rect x="0" y="0" width="520" height="95" class="a16-inline-svg a16p5-root"/>
+        <text x="15" y="24" class="a16-inline-svg a16p5-root" font-size="14px">❌ 2. Rubéola — Sorologia IgG / IgM</text>
+        <text x="15" y="46" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold">Por que NÃO pedir?</tspan> Excelente cobertura vacinal (Tríplice Viral no Brasil). A vacina é de vírus vivo atenuado e é <tspan class="a16p5-bold" fill="var(--a16p5-red, #ef4444)">CONTRAINDICADA na gestação</tspan> (não adianta diagnosticar suscetibilidade durante a gravidez).</text>
+      </g>
+
+      <!-- Exclusion 3: Parvovirus B19 -->
+      <g transform="translate(15, 250)">
+        <rect x="0" y="0" width="520" height="95" class="a16-inline-svg a16p5-root"/>
+        <text x="15" y="24" class="a16-inline-svg a16p5-root" font-size="14px">❌ 3. Parvovírus B19 (Eritema Infeccioso)</text>
+        <text x="15" y="46" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold">Por que NÃO pedir?</tspan> Não há rastreamento sorológico universal recomendado no pré-natal de baixo risco.</text>
+        <text x="15" y="80" class="a16-inline-svg a16p5-root">• Solicitar apenas se contato direto comprovado com caso exantemático ou hidropsia fetal não-imune.</text>
+      </g>
+    </g>
+
+    <!-- Right Residency Case Panel (EXC) -->
+    <g transform="translate(610, 0)">
+      <rect x="0" y="0" width="320" height="440" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-gold, #eab308)"/>
+      <rect x="0" y="0" width="320" height="42" fill="var(--a16p5-gold-bg, rgba(234,179,8,0.15))" rx="10"/>
+      <text x="15" y="26" class="a16-inline-svg a16p5-root" fill="var(--a16p5-gold, #eab308)">📌 PEGADINHA SUPREMA DE PROVA</text>
+
+      <g transform="translate(15, 55)">
+        <text x="0" y="16" class="a16-inline-svg a16p5-root" font-style="italic">"Questão de Residência: Qual dos exames abaixo NÃO deve ser solicitado na rotina de pré-natal de baixo risco segundo o Ministério da Saúde?"</text>
+
+        <rect x="0" y="70" width="290" height="120" class="a16-inline-svg a16p5-root" stroke="var(--a16p5-gold, #eab308)"/>
+        <text x="10" y="90" class="a16-inline-svg a16p5-root" fill="var(--a16p5-gold, #eab308)">Respostas Incorretas (São Rotina):</text>
+        <text x="10" y="110" class="a16-inline-svg a16p5-root">A) Urocultura (É rotina!)</text>
+        <text x="10" y="128" class="a16-inline-svg a16p5-root">B) Glicemia de jejum (É rotina!)</text>
+        <text x="10" y="146" class="a16-inline-svg a16p5-root">C) Sorologia para HIV (É rotina!)</text>
+        <text x="10" y="172" class="a16-inline-svg a16p5-root" fill="var(--a16p5-green, #10b981)">Gabarito: <tspan fill="var(--a16p5-gold, #eab308)">Sorologia para Rubéola ou CMV!</tspan></text>
+
+        <rect x="0" y="200" width="290" height="170" class="a16-inline-svg a16p5-root"/>
+        <text x="10" y="222" class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Resumo das Exclusões</text>
+        <text x="10" y="244" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-gold, #eab308)">CMV:</tspan> Não rastrear.</text>
+        <text x="10" y="266" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-gold, #eab308)">Rubéola:</tspan> Não rastrear.</text>
+        <text x="10" y="288" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-gold, #eab308)">Parvovírus B19:</tspan> Não rastrear.</text>
+        <text x="10" y="310" class="a16-inline-svg a16p5-root">• <tspan class="a16p5-bold" fill="var(--a16p5-gold, #eab308)">Sorologia Chagas:</tspan> Apenas área endêmica.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- FOOTER / AFFORDANCE BAR (Y: 622 to 655) -->
+  <g transform="translate(25, 622)">
+    <rect x="0" y="0" width="930" height="34" fill="var(--a16p5-card-inner, #131c35)" stroke="var(--a16p5-border, #3a506b)" stroke-width="1" rx="6"/>
+    <circle cx="20" cy="17" r="5" fill="var(--a16p5-teal, #06b6d4)"/>
+    <text x="34" y="21" class="a16-inline-svg a16p5-root" font-size="11px">
+      <tspan class="a16-inline-svg a16p5-root" fill="var(--a16p5-teal, #06b6d4)">Dica de Interação:</tspan> Toque nas abas do mnemônico TESTAR ou no botão de exclusões para alternar as condutas do Ministério da Saúde.
+    </text>
+    
+    <text x="910" y="21" class="a16-inline-svg a16p5-root" font-size="10px" text-anchor="end">SVG Interativo · Plataforma Médica Bauer</text>
+  </g>
+
+  <!-- INLINE JAVASCRIPT CONTROLLER -->
+  <script>//<![CDATA[
+    function a16p5SelectTab(tabId) {
+      // 1. Hide all panels
+      var panels = document.querySelectorAll('.a16p5-panel');
+      for (var i = 0; i < panels.length; i++) {
+        panels[i].classList.remove('a16p5-visible');
+      }
+
+      // 2. Deactivate all buttons
+      var buttons = document.querySelectorAll('.a16p5-tab-btn');
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove('a16p5-active');
+        buttons[j].setAttribute('aria-selected', 'false');
+      }
+
+      // 3. Show targeted panel
+      var targetPanel = document.getElementById('a16p5-panel-' + tabId);
+      if (targetPanel) {
+        targetPanel.classList.add('a16p5-visible');
+      }
+
+      // 4. Activate targeted button
+      var targetBtn = document.getElementById('a16p5-btn-' + tabId);
+      if (targetBtn) {
+        targetBtn.classList.add('a16p5-active');
+        targetBtn.setAttribute('aria-selected', 'true');
+      }
+    }
+  //]]></script>
+</svg>
+</div><figcaption class="fig__caption">Mnemônico TESTAR: as 5 colunas da bateria de exames do 1º trimestre do pré-natal.</figcaption></figure>
+
+<figure class="fig"><div class="fig__frame">
+<img src="media/B05-Blood_typing_by_gel_card_method_28column_agglutina" alt="Amostras de sangue para exames do pré-natal" loading="lazy" alt="Tipagem ABO-Rh (gel card / column agglutination)">
+</div><figcaption class="fig__caption">Amostras laboratoriais · CDC PHIL · Domínio público</figcaption></figure>
+
+<div class="a16-quiz" data-page="p5" aria-label="Quiz da página 5">
+  <p class="a16-quiz__title">Quiz — Página 5</p>
+  <div class="a16-quiz__q"><p class="a16-quiz__q-text">Q1. Qual conjunto <strong>não</strong> faz parte da rotina básica MS do 1º trimestre?</p>
+  <div class="a16-quiz__options">
+    <div class="a16-quiz__opt" data-value="A" data-correct="false" tabindex="0" role="button"><span class="a16-quiz__opt-marker">A</span> Toxoplasmose IgG/IgM</div>
+    <div class="a16-quiz__opt" data-value="B" data-correct="false" tabindex="0" role="button"><span class="a16-quiz__opt-marker">B</span> HTLV</div>
+    <div class="a16-quiz__opt" data-value="C" data-correct="true" tabindex="0" role="button"><span class="a16-quiz__opt-marker">C</span> CMV + rubéola + parvovírus</div>
+    <div class="a16-quiz__opt" data-value="D" data-correct="false" tabindex="0" role="button"><span class="a16-quiz__opt-marker">D</span> EAS + urocultura</div>
+  </div>
+  <div class="a16-quiz__feedback a16-quiz__feedback--correct"><strong>✓ Correto!</strong> A infecção da rotina citada é <strong>toxoplasmose</strong>. CMV, rubéola e parvo NÃO entram na rotina MS.</div>
+  <div class="a16-quiz__feedback a16-quiz__feedback--wrong"><strong>✗ Incorreto.</strong> CMV, rubéola e parvovírus não fazem parte da rotina básica MS do 1º trimestre.</div>
+  </div>
+  <div class="a16-quiz__q"><p class="a16-quiz__q-text">Q2. Coombs indireto segundo o MS:</p>
+  <div class="a16-quiz__options">
+    <div class="a16-quiz__opt" data-value="A" data-correct="false" tabindex="0" role="button"><span class="a16-quiz__opt-marker">A</span> Só Rh positivo.</div>
+    <div class="a16-quiz__opt" data-value="B" data-correct="true" tabindex="0" role="button"><span class="a16-quiz__opt-marker">B</span> Gestante <strong>Rh negativo</strong> (prática frequentemente amplia a todas).</div>
+    <div class="a16-quiz__opt" data-value="C" data-correct="false" tabindex="0" role="button"><span class="a16-quiz__opt-marker">C</span> Apenas no 3º trimestre.</div>
+    <div class="a16-quiz__opt" data-value="D" data-correct="false" tabindex="0" role="button"><span class="a16-quiz__opt-marker">D</span> Substitui a tipagem.</div>
+  </div>
+  <div class="a16-quiz__feedback a16-quiz__feedback--correct"><strong>✓ Correto!</strong> MS: Coombs para Rh negativo. Na prática, muitos pedem para todas (outros anticorpos irregulares).</div>
+  <div class="a16-quiz__feedback a16-quiz__feedback--wrong"><strong>✗ Incorreto.</strong> MS indica Coombs para Rh negativo; a prática frequentemente amplia.</div>
+  </div>
+</div>
+<nav class="a16-nav" aria-label="Navegação entre páginas">
+<a class="a16-nav__btn" href="p4.html">← Página 4</a>
+<a class="a16-nav__btn a16-nav__btn--next" href="p6.html">Página 6 →</a>
+</nav>
+  </article></div></main>
+  <script src="app-a16.js"></script>
+</body>
+</html>

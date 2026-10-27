@@ -1,0 +1,630 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 640" role="img" aria-labelledby="a6p3-title a6p3-desc" class="a6p3-root">
+  <title id="a6p3-title">Três vias, uma palavra</title>
+  <desc id="a6p3-desc">Três portas oficiais para o diagnóstico de epilepsia: duas ou mais crises não provocadas com intervalo maior que 24 horas; uma crise não provocada com risco de recorrência acima de 60 por cento ou lesão epileptogênica; encaixe em síndrome epiléptica. Crise única sem foco não fecha o diagnóstico sozinha.</desc>
+  <defs>
+    <linearGradient id="a6p3-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--a6p3-bg0, #0B1220)"/>
+      <stop offset="100%" stop-color="var(--a6p3-bg1, #07111F)"/>
+    </linearGradient>
+    <radialGradient id="a6p3-aurora" cx="70%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="var(--a6p3-indigo, #818CF8)" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="var(--a6p3-teal, #2DD4BF)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="var(--a6p3-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a6p3-hubGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a6p3-teal, #2DD4BF)" stop-opacity="0.40"/>
+      <stop offset="55%" stop-color="var(--a6p3-indigo, #818CF8)" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="var(--a6p3-bg0, #0B1220)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a6p3-goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--a6p3-gold, #FBBF24)" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="var(--a6p3-gold, #FBBF24)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="a6p3-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="a6p3-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a6p3-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a6p3-indigo, #818CF8)"/>
+    </marker>
+    <marker id="a6p3-arrTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a6p3-teal, #2DD4BF)"/>
+    </marker>
+    <marker id="a6p3-arrGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--a6p3-gold, #FBBF24)"/>
+    </marker>
+    <style>
+      .a6p3-root {
+        --a6p3-bg0: #0B1220;
+        --a6p3-bg1: #07111F;
+        --a6p3-card: #111A2B;
+        --a6p3-card2: #152033;
+        --a6p3-border: rgba(148,163,184,0.18);
+        --a6p3-ink: #F4F7FB;
+        --a6p3-muted: #94A3B8;
+        --a6p3-soft: #B8C0CC;
+        --a6p3-teal: #2DD4BF;
+        --a6p3-tealDim: #0F766E;
+        --a6p3-indigo: #818CF8;
+        --a6p3-indigoDeep: #4F46E5;
+        --a6p3-gold: #FBBF24;
+        --a6p3-goldDim: #B45309;
+        --a6p3-coral: #F87171;
+        --a6p3-ok: #34D399;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      [data-theme="light"] .a6p3-root {
+        --a6p3-bg0: #F8F6F2;
+        --a6p3-bg1: #EEF2F7;
+        --a6p3-card: #FFFFFF;
+        --a6p3-card2: #F1F5F9;
+        --a6p3-border: rgba(15,23,42,0.10);
+        --a6p3-ink: #0F172A;
+        --a6p3-muted: #64748B;
+        --a6p3-soft: #475569;
+        --a6p3-teal: #0D9488;
+        --a6p3-tealDim: #115E59;
+        --a6p3-indigo: #4F46E5;
+        --a6p3-indigoDeep: #3730A3;
+        --a6p3-gold: #D97706;
+        --a6p3-goldDim: #92400E;
+        --a6p3-coral: #DC2626;
+        --a6p3-ok: #059669;
+      }
+      .a6p3-root .a6p3-via,
+      .a6p3-root .a6p3-chip,
+      .a6p3-root .a6p3-btn,
+      .a6p3-root .a6p3-trap {
+        cursor: pointer;
+      }
+      .a6p3-root .a6p3-via:focus,
+      .a6p3-root .a6p3-chip:focus,
+      .a6p3-root .a6p3-btn:focus,
+      .a6p3-root .a6p3-trap:focus {
+        outline: none;
+      }
+      .a6p3-root .a6p3-via:focus .a6p3-via-ring,
+      .a6p3-root .a6p3-chip:focus .a6p3-chip-ring,
+      .a6p3-root .a6p3-btn:focus .a6p3-btn-ring,
+      .a6p3-root .a6p3-trap:focus .a6p3-trap-ring {
+        opacity: 1;
+      }
+      .a6p3-root .a6p3-via-fill,
+      .a6p3-root .a6p3-via-dot,
+      .a6p3-root .a6p3-via-label,
+      .a6p3-root .a6p3-bridge,
+      .a6p3-root .a6p3-hub-ring,
+      .a6p3-root .a6p3-mini,
+      .a6p3-root .a6p3-detail-panel {
+        transition: opacity 0.35s ease, fill 0.35s ease, stroke 0.35s ease, stroke-width 0.35s ease;
+      }
+      .a6p3-root .a6p3-tip {
+        pointer-events: none;
+      }
+      .a6p3-root .a6p3-via-fill {
+        opacity: 0.55;
+      }
+      .a6p3-root .a6p3-bridge {
+        opacity: 0.18;
+      }
+      .a6p3-root .a6p3-hub-ring {
+        opacity: 0.35;
+      }
+      .a6p3-root .a6p3-detail-panel {
+        opacity: 0;
+      }
+      .a6p3-root .a6p3-detail-panel.a6p3-d-rest {
+        opacity: 1;
+      }
+      .a6p3-root[data-active="v1"] .a6p3-v-v1 .a6p3-via-fill,
+      .a6p3-root[data-active="v2"] .a6p3-v-v2 .a6p3-via-fill,
+      .a6p3-root[data-active="v3"] .a6p3-v-v3 .a6p3-via-fill {
+        opacity: 1;
+      }
+      .a6p3-root[data-active="v1"] .a6p3-v-v1 .a6p3-via-label,
+      .a6p3-root[data-active="v2"] .a6p3-v-v2 .a6p3-via-label,
+      .a6p3-root[data-active="v3"] .a6p3-v-v3 .a6p3-via-label {
+        fill: var(--a6p3-ink, #F4F7FB);
+        font-weight: 700;
+      }
+      .a6p3-root[data-active="v1"] .a6p3-bridge-v1,
+      .a6p3-root[data-active="v2"] .a6p3-bridge-v2,
+      .a6p3-root[data-active="v3"] .a6p3-bridge-v3 {
+        opacity: 1;
+      }
+      .a6p3-root[data-active="v1"] .a6p3-hub-ring {
+        stroke: var(--a6p3-teal, #2DD4BF);
+        opacity: 0.95;
+      }
+      .a6p3-root[data-active="v2"] .a6p3-hub-ring {
+        stroke: var(--a6p3-gold, #FBBF24);
+        opacity: 0.95;
+      }
+      .a6p3-root[data-active="v3"] .a6p3-hub-ring {
+        stroke: var(--a6p3-indigo, #818CF8);
+        opacity: 0.95;
+      }
+      .a6p3-root[data-active="v1"] .a6p3-d-v1,
+      .a6p3-root[data-active="v2"] .a6p3-d-v2,
+      .a6p3-root[data-active="v3"] .a6p3-d-v3,
+      .a6p3-root[data-active="trap"] .a6p3-d-trap {
+        opacity: 1;
+      }
+      .a6p3-root[data-active="v1"] .a6p3-d-rest,
+      .a6p3-root[data-active="v2"] .a6p3-d-rest,
+      .a6p3-root[data-active="v3"] .a6p3-d-rest,
+      .a6p3-root[data-active="trap"] .a6p3-d-rest {
+        opacity: 0;
+      }
+      .a6p3-root[data-active="trap"] .a6p3-hub-word {
+        fill: var(--a6p3-muted, #94A3B8);
+      }
+      .a6p3-root[data-active="trap"] .a6p3-hub-ring {
+        stroke: var(--a6p3-coral, #F87171);
+        opacity: 0.7;
+        stroke-dasharray: 6 5;
+      }
+      .a6p3-root[data-active="trap"] .a6p3-hub-x {
+        opacity: 1;
+      }
+      .a6p3-root .a6p3-hub-x {
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+      .a6p3-root[data-dim="1"] .a6p3-via-fill {
+        opacity: 0.22;
+      }
+      .a6p3-root[data-dim="1"] .a6p3-bridge {
+        opacity: 0.06;
+      }
+      .a6p3-root[data-playing="1"] .a6p3-hub-pulse {
+        animation: a6p3-pulse 1.05s ease-in-out infinite;
+      }
+      @keyframes a6p3-pulse {
+        0%, 100% { opacity: 0.25; r: 52; }
+        50% { opacity: 0.55; r: 62; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .a6p3-root .a6p3-via-fill,
+        .a6p3-root .a6p3-via-dot,
+        .a6p3-root .a6p3-via-label,
+        .a6p3-root .a6p3-bridge,
+        .a6p3-root .a6p3-hub-ring,
+        .a6p3-root .a6p3-detail-panel {
+          transition: none;
+        }
+        .a6p3-root[data-playing="1"] .a6p3-hub-pulse {
+          animation: none !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="840" height="640" rx="20" fill="url(#a6p3-bg)"/>
+  <rect width="840" height="640" rx="20" fill="url(#a6p3-aurora)" pointer-events="none"/>
+
+  <text x="36" y="36" fill="var(--a6p3-teal, #2DD4BF)" font-size="12" font-weight="700" letter-spacing="2.2">NEUROLOGIA · CRITÉRIO OPERACIONAL</text>
+  <text x="36" y="66" fill="var(--a6p3-ink, #F4F7FB)" font-size="24" font-weight="700" letter-spacing="-0.4">Três vias, uma palavra</text>
+  <text x="36" y="90" fill="var(--a6p3-muted, #94A3B8)" font-size="13.5" font-weight="500">Epilepsia não é “teve crise”. São três portas oficiais — e a crise única sem foco não fecha sozinha.</text>
+
+  <g id="a6p3-mantra" transform="translate(36,104)">
+    <rect width="768" height="38" rx="12" fill="var(--a6p3-card, #111A2B)" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="1.3" opacity="0.98"/>
+    <circle cx="20" cy="19" r="5" fill="var(--a6p3-teal, #2DD4BF)"/>
+    <text x="38" y="24" fill="var(--a6p3-teal, #2DD4BF)" font-size="13" font-weight="700">ILAE operacional · 3 vias suficientes</text>
+    <text x="420" y="24" fill="var(--a6p3-soft, #B8C0CC)" font-size="12.5" font-weight="500">“aguda + transitória + recorre” sozinha não basta</text>
+  </g>
+
+  <g id="a6p3-vias" transform="translate(28,158)">
+    <rect width="360" height="330" rx="18" fill="var(--a6p3-card, #111A2B)" stroke="var(--a6p3-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <text x="20" y="28" fill="var(--a6p3-muted, #94A3B8)" font-size="11" font-weight="700" letter-spacing="1.6">PORTAS OFICIAIS · TOQUE PARA ABRIR</text>
+
+    <g class="a6p3-via a6p3-v-v1" id="a6p3-via-v1" tabindex="0" role="button" aria-label="Via 1: duas ou mais crises não provocadas com intervalo maior que 24 horas" data-via="v1" transform="translate(16,44)">
+      <rect class="a6p3-via-ring" x="-2" y="-2" width="332" height="78" rx="14" fill="none" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+      <rect class="a6p3-via-fill" width="328" height="74" rx="12" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="1.5" opacity="0.55"/>
+      <circle class="a6p3-via-dot" cx="24" cy="28" r="10" fill="var(--a6p3-teal, #2DD4BF)"/>
+      <text x="24" y="32" text-anchor="middle" fill="var(--a6p3-bg0, #0B1220)" font-size="12" font-weight="800">1</text>
+      <text class="a6p3-via-label" x="46" y="24" fill="var(--a6p3-soft, #B8C0CC)" font-size="14.5" font-weight="600">≥2 crises · intervalo &gt;24 h</text>
+      <text x="46" y="44" fill="var(--a6p3-muted, #94A3B8)" font-size="12" font-weight="500">Não provocadas · mesmo dia = 1 evento</text>
+      <g transform="translate(46,52)" opacity="0.9">
+        <circle cx="8" cy="8" r="5" fill="none" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="1.4"/>
+        <path d="M8 5 V8 L10 10" fill="none" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="1.3" stroke-linecap="round"/>
+        <text x="18" y="12" fill="var(--a6p3-teal, #2DD4BF)" font-size="11" font-weight="700">&gt;24 h entre crises</text>
+      </g>
+    </g>
+
+    <g class="a6p3-via a6p3-v-v2" id="a6p3-via-v2" tabindex="0" role="button" aria-label="Via 2: uma crise não provocada com risco de recorrência maior que 60 por cento ou lesão epileptogênica" data-via="v2" transform="translate(16,130)">
+      <rect class="a6p3-via-ring" x="-2" y="-2" width="332" height="78" rx="14" fill="none" stroke="var(--a6p3-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+      <rect class="a6p3-via-fill" width="328" height="74" rx="12" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-gold, #FBBF24)" stroke-width="1.5" opacity="0.55"/>
+      <circle class="a6p3-via-dot" cx="24" cy="28" r="10" fill="var(--a6p3-gold, #FBBF24)"/>
+      <text x="24" y="32" text-anchor="middle" fill="var(--a6p3-bg0, #0B1220)" font-size="12" font-weight="800">2</text>
+      <text class="a6p3-via-label" x="46" y="24" fill="var(--a6p3-soft, #B8C0CC)" font-size="14.5" font-weight="600">1 crise + risco &gt;60%</text>
+      <text x="46" y="44" fill="var(--a6p3-muted, #94A3B8)" font-size="12" font-weight="500">Lesão / foco epileptogênico</text>
+      <g transform="translate(46,52)" opacity="0.95">
+        <circle cx="8" cy="8" r="5" fill="var(--a6p3-gold, #FBBF24)" opacity="0.85"/>
+        <circle cx="8" cy="8" r="2" fill="var(--a6p3-card2, #152033)"/>
+        <text x="18" y="12" fill="var(--a6p3-gold, #FBBF24)" font-size="11" font-weight="700">TCG + cicatriz de NCC</text>
+      </g>
+    </g>
+
+    <g class="a6p3-via a6p3-v-v3" id="a6p3-via-v3" tabindex="0" role="button" aria-label="Via 3: encaixe em síndrome epiléptica por clínica, epidemiologia, EEG e associados" data-via="v3" transform="translate(16,216)">
+      <rect class="a6p3-via-ring" x="-2" y="-2" width="332" height="78" rx="14" fill="none" stroke="var(--a6p3-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect class="a6p3-via-fill" width="328" height="74" rx="12" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-indigo, #818CF8)" stroke-width="1.5" opacity="0.55"/>
+      <circle class="a6p3-via-dot" cx="24" cy="28" r="10" fill="var(--a6p3-indigo, #818CF8)"/>
+      <text x="24" y="32" text-anchor="middle" fill="var(--a6p3-ink, #F4F7FB)" font-size="12" font-weight="800">3</text>
+      <text class="a6p3-via-label" x="46" y="24" fill="var(--a6p3-soft, #B8C0CC)" font-size="14.5" font-weight="600">Síndrome epiléptica</text>
+      <text x="46" y="44" fill="var(--a6p3-muted, #94A3B8)" font-size="12" font-weight="500">Clínica + epidemiol. + EEG + associados</text>
+      <g transform="translate(46,52)" opacity="0.9">
+        <circle cx="6" cy="8" r="3.2" fill="var(--a6p3-indigo, #818CF8)"/>
+        <circle cx="16" cy="8" r="3.2" fill="var(--a6p3-indigo, #818CF8)" opacity="0.7"/>
+        <circle cx="26" cy="8" r="3.2" fill="var(--a6p3-indigo, #818CF8)" opacity="0.5"/>
+        <text x="36" y="12" fill="var(--a6p3-indigo, #818CF8)" font-size="11" font-weight="700">constelação que fecha</text>
+      </g>
+    </g>
+  </g>
+
+  <g id="a6p3-hub" transform="translate(412,158)">
+    <rect width="400" height="330" rx="18" fill="var(--a6p3-card, #111A2B)" stroke="var(--a6p3-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+    <text x="20" y="28" fill="var(--a6p3-muted, #94A3B8)" font-size="11" font-weight="700" letter-spacing="1.6">DESTINO · UMA PALAVRA</text>
+    <text id="a6p3-status" class="a6p3-status" x="20" y="52" fill="var(--a6p3-soft, #B8C0CC)" font-size="14" font-weight="700">Em repouso · três vias disponíveis</text>
+
+    <circle class="a6p3-hub-pulse" cx="200" cy="148" r="56" fill="url(#a6p3-hubGlow)" opacity="0.35"/>
+    <circle class="a6p3-hub-ring" cx="200" cy="148" r="64" fill="none" stroke="var(--a6p3-indigo, #818CF8)" stroke-width="2.2" opacity="0.35"/>
+    <circle cx="200" cy="148" r="48" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="1.6"/>
+    <text class="a6p3-hub-word" x="200" y="144" text-anchor="middle" fill="var(--a6p3-ink, #F4F7FB)" font-size="13" font-weight="800" letter-spacing="1.4">EPILEPSIA</text>
+    <text class="a6p3-hub-word" x="200" y="162" text-anchor="middle" fill="var(--a6p3-muted, #94A3B8)" font-size="10.5" font-weight="600">diagnóstico</text>
+    <g class="a6p3-hub-x" transform="translate(200,148)">
+      <path d="M-14 -14 L14 14 M14 -14 L-14 14" stroke="var(--a6p3-coral, #F87171)" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+
+    <path class="a6p3-bridge a6p3-bridge-v1" d="M-24 82 C40 82, 80 120, 136 138" fill="none" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="2" marker-end="url(#a6p3-arrTeal)" opacity="0.18"/>
+    <path class="a6p3-bridge a6p3-bridge-v2" d="M-24 168 C40 168, 90 155, 136 150" fill="none" stroke="var(--a6p3-gold, #FBBF24)" stroke-width="2" marker-end="url(#a6p3-arrGold)" opacity="0.18"/>
+    <path class="a6p3-bridge a6p3-bridge-v3" d="M-24 254 C40 254, 80 190, 136 162" fill="none" stroke="var(--a6p3-indigo, #818CF8)" stroke-width="2" marker-end="url(#a6p3-arr)" opacity="0.18"/>
+
+    <g class="a6p3-detail-panel a6p3-d-rest" id="a6p3-d-rest" transform="translate(16,220)">
+      <rect width="368" height="92" rx="12" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+      <text x="16" y="28" fill="var(--a6p3-ink, #F4F7FB)" font-size="13.5" font-weight="700">Qualquer via basta</text>
+      <text x="16" y="50" fill="var(--a6p3-muted, #94A3B8)" font-size="12" font-weight="500">Uma porta oficial fecha o diagnóstico. Não precisa</text>
+      <text x="16" y="68" fill="var(--a6p3-muted, #94A3B8)" font-size="12" font-weight="500">das três. Crise ≠ epilepsia até entrar por uma via.</text>
+    </g>
+
+    <g class="a6p3-detail-panel a6p3-d-v1" id="a6p3-d-v1" transform="translate(16,220)">
+      <rect width="368" height="92" rx="12" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="1.4"/>
+      <text x="16" y="26" fill="var(--a6p3-teal, #2DD4BF)" font-size="13.5" font-weight="700">Via 1 · recorrência temporal</text>
+      <text x="16" y="48" fill="var(--a6p3-soft, #B8C0CC)" font-size="12" font-weight="500">≥2 crises epilépticas não provocadas, separadas</text>
+      <text x="16" y="66" fill="var(--a6p3-soft, #B8C0CC)" font-size="12" font-weight="500">por &gt;24 h. Duas no mesmo dia contam como um evento.</text>
+      <text x="16" y="84" fill="var(--a6p3-muted, #94A3B8)" font-size="11.5" font-weight="500">Pegadinha de prova: intervalo, não contagem bruta.</text>
+    </g>
+
+    <g class="a6p3-detail-panel a6p3-d-v2" id="a6p3-d-v2" transform="translate(16,220)">
+      <rect width="368" height="92" rx="12" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-gold, #FBBF24)" stroke-width="1.4"/>
+      <text x="16" y="26" fill="var(--a6p3-gold, #FBBF24)" font-size="13.5" font-weight="700">Via 2 · risco / lesão</text>
+      <text x="16" y="48" fill="var(--a6p3-soft, #B8C0CC)" font-size="12" font-weight="500">1 crise não provocada + risco de recorrência &gt;60%</text>
+      <text x="16" y="66" fill="var(--a6p3-soft, #B8C0CC)" font-size="12" font-weight="500">(lesão epileptogênica / foco). Clássico: TCG + NCC.</text>
+      <text x="16" y="84" fill="var(--a6p3-muted, #94A3B8)" font-size="11.5" font-weight="500">“Uma crise nunca é epilepsia” mata esta via.</text>
+    </g>
+
+    <g class="a6p3-detail-panel a6p3-d-v3" id="a6p3-d-v3" transform="translate(16,220)">
+      <rect width="368" height="92" rx="12" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-indigo, #818CF8)" stroke-width="1.4"/>
+      <text x="16" y="26" fill="var(--a6p3-indigo, #818CF8)" font-size="13.5" font-weight="700">Via 3 · síndrome</text>
+      <text x="16" y="48" fill="var(--a6p3-soft, #B8C0CC)" font-size="12" font-weight="500">Encaixe em síndrome epiléptica: clínica + idade/</text>
+      <text x="16" y="66" fill="var(--a6p3-soft, #B8C0CC)" font-size="12" font-weight="500">epidemiologia + EEG + traços associados.</text>
+      <text x="16" y="84" fill="var(--a6p3-muted, #94A3B8)" font-size="11.5" font-weight="500">Sem inventar síndrome nominal neste recorte.</text>
+    </g>
+
+    <g class="a6p3-detail-panel a6p3-d-trap" id="a6p3-d-trap" transform="translate(16,220)">
+      <rect width="368" height="92" rx="12" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-coral, #F87171)" stroke-width="1.4"/>
+      <text x="16" y="26" fill="var(--a6p3-coral, #F87171)" font-size="13.5" font-weight="700">Não fecha · crise única sem foco</text>
+      <text x="16" y="48" fill="var(--a6p3-soft, #B8C0CC)" font-size="12" font-weight="500">Até ~10% da população tem uma crise na vida e</text>
+      <text x="16" y="66" fill="var(--a6p3-soft, #B8C0CC)" font-size="12" font-weight="500">nunca repete. Sem lesão / sem síndrome / sem 2ª.</text>
+      <text x="16" y="84" fill="var(--a6p3-muted, #94A3B8)" font-size="11.5" font-weight="500">Crise ≠ epilepsia. Porta permanece fechada.</text>
+    </g>
+  </g>
+
+  <g id="a6p3-trap-bar" transform="translate(28,504)">
+    <g class="a6p3-trap" id="a6p3-trap" tabindex="0" role="button" aria-label="Armadilha: crise única sem foco não fecha o diagnóstico de epilepsia" data-via="trap">
+      <rect class="a6p3-trap-ring" x="-2" y="-2" width="404" height="48" rx="14" fill="none" stroke="var(--a6p3-coral, #F87171)" stroke-width="2" opacity="0"/>
+      <rect width="400" height="44" rx="12" fill="var(--a6p3-card, #111A2B)" stroke="var(--a6p3-coral, #F87171)" stroke-width="1.3"/>
+      <circle cx="22" cy="22" r="7" fill="none" stroke="var(--a6p3-coral, #F87171)" stroke-width="1.8"/>
+      <path d="M19 19 L25 25 M25 19 L19 25" stroke="var(--a6p3-coral, #F87171)" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="42" y="19" fill="var(--a6p3-coral, #F87171)" font-size="13" font-weight="700">Crise única sem foco · não fecha</text>
+      <text x="42" y="35" fill="var(--a6p3-muted, #94A3B8)" font-size="11.5" font-weight="500">Até ~10% tem uma crise na vida e nunca repete</text>
+    </g>
+  </g>
+
+  <g id="a6p3-chips" transform="translate(444,504)">
+    <g class="a6p3-chip" id="a6p3-chip-day" tabindex="0" role="button" aria-label="Mesmo dia conta como um evento na via 1">
+      <rect class="a6p3-chip-ring" x="-2" y="-2" width="176" height="48" rx="14" fill="none" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+      <rect width="172" height="44" rx="12" fill="var(--a6p3-card, #111A2B)" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="1.2"/>
+      <text x="14" y="19" fill="var(--a6p3-teal, #2DD4BF)" font-size="12.5" font-weight="700">Mesmo dia = 1 evento</text>
+      <text x="14" y="35" fill="var(--a6p3-muted, #94A3B8)" font-size="11" font-weight="500">Via 1 exige &gt;24 h</text>
+    </g>
+    <g class="a6p3-chip" id="a6p3-chip-vague" tabindex="0" role="button" aria-label="Fórmula vaga aguda transitória e recorre não basta sozinha" transform="translate(184,0)">
+      <rect class="a6p3-chip-ring" x="-2" y="-2" width="184" height="48" rx="14" fill="none" stroke="var(--a6p3-indigo, #818CF8)" stroke-width="2" opacity="0"/>
+      <rect width="180" height="44" rx="12" fill="var(--a6p3-card, #111A2B)" stroke="var(--a6p3-indigo, #818CF8)" stroke-width="1.2"/>
+      <text x="14" y="19" fill="var(--a6p3-indigo, #818CF8)" font-size="12.5" font-weight="700">Não basta “recorre”</text>
+      <text x="14" y="35" fill="var(--a6p3-muted, #94A3B8)" font-size="11" font-weight="500">Critério operacional</text>
+    </g>
+  </g>
+
+  <g id="a6p3-controls" transform="translate(28,568)">
+    <g class="a6p3-btn" id="a6p3-btn-tour" tabindex="0" role="button" aria-label="Percorrer as três vias oficiais em sequência">
+      <rect class="a6p3-btn-ring" x="-2" y="-2" width="128" height="36" rx="18" fill="none" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="2" opacity="0"/>
+      <rect width="124" height="32" rx="16" fill="var(--a6p3-indigoDeep, #4F46E5)" opacity="0.92"/>
+      <text x="62" y="21" text-anchor="middle" fill="var(--a6p3-ink, #F4F7FB)" font-size="12.5" font-weight="700">Percorrer vias</text>
+    </g>
+    <g class="a6p3-btn" id="a6p3-btn-reset" tabindex="0" role="button" aria-label="Repor estado de repouso" transform="translate(136,0)">
+      <rect class="a6p3-btn-ring" x="-2" y="-2" width="88" height="36" rx="18" fill="none" stroke="var(--a6p3-muted, #94A3B8)" stroke-width="2" opacity="0"/>
+      <rect width="84" height="32" rx="16" fill="var(--a6p3-card, #111A2B)" stroke="var(--a6p3-border, rgba(148,163,184,0.18))" stroke-width="1.2"/>
+      <text x="42" y="21" text-anchor="middle" fill="var(--a6p3-soft, #B8C0CC)" font-size="12.5" font-weight="600">Repor</text>
+    </g>
+    <text x="240" y="22" fill="var(--a6p3-muted, #94A3B8)" font-size="12" font-weight="500">Teal = critério · Ouro = via 2 / risco · Índigo = estrutura sindrômica</text>
+  </g>
+
+  <g id="a6p3-tip" class="a6p3-tip" opacity="0" aria-hidden="true" transform="translate(0,0)">
+    <rect id="a6p3-tip-bg" x="0" y="0" width="300" height="58" rx="10" fill="var(--a6p3-card2, #152033)" stroke="var(--a6p3-teal, #2DD4BF)" stroke-width="1.4" opacity="0.98"/>
+    <text id="a6p3-tip-t1" x="14" y="24" fill="var(--a6p3-ink, #F4F7FB)" font-size="13" font-weight="700"> </text>
+    <text id="a6p3-tip-t2" x="14" y="44" fill="var(--a6p3-muted, #94A3B8)" font-size="12" font-weight="500"> </text>
+  </g>
+
+  <text id="a6p3-live" x="36" y="628" fill="var(--a6p3-muted, #94A3B8)" font-size="1" opacity="0" aria-live="polite"> </text>
+
+  <script type="text/ecmascript"><![CDATA[
+(function(){
+  var root = document.querySelector('.a6p3-root');
+  if(!root) return;
+  function Q(s){ return root.querySelector(s); }
+  function QA(s){ return root.querySelectorAll(s); }
+
+  var statusEl = Q('#a6p3-status');
+  var liveEl = Q('#a6p3-live');
+  var tip = Q('#a6p3-tip');
+  var tourBtn = Q('#a6p3-btn-tour');
+  var resetBtn = Q('#a6p3-btn-reset');
+  var timers = [];
+  var playing = false;
+  var reduce = false;
+  try {
+    reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch(e) { reduce = false; }
+
+  var vias = ['v1','v2','v3'];
+  var labels = {
+    v1: {
+      title: 'Via 1',
+      status: 'Via 1 aberta · ≥2 crises com intervalo >24 h',
+      tip1: 'Via 1 · recorrência',
+      tip2: '≥2 não provocadas, separadas por >24 h.',
+      stroke: 'var(--a6p3-teal, #2DD4BF)',
+      live: 'Via 1: duas ou mais crises não provocadas com intervalo maior que 24 horas. Mesmo dia conta como um evento.'
+    },
+    v2: {
+      title: 'Via 2',
+      status: 'Via 2 aberta · 1 crise + risco >60% / lesão',
+      tip1: 'Via 2 · risco / lesão',
+      tip2: 'Uma crise + lesão epileptogênica (ex.: NCC).',
+      stroke: 'var(--a6p3-gold, #FBBF24)',
+      live: 'Via 2: uma crise não provocada com risco de recorrência acima de 60 por cento, tipicamente com lesão. Exemplo clássico: TCG com cicatriz de NCC.'
+    },
+    v3: {
+      title: 'Via 3',
+      status: 'Via 3 aberta · síndrome epiléptica',
+      tip1: 'Via 3 · síndrome',
+      tip2: 'Clínica + epidemiologia + EEG + associados.',
+      stroke: 'var(--a6p3-indigo, #818CF8)',
+      live: 'Via 3: encaixe em síndrome epiléptica por constelação clínica, epidemiológica e eletrencefalográfica.'
+    },
+    trap: {
+      title: 'Não fecha',
+      status: 'Porta fechada · crise única sem foco',
+      tip1: 'Não fecha sozinha',
+      tip2: 'Até ~10% tem uma crise e nunca repete.',
+      stroke: 'var(--a6p3-coral, #F87171)',
+      live: 'Crise única sem foco, sem lesão e sem síndrome não fecha o diagnóstico de epilepsia.'
+    }
+  };
+
+  function clearTimers(){
+    for(var i=0;i<timers.length;i++) clearTimeout(timers[i]);
+    timers = [];
+    playing = false;
+    root.setAttribute('data-playing','0');
+  }
+
+  function setActive(via){
+    root.setAttribute('data-dim','0');
+    if(!via){
+      root.removeAttribute('data-active');
+      if(statusEl){
+        statusEl.textContent = 'Em repouso · três vias disponíveis';
+        statusEl.setAttribute('fill','var(--a6p3-soft, #B8C0CC)');
+      }
+      if(liveEl) liveEl.textContent = 'Nenhuma via ativa. Três portas oficiais levam à palavra epilepsia.';
+      return;
+    }
+    root.setAttribute('data-active', via);
+    var L = labels[via];
+    if(statusEl && L){
+      statusEl.textContent = L.status;
+      statusEl.setAttribute('fill', L.stroke);
+    }
+    if(liveEl && L) liveEl.textContent = L.live;
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx; pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x:cx, y:cy};
+    var p = pt.matrixTransform(m.inverse());
+    return {x:p.x, y:p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip) return;
+    var t1el = Q('#a6p3-tip-t1');
+    var t2el = Q('#a6p3-tip-t2');
+    var bg = Q('#a6p3-tip-bg');
+    if(t1el) t1el.textContent = t1;
+    if(t2el) t2el.textContent = t2;
+    if(bg) bg.setAttribute('stroke', stroke || 'var(--a6p3-teal, #2DD4BF)');
+    var p = clientToSvg(cx, cy);
+    var w = 300, h = 58, off = 14;
+    var x = p.x + off, y = p.y + off;
+    if(x + w > 820) x = p.x - w - off;
+    if(y + h > 620) y = p.y - h - off;
+    if(x < 8) x = 8;
+    if(y < 8) y = 8;
+    tip.setAttribute('transform','translate('+x.toFixed(1)+','+y.toFixed(1)+')');
+    tip.setAttribute('opacity','1');
+    tip.setAttribute('aria-hidden','false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity','0');
+    tip.setAttribute('aria-hidden','true');
+  }
+
+  function tourSequence(){
+    clearTimers();
+    playing = true;
+    root.setAttribute('data-playing','1');
+    setActive(null);
+    var seq = ['v1','v2','v3','trap'];
+    var i = 0;
+    var stepOn = reduce ? 700 : 950;
+    var stepOff = reduce ? 220 : 320;
+    function next(){
+      if(i >= seq.length){
+        timers.push(setTimeout(function(){
+          setActive(null);
+          playing = false;
+          root.setAttribute('data-playing','0');
+          if(statusEl){
+            statusEl.textContent = 'Ciclo completo · três portas, uma palavra';
+            statusEl.setAttribute('fill','var(--a6p3-teal, #2DD4BF)');
+          }
+          if(liveEl) liveEl.textContent = 'Três vias oficiais abrem epilepsia. A crise única sem foco não fecha.';
+        }, stepOff));
+        return;
+      }
+      var v = seq[i];
+      setActive(v);
+      i++;
+      timers.push(setTimeout(function(){
+        timers.push(setTimeout(next, stepOff));
+      }, stepOn));
+    }
+    next();
+  }
+
+  function bindVia(el){
+    if(!el) return;
+    var via = el.getAttribute('data-via');
+    var L = labels[via];
+    function activate(ev){
+      clearTimers();
+      setActive(via);
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 80;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      if(L) showTip(cx, cy, L.tip1, L.tip2, L.stroke);
+    }
+    el.addEventListener('mouseenter', function(ev){
+      if(playing) return;
+      setActive(via);
+      if(L) showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('mousemove', function(ev){
+      if(playing) return;
+      if(tip && tip.getAttribute('opacity')==='1' && L) showTip(ev.clientX, ev.clientY, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('mouseleave', function(){
+      if(playing) return;
+      hideTip();
+    });
+    el.addEventListener('click', activate);
+    el.addEventListener('focus', function(){
+      if(playing) return;
+      setActive(via);
+      var b = el.getBoundingClientRect();
+      if(L) showTip(b.left + b.width/2, b.top + b.height/2, L.tip1, L.tip2, L.stroke);
+    });
+    el.addEventListener('blur', function(){ if(!playing) hideTip(); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){
+        ev.preventDefault();
+        activate(ev);
+      }
+    });
+  }
+
+  bindVia(Q('#a6p3-via-v1'));
+  bindVia(Q('#a6p3-via-v2'));
+  bindVia(Q('#a6p3-via-v3'));
+  bindVia(Q('#a6p3-trap'));
+
+  if(tourBtn){
+    tourBtn.addEventListener('click', tourSequence);
+    tourBtn.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); tourSequence(); }
+    });
+  }
+  if(resetBtn){
+    resetBtn.addEventListener('click', function(){ clearTimers(); setActive(null); hideTip(); });
+    resetBtn.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); clearTimers(); setActive(null); hideTip(); }
+    });
+  }
+
+  var chips = {
+    day: ['Mesmo dia = 1 evento', 'Na via 1, duas crises no mesmo dia não contam como duas.', 'var(--a6p3-teal, #2DD4BF)'],
+    vague: ['Não basta “recorre”', 'Fórmula vaga sem critério operacional não fecha epilepsia.', 'var(--a6p3-indigo, #818CF8)']
+  };
+
+  function bindChip(id, key){
+    var el = Q(id);
+    if(!el) return;
+    var data = chips[key];
+    function go(ev){
+      var cx = (ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 14;
+      showTip(cx, cy, data[0], data[1], data[2]);
+      if(liveEl) liveEl.textContent = data[0] + '. ' + data[1];
+    }
+    el.addEventListener('mouseenter', go);
+    el.addEventListener('mousemove', function(ev){ if(tip && tip.getAttribute('opacity')==='1') go(ev); });
+    el.addEventListener('mouseleave', hideTip);
+    el.addEventListener('focus', function(){
+      var b = el.getBoundingClientRect();
+      showTip(b.left + b.width/2, b.top + b.height/2, data[0], data[1], data[2]);
+    });
+    el.addEventListener('blur', hideTip);
+    el.addEventListener('click', go);
+    el.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){ ev.preventDefault(); go(ev); }
+    });
+  }
+  bindChip('#a6p3-chip-day','day');
+  bindChip('#a6p3-chip-vague','vague');
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    var viasG = Q('#a6p3-vias');
+    var trapG = Q('#a6p3-trap-bar');
+    var chipsG = Q('#a6p3-chips');
+    var ctrls = Q('#a6p3-controls');
+    if(viasG && viasG.contains(t)) return;
+    if(trapG && trapG.contains(t)) return;
+    if(chipsG && chipsG.contains(t)) return;
+    if(ctrls && ctrls.contains(t)) return;
+    hideTip();
+  });
+
+  setActive(null);
+})();
+  ]]></script>
+</svg>

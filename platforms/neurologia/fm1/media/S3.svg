@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 700" width="100%" height="100%" id="fm1p3-svg" class="fm1p3-root" role="img" aria-label="Ilustração Médica Interativa: Avaliação da Força Muscular - Quantidade versus Qualidade">
+  <defs>
+    <!-- Filters & Shadows -->
+    <filter id="fm1p3-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+    <filter id="fm1p3-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm1p3-glow-teal" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="fm1p3-arr-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm1p3-teal, #14b8a6)" />
+    </marker>
+    <marker id="fm1p3-arr-coral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm1p3-coral, #ff6b6b)" />
+    </marker>
+    <marker id="fm1p3-arr-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--fm1p3-amber, #f59e0b)" />
+    </marker>
+
+    <!-- Gradients -->
+    <linearGradient id="fm1p3-grad-seal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p3-gold-light, #fbbf24)" />
+      <stop offset="100%" stop-color="var(--fm1p3-gold-dark, #d97706)" />
+    </linearGradient>
+    <linearGradient id="fm1p3-grad-arm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p3-indigo-light, #818cf8)" />
+      <stop offset="100%" stop-color="var(--fm1p3-indigo, #6366f1)" />
+    </linearGradient>
+    <linearGradient id="fm1p3-grad-bag" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p3-coral, #ff6b6b)" />
+      <stop offset="100%" stop-color="var(--fm1p3-coral-dark, #be123c)" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Root & Variables with Scoped Fallbacks */
+    .fm1p3-root {
+      --fm1p3-bg: var(--kw-bg-1, #0f172a);
+      --fm1p3-card-bg: var(--kw-bg-2, #1e293b);
+      --fm1p3-panel-bg: var(--kw-bg-3, #0f172a);
+      --fm1p3-border: var(--kw-border, #334155);
+      --fm1p3-text-main: var(--kw-text-main, #f8fafc);
+      --fm1p3-text-muted: var(--kw-text-muted, #94a3b8);
+      --fm1p3-text-inv: var(--kw-text-inv, #0f172a);
+
+      --fm1p3-teal: var(--kw-teal, #14b8a6);
+      --fm1p3-teal-dark: var(--kw-teal-dark, #0d9488);
+      --fm1p3-coral: var(--kw-coral, #ff6b6b);
+      --fm1p3-coral-dark: var(--kw-coral-dark, #e11d48);
+      --fm1p3-indigo: var(--kw-indigo, #6366f1);
+      --fm1p3-indigo-light: var(--kw-indigo-light, #818cf8);
+      --fm1p3-gold: var(--kw-gold, #f59e0b);
+      --fm1p3-gold-light: var(--kw-gold-light, #fbbf24);
+      --fm1p3-gold-dark: var(--kw-gold-dark, #d97706);
+      --fm1p3-green: var(--kw-green, #10b981);
+      --fm1p3-red: var(--kw-red, #ef4444);
+      --fm1p3-amber: var(--kw-amber, #f59e0b);
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    [data-theme="light"] .fm1p3-root {
+      --fm1p3-bg: var(--kw-bg-1, #f8fafc);
+      --fm1p3-card-bg: var(--kw-bg-2, #ffffff);
+      --fm1p3-panel-bg: var(--kw-bg-3, #f1f5f9);
+      --fm1p3-border: var(--kw-border, #cbd5e1);
+      --fm1p3-text-main: var(--kw-text-main, #0f172a);
+      --fm1p3-text-muted: var(--kw-text-muted, #475569);
+      --fm1p3-text-inv: var(--kw-text-inv, #ffffff);
+
+      --fm1p3-teal: var(--kw-teal, #0d9488);
+      --fm1p3-teal-dark: var(--kw-teal-dark, #0f766e);
+      --fm1p3-coral: var(--kw-coral, #e11d48);
+      --fm1p3-coral-dark: var(--kw-coral-dark, #be123c);
+      --fm1p3-indigo: var(--kw-indigo, #4f46e5);
+      --fm1p3-indigo-light: var(--kw-indigo-light, #6366f1);
+      --fm1p3-gold: var(--kw-gold, #d97706);
+      --fm1p3-gold-light: var(--kw-gold-light, #f59e0b);
+      --fm1p3-gold-dark: var(--kw-gold-dark, #b45309);
+      --fm1p3-green: var(--kw-green, #059669);
+      --fm1p3-red: var(--kw-red, #dc2626);
+      --fm1p3-amber: var(--kw-amber, #d97706);
+    }
+
+    /* Base Containers */
+    #fm1p3-svg .fm1p3-bg-rect {
+      fill: var(--fm1p3-bg, #0f172a);
+      transition: fill 0.3s ease;
+    }
+    #fm1p3-svg .fm1p3-card-bg {
+      fill: var(--fm1p3-card-bg, #1e293b);
+      stroke: var(--fm1p3-border, #334155);
+      stroke-width: 1.5;
+    }
+    #fm1p3-svg .fm1p3-panel-bg {
+      fill: var(--fm1p3-panel-bg, #0f172a);
+      stroke: var(--fm1p3-border, #334155);
+      stroke-width: 1.5;
+    }
+
+    /* Typography */
+    #fm1p3-svg .fm1p3-title {
+      fill: var(--fm1p3-text-main, #f8fafc);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    #fm1p3-svg .fm1p3-subtitle {
+      fill: var(--fm1p3-text-muted, #94a3b8);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    #fm1p3-svg .fm1p3-badge-txt {
+      fill: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    #fm1p3-svg .fm1p3-label {
+      fill: var(--fm1p3-text-main, #f8fafc);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    #fm1p3-svg .fm1p3-sublabel {
+      fill: var(--fm1p3-text-muted, #94a3b8);
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    /* Buttons / Mode Switcher */
+    #fm1p3-svg .fm1p3-btn {
+      cursor: pointer;
+      user-select: none;
+    }
+    #fm1p3-svg .fm1p3-btn-bg {
+      fill: var(--fm1p3-card-bg, #1e293b);
+      stroke: var(--fm1p3-border, #334155);
+      stroke-width: 1.5;
+      transition: all 0.25s ease;
+    }
+    #fm1p3-svg .fm1p3-btn-text {
+      fill: var(--fm1p3-text-muted, #94a3b8);
+      font-size: 13px;
+      font-weight: 700;
+      transition: fill 0.25s ease;
+    }
+    #fm1p3-svg .fm1p3-btn:hover .fm1p3-btn-bg {
+      stroke: var(--fm1p3-teal, #14b8a6);
+      fill: var(--fm1p3-panel-bg, #0f172a);
+    }
+    #fm1p3-svg .fm1p3-btn:hover .fm1p3-btn-text {
+      fill: var(--fm1p3-text-main, #f8fafc);
+    }
+
+    /* Active States via data-mode on #fm1p3-stage */
+    #fm1p3-stage[data-mode="qty"] #fm1p3-btn-qty .fm1p3-btn-bg {
+      fill: var(--fm1p3-teal, #14b8a6);
+      stroke: var(--fm1p3-teal, #14b8a6);
+    }
+    #fm1p3-stage[data-mode="qty"] #fm1p3-btn-qty .fm1p3-btn-text {
+      fill: #ffffff;
+    }
+
+    #fm1p3-stage[data-mode="quality"] #fm1p3-btn-quality .fm1p3-btn-bg {
+      fill: var(--fm1p3-amber, #f59e0b);
+      stroke: var(--fm1p3-amber, #f59e0b);
+    }
+    #fm1p3-stage[data-mode="quality"] #fm1p3-btn-quality .fm1p3-btn-text {
+      fill: #ffffff;
+    }
+
+    #fm1p3-stage[data-mode="weakness"] #fm1p3-btn-weakness .fm1p3-btn-bg {
+      fill: var(--fm1p3-red, #ef4444);
+      stroke: var(--fm1p3-red, #ef4444);
+    }
+    #fm1p3-stage[data-mode="weakness"] #fm1p3-btn-weakness .fm1p3-btn-text {
+      fill: #ffffff;
+    }
+
+    /* Dynamic Visibility & Animations */
+    #fm1p3-svg .fm1p3-arm-normal,
+    #fm1p3-svg .fm1p3-arm-weak,
+    #fm1p3-svg .fm1p3-tremor-path,
+    #fm1p3-svg .fm1p3-panel-content {
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    /* Default (qty mode) */
+    #fm1p3-stage[data-mode="qty"] .fm1p3-arm-normal { opacity: 1; transform: translateY(0); }
+    #fm1p3-stage[data-mode="qty"] .fm1p3-arm-weak { opacity: 0; transform: translateY(20px); pointer-events: none; }
+    #fm1p3-stage[data-mode="qty"] .fm1p3-tremor-path { opacity: 0; }
+
+    #fm1p3-stage[data-mode="qty"] .fm1p3-panel-qty { opacity: 1; pointer-events: auto; }
+    #fm1p3-stage[data-mode="qty"] .fm1p3-panel-quality { opacity: 0; pointer-events: none; display: none; }
+    #fm1p3-stage[data-mode="qty"] .fm1p3-panel-weakness { opacity: 0; pointer-events: none; display: none; }
+
+    /* Quality mode (Tremor / Ataxia, Force maintained!) */
+    #fm1p3-stage[data-mode="quality"] .fm1p3-arm-normal { opacity: 1; transform: translateY(0); }
+    #fm1p3-stage[data-mode="quality"] .fm1p3-arm-weak { opacity: 0; transform: translateY(20px); pointer-events: none; }
+    #fm1p3-stage[data-mode="quality"] .fm1p3-tremor-path { opacity: 1; }
+
+    #fm1p3-stage[data-mode="quality"] .fm1p3-panel-qty { opacity: 0; pointer-events: none; display: none; }
+    #fm1p3-stage[data-mode="quality"] .fm1p3-panel-quality { opacity: 1; pointer-events: auto; display: block; }
+    #fm1p3-stage[data-mode="quality"] .fm1p3-panel-weakness { opacity: 0; pointer-events: none; display: none; }
+
+    /* Weakness mode (True muscle deficit) */
+    #fm1p3-stage[data-mode="weakness"] .fm1p3-arm-normal { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+    #fm1p3-stage[data-mode="weakness"] .fm1p3-arm-weak { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    #fm1p3-stage[data-mode="weakness"] .fm1p3-tremor-path { opacity: 0; }
+
+    #fm1p3-stage[data-mode="weakness"] .fm1p3-panel-qty { opacity: 0; pointer-events: none; display: none; }
+    #fm1p3-stage[data-mode="weakness"] .fm1p3-panel-quality { opacity: 0; pointer-events: none; display: none; }
+    #fm1p3-stage[data-mode="weakness"] .fm1p3-panel-weakness { opacity: 1; pointer-events: auto; display: block; }
+
+    /* MRC Meter Styles */
+    #fm1p3-svg .fm1p3-mrc-step {
+      fill: var(--fm1p3-panel-bg, #0f172a);
+      stroke: var(--fm1p3-border, #334155);
+      stroke-width: 1;
+      transition: all 0.3s ease;
+    }
+    #fm1p3-svg .fm1p3-mrc-step-txt {
+      fill: var(--fm1p3-text-muted, #94a3b8);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    #fm1p3-stage[data-mode="qty"] .fm1p3-mrc-5,
+    #fm1p3-stage[data-mode="quality"] .fm1p3-mrc-5 {
+      fill: var(--fm1p3-teal, #14b8a6);
+      stroke: var(--fm1p3-teal, #14b8a6);
+    }
+    #fm1p3-stage[data-mode="qty"] .fm1p3-mrc-5 .fm1p3-mrc-step-txt,
+    #fm1p3-stage[data-mode="quality"] .fm1p3-mrc-5 .fm1p3-mrc-step-txt {
+      fill: #ffffff;
+    }
+
+    #fm1p3-stage[data-mode="weakness"] .fm1p3-mrc-2 {
+      fill: var(--fm1p3-red, #ef4444);
+      stroke: var(--fm1p3-red, #ef4444);
+    }
+    #fm1p3-stage[data-mode="weakness"] .fm1p3-mrc-2 .fm1p3-mrc-step-txt {
+      fill: #ffffff;
+    }
+
+    /* Hotspot Interactive Elements */
+    #fm1p3-svg .fm1p3-hs-shape {
+      cursor: pointer;
+      outline: none;
+    }
+    #fm1p3-svg .fm1p3-hs-pulse {
+      animation: fm1p3-pulse 2s infinite;
+    }
+    @keyframes fm1p3-pulse {
+      0% { r: 6px; opacity: 0.8; }
+      50% { r: 12px; opacity: 0.2; }
+      100% { r: 6px; opacity: 0.8; }
+    }
+
+    /* Tooltip styling */
+    #fm1p3-svg .fm1p3-tt-bg {
+      fill: var(--fm1p3-card-bg, #1e293b);
+      stroke: var(--fm1p3-teal, #14b8a6);
+      stroke-width: 1.5;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    }
+    #fm1p3-svg .fm1p3-tt-text {
+      fill: var(--fm1p3-text-main, #f8fafc);
+      font-size: 11px;
+      font-weight: 600;
+    }
+  </style>
+
+  <!-- BACKGROUND -->
+  <rect width="1080" height="700" rx="16" class="fm1p3-bg-rect" />
+
+  <!-- HEADER CONTRACT (Item 1 do contrato: Título + Legenda de Interpretação) -->
+  <g class="fm1p3-header" transform="translate(40, 42)">
+    <!-- Category Pill -->
+    <rect x="0" y="0" width="165" height="24" rx="12" fill="var(--fm1p3-teal, #14b8a6)" />
+    <text x="12" y="16" class="fm1p3-badge-txt">PROMIÉLICA · ESCALA MRC</text>
+
+    <!-- Main Title -->
+    <text x="180" y="18" class="fm1p3-title">FORÇA MUSCULAR: QUANTIDADE (CARGA) vs QUALIDADE (GESTO)</text>
+    
+    <!-- Subtitle / Interpretation Legend -->
+    <text x="0" y="44" class="fm1p3-subtitle">
+      Âncoras operacionais da residência: Força = Vencer Gravidade + Carga Extra (Sacola). Tremor, Ataxia e Lentidão NÃO são fraqueza.
+    </text>
+  </g>
+
+  <!-- MAIN INTERACTIVE STAGE -->
+  <g id="fm1p3-stage" data-mode="qty" transform="translate(40, 115)">
+
+    <!-- MODE SWITCHER BUTTONS (Toque / Clique para alternar cenários clínicos) -->
+    <g class="fm1p3-controls" transform="translate(0, 0)">
+      <text x="0" y="18" class="fm1p3-label" style="font-weight:700; font-size:13px; fill:var(--fm1p3-text-muted, #94a3b8);">
+        SELECIONE O CENÁRIO CLÍNICO EM TESTE:
+      </text>
+
+      <!-- Btn 1: Quantidade (Normal) -->
+      <g id="fm1p3-btn-qty" class="fm1p3-btn fm1p3-hs-shape" transform="translate(250, 0)" role="button" aria-label="Cenário 1: Força Preservada (Vence Gravidade e Carga)" tabindex="0" data-fm1p3-tip="Força MRC Grau 5: Vence gravidade e resistência máxima.">
+        <rect width="235" height="36" rx="8" class="fm1p3-btn-bg" />
+        <circle cx="20" cy="18" r="6" fill="var(--fm1p3-teal, #14b8a6)" />
+        <text x="35" y="23" class="fm1p3-btn-text">1. FORÇA NORMAL (MRC 5)</text>
+      </g>
+
+      <!-- Btn 2: Alteração de Qualidade -->
+      <g id="fm1p3-btn-quality" class="fm1p3-btn fm1p3-hs-shape" transform="translate(495, 0)" role="button" aria-label="Cenário 2: Tremor ou Ataxia (Qualidade Alterada, Força Preservada)" tabindex="0" data-fm1p3-tip="Ataxia/Tremor: Gesto oscilante, mas a sacola PERMANECE NO AR (Carga Vencida!).">
+        <rect width="245" height="36" rx="8" class="fm1p3-btn-bg" />
+        <circle cx="20" cy="18" r="6" fill="var(--fm1p3-amber, #f59e0b)" />
+        <text x="35" y="23" class="fm1p3-btn-text">2. TREMOR / ATAXIA (QUALIDADE)</text>
+      </g>
+
+      <!-- Btn 3: Fraqueza Real (Quantidade) -->
+      <g id="fm1p3-btn-weakness" class="fm1p3-btn fm1p3-hs-shape" transform="translate(750, 0)" role="button" aria-label="Cenário 3: Deficit Motor Real (Fraqueza MRC 2)" tabindex="0" data-fm1p3-tip="Fraqueza Real: O braço cai sob ação da gravidade/carga (Falha de Força).">
+        <rect width="250" height="36" rx="8" class="fm1p3-btn-bg" />
+        <circle cx="20" cy="18" r="6" fill="var(--fm1p3-red, #ef4444)" />
+        <text x="35" y="23" class="fm1p3-btn-text">3. FRAQUEZA REAL (GRAVIDADE)</text>
+      </g>
+    </g>
+
+    <!-- LEFT GRAPHICAL STAGE: VECTOR ARM + LOAD + SEAL (X: 0..610, Y: 55..540) -->
+    <g class="fm1p3-graphic-stage" transform="translate(0, 55)">
+      <!-- Main Card Canvas -->
+      <rect x="0" y="0" width="610" height="495" rx="12" class="fm1p3-card-bg" />
+
+      <!-- Background Grid Subdued Lines -->
+      <path d="M 40 100 L 570 100 M 40 200 L 570 200 M 40 300 L 570 300 M 40 400 L 570 400" stroke="var(--fm1p3-border, #334155)" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.4" />
+
+      <!-- GOLD SEAL OF QUALITY VS QUANTITY (Regra de Ouro da Casa) -->
+      <g class="fm1p3-seal-gold" transform="translate(420, 20)" filter="url(#fm1p3-shadow)">
+        <!-- Outer Glowing Gold Ribbon -->
+        <rect x="0" y="0" width="170" height="64" rx="10" fill="url(#fm1p3-grad-seal)" stroke="var(--fm1p3-gold-light, #fbbf24)" stroke-width="1.5" />
+        <!-- Badge Icon -->
+        <circle cx="24" cy="32" r="14" fill="#ffffff" opacity="0.2" />
+        <path d="M 24 22 L 27 28 L 33 29 L 29 33 L 30 40 L 24 36 L 18 40 L 19 33 L 15 29 L 21 28 z" fill="#ffffff" />
+        <!-- Seal Text -->
+        <text x="46" y="26" style="fill:#ffffff; font-size:10px; font-weight:800; letter-spacing:0.05em;">REGRA DE OURO</text>
+        <text x="46" y="42" style="fill:#ffffff; font-size:12px; font-weight:900; letter-spacing:-0.01em;">QUANTIDADE ≠ QUALIDADE</text>
+        <text x="46" y="54" style="fill:rgba(255,255,255,0.85); font-size:9px; font-weight:600;">Força = Vencer Carga + Gravidade</text>
+      </g>
+
+      <!-- GRAVITY & LOAD REFERENCE AXIS -->
+      <g transform="translate(30, 30)">
+        <text x="0" y="0" class="fm1p3-sublabel" style="font-weight:700; fill:var(--fm1p3-teal, #14b8a6);">BIOMECÂNICA DO TESTE MOTOR</text>
+        <text x="0" y="16" class="fm1p3-sublabel">Vetor F_muscular (Cima) vs Vetor Carga+Gravidade (Baixo)</text>
+      </g>
+
+      <!-- ARM DRAWING GROUP: SCENARIO 1 & 2 (LIFTED ARM WITH SACOLA) -->
+      <g class="fm1p3-arm-normal" transform="translate(60, 100)">
+        <!-- Torso & Shoulder Pivot Anchor -->
+        <path d="M 30 180 C 30 120, 60 80, 100 70" fill="none" stroke="var(--fm1p3-text-muted, #94a3b8)" stroke-width="6" stroke-linecap="round" opacity="0.3" />
+        <circle cx="100" cy="70" r="14" fill="var(--fm1p3-border, #334155)" stroke="var(--fm1p3-indigo, #6366f1)" stroke-width="2" />
+        <text x="90" y="45" class="fm1p3-sublabel" style="font-size:10px; font-weight:700;">Ombro (Fixo)</text>
+
+        <!-- Biceps Muscle Abdominal Contour (Teal Accent for Force) -->
+        <path d="M 100 70 L 190 70 L 290 65" fill="none" stroke="url(#fm1p3-grad-arm)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Flexed Biceps Bulk -->
+        <path d="M 130 60 Q 165 40 200 60" fill="none" stroke="var(--fm1p3-teal, #14b8a6)" stroke-width="6" stroke-linecap="round" />
+
+        <!-- Forearm Horizontal (Holding Bag against gravity) -->
+        <path d="M 290 65 L 380 65" fill="none" stroke="url(#fm1p3-grad-arm)" stroke-width="20" stroke-linecap="round" />
+        <!-- Hand Clenched around Bag Handle -->
+        <circle cx="395" cy="65" r="12" fill="var(--fm1p3-indigo-light, #818cf8)" />
+
+        <!-- HEAVY LOAD BAG (Sacola Coral - Metáfora Operacional) -->
+        <g id="fm1p3-bag-normal" class="fm1p3-hs-shape" transform="translate(370, 65)" role="img" aria-label="Sacola de Carga Extra" data-fm1p3-tip="Carga Extra: Teste de resistência além da gravidade. Vencer este peso = MRC Grau 4 ou 5.">
+          <!-- Bag Alça / Handle -->
+          <path d="M 25 0 Q 25 -25 15 -25 Q 5 -25 5 0" fill="none" stroke="var(--fm1p3-coral-dark, #be123c)" stroke-width="4" />
+          <!-- Bag Body -->
+          <path d="M -5 10 L 35 10 L 42 80 C 42 86, 36 90, 30 90 L 0 90 C -6 90, -12 86, -12 80 z" fill="url(#fm1p3-grad-bag)" filter="url(#fm1p3-shadow)" />
+          <!-- Bag Label / Mass Rating -->
+          <rect x="2" y="35" width="26" height="24" rx="4" fill="#ffffff" opacity="0.9" />
+          <text x="15" y="51" text-anchor="middle" style="fill:var(--fm1p3-coral-dark, #be123c); font-size:12px; font-weight:900;">+kg</text>
+          <text x="15" y="115" text-anchor="middle" class="fm1p3-label" style="fill:var(--fm1p3-coral, #ff6b6b); font-weight:800;">SACOLA (CARGA)</text>
+        </g>
+
+        <!-- FORCE VECTORS (Vetor Força Muscular vs Vetor Gravidade/Carga) -->
+        <!-- Muscular Force Vector UP (Teal) -->
+        <g transform="translate(220, 65)">
+          <line x1="0" y1="0" x2="0" y2="-65" stroke="var(--fm1p3-teal, #14b8a6)" stroke-width="4" marker-end="url(#fm1p3-arr-teal)" />
+          <rect x="-45" y="-85" width="90" height="18" rx="4" fill="var(--fm1p3-teal, #14b8a6)" />
+          <text x="0" y="-72" text-anchor="middle" style="fill:#ffffff; font-size:10px; font-weight:800;">F_MUSCULAR ↑</text>
+        </g>
+
+        <!-- Gravity + Load Vector DOWN (Coral) -->
+        <g transform="translate(395, 180)">
+          <line x1="0" y1="0" x2="0" y2="55" stroke="var(--fm1p3-coral, #ff6b6b)" stroke-width="4" marker-end="url(#fm1p3-arr-coral)" />
+          <text x="12" y="35" class="fm1p3-sublabel" style="fill:var(--fm1p3-coral, #ff6b6b); font-weight:800;">F_GRAVIDADE + CARGA ↓</text>
+        </g>
+      </g>
+
+      <!-- TREMOR / ATAXIA PATH OVERLAY (Visible ONLY in Quality Mode) -->
+      <g class="fm1p3-tremor-path" transform="translate(60, 100)">
+        <!-- Sinusoidal / Oscillatory Path showing Tremor/Ataxia during movement -->
+        <path d="M 100 70 Q 120 40 140 70 T 180 70 T 220 70 T 260 70 T 300 70 T 340 70 T 380 70" fill="none" stroke="var(--fm1p3-amber, #f59e0b)" stroke-width="3.5" stroke-dasharray="6 4" filter="url(#fm1p3-glow-gold)" />
+
+        <!-- Tremor Oscillation Callout Badge -->
+        <g transform="translate(200, -10)">
+          <rect x="0" y="0" width="200" height="28" rx="6" fill="var(--fm1p3-amber, #f59e0b)" filter="url(#fm1p3-shadow)" />
+          <text x="100" y="18" text-anchor="middle" style="fill:#ffffff; font-size:11px; font-weight:800;">OSCILAÇÃO / TREMOR / ATAXIA</text>
+        </g>
+      </g>
+
+      <!-- ARM DRAWING GROUP: SCENARIO 3 (DROPPED ARM / WEAKNESS MRC 2-0) -->
+      <g class="fm1p3-arm-weak" transform="translate(60, 100)">
+        <!-- Torso & Shoulder Anchor -->
+        <path d="M 30 180 C 30 120, 60 80, 100 70" fill="none" stroke="var(--fm1p3-text-muted, #94a3b8)" stroke-width="6" stroke-linecap="round" opacity="0.3" />
+        <circle cx="100" cy="70" r="14" fill="var(--fm1p3-border, #334155)" stroke="var(--fm1p3-red, #ef4444)" stroke-width="2" />
+
+        <!-- Dropped Arm Contour (Falling towards floor) -->
+        <path d="M 100 70 L 170 140 L 220 230" fill="none" stroke="var(--fm1p3-indigo, #6366f1)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+        <path d="M 220 230 L 250 280" fill="none" stroke="var(--fm1p3-indigo, #6366f1)" stroke-width="18" stroke-linecap="round" opacity="0.6" />
+
+        <!-- Bag Dropped on Floor -->
+        <g transform="translate(240, 270)">
+          <path d="M -5 10 L 35 10 L 42 80 C 42 86, 36 90, 30 90 L 0 90 C -6 90, -12 86, -12 80 z" fill="url(#fm1p3-grad-bag)" opacity="0.8" />
+          <text x="15" y="50" text-anchor="middle" style="fill:#ffffff; font-size:11px; font-weight:900;">CAÍDA</text>
+        </g>
+
+        <!-- Broken Muscular Vector -->
+        <g transform="translate(180, 130)">
+          <line x1="0" y1="0" x2="0" y2="-30" stroke="var(--fm1p3-red, #ef4444)" stroke-width="3" stroke-dasharray="4 4" />
+          <rect x="-55" y="-50" width="110" height="18" rx="4" fill="var(--fm1p3-red, #ef4444)" />
+          <text x="0" y="-37" text-anchor="middle" style="fill:#ffffff; font-size:9px; font-weight:800;">F_MUSCULAR INSICIENTE</text>
+        </g>
+      </g>
+
+      <!-- MRC SCALE QUANTIFIER GAUGE (Barra Horizontal MRC 0 a 5) -->
+      <g class="fm1p3-mrc-gauge" transform="translate(30, 385)">
+        <text x="0" y="-12" class="fm1p3-label" style="font-weight:700;">ESCALA MRC (QUANTIFICAÇÃO DA FORÇA):</text>
+        
+        <!-- Step 0 -->
+        <g class="fm1p3-mrc-step fm1p3-mrc-0" transform="translate(0, 0)">
+          <rect width="85" height="40" rx="6" />
+          <text x="42" y="18" text-anchor="middle" class="fm1p3-mrc-step-txt">GRAU 0-1</text>
+          <text x="42" y="30" text-anchor="middle" style="font-size:8px; fill:var(--fm1p3-text-muted, #94a3b8);">Sem Movimento</text>
+        </g>
+
+        <!-- Step 2 -->
+        <g class="fm1p3-mrc-step fm1p3-mrc-2" transform="translate(92, 0)">
+          <rect width="95" height="40" rx="6" />
+          <text x="47" y="18" text-anchor="middle" class="fm1p3-mrc-step-txt">GRAU 2</text>
+          <text x="47" y="30" text-anchor="middle" style="font-size:8px; fill:var(--fm1p3-text-muted, #94a3b8);">Sem Gravidade</text>
+        </g>
+
+        <!-- Step 3 -->
+        <g class="fm1p3-mrc-step fm1p3-mrc-3" transform="translate(194, 0)">
+          <rect width="110" height="40" rx="6" />
+          <text x="55" y="18" text-anchor="middle" class="fm1p3-mrc-step-txt">GRAU 3</text>
+          <text x="55" y="30" text-anchor="middle" style="font-size:8px; fill:var(--fm1p3-text-muted, #94a3b8);">Vence Gravidade</text>
+        </g>
+
+        <!-- Step 4 -->
+        <g class="fm1p3-mrc-step fm1p3-mrc-4" transform="translate(310, 0)">
+          <rect width="115" height="40" rx="6" />
+          <text x="57" y="18" text-anchor="middle" class="fm1p3-mrc-step-txt">GRAU 4</text>
+          <text x="57" y="30" text-anchor="middle" style="font-size:8px; fill:var(--fm1p3-text-muted, #94a3b8);">Vence Carga Moderada</text>
+        </g>
+
+        <!-- Step 5 -->
+        <g class="fm1p3-mrc-step fm1p3-mrc-5" transform="translate(432, 0)">
+          <rect width="120" height="40" rx="6" />
+          <text x="60" y="18" text-anchor="middle" class="fm1p3-mrc-step-txt">GRAU 5 (NORMAL)</text>
+          <text x="60" y="30" text-anchor="middle" style="font-size:8px; fill:var(--fm1p3-text-muted, #94a3b8);">Vence Carga Máxima</text>
+        </g>
+
+        <text x="0" y="60" class="fm1p3-sublabel" style="font-size:10px;">
+          * Nota: O grau MRC é definido estritamente pela superação da gravidade e da carga extra.
+        </text>
+      </g>
+    </g>
+
+    <!-- RIGHT STAGE: CLINICAL READING & INTERPRETATION PANEL (X: 630..1000, Y: 55..550) -->
+    <g class="fm1p3-reading-panel" transform="translate(630, 55)">
+      <!-- Panel Outer Box -->
+      <rect x="0" y="0" width="370" height="495" rx="12" class="fm1p3-panel-bg" />
+
+      <!-- PANEL CONTENT 1: QUANTIDADE (NORMAL) -->
+      <g class="fm1p3-panel-content fm1p3-panel-qty" transform="translate(20, 25)">
+        <!-- Header -->
+        <rect x="0" y="0" width="330" height="32" rx="6" fill="var(--fm1p3-teal, #14b8a6)" />
+        <text x="15" y="21" style="fill:#ffffff; font-size:13px; font-weight:800;">PAINEL 1: DEFINIÇÃO DE FORÇA (MRC 5)</text>
+
+        <!-- Section A -->
+        <g transform="translate(0, 50)">
+          <text x="0" y="0" class="fm1p3-label" style="fill:var(--fm1p3-teal, #14b8a6); font-size:13px;">O QUE CONSTITUI A FORÇA?</text>
+          <text x="0" y="20" class="fm1p3-sublabel" style="font-size:11px; line-height:1.4;">
+            A força muscular é um parâmetro <tspan font-weight="700" fill="var(--fm1p3-text-main, #f8fafc)">PURAMENTE QUANTITATIVO</tspan>.
+          </text>
+          
+          <!-- Box Bullet 1 -->
+          <rect x="0" y="32" width="330" height="54" rx="6" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-border, #334155)" />
+          <circle cx="15" cy="59" r="4" fill="var(--fm1p3-teal, #14b8a6)" />
+          <text x="28" y="52" class="fm1p3-label" style="font-size:11px;">1. Vencer a Gravidade ($\vec{g}$)</text>
+          <text x="28" y="68" class="fm1p3-sublabel">Capacidade de elevar o membro no espaço (MRC ≥ 3).</text>
+
+          <!-- Box Bullet 2 -->
+          <rect x="0" y="94" width="330" height="54" rx="6" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-border, #334155)" />
+          <circle cx="15" cy="121" r="4" fill="var(--fm1p3-coral, #ff6b6b)" />
+          <text x="28" y="114" class="fm1p3-label" style="font-size:11px;">2. Vencer Carga Extra ($\Delta F$)</text>
+          <text x="28" y="130" class="fm1p3-sublabel">Metáfora operacional: Levantar a sacola de compras (MRC 4-5).</text>
+        </g>
+
+        <!-- Section B: Diagnostic Takeaway -->
+        <g transform="translate(0, 225)">
+          <rect x="0" y="0" width="330" height="195" rx="8" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-teal, #14b8a6)" stroke-width="1.5" />
+          <text x="15" y="25" class="fm1p3-label" style="fill:var(--fm1p3-teal, #14b8a6); font-weight:800;">ÂNCORA DE PROVA (RESIDÊNCIA):</text>
+
+          <text x="15" y="50" class="fm1p3-sublabel" style="font-size:11px; fill:var(--fm1p3-text-main, #f8fafc);">
+            • Se o paciente <tspan font-weight="700" fill="var(--fm1p3-teal, #14b8a6)">sustenta a sacola no ar</tspan> contra a resistência do examinador, a FORÇA ESTÁ PRESERVADA (MRC 5).
+          </text>
+
+          <text x="15" y="95" class="fm1p3-sublabel" style="font-size:11px; fill:var(--fm1p3-text-main, #f8fafc);">
+            • Não confunda oscilação do trajeto com perda de recrutamento de unidades motoras.
+          </text>
+
+          <rect x="15" y="125" width="300" height="55" rx="6" fill="var(--fm1p3-panel-bg, #0f172a)" />
+          <text x="25" y="145" class="fm1p3-label" style="font-size:10px; fill:var(--fm1p3-gold, #f59e0b);">CONCLUSÃO OPERACIONAL:</text>
+          <text x="25" y="163" class="fm1p3-sublabel" style="font-size:10px; font-weight:700; fill:var(--fm1p3-teal, #14b8a6);">Força = Carga superada. Fim de papo.</text>
+        </g>
+      </g>
+
+      <!-- PANEL CONTENT 2: QUALIDADE (TREMOR / ATAXIA) -->
+      <g class="fm1p3-panel-content fm1p3-panel-quality" transform="translate(20, 25)">
+        <!-- Header -->
+        <rect x="0" y="0" width="330" height="32" rx="6" fill="var(--fm1p3-amber, #f59e0b)" />
+        <text x="15" y="21" style="fill:#ffffff; font-size:13px; font-weight:800;">PAINEL 2: ARMADILHA - ATAXIA / TREMOR</text>
+
+        <!-- Main Warning Box -->
+        <g transform="translate(0, 45)">
+          <rect x="0" y="0" width="330" height="120" rx="8" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-amber, #f59e0b)" stroke-width="2" />
+          <text x="15" y="24" class="fm1p3-label" style="fill:var(--fm1p3-amber, #f59e0b); font-weight:900; font-size:12px;">
+            ⚠️ ATENÇÃO: FORÇA PERMANECE 5/5!
+          </text>
+          <text x="15" y="46" class="fm1p3-sublabel" style="font-size:11px; fill:var(--fm1p3-text-main, #f8fafc); line-height:1.4;">
+            O paciente balança, treme ou erra o alvo (dismetria), mas <tspan font-weight="800" fill="var(--fm1p3-amber, #f59e0b)">A SACOLA NÃO CAI</tspan>.
+          </text>
+          <text x="15" y="82" class="fm1p3-sublabel" style="font-size:10px; fill:var(--fm1p3-text-muted, #94a3b8);">
+            A carga continua vencida no ar. Logo, a pontuação na escala MRC permanece INTALCADA (MRC 5).
+          </text>
+        </g>
+
+        <!-- Domain Boundaries -->
+        <g transform="translate(0, 180)">
+          <text x="0" y="0" class="fm1p3-label" style="font-size:12px; fill:var(--fm1p3-amber, #f59e0b);">O QUE FICA FORA DO EIXO DA FORÇA?</text>
+          
+          <rect x="0" y="15" width="330" height="40" rx="6" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-border, #334155)" />
+          <text x="15" y="38" class="fm1p3-sublabel" style="font-size:11px; font-weight:700; fill:var(--fm1p3-text-main, #f8fafc);">• Tremor Intencional / De Repouso</text>
+
+          <rect x="0" y="62" width="330" height="40" rx="6" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-border, #334155)" />
+          <text x="15" y="85" class="fm1p3-sublabel" style="font-size:11px; font-weight:700; fill:var(--fm1p3-text-main, #f8fafc);">• Ataxia Cerebelar / Decomposiçao do Gesto</text>
+
+          <rect x="0" y="109" width="330" height="40" rx="6" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-border, #334155)" />
+          <text x="15" y="132" class="fm1p3-sublabel" style="font-size:11px; font-weight:700; fill:var(--fm1p3-text-main, #f8fafc);">• Bradykinesia / Lentidão Parkinsoniana</text>
+        </g>
+
+        <!-- Topography clue -->
+        <g transform="translate(0, 345)">
+          <rect x="0" y="0" width="330" height="75" rx="6" fill="var(--fm1p3-panel-bg, #0f172a)" stroke="var(--fm1p3-amber, #f59e0b)" stroke-dasharray="4 4" />
+          <text x="15" y="22" class="fm1p3-label" style="font-size:11px; fill:var(--fm1p3-amber, #f59e0b);">DIAGNÓSTICO TOPOGRÁFICO CORRETO:</text>
+          <text x="15" y="42" class="fm1p3-sublabel" style="font-size:10px; fill:var(--fm1p3-text-main, #f8fafc);">
+            Investigar <tspan font-weight="700" fill="var(--fm1p3-amber, #f59e0b)">Cerebelo ou Vias Extrapiramidais</tspan>.
+          </text>
+          <text x="15" y="58" class="fm1p3-sublabel" style="font-size:10px; fill:var(--fm1p3-red, #ef4444);">
+            NÃO solicitar exames de via motora primária / NMI por erro de qualidade!
+          </text>
+        </g>
+      </g>
+
+      <!-- PANEL CONTENT 3: FRAQUEZA REAL (DEFICIT MOTOR QUANTITATIVO) -->
+      <g class="fm1p3-panel-content fm1p3-panel-weakness" transform="translate(20, 25)">
+        <!-- Header -->
+        <rect x="0" y="0" width="330" height="32" rx="6" fill="var(--fm1p3-red, #ef4444)" />
+        <text x="15" y="21" style="fill:#ffffff; font-size:13px; font-weight:800;">PAINEL 3: VERDADEIRA FRAQUEZA (PARESIA)</text>
+
+        <!-- Details -->
+        <g transform="translate(0, 45)">
+          <rect x="0" y="0" width="330" height="110" rx="8" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-red, #ef4444)" stroke-width="1.5" />
+          <text x="15" y="24" class="fm1p3-label" style="fill:var(--fm1p3-red, #ef4444); font-weight:900; font-size:12px;">
+            FALHA NO EIXO QUANTITATIVO
+          </text>
+          <text x="15" y="46" class="fm1p3-sublabel" style="font-size:11px; fill:var(--fm1p3-text-main, #f8fafc); line-height:1.4;">
+            O membro <tspan font-weight="800" fill="var(--fm1p3-red, #ef4444)">DESPENCA</tspan> sob a ao da gravidade ou cede à menor resistência exercida.
+          </text>
+          <text x="15" y="82" class="fm1p3-sublabel" style="font-size:10px; fill:var(--fm1p3-text-muted, #94a3b8);">
+            Incapacidade física de recrutar motor-units suficientes para superar o vetor vetorial de gravidade/carga.
+          </text>
+        </g>
+
+        <!-- Topographic Differential Link -->
+        <g transform="translate(0, 175)">
+          <text x="0" y="0" class="fm1p3-label" style="font-size:12px; fill:var(--fm1p3-red, #ef4444);">INVESTIGAÇÃO DA VIA MOTORA (Ponte Trilha FM3-FM5):</text>
+          
+          <rect x="0" y="15" width="330" height="42" rx="6" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-border, #334155)" />
+          <text x="15" y="32" class="fm1p3-label" style="font-size:11px;">1º Neurônio Motor (Piramidal / Córtex / EVE)</text>
+          <text x="15" y="46" class="fm1p3-sublabel" style="font-size:9px;">Espasticidade, hiperreflexia, sinal de Babinski.</text>
+
+          <rect x="0" y="65" width="330" height="42" rx="6" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-border, #334155)" />
+          <text x="15" y="82" class="fm1p3-label" style="font-size:11px;">2º Neurônio Motor / Raiz / Nervo (NMI)</text>
+          <text x="15" y="96" class="fm1p3-sublabel" style="font-size:9px;">Flacidez, fasciculações, amiotrofia.</text>
+
+          <rect x="0" y="115" width="330" height="42" rx="6" fill="var(--fm1p3-card-bg, #1e293b)" stroke="var(--fm1p3-border, #334155)" />
+          <text x="15" y="132" class="fm1p3-label" style="font-size:11px;">Junção Miastênica / Músculo Primário</text>
+          <text x="15" y="146" class="fm1p3-sublabel" style="font-size:9px;">Flutuação/fatigabilidade ou mialgia proximal.</text>
+        </g>
+
+        <g transform="translate(0, 350)">
+          <rect x="0" y="0" width="330" height="60" rx="6" fill="var(--fm1p3-panel-bg, #0f172a)" stroke="var(--fm1p3-red, #ef4444)" />
+          <text x="15" y="25" class="fm1p3-label" style="font-size:11px; fill:var(--fm1p3-red, #ef4444);">REGRA DE CONDUTA:</text>
+          <text x="15" y="43" class="fm1p3-sublabel" style="font-size:10px; font-weight:700; fill:var(--fm1p3-text-main, #f8fafc);">
+            Graduar MRC de 0 a 4 e buscar a topografia motora.
+          </text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- TOOLTIP OVERLAY CONTAINER -->
+  <g id="fm1p3-tooltip" class="fm1p3-tooltip-group" style="opacity: 0; pointer-events: none; transition: opacity 0.15s ease;">
+    <rect id="fm1p3-tt-bg" rx="6" width="220" height="42" class="fm1p3-tt-bg" />
+    <text id="fm1p3-tt-text" x="12" y="25" class="fm1p3-tt-text">Tooltip Text</text>
+  </g>
+
+  <!-- INLINE JS SELF-CONTAINED ENGINE (Dual-engine + Keyboard + Mouse Follow) -->
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function() {
+      const svg = document.getElementById('fm1p3-svg');
+      if (!svg) return;
+
+      const stage = svg.querySelector('#fm1p3-stage');
+      const tooltip = svg.querySelector('#fm1p3-tooltip');
+      const ttBg = svg.querySelector('#fm1p3-tt-bg');
+      const ttText = svg.querySelector('#fm1p3-tt-text');
+
+      // Mode Switcher Handler
+      function setMode(mode) {
+        if (!stage) return;
+        stage.setAttribute('data-mode', mode);
+      }
+
+      // Attach button listeners
+      const btnQty = svg.querySelector('#fm1p3-btn-qty');
+      const btnQuality = svg.querySelector('#fm1p3-btn-quality');
+      const btnWeakness = svg.querySelector('#fm1p3-btn-weakness');
+
+      if (btnQty) {
+        btnQty.addEventListener('click', () => setMode('qty'));
+        btnQty.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { setMode('qty'); e.preventDefault(); } });
+      }
+      if (btnQuality) {
+        btnQuality.addEventListener('click', () => setMode('quality'));
+        btnQuality.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { setMode('quality'); e.preventDefault(); } });
+      }
+      if (btnWeakness) {
+        btnWeakness.addEventListener('click', () => setMode('weakness'));
+        btnWeakness.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { setMode('weakness'); e.preventDefault(); } });
+      }
+
+      // Tooltip Mouse Follow Engine using SVG Matrix Transformation
+      function showTooltip(evt, text) {
+        if (!tooltip || !ttText || !ttBg) return;
+        ttText.textContent = text;
+        
+        // Measure text width
+        const bbox = ttText.getBBox();
+        const padding = 24;
+        const width = Math.max(bbox.width + padding, 140);
+        ttBg.setAttribute('width', width);
+
+        // Get SVG Coordinates
+        let pt = svg.createSVGPoint();
+        pt.x = evt.clientX || (evt.touches && evt.touches[0] ? evt.touches[0].clientX : 0);
+        pt.y = evt.clientY || (evt.touches && evt.touches[0] ? evt.touches[0].clientY : 0);
+        
+        const ctm = svg.getScreenCTM();
+        if (ctm) {
+          let svgPt = pt.matrixTransform(ctm.inverse());
+          let x = svgPt.x + 15;
+          let y = svgPt.y - 45;
+
+          // Boundary checks
+          if (x + width > 1060) x = svgPt.x - width - 10;
+          if (y < 20) y = svgPt.y + 20;
+
+          tooltip.setAttribute('transform', `translate(${x}, ${y})`);
+          tooltip.style.opacity = '1';
+        }
+      }
+
+      function hideTooltip() {
+        if (tooltip) tooltip.style.opacity = '0';
+      }
+
+      // Bind tooltips to shapes with data-fm1p3-tip attribute
+      const tipTargets = svg.querySelectorAll('[data-fm1p3-tip]');
+      tipTargets.forEach(el => {
+        const text = el.getAttribute('data-fm1p3-tip');
+        el.addEventListener('mousemove', (e) => showTooltip(e, text));
+        el.addEventListener('mouseenter', (e) => showTooltip(e, text));
+        el.addEventListener('mouseleave', hideTooltip);
+        el.addEventListener('touchstart', (e) => { showTooltip(e, text); }, {passive: true});
+        el.addEventListener('touchend', hideTooltip);
+      });
+
+      // Mark standalone bound state
+      svg.setAttribute('data-fm1p3-bound', 'true');
+    })();
+    /*]]>*/
+  </script>
+</svg>

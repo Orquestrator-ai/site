@@ -1,0 +1,805 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CHASSI DA PLATAFORMA GO — copie VERBATIM e troque SÓ o que está em {{ }}.
+
+     ⛔ NÃO invente header, footer, menu, CSS nem JS. NÃO crie arquivo .css novo.
+     ⛔ NÃO mexa nos caminhos ../../assets/ — eles apontam para o chassi compartilhado
+        (tokens.css, base.css, components.css) que dá a identidade da plataforma inteira.
+
+     O QUE É SEU: o conteúdo dentro de <main id="main"><div class="reading"> … </div></main>.
+     Ali dentro você decide a cara da página — paleta interna, ritmo, componentes,
+     como monta o card, que interação inventa. O resto é contrato.
+
+     Placeholders:
+       p8        p1, p2, … p22          (index.html é p1)
+       8       1, 2, … 22
+       22          22
+       A linha que corta a pelve  título curto desta página
+       A linha terminal separa pelve maior (falsa) de pelve menor (verdadeira, o canal de parto) — uma borda óssea contínua que se percorre com o dedo.      uma frase, para o <meta description>
+       <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8" aria-current="page"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li>     os 22 <li> do menu — repita o padrão de menu-panel__item
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<!doctype html>
+<html lang="pt-BR" data-page="p8">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#171219">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="A linha terminal separa pelve maior (falsa) de pelve menor (verdadeira, o canal de parto) — uma borda óssea contínua que se percorre com o dedo.">
+  <title>A linha que corta a pelve · Anatomia da pelve feminina (parte 1) — GO Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/img/icon.svg" type="image/svg+xml">
+  <style id="critical-nav-fouc">#home-btn{display:grid;place-items:center;width:40px;height:40px;color:#ecdde6;border-bottom:0}#home-btn svg{display:block;width:20px;height:20px}</style>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/aula-12.css">
+</head>
+<body data-page-id="p8" data-a12-page="p08">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="page-orb" aria-hidden="true"></div><div class="page-orb page-orb--rose" aria-hidden="true"></div>
+  <header class="site-header" id="site-header"><div class="site-header__row">
+    <a class="site-header__brand" href="../../index.html"><span class="site-header__logo">GO</span><span class="site-header__titles"><span class="site-header__title">Anatomia da pelve feminina (parte 1)</span><span class="site-header__subtitle">Ginecologia e Obstetrícia · Aula 12</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress" id="progress">8/22</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub do módulo" title="Hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header>
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas da aula"><p class="menu-panel__title">Aula 12 — Anatomia da pelve feminina (parte 1)</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8" aria-current="page"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li></ul><p class="menu-panel__title">Módulo</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="../../index.html"><span class="menu-panel__index">⌂</span><span>Voltar ao hub do módulo</span></a></li></ul></nav></div>
+  <main id="main"><div class="reading">
+
+  <!-- ▼▼▼ AQUI DENTRO É SEU. O conteúdo da página, com a peça SVG da tabela
+       copiada byte a byte, o quiz, e a didática que você decidir. ▼▼▼ -->
+
+  <article data-page="p8" data-layout="a12-p08">
+<header class="a12-question-stage" data-opener="E8"><div class="a12-question-stage__question"><span class="a12-question-stage__eyebrow">Erro comum desmontado</span><h1 id="p08-title">A linha que corta a pelve em duas: só uma delas é o canal de parto</h1><p class="a12-question-stage__lead no-indent">"Pelve falsa" é um nome infeliz. Ele sugere região sem importância, e o reflexo é arquivar aquela metade como ruído. Ela existe, é grande, tem conteúdo e tem função — só não é por ela que o feto passa. É esse "só" que o nome não explica.</p></div></header>
+<div class="chipset"><span class="a12-modmark">Obstetrícia</span><span class="chip--topic">Parte A · Paredes</span><span class="chip--topic">Itens 078</span><span class="chip--topic">Erro comum desmontado</span></div>
+
+<div class="a12-topic" data-topic="1">
+<div class="a12-topic__kicker">Tópico 1</div>
+<h2 class="topic-h">Uma borda que se segue com o dedo: a linha terminal</h2>
+<div class="prose">
+<p> <strong class="term">E-001</strong> A pelve não é um compartimento único: ela é dividida em duas por <strong class="term">uma borda óssea curva e contínua</strong>, e essa borda tem nome — <strong class="term">linha terminal</strong>, também chamada <strong class="term">linha inominada</strong> em textos mais antigos. É a mesma borda, com dois nomes.</p>
+<p> A melhor forma de guardá-la não é como um conceito, é como um <strong class="term">trajeto</strong>. Comece atrás, no <strong class="term">promontório sacral</strong> — a âncora posterior, já conhecida. Dali a borda corre <strong class="term">para a frente e para baixo</strong> pela <strong class="term">linha arqueada do ílio</strong>, na face interna do osso; continua pela <strong class="term">linha pectínea do púbis</strong>, passando por uma saliência chamada <strong class="term">eminência iliopúbica</strong>; e termina na <strong class="term">borda superior da sínfise púbica</strong>, na frente. Do promontório à sínfise, dos dois lados, fechando um contorno completo.</p>
+<p> Repare que essa volta é <strong class="term">a mesma volta do anel ósseo</strong>, agora percorrida <strong class="term">por dentro</strong> e num nível definido. E note também que ela liga <strong class="term">duas das três âncoras</strong> — promontório atrás, sínfise na frente. É por isso que ela é fácil de reconstruir: você já sabe onde começa e onde termina.</p>
+</div></div>
+
+<div class="a12-topic" data-topic="2">
+<div class="a12-topic__kicker">Tópico 2</div>
+<h2 class="topic-h">Acima da linha: a pelve maior, também chamada falsa</h2>
+<div class="prose">
+<p> <strong class="term">E-002</strong> <strong class="term">Tudo o que fica acima da linha terminal é a pelve maior</strong>, também chamada <strong class="term">pelve falsa</strong>. Os limites: as <strong class="term">asas do ílio</strong> dos lados — aquelas partes largas e em leque —, o <strong class="term">corpo da quinta vértebra lombar</strong> atrás, e <strong class="term">nenhum osso na frente</strong>: ali há apenas a parede abdominal inferior. Essa ausência de osso anterior é importante e explica o nome popular: a pelve maior é, na prática, <strong class="term">a porção inferior da cavidade abdominal</strong>.</p>
+<p> <strong class="term">E-003</strong> E o conteúdo confirma: o que está ali dentro são <strong class="term">alças de intestino delgado, ceco e cólon sigmoide</strong> — <strong class="term">vísceras abdominais</strong>, não pélvicas. Mais um hóspede, no fim da gestação: <strong class="term">o útero gravídico</strong>, que cresce e sobe para dentro dela.</p>
+</div></div>
+
+<div class="a12-topic" data-topic="3">
+<div class="a12-topic__kicker">Tópico 3</div>
+<h2 class="topic-h">Abaixo da linha: a pelve menor, e ela é o canal de parto</h2>
+<div class="prose">
+<p> <strong class="term">E-004</strong> <strong class="term">Tudo o que fica abaixo da linha terminal é a pelve menor</strong>, também chamada <strong class="term">pelve verdadeira</strong> ou <strong class="term">pelve obstétrica</strong>. É um espaço delimitado em cima pelo <strong class="term">estreito superior</strong> e embaixo pelo <strong class="term">estreito inferior</strong> — o aro da entrada e o aro da saída.</p>
+<p> <strong class="term">E-005</strong> O conteúdo dela é outro: <strong class="term">bexiga, uretra, reto, vagina, útero e ovários</strong> — os <strong class="term">órgãos pélvicos verdadeiros</strong>, exatamente os mesmos que o chão da pelve vai segurar.</p>
+<p> <strong class="term">E-006</strong> E agora a frase que muda o valor de tudo: <strong class="term">a pelve menor é o canal de parto.</strong> Ela <strong class="term">é</strong> o trajeto duro. Toda medida que decide se o feto passa — todo estreito, todo diâmetro, toda conjugata — é medida <strong class="term">dela</strong>. A pelve maior não participa da passagem; ela apenas apoia o útero antes de o trabalho de parto começar.</p>
+</div></div>
+
+<div class="a12-topic" data-topic="4">
+<div class="a12-topic__kicker">Tópico 4</div>
+<h2 class="topic-h">"Falsa" finalmente ganha par</h2>
+<div class="prose">
+<p> <strong class="term">[078]</strong> <strong class="term">E-007</strong> O ílio pertence à <strong class="term">pelve maior</strong>, também chamada <strong class="term">falsa</strong>. Falsa em relação a quê? À <strong class="term">pelve menor</strong>, a <strong class="term">verdadeira</strong> — a que fica abaixo da linha terminal e por onde o feto de fato passa. <strong class="term">Chama-se falsa não porque não exista, mas porque não é ela que o feto atravessa.</strong> É por isso que ela tem pouca relevância obstétrica: <strong class="term">quem decide o parto é a de baixo.</strong></p>
+<p> A partir daqui, sempre que aparecer um número de bacia — um diâmetro, uma conjugata, um estreito —, ele se refere à <strong class="term">pelve menor</strong>. Nenhum deles descreve a de cima.</p>
+</div></div>
+
+<figure class="a12-fig">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 630" width="100%" height="100%" class="a12-inline-svg a12p08-root" data-svg-tokenized="true" role="img" aria-labelledby="a12p8-title a12p8-desc">
+<!-- 
+ABORDAGENS VISUAIS AVALIADAS:
+1. Vista isolada 2D com diagramação textual estática: Sem relação volumétrica instantânea entre corte lateral e plano superior.
+2. Modelo 3D simulado por rotação contínua: Alto ruído visual que compromete a clareza anatômica dos 5 marcos e prejudica legibilidade em dispositivos móveis.
+3. Painel duplo sincronizado (Perfil Sagital + Estreito Superior) com cursor bidirecional determinístico e 5 marcos anatômicos integrados (VENCEDORA: demonstra com máxima precisão a equivalência entre a linha de nivelamento no perfil e o contorno anelar fechado superior).
+JUSTIFICATIVA DA ESCOLHA: A abordagem 3 conecta instantaneamente a altura do plano de corte no perfil à geometria do anel pélvico, permitindo ao aluno aprender deterministicamente a fronteira 3D entre a pelve maior e a pelve menor ao percorrer os 5 marcos.
+-->
+  <title id="a12p8-title">Anatomia Pélvica: A Linha Terminal (Linha Inominada)</title>
+  <desc id="a12p8-desc">Ilustração anatômica interativa demonstrando o plano inclinado da linha terminal em corte sagital (esquerda) e o contorno ring-like no estreito superior pélvico (direita), separando a pelve maior (falsa) da pelve menor (verdadeira/canal de parto).</desc>
+
+  <defs>
+    <style>
+      .a12p8-root {
+        --a12p8-tinta: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        --a12p8-bg: var(--a12-bg, var(--a12p8-bg-fallback, #141017));
+        --a12p8-panel-bg: var(--a12-panel-bg, var(--a12p8-panel-bg-fallback, #1D1722));
+        --a12p8-osso: var(--a12-osso, var(--a12p8-osso-fallback, #DCC7B4));
+        --a12p8-osso-dark: var(--a12-osso-dark, var(--a12p8-osso-dark-fallback, #8C7561));
+        --a12p8-linha-terminal: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        --a12p8-maior: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        --a12p8-menor: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        --a12p8-cursor: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        --a12p8-divisor: var(--a12-linha, var(--a12p8-divisor-fallback, #A99DA6));
+        --a12p8-muted: #9E909B;
+        --a12p8-border: #332938;
+        --a12p8-card: #251E2B;
+        --a12p8-focus-ring: #F3BE5B;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a12p8-bg);
+        color: var(--a12p8-tinta);
+      }
+
+      [data-theme="light"] .a12p8-root {
+        --a12p8-tinta-fallback: #1F1A24;
+        --a12p8-bg-fallback: #FAF7F9;
+        --a12p8-panel-bg-fallback: #FFFFFF;
+        --a12p8-osso-fallback: #8A7058;
+        --a12p8-osso-dark-fallback: #5C4736;
+        --a12p8-linha-terminal-fallback: #D9901A;
+        --a12p8-maior-fallback: #2B6CB0;
+        --a12p8-menor-fallback: #C53030;
+        --a12p8-cursor-fallback: #2F855A;
+        --a12p8-divisor-fallback: #718096;
+        --a12p8-muted: #6B5D68;
+        --a12p8-border: #E5DDE3;
+        --a12p8-card: #F3EFF2;
+        --a12p8-focus-ring: #D9901A;
+      }
+
+      .a12p8-panel {
+        fill: var(--a12-panel-bg, var(--a12p8-panel-bg-fallback, #1D1722));
+        stroke: var(--a12-linha, var(--a12p8-divisor-fallback, #A99DA6));
+        stroke-opacity: 0.3;
+        stroke-width: 1px;
+        rx: 12px;
+      }
+
+      .a12p8-header-title {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        fill: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+      }
+
+      .a12p8-header-sub {
+        font-size: 12px;
+        fill: var(--a12p8-muted);
+      }
+
+      .a12p8-panel-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        fill: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+      }
+
+      .a12p8-bone {
+        fill: var(--a12-osso, var(--a12p8-osso-fallback, #DCC7B4));
+        fill-opacity: 0.25;
+        stroke: var(--a12-osso, var(--a12p8-osso-fallback, #DCC7B4));
+        stroke-width: 2px;
+        stroke-linejoin: round;
+      }
+
+      .a12p8-bone-feature {
+        fill: none;
+        stroke: var(--a12-osso-dark, var(--a12p8-osso-dark-fallback, #8C7561));
+        stroke-width: 1.5px;
+        stroke-dasharray: 3 3;
+      }
+
+      .a12p8-region-maior {
+        fill: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        fill-opacity: 0.18;
+        stroke: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        stroke-width: 1px;
+        stroke-dasharray: 4 2;
+      }
+
+      .a12p8-region-menor {
+        fill: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        fill-opacity: 0.18;
+        stroke: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        stroke-width: 1px;
+        stroke-dasharray: 4 2;
+      }
+
+      .a12p8-linea-terminalis {
+        fill: none;
+        stroke: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        stroke-width: 3.5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 3px rgba(243, 190, 91, 0.4));
+      }
+
+      .a12p8-linea-guide {
+        fill: none;
+        stroke: var(--a12-linha, var(--a12p8-divisor-fallback, #A99DA6));
+        stroke-width: 1px;
+        stroke-dasharray: 3 3;
+        opacity: 0.5;
+      }
+
+      .a12p8-sync-beam {
+        fill: none;
+        stroke: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke-width: 1.5px;
+        stroke-dasharray: 4 4;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+      }
+
+      .a12p8-marco-pt {
+        fill: var(--a12-panel-bg, var(--a12p8-panel-bg-fallback, #1D1722));
+        stroke: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        stroke-width: 2px;
+        cursor: pointer;
+        transition: transform 0.2s, fill 0.2s, stroke-width 0.2s;
+      }
+
+      .a12p8-marco-pt:hover, .a12p8-marco-pt:focus {
+        fill: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        stroke: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        stroke-width: 3px;
+        outline: none;
+      }
+
+      .a12p8-marco-pt.a12p8-active {
+        fill: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        stroke-width: 3px;
+      }
+
+      .a12p8-cursor-indicator {
+        fill: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        stroke-width: 2.5px;
+        filter: drop-shadow(0 0 5px rgba(85, 184, 137, 0.8));
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .a12p8-pulse-ring {
+        fill: none;
+        stroke: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke-width: 1.5px;
+        opacity: 0.8;
+        animation: a12p8-pulse 2s infinite;
+      }
+
+      @keyframes a12p8-pulse {
+        0% { r: 6px; opacity: 0.9; }
+        100% { r: 16px; opacity: 0; }
+      }
+
+      .a12p8-badge {
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 8px;
+        rx: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .a12p8-badge-maior {
+        fill: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        fill-opacity: 0.25;
+        stroke: var(--a12-pelve-maior, var(--a12p8-maior-fallback, #7FA6D8));
+        stroke-width: 1px;
+      }
+
+      .a12p8-badge-menor {
+        fill: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        fill-opacity: 0.25;
+        stroke: var(--a12-pelve-menor, var(--a12p8-menor-fallback, #E17A8E));
+        stroke-width: 1px;
+      }
+
+      .a12p8-btn-step {
+        fill: var(--a12p8-card);
+        stroke: var(--a12-linha, var(--a12p8-divisor-fallback, #A99DA6));
+        stroke-width: 1px;
+        rx: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .a12p8-btn-step:hover, .a12p8-btn-step:focus {
+        fill: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        stroke: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+        outline: none;
+      }
+
+      .a12p8-btn-step:hover text, .a12p8-btn-step:focus text {
+        fill: #141017;
+        font-weight: 700;
+      }
+
+      .a12p8-btn-step.a12p8-active {
+        fill: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        stroke: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+      }
+
+      .a12p8-btn-step.a12p8-active text {
+        fill: #FFFFFF;
+        font-weight: 700;
+      }
+
+      .a12p8-btn-text {
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .a12p8-card-bg {
+        fill: var(--a12p8-card);
+        stroke: var(--a12p8-border);
+        stroke-width: 1.5px;
+        rx: 10px;
+      }
+
+      .a12p8-card-title {
+        font-size: 14px;
+        font-weight: 700;
+        fill: var(--a12-ouro, var(--a12p8-linha-terminal-fallback, #F3BE5B));
+      }
+
+      .a12p8-card-body {
+        font-size: 12px;
+        fill: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+        line-height: 1.4;
+      }
+
+      .a12p8-card-tag {
+        font-size: 10px;
+        font-weight: 700;
+        fill: var(--a12-verde, var(--a12p8-cursor-fallback, #55B889));
+        letter-spacing: 0.5px;
+      }
+
+      .a12p8-label-text {
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--a12-tinta, var(--a12p8-tinta-fallback, #F7F1F5));
+      }
+
+      .a12p8-sublabel-text {
+        font-size: 9.5px;
+        fill: var(--a12p8-muted);
+      }
+
+      .a12p8-focus-indicator {
+        outline: none;
+      }
+
+      .a12p8-focus-indicator:focus-visible {
+        stroke: var(--a12p8-focus-ring);
+        stroke-width: 2px;
+      }
+    </style>
+
+    <linearGradient id="a12p8-grad-maior" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12-pelve-maior, #7FA6D8)" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="var(--a12-pelve-maior, #7FA6D8)" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <linearGradient id="a12p8-grad-menor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12-pelve-menor, #E17A8E)" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="var(--a12-pelve-menor, #E17A8E)" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Marker filter glow -->
+    <filter id="a12p8-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- ==================== HEADER (LEGENDA DE INTERPRETAÇÃO & TÍTULO) ==================== -->
+  <g id="a12p8-group-header" transform="translate(20, 24)">
+    <text x="0" y="0" class="a12p8-header-title">ANATOMIA PÉLVICA: A LINHA TERMINAL (LINHA INOMINADA)</text>
+    <text x="0" y="20" class="a12p8-header-sub">Plano inclinado tridimensional que delimita a transição exata entre a Pelve Maior (Falsa) e a Pelve Menor (Verdadeira / Canal de Parto)</text>
+  </g>
+
+  <!-- ==================== PAINEL ESQUERDO: CORTE SAGITAL (PERFIL) ==================== -->
+  <g id="a12p8-panel-sagittal-group" transform="translate(20, 75)">
+    <rect class="a12p8-panel" x="0" y="0" width="405" height="345" />
+    <text x="16" y="26" class="a12p8-panel-label">PLANO SAGITAL (VISTA DE PERFIL MEDIANO)</text>
+
+    <!-- Região Pelve Maior (Falsa) -->
+    <path class="a12p8-region-maior" fill="url(#a12p8-grad-maior)" d="M 110 260 L 335 105 L 342 55 C 280 25 180 50 150 110 Z" />
+    <!-- Região Pelve Menor (Verdadeira / Canal de Parto) -->
+    <path class="a12p8-region-menor" fill="url(#a12p8-grad-menor)" d="M 110 260 L 335 105 Q 365 185 340 255 C 295 315 195 325 120 295 Z" />
+
+    <!-- Estrutura Óssea: Sacro e Lamber (Posterior) -->
+    <!-- Coluna Lombar L4-L5 -->
+    <path class="a12p8-bone" d="M 325 25 L 345 25 L 345 55 L 335 55 Z" />
+    <path class="a12p8-bone" d="M 328 60 L 348 60 L 345 95 L 335 95 Z" />
+    <!-- Sacro S1-S5 e Cóccix -->
+    <path class="a12p8-bone" d="M 335 105 C 345 125 365 160 360 210 C 355 240 345 260 330 275 L 320 270 C 335 255 342 235 345 205 C 348 165 332 135 322 115 Z" />
+    <path class="a12p8-bone-feature" d="M 335 105 L 360 120 M 345 150 L 365 165 M 350 190 L 362 205" />
+
+    <!-- Estrutura Óssea: Sínfise Púbica (Anterior) -->
+    <path class="a12p8-bone" d="M 110 260 C 100 250 90 260 90 275 C 90 295 108 305 122 290 C 128 275 118 260 110 260 Z" />
+    <path class="a12p8-bone-feature" d="M 98 265 C 102 275 104 285 102 292" />
+
+    <!-- Estrutura Óssea: Assoalho Pélvico e Ísquio -->
+    <path class="a12p8-bone" d="M 230 295 C 240 315 220 325 200 325 C 185 325 175 310 185 295 Z" />
+
+    <!-- Linha Terminal no Corte Sagital (Ouro Inclinada) -->
+    <line id="a12p8-linea-sagittal" class="a12p8-linea-terminalis" x1="335" y1="105" x2="110" y2="260" />
+
+    <!-- Guia Angular de Inclinação (~55° em relação ao plano horizontal) -->
+    <line class="a12p8-linea-guide" x1="110" y1="260" x2="335" y2="260" />
+    <path d="M 160 260 A 50 50 0 0 0 142 238" fill="none" stroke="var(--a12-ouro, #F3BE5B)" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="165" y="252" class="a12p8-sublabel-text" fill="var(--a12-ouro, #F3BE5B)">Inclinação ~55°</text>
+
+    <!-- Badges de Divisão Pélvica -->
+    <g transform="translate(180, 80)">
+      <rect class="a12p8-badge a12p8-badge-maior" x="0" y="0" width="135" height="22" rx="4" />
+      <text x="67" y="15" class="a12p8-label-text" text-anchor="middle" fill="var(--a12-pelve-maior, #7FA6D8)">PELVE MAIOR (FALSA)</text>
+    </g>
+
+    <g transform="translate(180, 205)">
+      <rect class="a12p8-badge a12p8-badge-menor" x="0" y="0" width="155" height="22" rx="4" />
+      <text x="77" y="15" class="a12p8-label-text" text-anchor="middle" fill="var(--a12-pelve-menor, #E17A8E)">PELVE MENOR (VERDADEIRA)</text>
+    </g>
+
+    <!-- Canal de Parto (Seta indicativa inferior) -->
+    <g transform="translate(210, 265)">
+      <path d="M 10 0 L 10 30 M 5 25 L 10 30 L 15 25" fill="none" stroke="var(--a12-pelve-menor, #E17A8E)" stroke-width="2" stroke-linecap="round" />
+      <text x="22" y="18" class="a12p8-sublabel-text" fill="var(--a12-pelve-menor, #E17A8E)" font-weight="700">CANAL DE PARTO</text>
+    </g>
+
+    <!-- Rótulos Fixo dos Extremos Anatômicos -->
+    <text x="342" y="100" class="a12p8-label-text" text-anchor="start">Promontório (S1)</text>
+    <text x="14" y="260" class="a12p8-label-text" text-anchor="start">Borda Sup. Sínfise</text>
+
+    <!-- 5 Pontos de Marcos ao longo da Linha Terminal no perfil -->
+    <!-- Pt 0: Promontório (335, 105) -->
+    <circle id="a12p8-sag-pt-0" class="a12p8-marco-pt a12p8-focus-indicator" cx="335" cy="105" r="7" role="button" tabindex="0" aria-label="Marco 1: Promontório Sacral" />
+    <!-- Pt 1: Linha Arqueada (278.7, 143.7) -->
+    <circle id="a12p8-sag-pt-1" class="a12p8-marco-pt a12p8-focus-indicator" cx="278.7" cy="143.7" r="7" role="button" tabindex="0" aria-label="Marco 2: Linha Arqueada do Ílio" />
+    <!-- Pt 2: Eminência Iliopúbica (222.5, 182.5) -->
+    <circle id="a12p8-sag-pt-2" class="a12p8-marco-pt a12p8-focus-indicator" cx="222.5" cy="182.5" r="7" role="button" tabindex="0" aria-label="Marco 3: Eminência Iliopúbica" />
+    <!-- Pt 3: Linha Pectínea (166.2, 221.2) -->
+    <circle id="a12p8-sag-pt-3" class="a12p8-marco-pt a12p8-focus-indicator" cx="166.2" cy="221.2" r="7" role="button" tabindex="0" aria-label="Marco 4: Linha Pectínea" />
+    <!-- Pt 4: Sínfise Púbica (110, 260) -->
+    <circle id="a12p8-sag-pt-4" class="a12p8-marco-pt a12p8-focus-indicator" cx="110" cy="260" r="7" role="button" tabindex="0" aria-label="Marco 5: Borda Superior da Sínfise Púbica" />
+
+    <!-- Cursor Interativo Animado no Perfil Sagital -->
+    <g id="a12p8-cursor-sagittal-group" transform="translate(335, 105)">
+      <circle class="a12p8-pulse-ring" cx="0" cy="0" r="10" />
+      <circle class="a12p8-cursor-indicator" cx="0" cy="0" r="7" />
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL DIREITO: PLANO SUPERIOR (ESTREITO SUPERIOR) ==================== -->
+  <g id="a12p8-panel-superior-group" transform="translate(435, 75)">
+    <rect class="a12p8-panel" x="0" y="0" width="405" height="345" />
+    <text x="16" y="26" class="a12p8-panel-label">PLANO SUPERIOR (CONTORNO DO ESTREITO SUPERIOR)</text>
+
+    <!-- Silhueta da Bacia Pélvica Vista de Cima (Ossos Ilíacos, Sacro, Púbis) -->
+    <!-- Asas Ilíacas Superiores / Fossas Ilíacas (Pelve Maior) -->
+    <path class="a12p8-bone" d="M 202 50 C 245 55 315 80 325 125 C 335 170 305 220 275 245 C 245 270 207 275 202 275 C 197 275 159 270 129 245 C 99 220 69 170 79 125 C 89 80 159 55 202 50 Z" />
+    <!-- Espinhas Ilíacas e Sacro Posterior -->
+    <path class="a12p8-bone" d="M 165 48 C 185 45 219 45 239 48 C 255 58 265 85 245 95 C 220 85 184 85 159 95 C 139 85 149 58 165 48 Z" />
+    <text x="202" y="40" class="a12p8-sublabel-text" text-anchor="middle">Sacro / Promontório (Posterior)</text>
+    <text x="202" y="295" class="a12p8-sublabel-text" text-anchor="middle">Sínfise Púbica (Anterior)</text>
+
+    <!-- Anel Fechado da LINHA TERMINAL no Plano Superior (Linha Inominada) -->
+    <path id="a12p8-ring-superior" class="a12p8-linea-terminalis" d="M 202 65 C 235 72 282 95 288 135 C 294 175 262 225 232 248 C 215 260 205 263 202 263 C 199 263 189 260 172 248 C 142 225 110 175 116 135 C 122 95 169 72 202 65 Z" />
+
+    <!-- Marcadores Anatômicos no Plano Superior (Lado Direito e Simétricos no Lado Esquerdo) -->
+    <!-- Pt 0: Promontório (202, 65) -->
+    <circle id="a12p8-sup-pt-0" class="a12p8-marco-pt a12p8-focus-indicator" cx="202" cy="65" r="7" role="button" tabindex="0" aria-label="Marco 1 Superior: Promontório" />
+
+    <!-- Pt 1: Linha Arqueada do Ílio (Direita: 270, 115 / Esquerda: 134, 115) -->
+    <circle id="a12p8-sup-pt-1-L" class="a12p8-marco-pt" cx="134" cy="115" r="5" opacity="0.6" />
+    <circle id="a12p8-sup-pt-1" class="a12p8-marco-pt a12p8-focus-indicator" cx="270" cy="115" r="7" role="button" tabindex="0" aria-label="Marco 2 Superior: Linha Arqueada" />
+
+    <!-- Pt 2: Eminência Iliopúbica (Direita: 268, 178 / Esquerda: 136, 178) -->
+    <circle id="a12p8-sup-pt-2-L" class="a12p8-marco-pt" cx="136" cy="178" r="5" opacity="0.6" />
+    <circle id="a12p8-sup-pt-2" class="a12p8-marco-pt a12p8-focus-indicator" cx="268" cy="178" r="7" role="button" tabindex="0" aria-label="Marco 3 Superior: Eminência Iliopúbica" />
+
+    <!-- Pt 3: Linha Pectínea (Direita: 232, 235 / Esquerda: 172, 235) -->
+    <circle id="a12p8-sup-pt-3-L" class="a12p8-marco-pt" cx="172" cy="235" r="5" opacity="0.6" />
+    <circle id="a12p8-sup-pt-3" class="a12p8-marco-pt a12p8-focus-indicator" cx="232" cy="235" r="7" role="button" tabindex="0" aria-label="Marco 4 Superior: Linha Pectínea" />
+
+    <!-- Pt 4: Sínfise Púbica (202, 263) -->
+    <circle id="a12p8-sup-pt-4" class="a12p8-marco-pt a12p8-focus-indicator" cx="202" cy="263" r="7" role="button" tabindex="0" aria-label="Marco 5 Superior: Sínfise Púbica" />
+
+    <!-- Cursor Interativo Animado no Plano Superior -->
+    <g id="a12p8-cursor-superior-group" transform="translate(202, 65)">
+      <circle class="a12p8-pulse-ring" cx="0" cy="0" r="10" />
+      <circle class="a12p8-cursor-indicator" cx="0" cy="0" r="7" />
+    </g>
+
+    <!-- Indicador de Área Central (Estreito Superior / Entrada Pélvica) -->
+    <text x="202" y="165" class="a12p8-label-text" text-anchor="middle" fill="var(--a12-pelve-menor, #E17A8E)" font-weight="700">ENTRADA PÉLVICA</text>
+    <text x="202" y="180" class="a12p8-sublabel-text" text-anchor="middle">(Plano do Estreito Superior)</text>
+  </g>
+
+  <!-- Feixe de Sincronização Dinâmica entre Perfil e Vista Superior -->
+  <line id="a12p8-sync-beam-line" class="a12p8-sync-beam" x1="355" y1="180" x2="637" y2="140" />
+
+  <!-- ==================== BARRA DE NAVEGAÇÃO DOS 5 MARCOS ANATÔMICOS ==================== -->
+  <g id="a12p8-group-steps" transform="translate(20, 435)">
+    <!-- 5 Botoes para selecionar a sequencia verbatim -->
+    <!-- Button 1 -->
+    <g id="a12p8-btn-step-0" class="a12p8-btn-step a12p8-active a12p8-focus-indicator" transform="translate(0, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 1: Promontório">
+      <rect x="0" y="0" width="155" height="34" rx="6" />
+      <text x="77" y="21" class="a12p8-btn-text">1. Promontório</text>
+    </g>
+
+    <!-- Button 2 -->
+    <g id="a12p8-btn-step-1" class="a12p8-btn-step a12p8-focus-indicator" transform="translate(165, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 2: Linha Arqueada">
+      <rect x="0" y="0" width="155" height="34" rx="6" />
+      <text x="77" y="21" class="a12p8-btn-text">2. Linha Arqueada</text>
+    </g>
+
+    <!-- Button 3 -->
+    <g id="a12p8-btn-step-2" class="a12p8-btn-step a12p8-focus-indicator" transform="translate(330, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 3: Eminência Iliopúbica">
+      <rect x="0" y="0" width="160" height="34" rx="6" />
+      <text x="80" y="21" class="a12p8-btn-text">3. Eminência Iliopúbica</text>
+    </g>
+
+    <!-- Button 4 -->
+    <g id="a12p8-btn-step-3" class="a12p8-btn-step a12p8-focus-indicator" transform="translate(498, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 4: Linha Pectínea">
+      <rect x="0" y="0" width="155" height="34" rx="6" />
+      <text x="77" y="21" class="a12p8-btn-text">4. Linha Pectínea</text>
+    </g>
+
+    <!-- Button 5 -->
+    <g id="a12p8-btn-step-4" class="a12p8-btn-step a12p8-focus-indicator" transform="translate(663, 0)" role="button" tabindex="0" aria-label="Selecionar Marco 5: Sínfise Púbica">
+      <rect x="0" y="0" width="157" height="34" rx="6" />
+      <text x="78" y="21" class="a12p8-btn-text">5. Sínfise Púbica</text>
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL DE LEITURA & INTERPRETAÇÃO CLÍNICA ==================== -->
+  <g id="a12p8-group-card" transform="translate(20, 482)">
+    <rect class="a12p8-card-bg" x="0" y="0" width="820" height="128" />
+
+    <!-- Titulo do Marco Selecionado e Tag de Posicao -->
+    <text id="a12p8-card-title" class="a12p8-card-title" x="20" y="28">1. PROMONTÓRIO SACRAL (MARCO ANTEROPOSTERIOR INICIAL)</text>
+    <text id="a12p8-card-tag" class="a12p8-card-tag" x="800" y="28" text-anchor="end">MARCO 1 DE 5 · PERCURSO ANATÔMICO VERBATIM</text>
+
+    <line x1="20" y1="38" x2="800" y2="38" stroke="var(--a12p8-border)" stroke-width="1" />
+
+    <!-- Descrição Anatômica -->
+    <text x="20" y="58" class="a12p8-card-body" font-weight="700" fill="var(--a12-ouro, #F3BE5B)">Descrição Anatômica:</text>
+    <text id="a12p8-card-desc" x="160" y="58" class="a12p8-card-body">Projeção anterior da margem superior do corpo da 1ª vértebra sacral (S1). Representa o ponto mais posterior da linha terminal e a âncora posterior da pelve verdadeira.</text>
+
+    <!-- Relevância Obstétrica / Função Didática -->
+    <text x="20" y="84" class="a12p8-card-body" font-weight="700" fill="var(--a12-verde, #55B889)">Importância Obstétrica:</text>
+    <text id="a12p8-card-relevancia" x="160" y="84" class="a12p8-card-body">Ponto fixo posterior para mensuração do Diâmetro Conjugado Obstétrico (do promontório à face posterior da sínfise púbica, mínimo normal ~10,5 cm).</text>
+
+    <!-- Regra de Transição / Resumo de Conclusão -->
+    <text x="20" y="110" class="a12p8-card-body" font-weight="700" fill="var(--a12-pelve-maior, #7FA6D8)">Regra de Divisão:</text>
+    <text id="a12p8-card-regra" x="160" y="110" class="a12p8-card-body">Qualquer estrutura ACIMA deste nível está na Pelve Maior (vísceras abdominais). ABAIXO começa o Canal de Parto (Pelve Menor).</text>
+  </g>
+
+  <!-- Engine Interativo Self-Contained em CDATA -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      'use strict';
+
+      // Dados determinísticos dos 5 marcos anatômicos
+      var marcos = [
+        {
+          id: 0,
+          title: "1. PROMONTÓRIO SACRAL (MARCO POSTERIOR INICIAL)",
+          desc: "Projeção anterior da margem superior da 1ª vértebra sacral (S1). Âncora posterior da linha inominada.",
+          relevancia: "Ponto fixo posterior para medida do Diâmetro Conjugado Obstétrico (mínimo normal ~10,5 cm).",
+          regra: "Ponto divisor posterior: Estruturas acima pertencem à cavidade abdominal / pelve falsa.",
+          sag: { x: 335, y: 105 },
+          sup: { x: 202, y: 65 }
+        },
+        {
+          id: 1,
+          title: "2. LINHA ARQUEADA DO ÍLIO (SEGMENTO LATERAL)",
+          desc: "Crista óssea curva e suave na superfície medial do ílio, estendendo-se inferior e anterior ao sacro.",
+          relevancia: "Constitui a parede lateral do estreito superior pélvico. Guia a passagem da apresentação fetal.",
+          regra: "Separa a fossa ilíaca (pelve maior, superior) da parede pélvica lateral (pelve menor, inferior).",
+          sag: { x: 278.7, y: 143.7 },
+          sup: { x: 270, y: 115 }
+        },
+        {
+          id: 2,
+          title: "3. EMINÊNCIA ILIOPÚBICA (PONTO DE INFLEXÃO ANTEROLATERAL)",
+          desc: "Elevação óssea localizada na zona de fusão entre o ílio e o púbis, correspondendo à margem acetabular.",
+          relevancia: "Marca a inflexão de curvatura do anel pélvico no estreito superior.",
+          regra: "Ponto de ancoragem anterior médio no plano do estreito superior pélvico.",
+          sag: { x: 222.5, y: 182.5 },
+          sup: { x: 268, y: 178 }
+        },
+        {
+          id: 3,
+          title: "4. LINHA PECTÍNEA / PÉCTEN DO PÚBIS (SEGMENTO ANTERIOR)",
+          desc: "Crista afiada na margem superior do ramo superior do osso púbico.",
+          relevancia: "Inserção do ligamento pectíneo (Cooper) e marco anatômico para herniorrafias pélvicas.",
+          regra: "Continuação anterior imediata da linha arqueada até a sínfise púbica.",
+          sag: { x: 166.2, y: 221.2 },
+          sup: { x: 232, y: 235 }
+        },
+        {
+          id: 4,
+          title: "5. BORDA SUPERIOR DA SÍNFISE PÚBICA (MARCO ANTERIOR FINAL)",
+          desc: "Margem superior da articulação fibrocartilaginosa pubiana na linha média anterior.",
+          relevancia: "Encerra o contorno da linha terminal. Limite anterior do diâmetro conjugado verdadeiro (11,0 cm).",
+          regra: "Ponto divisor anterior: Abaixo deste marco inicia-se diretamente o Canal de Parto.",
+          sag: { x: 110, y: 260 },
+          sup: { x: 202, y: 263 }
+        }
+      ];
+
+      var currentIdx = 0;
+
+      function updateScene(idx) {
+        if (idx < 0 || idx >= marcos.length) return;
+        currentIdx = idx;
+        var data = marcos[idx];
+
+        // 1. Atualizar posição dos cursores nos dois painéis
+        var curSag = document.getElementById('a12p8-cursor-sagittal-group');
+        var curSup = document.getElementById('a12p8-cursor-superior-group');
+        if (curSag) curSag.setAttribute('transform', 'translate(' + data.sag.x + ', ' + data.sag.y + ')');
+        if (curSup) curSup.setAttribute('transform', 'translate(' + data.sup.x + ', ' + data.sup.y + ')');
+
+        // 2. Atualizar feixe de sincronização entre painéis
+        var syncBeam = document.getElementById('a12p8-sync-beam-line');
+        if (syncBeam) {
+          // Coordenadas absolutas adicionando o offset do painel sagital (20) e superior (435)
+          syncBeam.setAttribute('x1', data.sag.x + 20);
+          syncBeam.setAttribute('y1', data.sag.y + 75);
+          syncBeam.setAttribute('x2', data.sup.x + 435);
+          syncBeam.setAttribute('y2', data.sup.y + 75);
+        }
+
+        // 3. Atualizar estados ativos nos botões de passo
+        for (var i = 0; i < 5; i++) {
+          var btn = document.getElementById('a12p8-btn-step-' + i);
+          var sagPt = document.getElementById('a12p8-sag-pt-' + i);
+          var supPt = document.getElementById('a12p8-sup-pt-' + i);
+
+          if (btn) {
+            if (i === idx) {
+              btn.classList.add('a12p8-active');
+              btn.setAttribute('aria-selected', 'true');
+            } else {
+              btn.classList.remove('a12p8-active');
+              btn.setAttribute('aria-selected', 'false');
+            }
+          }
+
+          if (sagPt) {
+            if (i === idx) sagPt.classList.add('a12p8-active');
+            else sagPt.classList.remove('a12p8-active');
+          }
+
+          if (supPt) {
+            if (i === idx) supPt.classList.add('a12p8-active');
+            else supPt.classList.remove('a12p8-active');
+          }
+        }
+
+        // 4. Atualizar os textos do painel de leitura
+        var titleEl = document.getElementById('a12p8-card-title');
+        var descEl = document.getElementById('a12p8-card-desc');
+        var relEl = document.getElementById('a12p8-card-relevancia');
+        var regEl = document.getElementById('a12p8-card-regra');
+        var tagEl = document.getElementById('a12p8-card-tag');
+
+        if (titleEl) titleEl.textContent = data.title;
+        if (descEl) descEl.textContent = data.desc;
+        if (relEl) relEl.textContent = data.relevancia;
+        if (regEl) regEl.textContent = data.regra;
+        if (tagEl) tagEl.textContent = 'MARCO ' + (idx + 1) + ' DE 5 · PERCURSO ANATÔMICO VERBATIM';
+      }
+
+      // Handler para clique e teclado
+      function setupListeners() {
+        for (var i = 0; i < 5; i++) {
+          (function(index) {
+            var btn = document.getElementById('a12p8-btn-step-' + index);
+            var sagPt = document.getElementById('a12p8-sag-pt-' + index);
+            var supPt = document.getElementById('a12p8-sup-pt-' + index);
+
+            var handler = function(e) {
+              if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+              e.preventDefault();
+              updateScene(index);
+            };
+
+            if (btn) {
+              btn.addEventListener('click', handler);
+              btn.addEventListener('keydown', handler);
+            }
+            if (sagPt) {
+              sagPt.addEventListener('click', handler);
+              sagPt.addEventListener('keydown', handler);
+            }
+            if (supPt) {
+              supPt.addEventListener('click', handler);
+              supPt.addEventListener('keydown', handler);
+            }
+          })(i);
+        }
+
+        // Navegação global por setas do teclado (Esquerda/Direita)
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            var next = (currentIdx + 1) % 5;
+            updateScene(next);
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            var prev = (currentIdx - 1 + 5) % 5;
+            updateScene(prev);
+          }
+        });
+      }
+
+      // Inicialização
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setupListeners();
+          updateScene(0);
+        });
+      } else {
+        setupListeners();
+        updateScene(0);
+      }
+    })();
+    ]]>
+  </script>
+</svg>
+<figcaption>A linha terminal (linha inominada) — painel duplo: corte sagital à esquerda e vista superior à direita, mostrando a fronteira entre pelve maior (falsa) e pelve menor (verdadeira / canal de parto).</figcaption>
+</figure>
+
+<div class="a12-table-wrap">
+<table class="a12-cmp-table">
+<caption>Tabela comparativa — as duas pelves</caption>
+<thead><tr><th></th><th>PELVE MAIOR (falsa)</th><th>PELVE MENOR (verdadeira, obstétrica)</th></tr></thead>
+<tbody>
+<tr><th scope="row">posição</th><td>acima da linha terminal</td><td>abaixo da linha terminal</td></tr>
+<tr><th scope="row">limites</th><td>asas do ílio (lados) · corpo de L5 (atrás) · <strong>sem osso na frente</strong></td><td>estreito superior (teto) · estreito inferior (chão)</td></tr>
+<tr><th scope="row">o que contém</th><td>alças de delgado, ceco, sigmoide · útero gravídico no fim da gestação</td><td>bexiga, uretra, reto, vagina, útero, ovários</td></tr>
+<tr><th scope="row">natureza</th><td>na prática, porção inferior da cavidade abdominal</td><td>o <strong>canal de parto</strong></td></tr>
+<tr><th scope="row">importância obstétrica</th><td>apoia o útero antes do trabalho de parto</td><td><strong>decide a passagem</strong> — todos os diâmetros são dela</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="a12-callout a12-callout--error">
+<h3 class="a12-callout__title">Erro comum desmontado</h3>
+<p><strong>O erro:</strong> "pelve falsa é uma região sem importância, dá para pular." <strong>A desmontagem:</strong> ela tem conteúdo, tem limites e abriga o útero gravídico no terceiro trimestre. O que ela <strong>não</strong> tem é participação no trajeto do parto — e é só isso que "falsa" quer dizer. Descartá-la inteira é perder a referência do que <strong>não</strong> entra na conta dos diâmetros, e é justamente essa distinção que a banca cobra quando pergunta qual pelve tem importância obstétrica.</p>
+</div>
+
+<section class="quiz" data-quiz-id="a12-p08" aria-labelledby="quiz-p08-title">
+<h2 id="quiz-p08-title">Quiz — fixação</h2>
+<ol class="quiz__questions" style="list-style:none;padding:0;margin:0">
+<li class="quiz__q" data-q="1"><p class="quiz__stem">A estrutura que separa a pelve maior da pelve menor é:</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>o diafragma pélvico.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>a linha terminal, que vai do promontório sacral à borda superior da sínfise púbica.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>o plano das espinhas isquiáticas.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>o estreito inferior.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why">A fronteira entre as duas pelves é <strong class="term">óssea e contínua</strong>: promontório → linha arqueada do ílio → eminência iliopúbica → linha pectínea → borda superior da sínfise. É a mesma borda que define o <strong class="term">estreito superior</strong>, e essa coincidência não é acidente — a entrada do canal de parto <strong class="term">é</strong> a fronteira entre as duas pelves.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">é muscular e está bem mais abaixo: o diafragma pélvico é o chão da pelve menor, e usá-lo como divisor colocaria bexiga, útero e reto do lado de fora da pelve menor, o que é absurdo.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">é o plano do <strong class="term">meio</strong> do canal, referência da descida fetal, e não a entrada.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">é a <strong class="term">saída</strong> do canal — o aro de baixo —, e não pode separar o que está acima do que está abaixo da entrada. <strong>Por que cair na (C):</strong> o plano das espinhas é a referência mais repetida da obstetrícia, e o reflexo é oferecê-lo para qualquer pergunta de nível pélvico. A régua: <strong class="term">entrada = linha terminal · meio = espinhas · saída = estreito inferior.</strong> São três níveis distintos, e cada um responde a uma pergunta diferente.</span></li></ul></div></li>
+<li class="quiz__q" data-q="2"><p class="quiz__stem">Por que a pelve maior é chamada de "falsa" e considerada de pouca relevância obstétrica?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>porque não contém nenhuma víscera.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">B</span><span>porque não é delimitada por osso em nenhum ponto.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">C</span><span>porque não faz parte do trajeto atravessado pelo feto — o canal de parto é a pelve menor.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>porque só existe em mulheres nulíparas, obliterando-se após a primeira gestação.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito C.</b> <span class="why">"Falsa" descreve <strong class="term">função no parto</strong>, não existência. Ela é ampla, tem limites definidos e abriga vísceras — mas o feto não passa por ela, e <strong class="term">todos os diâmetros que decidem a passagem pertencem à pelve menor</strong>. É por isso que o adjetivo sem par vira ruído: sozinha, a palavra sugere inexistência; ao lado de "verdadeira", ela vira uma informação obstétrica precisa.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">é factualmente falsa: contém alças de delgado, ceco e sigmoide, e recebe o útero gravídico no fim da gestação.</span></li><li class="is-wrong"><b>(B)</b> <span class="why">é falsa por exagero — ela <strong class="term">não tem osso na frente</strong>, e só ali; nas laterais é limitada pelas asas do ílio e atrás pelo corpo de L5.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">é invenção sem qualquer base anatômica. <strong>Por que cair na (A):</strong> a alternativa parece justificar o adjetivo "falsa" com elegância — se está vazia, é falsa. Mas ela está cheia, e de vísceras <strong class="term">abdominais</strong>; o que a exclui do assunto obstétrico é a <strong class="term">rota do feto</strong>, não o conteúdo.</span></li></ul></div></li>
+</ol></section>
+
+<div class="a12-resumo">
+<h2 class="a12-resumo__title">Resumo operacional</h2>
+<p> A <strong class="term">linha terminal</strong> (ou inominada) separa as duas pelves: promontório → linha arqueada do ílio → eminência iliopúbica → linha pectínea → borda superior da sínfise. <strong>Acima</strong>: pelve <strong class="term">maior/falsa</strong> — asas do ílio, L5 atrás, sem osso na frente; contém vísceras abdominais e recebe o útero gravídico. <strong>Abaixo</strong>: pelve <strong class="term">menor/verdadeira/obstétrica</strong> — entre o estreito superior e o inferior; contém bexiga, uretra, reto, vagina, útero e ovários. <strong class="term">A pelve menor é o canal de parto</strong>, e todo diâmetro que decide a passagem é dela. Falsa <strong>não</strong> quer dizer inexistente: quer dizer que <strong>não é por ali que o feto passa</strong>.</p>
+</div>
+</article>
+
+    <!-- ▲▲▲ FIM DO SEU CONTEÚDO ▲▲▲ -->
+
+  </div></main>
+  <footer class="site-footer"><div class="container"><span>Anatomia da pelve feminina (parte 1) · Aula 12 — conteúdo educacional para residência.</span><span>8 / 22</span></div></footer>
+  <script src="../../assets/js/pwa-bootstrap.js" defer></script>
+  <script src="../../assets/js/app-a12.js" defer></script>
+  <script src="../../assets/js/quiz-a12.js" defer></script>
+  <script src="../../assets/js/aula-12.js" defer></script>
+</body>
+</html>
+
+<!-- Padrão de UM item do menu, para montar <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8" aria-current="page"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li> (22 deles):
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>Título curto</span></a></li>
+     O primeiro aponta para index.html com data-page-id="p1".
+-->

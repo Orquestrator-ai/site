@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" class="fm1p2-root" id="fm1p2-svg-root">
+  <defs>
+    <style type="text/css">
+      <![CDATA[
+      /* BASE TOKENS AND RESPONSIVE THEMING (Strictly local, no :root, no prefers-color-scheme) */
+      .fm1p2-root {
+        --fm1p2-bg: #0b1329;
+        --fm1p2-card-bg: #15203b;
+        --fm1p2-card-border: #26365a;
+        --fm1p2-card-header: #1e2d4f;
+        --fm1p2-text-main: #f8fafc;
+        --fm1p2-text-muted: #94a3b8;
+        --fm1p2-text-dim: #64748b;
+        
+        --fm1p2-coral: #ff6b6b;
+        --fm1p2-coral-bg: rgba(255, 107, 107, 0.15);
+        --fm1p2-coral-border: rgba(255, 107, 107, 0.4);
+        
+        --fm1p2-teal: #10b981;
+        --fm1p2-teal-bg: rgba(16, 185, 129, 0.15);
+        --fm1p2-teal-border: rgba(16, 185, 129, 0.4);
+        
+        --fm1p2-gold: #f59e0b;
+        --fm1p2-gold-bg: rgba(245, 158, 11, 0.15);
+        --fm1p2-gold-border: rgba(245, 158, 11, 0.4);
+        
+        --fm1p2-indigo: #6366f1;
+        --fm1p2-indigo-bg: rgba(99, 102, 241, 0.15);
+
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--fm1p2-bg, #0b1329);
+        color: var(--fm1p2-text-main, #f8fafc);
+        user-select: none;
+      }
+
+      [data-theme="light"] .fm1p2-root,
+      .fm1p2-root[data-theme="light"] {
+        --fm1p2-bg: #f1f5f9;
+        --fm1p2-card-bg: #ffffff;
+        --fm1p2-card-border: #cbd5e1;
+        --fm1p2-card-header: #e2e8f0;
+        --fm1p2-text-main: #0f172a;
+        --fm1p2-text-muted: #475569;
+        --fm1p2-text-dim: #94a3b8;
+        
+        --fm1p2-coral: #dc2626;
+        --fm1p2-coral-bg: rgba(220, 38, 38, 0.1);
+        --fm1p2-coral-border: rgba(220, 38, 38, 0.4);
+        
+        --fm1p2-teal: #059669;
+        --fm1p2-teal-bg: rgba(5, 150, 105, 0.1);
+        --fm1p2-teal-border: rgba(5, 150, 105, 0.4);
+        
+        --fm1p2-gold: #d97706;
+        --fm1p2-gold-bg: rgba(217, 119, 6, 0.1);
+        --fm1p2-gold-border: rgba(217, 119, 6, 0.4);
+        
+        --fm1p2-indigo: #4f46e5;
+        --fm1p2-indigo-bg: rgba(79, 70, 229, 0.1);
+      }
+
+      /* SCOPED CLASS STYLES */
+      .fm1p2-card {
+        fill: var(--fm1p2-card-bg, #15203b);
+        stroke: var(--fm1p2-card-border, #26365a);
+        stroke-width: 1.5;
+        rx: 12px;
+      }
+
+      .fm1p2-card-head {
+        fill: var(--fm1p2-card-header, #1e2d4f);
+        stroke: var(--fm1p2-card-border, #26365a);
+        stroke-width: 1;
+      }
+
+      .fm1p2-title {
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        fill: var(--fm1p2-text-main, #f8fafc);
+      }
+
+      .fm1p2-subtitle {
+        font-size: 12.5px;
+        font-weight: 500;
+        fill: var(--fm1p2-text-muted, #94a3b8);
+      }
+
+      .fm1p2-badge-gold {
+        fill: var(--fm1p2-gold-bg, rgba(245, 158, 11, 0.15));
+        stroke: var(--fm1p2-gold-border, rgba(245, 158, 11, 0.4));
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      .fm1p2-badge-gold-text {
+        fill: var(--fm1p2-gold, #f59e0b);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+      }
+
+      .fm1p2-badge-coral {
+        fill: var(--fm1p2-coral-bg, rgba(255, 107, 107, 0.15));
+        stroke: var(--fm1p2-coral-border, rgba(255, 107, 107, 0.4));
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      .fm1p2-badge-coral-text {
+        fill: var(--fm1p2-coral, #ff6b6b);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .fm1p2-badge-teal {
+        fill: var(--fm1p2-teal-bg, rgba(16, 185, 129, 0.15));
+        stroke: var(--fm1p2-teal-border, rgba(16, 185, 129, 0.4));
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      .fm1p2-badge-teal-text {
+        fill: var(--fm1p2-teal, #10b981);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      /* INTERACTIVE ELEMENTS */
+      .fm1p2-clickable {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .fm1p2-clickable:hover {
+        filter: brightness(1.15);
+      }
+
+      .fm1p2-interactive {
+        transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+      }
+
+      .fm1p2-interactive.fm1p2-active {
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+      }
+
+      .fm1p2-zone-ring {
+        fill: none;
+        stroke: var(--fm1p2-coral, #ff6b6b);
+        stroke-width: 2;
+        stroke-dasharray: 4 3;
+      }
+
+      .fm1p2-zone-glow {
+        fill: var(--fm1p2-coral, #ff6b6b);
+        opacity: 0.25;
+        transition: opacity 0.2s ease;
+      }
+
+      .fm1p2-interactive.fm1p2-active .fm1p2-zone-glow {
+        opacity: 0.55;
+      }
+
+      .fm1p2-chip-rect {
+        fill: var(--fm1p2-teal-bg, rgba(16, 185, 129, 0.15));
+        stroke: var(--fm1p2-teal-border, rgba(16, 185, 129, 0.4));
+        stroke-width: 1.5;
+        rx: 8px;
+        transition: all 0.2s ease;
+      }
+
+      .fm1p2-interactive.fm1p2-active .fm1p2-chip-rect {
+        fill: var(--fm1p2-teal, #10b981);
+        stroke: var(--fm1p2-text-main, #f8fafc);
+      }
+
+      .fm1p2-interactive.fm1p2-active .fm1p2-chip-text {
+        fill: #ffffff;
+        font-weight: 800;
+      }
+
+      .fm1p2-chip-text {
+        fill: var(--fm1p2-teal, #10b981);
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .fm1p2-btn-tab {
+        fill: var(--fm1p2-card-header, #1e2d4f);
+        stroke: var(--fm1p2-card-border, #26365a);
+        stroke-width: 1;
+        rx: 6px;
+        cursor: pointer;
+      }
+
+      .fm1p2-btn-tab.fm1p2-tab-active {
+        fill: var(--fm1p2-indigo, #6366f1);
+        stroke: var(--fm1p2-text-main, #f8fafc);
+      }
+
+      .fm1p2-btn-tab-text {
+        fill: var(--fm1p2-text-muted, #94a3b8);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .fm1p2-btn-tab.fm1p2-tab-active .fm1p2-btn-tab-text {
+        fill: #ffffff;
+      }
+
+      .fm1p2-table-border {
+        stroke: var(--fm1p2-card-border, #26365a);
+        stroke-width: 1;
+      }
+
+      .fm1p2-table-header {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--fm1p2-text-main, #f8fafc);
+      }
+
+      .fm1p2-table-cell {
+        font-size: 11px;
+        fill: var(--fm1p2-text-muted, #94a3b8);
+      }
+
+      .fm1p2-table-cell-highlight {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--fm1p2-coral, #ff6b6b);
+      }
+
+      .fm1p2-table-cell-teal {
+        font-size: 11px;
+        font-weight: 700;
+        fill: var(--fm1p2-teal, #10b981);
+      }
+      ]]>
+    </style>
+
+    <!-- Filter Glow Effects -->
+    <filter id="fm1p2-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm1p2-glow-teal" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND BASE CONTAINER -->
+  <rect width="1000" height="680" fill="var(--fm1p2-bg, #0b1329)" rx="16" />
+
+  <!-- HEADER BAR (Title and Diagnostic Interpretation Legend) -->
+  <g transform="translate(20, 16)">
+    <rect width="960" height="74" class="fm1p2-card" />
+    <!-- Top Category / Context Badge -->
+    <rect x="16" y="12" width="220" height="20" class="fm1p2-badge-gold" />
+    <text x="26" y="26" class="fm1p2-badge-gold-text">CASO-ÂNCORA · MIOPATIA × ICC</text>
+    
+    <!-- Title -->
+    <text x="248" y="27" class="fm1p2-title">TRÊS ZONAS DE FRAQUEZA PROXIMAL/AXIAL + CHIPS 'SEM CONGESTÃO'</text>
+    
+    <!-- Interpretation Subtitle / Legend -->
+    <text x="16" y="55" class="fm1p2-subtitle">
+      <tspan font-weight="700" fill="var(--fm1p2-coral, #ff6b6b)">Achado Crítico:</tspan> Cansaço com fraqueza cérvico-axial e proximal (MS/MI) + pulmões limpos e jugular plana <tspan font-weight="700" fill="var(--fm1p2-teal, #10b981)">DESCARTA ICC</tspan> e <tspan font-weight="700" fill="var(--fm1p2-coral, #ff6b6b)">CONFIRMA PADRÃO MIOPÁTICO</tspan>.
+    </text>
+  </g>
+
+  <!-- LEFT PANEL: SILHOUETTE AND 3 WEAKNESS ZONES (x: 20, y: 102, w: 320, h: 560) -->
+  <g transform="translate(20, 102)" id="fm1p2-group-left">
+    <rect width="320" height="560" class="fm1p2-card" />
+    <rect width="320" height="38" class="fm1p2-card-head" rx="12" />
+    <!-- Header Title -->
+    <text x="14" y="24" font-size="13" font-weight="800" fill="var(--fm1p2-text-main, #f8fafc)">1. ZONAS DE FRAQUEZA (CORAL)</text>
+    <text x="220" y="24" font-size="11" font-weight="600" fill="var(--fm1p2-coral, #ff6b6b)">SIMÉTRICAS</text>
+
+    <!-- Stylized Anatomic Body Silhouette -->
+    <g transform="translate(90, 50)" id="fm1p2-body-silhouette">
+      <!-- Head and Neck -->
+      <path d="M 70 20 C 55 20 50 35 50 48 C 50 60 55 70 65 72 L 65 85 L 75 85 L 75 72 C 85 70 90 60 90 48 C 90 35 85 20 70 20 Z" fill="#2a3b61" stroke="var(--fm1p2-card-border, #26365a)" stroke-width="1.5"/>
+      
+      <!-- Torso and Arms -->
+      <path d="M 65 85 C 45 88 20 100 12 125 C 8 135 15 175 18 200 C 20 208 26 210 30 202 C 34 190 40 150 44 140 L 44 240 L 96 240 L 96 140 C 100 150 106 190 110 202 C 114 210 120 208 122 200 C 125 175 132 135 128 125 C 120 100 95 88 75 85 Z" fill="#2a3b61" stroke="var(--fm1p2-card-border, #26365a)" stroke-width="1.5"/>
+      
+      <!-- Pelvis and Legs -->
+      <path d="M 44 240 L 38 330 C 36 360 35 410 45 420 C 52 425 58 425 60 415 L 67 310 L 73 310 L 80 415 C 82 425 88 425 95 420 C 105 410 104 360 102 330 L 96 240 Z" fill="#2a3b61" stroke="var(--fm1p2-card-border, #26365a)" stroke-width="1.5"/>
+
+      <!-- ZONE 1: CERVICAL AXIAL (Pescoço) Glow and Targets -->
+      <g id="fm1p2-item-zone-cervical" class="fm1p2-interactive fm1p2-clickable" role="button" tabindex="0" aria-label="Zona 1: Axial Cervical" onclick="fm1p2Select('zone-cervical')" onkeydown="if(event.key==='Enter'||event.key===' ')fm1p2Select('zone-cervical')">
+        <ellipse cx="70" cy="78" rx="22" ry="12" class="fm1p2-zone-glow" filter="url(#fm1p2-glow-coral)" />
+        <ellipse cx="70" cy="78" rx="20" ry="10" class="fm1p2-zone-ring" />
+        <circle cx="70" cy="78" r="4" fill="var(--fm1p2-coral, #ff6b6b)" />
+        <!-- Line pointer -->
+        <path d="M 88 78 L 130 78" stroke="var(--fm1p2-coral, #ff6b6b)" stroke-width="1.5" stroke-dasharray="2 2"/>
+        <rect x="125" y="63" width="95" height="28" rx="6" fill="var(--fm1p2-card-bg, #15203b)" stroke="var(--fm1p2-coral, #ff6b6b)" stroke-width="1.5"/>
+        <text x="172" y="80" font-size="10" font-weight="800" fill="var(--fm1p2-coral, #ff6b6b)" text-anchor="middle">1. AXIAL CERVICAL</text>
+      </g>
+
+      <!-- ZONE 2: PROXIMAL MS (Cintura Escapular) Glow and Targets -->
+      <g id="fm1p2-item-zone-escapular" class="fm1p2-interactive fm1p2-clickable" role="button" tabindex="0" aria-label="Zona 2: Proximal MS Escapular" onclick="fm1p2Select('zone-escapular')" onkeydown="if(event.key==='Enter'||event.key===' ')fm1p2Select('zone-escapular')">
+        <ellipse cx="70" cy="115" rx="46" ry="18" class="fm1p2-zone-glow" filter="url(#fm1p2-glow-coral)" />
+        <ellipse cx="70" cy="115" rx="42" ry="15" class="fm1p2-zone-ring" />
+        <circle cx="35" cy="115" r="4" fill="var(--fm1p2-coral, #ff6b6b)" />
+        <circle cx="105" cy="115" r="4" fill="var(--fm1p2-coral, #ff6b6b)" />
+        <!-- Line pointer -->
+        <path d="M 28 115 L -45 115" stroke="var(--fm1p2-coral, #ff6b6b)" stroke-width="1.5" stroke-dasharray="2 2"/>
+        <rect x="-85" y="100" width="95" height="28" rx="6" fill="var(--fm1p2-card-bg, #15203b)" stroke="var(--fm1p2-coral, #ff6b6b)" stroke-width="1.5"/>
+        <text x="-37" y="117" font-size="10" font-weight="800" fill="var(--fm1p2-coral, #ff6b6b)" text-anchor="middle">2. PROXIMAL MS</text>
+      </g>
+
+      <!-- ZONE 3: PROXIMAL MI (Cintura Pélvica) Glow and Targets -->
+      <g id="fm1p2-item-zone-pelvica" class="fm1p2-interactive fm1p2-clickable" role="button" tabindex="0" aria-label="Zona 3: Proximal MI Pélvica" onclick="fm1p2Select('zone-pelvica')" onkeydown="if(event.key==='Enter'||event.key===' ')fm1p2Select('zone-pelvica')">
+        <ellipse cx="70" cy="270" rx="36" ry="30" class="fm1p2-zone-glow" filter="url(#fm1p2-glow-coral)" />
+        <ellipse cx="70" cy="270" rx="32" ry="26" class="fm1p2-zone-ring" />
+        <circle cx="52" cy="270" r="4" fill="var(--fm1p2-coral, #ff6b6b)" />
+        <circle cx="88" cy="270" r="4" fill="var(--fm1p2-coral, #ff6b6b)" />
+        <!-- Line pointer -->
+        <path d="M 102 270 L 130 270" stroke="var(--fm1p2-coral, #ff6b6b)" stroke-width="1.5" stroke-dasharray="2 2"/>
+        <rect x="125" y="255" width="95" height="28" rx="6" fill="var(--fm1p2-card-bg, #15203b)" stroke="var(--fm1p2-coral, #ff6b6b)" stroke-width="1.5"/>
+        <text x="172" y="272" font-size="10" font-weight="800" fill="var(--fm1p2-coral, #ff6b6b)" text-anchor="middle">3. PROXIMAL MI</text>
+      </g>
+    </g> <!-- end body silhouette -->
+
+    <!-- Quick Selector Buttons for Weakness Zones -->
+    <g transform="translate(14, 492)">
+      <text x="0" y="-8" font-size="11" font-weight="700" fill="var(--fm1p2-text-muted, #94a3b8)">CLIQUE PARA INSPECIONAR A ZONA:</text>
+      
+      <rect x="0" y="0" width="92" height="30" class="fm1p2-clickable" rx="6" fill="var(--fm1p2-coral-bg, rgba(255, 107, 107, 0.15))" stroke="var(--fm1p2-coral-border, rgba(255, 107, 107, 0.4))" stroke-width="1" onclick="fm1p2Select('zone-cervical')" />
+      <text x="46" y="19" font-size="10" font-weight="700" fill="var(--fm1p2-coral, #ff6b6b)" text-anchor="middle" pointer-events="none">PESCOÇO</text>
+
+      <rect x="100" y="0" width="92" height="30" class="fm1p2-clickable" rx="6" fill="var(--fm1p2-coral-bg, rgba(255, 107, 107, 0.15))" stroke="var(--fm1p2-coral-border, rgba(255, 107, 107, 0.4))" stroke-width="1" onclick="fm1p2Select('zone-escapular')" />
+      <text x="146" y="19" font-size="10" font-weight="700" fill="var(--fm1p2-coral, #ff6b6b)" text-anchor="middle" pointer-events="none">OMBROS (MS)</text>
+
+      <rect x="200" y="0" width="92" height="30" class="fm1p2-clickable" rx="6" fill="var(--fm1p2-coral-bg, rgba(255, 107, 107, 0.15))" stroke="var(--fm1p2-coral-border, rgba(255, 107, 107, 0.4))" stroke-width="1" onclick="fm1p2Select('zone-pelvica')" />
+      <text x="246" y="19" font-size="10" font-weight="700" fill="var(--fm1p2-coral, #ff6b6b)" text-anchor="middle" pointer-events="none">ESCADA (MI)</text>
+    </g>
+  </g>
+
+  <!-- CENTER PANEL: CHIPS 'SEM CONGESTÃO' AND ISCA CARDÍACA (x: 355, y: 102, w: 290, h: 560) -->
+  <g transform="translate(355, 102)" id="fm1p2-group-center">
+    <rect width="290" height="560" class="fm1p2-card" />
+    <rect width="290" height="38" class="fm1p2-card-head" rx="12" />
+    <text x="14" y="24" font-size="13" font-weight="800" fill="var(--fm1p2-text-main, #f8fafc)">2. SINAIS 'SEM CONGESTÃO' (TEAL)</text>
+
+    <!-- Visual Cardiopulmonary Schema -->
+    <g transform="translate(15, 52)">
+      <!-- Cardiopulmonary Container Box -->
+      <rect width="260" height="180" rx="10" fill="var(--fm1p2-bg, #0b1329)" stroke="var(--fm1p2-card-border, #26365a)" stroke-width="1" />
+      
+      <!-- Lungs Graphic (Clean) -->
+      <g transform="translate(35, 20)">
+        <!-- Left Lung -->
+        <path d="M 40 15 C 25 15 15 35 15 65 C 15 85 25 95 40 95 C 45 95 45 15 40 15 Z" fill="none" stroke="var(--fm1p2-teal, #10b981)" stroke-width="2"/>
+        <!-- Right Lung -->
+        <path d="M 60 15 C 75 15 85 35 85 65 C 85 85 75 95 60 95 C 55 95 55 15 60 15 Z" fill="none" stroke="var(--fm1p2-teal, #10b981)" stroke-width="2"/>
+        <!-- Airway Tree -->
+        <path d="M 50 10 L 50 35 M 50 35 L 35 50 M 50 35 L 65 50" stroke="var(--fm1p2-teal, #10b981)" stroke-width="2" stroke-linecap="round"/>
+        <!-- "Clean" sparkles -->
+        <text x="50" y="70" font-size="9" font-weight="700" fill="var(--fm1p2-teal, #10b981)" text-anchor="middle">MV UNIFORME</text>
+        <text x="50" y="82" font-size="8" fill="var(--fm1p2-text-muted, #94a3b8)" text-anchor="middle">SEM CREPITANTES</text>
+      </g>
+
+      <!-- Heart Graphic (Normal rhythm) -->
+      <g transform="translate(150, 25)">
+        <path d="M 40 25 C 40 15 25 10 15 25 C 5 40 20 55 40 70 C 60 55 75 40 65 25 C 55 10 40 15 40 25 Z" fill="none" stroke="var(--fm1p2-teal, #10b981)" stroke-width="2"/>
+        <path d="M 10 45 L 25 45 L 30 35 L 35 55 L 42 28 L 48 48 L 53 45 L 70 45" fill="none" stroke="var(--fm1p2-teal, #10b981)" stroke-width="1.5"/>
+        <text x="40" y="84" font-size="8" font-weight="700" fill="var(--fm1p2-teal, #10b981)" text-anchor="middle">SEM B3 / GALOPE</text>
+      </g>
+
+      <text x="130" y="165" font-size="10" font-weight="700" fill="var(--fm1p2-teal, #10b981)" text-anchor="middle">EXAME FÍSICO CARDIOTORÁCICO NORMAL</text>
+    </g> <!-- end cardiopulmonary schema -->
+
+    <!-- THE 4 'NO CONGESTION' CHIPS (Interactive) -->
+    <g transform="translate(15, 248)">
+      <text x="0" y="-8" font-size="11" font-weight="700" fill="var(--fm1p2-text-muted, #94a3b8)">CHIPS DE CONFIRMAÇÃO (CLIQUE):</text>
+
+      <!-- CHIP 1: LUNGS CLEAN -->
+      <g id="fm1p2-item-chip-pulmao" class="fm1p2-interactive fm1p2-clickable" role="button" tabindex="0" aria-label="Chip 1: Pulmões Limpos" onclick="fm1p2Select('chip-pulmao')" onkeydown="if(event.key==='Enter'||event.key===' ')fm1p2Select('chip-pulmao')">
+        <rect x="0" y="0" width="260" height="38" class="fm1p2-chip-rect" />
+        <circle cx="20" cy="19" r="9" fill="var(--fm1p2-teal, #10b981)"/>
+        <text x="20" y="23" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="36" y="17" class="fm1p2-chip-text">PULMÕES LIMPOS / SEM CREPITANTES</text>
+        <text x="36" y="29" font-size="9" fill="var(--fm1p2-text-muted, #94a3b8)">Murmúrio vesicular fisiológico sem estertores</text>
+      </g>
+
+      <!-- CHIP 2: NO JVD -->
+      <g id="fm1p2-item-chip-jugular" class="fm1p2-interactive fm1p2-clickable" transform="translate(0, 46)" role="button" tabindex="0" aria-label="Chip 2: Jugular Plana" onclick="fm1p2Select('chip-jugular')" onkeydown="if(event.key==='Enter'||event.key===' ')fm1p2Select('chip-jugular')">
+        <rect x="0" y="0" width="260" height="38" class="fm1p2-chip-rect" />
+        <circle cx="20" cy="19" r="9" fill="var(--fm1p2-teal, #10b981)"/>
+        <text x="20" y="23" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="36" y="17" class="fm1p2-chip-text">TURGÊNCIA JUGULAR AUSENTE (0/4+)</text>
+        <text x="36" y="29" font-size="9" fill="var(--fm1p2-text-muted, #94a3b8)">Sem turgência jugular patológica a 45°</text>
+      </g>
+
+      <!-- CHIP 3: NO S3 GALLOP -->
+      <g id="fm1p2-item-chip-coracao" class="fm1p2-interactive fm1p2-clickable" transform="translate(0, 92)" role="button" tabindex="0" aria-label="Chip 3: Sem B3" onclick="fm1p2Select('chip-coracao')" onkeydown="if(event.key==='Enter'||event.key===' ')fm1p2Select('chip-coracao')">
+        <rect x="0" y="0" width="260" height="38" class="fm1p2-chip-rect" />
+        <circle cx="20" cy="19" r="9" fill="var(--fm1p2-teal, #10b981)"/>
+        <text x="20" y="23" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="36" y="17" class="fm1p2-chip-text">RITMO CARDÍACO SEM B3 / GALOPE</text>
+        <text x="36" y="29" font-size="9" fill="var(--fm1p2-text-muted, #94a3b8)">B1 e B2 normofonéticas, sem sopro ou B3</text>
+      </g>
+
+      <!-- CHIP 4: NO PERIPHERAL EDEMA -->
+      <g id="fm1p2-item-chip-edema" class="fm1p2-interactive fm1p2-clickable" transform="translate(0, 138)" role="button" tabindex="0" aria-label="Chip 4: Sem Edema" onclick="fm1p2Select('chip-edema')" onkeydown="if(event.key==='Enter'||event.key===' ')fm1p2Select('chip-edema')">
+        <rect x="0" y="0" width="260" height="38" class="fm1p2-chip-rect" />
+        <circle cx="20" cy="19" r="9" fill="var(--fm1p2-teal, #10b981)"/>
+        <text x="20" y="23" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="36" y="17" class="fm1p2-chip-text">MEMBROS INFERIORES SEM EDEMA</text>
+        <text x="36" y="29" font-size="9" fill="var(--fm1p2-text-muted, #94a3b8)">Sinal do cacifo negativo / sem estase venosa</text>
+      </g>
+    </g>
+
+    <!-- ISCA CARDÍACA DESLIGADA PANEL (Gold / Dark Amber) -->
+    <g transform="translate(15, 436)">
+      <rect width="260" height="110" rx="8" fill="var(--fm1p2-gold-bg, rgba(245, 158, 11, 0.15))" stroke="var(--fm1p2-gold-border, rgba(245, 158, 11, 0.4))" stroke-width="1.5" />
+      <rect x="10" y="10" width="130" height="18" rx="4" fill="var(--fm1p2-gold, #f59e0b)" />
+      <text x="75" y="23" font-size="9" font-weight="900" fill="#000000" text-anchor="middle">ISCA DE ICC DESLIGADA</text>
+      
+      <text x="12" y="44" font-size="10" font-weight="700" fill="var(--fm1p2-gold, #f59e0b)">Por que o candidato erra a questão?</text>
+      <text x="12" y="58" font-size="9.5" fill="var(--fm1p2-text-main, #f8fafc)">
+        O aluno lê "cansaço prostrante e dispneia"
+      </text>
+      <text x="12" y="70" font-size="9.5" fill="var(--fm1p2-text-main, #f8fafc)">
+        e prescreve furosemida achando que é ICC.
+      </text>
+      <text x="12" y="86" font-size="9.5" font-weight="700" fill="var(--fm1p2-teal, #10b981)">
+        REGRAS: Sem congestão = Cansaço é Muscular!
+      </text>
+      <text x="12" y="98" font-size="8.5" fill="var(--fm1p2-text-muted, #94a3b8)">
+        Fraqueza do diafragma/intercostais simula dispneia.
+      </text>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: DYNAMIC CLINICAL INTERPRETATION AND COMPARISON TABLE (x: 660, y: 102, w: 320, h: 560) -->
+  <g transform="translate(660, 102)" id="fm1p2-group-right">
+    <rect width="320" height="560" class="fm1p2-card" />
+    <rect width="320" height="38" class="fm1p2-card-head" rx="12" />
+    <text x="14" y="24" font-size="13" font-weight="800" fill="var(--fm1p2-text-main, #f8fafc)">3. PAINEL DE LEITURA E DECISÃO</text>
+
+    <!-- Filter / View Tabs -->
+    <g transform="translate(12, 48)">
+      <rect id="fm1p2-tab-all" class="fm1p2-btn-tab fm1p2-tab-active" x="0" y="0" width="94" height="26" onclick="fm1p2SetTab('all')" />
+      <text x="47" y="17" class="fm1p2-btn-tab-text" text-anchor="middle" pointer-events="none">VER TUDO</text>
+
+      <rect id="fm1p2-tab-weakness" class="fm1p2-btn-tab" x="100" y="0" width="94" height="26" onclick="fm1p2SetTab('weakness')" />
+      <text x="147" y="17" class="fm1p2-btn-tab-text" text-anchor="middle" pointer-events="none">FRAQUEZAS</text>
+
+      <rect id="fm1p2-tab-congestion" class="fm1p2-btn-tab" x="200" y="0" width="94" height="26" onclick="fm1p2SetTab('congestion')" />
+      <text x="247" y="17" class="fm1p2-btn-tab-text" text-anchor="middle" pointer-events="none">SEM CONGESTÃO</text>
+    </g>
+
+    <!-- DYNAMIC DETAIL CARD (Updates on click) -->
+    <g transform="translate(12, 85)" id="fm1p2-detail-box">
+      <rect width="296" height="175" rx="10" fill="var(--fm1p2-bg, #0b1329)" stroke="var(--fm1p2-indigo, #6366f1)" stroke-width="1.5" />
+      
+      <!-- Selected Item Title Banner -->
+      <text id="fm1p2-panel-title" x="14" y="24" font-size="13" font-weight="800" fill="var(--fm1p2-coral, #ff6b6b)">ZONA 1: AXIAL CERVICAL (PESCOÇO)</text>
+      
+      <!-- Sub-description -->
+      <text id="fm1p2-panel-subtitle" x="14" y="40" font-size="10" font-weight="600" fill="var(--fm1p2-text-muted, #94a3b8)">Incapacidade de flexão ventral da cabeça</text>
+      
+      <line x1="14" y1="48" x2="282" y2="48" stroke="var(--fm1p2-card-border, #26365a)" stroke-width="1"/>
+
+      <!-- Clinical Anamnesis / Question -->
+      <text x="14" y="64" font-size="10" font-weight="700" fill="var(--fm1p2-gold, #f59e0b)">COMO O PACIENTE RECLAMA NA PROVA?</text>
+      <text id="fm1p2-panel-clinical" x="14" y="78" font-size="9.5" fill="var(--fm1p2-text-main, #f8fafc)">"Doutor, não consigo levantar a cabeça do travesseiro de manhã."</text>
+
+      <!-- Key Physical Finding -->
+      <text x="14" y="98" font-size="10" font-weight="700" fill="var(--fm1p2-coral, #ff6b6b)">ACHADO CHAVE NO EXAME FÍSICO:</text>
+      <text id="fm1p2-panel-finding" x="14" y="112" font-size="9.5" fill="var(--fm1p2-text-main, #f8fafc)">Fraqueza dos flexores do pescoço (grau 3/5 ou menor).</text>
+
+      <!-- Why it's misdiagnosed as ICC -->
+      <text x="14" y="132" font-size="10" font-weight="700" fill="var(--fm1p2-teal, #10b981)">POR QUE ELIMINA A ISCA DE ICC?</text>
+      <text id="fm1p2-panel-pitfall" x="14" y="146" font-size="9.5" fill="var(--fm1p2-text-main, #f8fafc)">ICC isolada jamais causa queda da cabeça ou paresia cervical.</text>
+      <text id="fm1p2-panel-note" x="14" y="160" font-size="8.5" font-weight="600" fill="var(--fm1p2-text-dim, #64748b)">Comprometimento muscular axial = Padrão Miopático Inflamatório.</text>
+    </g> <!-- end detail box -->
+
+    <!-- COMPARISON TABLE: MIOPATIA VS ICC ISCA -->
+    <g transform="translate(12, 270)">
+      <text x="0" y="-6" font-size="11" font-weight="800" fill="var(--fm1p2-text-main, #f8fafc)">TABELA COMPARATIVA DE RUPTURA DA ISCA:</text>
+
+      <!-- Table Header -->
+      <rect x="0" y="0" width="296" height="22" fill="var(--fm1p2-card-header, #1e2d4f)" rx="4"/>
+      <text x="8" y="15" class="fm1p2-table-header">SINAL / ACHADO</text>
+      <text x="125" y="15" class="fm1p2-table-header" fill="var(--fm1p2-coral, #ff6b6b)">MIOPATIA (REAL)</text>
+      <text x="220" y="15" class="fm1p2-table-header" fill="var(--fm1p2-gold, #f59e0b)">ICC (ISCA)</text>
+
+      <!-- Row 1: Pescoço / Flexão -->
+      <line x1="0" y1="44" x2="296" y2="44" class="fm1p2-table-border"/>
+      <text x="8" y="37" class="fm1p2-table-cell">Levantar cabeça</text>
+      <text x="125" y="37" class="fm1p2-table-cell-highlight">FRACA (Axial)</text>
+      <text x="220" y="37" class="fm1p2-table-cell">Preservado</text>
+
+      <!-- Row 2: Pentear cabelo -->
+      <line x1="0" y1="66" x2="296" y2="66" class="fm1p2-table-border"/>
+      <text x="8" y="59" class="fm1p2-table-cell">Elevar braços</text>
+      <text x="125" y="59" class="fm1p2-table-cell-highlight">DIFÍCIL (MS Prox)</text>
+      <text x="220" y="59" class="fm1p2-table-cell">Normal</text>
+
+      <!-- Row 3: Subir escadas -->
+      <line x1="0" y1="88" x2="296" y2="88" class="fm1p2-table-border"/>
+      <text x="8" y="81" class="fm1p2-table-cell">Subir escadas</text>
+      <text x="125" y="81" class="fm1p2-table-cell-highlight">DIFÍCIL (MI Prox)</text>
+      <text x="220" y="81" class="fm1p2-table-cell">Dispneia esforço</text>
+
+      <!-- Row 4: Ausculta pulmonar -->
+      <line x1="0" y1="110" x2="296" y2="110" class="fm1p2-table-border"/>
+      <text x="8" y="103" class="fm1p2-table-cell">Estertores pulm.</text>
+      <text x="125" y="103" class="fm1p2-table-cell-teal">AUSENTES</text>
+      <text x="220" y="103" class="fm1p2-table-cell" font-weight="700">Presentes (Bases)</text>
+
+      <!-- Row 5: Jugulares -->
+      <line x1="0" y1="132" x2="296" y2="132" class="fm1p2-table-border"/>
+      <text x="8" y="125" class="fm1p2-table-cell">Turgência Jugular</text>
+      <text x="125" y="125" class="fm1p2-table-cell-teal">AUSENTE (0/4+)</text>
+      <text x="220" y="125" class="fm1p2-table-cell" font-weight="700">Presente (Estase)</text>
+    </g>
+
+    <!-- TAKEAWAY GOLDEN RULE BOX -->
+    <g transform="translate(12, 420)">
+      <rect width="296" height="126" rx="8" fill="var(--fm1p2-teal-bg, rgba(16, 185, 129, 0.15))" stroke="var(--fm1p2-teal-border, rgba(16, 185, 129, 0.4))" stroke-width="1.5"/>
+      
+      <rect x="10" y="10" width="200" height="18" rx="4" fill="var(--fm1p2-teal, #10b981)"/>
+      <text x="110" y="23" font-size="9.5" font-weight="900" fill="#ffffff" text-anchor="middle">SÍNTESE DE PROVA (MEMORIZE)</text>
+
+      <text x="12" y="44" font-size="10" font-weight="800" fill="var(--fm1p2-teal, #10b981)">
+        Fórmula da Miopatia Inflamatória no Caso-Âncora:
+      </text>
+
+      <text x="12" y="62" font-size="9.5" font-weight="700" fill="var(--fm1p2-text-main, #f8fafc)">
+        [ Cansaço/Dispneia ] + [ 3 Zonas Proximais/Axiais ]
+      </text>
+      <text x="12" y="76" font-size="9.5" font-weight="700" fill="var(--fm1p2-text-main, #f8fafc)">
+        + [ Exame Cardiotorácico Limpo ]
+      </text>
+
+      <text x="12" y="94" font-size="10" font-weight="900" fill="var(--fm1p2-coral, #ff6b6b)">
+        = DIAGNÓSTICO MIOPÁTICO (Polimiosite / DM)
+      </text>
+      <text x="12" y="110" font-size="8.5" fill="var(--fm1p2-text-muted, #94a3b8)">
+        Nunca trate a fadiga muscular como classe funcional IV de ICC!
+      </text>
+    </g>
+  </g> <!-- end right panel -->
+
+  <!-- EMBEDDED SELF-CONTAINED INTERACTIVE ENGINE JS -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var fm1p2Data = {
+        'zone-cervical': {
+          title: 'ZONA 1: AXIAL CERVICAL (PESCOÇO)',
+          subtitle: 'Fraqueza dos músculos flexores do pescoço',
+          clinical: '"Doutor, não consigo erguer a cabeça do travesseiro."',
+          finding: 'Paresia de flexores cervicais (grau 3/5 ou menor).',
+          pitfall: 'ICC isolada NUNCA afeta a musculatura axial cervical.',
+          note: 'Comprometimento axial é marco das miopatias inflamatórias.'
+        },
+        'zone-escapular': {
+          title: 'ZONA 2: PROXIMAL MS (CINTURA ESCAPULAR)',
+          subtitle: 'Fraqueza de deltoides, supraespinhal e peitorais',
+          clinical: '"Dificuldade para pentear o cabelo ou pegar objetos no alto."',
+          finding: 'Incapacidade de abduzir os braços acima de 90° contra gravidade.',
+          pitfall: 'Erradamente atribuído a adinamia/astenia geral da insuficiência cardíaca.',
+          note: 'A fraqueza é MOTOR-FOCAL PROXIMAL, não mero cansaço sistêmico.'
+        },
+        'zone-pelvica': {
+          title: 'ZONA 3: PROXIMAL MI (CINTURA PÉLVICA / ESCADA)',
+          subtitle: 'Fraqueza de iliopsoas, glúteos e quadríceps',
+          clinical: '"Custa muito subir degraus de escada ou levantar de cadeiras baixas."',
+          finding: 'Sinal de Gowers positivo (escorar-se nas próprias pernas para levantar).',
+          pitfall: 'A dispneia aos degraus é por falha do quadríceps + diafragma, não estase.',
+          note: 'Dificuldade para levantar da cadeira sem ajuda das mãos = Miopatia Proximal.'
+        },
+        'chip-pulmao': {
+          title: 'CHIP 1: PULMÕES LIMPOS (SEM CONGESTÃO)',
+          subtitle: 'Ausculta pulmonar com murmúrio vesicular fisiológico',
+          clinical: '"Não há ortopneia verdadeira nem crepitantes nas bases."',
+          finding: 'Campos pulmonares limpos, sem estertores crepitantes em maré montante.',
+          pitfall: 'Desmonta a tese de Congestão Pulmonar / Edema Agudo de ICC.',
+          note: 'A dispneia na miopatia vem da fraqueza diafragmática / parede torácica.'
+        },
+        'chip-jugular': {
+          title: 'CHIP 2: TURGÊNCIA JUGULAR AUSENTE (0/4+)',
+          subtitle: 'Pressão Venosa Central (PVC) normal',
+          clinical: '"Ausência de ingurgitamento jugular a 45° ou refluxo hepatojugular."',
+          finding: 'Veias jugulares planas, sem ondas de estase venosa sistêmica.',
+          pitfall: 'Descarta hipertensão atrial direita e descompensação de ICC direita.',
+          note: 'Sem turgência jugular = Ausência de congestão sistêmica.'
+        },
+        'chip-coracao': {
+          title: 'CHIP 3: CORAÇÃO SEM B3 OU RITMO DE GALOPE',
+          subtitle: 'Precordiogama normal na ausculta cardíaca',
+          clinical: '"Bulhas cardíacas normofonéticas em 2 tempos, sem sopros."',
+          finding: 'Sem B3 (terceira bulha) ou ritmo de galope ventricular.',
+          pitfall: 'A ausência de B3 afasta disfunção sistólica ventricular aguda.',
+          note: 'B1 e B2 limpas indicam que a bomba cardíaca não é a causa do cansaço.'
+        },
+        'chip-edema': {
+          title: 'CHIP 4: MEMBROS INFERIORES SEM EDEMA',
+          subtitle: 'Perfusão e drenagem venosa preservadas',
+          clinical: '"Ausência de inchaço nos tornozelos ou sinal do cacifo/Godet."',
+          finding: 'Membros inferiores sem edema assimétrico ou simétrico (Cacifo 0/4+).',
+          pitfall: 'Afasta retenção hidrossalina de origem renal, hepática ou cardíaca.',
+          note: 'A dificuldade de andar decorre de miopatia pélvica, não de edema pesado.'
+        }
+      };
+
+      window.fm1p2Select = function(id) {
+        // Clear active class from interactive elements
+        var items = document.querySelectorAll('.fm1p2-interactive');
+        for (var i = 0; i < items.length; i++) {
+          items[i].classList.remove('fm1p2-active');
+        }
+
+        // Set active class on target item
+        var target = document.getElementById('fm1p2-item-' + id);
+        if (target) {
+          target.classList.add('fm1p2-active');
+        }
+
+        // Update Reading Panel text
+        var info = fm1p2Data[id];
+        if (info) {
+          document.getElementById('fm1p2-panel-title').textContent = info.title;
+          document.getElementById('fm1p2-panel-subtitle').textContent = info.subtitle;
+          document.getElementById('fm1p2-panel-clinical').textContent = info.clinical;
+          document.getElementById('fm1p2-panel-finding').textContent = info.finding;
+          document.getElementById('fm1p2-panel-pitfall').textContent = info.pitfall;
+          document.getElementById('fm1p2-panel-note').textContent = info.note;
+        }
+      };
+
+      window.fm1p2SetTab = function(tabName) {
+        var tabs = ['all', 'weakness', 'congestion'];
+        for (var i = 0; i < tabs.length; i++) {
+          var t = document.getElementById('fm1p2-tab-' + tabs[i]);
+          if (t) t.classList.remove('fm1p2-tab-active');
+        }
+        var activeTab = document.getElementById('fm1p2-tab-' + tabName);
+        if (activeTab) activeTab.classList.add('fm1p2-tab-active');
+
+        if (tabName === 'weakness') {
+          fm1p2Select('zone-cervical');
+        } else if (tabName === 'congestion') {
+          fm1p2Select('chip-pulmao');
+        } else {
+          fm1p2Select('zone-cervical');
+        }
+      };
+
+      // Initialize default view
+      fm1p2Select('zone-cervical');
+    })();
+    ]]>
+  </script>
+</svg>

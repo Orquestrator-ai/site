@@ -1,0 +1,624 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="100%" id="gds-svg-root">
+  <defs>
+    <!-- Filtro de Sombra para o Card Lateral e Slider -->
+    <filter id="gds-shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <filter id="handle-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <!-- ClipPath para os cantos arredondados da régua -->
+    <clipPath id="track-clip">
+      <rect x="50" y="115" width="450" height="12" rx="6"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    #gds-svg-root {
+      --c-bg: var(--bg-1, #ffffff);
+      --c-card-bg: var(--bg-2, #f8fafc);
+      --c-ink: var(--ink-100, #0f172a);
+      --c-ink-muted: var(--ink-70, #64748b);
+      --c-green: var(--kw-green, #10b981);
+      --c-amber: var(--kw-amber, #f59e0b);
+      --c-red: var(--kw-red, #ef4444);
+      --c-border: var(--border-color, #e2e8f0);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      #gds-svg-root {
+        --c-bg: var(--bg-1, #0f172a);
+        --c-card-bg: var(--bg-2, #1e293b);
+        --c-ink: var(--ink-100, #f8fafc);
+        --c-ink-muted: var(--ink-70, #94a3b8);
+        --c-green: var(--kw-green, #34d399);
+        --c-amber: var(--kw-amber, #fbbf24);
+        --c-red: var(--kw-red, #f87171);
+        --c-border: var(--border-color, #334155);
+      }
+    }
+
+    #gds-svg-root text {
+      user-select: none;
+    }
+
+    #gds-svg-root .btn rect {
+      fill: var(--c-card-bg);
+      stroke: var(--c-border);
+      stroke-width: 1px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #gds-svg-root .btn text {
+      fill: var(--c-ink-muted);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #gds-svg-root .btn-healthy.active rect {
+      fill: var(--c-green);
+      stroke: var(--c-green);
+    }
+
+    #gds-svg-root .btn-pathological.active rect {
+      fill: var(--c-red);
+      stroke: var(--c-red);
+    }
+
+    #gds-svg-root .btn.active text {
+      fill: var(--c-bg);
+      font-weight: 600;
+    }
+
+    #gds-svg-root .tick-dot {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #gds-svg-root .tick-group.active .tick-dot {
+      fill: var(--c-bg);
+      stroke-width: 2.5px;
+      r: 5.5px;
+    }
+
+    #gds-svg-root .tick-text {
+      transition: all 0.2s ease;
+    }
+
+    #gds-svg-root .tick-group.active .tick-text {
+      fill: var(--c-ink);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    #gds-svg-root .adjust-btn rect {
+      fill: var(--c-card-bg);
+      stroke: var(--c-border);
+      transition: all 0.2s ease;
+    }
+
+    #gds-svg-root .adjust-btn:hover rect {
+      fill: var(--c-border);
+    }
+
+    #gds-svg-root .adjust-btn text {
+      fill: var(--c-ink);
+    }
+
+    #gds-svg-root .detail-group {
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    #gds-svg-root .cutoff-badge {
+      transition: transform 0.2s ease;
+    }
+
+    #gds-svg-root .cutoff-badge:hover {
+      transform: scale(1.05);
+    }
+  </style>
+
+  <!-- Card Principal de Fundo -->
+  <rect width="800" height="420" rx="16" fill="var(--c-bg)" stroke="var(--c-border)" stroke-width="1.5"/>
+
+  <!-- Cabeçalho Informativo -->
+  <g transform="translate(30, 35)">
+    <text x="0" y="0" font-family="'Outfit', sans-serif" font-weight="700" font-size="18" fill="var(--c-ink)" letter-spacing="-0.3px">ESCALA DE DEPRESSÃO GERIÁTRICA (GDS-15)</text>
+    <text x="0" y="20" font-family="'Outfit', sans-serif" font-weight="400" font-size="12" fill="var(--c-ink-muted)">GDS-15: 15 perguntas, 3 faixas. No idoso, respostas como 'prefiro ficar em casa' pesam — sinalizam risco, não ruído.</text>
+  </g>
+
+  <!-- Divisor Horizontal Superior -->
+  <line x1="30" y1="75" x2="770" y2="75" stroke="var(--c-border)" stroke-width="1"/>
+
+  <!-- COLUNA DA ESQUERDA: Régua e Simulador -->
+  <!-- 1. RÉGUA DE PONTUAÇÃO -->
+  <g transform="translate(0, 0)">
+    <text x="50" y="100" font-family="'Outfit', sans-serif" font-weight="700" font-size="11" fill="var(--c-ink-muted)" letter-spacing="0.5px">RÉGUA DE INTERPRETAÇÃO (0-15 PONTOS)</text>
+    
+    <!-- Barra Contínua Graduada (com clipPath) -->
+    <g clip-path="url(#track-clip)">
+      <!-- Faixa Normal: 0 - 4.5 -->
+      <rect x="50" y="115" width="135" height="12" fill="var(--c-green)" opacity="0.85"/>
+      <!-- Faixa Risco: 4.5 - 9.5 -->
+      <rect x="185" y="115" width="150" height="12" fill="var(--c-amber)" opacity="0.85"/>
+      <!-- Faixa Grave: 9.5 - 15 -->
+      <rect x="335" y="115" width="165" height="12" fill="var(--c-red)" opacity="0.85"/>
+    </g>
+
+    <!-- Limiares / Pontos de Corte -->
+    <!-- Limiar 5 -->
+    <g class="cutoff-badge" onclick="showCutoffInfo(1)" cursor="help" role="button" aria-label="Limiar 5: Risco">
+      <line x1="185" y1="108" x2="185" y2="134" stroke="var(--c-amber)" stroke-dasharray="3,3" stroke-width="1.5"/>
+      <rect x="157" y="86" width="56" height="15" rx="7.5" fill="var(--c-card-bg)" stroke="var(--c-amber)" stroke-width="1"/>
+      <text x="185" y="97" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="8" font-weight="700" fill="var(--c-amber)">LIMIAR 5</text>
+    </g>
+
+    <!-- Limiar 10 -->
+    <g class="cutoff-badge" onclick="showCutoffInfo(2)" cursor="help" role="button" aria-label="Limiar 10: Grave">
+      <line x1="335" y1="108" x2="335" y2="134" stroke="var(--c-red)" stroke-dasharray="3,3" stroke-width="1.5"/>
+      <rect x="307" y="86" width="56" height="15" rx="7.5" fill="var(--c-card-bg)" stroke="var(--c-red)" stroke-width="1"/>
+      <text x="335" y="97" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="8" font-weight="700" fill="var(--c-red)">LIMIAR 10</text>
+    </g>
+
+    <!-- Ticks e Números Clicáveis (0-15) -->
+    <!-- Tick 0 -->
+    <g class="tick-group" id="tick-0" transform="translate(50, 121)" onclick="selectScore(0)" cursor="pointer" role="button" aria-label="Score 0">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">0</text>
+    </g>
+    <!-- Tick 1 -->
+    <g class="tick-group" id="tick-1" transform="translate(80, 121)" onclick="selectScore(1)" cursor="pointer" role="button" aria-label="Score 1">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">1</text>
+    </g>
+    <!-- Tick 2 -->
+    <g class="tick-group" id="tick-2" transform="translate(110, 121)" onclick="selectScore(2)" cursor="pointer" role="button" aria-label="Score 2">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">2</text>
+    </g>
+    <!-- Tick 3 -->
+    <g class="tick-group" id="tick-3" transform="translate(140, 121)" onclick="selectScore(3)" cursor="pointer" role="button" aria-label="Score 3">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">3</text>
+    </g>
+    <!-- Tick 4 -->
+    <g class="tick-group" id="tick-4" transform="translate(170, 121)" onclick="selectScore(4)" cursor="pointer" role="button" aria-label="Score 4">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">4</text>
+    </g>
+    <!-- Tick 5 -->
+    <g class="tick-group" id="tick-5" transform="translate(200, 121)" onclick="selectScore(5)" cursor="pointer" role="button" aria-label="Score 5">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">5</text>
+    </g>
+    <!-- Tick 6 -->
+    <g class="tick-group" id="tick-6" transform="translate(230, 121)" onclick="selectScore(6)" cursor="pointer" role="button" aria-label="Score 6">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">6</text>
+    </g>
+    <!-- Tick 7 -->
+    <g class="tick-group active" id="tick-7" transform="translate(260, 121)" onclick="selectScore(7)" cursor="pointer" role="button" aria-label="Score 7">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="5.5" fill="var(--c-bg)" stroke="var(--c-amber)" stroke-width="2.5"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="var(--c-ink)">7</text>
+    </g>
+    <!-- Tick 8 -->
+    <g class="tick-group" id="tick-8" transform="translate(290, 121)" onclick="selectScore(8)" cursor="pointer" role="button" aria-label="Score 8">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">8</text>
+    </g>
+    <!-- Tick 9 -->
+    <g class="tick-group" id="tick-9" transform="translate(320, 121)" onclick="selectScore(9)" cursor="pointer" role="button" aria-label="Score 9">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">9</text>
+    </g>
+    <!-- Tick 10 -->
+    <g class="tick-group" id="tick-10" transform="translate(350, 121)" onclick="selectScore(10)" cursor="pointer" role="button" aria-label="Score 10">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">10</text>
+    </g>
+    <!-- Tick 11 -->
+    <g class="tick-group" id="tick-11" transform="translate(380, 121)" onclick="selectScore(11)" cursor="pointer" role="button" aria-label="Score 11">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">11</text>
+    </g>
+    <!-- Tick 12 -->
+    <g class="tick-group" id="tick-12" transform="translate(410, 121)" onclick="selectScore(12)" cursor="pointer" role="button" aria-label="Score 12">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">12</text>
+    </g>
+    <!-- Tick 13 -->
+    <g class="tick-group" id="tick-13" transform="translate(440, 121)" onclick="selectScore(13)" cursor="pointer" role="button" aria-label="Score 13">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">13</text>
+    </g>
+    <!-- Tick 14 -->
+    <g class="tick-group" id="tick-14" transform="translate(470, 121)" onclick="selectScore(14)" cursor="pointer" role="button" aria-label="Score 14">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">14</text>
+    </g>
+    <!-- Tick 15 -->
+    <g class="tick-group" id="tick-15" transform="translate(500, 121)" onclick="selectScore(15)" cursor="pointer" role="button" aria-label="Score 15">
+      <circle r="15" fill="transparent"/>
+      <circle class="tick-dot" r="4" fill="var(--c-ink-muted)" opacity="0.6"/>
+      <text class="tick-text" y="24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">15</text>
+    </g>
+
+    <!-- Cursor/Handle Deslizante Ativo -->
+    <g id="active-handle" transform="translate(260, 121)" filter="url(#handle-shadow)">
+      <circle id="active-handle-circle" r="9" fill="var(--c-amber)" stroke="var(--c-bg)" stroke-width="2.5"/>
+    </g>
+  </g>
+
+  <!-- Tooltip flutuante de explicação do limiar -->
+  <g id="cutoff-tooltip" transform="translate(185, 82)" opacity="0" pointer-events="none">
+    <rect x="-95" y="-55" width="190" height="46" rx="8" fill="var(--c-card-bg)" stroke="var(--c-border)" stroke-width="1.5" filter="url(#gds-shadow)"/>
+    <path d="M-6 -7 L0 0 L6 -7" fill="var(--c-card-bg)" stroke="var(--c-border)" stroke-width="1.5"/>
+    <path d="M-6 -8 L6 -8" fill="var(--c-card-bg)" stroke="var(--c-card-bg)"/>
+    <text x="0" y="-38" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" id="cutoff-tt-title" fill="var(--c-amber)">LIMIAR</text>
+    <text x="0" y="-24" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="9" id="cutoff-tt-desc" fill="var(--c-ink-muted)">Descrição...</text>
+  </g>
+
+  <!-- 2. SIMULADOR DE RESPOSTAS (Foco clínico estruturado) -->
+  <g transform="translate(0, 0)">
+    <text x="50" y="185" font-family="'Outfit', sans-serif" font-weight="700" font-size="11" fill="var(--c-ink-muted)" letter-spacing="0.5px">SIMULADOR: RESPOSTAS DO PACIENTE</text>
+
+    <!-- Questão 1: Satisfação de Vida (Invertida: Não = +1) -->
+    <g class="question-row" id="q-row-1" transform="translate(0, 202)">
+      <text x="50" y="14" font-family="'Outfit', sans-serif" font-size="11.5" fill="var(--c-ink)">1. Está satisfeito(a) com a sua vida?</text>
+      <g class="btn btn-healthy" id="q1-sim" onclick="setQuestion(0, true)" cursor="pointer" role="button" aria-label="Q1: Sim">
+        <rect x="330" y="0" width="45" height="19" rx="4"/>
+        <text x="352.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Sim</text>
+      </g>
+      <g class="btn btn-pathological" id="q1-nao" onclick="setQuestion(0, false)" cursor="pointer" role="button" aria-label="Q1: Não">
+        <rect x="385" y="0" width="45" height="19" rx="4"/>
+        <text x="407.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Não</text>
+      </g>
+      <text x="445" y="14" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="var(--c-red)" id="q1-weight" opacity="0">+1 pt</text>
+    </g>
+
+    <!-- Questão 2: Abandono de atividades (Direta: Sim = +1) -->
+    <g class="question-row" id="q-row-2" transform="translate(0, 232)">
+      <text x="50" y="14" font-family="'Outfit', sans-serif" font-size="11.5" fill="var(--c-ink)">2. Abandonou muitos dos seus interesses e atividades?</text>
+      <g class="btn btn-pathological" id="q2-sim" onclick="setQuestion(1, true)" cursor="pointer" role="button" aria-label="Q2: Sim">
+        <rect x="330" y="0" width="45" height="19" rx="4"/>
+        <text x="352.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Sim</text>
+      </g>
+      <g class="btn btn-healthy" id="q2-nao" onclick="setQuestion(1, false)" cursor="pointer" role="button" aria-label="Q2: Não">
+        <rect x="385" y="0" width="45" height="19" rx="4"/>
+        <text x="407.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Não</text>
+      </g>
+      <text x="445" y="14" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="var(--c-red)" id="q2-weight" opacity="1">+1 pt</text>
+    </g>
+
+    <!-- Questão 3: Isolamento social (Direta: Sim = +1) -->
+    <g class="question-row" id="q-row-3" transform="translate(0, 262)">
+      <text x="50" y="14" font-family="'Outfit', sans-serif" font-size="11.5" fill="var(--c-ink)">3. Prefere ficar em casa a sair e fazer coisas novas?</text>
+      <g class="btn btn-pathological" id="q3-sim" onclick="setQuestion(2, true)" cursor="pointer" role="button" aria-label="Q3: Sim">
+        <rect x="330" y="0" width="45" height="19" rx="4"/>
+        <text x="352.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Sim</text>
+      </g>
+      <g class="btn btn-healthy" id="q3-nao" onclick="setQuestion(2, false)" cursor="pointer" role="button" aria-label="Q3: Não">
+        <rect x="385" y="0" width="45" height="19" rx="4"/>
+        <text x="407.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Não</text>
+      </g>
+      <text x="445" y="14" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="var(--c-red)" id="q3-weight" opacity="1">+1 pt</text>
+    </g>
+
+    <!-- Questão 4: Humor habitual (Invertida: Não = +1) -->
+    <g class="question-row" id="q-row-4" transform="translate(0, 292)">
+      <text x="50" y="14" font-family="'Outfit', sans-serif" font-size="11.5" fill="var(--c-ink)">4. Sente-se feliz a maior parte do tempo?</text>
+      <g class="btn btn-healthy" id="q4-sim" onclick="setQuestion(3, true)" cursor="pointer" role="button" aria-label="Q4: Sim">
+        <rect x="330" y="0" width="45" height="19" rx="4"/>
+        <text x="352.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Sim</text>
+      </g>
+      <g class="btn btn-pathological" id="q4-nao" onclick="setQuestion(3, false)" cursor="pointer" role="button" aria-label="Q4: Não">
+        <rect x="385" y="0" width="45" height="19" rx="4"/>
+        <text x="407.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Não</text>
+      </g>
+      <text x="445" y="14" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="var(--c-red)" id="q4-weight" opacity="0">+1 pt</text>
+    </g>
+
+    <!-- Questão 5: Sentimento de Vazio (Direta: Sim = +1) -->
+    <g class="question-row" id="q-row-5" transform="translate(0, 322)">
+      <text x="50" y="14" font-family="'Outfit', sans-serif" font-size="11.5" fill="var(--c-ink)">5. Sente que a sua vida está vazia?</text>
+      <g class="btn btn-pathological" id="q5-sim" onclick="setQuestion(4, true)" cursor="pointer" role="button" aria-label="Q5: Sim">
+        <rect x="330" y="0" width="45" height="19" rx="4"/>
+        <text x="352.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Sim</text>
+      </g>
+      <g class="btn btn-healthy" id="q5-nao" onclick="setQuestion(4, false)" cursor="pointer" role="button" aria-label="Q5: Não">
+        <rect x="385" y="0" width="45" height="19" rx="4"/>
+        <text x="407.5" y="13" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10.5" font-weight="500">Não</text>
+      </g>
+      <text x="445" y="14" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="var(--c-red)" id="q5-weight" opacity="0">+1 pt</text>
+    </g>
+
+    <!-- Outras 10 Perguntas (Ajuste numérico complementar) -->
+    <g class="other-row" transform="translate(0, 357)">
+      <text x="50" y="16" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" fill="var(--c-ink)">Outras 10 perguntas da escala Yesavage:</text>
+      
+      <!-- Botão Menos -->
+      <g class="adjust-btn" onclick="adjustOther(-1)" cursor="pointer" role="button" aria-label="Diminuir outras perguntas">
+        <rect x="330" y="0" width="24" height="22" rx="6"/>
+        <text x="342" y="15" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="14" font-weight="700">-</text>
+      </g>
+      
+      <!-- Contador -->
+      <rect x="362" y="0" width="40" height="22" rx="4" fill="var(--c-card-bg)" stroke="var(--c-border)" stroke-width="1"/>
+      <text x="382" y="15" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="var(--c-ink)" id="other-score-text">05</text>
+      
+      <!-- Botão Mais -->
+      <g class="adjust-btn" onclick="adjustOther(1)" cursor="pointer" role="button" aria-label="Aumentar outras perguntas">
+        <rect x="410" y="0" width="24" height="22" rx="6"/>
+        <text x="422" y="15" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="13" font-weight="700">+</text>
+      </g>
+      <text x="445" y="15" font-family="'Outfit', sans-serif" font-size="10" fill="var(--c-ink-muted)">pontos adicionais</text>
+    </g>
+  </g>
+
+  <!-- COLUNA DA DIREITA: Card de Leitura Clínica -->
+  <g transform="translate(540, 95)" filter="url(#gds-shadow)">
+    <!-- Painel de Leitura -->
+    <rect x="0" y="0" width="230" height="295" rx="12" fill="var(--c-card-bg)" stroke="var(--c-border)" stroke-width="1.5"/>
+    <rect id="card-indicator" x="0" y="0" width="6" height="295" rx="3" fill="var(--c-amber)"/>
+
+    <text x="20" y="30" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" fill="var(--c-ink-muted)" letter-spacing="1px">INTERPRETAÇÃO CLÍNICA</text>
+    
+    <!-- Score Grande -->
+    <g transform="translate(20, 75)">
+      <text id="score-num" x="0" y="0" font-family="'Outfit', sans-serif" font-size="44" font-weight="700" fill="var(--c-ink)">07</text>
+      <text x="50" y="-6" font-family="'Outfit', sans-serif" font-size="16" font-weight="600" fill="var(--c-ink-muted)">/ 15</text>
+      <text x="50" y="10" font-family="'Outfit', sans-serif" font-size="10" font-weight="500" fill="var(--c-ink-muted)">pontos</text>
+    </g>
+
+    <!-- Classificação -->
+    <text id="category-title" x="20" y="108" font-family="'Outfit', sans-serif" font-size="13.5" font-weight="700" fill="var(--c-amber)">RISCO DE DEPRESSÃO</text>
+    
+    <line x1="20" y1="122" x2="210" y2="122" stroke="var(--c-border)" stroke-width="1"/>
+
+    <!-- Seção de Caso Clínico Dinâmico -->
+    <g transform="translate(20, 140)">
+      <text x="0" y="0" font-family="'Outfit', sans-serif" font-size="9.5" font-weight="700" fill="var(--c-ink-muted)" letter-spacing="0.5px">CASO CLÍNICO ANCORADO</text>
+      
+      <!-- Detalhe Normal (0-4) -->
+      <g id="detail-normal" class="detail-group" display="none" opacity="0">
+        <text x="0" y="16" font-family="'Outfit', sans-serif" font-size="11.5" font-weight="600" fill="var(--c-ink)">Sr. José, 72 anos:</text>
+        <text x="0" y="31" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">Ativo, relata boa satisfação</text>
+        <text x="0" y="46" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">de vida, mantém contato com</text>
+        <text x="0" y="61" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">amigos e hobbies rotineiros.</text>
+        
+        <text x="0" y="90" font-family="'Outfit', sans-serif" font-size="9.5" font-weight="700" fill="var(--c-ink-muted)" letter-spacing="0.5px">CONDUTA SUGERIDA</text>
+        <text x="0" y="106" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-green)" font-weight="600">Rastreio anual de rotina.</text>
+        <text x="0" y="121" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">Estimular envelhecimento ativo.</text>
+      </g>
+
+      <!-- Detalhe Risco (5-9) -->
+      <g id="detail-risk" class="detail-group" display="block" opacity="1">
+        <text x="0" y="16" font-family="'Outfit', sans-serif" font-size="11.5" font-weight="600" fill="var(--c-ink)">Dona Maria, 78 anos:</text>
+        <text x="0" y="31" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">Diz que 'prefere ficar em casa',</text>
+        <text x="0" y="46" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">abandonou a costura e relata</text>
+        <text x="0" y="61" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">desânimo, mas se autocuida.</text>
+        
+        <text x="0" y="90" font-family="'Outfit', sans-serif" font-size="9.5" font-weight="700" fill="var(--c-ink-muted)" letter-spacing="0.5px">CONDUTA SUGERIDA</text>
+        <text x="0" y="106" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-amber)" font-weight="600">Avaliação geriátrica integral.</text>
+        <text x="0" y="121" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">Investigar suporte social e cognitivo.</text>
+      </g>
+
+      <!-- Detalhe Grave (10-15) -->
+      <g id="detail-severe" class="detail-group" display="none" opacity="0">
+        <text x="0" y="16" font-family="'Outfit', sans-serif" font-size="11.5" font-weight="600" fill="var(--c-ink)">Sr. Antônio, 83 anos:</text>
+        <text x="0" y="31" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">Apatia severa, choro fácil,</text>
+        <text x="0" y="46" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">sentimento de vazio existencial</text>
+        <text x="0" y="61" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">e isolamento familiar rígido.</text>
+        
+        <text x="0" y="90" font-family="'Outfit', sans-serif" font-size="9.5" font-weight="700" fill="var(--c-ink-muted)" letter-spacing="0.5px">CONDUTA SUGERIDA</text>
+        <text x="0" y="106" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-red)" font-weight="600">Intervenção neuropsiquiátrica.</text>
+        <text x="0" y="121" font-family="'Outfit', sans-serif" font-size="11" fill="var(--c-ink-muted)">Iniciar terapia e vigiar autolesão.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Script Interativo Principal -->
+  <script type="text/javascript">
+    //<![CDATA[
+    const pathologicalAnswers = [false, true, true, false, true];
+    const qStates = [true, true, true, true, false]; // Dona Maria (Score 7)
+    let otherScore = 5;
+    let tooltipTimeout;
+
+    // Inicialização segura
+    document.addEventListener("DOMContentLoaded", function() {
+      updateUI();
+    });
+
+    // Caso o SVG seja embutido diretamente e DOMContentLoaded já tenha ocorrido
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+      updateUI();
+    }
+
+    function setQuestion(qIdx, isSim) {
+      qStates[qIdx] = isSim;
+      hideCutoffInfo();
+      updateUI();
+    }
+
+    function adjustOther(amount) {
+      const newScore = otherScore + amount;
+      if (newScore >= 0 && newScore <= 10) {
+        otherScore = newScore;
+        hideCutoffInfo();
+        updateUI();
+      }
+    }
+
+    function selectScore(S) {
+      let sq = 0;
+      let so = 0;
+      if (S <= 5) {
+        sq = S;
+        so = 0;
+      } else {
+        sq = 5;
+        so = S - 5;
+      }
+      otherScore = so;
+      for (let i = 0; i < 5; i++) {
+        if (i < sq) {
+          qStates[i] = pathologicalAnswers[i];
+        } else {
+          qStates[i] = !pathologicalAnswers[i];
+        }
+      }
+      hideCutoffInfo();
+      updateUI();
+    }
+
+    function updateUI() {
+      let sq = 0;
+      for (let i = 0; i < 5; i++) {
+        const isPathological = (qStates[i] === pathologicalAnswers[i]);
+        sq += isPathological ? 1 : 0;
+
+        const btnSim = document.getElementById('q' + (i+1) + '-sim');
+        const btnNao = document.getElementById('q' + (i+1) + '-nao');
+        const weightInd = document.getElementById('q' + (i+1) + '-weight');
+
+        if (qStates[i] === true) {
+          btnSim.classList.add('active');
+          btnNao.classList.remove('active');
+        } else {
+          btnSim.classList.remove('active');
+          btnNao.classList.add('active');
+        }
+
+        if (isPathological) {
+          weightInd.style.opacity = '1';
+        } else {
+          weightInd.style.opacity = '0';
+        }
+      }
+
+      document.getElementById('other-score-text').textContent = otherScore.toString().padStart(2, '0');
+
+      const totalScore = sq + otherScore;
+      updateScoreUI(totalScore);
+    }
+
+    function updateScoreUI(totalScore) {
+      // 1. Atualiza Posição do Handle do Slider
+      const X = 50 + totalScore * 30;
+      document.getElementById('active-handle').setAttribute('transform', 'translate(' + X + ', 121)');
+
+      // 2. Determina Categoria, Cor e Card de Detalhes
+      let color = 'var(--c-green)';
+      let catText = 'NORMAL';
+      let activeGroup = 'detail-normal';
+
+      if (totalScore >= 5 && totalScore <= 9) {
+        color = 'var(--c-amber)';
+        catText = 'RISCO DE DEPRESSÃO';
+        activeGroup = 'detail-risk';
+      } else if (totalScore >= 10) {
+        color = 'var(--c-red)';
+        catText = 'SUSPEITA GRAVE';
+        activeGroup = 'detail-severe';
+      }
+
+      // 3. Atualiza Display e Cores no Painel
+      document.getElementById('score-num').textContent = totalScore.toString().padStart(2, '0');
+      
+      const catTitle = document.getElementById('category-title');
+      catTitle.textContent = catText;
+      catTitle.style.fill = color;
+      
+      document.getElementById('card-indicator').setAttribute('fill', color);
+      document.getElementById('active-handle-circle').setAttribute('fill', color);
+
+      // 4. Alterna Visibilidade dos Cards de Caso Clínico com Transição Suave
+      const groups = ['detail-normal', 'detail-risk', 'detail-severe'];
+      for (let i = 0; i < groups.length; i++) {
+        const el = document.getElementById(groups[i]);
+        if (groups[i] === activeGroup) {
+          el.style.display = 'block';
+          el.style.opacity = '1';
+        } else {
+          el.style.opacity = '0';
+          el.style.display = 'none';
+        }
+      }
+
+      // 5. Atualiza Realce Visual das Ticks da Régua
+      for (let i = 0; i <= 15; i++) {
+        const tick = document.getElementById('tick-' + i);
+        const dot = tick.querySelector('.tick-dot');
+        const text = tick.querySelector('.tick-text');
+        
+        if (i === totalScore) {
+          tick.classList.add('active');
+          dot.setAttribute('fill', 'var(--c-bg)');
+          dot.setAttribute('stroke', color);
+          dot.setAttribute('stroke-width', '2.5px');
+          dot.setAttribute('r', '5.5');
+          dot.style.opacity = '1';
+          text.setAttribute('fill', 'var(--c-ink)');
+          text.style.fontWeight = '700';
+          text.style.fontSize = '12px';
+        } else {
+          tick.classList.remove('active');
+          dot.setAttribute('fill', 'var(--c-ink-muted)');
+          dot.removeAttribute('stroke');
+          dot.removeAttribute('stroke-width');
+          dot.setAttribute('r', '4');
+          dot.style.opacity = '0.6';
+          text.setAttribute('fill', 'var(--c-ink-muted)');
+          text.style.fontWeight = '500';
+          text.style.fontSize = '10px';
+        }
+      }
+    }
+
+    function showCutoffInfo(type) {
+      const tt = document.getElementById('cutoff-tooltip');
+      const title = document.getElementById('cutoff-tt-title');
+      const desc = document.getElementById('cutoff-tt-desc');
+
+      if (type === 1) {
+        tt.setAttribute('transform', 'translate(185, 82)');
+        title.textContent = 'LIMIAR DE RISCO (5 PONTOS)';
+        title.style.fill = 'var(--c-amber)';
+        desc.textContent = 'Início da faixa de risco. Requer investigação de sintomas.';
+      } else {
+        tt.setAttribute('transform', 'translate(335, 82)');
+        title.textContent = 'LIMIAR CRÍTICO (10 PONTOS)';
+        title.style.fill = 'var(--c-red)';
+        desc.textContent = 'Indica suspeita de depressão grave. Intervir rápido.';
+      }
+
+      tt.style.opacity = '1';
+      tt.style.pointerEvents = 'auto';
+
+      clearTimeout(tooltipTimeout);
+      tooltipTimeout = setTimeout(hideCutoffInfo, 4000);
+    }
+
+    // Corrigido typo no nome da função
+    function hideCutoffInfo() {
+      const tt = document.getElementById('cutoff-tooltip');
+      tt.style.opacity = '0';
+      tt.style.pointerEvents = 'none';
+    }
+    //]]>
+  </script>
+</svg>

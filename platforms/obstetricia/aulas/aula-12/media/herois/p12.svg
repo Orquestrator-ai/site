@@ -1,0 +1,709 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" class="a12p12h-root" id="a12p12h-svg-root">
+  <defs>
+    <style type="text/css">
+      .a12p12h-root {
+        --a12p12h-bg: var(--kw-bg, #14040d);
+        --a12p12h-card: var(--kw-card, #230816);
+        --a12p12h-card-border: var(--kw-card-border, #4a102b);
+        --a12p12h-text-main: var(--kw-text-main, #ffe4e6);
+        --a12p12h-text-sub: var(--kw-text-sub, #fbcfe8);
+        --a12p12h-text-muted: var(--kw-text-muted, #fda4af);
+        --a12p12h-pelvis-fill: var(--kw-pelvis-fill, #360b20);
+        --a12p12h-pelvis-stroke: var(--kw-pelvis-stroke, #9f1239);
+        --a12p12h-spine-color: var(--kw-spine-color, #fbbf24);
+        --a12p12h-zero-line: var(--kw-zero-line, #f59e0b);
+        --a12p12h-head-fill: var(--kw-head-fill, #4c0519);
+        --a12p12h-head-stroke: var(--kw-head-stroke, #fb7185);
+        --a12p12h-head-texture: var(--kw-head-texture, #881337);
+        --a12p12h-dbp-line: var(--kw-dbp-line, #38bdf8);
+        --a12p12h-green: var(--kw-green, #10b981);
+        --a12p12h-green-bg: var(--kw-green-bg, #064e3b);
+        --a12p12h-yellow: var(--kw-yellow, #f59e0b);
+        --a12p12h-yellow-bg: var(--kw-yellow-bg, #78350f);
+        --a12p12h-rose: var(--kw-rose, #f43f5e);
+        --a12p12h-rose-bg: var(--kw-rose-bg, #881337);
+        --a12p12h-btn-bg: var(--kw-btn-bg, #2d0a1b);
+        --a12p12h-btn-hover: var(--kw-btn-hover, #4a122e);
+        --a12p12h-btn-active: var(--kw-btn-active, #be123c);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      [data-theme="light"] .a12p12h-root {
+        --a12p12h-bg: var(--kw-bg-light, #fff5f7);
+        --a12p12h-card: var(--kw-card-light, #ffffff);
+        --a12p12h-card-border: var(--kw-card-border-light, #fbcfe8);
+        --a12p12h-text-main: var(--kw-text-main-light, #4c0519);
+        --a12p12h-text-sub: var(--kw-text-sub-light, #831843);
+        --a12p12h-text-muted: var(--kw-text-muted-light, #be123c);
+        --a12p12h-pelvis-fill: var(--kw-pelvis-fill-light, #ffe4e6);
+        --a12p12h-pelvis-stroke: var(--kw-pelvis-stroke-light, #be123c);
+        --a12p12h-spine-color: var(--kw-spine-color-light, #d97706);
+        --a12p12h-zero-line: var(--kw-zero-line-light, #d97706);
+        --a12p12h-head-fill: var(--kw-head-fill-light, #fce7f3);
+        --a12p12h-head-stroke: var(--kw-head-stroke-light, #9f1239);
+        --a12p12h-head-texture: var(--kw-head-texture-light, #f43f5e);
+        --a12p12h-dbp-line: var(--kw-dbp-line-light, #0284c7);
+        --a12p12h-green: var(--kw-green-light, #059669);
+        --a12p12h-green-bg: var(--kw-green-bg-light, #d1fae5);
+        --a12p12h-yellow: var(--kw-yellow-light, #d97706);
+        --a12p12h-yellow-bg: var(--kw-yellow-bg-light, #fef3c7);
+        --a12p12h-rose: var(--kw-rose-light, #e11d48);
+        --a12p12h-rose-bg: var(--kw-rose-bg-light, #ffe4e6);
+        --a12p12h-btn-bg: var(--kw-btn-bg-light, #fce7f3);
+        --a12p12h-btn-hover: var(--kw-btn-hover-light, #fbcfe8);
+        --a12p12h-btn-active: var(--kw-btn-active-light, #f43f5e);
+      }
+
+      .a12p12h-bg-rect {
+        fill: var(--a12p12h-bg, #14040d);
+      }
+
+      .a12p12h-card-bg {
+        fill: var(--a12p12h-card, #230816);
+        stroke: var(--a12p12h-card-border, #4a102b);
+        stroke-width: 1.5;
+        rx: 12;
+      }
+
+      .a12p12h-title-text {
+        fill: var(--a12p12h-text-main, #ffe4e6);
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+
+      .a12p12h-subtitle-text {
+        fill: var(--a12p12h-text-sub, #fbcfe8);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .a12p12h-caption-bg {
+        fill: var(--a12p12h-card, #230816);
+        stroke: var(--a12p12h-card-border, #4a102b);
+        stroke-width: 1;
+        rx: 8;
+      }
+
+      .a12p12h-caption-text {
+        fill: var(--a12p12h-text-sub, #fbcfe8);
+        font-size: 11.5px;
+        line-height: 1.4;
+      }
+
+      .a12p12h-pelvis-path {
+        fill: var(--a12p12h-pelvis-fill, #360b20);
+        stroke: var(--a12p12h-pelvis-stroke, #9f1239);
+        stroke-width: 2.5;
+      }
+
+      .a12p12h-spine-node {
+        fill: var(--a12p12h-spine-color, #fbbf24);
+        stroke: var(--a12p12h-bg, #14040d);
+        stroke-width: 2;
+        filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6));
+      }
+
+      .a12p12h-spine-anchor-badge {
+        fill: var(--a12p12h-yellow-bg, #78350f);
+        stroke: var(--a12p12h-spine-color, #fbbf24);
+        stroke-width: 1.5;
+        rx: 4;
+      }
+
+      .a12p12h-spine-anchor-text {
+        fill: var(--a12p12h-spine-color, #fbbf24);
+        font-size: 10.5px;
+        font-weight: 700;
+      }
+
+      .a12p12h-zero-line-path {
+        stroke: var(--a12p12h-zero-line, #f59e0b);
+        stroke-width: 2;
+        stroke-dasharray: 6 4;
+      }
+
+      .a12p12h-ruler-line {
+        stroke: var(--a12p12h-card-border, #4a102b);
+        stroke-width: 1.5;
+      }
+
+      .a12p12h-ruler-tick {
+        stroke: var(--a12p12h-text-muted, #fda4af);
+        stroke-width: 1.5;
+      }
+
+      .a12p12h-ruler-tick-zero {
+        stroke: var(--a12p12h-zero-line, #f59e0b);
+        stroke-width: 2.5;
+      }
+
+      .a12p12h-ruler-text {
+        fill: var(--a12p12h-text-sub, #fbcfe8);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .a12p12h-ruler-text-zero {
+        fill: var(--a12p12h-zero-line, #f59e0b);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .a12p12h-ruler-target {
+        cursor: pointer;
+        fill: transparent;
+      }
+
+      .a12p12h-ruler-target:hover + .a12p12h-ruler-highlight {
+        opacity: 0.3;
+      }
+
+      .a12p12h-ruler-highlight {
+        fill: var(--a12p12h-rose, #f43f5e);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        rx: 4;
+      }
+
+      .a12p12h-head-group {
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .a12p12h-head-shape {
+        fill: var(--a12p12h-head-fill, #4c0519);
+        stroke: var(--a12p12h-head-stroke, #fb7185);
+        stroke-width: 2.5;
+        filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+      }
+
+      .a12p12h-head-suture {
+        stroke: var(--a12p12h-head-texture, #881337);
+        stroke-width: 1.5;
+        fill: none;
+      }
+
+      .a12p12h-dbp-line-path {
+        stroke: var(--a12p12h-dbp-line, #38bdf8);
+        stroke-width: 2;
+        stroke-dasharray: 4 3;
+      }
+
+      .a12p12h-dbp-text {
+        fill: var(--a12p12h-dbp-line, #38bdf8);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .a12p12h-dimension-arrow {
+        stroke: var(--a12p12h-spine-color, #fbbf24);
+        stroke-width: 1.5;
+      }
+
+      .a12p12h-dimension-text {
+        fill: var(--a12p12h-spine-color, #fbbf24);
+        font-size: 11.5px;
+        font-weight: 700;
+      }
+
+      .a12p12h-btn {
+        cursor: pointer;
+      }
+
+      .a12p12h-btn-bg-rect {
+        fill: var(--a12p12h-btn-bg, #2d0a1b);
+        stroke: var(--a12p12h-card-border, #4a102b);
+        stroke-width: 1.5;
+        rx: 8;
+        transition: all 0.2s ease;
+      }
+
+      .a12p12h-btn:hover .a12p12h-btn-bg-rect {
+        fill: var(--a12p12h-btn-hover, #4a122e);
+        stroke: var(--a12p12h-head-stroke, #fb7185);
+      }
+
+      .a12p12h-btn.a12p12h-active .a12p12h-btn-bg-rect {
+        fill: var(--a12p12h-btn-active, #be123c);
+        stroke: var(--a12p12h-text-main, #ffe4e6);
+        stroke-width: 2;
+        filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.4));
+      }
+
+      .a12p12h-btn-label {
+        fill: var(--a12p12h-text-sub, #fbcfe8);
+        font-size: 12px;
+        font-weight: 700;
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .a12p12h-btn.a12p12h-active .a12p12h-btn-label {
+        fill: #ffffff;
+      }
+
+      .a12p12h-panel-header {
+        fill: var(--a12p12h-text-main, #ffe4e6);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+
+      .a12p12h-badge-bg {
+        rx: 6;
+        transition: fill 0.3s ease;
+      }
+
+      .a12p12h-badge-bg-yellow {
+        fill: var(--a12p12h-yellow-bg, #78350f);
+        stroke: var(--a12p12h-yellow, #f59e0b);
+        stroke-width: 1;
+      }
+
+      .a12p12h-badge-bg-green {
+        fill: var(--a12p12h-green-bg, #064e3b);
+        stroke: var(--a12p12h-green, #10b981);
+        stroke-width: 1.5;
+      }
+
+      .a12p12h-badge-text {
+        font-size: 12px;
+        font-weight: 800;
+        text-anchor: middle;
+      }
+
+      .a12p12h-badge-text-yellow {
+        fill: var(--a12p12h-yellow, #f59e0b);
+      }
+
+      .a12p12h-badge-text-green {
+        fill: var(--a12p12h-green, #10b981);
+      }
+
+      .a12p12h-info-box-bg {
+        fill: var(--a12p12h-bg, #14040d);
+        stroke: var(--a12p12h-card-border, #4a102b);
+        stroke-width: 1;
+        rx: 8;
+      }
+
+      .a12p12h-info-title {
+        fill: var(--a12p12h-text-main, #ffe4e6);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .a12p12h-info-body {
+        fill: var(--a12p12h-text-sub, #fbcfe8);
+        font-size: 11.5px;
+        line-height: 1.45;
+      }
+
+      .a12p12h-active-label-group {
+        transition: opacity 0.3s ease;
+      }
+
+      .a12p12h-label-box {
+        fill: var(--a12p12h-card, #230816);
+        stroke: var(--a12p12h-head-stroke, #fb7185);
+        stroke-width: 1.5;
+        rx: 5;
+        filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+      }
+
+      .a12p12h-label-text {
+        fill: var(--a12p12h-text-main, #ffe4e6);
+        font-size: 11px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="640" class="a12p12h-bg-rect" />
+
+  <!-- HEADER -->
+  <g transform="translate(25, 20)">
+    <text x="0" y="20" class="a12p12h-title-text">O ZERO ESTÁ NO GARGALO</text>
+    <text x="0" y="38" class="a12p12h-subtitle-text">Plano 0 de De Lee &amp; Mecanismo da Insinuação Fetal (Estreito Médio Maternidade)</text>
+    
+    <!-- Header Banner / Legend -->
+    <g transform="translate(0, 48)">
+      <rect width="910" height="38" class="a12p12h-caption-bg" />
+      <text x="14" y="23" class="a12p12h-caption-text">
+        <tspan font-weight="700" fill="var(--a12p12h-yellow, #f59e0b)">💡 REGRA OURO:</tspan> O Plano 0 (Linha Biespinhal) é o menor diâmetro transversal da pelve (<tspan font-weight="700" fill="var(--a12p12h-spine-color, #fbbf24)">10,5 cm</tspan>). Ao atingir <tspan font-weight="700" fill="var(--a12p12h-green, #10b981)">+1 cm</tspan>, o maior diâmetro da cabeça (<tspan font-weight="700" fill="var(--a12p12h-dbp-line, #38bdf8)">DBP = 9,5 cm</tspan>) já ultrapassou o gargalo ósseo: a apresentação está <tspan font-weight="700" fill="var(--a12p12h-green, #10b981)">INSINUADA (ENGAJADA)</tspan>.
+      </text>
+    </g>
+  </g>
+
+  <!-- LEFT STAGE: PELVIS & FETAL HEAD (X: 25..575, Y: 120..560) -->
+  <g transform="translate(25, 120)">
+    <!-- Stage Card Frame -->
+    <rect width="550" height="440" class="a12p12h-card-bg" />
+
+    <!-- Stage Title -->
+    <text x="20" y="30" class="a12p12h-panel-header">CORTE CORONAL DA BACIA &amp; PROGRESSÃO FETAL</text>
+
+    <!-- Pelvic Bone Anatomy Contour -->
+    <g transform="translate(40, 60)">
+      <!-- Sacrum Background Outline -->
+      <path d="M 120 20 C 150 10, 250 10, 280 20 C 270 70, 260 100, 240 140 C 230 160, 170 160, 160 140 C 140 100, 130 70, 120 20 Z" fill="var(--a12p12h-bg, #14040d)" opacity="0.4" stroke="var(--a12p12h-pelvis-stroke, #9f1239)" stroke-dasharray="3 3" stroke-width="1.5" />
+
+      <!-- Pelvic Wings and Ischial Spines (Left & Right Symmetric) -->
+      <!-- Left Bone Contour -->
+      <path d="M 40 20 C 60 10, 100 20, 110 50 C 100 90, 85 130, 90 170 C 95 185, 115 195, 135 200 C 110 210, 90 230, 85 270 C 80 300, 110 320, 145 320 C 130 300, 120 270, 125 240 C 70 240, 50 160, 40 20 Z" class="a12p12h-pelvis-path" />
+
+      <!-- Right Bone Contour -->
+      <path d="M 360 20 C 340 10, 300 20, 290 50 C 300 90, 315 130, 310 170 C 305 185, 285 195, 265 200 C 290 210, 310 230, 315 270 C 320 300, 290 320, 255 320 C 270 300, 280 270, 275 240 C 330 240, 350 160, 360 20 Z" class="a12p12h-pelvis-path" />
+
+      <!-- Ischial Spines Nodes (Âncora 3) -->
+      <circle cx="135" cy="200" r="7" class="a12p12h-spine-node" />
+      <circle cx="265" cy="200" r="7" class="a12p12h-spine-node" />
+
+      <!-- Anchor 3 Spine Badge (Left) -->
+      <g transform="translate(15, 185)">
+        <rect width="105" height="26" class="a12p12h-spine-anchor-badge" />
+        <text x="52" y="17" class="a12p12h-spine-anchor-text" text-anchor="middle">Espinha Isquiática (E)</text>
+      </g>
+
+      <!-- Anchor 3 Spine Badge (Right) -->
+      <g transform="translate(280, 185)">
+        <rect width="105" height="26" class="a12p12h-spine-anchor-badge" />
+        <text x="52" y="17" class="a12p12h-spine-anchor-text" text-anchor="middle">Espinha Isquiática (D)</text>
+      </g>
+
+      <!-- Linha Biespinhal (Nível 0) -->
+      <line x1="60" y1="200" x2="340" y2="200" class="a12p12h-zero-line-path" />
+
+      <!-- Bispinous Distance Arrow & Label (10,5 cm) -->
+      <g transform="translate(135, 218)">
+        <line x1="0" y1="0" x2="130" y2="0" class="a12p12h-dimension-arrow" />
+        <polygon points="0,0 8,-4 8,4" fill="var(--a12p12h-spine-color, #fbbf24)" />
+        <polygon points="130,0 122,-4 122,4" fill="var(--a12p12h-spine-color, #fbbf24)" />
+        <rect x="25" y="-12" width="80" height="20" fill="var(--a12p12h-card, #230816)" rx="4" stroke="var(--a12p12h-spine-color, #fbbf24)" stroke-width="1" />
+        <text x="65" y="2" class="a12p12h-dimension-text" text-anchor="middle">10,5 cm (Gargalo)</text>
+      </g>
+    </g>
+
+    <!-- FETAL HEAD ANIMATED GROUP -->
+    <g id="a12p12h-fetal-head" class="a12p12h-head-group" transform="translate(240, 222)">
+      <!-- Head Skull Oval -->
+      <ellipse cx="0" cy="-35" rx="64" ry="72" class="a12p12h-head-shape" />
+
+      <!-- Sutures / Parietal Texture -->
+      <path d="M 0 -105 L 0 25" class="a12p12h-head-suture" />
+      <path d="M -45 -40 C -20 -30, 20 -30, 45 -40" class="a12p12h-head-suture" />
+      <polygon points="0,-45 -8,-35 0,-25 8,-35" fill="var(--a12p12h-head-texture, #881337)" stroke="var(--a12p12h-head-stroke, #fb7185)" stroke-width="1" />
+
+      <!-- Biparietal Diameter Line (DBP = 9.5 cm) -->
+      <g transform="translate(0, -35)">
+        <line x1="-64" y1="0" x2="64" y2="0" class="a12p12h-dbp-line-path" />
+        <circle cx="-64" cy="0" r="3.5" fill="var(--a12p12h-dbp-line, #38bdf8)" />
+        <circle cx="64" cy="0" r="3.5" fill="var(--a12p12h-dbp-line, #38bdf8)" />
+        <rect x="-42" y="-10" width="84" height="18" fill="var(--a12p12h-card, #230816)" rx="3" stroke="var(--a12p12h-dbp-line, #38bdf8)" stroke-width="1" />
+        <text x="0" y="3" class="a12p12h-dbp-text" text-anchor="middle">DBP = 9,5 cm</text>
+      </g>
+
+      <!-- Vertex Leading Point Marker -->
+      <circle cx="0" cy="37" r="4" fill="var(--a12p12h-rose, #f43f5e)" />
+      <line x1="0" y1="37" x2="0" y2="48" stroke="var(--a12p12h-rose, #f43f5e)" stroke-width="1.5" stroke-dasharray="2 2" />
+    </g>
+
+    <!-- DE LEE RULER SCALE -->
+    <g transform="translate(470, 70)">
+      <line x1="20" y1="60" x2="20" y2="340" class="a12p12h-ruler-line" />
+      
+      <g transform="translate(0, 100)">
+        <line x1="10" y1="0" x2="20" y2="0" class="a12p12h-ruler-tick" />
+        <text x="0" y="4" class="a12p12h-ruler-text" text-anchor="end">-3</text>
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-highlight" id="a12p12h-hl-m3" />
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-target" onclick="a12p12hSetLevel(-3)" />
+      </g>
+
+      <g transform="translate(0, 130)">
+        <line x1="10" y1="0" x2="20" y2="0" class="a12p12h-ruler-tick" />
+        <text x="0" y="4" class="a12p12h-ruler-text" text-anchor="end">-2</text>
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-highlight" id="a12p12h-hl-m2" />
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-target" onclick="a12p12hSetLevel(-2)" />
+      </g>
+
+      <g transform="translate(0, 160)">
+        <line x1="10" y1="0" x2="20" y2="0" class="a12p12h-ruler-tick" />
+        <text x="0" y="4" class="a12p12h-ruler-text" text-anchor="end">-1</text>
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-highlight" id="a12p12h-hl-m1" />
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-target" onclick="a12p12hSetLevel(-1)" />
+      </g>
+
+      <g transform="translate(0, 190)">
+        <line x1="0" y1="0" x2="25" y2="0" class="a12p12h-ruler-tick-zero" />
+        <text x="-6" y="4" class="a12p12h-ruler-text-zero" text-anchor="end">0</text>
+        <rect x="-15" y="-14" width="55" height="28" class="a12p12h-ruler-highlight" id="a12p12h-hl-0" opacity="0.3" />
+        <rect x="-15" y="-14" width="55" height="28" class="a12p12h-ruler-target" onclick="a12p12hSetLevel(0)" />
+      </g>
+
+      <g transform="translate(0, 220)">
+        <line x1="10" y1="0" x2="20" y2="0" class="a12p12h-ruler-tick" />
+        <text x="0" y="4" class="a12p12h-ruler-text" text-anchor="end">+1</text>
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-highlight" id="a12p12h-hl-p1" />
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-target" onclick="a12p12hSetLevel(1)" />
+      </g>
+
+      <g transform="translate(0, 250)">
+        <line x1="10" y1="0" x2="20" y2="0" class="a12p12h-ruler-tick" />
+        <text x="0" y="4" class="a12p12h-ruler-text" text-anchor="end">+2</text>
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-highlight" id="a12p12h-hl-p2" />
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-target" onclick="a12p12hSetLevel(2)" />
+      </g>
+
+      <g transform="translate(0, 280)">
+        <line x1="10" y1="0" x2="20" y2="0" class="a12p12h-ruler-tick" />
+        <text x="0" y="4" class="a12p12h-ruler-text" text-anchor="end">+3</text>
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-highlight" id="a12p12h-hl-p3" />
+        <rect x="-10" y="-14" width="45" height="28" class="a12p12h-ruler-target" onclick="a12p12hSetLevel(3)" />
+      </g>
+
+      <text x="20" y="315" class="a12p12h-ruler-text" text-anchor="middle" font-size="10px">Plano (cm)</text>
+    </g>
+
+    <!-- DYNAMIC ACTIVE LABELS (MAX 3 ACTIVE LABELS) -->
+    <g id="a12p12h-labels-group" class="a12p12h-active-label-group" transform="translate(20, 375)">
+      <g transform="translate(0, 0)">
+        <rect width="165" height="24" class="a12p12h-label-box" />
+        <text x="82" y="16" class="a12p12h-label-text" text-anchor="middle" fill="var(--a12p12h-yellow, #f59e0b)">1. Biespinhal: 10,5 cm (Gargalo)</text>
+      </g>
+
+      <g transform="translate(180, 0)">
+        <rect width="165" height="24" class="a12p12h-label-box" />
+        <text x="82" y="16" class="a12p12h-label-text" text-anchor="middle" fill="var(--a12p12h-dbp-line, #38bdf8)">2. Maior Diâmetro (DBP 9,5 cm)</text>
+      </g>
+
+      <g transform="translate(360, 0)">
+        <rect width="170" height="24" class="a12p12h-label-box" id="a12p12h-lbl3-box" stroke="var(--a12p12h-yellow, #f59e0b)" />
+        <text x="85" y="16" class="a12p12h-label-text" text-anchor="middle" id="a12p12h-lbl3-text">3. Estado: No Gargalo (0 cm)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE CONTROLS BAR -->
+  <g transform="translate(25, 570)">
+    <rect width="550" height="50" class="a12p12h-card-bg" />
+    <text x="15" y="30" class="a12p12h-subtitle-text" font-weight="700">Selecione o Nível de De Lee:</text>
+
+    <g class="a12p12h-btn" id="a12p12h-btn-m1" onclick="a12p12hSetLevel(-1)" transform="translate(200, 10)">
+      <rect width="65" height="30" class="a12p12h-btn-bg-rect" />
+      <text x="32.5" y="19" class="a12p12h-btn-label">-1 cm</text>
+    </g>
+
+    <g class="a12p12h-btn a12p12h-active" id="a12p12h-btn-0" onclick="a12p12hSetLevel(0)" transform="translate(275, 10)">
+      <rect width="125" height="30" class="a12p12h-btn-bg-rect" />
+      <text x="62.5" y="19" class="a12p12h-btn-label">0 cm (No Gargalo)</text>
+    </g>
+
+    <g class="a12p12h-btn" id="a12p12h-btn-p1" onclick="a12p12hSetLevel(1)" transform="translate(410, 10)">
+      <rect width="125" height="30" class="a12p12h-btn-bg-rect" />
+      <text x="62.5" y="19" class="a12p12h-btn-label">+1 cm (Insinuada)</text>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: CLINICAL INTERPRETATION & READOUT -->
+  <g transform="translate(595, 120)">
+    <rect width="340" height="500" class="a12p12h-card-bg" />
+
+    <text x="20" y="32" class="a12p12h-panel-header">PAINEL DE ANÁLISE CLÍNICA</text>
+    <line x1="20" y1="42" x2="320" y2="42" stroke="var(--a12p12h-card-border, #4a102b)" stroke-width="1" />
+
+    <!-- Dynamic Status Badge -->
+    <g transform="translate(20, 56)">
+      <rect width="300" height="36" class="a12p12h-badge-bg a12p12h-badge-bg-yellow" id="a12p12h-status-badge-bg" />
+      <text x="150" y="23" class="a12p12h-badge-text a12p12h-badge-text-yellow" id="a12p12h-status-badge-text">ESTÁGIO: DE LEE 0 CM (NO GARGALO)</text>
+    </g>
+
+    <!-- Section 1 -->
+    <g transform="translate(20, 108)">
+      <rect width="300" height="95" class="a12p12h-info-box-bg" />
+      <text x="14" y="22" class="a12p12h-info-title">1. Maior Diâmetro Fetal (DBP = 9,5 cm)</text>
+      <text x="14" y="42" class="a12p12h-info-body" id="a12p12h-card1-text">
+        <tspan x="14" dy="0">• Polo cefálico no nível da linha biespinhal.</tspan>
+        <tspan x="14" dy="16">• O diâmetro biparietal (DBP) aborda o menor</tspan>
+        <tspan x="14" dy="16">  estreito ósseo (diâmetro biespinhal = 10,5 cm).</tspan>
+      </text>
+    </g>
+
+    <!-- Section 2 -->
+    <g transform="translate(20, 218)">
+      <rect width="300" height="110" class="a12p12h-info-box-bg" />
+      <text x="14" y="22" class="a12p12h-info-title">2. Status Obstétrico da Apresentação</text>
+      <text x="14" y="42" class="a12p12h-info-body" id="a12p12h-card2-text">
+        <tspan x="14" dy="0" font-weight="700" fill="var(--a12p12h-yellow, #f59e0b)">• Transição do Gargalo:</tspan>
+        <tspan x="14" dy="16">  O polo cefálico atinge o nível 0, mas a maior</tspan>
+        <tspan x="14" dy="16">  circunferência transversal ainda está completando</tspan>
+        <tspan x="14" dy="16">  a passagem pelo plano biespinhal.</tspan>
+      </text>
+    </g>
+
+    <!-- Section 3 -->
+    <g transform="translate(20, 342)">
+      <rect width="300" height="115" class="a12p12h-info-box-bg" stroke="var(--a12p12h-spine-color, #fbbf24)" stroke-width="1.2" />
+      <text x="14" y="22" class="a12p12h-info-title" fill="var(--a12p12h-spine-color, #fbbf24)">3. Por que o "0" está no Gargalo?</text>
+      <text x="14" y="42" class="a12p12h-info-body">
+        <tspan x="14" dy="0">As espinhas isquiáticas (<tspan font-weight="700" fill="var(--a12p12h-spine-color, #fbbf24)">Âncora 3</tspan>) representam</tspan>
+        <tspan x="14" dy="16">o ponto mais estreito da pelve (10,5 cm). Superar</tspan>
+        <tspan x="14" dy="16">o plano 0 (em +1 cm) é a prova biológica de que</tspan>
+        <tspan x="14" dy="16">o maior diâmetro do feto passou o gargalo ósseo!</tspan>
+      </text>
+    </g>
+
+    <!-- Footer Credit -->
+    <text x="170" y="482" class="a12p12h-subtitle-text" font-size="10px" text-anchor="middle" fill="var(--a12p12h-text-muted, #fda4af)">Fidelidade Médica Bauer • Nível 0 &amp; +1 Insinuada</text>
+  </g>
+
+  <!-- INTERACTIVE LOGIC (PURE INLINE JS) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var currentLevel = 0;
+
+      var levelYMap = {
+        '-3': 132,
+        '-2': 162,
+        '-1': 192,
+        '0': 222,
+        '1': 252,
+        '2': 282,
+        '3': 312
+      };
+
+      window.a12p12hSetLevel = function(lvl) {
+        currentLevel = lvl;
+
+        var headEl = document.getElementById('a12p12h-fetal-head');
+        if (headEl && levelYMap[lvl] !== undefined) {
+          headEl.setAttribute('transform', 'translate(240, ' + levelYMap[lvl] + ')');
+        }
+
+        var highlights = ['m3', 'm2', 'm1', '0', 'p1', 'p2', 'p3'];
+        highlights.forEach(function(h) {
+          var el = document.getElementById('a12p12h-hl-' + h);
+          if (el) el.setAttribute('opacity', '0');
+        });
+        var targetHlId = (lvl < 0) ? 'm' + Math.abs(lvl) : (lvl === 0 ? '0' : 'p' + lvl);
+        var activeHl = document.getElementById('a12p12h-hl-' + targetHlId);
+        if (activeHl) activeHl.setAttribute('opacity', '0.4');
+
+        var btnM1 = document.getElementById('a12p12h-btn-m1');
+        var btn0 = document.getElementById('a12p12h-btn-0');
+        var btnP1 = document.getElementById('a12p12h-btn-p1');
+
+        if (btnM1) btnM1.classList.remove('a12p12h-active');
+        if (btn0) btn0.classList.remove('a12p12h-active');
+        if (btnP1) btnP1.classList.remove('a12p12h-active');
+
+        if (lvl === -1 && btnM1) btnM1.classList.add('a12p12h-active');
+        if (lvl === 0 && btn0) btn0.classList.add('a12p12h-active');
+        if (lvl === 1 && btnP1) btnP1.classList.add('a12p12h-active');
+
+        var lbl3Box = document.getElementById('a12p12h-lbl3-box');
+        var lbl3Text = document.getElementById('a12p12h-lbl3-text');
+
+        if (lvl >= 1) {
+          if (lbl3Box) lbl3Box.setAttribute('stroke', 'var(--a12p12h-green, #10b981)');
+          if (lbl3Text) {
+            lbl3Text.textContent = '3. Estado: INSINUADA (+' + lvl + ' cm)';
+            lbl3Text.setAttribute('fill', 'var(--a12p12h-green, #10b981)');
+          }
+        } else if (lvl === 0) {
+          if (lbl3Box) lbl3Box.setAttribute('stroke', 'var(--a12p12h-yellow, #f59e0b)');
+          if (lbl3Text) {
+            lbl3Text.textContent = '3. Estado: No Gargalo (0 cm)';
+            lbl3Text.setAttribute('fill', 'var(--a12p12h-yellow, #f59e0b)');
+          }
+        } else {
+          if (lbl3Box) lbl3Box.setAttribute('stroke', 'var(--a12p12h-rose, #f43f5e)');
+          if (lbl3Text) {
+            lbl3Text.textContent = '3. Estado: Alta / Não Insinuada';
+            lbl3Text.setAttribute('fill', 'var(--a12p12h-rose, #f43f5e)');
+          }
+        }
+
+        var badgeBg = document.getElementById('a12p12h-status-badge-bg');
+        var badgeText = document.getElementById('a12p12h-status-badge-text');
+        var card1 = document.getElementById('a12p12h-card1-text');
+        var card2 = document.getElementById('a12p12h-card2-text');
+
+        if (lvl >= 1) {
+          if (badgeBg) {
+            badgeBg.setAttribute('class', 'a12p12h-badge-bg a12p12h-badge-bg-green');
+          }
+          if (badgeText) {
+            badgeText.setAttribute('class', 'a12p12h-badge-text a12p12h-badge-text-green');
+            badgeText.textContent = 'ESTÁGIO: +' + lvl + ' CM (INSINUADA / ENGAJADA)';
+          }
+
+          if (card1) {
+            card1.innerHTML =
+              '<tspan x="14" dy="0" font-weight="700" fill="var(--a12p12h-green, #10b981)">• DBP ultrapassou as espinhas!</tspan>' +
+              '<tspan x="14" dy="16">• O maior diâmetro da cabeça (DBP 9,5 cm)</tspan>' +
+              '<tspan x="14" dy="16">  já venceu o gargalo ósseo (biespinhal 10,5 cm).</tspan>';
+          }
+
+          if (card2) {
+            card2.innerHTML =
+              '<tspan x="14" dy="0" font-weight="700" fill="var(--a12p12h-green, #10b981)">• DIAGNÓSTICO: APRESENTAÇÃO INSINUADA</tspan>' +
+              '<tspan x="14" dy="16">  Em +' + lvl + ' cm de De Lee, o feto superou a menor</tspan>' +
+              '<tspan x="14" dy="16">  estrangulação da pelve. Risco de desproporção</tspan>' +
+              '<tspan x="14" dy="16">  céfalo-pélvica (DCP) no estreito médio AFASTADO.</tspan>';
+          }
+
+        } else if (lvl === 0) {
+          if (badgeBg) {
+            badgeBg.setAttribute('class', 'a12p12h-badge-bg a12p12h-badge-bg-yellow');
+          }
+          if (badgeText) {
+            badgeText.setAttribute('class', 'a12p12h-badge-text a12p12h-badge-text-yellow');
+            badgeText.textContent = 'ESTÁGIO: DE LEE 0 CM (NO GARGALO)';
+          }
+
+          if (card1) {
+            card1.innerHTML =
+              '<tspan x="14" dy="0">• Polo cefálico no nível da linha biespinhal.</tspan>' +
+              '<tspan x="14" dy="16">• O diâmetro biparietal (DBP) aborda o menor</tspan>' +
+              '<tspan x="14" dy="16">  estreito ósseo (diâmetro biespinhal = 10,5 cm).</tspan>';
+          }
+
+          if (card2) {
+            card2.innerHTML =
+              '<tspan x="14" dy="0" font-weight="700" fill="var(--a12p12h-yellow, #f59e0b)">• Transição do Gargalo:</tspan>' +
+              '<tspan x="14" dy="16">  O polo cefálico atinge o nível 0, mas a maior</tspan>' +
+              '<tspan x="14" dy="16">  circunferência transversal ainda está completando</tspan>' +
+              '<tspan x="14" dy="16">  a passagem pelo plano biespinhal.</tspan>';
+          }
+
+        } else {
+          if (badgeBg) {
+            badgeBg.setAttribute('class', 'a12p12h-badge-bg a12p12h-badge-bg-yellow');
+          }
+          if (badgeText) {
+            badgeText.setAttribute('class', 'a12p12h-badge-text a12p12h-badge-text-yellow');
+            badgeText.textContent = 'ESTÁGIO: ' + lvl + ' CM (NÃO INSINUADA / ALTA)';
+          }
+
+          if (card1) {
+            card1.innerHTML =
+              '<tspan x="14" dy="0" font-weight="700" fill="var(--a12p12h-rose, #f43f5e)">• DBP acima das espinhas isquiáticas.</tspan>' +
+              '<tspan x="14" dy="16">• A maior circunferência fetal ainda não entrou</tspan>' +
+              '<tspan x="14" dy="16">  no menor diâmetro transversal da pelve.</tspan>';
+          }
+
+          if (card2) {
+            card2.innerHTML =
+              '<tspan x="14" dy="0" font-weight="700" fill="var(--a12p12h-rose, #f43f5e)">• DIAGNÓSTICO: APRESENTAÇÃO ALTA / MÓVEL</tspan>' +
+              '<tspan x="14" dy="16">  A cabeça fetal está acima do plano biespinhal.</tspan>' +
+              '<tspan x="14" dy="16">  Não é possível confirmar insinuação antes</tspan>' +
+              '<tspan x="14" dy="16">  de ultrapassar a linha de De Lee 0.</tspan>';
+          }
+        }
+      };
+    })();
+    ]]>
+  </script>
+</svg>

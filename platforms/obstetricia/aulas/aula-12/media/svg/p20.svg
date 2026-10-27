@@ -1,0 +1,581 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="100%" height="100%" class="a12p20-root" id="a12p20-svg" data-svg-tokenized="true" data-active-cord="all" role="img" aria-labelledby="a12p20-title a12p20-desc">
+  <title id="a12p20-title">Aparelho de Suspensão Uterina: As Três Cordas e a Geometria do Plano</title>
+  <desc id="a12p20-desc">Ilustração médica anatômica em painel duplo comparando o corte sagital mediano e a vista superior transversa do útero, demonstrando os ligamentos pubovesicouterino, cardinal e uterossacro.</desc>
+
+  <style>
+    /* Scope estrito à raiz id #a12p20-svg */
+    #a12p20-svg {
+      --a12p20-bg: var(--bg-1, var(--a12p20-bg-local, #140F15));
+      --a12p20-panel-bg: var(--bg-2, var(--a12p20-panel-bg-local, #1F1821));
+      --a12p20-panel-border: var(--ink-20, var(--a12p20-panel-border-local, #3A2E3C));
+      --a12p20-tinta: var(--a12-tinta, var(--a12p20-tinta-local, #F7F1F5));
+      --a12p20-tinta-sub: var(--ink-70, var(--a12p20-tinta-sub-local, #C5B7C3));
+      --a12p20-osso: var(--a12-osso, var(--a12p20-osso-local, #DCC7B4));
+      --a12p20-anterior: var(--a12-ligamento-anterior, var(--a12p20-anterior-local, #EF7582));
+      --a12p20-lateral: var(--a12-ligamento-lateral, var(--a12p20-lateral-local, #6FA8D6));
+      --a12p20-posterior: var(--a12-ligamento-posterior, var(--a12p20-posterior-local, #A978C7));
+      --a12p20-fora-plano: var(--a12-ouro, var(--a12p20-fora-plano-local, #F3BE5B));
+      --a12p20-atenuado: var(--a12-atenuado, var(--a12p20-atenuado-local, #9D919A));
+      --a12p20-chao: var(--a12p20-chao-local, #5E7A67);
+      --a12p20-utero-fill: var(--a12p20-utero-fill-local, #3D2231);
+      --a12p20-utero-stroke: var(--a12p20-utero-stroke-local, #E89BB6);
+      --a12p20-bexiga-fill: var(--a12p20-bexiga-fill-local, #1A3240);
+      --a12p20-bexiga-stroke: var(--a12p20-bexiga-stroke-local, #5CB6E6);
+      --a12p20-retode-fill: var(--a12p20-retode-fill-local, #362520);
+      --a12p20-retode-stroke: var(--a12p20-retode-stroke-local, #C28B75);
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--a12p20-bg);
+      color: var(--a12p20-tinta);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Suporte a Tema Claro escopado por [data-theme="light"] */
+    :root[data-theme="light"] #a12p20-svg,
+    #a12p20-svg[data-theme="light"] {
+      --a12p20-bg: var(--bg-1, var(--a12p20-bg-local, #FAF7F9));
+      --a12p20-panel-bg: var(--bg-2, var(--a12p20-panel-bg-local, #FFFFFF));
+      --a12p20-panel-border: var(--ink-20, var(--a12p20-panel-border-local, #E5DCE3));
+      --a12p20-tinta: var(--a12-tinta, var(--a12p20-tinta-local, #2B2329));
+      --a12p20-tinta-sub: var(--ink-70, var(--a12p20-tinta-sub-local, #5E525C));
+      --a12p20-osso: var(--a12-osso, var(--a12p20-osso-local, #8C725D));
+      --a12p20-anterior: var(--a12-ligamento-anterior, var(--a12p20-anterior-local, #D9384A));
+      --a12p20-lateral: var(--a12-ligamento-lateral, var(--a12p20-lateral-local, #2575B0));
+      --a12p20-posterior: var(--a12-ligamento-posterior, var(--a12p20-posterior-local, #7B439B));
+      --a12p20-fora-plano: var(--a12-ouro, var(--a12p20-fora-plano-local, #C68A16));
+      --a12p20-atenuado: var(--a12-atenuado, var(--a12p20-atenuado-local, #665C63));
+      --a12p20-chao: var(--a12p20-chao-local, #3B6B48);
+      --a12p20-utero-fill: var(--a12p20-utero-fill-local, #FDE8EF);
+      --a12p20-utero-stroke: var(--a12p20-utero-stroke-local, #B8436C);
+      --a12p20-bexiga-fill: var(--a12p20-bexiga-fill-local, #E3F2FD);
+      --a12p20-bexiga-stroke: var(--a12p20-bexiga-stroke-local, #1976D2);
+      --a12p20-retode-fill: var(--a12p20-retode-fill-local, #F5EBE6);
+      --a12p20-retode-stroke: var(--a12p20-retode-stroke-local, #8D5B4C);
+    }
+
+    /* Painéis e Molduras */
+    #a12p20-svg .a12p20-panel {
+      fill: var(--a12p20-panel-bg);
+      stroke: var(--a12p20-panel-border);
+      stroke-width: 1.5px;
+      rx: 12px;
+    }
+
+    /* Tipografia e Hierarquia Visual */
+    #a12p20-svg .a12p20-title-text {
+      font-size: 19px;
+      font-weight: 800;
+      fill: var(--a12p20-tinta);
+      letter-spacing: 0.5px;
+    }
+
+    #a12p20-svg .a12p20-subtitle-text {
+      font-size: 13px;
+      font-weight: 500;
+      fill: var(--a12p20-tinta-sub);
+    }
+
+    #a12p20-svg .a12p20-panel-header {
+      font-size: 14px;
+      font-weight: 800;
+      fill: var(--a12p20-tinta);
+      letter-spacing: 0.5px;
+    }
+
+    #a12p20-svg .a12p20-panel-sub {
+      font-size: 11.5px;
+      font-weight: 600;
+      fill: var(--a12p20-tinta-sub);
+    }
+
+    #a12p20-svg .a12p20-label {
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--a12p20-tinta);
+    }
+
+    #a12p20-svg .a12p20-label-sub {
+      font-size: 10.5px;
+      font-weight: 500;
+      fill: var(--a12p20-tinta-sub);
+    }
+
+    #a12p20-svg .a12p20-axis-text {
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+
+    /* Traços Anatômicos */
+    #a12p20-svg .a12p20-bone {
+      fill: var(--a12p20-osso);
+      fill-opacity: 0.25;
+      stroke: var(--a12p20-osso);
+      stroke-width: 2px;
+    }
+
+    #a12p20-svg .a12p20-floor-ground {
+      stroke: var(--a12p20-chao);
+      stroke-width: 2.5px;
+      stroke-dasharray: 6 4;
+      fill: none;
+    }
+
+    #a12p20-svg .a12p20-organ-utero {
+      fill: var(--a12p20-utero-fill);
+      stroke: var(--a12p20-utero-stroke);
+      stroke-width: 2px;
+    }
+
+    #a12p20-svg .a12p20-organ-bexiga {
+      fill: var(--a12p20-bexiga-fill);
+      stroke: var(--a12p20-bexiga-stroke);
+      stroke-width: 1.8px;
+    }
+
+    #a12p20-svg .a12p20-organ-sacro {
+      fill: var(--a12p20-retode-fill);
+      stroke: var(--a12p20-retode-stroke);
+      stroke-width: 1.8px;
+    }
+
+    /* Cordas e Vetores */
+    #a12p20-svg .a12p20-cord {
+      transition: opacity 0.3s ease, stroke-width 0.25s ease, filter 0.25s ease;
+      cursor: pointer;
+    }
+
+    #a12p20-svg .a12p20-cord-ant {
+      stroke: var(--a12p20-anterior);
+      fill: none;
+    }
+
+    #a12p20-svg .a12p20-cord-lat {
+      stroke: var(--a12p20-lateral);
+      fill: none;
+    }
+
+    #a12p20-svg .a12p20-cord-post {
+      stroke: var(--a12p20-posterior);
+      fill: none;
+    }
+
+    #a12p20-svg .a12p20-vector-gold {
+      stroke: var(--a12p20-fora-plano);
+      fill: var(--a12p20-fora-plano);
+    }
+
+    #a12p20-svg .a12p20-label-group {
+      transition: opacity 0.3s ease;
+    }
+
+    /* Transições de Estado da Máquina de Interação */
+    #a12p20-svg[data-active-cord="ant"] .a12p20-cord:not(.a12p20-cord-ant),
+    #a12p20-svg[data-active-cord="ant"] .a12p20-label-group:not(.a12p20-lg-ant) {
+      opacity: 0.18;
+    }
+
+    #a12p20-svg[data-active-cord="lat"] .a12p20-cord:not(.a12p20-cord-lat),
+    #a12p20-svg[data-active-cord="lat"] .a12p20-label-group:not(.a12p20-lg-lat) {
+      opacity: 0.18;
+    }
+
+    #a12p20-svg[data-active-cord="post"] .a12p20-cord:not(.a12p20-cord-post),
+    #a12p20-svg[data-active-cord="post"] .a12p20-label-group:not(.a12p20-lg-post) {
+      opacity: 0.18;
+    }
+
+    /* Destaques de Foco e Seleção */
+    #a12p20-svg[data-active-cord="ant"] .a12p20-cord-ant,
+    #a12p20-svg[data-active-cord="lat"] .a12p20-cord-lat,
+    #a12p20-svg[data-active-cord="post"] .a12p20-cord-post {
+      opacity: 1 !important;
+      stroke-width: 6px !important;
+      filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+    }
+
+    #a12p20-svg[data-active-cord="lat"] .a12p20-vector-gold {
+      opacity: 1 !important;
+      filter: drop-shadow(0 0 8px var(--a12p20-fora-plano));
+    }
+
+    /* Botões Seletores */
+    #a12p20-svg .a12p20-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #a12p20-svg .a12p20-btn-bg {
+      fill: var(--a12p20-panel-bg);
+      stroke: var(--a12p20-panel-border);
+      stroke-width: 1.5px;
+      rx: 8px;
+    }
+
+    #a12p20-svg .a12p20-btn-txt {
+      font-size: 11px;
+      font-weight: 700;
+      fill: var(--a12p20-tinta-sub);
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+    #a12p20-svg .a12p20-btn:hover .a12p20-btn-bg {
+      stroke: var(--a12p20-tinta-sub);
+      fill: rgba(255,255,255,0.06);
+    }
+
+    #a12p20-svg[data-active-cord="all"] #a12p20-btn-all .a12p20-btn-bg {
+      fill: var(--a12p20-tinta);
+      stroke: var(--a12p20-tinta);
+    }
+    #a12p20-svg[data-active-cord="all"] #a12p20-btn-all .a12p20-btn-txt {
+      fill: var(--a12p20-bg);
+    }
+
+    #a12p20-svg[data-active-cord="ant"] #a12p20-btn-ant .a12p20-btn-bg {
+      fill: var(--a12p20-anterior);
+      stroke: var(--a12p20-anterior);
+    }
+    #a12p20-svg[data-active-cord="ant"] #a12p20-btn-ant .a12p20-btn-txt {
+      fill: #FFFFFF;
+    }
+
+    #a12p20-svg[data-active-cord="lat"] #a12p20-btn-lat .a12p20-btn-bg {
+      fill: var(--a12p20-lateral);
+      stroke: var(--a12p20-lateral);
+    }
+    #a12p20-svg[data-active-cord="lat"] #a12p20-btn-lat .a12p20-btn-txt {
+      fill: #FFFFFF;
+    }
+
+    #a12p20-svg[data-active-cord="post"] #a12p20-btn-post .a12p20-btn-bg {
+      fill: var(--a12p20-posterior);
+      stroke: var(--a12p20-posterior);
+    }
+    #a12p20-svg[data-active-cord="post"] #a12p20-btn-post .a12p20-btn-txt {
+      fill: #FFFFFF;
+    }
+
+    /* Acessibilidade por Teclado */
+    #a12p20-svg .hs-shape:focus {
+      outline: none;
+    }
+    #a12p20-svg .hs-shape:focus-visible .a12p20-btn-bg,
+    #a12p20-svg .hs-shape:focus-visible circle {
+      stroke: var(--a12p20-fora-plano) !important;
+      stroke-width: 3px !important;
+    }
+  </style>
+
+  <!-- ==================== TOPO: CABEÇALHO E CONTRATO DE LAYOUT ==================== -->
+  <g id="a12p20-header" transform="translate(20, 20)">
+    <text x="0" y="24" class="a12p20-title-text">APARELHO DE SUSPENSÃO UTERINA: AS TRÊS CORDAS E A GEOMETRIA DO PLANO</text>
+    <text x="0" y="46" class="a12p20-subtitle-text">Sustentação = Chão (assoalho pélvico) · Suspensão = Cordas (3 eixos ligamentares). O ligamento cardinal sai do corte sagital.</text>
+  </g>
+
+  <!-- ==================== PAINEL ESQUERDO: CORTE SAGITAL MEDIANO ==================== -->
+  <g id="a12p20-panel-left" transform="translate(20, 80)">
+    <rect width="470" height="490" class="a12p20-panel" />
+    
+    <!-- Título do Painel -->
+    <text x="24" y="32" class="a12p20-panel-header">PAINEL 1: CORTE SAGITAL MEDIANO</text>
+    <text x="24" y="48" class="a12p20-panel-sub">Plano Sagital (X-Z) · Visibilidade de Perfil</text>
+
+    <!-- Estruturas Anatômicas (Base Sagital P3) -->
+    <g id="a12p20-sag-anatomy" transform="translate(20, 30)">
+
+      <!-- Osso Púbico (Anterior - Esquerda) -->
+      <path d="M 50 350 Q 80 340 90 370 Q 85 410 55 400 Z" class="a12p20-bone" />
+      <text x="68" y="380" class="a12p20-label-sub" text-anchor="middle">PÚBIS</text>
+
+      <!-- Sacro / Cóccix (Posterior - Direita) -->
+      <path d="M 400 160 Q 425 240 420 330 Q 405 390 380 420" fill="none" stroke="var(--a12p20-osso)" stroke-width="14" stroke-linecap="round" opacity="0.35" />
+      <text x="405" y="260" class="a12p20-label-sub" text-anchor="middle" transform="rotate(75, 405, 260)">SACRO</text>
+
+      <!-- Assoalho Pélvico (Chão de Sustentação) -->
+      <path d="M 60 400 C 140 450 320 450 385 415" class="a12p20-floor-ground" />
+      <path d="M 60 400 C 140 450 320 450 385 415" fill="none" stroke="var(--a12p20-chao)" stroke-width="12" stroke-linecap="round" opacity="0.15" />
+      <text x="220" y="445" class="a12p20-axis-text" fill="var(--a12p20-chao)" text-anchor="middle">CHÃO (SUSTENTAÇÃO · ASSOALHO PÉLVICO)</text>
+
+      <!-- Bexiga Urinária -->
+      <path d="M 95 360 C 120 315 170 315 190 355 C 175 390 120 395 95 360 Z" class="a12p20-organ-bexiga" />
+      <text x="140" y="355" class="a12p20-label-sub" text-anchor="middle">BEXIGA</text>
+
+      <!-- Reto / Ampola Retal -->
+      <path d="M 370 410 C 310 390 300 300 360 200 L 380 210 C 325 300 335 375 385 395 Z" class="a12p20-organ-sacro" />
+      <text x="345" y="300" class="a12p20-label-sub" text-anchor="middle">RETO</text>
+
+      <!-- Útero (Corpo + Colo) -->
+      <path d="M 185 260 C 225 220 270 250 255 300 C 245 330 225 345 215 385 L 195 385 C 195 345 175 325 185 260 Z" class="a12p20-organ-utero" />
+      <text x="218" y="275" class="a12p20-label" text-anchor="middle" font-weight="700">ÚTERO</text>
+      <text x="205" y="375" class="a12p20-label-sub" text-anchor="middle">COLO</text>
+
+      <!-- Vagina -->
+      <path d="M 195 385 L 180 435 M 215 385 L 200 435" stroke="var(--a12p20-utero-stroke)" stroke-width="2" stroke-dasharray="3 2" />
+
+      <!-- ================= CORDAS NO SAGITAL ================= -->
+      
+      <!-- 1. CORDA ANTERIOR: Pubovesicouterino (Rosa/Vermelho) -->
+      <path d="M 90 365 Q 120 345 195 360" class="a12p20-cord a12p20-cord-ant hs-shape" stroke-width="4.5" stroke-linecap="round" data-hs-cord="ant" role="button" aria-label="Corda Anterior Pubovesicouterino" tabindex="0" />
+      <circle cx="195" cy="360" r="4" fill="var(--a12p20-anterior)" />
+
+      <!-- 2. CORDA POSTERIOR: Uterossacro (Roxo) -->
+      <path d="M 215 365 Q 310 350 405 280" class="a12p20-cord a12p20-cord-post hs-shape" stroke-width="4.5" stroke-linecap="round" data-hs-cord="post" role="button" aria-label="Corda Posterior Uterossacro" tabindex="0" />
+      <circle cx="215" cy="365" r="4" fill="var(--a12p20-posterior)" />
+
+      <!-- 3. CORDA LATERAL / CARDINAL: Vetor saindo do plano (Ouro / Azul) -->
+      <g id="a12p20-sag-cardinal-vector" class="a12p20-cord a12p20-cord-lat hs-shape" data-hs-cord="lat" role="button" aria-label="Corda Lateral Cardinal Saindo do Plano" tabindex="0" transform="translate(205, 362)">
+        <circle cx="0" cy="0" r="16" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-fora-plano)" stroke-width="2.5" class="a12p20-vector-gold" />
+        <circle cx="0" cy="0" r="10" fill="none" stroke="var(--a12p20-lateral)" stroke-width="1.8" stroke-dasharray="3 2" />
+        <circle cx="0" cy="0" r="4" fill="var(--a12p20-fora-plano)" class="a12p20-vector-gold" />
+        <path d="M -22 0 L -16 0 M 22 0 L 16 0 M 0 -22 L 0 -16 M 0 22 L 0 16" stroke="var(--a12p20-fora-plano)" stroke-width="2" stroke-linecap="round" class="a12p20-vector-gold" />
+      </g>
+
+      <!-- ================= RÓTULOS DO CORTE SAGITAL ================= -->
+      
+      <!-- Rótulo Anterior -->
+      <g class="a12p20-label-group a12p20-lg-ant" transform="translate(25, 270)">
+        <line x1="110" y1="60" x2="60" y2="20" stroke="var(--a12p20-anterior)" stroke-width="1.2" stroke-dasharray="3 2" />
+        <rect x="0" y="0" width="135" height="34" rx="6" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-anterior)" stroke-width="1" />
+        <text x="10" y="15" class="a12p20-label" fill="var(--a12p20-anterior)">PUBOVESICOUTERINO</text>
+        <text x="10" y="27" class="a12p20-label-sub">Anterior · Visível no plano</text>
+      </g>
+
+      <!-- Rótulo Posterior -->
+      <g class="a12p20-label-group a12p20-lg-post" transform="translate(310, 160)">
+        <line x1="-15" y1="65" x2="30" y2="35" stroke="var(--a12p20-posterior)" stroke-width="1.2" stroke-dasharray="3 2" />
+        <rect x="20" y="10" width="125" height="34" rx="6" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-posterior)" stroke-width="1" />
+        <text x="30" y="25" class="a12p20-label" fill="var(--a12p20-posterior)">UTEROSSACRO</text>
+        <text x="30" y="37" class="a12p20-label-sub">Posterior · Visível no plano</text>
+      </g>
+
+      <!-- Rótulo Cardinal Verbatim: "sai do plano" -->
+      <g class="a12p20-label-group a12p20-lg-lat" transform="translate(130, 405)">
+        <line x1="75" y1="-25" x2="35" y2="10" stroke="var(--a12p20-fora-plano)" stroke-width="1.5" />
+        <rect x="0" y="0" width="150" height="42" rx="6" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-fora-plano)" stroke-width="1.5" />
+        <text x="10" y="16" class="a12p20-label" fill="var(--a12p20-fora-plano)">CARDINAL (MACKENRODT)</text>
+        <text x="10" y="31" font-size="11px" font-weight="800" fill="var(--a12p20-fora-plano)">sai do plano ☉</text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ==================== PAINEL DIREITO: VISTA SUPERIOR TRANSVERSA ==================== -->
+  <g id="a12p20-panel-right" transform="translate(510, 80)">
+    <rect width="470" height="490" class="a12p20-panel" />
+    
+    <!-- Título do Painel -->
+    <text x="24" y="32" class="a12p20-panel-header">PAINEL 2: VISTA SUPERIOR TRANSVERSA</text>
+    <text x="24" y="48" class="a12p20-panel-sub">Plano Transverso (X-Y) · Direções Verdadeiras</text>
+
+    <!-- Anatômico Superior (Anel Pélvico + Direções) -->
+    <g id="a12p20-sup-anatomy" transform="translate(235, 275)">
+
+      <!-- Anel Ósseo Pélvico -->
+      <ellipse cx="0" cy="0" rx="190" ry="165" fill="none" stroke="var(--a12p20-osso)" stroke-width="3" stroke-dasharray="8 5" opacity="0.4" />
+      
+      <!-- Púbis (Anterior / Norte) -->
+      <path d="M -40 -165 Q 0 -178 40 -165 Q 30 -150 0 -152 Q -30 -150 -40 -165 Z" class="a12p20-bone" />
+      <!-- Sacro (Posterior / Sul) -->
+      <path d="M -50 160 Q 0 175 50 160 Q 35 145 0 148 Q -35 145 -50 160 Z" class="a12p20-bone" />
+
+      <!-- Bexiga (Norte) -->
+      <ellipse cx="0" cy="-105" rx="55" ry="32" class="a12p20-organ-bexiga" />
+      <text x="0" y="-105" class="a12p20-label-sub" text-anchor="middle" dominant-baseline="middle">BEXIGA</text>
+
+      <!-- Reto (Sul) -->
+      <ellipse cx="0" cy="105" rx="36" ry="26" class="a12p20-organ-sacro" />
+      <text x="0" y="105" class="a12p20-label-sub" text-anchor="middle" dominant-baseline="middle">RETO</text>
+
+      <!-- Útero ao Centro (Fundo + Colo) -->
+      <ellipse cx="0" cy="0" rx="42" ry="56" class="a12p20-organ-utero" />
+      <circle cx="0" cy="0" r="18" fill="none" stroke="var(--a12p20-utero-stroke)" stroke-width="1.5" stroke-dasharray="3 2" />
+      <text x="0" y="-8" class="a12p20-label" text-anchor="middle" font-weight="700">ÚTERO</text>
+      <text x="0" y="10" class="a12p20-label-sub" text-anchor="middle">HUB DO COLO</text>
+
+      <!-- EIXOS E DIREÇÕES OBRIGATÓRIAS DA VISTA SUPERIOR -->
+      <!-- Direção 1: FRENTE -->
+      <text x="0" y="-180" class="a12p20-axis-text" fill="var(--a12p20-anterior)" text-anchor="middle">FRENTE (ANTERIOR)</text>
+      <!-- Direção 2: LATEAIS -->
+      <text x="-195" y="4" class="a12p20-axis-text" fill="var(--a12p20-lateral)" text-anchor="end">LATEAIS</text>
+      <text x="195" y="4" class="a12p20-axis-text" fill="var(--a12p20-lateral)" text-anchor="start">LATERAIS</text>
+      <!-- Direção 3: TRÁS -->
+      <text x="0" y="192" class="a12p20-axis-text" fill="var(--a12p20-posterior)" text-anchor="middle">TRÁS (POSTERIOR)</text>
+
+      <!-- ================= CORDAS NA VISTA SUPERIOR ================= -->
+
+      <!-- 1. CORDA ANTERIOR: Pubovesicouterino (Norte) -->
+      <path d="M 0 -35 L 0 -150" class="a12p20-cord a12p20-cord-ant hs-shape" stroke-width="5" stroke-linecap="round" data-hs-cord="ant" role="button" aria-label="Corda Anterior na Vista Superior" tabindex="0" />
+      <circle cx="0" cy="-35" r="4" fill="var(--a12p20-anterior)" />
+      <circle cx="0" cy="-150" r="4" fill="var(--a12p20-anterior)" />
+
+      <!-- 2. CORDA LATERAL BILATERAL: Cardinal / Mackenrodt (Leste & Oeste) -->
+      <path d="M -30 0 L -175 0" class="a12p20-cord a12p20-cord-lat hs-shape" stroke-width="5" stroke-linecap="round" data-hs-cord="lat" role="button" aria-label="Corda Cardinal Esquerda" tabindex="0" />
+      <path d="M 30 0 L 175 0" class="a12p20-cord a12p20-cord-lat hs-shape" stroke-width="5" stroke-linecap="round" data-hs-cord="lat" role="button" aria-label="Corda Cardinal Direita" tabindex="0" />
+      <circle cx="-30" cy="0" r="4" fill="var(--a12p20-lateral)" />
+      <circle cx="-175" cy="0" r="4" fill="var(--a12p20-lateral)" />
+      <circle cx="30" cy="0" r="4" fill="var(--a12p20-lateral)" />
+      <circle cx="175" cy="0" r="4" fill="var(--a12p20-lateral)" />
+
+      <!-- 3. CORDA POSTERIOR: Uterossacro Bilateral (Sul-Oeste & Sul-Leste) -->
+      <path d="M -18 20 C -25 50 -45 90 -65 145" class="a12p20-cord a12p20-cord-post hs-shape" stroke-width="5" stroke-linecap="round" fill="none" data-hs-cord="post" role="button" aria-label="Corda Uterossacro Esquerda" tabindex="0" />
+      <path d="M 18 20 C 25 50 45 90 65 145" class="a12p20-cord a12p20-cord-post hs-shape" stroke-width="5" stroke-linecap="round" fill="none" data-hs-cord="post" role="button" aria-label="Corda Uterossacro Direita" tabindex="0" />
+      <circle cx="-18" cy="20" r="4" fill="var(--a12p20-posterior)" />
+      <circle cx="-65" cy="145" r="4" fill="var(--a12p20-posterior)" />
+      <circle cx="18" cy="20" r="4" fill="var(--a12p20-posterior)" />
+      <circle cx="65" cy="145" r="4" fill="var(--a12p20-posterior)" />
+
+      <!-- ================= RÓTULOS DA VISTA SUPERIOR ================= -->
+      
+      <!-- Rótulo Cardinal Lateral (Bilateral) -->
+      <g class="a12p20-label-group a12p20-lg-lat" transform="translate(-160, -45)">
+        <rect x="0" y="0" width="140" height="30" rx="5" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-lateral)" stroke-width="1" />
+        <text x="10" y="14" class="a12p20-label" fill="var(--a12p20-lateral)">CARDINAL LATERAL</text>
+        <text x="10" y="24" class="a12p20-label-sub">Parametrial Bilateral</text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ==================== CONTROLES INTERATIVOS E PAINEL DE LEITURA ANCORADO ==================== -->
+  <g id="a12p20-controls-and-reading" transform="translate(20, 585)">
+    
+    <!-- BARRA DE SELEÇÃO DE CORDAS -->
+    <g id="a12p20-selector-bar">
+      <!-- Botão 1: Todas -->
+      <g id="a12p20-btn-all" class="a12p20-btn hs-shape" data-hs-cord="all" role="button" aria-label="Mostrar todas as cordas" tabindex="0" transform="translate(0, 0)">
+        <rect width="110" height="34" class="a12p20-btn-bg" />
+        <text x="55" y="17" class="a12p20-btn-txt">VER TODAS</text>
+      </g>
+
+      <!-- Botão 2: Anterior -->
+      <g id="a12p20-btn-ant" class="a12p20-btn hs-shape" data-hs-cord="ant" role="button" aria-label="Isolar corda anterior" tabindex="0" transform="translate(120, 0)">
+        <rect width="115" height="34" class="a12p20-btn-bg" />
+        <text x="57.5" y="17" class="a12p20-btn-txt">1. ANTERIOR</text>
+      </g>
+
+      <!-- Botão 3: Lateral -->
+      <g id="a12p20-btn-lat" class="a12p20-btn hs-shape" data-hs-cord="lat" role="button" aria-label="Isolar corda lateral cardinal" tabindex="0" transform="translate(245, 0)">
+        <rect width="115" height="34" class="a12p20-btn-bg" />
+        <text x="57.5" y="17" class="a12p20-btn-txt">2. LATERAL</text>
+      </g>
+
+      <!-- Botão 4: Posterior -->
+      <g id="a12p20-btn-post" class="a12p20-btn hs-shape" data-hs-cord="post" role="button" aria-label="Isolar corda posterior" tabindex="0" transform="translate(370, 0)">
+        <rect width="115" height="34" class="a12p20-btn-bg" />
+        <text x="57.5" y="17" class="a12p20-btn-txt">3. POSTERIOR</text>
+      </g>
+    </g>
+
+    <!-- PAINEL DE LEITURA ANCORADO -->
+    <g id="a12p20-reading-card" transform="translate(0, 46)">
+      <rect width="960" height="120" rx="10" fill="var(--a12p20-panel-bg)" stroke="var(--a12p20-panel-border)" stroke-width="1.5" />
+      
+      <!-- Indicador Lateral Decorativo -->
+      <rect id="a12p20-read-indicator" x="0" y="0" width="8" height="120" rx="4" fill="var(--a12p20-fora-plano)" />
+
+      <!-- CONTEÚDO DINÂMICO DO PAINEL DE LEITURA -->
+      <g transform="translate(24, 20)">
+        <text id="a12p20-read-title" x="0" y="16" font-size="15px" font-weight="800" fill="var(--a12p20-tinta)">GEOMETRIA DA SUSPENSÃO: PRESENÇA VS. VISIBILIDADE DE PLANO</text>
+        
+        <text id="a12p20-read-line1" x="0" y="42" font-size="12.5px" font-weight="600" fill="var(--a12p20-tinta-sub)">
+          O útero é suspenso por 3 eixos ligamentares (cordas). A sustentação é realizada pelo chão (assoalho pélvico).
+        </text>
+
+        <text id="a12p20-read-line2" x="0" y="64" font-size="12.5px" font-weight="600" fill="var(--a12p20-tinta)">
+          • Por que o Cardinal "desaparece" no Sagital? O plano mediano (X-Z) corta a bacia longitudinalmente; o cardinal corre perpendicularmente (eixo Y).
+        </text>
+
+        <text id="a12p20-read-line3" x="0" y="86" font-size="12px" font-weight="700" fill="var(--a12p20-fora-plano)">
+          ✓ CONCLUSÃO: Ausência no corte sagital 2D não significa inexistência. O cardinal é a principal corda contra a histeroptose.
+        </text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ==================== SCRIPT INLINE SELF-CONTAINED ==================== -->
+  <script>//<![CDATA[
+  (function() {
+    'use strict';
+    var svg = document.getElementById('a12p20-svg');
+    if (!svg) return;
+
+    var readTitle = document.getElementById('a12p20-read-title');
+    var readLine1 = document.getElementById('a12p20-read-line1');
+    var readLine2 = document.getElementById('a12p20-read-line2');
+    var readLine3 = document.getElementById('a12p20-read-line3');
+    var readIndicator = document.getElementById('a12p20-read-indicator');
+
+    var texts = {
+      all: {
+        title: "GEOMETRIA DA SUSPENSÃO: PRESENÇA VS. VISIBILIDADE DE PLANO",
+        line1: "O útero é suspenso por 3 eixos ligamentares (cordas). A sustentação é realizada pelo chão (assoalho pélvico).",
+        line2: "• O ligamento Pubovesicouterino (frente) e Uterossacro (trás) são paralelos ao plano mediano sagital (visíveis no Sagital).",
+        line3: "✓ O ligamento Cardinal (lateral) emerge ortogonalmente ao plano sagital — representado como vetor 3D (☉ sai do plano).",
+        color: "var(--a12p20-fora-plano)"
+      },
+      ant: {
+        title: "CORDA ANTERIOR: LIGAMENTO PUBOVESICOUTERINO",
+        line1: "• Trajeto: Origina-se na face posterior do púbis, contorna a bexiga urinária e insere-se no colo uterino anterior.",
+        line2: "• Visibilidade: Totalmente contido e visível no corte sagital mediano (direção Frente no plano X-Z).",
+        line3: "✓ Função Mecânica: Evita o deslocamento posterior excessivo do colo e orienta a vesicofixação anterior.",
+        color: "var(--a12p20-anterior)"
+      },
+      lat: {
+        title: "CORDA LATERAL: LIGAMENTO CARDINAL (PARAMETRIAL / MACKENRODT)",
+        line1: "• Trajeto: Insere-se no colo uterino e fórnices vaginais laterais, estendendo-se até as paredes pélvicas laterais.",
+        line2: "• Visibilidade no Sagital: AUSENTE COMO LINHA — sai do plano mediano (eixo Y). Representado pelo vetor ortogonal ☉.",
+        line3: "✓ Relevância Clínica: É o principal eixo de suspensão apical. Sua falha é a principal causa de histeroptose grave.",
+        color: "var(--a12p20-lateral)"
+      },
+      post: {
+        title: "CORDA POSTERIOR: LIGAMENTO UTEROSSACRO",
+        line1: "• Trajeto: Origina-se no colo posterior/vagina superior, contorna lateralmente o reto e fixa-se na fáscia pré-sacral (S2-S4).",
+        line2: "• Visibilidade: Totalmente visível no corte sagital mediano (direção Trás no plano X-Z).",
+        line3: "✓ Função Mecânica: Traciona o colo pélvico póstero-superiormente, mantendo o corpo uterino em anteversão fisiológica.",
+        color: "var(--a12p20-posterior)"
+      }
+    };
+
+    function setActiveCord(cord) {
+      if (!texts[cord]) cord = 'all';
+      svg.setAttribute('data-active-cord', cord);
+      
+      var data = texts[cord];
+      if (readTitle) readTitle.textContent = data.title;
+      if (readLine1) readLine1.textContent = data.line1;
+      if (readLine2) readLine2.textContent = data.line2;
+      if (readLine3) readLine3.textContent = data.line3;
+      if (readIndicator) readIndicator.setAttribute('fill', data.color);
+    }
+
+    var targets = svg.querySelectorAll('.hs-shape');
+    targets.forEach(function(el) {
+      function trigger(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var cord = el.getAttribute('data-hs-cord');
+        if (cord) {
+          var current = svg.getAttribute('data-active-cord');
+          if (current === cord && cord !== 'all') {
+            setActiveCord('all');
+          } else {
+            setActiveCord(cord);
+          }
+        }
+      }
+
+      el.addEventListener('click', trigger);
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          trigger(e);
+        }
+      });
+    });
+
+  })();
+  //]]></script>
+</svg>

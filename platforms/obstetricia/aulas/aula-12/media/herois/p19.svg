@@ -1,0 +1,760 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%" id="a12p19h-svg" class="a12p19h-root" data-theme="dark">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="a12p19h-bg-grad" cx="30%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="var(--a12p19h-bg-stop1, #280d24)" />
+      <stop offset="100%" stop-color="var(--a12p19h-bg-stop2, #120511)" />
+    </radialGradient>
+    
+    <linearGradient id="a12p19h-panel-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p19h-pnl-stop1, rgba(48, 16, 44, 0.75))" />
+      <stop offset="100%" stop-color="var(--a12p19h-pnl-stop2, rgba(24, 7, 22, 0.85))" />
+    </linearGradient>
+
+    <!-- Muscle & Bone Shading Gradients -->
+    <linearGradient id="a12p19h-muscle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p19h-m-stop1, #b83253)" />
+      <stop offset="50%" stop-color="var(--a12p19h-m-stop2, #8e1f3b)" />
+      <stop offset="100%" stop-color="var(--a12p19h-m-stop3, #5c0f24)" />
+    </linearGradient>
+
+    <linearGradient id="a12p19h-cut-muscle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p19h-cm-stop1, #ff5277)" />
+      <stop offset="100%" stop-color="var(--a12p19h-cm-stop2, #a81335)" />
+    </linearGradient>
+
+    <linearGradient id="a12p19h-spared-muscle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p19h-sm-stop1, #2ecc71)" />
+      <stop offset="100%" stop-color="var(--a12p19h-sm-stop2, #15803d)" />
+    </linearGradient>
+
+    <radialGradient id="a12p19h-bone-grad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="var(--a12p19h-b-stop1, #e2d1c3)" />
+      <stop offset="70%" stop-color="var(--a12p19h-b-stop2, #b89b88)" />
+      <stop offset="100%" stop-color="var(--a12p19h-b-stop3, #7a5e4c)" />
+    </radialGradient>
+
+    <radialGradient id="a12p19h-furcula-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffdd59" stop-opacity="1" />
+      <stop offset="40%" stop-color="#ff5252" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ff5252" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filters for Depth and Glow -->
+    <filter id="a12p19h-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="a12p19h-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+
+    <!-- Patterns for Muscle Fibers -->
+    <pattern id="a12p19h-striation" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" />
+    </pattern>
+  </defs>
+
+  <style id="a12p19h-style">
+    #a12p19h-svg.a12p19h-root {
+      --a12p19h-bg: var(--bg-1, #160814);
+      --a12p19h-card-bg: var(--bg-2, #260d23);
+      --a12p19h-text-main: var(--ink-90, #f8ebf7);
+      --a12p19h-text-sub: var(--ink-70, #cfb0cd);
+      --a12p19h-accent-green: var(--kw-green, #2ecc71);
+      --a12p19h-accent-red: var(--kw-red, #ff4757);
+      --a12p19h-accent-yellow: var(--kw-yellow, #ffa502);
+      --a12p19h-border: var(--ink-20, rgba(255, 255, 255, 0.14));
+      --a12p19h-bg-stop1: #2d0e28;
+      --a12p19h-bg-stop2: #140513;
+      --a12p19h-pnl-stop1: rgba(48, 16, 44, 0.85);
+      --a12p19h-pnl-stop2: rgba(24, 7, 22, 0.92);
+      --a12p19h-m-stop1: #b83253;
+      --a12p19h-m-stop2: #8e1f3b;
+      --a12p19h-m-stop3: #5c0f24;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      user-select: none;
+      background-color: var(--a12p19h-bg, #160814);
+    }
+
+    [data-theme="light"]#a12p19h-svg.a12p19h-root,
+    [data-theme="light"] .a12p19h-root {
+      --a12p19h-bg: var(--bg-1, #fcf6fa);
+      --a12p19h-card-bg: var(--bg-2, #f2e4f0);
+      --a12p19h-text-main: var(--ink-90, #2c0e29);
+      --a12p19h-text-sub: var(--ink-70, #633660);
+      --a12p19h-border: var(--ink-20, rgba(0, 0, 0, 0.14));
+      --a12p19h-bg-stop1: #fbf0f8;
+      --a12p19h-bg-stop2: #eee0ed;
+      --a12p19h-pnl-stop1: rgba(250, 240, 248, 0.95);
+      --a12p19h-pnl-stop2: rgba(235, 220, 233, 0.95);
+      --a12p19h-m-stop1: #d64567;
+      --a12p19h-m-stop2: #aa2d4c;
+      --a12p19h-m-stop3: #7d1732;
+      background-color: var(--a12p19h-bg, #fcf6fa);
+    }
+
+    #a12p19h-svg .a12p19h-bg-rect {
+      fill: url(#a12p19h-bg-grad);
+    }
+
+    #a12p19h-svg .a12p19h-header-title {
+      font-size: 20px;
+      font-weight: 800;
+      fill: var(--a12p19h-text-main, #f8ebf7);
+      letter-spacing: 0.5px;
+    }
+
+    #a12p19h-svg .a12p19h-header-subtitle {
+      font-size: 13px;
+      font-weight: 500;
+      fill: var(--a12p19h-text-sub, #cfb0cd);
+    }
+
+    #a12p19h-svg .a12p19h-legend-box {
+      fill: url(#a12p19h-panel-grad);
+      stroke: var(--a12p19h-border, rgba(255, 255, 255, 0.14));
+      stroke-width: 1;
+      rx: 8px;
+    }
+
+    #a12p19h-svg .a12p19h-legend-text {
+      font-size: 12px;
+      font-weight: 600;
+      fill: var(--a12p19h-text-main, #f8ebf7);
+    }
+
+    #a12p19h-svg .a12p19h-stage-border {
+      fill: url(#a12p19h-panel-grad);
+      stroke: var(--a12p19h-border, rgba(255, 255, 255, 0.14));
+      stroke-width: 1.5;
+      rx: 12px;
+    }
+
+    #a12p19h-svg .a12p19h-panel-box {
+      fill: url(#a12p19h-panel-grad);
+      stroke: var(--a12p19h-border, rgba(255, 255, 255, 0.14));
+      stroke-width: 1.5;
+      rx: 12px;
+    }
+
+    #a12p19h-svg .a12p19h-muscle {
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+    }
+
+    #a12p19h-svg .a12p19h-muscle:hover {
+      filter: drop-shadow(0 0 6px var(--a12p19h-accent-yellow, #ffa502));
+      opacity: 0.95;
+    }
+
+    #a12p19h-svg .a12p19h-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #a12p19h-svg .a12p19h-btn-bg {
+      fill: var(--a12p19h-card-bg, #260d23);
+      stroke: var(--a12p19h-border, rgba(255, 255, 255, 0.14));
+      stroke-width: 1.5;
+      rx: 8px;
+    }
+
+    #a12p19h-svg .a12p19h-btn:hover .a12p19h-btn-bg {
+      stroke: var(--a12p19h-accent-yellow, #ffa502);
+      fill: rgba(255, 165, 2, 0.15);
+    }
+
+    #a12p19h-svg .a12p19h-btn.a12p19h-active .a12p19h-btn-bg {
+      stroke: var(--a12p19h-accent-yellow, #ffa502);
+      fill: rgba(255, 165, 2, 0.25);
+    }
+
+    #a12p19h-svg .a12p19h-btn-text {
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--a12p19h-text-main, #f8ebf7);
+      text-anchor: middle;
+      pointer-events: none;
+    }
+
+    #a12p19h-svg .a12p19h-card {
+      fill: rgba(0, 0, 0, 0.25);
+      stroke: var(--a12p19h-border, rgba(255, 255, 255, 0.1));
+      stroke-width: 1;
+      rx: 8px;
+      transition: all 0.25s ease;
+    }
+
+    #a12p19h-svg .a12p19h-card.a12p19h-cut {
+      stroke: var(--a12p19h-accent-red, #ff4757);
+      fill: rgba(255, 71, 87, 0.12);
+    }
+
+    #a12p19h-svg .a12p19h-card.a12p19h-spared {
+      stroke: var(--a12p19h-accent-green, #2ecc71);
+      fill: rgba(46, 204, 113, 0.12);
+    }
+
+    #a12p19h-svg .a12p19h-card.a12p19h-warning {
+      stroke: var(--a12p19h-accent-yellow, #ffa502);
+      fill: rgba(255, 165, 2, 0.15);
+    }
+
+    #a12p19h-svg .a12p19h-badge {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      rx: 4px;
+      text-anchor: middle;
+    }
+
+    #a12p19h-svg .a12p19h-label-text {
+      font-size: 11px;
+      font-weight: 600;
+      fill: var(--a12p19h-text-main, #f8ebf7);
+    }
+
+    #a12p19h-svg .a12p19h-sublabel-text {
+      font-size: 10px;
+      font-weight: 400;
+      fill: var(--a12p19h-text-sub, #cfb0cd);
+    }
+
+    #a12p19h-svg .a12p19h-pointer-line {
+      stroke: var(--a12p19h-text-sub, #cfb0cd);
+      stroke-width: 1;
+      stroke-dasharray: 2,2;
+    }
+
+    #a12p19h-svg .a12p19h-inc-line {
+      stroke: var(--a12p19h-accent-red, #ff4757);
+      stroke-width: 4;
+      stroke-linecap: round;
+      filter: url(#a12p19h-glow);
+    }
+
+    #a12p19h-svg .a12p19h-inc-guide {
+      stroke: var(--a12p19h-accent-yellow, #ffa502);
+      stroke-width: 1.5;
+      stroke-dasharray: 4,3;
+    }
+  </style>
+
+  <!-- Background Layer -->
+  <rect class="a12p19h-bg-rect" width="1000" height="700" rx="0" />
+
+  <!-- HEADER AREA -->
+  <g transform="translate(30, 20)">
+    <text class="a12p19h-header-title" x="0" y="22">EPISIOTOMIA MEDIOLATERAL DIREITA: GEOMETRIA E SELEÇÃO MUSCULAR</text>
+    <text class="a12p19h-header-subtitle" x="0" y="40">Relação topográfica entre o vetor incisional (45°–60°) e os músculos do assoalho pélvico</text>
+  </g>
+
+  <!-- LEGENDA DE INTERPRETAÇÃO (CONTRATO BAUER 1) -->
+  <g transform="translate(30, 70)">
+    <rect class="a12p19h-legend-box" x="0" y="0" width="940" height="34" />
+    <text class="a12p19h-legend-text" x="15" y="21">
+      <tspan fill="var(--a12p19h-accent-yellow, #ffa502)">REGRAS ANATÔMICAS:</tspan> O corte a <tspan fill="var(--a12p19h-accent-yellow, #ffa502)">45°–60°</tspan> atravessa o <tspan fill="var(--a12p19h-accent-red, #ff4757)">M. Bulboesponjoso</tspan> (na origem) e o <tspan fill="var(--a12p19h-accent-red, #ff4757)">M. Transverso Sup. do Períneo</tspan> (no trajeto lateral), preservando o <tspan fill="var(--a12p19h-accent-green, #2ecc71)">Esfíncter Anal Externo</tspan> e o <tspan fill="var(--a12p19h-accent-green, #2ecc71)">M. Isquiocavernoso</tspan>.
+    </text>
+  </g>
+
+  <!-- MAIN STAGE (LEFT) - ANATOMICAL SCHEME -->
+  <g transform="translate(30, 115)">
+    <!-- Stage Box -->
+    <rect class="a12p19h-stage-border" x="0" y="0" width="580" height="565" />
+    
+    <!-- Stage Title & Orientation -->
+    <text class="a12p19h-header-subtitle" x="15" y="24" font-weight="700" fill="var(--a12p19h-text-main, #f8ebf7)">VISÃO PERINEAL (POSIÇÃO DE LITOTOMIA)</text>
+    <text class="a12p19h-sublabel-text" x="565" y="24" text-anchor="end">DIREITA DA PACIENTE (R) &#127993;&#9644;&#9644;&#9654; ESQUERDA DA PACIENTE (L)</text>
+    
+    <!-- Deep Pelvic Floor (Background Muscle Bed - Levator Ani) -->
+    <g class="a12p19h-deep-muscles" opacity="0.45">
+      <path d="M 120,400 Q 290,140 460,400 Q 460,520 290,540 Q 120,520 120,400 Z" fill="#4a152d" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+      <path d="M 140,380 Q 290,170 440,380 Q 440,490 290,520 Q 140,490 140,380 Z" fill="url(#a12p19h-striation)" opacity="0.6" />
+    </g>
+
+    <!-- Bony Landmarks -->
+    <!-- Pubic Symphysis (Top Midline) -->
+    <g id="a12p19h-bone-pubis">
+      <path d="M 260,135 Q 290,120 320,135 L 310,155 Q 290,148 270,155 Z" fill="url(#a12p19h-bone-grad)" stroke="#5a4335" stroke-width="1.5" filter="url(#a12p19h-shadow)" />
+      <text class="a12p19h-sublabel-text" x="290" y="115" text-anchor="middle" font-weight="700">Sínfise Púbica (Anterior)</text>
+    </g>
+
+    <!-- Ischial Tuberosities (Bilateral Bones) -->
+    <!-- Right Tuberosity (Patient R = Screen Left) -->
+    <g id="a12p19h-bone-tuberosity-r">
+      <ellipse cx="140" cy="435" rx="28" ry="38" fill="url(#a12p19h-bone-grad)" stroke="#5a4335" stroke-width="1.5" filter="url(#a12p19h-shadow)" />
+      <!-- Target Marker for Episiotomy Destination -->
+      <circle cx="140" cy="435" r="14" fill="none" stroke="var(--a12p19h-accent-yellow, #ffa502)" stroke-width="2" stroke-dasharray="3,2" />
+      <circle cx="140" cy="435" r="4" fill="var(--a12p19h-accent-yellow, #ffa502)" />
+      <text class="a12p19h-sublabel-text" x="140" y="490" text-anchor="middle" font-weight="700">Tuberosidade</text>
+      <text class="a12p19h-sublabel-text" x="140" y="503" text-anchor="middle">Isquiática Direita</text>
+      <text class="a12p19h-sublabel-text" x="140" y="516" text-anchor="middle" fill="var(--a12p19h-accent-yellow, #ffa502)">(Destino do Vetor)</text>
+    </g>
+
+    <!-- Left Tuberosity (Patient L = Screen Right) -->
+    <g id="a12p19h-bone-tuberosity-l" opacity="0.65">
+      <ellipse cx="440" cy="435" rx="28" ry="38" fill="url(#a12p19h-bone-grad)" stroke="#5a4335" stroke-width="1.5" />
+      <text class="a12p19h-sublabel-text" x="440" y="490" text-anchor="middle">Tuberosidade</text>
+      <text class="a12p19h-sublabel-text" x="440" y="503" text-anchor="middle">Isquiática Esq.</text>
+    </g>
+
+    <!-- Coccyx & Anococcygeal Ligament (Bottom Midline) -->
+    <g id="a12p19h-bone-coccyx">
+      <line x1="290" y1="515" x2="290" y2="542" stroke="#7a5e4c" stroke-width="4" stroke-dasharray="2,2" />
+      <ellipse cx="290" cy="548" rx="14" ry="10" fill="url(#a12p19h-bone-grad)" stroke="#5a4335" stroke-width="1" />
+      <text class="a12p19h-sublabel-text" x="290" y="565" text-anchor="middle">Cóccix (Posterior)</text>
+    </g>
+
+    <!-- PERINEAL MUSCLES (CORE ANATOMY) -->
+
+    <!-- 1. M. ISQUIOCAVERNOSO (Bilateral) -->
+    <!-- Right Isquiocavernoso (Patient R = Screen Left) - SPARED -->
+    <g id="a12p19h-hs-ic" class="a12p19h-muscle" data-muscle="ic">
+      <path id="a12p19h-path-ic-r" d="M 148,410 C 170,350 220,240 270,160 C 278,168 284,178 280,188 C 235,260 190,360 162,425 Z" 
+            fill="url(#a12p19h-spared-muscle-grad)" stroke="var(--a12p19h-accent-green, #2ecc71)" stroke-width="1.5" filter="url(#a12p19h-shadow)" />
+      <path d="M 148,410 C 170,350 220,240 270,160 C 278,168 284,178 280,188 C 235,260 190,360 162,425 Z" 
+            fill="url(#a12p19h-striation)" opacity="0.5" />
+    </g>
+    <!-- Left Isquiocavernoso (Patient L = Screen Right) -->
+    <g id="a12p19h-path-ic-l" opacity="0.75">
+      <path d="M 432,410 C 410,350 360,240 310,160 C 302,168 296,178 300,188 C 345,260 390,360 418,425 Z" 
+            fill="url(#a12p19h-muscle-grad)" stroke="#7a1a31" stroke-width="1" />
+    </g>
+
+    <!-- 2. M. BULBOESPONJOSO / BULBOCAVERNOSO (Bilateral surrounding Vagina) -->
+    <!-- Left Bulboesponjoso (Patient L = Screen Right) -->
+    <g id="a12p19h-path-be-l" opacity="0.75">
+      <path d="M 292,190 C 320,200 340,260 335,320 C 330,350 315,370 292,375 C 302,345 315,300 305,250 C 298,220 292,198 292,190 Z" 
+            fill="url(#a12p19h-muscle-grad)" stroke="#7a1a31" stroke-width="1" />
+    </g>
+    <!-- Right Bulboesponjoso (Patient R = Screen Left) - CUT IN 45-60° -->
+    <g id="a12p19h-hs-be" class="a12p19h-muscle" data-muscle="be">
+      <path id="a12p19h-path-be-r" d="M 288,190 C 260,200 240,260 245,320 C 250,350 265,370 288,375 C 278,345 265,300 275,250 C 282,220 288,198 288,190 Z" 
+            fill="url(#a12p19h-cut-muscle-grad)" stroke="var(--a12p19h-accent-red, #ff4757)" stroke-width="2" filter="url(#a12p19h-shadow)" />
+      <path d="M 288,190 C 260,200 240,260 245,320 C 250,350 265,370 288,375 C 278,345 265,300 275,250 C 282,220 288,198 288,190 Z" 
+            fill="url(#a12p19h-striation)" opacity="0.5" />
+    </g>
+
+    <!-- 3. M. TRANSVERSO SUPERFICIAL DO PERÍNEO (Bilateral Transverse) -->
+    <!-- Left Transverso Sup. (Patient L = Screen Right) -->
+    <g id="a12p19h-path-ts-l" opacity="0.75">
+      <path d="M 292,372 C 340,378 390,395 425,415 C 420,430 405,432 375,418 C 340,402 305,390 292,388 Z" 
+            fill="url(#a12p19h-muscle-grad)" stroke="#7a1a31" stroke-width="1" />
+    </g>
+    <!-- Right Transverso Sup. (Patient R = Screen Left) - CUT IN 45-60° -->
+    <g id="a12p19h-hs-ts" class="a12p19h-muscle" data-muscle="ts">
+      <path id="a12p19h-path-ts-r" d="M 288,372 C 240,378 190,395 155,415 C 160,430 175,432 205,418 C 240,402 275,390 288,388 Z" 
+            fill="url(#a12p19h-cut-muscle-grad)" stroke="var(--a12p19h-accent-red, #ff4757)" stroke-width="2" filter="url(#a12p19h-shadow)" />
+      <path d="M 288,372 C 240,378 190,395 155,415 C 160,430 175,432 205,418 C 240,402 275,390 288,388 Z" 
+            fill="url(#a12p19h-striation)" opacity="0.5" />
+    </g>
+
+    <!-- 4. M. ESFÍNCTER EXTERNO DO ÂNUS (Annular Ring around Anus) - SPARED IN 45-60° -->
+    <g id="a12p19h-hs-ea" class="a12p19h-muscle" data-muscle="ea">
+      <!-- Outer Sphincter Ring -->
+      <ellipse id="a12p19h-path-ea-outer" cx="290" cy="465" rx="42" ry="48" 
+               fill="url(#a12p19h-spared-muscle-grad)" stroke="var(--a12p19h-accent-green, #2ecc71)" stroke-width="2" filter="url(#a12p19h-shadow)" />
+      <ellipse cx="290" cy="465" rx="42" ry="48" fill="url(#a12p19h-striation)" opacity="0.5" />
+      <!-- Inner Anal Lumen cutout -->
+      <ellipse cx="290" cy="465" rx="16" ry="20" fill="var(--a12p19h-bg, #160814)" stroke="#4a152d" stroke-width="1.5" />
+    </g>
+
+    <!-- PERINEAL BODY / TENDÃO CENTRAL DO PERÍNEO -->
+    <g id="a12p19h-hs-vg" class="a12p19h-muscle" data-muscle="vg">
+      <ellipse cx="290" cy="378" rx="16" ry="12" fill="#d4a373" stroke="#8a5a36" stroke-width="1.5" opacity="0.9" />
+      <text class="a12p19h-sublabel-text" x="290" y="381" text-anchor="middle" font-weight="800" fill="#2c0e29" font-size="9px">TCP</text>
+    </g>
+
+    <!-- UROGENITAL ORIFICES & STRUCTURES -->
+    <!-- Clitoris Glans -->
+    <circle cx="290" cy="180" r="7" fill="#ff758c" stroke="#c92a42" stroke-width="1.5" />
+    <text class="a12p19h-sublabel-text" x="290" y="170" text-anchor="middle">Clitóris</text>
+
+    <!-- Urethral Meatus -->
+    <ellipse cx="290" cy="240" rx="5" ry="7" fill="#2b091e" stroke="#ff758c" stroke-width="1" />
+    <text class="a12p19h-sublabel-text" x="290" y="230" text-anchor="middle">Óstio Uretral</text>
+
+    <!-- Vaginal Introitus -->
+    <ellipse cx="290" cy="300" rx="22" ry="32" fill="#230617" stroke="#b83253" stroke-width="1.5" />
+    <!-- Hymenal caruncles -->
+    <path d="M 270,300 Q 290,275 310,300 Q 315,325 290,330 Q 265,325 270,300 Z" fill="none" stroke="#d64567" stroke-width="1" stroke-dasharray="2,2" />
+    <text class="a12p19h-sublabel-text" x="290" y="304" text-anchor="middle" font-weight="600" fill="var(--a12p19h-text-sub, #cfb0cd)">Óstio Vaginal</text>
+
+    <!-- FÚRCULA VAGINAL (COMISSURA POSTERIOR) - INCISION START POINT -->
+    <g id="a12p19h-furcula-point">
+      <circle cx="290" cy="338" r="14" fill="url(#a12p19h-furcula-glow)" />
+      <circle cx="290" cy="338" r="5" fill="var(--a12p19h-accent-yellow, #ffa502)" stroke="#ffffff" stroke-width="1.5" filter="url(#a12p19h-glow)" />
+    </g>
+
+    <!-- GEOMETRIC ANGLE OVERLAY & INCISION VECTOR -->
+    <!-- Safety Corridor Arc (45°–60°) -->
+    <g id="a12p19h-angle-corridor">
+      <path id="a12p19h-corridor-path" d="M 290,338 L 184,444 A 150,150 0 0,0 160.1,413 Z" 
+            fill="rgba(255, 165, 2, 0.22)" stroke="var(--a12p19h-accent-yellow, #ffa502)" stroke-width="1" stroke-dasharray="3,2" />
+      <text class="a12p19h-sublabel-text" x="145" y="405" font-weight="800" fill="var(--a12p19h-accent-yellow, #ffa502)">Zona Segura (45°–60°)</text>
+    </g>
+
+    <!-- Reference Midline (Sagittal 0°) -->
+    <line x1="290" y1="338" x2="290" y2="505" stroke="var(--a12p19h-text-sub, #cfb0cd)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6" />
+    <text class="a12p19h-sublabel-text" x="296" y="500" font-weight="700">0° (Mediana)</text>
+
+    <!-- Reference Line to Ischial Tuberosity (Ideal Axis 50°) -->
+    <line x1="290" y1="338" x2="140" y2="435" class="a12p19h-inc-guide" opacity="0.85" />
+
+    <!-- ACTIVE DYNAMIC INCISION VECTOR LINE -->
+    <g id="a12p19h-dynamic-vector">
+      <line id="a12p19h-inc-line-el" class="a12p19h-inc-line" x1="290" y1="338" x2="175" y2="435" />
+      <!-- Incision Scissors/Cut icon marker -->
+      <circle id="a12p19h-inc-cut-node" cx="232" cy="386" r="6" fill="var(--a12p19h-accent-red, #ff4757)" stroke="#ffffff" stroke-width="1.5" filter="url(#a12p19h-glow)" />
+      <!-- Cut Cross Lines -->
+      <line id="a12p19h-cut-cross1" x1="226" y1="380" x2="238" y2="392" stroke="#ffffff" stroke-width="2" />
+      <line id="a12p19h-cut-cross2" x1="226" y1="392" x2="238" y2="380" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- LABELS & POINTERS (CONTRATO BAUER 5 ACTIVE LABELS, NO PATH CROSSING) -->
+    
+    <!-- Label 1: Fúrcula Vaginal (Incision Origin) -->
+    <g id="a12p19h-lbl-furcula">
+      <line class="a12p19h-pointer-line" x1="290" y1="338" x2="360" y2="338" />
+      <circle cx="360" cy="338" r="3" fill="var(--a12p19h-accent-yellow, #ffa502)" />
+      <text class="a12p19h-label-text" x="368" y="335" font-weight="700">1. Fúrcula Vaginal</text>
+      <text class="a12p19h-sublabel-text" x="368" y="348" fill="var(--a12p19h-accent-yellow, #ffa502)">Ponto Inicial da Incisão</text>
+    </g>
+
+    <!-- Label 2: M. Bulboesponjoso (Crossed) -->
+    <g id="a12p19h-lbl-be">
+      <line class="a12p19h-pointer-line" x1="255" y1="330" x2="80" y2="280" />
+      <circle cx="80" cy="280" r="3" fill="var(--a12p19h-accent-red, #ff4757)" />
+      <text class="a12p19h-label-text" x="75" y="265" text-anchor="end" font-weight="700">2. M. Bulboesponjoso</text>
+      <text class="a12p19h-sublabel-text" x="75" y="278" text-anchor="end" fill="var(--a12p19h-accent-red, #ff4757)">SECCIONADO na Origem</text>
+    </g>
+
+    <!-- Label 3: M. Transverso Superficial do Períneo (Crossed) -->
+    <g id="a12p19h-lbl-ts">
+      <line class="a12p19h-pointer-line" x1="220" y1="400" x2="80" y2="350" />
+      <circle cx="80" cy="350" r="3" fill="var(--a12p19h-accent-red, #ff4757)" />
+      <text class="a12p19h-label-text" x="75" y="335" text-anchor="end" font-weight="700">3. M. Transverso Sup. Períneo</text>
+      <text class="a12p19h-sublabel-text" x="75" y="348" text-anchor="end" fill="var(--a12p19h-accent-red, #ff4757)">SECCIONADO no Trajeto Lateral</text>
+    </g>
+
+    <!-- Label 4: M. Esfíncter Externo do Ânus (Spared) -->
+    <g id="a12p19h-lbl-ea">
+      <line class="a12p19h-pointer-line" x1="332" y1="465" x2="440" y2="540" />
+      <circle cx="440" cy="540" r="3" fill="var(--a12p19h-accent-green, #2ecc71)" />
+      <text class="a12p19h-label-text" x="448" y="538" font-weight="700">4. M. Esfíncter Ext. do Ânus</text>
+      <text class="a12p19h-sublabel-text" x="448" y="551" fill="var(--a12p19h-accent-green, #2ecc71)">POUPADO (Linha Média Posterior)</text>
+    </g>
+
+    <!-- Label 5: M. Isquiocavernoso (Spared) -->
+    <g id="a12p19h-lbl-ic">
+      <line class="a12p19h-pointer-line" x1="210" y1="260" x2="80" y2="210" />
+      <circle cx="80" cy="210" r="3" fill="var(--a12p19h-accent-green, #2ecc71)" />
+      <text class="a12p19h-label-text" x="75" y="195" text-anchor="end" font-weight="700">5. M. Isquiocavernoso</text>
+      <text class="a12p19h-sublabel-text" x="75" y="208" text-anchor="end" fill="var(--a12p19h-accent-green, #2ecc71)">POUPADO (Antero-lateral)</text>
+    </g>
+  </g>
+
+  <!-- RIGHT CONTROL & CLINICAL READOUT PANEL (CONTRATO BAUER 4) -->
+  <g transform="translate(630, 115)">
+    <rect class="a12p19h-panel-box" x="0" y="0" width="340" height="565" />
+
+    <!-- Panel Title -->
+    <text class="a12p19h-header-subtitle" x="20" y="28" font-weight="700" fill="var(--a12p19h-text-main, #f8ebf7)">SIMULADOR &amp; PAINEL DE LEITURA</text>
+
+    <!-- SECTION 1: ANGLE CONTROLS -->
+    <g transform="translate(20, 45)">
+      <text class="a12p19h-sublabel-text" x="0" y="0" font-weight="700" fill="var(--a12p19h-text-sub, #cfb0cd)">SELEICONE O ÂNGULO DE INCISÃO:</text>
+      
+      <!-- Preset Buttons -->
+      <!-- Button 1: 0° Mediana -->
+      <g id="a12p19h-btn-0" class="a12p19h-btn" data-angle="0" transform="translate(0, 10)">
+        <rect class="a12p19h-btn-bg" width="92" height="36" />
+        <text class="a12p19h-btn-text" x="46" y="18" fill="var(--a12p19h-accent-red, #ff4757)">0° Mediana</text>
+        <text class="a12p19h-btn-text" x="46" y="29" font-size="9px" opacity="0.75">(Alto Risco)</text>
+      </g>
+
+      <!-- Button 2: 50° Mediolateral (GOLD STANDARD) -->
+      <g id="a12p19h-btn-50" class="a12p19h-btn a12p19h-active" data-angle="50" transform="translate(104, 10)">
+        <rect class="a12p19h-btn-bg" width="92" height="36" />
+        <text class="a12p19h-btn-text" x="46" y="18" fill="var(--a12p19h-accent-yellow, #ffa502)">45°–60° Ideal</text>
+        <text class="a12p19h-btn-text" x="46" y="29" font-size="9px" fill="var(--a12p19h-accent-green, #2ecc71)">(Padrão Ouro)</text>
+      </g>
+
+      <!-- Button 3: 75° Lateral -->
+      <g id="a12p19h-btn-75" class="a12p19h-btn" data-angle="75" transform="translate(208, 10)">
+        <rect class="a12p19h-btn-bg" width="92" height="36" />
+        <text class="a12p19h-btn-text" x="46" y="18">75° Lateral</text>
+        <text class="a12p19h-btn-text" x="46" y="29" font-size="9px" opacity="0.75">(Exagerada)</text>
+      </g>
+    </g>
+
+    <!-- SECTION 2: LIVE READOUT CARDS FOR MUSCLES -->
+    <g transform="translate(20, 115)">
+      <text class="a12p19h-sublabel-text" x="0" y="0" font-weight="700" fill="var(--a12p19h-text-sub, #cfb0cd)">ESTADO DOS MÚSCULOS NO VETOR ATUAL:</text>
+
+      <!-- Card 1: M. Bulboesponjoso -->
+      <g id="a12p19h-card-be" class="a12p19h-card a12p19h-cut" transform="translate(0, 10)">
+        <rect width="300" height="54" rx="8" />
+        <text class="a12p19h-label-text" x="12" y="22" font-weight="700">M. Bulboesponjoso (Bulbocavernoso)</text>
+        <text id="a12p19h-status-be" class="a12p19h-sublabel-text" x="12" y="38" fill="var(--a12p19h-text-sub, #cfb0cd)">Cruzado logo no início da incisão junto à fúrcula.</text>
+        <rect id="a12p19h-badge-bg-be" x="205" y="10" width="85" height="18" rx="4" fill="var(--a12p19h-accent-red, #ff4757)" />
+        <text id="a12p19h-badge-txt-be" class="a12p19h-badge" x="247" y="23" fill="#ffffff">SECCIONADO</text>
+      </g>
+
+      <!-- Card 2: M. Transverso Superficial do Períneo -->
+      <g id="a12p19h-card-ts" class="a12p19h-card a12p19h-cut" transform="translate(0, 72)">
+        <rect width="300" height="54" rx="8" />
+        <text class="a12p19h-label-text" x="12" y="22" font-weight="700">M. Transverso Superficial do Períneo</text>
+        <text id="a12p19h-status-ts" class="a12p19h-sublabel-text" x="12" y="38" fill="var(--a12p19h-text-sub, #cfb0cd)">Seccionado no trajeto médio rumo à tuberosidade.</text>
+        <rect id="a12p19h-badge-bg-ts" x="205" y="10" width="85" height="18" rx="4" fill="var(--a12p19h-accent-red, #ff4757)" />
+        <text id="a12p19h-badge-txt-ts" class="a12p19h-badge" x="247" y="23" fill="#ffffff">SECCIONADO</text>
+      </g>
+
+      <!-- Card 3: M. Esfíncter Externo do Ânus -->
+      <g id="a12p19h-card-ea" class="a12p19h-card a12p19h-spared" transform="translate(0, 134)">
+        <rect width="300" height="54" rx="8" />
+        <text class="a12p19h-label-text" x="12" y="22" font-weight="700">M. Esfíncter Externo do Ânus</text>
+        <text id="a12p19h-status-ea" class="a12p19h-sublabel-text" x="12" y="38" fill="var(--a12p19h-text-sub, #cfb0cd)">Protegido na linha média posterior (&gt;15mm de margem).</text>
+        <rect id="a12p19h-badge-bg-ea" x="205" y="10" width="85" height="18" rx="4" fill="var(--a12p19h-accent-green, #2ecc71)" />
+        <text id="a12p19h-badge-txt-ea" class="a12p19h-badge" x="247" y="23" fill="#ffffff">POUPADO</text>
+      </g>
+
+      <!-- Card 4: M. Isquiocavernoso -->
+      <g id="a12p19h-card-ic" class="a12p19h-card a12p19h-spared" transform="translate(0, 196)">
+        <rect width="300" height="54" rx="8" />
+        <text class="a12p19h-label-text" x="12" y="22" font-weight="700">M. Isquiocavernoso</text>
+        <text id="a12p19h-status-ic" class="a12p19h-sublabel-text" x="12" y="38" fill="var(--a12p19h-text-sub, #cfb0cd)">Intacto antero-lateralmente junto ao ramo isquiopúbico.</text>
+        <rect id="a12p19h-badge-bg-ic" x="205" y="10" width="85" height="18" rx="4" fill="var(--a12p19h-accent-green, #2ecc71)" />
+        <text id="a12p19h-badge-txt-ic" class="a12p19h-badge" x="247" y="23" fill="#ffffff">POUPADO</text>
+      </g>
+    </g>
+
+    <!-- SECTION 3: CLINICAL SYNTHESIS BOX -->
+    <g transform="translate(20, 385)">
+      <rect width="300" height="155" rx="8" fill="rgba(0, 0, 0, 0.3)" stroke="var(--a12p19h-border, rgba(255, 255, 255, 0.14))" stroke-width="1" />
+      <text class="a12p19h-label-text" x="15" y="22" font-weight="700" fill="var(--a12p19h-accent-yellow, #ffa502)">SÍNTESE PARA A PROVA DE RESIDÊNCIA:</text>
+      
+      <text class="a12p19h-sublabel-text" x="15" y="42">
+        <tspan x="15" dy="0" font-weight="700" fill="var(--a12p19h-text-main, #f8ebf7)">• O PAR SECCIONADO:</tspan>
+        <tspan x="25" dy="14">1. Bulboesponjoso (anterior/origem)</tspan>
+        <tspan x="25" dy="14">2. Transverso Superficial do Períneo (lateral)</tspan>
+        <tspan x="15" dy="20" font-weight="700" fill="var(--a12p19h-text-main, #f8ebf7)">• O PAR POUPADO:</tspan>
+        <tspan x="25" dy="14">1. Esfíncter Externo do Ânus (preservado)</tspan>
+        <tspan x="25" dy="14">2. Isquiocavernoso (preservado)</tspan>
+        <tspan x="15" dy="20" font-weight="700" fill="var(--a12p19h-accent-yellow, #ffa502)">• Mnemônica:</tspan>
+        <tspan fill="var(--a12p19h-text-main, #f8ebf7)"> 45° corta B + T (BT), poupa E + I (EI).</tspan>
+      </text>
+    </g>
+
+    <!-- Interactive Hint Footer -->
+    <text class="a12p19h-sublabel-text" x="170" y="555" text-anchor="middle" font-size="10px" opacity="0.7">
+      Clique nos botões de ângulo para alternar a simulação
+    </text>
+  </g>
+
+  <!-- EMBEDDED ENGINE SCRIPT (SELF-CONTAINED) -->
+  <script id="a12p19h-script"><![CDATA[
+    (function() {
+      var currentAngle = 50;
+
+      // Origin point: Fúrcula Vaginal
+      var ox = 290;
+      var oy = 338;
+      var vectorLen = 160;
+
+      function setAngle(angle) {
+        currentAngle = angle;
+
+        // Update active button state
+        var btns = [0, 50, 75];
+        btns.forEach(function(a) {
+          var btn = document.getElementById('a12p19h-btn-' + a);
+          if (btn) {
+            if (a === angle) {
+              btn.classList.add('a12p19h-active');
+            } else {
+              btn.classList.remove('a12p19h-active');
+            }
+          }
+        });
+
+        // Calculate dynamic incision line end point
+        var rad = angle * Math.PI / 180;
+        var dx = - Math.sin(rad) * vectorLen;
+        var dy = Math.cos(rad) * vectorLen;
+
+        var ex = ox + dx;
+        var ey = oy + dy;
+
+        // Update line element
+        var lineEl = document.getElementById('a12p19h-inc-line-el');
+        if (lineEl) {
+          lineEl.setAttribute('x2', ex);
+          lineEl.setAttribute('y2', ey);
+        }
+
+        // Update cut node marker along vector
+        var nodeRatio = 0.45;
+        var nx = ox + dx * nodeRatio;
+        var ny = oy + dy * nodeRatio;
+
+        var cutNode = document.getElementById('a12p19h-inc-cut-node');
+        var cross1 = document.getElementById('a12p19h-cut-cross1');
+        var cross2 = document.getElementById('a12p19h-cut-cross2');
+
+        if (cutNode) {
+          cutNode.setAttribute('cx', nx);
+          cutNode.setAttribute('cy', ny);
+        }
+        if (cross1) {
+          cross1.setAttribute('x1', nx - 6); cross1.setAttribute('y1', ny - 6);
+          cross1.setAttribute('x2', nx + 6); cross1.setAttribute('y2', ny + 6);
+        }
+        if (cross2) {
+          cross2.setAttribute('x1', nx - 6); cross2.setAttribute('y1', ny + 6);
+          cross2.setAttribute('x2', nx + 6); cross2.setAttribute('y2', ny - 6);
+        }
+
+        // Update muscle statuses based on angle
+        var cardBe = document.getElementById('a12p19h-card-be');
+        var cardTs = document.getElementById('a12p19h-card-ts');
+        var cardEa = document.getElementById('a12p19h-card-ea');
+        var cardIc = document.getElementById('a12p19h-card-ic');
+
+        var bgBe = document.getElementById('a12p19h-badge-bg-be');
+        var txtBe = document.getElementById('a12p19h-badge-txt-be');
+        var stBe = document.getElementById('a12p19h-status-be');
+
+        var bgTs = document.getElementById('a12p19h-badge-bg-ts');
+        var txtTs = document.getElementById('a12p19h-badge-txt-ts');
+        var stTs = document.getElementById('a12p19h-status-ts');
+
+        var bgEa = document.getElementById('a12p19h-badge-bg-ea');
+        var txtEa = document.getElementById('a12p19h-badge-txt-ea');
+        var stEa = document.getElementById('a12p19h-status-ea');
+
+        var bgIc = document.getElementById('a12p19h-badge-bg-ic');
+        var txtIc = document.getElementById('a12p19h-badge-txt-ic');
+        var stIc = document.getElementById('a12p19h-status-ic');
+
+        var pathBe = document.getElementById('a12p19h-path-be-r');
+        var pathTs = document.getElementById('a12p19h-path-ts-r');
+        var pathEa = document.getElementById('a12p19h-path-ea-outer');
+        var pathIc = document.getElementById('a12p19h-path-ic-r');
+
+        if (angle === 0) {
+          // MEDIAN EPISIOTOMY (0°)
+          if (cardBe) cardBe.className.baseVal = 'a12p19h-card a12p19h-cut';
+          if (bgBe) bgBe.setAttribute('fill', 'var(--a12p19h-accent-red, #ff4757)');
+          if (txtBe) txtBe.textContent = 'SECCIONADO';
+          if (stBe) stBe.textContent = 'Cruzado medialmente na fúrcula.';
+
+          if (cardTs) cardTs.className.baseVal = 'a12p19h-card a12p19h-spared';
+          if (bgTs) bgTs.setAttribute('fill', 'var(--a12p19h-accent-green, #2ecc71)');
+          if (txtTs) txtTs.textContent = 'POUPADO';
+          if (stTs) stTs.textContent = 'Vetor de 0° passa paralelo ao músculo.';
+
+          if (cardEa) cardEa.className.baseVal = 'a12p19h-card a12p19h-cut';
+          if (bgEa) bgEa.setAttribute('fill', 'var(--a12p19h-accent-red, #ff4757)');
+          if (txtEa) txtEa.textContent = 'LACERAÇÃO 3º/4º';
+          if (stEa) stEa.textContent = 'ALERTA: Vetor atinge diretamente o esfíncter!';
+
+          if (cardIc) cardIc.className.baseVal = 'a12p19h-card a12p19h-spared';
+          if (bgIc) bgIc.setAttribute('fill', 'var(--a12p19h-accent-green, #2ecc71)');
+          if (txtIc) txtIc.textContent = 'POUPADO';
+          if (stIc) stIc.textContent = 'Preservado lateralmente.';
+
+          // Visual fills on muscles
+          if (pathBe) pathBe.setAttribute('fill', 'url(#a12p19h-cut-muscle-grad)');
+          if (pathTs) pathTs.setAttribute('fill', 'url(#a12p19h-spared-muscle-grad)');
+          if (pathEa) pathEa.setAttribute('fill', 'url(#a12p19h-cut-muscle-grad)');
+          if (pathIc) pathIc.setAttribute('fill', 'url(#a12p19h-spared-muscle-grad)');
+
+        } else if (angle >= 45 && angle <= 60) {
+          // MEDIOLATERAL (45°-60°) - GOLD STANDARD
+          if (cardBe) cardBe.className.baseVal = 'a12p19h-card a12p19h-cut';
+          if (bgBe) bgBe.setAttribute('fill', 'var(--a12p19h-accent-red, #ff4757)');
+          if (txtBe) txtBe.textContent = 'SECCIONADO';
+          if (stBe) stBe.textContent = 'Cruzado logo no início da incisão junto à fúrcula.';
+
+          if (cardTs) cardTs.className.baseVal = 'a12p19h-card a12p19h-cut';
+          if (bgTs) bgTs.setAttribute('fill', 'var(--a12p19h-accent-red, #ff4757)');
+          if (txtTs) txtTs.textContent = 'SECCIONADO';
+          if (stTs) stTs.textContent = 'Seccionado no trajeto médio rumo à tuberosidade.';
+
+          if (cardEa) cardEa.className.baseVal = 'a12p19h-card a12p19h-spared';
+          if (bgEa) bgEa.setAttribute('fill', 'var(--a12p19h-accent-green, #2ecc71)');
+          if (txtEa) txtEa.textContent = 'POUPADO';
+          if (stEa) stEa.textContent = 'Protegido na linha média posterior (>15mm de margem).';
+
+          if (cardIc) cardIc.className.baseVal = 'a12p19h-card a12p19h-spared';
+          if (bgIc) bgIc.setAttribute('fill', 'var(--a12p19h-accent-green, #2ecc71)');
+          if (txtIc) txtIc.textContent = 'POUPADO';
+          if (stIc) stIc.textContent = 'Intacto antero-lateralmente junto ao ramo isquiopúbico.';
+
+          // Visual fills on muscles
+          if (pathBe) pathBe.setAttribute('fill', 'url(#a12p19h-cut-muscle-grad)');
+          if (pathTs) pathTs.setAttribute('fill', 'url(#a12p19h-cut-muscle-grad)');
+          if (pathEa) pathEa.setAttribute('fill', 'url(#a12p19h-spared-muscle-grad)');
+          if (pathIc) pathIc.setAttribute('fill', 'url(#a12p19h-spared-muscle-grad)');
+
+        } else if (angle > 65) {
+          // LATERAL INCISION (75°) - EXCESSIVE ANGLE
+          if (cardBe) cardBe.className.baseVal = 'a12p19h-card a12p19h-warning';
+          if (bgBe) bgBe.setAttribute('fill', 'var(--a12p19h-accent-yellow, #ffa502)');
+          if (txtBe) txtBe.textContent = 'PARCIAL';
+          if (stBe) stBe.textContent = 'Corte muito lateral desvia do corpo perineal.';
+
+          if (cardTs) cardTs.className.baseVal = 'a12p19h-card a12p19h-cut';
+          if (bgTs) bgTs.setAttribute('fill', 'var(--a12p19h-accent-red, #ff4757)');
+          if (txtTs) txtTs.textContent = 'SECCIONADO';
+          if (stTs) stTs.textContent = 'Seccionado lateralmente.';
+
+          if (cardEa) cardEa.className.baseVal = 'a12p19h-card a12p19h-spared';
+          if (bgEa) bgEa.setAttribute('fill', 'var(--a12p19h-accent-green, #2ecc71)');
+          if (txtEa) txtEa.textContent = 'POUPADO';
+          if (stEa) stEa.textContent = 'Preservado (distância excessiva).';
+
+          if (cardIc) cardIc.className.baseVal = 'a12p19h-card a12p19h-warning';
+          if (bgIc) bgIc.setAttribute('fill', 'var(--a12p19h-accent-yellow, #ffa502)');
+          if (txtIc) txtIc.textContent = 'RISCO DE LESÃO';
+          if (stIc) stIc.textContent = 'ATENÇÃO: Ângulo >70° aproxima do ramo isquiopúbico!';
+
+          // Visual fills on muscles
+          if (pathBe) pathBe.setAttribute('fill', 'url(#a12p19h-cut-muscle-grad)');
+          if (pathTs) pathTs.setAttribute('fill', 'url(#a12p19h-cut-muscle-grad)');
+          if (pathEa) pathEa.setAttribute('fill', 'url(#a12p19h-spared-muscle-grad)');
+          if (pathIc) pathIc.setAttribute('fill', 'url(#a12p19h-cut-muscle-grad)');
+        }
+      }
+
+      // Attach button click listeners
+      var btn0 = document.getElementById('a12p19h-btn-0');
+      var btn50 = document.getElementById('a12p19h-btn-50');
+      var btn75 = document.getElementById('a12p19h-btn-75');
+
+      if (btn0) btn0.addEventListener('click', function() { setAngle(0); });
+      if (btn50) btn50.addEventListener('click', function() { setAngle(50); });
+      if (btn75) btn75.addEventListener('click', function() { setAngle(75); });
+
+      // Muscle click listeners to toggle selection/focus
+      var muscles = document.querySelectorAll('.a12p19h-muscle');
+      for (var i = 0; i < muscles.length; i++) {
+        (function(m) {
+          m.addEventListener('click', function() {
+            var type = m.getAttribute('data-muscle');
+            if (type === 'be') setAngle(50);
+            else if (type === 'ts') setAngle(50);
+            else if (type === 'ea') setAngle(0);
+            else if (type === 'ic') setAngle(75);
+          });
+        })(muscles[i]);
+      }
+
+      // Initialize default
+      setAngle(50);
+    })();
+  ]]></script>
+</svg>

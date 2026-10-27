@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Cefaleia (cf1). Progressão e o crânio que dói — quatro sítios álgicos e a metáfora alfinete → bola de tênis.">
+<title>Progressão e o crânio que dói · cf1 · Neurologia</title>
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="cf1-cara">
+/* cf1 — identidade e componentes; a moldura vem do chassi compartilhado.
+   Ajuste 02-08: --ink-mute apontava para --ink-60 (o tom de NOTA/carimbo da casa)
+   e virou a cor de parágrafos de abertura, legendas e respostas — a página inteira
+   ficou cinza e ilegível. Agora --ink-mute aponta para --ink-legenda (texto que se LÊ,
+   nos dois temas). Os poucos usos que SÃO mesmo metadado/carimbo recebem --ink-60
+   direto. Os cards ganham borda visível e inset-highlight (voltam a ser objetos);
+   os alarmes de coral ganham halo próprio (saltam do fundo). */
+:root {
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+  --violet: #a78bfa;
+  --teal: var(--ciano);
+  --gold: var(--amber);
+  --green: var(--verde);
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --r: var(--radius-sm);
+  --r-lg: var(--radius);
+  --font: var(--font-sans);
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  /* membrana do card: borda que se vê + Highlight interno de glass + sombra da casa. */
+  --card-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.035);
+  /* halo dos alarmes: coral suave вокруг do card, sem virar neon. */
+  --alarm-glow: 0 0 30px -12px color-mix(in srgb, var(--coral) 50%, transparent);
+}
+body[data-theme="light"] { --violet: #7c3aed; }
+/* Guarda local: resolve os apelidos da aula no mesmo elemento que recebe os tokens
+   do tema manual, impedindo que card e texto herdem esquemas diferentes. */
+body[data-theme="light"], body[data-theme="dark"] {
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+}
+.page__eyebrow { color: var(--ink-60); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 .5rem; }
+/* Openers */
+.opener {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg);
+  background: var(--card); padding: 1.15rem 1.2rem 1.25rem; margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .opener, .exec-card, .fig, .quiz, .op-summary, .why-matters, .trap, .dont-confuse, .case-card, .gap-box, .hero-figure, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge { background: var(--card-solid); }
+}
+.opener__eyebrow { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); margin-bottom: .35rem; }
+.opener h1, #page-title {
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem); line-height: 1.25; margin: 0 0 .55rem; font-weight: 700;
+}
+.opener__lead, .opener__mnemonic, .opener__bust, .opener__case { margin: 0; color: var(--ink-mute); font-size: 1.02rem; }
+.opener--question { border-left: 4px solid var(--indigo); }
+.opener--case { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 8%, var(--card)); }
+.opener--trap { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.opener--checklist { border-left: 4px solid var(--teal); }
+.opener--mnemonic {
+  border-left: 4px solid var(--gold);
+  background: color-mix(in srgb, var(--gold) 7%, var(--card));
+}
+.opener--mnemonic .opener__mnemonic { font-family: Georgia, "Times New Roman", serif; font-size: 1.18rem; color: var(--ink); }
+.opener--vs { border-left: 4px solid var(--teal); }
+.opener--bust { border-left: 4px solid var(--coral); }
+.strike-wrong { text-decoration: line-through; color: var(--ink-60); }
+.chipset { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.1rem; }
+.chip--topic, .chip, .chip--ok, .chip--no, .chip--series {
+  display: inline-flex; align-items: center; border-radius: 999px; padding: .28rem .7rem;
+  font-size: .78rem; border: 1px solid var(--border); background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+  color: var(--ink); cursor: default;
+}
+.chip--topic { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 35%, var(--border)); }
+.chip--ok { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+.chip--no { color: var(--coral); border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.chip--series { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 35%, var(--border)); cursor: not-allowed; }
+button.chip { cursor: pointer; min-height: 36px; }
+/* Prosa usa a tipografia editorial do chassi. */
+.no-indent { text-indent: 0 !important; }
+.prose-list { margin: 0 0 1em 1.1rem; padding: 0; }
+.prose-list li { margin: .3rem 0; }
+.topic-h { font-size: 1.12rem; margin: 1.35rem 0 .55rem; color: var(--ink); }
+.term { color: var(--indigo); font-weight: 650; }
+[data-theme="light"] .term { color: var(--indigo); }
+.hl-good { color: var(--green); font-weight: 650; }
+.hl-bad { color: var(--coral); font-weight: 650; }
+.hl-warn { color: var(--gold); font-weight: 650; }
+/* Cards */
+.exec-card, .trap, .dont-confuse, .op-summary, .why-matters, .continuity, .gap-box, .hero-figure, .case-card, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge {
+  border: 1px solid var(--border-strong); border-radius: var(--r); background: var(--card);
+  padding: 1rem 1.05rem; margin: 1.1rem 0; box-shadow: var(--card-shadow);
+}
+.exec-card__title, .trap__title, .op-summary__title, .why-matters__title, .flip-deck__title, .ctx-grid__title, .alarm-mini__title, .flow-raias__title, .mantra-row__title, .tabelao__title, .series-bridge__title {
+  margin: 0 0 .65rem; font-size: 1rem; color: var(--teal);
+}
+/* Fecho: corpo em tom legenda (lê confortável nos dois temas); strong segue ink-100 pelo chassi. */
+.op-summary .prosa { color: var(--ink-legenda); }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.checklist label { display: flex; gap: .55rem; align-items: flex-start; cursor: pointer; min-height: 44px; }
+.checklist input { width: 18px; height: 18px; margin-top: .2rem; accent-color: var(--indigo); }
+/* split grave × simples (P1) */
+.split-board { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media (max-width: 560px) { .split-board { grid-template-columns: 1fr; } }
+.split-board__bad, .split-board__good {
+  border-radius: 10px; padding: .8rem .85rem; border: 1px solid var(--border);
+}
+.split-board__bad { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--alarm-glow); }
+.split-board__good { border-color: color-mix(in srgb, var(--green) 45%, var(--border)); background: color-mix(in srgb, var(--green) 6%, var(--card)); }
+.split-board h4 { margin: 0 0 .4rem; font-size: .9rem; }
+.split-board__bad h4 { color: var(--coral); }
+.split-board__good h4 { color: var(--green); }
+.split-board ul { margin: .2rem 0 0; padding-left: 1.1rem; }
+.split-board li { margin: .25rem 0; font-size: .92rem; }
+/* funil-PS toggle (P1/P8) */
+.funil-toggle { display: flex; gap: .5rem; flex-wrap: wrap; margin: .6rem 0 .2rem; }
+.funil-btn {
+  min-height: 44px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .45rem 1rem; cursor: pointer; font: inherit;
+}
+.funil-btn[aria-pressed="true"] { border-color: var(--indigo); color: var(--indigo); background: color-mix(in srgb, var(--indigo) 12%, var(--card-solid)); }
+.funil-btn.funil-btn--alarm[aria-pressed="true"] { border-color: var(--coral); color: var(--coral); background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); }
+.funil-out { font-size: .94rem; color: var(--ink-mute); margin: .5rem 0 0; text-indent: 0; }
+/* flip-cards (P2) */
+.flip-deck { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .flip-deck { grid-template-columns: 1fr; } }
+.flip-card { perspective: 1000px; min-height: 120px; cursor: pointer; }
+.flip-card__inner { position: relative; width: 100%; min-height: 120px; transition: transform .5s; transform-style: preserve-3d; }
+.flip-card[aria-pressed="true"] .flip-card__inner { transform: rotateY(180deg); }
+.flip-card__face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 10px; border: 1px solid var(--border-strong); padding: .8rem .85rem; display: flex; flex-direction: column; gap: .25rem; background: var(--card-solid); }
+.flip-card__face--front { color: var(--ink); }
+.flip-card__face--front .ff-tag { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); }
+.flip-card__face--back { transform: rotateY(180deg); color: var(--ink-mute); font-size: .9rem; }
+.flip-card--primary .flip-card__face--front { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.flip-card--secondary .flip-card__face--front { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.flip-card:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 10px; }
+/* board comparativo (P2) */
+.cmp-board { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .cmp-board { grid-template-columns: 1fr; } }
+.cmp-col { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.cmp-col--p { border-color: color-mix(in srgb, var(--indigo) 40%, var(--border)); }
+.cmp-col--s { border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.cmp-col h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.cmp-col--p h4 { color: var(--indigo); }
+.cmp-col--s h4 { color: var(--coral); }
+.cmp-col .chip { margin: .2rem .2rem .2rem 0; }
+/* timeline crises (P3) — texto simples no DOM reforça o SVG */
+.reopen-banner { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); border-radius: 0 10px 10px 0; padding: .65rem .85rem; margin: .8rem 0; box-shadow: var(--alarm-glow); }
+.reopen-banner b { color: var(--coral); }
+/* mini-tabela 3 alarmes (P4) */
+.alarm-mini { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.alarm-mini__table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.alarm-mini__table th, .alarm-mini__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.alarm-mini__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); }
+.nuance {
+  border-left: 3px solid var(--gold); padding: .7rem .9rem; margin: 1rem 0;
+  background: color-mix(in srgb, var(--gold) 8%, transparent); border-radius: 0 10px 10px 0;
+}
+.nuance__tag { display: inline-block; font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); font-weight: 700; margin-bottom: .25rem; }
+/* curva trovoada toggle (P4) */
+.curve-toggle { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .55rem; }
+.curve-btn {
+  min-height: 40px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .4rem .85rem; cursor: pointer; font: inherit;
+}
+.curve-btn.is-active { border-color: var(--coral); color: var(--coral); }
+.curve-btn.is-active[data-curve="prog"] { border-color: var(--amber); color: var(--amber); }
+.curve-out { font-size: .94rem; color: var(--ink-mute); margin: .4rem 0 0; text-indent: 0; }
+/* herói (P5) */
+.hero-figure { border-left: 4px solid var(--violet); }
+.hero-figure__cap { font-size: .82rem; color: var(--ink-legenda); margin: .5rem 0 0; }
+/* cards sistêmicos (P6) */
+.sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .8rem 0; }
+@media (max-width: 560px) { .sys-grid { grid-template-columns: 1fr; } }
+.sys-card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.sys-card--men { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.sys-card--sys { border-color: color-mix(in srgb, var(--amber) 45%, var(--border)); }
+.sys-card h4 { margin: 0 0 .3rem; font-size: .9rem; }
+.sys-card--men h4 { color: var(--coral); }
+.sys-card--sys h4 { color: var(--amber); }
+.trap { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.trap--despertar { border-left-color: var(--gold); box-shadow: var(--card-shadow); }
+.trap__pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .6rem 0; }
+@media (max-width: 560px) { .trap__pair { grid-template-columns: 1fr; } }
+.trap__phrase { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem .8rem; font-size: .92rem; }
+.trap__phrase--no { border-color: color-mix(in srgb, var(--ink-60) 40%, var(--border)); color: var(--ink-60); }
+.trap__phrase--yes { border-color: color-mix(in srgb, var(--coral) 50%, var(--border)); background: color-mix(in srgb, var(--coral) 8%, var(--card)); }
+.trap__phrase b { color: var(--coral); }
+/* context grid (P7) */
+.ctx-grid { }
+.ctx-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin: .5rem 0; }
+@media (max-width: 640px) { .ctx-cards { grid-template-columns: 1fr; } }
+.ctx-item { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; cursor: pointer; background: var(--card-solid); }
+.ctx-item[aria-expanded="true"] { border-color: var(--violet); }
+.ctx-item__ctx { font-size: .78rem; color: var(--violet); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.ctx-item__q { font-size: .95rem; font-weight: 600; margin: .2rem 0; }
+.ctx-item__a { font-size: .9rem; color: var(--ink-mute); display: none; margin-top: .3rem; }
+.ctx-item[aria-expanded="true"] .ctx-item__a { display: block; }
+.ctx-item:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+/* checklist porta (P8) */
+.checklist--porta .checklist__hint { font-size: .82rem; color: var(--ink-mute); margin-top: .4rem; }
+/* fluxo 4 raias (P9) */
+.flow-raias { }
+.rai { border: 1px solid var(--border-strong); border-radius: 10px; padding: .7rem .85rem; margin: .5rem 0; cursor: pointer; background: var(--card-solid); }
+.rai[aria-pressed="true"] { border-color: var(--indigo); box-shadow: 0 0 0 1px color-mix(in srgb, var(--indigo) 45%, transparent); }
+.rai__top { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.rai__sus { font-weight: 700; color: var(--coral); }
+.rai__arr { color: var(--teal); font-weight: 700; }
+.rai__ex { font-weight: 700; color: var(--indigo); }
+.rai__why { font-size: .9rem; color: var(--ink-mute); margin-top: .35rem; display: none; }
+.rai[aria-pressed="true"] .rai__why { display: block; }
+.rai:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+/* tabelão P10 */
+.tabelao { }
+.tabelao__filters { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .7rem; }
+.filter-btn { min-height: 36px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-solid); color: var(--ink); padding: .3rem .8rem; cursor: pointer; font: inherit; font-size: .82rem; }
+.filter-btn.is-active { border-color: var(--indigo); color: var(--indigo); }
+.tabelao__cards { display: none; flex-direction: column; gap: .5rem; }
+@media (max-width: 640px) { .tabelao__cards { display: flex; } .tabelao__table-wrap { display: none; } }
+.tabelao__card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .6rem .75rem; border-left: 4px solid var(--coral); box-shadow: var(--alarm-glow); }
+.tabelao__card .tc-alarm { font-weight: 700; color: var(--coral); }
+.tabelao__card .tc-row { font-size: .88rem; color: var(--ink-mute); margin-top: .2rem; }
+.tabelao__table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabelao__table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 560px; }
+.tabelao__table th, .tabelao__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.tabelao__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); position: sticky; top: 0; }
+.tabelao__table td.alarme-cell { font-weight: 650; color: var(--coral); }
+/* mantras (P10) */
+.mantra-row { border-left: 4px solid var(--gold); }
+.mantra-row ol { margin: .2rem 0 0; padding-left: 1.3rem; }
+.mantra-row li { margin: .4rem 0; font-weight: 600; }
+.mantra-row li .m-gold { color: var(--gold); }
+/* series bridge chips */
+.series-bridge { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 6%, var(--card)); }
+.series-bridge .chip-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+.dont-confuse__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+.dont-confuse__grid--2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .dont-confuse__grid { grid-template-columns: 1fr; } }
+.dont-confuse__grid > div { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem; }
+.dont-confuse__warn { border-color: color-mix(in srgb, var(--gold) 50%, var(--border)) !important; }
+.dont-confuse h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.gap-box { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 11%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.gap-box h4 { margin: 0 0 .4rem; color: var(--coral); }
+/* Figures */
+.fig { margin: 1.25rem 0; border: 1px solid var(--border-strong); border-radius: var(--r-lg); overflow: hidden; background: var(--card); box-shadow: var(--card-shadow); }
+.fig__frame { width: 100%; display: block; background: var(--bg-1); }
+.fig__frame img {
+  display: block; width: 100%; height: auto; max-width: 100%;
+  object-fit: contain; background: #0a0f18;
+}
+[data-theme="light"] .fig__frame img { background: #e8eef5; }
+.fig__frame--svg { padding: .35rem; }
+.cf1-inline-svg { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; }
+.fig__cap {
+  padding: .7rem .95rem .85rem; font-size: .78rem; color: var(--ink-legenda); line-height: 1.45;
+  border-top: 1px solid var(--border);
+}
+.fig__label {
+  display: inline-block; font-family: var(--mono); font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--gold); margin-right: .4rem;
+}
+.fig__attr { display: block; margin-top: .4rem; padding-top: .35rem; border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent); font-size: .74rem; color: var(--ink-fonte); }
+/* Quiz */
+.quiz {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg); padding: 1.1rem 1rem 1.25rem;
+  background: var(--card); margin: 1.5rem 0 1rem; box-shadow: var(--card-shadow);
+}
+.quiz h2 { margin: 0 0 .85rem; font-size: 1.1rem; }
+.quiz__questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.quiz__stem { margin: 0 0 .55rem; font-weight: 600; text-indent: 0; }
+.quiz__alternatives { display: grid; gap: .4rem; }
+.quiz__alt {
+  text-align: left; border: 1px solid var(--border-strong); border-radius: 10px;
+  background: var(--card-solid); color: var(--ink); padding: .7rem .8rem; cursor: pointer;
+  min-height: 44px; font: inherit;
+}
+.quiz__alt:hover { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.quiz__alt:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.quiz__alt[aria-checked="true"] { border-color: var(--indigo); }
+.quiz__alt.is-correct { border-color: var(--green); background: color-mix(in srgb, var(--green) 12%, var(--card-solid)); }
+.quiz__alt.is-wrong { border-color: var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card-solid)); }
+.quiz__feedback { margin-top: .55rem; padding: .7rem .75rem; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--bg-2); }
+.quiz__feedback[hidden] { display: none; }
+.quiz__verdict { margin: 0 0 .35rem; font-weight: 700; }
+.quiz__verdict.is-ok { color: var(--green); }
+.quiz__verdict.is-bad { color: var(--coral); }
+.quiz__justification, .quiz__distractor { margin: .25rem 0 0; font-size: .92rem; text-indent: 0; }
+.quiz__distractor { color: var(--ink-mute); }
+.page-nav__btn.is-disabled { opacity: .4; pointer-events: none; }
+.page-nav__pos { font-family: var(--mono); font-size: .85rem; color: var(--ink-60); }
+.continuity { border-left: 3px solid var(--teal); }
+</style>
+</head>
+<body data-theme="dark" data-page-id="p5" data-layout="cf1-p05" data-source-ids="040,041,042,043,044,045,046,047,048,049,108,109">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <div class="site-header__brand">
+      <span class="site-header__logo">NN</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Cefaleia: abordagem</span>
+        <span class="site-header__subtitle">Neurologia · Cefaleia</span>
+      </span>
+    </div>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress" id="progress">5/10</span>
+    <div class="site-header__actions">
+      <button type="button" class="icon-btn" id="home-btn" aria-label="Página inicial" title="Início" onclick="location.href='index.html'">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" data-theme-btn aria-label="Alternar tema" aria-pressed="false" title="Tema">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">Cefaleia: abordagem sindrômica</p>
+    <ul class="menu-panel__list">
+<li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>A cefaleia que não se erra</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>A dor é a doença</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>Crises que se parecem</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Idade, súbito e trovoada</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link is-current" href="p5.html"><span class="menu-panel__index">05</span><span>Progressão e o crânio</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Acordou por causa da dor</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Contexto que muda o jogo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Anamnese e fundo de olho</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html"><span class="menu-panel__index">09</span><span>O exame pela suspeita</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html"><span class="menu-panel__index">10</span><span>Tabelão e mantras</span></a></li>
+    </ul>
+  </nav>
+</div>
+<main id="main">
+  <div class="coluna">
+    <article class="page" data-page="p5" data-layout="cf1-p05" data-source-ids="040,041,042,043,044,045,046,047,048,049,108,109">
+      <p class="page__eyebrow">Página 5 · E1</p>
+      <section class="opener opener--question" data-opener="E1">
+        <span class="opener__eyebrow">Pergunta central</span>
+        <h1 id="page-title">Progressão e o crânio que dói</h1>
+        <p class="opener__lead no-indent">Se o tálamo não dói, o que dói — e por que o tumor “cresce a dor”?</p>
+      </section>
+      <div class="chipset"><span class="chip--topic">P05</span><span class="chip--topic">E1</span><span class="chip--topic">substrato álgico</span><span class="chip--no">progressiva</span></div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose prosa">
+          <h4 class="topic-h">Progressiva = alarme</h4>
+          <p><strong class="hl-bad">Cefaleia progressiva</strong> (ex.: em intensidade) é sinal de alarme. Sugere processo que pode estar <strong class="term">crescendo</strong> (ex.: tumor).</p>
+
+          <h4 class="topic-h">Sem receptor = sem dor</h4>
+          <p>Estruturas como <strong class="term">lobo frontal</strong> ou <strong class="term">tálamo</strong> <strong class="term">não</strong> “doem” sozinhas no sentido coloquial: não são dotadas de receptores sensitivos álgicos da mesma forma que as estruturas que realmente geram dor craniana. <strong class="hl-warn">Só dói quem tem receptores álgicos.</strong></p>
+
+          <h4 class="topic-h">Quatro sítios</h4>
+          <p>No crânio, há receptores álgicos no <strong class="term">periósteo</strong>; nas <strong class="term">meninges</strong> — membranas que recobrem o <strong class="term">encéfalo</strong> e a <strong class="term">medula espinhal</strong>; e em <strong class="term">grandes vasos da base</strong>.</p>
+
+          <h4 class="topic-h">Trigêmeo</h4>
+          <p>Outra via importante: o próprio <strong class="term">nervo trigêmeo</strong> — grande nervo sensitivo do crânio; se estimulado/acometido, <strong class="term">capta e gera</strong> informação dolorosa (não é só “transmissor abstrato da enxaqueca”).</p>
+
+          <h4 class="topic-h">Alfinete → bola de tênis</h4>
+          <p>Um tumor minúsculo (“cabeça de alfinete”) no início do ano recruta <strong class="term">poucos</strong> receptores; se cresce até o tamanho de uma <strong class="hl-bad">bola de tênis</strong>, recruta <strong class="term">muito mais</strong> e a dor <strong class="hl-bad">aumenta</strong>. Metáfora: crescimento de lesão = mais recrutamento álgico = dor progressiva. Cefaleia que <strong class="term">progride em intensidade</strong> sugere processo que pode estar <strong class="term">crescendo</strong> — alarme.</p>
+        </div>
+      </section>
+
+      <aside class="exec-card" aria-label="Linha do tabelão progressiva">
+        <h3 class="exec-card__title">Progressão em três decisões</h3>
+        <div class="cmp-board">
+          <div class="cmp-col" style="border-color:color-mix(in srgb,var(--coral) 40%,var(--border));">
+            <h4 style="color:var(--coral);">Progressiva</h4>
+            <div class="no-indent" role="paragraph" style="margin:0;font-size:.9rem;">Cefaleia que piora em intensidade ao longo do tempo.</div>
+          </div>
+          <div class="cmp-col" style="border-color:color-mix(in srgb,var(--amber) 40%,var(--border));">
+            <h4 style="color:var(--amber);">Pode estar crescendo</h4>
+            <div class="no-indent" role="paragraph" style="margin:0;font-size:.9rem;">Mais lesão → mais receptores recrutados (alfinete → tênis).</div>
+          </div>
+          <div class="cmp-col" style="border-color:color-mix(in srgb,var(--indigo) 40%,var(--border));">
+            <h4 style="color:var(--indigo);">Investigar</h4>
+            <div class="no-indent" role="paragraph" style="margin:0;font-size:.9rem;">Neuroimagem (RM com contraste) para lesão expansiva.</div>
+          </div>
+        </div>
+      </aside>
+
+      <figure class="fig fig--real">
+        <div class="fig__frame">
+          <img src="media/B05-glioblastoma-tc-massa-frontal-efeito-de-massa-e-desvio-linha-media.png" loading="lazy" decoding="async" width="3000" height="2982" alt="Neuroimagem axial com grande massa frontal, compressão ventricular e desvio contralateral da linha média">
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Imagem real</span> RM axial: meningioma frontal gigante (seta amarela), com compressão do ventrículo lateral ipsilateral e desvio contralateral da linha média. O achado transforma “progressão” em anatomia visível — mais tecido recrutado, maior efeito de massa.
+          <span class="fig__attr">Bokhari SA, Elnoor M, Al Mansour A, Mustafa K, Osman A. “Neuropsychiatric Manifestations of a Frontal Lobe Meningioma: A Case Report”, Figure 2. <em>Cureus</em>. 2024;16(8):e68101. https://doi.org/10.7759/cureus.68101. CC BY 4.0. Normalização técnica da transparência do PNG; conteúdo visual preservado.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="fig fig--svg">
+        <div class="fig__frame fig__frame--svg">
+          <svg class="cf1-inline-svg cf1p5-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="100%" height="100%" id="cf1p5-svg-root" role="group" aria-labelledby="cf1p5-title cf1p5-desc">
+  <title id="cf1p5-title">Progressão da lesão e recrutamento de nociceptores</title>
+  <desc id="cf1p5-desc">A comparação entre um volume do tamanho de um alfinete e outro do tamanho de uma bola de tênis mostra como o crescimento de uma lesão recruta mais receptores álgicos e intensifica a dor.</desc>
+  <defs>
+    <radialGradient id="cf1p5-grad-tumor-pin" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fda4af" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#f43f5e" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#be123c" stop-opacity="1"/>
+    </radialGradient>
+
+    <radialGradient id="cf1p5-grad-tumor-ball" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fecdd3" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#fb7185" stop-opacity="1"/>
+      <stop offset="75%" stop-color="#e11d48" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#881337" stop-opacity="1"/>
+    </radialGradient>
+
+    <radialGradient id="cf1p5-grad-tumor-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#e11d48" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#e11d48" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cf1p5-grad-dura" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="cf1p5-grad-eva" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="30%" stop-color="#f59e0b"/>
+      <stop offset="70%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+
+    <linearGradient id="cf1p5-grad-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--cf1p5-card-top, #1a233a)"/>
+      <stop offset="100%" stop-color="var(--cf1p5-card-bot, #111827)"/>
+    </linearGradient>
+
+    <filter id="cf1p5-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <filter id="cf1p5-glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    .cf1p5-root {
+      --cf1p5-bg: #0b0f19;
+      --cf1p5-card: #151d30;
+      --cf1p5-card-top: #1a243d;
+      --cf1p5-card-bot: #101625;
+      --cf1p5-border: #263454;
+      --cf1p5-border-active: #3b82f6;
+      --cf1p5-ink: #f1f5f9;
+      --cf1p5-ink-sub: #94a3b8;
+      --cf1p5-ink-muted: #64748b;
+      --cf1p5-indigo: #6366f1;
+      --cf1p5-indigo-light: #818cf8;
+      --cf1p5-coral: #f43f5e;
+      --cf1p5-coral-dark: #e11d48;
+      --cf1p5-amber: #f59e0b;
+      --cf1p5-amber-light: #fbbf24;
+      --cf1p5-teal: #14b8a6;
+      --cf1p5-teal-light: #2dd4bf;
+      --cf1p5-green: #10b981;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    [data-theme="light"] .cf1p5-root,
+    .cf1p5-root[data-theme="light"] {
+      --cf1p5-bg: #f8fafc;
+      --cf1p5-card: #ffffff;
+      --cf1p5-card-top: #ffffff;
+      --cf1p5-card-bot: #f1f5f9;
+      --cf1p5-border: #cbd5e1;
+      --cf1p5-border-active: #2563eb;
+      --cf1p5-ink: #0f172a;
+      --cf1p5-ink-sub: #334155;
+      --cf1p5-ink-muted: #64748b;
+      --cf1p5-indigo: #4f46e5;
+      --cf1p5-indigo-light: #4338ca;
+      --cf1p5-coral: #e11d48;
+      --cf1p5-coral-dark: #be123c;
+      --cf1p5-amber: #d97706;
+      --cf1p5-amber-light: #b45309;
+      --cf1p5-teal: #0d9488;
+      --cf1p5-teal-light: #0f766e;
+      --cf1p5-green: #059669;
+    }
+
+    .cf1p5-bg-rect { fill: var(--cf1p5-bg, #0b0f19); transition: fill 0.3s ease; }
+    .cf1p5-card-bg { fill: url(#cf1p5-grad-card); stroke: var(--cf1p5-border, #263454); stroke-width: 1.5; rx: 10px; transition: all 0.3s ease; }
+    .cf1p5-card-bg:hover { stroke: var(--cf1p5-border-active, #3b82f6); }
+
+    .cf1p5-text-title { fill: var(--cf1p5-ink, #f1f5f9); font-size: 17px; font-weight: 700; letter-spacing: 0.3px; }
+    .cf1p5-text-subtitle { fill: var(--cf1p5-ink-sub, #94a3b8); font-size: 12px; font-weight: 400; }
+    .cf1p5-text-label { fill: var(--cf1p5-ink, #f1f5f9); font-size: 12px; font-weight: 600; }
+    .cf1p5-text-muted { fill: var(--cf1p5-ink-muted, #64748b); font-size: 11px; }
+
+    .cf1p5-btn { cursor: pointer; transition: all 0.2s ease; }
+    .cf1p5-btn-rect { fill: var(--cf1p5-card, #151d30); stroke: var(--cf1p5-border, #263454); stroke-width: 1.5; rx: 8px; }
+    .cf1p5-btn:hover .cf1p5-btn-rect { stroke: var(--cf1p5-teal, #14b8a6); fill: var(--cf1p5-card-top, #1a243d); }
+    .cf1p5-btn-text { fill: var(--cf1p5-ink-sub, #94a3b8); font-size: 12px; font-weight: 600; text-anchor: middle; dominant-baseline: middle; }
+    .cf1p5-btn:hover .cf1p5-btn-text { fill: var(--cf1p5-ink, #f1f5f9); }
+    .cf1p5-btn:focus-visible { outline: 2px solid var(--cf1p5-teal, #14b8a6); outline-offset: 2px; }
+
+    .cf1p5-root[data-scene="jan"] .cf1p5-btn-jan .cf1p5-btn-rect,
+    .cf1p5-root[data-scene="jul"] .cf1p5-btn-jul .cf1p5-btn-rect {
+      fill: rgba(20, 184, 166, 0.15);
+      stroke: var(--cf1p5-teal, #14b8a6);
+      stroke-width: 2;
+    }
+    .cf1p5-root[data-scene="jan"] .cf1p5-btn-jan .cf1p5-btn-text,
+    .cf1p5-root[data-scene="jul"] .cf1p5-btn-jul .cf1p5-btn-text {
+      fill: var(--cf1p5-teal-light, #2dd4bf);
+      font-weight: 700;
+    }
+
+    .cf1p5-stage-jan, .cf1p5-stage-jul { transition: opacity 0.4s ease, transform 0.4s ease; }
+
+    .cf1p5-root[data-scene="jan"] .cf1p5-stage-jan { opacity: 1; visibility: visible; pointer-events: auto; }
+    .cf1p5-root[data-scene="jan"] .cf1p5-stage-jul { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    .cf1p5-root[data-scene="jul"] .cf1p5-stage-jan { opacity: 0; visibility: hidden; pointer-events: none; }
+    .cf1p5-root[data-scene="jul"] .cf1p5-stage-jul { opacity: 1; visibility: visible; pointer-events: auto; }
+
+    @keyframes cf1p5-pulse {
+      0% { r: 3.5px; opacity: 0.7; }
+      50% { r: 6.5px; opacity: 1; filter: drop-shadow(0 0 6px var(--cf1p5-amber, #f59e0b)); }
+      100% { r: 3.5px; opacity: 0.7; }
+    }
+    .cf1p5-receptor-active { animation: cf1p5-pulse 2s infinite ease-in-out; }
+
+    @keyframes cf1p5-wave {
+      0% { stroke-dashoffset: 40; opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 0.3; }
+    }
+    .cf1p5-pain-wave {
+      stroke: var(--cf1p5-amber, #f59e0b);
+      stroke-dasharray: 4, 4;
+      animation: cf1p5-wave 1.5s linear infinite;
+    }
+
+    .cf1p5-tooltip {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .cf1p5-hotspot:hover .cf1p5-tooltip {
+      opacity: 1;
+    }
+    .cf1p5-hotspot { cursor: pointer; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cf1p5-receptor-active, .cf1p5-pain-wave, .cf1p5-stage-jan, .cf1p5-stage-jul { animation: none !important; transition: none !important; }
+    }
+  </style>
+
+  <rect width="960" height="680" class="cf1p5-bg-rect" rx="12"/>
+
+  <g transform="translate(24, 20)">
+    <rect x="0" y="0" width="280" height="22" rx="4" fill="rgba(244, 63, 94, 0.15)" stroke="var(--cf1p5-coral, #f43f5e)" stroke-width="1"/>
+    <text x="12" y="15" fill="var(--cf1p5-coral, #f43f5e)" font-size="11" font-weight="700" letter-spacing="0.5">SINAL DE ALARME · CEFALEIA PROGRESSIVA</text>
+
+    <text x="0" y="44" class="cf1p5-text-title">PROGRESSÃO TEMPORAL E RECRUTAMENTO DE NOCICEPTORES</text>
+    <text x="0" y="62" class="cf1p5-text-subtitle">Mecanismo Fisiopatológico: Transição de lesão "Alfinete" (Início do Ano) para "Bola de Tênis" (Meio do Ano)</text>
+  </g>
+
+  <g transform="translate(24, 94)">
+    <rect x="0" y="0" width="912" height="46" class="cf1p5-card-bg"/>
+
+    <g id="cf1p5-tab-jan" class="cf1p5-btn cf1p5-btn-jan" transform="translate(10, 6)" role="button" tabindex="0" aria-label="Ver cenário de Janeiro: Lesão Alfinete">
+      <rect width="280" height="34" class="cf1p5-btn-rect"/>
+      <circle cx="24" cy="17" r="5" fill="var(--cf1p5-teal, #14b8a6)"/>
+      <text x="150" y="17" class="cf1p5-btn-text">1. JANEIRO · Lesão "Alfinete" (5 mm)</text>
+    </g>
+
+    <g id="cf1p5-tab-jul" class="cf1p5-btn cf1p5-btn-jul" transform="translate(300, 6)" role="button" tabindex="0" aria-label="Ver cenário de Julho: Lesão Bola de Tênis">
+      <rect width="290" height="34" class="cf1p5-btn-rect"/>
+      <circle cx="24" cy="17" r="5" fill="var(--cf1p5-coral, #f43f5e)"/>
+      <text x="155" y="17" class="cf1p5-btn-text">2. JULHO · Lesão "Bola de Tênis" (65 mm)</text>
+    </g>
+
+    <g transform="translate(605, 11)">
+      <rect x="0" y="0" width="295" height="24" rx="12" fill="rgba(99, 102, 241, 0.1)" stroke="rgba(99, 102, 241, 0.3)" stroke-width="1"/>
+      <circle cx="15" cy="12" r="4" fill="var(--cf1p5-indigo-light, #818cf8)"/>
+      <text x="26" y="16" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="11" font-weight="500">Toque nos botões para simular o crescimento</text>
+    </g>
+  </g>
+
+  <g transform="translate(24, 152)">
+    <rect width="460" height="380" class="cf1p5-card-bg" filter="url(#cf1p5-shadow)"/>
+
+    <text x="16" y="26" class="cf1p5-text-label">CORTE SAGITAL DAS MENINGES &amp; DISTENSÃO DURAL</text>
+    <text x="16" y="42" class="cf1p5-text-muted">Observe a tração sobre a Dura-máter e vasos dury-piais</text>
+
+    <g transform="translate(30, 60)">
+      <path d="M 20,40 Q 200,-10 380,40 Q 400,160 380,280 L 20,280 Z" fill="rgba(100, 116, 139, 0.15)" stroke="var(--cf1p5-ink-muted, #64748b)" stroke-width="3" stroke-dasharray="6,4"/>
+      <text x="310" y="25" fill="var(--cf1p5-ink-muted, #64748b)" font-size="10" font-weight="600">Ossos do Crânio</text>
+
+      <path d="M 40,80 Q 200,30 360,80 Q 370,170 350,260 L 50,260 Z" fill="rgba(99, 102, 241, 0.08)" stroke="rgba(99, 102, 241, 0.2)" stroke-width="1.5"/>
+      <text x="60" y="240" fill="var(--cf1p5-indigo-light, #818cf8)" font-size="11" font-weight="600">Parenquima Cerebral</text>
+      <text x="60" y="253" fill="var(--cf1p5-ink-muted, #64748b)" font-size="9">(INSENSÍVEL À DOR)</text>
+
+      <g transform="translate(15, 75)">
+        <line x1="0" y1="0" x2="35" y2="0" stroke="var(--cf1p5-indigo, #6366f1)" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="2.5" fill="var(--cf1p5-indigo, #6366f1)"/>
+        <text x="40" y="4" fill="var(--cf1p5-indigo-light, #818cf8)" font-size="10" font-weight="700">Dura-máter (Sensível / Nociceptores V1-V3)</text>
+      </g>
+    </g>
+
+    <g class="cf1p5-stage-jan" transform="translate(30, 60)">
+      <path d="M 30,75 Q 200,35 370,75" fill="none" stroke="url(#cf1p5-grad-dura)" stroke-width="4"/>
+
+      <g transform="translate(200, 110)" class="cf1p5-hotspot">
+        <circle cx="0" cy="0" r="14" fill="url(#cf1p5-grad-tumor-glow)"/>
+        <circle cx="0" cy="0" r="6" fill="url(#cf1p5-grad-tumor-pin)" stroke="#ffffff" stroke-width="1.5"/>
+
+        <line x1="8" y1="-8" x2="45" y2="-35" stroke="var(--cf1p5-coral, #f43f5e)" stroke-width="1.5"/>
+        <rect x="45" y="-50" width="115" height="24" rx="4" fill="var(--cf1p5-card, #151d30)" stroke="var(--cf1p5-coral, #f43f5e)" stroke-width="1"/>
+        <text x="102" y="-34" fill="var(--cf1p5-coral, #f43f5e)" font-size="11" font-weight="700" text-anchor="middle">Lesão: 0,5 cm (Pin)</text>
+
+        <g class="cf1p5-tooltip" transform="translate(-80, -65)">
+          <rect x="0" y="0" width="160" height="36" rx="6" fill="#0f172a" stroke="var(--cf1p5-border, #263454)" stroke-width="1"/>
+          <text x="80" y="16" fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle">Início do Ano (Jan)</text>
+          <text x="80" y="28" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="9" text-anchor="middle">Volume restrito: 0,06 cm³</text>
+        </g>
+      </g>
+
+      <g transform="translate(170, 70)">
+        <circle cx="0" cy="0" r="4" fill="var(--cf1p5-amber, #f59e0b)" stroke="#ffffff" stroke-width="1"/>
+        <line x1="0" y1="0" x2="-15" y2="-20" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="1" stroke-dasharray="2,2"/>
+      </g>
+      <g transform="translate(230, 72)">
+        <circle cx="0" cy="0" r="4" fill="var(--cf1p5-amber, #f59e0b)" stroke="#ffffff" stroke-width="1"/>
+        <line x1="0" y1="0" x2="15" y2="-20" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="1" stroke-dasharray="2,2"/>
+      </g>
+
+      <path d="M 180,60 Q 200,55 220,60" fill="none" stroke="var(--cf1p5-teal, #14b8a6)" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <text x="200" y="48" fill="var(--cf1p5-teal, #14b8a6)" font-size="10" font-weight="600" text-anchor="middle">Mínima Distensão Dural</text>
+    </g>
+
+    <g class="cf1p5-stage-jul" transform="translate(30, 60)">
+      <path d="M 30,75 Q 80,70 110,40 Q 200,-15 290,40 Q 320,70 370,75" fill="none" stroke="url(#cf1p5-grad-dura)" stroke-width="5"/>
+
+      <g transform="translate(200, 145)" class="cf1p5-hotspot">
+        <circle cx="0" cy="0" r="75" fill="url(#cf1p5-grad-tumor-glow)"/>
+        <circle cx="0" cy="0" r="48" fill="url(#cf1p5-grad-tumor-ball)" stroke="var(--cf1p5-coral, #f43f5e)" stroke-width="2.5"/>
+
+        <path d="M -30,-35 Q 0,0 30,-35" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2" stroke-dasharray="4,2"/>
+        <path d="M -30,35 Q 0,0 30,35" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2" stroke-dasharray="4,2"/>
+
+        <rect x="-65" y="-12" width="130" height="24" rx="4" fill="rgba(15, 23, 42, 0.85)" stroke="var(--cf1p5-coral, #f43f5e)" stroke-width="1.5"/>
+        <text x="0" y="4" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">Lesão: 6,5 cm</text>
+        <text x="0" y="24" fill="var(--cf1p5-coral, #f43f5e)" font-size="10" font-weight="700" text-anchor="middle">("Bola de Tênis")</text>
+
+        <g class="cf1p5-tooltip" transform="translate(-90, -95)">
+          <rect x="0" y="0" width="180" height="42" rx="6" fill="#0f172a" stroke="var(--cf1p5-coral, #f43f5e)" stroke-width="1.5"/>
+          <text x="90" y="16" fill="var(--cf1p5-coral, #f43f5e)" font-size="11" font-weight="700" text-anchor="middle">Evolução em 6 Meses</text>
+          <text x="90" y="30" fill="var(--cf1p5-ink, #f1f5f9)" font-size="9" text-anchor="middle">Volume: 143,7 cm³ (Aumento 2400x)</text>
+        </g>
+      </g>
+
+      <g>
+        <circle cx="110" cy="40" class="cf1p5-receptor-active" fill="var(--cf1p5-amber, #f59e0b)" stroke="#ffffff" stroke-width="1"/>
+        <line x1="110" y1="40" x2="90" y2="15" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="1.5"/>
+
+        <circle cx="140" cy="22" class="cf1p5-receptor-active" fill="var(--cf1p5-amber, #f59e0b)" stroke="#ffffff" stroke-width="1"/>
+        <line x1="140" y1="22" x2="130" y2="-5" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="1.5"/>
+
+        <circle cx="200" cy="0" class="cf1p5-receptor-active" fill="var(--cf1p5-amber, #f59e0b)" stroke="#ffffff" stroke-width="1.5" filter="url(#cf1p5-glow-gold)"/>
+        <line x1="200" y1="0" x2="200" y2="-22" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="2"/>
+
+        <circle cx="260" cy="22" class="cf1p5-receptor-active" fill="var(--cf1p5-amber, #f59e0b)" stroke="#ffffff" stroke-width="1"/>
+        <line x1="260" y1="22" x2="270" y2="-5" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="1.5"/>
+
+        <circle cx="290" cy="40" class="cf1p5-receptor-active" fill="var(--cf1p5-amber, #f59e0b)" stroke="#ffffff" stroke-width="1"/>
+        <line x1="290" y1="40" x2="310" y2="15" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="1.5"/>
+      </g>
+
+      <g>
+        <path d="M 120,15 Q 200,-35 280,15" fill="none" stroke="var(--cf1p5-coral, #f43f5e)" stroke-width="2.5" class="cf1p5-pain-wave"/>
+
+        <path d="M 150,12 L 130,0" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="2" marker-end="url(#cf1p5-arrow)"/>
+        <path d="M 250,12 L 270,0" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="2" marker-end="url(#cf1p5-arrow)"/>
+
+        <rect x="110" y="-42" width="180" height="22" rx="4" fill="var(--cf1p5-amber, #f59e0b)"/>
+        <text x="200" y="-27" fill="#000000" font-size="10" font-weight="800" text-anchor="middle">RECRUTAMENTO MASSIVO DE DOR</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(504, 152)">
+
+    <g transform="translate(0, 0)">
+      <rect width="432" height="175" class="cf1p5-card-bg"/>
+      <text x="16" y="24" class="cf1p5-text-label">1. DINÂMICA DE EXPANSÃO &amp; RECRUTAMENTO</text>
+
+      <g transform="translate(16, 40)">
+        <rect width="190" height="55" rx="6" fill="rgba(15, 23, 42, 0.6)" stroke="var(--cf1p5-border, #263454)" stroke-width="1"/>
+        <text x="12" y="18" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="10" font-weight="600">VOLUME TUMORAL</text>
+
+        <g class="cf1p5-stage-jan">
+          <text x="12" y="42" fill="var(--cf1p5-teal, #14b8a6)" font-size="18" font-weight="800">0,06 cm³</text>
+          <text x="95" y="40" fill="var(--cf1p5-ink-muted, #64748b)" font-size="10">(Alfinete)</text>
+        </g>
+        <g class="cf1p5-stage-jul">
+          <text x="12" y="42" fill="var(--cf1p5-coral, #f43f5e)" font-size="18" font-weight="800">143,7 cm³</text>
+          <text x="110" y="40" fill="var(--cf1p5-coral, #f43f5e)" font-size="10" font-weight="700">(+2400x)</text>
+        </g>
+      </g>
+
+      <g transform="translate(222, 40)">
+        <rect width="194" height="55" rx="6" fill="rgba(15, 23, 42, 0.6)" stroke="var(--cf1p5-border, #263454)" stroke-width="1"/>
+        <text x="12" y="18" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="10" font-weight="600">NOCICEPTORES ATIVADOS</text>
+
+        <g class="cf1p5-stage-jan">
+          <text x="12" y="42" fill="var(--cf1p5-teal, #14b8a6)" font-size="18" font-weight="800">Baixo</text>
+          <text x="75" y="40" fill="var(--cf1p5-ink-muted, #64748b)" font-size="10">(Sub-limiar)</text>
+        </g>
+        <g class="cf1p5-stage-jul">
+          <text x="12" y="42" fill="var(--cf1p5-amber, #f59e0b)" font-size="18" font-weight="800">Saturação</text>
+          <text x="105" y="40" fill="var(--cf1p5-amber, #f59e0b)" font-size="10" font-weight="700">(Recrutados)</text>
+        </g>
+      </g>
+
+      <g transform="translate(16, 105)">
+        <rect width="400" height="54" rx="6" fill="rgba(99, 102, 241, 0.08)" stroke="rgba(99, 102, 241, 0.2)" stroke-width="1"/>
+        <text x="12" y="20" fill="var(--cf1p5-ink, #f1f5f9)" font-size="11" font-weight="600">Fisiopatologia da Dor meningeocraniana:</text>
+        <text x="12" y="38" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="10">O parênquima NÃO dói. A dor vem da <tspan fill="var(--cf1p5-amber, #f59e0b)" font-weight="700">distensão mecânica</tspan> da dura-máter e vasos da base irrigados pelo nervo Trigêmeo (V1-V3).</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 190)">
+      <rect width="432" height="190" class="cf1p5-card-bg"/>
+      <text x="16" y="24" class="cf1p5-text-label">2. ESCALA VISUAL ANALÓGICA DA DOR (EVA)</text>
+
+      <g transform="translate(16, 42)">
+        <rect width="400" height="16" rx="8" fill="url(#cf1p5-grad-eva)"/>
+
+        <text x="5" y="32" fill="var(--cf1p5-ink-muted, #64748b)" font-size="9">0 (Sem Dor)</text>
+        <text x="190" y="32" fill="var(--cf1p5-ink-muted, #64748b)" font-size="9">5 (Moderada)</text>
+        <text x="340" y="32" fill="var(--cf1p5-ink-muted, #64748b)" font-size="9">10 (Insuportável)</text>
+
+        <g class="cf1p5-stage-jan" transform="translate(80, 0)">
+          <polygon points="0,-6 -6,-16 6,-16" fill="var(--cf1p5-teal, #14b8a6)"/>
+          <circle cx="0" cy="-22" r="10" fill="var(--cf1p5-teal, #14b8a6)"/>
+          <text x="0" y="-19" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">2</text>
+        </g>
+        <g class="cf1p5-stage-jul" transform="translate(360, 0)">
+          <polygon points="0,-6 -6,-16 6,-16" fill="var(--cf1p5-coral, #f43f5e)"/>
+          <circle cx="0" cy="-22" r="12" fill="var(--cf1p5-coral, #f43f5e)" filter="url(#cf1p5-shadow)"/>
+          <text x="0" y="-18" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle">9</text>
+        </g>
+      </g>
+
+      <g transform="translate(16, 92)">
+        <g class="cf1p5-stage-jan">
+          <rect width="400" height="82" rx="6" fill="rgba(20, 184, 166, 0.08)" stroke="var(--cf1p5-teal, #14b8a6)" stroke-width="1"/>
+          <text x="12" y="20" fill="var(--cf1p5-teal-light, #2dd4bf)" font-size="11" font-weight="700">Janeiro · Cefaleia Inicial (Sub-clínica / Leve)</text>
+          <text x="12" y="38" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="10">• Descreve dor vaga, intermitente, muitas vezes ignorada.</text>
+          <text x="12" y="54" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="10">• Mínima tração sobre os folhetos durais dão surtos ocasionais.</text>
+          <text x="12" y="70" fill="var(--cf1p5-green, #10b981)" font-size="10" font-weight="600">✓ Responde temporariamente a analgésicos comuns.</text>
+        </g>
+
+        <g class="cf1p5-stage-jul">
+          <rect width="400" height="82" rx="6" fill="rgba(244, 63, 94, 0.08)" stroke="var(--cf1p5-coral, #f43f5e)" stroke-width="1"/>
+          <text x="12" y="20" fill="var(--cf1p5-coral, #f43f5e)" font-size="11" font-weight="700">Julho · Cefaleia Progressiva Grave (Sinal de Alarme!)</text>
+          <text x="12" y="38" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="10">• Dor diária, holocraniana, contínua com piora matinal (Valsalva).</text>
+          <text x="12" y="54" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="10">• Recrutamento massivo de unidades nociceptivas dury-piais.</text>
+          <text x="12" y="70" fill="var(--cf1p5-coral, #f43f5e)" font-size="10" font-weight="700">⚠️ Refratária a analgésicos · Risco de Hipertensão Intracraniana (HIC)!</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(24, 544)">
+    <rect width="912" height="116" class="cf1p5-card-bg"/>
+
+    <g transform="translate(16, 16)">
+      <rect width="190" height="84" rx="6" fill="rgba(245, 158, 11, 0.1)" stroke="var(--cf1p5-amber, #f59e0b)" stroke-width="1.5"/>
+      <text x="12" y="22" fill="var(--cf1p5-amber, #f59e0b)" font-size="11" font-weight="800">REGRA DE ALARME</text>
+      <text x="12" y="40" fill="var(--cf1p5-ink, #f1f5f9)" font-size="11" font-weight="700">Cefaleia de Padrão</text>
+      <text x="12" y="56" fill="var(--cf1p5-ink, #f1f5f9)" font-size="11" font-weight="700">Progressivo / Novo</text>
+      <text x="12" y="74" fill="var(--cf1p5-coral, #f43f5e)" font-size="11" font-weight="800">= NEUROIMAGEM (TC/RM)</text>
+    </g>
+
+    <g transform="translate(220, 16)">
+      <text x="0" y="16" fill="var(--cf1p5-ink, #f1f5f9)" font-size="12" font-weight="700">SÍNTESE CLÍNICO-INTERPRETATIVA:</text>
+
+      <text x="0" y="36" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="11">
+        1. <tspan fill="var(--cf1p5-ink, #f1f5f9)" font-weight="600">Por que o crescimento dói mais?</tspan> O aumento de volume (<tspan fill="var(--cf1p5-coral, #f43f5e)">alfinete → bola de tênis</tspan>) exerce tração mecânica crescente sobre os folhetos da dura-máter.
+      </text>
+
+      <text x="0" y="54" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="11">
+        2. <tspan fill="var(--cf1p5-ink, #f1f5f9)" font-weight="600">Recrutamento de Receptores:</tspan> A maior área de distensão ativa um número exponencialmente maior de nociceptores dury-piais.
+      </text>
+
+      <text x="0" y="72" fill="var(--cf1p5-ink-sub, #94a3b8)" font-size="11">
+        3. <tspan fill="var(--cf1p5-amber, #f59e0b)" font-weight="700">Conduta Médica:</tspan> Toda cefaleia com piora progressiva em dias/semanas afasta enxaqueca e exige neuroimagem urgente para descartar lesão expansiva.
+      </text>
+    </g>
+
+    <g transform="translate(220, 92)">
+      <circle cx="6" cy="0" r="5" fill="var(--cf1p5-coral, #f43f5e)"/>
+      <text x="16" y="4" fill="var(--cf1p5-ink-muted, #64748b)" font-size="10">Massa Expansiva</text>
+
+      <circle cx="130" cy="0" r="4" fill="var(--cf1p5-amber, #f59e0b)"/>
+      <text x="140" y="4" fill="var(--cf1p5-ink-muted, #64748b)" font-size="10">Nociceptores Ativados</text>
+
+      <line x1="270" y1="0" x2="290" y2="0" stroke="var(--cf1p5-indigo, #6366f1)" stroke-width="3"/>
+      <text x="296" y="4" fill="var(--cf1p5-ink-muted, #64748b)" font-size="10">Dura-máter / Meninge</text>
+    </g>
+  </g>
+
+  <defs>
+    <marker id="cf1p5-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cf1p5-amber, #f59e0b)"/>
+    </marker>
+  </defs>
+
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('cf1p5-svg-root');
+      var tabJan = document.getElementById('cf1p5-tab-jan');
+      var tabJul = document.getElementById('cf1p5-tab-jul');
+
+      function setScene(sceneName) {
+        if (!root) return;
+        root.setAttribute('data-scene', sceneName);
+      }
+
+      if (tabJan) {
+        tabJan.addEventListener('click', function() { setScene('jan'); });
+        tabJan.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setScene('jan');
+          }
+        });
+      }
+
+      if (tabJul) {
+        tabJul.addEventListener('click', function() { setScene('jul'); });
+        tabJul.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setScene('jul');
+          }
+        });
+      }
+
+      setScene('jan');
+    })();
+    ]]>
+  </script>
+</svg>
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Ilustração</span> Alfinete (início do ano) → bola de tênis (meio do ano): crescimento recruta mais receptores e piora a dor. Toque nas abas para simular.</figcaption>
+      </figure>
+
+      <figure class="fig fig--svg hero-figure" data-visual-slot="H1">
+        <div class="fig__frame fig__frame--svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" class="cf1-inline-svg cf1p5h-root" id="cf1p5h-svg" aria-labelledby="cf1p5h-title cf1p5h-desc" role="group">
+  <title id="cf1p5h-title">Quatro sítios álgicos cranianos</title>
+  <desc id="cf1p5h-desc">Mapa anatômico interativo do periósteo, das meninges, dos grandes vasos da base e do nervo trigêmeo, estruturas capazes de gerar dor craniana.</desc>
+  <defs>
+    <!-- Filters & Shadow -->
+    <filter id="cf1p5h-glow-teal" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="cf1p5h-glow-indigo" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="cf1p5h-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="cf1p5h-glow-amber" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="cf1p5h-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="cf1p5h-grad-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--cf1p5h-bg-start, #0b0f19)"/>
+      <stop offset="100%" stop-color="var(--cf1p5h-bg-end, #111827)"/>
+    </linearGradient>
+
+    <linearGradient id="cf1p5h-grad-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--cf1p5h-card-top, #1a2336)"/>
+      <stop offset="100%" stop-color="var(--cf1p5h-card-bot, #131a2a)"/>
+    </linearGradient>
+
+    <radialGradient id="cf1p5h-brain-grad" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="var(--cf1p5h-brain-center, #334155)"/>
+      <stop offset="70%" stop-color="var(--cf1p5h-brain-mid, #1e293b)"/>
+      <stop offset="100%" stop-color="var(--cf1p5h-brain-outer, #0f172a)"/>
+    </radialGradient>
+
+    <radialGradient id="cf1p5h-tumor-grad-0" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0.2"/>
+    </radialGradient>
+    <radialGradient id="cf1p5h-tumor-grad-1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#dc2626" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#991b1b" stop-opacity="0.2"/>
+    </radialGradient>
+    <radialGradient id="cf1p5h-tumor-grad-2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff0055" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#e11d48" stop-opacity="0.85"/>
+      <stop offset="80%" stop-color="#9f1239" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#881337" stop-opacity="0.1"/>
+    </radialGradient>
+
+    <!-- Marker Endings -->
+    <marker id="cf1p5h-arrow-teal" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#14b8a6"/>
+    </marker>
+    <marker id="cf1p5h-arrow-indigo" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6366f1"/>
+    </marker>
+    <marker id="cf1p5h-arrow-coral" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f43f5e"/>
+    </marker>
+    <marker id="cf1p5h-arrow-amber" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <style>
+  /*<![CDATA[*/
+    /* Scoped tokenization and typography */
+    .cf1p5h-root {
+      --cf1p5h-font: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --cf1p5h-bg-start: #0b0f19;
+      --cf1p5h-bg-end: #111827;
+      --cf1p5h-card-top: #1a2336;
+      --cf1p5h-card-bot: #131a2a;
+      --cf1p5h-border: #2a364f;
+      --cf1p5h-border-active: #3b82f6;
+      --cf1p5h-txt-main: #f8fafc;
+      --cf1p5h-txt-sub: #94a3b8;
+      --cf1p5h-txt-muted: #64748b;
+      
+      /* Medical Theme Tokens */
+      --cf1p5h-teal: #14b8a6;
+      --cf1p5h-teal-bg: rgba(20, 184, 166, 0.12);
+      --cf1p5h-indigo: #6366f1;
+      --cf1p5h-indigo-bg: rgba(99, 102, 241, 0.12);
+      --cf1p5h-coral: #f43f5e;
+      --cf1p5h-coral-bg: rgba(244, 63, 94, 0.12);
+      --cf1p5h-amber: #f59e0b;
+      --cf1p5h-amber-bg: rgba(245, 158, 11, 0.12);
+      --cf1p5h-slate: #64748b;
+      --cf1p5h-slate-bg: rgba(100, 116, 139, 0.15);
+
+      font-family: var(--cf1p5h-font);
+      background: var(--cf1p5h-bg-start);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Light Theme Support */
+    :root[data-theme="light"] .cf1p5h-root,
+    .cf1p5h-root[data-theme="light"] {
+      --cf1p5h-bg-start: #f8fafc;
+      --cf1p5h-bg-end: #f1f5f9;
+      --cf1p5h-card-top: #ffffff;
+      --cf1p5h-card-bot: #f8fafc;
+      --cf1p5h-border: #cbd5e1;
+      --cf1p5h-border-active: #2563eb;
+      --cf1p5h-txt-main: #0f172a;
+      --cf1p5h-txt-sub: #334155;
+      --cf1p5h-txt-muted: #64748b;
+
+      --cf1p5h-teal: #0d9488;
+      --cf1p5h-teal-bg: rgba(13, 148, 136, 0.12);
+      --cf1p5h-indigo: #4f46e5;
+      --cf1p5h-indigo-bg: rgba(79, 70, 229, 0.12);
+      --cf1p5h-coral: #e11d48;
+      --cf1p5h-coral-bg: rgba(225, 29, 72, 0.12);
+      --cf1p5h-amber: #d97706;
+      --cf1p5h-amber-bg: rgba(217, 119, 6, 0.12);
+      --cf1p5h-slate: #475569;
+      --cf1p5h-slate-bg: rgba(71, 85, 105, 0.12);
+    }
+
+    @media (prefers-color-scheme: light) {
+      .cf1p5h-root:not([data-theme="dark"]) {
+        --cf1p5h-bg-start: #f8fafc;
+        --cf1p5h-bg-end: #f1f5f9;
+        --cf1p5h-card-top: #ffffff;
+        --cf1p5h-card-bot: #f8fafc;
+        --cf1p5h-border: #cbd5e1;
+        --cf1p5h-border-active: #2563eb;
+        --cf1p5h-txt-main: #0f172a;
+        --cf1p5h-txt-sub: #334155;
+        --cf1p5h-txt-muted: #64748b;
+
+        --cf1p5h-teal: #0d9488;
+        --cf1p5h-teal-bg: rgba(13, 148, 136, 0.12);
+        --cf1p5h-indigo: #4f46e5;
+        --cf1p5h-indigo-bg: rgba(79, 70, 229, 0.12);
+        --cf1p5h-coral: #e11d48;
+        --cf1p5h-coral-bg: rgba(225, 29, 72, 0.12);
+        --cf1p5h-amber: #d97706;
+        --cf1p5h-amber-bg: rgba(217, 119, 6, 0.12);
+        --cf1p5h-slate: #475569;
+        --cf1p5h-slate-bg: rgba(71, 85, 105, 0.12);
+      }
+    }
+
+    /* Scoped Hotspots and Interaction States */
+    .cf1p5h-hs {
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+    }
+    .cf1p5h-hs:hover, .cf1p5h-hs:focus {
+      outline: none;
+    }
+    .cf1p5h-hs:hover .cf1p5h-hs-node,
+    .cf1p5h-hs:focus .cf1p5h-hs-node {
+      transform: scale(1.15);
+      stroke-width: 3.5;
+    }
+    .cf1p5h-hs[data-active="true"] .cf1p5h-hs-node {
+      transform: scale(1.22);
+      stroke-width: 4;
+      filter: drop-shadow(0 0 8px currentColor);
+    }
+    .cf1p5h-hs-node {
+      transition: transform 0.25s ease, stroke-width 0.2s ease;
+      transform-origin: center;
+    }
+
+    /* Pulse animation for active nodes */
+    @keyframes cf1p5h-pulse {
+      0% { r: 16px; opacity: 0.8; }
+      50% { r: 24px; opacity: 0.2; }
+      100% { r: 16px; opacity: 0.8; }
+    }
+    .cf1p5h-pulse-ring {
+      animation: cf1p5h-pulse 2.2s infinite ease-in-out;
+      pointer-events: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cf1p5h-pulse-ring { animation: none; }
+    }
+
+    /* Button Tabs */
+    .cf1p5h-tab-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cf1p5h-tab-btn:hover {
+      opacity: 0.9;
+    }
+    .cf1p5h-tab-btn[data-active="true"] rect {
+      fill: var(--cf1p5h-border-active, #3b82f6);
+      stroke: var(--cf1p5h-border-active, #3b82f6);
+    }
+    .cf1p5h-tab-btn[data-active="true"] text {
+      fill: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Simulator Stage Buttons */
+    .cf1p5h-stage-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cf1p5h-stage-btn:hover rect {
+      stroke: var(--cf1p5h-border-active, #3b82f6);
+    }
+    .cf1p5h-stage-btn[data-active="true"] rect {
+      stroke-width: 2.5;
+    }
+
+    /* Tooltip styling */
+    .cf1p5h-tooltip {
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+    }
+    .cf1p5h-tooltip.visible {
+      opacity: 1;
+    }
+
+    /* Tab views visibility */
+    .cf1p5h-tab-content {
+      transition: opacity 0.25s ease;
+    }
+    .cf1p5h-tab-content.hidden {
+      display: none;
+      opacity: 0;
+    }
+  /*]]>*/
+  </style>
+
+  <!-- BACKGROUND BASE -->
+  <rect width="1200" height="780" rx="16" fill="url(#cf1p5h-grad-bg)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1.5"/>
+
+  <!-- HEADER BAR -->
+  <g id="cf1p5h-header" transform="translate(24, 20)">
+    <!-- Title & Subtitle -->
+    <text x="0" y="24" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="22" font-weight="800" letter-spacing="0.5">MAPA DOS 4 SÍTIOS ÁLGICOS CRANIANOS</text>
+    <text x="0" y="44" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="13" font-weight="600">ANATOMIA DA NOCICEPÇÃO CRANIANA &amp; MECANISMO DE EXPANSÃO DE LESÕES</text>
+
+    <!-- Interpretation Legend Box (Layout Contract Item 1 & 4) -->
+    <rect x="0" y="54" width="1152" height="42" rx="8" fill="var(--cf1p5h-card-bot, #131a2a)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1"/>
+    <circle cx="18" cy="75" r="8" fill="#f59e0b" opacity="0.9"/>
+    <text x="18" y="79" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">!</text>
+    <text x="34" y="72" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="12" font-weight="700">LEGENDA DE INTERPRETAÇÃO CLÍNICA:</text>
+    <text x="254" y="72" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="12" font-weight="500">O parênquima cerebral <tspan fill="#f43f5e" font-weight="700">NÃO possui nociceptores</tspan> (insensível). Toda cefaleia decorre da tração, inflamação ou estiramento de <tspan fill="#14b8a6" font-weight="700">4 sítios sensíveis</tspan>. Lesões parenquimatosas só doem ao <tspan fill="#f59e0b" font-weight="700">crescer e recrutar</tspan> estas estruturas.</text>
+    <text x="34" y="88" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="10.5" font-weight="500">Passe o mouse ou toque nos sítios numerados [1] a [4] ou navegue pelas abas para explorar a fisiopatologia.</text>
+  </g>
+
+  <!-- ================================================================= -->
+  <!-- PANEL A: ANATOMICAL VECTOR DRAWING (LEFT SIDE)                    -->
+  <!-- ================================================================= -->
+  <g id="cf1p5h-panel-a" transform="translate(24, 126)">
+    <!-- Stage Card Frame -->
+    <rect width="650" height="630" rx="12" fill="url(#cf1p5h-grad-card)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1.5" filter="url(#cf1p5h-shadow)"/>
+    
+    <!-- Stage Title Banner -->
+    <rect x="16" y="16" width="618" height="34" rx="6" fill="var(--cf1p5h-slate-bg, rgba(100,116,139,0.15))" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1"/>
+    <text x="28" y="38" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="13" font-weight="700">CORTE ANATÔMICO CRANIOENCEFÁLICO</text>
+    <text x="620" y="38" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="11" font-weight="600" text-anchor="end">Visão Sagital Esquemática</text>
+
+    <!-- ANATOMICAL GRAPHICS GROUP -->
+    <g id="cf1p5h-anatomy" transform="translate(25, 70)">
+      
+      <!-- 0. BACKGROUND GRID / ORIENTATION -->
+      <path d="M 50 470 L 550 470" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="50" y="490" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="11" font-weight="600">Anterior (Face)</text>
+      <text x="550" y="490" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="11" font-weight="600" text-anchor="end">Posterior (Occipital)</text>
+
+      <!-- 1. INSENSITIVE BRAIN PARENCHYMA (LOBO FRONTAL / TÁLAMO / CÓRTEX) -->
+      <g id="cf1p5h-layer-parenchyma">
+        <!-- Cerebrum Outline & Fill -->
+        <path d="M 120 320 
+                 C 110 240, 140 130, 240 100 
+                 C 340 70, 440 100, 480 170 
+                 C 510 230, 500 310, 450 360 
+                 C 410 400, 360 390, 310 390
+                 C 260 390, 200 410, 160 380 
+                 Z" 
+              fill="url(#cf1p5h-brain-grad)" 
+              stroke="#334155" 
+              stroke-width="2"/>
+        
+        <!-- Sulci & Gyri Internal Anatomical Lines -->
+        <path d="M 210 115 C 240 150, 220 200, 260 220 C 300 240, 350 180, 380 200" fill="none" stroke="#475569" stroke-width="2" opacity="0.6"/>
+        <path d="M 310 90 C 330 140, 380 130, 410 170" fill="none" stroke="#475569" stroke-width="2" opacity="0.6"/>
+        <path d="M 150 260 C 190 270, 230 250, 270 290" fill="none" stroke="#475569" stroke-width="2" opacity="0.6"/>
+        <path d="M 360 370 C 380 320, 430 310, 460 270" fill="none" stroke="#475569" stroke-width="2" opacity="0.6"/>
+
+        <!-- Thalamus & Deep Basal Structures -->
+        <ellipse cx="310" cy="270" rx="45" ry="30" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+        <text x="310" y="268" fill="#94a3b8" font-size="10" font-weight="700" text-anchor="middle">TÁLAMO</text>
+        <text x="310" y="280" fill="#64748b" font-size="9" font-weight="500" text-anchor="middle">(Substância Cinzenta)</text>
+
+        <!-- Frontal Lobe Label -->
+        <text x="200" y="190" fill="#cbd5e1" font-size="12" font-weight="700" text-anchor="middle">LOBO FRONTAL</text>
+
+        <!-- INSENSITIVE PARENCHYMA MARKER (NO NOCICEPTORS) -->
+        <g id="cf1p5h-parenchyma-badge" transform="translate(240, 310)">
+          <rect x="-90" y="-14" width="180" height="28" rx="14" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
+          <circle cx="-74" cy="0" r="8" fill="#64748b"/>
+          <text x="-74" y="3.5" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle">∅</text>
+          <text x="-58" y="4" fill="#f8fafc" font-size="11" font-weight="700">SEM NOCICEPTORES</text>
+        </g>
+      </g>
+
+      <!-- 2. SÍTIO 2: MENINGES & SEIOS VENOSOS (INDIGO) -->
+      <g id="cf1p5h-layer-meninges">
+        <!-- Dura-Máter Layer (Wrapping brain) -->
+        <path id="cf1p5h-path-dura" d="M 112 328 
+                 C 100 232, 132 118, 240 88 
+                 C 348 58, 452 90, 492 165 
+                 C 524 228, 512 315, 460 368 
+                 C 418 410, 362 398, 310 398
+                 C 255 398, 195 420, 152 388 
+                 Z" 
+              fill="none" 
+              stroke="var(--cf1p5h-indigo, #6366f1)" 
+              stroke-width="4" 
+              stroke-dasharray="8,4"
+              opacity="0.9"/>
+        
+        <!-- Superior Sagittal Sinus (Seio Sagital Superior) -->
+        <path d="M 125 310 C 115 220, 150 110, 240 82 C 330 54, 430 80, 478 150" fill="none" stroke="#4f46e5" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+        <path d="M 125 310 C 115 220, 150 110, 240 82 C 330 54, 430 80, 478 150" fill="none" stroke="#818cf8" stroke-width="2"/>
+        
+        <!-- Falx Cerebri Fold -->
+        <path d="M 240 84 C 270 160, 290 200, 310 240" fill="none" stroke="var(--cf1p5h-indigo, #6366f1)" stroke-width="2.5" stroke-dasharray="3,3"/>
+      </g>
+
+      <!-- 3. SÍTIO 1: PERIÓSTEO & CALVÁRIA (TEAL) -->
+      <g id="cf1p5h-layer-pericranium">
+        <!-- Skull Bone (Calvária) Contour -->
+        <path id="cf1p5h-path-skull" d="M 98 340 
+                 C 85 220, 122 98, 240 68 
+                 C 358 38, 472 75, 510 155 
+                 C 542 225, 530 325, 475 382 
+                 C 428 428, 365 412, 310 412
+                 C 250 412, 185 438, 138 400 
+                 Z" 
+              fill="none" 
+              stroke="#0d9488" 
+              stroke-width="9" 
+              opacity="0.35"/>
+        
+        <!-- Pericranium Outer Sensitive Membrane -->
+        <path d="M 92 344 
+                 C 78 215, 118 90, 240 60 
+                 C 362 30, 478 68, 518 150 
+                 C 550 222, 538 330, 482 388 
+                 C 432 435, 365 418, 310 418
+                 C 248 418, 180 445, 132 406 
+                 Z" 
+              fill="none" 
+              stroke="var(--cf1p5h-teal, #14b8a6)" 
+              stroke-width="3.5"/>
+
+        <!-- Pericranial Nociceptor Micro-Dots -->
+        <g fill="var(--cf1p5h-teal, #14b8a6)">
+          <circle cx="140" cy="120" r="3"/>
+          <circle cx="210" cy="72" r="3"/>
+          <circle cx="290" cy="52" r="3"/>
+          <circle cx="380" cy="62" r="3"/>
+          <circle cx="460" cy="102" r="3"/>
+          <circle cx="510" cy="180" r="3"/>
+        </g>
+      </g>
+
+      <!-- 4. SÍTIO 3: GRANDES VASOS DA BASE (CORAL / RED) -->
+      <g id="cf1p5h-layer-vessels">
+        <!-- Circle of Willis & Major Arteries -->
+        <!-- Internal Carotid & Basilar Artery -->
+        <path d="M 230 430 L 250 380 L 280 360" fill="none" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 330 430 L 330 385 L 305 365" fill="none" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="5" stroke-linecap="round"/>
+
+        <!-- Circle of Willis Arterial Ring -->
+        <ellipse cx="292" cy="362" rx="28" ry="16" fill="none" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="4.5" stroke-dasharray="6,2"/>
+        
+        <!-- Middle Cerebral Artery Branching -->
+        <path d="M 315 358 C 360 340, 400 320, 430 280" fill="none" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="3"/>
+        <path d="M 270 358 C 220 330, 180 300, 150 250" fill="none" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="3"/>
+
+        <!-- Pulsating Vessel Highlights -->
+        <circle cx="292" cy="362" r="6" fill="#ffffff" opacity="0.9"/>
+        <circle cx="292" cy="362" r="3" fill="var(--cf1p5h-coral, #f43f5e)"/>
+      </g>
+
+      <!-- 5. SÍTIO 4: SISTEMA TRIGEMINOVASCULAR (AMBER / GOLD) -->
+      <g id="cf1p5h-layer-trigeminal">
+        <!-- Trigeminal Ganglion (Gânglio de Gasser) -->
+        <path d="M 210 395 C 205 385, 215 375, 225 380 C 235 385, 230 400, 220 400 Z" fill="var(--cf1p5h-amber, #f59e0b)" stroke="#d97706" stroke-width="1.5"/>
+        
+        <!-- Nerve Branches V1, V2, V3 -->
+        <!-- V1 (Ophthalmic -> Frontal / Dura) -->
+        <path d="M 220 380 C 200 330, 160 260, 150 180" fill="none" stroke="var(--cf1p5h-amber, #f59e0b)" stroke-width="3" stroke-dasharray="5,3"/>
+        <path d="M 220 380 C 250 310, 280 230, 310 120" fill="none" stroke="var(--cf1p5h-amber, #f59e0b)" stroke-width="2.5" stroke-dasharray="5,3"/>
+
+        <!-- V2 (Maxillary) -->
+        <path d="M 215 395 L 140 410" fill="none" stroke="var(--cf1p5h-amber, #f59e0b)" stroke-width="2.5"/>
+
+        <!-- V3 (Mandibular) -->
+        <path d="M 220 400 L 170 450" fill="none" stroke="var(--cf1p5h-amber, #f59e0b)" stroke-width="2.5"/>
+
+        <!-- Trigeminal Nucleus in Brainstem (TNC) -->
+        <path d="M 230 405 C 260 415, 290 425, 310 440" fill="none" stroke="#f59e0b" stroke-width="3.5"/>
+      </g>
+
+      <!-- SIMULATOR TUMOR GRAPHIC (DYNAMICALLY TOGGLED BY STAGE) -->
+      <g id="cf1p5h-sim-tumor-group" transform="translate(190, 160)" style="display: none;">
+        <!-- Stage 0 Tumor (Small, isolated) -->
+        <g id="cf1p5h-tumor-stage-0">
+          <circle cx="0" cy="0" r="16" fill="url(#cf1p5h-tumor-grad-0)" stroke="#ea580c" stroke-width="2"/>
+          <text x="0" y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">2 cm</text>
+        </g>
+
+        <!-- Stage 1 Tumor (Medium, touches dura) -->
+        <g id="cf1p5h-tumor-stage-1" style="display: none;">
+          <circle cx="0" cy="0" r="38" fill="url(#cf1p5h-tumor-grad-1)" stroke="#dc2626" stroke-width="2.5"/>
+          <!-- Traction Rays to Dura -->
+          <line x1="-30" y1="-20" x2="-65" y2="-45" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,2" marker-end="url(#cf1p5h-arrow-coral)"/>
+          <line x1="10" y1="-35" x2="20" y2="-75" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,2" marker-end="url(#cf1p5h-arrow-coral)"/>
+          <text x="0" y="4" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle">4 cm</text>
+        </g>
+
+        <!-- Stage 2 Tumor (Large, severe displacement of vessels + trigeminal) -->
+        <g id="cf1p5h-tumor-stage-2" style="display: none;">
+          <circle cx="0" cy="0" r="62" fill="url(#cf1p5h-tumor-grad-2)" stroke="#ff0055" stroke-width="3"/>
+          <circle cx="0" cy="0" r="75" fill="none" stroke="#ff0055" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.8"/>
+          <!-- Massive Traction Vectors -->
+          <line x1="-45" y1="-35" x2="-95" y2="-70" stroke="#ff0055" stroke-width="3" marker-end="url(#cf1p5h-arrow-coral)"/>
+          <line x1="30" y1="-50" x2="60" y2="-100" stroke="#ff0055" stroke-width="3" marker-end="url(#cf1p5h-arrow-coral)"/>
+          <line x1="20" y1="50" x2="80" y2="170" stroke="#ff0055" stroke-width="3" marker-end="url(#cf1p5h-arrow-coral)"/>
+          <text x="0" y="4" fill="#ffffff" font-size="14" font-weight="900" text-anchor="middle">6 cm</text>
+          <text x="0" y="20" fill="#fecdd3" font-size="10" font-weight="700" text-anchor="middle">Massa / Herniação</text>
+        </g>
+      </g>
+
+      <!-- =============================================================== -->
+      <!-- INTERACTIVE HOTSPOT BADGES ([1] to [4] + [∅])                   -->
+      <!-- =============================================================== -->
+
+      <!-- HOTSPOT 1: PERIÓSTEO (TEAL) -->
+      <g class="cf1p5h-hs" id="cf1p5h-hs-1" transform="translate(290, 48)" tabindex="0" role="button" aria-label="Sítio 1: Periósteo e Cuia Craniana" data-site="1">
+        <circle cx="0" cy="0" r="22" class="cf1p5h-pulse-ring" fill="var(--cf1p5h-teal, #14b8a6)"/>
+        <circle cx="0" cy="0" r="16" class="cf1p5h-hs-node" fill="#042f2e" stroke="var(--cf1p5h-teal, #14b8a6)" stroke-width="2.5"/>
+        <text x="0" y="5" fill="var(--cf1p5h-teal, #14b8a6)" font-size="13" font-weight="900" text-anchor="middle">1</text>
+        <!-- Pointer Line to Structure -->
+        <path d="M 0 16 L 0 35" stroke="var(--cf1p5h-teal, #14b8a6)" stroke-width="2" marker-end="url(#cf1p5h-arrow-teal)"/>
+        <!-- Label Badge -->
+        <rect x="22" y="-12" width="130" height="24" rx="12" fill="#042f2e" stroke="var(--cf1p5h-teal, #14b8a6)" stroke-width="1.5"/>
+        <text x="87" y="4" fill="#5eead4" font-size="11" font-weight="800" text-anchor="middle">1. PERIÓSTEO</text>
+      </g>
+
+      <!-- HOTSPOT 2: MENINGES (INDIGO) -->
+      <g class="cf1p5h-hs" id="cf1p5h-hs-2" transform="translate(470, 110)" tabindex="0" role="button" aria-label="Sítio 2: Meninges e Seios Venosos" data-site="2">
+        <circle cx="0" cy="0" r="22" class="cf1p5h-pulse-ring" fill="var(--cf1p5h-indigo, #6366f1)"/>
+        <circle cx="0" cy="0" r="16" class="cf1p5h-hs-node" fill="#1e1b4b" stroke="var(--cf1p5h-indigo, #6366f1)" stroke-width="2.5"/>
+        <text x="0" y="5" fill="var(--cf1p5h-indigo, #6366f1)" font-size="13" font-weight="900" text-anchor="middle">2</text>
+        <!-- Pointer Line to Dura/Falx -->
+        <path d="M -14 10 L -35 30" stroke="var(--cf1p5h-indigo, #6366f1)" stroke-width="2" marker-end="url(#cf1p5h-arrow-indigo)"/>
+        <!-- Label Badge -->
+        <rect x="22" y="-12" width="124" height="24" rx="12" fill="#1e1b4b" stroke="var(--cf1p5h-indigo, #6366f1)" stroke-width="1.5"/>
+        <text x="84" y="4" fill="#a5b4fc" font-size="11" font-weight="800" text-anchor="middle">2. MENINGES</text>
+      </g>
+
+      <!-- HOTSPOT 3: VASOS DA BASE (CORAL) -->
+      <g class="cf1p5h-hs" id="cf1p5h-hs-3" transform="translate(420, 362)" tabindex="0" role="button" aria-label="Sítio 3: Grandes Vasos da Base" data-site="3">
+        <circle cx="0" cy="0" r="22" class="cf1p5h-pulse-ring" fill="var(--cf1p5h-coral, #f43f5e)"/>
+        <circle cx="0" cy="0" r="16" class="cf1p5h-hs-node" fill="#4c0519" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="2.5"/>
+        <text x="0" y="5" fill="var(--cf1p5h-coral, #f43f5e)" font-size="13" font-weight="900" text-anchor="middle">3</text>
+        <!-- Pointer Line to Willis arterial ring -->
+        <path d="M -16 0 L -95 0" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="2" marker-end="url(#cf1p5h-arrow-coral)"/>
+        <!-- Label Badge -->
+        <rect x="22" y="-12" width="138" height="24" rx="12" fill="#4c0519" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="1.5"/>
+        <text x="91" y="4" fill="#fecdd3" font-size="11" font-weight="800" text-anchor="middle">3. VASOS DA BASE</text>
+      </g>
+
+      <!-- HOTSPOT 4: NERVO TRIGÊMEO (AMBER) -->
+      <g class="cf1p5h-hs" id="cf1p5h-hs-4" transform="translate(90, 395)" tabindex="0" role="button" aria-label="Sítio 4: Sistema Trigeminovascular" data-site="4">
+        <circle cx="0" cy="0" r="22" class="cf1p5h-pulse-ring" fill="var(--cf1p5h-amber, #f59e0b)"/>
+        <circle cx="0" cy="0" r="16" class="cf1p5h-hs-node" fill="#451a03" stroke="var(--cf1p5h-amber, #f59e0b)" stroke-width="2.5"/>
+        <text x="0" y="5" fill="var(--cf1p5h-amber, #f59e0b)" font-size="13" font-weight="900" text-anchor="middle">4</text>
+        <!-- Pointer Line to Trigeminal ganglion/V1 -->
+        <path d="M 16 0 L 110 0" stroke="var(--cf1p5h-amber, #f59e0b)" stroke-width="2" marker-end="url(#cf1p5h-arrow-amber)"/>
+        <!-- Label Badge -->
+        <rect x="-145" y="-12" width="138" height="24" rx="12" fill="#451a03" stroke="var(--cf1p5h-amber, #f59e0b)" stroke-width="1.5"/>
+        <text x="-76" y="4" fill="#fde68a" font-size="11" font-weight="800" text-anchor="middle">4. VIA TRIGÊMEO</text>
+      </g>
+
+      <!-- HOTSPOT 5: PARÊNQUIMA (SLATE - INSENSÍVEL) -->
+      <g class="cf1p5h-hs" id="cf1p5h-hs-5" transform="translate(150, 240)" tabindex="0" role="button" aria-label="Sítio Insensível: Parênquima Cerebral" data-site="5">
+        <circle cx="0" cy="0" r="18" class="cf1p5h-hs-node" fill="#0f172a" stroke="var(--cf1p5h-slate, #64748b)" stroke-width="2"/>
+        <text x="0" y="4" fill="#94a3b8" font-size="12" font-weight="900" text-anchor="middle">∅</text>
+        <!-- Pointer to Parenchyma -->
+        <path d="M 18 0 L 40 0" stroke="#64748b" stroke-width="1.5" stroke-dasharray="2,2"/>
+      </g>
+
+    </g> <!-- END ANATOMY -->
+  </g> <!-- END PANEL A -->
+
+
+  <!-- ================================================================= -->
+  <!-- PANEL B: INTERACTIVE READOUT & CLINICAL SIMULATOR (RIGHT SIDE)   -->
+  <!-- ================================================================= -->
+  <g id="cf1p5h-panel-b" transform="translate(694, 126)">
+    <!-- Main Card Frame -->
+    <rect width="482" height="630" rx="12" fill="url(#cf1p5h-grad-card)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1.5" filter="url(#cf1p5h-shadow)"/>
+
+    <!-- NAVIGATION TAB BAR -->
+    <g id="cf1p5h-tab-bar" transform="translate(16, 16)" role="tablist" aria-label="Modos do mapa dos sítios álgicos">
+      <!-- Tab 1: Detailed Site Analysis -->
+      <g class="cf1p5h-tab-btn" id="cf1p5h-tab-btn-1" data-tab="1" data-active="true" tabindex="0" role="tab" aria-selected="true" aria-controls="cf1p5h-tab-view-1">
+        <rect width="220" height="36" rx="8" fill="var(--cf1p5h-border-active, #3b82f6)" stroke="var(--cf1p5h-border-active, #3b82f6)" stroke-width="1.5"/>
+        <text x="110" y="23" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">1. SÍTIOS NOCICEPTIVOS</text>
+      </g>
+
+      <!-- Tab 2: Mass Expansion Simulator -->
+      <g class="cf1p5h-tab-btn" id="cf1p5h-tab-btn-2" data-tab="2" data-active="false" transform="translate(230, 0)" tabindex="0" role="tab" aria-selected="false" aria-controls="cf1p5h-tab-view-2">
+        <rect width="220" height="36" rx="8" fill="var(--cf1p5h-card-bot, #131a2a)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1.5"/>
+        <text x="110" y="23" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="12" font-weight="700" text-anchor="middle">2. SIMULADOR EXPANSÃO</text>
+      </g>
+    </g>
+
+    <!-- TAB 1 VIEW: DETAILED SITE READOUT -->
+    <g class="cf1p5h-tab-content" id="cf1p5h-tab-view-1" transform="translate(16, 68)">
+      
+      <!-- Dynamic Header Card -->
+      <rect width="450" height="84" rx="8" fill="var(--cf1p5h-slate-bg, rgba(100,116,139,0.15))" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1" id="cf1p5h-card-header-bg"/>
+      
+      <g transform="translate(16, 20)">
+        <rect x="0" y="0" width="36" height="36" rx="18" fill="var(--cf1p5h-teal, #14b8a6)" id="cf1p5h-card-badge-bg"/>
+        <text x="18" y="24" fill="#ffffff" font-size="16" font-weight="900" text-anchor="middle" id="cf1p5h-card-badge-txt">1</text>
+        
+        <text x="48" y="18" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="15" font-weight="800" id="cf1p5h-card-title">PERIÓSTEO &amp; CALVÁRIA</text>
+        <text x="48" y="36" fill="var(--cf1p5h-teal, #14b8a6)" font-size="12" font-weight="700" id="cf1p5h-card-subtitle">Sítio Somático Superficial Extracraniano</text>
+      </g>
+
+      <!-- Key Medical Parameters Grid -->
+      <g transform="translate(0, 96)">
+        
+        <!-- Parameter 1: Sensitive Mechanism -->
+        <rect x="0" y="0" width="450" height="66" rx="8" fill="var(--cf1p5h-card-bot, #131a2a)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1"/>
+        <text x="16" y="22" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="11" font-weight="700">MECANISMO DE ESTÍMULO ÁLGICO</text>
+        <text x="16" y="44" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="13" font-weight="600" id="cf1p5h-detail-mechanism">Sensível a contusão, tração pericraniana, espasmo muscular e inflamação.</text>
+
+        <!-- Parameter 2: Innervation Pathway -->
+        <rect x="0" y="74" width="450" height="66" rx="8" fill="var(--cf1p5h-card-bot, #131a2a)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1"/>
+        <text x="16" y="96" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="11" font-weight="700">VIA DE CONDUÇÃO NERVOSA</text>
+        <text x="16" y="118" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="13" font-weight="600" id="cf1p5h-detail-innervation">Ramos cutâneos do Trigêmeo (V1-V3) + Nervos Cervicais C2-C3 (Occipitais).</text>
+
+        <!-- Parameter 3: Clinical Etiologies -->
+        <rect x="0" y="148" width="450" height="110" rx="8" fill="var(--cf1p5h-card-bot, #131a2a)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1"/>
+        <text x="16" y="170" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="11" font-weight="700">ENTIDADES CLÍNICAS TÍPICAS RECRUTADORAS</text>
+        <text x="16" y="192" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="12.5" font-weight="500" id="cf1p5h-detail-clinical-1">• Cefaleia Tensional (contratura de pericrânio e escalpo)</text>
+        <text x="16" y="212" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="12.5" font-weight="500" id="cf1p5h-detail-clinical-2">• Arterite de Células Gigantes (inflamação da artéria temporal)</text>
+        <text x="16" y="232" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="12.5" font-weight="500" id="cf1p5h-detail-clinical-3">• Trauma Cranioencefálico, Mastoidite e Sinusite frontal</text>
+      </g>
+
+      <!-- COMPARATIVE SUMMARY MATRIX (All 4 Sites Overview) -->
+      <g transform="translate(0, 370)">
+        <text x="0" y="0" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="11.5" font-weight="700">SÍNTESE DOS 4 SÍTIOS RECEPTORES</text>
+        
+        <!-- Table Header -->
+        <rect x="0" y="10" width="450" height="24" rx="4" fill="#0f172a"/>
+        <text x="12" y="26" fill="#64748b" font-size="10" font-weight="700">SÍTIO ÁLGICO</text>
+        <text x="160" y="26" fill="#64748b" font-size="10" font-weight="700">ESTÍMULO TÍPICO</text>
+        <text x="320" y="26" fill="#64748b" font-size="10" font-weight="700">EXEMPLO CHAVE</text>
+
+        <!-- Rows -->
+        <!-- Row 1 -->
+        <rect x="0" y="38" width="450" height="26" rx="4" fill="rgba(20, 184, 166, 0.08)"/>
+        <text x="12" y="55" fill="#14b8a6" font-size="11" font-weight="700">1. Periósteo</text>
+        <text x="160" y="55" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="10.5" font-weight="500">Tração / Espasmo</text>
+        <text x="320" y="55" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="10.5" font-weight="600">Cefaleia Tensional</text>
+
+        <!-- Row 2 -->
+        <rect x="0" y="68" width="450" height="26" rx="4" fill="rgba(99, 102, 241, 0.08)"/>
+        <text x="12" y="85" fill="#6366f1" font-size="11" font-weight="700">2. Meninges</text>
+        <text x="160" y="85" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="10.5" font-weight="500">Inflamação / Distensão</text>
+        <text x="320" y="85" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="10.5" font-weight="600">Meningite / HSA</text>
+
+        <!-- Row 3 -->
+        <rect x="0" y="98" width="450" height="26" rx="4" fill="rgba(244, 63, 94, 0.08)"/>
+        <text x="12" y="115" fill="#f43f5e" font-size="11" font-weight="700">3. Vasos da Base</text>
+        <text x="160" y="115" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="10.5" font-weight="500">Dilatação / Tração</text>
+        <text x="320" y="115" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="10.5" font-weight="600">Aneurisma / Enxaqueca</text>
+
+        <!-- Row 4 -->
+        <rect x="0" y="128" width="450" height="26" rx="4" fill="rgba(245, 158, 11, 0.08)"/>
+        <text x="12" y="145" fill="#f59e0b" font-size="11" font-weight="700">4. Via Trigêmeo</text>
+        <text x="160" y="145" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="10.5" font-weight="500">Sensibilização V1</text>
+        <text x="320" y="145" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="10.5" font-weight="600">Salvas / Enxaqueca</text>
+      </g>
+    </g>
+
+    <!-- TAB 2 VIEW: MASS EXPANSION SIMULATOR -->
+    <g class="cf1p5h-tab-content hidden" id="cf1p5h-tab-view-2" transform="translate(16, 68)">
+      
+      <!-- Title & Concept Header -->
+      <rect width="450" height="60" rx="8" fill="rgba(245, 158, 11, 0.1)" stroke="#f59e0b" stroke-width="1"/>
+      <text x="16" y="24" fill="#f59e0b" font-size="13" font-weight="800">POR QUE TUMORES CEREBRAIS NASCEM EM SILÊNCIO?</text>
+      <text x="16" y="44" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="11.5" font-weight="500">Selecione o tamanho da lesão para simular o recrutamento nociceptivo:</text>
+
+      <!-- Stage Selector Buttons -->
+      <g id="cf1p5h-stage-buttons" transform="translate(0, 72)">
+        <!-- Stage 0 -->
+        <g class="cf1p5h-stage-btn" id="cf1p5h-stage-btn-0" data-stage="0" data-active="true" tabindex="0" role="button" aria-label="Estágio 0: Lesão Inicial 2cm">
+          <rect width="144" height="42" rx="8" fill="#131a2a" stroke="#f97316" stroke-width="2"/>
+          <text x="72" y="18" fill="#f97316" font-size="11" font-weight="800" text-anchor="middle">ESTÁGIO 0</text>
+          <text x="72" y="32" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">2 cm (Sem Dor)</text>
+        </g>
+
+        <!-- Stage 1 -->
+        <g class="cf1p5h-stage-btn" id="cf1p5h-stage-btn-1" data-stage="1" data-active="false" transform="translate(153, 0)" tabindex="0" role="button" aria-label="Estágio 1: Efeito de Massa 4cm">
+          <rect width="144" height="42" rx="8" fill="#131a2a" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1"/>
+          <text x="72" y="18" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="11" font-weight="800" text-anchor="middle">ESTÁGIO 1</text>
+          <text x="72" y="32" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="10" font-weight="600" text-anchor="middle">4 cm (Dura-Máter)</text>
+        </g>
+
+        <!-- Stage 2 -->
+        <g class="cf1p5h-stage-btn" id="cf1p5h-stage-btn-2" data-stage="2" data-active="false" transform="translate(306, 0)" tabindex="0" role="button" aria-label="Estágio 2: Herniação 6cm">
+          <rect width="144" height="42" rx="8" fill="#131a2a" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1"/>
+          <text x="72" y="18" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="11" font-weight="800" text-anchor="middle">ESTÁGIO 2</text>
+          <text x="72" y="32" fill="var(--cf1p5h-txt-muted, #64748b)" font-size="10" font-weight="600" text-anchor="middle">6 cm (Alarme/Grave)</text>
+        </g>
+      </g>
+
+      <!-- Stage Dynamic Report Box -->
+      <g transform="translate(0, 130)">
+        <rect width="450" height="210" rx="8" fill="var(--cf1p5h-card-bot, #131a2a)" stroke="var(--cf1p5h-border, #2a364f)" stroke-width="1.5" id="cf1p5h-sim-report-bg"/>
+        
+        <g transform="translate(16, 20)">
+          <!-- Status Badge -->
+          <rect x="0" y="0" width="130" height="24" rx="12" fill="rgba(249, 115, 22, 0.15)" stroke="#f97316" stroke-width="1" id="cf1p5h-sim-badge-bg"/>
+          <text x="65" y="16" fill="#f97316" font-size="11" font-weight="800" text-anchor="middle" id="cf1p5h-sim-badge-txt">∅ INDOLOR (SILENCIOSO)</text>
+
+          <text x="0" y="48" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="14" font-weight="800" id="cf1p5h-sim-title">Lesão Intra-Parenquimatosa Restrita</text>
+
+          <!-- Detailed points -->
+          <text x="0" y="76" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="12" font-weight="500" id="cf1p5h-sim-desc-1">• O nódulo de 2 cm cresce exclusivamente na substância branca frontal.</text>
+          <text x="0" y="98" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="12" font-weight="500" id="cf1p5h-sim-desc-2">• Como o parênquima cerebral possui ZERO nociceptores, o paciente não sente dor nenhuma.</text>
+          <text x="0" y="120" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="12" font-weight="500" id="cf1p5h-sim-desc-3">• Exame neurológico sensitivo pode ser normal; ausência de sintomas alérgicos/álgicos.</text>
+
+          <!-- Affected Sites Counter -->
+          <rect x="0" y="140" width="418" height="34" rx="6" fill="#0f172a" stroke="#2a364f" stroke-width="1"/>
+          <text x="12" y="161" fill="#94a3b8" font-size="11" font-weight="700">SÍTIOS ÁLGICOS RECRUTADOS:</text>
+          <text x="210" y="161" fill="#64748b" font-size="11" font-weight="800" id="cf1p5h-sim-sites-count">0 de 4 Sítios Ativados</text>
+        </g>
+      </g>
+
+      <!-- Key Clinical Takeaway Box (Red Flags Anchor) -->
+      <g transform="translate(0, 355)">
+        <rect width="450" height="175" rx="8" fill="rgba(244, 63, 94, 0.08)" stroke="var(--cf1p5h-coral, #f43f5e)" stroke-width="1"/>
+        <circle cx="20" cy="24" r="8" fill="var(--cf1p5h-coral, #f43f5e)"/>
+        <text x="20" y="28" fill="#ffffff" font-size="10" font-weight="900" text-anchor="middle">!</text>
+        <text x="36" y="28" fill="var(--cf1p5h-coral, #f43f5e)" font-size="12" font-weight="800">CORRELAÇÃO COM SNOOP / RED FLAGS:</text>
+        
+        <text x="16" y="54" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="11.5" font-weight="600">• Cefaleia de início recente em &gt;50 anos ou progressiva indica expansão.</text>
+        <text x="16" y="74" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="11.5" font-weight="600">• A dor por tumor surge do ESTIRAMENTO MENÍNGEO (Sítio 2) e vascular (Sítio 3).</text>
+        <text x="16" y="94" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="11.5" font-weight="600">• Piora com Manobra de Valsalva (tosse/curvar) = estiramento venoso/dural.</text>
+        <text x="16" y="114" fill="var(--cf1p5h-txt-main, #f8fafc)" font-size="11.5" font-weight="600">• Cefaleia matinal (hipercapnia noturna -&gt; vasodilatação -&gt; estira vasos da base).</text>
+        <text x="225" y="144" fill="var(--cf1p5h-txt-sub, #94a3b8)" font-size="11" font-weight="700" text-anchor="middle">REGRA-CHAVE: O cérebro não dói; a tração das suas amarras sim!</text>
+      </g>
+
+    </g> <!-- END TAB 2 -->
+
+  </g> <!-- END PANEL B -->
+
+  <!-- Dynamic Mouse-Follow Tooltip -->
+  <g class="cf1p5h-tooltip" id="cf1p5h-tooltip-el" transform="translate(0,0)">
+    <rect width="200" height="42" rx="6" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5" filter="url(#cf1p5h-shadow)"/>
+    <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="800" id="cf1p5h-tt-title">Sítio Nociceptivo</text>
+    <text x="10" y="32" fill="#94a3b8" font-size="10" font-weight="600" id="cf1p5h-tt-desc">Clique para ver detalhes</text>
+  </g>
+
+  <!-- ================================================================= -->
+  <!-- INTERACTIVE VANILLA JS ENGINE (INLINE & SELF-CONTAINED)            -->
+  <!-- ================================================================= -->
+  <script><![CDATA[
+    (function() {
+      'use strict';
+
+      // Data definitions for the 5 anatomical sites
+      const sitesData = {
+        1: {
+          title: "PERIÓSTEO & CALVÁRIA",
+          subtitle: "Sítio Somático Superficial Extracraniano",
+          color: "#14b8a6",
+          badgeBg: "#042f2e",
+          mechanism: "Sensível a contusão, tração pericraniana, espasmo muscular e inflamação.",
+          innervation: "Ramos cutâneos do Trigêmeo (V1-V3) + Nervos Cervicais C2-C3 (Occipitais).",
+          clinicals: [
+            "• Cefaleia Tensional (contratura de pericrânio e escalpo)",
+            "• Arterite de Células Gigantes (inflamação da artéria temporal)",
+            "• Trauma Cranioencefálico, Mastoidite e Sinusite frontal"
+          ]
+        },
+        2: {
+          title: "MENINGES & SEIOS VENOSOS",
+          subtitle: "Sítio Nociceptivo Dural e Paquimeníngeo",
+          color: "#6366f1",
+          badgeBg: "#1e1b4b",
+          mechanism: "Alta sensibilidade a distensão dural, estiramento, infecção e sangue livre.",
+          innervation: "Ramo Meníngeo do Trigêmeo (V1 supratentorial) + Vago/Cervicais (fossa posterior).",
+          clinicals: [
+            "• Hemorragia Subaracnóidea (HSA - estiramento e irritação química)",
+            "• Meningite infecciosa (inflamação das leptomeninges)",
+            "• Trombose Venosa Cerebral (distensão do Seio Sagital e Transverso)"
+          ]
+        },
+        3: {
+          title: "GRANDES VASOS DA BASE",
+          subtitle: "Sítio Vascular do Polígono de Willis",
+          color: "#f43f5e",
+          badgeBg: "#4c0519",
+          mechanism: "Nociceptores adventiciais sensíveis à vasodilatação súbita e tração arterial.",
+          innervation: "Via Trigeminovascular perivascular (liberação de CGRP, Substância P).",
+          clinicals: [
+            "• Aneurisma Arterial Roto ou em Expansão (Cefaleia em Trovoada)",
+            "• Enxaqueca / Migrânea (sensibilização trigeminovascular e vasodilação)",
+            "• Dissecção de Artéria Carótida ou Vertebral"
+          ]
+        },
+        4: {
+          title: "SISTEMA TRIGÊMEO (V PAR)",
+          subtitle: "Via Aferente Primária & Centro Integrador",
+          color: "#f59e0b",
+          badgeBg: "#451a03",
+          mechanism: "Conduz nocicepção de toda a face, dura supratentorial e vasos cranianos.",
+          innervation: "Gânglio Trigeminal (Gasser) -> Núcleo do Trato Espinal do Trigêmeo (TNC).",
+          clinicals: [
+            "• Cefaleia em Salvas / Cluster (ativação trigêmino-autonômica)",
+            "• Neuralgia do Trigêmeo (compressão neurovascular da raiz do V par)",
+            "• Sensibilização Central na Migrânea crônica"
+          ]
+        },
+        5: {
+          title: "PARÊNQUIMA CEREBRAL",
+          subtitle: "Estrutura Profunda Insensível à Dor",
+          color: "#64748b",
+          badgeBg: "#0f172a",
+          mechanism: "ZERO NOCICEPTORES. Insensível a corte, cauterização ou biópsia.",
+          innervation: "Sem inervação nociceptiva intrínseca (apenas vasos penetrantes finos).",
+          clinicals: [
+            "• Tumores primitivos (Glioblastoma) começam completamente indolores",
+            "• AVC Isquêmico lacunar é habitualmente indolor",
+            "• Só dói secundariamente se expandir e comprimir Meninges/Vasos"
+          ]
+        }
+      };
+
+      // Data definitions for Simulator Stages
+      const stagesData = {
+        0: {
+          badge: "∅ INDOLOR (SILENCIOSO)",
+          badgeBg: "rgba(249, 115, 22, 0.15)",
+          badgeColor: "#f97316",
+          badgeBorder: "#f97316",
+          title: "Estágio 0: Lesão Intra-Parenquimatosa Restrita (2 cm)",
+          desc1: "• Nódulos pequenos crescem exclusivamente no parênquima frontal ou subcortical.",
+          desc2: "• Como o parênquima tem ZERO nociceptores, o paciente NÃO sente dor alguma.",
+          desc3: "• Fase assintomática ou apenas com sintomas focais motor/cognitivo.",
+          sitesCount: "0 de 4 Sítios Ativados"
+        },
+        1: {
+          badge: "⚠️ CEFALEIA PROGRESSIVA",
+          badgeBg: "rgba(239, 68, 68, 0.15)",
+          badgeColor: "#ef4444",
+          badgeBorder: "#ef4444",
+          title: "Estágio 1: Efeito de Massa Dural (4 cm)",
+          desc1: "• O tumor se expande e começa a deformar a lâmina da Dura-Máter (Sítio 2).",
+          desc2: "• Estiramento de mecanorreceptores meníngeos gera cefaleia sorda e contínua.",
+          desc3: "• Piora matinal ao se curvar ou tossir (aumento da PIC e estiramento).",
+          sitesCount: "1 de 4 Sítios Ativados (Meninges)"
+        },
+        2: {
+          badge: "🚨 SINAL DE ALARME / GRAVE",
+          badgeBg: "rgba(255, 0, 85, 0.2)",
+          badgeColor: "#ff0055",
+          badgeBorder: "#ff0055",
+          title: "Estágio 2: Tração Vascular & Herniation (6 cm)",
+          desc1: "• Grande massa traciona as artérias da base (Sítio 3) e o Nervo Trigêmeo (Sítio 4).",
+          desc2: "• Cefaleia intensa, refratária, acompanhada de vômitos em jato e papiledema.",
+          desc3: "• Emergência neurocirúrgica por risco iminente de herniar.",
+          sitesCount: "3 de 4 Sítios Ativados (Meninges + Vasos + Trigêmeo)"
+        }
+      };
+
+      // State variables
+      let activeSite = 1;
+      let activeTab = 1;
+      let activeStage = 0;
+
+      // Element References
+      const svg = document.getElementById('cf1p5h-svg');
+      const tooltip = document.getElementById('cf1p5h-tooltip-el');
+      const ttTitle = document.getElementById('cf1p5h-tt-title');
+      const ttDesc = document.getElementById('cf1p5h-tt-desc');
+
+      // Update Site Detail Display
+      function selectSite(siteId) {
+        activeSite = siteId;
+        const data = sitesData[siteId];
+        if (!data) return;
+
+        // Update active attribute on hotspots
+        document.querySelectorAll('.cf1p5h-hs').forEach(hs => {
+          if (parseInt(hs.getAttribute('data-site')) === siteId) {
+            hs.setAttribute('data-active', 'true');
+          } else {
+            hs.setAttribute('data-active', 'false');
+          }
+        });
+
+        // Update Card Header
+        document.getElementById('cf1p5h-card-badge-bg').setAttribute('fill', data.color);
+        document.getElementById('cf1p5h-card-badge-txt').textContent = siteId === 5 ? '∅' : siteId;
+        document.getElementById('cf1p5h-card-title').textContent = data.title;
+        document.getElementById('cf1p5h-card-subtitle').textContent = data.subtitle;
+        document.getElementById('cf1p5h-card-subtitle').setAttribute('fill', data.color);
+
+        // Update Card Fields
+        document.getElementById('cf1p5h-detail-mechanism').textContent = data.mechanism;
+        document.getElementById('cf1p5h-detail-innervation').textContent = data.innervation;
+        document.getElementById('cf1p5h-detail-clinical-1').textContent = data.clinicals[0] || '';
+        document.getElementById('cf1p5h-detail-clinical-2').textContent = data.clinicals[1] || '';
+        document.getElementById('cf1p5h-detail-clinical-3').textContent = data.clinicals[2] || '';
+
+        // Switch to Tab 1 if not already
+        if (activeTab !== 1) switchTab(1);
+      }
+
+      // Switch Tab Views
+      function switchTab(tabId) {
+        activeTab = tabId;
+        
+        // Tab buttons UI
+        document.querySelectorAll('.cf1p5h-tab-btn').forEach(btn => {
+          const isCurrent = parseInt(btn.getAttribute('data-tab')) === tabId;
+          btn.setAttribute('data-active', isCurrent ? 'true' : 'false');
+          btn.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+        });
+
+        // Tab Views UI
+        const view1 = document.getElementById('cf1p5h-tab-view-1');
+        const view2 = document.getElementById('cf1p5h-tab-view-2');
+
+        if (tabId === 1) {
+          view1.classList.remove('hidden');
+          view2.classList.add('hidden');
+          // Hide simulator tumor graphic
+          document.getElementById('cf1p5h-sim-tumor-group').style.display = 'none';
+        } else {
+          view1.classList.add('hidden');
+          view2.classList.remove('hidden');
+          // Show simulator tumor graphic and refresh stage
+          document.getElementById('cf1p5h-sim-tumor-group').style.display = 'block';
+          selectStage(activeStage);
+        }
+      }
+
+      // Select Simulator Stage
+      function selectStage(stageId) {
+        activeStage = stageId;
+        const data = stagesData[stageId];
+        if (!data) return;
+
+        // Stage Buttons UI
+        document.querySelectorAll('.cf1p5h-stage-btn').forEach(btn => {
+          const isCurrent = parseInt(btn.getAttribute('data-stage')) === stageId;
+          btn.setAttribute('data-active', isCurrent ? 'true' : 'false');
+          const rect = btn.querySelector('rect');
+          if (rect) {
+            rect.setAttribute('stroke', isCurrent ? (stageId === 0 ? '#f97316' : (stageId === 1 ? '#ef4444' : '#ff0055')) : 'var(--cf1p5h-border, #2a364f)');
+          }
+        });
+
+        // Update Report UI
+        document.getElementById('cf1p5h-sim-badge-bg').setAttribute('fill', data.badgeBg);
+        document.getElementById('cf1p5h-sim-badge-bg').setAttribute('stroke', data.badgeBorder);
+        document.getElementById('cf1p5h-sim-badge-txt').textContent = data.badge;
+        document.getElementById('cf1p5h-sim-badge-txt').setAttribute('fill', data.badgeColor);
+
+        document.getElementById('cf1p5h-sim-title').textContent = data.title;
+        document.getElementById('cf1p5h-sim-desc-1').textContent = data.desc1;
+        document.getElementById('cf1p5h-sim-desc-2').textContent = data.desc2;
+        document.getElementById('cf1p5h-sim-desc-3').textContent = data.desc3;
+        document.getElementById('cf1p5h-sim-sites-count').textContent = data.sitesCount;
+        document.getElementById('cf1p5h-sim-sites-count').setAttribute('fill', data.badgeColor);
+
+        // Update Anatomical Tumor Graphic
+        document.getElementById('cf1p5h-tumor-stage-0').style.display = stageId === 0 ? 'block' : 'none';
+        document.getElementById('cf1p5h-tumor-stage-1').style.display = stageId === 1 ? 'block' : 'none';
+        document.getElementById('cf1p5h-tumor-stage-2').style.display = stageId === 2 ? 'block' : 'none';
+      }
+
+      // Mouse-follow Tooltip helper
+      function showTooltip(evt, title, desc) {
+        if (!svg || !tooltip) return;
+        ttTitle.textContent = title;
+        ttDesc.textContent = desc;
+        tooltip.classList.add('visible');
+        moveTooltip(evt);
+      }
+
+      function moveTooltip(evt) {
+        if (!svg || !tooltip) return;
+        const ctm = svg.getScreenCTM();
+        if (!ctm) return;
+        const pt = svg.createSVGPoint();
+        pt.x = evt.clientX;
+        pt.y = evt.clientY;
+        const svgPt = pt.matrixTransform(ctm.inverse());
+        
+        let tx = svgPt.x + 15;
+        let ty = svgPt.y + 15;
+        if (tx > 980) tx = svgPt.x - 215;
+        if (ty > 720) ty = svgPt.y - 50;
+
+        tooltip.setAttribute('transform', `translate(${tx}, ${ty})`);
+      }
+
+      function hideTooltip() {
+        if (tooltip) tooltip.classList.remove('visible');
+      }
+
+      // Attach Event Listeners
+      function initEvents() {
+        // Hotspots Click / Mouse / Keyboard
+        document.querySelectorAll('.cf1p5h-hs').forEach(hs => {
+          const siteId = parseInt(hs.getAttribute('data-site'));
+          const data = sitesData[siteId];
+
+          hs.addEventListener('click', () => selectSite(siteId));
+          hs.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              selectSite(siteId);
+            }
+          });
+
+          hs.addEventListener('mouseenter', (e) => {
+            if (data) showTooltip(e, data.title, "Clique para ver fisiopatologia");
+          });
+          hs.addEventListener('mousemove', moveTooltip);
+          hs.addEventListener('mouseleave', hideTooltip);
+        });
+
+        // Tabs Click / Keyboard
+        document.querySelectorAll('.cf1p5h-tab-btn').forEach(btn => {
+          const tabId = parseInt(btn.getAttribute('data-tab'));
+          btn.addEventListener('click', () => switchTab(tabId));
+          btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              switchTab(tabId);
+            }
+          });
+        });
+
+        // Stage Buttons Click / Keyboard
+        document.querySelectorAll('.cf1p5h-stage-btn').forEach(btn => {
+          const stageId = parseInt(btn.getAttribute('data-stage'));
+          btn.addEventListener('click', () => selectStage(stageId));
+          btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              selectStage(stageId);
+            }
+          });
+        });
+
+        // Initial default state
+        selectSite(1);
+      }
+
+      // Run Initialization when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initEvents);
+      } else {
+        initEvents();
+      }
+
+    })();
+  ]]></script>
+</svg>
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Mapa anatômico</span> Quatro sítios álgicos cranianos — periósteo, meninges, grandes vasos da base e nervo trigêmeo — em contraste com o parênquima sem receptor álgico. Toque nos sítios e nos estágios para explorar.</figcaption>
+      </figure>
+
+      <aside class="op-summary" aria-label="Resumo operacional">
+        <h2 class="op-summary__title">Resumo operacional</h2>
+        <div class="prose prosa"><p class="no-indent"><strong class="term">Dói quem tem receptor</strong>; crescimento recruta mais; progressão = alarme.</p></div>
+      </aside>
+
+      <aside class="why-matters">
+        <h2 class="why-matters__title">Por que importa</h2>
+        <div class="prose prosa"><p>“Dor que piora mês a mês” não é “enxaqueca que piorou um pouco” — é <strong class="hl-bad">recrutamento</strong>.</p></div>
+      </aside>
+
+      <aside class="continuity"><div class="prose prosa"><p class="no-indent">Outros alarmes não são de tempo de instalação, e sim de <strong>despertar</strong> e de <strong>sinais sistêmicos</strong>.</p></div></aside>
+
+<section class="quiz" data-quiz-id="cf1-cefaleia-p05" aria-labelledby="quiz-p05-title">
+  <h2 id="quiz-p05-title">Quiz — fixação</h2>
+  <ol class="quiz__questions">
+<li class="quiz__question" data-q="1">
+  <p class="quiz__stem" id="quiz-p05-q1-label">Quais estruturas <strong>têm</strong> receptores álgicos?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p05-q1-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Só o tálamo</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Periósteo, meninges, grandes vasos da base e nervo trigêmeo</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Apenas o lobo frontal</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Só o líquor</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> os quatro sítios são <strong class="term">periósteo · meninges · vasos da base · V</strong>.</p>
+    <p class="quiz__distractor">(A)(C) são exemplos de estruturas que <strong class="term">não</strong> “doem” sozinhas. (D) não é o sítio listado. Cai em (A)/(C) porque “cérebro dói” genérico puxa tálamo/frontal.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="2">
+  <p class="quiz__stem" id="quiz-p05-q2-label">A metáfora alfinete → bola de tênis ensina que:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p05-q2-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Tumor pequeno dói mais</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Crescimento recruta mais receptores → dor progressiva</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Toda progressão é enxaqueca</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Meninges não participam da dor</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> mais volume/lesão → <strong>mais</strong> receptores álgicos recrutados → <strong>mais</strong> dor.</p>
+    <p class="quiz__distractor">(A) invertido. (C) progressão é <strong class="hl-bad">alarme</strong> de secundária possível. (D) meninges <strong class="term">têm</strong> receptores. Cai em (C) por normalizar progressão como “enxaqueca crônica”.</p>
+  </div>
+</li>
+  </ol>
+</section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="page-nav__btn" href="p4.html" rel="prev">← Anterior</a><span class="page-nav__pos">5/10</span><a class="page-nav__btn" href="p6.html" rel="next">Próxima →</a></nav>
+    </article>
+  </div>
+</main>
+<script src="../_assets/app.js" defer></script>
+<script src="cf1.js" defer></script>
+</body>
+</html>

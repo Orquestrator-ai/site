@@ -1,0 +1,766 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" class="a12p5h-root" id="a12p5h-svg-container">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="a12p5h-grad-bg" cx="40%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="var(--a12p5h-bg-stop1, #260c20)"/>
+      <stop offset="60%" stop-color="var(--a12p5h-bg-stop2, #140510)"/>
+      <stop offset="100%" stop-color="var(--a12p5h-bg-stop3, #0a0208)"/>
+    </radialGradient>
+
+    <linearGradient id="a12p5h-grad-panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p5h-pnl-stop1, #2c1026)"/>
+      <stop offset="100%" stop-color="var(--a12p5h-pnl-stop2, #1a0716)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p5h-grad-bone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p5h-bone-s1, #8f4065)"/>
+      <stop offset="50%" stop-color="var(--a12p5h-bone-s2, #682645)"/>
+      <stop offset="100%" stop-color="var(--a12p5h-bone-s3, #4a1730)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p5h-grad-promontory" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p5h-prom-s1, #fbbf24)"/>
+      <stop offset="100%" stop-color="var(--a12p5h-prom-s2, #d97706)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p5h-grad-coccyx-retro" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p5h-cocc-s1, #34d399)"/>
+      <stop offset="100%" stop-color="var(--a12p5h-cocc-s2, #059669)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p5h-grad-hand" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p5h-hand-s1, #5c203b)"/>
+      <stop offset="100%" stop-color="var(--a12p5h-hand-s2, #a05274)"/>
+    </linearGradient>
+
+    <!-- Filters for Glow & Drop Shadow -->
+    <filter id="a12p5h-glow-gold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="a12p5h-glow-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="a12p5h-shadow-card" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* CSS Namespace Isolation Rules */
+    .a12p5h-root {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--a12p5h-bg-color, #140510);
+      color: var(--a12p5h-text-main, #fce7f3);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Light Mode Overrides */
+    [data-theme="light"] .a12p5h-root,
+    :root[data-theme="light"] .a12p5h-root {
+      --a12p5h-bg-color: #fff4f7;
+      --a12p5h-bg-stop1: #fff0f5;
+      --a12p5h-bg-stop2: #f9e2ec;
+      --a12p5h-bg-stop3: #f2d4e3;
+      --a12p5h-text-main: #2d061e;
+      --a12p5h-text-sub: #701a4a;
+      --a12p5h-pnl-stop1: #ffffff;
+      --a12p5h-pnl-stop2: #faedf3;
+      --a12p5h-pnl-border: #e0b2c7;
+      --a12p5h-bone-s1: #e6a8c4;
+      --a12p5h-bone-s2: #cb7b9f;
+      --a12p5h-bone-s3: #aa527b;
+      --a12p5h-card-bg: #ffffff;
+      --a12p5h-card-border: #eabfd0;
+      --a12p5h-hand-s1: #e5b3c9;
+      --a12p5h-hand-s2: #c47999;
+      --a12p5h-btn-inactive-bg: #f3d5e2;
+      --a12p5h-btn-inactive-txt: #5c163d;
+    }
+
+    /* Element Scoped Classes */
+    .a12p5h-title-main {
+      font-size: 19px;
+      font-weight: 800;
+      fill: var(--a12p5h-text-main, #fce7f3);
+      letter-spacing: 0.5px;
+    }
+
+    .a12p5h-title-sub {
+      font-size: 12px;
+      font-weight: 500;
+      fill: var(--a12p5h-text-sub, #f472b6);
+    }
+
+    .a12p5h-badge-plane {
+      font-size: 10.5px;
+      font-weight: 700;
+      fill: var(--a12p5h-plane-txt, #fbbf24);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* Interactive Buttons */
+    .a12p5h-btn-group {
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .a12p5h-btn-group:hover {
+      opacity: 0.92;
+    }
+
+    .a12p5h-btn-rect {
+      fill: var(--a12p5h-btn-inactive-bg, #2a0e23);
+      stroke: var(--a12p5h-btn-border, #5c1d43);
+      stroke-width: 1.5px;
+      rx: 8px;
+      ry: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .a12p5h-btn-text {
+      font-size: 11.5px;
+      font-weight: 700;
+      fill: var(--a12p5h-btn-inactive-txt, #d8b4fe);
+      text-anchor: middle;
+      pointer-events: none;
+    }
+
+    .a12p5h-btn-group.a12p5h-active .a12p5h-btn-rect {
+      fill: var(--a12p5h-btn-active-bg, #701a4a);
+      stroke: var(--a12p5h-btn-active-border, #fbbf24);
+      stroke-width: 2px;
+    }
+
+    .a12p5h-btn-group.a12p5h-active .a12p5h-btn-text {
+      fill: var(--a12p5h-btn-active-txt, #ffffff);
+    }
+
+    /* Anatomical Shapes */
+    .a12p5h-bone-path {
+      fill: url(#a12p5h-grad-bone);
+      stroke: var(--a12p5h-bone-stroke, #d49ba8);
+      stroke-width: 1.5px;
+      stroke-linejoin: round;
+    }
+
+    .a12p5h-promontory-highlight {
+      fill: url(#a12p5h-grad-promontory);
+      stroke: var(--a12p5h-prom-stroke, #f59e0b);
+      stroke-width: 2px;
+      filter: url(#a12p5h-glow-gold);
+    }
+
+    .a12p5h-coccyx-repose-path {
+      fill: var(--a12p5h-cocc-rep-fill, #883d63);
+      stroke: var(--a12p5h-cocc-rep-stroke, #f472b6);
+      stroke-width: 1.5px;
+      stroke-dasharray: 4 3;
+      opacity: 0.65;
+      transition: all 0.3s ease;
+    }
+
+    .a12p5h-coccyx-retro-path {
+      fill: url(#a12p5h-grad-coccyx-retro);
+      stroke: var(--a12p5h-cocc-ret-stroke, #6ee7b7);
+      stroke-width: 2px;
+      filter: url(#a12p5h-glow-green);
+      transition: all 0.3s ease;
+    }
+
+    .a12p5h-hand-path {
+      fill: url(#a12p5h-grad-hand);
+      stroke: var(--a12p5h-hand-stroke, #f472b6);
+      stroke-width: 1.5px;
+      opacity: 0.9;
+    }
+
+    /* Measure Lines */
+    .a12p5h-line-diag {
+      stroke: var(--a12p5h-line-diag-color, #38bdf8);
+      stroke-width: 2.5px;
+      stroke-dasharray: 6 4;
+      transition: opacity 0.3s ease;
+    }
+
+    .a12p5h-line-outlet-repose {
+      stroke: var(--a12p5h-line-out-rep, #f59e0b);
+      stroke-width: 2.5px;
+      stroke-dasharray: 4 4;
+    }
+
+    .a12p5h-line-outlet-retro {
+      stroke: var(--a12p5h-line-out-ret, #10b981);
+      stroke-width: 3px;
+      filter: url(#a12p5h-glow-green);
+    }
+
+    /* Hotspot Circles */
+    .a12p5h-hotspot-trigger {
+      cursor: pointer;
+      fill: transparent;
+      stroke: transparent;
+    }
+
+    .a12p5h-hotspot-dot {
+      fill: var(--a12p5h-dot-fill, #fbbf24);
+      stroke: var(--a12p5h-dot-stroke, #ffffff);
+      stroke-width: 2px;
+      cursor: pointer;
+      transition: transform 0.2s ease, fill 0.2s ease;
+    }
+
+    .a12p5h-hotspot-trigger:hover + .a12p5h-hotspot-dot,
+    .a12p5h-hotspot-dot:hover {
+      transform: scale(1.35);
+      fill: #ffffff;
+    }
+
+    /* Reading Panel */
+    .a12p5h-panel-bg {
+      fill: url(#a12p5h-grad-panel);
+      stroke: var(--a12p5h-pnl-border, #4a1c3d);
+      stroke-width: 1.5px;
+      rx: 14px;
+      ry: 14px;
+      filter: url(#a12p5h-shadow-card);
+    }
+
+    .a12p5h-card-box {
+      fill: var(--a12p5h-card-bg, #220a1b);
+      stroke: var(--a12p5h-card-border, #4d1839);
+      stroke-width: 1.2px;
+      rx: 10px;
+      ry: 10px;
+    }
+
+    .a12p5h-panel-title {
+      font-size: 14px;
+      font-weight: 800;
+      fill: var(--a12p5h-text-main, #fce7f3);
+      letter-spacing: 0.4px;
+    }
+
+    .a12p5h-metric-val {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+
+    .a12p5h-metric-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      fill: var(--a12p5h-text-sub, #f472b6);
+    }
+
+    .a12p5h-panel-body {
+      font-size: 11.5px;
+      font-weight: 400;
+      line-height: 1.55;
+      fill: var(--a12p5h-text-main, #fce7f3);
+    }
+
+    /* Tooltip */
+    .a12p5h-tooltip-box {
+      fill: var(--a12p5h-tt-bg, #1a0514);
+      stroke: var(--a12p5h-tt-border, #fbbf24);
+      stroke-width: 1.5px;
+      rx: 6px;
+      ry: 6px;
+      pointer-events: none;
+      filter: url(#a12p5h-shadow-card);
+    }
+
+    .a12p5h-tooltip-text {
+      font-size: 11px;
+      font-weight: 700;
+      fill: var(--a12p5h-tt-txt, #ffffff);
+      pointer-events: none;
+      text-anchor: middle;
+    }
+
+    /* Dynamic visibility helper classes controlled by JS */
+    .a12p5h-hide {
+      display: none !important;
+    }
+  </style>
+
+  <!-- BACKGROUND RECTANGLE -->
+  <rect width="960" height="640" fill="url(#a12p5h-grad-bg)" class="a12p5h-bg"/>
+
+  <!-- ==================== HEADER SECTION ==================== -->
+  <g transform="translate(30, 24)">
+    <text x="0" y="20" class="a12p5h-title-main">PELVIMETRIA &amp; DINÂMICA OSTÉOTICA DO PARTO</text>
+    <text x="0" y="38" class="a12p5h-title-sub">Promontório Sacral Fixo (Régua de Entrada) vs. Cóccix Móvel (Expansão de Saída)</text>
+    
+    <!-- Plane Declaration Badge -->
+    <g transform="translate(560, 4)">
+      <rect x="0" y="0" width="165" height="24" rx="12" fill="var(--a12p5h-badge-bg, #3b122c)" stroke="var(--a12p5h-badge-border, #fbbf24)" stroke-width="1.2"/>
+      <text x="82.5" y="16" text-anchor="middle" class="a12p5h-badge-plane">Plano Sagital Mediano</text>
+    </g>
+  </g>
+
+  <!-- ==================== MODE SELECTOR BUTTONS ==================== -->
+  <g transform="translate(30, 75)">
+    <!-- Mode Button 1 -->
+    <g id="a12p5h-btn-mode1" class="a12p5h-btn-group a12p5h-active" transform="translate(0, 0)">
+      <rect x="0" y="0" width="185" height="42" class="a12p5h-btn-rect"/>
+      <text x="92.5" y="25" class="a12p5h-btn-text">1. Promontório (Fixo)</text>
+    </g>
+
+    <!-- Mode Button 2 -->
+    <g id="a12p5h-btn-mode2" class="a12p5h-btn-group" transform="translate(195, 0)">
+      <rect x="0" y="0" width="185" height="42" class="a12p5h-btn-rect"/>
+      <text x="92.5" y="25" class="a12p5h-btn-text">2. Cóccix (Retropulsão)</text>
+    </g>
+
+    <!-- Mode Button 3 -->
+    <g id="a12p5h-btn-mode3" class="a12p5h-btn-group" transform="translate(390, 0)">
+      <rect x="0" y="0" width="185" height="42" class="a12p5h-btn-rect"/>
+      <text x="92.5" y="25" class="a12p5h-btn-text">3. Visão Integrada</text>
+    </g>
+  </g>
+
+  <!-- ==================== ANATOMICAL DRAWING CANVAS (LEFT SIDE) ==================== -->
+  <g transform="translate(30, 130)" id="a12p5h-anatomy-stage">
+    
+    <!-- Outer Pelvic Grid & Spatial Reference Lines -->
+    <rect x="0" y="0" width="575" height="465" rx="14" fill="var(--a12p5h-stage-bg, #1a0816)" stroke="var(--a12p5h-stage-border, #3d1431)" stroke-width="1.5"/>
+    
+    <!-- Spatial Orientation Labels -->
+    <text x="20" y="30" fill="var(--a12p5h-dir-txt, #a05274)" font-size="10.5" font-weight="700">ANTERIOR (Púbis)</text>
+    <text x="480" y="30" fill="var(--a12p5h-dir-txt, #a05274)" font-size="10.5" font-weight="700">POSTERIOR (Sacro)</text>
+    <text x="20" y="445" fill="var(--a12p5h-dir-txt, #a05274)" font-size="10.5" font-weight="700">INFERIOR (Assoalho/Saída)</text>
+
+    <!-- ANATOMICAL STRUCTURES -->
+    
+    <!-- 1. Lumbar Vertebra L5 & Intervertebral Disc -->
+    <path d="M 400 45 C 410 40, 445 42, 455 50 C 460 70, 455 85, 445 92 C 425 95, 395 90, 390 75 Z" class="a12p5h-bone-path" id="a12p5h-l5-body"/>
+    <text x="420" y="70" fill="#fce7f3" font-size="10" font-weight="700" text-anchor="middle">L5</text>
+    
+    <path d="M 390 75 C 405 82, 435 84, 445 92 C 440 100, 415 102, 382 92 Z" fill="#9d4b75" stroke="#d49ba8" stroke-width="1"/>
+
+    <!-- 2. Sacrum Body (S1 to S5) -->
+    <!-- S1 Promontory Ledge: sharp anterior projection at (380, 102) -->
+    <path id="a12p5h-sacrum-body" class="a12p5h-bone-path" 
+          d="M 380 102 
+             C 395 106, 440 104, 450 110 
+             C 465 140, 470 190, 455 250 
+             C 445 285, 425 315, 395 335 
+             C 385 330, 380 320, 388 310 
+             C 410 292, 425 265, 430 230 
+             C 438 180, 430 140, 400 120 
+             C 388 114, 376 108, 380 102 Z"/>
+             
+    <!-- Sacral Vertebral Fusion Lines (S1-S5) -->
+    <path d="M 400 145 C 415 150, 430 155, 435 160" stroke="var(--a12p5h-bone-stroke, #d49ba8)" stroke-width="1" opacity="0.6"/>
+    <path d="M 400 190 C 415 198, 425 205, 432 210" stroke="var(--a12p5h-bone-stroke, #d49ba8)" stroke-width="1" opacity="0.6"/>
+    <path d="M 395 240 C 410 248, 420 255, 426 260" stroke="var(--a12p5h-bone-stroke, #d49ba8)" stroke-width="1" opacity="0.6"/>
+    <path d="M 390 285 C 400 292, 410 298, 415 302" stroke="var(--a12p5h-bone-stroke, #d49ba8)" stroke-width="1" opacity="0.6"/>
+
+    <!-- Promontory Bony Ledge Highlight -->
+    <path id="a12p5h-promontory-ledge" class="a12p5h-promontory-highlight"
+          d="M 380 102 C 373 100, 368 105, 375 110 C 382 115, 390 118, 400 120 C 392 112, 385 106, 380 102 Z"/>
+
+    <!-- 3. Pubic Symphysis (Anterior Anchor) -->
+    <path id="a12p5h-pubis-body" class="a12p5h-bone-path"
+          d="M 120 230 
+             C 145 220, 160 230, 155 260 
+             C 150 290, 135 320, 110 325 
+             C 95 328, 90 310, 98 290 
+             C 106 270, 110 245, 120 230 Z"/>
+    
+    <!-- Fibrocartilaginous Symphyseal Disc -->
+    <path d="M 120 230 C 130 245, 128 275, 110 325" stroke="#f472b6" stroke-width="3" opacity="0.7"/>
+    <text x="105" y="275" fill="#fce7f3" font-size="10" font-weight="700" text-anchor="middle" transform="rotate(-75 105 275)">SÍMFISE PÚBICA</text>
+
+    <!-- 4. Coccyx In Repouse (Resting Position - Position A: ~9.5 cm outlet) -->
+    <g id="a12p5h-group-coccyx-repose">
+      <path id="a12p5h-coccyx-repose" class="a12p5h-coccyx-repose-path"
+            d="M 395 335 
+               C 385 355, 365 375, 345 385 
+               C 340 382, 342 375, 350 368 
+               C 365 358, 380 342, 388 330 Z"/>
+      <!-- Sacrococcygeal Joint Line (Repouse) -->
+      <line x1="388" y1="330" x2="395" y2="335" stroke="#fbbf24" stroke-width="2"/>
+    </g>
+
+    <!-- 5. Coccyx In Retropulsão (Retropulsed Position - Position B: ~11.5 cm outlet) -->
+    <g id="a12p5h-group-coccyx-retro">
+      <path id="a12p5h-coccyx-retro" class="a12p5h-coccyx-retro-path"
+            d="M 395 335 
+               C 400 360, 402 385, 395 405 
+               C 388 405, 385 395, 388 382 
+               C 392 365, 390 348, 388 330 Z"/>
+      <!-- Sacrococcygeal Joint Line (Retropulsion Hinge Point) -->
+      <circle cx="391.5" cy="332.5" r="4" fill="#fbbf24" stroke="#ffffff" stroke-width="1.5"/>
+      
+      <!-- Motion Vector Arc (Retropulsão Arrow) -->
+      <path d="M 345 385 Q 370 410 395 405" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="3 3"/>
+      <polygon points="395,405 384,400 388,409" fill="#34d399"/>
+      
+      <!-- Expansion Delta Label -->
+      <g transform="translate(330, 420)">
+        <rect x="0" y="0" width="115" height="22" rx="4" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+        <text x="57.5" y="15" fill="#a7f3d0" font-size="10" font-weight="800" text-anchor="middle">+1,5 a 2,0 cm ganho</text>
+      </g>
+    </g>
+
+    <!-- 6. Examiner's Hand & Vaginal Exam (Pelvimetria / Conjugata Diagonalis) -->
+    <g id="a12p5h-group-examiner-hand">
+      <!-- Two fingers (index & middle) reaching promontory ledge at (375, 108) -->
+      <path id="a12p5h-hand-fingers" class="a12p5h-hand-path"
+            d="M 40 370 
+               C 90 350, 160 300, 230 240 
+               C 280 195, 340 135, 375 108 
+               C 379 112, 375 118, 342 150 
+               C 285 205, 200 280, 140 320 
+               C 100 345, 60 375, 40 385 Z"/>
+      <!-- Contact Indicator Ring at Promontory -->
+      <circle cx="375" cy="108" r="7" fill="none" stroke="#fbbf24" stroke-width="2" filter="url(#a12p5h-glow-gold)"/>
+      <circle cx="375" cy="108" r="2.5" fill="#ffffff"/>
+      <!-- Contact Point at Subpubic Arch (110, 325) -->
+      <circle cx="110" cy="325" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+    </g>
+
+    <!-- 7. Pelvic Diameters & Measurement Lines -->
+    <g id="a12p5h-group-measures">
+      <!-- Conjugata Diagonalis Line (Promontory 375,108 -> Inferior Symphysis 110,325) -->
+      <g id="a12p5h-line-cd-wrap">
+        <line x1="375" y1="108" x2="110" y2="325" class="a12p5h-line-diag"/>
+        <!-- Line Label Badge -->
+        <g transform="translate(205, 195)">
+          <rect x="0" y="0" width="135" height="22" rx="4" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1"/>
+          <text x="67.5" y="15" fill="#e0f2fe" font-size="10.5" font-weight="800" text-anchor="middle">Conj. Diagonal = 12,5 cm</text>
+        </g>
+      </g>
+
+      <!-- Conjugata Obstétrica Line (Promontory 375,108 -> Posterior Symphysis 135,260) -->
+      <g id="a12p5h-line-co-wrap">
+        <line x1="375" y1="108" x2="135" y2="260" stroke="#34d399" stroke-width="2.5" stroke-dasharray="5 3"/>
+        <g transform="translate(225, 155)">
+          <rect x="0" y="0" width="135" height="22" rx="4" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+          <text x="67.5" y="15" fill="#a7f3d0" font-size="10.5" font-weight="800" text-anchor="middle">Conj. Obstétrica = 11,0 cm</text>
+        </g>
+      </g>
+
+      <!-- Inferior Strait Anteroposterior Diameter (Repouse: Symphysis 110,325 -> Coccyx Repouse 345,385) -->
+      <g id="a12p5h-line-outlet-rep-wrap">
+        <line x1="110" y1="325" x2="345" y2="385" class="a12p5h-line-outlet-repose"/>
+        <g transform="translate(180, 370)">
+          <rect x="0" y="0" width="145" height="22" rx="4" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+          <text x="72.5" y="15" fill="#fef3c7" font-size="10" font-weight="800" text-anchor="middle">Repouso: 9,5 cm (Limiar)</text>
+        </g>
+      </g>
+
+      <!-- Inferior Strait Anteroposterior Diameter (Retropulsion: Symphysis 110,325 -> Coccyx Retro 395,405) -->
+      <g id="a12p5h-line-outlet-ret-wrap">
+        <line x1="110" y1="325" x2="395" y2="405" class="a12p5h-line-outlet-retro"/>
+        <g transform="translate(200, 395)">
+          <rect x="0" y="0" width="155" height="24" rx="4" fill="#064e3b" stroke="#34d399" stroke-width="1.2"/>
+          <text x="77.5" y="16" fill="#a7f3d0" font-size="10.5" font-weight="900" text-anchor="middle">Retropulsão: 11,5 cm (Amplo)</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- 8. INTERACTIVE STRUCTURE HOTSPOTS (Click & Hover Triggers) -->
+    
+    <!-- Hotspot 1: Promontório Sacral -->
+    <g transform="translate(375, 108)" id="a12p5h-hs-promontory">
+      <circle cx="0" cy="0" r="22" class="a12p5h-hotspot-trigger" data-hs="promontory"/>
+      <circle cx="0" cy="0" r="7" class="a12p5h-hotspot-dot"/>
+      <!-- Leader Line & Label (Does NOT cross shape) -->
+      <line x1="10" y1="-10" x2="60" y2="-40" stroke="#fbbf24" stroke-width="1.5"/>
+      <rect x="60" y="-55" width="125" height="24" rx="4" fill="#2d1604" stroke="#fbbf24" stroke-width="1"/>
+      <text x="122.5" y="-39" fill="#fef3c7" font-size="10.5" font-weight="800" text-anchor="middle">PROMONTÓRIO (FIXO)</text>
+    </g>
+
+    <!-- Hotspot 2: Sacrococcygeal Joint & Coccyx -->
+    <g transform="translate(391.5, 332.5)" id="a12p5h-hs-coccyx">
+      <circle cx="0" cy="0" r="24" class="a12p5h-hotspot-trigger" data-hs="coccyx"/>
+      <circle cx="0" cy="0" r="7" class="a12p5h-hotspot-dot" fill="#34d399"/>
+      <!-- Leader Line & Label -->
+      <line x1="10" y1="10" x2="60" y2="40" stroke="#34d399" stroke-width="1.5"/>
+      <rect x="60" y="28" width="115" height="24" rx="4" fill="#042f2e" stroke="#34d399" stroke-width="1"/>
+      <text x="117.5" y="44" fill="#a7f3d0" font-size="10.5" font-weight="800" text-anchor="middle">CÓCCIX (MÓVEL)</text>
+    </g>
+
+    <!-- Hotspot 3: Estreito Inferior / Saída -->
+    <g transform="translate(250, 360)" id="a12p5h-hs-outlet">
+      <circle cx="0" cy="0" r="22" class="a12p5h-hotspot-trigger" data-hs="outlet"/>
+      <circle cx="0" cy="0" r="6" class="a12p5h-hotspot-dot" fill="#38bdf8"/>
+      <line x1="0" y1="10" x2="0" y2="45" stroke="#38bdf8" stroke-width="1.5"/>
+      <rect x="-65" y="45" width="130" height="22" rx="4" fill="#082f49" stroke="#38bdf8" stroke-width="1"/>
+      <text x="0" y="60" fill="#e0f2fe" font-size="10" font-weight="800" text-anchor="middle">ESTREITO INFERIOR</text>
+    </g>
+
+    <!-- Hotspot 4: Toque Vaginal / Pelvimetria -->
+    <g transform="translate(250, 215)" id="a12p5h-hs-exam">
+      <circle cx="0" cy="0" r="22" class="a12p5h-hotspot-trigger" data-hs="exam"/>
+      <circle cx="0" cy="0" r="6" class="a12p5h-hotspot-dot" fill="#f472b6"/>
+      <line x1="-10" y1="-10" x2="-50" y2="-35" stroke="#f472b6" stroke-width="1.5"/>
+      <rect x="-160" y="-48" width="110" height="22" rx="4" fill="#4c0519" stroke="#f472b6" stroke-width="1"/>
+      <text x="-105" y="-33" fill="#ffe4e6" font-size="10" font-weight="800" text-anchor="middle">TOQUE VAGINAL</text>
+    </g>
+
+    <!-- Interactive Canvas Hint (Neutral Affordance Text) -->
+    <g transform="translate(15, 435)">
+      <text x="0" y="0" fill="var(--a12p5h-text-sub, #f472b6)" font-size="10" font-weight="600">
+        💡 Toque nos botões ou estruturas para explorar a dinâmica anatômica
+      </text>
+    </g>
+  </g>
+
+  <!-- ==================== CLINICAL READING PANEL (RIGHT SIDE) ==================== -->
+  <g transform="translate(620, 75)">
+    <!-- Panel Outer Frame -->
+    <rect x="0" y="0" width="310" height="520" class="a12p5h-panel-bg"/>
+
+    <!-- Panel Header -->
+    <g transform="translate(20, 25)">
+      <text x="0" y="0" class="a12p5h-panel-title" id="a12p5h-pnl-head">PAINEL DE LEITURA CLÍNICA</text>
+      <line x1="0" y1="10" x2="270" y2="10" stroke="var(--a12p5h-card-border, #4d1839)" stroke-width="1.5"/>
+    </g>
+
+    <!-- Key Metrics Highlight Box -->
+    <g transform="translate(20, 50)" id="a12p5h-card-metrics">
+      <rect x="0" y="0" width="270" height="95" class="a12p5h-card-box"/>
+      
+      <!-- Metric 1: Conjugata Obstétrica / Promontório -->
+      <g transform="translate(15, 20)">
+        <text x="0" y="0" class="a12p5h-metric-lbl">CONJUGATA OBSTÉTRICA</text>
+        <text x="0" y="24" class="a12p5h-metric-val" fill="#34d399" id="a12p5h-m1-val">11,0 cm</text>
+        <text x="0" y="38" font-size="9.5" fill="#a7f3d0" font-weight="600" id="a12p5h-m1-sub">Verde: Diâmetro Útil Fixo (≥10,5 cm)</text>
+      </g>
+
+      <!-- Metric 2: Estreito Inferior / Retropulsão -->
+      <g transform="translate(145, 20)">
+        <text x="0" y="0" class="a12p5h-metric-lbl">ESTREITO INFERIOR</text>
+        <text x="0" y="24" class="a12p5h-metric-val" fill="#fbbf24" id="a12p5h-m2-val">9,5 ➔ 11,5 cm</text>
+        <text x="0" y="38" font-size="9.5" fill="#fef3c7" font-weight="600" id="a12p5h-m2-sub">Amarelo ➔ Verde (+2,0 cm ganho)</text>
+      </g>
+    </g>
+
+    <!-- Clinical Concept Analysis Box 1 -->
+    <g transform="translate(20, 160)">
+      <rect x="0" y="0" width="270" height="155" class="a12p5h-card-box"/>
+      <text x="15" y="22" font-size="12" font-weight="800" fill="#fbbf24" id="a12p5h-c1-title">1. PROMONTÓRIO COMO RÉGUA FIXA</text>
+      <foreignObject x="15" y="30" width="240" height="115">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: system-ui, sans-serif; font-size: 11px; line-height: 1.45; color: #fce7f3;" id="a12p5h-c1-desc">
+          O <strong style="color:#fbbf24;">Promontório Sacral (S1)</strong> é uma estrutura óssea rígida e imóvel. Ao toque vaginal, se a ponta do dedo atinge o promontório, mede-se a <em>Conjugata Diagonalis (~12.5 cm)</em>. Subtrai-se 1.5 cm para calcular a <strong>Conjugata Obstétrica (~11.0 cm)</strong>.
+        </div>
+      </foreignObject>
+    </g>
+
+    <!-- Clinical Concept Analysis Box 2 -->
+    <g transform="translate(20, 330)">
+      <rect x="0" y="0" width="270" height="145" class="a12p5h-card-box"/>
+      <text x="15" y="22" font-size="12" font-weight="800" fill="#34d399" id="a12p5h-c2-title">2. RETROPULSÃO DO CÓCCIX NO DESPRENDIMENTO</text>
+      <foreignObject x="15" y="30" width="240" height="105">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: system-ui, sans-serif; font-size: 11px; line-height: 1.45; color: #fce7f3;" id="a12p5h-c2-desc">
+          Ao contrário do promontório, o <strong style="color:#34d399;">Cóccix é móvel</strong> na articulação sacrococcígea. Na fase de desprendimento fetal, a pressão retrocede o cóccix de 1,5 a 2,0 cm, expandindo o diâmetro anteroposterior da saída de 9,5 cm (limiar) para 11,5 cm (amplo).
+        </div>
+      </foreignObject>
+    </g>
+
+    <!-- Color Code Legend / Conclusion Footer -->
+    <g transform="translate(20, 488)">
+      <circle cx="8" cy="8" r="5" fill="#34d399"/>
+      <text x="18" y="11" font-size="9.5" fill="#fce7f3" font-weight="700">Verde: Normal / Ampliado</text>
+      
+      <circle cx="115" cy="8" r="5" fill="#fbbf24"/>
+      <text x="125" y="11" font-size="9.5" fill="#fce7f3" font-weight="700">Amarelo: Limiar Basal</text>
+      
+      <circle cx="205" cy="8" r="5" fill="#38bdf8"/>
+      <text x="215" y="11" font-size="9.5" fill="#fce7f3" font-weight="700">Azul: Medida Toque</text>
+    </g>
+  </g>
+
+  <!-- ==================== FLOATING TOOLTIP ==================== -->
+  <g id="a12p5h-tooltip" class="a12p5h-hide" transform="translate(0, 0)">
+    <rect x="-80" y="-35" width="160" height="28" class="a12p5h-tooltip-box" id="a12p5h-tt-rect"/>
+    <text x="0" y="-17" class="a12p5h-tooltip-text" id="a12p5h-tt-text">Info</text>
+  </g>
+
+  <!-- ==================== INTERACTIVE JAVASCRIPT STATE MACHINE ==================== -->
+  <script>//<![CDATA[
+    (function() {
+      // DOM Elements Cache
+      var btn1 = document.getElementById('a12p5h-btn-mode1');
+      var btn2 = document.getElementById('a12p5h-btn-mode2');
+      var btn3 = document.getElementById('a12p5h-btn-mode3');
+
+      var grpHand = document.getElementById('a12p5h-group-examiner-hand');
+      var grpCoccyxRepose = document.getElementById('a12p5h-group-coccyx-repose');
+      var grpCoccyxRetro = document.getElementById('a12p5h-group-coccyx-retro');
+
+      var lineCd = document.getElementById('a12p5h-line-cd-wrap');
+      var lineCo = document.getElementById('a12p5h-line-co-wrap');
+      var lineOutletRep = document.getElementById('a12p5h-line-outlet-rep-wrap');
+      var lineOutletRet = document.getElementById('a12p5h-line-outlet-ret-wrap');
+
+      var pnlHead = document.getElementById('a12p5h-pnl-head');
+      var m1Val = document.getElementById('a12p5h-m1-val');
+      var m1Sub = document.getElementById('a12p5h-m1-sub');
+      var m2Val = document.getElementById('a12p5h-m2-val');
+      var m2Sub = document.getElementById('a12p5h-m2-sub');
+
+      var c1Title = document.getElementById('a12p5h-c1-title');
+      var c1Desc = document.getElementById('a12p5h-c1-desc');
+      var c2Title = document.getElementById('a12p5h-c2-title');
+      var c2Desc = document.getElementById('a12p5h-c2-desc');
+
+      var tooltip = document.getElementById('a12p5h-tooltip');
+      var ttText = document.getElementById('a12p5h-tt-text');
+      var ttRect = document.getElementById('a12p5h-tt-rect');
+      var svgContainer = document.getElementById('a12p5h-svg-container');
+
+      // State Machine Handler
+      function setMode(mode) {
+        // Reset Button Classes
+        btn1.classList.remove('a12p5h-active');
+        btn2.classList.remove('a12p5h-active');
+        btn3.classList.remove('a12p5h-active');
+
+        if (mode === 1) {
+          btn1.classList.add('a12p5h-active');
+          
+          // Show Hand & Inlet measures; Hide retropulsion coccyx
+          grpHand.classList.remove('a12p5h-hide');
+          grpCoccyxRepose.classList.remove('a12p5h-hide');
+          grpCoccyxRetro.classList.add('a12p5h-hide');
+
+          lineCd.classList.remove('a12p5h-hide');
+          lineCo.classList.remove('a12p5h-hide');
+          lineOutletRep.classList.remove('a12p5h-hide');
+          lineOutletRet.classList.add('a12p5h-hide');
+
+          // Update Panel Content
+          pnlHead.textContent = "1. PROMONTÓRIO & PELVIMETRIA";
+          m1Val.textContent = "11,0 cm";
+          m1Sub.textContent = "Conj. Obstétrica Útil (Fixo)";
+          m2Val.textContent = "12,5 cm";
+          m2Sub.textContent = "Conj. Diagonal (Toque Vaginal)";
+
+          c1Title.textContent = "1. O PROMONTÓRIO COMO ANCORADOURO";
+          c1Desc.innerHTML = "O <strong>Promontório Sacral (S1)</strong> é a projeção óssea posterior do estreito superior. Por ser rigidamente <strong style='color:#fbbf24;'>FIXO</strong>, serve de ponto de referência anatômica (régua de pelvimetria) e ancoradouro para promontofixação.";
+          
+          c2Title.textContent = "2. PELVIMETRIA CLÍNICA NO TOQUE";
+          c2Desc.innerHTML = "No exame de toque vaginal, a mão alcança a ponta do promontório para medir a <em>Conjugata Diagonalis (12,5 cm)</em>. Subtrai-se 1,5 cm para estimar a <strong>Conjugata Obstétrica útil (11,0 cm)</strong>.";
+        } 
+        else if (mode === 2) {
+          btn2.classList.add('a12p5h-active');
+
+          // Hide Hand; Show Retropulsion Coccyx & Outlet expansion
+          grpHand.classList.add('a12p5h-hide');
+          grpCoccyxRepose.classList.remove('a12p5h-hide');
+          grpCoccyxRetro.classList.remove('a12p5h-hide');
+
+          lineCd.classList.add('a12p5h-hide');
+          lineCo.classList.add('a12p5h-hide');
+          lineOutletRep.classList.remove('a12p5h-hide');
+          lineOutletRet.classList.remove('a12p5h-hide');
+
+          // Update Panel Content
+          pnlHead.textContent = "2. MOBILIDADE DO CÓCCIX";
+          m1Val.textContent = "9,5 cm";
+          m1Sub.textContent = "Diâmetro Basal em Repouso";
+          m2Val.textContent = "11,5 cm";
+          m2Sub.textContent = "Diâmetro Ampliado (+2,0 cm)";
+
+          c1Title.textContent = "1. ARTICULAÇÃO SACROCOCCÍGEA";
+          c1Desc.innerHTML = "Ao contrário do sacro fixo, a articulação sacrococcígea permite mobilidade. Em repouso, o cóccix projeta-se para a frente, limitando a saída anteroposterior em <strong style='color:#f59e0b;'>9,5 cm</strong>.";
+
+          c2Title.textContent = "2. RETROPULSÃO NO DESPRENDIMENTO";
+          c2Desc.innerHTML = "Na passagem da cabeça fetal pelo estreito inferior, o cóccix sofre <strong style='color:#34d399;'>retropulsão posterior</strong> de 1,5 a 2,0 cm, expandindo o diâmetro da saída para <strong>11,5 cm</strong> e facilitando o parto.";
+        } 
+        else if (mode === 3) {
+          btn3.classList.add('a12p5h-active');
+
+          // Show All Structures & Integrated View
+          grpHand.classList.remove('a12p5h-hide');
+          grpCoccyxRepose.classList.remove('a12p5h-hide');
+          grpCoccyxRetro.classList.remove('a12p5h-hide');
+
+          lineCd.classList.remove('a12p5h-hide');
+          lineCo.classList.remove('a12p5h-hide');
+          lineOutletRep.classList.remove('a12p5h-hide');
+          lineOutletRet.classList.remove('a12p5h-hide');
+
+          // Update Panel Content
+          pnlHead.textContent = "3. DINÂMICA INTEGRADA DA PELVE";
+          m1Val.textContent = "11,0 cm";
+          m1Sub.textContent = "Entrada (Conj. Obstétrica Fixa)";
+          m2Val.textContent = "11,5 cm";
+          m2Sub.textContent = "Saída (Estreito Inf. Retropulsionado)";
+
+          c1Title.textContent = "1. SÍNTESE ANATÔMICA PARA PROVA";
+          c1Desc.innerHTML = "• <strong style='color:#fbbf24;'>Promontório (S1)</strong>: Fixo. Régua do estreito superior.<br/>• <strong style='color:#34d399;'>Cóccix</strong>: Móvel. Expande o estreito inferior no desprendimento.<br/>• <strong style='color:#38bdf8;'>Toque</strong>: CD - 1,5 cm = CO.";
+
+          c2Title.textContent = "2. REGRA PRÁTICA RESIDÊNCIA";
+          c2Desc.innerHTML = "A bacia obstétrica possui a entrada protegida por um diâmetro rígido fixo (CO = 11,0 cm) e a saída dinamicamente expansível pela retropulsão coccígea (9,5 ➔ 11,5 cm).";
+        }
+      }
+
+      // Event Listeners for Buttons
+      btn1.addEventListener('click', function() { setMode(1); });
+      btn2.addEventListener('click', function() { setMode(2); });
+      btn3.addEventListener('click', function() { setMode(3); });
+
+      // Hotspot Tooltip Mouse/Touch Handlers
+      var hotspots = [
+        { id: 'a12p5h-hs-promontory', text: 'Promontório Sacral (S1) - Ponto FIXO' },
+        { id: 'a12p5h-hs-coccyx', text: 'Cóccix - MÓVEL (Retropulsão +2,0 cm)' },
+        { id: 'a12p5h-hs-outlet', text: 'Estreito Inferior (Saída Pelviana)' },
+        { id: 'a12p5h-hs-exam', text: 'Exame de Toque Vaginal (Pelvimetria)' }
+      ];
+
+      hotspots.forEach(function(hs) {
+        var el = document.getElementById(hs.id);
+        if (!el) return;
+
+        el.addEventListener('mouseenter', function(e) {
+          showTooltip(hs.text, e);
+        });
+        el.addEventListener('mousemove', function(e) {
+          moveTooltip(e);
+        });
+        el.addEventListener('mouseleave', function() {
+          hideTooltip();
+        });
+        el.addEventListener('touchstart', function(e) {
+          showTooltip(hs.text, e.touches[0]);
+        }, { passive: true });
+      });
+
+      function showTooltip(text, e) {
+        ttText.textContent = text;
+        var textWidth = text.length * 7 + 20;
+        ttRect.setAttribute('width', textWidth);
+        ttRect.setAttribute('x', -textWidth / 2);
+        tooltip.classList.remove('a12p5h-hide');
+        moveTooltip(e);
+      }
+
+      function moveTooltip(e) {
+        if (!svgContainer) return;
+        var rect = svgContainer.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        tooltip.setAttribute('transform', 'translate(' + x + ', ' + (y - 15) + ')');
+      }
+
+      function hideTooltip() {
+        tooltip.classList.add('a12p5h-hide');
+      }
+
+      // Initial Mode Setup
+      setMode(1);
+    })();
+  //]]></script>
+</svg>

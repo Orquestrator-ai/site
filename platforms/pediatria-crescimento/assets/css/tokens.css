@@ -1,0 +1,185 @@
+/* Design tokens — Plataforma Neonatologia / Pediatria Bauer
+   Identidade: pediatria. Acento da casa = AZUL-CÉU (sky). Assinatura/calor = coral Bauer.
+   Azul-noite suave + off-white. Dark mode primário; light "céu" claro.
+   NB: os nomes --teal-* foram preservados (chassi compartilhado), mas carregam o
+   acento AZUL-CÉU desta plataforma — não é verde. */
+
+:root {
+  /* --- Backgrounds (azul-noite suave de pediatria) --- */
+  --bg-base: #0a1826;            /* fundo principal */
+  --bg-elevated: #0f2336;        /* card padrão */
+  --bg-elevated-2: #15314c;      /* card sobre card */
+  --bg-glass: rgba(20, 52, 84, 0.58);
+  --bg-glass-strong: rgba(10, 24, 40, 0.84);
+
+  /* --- Ink (texto) off-white levemente frio --- */
+  --ink-100: #eef4fb;
+  --ink-90:  #dce7f2;
+  --ink-70:  #aebccd;
+  --ink-50:  #7d8b9c;
+  --ink-30:  #4c5667;
+
+  /* --- Acento da casa: AZUL-CÉU (pediatria) --- */
+  --teal-100: #ddefff;
+  --teal-80:  #a6dbfb;
+  --teal-60:  #62bdf3;           /* destaque tipográfico (sky highlight) */
+  --teal-50:  #3aa6e8;
+  --teal-40:  #2389d1;
+  --teal-30:  #1a6cab;
+  --teal-20:  #134f80;
+  --teal-10:  #0e3558;
+  --teal-05:  #0a2740;
+
+  /* --- Assinatura Bauer: coral (perigo / atenção vital / calor pediátrico) --- */
+  --coral-100: #ffd9d0;
+  --coral-80:  #ff9d8a;
+  --coral-60:  #f4715a;          /* assinatura autoral */
+  --coral-50:  #e8543f;          /* coral Bauer canônico */
+  --coral-40:  #c9412e;
+  --coral-30:  #9c3324;
+  --coral-dim: rgba(232, 84, 63, 0.16);
+
+  /* --- Funcionais (semáforo clínico WCAG AA) --- */
+  --ok-green: #5fdfa0;           /* normal / favorável / dentro do canal */
+  --ok-green-dim: rgba(95, 223, 160, 0.16);
+  --warn-amber: #f2b541;         /* pegadinha / atenção / limítrofe */
+  --warn-amber-dim: rgba(242, 181, 65, 0.15);
+  --err-red: #f4715a;            /* erro / alarme / fora da curva */
+  --err-red-dim: rgba(244, 113, 90, 0.16);
+  --info-blue: #93a4c9;          /* nota neutra (periwinkle, distinto do acento sky) */
+  --info-blue-dim: rgba(147, 164, 201, 0.15);
+
+  /* --- Helpers pediátricos (tints suaves p/ glass / card-in-card) --- */
+  --sky-tint: rgba(98, 189, 243, 0.10);
+  --sky-tint-2: rgba(98, 189, 243, 0.16);
+  --peach-soft: #ffcdb6;         /* secundário quente pediátrico (uso pontual) */
+
+  /* --- Eixos didáticos herdados (não usados em pediatria, mantidos p/ chassi) --- */
+  --cec-blue: #62bdf3;
+  --cec-blue-dim: rgba(98, 189, 243, 0.16);
+  --adeno-coral: var(--coral-50);
+  --adeno-coral-dim: var(--coral-dim);
+
+  /* --- Bordas / divisórias --- */
+  --border-soft: rgba(231, 240, 250, 0.10);
+  --border-mid:  rgba(231, 240, 250, 0.18);
+  --border-strong: rgba(231, 240, 250, 0.32);
+
+  /* --- Sombras (com glow de luxo) --- */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.42);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.46);
+  --shadow-lg: 0 20px 52px rgba(0,0,0,0.56);
+  --shadow-glow-teal: 0 0 0 1px rgba(98,189,243,0.22), 0 10px 34px rgba(14,53,88,0.62);
+  --shadow-glow-coral: 0 0 0 1px rgba(232,84,63,0.22), 0 10px 34px rgba(120,30,24,0.40);
+
+  /* --- Tipografia --- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-serif: ui-serif, "Lora", "Iowan Old Style", "Apple Garamond", Georgia, serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  /* Escala tipográfica fluida (luxo: respira em qualquer viewport) */
+  --fs-xs: clamp(0.74rem, 0.72rem + 0.1vw, 0.78rem);
+  --fs-sm: clamp(0.86rem, 0.83rem + 0.15vw, 0.92rem);
+  --fs-md: clamp(0.98rem, 0.95rem + 0.2vw, 1.06rem);
+  --fs-lg: clamp(1.10rem, 1.04rem + 0.4vw, 1.28rem);
+  --fs-xl: clamp(1.34rem, 1.20rem + 0.7vw, 1.62rem);
+  --fs-2xl: clamp(1.70rem, 1.45rem + 1.1vw, 2.20rem);
+  --fs-3xl: clamp(2.15rem, 1.80rem + 1.7vw, 2.85rem);
+  --fs-display: clamp(2.35rem, 4vw + 1rem, 3.85rem);
+
+  --lh-tight: 1.16;
+  --lh-snug:  1.32;
+  --lh-base:  1.6;
+  --lh-loose: 1.72;
+
+  /* --- Raios --- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  /* --- Espaçamento --- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 72px;
+  --sp-9: 96px;
+
+  /* --- Container --- */
+  --container-max: 1180px;     /* largura do header flutuante (box externo) */
+  --container-content: 1124px; /* largura do quadro de conteúdo: pertinho do header, com respiro proposital simétrico (~28px dentro do box do header em cada lado @1440) */
+  --container-text: 760px;     /* legado (alguns wrappers ainda usam) */
+  --measure: 74ch;             /* medida de leitura confortável da prosa corrida dentro do quadro largo */
+
+  /* --- Z-index canônico --- */
+  --z-content: 1;
+  --z-sticky: 20;
+  --z-banner-mantra: 50;
+  --z-menu: 100;
+  --z-modal: 200;
+  --z-install-prompt: 300;
+  --z-update-toast: 400;
+
+  /* --- Motion (luxo: easing suave, durações refinadas) --- */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-mid:  260ms;
+  --dur-slow: 460ms;
+}
+
+/* === Tema light (opt-in via [data-theme="light"]) — "céu" claro de pediatria === */
+:root[data-theme="light"] {
+  --bg-base: #d8ebfb;            /* azul-bebê suave (pediatria) */
+  --bg-elevated: #ffffff;        /* cards brancos p/ contraste/pop */
+  --bg-elevated-2: #cce2f8;      /* card sobre card: azul-bebê um tom mais fundo */
+  --bg-glass: rgba(255, 255, 255, 0.70);
+  --bg-glass-strong: rgba(255, 255, 255, 0.90);
+
+  --ink-100: #0f2438;
+  --ink-90:  #20364a;
+  --ink-70:  #44586c;
+  --ink-50:  #6b7c8e;
+  --ink-30:  #a6b3c2;
+
+  --teal-60: #1f7fc2;
+  --teal-80: #2a93d6;
+  --teal-10: #d6ecfb;   /* superfície sky sutil clara */
+  --teal-05: #ebf5fe;   /* tint sky mais leve */
+
+  --coral-60: #c8453a;
+  --coral-50: #c8453a;
+
+  --ok-green: #2e8c4a;
+  --warn-amber: #ad7c14;
+  --err-red: #c8453a;
+  --info-blue: #5a6b90;
+  --cec-blue: #1f7fc2;
+
+  --sky-tint: rgba(31, 127, 194, 0.08);
+  --sky-tint-2: rgba(31, 127, 194, 0.14);
+
+  --border-soft: rgba(15, 36, 56, 0.10);
+  --border-mid:  rgba(15, 36, 56, 0.18);
+  --border-strong: rgba(15, 36, 56, 0.32);
+
+  --shadow-sm: 0 1px 2px rgba(15,40,60,0.08);
+  --shadow-md: 0 6px 20px rgba(15,40,60,0.10);
+  --shadow-lg: 0 20px 52px rgba(15,40,60,0.15);
+  --shadow-glow-teal: 0 0 0 1px rgba(31,127,194,0.18), 0 10px 34px rgba(31,127,194,0.16);
+  --shadow-glow-coral: 0 0 0 1px rgba(200,69,58,0.18), 0 10px 34px rgba(200,69,58,0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-mid:  0ms;
+    --dur-slow: 0ms;
+  }
+}

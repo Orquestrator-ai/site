@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Você está offline — Intensivão Preventiva</title>
+  <meta name="theme-color" content="#2563eb" />
+  <style>
+    :root {
+      --bg: #eef2ff;
+      --card: rgba(255,255,255,0.86);
+      --text: #0b1220;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-2: #8b5cf6;
+      --border: rgba(15,23,42,0.08);
+      --shadow: 0 24px 70px rgba(15,23,42,0.18);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #07090f;
+        --card: rgba(20,27,45,0.86);
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-2: #a78bfa;
+        --border: rgba(255,255,255,0.08);
+        --shadow: 0 24px 70px rgba(0,0,0,0.55);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+      background:
+        radial-gradient(900px 500px at 12% 0%, rgba(37,99,235,0.18), transparent 60%),
+        radial-gradient(700px 420px at 100% 100%, rgba(139,92,246,0.18), transparent 58%),
+        radial-gradient(600px 360px at 60% 50%, rgba(20,184,166,0.10), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100%, 640px);
+      padding: clamp(24px, 6vw, 44px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.14), rgba(139,92,246,0.14));
+      border: 1px solid rgba(37,99,235,0.18);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .brand::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.14);
+    }
+
+    h1 {
+      margin: 6px 0 14px;
+      font-size: clamp(2rem, 7vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .quote {
+      margin: 18px 0 22px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--accent);
+      background: rgba(37,99,235,0.06);
+      border-radius: 0 12px 12px 0;
+      color: var(--text);
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .modulos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin: 20px 0 22px;
+    }
+    .modulo {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.4);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text);
+    }
+    .modulo.m1 { border-color: rgba(37,99,235,0.35); color: #2563eb; }
+    .modulo.m2 { border-color: rgba(20,184,166,0.35); color: #0d9488; }
+    .modulo.m3 { border-color: rgba(249,115,22,0.35); color: #ea580c; }
+    .modulo.m4 { border-color: rgba(139,92,246,0.35); color: #7c3aed; }
+
+    @media (prefers-color-scheme: dark) {
+      .modulo { background: rgba(255,255,255,0.04); }
+      .modulo.m1 { color: #93c5fd; }
+      .modulo.m2 { color: #5eead4; }
+      .modulo.m3 { color: #fdba74; }
+      .modulo.m4 { color: #c4b5fd; }
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 14px 32px rgba(37,99,235,0.28);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    a.button:hover { transform: translateY(-1px); box-shadow: 0 18px 36px rgba(37,99,235,0.32); }
+
+    a.button.--ghost {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(37,99,235,0.35);
+      box-shadow: none;
+    }
+
+    .status {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .status::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 0 4px rgba(239,68,68,0.18);
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <main role="main" aria-labelledby="offline-title">
+    <span class="brand">Intensivão Preventiva</span>
+
+    <h1 id="offline-title">Você está offline.</h1>
+
+    <p>Sem conexão no momento, mas o app continua aqui. Parte do conteúdo já foi armazenado no seu dispositivo e pode estar disponível.</p>
+
+    <div class="quote">
+      "Sentir antes de calcular. Calcular para confirmar o que se sentiu."
+    </div>
+
+    <div class="modulos" aria-label="Módulos da plataforma">
+      <div class="modulo m1">M1 · Epidemiologia &amp; MBE</div>
+      <div class="modulo m2">M2 · Sens/Esp · VPP/VPN</div>
+      <div class="modulo m3">M3 · RV · ROC · AUC</div>
+      <div class="modulo m4">M4 · Tendência &amp; Dispersão</div>
+    </div>
+
+    <p>Tente reconectar para atualizar o conteúdo, sincronizar progresso e carregar páginas que ainda não foram visitadas.</p>
+
+    <div class="actions">
+      <a class="button" href="./" aria-label="Tentar voltar ao app">Tentar novamente</a>
+      <a class="button --ghost" href="./#home" aria-label="Ir para a home">Ir para a home</a>
+    </div>
+
+    <p class="status" id="status-online">Sem conexão detectada.</p>
+  </main>
+
+  <script>
+    (function () {
+      var s = document.getElementById('status-online');
+      function update() {
+        if (navigator.onLine) {
+          s.textContent = 'Conexão restabelecida — recarregue para voltar ao app.';
+          s.style.setProperty('--dot', '#22c55e');
+        } else {
+          s.textContent = 'Sem conexão detectada.';
+        }
+      }
+      window.addEventListener('online', update);
+      window.addEventListener('offline', update);
+      update();
+    })();
+  </script>
+</body>
+</html>

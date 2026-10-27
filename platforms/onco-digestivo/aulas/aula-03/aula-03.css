@@ -1,0 +1,133 @@
+/* aula-03.css — interatividade dos SVGs autorais da Aula 3 (Endocardite por S. bovis + Câncer Colorretal).
+   Espelha o padrão scoped de aula-02.css. Só estados visuais; o JS muda atributos/classes.
+   ZERO hex — herda tokens do repo. prefers-reduced-motion desliga transições e animações.
+   Folha própria para passar o GATE-DRIFT (0 <style> nas aulas) e alinhar com as aulas gold.
+
+   ccr1  (p1)  hotspot exclusivo: o elo coração ↔ S. bovis ↔ cólon (bovis default aceso)
+   ccr2  (p2)  step-through 1→4: a linha do tempo do caso do Sr. Luiz
+   ccr4  (p4)  reveal: hemocultura S. bovis → colonoscopia (a bandeira vermelha)
+   ccr6  (p6)  hotspot exclusivo: balança dos fatores de risco + fibra protetora
+   ccr7  (p7)  slider 40→60: janela adenoma→carcinoma e o corte etário 45/50
+   ccr9  (p9)  toggle: colonoscopia diagnostica × CEA segue
+   ccr10 (p10) hotspot exclusivo por órgão: fígado/pulmão hematogênico + mapa de exame (fígado default)
+   ccr13 (p13) slider 1→5: régua ressecável ↔ irressecável da metástase hepática
+   ccr14 (p14) decision-reveal por linha: matriz erro × correto (6 armadilhas) */
+
+.figure-svg .ccr-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* alvos clicáveis (o elemento desenhado é o alvo) */
+.il-ccr1 .ccr1-node,
+.il-ccr4 .ccr4-target,
+.il-ccr6 .ccr6-factor,
+.il-ccr10 .ccr10-target,
+.il-ccr14 .ccr14-row { cursor: pointer; }
+.il-ccr1 .ccr1-hit,
+.il-ccr6 .ccr6-hit,
+.il-ccr14 .ccr14-hit { cursor: pointer; }
+
+/* foco de teclado visível */
+.figure-svg [tabindex]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 3px; }
+.figure-svg [class$="-hit"]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; border-radius: 8px; }
+
+/* realce / atenuação genéricos dos hotspots e steps (espelho do CSS de apoio do brief) */
+.il-ccr1 .ccr1-node, .il-ccr1 .ccr1-edge,
+.il-ccr2 .ccr2-mark, .il-ccr2 .ccr2-edge,
+.il-ccr6 .ccr6-factor, .il-ccr6 .ccr6-pan,
+.il-ccr10 .ccr10-target, .il-ccr10 .ccr10-trail,
+.il-ccr13 .ccr13-state,
+.il-ccr14 .ccr14-wrong, .il-ccr14 .ccr14-right, .il-ccr14 .ccr14-right-txt,
+.figure-svg [class$="-aura"] { transition: opacity var(--dur-mid, .22s) var(--ease-out, ease); }
+.figure-svg .is-dim { opacity: .34; }
+
+/* ===== ccr1 (p1) — o elo (hotspot exclusivo por nó do triângulo) ===== */
+.il-ccr1 .ccr1-edge:not(.is-on) { opacity: .2; }
+.il-ccr1 .ccr1-edge.is-on { opacity: 1; }
+.il-ccr1 .ccr1-aura { opacity: 0; }
+.il-ccr1 .ccr1-node.is-on .ccr1-aura { opacity: 1; }
+.il-ccr1 .ccr1-node.is-on .ccr1-organ { stroke-width: 3.2; }
+.il-ccr1 .ccr1-node.is-dim { opacity: .4; }
+
+/* ===== ccr2 (p2) — linha do tempo do caso (step-through 1→4) ===== */
+.il-ccr2 .ccr2-mark { opacity: .3; }
+.il-ccr2 .ccr2-mark.is-on { opacity: 1; }
+.il-ccr2 .ccr2-edge { opacity: 0; }
+.il-ccr2 .ccr2-edge.is-on { opacity: 1; }
+
+/* ===== ccr4 (p4) — reveal da conduta (a bandeira vermelha) ===== */
+.il-ccr4 .ccr4-aura { opacity: 0; }
+.il-ccr4 .ccr4-status { opacity: 0; }
+.il-ccr4 .ccr4-target.is-revealed .ccr4-aura { opacity: 1; }
+.il-ccr4 .ccr4-target.is-revealed .ccr4-card { stroke-width: 3.2; }
+.il-ccr4 .ccr4-target.is-revealed .ccr4-hint { opacity: 0; }
+.il-ccr4 .ccr4-target.is-revealed ~ .ccr4-status,
+.il-ccr4.is-revealed .ccr4-status { opacity: 1; }
+
+/* ===== ccr6 (p6) — balança dos fatores de risco (hotspot exclusivo) ===== */
+.il-ccr6 .ccr6-chip,
+.il-ccr6 .ccr6-aura { transition: opacity var(--dur-mid, .22s) var(--ease-out, ease), stroke-width var(--dur-fast, .12s) var(--ease-out, ease); }
+.il-ccr6 .ccr6-factor.is-dim .ccr6-chip { opacity: .42; }
+.il-ccr6 .ccr6-factor.is-on .ccr6-chip { stroke-width: 2.6; }
+.il-ccr6 .ccr6-aura { opacity: 0; }
+.il-ccr6 .ccr6-factor.is-on .ccr6-aura { opacity: 1; }
+
+/* ===== ccr7 (p7) — janela adenoma→carcinoma + corte etário (slider) ===== */
+.il-ccr7 .ccr7-cursor,
+.il-ccr7 .ccr7-gate rect,
+.il-ccr7 .ccr7-gate line { transition: transform var(--dur-mid, .22s) var(--ease-out, ease), opacity var(--dur-mid, .22s) var(--ease-out, ease); }
+.il-ccr7 .ccr7-gate:not(.is-on) { opacity: .5; }
+.il-ccr7 .ccr7-gate.is-on { opacity: 1; }
+.il-ccr7 .ccr7-gate.is-on rect { stroke-width: 2.6; }
+
+/* ===== ccr9 (p9) — colonoscopia × CEA (toggle) ===== */
+.il-ccr9 .ccr9-side { transition: opacity var(--dur-mid, .22s) var(--ease-out, ease); }
+.il-ccr9 .ccr9-side.is-dim { opacity: .34; }
+
+/* ===== ccr10 (p10) — fígado/pulmão hematogênico (hotspot exclusivo por órgão) ===== */
+.il-ccr10 .ccr10-trail:not(.is-on) { opacity: .16; }
+.il-ccr10 .ccr10-trail.is-on { opacity: 1; }
+.il-ccr10 .ccr10-aura { opacity: 0; }
+.il-ccr10 .ccr10-target.is-on .ccr10-aura { opacity: 1; }
+.il-ccr10 .ccr10-target.is-on .ccr10-organ { stroke-width: 3; }
+.il-ccr10 .ccr10-target.is-dim { opacity: .42; }
+
+/* ===== ccr13 (p13) — régua de ressecabilidade (slider) ===== */
+.il-ccr13 .ccr13-state { opacity: 0; }
+.il-ccr13 .ccr13-state.is-on { opacity: 1; }
+.il-ccr13 .ccr13-cursor { transition: transform var(--dur-mid, .22s) var(--ease-out, ease); }
+
+/* ===== ccr14 (p14) — matriz erro × correto (decision-reveal por linha) ===== */
+.il-ccr14 .ccr14-row[aria-pressed="true"] .ccr14-wrong { stroke-width: 2.2; }
+.il-ccr14 .ccr14-row[aria-pressed="true"] .ccr14-right { stroke-width: 2.2; }
+.il-ccr14 .ccr14-right-txt { transition: opacity var(--dur-mid, .22s) var(--ease-out, ease); }
+
+/* controles externos: slider (rim-ctl) — espelho do padrão da casa */
+.rim-ctl { display: flex; gap: var(--sp-2); justify-content: center; align-items: center; margin-top: var(--sp-3); flex-wrap: wrap; }
+.rim-ctl__label { font: 600 var(--fs-sm)/1 inherit; color: var(--ink-90); }
+.rim-ctl input[type="range"] { accent-color: var(--teal-60); min-width: 220px; cursor: pointer; }
+.rim-ctl input[type="range"]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 3px; }
+
+/* controle externo: step-through (step-ctl) — reusa o padrão das aulas 01/02 */
+.step-ctl { display: flex; gap: var(--sp-2); justify-content: center; align-items: center; margin-top: var(--sp-3); flex-wrap: wrap; }
+.step-ctl button {
+  appearance: none; border: 1px solid var(--border-mid); background: var(--bg-elevated-2);
+  color: var(--ink-90); font: 600 var(--fs-sm)/1 inherit; padding: 0.5rem 0.9rem;
+  border-radius: var(--r-md, 10px); cursor: pointer; transition: background var(--dur-fast, .12s) var(--ease-out, ease), border-color var(--dur-fast, .12s) var(--ease-out, ease);
+}
+.step-ctl button:hover:not(:disabled) { border-color: var(--teal-60); }
+.step-ctl button:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+.step-ctl button:disabled { opacity: 0.4; cursor: default; }
+.step-ctl [data-step-count] { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-50); }
+
+/* movimento só quando permitido — ZERO SMIL */
+@media (prefers-reduced-motion: no-preference) {
+  .il-ccr1 .ccr1-node.is-on .ccr1-aura { animation: ccr-pulse 2.6s ease-in-out infinite; }
+  .il-ccr4 .ccr4-target.is-revealed .ccr4-aura { animation: ccr-pulse 2.8s ease-in-out infinite; }
+  .il-ccr10 .ccr10-target.is-on .ccr10-aura { animation: ccr-pulse 2.6s ease-in-out infinite; }
+}
+@keyframes ccr-pulse { 0%, 100% { opacity: .5; } 50% { opacity: .9; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .il-ccr1 *, .il-ccr2 *, .il-ccr4 *, .il-ccr6 *, .il-ccr7 *,
+  .il-ccr9 *, .il-ccr10 *, .il-ccr13 *, .il-ccr14 *,
+  .step-ctl button, .rim-ctl input { transition: none !important; animation: none !important; }
+}

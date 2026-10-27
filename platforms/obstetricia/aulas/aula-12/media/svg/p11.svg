@@ -1,0 +1,446 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" class="a12p11-root" data-svg-tokenized="true" data-active="diagonalis" role="img" aria-labelledby="a12p11-title a12p11-desc">
+  <title id="a12p11-title">Bacia Obstétrica: Conjugatas do Estreito Superior</title>
+  <desc id="a12p11-desc">Ilustração médica interativa demonstrando as conjugatas anatômica, obstétrica e diagonalis do estreito superior da bacia, e a razão anatômica pela qual se subtrai 1,5 cm da conjugata diagonalis mensurável ao toque vaginal.</desc>
+
+  <style>
+    .a12p11-root {
+      --a12p11-bg: var(--bg-1, #12151E);
+      --a12p11-card: var(--bg-2, #1A1F2C);
+      --a12p11-border: var(--ink-20, #2E364A);
+      --a12p11-tinta: var(--a12-tinta, #F7F1F5);
+      --a12p11-tinta-sub: var(--ink-70, #B0BAC9);
+      --a12p11-osso: var(--a12-osso, #DCC7B4);
+      --a12p11-osso-stroke: var(--ink-40, #8A7A6E);
+      --a12p11-anatomica: var(--a12-conjugata-anatomica, #6FA8D6);
+      --a12p11-obstetrica: var(--a12-conjugata-obstetrica, #E56C7B);
+      --a12p11-diagonalis: var(--a12-conjugata-diagonalis, #55B889);
+      --a12p11-diferenca: var(--a12-ouro, #F3BE5B);
+      --a12p11-mao: var(--a12-pele-esquema, #C99074);
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--a12p11-bg);
+      color: var(--a12p11-tinta);
+      width: 100%;
+      height: auto;
+      user-select: none;
+    }
+
+    [data-theme="light"] .a12p11-root {
+      --a12p11-bg: var(--bg-1, #F8F9FA);
+      --a12p11-card: var(--bg-2, #FFFFFF);
+      --a12p11-border: var(--ink-20, #E2E8F0);
+      --a12p11-tinta: var(--a12-tinta, #1E293B);
+      --a12p11-tinta-sub: var(--ink-70, #64748B);
+      --a12p11-osso: var(--a12-osso, #C5B09E);
+      --a12p11-osso-stroke: var(--ink-40, #5C4D42);
+      --a12p11-anatomica: var(--a12-conjugata-anatomica, #2563EB);
+      --a12p11-obstetrica: var(--a12-conjugata-obstetrica, #DC2626);
+      --a12p11-diagonalis: var(--a12-conjugata-diagonalis, #059669);
+      --a12p11-diferenca: var(--a12-ouro, #D97706);
+      --a12p11-mao: var(--a12-pele-esquema, #A66E56);
+    }
+
+    /* Linhas de Conjugata */
+    .a12p11-line-anatomica,
+    .a12p11-line-obstetrica,
+    .a12p11-line-diagonalis {
+      transition: opacity 0.3s ease, stroke-width 0.3s ease;
+      opacity: 0.25;
+      stroke-width: 2.5;
+    }
+
+    .a12p11-root[data-active="anatomica"] .a12p11-line-anatomica {
+      opacity: 1;
+      stroke-width: 4.5;
+      filter: drop-shadow(0 0 6px rgba(111, 168, 214, 0.6));
+    }
+
+    .a12p11-root[data-active="obstetrica"] .a12p11-line-obstetrica {
+      opacity: 1;
+      stroke-width: 4.5;
+      filter: drop-shadow(0 0 6px rgba(229, 108, 123, 0.6));
+    }
+
+    .a12p11-root[data-active="diagonalis"] .a12p11-line-diagonalis {
+      opacity: 1;
+      stroke-width: 4.5;
+      filter: drop-shadow(0 0 6px rgba(85, 184, 137, 0.6));
+    }
+
+    /* Mão do examinador */
+    .a12p11-hand-group {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .a12p11-root[data-active="diagonalis"] .a12p11-hand-group {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    .a12p11-root[data-active="obstetrica"] .a12p11-hand-group {
+      opacity: 0.45;
+      transform: translate(-6px, 10px);
+    }
+    .a12p11-root[data-active="anatomica"] .a12p11-hand-group {
+      opacity: 0.2;
+      transform: translate(-12px, 20px);
+    }
+
+    /* Barreira Óssea na obstétrica */
+    .a12p11-barrier-group {
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .a12p11-root[data-active="obstetrica"] .a12p11-barrier-group {
+      opacity: 1;
+    }
+
+    /* Cards Informativos */
+    .a12p11-card-anatomica,
+    .a12p11-card-obstetrica,
+    .a12p11-card-diagonalis {
+      display: none;
+    }
+    .a12p11-root[data-active="anatomica"] .a12p11-card-anatomica { display: block; }
+    .a12p11-root[data-active="obstetrica"] .a12p11-card-obstetrica { display: block; }
+    .a12p11-root[data-active="diagonalis"] .a12p11-card-diagonalis { display: block; }
+
+    /* Botões de Seleção */
+    .a12p11-btn {
+      cursor: pointer;
+      outline: none;
+    }
+    .a12p11-btn-bg {
+      fill: var(--a12p11-card);
+      stroke: var(--a12p11-border);
+      stroke-width: 1.5;
+      transition: all 0.2s ease;
+    }
+    .a12p11-btn:hover .a12p11-btn-bg,
+    .a12p11-btn:focus .a12p11-btn-bg {
+      stroke: var(--a12p11-tinta);
+      filter: brightness(1.1);
+    }
+    .a12p11-btn text {
+      fill: var(--a12p11-tinta-sub);
+      font-size: 12px;
+      font-weight: 600;
+      transition: fill 0.2s ease;
+    }
+
+    .a12p11-root[data-active="anatomica"] .a12p11-btn-anatomica .a12p11-btn-bg {
+      fill: var(--a12p11-anatomica);
+      stroke: var(--a12p11-anatomica);
+    }
+    .a12p11-root[data-active="obstetrica"] .a12p11-btn-obstetrica .a12p11-btn-bg {
+      fill: var(--a12p11-obstetrica);
+      stroke: var(--a12p11-obstetrica);
+    }
+    .a12p11-root[data-active="diagonalis"] .a12p11-btn-diagonalis .a12p11-btn-bg {
+      fill: var(--a12p11-diagonalis);
+      stroke: var(--a12p11-diagonalis);
+    }
+
+    .a12p11-root[data-active="anatomica"] .a12p11-btn-anatomica text,
+    .a12p11-root[data-active="obstetrica"] .a12p11-btn-obstetrica text,
+    .a12p11-root[data-active="diagonalis"] .a12p11-btn-diagonalis text {
+      fill: #FFFFFF;
+      font-weight: 700;
+    }
+
+    /* Hotspots Anatômicos */
+    .a12p11-hotspot {
+      cursor: pointer;
+      outline: none;
+    }
+    .a12p11-hotspot-ring {
+      transition: r 0.2s ease, stroke-width 0.2s ease;
+    }
+    .a12p11-hotspot:hover .a12p11-hotspot-ring,
+    .a12p11-hotspot:focus .a12p11-hotspot-ring {
+      r: 16;
+      stroke-width: 3;
+    }
+  </style>
+
+  <!-- ==================== TITULO E LEGENDA (CONTRATO DE LAYOUT) ==================== -->
+  <g class="a12p11-header" transform="translate(20, 16)">
+    <text x="0" y="20" fill="var(--a12p11-tinta)" font-size="18" font-weight="800" letter-spacing="0.5">BACIA OBSTÉTRICA: CONJUGATAS DO ESTREITO SUPERIOR</text>
+    <text x="0" y="40" fill="var(--a12p11-tinta-sub)" font-size="12.5" font-weight="500">
+      Por que a conjugata mensurável ao toque (<tspan fill="var(--a12p11-diagonalis)" font-weight="700">Diagonalis = 12 cm</tspan>) NÃO é a que decide a passagem fetal (<tspan fill="var(--a12p11-obstetrica)" font-weight="700">Obstétrica = 10,5 cm</tspan>)?
+    </text>
+  </g>
+
+  <!-- ==================== PAINEL ESQUERDO: VISTA SUPERIOR (ESTREITO SUPERIOR) ==================== -->
+  <g class="a12p11-panel-left" transform="translate(20, 70)">
+    <!-- Fundo Painel -->
+    <rect x="0" y="0" width="410" height="395" rx="12" fill="var(--a12p11-card)" stroke="var(--a12p11-border)" stroke-width="1.5" />
+    
+    <!-- Rotulo do Plano -->
+    <rect x="16" y="14" width="220" height="24" rx="6" fill="var(--a12p11-bg)" />
+    <text x="26" y="30" fill="var(--a12p11-tinta)" font-size="11" font-weight="700" letter-spacing="0.4">PAINEL A · VISTA SUPERIOR (ANEL TERMINAL)</text>
+
+    <!-- Estrutura Ossea da Bacia (Vista Superior) -->
+    <g class="a12p11-pelvic-brim" transform="translate(205, 205)">
+      <!-- Ilio / Ramos Pubicos / Contorno Exterior -->
+      <path d="M -120 -50 C -150 -10 -140 60 -100 100 C -60 135 -20 145 0 145 C 20 145 60 135 100 100 C 140 60 150 -10 120 -50 C 90 -80 40 -95 0 -85 C -40 -95 -90 -80 -120 -50 Z" 
+            fill="none" stroke="var(--a12p11-osso)" stroke-width="24" stroke-linejoin="round" opacity="0.4" />
+      <path d="M -120 -50 C -150 -10 -140 60 -100 100 C -60 135 -20 145 0 145 C 20 145 60 135 100 100 C 140 60 150 -10 120 -50 C 90 -80 40 -95 0 -85 C -40 -95 -90 -80 -120 -50 Z" 
+            fill="none" stroke="var(--a12p11-osso-stroke)" stroke-width="2" stroke-linejoin="round" />
+
+      <!-- Linha Terminalis (Aro Interno) -->
+      <path d="M 0 -85 C 45 -85 95 -60 110 0 C 120 50 80 115 0 125 C -80 115 -120 50 -110 0 C -95 -60 -45 -85 0 -85 Z" 
+            fill="var(--a12p11-bg)" stroke="var(--a12p11-tinta)" stroke-width="2.5" />
+
+      <!-- Promontorio (Posterior) -->
+      <path d="M -35 -95 C -15 -105 15 -105 35 -95 C 25 -80 -25 -80 -35 -95 Z" fill="var(--a12p11-osso)" stroke="var(--a12p11-osso-stroke)" stroke-width="1.5" />
+      <text x="0" y="-112" fill="var(--a12p11-tinta)" font-size="11" font-weight="700" text-anchor="middle">Promontório Sacral (S1)</text>
+
+      <!-- Sinfise Pubica (Anterior) -->
+      <rect x="-25" y="118" width="50" height="18" rx="4" fill="var(--a12p11-osso)" stroke="var(--a12p11-osso-stroke)" stroke-width="1.5" />
+      <text x="0" y="152" fill="var(--a12p11-tinta)" font-size="11" font-weight="700" text-anchor="middle">Sínfise Púbica (Anterior)</text>
+
+      <!-- Diametro Transverso (Referencia) -->
+      <line x1="-110" y1="10" x2="110" y2="10" stroke="var(--a12p11-tinta-sub)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.5" />
+      <text x="65" y="5" fill="var(--a12p11-tinta-sub)" font-size="10" font-weight="600">Diâmetro Transverso (13 cm)</text>
+
+      <!-- Eixo Anteroposterior (Conjugata Ativa no Estreito Superior) -->
+      <line x1="0" y1="-85" x2="0" y2="118" stroke="var(--a12p11-obstetrica)" stroke-width="3.5" stroke-dasharray="6,4" class="a12p11-line-obstetrica" />
+      <line x1="0" y1="-85" x2="0" y2="118" stroke="var(--a12p11-diagonalis)" stroke-width="3.5" stroke-dasharray="6,4" class="a12p11-line-diagonalis" />
+      <line x1="0" y1="-85" x2="0" y2="118" stroke="var(--a12p11-anatomica)" stroke-width="3.5" stroke-dasharray="6,4" class="a12p11-line-anatomica" />
+
+      <!-- Pontos Extremos -->
+      <circle cx="0" cy="-85" r="5" fill="var(--a12p11-tinta)" />
+      <circle cx="0" cy="118" r="5" fill="var(--a12p11-tinta)" />
+
+      <!-- Indicador Fetal de Passagem -->
+      <circle cx="0" cy="15" r="42" fill="none" stroke="var(--a12p11-diferenca)" stroke-width="2" stroke-dasharray="3,3" opacity="0.8" />
+      <text x="0" y="19" fill="var(--a12p11-diferenca)" font-size="10" font-weight="700" text-anchor="middle">Passagem Fetal (Cabeça)</text>
+    </g>
+
+    <!-- Legenda de Orientacao -->
+    <text x="205" y="375" fill="var(--a12p11-tinta-sub)" font-size="10.5" font-weight="500" text-anchor="middle">
+      Anel ósseo rígido: a conjugata obstétrica é a menor abertura Antero-Posterior.
+    </text>
+  </g>
+
+  <!-- ==================== PAINEL DIREITO: CORTE SAGITAL (3 CONJUGATAS) ==================== -->
+  <g class="a12p11-panel-right" transform="translate(450, 70)">
+    <!-- Fundo Painel -->
+    <rect x="0" y="0" width="490" height="395" rx="12" fill="var(--a12p11-card)" stroke="var(--a12p11-border)" stroke-width="1.5" />
+    
+    <!-- Rotulo do Plano -->
+    <rect x="16" y="14" width="240" height="24" rx="6" fill="var(--a12p11-bg)" />
+    <text x="26" y="30" fill="var(--a12p11-tinta)" font-size="11" font-weight="700" letter-spacing="0.4">PAINEL B · CORTE SAGITAL (PILAR MEDICO P3)</text>
+
+    <!-- ANATOMIA SAGITAL DA BACIA -->
+    <g class="a12p11-sagittal-anatomy">
+      <!-- Sacro e Promontorio S1 (Posterior - Direita) -->
+      <!-- Ponto do Promontorio FIXO P = (320, 80) relativo ao painel sagital (absoluto 770, 150) -->
+      <path d="M 320 80 Q 345 120 348 170 T 325 260 T 285 320 L 265 335 C 275 310 305 250 310 180 C 315 130 295 95 320 80 Z" 
+            fill="var(--a12p11-osso)" stroke="var(--a12p11-osso-stroke)" stroke-width="2" />
+      <!-- Segmentacao das Vertebras Sacrais -->
+      <line x1="320" y1="80" x2="340" y2="105" stroke="var(--a12p11-osso-stroke)" stroke-width="1" />
+      <line x1="335" y1="130" x2="350" y2="155" stroke="var(--a12p11-osso-stroke)" stroke-width="1" />
+      <line x1="340" y1="190" x2="345" y2="215" stroke="var(--a12p11-osso-stroke)" stroke-width="1" />
+      
+      <!-- Label Promontorio -->
+      <circle cx="320" cy="80" r="6" fill="var(--a12p11-tinta)" />
+      <text x="332" y="75" fill="var(--a12p11-tinta)" font-size="11" font-weight="800">Promontório (S1)</text>
+      <text x="332" y="90" fill="var(--a12p11-tinta-sub)" font-size="9.5" font-weight="600">Ponto Fixo Posterior</text>
+
+      <!-- Sinfise Pubica (Anterior - Esquerda) -->
+      <!-- Formato de Cunha / Oval Anatomico com espessura posterior -->
+      <!-- A (Borda Sup) = (98, 195) | O (Face Int / Culmen) = (125, 227) | D (Borda Inf) = (112, 270) -->
+      <path d="M 98 195 C 75 195 65 210 68 245 C 70 270 90 275 112 270 C 122 250 132 238 125 227 C 118 215 108 202 98 195 Z" 
+            fill="var(--a12p11-osso)" stroke="var(--a12p11-osso-stroke)" stroke-width="2" />
+      <path d="M 85 205 Q 98 230 102 260" fill="none" stroke="var(--a12p11-osso-stroke)" stroke-width="1.5" stroke-dasharray="2,2" />
+      <text x="40" y="235" fill="var(--a12p11-tinta)" font-size="10.5" font-weight="700">Sínfise Púbica</text>
+
+      <!-- Destaque da Espessura Ossea Anterior (Sinfise) -->
+      <path d="M 98 195 L 125 227 L 112 270" fill="none" stroke="var(--a12p11-diferenca)" stroke-width="3" opacity="0.8" />
+      <text x="135" y="250" fill="var(--a12p11-diferenca)" font-size="11" font-weight="800">Δ = 1,5 cm</text>
+      <text x="135" y="263" fill="var(--a12p11-tinta-sub)" font-size="9" font-weight="500">Espessura óssea</text>
+    </g>
+
+    <!-- AS TRES LINHAS DE CONJUGATA (PARTEM TODAS DO PROMONTORIO 320, 80) -->
+    <g class="a12p11-conjugate-lines">
+      <!-- 1. Conjugata Vera Anatomica: P(320,80) -> A(98, 195) -->
+      <line x1="320" y1="80" x2="98" y2="195" stroke="var(--a12p11-anatomica)" class="a12p11-line-anatomica" />
+      
+      <!-- 2. Conjugata Vera Obstetrica: P(320,80) -> O(125, 227) -->
+      <line x1="320" y1="80" x2="125" y2="227" stroke="var(--a12p11-obstetrica)" class="a12p11-line-obstetrica" />
+
+      <!-- 3. Conjugata Diagonalis: P(320,80) -> D(112, 270) -->
+      <line x1="320" y1="80" x2="112" y2="270" stroke="var(--a12p11-diagonalis)" class="a12p11-line-diagonalis" />
+    </g>
+
+    <!-- MAO DO EXAMINADOR E DEDOS NO TOQUE VAGINAL -->
+    <!-- Entra por baixo/esquerda (vulva/vagina) em direcao a D(112, 270) -->
+    <g class="a12p11-hand-group">
+      <!-- Antebraco / Punho -->
+      <path d="M 10 370 L 55 315 L 75 328 L 30 385 Z" fill="var(--a12p11-mao)" stroke="var(--a12p11-osso-stroke)" stroke-width="1.5" />
+      <!-- Mao / Palma -->
+      <path d="M 55 315 L 90 282 L 105 295 L 75 328 Z" fill="var(--a12p11-mao)" stroke="var(--a12p11-osso-stroke)" stroke-width="1.5" />
+      <!-- Dedos Indicador e Medio estendidos tocando a Borda Inferior D(112, 270) -->
+      <path d="M 90 282 L 112 270 L 116 276 L 95 288 Z" fill="var(--a12p11-mao)" stroke="var(--a12p11-osso-stroke)" stroke-width="1.5" />
+      <!-- Dedo com anel de toque -->
+      <circle cx="112" cy="270" r="4" fill="var(--a12p11-diagonalis)" />
+      
+      <!-- Label do Toque -->
+      <rect x="15" y="325" width="105" height="20" rx="4" fill="var(--a12p11-bg)" opacity="0.9" />
+      <text x="67" y="339" fill="var(--a12p11-diagonalis)" font-size="10" font-weight="700" text-anchor="middle">Toque Vaginal (Alcança D)</text>
+    </g>
+
+    <!-- BARREIRA OSSEA / ALERTA QUANDO EM MODO OBSTETRICA -->
+    <g class="a12p11-barrier-group">
+      <!-- Extensao impossivel de D ate O -->
+      <line x1="112" y1="270" x2="125" y2="227" stroke="var(--a12p11-obstetrica)" stroke-width="2.5" stroke-dasharray="4,3" />
+      <!-- Sinal de Bloqueio -->
+      <circle cx="120" cy="245" r="9" fill="var(--a12p11-obstetrica)" />
+      <text x="120" y="249" fill="#FFFFFF" font-size="11" font-weight="900" text-anchor="middle">✕</text>
+      <!-- Caixinha de Alerta -->
+      <rect x="135" y="195" width="180" height="34" rx="6" fill="var(--a12p11-bg)" stroke="var(--a12p11-obstetrica)" stroke-width="1.5" />
+      <text x="143" y="210" fill="var(--a12p11-obstetrica)" font-size="10" font-weight="800">BARREIRA ÓSSEA PÚBICA</text>
+      <text x="143" y="223" fill="var(--a12p11-tinta)" font-size="9" font-weight="600">Dedos não chegam à face interna (O)</text>
+    </g>
+
+    <!-- HOTSPOTS CLICAVEIS ANATOMICOS (PONTOS A, O, D NA SINFISE) -->
+    <!-- Hotspot A (Borda Superior) -->
+    <g class="a12p11-hotspot" data-target="anatomica" role="button" tabindex="0" aria-label="Selecionar Conjugata Anatômica">
+      <circle cx="98" cy="195" r="14" fill="transparent" />
+      <circle cx="98" cy="195" r="7" fill="var(--a12p11-bg)" stroke="var(--a12p11-anatomica)" stroke-width="2.5" class="a12p11-hotspot-ring" />
+      <text x="82" y="190" fill="var(--a12p11-anatomica)" font-size="11" font-weight="800" text-anchor="end">A</text>
+    </g>
+
+    <!-- Hotspot O (Face Interna / Promontorio Pubico) -->
+    <g class="a12p11-hotspot" data-target="obstetrica" role="button" tabindex="0" aria-label="Selecionar Conjugata Obstétrica">
+      <circle cx="125" cy="227" r="14" fill="transparent" />
+      <circle cx="125" cy="227" r="7" fill="var(--a12p11-bg)" stroke="var(--a12p11-obstetrica)" stroke-width="2.5" class="a12p11-hotspot-ring" />
+      <text x="140" y="222" fill="var(--a12p11-obstetrica)" font-size="11" font-weight="800">O</text>
+    </g>
+
+    <!-- Hotspot D (Borda Inferior) -->
+    <g class="a12p11-hotspot" data-target="diagonalis" role="button" tabindex="0" aria-label="Selecionar Conjugata Diagonalis">
+      <circle cx="112" cy="270" r="14" fill="transparent" />
+      <circle cx="112" cy="270" r="7" fill="var(--a12p11-bg)" stroke="var(--a12p11-diagonalis)" stroke-width="2.5" class="a12p11-hotspot-ring" />
+      <text x="96" y="285" fill="var(--a12p11-diagonalis)" font-size="11" font-weight="800" text-anchor="end">D</text>
+    </g>
+
+    <!-- ROTULOS E LIDERES DAS LINHAS (SEM CRUZAMENTO) -->
+    <g class="a12p11-labels" transform="translate(180, 110)">
+      <!-- Anatômica -->
+      <text x="0" y="0" fill="var(--a12p11-anatomica)" font-size="11" font-weight="700">1. Vera Anatômica (P → A): ≈ 11,0 cm</text>
+      <!-- Obstétrica -->
+      <text x="0" y="22" fill="var(--a12p11-obstetrica)" font-size="11" font-weight="800">2. Vera Obstétrica (P → O): ≈ 10,5 cm ★</text>
+      <!-- Diagonalis -->
+      <text x="0" y="44" fill="var(--a12p11-diagonalis)" font-size="11" font-weight="700">3. Diagonalis (P → D): ≈ 12,0 cm 🩻</text>
+    </g>
+  </g>
+
+  <!-- ==================== RODAPE / PAINEL DE LEITURA E INTERACAO ==================== -->
+  <g class="a12p11-footer" transform="translate(20, 480)">
+    <!-- Fundo do Painel de Leitura -->
+    <rect x="0" y="0" width="920" height="145" rx="12" fill="var(--a12p11-card)" stroke="var(--a12p11-border)" stroke-width="1.5" />
+
+    <!-- SELETOR DE SELETOR / TABS INTERATIVAS -->
+    <g class="a12p11-tabs" transform="translate(16, 16)">
+      <!-- Tab 1: Anatomica -->
+      <g class="a12p11-btn a12p11-btn-anatomica" data-target="anatomica" role="button" tabindex="0" aria-label="Exibir Conjugata Anatômica">
+        <rect x="0" y="0" width="280" height="36" rx="8" class="a12p11-btn-bg" />
+        <text x="140" y="22" text-anchor="middle">1. Anatômica (11,0 cm) · Não mensurável</text>
+      </g>
+
+      <!-- Tab 2: Obstetrica -->
+      <g class="a12p11-btn a12p11-btn-obstetrica" data-target="obstetrica" transform="translate(295, 0)" role="button" tabindex="0" aria-label="Exibir Conjugata Obstétrica">
+        <rect x="0" y="0" width="300" height="36" rx="8" class="a12p11-btn-bg" />
+        <text x="150" y="22" text-anchor="middle">2. Obstétrica (10,5 cm) · A QUE DECIDE</text>
+      </g>
+
+      <!-- Tab 3: Diagonalis -->
+      <g class="a12p11-btn a12p11-btn-diagonalis" data-target="diagonalis" transform="translate(610, 0)" role="button" tabindex="0" aria-label="Exibir Conjugata Diagonalis">
+        <rect x="0" y="0" width="278" height="36" rx="8" class="a12p11-btn-bg" />
+        <text x="139" y="22" text-anchor="middle">3. Diagonalis (12,0 cm) · Mensurável</text>
+      </g>
+    </g>
+
+    <!-- CONTEUDO DINAMICO DO CARTAO DE LEITURA -->
+    <!-- State 1: Anatomica -->
+    <g class="a12p11-card-anatomica" transform="translate(20, 64)">
+      <text x="0" y="20" fill="var(--a12p11-anatomica)" font-size="14" font-weight="800">Conjugata Vera Anatômica (Promonto-Suprapúbica) = 11,0 cm</text>
+      <text x="0" y="42" fill="var(--a12p11-tinta-sub)" font-size="12" font-weight="500">
+        Trajeto do promontório sacral até a borda superior da sínfise púbica (Ponto A). É a medida anatômica teórica da entrada da bacia, mas <tspan fill="var(--a12p11-tinta)" font-weight="700">não representa a menor passagem fetal</tspan> nem é acessível ao exame físico.
+      </text>
+    </g>
+
+    <!-- State 2: Obstetrica -->
+    <g class="a12p11-card-obstetrica" transform="translate(20, 64)">
+      <text x="0" y="20" fill="var(--a12p11-obstetrica)" font-size="14" font-weight="800">Conjugata Vera Obstétrica (Promonto-Retropúbica) = 10,5 cm ★ [MENOR DIÂMETRO]</text>
+      <text x="0" y="42" fill="var(--a12p11-tinta-sub)" font-size="12" font-weight="500">
+        Trajeto do promontório até a face interna/posterior da sínfise púbica (Ponto O - a zona mais proeminente). <tspan fill="var(--a12p11-obstetrica)" font-weight="700">É o menor espaço útil para a cabeça fetal no estreito superior.</tspan> Como os dedos não ultrapassam a barreira óssea inferior no toque, sua medida é obrigatoriamente calculada: <tspan fill="var(--a12p11-diferenca)" font-weight="700">Obstétrica = Diagonalis - 1,5 cm</tspan>.
+      </text>
+    </g>
+
+    <!-- State 3: Diagonalis -->
+    <g class="a12p11-card-diagonalis" transform="translate(20, 64)">
+      <text x="0" y="20" fill="var(--a12p11-diagonalis)" font-size="14" font-weight="800">Conjugata Diagonalis (Promonto-Subpúbica) = 12,0 cm 🩻 [MENSURÁVEL AO TOQUE]</text>
+      <text x="0" y="42" fill="var(--a12p11-tinta-sub)" font-size="12" font-weight="500">
+        Trajeto do promontório até a borda inferior da sínfise púbica (Ponto D). <tspan fill="var(--a12p11-diagonalis)" font-weight="700">Única conjugata diretamente mensurável pelo toque vaginal</tspan> (ao tocar o promontório com a ponta dos dedos e marcar o contato subpúbico na mão). Para obter a conjugata obstétrica decisiva, <tspan fill="var(--a12p11-diferenca)" font-weight="700">SUBTRAEM-SE 1,5 cm</tspan> devido à espessura e inclinação da pubo-sínfise.
+      </text>
+    </g>
+
+    <!-- Caixa de Formula Fixa de Dedução -->
+    <g class="a12p11-formula-box" transform="translate(680, 64)">
+      <rect x="0" y="0" width="220" height="65" rx="8" fill="var(--a12p11-bg)" stroke="var(--a12p11-diferenca)" stroke-width="1.5" />
+      <text x="110" y="22" fill="var(--a12p11-diferenca)" font-size="11" font-weight="800" text-anchor="middle">FÓRMULA DE DEDUÇÃO</text>
+      <text x="110" y="42" fill="var(--a12p11-tinta)" font-size="12" font-weight="700" text-anchor="middle">Obstétrica = Diagonalis - 1,5 cm</text>
+      <text x="110" y="56" fill="var(--a12p11-tinta-sub)" font-size="10" font-weight="600" text-anchor="middle">10,5 cm = 12,0 cm - 1,5 cm</text>
+    </g>
+  </g>
+
+  <!-- ==================== SCRIPT DE INTERATIVIDADE AUTOCONTIDO ==================== -->
+  <script>
+    /*<![CDATA[*/
+    (function() {
+      var root = document.querySelector('.a12p11-root');
+      if (!root) return;
+
+      function setActive(scene) {
+        if (!scene) return;
+        root.setAttribute('data-active', scene);
+        
+        // Atualiza acessibilidade aria-pressed
+        var btns = root.querySelectorAll('[data-target]');
+        btns.forEach(function(btn) {
+          var isTarget = btn.getAttribute('data-target') === scene;
+          if (btn.hasAttribute('aria-pressed')) {
+            btn.setAttribute('aria-pressed', isTarget ? 'true' : 'false');
+          }
+        });
+      }
+
+      // Clique em qualquer alvo com data-target (tabs ou hotspots)
+      root.addEventListener('click', function(e) {
+        var target = e.target.closest('[data-target]');
+        if (target) {
+          var scene = target.getAttribute('data-target');
+          if (scene) setActive(scene);
+        }
+      });
+
+      // Suporte a teclado (Enter, Espaco e Teclas 1, 2, 3)
+      root.addEventListener('keydown', function(e) {
+        var target = e.target.closest('[data-target]');
+        if (target && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          var scene = target.getAttribute('data-target');
+          if (scene) setActive(scene);
+        }
+        
+        if (e.key === '1') setActive('anatomica');
+        if (e.key === '2') setActive('obstetrica');
+        if (e.key === '3') setActive('diagonalis');
+      });
+    })();
+    /*]]>*/
+  </script>
+</svg>

@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D9488">
+<meta name="description" content="Corpo, axônio e bainha de mielina — a infraestrutura comum que explica o quadro amplo da EM.">
+<title>Por que o quadro é múltiplo: a mielina — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm2-cara">
+:root,[data-theme="dark"]{--fm2-teal:#14b8a6;--fm2-indigo:#818CF8;--fm2-gelo:#38BDF8;--fm2-ouro:#E0A100;--fm2-coral:#FB7185;--fm2-amber:#F59E0B;--fm2-verde:#34D399}
+[data-theme="light"]{--fm2-teal:#0F766E;--fm2-indigo:#4F46E5;--fm2-gelo:#0284C7;--fm2-ouro:#846006;--fm2-coral:#C81E43;--fm2-amber:#A15206;--fm2-verde:#059669}
+.reading{width:100%;margin:0 auto;padding:0 0 3rem}
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem;margin:0 0 1.25rem;box-shadow:var(--shadow)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--fm2-teal);margin:0 0 .45rem}
+.opener h1{font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 .6rem;color:var(--ink-100)}
+.opener p{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.55}
+.opener--case{border-left:4px solid var(--fm2-indigo)}
+.opener--question{border-left:4px solid var(--fm2-teal)}
+.opener--mnemonic{border-left:4px solid var(--fm2-amber)}
+.opener--impact{border-left:4px solid var(--fm2-coral)}
+.opener--checklist{border-left:4px solid var(--fm2-verde)}
+.opener--vs{border-left:4px solid var(--fm2-gelo)}
+.opener--trap{border-left:4px solid var(--fm2-ouro)}
+.opener--bust{border-left:4px solid var(--fm2-coral)}
+.chipset{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.15rem}
+.chip{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.3rem .75rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--fm2-teal);border-color:color-mix(in srgb,var(--fm2-teal) 45%,var(--border))}
+.chip--gold{color:var(--fm2-ouro);border-color:color-mix(in srgb,var(--fm2-ouro) 45%,var(--border))}
+.chip--ok{color:var(--fm2-verde);border-color:color-mix(in srgb,var(--fm2-verde) 45%,var(--border))}
+.chip--no{color:var(--fm2-coral);border-color:color-mix(in srgb,var(--fm2-coral) 45%,var(--border))}
+.chip--series{color:var(--fm2-indigo);border-color:color-mix(in srgb,var(--fm2-indigo) 45%,var(--border))}
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em;line-height:1.62}
+.prose p.no-indent,.no-indent{text-indent:0}
+.topic-h{font-size:1.12rem;margin:1.4rem 0 .55rem;color:var(--ink-100);font-weight:700}
+.term{color:var(--fm2-indigo);font-weight:700}
+.hl-good{color:var(--fm2-verde);font-weight:700}
+.hl-bad{color:var(--fm2-coral);font-weight:700}
+.hl-warn{color:var(--fm2-amber);font-weight:700}
+.hl-gold{color:var(--fm2-ouro);font-weight:700}
+.nuance{border-left:4px solid var(--fm2-amber);padding:.7rem .9rem;margin:1rem 0;background:color-mix(in srgb,var(--fm2-amber) 9%,var(--bg-2));border-radius:0 10px 10px 0}
+.nuance__title{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--fm2-amber);margin:0 0 .3rem;font-weight:700}
+.nuance p{margin:0;color:var(--ink-80);font-size:.94rem;line-height:1.55}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0}
+.comparison{width:100%;border-collapse:collapse;font-size:.92rem;min-width:300px}
+.comparison th,.comparison td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}
+.comparison th{background:var(--bg-3);color:var(--ink-100)}
+.comparison tr:nth-child(even) td{background:var(--bg-2)}
+.exec-card{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.exec-card__title{margin:0 0 .6rem;font-size:1rem;color:var(--fm2-teal);font-weight:700}
+.case-card{border:1px solid var(--border);border-left:4px solid var(--fm2-indigo);border-radius:var(--radius-sm);background:var(--bg-2);padding:1rem 1.1rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.case-card h4{margin:0 0 .5rem;color:var(--fm2-indigo)}
+.case-card p{margin:.3rem 0;color:var(--ink-80)}
+.gap-box{border:1px solid var(--border);border-left:4px solid var(--fm2-coral);border-radius:var(--radius-sm);background:color-mix(in srgb,var(--fm2-coral) 8%,var(--bg-2));padding:.9rem 1rem;margin:1.1rem 0}
+.gap-box h4{margin:0 0 .4rem;color:var(--fm2-coral)}
+.gap-box p{margin:0;color:var(--ink-80);font-size:.92rem}
+.continuity{border:1px solid var(--border);border-left:4px solid var(--fm2-gelo);border-radius:var(--radius-sm);background:var(--bg-2);padding:.85rem 1rem;margin:1.2rem 0 0}
+.continuity p{margin:0;color:var(--ink-60);font-size:.92rem}
+.hero-figure{margin:1.5rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.hero-figure__frame{width:100%;display:block;background:var(--bg-1)}
+.hero-figure__cap{padding:.7rem .9rem .9rem;font-size:.8rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig{margin:1.25rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.fig__frame{width:100%;display:block;background:var(--bg-1)}
+.fig__frame--svg{padding:.25rem}
+.fm2-inline-svg{display:block;width:100%;height:auto;border-radius:8px}
+.fig__cap{padding:.65rem .9rem .85rem;font-size:.78rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--fm2-teal);margin-right:.4rem}
+.quiz__alts{list-style:none;margin:0 0 .9rem;padding:0;display:grid;gap:.45rem}
+.alt{display:flex;gap:.6rem;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-3);color:var(--ink-100);padding:.7rem .85rem;cursor:pointer;font:inherit;min-height:44px;line-height:1.45}
+.alt:hover{border-color:var(--fm2-teal);background:var(--bg-4)}
+.alt[aria-checked="true"]{border-color:var(--fm2-gelo);background:color-mix(in srgb,var(--fm2-gelo) 13%,var(--bg-3))}
+.alt.is-correct{border-color:var(--fm2-verde);background:color-mix(in srgb,var(--fm2-verde) 14%,var(--bg-3))}
+.alt.is-correct::after{content:" ✔";color:var(--fm2-verde);font-weight:800;margin-left:auto}
+.alt.is-wrong{border-color:var(--fm2-coral);background:color-mix(in srgb,var(--fm2-coral) 14%,var(--bg-3))}
+.alt.is-wrong::after{content:" ✗";color:var(--fm2-coral);font-weight:800;margin-left:auto}
+.alt.is-marked{border-color:var(--fm2-gelo)}
+.ltr{display:inline-flex;align-items:center;justify-content:center;min-width:1.6rem;height:1.6rem;border-radius:6px;background:var(--bg-4);color:var(--fm2-teal);font-weight:800;font-size:.82rem;flex:0 0 auto}
+.alt.is-correct .ltr{background:var(--fm2-verde);color:#fff}
+.alt.is-wrong .ltr{background:var(--fm2-coral);color:#fff}
+.quiz__btn{display:inline-flex;align-items:center;min-height:44px;padding:.55rem 1rem;border-radius:var(--radius-sm);border:1px solid var(--border-strong);background:var(--bg-3);color:var(--ink-100);cursor:pointer;font:inherit;font-weight:600}
+.quiz__btn:hover:not(:disabled){border-color:var(--fm2-teal);color:var(--fm2-teal)}
+.quiz__btn:disabled{opacity:.6;cursor:default}
+.quiz__explicacao{margin-top:.7rem;padding:.8rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3)}
+.quiz__explicacao[hidden]{display:none}
+.quiz__explicacao p{margin:0 0 .6rem;font-size:.93rem;line-height:1.55}
+.quiz__explicacao p:last-child{margin:0}
+.quiz__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.flow{display:grid;gap:.5rem;margin:.9rem 0}
+.flow__step{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-2);padding:.7rem .85rem;font-size:.93rem}
+.flow__step strong{color:var(--fm2-teal)}
+.flow__arrow{text-align:center;color:var(--fm2-gelo);font-weight:700}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.9rem 0}
+.stat-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem .9rem;background:var(--bg-2)}
+.stat-card__n{font-size:1.7rem;font-weight:800;color:var(--fm2-teal);line-height:1}
+.stat-card__n--bad{color:var(--fm2-coral)}
+.stat-card__t{display:block;margin-top:.35rem;font-size:.82rem;color:var(--ink-60)}
+.board{display:grid;gap:.5rem;margin:.9rem 0}
+.board__row{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;border:1px solid var(--border);border-radius:var(--radius-sm);padding:.6rem .8rem;background:var(--bg-2)}
+.board__tag{font-weight:800;min-width:1.6rem;text-align:center;border-radius:6px;padding:.15rem .25rem;background:var(--bg-4)}
+.board__tag--ok{background:var(--fm2-verde);color:#fff}
+.board__tag--no{background:var(--fm2-coral);color:#fff}
+.dont-confuse{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.9rem 0}
+.dont-confuse>div{border:1px solid var(--border);border-radius:10px;padding:.65rem .8rem;background:var(--bg-2)}
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:560px){.stat-row,.dont-confuse{grid-template-columns:1fr}}
+@media(max-width:420px){.board__row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p4" data-layout="fm2-p04" data-source-ids="038,039,040,041,042,043,044,045,046,047,048">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Esclerose múltipla</span>
+        <span class="site-header__subtitle">Neurologia · esclerose múltipla</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">4/12</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+<div class="reading">
+  <section class="opener opener--vs" aria-labelledby="p4-titulo">
+    <span class="opener__eyebrow">Comparação chocante</span>
+    <h1 id="p4-titulo">Por que o quadro é múltiplo: a mielina</h1>
+    <p>Mielina intacta × mielina atacada — mesma doença, mil faces. O alvo é uma estrutura comum, não um neurônio só.</p>
+  </section>
+
+  <div class="prose">
+    <h2 class="topic-h">Corpo + axônio + mielina</h2>
+    <p class="no-indent">No neurônio: <strong>corpo celular</strong> + <strong>axônio</strong> + ramificações distais. Para o axônio mandar o estímulo elétrico de forma correta, longa e com boa <strong>velocidade</strong>, ele é envolvido por uma <strong>bainha proteica</strong>: a <strong>bainha de mielina</strong>.</p>
+    <h2 class="topic-h">Velocidade do impulso</h2>
+    <p class="no-indent">A bainha de mielina é <strong>fundamental</strong> para levar o estímulo do corpo até a ponta, para o próximo neurônio. A <strong>grande maioria</strong> dos neurônios do SNC é <strong>mielinizada</strong> (não todos, mas quase todos). Exemplos: fala, pensamento, comportamento, visão, coordenação, equilíbrio — “todo mundo tem mielina”.</p>
+    <h2 class="topic-h">Alvo comum, não um neurônio só</h2>
+    <p class="no-indent">Por definição, <strong>todo neurônio central mielinizado pode ser atacado</strong>. A doença <strong>não</strong> é “contra o neurônio motor” nem “contra o neurônio da visão” isoladamente. O alvo é uma <strong>parte comum</strong> dos neurônios gerais: a <strong>bainha de mielina</strong>.</p>
+    <h2 class="topic-h">Por isso o quadro é amplo</h2>
+    <p class="no-indent">Por isso o quadro clínico é <strong>amplo</strong> e <strong>múltiplo</strong>: pega estrutura comum aos neurônios. Esclerose múltipla é a <strong>grande doença desmielinizante</strong> do SNC.</p>
+  </div>
+
+  <div class="exec-card" style="border-left:4px solid var(--fm2-indigo)">
+    <p class="exec-card__title">Estrutura comum → quadro múltiplo</p>
+    <p class="no-indent">Atacar a mielina = atacar a infraestrutura comum → <strong>visão + força + sensitivo + equilíbrio</strong> no mesmo diagnóstico. Uma doença, múltiplas apresentações — daí o nome.</p>
+  </div>
+
+  <figure class="hero-figure" aria-labelledby="p4-hero-titulo">
+    <div class="hero-figure__frame">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="100%" height="100%" id="fm2p4h-svg" class="fm2-inline-svg fm2p4h-root" role="img" aria-labelledby="fm2p4h-title-text fm2p4h-desc-text">
+  <defs>
+    <!-- Background and Card Gradients -->
+    <linearGradient id="fm2p4h-grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p4h-bg-start, #0b0f19)" />
+      <stop offset="100%" stop-color="var(--fm2p4h-bg-end, #111827)" />
+    </linearGradient>
+    
+    <linearGradient id="fm2p4h-grad-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p4h-card-top, #1f293d)" />
+      <stop offset="100%" stop-color="var(--fm2p4h-card-bottom, #131c2e)" />
+    </linearGradient>
+
+    <linearGradient id="fm2p4h-grad-intact" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#2dd4bf" />
+    </linearGradient>
+
+    <linearGradient id="fm2p4h-grad-patho" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+
+    <linearGradient id="fm2p4h-grad-axon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+
+    <linearGradient id="fm2p4h-grad-myelin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#0d9488" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#042f2e" stop-opacity="0.9" />
+    </linearGradient>
+
+    <radialGradient id="fm2p4h-grad-node" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="60%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </radialGradient>
+
+    <radialGradient id="fm2p4h-grad-spark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#eab308" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="fm2p4h-grad-spark-slow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#991b1b" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filters for Depth and Glow -->
+    <filter id="fm2p4h-glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="fm2p4h-glow-red" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="fm2p4h-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <style>
+    /* Scoped Design Tokens and Bauer Specifications */
+    .fm2p4h-root {
+      --fm2p4h-bg-start: var(--bg-1, #0b0f19);
+      --fm2p4h-bg-end: var(--bg-1, #111827);
+      --fm2p4h-card-top: var(--bg-2, #1a2234);
+      --fm2p4h-card-bottom: var(--bg-2, #121826);
+      --fm2p4h-card-border: var(--ink-20, #2a3447);
+      --fm2p4h-text-main: var(--ink-90, #f8fafc);
+      --fm2p4h-text-muted: var(--ink-70, #94a3b8);
+      --fm2p4h-text-sub: var(--ink-50, #64748b);
+      --fm2p4h-green: var(--kw-green, #10b981);
+      --fm2p4h-green-bg: rgba(16, 185, 129, 0.12);
+      --fm2p4h-coral: var(--kw-red, #ef4444);
+      --fm2p4h-coral-bg: rgba(239, 68, 68, 0.12);
+      --fm2p4h-amber: var(--kw-amber, #f59e0b);
+      --fm2p4h-amber-bg: rgba(245, 158, 11, 0.12);
+      --fm2p4h-teal: var(--kw-teal, #14b8a6);
+      --fm2p4h-indigo: var(--kw-indigo, #6366f1);
+      --fm2p4h-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* Light Theme Support via root attribute and prefers-color-scheme */
+    :root[data-theme="light"] .fm2p4h-root,
+    @media (prefers-color-scheme: light) {
+      .fm2p4h-root {
+        --fm2p4h-bg-start: var(--bg-1, #f8fafc);
+        --fm2p4h-bg-end: var(--bg-1, #f1f5f9);
+        --fm2p4h-card-top: var(--bg-2, #ffffff);
+        --fm2p4h-card-bottom: var(--bg-2, #f8fafc);
+        --fm2p4h-card-border: var(--ink-20, #e2e8f0);
+        --fm2p4h-text-main: var(--ink-90, #0f172a);
+        --fm2p4h-text-muted: var(--ink-70, #475569);
+        --fm2p4h-text-sub: var(--ink-50, #64748b);
+        --fm2p4h-green-bg: rgba(16, 185, 129, 0.15);
+        --fm2p4h-coral-bg: rgba(239, 68, 68, 0.15);
+        --fm2p4h-amber-bg: rgba(245, 158, 11, 0.15);
+      }
+    }
+
+    text {
+      font-family: var(--fm2p4h-font);
+      user-select: none;
+    }
+
+    /* Interactive Buttons */
+    .fm2p4h-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .fm2p4h-btn rect {
+      fill: var(--fm2p4h-card-top);
+      stroke: var(--fm2p4h-card-border);
+      stroke-width: 1.5;
+      rx: 6px;
+    }
+    .fm2p4h-btn text {
+      fill: var(--fm2p4h-text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+    .fm2p4h-btn:hover rect, .fm2p4h-btn:focus rect {
+      stroke: var(--fm2p4h-teal);
+      fill: rgba(20, 184, 166, 0.15);
+    }
+    .fm2p4h-btn:hover text, .fm2p4h-btn:focus text {
+      fill: var(--fm2p4h-text-main);
+    }
+    .fm2p4h-btn.fm2p4h-active rect {
+      fill: var(--fm2p4h-teal);
+      stroke: var(--fm2p4h-teal);
+    }
+    .fm2p4h-btn.fm2p4h-active text {
+      fill: #ffffff;
+    }
+
+    .fm2p4h-btn-run rect {
+      fill: #059669;
+      stroke: #10b981;
+    }
+    .fm2p4h-btn-run text {
+      fill: #ffffff;
+    }
+    .fm2p4h-btn-run:hover rect {
+      fill: #10b981;
+    }
+
+    /* Hotspot Styling */
+    .fm2p4h-hotspot {
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .fm2p4h-hotspot:hover, .fm2p4h-hotspot:focus {
+      filter: brightness(1.25);
+    }
+
+    /* Saltatory Arc Animation */
+    @keyframes fm2p4h-pulse-arc {
+      0% { stroke-dashoffset: 40; opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 0.2; }
+    }
+    .fm2p4h-salt-arc {
+      stroke-dasharray: 40;
+      animation: fm2p4h-pulse-arc 1.5s infinite linear;
+    }
+
+    /* Clinical Card Interactive Hover */
+    .fm2p4h-chip {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .fm2p4h-chip:hover rect, .fm2p4h-chip:focus rect {
+      stroke: var(--fm2p4h-amber);
+      fill: var(--fm2p4h-amber-bg);
+      transform: translateY(-2px);
+    }
+
+    /* Dynamic Tooltip Container */
+    #fm2p4h-tooltip {
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+    }
+    #fm2p4h-tooltip.fm2p4h-visible {
+      opacity: 1;
+    }
+  </style>
+
+  <!-- Base Canvas Background -->
+  <rect width="1200" height="920" fill="url(#fm2p4h-grad-bg)" rx="16" />
+  <rect width="1196" height="916" x="2" y="2" fill="none" stroke="var(--fm2p4h-card-border)" stroke-width="2" rx="14" />
+
+  <!-- ========================================== -->
+  <!-- 1. HEADER SECTION (Title and Interpretation)-->
+  <!-- ========================================== -->
+  <g id="fm2p4h-header" transform="translate(30, 24)">
+    <!-- Title -->
+    <text id="fm2p4h-title-text" x="0" y="22" font-size="22" font-weight="800" fill="var(--fm2p4h-text-main)" letter-spacing="-0.02em">
+      MECANISMO DA ESCLEROSE MÚLTIPLA (EM)
+    </text>
+    <rect x="0" y="32" width="460" height="3" fill="var(--fm2p4h-teal)" rx="1.5" />
+
+    <!-- Subtitle / Concept Banner -->
+    <rect x="0" y="44" width="1140" height="34" fill="var(--fm2p4h-amber-bg)" stroke="var(--fm2p4h-amber)" stroke-width="1" rx="6" />
+    <text id="fm2p4h-desc-text" x="14" y="65" font-size="13" font-weight="600" fill="var(--fm2p4h-amber)">
+      💡 LEGENDA CONCEITUUAL: Alvo Imunomediado = Bainha de Mielina (SNC). A perda da Condução Saltatória gera bloqueio axonal e Clínica Múltipla.
+    </text>
+
+    <!-- Top Action Toolbar -->
+    <g transform="translate(0, 88)">
+      <!-- Simulation Run Button -->
+      <g class="fm2p4h-btn fm2p4h-btn-run" id="fm2p4h-btn-sim" role="button" tabindex="0" aria-label="Simular Condução Elétrica">
+        <rect x="0" y="0" width="190" height="32" rx="6" />
+        <text x="95" y="16">⚡ SIMULAR IMPULSO</text>
+      </g>
+
+      <!-- View Filter Buttons -->
+      <g class="fm2p4h-btn fm2p4h-active" id="fm2p4h-filter-all" transform="translate(205, 0)" role="button" tabindex="0" aria-label="Ver Visão Geral">
+        <rect x="0" y="0" width="130" height="32" />
+        <text x="65" y="16">Visão Geral</text>
+      </g>
+      <g class="fm2p4h-btn" id="fm2p4h-filter-intact" transform="translate(345, 0)" role="button" tabindex="0" aria-label="Foco Intacto">
+        <rect x="0" y="0" width="150" height="32" />
+        <text x="75" y="16">1. Mielina Intacta</text>
+      </g>
+      <g class="fm2p4h-btn" id="fm2p4h-filter-attack" transform="translate(505, 0)" role="button" tabindex="0" aria-label="Foco Ataque Imune">
+        <rect x="0" y="0" width="150" height="32" />
+        <text x="75" y="16">2. Ataque Imune</text>
+      </g>
+      <g class="fm2p4h-btn" id="fm2p4h-filter-chips" transform="translate(665, 0)" role="button" tabindex="0" aria-label="Foco Quadro Múltiplo">
+        <rect x="0" y="0" width="160" height="32" />
+        <text x="80" y="16">3. Quadro Múltiplo</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 2. PAINEL A: CONDUÇÃO FISIOLÓGICA (NORMAL) -->
+  <!-- ========================================== -->
+  <g id="fm2p4h-panel-a" transform="translate(30, 155)">
+    <!-- Container Card -->
+    <rect width="555" height="365" fill="url(#fm2p4h-grad-card)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="12" filter="url(#fm2p4h-shadow)" />
+    
+    <!-- Panel Header -->
+    <path d="M 0 12 Q 0 0 12 0 L 543 0 Q 555 0 555 12 L 555 42 L 0 42 Z" fill="var(--fm2p4h-green-bg)" />
+    <rect x="14" y="12" width="10" height="18" fill="var(--fm2p4h-green)" rx="2" />
+    <text x="32" y="26" font-size="15" font-weight="700" fill="var(--fm2p4h-green)">
+      PAINEL A: CONDUÇÃO SALTATÓRIA FISIOLÓGICA (INTACTA)
+    </text>
+    <text x="535" y="26" font-size="12" font-weight="700" fill="var(--fm2p4h-green)" text-anchor="end">
+      ~100 m/s (Rápida)
+    </text>
+    <line x1="0" y1="42" x2="555" y2="42" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+
+    <!-- Oligodendrocyte (Top Center) -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-oligo" data-fm2p4h-title="Oligodendrócito (SNC)" data-fm2p4h-desc="Célula glial responsável por sintetizar e manter a bainha de mielina de múltiplos segmentos axonais no Sistema Nervoso Central." data-fm2p4h-status="normal">
+      <!-- Cytoplasmic extensions to myelin segments -->
+      <path d="M 270 105 Q 240 140 210 200" stroke="#0d9488" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8" />
+      <path d="M 280 110 Q 285 150 290 200" stroke="#0d9488" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8" />
+      <path d="M 290 105 Q 330 140 370 200" stroke="#0d9488" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8" />
+      
+      <!-- Soma -->
+      <circle cx="280" cy="95" r="22" fill="#14b8a6" stroke="#5eead4" stroke-width="2" filter="url(#fm2p4h-glow-green)" />
+      <circle cx="280" cy="95" r="10" fill="#042f2e" />
+      <text x="280" y="62" font-size="12" font-weight="700" fill="var(--fm2p4h-teal)" text-anchor="middle">Oligodendrócito (SNC)</text>
+    </g>
+
+    <!-- Soma / Cell Body of Neuron (Left) -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-soma" data-fm2p4h-title="Corpo Celular (Soma Neuronal)" data-fm2p4h-desc="Integra os potenciais sinápticos e gera o potencial de ação no cone de implantação axonal." data-fm2p4h-status="normal">
+      <!-- Dendrites -->
+      <path d="M 45 185 L 15 160 M 45 200 L 5 200 M 45 220 L 15 240 M 60 175 L 40 145 M 60 235 L 45 260" stroke="#818cf8" stroke-width="3" stroke-linecap="round" />
+      <!-- Soma Circle -->
+      <circle cx="70" cy="205" r="28" fill="url(#fm2p4h-grad-axon)" stroke="#c7d2fe" stroke-width="2" />
+      <circle cx="70" cy="205" r="11" fill="#312e81" />
+      <text x="70" y="250" font-size="12" font-weight="700" fill="var(--fm2p4h-indigo)" text-anchor="middle">Soma</text>
+    </g>
+
+    <!-- Axon Core -->
+    <line x1="98" y1="205" x2="520" y2="205" stroke="url(#fm2p4h-grad-axon)" stroke-width="12" stroke-linecap="round" />
+    <line x1="98" y1="205" x2="520" y2="205" stroke="#c7d2fe" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Myelin Sheath Segments (Intact) -->
+    <!-- Segment 1 -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-myelin-1" data-fm2p4h-title="Bainha de Mielina (Intacta)" data-fm2p4h-desc="Isolante elétrico lipídico (MBP, PLP, MOG). Aumenta a resistência da membrana e reduz a capacitância, permitindo a condução saltatória." data-fm2p4h-status="normal">
+      <rect x="130" y="187" width="75" height="36" rx="8" fill="url(#fm2p4h-grad-myelin)" stroke="#5eead4" stroke-width="1.5" />
+      <line x1="130" y1="205" x2="205" y2="205" stroke="#ffffff" stroke-width="1" opacity="0.4" />
+    </g>
+
+    <!-- Segment 2 -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-myelin-2" data-fm2p4h-title="Bainha de Mielina (Intacta)" data-fm2p4h-desc="Camadas concêntricas de membrana plasmática contínuas mantidas pelo oligodendrócito." data-fm2p4h-status="normal">
+      <rect x="225" y="187" width="75" height="36" rx="8" fill="url(#fm2p4h-grad-myelin)" stroke="#5eead4" stroke-width="1.5" />
+      <line x1="225" y1="205" x2="300" y2="205" stroke="#ffffff" stroke-width="1" opacity="0.4" />
+    </g>
+
+    <!-- Segment 3 -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-myelin-3" data-fm2p4h-title="Bainha de Mielina (Intacta)" data-fm2p4h-desc="Isolamento de alta eficiência. Previne dissipação de carga ao longo do comprimento axonal." data-fm2p4h-status="normal">
+      <rect x="320" y="187" width="75" height="36" rx="8" fill="url(#fm2p4h-grad-myelin)" stroke="#5eead4" stroke-width="1.5" />
+      <line x1="320" y1="205" x2="395" y2="205" stroke="#ffffff" stroke-width="1" opacity="0.4" />
+    </g>
+
+    <!-- Segment 4 -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-myelin-4" data-fm2p4h-title="Bainha de Mielina (Intacta)" data-fm2p4h-desc="Segmento mielinizado terminal preservando velocidade de condução de 100 m/s." data-fm2p4h-status="normal">
+      <rect x="415" y="187" width="75" height="36" rx="8" fill="url(#fm2p4h-grad-myelin)" stroke="#5eead4" stroke-width="1.5" />
+      <line x1="415" y1="205" x2="490" y2="205" stroke="#ffffff" stroke-width="1" opacity="0.4" />
+    </g>
+
+    <!-- Nodes of Ranvier -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-node-1" data-fm2p4h-title="Nódulo de Ranvier (Alta Densidade de Canais Na+)" data-fm2p4h-desc="Região desprovida de mielina com altíssima concentração de canais de sódio voltagem-dependente (~1200/µm²). Permite regeneração ativa do potencial." data-fm2p4h-status="normal">
+      <circle cx="215" cy="205" r="6" fill="url(#fm2p4h-grad-node)" stroke="#fef08a" stroke-width="1" />
+      <circle cx="310" cy="205" r="6" fill="url(#fm2p4h-grad-node)" stroke="#fef08a" stroke-width="1" />
+      <circle cx="405" cy="205" r="6" fill="url(#fm2p4h-grad-node)" stroke="#fef08a" stroke-width="1" />
+    </g>
+
+    <!-- Saltatory Conduction Arcs -->
+    <path d="M 98 185 Q 156 145 215 185" fill="none" stroke="#22c55e" stroke-width="2.5" class="fm2p4h-salt-arc" />
+    <path d="M 215 185 Q 262 145 310 185" fill="none" stroke="#22c55e" stroke-width="2.5" class="fm2p4h-salt-arc" />
+    <path d="M 310 185 Q 357 145 405 185" fill="none" stroke="#22c55e" stroke-width="2.5" class="fm2p4h-salt-arc" />
+    <path d="M 405 185 Q 452 145 500 185" fill="none" stroke="#22c55e" stroke-width="2.5" class="fm2p4h-salt-arc" />
+
+    <!-- Animated Fast Impulse Spark -->
+    <circle id="fm2p4h-spark-intact" cx="98" cy="205" r="10" fill="url(#fm2p4h-grad-spark)" filter="url(#fm2p4h-glow-green)" />
+
+    <!-- Panel Callouts -->
+    <g transform="translate(20, 275)">
+      <rect x="0" y="0" width="515" height="75" fill="var(--fm2p4h-card-top)" stroke="var(--fm2p4h-card-border)" stroke-width="1" rx="8" />
+      <text x="14" y="24" font-size="12" font-weight="700" fill="var(--fm2p4h-green)">✓ CONDUÇÃO SALTATÓRIA EFICIENTE</text>
+      <text x="14" y="44" font-size="11" fill="var(--fm2p4h-text-muted)">
+        - A mielina isola a membrana axonal → reduz vazamento de íons (K+).
+      </text>
+      <text x="14" y="60" font-size="11" fill="var(--fm2p4h-text-muted)">
+        - O potencial de ação salta instantaneamente entre os Nódulos de Ranvier.
+      </text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 3. PAINEL B: ATAQUE IMUNOMEDIADO (EM)      -->
+  <!-- ========================================== -->
+  <g id="fm2p4h-panel-b" transform="translate(615, 155)">
+    <!-- Container Card -->
+    <rect width="555" height="365" fill="url(#fm2p4h-grad-card)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="12" filter="url(#fm2p4h-shadow)" />
+    
+    <!-- Panel Header -->
+    <path d="M 0 12 Q 0 0 12 0 L 543 0 Q 555 0 555 12 L 555 42 L 0 42 Z" fill="var(--fm2p4h-coral-bg)" />
+    <rect x="14" y="12" width="10" height="18" fill="var(--fm2p4h-coral)" rx="2" />
+    <text x="32" y="26" font-size="15" font-weight="700" fill="var(--fm2p4h-coral)">
+      PAINEL B: ATAQUE IMUNOMEDIADO &amp; DESMIELINIZAÇÃO
+    </text>
+    <text x="535" y="26" font-size="12" font-weight="700" fill="var(--fm2p4h-coral)" text-anchor="end">
+      ~10 m/s ou Bloqueio
+    </text>
+    <line x1="0" y1="42" x2="555" y2="42" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+
+    <!-- Blood-Brain Barrier (BBB) and Immune Infiltration -->
+    <g id="fm2p4h-bbb-vessel" transform="translate(320, 50)">
+      <!-- Capillary Wall -->
+      <path d="M 0 0 C 40 -10, 120 -10, 200 0 L 200 24 C 120 14, 40 14, 0 24 Z" fill="#991b1b" opacity="0.6" />
+      <text x="100" y="14" font-size="10" font-weight="700" fill="#fca5a5" text-anchor="middle">Barreira Hematoencefálica (BHE) Rompida</text>
+
+      <!-- Autoreactive T-cell crossing BBB -->
+      <g class="fm2p4h-hotspot" id="fm2p4h-hs-tcell" data-fm2p4h-title="Linfócito T Ativado (CD4+ Th1/Th17 &amp; CD8+)" data-fm2p4h-desc="Atravessa a BHE hiperpermeável, reconhece autoantígenos da mielina (MBP/MOG) e secreta citocinas pró-inflamatórias (IFN-γ, IL-17)." data-fm2p4h-status="patologico">
+        <circle cx="45" cy="38" r="14" fill="#ef4444" stroke="#fca5a5" stroke-width="1.5" filter="url(#fm2p4h-glow-red)" />
+        <circle cx="45" cy="38" r="6" fill="#7f1d1d" />
+        <text x="45" y="60" font-size="10" font-weight="700" fill="var(--fm2p4h-coral)" text-anchor="middle">Linfócito T</text>
+      </g>
+
+      <!-- B-cell & Antibodies -->
+      <g class="fm2p4h-hotspot" id="fm2p4h-hs-bcell" data-fm2p4h-title="Linfócito B &amp; Plasmócito (Autoanticorpos)" data-fm2p4h-desc="Sintetizam autoanticorpos anti-mielina (gerando bandas oligoclonais no LCR) e ativam a cascata do complemento." data-fm2p4h-status="patologico">
+        <circle cx="120" cy="42" r="13" fill="#f97316" stroke="#ffedd5" stroke-width="1.5" />
+        <circle cx="120" cy="42" r="5" fill="#7c2d12" />
+        <!-- Autoantibody Y shapes -->
+        <path d="M 140 45 L 145 50 M 145 50 L 150 45 M 145 50 L 145 57" stroke="#fb923c" stroke-width="1.5" />
+        <text x="120" y="63" font-size="10" font-weight="700" fill="var(--fm2p4h-amber)" text-anchor="middle">Linfócito B</text>
+      </g>
+
+      <!-- Macrophage / Microglia -->
+      <g class="fm2p4h-hotspot" id="fm2p4h-hs-macro" data-fm2p4h-title="Macrófago / Microglia Reativa" data-fm2p4h-desc="Fagocita ativamente as lamelas de mielina desnudadas, liberando ROS, óxido nítrico e TNFs patogênicos." data-fm2p4h-status="patologico">
+        <path d="M 180 40 C 170 30, 160 50, 175 60 C 190 65, 200 45, 185 35 Z" fill="#b91c1c" stroke="#fca5a5" stroke-width="1.5" />
+        <text x="180" y="72" font-size="10" font-weight="700" fill="var(--fm2p4h-coral)" text-anchor="middle">Macrófago</text>
+      </g>
+    </g>
+
+    <!-- Axon Core (Pathological Side) -->
+    <line x1="30" y1="205" x2="520" y2="205" stroke="url(#fm2p4h-grad-axon)" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Demyelinated Axon Segments & Plaque -->
+    <!-- Segment 1: Partial Damage -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-damage-1" data-fm2p4h-title="Desmielinização Inicial" data-fm2p4h-desc="Adestramento e afinamento da bainha por ataque citotóxico inicial." data-fm2p4h-status="patologico">
+      <rect x="50" y="193" width="70" height="24" rx="4" fill="#78716c" opacity="0.7" stroke="#ef4444" stroke-dasharray="3 3" />
+    </g>
+
+    <!-- Segment 2: Bare Axon & Potassium Leakage (Placa Focal) -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-plaque" data-fm2p4h-title="PLACA DE DESMIELINIZAÇÃO FOCAL" data-fm2p4h-desc="Perda completa da mielina com axônio desnudado. Ocorre vazamento massivo de corrente (saída de K+) e desorganização dos canais de Na+." data-fm2p4h-status="patologico">
+      <!-- Bare axon highlight -->
+      <rect x="145" y="197" width="130" height="16" rx="2" fill="#ef4444" opacity="0.3" filter="url(#fm2p4h-glow-red)" />
+      
+      <!-- Escaping Potassium K+ arrows -->
+      <path d="M 170 195 L 170 170 M 170 170 L 165 176 M 170 170 L 175 176" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
+      <text x="170" y="162" font-size="10" font-weight="800" fill="#ef4444" text-anchor="middle">K+ (Vazamento)</text>
+
+      <path d="M 230 195 L 230 170 M 230 170 L 225 176 M 230 170 L 235 176" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
+      <text x="230" y="162" font-size="10" font-weight="800" fill="#ef4444" text-anchor="middle">K+ (Vazamento)</text>
+
+      <!-- Debris / Fragments -->
+      <circle cx="150" cy="225" r="4" fill="#f97316" />
+      <circle cx="185" cy="230" r="5" fill="#ef4444" />
+      <circle cx="240" cy="223" r="3.5" fill="#dc2626" />
+      <text x="210" y="245" font-size="11" font-weight="700" fill="var(--fm2p4h-coral)" text-anchor="middle">Axônio Desnudado (Placa de EM)</text>
+    </g>
+
+    <!-- Segment 3: Disrupted Conduction Block Area -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-block" data-fm2p4h-title="Bloqueio de Condução Axonal" data-fm2p4h-desc="A dissipação de corrente reduz o potencial abaixo do limiar de disparo. O impulso elétrico é interrompido ou drasticamente retardado." data-fm2p4h-status="patologico">
+      <rect x="300" y="190" width="85" height="30" rx="6" fill="#44403c" stroke="#f59e0b" stroke-width="1.5" />
+      <text x="342" y="209" font-size="10" font-weight="800" fill="#f59e0b" text-anchor="middle">BLOQUEIO</text>
+    </g>
+
+    <!-- Segment 4: Degraded Myelin Remnant -->
+    <g class="fm2p4h-hotspot" id="fm2p4h-hs-damage-2" data-fm2p4h-title="Remanescente de Mielina" data-fm2p4h-desc="Segmento danificado residual com perda parcial de função." data-fm2p4h-status="patologico">
+      <rect x="410" y="190" width="75" height="30" rx="6" fill="#78716c" stroke="#ef4444" stroke-width="1" />
+    </g>
+
+    <!-- Slow / Disrupted Impulse Spark -->
+    <circle id="fm2p4h-spark-patho" cx="30" cy="205" r="10" fill="url(#fm2p4h-grad-spark-slow)" filter="url(#fm2p4h-glow-red)" />
+
+    <!-- Panel Callouts -->
+    <g transform="translate(20, 275)">
+      <rect x="0" y="0" width="515" height="75" fill="var(--fm2p4h-card-top)" stroke="var(--fm2p4h-card-border)" stroke-width="1" rx="8" />
+      <text x="14" y="24" font-size="12" font-weight="700" fill="var(--fm2p4h-coral)">⚠ FALHA DE CONDUÇÃO E BLOQUEIO AXONAL</text>
+      <text x="14" y="44" font-size="11" fill="var(--fm2p4h-text-muted)">
+        - Sem mielina, a resistência cai e a carga elétrica se esvai pela membrana.
+      </text>
+      <text x="14" y="60" font-size="11" fill="var(--fm2p4h-text-muted)">
+        - O potencial não atinge o limiar no próximo nódulo → lentificação ou bloqueio.
+      </text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 4. LOWER LEFT: CLINICAL MANIFESTATION CHIPS-->
+  <!-- ========================================== -->
+  <g id="fm2p4h-panel-chips" transform="translate(30, 535)">
+    <!-- Container Card -->
+    <rect width="660" height="360" fill="url(#fm2p4h-grad-card)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="12" filter="url(#fm2p4h-shadow)" />
+    
+    <!-- Header -->
+    <path d="M 0 12 Q 0 0 12 0 L 648 0 Q 660 0 660 12 L 660 42 L 0 42 Z" fill="var(--fm2p4h-amber-bg)" />
+    <rect x="14" y="12" width="10" height="18" fill="var(--fm2p4h-amber)" rx="2" />
+    <text x="32" y="26" font-size="15" font-weight="700" fill="var(--fm2p4h-amber)">
+      POR QUE A SÍNDROME É &quot;MÚLTIPLA&quot;? (FOCOS NO SNC)
+    </text>
+    <text x="640" y="26" font-size="12" font-weight="700" fill="var(--fm2p4h-amber)" text-anchor="end">
+      Alvo = Mielina Universal no SNC
+    </text>
+    <line x1="0" y1="42" x2="660" y2="42" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+
+    <!-- Subtitle instruction -->
+    <text x="16" y="62" font-size="11" fill="var(--fm2p4h-text-sub)">
+      Como a mielina do SNC reveste tratos ópticos, motores, sensitivos e cerebelares, o ataque autoimune gera sintomas multifocais:
+    </text>
+
+    <!-- 5 Clinical Tract Chips -->
+    <!-- Chip 1: Visão -->
+    <g class="fm2p4h-chip fm2p4h-hotspot" id="fm2p4h-chip-vision" transform="translate(16, 75)" data-fm2p4h-title="1. Nervo Óptico (Neurite Óptica)" data-fm2p4h-desc="Perda subaguda da acuidade visual monocular, dor retrobulbar à movimentação ocular, escotoma central e Defeito Pupilar Aferente Relativo (Pupila de Marcus Gunn)." data-fm2p4h-status="alerta">
+      <rect width="305" height="78" fill="var(--fm2p4h-card-top)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="8" />
+      <circle cx="28" cy="39" r="16" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="1.5" />
+      <text x="28" y="44" font-size="16" text-anchor="middle">👁️</text>
+      <text x="54" y="28" font-size="13" font-weight="700" fill="var(--fm2p4h-coral)">VIA ÓPTICA (CN II)</text>
+      <text x="54" y="46" font-size="11" font-weight="600" fill="var(--fm2p4h-text-main)">Neurite Óptica Subaguda</text>
+      <text x="54" y="62" font-size="10" fill="var(--fm2p4h-text-muted)">Escotoma central + Dor à movimentação ocular</text>
+    </g>
+
+    <!-- Chip 2: Motor -->
+    <g class="fm2p4h-chip fm2p4h-hotspot" id="fm2p4h-chip-motor" transform="translate(338, 75)" data-fm2p4h-title="2. Trato Corticoespinal (Via Motora)" data-fm2p4h-desc="Síndrome do Neurônio Motor Superior (NMS): paresia/plegia de membros, espasticidade piramidal, hiperreflexia tendínea e sinal de Babinski presente." data-fm2p4h-status="alerta">
+      <rect width="305" height="78" fill="var(--fm2p4h-card-top)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="8" />
+      <circle cx="28" cy="39" r="16" fill="rgba(245, 158, 11, 0.15)" stroke="#f59e0b" stroke-width="1.5" />
+      <text x="28" y="44" font-size="16" text-anchor="middle">🧠</text>
+      <text x="54" y="28" font-size="13" font-weight="700" fill="var(--fm2p4h-amber)">VIA MOTORA (Pirâmide)</text>
+      <text x="54" y="46" font-size="11" font-weight="600" fill="var(--fm2p4h-text-main)">Síndrome do NMS / Piramidal</text>
+      <text x="54" y="62" font-size="10" fill="var(--fm2p4h-text-muted)">Paresia + Espasticidade + Babinski (+)</text>
+    </g>
+
+    <!-- Chip 3: Sensitivo -->
+    <g class="fm2p4h-chip fm2p4h-hotspot" id="fm2p4h-chip-sensory" transform="translate(16, 165)" data-fm2p4h-title="3. Vias Sensitivas (Cordões Posteriores/Espinotalâmico)" data-fm2p4h-desc="Parestesias em faixa, hipoestesia, perda da propriocepção consciente e Sinal de Lhermitte (sensação de choque elétrico que se irradia pela coluna à flexão cervical)." data-fm2p4h-status="alerta">
+      <rect width="305" height="78" fill="var(--fm2p4h-card-top)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="8" />
+      <circle cx="28" cy="39" r="16" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="1.5" />
+      <text x="28" y="44" font-size="16" text-anchor="middle">✋</text>
+      <text x="54" y="28" font-size="13" font-weight="700" fill="var(--fm2p4h-indigo)">VIA SENSITIVA (Medular)</text>
+      <text x="54" y="46" font-size="11" font-weight="600" fill="var(--fm2p4h-text-main)">Parestesias &amp; Sinal de Lhermitte</text>
+      <text x="54" y="62" font-size="10" fill="var(--fm2p4h-text-muted)">Sensação de choque na flexão cervical</text>
+    </g>
+
+    <!-- Chip 4: Cerebelo & Tronco -->
+    <g class="fm2p4h-chip fm2p4h-hotspot" id="fm2p4h-chip-cereb" transform="translate(338, 165)" data-fm2p4h-title="4. Tronco &amp; Cerebelo (FLM / Pedúnculos)" data-fm2p4h-desc="Ataxia de marcha, tremor de intenção, dismetria, disartria escandida e Oftalmoplegia Internuclear (OIN por lesão do Fascículo Longitudinal Medial)." data-fm2p4h-status="alerta">
+      <rect width="305" height="78" fill="var(--fm2p4h-card-top)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="8" />
+      <circle cx="28" cy="39" r="16" fill="rgba(20, 184, 166, 0.15)" stroke="#14b8a6" stroke-width="1.5" />
+      <text x="28" y="44" font-size="16" text-anchor="middle">⚖️</text>
+      <text x="54" y="28" font-size="13" font-weight="700" fill="var(--fm2p4h-teal)">TRONCO &amp; CEREBELO</text>
+      <text x="54" y="46" font-size="11" font-weight="600" fill="var(--fm2p4h-text-main)">Ataxia &amp; Oftalmoplegia (OIN)</text>
+      <text x="54" y="62" font-size="10" fill="var(--fm2p4h-text-muted)">Dismetria + Nistagmo + Paresia de adução</text>
+    </g>
+
+    <!-- Chip 5: Autonômico -->
+    <g class="fm2p4h-chip fm2p4h-hotspot" id="fm2p4h-chip-auto" transform="translate(16, 255)" data-fm2p4h-title="5. Vias Autonômicas &amp; Esfincterianas" data-fm2p4h-desc="Disfunção vesical neurogênica (urgência mictória, incontinência ou retenção), disfunção intestinal, fadiga central patológica desproporcional e disfunção sexual." data-fm2p4h-status="alerta">
+      <rect width="627" height="68" fill="var(--fm2p4h-card-top)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="8" />
+      <circle cx="28" cy="34" r="16" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1.5" />
+      <text x="28" y="39" font-size="16" text-anchor="middle">⚡</text>
+      <text x="54" y="25" font-size="13" font-weight="700" fill="var(--fm2p4h-green)">VIAS AUTONÔMICAS / ESFINCTERIANAS &amp; FADIGA CENTRAL</text>
+      <text x="54" y="43" font-size="11" font-weight="600" fill="var(--fm2p4h-text-main)">Bexiga Neurogênica (Urgência / Retenção) + Fadiga Incapacitante</text>
+      <text x="54" y="58" font-size="10" fill="var(--fm2p4h-text-muted)">Disfunção esfincteriana secundária a desmielinização dos tratos reticulospinais medulares</text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 5. LOWER RIGHT: DATA & MEDICAL BENCHMARK   -->
+  <!-- ========================================== -->
+  <g id="fm2p4h-panel-data" transform="translate(710, 535)">
+    <!-- Container Card -->
+    <rect width="460" height="360" fill="url(#fm2p4h-grad-card)" stroke="var(--fm2p4h-card-border)" stroke-width="1.5" rx="12" filter="url(#fm2p4h-shadow)" />
+    
+    <!-- Header -->
+    <path d="M 0 12 Q 0 0 12 0 L 448 0 Q 460 0 460 12 L 460 42 L 0 42 Z" fill="var(--fm2p4h-green-bg)" />
+    <rect x="14" y="12" width="10" height="18" fill="var(--fm2p4h-green)" rx="2" />
+    <text x="32" y="26" font-size="15" font-weight="700" fill="var(--fm2p4h-green)">
+      PAINEL DE ANÁLISE BIOMÉTRICA
+    </text>
+    <line x1="0" y1="42" x2="460" y2="42" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+
+    <!-- Table Rows -->
+    <g transform="translate(16, 52)">
+      <!-- Row 1: Speed -->
+      <g transform="translate(0, 0)">
+        <rect width="428" height="52" fill="var(--fm2p4h-card-top)" rx="6" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--fm2p4h-text-muted)">Velocidade de Condução Axonal</text>
+        <text x="12" y="38" font-size="12" font-weight="800" fill="var(--fm2p4h-green)">Intacto: 80 - 120 m/s</text>
+        <text x="240" y="38" font-size="12" font-weight="800" fill="var(--fm2p4h-coral)">EM: 5 - 15 m/s (ou Bloqueio)</text>
+      </g>
+
+      <!-- Row 2: Latency -->
+      <g transform="translate(0, 60)">
+        <rect width="428" height="52" fill="var(--fm2p4h-card-top)" rx="6" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--fm2p4h-text-muted)">Potencial Evocado Visual (Latência P100)</text>
+        <text x="12" y="38" font-size="12" font-weight="800" fill="var(--fm2p4h-green)">Normal: &lt; 100 ms</text>
+        <text x="240" y="38" font-size="12" font-weight="800" fill="var(--fm2p4h-coral)">EM: &gt; 130 ms (Atraso)</text>
+      </g>
+
+      <!-- Row 3: Na+ Channels -->
+      <g transform="translate(0, 120)">
+        <rect width="428" height="52" fill="var(--fm2p4h-card-top)" rx="6" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--fm2p4h-text-muted)">Densidade de Canais Na+ Volt-Dep.</text>
+        <text x="12" y="38" font-size="12" font-weight="800" fill="var(--fm2p4h-green)">~1200 / µm² (Nódulos)</text>
+        <text x="240" y="38" font-size="12" font-weight="800" fill="var(--fm2p4h-coral)">Disperso (&lt;20 / µm²)</text>
+      </g>
+
+      <!-- Row 4: Energy cost -->
+      <g transform="translate(0, 180)">
+        <rect width="428" height="52" fill="var(--fm2p4h-card-top)" rx="6" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--fm2p4h-text-muted)">Custo Energético (Bomba Na+/K+ ATPase)</text>
+        <text x="12" y="38" font-size="12" font-weight="800" fill="var(--fm2p4h-green)">Baixo / Baixa demanda</text>
+        <text x="240" y="38" font-size="12" font-weight="800" fill="var(--fm2p4h-amber)">Elevado (Estresse Mitocondrial)</text>
+      </g>
+    </g>
+
+    <!-- Bottom Clinical Takeaway Box -->
+    <g transform="translate(16, 292)">
+      <rect width="428" height="56" fill="var(--fm2p4h-amber-bg)" stroke="var(--fm2p4h-amber)" stroke-width="1" rx="6" />
+      <text x="12" y="22" font-size="11" font-weight="800" fill="var(--fm2p4h-amber)">📌 SÍNTESE MECÂNICA NEURO-IMUNE:</text>
+      <text x="12" y="40" font-size="10.5" fill="var(--fm2p4h-text-main)">
+        O dano crônico à mielina expõe o axônio à degeneração secundária.
+      </text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 6. DYNAMIC MOUSE-FOLLOW TOOLTIP CONTAINER  -->
+  <!-- ========================================== -->
+  <g id="fm2p4h-tooltip" transform="translate(0, 0)">
+    <rect id="fm2p4h-tt-bg" width="320" height="110" fill="var(--fm2p4h-card-top)" stroke="var(--fm2p4h-teal)" stroke-width="1.5" rx="8" filter="url(#fm2p4h-shadow)" />
+    <text id="fm2p4h-tt-title" x="14" y="26" font-size="13" font-weight="800" fill="var(--fm2p4h-teal)">Título Tooltip</text>
+    <text id="fm2p4h-tt-badge" x="306" y="26" font-size="10" font-weight="800" fill="#ffffff" text-anchor="end">Status</text>
+    <line x1="14" y1="36" x2="306" y2="36" stroke="var(--fm2p4h-card-border)" stroke-width="1" />
+    <foreignObject x="14" y="42" width="292" height="60">
+      <div xmlns="http://www.w3.org/1999/xhtml" id="fm2p4h-tt-desc" style="font-family: system-ui, sans-serif; font-size: 11px; color: #94a3b8; line-height: 1.35; word-wrap: break-word;">
+        Descrição detalhada do elemento selecionado.
+      </div>
+    </foreignObject>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 7. EMBEDDED ENGINE (CDATA JS INTERACTION)  -->
+  <!-- ========================================== -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var svg = document.getElementById('fm2p4h-svg');
+      if (!svg) return;
+
+      var tooltip = document.getElementById('fm2p4h-tooltip');
+      var ttTitle = document.getElementById('fm2p4h-tt-title');
+      var ttBadge = document.getElementById('fm2p4h-tt-badge');
+      var ttDesc = document.getElementById('fm2p4h-tt-desc');
+      var ttBg = document.getElementById('fm2p4h-tt-bg');
+
+      var sparkIntact = document.getElementById('fm2p4h-spark-intact');
+      var sparkPatho = document.getElementById('fm2p4h-spark-patho');
+
+      var hotspots = svg.querySelectorAll('.fm2p4h-hotspot');
+
+      function getSVGPoint(e) {
+        var pt = svg.createSVGPoint();
+        pt.x = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+        pt.y = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+        var ctm = svg.getScreenCTM();
+        if (ctm) {
+          return pt.matrixTransform(ctm.inverse());
+        }
+        return { x: 0, y: 0 };
+      }
+
+      function showTooltip(el, e) {
+        var title = el.getAttribute('data-fm2p4h-title') || 'Informação';
+        var desc = el.getAttribute('data-fm2p4h-desc') || '';
+        var status = el.getAttribute('data-fm2p4h-status') || 'normal';
+
+        ttTitle.textContent = title;
+        ttDesc.textContent = desc;
+
+        if (status === 'normal') {
+          ttTitle.setAttribute('fill', 'var(--fm2p4h-green, #10b981)');
+          ttBg.setAttribute('stroke', 'var(--fm2p4h-green, #10b981)');
+          ttBadge.textContent = '● FISIOLÓGICO';
+          ttBadge.setAttribute('fill', '#10b981');
+        } else if (status === 'patologico') {
+          ttTitle.setAttribute('fill', 'var(--fm2p4h-coral, #ef4444)');
+          ttBg.setAttribute('stroke', 'var(--fm2p4h-coral, #ef4444)');
+          ttBadge.textContent = '● PATOLÓGICO';
+          ttBadge.setAttribute('fill', '#ef4444');
+        } else {
+          ttTitle.setAttribute('fill', 'var(--fm2p4h-amber, #f59e0b)');
+          ttBg.setAttribute('stroke', 'var(--fm2p4h-amber, #f59e0b)');
+          ttBadge.textContent = '● ALERTA CLÍNICO';
+          ttBadge.setAttribute('fill', '#f59e0b');
+        }
+
+        updateTooltipPosition(e);
+        tooltip.classList.add('fm2p4h-visible');
+      }
+
+      function updateTooltipPosition(e) {
+        var p = getSVGPoint(e);
+        var x = p.x + 15;
+        var y = p.y + 15;
+
+        if (x + 330 > 1180) x = p.x - 335;
+        if (y + 120 > 900) y = p.y - 125;
+
+        tooltip.setAttribute('transform', 'translate(' + x + ', ' + y + ')');
+      }
+
+      function hideTooltip() {
+        tooltip.classList.remove('fm2p4h-visible');
+      }
+
+      for (var i = 0; i < hotspots.length; i++) {
+        (function(hs) {
+          hs.addEventListener('mouseenter', function(e) { showTooltip(hs, e); });
+          hs.addEventListener('mousemove', updateTooltipPosition);
+          hs.addEventListener('mouseleave', hideTooltip);
+          hs.addEventListener('focus', function(e) { showTooltip(hs, e); });
+          hs.addEventListener('blur', hideTooltip);
+        })(hotspots[i]);
+      }
+
+      var simInterval = null;
+      var intactPos = 98;
+      var pathoPos = 30;
+      var isRunning = false;
+
+      function runImpulseSimulation() {
+        if (isRunning) return;
+        isRunning = true;
+        intactPos = 98;
+        pathoPos = 30;
+
+        if (simInterval) clearInterval(simInterval);
+
+        simInterval = setInterval(function() {
+          intactPos += 14;
+          if (intactPos > 510) intactPos = 98;
+          if (sparkIntact) sparkIntact.setAttribute('cx', intactPos);
+
+          pathoPos += 3;
+          if (pathoPos > 320) {
+            if (sparkPatho) sparkPatho.setAttribute('opacity', '0.2');
+            if (pathoPos > 380) {
+              pathoPos = 30;
+              if (sparkPatho) sparkPatho.setAttribute('opacity', '1');
+            }
+          } else {
+            if (sparkPatho) sparkPatho.setAttribute('opacity', '1');
+          }
+          if (sparkPatho) sparkPatho.setAttribute('cx', pathoPos);
+        }, 30);
+      }
+
+      runImpulseSimulation();
+
+      var btnSim = document.getElementById('fm2p4h-btn-sim');
+      if (btnSim) {
+        btnSim.addEventListener('click', function() {
+          isRunning = false;
+          runImpulseSimulation();
+        });
+      }
+
+      var filterAll = document.getElementById('fm2p4h-filter-all');
+      var filterIntact = document.getElementById('fm2p4h-filter-intact');
+      var filterAttack = document.getElementById('fm2p4h-filter-attack');
+      var filterChips = document.getElementById('fm2p4h-filter-chips');
+
+      var panelA = document.getElementById('fm2p4h-panel-a');
+      var panelB = document.getElementById('fm2p4h-panel-b');
+      var panelChips = document.getElementById('fm2p4h-panel-chips');
+      var panelData = document.getElementById('fm2p4h-panel-data');
+
+      var filterBtns = [filterAll, filterIntact, filterAttack, filterChips];
+
+      function setActiveFilter(activeBtn) {
+        for (var k = 0; k < filterBtns.length; k++) {
+          if (filterBtns[k]) filterBtns[k].classList.remove('fm2p4h-active');
+        }
+        if (activeBtn) activeBtn.classList.add('fm2p4h-active');
+      }
+
+      function resetOpacities() {
+        if (panelA) panelA.style.opacity = '1';
+        if (panelB) panelB.style.opacity = '1';
+        if (panelChips) panelChips.style.opacity = '1';
+        if (panelData) panelData.style.opacity = '1';
+      }
+
+      if (filterAll) {
+        filterAll.addEventListener('click', function() {
+          setActiveFilter(filterAll);
+          resetOpacities();
+        });
+      }
+      if (filterIntact) {
+        filterIntact.addEventListener('click', function() {
+          setActiveFilter(filterIntact);
+          if (panelA) panelA.style.opacity = '1';
+          if (panelB) panelB.style.opacity = '0.35';
+          if (panelChips) panelChips.style.opacity = '0.35';
+          if (panelData) panelData.style.opacity = '1';
+        });
+      }
+      if (filterAttack) {
+        filterAttack.addEventListener('click', function() {
+          setActiveFilter(filterAttack);
+          if (panelA) panelA.style.opacity = '0.35';
+          if (panelB) panelB.style.opacity = '1';
+          if (panelChips) panelChips.style.opacity = '0.35';
+          if (panelData) panelData.style.opacity = '1';
+        });
+      }
+      if (filterChips) {
+        filterChips.addEventListener('click', function() {
+          setActiveFilter(filterChips);
+          if (panelA) panelA.style.opacity = '0.35';
+          if (panelB) panelB.style.opacity = '0.35';
+          if (panelChips) panelChips.style.opacity = '1';
+          if (panelData) panelData.style.opacity = '0.35';
+        });
+      }
+
+    })();
+    ]]>
+  </script>
+</svg>
+
+    </div>
+    <figcaption class="hero-figure__cap" id="p4-hero-titulo"><span class="fig__label" style="color:var(--fm2-indigo)">Herói</span>Neurônio com mielina intacta (impulso rápido) × neurônio com bainha atacada (impulso lento/interrompido). O alvo é a mielina — não um neurônio só. Passe o mouse nos pontos para ver cada painel.</figcaption>
+  </figure>
+
+  <div class="figura-ancorada">
+    <figure class="figura-ancorada__media">
+      <img src="media/B04-nervo-corte-transversal-mielina-osmio-400x-Malyshko-Anastasia.jpg" alt="Corte transversal de nervo com bainhas de mielina coradas por ácido ósmico, aumento 400×." loading="lazy" decoding="async">
+      <figcaption class="figura-ancorada__legenda">Bainha de mielina — nervo em corte transversal, ácido ósmico 400×. Cada anel é uma bainha protegendo um axônio.</figcaption>
+      <p class="figura-ancorada__fonte">Malyshko Anastasia · Wikimedia Commons · CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%BD%D0%B8%D0%B9_%D0%BD%D0%B5%D1%80%D0%B2.jpg">fonte</a></p>
+    </figure>
+    <div class="figura-ancorada__ancora">
+      <h4>A infraestrutura comum</h4>
+      <p>Os anéis escuros são bainha de mielina envolvendo axônios — é essa estrutura que o sistema imune ataca. Perder mielina = perder velocidade; o quadro depende de onde a bainha somiu.</p>
+    </div>
+  </div>
+
+  <figure class="fig">
+    <div class="fig__frame fig__frame--svg">
+<svg id="fm2p4-svg" class="fm2-inline-svg fm2p4-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" aria-labelledby="fm2p4-title fm2p4-desc" role="img">
+  <title id="fm2p4-title">Hub de Mielina e Irradiação das Síndromes Clínicas Desmielinizantes no SNC</title>
+  <desc id="fm2p4-desc">Diagrama interativo do hub central de mielina no sistema nervoso central irradiando para cinco tratos clínicos: visual, motor, sensitivo, cerebelar e autonômico.</desc>
+  
+  <defs>
+    <!-- Scoped Filters & Gradients -->
+    <filter id="fm2p4-glow-teal" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm2p4-glow-gold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="fm2p4-card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+
+    <!-- Radial Gradients for Central Myelin Hub -->
+    <radialGradient id="fm2p4-grad-hub-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm2p4-hub-core, #00f0ff)" stop-opacity="0.25" />
+      <stop offset="70%" stop-color="var(--fm2p4-hub-mid, #0891b2)" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="var(--fm2p4-hub-edge, #0284c7)" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="fm2p4-grad-axon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm2p4-axon-core, #fbbf24)" />
+      <stop offset="70%" stop-color="var(--fm2p4-axon-edge, #d97706)" />
+      <stop offset="100%" stop-color="var(--fm2p4-axon-border, #92400e)" />
+    </radialGradient>
+
+    <!-- Chip Specific Gradients -->
+    <linearGradient id="fm2p4-grad-vision" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p4-vision-start, #0284c7)" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="var(--fm2p4-vision-end, #38bdf8)" stop-opacity="0.03" />
+    </linearGradient>
+
+    <linearGradient id="fm2p4-grad-motor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p4-motor-start, #dc2626)" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="var(--fm2p4-motor-end, #f87171)" stop-opacity="0.03" />
+    </linearGradient>
+
+    <linearGradient id="fm2p4-grad-sensory" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p4-sensory-start, #d97706)" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="var(--fm2p4-sensory-end, #fbbf24)" stop-opacity="0.03" />
+    </linearGradient>
+
+    <linearGradient id="fm2p4-grad-cerebellar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p4-cereb-start, #7e22ce)" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="var(--fm2p4-cereb-end, #c084fc)" stop-opacity="0.03" />
+    </linearGradient>
+
+    <linearGradient id="fm2p4-grad-autonomic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm2p4-auto-start, #059669)" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="var(--fm2p4-auto-end, #34d399)" stop-opacity="0.03" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Scope all styles under #fm2p4-svg and .fm2p4-root */
+    #fm2p4-svg.fm2p4-root {
+      --fm2p4-bg-main: #090d16;
+      --fm2p4-card-bg: #111827;
+      --fm2p4-card-border: #1f293d;
+      --fm2p4-card-header: #1a2438;
+      
+      --fm2p4-text-pri: #f3f4f6;
+      --fm2p4-text-sec: #9ca3af;
+      --fm2p4-text-mut: #6b7280;
+      
+      --fm2p4-hub-core: #00f0ff;
+      --fm2p4-hub-mid: #0891b2;
+      --fm2p4-hub-edge: #0284c7;
+      --fm2p4-axon-core: #fbbf24;
+      --fm2p4-axon-edge: #d97706;
+      --fm2p4-axon-border: #92400e;
+      
+      --fm2p4-vision: #38bdf8;
+      --fm2p4-motor: #f87171;
+      --fm2p4-sensory: #fbbf24;
+      --fm2p4-cerebellar: #c084fc;
+      --fm2p4-autonomic: #34d399;
+      
+      --fm2p4-pill-bg: #1f293d;
+      --fm2p4-pill-border: #374151;
+      --fm2p4-pill-hover: #2d3748;
+      
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--fm2p4-bg-main, #090d16);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Light Mode Overrides */
+    [data-theme="light"] #fm2p4-svg.fm2p4-root {
+      --fm2p4-bg-main: #f8fafc;
+      --fm2p4-card-bg: #ffffff;
+      --fm2p4-card-border: #cbd5e1;
+      --fm2p4-card-header: #f1f5f9;
+      
+      --fm2p4-text-pri: #0f172a;
+      --fm2p4-text-sec: #334155;
+      --fm2p4-text-mut: #64748b;
+      
+      --fm2p4-hub-core: #0284c7;
+      --fm2p4-hub-mid: #0369a1;
+      --fm2p4-hub-edge: #075985;
+      --fm2p4-axon-core: #d97706;
+      --fm2p4-axon-edge: #b45309;
+      --fm2p4-axon-border: #78350f;
+      
+      --fm2p4-vision: #0284c7;
+      --fm2p4-motor: #dc2626;
+      --fm2p4-sensory: #d97706;
+      --fm2p4-cerebellar: #7e22ce;
+      --fm2p4-autonomic: #059669;
+      
+      --fm2p4-pill-bg: #e2e8f0;
+      --fm2p4-pill-border: #cbd5e1;
+      --fm2p4-pill-hover: #d1d5db;
+    }
+
+    /* Interactive Elements Styling */
+    #fm2p4-svg .fm2p4-interactive {
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, stroke 0.2s ease, fill 0.2s ease;
+    }
+
+    #fm2p4-svg .fm2p4-interactive:hover {
+      filter: brightness(1.15);
+    }
+
+    #fm2p4-svg .fm2p4-chip-box {
+      transition: stroke 0.2s ease, stroke-width 0.2s ease, fill 0.2s ease;
+    }
+
+    #fm2p4-svg .fm2p4-ray-line {
+      transition: stroke-opacity 0.3s ease, stroke-width 0.3s ease;
+    }
+
+    #fm2p4-svg .fm2p4-ray-pulse {
+      animation: fm2p4-pulse-anim 3s infinite linear;
+    }
+
+    @keyframes fm2p4-pulse-anim {
+      0% { stroke-dashoffset: 60; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    /* Active State Highlights */
+    #fm2p4-svg[data-active="hub"] .fm2p4-hub-node { stroke-width: 3.5px; filter: drop-shadow(0 0 8px var(--fm2p4-hub-core, #00f0ff)); }
+    #fm2p4-svg[data-active="vision"] .fm2p4-chip-vision { stroke: var(--fm2p4-vision, #38bdf8) !important; stroke-width: 2.5px !important; fill-opacity: 0.25 !important; }
+    #fm2p4-svg[data-active="motor"] .fm2p4-chip-motor { stroke: var(--fm2p4-motor, #f87171) !important; stroke-width: 2.5px !important; fill-opacity: 0.25 !important; }
+    #fm2p4-svg[data-active="sensory"] .fm2p4-chip-sensory { stroke: var(--fm2p4-sensory, #fbbf24) !important; stroke-width: 2.5px !important; fill-opacity: 0.25 !important; }
+    #fm2p4-svg[data-active="cerebellar"] .fm2p4-chip-cerebellar { stroke: var(--fm2p4-cerebellar, #c084fc) !important; stroke-width: 2.5px !important; fill-opacity: 0.25 !important; }
+    #fm2p4-svg[data-active="autonomic"] .fm2p4-chip-autonomic { stroke: var(--fm2p4-autonomic, #34d399) !important; stroke-width: 2.5px !important; fill-opacity: 0.25 !important; }
+
+    /* Dimming inactive rays */
+    #fm2p4-svg[data-active="vision"] .fm2p4-ray:not(.fm2p4-ray-vision) { stroke-opacity: 0.15; }
+    #fm2p4-svg[data-active="motor"] .fm2p4-ray:not(.fm2p4-ray-motor) { stroke-opacity: 0.15; }
+    #fm2p4-svg[data-active="sensory"] .fm2p4-ray:not(.fm2p4-ray-sensory) { stroke-opacity: 0.15; }
+    #fm2p4-svg[data-active="cerebellar"] .fm2p4-ray:not(.fm2p4-ray-cerebellar) { stroke-opacity: 0.15; }
+    #fm2p4-svg[data-active="autonomic"] .fm2p4-ray:not(.fm2p4-ray-autonomic) { stroke-opacity: 0.15; }
+
+    /* Dimming inactive chips */
+    #fm2p4-svg[data-active="vision"] .fm2p4-chip-group:not(.fm2p4-grp-vision) { opacity: 0.45; }
+    #fm2p4-svg[data-active="motor"] .fm2p4-chip-group:not(.fm2p4-grp-motor) { opacity: 0.45; }
+    #fm2p4-svg[data-active="sensory"] .fm2p4-chip-group:not(.fm2p4-grp-sensory) { opacity: 0.45; }
+    #fm2p4-svg[data-active="cerebellar"] .fm2p4-chip-group:not(.fm2p4-grp-cerebellar) { opacity: 0.45; }
+    #fm2p4-svg[data-active="autonomic"] .fm2p4-chip-group:not(.fm2p4-grp-autonomic) { opacity: 0.45; }
+
+    /* Filter Pills Active Styling */
+    #fm2p4-svg[data-active="hub"] .fm2p4-pill-hub { fill: var(--fm2p4-hub-core, #00f0ff) !important; stroke: var(--fm2p4-hub-core, #00f0ff) !important; }
+    #fm2p4-svg[data-active="hub"] .fm2p4-pill-hub text { fill: #090d16 !important; font-weight: 700; }
+    
+    #fm2p4-svg[data-active="vision"] .fm2p4-pill-vision { fill: var(--fm2p4-vision, #38bdf8) !important; stroke: var(--fm2p4-vision, #38bdf8) !important; }
+    #fm2p4-svg[data-active="vision"] .fm2p4-pill-vision text { fill: #090d16 !important; font-weight: 700; }
+    
+    #fm2p4-svg[data-active="motor"] .fm2p4-pill-motor { fill: var(--fm2p4-motor, #f87171) !important; stroke: var(--fm2p4-motor, #f87171) !important; }
+    #fm2p4-svg[data-active="motor"] .fm2p4-pill-motor text { fill: #090d16 !important; font-weight: 700; }
+    
+    #fm2p4-svg[data-active="sensory"] .fm2p4-pill-sensory { fill: var(--fm2p4-sensory, #fbbf24) !important; stroke: var(--fm2p4-sensory, #fbbf24) !important; }
+    #fm2p4-svg[data-active="sensory"] .fm2p4-pill-sensory text { fill: #090d16 !important; font-weight: 700; }
+    
+    #fm2p4-svg[data-active="cerebellar"] .fm2p4-pill-cerebellar { fill: var(--fm2p4-cerebellar, #c084fc) !important; stroke: var(--fm2p4-cerebellar, #c084fc) !important; }
+    #fm2p4-svg[data-active="cerebellar"] .fm2p4-pill-cerebellar text { fill: #090d16 !important; font-weight: 700; }
+    
+    #fm2p4-svg[data-active="autonomic"] .fm2p4-pill-autonomic { fill: var(--fm2p4-autonomic, #34d399) !important; stroke: var(--fm2p4-autonomic, #34d399) !important; }
+    #fm2p4-svg[data-active="autonomic"] .fm2p4-pill-autonomic text { fill: #090d16 !important; font-weight: 700; }
+
+    /* Accessibility Focus Outline */
+    #fm2p4-svg .fm2p4-interactive:focus-visible {
+      outline: 2px solid var(--fm2p4-hub-core, #00f0ff);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #fm2p4-svg .fm2p4-ray-pulse {
+        animation: none !important;
+      }
+      #fm2p4-svg .fm2p4-interactive {
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <!-- ==================== HEADER SECTION ==================== -->
+  <g id="fm2p4-header-group" transform="translate(30, 20)">
+    <!-- Title Badge -->
+    <rect x="0" y="0" width="180" height="22" rx="4" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+    <text x="10" y="15" font-size="10" font-weight="700" fill="var(--fm2p4-hub-core, #00f0ff)" letter-spacing="0.8">NEUROLOGIA · SÍNDROMES DO SNC</text>
+
+    <!-- Main Title -->
+    <text x="0" y="44" font-size="20" font-weight="800" fill="var(--fm2p4-text-pri, #f3f4f6)" letter-spacing="-0.2">SÍNDROMES DESMIELINIZANTES: HUB DE MIELINA &amp; IRRADIAÇÃO CLÍNICA</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="62" font-size="12" font-weight="500" fill="var(--fm2p4-text-sec, #9ca3af)">Alvo Histológico Único (Bainha de Mielina) → Múltiplas Manifestações Clínicas por Trato Acometido</text>
+
+    <!-- Interpretation Legend Box (Contrato de Layout #1) -->
+    <g transform="translate(0, 72)">
+      <rect x="0" y="0" width="940" height="34" rx="6" fill="var(--fm2p4-card-bg, #111827)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1.2" />
+      <circle cx="16" cy="17" r="5" fill="var(--fm2p4-hub-core, #00f0ff)" />
+      <text x="28" y="21" font-size="11" font-weight="700" fill="var(--fm2p4-text-pri, #f3f4f6)">REGRA METODOLÓGICA DE PROVA:</text>
+      <text x="212" y="21" font-size="11" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">A destruição focal da mielina no SNC produz quadros heterogêneos. Selecione cada síndrome para analisar a correlação anatomoclínica exata.</text>
+    </g>
+  </g>
+
+  <!-- ==================== MAIN CONTENT AREA ==================== -->
+  
+  <!-- Left Side: Radial Hub & Chips Diagram (X: 30 to 570, Y: 135 to 660) -->
+  <g id="fm2p4-diagram-group" transform="translate(30, 135)">
+    
+    <!-- Filter Control Pills at Top of Diagram -->
+    <g id="fm2p4-pills-group" transform="translate(0, 0)">
+      <!-- Pill 1: Todos (Hub) -->
+      <g class="fm2p4-interactive" data-target="hub" role="button" tabindex="0" aria-label="Exibir visão geral do Hub de Mielina">
+        <rect class="fm2p4-pill-hub" x="0" y="0" width="82" height="28" rx="14" fill="var(--fm2p4-pill-bg, #1f293d)" stroke="var(--fm2p4-pill-border, #374151)" stroke-width="1" />
+        <text x="41" y="18" text-anchor="middle" font-size="11" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)" pointer-events="none">HUB GERAL</text>
+      </g>
+
+      <!-- Pill 2: Visão -->
+      <g class="fm2p4-interactive" data-target="vision" transform="translate(90, 0)" role="button" tabindex="0" aria-label="Filtrar Síndrome Visual">
+        <rect class="fm2p4-pill-vision" x="0" y="0" width="76" height="28" rx="14" fill="var(--fm2p4-pill-bg, #1f293d)" stroke="var(--fm2p4-pill-border, #374151)" stroke-width="1" />
+        <text x="38" y="18" text-anchor="middle" font-size="11" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)" pointer-events="none">VISUAL</text>
+      </g>
+
+      <!-- Pill 3: Motor -->
+      <g class="fm2p4-interactive" data-target="motor" transform="translate(174, 0)" role="button" tabindex="0" aria-label="Filtrar Síndrome Motora">
+        <rect class="fm2p4-pill-motor" x="0" y="0" width="76" height="28" rx="14" fill="var(--fm2p4-pill-bg, #1f293d)" stroke="var(--fm2p4-pill-border, #374151)" stroke-width="1" />
+        <text x="38" y="18" text-anchor="middle" font-size="11" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)" pointer-events="none">MOTOR</text>
+      </g>
+
+      <!-- Pill 4: Sensitivo -->
+      <g class="fm2p4-interactive" data-target="sensory" transform="translate(258, 0)" role="button" tabindex="0" aria-label="Filtrar Síndrome Sensitiva">
+        <rect class="fm2p4-pill-sensory" x="0" y="0" width="86" height="28" rx="14" fill="var(--fm2p4-pill-bg, #1f293d)" stroke="var(--fm2p4-pill-border, #374151)" stroke-width="1" />
+        <text x="43" y="18" text-anchor="middle" font-size="11" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)" pointer-events="none">SENSITIVO</text>
+      </g>
+
+      <!-- Pill 5: Cerebelo -->
+      <g class="fm2p4-interactive" data-target="cerebellar" transform="translate(352, 0)" role="button" tabindex="0" aria-label="Filtrar Síndrome Cerebelar">
+        <rect class="fm2p4-pill-cerebellar" x="0" y="0" width="86" height="28" rx="14" fill="var(--fm2p4-pill-bg, #1f293d)" stroke="var(--fm2p4-pill-border, #374151)" stroke-width="1" />
+        <text x="43" y="18" text-anchor="middle" font-size="11" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)" pointer-events="none">CEREBELO</text>
+      </g>
+
+      <!-- Pill 6: Autonômico -->
+      <g class="fm2p4-interactive" data-target="autonomic" transform="translate(446, 0)" role="button" tabindex="0" aria-label="Filtrar Síndrome Autonômica">
+        <rect class="fm2p4-pill-autonomic" x="0" y="0" width="98" height="28" rx="14" fill="var(--fm2p4-pill-bg, #1f293d)" stroke="var(--fm2p4-pill-border, #374151)" stroke-width="1" />
+        <text x="49" y="18" text-anchor="middle" font-size="11" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)" pointer-events="none">AUTONÔMICO</text>
+      </g>
+    </g>
+
+    <!-- RADIAL CONNECTOR RAYS (CENTER AT X:270, Y:270) -->
+    <!-- Center Hub Coordinates: (270, 270) -->
+    <!-- Chip Centers:
+         1. Vision: (100, 120)
+         2. Motor: (440, 120)
+         3. Sensory: (470, 270)
+         4. Cerebellar: (430, 420)
+         5. Autonomic: (110, 420)
+    -->
+    <g id="fm2p4-rays-layer">
+      <!-- Ray 1: Hub -> Vision -->
+      <g class="fm2p4-ray fm2p4-ray-vision">
+        <line x1="270" y1="270" x2="100" y2="120" stroke="var(--fm2p4-vision, #38bdf8)" stroke-width="3" stroke-opacity="0.6" stroke-dasharray="6,4" />
+        <line class="fm2p4-ray-pulse" x1="270" y1="270" x2="100" y2="120" stroke="var(--fm2p4-vision, #38bdf8)" stroke-width="4" stroke-linecap="round" stroke-dasharray="12,48" stroke-opacity="0.9" />
+      </g>
+
+      <!-- Ray 2: Hub -> Motor -->
+      <g class="fm2p4-ray fm2p4-ray-motor">
+        <line x1="270" y1="270" x2="440" y2="120" stroke="var(--fm2p4-motor, #f87171)" stroke-width="3" stroke-opacity="0.6" stroke-dasharray="6,4" />
+        <line class="fm2p4-ray-pulse" x1="270" y1="270" x2="440" y2="120" stroke="var(--fm2p4-motor, #f87171)" stroke-width="4" stroke-linecap="round" stroke-dasharray="12,48" stroke-opacity="0.9" />
+      </g>
+
+      <!-- Ray 3: Hub -> Sensory -->
+      <g class="fm2p4-ray fm2p4-ray-sensory">
+        <line x1="270" y1="270" x2="470" y2="270" stroke="var(--fm2p4-sensory, #fbbf24)" stroke-width="3" stroke-opacity="0.6" stroke-dasharray="6,4" />
+        <line class="fm2p4-ray-pulse" x1="270" y1="270" x2="470" y2="270" stroke="var(--fm2p4-sensory, #fbbf24)" stroke-width="4" stroke-linecap="round" stroke-dasharray="12,48" stroke-opacity="0.9" />
+      </g>
+
+      <!-- Ray 4: Hub -> Cerebellar -->
+      <g class="fm2p4-ray fm2p4-ray-cerebellar">
+        <line x1="270" y1="270" x2="430" y2="420" stroke="var(--fm2p4-cerebellar, #c084fc)" stroke-width="3" stroke-opacity="0.6" stroke-dasharray="6,4" />
+        <line class="fm2p4-ray-pulse" x1="270" y1="270" x2="430" y2="420" stroke="var(--fm2p4-cerebellar, #c084fc)" stroke-width="4" stroke-linecap="round" stroke-dasharray="12,48" stroke-opacity="0.9" />
+      </g>
+
+      <!-- Ray 5: Hub -> Autonomic -->
+      <g class="fm2p4-ray fm2p4-ray-autonomic">
+        <line x1="270" y1="270" x2="110" y2="420" stroke="var(--fm2p4-autonomic, #34d399)" stroke-width="3" stroke-opacity="0.6" stroke-dasharray="6,4" />
+        <line class="fm2p4-ray-pulse" x1="270" y1="270" x2="110" y2="420" stroke="var(--fm2p4-autonomic, #34d399)" stroke-width="4" stroke-linecap="round" stroke-dasharray="12,48" stroke-opacity="0.9" />
+      </g>
+    </g>
+
+    <!-- CENTRAL MYELIN HUB NODE (Center: 270, 270) -->
+    <g id="fm2p4-hub-node-group" class="fm2p4-interactive" data-target="hub" transform="translate(270, 270)" role="button" tabindex="0" aria-label="Detalhar o Hub Central de Mielina do SNC">
+      <!-- Glow & Outer Aura Rings -->
+      <circle cx="0" cy="0" r="76" fill="url(#fm2p4-grad-hub-bg)" />
+      <circle cx="0" cy="0" r="64" fill="none" stroke="var(--fm2p4-hub-core, #00f0ff)" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="8,4" />
+      
+      <!-- Concentric Myelin Sheath Lamellae (Anatomy Visualization) -->
+      <circle class="fm2p4-hub-node" cx="0" cy="0" r="52" fill="var(--fm2p4-card-bg, #111827)" stroke="var(--fm2p4-hub-core, #00f0ff)" stroke-width="2.5" />
+      
+      <!-- Myelin Spiral Layers (Representing myelin wraps) -->
+      <circle cx="0" cy="0" r="42" fill="none" stroke="var(--fm2p4-hub-mid, #0891b2)" stroke-width="3" stroke-opacity="0.6" stroke-dasharray="24,6" />
+      <circle cx="0" cy="0" r="32" fill="none" stroke="var(--fm2p4-hub-core, #00f0ff)" stroke-width="3" stroke-opacity="0.8" stroke-dasharray="18,4" />
+      <circle cx="0" cy="0" r="22" fill="none" stroke="var(--fm2p4-hub-mid, #0891b2)" stroke-width="2.5" stroke-opacity="0.9" />
+
+      <!-- Inner Axon Core -->
+      <circle cx="0" cy="0" r="14" fill="url(#fm2p4-grad-axon)" stroke="var(--fm2p4-axon-border, #92400e)" stroke-width="1.5" />
+      <circle cx="-3" cy="-3" r="3" fill="#ffffff" opacity="0.6" />
+
+      <!-- Oligodendrocyte Connection Nodes -->
+      <circle cx="-36" cy="-24" r="4" fill="var(--fm2p4-hub-core, #00f0ff)" />
+      <line x1="-36" y1="-24" x2="-26" y2="-16" stroke="var(--fm2p4-hub-core, #00f0ff)" stroke-width="1.5" />
+      
+      <circle cx="38" cy="20" r="4" fill="var(--fm2p4-hub-core, #00f0ff)" />
+      <line x1="38" y1="20" x2="26" y2="14" stroke="var(--fm2p4-hub-core, #00f0ff)" stroke-width="1.5" />
+
+      <!-- Label -->
+      <rect x="-56" y="58" width="112" height="22" rx="11" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-hub-core, #00f0ff)" stroke-width="1" />
+      <text x="0" y="73" text-anchor="middle" font-size="10" font-weight="700" fill="var(--fm2p4-text-pri, #f3f4f6)" pointer-events="none">BAINHA DE MIELINA</text>
+      <text x="0" y="-62" text-anchor="middle" font-size="9" font-weight="600" fill="var(--fm2p4-hub-core, #00f0ff)" pointer-events="none">ALVO CENTRAL (SNC)</text>
+    </g>
+
+    <!-- 5 CLINICAL CHIPS (CHIP CAPSULES) -->
+
+    <!-- CHIP 1: VISÃO (Top-Left, Center ~ 100, 120) -->
+    <g class="fm2p4-chip-group fm2p4-grp-vision fm2p4-interactive" data-target="vision" transform="translate(20, 70)" role="button" tabindex="0" aria-label="Detalhar Síndrome Visual no Nervo Óptico">
+      <rect class="fm2p4-chip-box fm2p4-chip-vision" x="0" y="0" width="160" height="96" rx="10" fill="url(#fm2p4-grad-vision)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1.5" />
+      
+      <!-- Icon Container -->
+      <rect x="12" y="12" width="28" height="28" rx="6" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-vision, #38bdf8)" stroke-width="1" />
+      <!-- Eye Icon -->
+      <path d="M 26 26 A 8 8 0 0 1 14 26 A 8 8 0 0 1 26 26 Z" fill="none" stroke="var(--fm2p4-vision, #38bdf8)" stroke-width="1.5" />
+      <circle cx="20" cy="26" r="3" fill="var(--fm2p4-vision, #38bdf8)" />
+
+      <!-- Chip Header Text -->
+      <text x="48" y="24" font-size="11" font-weight="800" fill="var(--fm2p4-vision, #38bdf8)">SÍNDROME VISUAL</text>
+      <text x="48" y="36" font-size="9" font-weight="600" fill="var(--fm2p4-text-sec, #9ca3af)">Nervo Óptico (CN II)</text>
+
+      <!-- Key Findings Bullet Points -->
+      <line x1="12" y1="48" x2="148" y2="48" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+      <circle cx="18" cy="60" r="2.5" fill="var(--fm2p4-vision, #38bdf8)" />
+      <text x="26" y="63" font-size="9.5" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)">Neurite Óptica Subaguda</text>
+      
+      <circle cx="18" cy="74" r="2.5" fill="var(--fm2p4-vision, #38bdf8)" />
+      <text x="26" y="77" font-size="9.5" font-weight="500" fill="var(--fm2p4-text-sec, #9ca3af)">Dor Ocular + RAPD (+)</text>
+      
+      <circle cx="18" cy="88" r="2.5" fill="var(--fm2p4-vision, #38bdf8)" />
+      <text x="26" y="91" font-size="9" font-weight="400" fill="var(--fm2p4-text-mut, #6b7280)">Escotoma Central / Discromatopsia</text>
+    </g>
+
+    <!-- CHIP 2: MOTOR (Top-Right, Center ~ 440, 120) -->
+    <g class="fm2p4-chip-group fm2p4-grp-motor fm2p4-interactive" data-target="motor" transform="translate(360, 70)" role="button" tabindex="0" aria-label="Detalhar Síndrome Motora no Trato Corticoespinal">
+      <rect class="fm2p4-chip-box fm2p4-chip-motor" x="0" y="0" width="160" height="96" rx="10" fill="url(#fm2p4-grad-motor)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1.5" />
+      
+      <!-- Icon Container -->
+      <rect x="12" y="12" width="28" height="28" rx="6" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-motor, #f87171)" stroke-width="1" />
+      <!-- Muscle / Lightning Icon -->
+      <path d="M 22 16 L 16 26 L 21 26 L 18 34 L 26 23 L 20 23 Z" fill="var(--fm2p4-motor, #f87171)" />
+
+      <!-- Chip Header Text -->
+      <text x="48" y="24" font-size="11" font-weight="800" fill="var(--fm2p4-motor, #f87171)">SÍNDROME MOTORA</text>
+      <text x="48" y="36" font-size="9" font-weight="600" fill="var(--fm2p4-text-sec, #9ca3af)">Trato Corticoespinal</text>
+
+      <!-- Key Findings Bullet Points -->
+      <line x1="12" y1="48" x2="148" y2="48" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+      <circle cx="18" cy="60" r="2.5" fill="var(--fm2p4-motor, #f87171)" />
+      <text x="26" y="63" font-size="9.5" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)">Paresia / Monoparesia</text>
+      
+      <circle cx="18" cy="74" r="2.5" fill="var(--fm2p4-motor, #f87171)" />
+      <text x="26" y="77" font-size="9.5" font-weight="500" fill="var(--fm2p4-text-sec, #9ca3af)">Espasticidade + Babinski (+)</text>
+      
+      <circle cx="18" cy="88" r="2.5" fill="var(--fm2p4-motor, #f87171)" />
+      <text x="26" y="91" font-size="9" font-weight="400" fill="var(--fm2p4-text-mut, #6b7280)">Hiperreflexia Miotática (1º NM)</text>
+    </g>
+
+    <!-- CHIP 3: SENSITIVO (Middle-Right, Center ~ 470, 270) -->
+    <g class="fm2p4-chip-group fm2p4-grp-sensory fm2p4-interactive" data-target="sensory" transform="translate(385, 220)" role="button" tabindex="0" aria-label="Detalhar Síndrome Sensitiva no Cordão Posterior">
+      <rect class="fm2p4-chip-box fm2p4-chip-sensory" x="0" y="0" width="165" height="96" rx="10" fill="url(#fm2p4-grad-sensory)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1.5" />
+      
+      <!-- Icon Container -->
+      <rect x="12" y="12" width="28" height="28" rx="6" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-sensory, #fbbf24)" stroke-width="1" />
+      <!-- Wave Sensory Icon -->
+      <path d="M 16 26 Q 20 18 24 26 T 32 26" fill="none" stroke="var(--fm2p4-sensory, #fbbf24)" stroke-width="2" stroke-linecap="round" />
+
+      <!-- Chip Header Text -->
+      <text x="48" y="24" font-size="11" font-weight="800" fill="var(--fm2p4-sensory, #fbbf24)">SÍNDROME SENSITIVA</text>
+      <text x="48" y="36" font-size="9" font-weight="600" fill="var(--fm2p4-text-sec, #9ca3af)">Cordão Posterior &amp; Vias</text>
+
+      <!-- Key Findings Bullet Points -->
+      <line x1="12" y1="48" x2="153" y2="48" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+      <circle cx="18" cy="60" r="2.5" fill="var(--fm2p4-sensory, #fbbf24)" />
+      <text x="26" y="63" font-size="9.5" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)">Parestesias em Faixa</text>
+      
+      <circle cx="18" cy="74" r="2.5" fill="var(--fm2p4-sensory, #fbbf24)" />
+      <text x="26" y="77" font-size="9.5" font-weight="500" fill="var(--fm2p4-text-sec, #9ca3af)">Sinal de Lhermitte (Choque)</text>
+      
+      <circle cx="18" cy="88" r="2.5" fill="var(--fm2p4-sensory, #fbbf24)" />
+      <text x="26" y="91" font-size="9" font-weight="400" fill="var(--fm2p4-text-mut, #6b7280)">Ataxia Sensitiva / Romberg (+)</text>
+    </g>
+
+    <!-- CHIP 4: CEREBELO (Bottom-Right, Center ~ 430, 420) -->
+    <g class="fm2p4-chip-group fm2p4-grp-cerebellar fm2p4-interactive" data-target="cerebellar" transform="translate(350, 370)" role="button" tabindex="0" aria-label="Detalhar Síndrome Cerebelar e Pedúnculos">
+      <rect class="fm2p4-chip-box fm2p4-chip-cerebellar" x="0" y="0" width="160" height="96" rx="10" fill="url(#fm2p4-grad-cerebellar)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1.5" />
+      
+      <!-- Icon Container -->
+      <rect x="12" y="12" width="28" height="28" rx="6" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-cerebellar, #c084fc)" stroke-width="1" />
+      <!-- Spiral/Coordination Icon -->
+      <path d="M 20 18 A 6 6 0 1 1 20 30 A 3 3 0 1 1 20 24" fill="none" stroke="var(--fm2p4-cerebellar, #c084fc)" stroke-width="2" stroke-linecap="round" />
+
+      <!-- Chip Header Text -->
+      <text x="48" y="24" font-size="11" font-weight="800" fill="var(--fm2p4-cerebellar, #c084fc)">SÍNDROME CEREBELAR</text>
+      <text x="48" y="36" font-size="9" font-weight="600" fill="var(--fm2p4-text-sec, #9ca3af)">Pedúnculos &amp; Alças</text>
+
+      <!-- Key Findings Bullet Points -->
+      <line x1="12" y1="48" x2="148" y2="48" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+      <circle cx="18" cy="60" r="2.5" fill="var(--fm2p4-cerebellar, #c084fc)" />
+      <text x="26" y="63" font-size="9.5" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)">Ataxia de Marcha &amp; Tronco</text>
+      
+      <circle cx="18" cy="74" r="2.5" fill="var(--fm2p4-cerebellar, #c084fc)" />
+      <text x="26" y="77" font-size="9.5" font-weight="500" fill="var(--fm2p4-text-sec, #9ca3af)">Dismetria &amp; Tremor Cinético</text>
+      
+      <circle cx="18" cy="88" r="2.5" fill="var(--fm2p4-cerebellar, #c084fc)" />
+      <text x="26" y="91" font-size="9" font-weight="400" fill="var(--fm2p4-text-mut, #6b7280)">Fala Escandida / Nistagmo</text>
+    </g>
+
+    <!-- CHIP 5: AUTONÔMICO (Bottom-Left, Center ~ 110, 420) -->
+    <g class="fm2p4-chip-group fm2p4-grp-autonomic fm2p4-interactive" data-target="autonomic" transform="translate(30, 370)" role="button" tabindex="0" aria-label="Detalhar Síndrome Autonômica e Esfincteriana">
+      <rect class="fm2p4-chip-box fm2p4-chip-autonomic" x="0" y="0" width="165" height="96" rx="10" fill="url(#fm2p4-grad-autonomic)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1.5" />
+      
+      <!-- Icon Container -->
+      <rect x="12" y="12" width="28" height="28" rx="6" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-autonomic, #34d399)" stroke-width="1" />
+      <!-- Gear / Autonomic Icon -->
+      <circle cx="20" cy="26" r="6" fill="none" stroke="var(--fm2p4-autonomic, #34d399)" stroke-width="2" />
+      <path d="M 20 16 L 20 18 M 20 34 L 20 36 M 10 26 L 12 26 M 28 26 L 30 26" stroke="var(--fm2p4-autonomic, #34d399)" stroke-width="2" stroke-linecap="round" />
+
+      <!-- Chip Header Text -->
+      <text x="48" y="24" font-size="11" font-weight="800" fill="var(--fm2p4-autonomic, #34d399)">AUTONÔMICA / ESFINCT.</text>
+      <text x="48" y="36" font-size="9" font-weight="600" fill="var(--fm2p4-text-sec, #9ca3af)">Tratos Descendentes</text>
+
+      <!-- Key Findings Bullet Points -->
+      <line x1="12" y1="48" x2="153" y2="48" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+      <circle cx="18" cy="60" r="2.5" fill="var(--fm2p4-autonomic, #34d399)" />
+      <text x="26" y="63" font-size="9.5" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)">Bexiga Neurogênica</text>
+      
+      <circle cx="18" cy="74" r="2.5" fill="var(--fm2p4-autonomic, #34d399)" />
+      <text x="26" y="77" font-size="9.5" font-weight="500" fill="var(--fm2p4-text-sec, #9ca3af)">Urgência / Incontinência</text>
+      
+      <circle cx="18" cy="88" r="2.5" fill="var(--fm2p4-autonomic, #34d399)" />
+      <text x="26" y="91" font-size="9" font-weight="400" fill="var(--fm2p4-text-mut, #6b7280)">Disfunção Sexual &amp; Intestino</text>
+    </g>
+
+  </g> <!-- End Left Diagram Group -->
+
+  <!-- ==================== RIGHT SIDE: CLINICAL READING PANEL ==================== -->
+  <!-- Container Box (X: 600, Y: 135, Width: 370, Height: 515) -->
+  <g id="fm2p4-panel-group" transform="translate(600, 135)">
+    <!-- Card Shadow & Outer Shell -->
+    <rect x="0" y="0" width="370" height="515" rx="12" fill="var(--fm2p4-card-bg, #111827)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1.5" filter="url(#fm2p4-card-shadow)" />
+    
+    <!-- Top Decorative Accent Bar -->
+    <rect id="fm2p4-panel-bar" x="0" y="0" width="370" height="6" rx="3" fill="var(--fm2p4-hub-core, #00f0ff)" />
+
+    <!-- Card Inner Header -->
+    <g transform="translate(20, 24)">
+      <!-- Dynamic Badge -->
+      <rect id="fm2p4-panel-badge-bg" x="0" y="0" width="160" height="22" rx="4" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-hub-core, #00f0ff)" stroke-width="1" />
+      <text id="fm2p4-panel-badge-txt" x="10" y="15" font-size="10" font-weight="700" fill="var(--fm2p4-hub-core, #00f0ff)">FISIOPATOLOGIA GERAL</text>
+
+      <!-- Dynamic Title -->
+      <text id="fm2p4-panel-title" x="0" y="44" font-size="16" font-weight="800" fill="var(--fm2p4-text-pri, #f3f4f6)">HUB CENTRAL DE MIELINA DO SNC</text>
+      <!-- Subtitle -->
+      <text id="fm2p4-panel-subtitle" x="0" y="60" font-size="11" font-weight="600" fill="var(--fm2p4-text-sec, #9ca3af)">Alvo Oligodendrocitário &amp; Condução Saltatória</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="20" y1="96" x2="350" y2="96" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1.2" />
+
+    <!-- SECTION 1: ANATOMIA & TRATO COMOMETIDO -->
+    <g transform="translate(20, 110)">
+      <rect x="0" y="0" width="3" height="14" rx="1.5" fill="var(--fm2p4-hub-core, #00f0ff)" id="fm2p4-sec1-bar" />
+      <text x="12" y="11" font-size="11" font-weight="700" fill="var(--fm2p4-text-pri, #f3f4f6)">ANATOMIA &amp; ALVO HISTOLÓGICO</text>
+      
+      <!-- Text container box -->
+      <rect x="0" y="20" width="330" height="52" rx="6" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+      <text id="fm2p4-panel-anat1" x="12" y="38" font-size="10.5" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)">Bainha de Mielina (SNC) &amp; Oligodendrócitos</text>
+      <text id="fm2p4-panel-anat2" x="12" y="56" font-size="10" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">Substância Branca Periventricular, Tronco e Medula</text>
+    </g>
+
+    <!-- SECTION 2: MECANISMO FISIOPATOLÓGICO -->
+    <g transform="translate(20, 196)">
+      <rect x="0" y="0" width="3" height="14" rx="1.5" fill="var(--fm2p4-hub-core, #00f0ff)" id="fm2p4-sec2-bar" />
+      <text x="12" y="11" font-size="11" font-weight="700" fill="var(--fm2p4-text-pri, #f3f4f6)">MECANISMO DE BLOQUEIO CONDUÇÃO</text>
+      
+      <!-- Multiline Text Display Box -->
+      <rect x="0" y="20" width="330" height="74" rx="6" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+      <text id="fm2p4-panel-mech1" x="12" y="38" font-size="10" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">A desmielinização focal rompe a condução saltatória nos Nódulos</text>
+      <text id="fm2p4-panel-mech2" x="12" y="54" font-size="10" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">de Ranvier, gerando lentificação severa ou dispersão temporal do</text>
+      <text id="fm2p4-panel-mech3" x="12" y="70" font-size="10" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">potencial de ação ao longo dos tratos centrais acometidos.</text>
+    </g>
+
+    <!-- SECTION 3: SEMIOLOGIA E SINAIS PRÁTICOS DE BEIRA DE LEITO -->
+    <g transform="translate(20, 304)">
+      <rect x="0" y="0" width="3" height="14" rx="1.5" fill="var(--fm2p4-hub-core, #00f0ff)" id="fm2p4-sec3-bar" />
+      <text x="12" y="11" font-size="11" font-weight="700" fill="var(--fm2p4-text-pri, #f3f4f6)">SEMIOLOGIA DE BEIRA DE LEITO</text>
+      
+      <!-- Text Display Box -->
+      <rect x="0" y="20" width="330" height="78" rx="6" fill="var(--fm2p4-card-header, #1a2438)" stroke="var(--fm2p4-card-border, #1f293d)" stroke-width="1" />
+      <text id="fm2p4-panel-sign1" x="12" y="38" font-size="10" font-weight="600" fill="var(--fm2p4-text-pri, #f3f4f6)">• Disseminação no Espaço e no Tempo</text>
+      <text id="fm2p4-panel-sign2" x="12" y="54" font-size="10" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">• Surtos de déficits neurofocais remitentes/recorrentes</text>
+      <text id="fm2p4-panel-sign3" x="12" y="70" font-size="10" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">• Fenômeno de Uhthoff (piora com elevação da temperatura)</text>
+    </g>
+
+    <!-- SECTION 4: DESTAQUE DE PROVA / RESIDÊNCIA MÉDICA -->
+    <g transform="translate(20, 416)">
+      <rect x="0" y="0" width="330" height="76" rx="6" fill="var(--fm2p4-pill-bg, #1f293d)" stroke="var(--fm2p4-hub-core, #00f0ff)" stroke-width="1.2" id="fm2p4-pearl-box" />
+      
+      <circle cx="16" cy="18" r="6" fill="var(--fm2p4-hub-core, #00f0ff)" id="fm2p4-pearl-icon" />
+      <text x="13" y="22" font-size="10" font-weight="900" fill="#090d16">!</text>
+      
+      <text x="28" y="21" font-size="10" font-weight="800" fill="var(--fm2p4-hub-core, #00f0ff)" id="fm2p4-pearl-head">PONTO-CHAVE PARA PROVA:</text>
+      
+      <text id="fm2p4-panel-pearl1" x="12" y="40" font-size="9.5" font-weight="500" fill="var(--fm2p4-text-pri, #f3f4f6)">Um alvo histológico ÚNICO explica múltiplos quadros.</text>
+      <text id="fm2p4-panel-pearl2" x="12" y="54" font-size="9.5" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">Nunca assuma doenças distintas para sintomas visuais,</text>
+      <text id="fm2p4-panel-pearl3" x="12" y="68" font-size="9.5" font-weight="400" fill="var(--fm2p4-text-sec, #9ca3af)">motores e cerebelares simultâneos em jovens.</text>
+    </g>
+
+  </g> <!-- End Panel Group -->
+
+  <!-- ==================== EMBEDDED INTERACTIVE JS ENGINE ==================== -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // Data Dictionary for 6 Interactive States
+      var statesData = {
+        hub: {
+          color: "var(--fm2p4-hub-core, #00f0ff)",
+          badge: "FISIOPATOLOGIA GERAL",
+          title: "HUB CENTRAL DE MIELINA DO SNC",
+          subtitle: "Alvo Oligodendrocitário & Condução Saltatória",
+          anat1: "Bainha de Mielina (SNC) & Oligodendrócitos",
+          anat2: "Substância Branca Periventricular, Tronco e Medula",
+          mech1: "A desmielinização focal rompe a condução saltatória nos Nódulos",
+          mech2: "de Ranvier, gerando lentificação severa ou dispersão temporal do",
+          mech3: "potencial de ação ao longo dos tratos centrais acometidos.",
+          sign1: "• Disseminação no Espaço e no Tempo",
+          sign2: "• Surtos de déficits neurofocais remitentes/recorrentes",
+          sign3: "• Fenômeno de Uhthoff (piora com elevação da temperatura)",
+          pearlHead: "PONTO-CHAVE PARA PROVA:",
+          pearl1: "Um alvo histológico ÚNICO explica múltiplos quadros.",
+          pearl2: "Nunca assuma doenças distintas para sintomas visuais,",
+          pearl3: "motores e cerebelares simultâneos em jovens."
+        },
+        vision: {
+          color: "var(--fm2p4-vision, #38bdf8)",
+          badge: "SÍNDROME VISUAL",
+          title: "NEURITE ÓPTICA (CN II)",
+          subtitle: "Desmielinização Focal da Via Visual Anterior",
+          anat1: "Nervo Óptico (Intraorbital / Retrobulbar) & Quiasma",
+          anat2: "Fibras Maculares de Alta Resolução Espacial",
+          mech1: "Acometimento inflamatório desmielinizado reduz a taxa de condução",
+          mech2: "das fibras de parvocélulas visuais, levando à queda subaguda da",
+          mech3: "acuidade e sensibilidade a contrastes / cores.",
+          sign1: "• Baixa de acuidade visual subaguda e dolorosa à movimentação",
+          sign2: "• Escotoma central / centrocecal & Discromatopsia (perda de cor)",
+          sign3: "• Defeito Pupilar Aferente Relativo (RAPD / Marcus Gunn)",
+          pearlHead: "PEGADINHA DE RESIDÊNCIA:",
+          pearl1: "Neurite Retrobulbar: o fundo de olho é NORMAL no início!",
+          pearl2: "Clássico: 'O paciente não vê nada e o médico não vê nada",
+          pearl3: "à fundoscopia'. Papilite (edema de disco) só em 1/3 dos casos."
+        },
+        motor: {
+          color: "var(--fm2p4-motor, #f87171)",
+          badge: "SÍNDROME MOTORA",
+          title: "TRATO CORTICOESPINAL (1º NM)",
+          subtitle: "Vias Descendentes Piramidais Corticais",
+          anat1: "Cápsula Interna, Pedúnculos Cerebrais e Medula",
+          anat2: "Vias Corticospinais Lateral e Anterior",
+          mech1: "Placas desmielinizantes corticoespinais interrompem a inibição",
+          mech2: "cortical sobre os arcos reflexos espinais, desencadeando",
+          mech3: "liberação piramidal e déficit de força motora voluntária.",
+          sign1: "• Paresia assimétrica (Monoparesia / Paraparesia)",
+          sign2: "• Espasticidade em 'canivete' & Sinal de Babinski (+)",
+          sign3: "• Hiperreflexia miotática, Clônus & Perda cutâneo-abdominal",
+          pearlHead: "DIAGNÓSTICO DIFERENCIAL:",
+          pearl1: "Sinais de Primeiro Neurônio Motor (1º NM) dominam!",
+          pearl2: "Presença de hiperreflexia e espasticidade descarta lesão",
+          pearl3: "de nervo periférico (2º NM) ou miopatia puras."
+        },
+        sensory: {
+          color: "var(--fm2p4-sensory, #fbbf24)",
+          badge: "SÍNDROME SENSITIVA",
+          title: "CORDÃO POSTERIOR & VIAS SENSITIVAS",
+          subtitle: "Vias Proprioceptivas & Espinotalâmicas",
+          anat1: "Fascículos Grácil e Cuneiforme (Cordão Posterior)",
+          anat2: "Nível Sensitivo Medular & Raízes de Entrada",
+          mech1: "A perda da bainha de mielina nas fibras Aβ espessas altera a",
+          mech2: "propriocepção consciente e a sensação vibratória, gerando",
+          mech3: "parestesias em faixa e desordem de condução mecanoelétrica.",
+          sign1: "• Parestesias, disestesias em 'bota/luva' ou nível medular",
+          sign2: "• Sinal de Lhermitte (sensação de choque pela coluna ao flexionar o pescoço)",
+          sign3: "• Ataxia sensitiva com Sinal de Romberg positivo",
+          pearlHead: "ACHADO SEMIOLÓGICO TÍPICO:",
+          pearl1: "Sinal de Lhermitte indica desmielinização cervical!",
+          pearl2: "Ocorre por hiperexitabilidade mecanoelétrica dos axônios",
+          pearl3: "desmielinizados expostos ao estiramento dural."
+        },
+        cerebellar: {
+          color: "var(--fm2p4-cerebellar, #c084fc)",
+          badge: "SÍNDROME CEREBELAR",
+          title: "PEDÚNCULOS & ALÇAS CEREBELARES",
+          subtitle: "Coordenação & Temporização do Movimento",
+          anat1: "Pedúnculos Cerebelares Superior/Médio & Substância Branca",
+          anat2: "Conexões Cortico-Ponto-Cerebelo-Talâmicas",
+          mech1: "Condução assincrônica nas alças de feedback cerebelar impede",
+          mech2: "a correção rápida e contínua do tom muscular e do direcionamento",
+          mech3: "espacial do movimento voluntário planejado.",
+          sign1: "• Ataxia de marcha (base alargada) e ataxia de tronco",
+          sign2: "• Dismetria (índex-nariz) e Disdiadococinesia (movimentos rápidos)",
+          sign3: "• Tremor de intenção (cinético) e Fala escandida (disartria)",
+          pearlHead: "TRÍADE HISTÓRICA DE CHARCOT:",
+          pearl1: "Tremor Intencional + Nistagmo + Fala Escandida.",
+          pearl2: "Representa o comprometimento multifocal cerebelar e de tronco",
+          pearl3: "característico das fases avançadas de desmielinização."
+        },
+        autonomic: {
+          color: "var(--fm2p4-autonomic, #34d399)",
+          badge: "AUTONÔMICA / ESFINCTERIANA",
+          title: "TRATOS AUTONÔMICOS DESCENDENTES",
+          subtitle: "Controle Mictional & Esfincteriano Central",
+          anat1: "Vias Reticulospinais e Centro Mictional Pontino / Sacral",
+          anat2: "Inervação Autonômica Visceral Medular (S2-S4)",
+          mech1: "Lesões desmielinizantes medulares interrompem a sinalização",
+          mech2: "suprassacral entre o tronco e a medula sacral, resultando em",
+          mech3: "dissinergia detrusor-esfíncter e disautonomia vegetativa.",
+          sign1: "• Bexiga Neurogênica (urgência mictional, polaciúria, incontinência)",
+          sign2: "• Retenção urinária por hiperreflexia do detrusor com resíduo elevado",
+          sign3: "• Disfunção esfincteriana anorretal & Disfunção erétil",
+          pearlHead: "IMPLICAÇÃO CLÍNICA PRÁTICA:",
+          pearl1: "Disfunção esfincteriana ocorre em até 80% dos casos!",
+          pearl2: "Sempre investigar resíduo pós-mictional em pacientes com",
+          pearl3: "queixas medulares para prevenir infecções de repetição e IRA."
+        }
+      };
+
+      var svgRoot = document.getElementById("fm2p4-svg");
+      if (!svgRoot) return;
+
+      // DOM Elements to Update
+      var elBar = document.getElementById("fm2p4-panel-bar");
+      var elBadgeBg = document.getElementById("fm2p4-panel-badge-bg");
+      var elBadgeTxt = document.getElementById("fm2p4-panel-badge-txt");
+      var elTitle = document.getElementById("fm2p4-panel-title");
+      var elSubtitle = document.getElementById("fm2p4-panel-subtitle");
+      
+      var elSec1Bar = document.getElementById("fm2p4-sec1-bar");
+      var elAnat1 = document.getElementById("fm2p4-panel-anat1");
+      var elAnat2 = document.getElementById("fm2p4-panel-anat2");
+      
+      var elSec2Bar = document.getElementById("fm2p4-sec2-bar");
+      var elMech1 = document.getElementById("fm2p4-panel-mech1");
+      var elMech2 = document.getElementById("fm2p4-panel-mech2");
+      var elMech3 = document.getElementById("fm2p4-panel-mech3");
+      
+      var elSec3Bar = document.getElementById("fm2p4-sec3-bar");
+      var elSign1 = document.getElementById("fm2p4-panel-sign1");
+      var elSign2 = document.getElementById("fm2p4-panel-sign2");
+      var elSign3 = document.getElementById("fm2p4-panel-sign3");
+      
+      var elPearlBox = document.getElementById("fm2p4-pearl-box");
+      var elPearlIcon = document.getElementById("fm2p4-pearl-icon");
+      var elPearlHead = document.getElementById("fm2p4-pearl-head");
+      var elPearl1 = document.getElementById("fm2p4-panel-pearl1");
+      var elPearl2 = document.getElementById("fm2p4-panel-pearl2");
+      var elPearl3 = document.getElementById("fm2p4-panel-pearl3");
+
+      function updateState(targetKey) {
+        var data = statesData[targetKey];
+        if (!data) return;
+
+        // Update Root data-active attribute
+        svgRoot.setAttribute("data-active", targetKey);
+
+        // Update Panel Color Accents
+        if (elBar) elBar.setAttribute("fill", data.color);
+        if (elBadgeBg) elBadgeBg.setAttribute("stroke", data.color);
+        if (elBadgeTxt) {
+          elBadgeTxt.setAttribute("fill", data.color);
+          elBadgeTxt.textContent = data.badge;
+        }
+        
+        if (elTitle) elTitle.textContent = data.title;
+        if (elSubtitle) elSubtitle.textContent = data.subtitle;
+
+        if (elSec1Bar) elSec1Bar.setAttribute("fill", data.color);
+        if (elAnat1) elAnat1.textContent = data.anat1;
+        if (elAnat2) elAnat2.textContent = data.anat2;
+
+        if (elSec2Bar) elSec2Bar.setAttribute("fill", data.color);
+        if (elMech1) elMech1.textContent = data.mech1;
+        if (elMech2) elMech2.textContent = data.mech2;
+        if (elMech3) elMech3.textContent = data.mech3;
+
+        if (elSec3Bar) elSec3Bar.setAttribute("fill", data.color);
+        if (elSign1) elSign1.textContent = data.sign1;
+        if (elSign2) elSign2.textContent = data.sign2;
+        if (elSign3) elSign3.textContent = data.sign3;
+
+        if (elPearlBox) elPearlBox.setAttribute("stroke", data.color);
+        if (elPearlIcon) elPearlIcon.setAttribute("fill", data.color);
+        if (elPearlHead) {
+          elPearlHead.setAttribute("fill", data.color);
+          elPearlHead.textContent = data.pearlHead;
+        }
+        
+        if (elPearl1) elPearl1.textContent = data.pearl1;
+        if (elPearl2) elPearl2.textContent = data.pearl2;
+        if (elPearl3) elPearl3.textContent = data.pearl3;
+      }
+
+      // Attach Event Listeners to all .fm2p4-interactive elements
+      var interactiveEls = svgRoot.querySelectorAll(".fm2p4-interactive");
+      for (var i = 0; i < interactiveEls.length; i++) {
+        (function(el) {
+          var target = el.getAttribute("data-target");
+          if (!target) return;
+
+          el.addEventListener("click", function() {
+            updateState(target);
+          });
+
+          el.addEventListener("keydown", function(evt) {
+            if (evt.key === "Enter" || evt.key === " ") {
+              evt.preventDefault();
+              updateState(target);
+            }
+          });
+        })(interactiveEls[i]);
+      }
+
+      // Initialize default state
+      updateState("hub");
+    })();
+    ]]>
+  </script>
+</svg>
+
+    </div>
+    <figcaption class="fig__cap"><span class="fig__label">Piso</span>Hub “mielina” irradiando chips clínicos: visão · motor · sensitivo · cerebelo · autonômico.</figcaption>
+  </figure>
+
+  <div class="continuity" aria-label="Continuidade">
+    <p>A manifestação mais clássica dessa lógica — <strong>neurite óptica</strong>.</p>
+  </div>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p4-q1" aria-labelledby="p4-q1-enun">
+    <h3>Quiz</h3>
+    <p class="quiz__enun" id="p4-q1-enun"><b>Q1.</b> O alvo molecular/estrutural da EM é:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Exclusivamente o corpo do neurônio motor</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>A bainha de mielina do SNC</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>Apenas a retina</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>Apenas o SNP</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> O alvo é a <strong>bainha de mielina do SNC</strong> — parte comum, não um neurônio isolado.</p>
+      <p><b>(A)</b> não é “contra o neurônio motor”. <b>(C)</b> retina não é o alvo. <b>(D)</b> EM não pega SNP.</p>
+      <p><em>Por que se cai na A:</em> achar que cada doença tem “um neurônio-alvo”.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+
+  <section class="quiz" data-quiz data-gabarito="B" data-quiz-id="p4-q2" aria-labelledby="p4-q2-enun">
+    <p class="quiz__enun" id="p4-q2-enun"><b>Q2.</b> O quadro clínico é amplo porque:</p>
+    <div class="quiz__alts">
+      <button class="alt" data-l="A"><span class="ltr">A</span><span>Cada paciente tem um vírus diferente</span></button>
+      <button class="alt" data-l="B"><span class="ltr">B</span><span>A mielina é comum a quase todos os neurônios centrais</span></button>
+      <button class="alt" data-l="C"><span class="ltr">C</span><span>A doença só pega um trato</span></button>
+      <button class="alt" data-l="D"><span class="ltr">D</span><span>É sempre sistêmica multiórgão</span></button>
+    </div>
+    <button class="quiz__btn" data-quiz-verificar>Verificar resposta</button>
+    <div class="quiz__explicacao" data-quiz-explicacao hidden>
+      <p><b>Gabarito: B.</b> A <strong>infraestrutura comum</strong> (mielina) faz o quadro depender de onde a bainha somiu — daí a amplitude.</p>
+      <p><b>(A)</b> não é vírus por paciente. <b>(C)</b> não é um trato só. <b>(D)</b> é neurológica, não sistêmica multiórgão.</p>
+      <p><em>Por que se cai na C:</em> pensar “uma doença = um trato = um sintoma”.</p>
+    </div>
+    <span class="quiz__live" data-quiz-live aria-live="polite" role="status"></span>
+  </section>
+<nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="p3.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">O que é EM: quatro âncoras</span></a><a class="next" href="p5.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Neurite óptica: o II par é SNC</span></a></nav>
+</div>
+</main>
+<footer class="rodape">Esclerose múltipla · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm2.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Esclerose múltipla · 12 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a class="menu-panel__link" href="index.html">1. Jaqueline: dois surtos, visão e motor</a></li>
+      <li><a class="menu-panel__link" href="p2.html">2. Espástica = 1º NMS — e o nome da doença</a></li>
+      <li><a class="menu-panel__link" href="p3.html">3. O que é EM: quatro âncoras</a></li>
+      <li><a class="menu-panel__link is-current" href="p4.html">4. Por que o quadro é múltiplo: a mielina</a></li>
+      <li><a class="menu-panel__link" href="p5.html">5. Neurite óptica: o II par é SNC</a></li>
+      <li><a class="menu-panel__link" href="p6.html">6. As três de prova + Uhthoff</a></li>
+      <li><a class="menu-panel__link" href="p7.html">7. Surto-remissão vs 15% progressiva</a></li>
+      <li><a class="menu-panel__link" href="p8.html">8. McDonald: tempo e espaço</a></li>
+      <li><a class="menu-panel__link" href="p9.html">9. RM obrigatória: prova o que a clínica suspeita</a></li>
+      <li><a class="menu-panel__link" href="p10.html">10. LCR e a pegadinha do conversivo</a></li>
+      <li><a class="menu-panel__link" href="p11.html">11. Vignette 25 a: por que é EM</a></li>
+      <li><a class="menu-panel__link" href="p12.html">12. Surto, sequela e PCDT SUS</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){ var p=ov.querySelector('.menu-panel'); if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

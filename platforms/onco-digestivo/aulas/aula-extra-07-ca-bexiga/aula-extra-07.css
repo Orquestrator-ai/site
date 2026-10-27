@@ -1,0 +1,195 @@
+/* aula-extra-07.css — estilos específicos das interações bespoke da Aula Extra 7 (Câncer de Bexiga).
+   Herda 100% dos tokens da plataforma (tokens.css). NÃO redefine token canônico.
+   Só (1) mapeia tokens que os SVGs do ilustrador referenciaram de outro projeto (gist.css:
+   --gold, --gold-soft, --ink-80, --pr-amber + glows) para a paleta cir-onco2, e
+   (2) estados visuais dos 12 SVGs interativos que o components.css compartilhado não cobre.
+   Paleta semântica do bloco urologia: coral = patológico/invasivo · teal = saudável/conservador ·
+   âmbar (--warn-amber / --gold) = decisão/divisor. Cor nunca é único portador (rótulo textual sempre). */
+
+/* ===== (1) MAPEAMENTO DE TOKENS DE OUTRO PROJETO → cir-onco2 =====
+   Os SVG-11/12 + MC-1..MC-7 vieram referenciando --gold/--gold-soft/--ink-80/--pr-amber e glows
+   (tokens do projeto GIST). Aqui mapeamos para os tokens canônicos da cir-onco2, SEM tocar
+   tokens.css. --warn-amber é o âmbar da casa; --gold é seu alias para decisão/divisor. */
+:root {
+  --gold: var(--warn-amber);
+  --gold-soft: var(--warn-amber-dim);
+  --pr-amber: var(--warn-amber);
+  --ink-80: var(--ink-90);
+  --state-correct: #5fdfa0;            /* verde "acertou/correto" (igual --ok-green canônico) */
+  --teal-glow: rgba(79, 214, 192, .45);
+  --teal-glow-soft: rgba(79, 214, 192, .30);
+  --coral-glow: rgba(244, 113, 90, .42);
+  --amber-glow: rgba(242, 181, 65, .42);
+}
+:root[data-theme="light"] {
+  --state-correct: #1f9e6b;
+  --teal-glow: rgba(15, 125, 112, .40);
+  --teal-glow-soft: rgba(15, 125, 112, .26);
+  --coral-glow: rgba(200, 69, 58, .36);
+  --amber-glow: rgba(173, 124, 20, .36);
+}
+
+/* ===== (2) ELEMENTOS COMUNS DE INTERAÇÃO ===== */
+
+/* região aria-live anexada a cada figura interativa (anúncio do estado para leitor de tela) */
+.figure-svg .bx-live {
+  margin: var(--sp-3) 0 0;
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--ink-90);
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--teal-40);
+  min-height: 1.2em;
+}
+
+/* NOTA DE ALINHAMENTO À AULA 6 (controle aprovado):
+   a aula 7 originalmente embrulhava as duas peças em <div class="figure-pair figure-pair--wide">
+   com grid. O chassi (components.css) NÃO conhece .figure-pair e ancora figuras como filhas
+   diretas de .page__container (.figure-svg { margin } + svg width:100%). O wrapper de grid
+   espremia os SVGs em meia-coluna ilegível, abria buraco vertical ao lado da peça mais curta
+   e, ao colapsar a coluna, jogava board-wants/dont-confuse para min-content (texto vertical),
+   além de causar sobreposição com o quiz. Correção: os 12 wrappers foram REMOVIDOS do HTML e
+   as 24 figuras agora são <figure class="figure-svg"|"med"> flat, irmãs diretas de
+   page__container — paridade estrutural 1:1 com a aula 6. Não há mais .figure-pair no projeto. */
+
+/* responsivo: SVGs grandes escalam sem estourar a coluna (defensivo; chassi já põe
+   width:100% no svg, isto cobre stage/frame). Igual à regra da aula 6. */
+.figure-svg__stage svg, .figure-svg__frame svg { max-width: 100%; height: auto; }
+
+/* foco visível padronizado em qualquer alvo interativo dentro de SVG (não remover outline) */
+.figure-svg svg [tabindex]:focus-visible,
+.figure-svg svg [role="button"]:focus-visible,
+.figure-svg svg [role="radio"]:focus-visible,
+.figure-svg svg [role="checkbox"]:focus-visible,
+.figure-svg svg [role="slider"]:focus-visible {
+  outline: 2px solid var(--warn-amber);
+  outline-offset: 2px;
+}
+
+/* segmented control externo (toggle vegetante×CIS — SVG-6) */
+.bx-seg {
+  display: inline-flex; gap: 0; margin-top: var(--sp-3);
+  border: 1px solid var(--border-mid); border-radius: var(--r-pill); overflow: hidden;
+}
+.bx-seg__btn {
+  font: inherit; cursor: pointer; background: var(--bg-elevated); color: var(--ink-70);
+  border: 0; padding: var(--sp-2) var(--sp-5); min-height: 44px;
+  transition: background var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+.bx-seg__btn + .bx-seg__btn { border-left: 1px solid var(--border-mid); }
+.bx-seg__btn[aria-pressed="true"] { background: var(--teal-05); color: var(--teal-60); font-weight: 700; }
+.bx-seg__btn:focus-visible { outline: 2px solid var(--teal-60); outline-offset: -2px; }
+
+/* ===== ESTADOS POR SVG ===== */
+
+/* SVG-1 — barras: cursor pointer e transição de opacity do tooltip */
+.il-svg1 .il-bar { cursor: pointer; }
+.il-svg1 .il-tip { transition: opacity var(--dur-mid) var(--ease-out); }
+
+/* SVG-2 — slider: thumb e mucosa com transição suave do preenchimento */
+.il-svg2 #il-svg2-thumb { cursor: grab; }
+.il-svg2 #il-svg2-thumb:active { cursor: grabbing; }
+.il-svg2 #il-svg2-mucosa,
+.il-svg2 #il-svg2-track { transition: stroke-dasharray var(--dur-fast) linear; }
+
+/* SVG-3 — fatores: cursor pointer no card-alvo */
+.il-svg3 .il-factor { cursor: pointer; }
+
+/* SVG-4 — steps: cursor pointer e transição de opacity */
+.il-svg4 .il-step { cursor: pointer; transition: opacity var(--dur-mid) var(--ease-out); }
+
+/* SVG-5 — nós: cursor pointer; cursor-anel com transição de translação */
+.il-svg5 .il-node { cursor: pointer; }
+.il-svg5 #il-svg5-cursor { transition: cx var(--dur-mid) var(--ease-lux); }
+
+/* SVG-6 — lados e hotspots */
+.bz-svg6 .bz6-side { transition: opacity var(--dur-mid) var(--ease-out); }
+.bz-svg6 .bz6-hotspot { cursor: pointer; }
+.bz-svg6 .bz6-hotspot[aria-pressed="true"] circle:first-child { stroke-width: 3; }
+
+/* SVG-7 — nós do fluxograma; detalhe das exceções escondido até abrir */
+.bz-svg7 .bz7-node, .bz-svg7 .bz7-branch { cursor: pointer; }
+.bz-svg7 .bz7-detail { opacity: 0; transition: opacity var(--dur-mid) var(--ease-out); pointer-events: none; }
+.bz-svg7 .bz7-detail.is-on { opacity: 1; }
+
+/* SVG-8 ÂNCORA — divisor T2: passo, flash, invasão */
+.bz-svg8 .bz8-step { cursor: pointer; }
+.bz-svg8 .bz8-step[aria-pressed="true"] rect { stroke-width: 3.2; }
+.bz-svg8 .bz8-depth { transition: y var(--dur-mid) var(--ease-lux), height var(--dur-mid) var(--ease-lux); }
+.bz-svg8 .bz8-flash { transition: opacity var(--dur-mid) var(--ease-out); }
+@keyframes bx-divisor-pulse {
+  0%   { opacity: .25; }
+  35%  { opacity: 1; }
+  100% { opacity: .9; }
+}
+.bz-svg8 .bz8-flash.is-flash { animation: bx-divisor-pulse var(--dur-slow) var(--ease-out) 1; }
+
+/* SVG-9 — toggles e cartão de resultado */
+.bz-svg9 .bz9-toggle { cursor: pointer; }
+.bz-svg9 .bz9-toggle[aria-checked="true"] rect { stroke: var(--warn-amber); stroke-width: 2; }
+.bz-svg9 .bz9-result rect { transition: fill var(--dur-mid) var(--ease-out), stroke var(--dur-mid) var(--ease-out); }
+
+/* SVG-10 — cistectomia: cenas, órgãos, knob, derivação */
+.bz-svg10 .bz10-organ { cursor: pointer; }
+.bz-svg10 .bz10-organ[aria-pressed="true"] { filter: drop-shadow(0 0 6px var(--amber-glow)); }
+.bz-svg10 .bz10-toggle, .bz-svg10 .bz10-deriv-opt { cursor: pointer; }
+.bz-svg10 .bz10-knob { transition: x var(--dur-mid) var(--ease-lux); }
+
+/* SVG-11 — grafo de nós */
+.bx-svg11 .bx-node { cursor: pointer; }
+.bx-svg11 .bx-node--active circle { stroke-width: 3.5; }
+.bx-svg11 [data-edge].is-on { filter: drop-shadow(0 0 4px var(--amber-glow)); }
+.bx-svg11 .bx-node:focus-visible circle { stroke-width: 3.5; }
+
+/* SVG-12 — quiz-âncora */
+.bx-svg12 .bx-opt { cursor: pointer; }
+.bx-svg12 .bx-opt rect { transition: fill var(--dur-fast) ease, stroke var(--dur-fast) ease; }
+.bx-svg12 .bx-opt[aria-checked="true"] rect { stroke-width: 2.4; }
+
+/* ===== reduced-motion: zera transições/animações de estado ===== */
+@media (prefers-reduced-motion: reduce) {
+  .il-svg1 .il-tip,
+  .il-svg2 #il-svg2-mucosa, .il-svg2 #il-svg2-track,
+  .il-svg4 .il-step, .il-svg5 #il-svg5-cursor,
+  .bz-svg6 .bz6-side, .bz-svg7 .bz7-detail,
+  .bz-svg8 .bz8-depth, .bz-svg8 .bz8-flash,
+  .bz-svg9 .bz9-result rect, .bz-svg10 .bz10-knob,
+  .bx-svg12 .bx-opt rect { transition: none; }
+  .bz-svg8 .bz8-flash.is-flash { animation: none; opacity: .9; }
+}
+
+/* ===== (3) ESTILOS DOS SVGs MC-4..MC-7 (extraídos dos <style> inline no SVG → drift gate) =====
+   Eram <style> dentro de <defs> dos SVGs interativos das páginas 8, 9, 11 e 12. Movidos para cá
+   sem mudança de seletor nem de valor — a CSS de documento cascateia normalmente para o SVG inline.
+   Visual idêntico; zero <style> no HTML. */
+.mc4 text{fill:var(--ink-100)}
+.mc4 .mut{fill:var(--ink-50)}
+.mc4 .zone{transition:opacity var(--dur-mid) var(--ease-lux)}
+.mc4:hover .zone{opacity:.55}
+.mc4 .zone:hover,.mc4 .zone:focus-visible{opacity:1;outline:none}
+.mc4 .zone:focus-visible .zbox{stroke:var(--warn-amber);stroke-width:3}
+@media (prefers-reduced-motion: reduce){.mc4 .zone{transition:none}.mc4:hover .zone{opacity:1}}
+
+.mc5 text{fill:var(--ink-100)}
+.mc5 .mut{fill:var(--ink-50)}
+.mc5 .step{transition:transform var(--dur-mid) var(--ease-lux)}
+.mc5 .step:hover,.mc5 .step:focus-visible{transform:translateY(-6px);outline:none}
+.mc5 .step:focus-visible rect{stroke:var(--warn-amber);stroke-width:3}
+@media (prefers-reduced-motion: reduce){.mc5 .step{transition:none}.mc5 .step:hover,.mc5 .step:focus-visible{transform:none}}
+
+.mc6 text{fill:var(--ink-100)}
+.mc6 .mut{fill:var(--ink-50)}
+.mc6 .col{transition:opacity var(--dur-mid) var(--ease-lux)}
+.mc6:hover .col{opacity:.5}
+.mc6 .col:hover,.mc6 .col:focus-visible{opacity:1;outline:none}
+.mc6 .col:focus-visible .cbox{stroke:var(--warn-amber);stroke-width:3}
+@media (prefers-reduced-motion: reduce){.mc6 .col{transition:none}.mc6:hover .col{opacity:1}}
+
+.mc7 text{fill:var(--ink-100)}
+.mc7 .mut{fill:var(--ink-50)}
+.mc7 .node{transition:transform var(--dur-mid) var(--ease-lux)}
+.mc7 .node:hover,.mc7 .node:focus-visible{transform:translateY(-4px);outline:none}
+.mc7 .node:focus-visible rect{stroke:var(--warn-amber);stroke-width:3}
+@media (prefers-reduced-motion: reduce){.mc7 .node{transition:none}.mc7 .node:hover,.mc7 .node:focus-visible{transform:none}}

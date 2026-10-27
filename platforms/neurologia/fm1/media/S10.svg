@@ -1,0 +1,712 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="100%" height="auto" class="fm1p10-root" id="fm1p10-svg-root" role="img" aria-label="Especificidade Cutâneo-Neurológica da Dermatomiosite">
+  <defs>
+    <!-- Gradients -->
+    <radialGradient id="fm1p10-grad-gottron" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm1p10-gottron, #f43f5e)" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="var(--fm1p10-gottron, #f43f5e)" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="var(--fm1p10-gottron-dark, #be185d)" stop-opacity="0.2"/>
+    </radialGradient>
+    
+    <radialGradient id="fm1p10-grad-teal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--fm1p10-teal, #14b8a6)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="var(--fm1p10-teal, #14b8a6)" stop-opacity="0.1"/>
+    </radialGradient>
+
+    <linearGradient id="fm1p10-grad-panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm1p10-bg-card, #161e2e)"/>
+      <stop offset="100%" stop-color="var(--fm1p10-bg-card-alt, #0f172a)"/>
+    </linearGradient>
+
+    <filter id="fm1p10-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <filter id="fm1p10-glow-gottron" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* Scope all styles strictly under .fm1p10-root */
+    .fm1p10-root {
+      --fm1p10-bg-main: #0b0f19;
+      --fm1p10-bg-card: #161e2e;
+      --fm1p10-bg-card-alt: #111827;
+      --fm1p10-bg-hover: #1e293b;
+      --fm1p10-border-card: #28354d;
+      --fm1p10-border-active: #3b82f6;
+      
+      --fm1p10-text-title: #f8fafc;
+      --fm1p10-text-body: #cbd5e1;
+      --fm1p10-text-muted: #94a3b8;
+      
+      --fm1p10-gottron: #f43f5e;
+      --fm1p10-gottron-dark: #be185d;
+      --fm1p10-gottron-glow: rgba(244, 63, 94, 0.4);
+      --fm1p10-gottron-bg: rgba(244, 63, 94, 0.12);
+      
+      --fm1p10-teal: #14b8a6;
+      --fm1p10-teal-glow: rgba(20, 184, 166, 0.4);
+      --fm1p10-teal-bg: rgba(20, 184, 166, 0.12);
+      
+      --fm1p10-gold: #f59e0b;
+      --fm1p10-gold-glow: rgba(245, 158, 11, 0.4);
+      --fm1p10-gold-bg: rgba(245, 158, 11, 0.15);
+      
+      --fm1p10-green: #10b981;
+      --fm1p10-green-bg: rgba(16, 185, 129, 0.15);
+      
+      --fm1p10-red: #ef4444;
+      --fm1p10-red-bg: rgba(239, 68, 68, 0.15);
+      
+      --fm1p10-hand-skin: #1e293b;
+      --fm1p10-hand-stroke: #475569;
+      --fm1p10-hand-joint: #334155;
+      
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--fm1p10-bg-main, #0b0f19);
+      user-select: none;
+    }
+
+    [data-theme="light"] .fm1p10-root, .fm1p10-root[data-theme="light"] {
+      --fm1p10-bg-main: #f8fafc;
+      --fm1p10-bg-card: #ffffff;
+      --fm1p10-bg-card-alt: #f1f5f9;
+      --fm1p10-bg-hover: #e2e8f0;
+      --fm1p10-border-card: #cbd5e1;
+      --fm1p10-border-active: #2563eb;
+      
+      --fm1p10-text-title: #0f172a;
+      --fm1p10-text-body: #334155;
+      --fm1p10-text-muted: #64748b;
+      
+      --fm1p10-gottron: #be185d;
+      --fm1p10-gottron-dark: #9f1239;
+      --fm1p10-gottron-glow: rgba(190, 24, 93, 0.3);
+      --fm1p10-gottron-bg: rgba(190, 24, 93, 0.08);
+      
+      --fm1p10-teal: #0d9488;
+      --fm1p10-teal-glow: rgba(13, 148, 136, 0.3);
+      --fm1p10-teal-bg: rgba(13, 148, 136, 0.08);
+      
+      --fm1p10-gold: #d97706;
+      --fm1p10-gold-glow: rgba(217, 119, 6, 0.3);
+      --fm1p10-gold-bg: rgba(217, 119, 6, 0.1);
+      
+      --fm1p10-green: #047857;
+      --fm1p10-green-bg: rgba(4, 120, 87, 0.1);
+      
+      --fm1p10-red: #b91c1c;
+      --fm1p10-red-bg: rgba(185, 28, 28, 0.1);
+      
+      --fm1p10-hand-skin: #e2e8f0;
+      --fm1p10-hand-stroke: #94a3b8;
+      --fm1p10-hand-joint: #cbd5e1;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fm1p10-pulse {
+      0% { r: 14px; opacity: 0.8; stroke-width: 2px; }
+      50% { r: 20px; opacity: 0.3; stroke-width: 4px; }
+      100% { r: 14px; opacity: 0.8; stroke-width: 2px; }
+    }
+
+    @keyframes fm1p10-fade-in {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fm1p10-pulse-ring {
+      animation: fm1p10-pulse 2.5s infinite ease-in-out;
+      transform-origin: center;
+    }
+
+    /* Reduced Motion Respect */
+    @media (prefers-reduced-motion: reduce) {
+      .fm1p10-pulse-ring {
+        animation: none;
+      }
+    }
+
+    /* Interactive Elements */
+    .fm1p10-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .fm1p10-btn:hover {
+      filter: brightness(1.15);
+    }
+    .fm1p10-btn:focus-visible {
+      outline: 2px solid var(--fm1p10-border-active, #3b82f6);
+    }
+
+    .fm1p10-hotspot {
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .fm1p10-hotspot:hover {
+      filter: brightness(1.25);
+    }
+
+    /* Dynamic Visibility Control */
+    .fm1p10-scene { display: none; }
+    .fm1p10-detail-panel { display: none; }
+
+    /* Active Tab Displays */
+    .fm1p10-root[data-active-tab="gottron"] .fm1p10-scene-gottron { display: block; animation: fm1p10-fade-in 0.3s ease-out; }
+    .fm1p10-root[data-active-tab="ocular"] .fm1p10-scene-ocular { display: block; animation: fm1p10-fade-in 0.3s ease-out; }
+    .fm1p10-root[data-active-tab="simulator"] .fm1p10-scene-simulator { display: block; animation: fm1p10-fade-in 0.3s ease-out; }
+
+    /* Active Joint Displays */
+    .fm1p10-root[data-active-joint="mcp"] #fm1p10-detail-mcp { display: block; }
+    .fm1p10-root[data-active-joint="pip"] #fm1p10-detail-pip { display: block; }
+    .fm1p10-root[data-active-joint="dip"] #fm1p10-detail-dip { display: block; }
+    .fm1p10-root[data-active-joint="none"] #fm1p10-detail-default { display: block; }
+
+    /* Tab Button States */
+    .fm1p10-tab-bg {
+      fill: var(--fm1p10-bg-card, #161e2e);
+      stroke: var(--fm1p10-border-card, #28354d);
+      stroke-width: 1.5px;
+    }
+    .fm1p10-tab-text {
+      fill: var(--fm1p10-text-muted, #94a3b8);
+      font-size: 13px;
+      font-weight: 600;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+    .fm1p10-root[data-active-tab="gottron"] #fm1p10-tab-gottron .fm1p10-tab-bg {
+      fill: var(--fm1p10-gottron-bg, rgba(244, 63, 94, 0.12));
+      stroke: var(--fm1p10-gottron, #f43f5e);
+      stroke-width: 2px;
+    }
+    .fm1p10-root[data-active-tab="gottron"] #fm1p10-tab-gottron .fm1p10-tab-text {
+      fill: var(--fm1p10-gottron, #f43f5e);
+      font-weight: 700;
+    }
+
+    .fm1p10-root[data-active-tab="ocular"] #fm1p10-tab-ocular .fm1p10-tab-bg {
+      fill: var(--fm1p10-teal-bg, rgba(20, 184, 166, 0.12));
+      stroke: var(--fm1p10-teal, #14b8a6);
+      stroke-width: 2px;
+    }
+    .fm1p10-root[data-active-tab="ocular"] #fm1p10-tab-ocular .fm1p10-tab-text {
+      fill: var(--fm1p10-teal, #14b8a6);
+      font-weight: 700;
+    }
+
+    .fm1p10-root[data-active-tab="simulator"] #fm1p10-tab-simulator .fm1p10-tab-bg {
+      fill: var(--fm1p10-gold-bg, rgba(245, 158, 11, 0.15));
+      stroke: var(--fm1p10-gold, #f59e0b);
+      stroke-width: 2px;
+    }
+    .fm1p10-root[data-active-tab="simulator"] #fm1p10-tab-simulator .fm1p10-tab-text {
+      fill: var(--fm1p10-gold, #f59e0b);
+      font-weight: 700;
+    }
+
+    /* Joint Highlight Ring States */
+    .fm1p10-joint-ring {
+      fill: none;
+      stroke: var(--fm1p10-gottron, #f43f5e);
+      stroke-width: 2px;
+      opacity: 0.4;
+      transition: all 0.2s ease;
+    }
+    .fm1p10-root[data-active-joint="mcp"] .fm1p10-mcp-ring { opacity: 1; stroke-width: 3px; filter: drop-shadow(0 0 6px var(--fm1p10-gottron)); }
+    .fm1p10-root[data-active-joint="pip"] .fm1p10-pip-ring { opacity: 1; stroke-width: 3px; filter: drop-shadow(0 0 6px var(--fm1p10-gottron)); }
+    .fm1p10-root[data-active-joint="dip"] .fm1p10-dip-ring { opacity: 1; stroke-width: 3px; filter: drop-shadow(0 0 6px var(--fm1p10-gottron)); }
+  </style>
+
+  <!-- BACKGROUND BASE -->
+  <rect width="960" height="700" rx="16" fill="var(--fm1p10-bg-main, #0b0f19)"/>
+
+  <!-- HEADER CONTRACT SECTION (Contract Rule #1: Name piece + interpretation legend) -->
+  <g id="fm1p10-header" transform="translate(30, 24)">
+    <text x="0" y="20" fill="var(--fm1p10-text-title, #f8fafc)" font-size="20" font-weight="800" letter-spacing="-0.02em">
+      ESPECIFICIDADE CUTÂNEO-NEUROLÓGICA DA DERMATOMIOSITE (DM)
+    </text>
+    <text x="0" y="42" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="13" font-weight="500">
+      Gottron crava o diagnóstico nos nós articulares dorsais · Acometimento muscular da DM poupa rigorosamente a musculatura ocular
+    </text>
+  </g>
+
+  <!-- INTERACTIVE SCENE SELECTOR TABS (390px responsive touch ready: height=38px >= 24px) -->
+  <g id="fm1p10-tabs" transform="translate(30, 75)">
+    <!-- TAB 1: GOTTRON -->
+    <g class="fm1p10-btn" id="fm1p10-tab-gottron" role="button" tabindex="0" aria-label="Cena 1: Pápulas de Gottron no Dorso da Mão">
+      <rect class="fm1p10-tab-bg" width="280" height="38" rx="8" x="0" y="0"/>
+      <circle cx="20" cy="19" r="6" fill="var(--fm1p10-gottron, #f43f5e)"/>
+      <text class="fm1p10-tab-text" x="148" y="20">1. Pápulas de Gottron (Articulações)</text>
+    </g>
+    
+    <!-- TAB 2: OCULAR SPARING -->
+    <g class="fm1p10-btn" id="fm1p10-tab-ocular" role="button" tabindex="0" aria-label="Cena 2: Fronteira Ocular - DM Poupa o Olho">
+      <rect class="fm1p10-tab-bg" width="290" height="38" rx="8" x="296" y="0"/>
+      <circle cx="316" cy="19" r="6" fill="var(--fm1p10-teal, #14b8a6)"/>
+      <text class="fm1p10-tab-text" x="448" y="20">2. Fronteira Ocular (DM vs Miastenia)</text>
+    </g>
+
+    <!-- TAB 3: RESIDENCY SIMULATOR -->
+    <g class="fm1p10-btn" id="fm1p10-tab-simulator" role="button" tabindex="0" aria-label="Cena 3: Simulador de Prova e Matriz Comparativa">
+      <rect class="fm1p10-tab-bg" width="304" height="38" rx="8" x="596" y="0"/>
+      <circle cx="616" cy="19" r="6" fill="var(--fm1p10-gold, #f59e0b)"/>
+      <text class="fm1p10-tab-text" x="754" y="20">3. Matriz Comparativa &amp; Pegadinha</text>
+    </g>
+  </g>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <!-- LEFT COLUMN: ANATOMICAL HAND ILLUSTRATION (x: 30, y: 130, w: 430, h: 500) -->
+  <g id="fm1p10-left-column" transform="translate(30, 130)">
+    <!-- HAND ANATOMY CARD -->
+    <rect width="430" height="500" rx="14" fill="url(#fm1p10-grad-panel)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="1.5" filter="url(#fm1p10-shadow)"/>
+    
+    <!-- Card Header -->
+    <text x="20" y="32" fill="var(--fm1p10-text-title, #f8fafc)" font-size="15" font-weight="700">
+      TOPOGRAFIA DAS PÁPULAS DE GOTTRON
+    </text>
+    <text x="20" y="50" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="12">
+      Selecione um grupo articular (MCP, PIP ou DIP) no dorso da mão:
+    </text>
+
+    <!-- ANATOMICAL DORSAL HAND DRAWING -->
+    <g id="fm1p10-hand-graphic" transform="translate(35, 70)">
+      <!-- Wrist Base -->
+      <path d="M 120 380 C 130 360, 140 340, 140 310 L 220 310 C 220 340, 230 360, 240 380 Z" fill="var(--fm1p10-hand-skin, #1e293b)" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="2"/>
+      
+      <!-- Metacarpal Palm Dorsum -->
+      <path d="M 100 240 C 90 280, 110 310, 140 310 L 220 310 C 250 310, 270 280, 265 240 C 265 220, 260 210, 255 200 L 105 200 C 100 210, 95 220, 100 240 Z" fill="var(--fm1p10-hand-skin, #1e293b)" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="2"/>
+
+      <!-- Thumb (Digit 1) -->
+      <path d="M 100 240 C 80 250, 50 240, 35 210 C 25 190, 35 170, 55 175 L 85 195 L 105 200 Z" fill="var(--fm1p10-hand-skin, #1e293b)" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="2"/>
+      <!-- Thumb IP Joint -->
+      <ellipse cx="50" cy="190" rx="8" ry="10" fill="var(--fm1p10-hand-joint, #334155)"/>
+
+      <!-- Index Finger (Digit 2) -->
+      <path d="M 105 200 L 105 130 L 105 70 L 105 35 C 105 20, 125 20, 125 35 L 125 70 L 125 130 L 125 200 Z" fill="var(--fm1p10-hand-skin, #1e293b)" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="2"/>
+      
+      <!-- Middle Finger (Digit 3) -->
+      <path d="M 140 200 L 140 120 L 140 60 L 140 15 C 140 0, 162 0, 162 15 L 162 60 L 162 120 L 162 200 Z" fill="var(--fm1p10-hand-skin, #1e293b)" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="2"/>
+
+      <!-- Ring Finger (Digit 4) -->
+      <path d="M 178 200 L 178 125 L 178 68 L 178 25 C 178 12, 198 12, 198 25 L 198 68 L 198 125 L 198 200 Z" fill="var(--fm1p10-hand-skin, #1e293b)" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="2"/>
+
+      <!-- Little Finger (Digit 5) -->
+      <path d="M 215 200 L 215 140 L 215 90 L 215 55 C 215 42, 233 42, 233 55 L 233 90 L 233 140 L 233 200 Z" fill="var(--fm1p10-hand-skin, #1e293b)" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="2"/>
+
+      <!-- Extensor Tendon Lines (Dorsal Detail) -->
+      <path d="M 180 310 L 115 200 M 180 310 L 151 200 M 180 310 L 188 200 M 180 310 L 224 200" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+
+      <!-- ================= GOTTRON PAPULES ON JOINTS ================= -->
+      <!-- MCP JOINTS (Metacarpophalangeal 2-5) at Y = 200 -->
+      <g id="fm1p10-mcp-group">
+        <!-- MCP Rings -->
+        <circle class="fm1p10-joint-ring fm1p10-mcp-ring" cx="115" cy="200" r="14"/>
+        <circle class="fm1p10-joint-ring fm1p10-mcp-ring" cx="151" cy="200" r="14"/>
+        <circle class="fm1p10-joint-ring fm1p10-mcp-ring" cx="188" cy="200" r="14"/>
+        <circle class="fm1p10-joint-ring fm1p10-mcp-ring" cx="224" cy="200" r="14"/>
+
+        <!-- MCP Papules (Violaceous Erythematous Plaques) -->
+        <ellipse cx="115" cy="200" rx="9" ry="7" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="151" cy="200" rx="10" ry="7" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="188" cy="200" rx="9" ry="7" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="224" cy="200" rx="8" ry="6" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+
+        <!-- Hotspot Trigger MCP -->
+        <rect class="fm1p10-hotspot" id="fm1p10-hs-mcp" x="95" y="185" width="145" height="30" fill="transparent" role="button" tabindex="0" aria-label="Ver detalhes das articulações metacarpofalângicas (MCP)"/>
+      </g>
+
+      <!-- PIP JOINTS (Proximal Interphalangeal 2-5) at Y = 130/125/140 -->
+      <g id="fm1p10-pip-group">
+        <!-- PIP Rings -->
+        <circle class="fm1p10-joint-ring fm1p10-pip-ring" cx="115" cy="130" r="12"/>
+        <circle class="fm1p10-joint-ring fm1p10-pip-ring" cx="151" cy="120" r="12"/>
+        <circle class="fm1p10-joint-ring fm1p10-pip-ring" cx="188" cy="125" r="12"/>
+        <circle class="fm1p10-joint-ring fm1p10-pip-ring" cx="224" cy="140" r="12"/>
+
+        <!-- PIP Papules -->
+        <ellipse cx="115" cy="130" rx="8" ry="6" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="151" cy="120" rx="8" ry="6" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="188" cy="125" rx="8" ry="6" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="224" cy="140" rx="7" ry="5" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+
+        <!-- Hotspot Trigger PIP -->
+        <rect class="fm1p10-hotspot" id="fm1p10-hs-pip" x="95" y="110" width="145" height="40" fill="transparent" role="button" tabindex="0" aria-label="Ver detalhes das articulações interfalângicas proximais (PIP)"/>
+      </g>
+
+      <!-- DIP JOINTS (Distal Interphalangeal 2-5) at Y = 70/60/68/90 -->
+      <g id="fm1p10-dip-group">
+        <!-- DIP Rings -->
+        <circle class="fm1p10-joint-ring fm1p10-dip-ring" cx="115" cy="70" r="10"/>
+        <circle class="fm1p10-joint-ring fm1p10-dip-ring" cx="151" cy="60" r="10"/>
+        <circle class="fm1p10-joint-ring fm1p10-dip-ring" cx="188" cy="68" r="10"/>
+        <circle class="fm1p10-joint-ring fm1p10-dip-ring" cx="224" cy="90" r="10"/>
+
+        <!-- DIP Papules -->
+        <ellipse cx="115" cy="70" rx="7" ry="5" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="151" cy="60" rx="7" ry="5" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="188" cy="68" rx="7" ry="5" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+        <ellipse cx="224" cy="90" rx="6" ry="4" fill="url(#fm1p10-grad-gottron)" filter="url(#fm1p10-glow-gottron)"/>
+
+        <!-- Hotspot Trigger DIP -->
+        <rect class="fm1p10-hotspot" id="fm1p10-hs-dip" x="95" y="50" width="145" height="50" fill="transparent" role="button" tabindex="0" aria-label="Ver detalhes das articulações interfalângicas distais (DIP)"/>
+      </g>
+
+      <!-- PULSING HIGHLIGHT ON MCP (Draw Attention) -->
+      <circle class="fm1p10-pulse-ring" cx="151" cy="200" r="16" fill="none" stroke="var(--fm1p10-gottron, #f43f5e)"/>
+
+      <!-- ANATOMICAL LABELS & LEADER LINES (Contract Rule #5: Labels never cross shape) -->
+      <!-- Label DIP -->
+      <path d="M 235 70 L 285 70" stroke="var(--fm1p10-gottron, #f43f5e)" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <circle cx="285" cy="70" r="3" fill="var(--fm1p10-gottron, #f43f5e)"/>
+      <text x="292" y="74" fill="var(--fm1p10-gottron, #f43f5e)" font-size="12" font-weight="700">DIP (Interfalângicas Distais)</text>
+
+      <!-- Label PIP -->
+      <path d="M 235 130 L 285 130" stroke="var(--fm1p10-gottron, #f43f5e)" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <circle cx="285" cy="130" r="3" fill="var(--fm1p10-gottron, #f43f5e)"/>
+      <text x="292" y="134" fill="var(--fm1p10-gottron, #f43f5e)" font-size="12" font-weight="700">PIP (Interfalângicas Proximais)</text>
+
+      <!-- Label MCP -->
+      <path d="M 235 200 L 285 200" stroke="var(--fm1p10-gottron, #f43f5e)" stroke-width="1.5"/>
+      <circle cx="285" cy="200" r="3" fill="var(--fm1p10-gottron, #f43f5e)"/>
+      <text x="292" y="204" fill="var(--fm1p10-gottron, #f43f5e)" font-size="12" font-weight="800">MCP (Metacarpofalângicas)</text>
+    </g>
+
+    <!-- BOTTOMLINE ANATOMICAL READOUT PANEL -->
+    <g id="fm1p10-joint-info-box" transform="translate(20, 375)">
+      <rect width="390" height="105" rx="8" fill="var(--fm1p10-bg-card-alt, #111827)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="1"/>
+      
+      <!-- DEFAULT DETAIL -->
+      <g class="fm1p10-detail-panel" id="fm1p10-detail-default">
+        <text x="14" y="24" fill="var(--fm1p10-gottron, #f43f5e)" font-size="13" font-weight="700">📌 Regra de Ouro Cutânea da DM:</text>
+        <text x="14" y="44" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12" width="360">
+          As Pápulas de Gottron aparecem <tspan font-weight="700" fill="var(--fm1p10-gottron, #f43f5e)">EXCLUSIVAMENTE SOBRE</tspan> as
+        </text>
+        <text x="14" y="62" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12">
+          prominências ósseas articulares (MCP, PIP, DIP).
+        </text>
+        <text x="14" y="84" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="11" font-style="italic">
+          💡 Difere da Psoríase (que acomete superfícies extensoras entre nós).
+        </text>
+      </g>
+
+      <!-- MCP DETAIL -->
+      <g class="fm1p10-detail-panel" id="fm1p10-detail-mcp">
+        <text x="14" y="24" fill="var(--fm1p10-gottron, #f43f5e)" font-size="13" font-weight="700">🔴 Nós Metacarpofalângicos (MCP 2–5):</text>
+        <text x="14" y="44" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12">
+          Sítio pré-dominante de placas eritemato-violáceas descamativas.
+        </text>
+        <text x="14" y="64" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12">
+          Histopatologia: Dermatite de interface vacuolar + mucina na derme.
+        </text>
+        <text x="14" y="86" fill="var(--fm1p10-gold, #f59e0b)" font-size="11" font-weight="600">
+          Patognomônico de Dermatomiosite (DM) · Sinal de Gottron se macular.
+        </text>
+      </g>
+
+      <!-- PIP DETAIL -->
+      <g class="fm1p10-detail-panel" id="fm1p10-detail-pip">
+        <text x="14" y="24" fill="var(--fm1p10-gottron, #f43f5e)" font-size="13" font-weight="700">🔴 Interfalângicas Proximais (PIP):</text>
+        <text x="14" y="44" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12">
+          Lesões simétricas sobre as dobras de extensão articulares.
+        </text>
+        <text x="14" y="64" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12">
+          Atrofia epidérmica e telangiectasias periungueais associadas.
+        </text>
+        <text x="14" y="86" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="11">
+          Presente em &gt;80% dos pacientes com DM clássica ou amiopática.
+        </text>
+      </g>
+
+      <!-- DIP DETAIL -->
+      <g class="fm1p10-detail-panel" id="fm1p10-detail-dip">
+        <text x="14" y="24" fill="var(--fm1p10-gottron, #f43f5e)" font-size="13" font-weight="700">🔴 Interfalângicas Distais (DIP):</text>
+        <text x="14" y="44" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12">
+          Acometimento articular acral preservando as áreas interarticulares.
+        </text>
+        <text x="14" y="64" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12">
+          Contraste crucial: A DM crava o nó; o Lúpus poupa o nó!
+        </text>
+        <text x="14" y="86" fill="var(--fm1p10-gold, #f59e0b)" font-size="11" font-weight="600">
+          Diferencial de Prova: DM = SOBRE o nó | Lúpus = ENTRE os nós.
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: OCULAR BORDER & CLINICAL BOARD (x: 480, y: 130, w: 450, h: 500) -->
+  <g id="fm1p10-right-column" transform="translate(480, 130)">
+    <!-- SCENE 1 & 2: OCULAR SPARING & CONTRAST DIAGRAM -->
+    <g class="fm1p10-scene fm1p10-scene-gottron fm1p10-scene-ocular" id="fm1p10-ocular-board">
+      <rect width="450" height="500" rx="14" fill="url(#fm1p10-grad-panel)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="1.5" filter="url(#fm1p10-shadow)"/>
+      
+      <!-- Card Header -->
+      <text x="20" y="32" fill="var(--fm1p10-text-title, #f8fafc)" font-size="15" font-weight="700">
+        FRONTEIRA OCULAR: DM POUPA × MIASTENIA MIRA
+      </text>
+      <text x="20" y="50" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="12">
+        Anatomia dos Músculos Extraoculares e Placa Motora (NC III, IV, VI)
+      </text>
+
+      <!-- EYE & EXTRAOCULAR MUSCLES DIAGRAM -->
+      <g id="fm1p10-eye-graphic" transform="translate(35, 70)">
+        <!-- Orbit Contour Background -->
+        <ellipse cx="180" cy="100" rx="130" ry="85" fill="var(--fm1p10-bg-card-alt, #111827)" stroke="var(--fm1p10-border-card, #28354d)" stroke-dasharray="4,4"/>
+        
+        <!-- Eyeball Globe -->
+        <circle cx="180" cy="100" r="55" fill="var(--fm1p10-hand-skin, #1e293b)" stroke="var(--fm1p10-hand-stroke, #475569)" stroke-width="2"/>
+        <!-- Cornea & Iris -->
+        <ellipse cx="215" cy="100" rx="18" ry="38" fill="var(--fm1p10-teal, #14b8a6)" opacity="0.3"/>
+        <ellipse cx="222" cy="100" rx="8" ry="24" fill="var(--fm1p10-teal, #14b8a6)"/>
+        <ellipse cx="224" cy="100" rx="4" ry="12" fill="#000000"/>
+
+        <!-- Extraocular Muscle Bands (Striated Myocytes) -->
+        <!-- Superior Rectus & Levator Palpebrae -->
+        <path d="M 80 55 C 110 50, 150 50, 190 52" fill="none" stroke="var(--fm1p10-teal, #14b8a6)" stroke-width="10" stroke-linecap="round"/>
+        <text x="75" y="42" fill="var(--fm1p10-teal, #14b8a6)" font-size="11" font-weight="700">M. Reto Superior / Elevador</text>
+
+        <!-- Inferior Rectus -->
+        <path d="M 80 145 C 110 150, 150 150, 190 148" fill="none" stroke="var(--fm1p10-teal, #14b8a6)" stroke-width="10" stroke-linecap="round"/>
+        <text x="75" y="165" fill="var(--fm1p10-teal, #14b8a6)" font-size="11" font-weight="700">M. Reto Inferior</text>
+
+        <!-- Lateral / Medial Muscle insertion -->
+        <path d="M 70 100 L 130 100" fill="none" stroke="var(--fm1p10-teal, #14b8a6)" stroke-width="14" opacity="0.8"/>
+        <text x="15" y="104" fill="var(--fm1p10-text-title, #f8fafc)" font-size="11" font-weight="700">N. Óptico / NC III</text>
+
+        <!-- Neuromuscular Junction Synapse Nodes (Plaques) -->
+        <circle cx="110" cy="53" r="4" fill="var(--fm1p10-gold, #f59e0b)"/>
+        <circle cx="110" cy="147" r="4" fill="var(--fm1p10-gold, #f59e0b)"/>
+        <circle cx="100" cy="100" r="4" fill="var(--fm1p10-gold, #f59e0b)"/>
+
+        <!-- SPARING BADGE OVER EYE (Contract Rule #3: Color with meaning) -->
+        <g transform="translate(230, 20)">
+          <rect width="165" height="52" rx="8" fill="var(--fm1p10-green-bg, rgba(16, 185, 129, 0.15))" stroke="var(--fm1p10-green, #10b981)" stroke-width="1.5"/>
+          <text x="12" y="22" fill="var(--fm1p10-green, #10b981)" font-size="12" font-weight="800">🛡️ DERMATOMIOSITE</text>
+          <text x="12" y="40" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="11" font-weight="600">Olho 100% POUPADO</text>
+        </g>
+
+        <!-- ATTACK BADGE (CONTRAST WITH MYASTHENIA) -->
+        <g transform="translate(230, 130)">
+          <rect width="165" height="52" rx="8" fill="var(--fm1p10-red-bg, rgba(239, 68, 68, 0.15))" stroke="var(--fm1p10-red, #ef4444)" stroke-width="1.5"/>
+          <text x="12" y="22" fill="var(--fm1p10-red, #ef4444)" font-size="12" font-weight="800">⚠️ MIASTENIA GRAVIS</text>
+          <text x="12" y="40" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="11" font-weight="600">Placa Ocular Acometida</text>
+        </g>
+      </g>
+
+      <!-- COMPARATIVE EXPLANATION PANEL (Contract Rule #4: Reading panel) -->
+      <g transform="translate(20, 275)">
+        <rect width="410" height="205" rx="10" fill="var(--fm1p10-bg-card-alt, #111827)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="1.5"/>
+        
+        <text x="16" y="26" fill="var(--fm1p10-gold, #f59e0b)" font-size="13" font-weight="700">
+          ⚖️ O CONTESTADOR NEURO-DERMATOLÓGICO:
+        </text>
+
+        <!-- DM Bullet -->
+        <circle cx="24" cy="52" r="5" fill="var(--fm1p10-green, #10b981)"/>
+        <text x="36" y="56" fill="var(--fm1p10-text-title, #f8fafc)" font-size="12" font-weight="700">Dermatomiosite (DM):</text>
+        <text x="36" y="74" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="11.5">
+          Afeta miócitos estriados <tspan font-weight="700" fill="var(--fm1p10-text-title, #f8fafc)">proximais dos membros</tspan>, pescoço e faringe.
+        </text>
+        <text x="36" y="90" fill="var(--fm1p10-green, #10b981)" font-size="11.5" font-weight="700">
+          POUPA rigorosamente os músculos extraoculares (Zero Ptose/Diplopia).
+        </text>
+        <text x="36" y="106" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="11">
+          *Heliotropo é rash eritemato-violáceo na pele da pálpebra, NÃO fraqueza motor!
+        </text>
+
+        <line x1="16" y1="120" x2="394" y2="120" stroke="var(--fm1p10-border-card, #28354d)" stroke-dasharray="2,2"/>
+
+        <!-- MG Bullet -->
+        <circle cx="24" cy="138" r="5" fill="var(--fm1p10-red, #ef4444)"/>
+        <text x="36" y="142" fill="var(--fm1p10-text-title, #f8fafc)" font-size="12" font-weight="700">Placa Neuromuscular / Miastenia Gravis:</text>
+        <text x="36" y="160" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="11.5">
+          Ataque autoimune aos receptores de AChR na placa motora.
+        </text>
+        <text x="36" y="178" fill="var(--fm1p10-red, #ef4444)" font-size="11.5" font-weight="700">
+          MIRA a musculatura ocular precocemente: Ptose flutuante + Diplopia.
+        </text>
+        <text x="36" y="194" fill="var(--fm1p10-gold, #f59e0b)" font-size="11" font-weight="600">
+          CPK Normal em Miastenia | CPK Marcadamente Elevado na DM (&gt;1000 U/L).
+        </text>
+      </g>
+    </g>
+
+    <!-- SCENE 3: RESIDENCY EXAM SIMULATOR & COMPARATIVE MATRIX -->
+    <g class="fm1p10-scene fm1p10-scene-simulator" id="fm1p10-simulator-board">
+      <rect width="450" height="500" rx="14" fill="url(#fm1p10-grad-panel)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="1.5" filter="url(#fm1p10-shadow)"/>
+      
+      <!-- Card Header -->
+      <text x="20" y="32" fill="var(--fm1p10-text-title, #f8fafc)" font-size="15" font-weight="700">
+        MATRIZ DE DIFERENCIAÇÃO PARA PROVAS
+      </text>
+      <text x="20" y="50" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="12">
+        Tabela Diagnóstica &amp; Alerta contra Pegadinhas de Ptose/Diplopia
+      </text>
+
+      <!-- COMPARATIVE MATRIX TABLE -->
+      <g transform="translate(16, 70)">
+        <!-- Table Header -->
+        <rect width="418" height="32" rx="6" fill="var(--fm1p10-bg-card-alt, #111827)"/>
+        <text x="12" y="20" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="11" font-weight="700">ACHADO / CRITÉRIO</text>
+        <text x="180" y="20" fill="var(--fm1p10-gottron, #f43f5e)" font-size="11" font-weight="800">DERMATOMIOSITE</text>
+        <text x="310" y="20" fill="var(--fm1p10-teal, #14b8a6)" font-size="11" font-weight="800">MIASTENIA GRAVIS</text>
+
+        <!-- Row 1: Gottron -->
+        <rect width="418" height="38" y="36" fill="var(--fm1p10-bg-card, #161e2e)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="0.5"/>
+        <text x="12" y="58" fill="var(--fm1p10-text-title, #f8fafc)" font-size="11.5" font-weight="600">Pápulas de Gottron</text>
+        <rect x="175" y="44" width="105" height="22" rx="4" fill="var(--fm1p10-gottron-bg, rgba(244,63,94,0.12))"/>
+        <text x="227" y="59" fill="var(--fm1p10-gottron, #f43f5e)" font-size="11" font-weight="800" text-anchor="middle">PRESENTE (100%)</text>
+        <rect x="305" y="44" width="100" height="22" rx="4" fill="var(--fm1p10-green-bg, rgba(16,185,129,0.1))"/>
+        <text x="355" y="59" fill="var(--fm1p10-green, #10b981)" font-size="11" font-weight="700" text-anchor="middle">AUSENTE</text>
+
+        <!-- Row 2: Ocular Sparing -->
+        <rect width="418" height="46" y="78" fill="var(--fm1p10-bg-card, #161e2e)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="0.5"/>
+        <text x="12" y="98" fill="var(--fm1p10-text-title, #f8fafc)" font-size="11.5" font-weight="600">Músculos Oculares</text>
+        <text x="12" y="114" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="10">(Ptose / Diplopia)</text>
+
+        <rect x="175" y="86" width="105" height="30" rx="4" fill="var(--fm1p10-green-bg, rgba(16,185,129,0.15))" stroke="var(--fm1p10-green, #10b981)"/>
+        <text x="227" y="100" fill="var(--fm1p10-green, #10b981)" font-size="11" font-weight="800" text-anchor="middle">POUPADOS</text>
+        <text x="227" y="112" fill="var(--fm1p10-green, #10b981)" font-size="9.5" text-anchor="middle">(Sem Ptose Motor)</text>
+
+        <rect x="305" y="86" width="100" height="30" rx="4" fill="var(--fm1p10-red-bg, rgba(239,68,68,0.15))" stroke="var(--fm1p10-red, #ef4444)"/>
+        <text x="355" y="100" fill="var(--fm1p10-red, #ef4444)" font-size="11" font-weight="800" text-anchor="middle">ACOMETIDOS</text>
+        <text x="355" y="112" fill="var(--fm1p10-red, #ef4444)" font-size="9.5" text-anchor="middle">(Ptose + Diplopia)</text>
+
+        <!-- Row 3: Weakness Distribution -->
+        <rect width="418" height="42" y="128" fill="var(--fm1p10-bg-card, #161e2e)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="0.5"/>
+        <text x="12" y="152" fill="var(--fm1p10-text-title, #f8fafc)" font-size="11.5" font-weight="600">Padrão da Fraqueza</text>
+
+        <text x="227" y="146" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="10.5" font-weight="700" text-anchor="middle">Proximal Simétrica</text>
+        <text x="227" y="160" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="9.5" text-anchor="middle">(Cinturas Escapular/Pélvica)</text>
+
+        <text x="355" y="146" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="10.5" font-weight="700" text-anchor="middle">Flutuante com Fadiga</text>
+        <text x="355" y="160" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="9.5" text-anchor="middle">(Piora ao longo do dia)</text>
+
+        <!-- Row 4: Serum CPK -->
+        <rect width="418" height="38" y="174" fill="var(--fm1p10-bg-card, #161e2e)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="0.5"/>
+        <text x="12" y="196" fill="var(--fm1p10-text-title, #f8fafc)" font-size="11.5" font-weight="600">CPK Sérica (Enzima)</text>
+
+        <rect x="175" y="182" width="105" height="22" rx="4" fill="var(--fm1p10-red-bg, rgba(239,68,68,0.15))"/>
+        <text x="227" y="197" fill="var(--fm1p10-red, #ef4444)" font-size="11" font-weight="800" text-anchor="middle">ELEVADA (&gt;10x)</text>
+
+        <rect x="305" y="182" width="100" height="22" rx="4" fill="var(--fm1p10-green-bg, rgba(16,185,129,0.15))"/>
+        <text x="355" y="197" fill="var(--fm1p10-green, #10b981)" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
+      </g>
+
+      <!-- RESIDENCY TRAP CALLOUT CARD -->
+      <g transform="translate(16, 305)">
+        <rect width="418" height="175" rx="10" fill="var(--fm1p10-gold-bg, rgba(245,158,11,0.12))" stroke="var(--fm1p10-gold, #f59e0b)" stroke-width="1.5"/>
+        
+        <text x="16" y="24" fill="var(--fm1p10-gold, #f59e0b)" font-size="13" font-weight="800">
+          🚨 ALERTA DE PROVA (PEGADINHA FREQUENTE):
+        </text>
+
+        <text x="16" y="44" fill="var(--fm1p10-text-title, #f8fafc)" font-size="11.5" font-weight="700">
+          "Paciente com fraqueza muscular proximal + PTOSE PALPEBRAL MOTOR"
+        </text>
+
+        <text x="16" y="66" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="11">
+          ❌ <tspan font-weight="700" fill="var(--fm1p10-red, #ef4444)">NÃO MARQUE DERMATOMIOSITE ISOLADA!</tspan>
+        </text>
+
+        <text x="16" y="86" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="11">
+          A Dermatomiosite <tspan font-weight="700" fill="var(--fm1p10-gold, #f59e0b)">JAMAIS acomete a motilidade ocular</tspan> nem produz ptose.
+        </text>
+        
+        <text x="16" y="106" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="11">
+          Se houver acometimento ocular motor associado, o diagnóstico é:
+        </text>
+
+        <text x="32" y="126" fill="var(--fm1p10-teal, #14b8a6)" font-size="11.5" font-weight="800">
+          👉 Miastenia Gravis OR Síndrome Miastênica / Overlap com Timoma.
+        </text>
+
+        <text x="16" y="152" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="10.5" font-style="italic">
+          *Lembre-se: O Heliotropo da DM é lesão cutânea eritematosa na pálpebra, sem ptose!
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- FOOTER CONTRACT NOTE & INTERACTION PROMPT -->
+  <g id="fm1p10-footer" transform="translate(30, 645)">
+    <rect width="900" height="38" rx="8" fill="var(--fm1p10-bg-card-alt, #111827)" stroke="var(--fm1p10-border-card, #28354d)" stroke-width="1"/>
+    
+    <circle cx="20" cy="19" r="4" fill="var(--fm1p10-gold, #f59e0b)"/>
+    <text x="32" y="23" fill="var(--fm1p10-text-body, #cbd5e1)" font-size="12" font-weight="500">
+      <tspan font-weight="700" fill="var(--fm1p10-gold, #f59e0b)">Síntese do Especialista:</tspan> Gottron = Nós Articulares Dorsais (DM) | Poupa Olho = Preservação Ocular na DM vs Acometimento na Miastenia.
+    </text>
+    
+    <text x="880" y="23" fill="var(--fm1p10-text-muted, #94a3b8)" font-size="11" font-weight="600" text-anchor="end">
+      Clique nos botões ou nós articulares para explorar 👆
+    </text>
+  </g>
+
+  <!-- EMBEDDED INTERACTIVE ENGINE (DUAL ENGINE SELF-CONTAINED) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('fm1p10-svg-root');
+      if (!root) return;
+
+      // Set initial state
+      root.setAttribute('data-active-tab', 'gottron');
+      root.setAttribute('data-active-joint', 'none');
+
+      // Helper function to switch tabs
+      function setActiveTab(tabId) {
+        root.setAttribute('data-active-tab', tabId);
+      }
+
+      // Helper function to switch joints
+      function setActiveJoint(jointId) {
+        var current = root.getAttribute('data-active-joint');
+        if (current === jointId) {
+          root.setAttribute('data-active-joint', 'none');
+        } else {
+          root.setAttribute('data-active-joint', jointId);
+        }
+      }
+
+      // Tab Buttons Click & Keyboard Listeners
+      var tabGottron = document.getElementById('fm1p10-tab-gottron');
+      var tabOcular = document.getElementById('fm1p10-tab-ocular');
+      var tabSimulator = document.getElementById('fm1p10-tab-simulator');
+
+      if (tabGottron) {
+        tabGottron.addEventListener('click', function() { setActiveTab('gottron'); });
+        tabGottron.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveTab('gottron'); e.preventDefault(); } });
+      }
+      if (tabOcular) {
+        tabOcular.addEventListener('click', function() { setActiveTab('ocular'); });
+        tabOcular.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveTab('ocular'); e.preventDefault(); } });
+      }
+      if (tabSimulator) {
+        tabSimulator.addEventListener('click', function() { setActiveTab('simulator'); });
+        tabSimulator.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveTab('simulator'); e.preventDefault(); } });
+      }
+
+      // Hotspot Joint Listeners
+      var hsMcp = document.getElementById('fm1p10-hs-mcp');
+      var hsPip = document.getElementById('fm1p10-hs-pip');
+      var hsDip = document.getElementById('fm1p10-hs-dip');
+
+      if (hsMcp) {
+        hsMcp.addEventListener('click', function() { setActiveJoint('mcp'); });
+        hsMcp.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveJoint('mcp'); e.preventDefault(); } });
+      }
+      if (hsPip) {
+        hsPip.addEventListener('click', function() { setActiveJoint('pip'); });
+        hsPip.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveJoint('pip'); e.preventDefault(); } });
+      }
+      if (hsDip) {
+        hsDip.addEventListener('click', function() { setActiveJoint('dip'); });
+        hsDip.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { setActiveJoint('dip'); e.preventDefault(); } });
+      }
+    })();
+    ]]>
+  </script>
+</svg>

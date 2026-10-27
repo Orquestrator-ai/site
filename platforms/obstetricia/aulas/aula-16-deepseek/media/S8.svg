@@ -1,0 +1,640 @@
+<svg id="a16p8-svg" class="a16-inline-svg a16p8-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="100%" height="100%" aria-label="Toxoplasmose na Gestação: Avidez de IgG e Dicotomia Terapêutica">
+  <defs>
+    <style type="text/css">
+      .a16p8-root {
+        --a16p8-bg: var(--kw-bg, #0b1120);
+        --a16p8-card: var(--kw-card, #151e32);
+        --a16p8-card-hi: var(--kw-card-hi, #1e2942);
+        --a16p8-border: var(--kw-border, #334155);
+        --a16p8-ink: var(--kw-ink, #f1f5f9);
+        --a16p8-sub: var(--kw-sub, #94a3b8);
+        --a16p8-teal: var(--kw-teal, #00d2b8);
+        --a16p8-teal-bg: var(--kw-teal-bg, rgba(0, 210, 184, 0.12));
+        --a16p8-coral: var(--kw-coral, #ff6b6b);
+        --a16p8-coral-bg: var(--kw-coral-bg, rgba(255, 107, 107, 0.12));
+        --a16p8-gold: var(--kw-gold, #ffc107);
+        --a16p8-gold-bg: var(--kw-gold-bg, rgba(255, 193, 7, 0.12));
+        --a16p8-green: var(--kw-green, #10b981);
+        --a16p8-green-bg: var(--kw-green-bg, rgba(16, 185, 129, 0.12));
+        --a16p8-red: var(--kw-red, #ef4444);
+        --a16p8-red-bg: var(--kw-red-bg, rgba(239, 68, 68, 0.12));
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--a16p8-bg);
+        color: var(--a16p8-ink);
+        box-sizing: border-box;
+      }
+
+      [data-theme="light"] .a16p8-root {
+        --a16p8-bg: var(--kw-bg-light, #f8fafc);
+        --a16p8-card: var(--kw-card-light, #ffffff);
+        --a16p8-card-hi: var(--kw-card-hi-light, #f1f5f9);
+        --a16p8-border: var(--kw-border-light, #cbd5e1);
+        --a16p8-ink: var(--kw-ink-light, #0f172a);
+        --a16p8-sub: var(--kw-sub-light, #475569);
+        --a16p8-teal: var(--kw-teal-light, #0d9488);
+        --a16p8-teal-bg: var(--kw-teal-bg-light, rgba(13, 148, 136, 0.1));
+        --a16p8-coral: var(--kw-coral-light, #e11d48);
+        --a16p8-coral-bg: var(--kw-coral-bg-light, rgba(225, 29, 72, 0.1));
+        --a16p8-gold: var(--kw-gold-light, #d97706);
+        --a16p8-gold-bg: var(--kw-gold-bg-light, rgba(217, 119, 6, 0.1));
+        --a16p8-green: var(--kw-green-light, #059669);
+        --a16p8-green-bg: var(--kw-green-bg-light, rgba(5, 150, 105, 0.1));
+        --a16p8-red: var(--kw-red-light, #dc2626);
+        --a16p8-red-bg: var(--kw-red-bg-light, rgba(220, 38, 38, 0.1));
+      }
+
+      .a16p8-title { font-size: 18px; font-weight: 800; fill: var(--a16p8-ink); letter-spacing: -0.02em; }
+      .a16p8-subtitle { font-size: 12px; fill: var(--a16p8-sub); font-weight: 500; }
+      .a16p8-badge-txt { font-size: 11px; font-weight: 700; }
+
+      .a16p8-btn { cursor: pointer; transition: all 0.2s ease; }
+      .a16p8-btn rect { fill: var(--a16p8-card); stroke: var(--a16p8-border); stroke-width: 1.5px; rx: 8px; }
+      .a16p8-btn text { fill: var(--a16p8-sub); font-size: 11px; font-weight: 700; text-anchor: middle; }
+      .a16p8-btn:hover rect { fill: var(--a16p8-card-hi); stroke: var(--a16p8-sub); }
+
+      .a16p8-btn[data-active="true"] rect { stroke-width: 2px; }
+      .a16p8-btn[data-mode="materno"][data-active="true"] rect { fill: var(--a16p8-teal-bg); stroke: var(--a16p8-teal); }
+      .a16p8-btn[data-mode="materno"][data-active="true"] text { fill: var(--a16p8-teal); }
+
+      .a16p8-btn[data-mode="fetal"][data-active="true"] rect { fill: var(--a16p8-coral-bg); stroke: var(--a16p8-coral); }
+      .a16p8-btn[data-mode="fetal"][data-active="true"] text { fill: var(--a16p8-coral); }
+
+      .a16p8-btn[data-mode="avidez"][data-active="true"] rect { fill: var(--a16p8-gold-bg); stroke: var(--a16p8-gold); }
+      .a16p8-btn[data-mode="avidez"][data-active="true"] text { fill: var(--a16p8-gold); }
+
+      .a16p8-btn[data-mode="pcr"][data-active="true"] rect { fill: var(--a16p8-green-bg); stroke: var(--a16p8-green); }
+      .a16p8-btn[data-mode="pcr"][data-active="true"] text { fill: var(--a16p8-green); }
+
+      .a16p8-btn[data-mode="casos"][data-active="true"] rect { fill: var(--a16p8-red-bg); stroke: var(--a16p8-red); }
+      .a16p8-btn[data-mode="casos"][data-active="true"] text { fill: var(--a16p8-red); }
+
+      .a16p8-panel { fill: var(--a16p8-card); stroke: var(--a16p8-border); stroke-width: 1.5px; rx: 12px; }
+      .a16p8-panel-head { font-size: 14px; font-weight: 700; fill: var(--a16p8-ink); }
+      .a16p8-sec-title { font-size: 12px; font-weight: 700; fill: var(--a16p8-gold); letter-spacing: 0.05em; text-transform: uppercase; }
+
+      .a16p8-hotspot { cursor: pointer; transition: transform 0.2s ease, filter 0.2s ease; }
+      .a16p8-hotspot:hover { filter: brightness(1.25); }
+
+      .a16p8-drug-mat { fill: var(--a16p8-teal); }
+      .a16p8-drug-fet { fill: var(--a16p8-coral); }
+
+      .a16p8-tooltip-bg { fill: var(--a16p8-card-hi); stroke: var(--a16p8-border); stroke-width: 1.5px; rx: 6px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+      .a16p8-tooltip-txt { font-size: 11px; fill: var(--a16p8-ink); font-weight: 500; }
+
+      .a16p8-fade { transition: opacity 0.3s ease; }
+      .a16p8-hidden { opacity: 0.15; pointer-events: none; }
+      .a16p8-active-target { opacity: 1 !important; filter: drop-shadow(0 0 8px currentColor); }
+
+      .a16p8-timeline-bar { stroke-dasharray: 4 4; }
+    </style>
+
+    <linearGradient id="a16p8-grad-placenta" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a16p8-teal)" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="var(--a16p8-teal)" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="a16p8-grad-fetus" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a16p8-coral)" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="var(--a16p8-coral)" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <filter id="a16p8-glow-teal" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="a16p8-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <marker id="a16p8-arrow-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--a16p8-teal)" />
+    </marker>
+    <marker id="a16p8-arrow-coral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--a16p8-coral)" />
+    </marker>
+    <marker id="a16p8-arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--a16p8-gold)" />
+    </marker>
+  </defs>
+
+  <!-- HEADER AREA -->
+  <g transform="translate(25, 20)">
+    <text x="0" y="16" class="a16-inline-svg a16p8-root">TOXOPLASMOSE GESTACIONAL: AVIDEZ DE IgG &amp; DICOTOMIA TERAPÊUTICA</text>
+    <text x="0" y="36" class="a16-inline-svg a16p8-root">Diferenciação de Alvo Terapêutico (Materno vs Fetal) e o Divisor de Águas da Idade Gestacional (16 Semanas)</text>
+    
+    <!-- Legend Badges -->
+    <g transform="translate(560, 2)">
+      <rect x="0" y="0" width="105" height="22" rx="4" fill="var(--a16p8-teal-bg)" stroke="var(--a16p8-teal)" stroke-width="1"/>
+      <text x="52" y="15" class="a16-inline-svg a16p8-root" fill="var(--a16p8-teal)" text-anchor="middle">ALVO MATERNO</text>
+
+      <rect x="112" y="0" width="95" height="22" rx="4" fill="var(--a16p8-coral-bg)" stroke="var(--a16p8-coral)" stroke-width="1"/>
+      <text x="159" y="15" class="a16-inline-svg a16p8-root" fill="var(--a16p8-coral)" text-anchor="middle">ALVO FETAL</text>
+
+      <rect x="214" y="0" width="155" height="22" rx="4" fill="var(--a16p8-gold-bg)" stroke="var(--a16p8-gold)" stroke-width="1"/>
+      <text x="291.5" y="15" class="a16-inline-svg a16p8-root" fill="var(--a16p8-gold)" text-anchor="middle">CORTE 16 SEM / PCR LA</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE CONTROL TABS (TOP NAVBAR) -->
+  <g transform="translate(25, 75)" id="a16p8-nav-group">
+    <!-- Tab 1: Alvo Materno -->
+    <g class="a16-inline-svg a16p8-root" id="a16p8-tab-materno" data-mode="materno" data-active="true" role="button" aria-label="Ver Alvo Materno - Espiramicina">
+      <rect x="0" y="0" width="180" height="34"/>
+      <text x="90" y="21">1. ALVO MATERNO (&lt;16w)</text>
+    </g>
+    <!-- Tab 2: Alvo Fetal -->
+    <g class="a16-inline-svg a16p8-root" id="a16p8-tab-fetal" data-mode="fetal" data-active="false" transform="translate(188, 0)" role="button" aria-label="Ver Alvo Fetal - Sulfa + Pirimetamina">
+      <rect x="0" y="0" width="180" height="34"/>
+      <text x="90" y="21">2. ALVO FETAL (≥16w / PCR+)</text>
+    </g>
+    <!-- Tab 3: Avidez IgG -->
+    <g class="a16-inline-svg a16p8-root" id="a16p8-tab-avidez" data-mode="avidez" data-active="false" transform="translate(376, 0)" role="button" aria-label="Ver Teste de Avidez de IgG">
+      <rect x="0" y="0" width="180" height="34"/>
+      <text x="90" y="21">3. AVIDEZ IgG (&lt;16 SEMANAS)</text>
+    </g>
+    <!-- Tab 4: Amniocentese PCR -->
+    <g class="a16-inline-svg a16p8-root" id="a16p8-tab-pcr" data-mode="pcr" data-active="false" transform="translate(564, 0)" role="button" aria-label="Ver Amniocentese e PCR no Líquido Amniótico">
+      <rect x="0" y="0" width="190" height="34"/>
+      <text x="95" y="21">4. AMNIOCENTESE (PCR LA)</text>
+    </g>
+    <!-- Tab 5: Simulação Clínicos -->
+    <g class="a16-inline-svg a16p8-root" id="a16p8-tab-casos" data-mode="casos" data-active="false" transform="translate(762, 0)" role="button" aria-label="Simulação de Casos Clínicos">
+      <rect x="0" y="0" width="188" height="34"/>
+      <text x="94" y="21">5. DESAFIO CLINICO (CASOS)</text>
+    </g>
+  </g>
+
+  <!-- MAIN CANVAS CONTENT AREA -->
+  <!-- LEFT: GRAPHIC ANATOMICAL-PHARMACOLOGICAL SCHEMATIC -->
+  <g transform="translate(25, 125)">
+    <!-- Stage Background Panel -->
+    <rect x="0" y="0" width="580" height="570" class="a16-inline-svg a16p8-root"/>
+
+    <!-- TITLE OF STAGE -->
+    <text x="20" y="30" class="a16-inline-svg a16p8-root" id="a16p8-stage-title">EIXO MATERNO-PLACENTÁRIO-FETAL &amp; DROGAS</text>
+    <text x="20" y="48" font-size="11" fill="var(--a16p8-sub)" id="a16p8-stage-sub">Toque nas estruturas ou alterne os botões superiores para explorar os alvos</text>
+
+    <!-- ANATOMICAL MAP GROUP -->
+    <g transform="translate(20, 65)">
+
+      <!-- ZONE 1: MATERNO / SANGUE MATERNO (LEFT) -->
+      <g id="a16p8-zone-maternal" class="a16-inline-svg a16p8-root" data-target="maternal">
+        <rect x="10" y="10" width="150" height="260" rx="10" fill="var(--a16p8-teal-bg)" stroke="var(--a16p8-teal)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="85" y="32" font-size="12" font-weight="700" fill="var(--a16p8-teal)" text-anchor="middle">CIRCULAÇÃO MATERNA</text>
+        <text x="85" y="46" font-size="10" fill="var(--a16p8-sub)" text-anchor="middle">(Vascularização Uterina)</text>
+        
+        <!-- Vessel Illustration -->
+        <path d="M 35 65 Q 60 90 35 120 T 35 180 T 35 240" fill="none" stroke="var(--a16p8-teal)" stroke-width="12" opacity="0.4"/>
+        <path d="M 35 65 Q 60 90 35 120 T 35 180 T 35 240" fill="none" stroke="var(--a16p8-teal)" stroke-width="3"/>
+        
+        <!-- T. gondii Tachyzoites in maternal blood -->
+        <g transform="translate(65, 80)">
+          <path d="M 0 0 C 10 -5, 15 5, 0 10 C -5 5, -5 -5, 0 0 Z" fill="var(--a16p8-red)"/>
+          <text x="18" y="5" font-size="9" fill="var(--a16p8-red)" font-weight="600">Taquizoítos (T. gondii)</text>
+        </g>
+        <g transform="translate(55, 140)">
+          <path d="M 0 0 C 10 -5, 15 5, 0 10 C -5 5, -5 -5, 0 0 Z" fill="var(--a16p8-red)"/>
+        </g>
+        <g transform="translate(75, 200)">
+          <path d="M 0 0 C 10 -5, 15 5, 0 10 C -5 5, -5 -5, 0 0 Z" fill="var(--a16p8-red)"/>
+        </g>
+      </g>
+
+      <!-- ZONE 2: PLACENTA (CENTER BARRIER) -->
+      <g id="a16p8-zone-placenta" class="a16-inline-svg a16p8-root" transform="translate(180, 10)" data-target="placenta">
+        <rect x="0" y="0" width="160" height="260" rx="12" fill="url(#a16p8-grad-placenta)" stroke="var(--a16p8-teal)" stroke-width="2"/>
+        <text x="80" y="25" font-size="13" font-weight="800" fill="var(--a16p8-ink)" text-anchor="middle">BARREIRA PLACENTÁRIA</text>
+        <text x="80" y="40" font-size="10" font-weight="600" fill="var(--a16p8-teal)" text-anchor="middle">Sinciciotrofoblasto / Vilos</text>
+
+        <!-- Microscopic Villi Illustration -->
+        <path d="M 20 60 Q 40 80 20 100 Q 50 120 20 140 Q 40 160 20 180 Q 50 200 20 220" fill="none" stroke="var(--a16p8-teal)" stroke-width="4" opacity="0.6"/>
+        <path d="M 140 60 Q 120 80 140 100 Q 110 120 140 140 Q 120 160 140 180 Q 110 200 140 220" fill="none" stroke="var(--a16p8-teal)" stroke-width="4" opacity="0.6"/>
+
+        <!-- ESPIRAMICINA ACCUMULATION IN PLACENTA (Teal Pills) -->
+        <g id="a16p8-group-espiramicina" class="a16-inline-svg a16p8-root">
+          <g transform="translate(50, 75)">
+            <rect x="0" y="0" width="22" height="10" rx="5" fill="var(--a16p8-teal)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+            <text x="11" y="8" font-size="7" font-weight="800" fill="#000" text-anchor="middle">ESP</text>
+          </g>
+          <g transform="translate(85, 95)">
+            <rect x="0" y="0" width="22" height="10" rx="5" fill="var(--a16p8-teal)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+            <text x="11" y="8" font-size="7" font-weight="800" fill="#000" text-anchor="middle">ESP</text>
+          </g>
+          <g transform="translate(40, 130)">
+            <rect x="0" y="0" width="22" height="10" rx="5" fill="var(--a16p8-teal)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+            <text x="11" y="8" font-size="7" font-weight="800" fill="#000" text-anchor="middle">ESP</text>
+          </g>
+          <g transform="translate(90, 150)">
+            <rect x="0" y="0" width="22" height="10" rx="5" fill="var(--a16p8-teal)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+            <text x="11" y="8" font-size="7" font-weight="800" fill="#000" text-anchor="middle">ESP</text>
+          </g>
+          <g transform="translate(60, 190)">
+            <rect x="0" y="0" width="22" height="10" rx="5" fill="var(--a16p8-teal)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+            <text x="11" y="8" font-size="7" font-weight="800" fill="#000" text-anchor="middle">ESP</text>
+          </g>
+
+          <rect x="15" y="215" width="130" height="34" rx="6" fill="var(--a16p8-card)" stroke="var(--a16p8-teal)" stroke-width="1"/>
+          <text x="80" y="228" font-size="9" font-weight="700" fill="var(--a16p8-teal)" text-anchor="middle">Concentração Placentária 4x</text>
+          <text x="80" y="241" font-size="8" fill="var(--a16p8-sub)" text-anchor="middle">Bloqueia Transmissão Vertical</text>
+        </g>
+      </g>
+
+      <!-- ZONE 3: FETO & LÍQUIDO AMNIÓTICO (RIGHT) -->
+      <g id="a16p8-zone-fetus" class="a16-inline-svg a16p8-root" transform="translate(360, 10)" data-target="fetus">
+        <rect x="0" y="0" width="170" height="260" rx="12" fill="url(#a16p8-grad-fetus)" stroke="var(--a16p8-coral)" stroke-width="2"/>
+        <text x="85" y="25" font-size="13" font-weight="800" fill="var(--a16p8-coral)" text-anchor="middle">COMPARTIMENTO FETAL</text>
+        <text x="85" y="40" font-size="10" fill="var(--a16p8-sub)" text-anchor="middle">Líquido Amniótico / Tecidos</text>
+
+        <!-- Fetus Schematic Outline -->
+        <g transform="translate(45, 60)" opacity="0.85">
+          <!-- Head -->
+          <circle cx="40" cy="35" r="25" fill="none" stroke="var(--a16p8-coral)" stroke-width="2.5"/>
+          <!-- Brain Target Highlight -->
+          <circle cx="40" cy="35" r="14" fill="var(--a16p8-coral-bg)" stroke="var(--a16p8-coral)" stroke-width="1" stroke-dasharray="2 2"/>
+          <text x="40" y="38" font-size="8" font-weight="700" fill="var(--a16p8-coral)" text-anchor="middle">SNC</text>
+          <!-- Body/Back curve -->
+          <path d="M 40 60 C 65 75, 65 110, 35 135 C 20 145, 10 130, 20 115 C 30 100, 35 90, 30 75" fill="none" stroke="var(--a16p8-coral)" stroke-width="2.5"/>
+          <!-- Eye dot target -->
+          <circle cx="48" cy="30" r="3" fill="var(--a16p8-coral)"/>
+        </g>
+
+        <!-- TRÍPLICE FETAL PENETRATION (Coral Pills) -->
+        <g id="a16p8-group-triplice" class="a16-inline-svg a16p8-root">
+          <!-- Arrow showing passage across placenta -->
+          <path d="M -15 110 L 20 110" fill="none" stroke="var(--a16p8-coral)" stroke-width="2" marker-end="url(#a16p8-arrow-coral)"/>
+          <path d="M -15 160 L 20 160" fill="none" stroke="var(--a16p8-coral)" stroke-width="2" marker-end="url(#a16p8-arrow-coral)"/>
+
+          <g transform="translate(15, 95)">
+            <polygon points="10,0 20,6 20,18 10,24 0,18 0,6" fill="var(--a16p8-coral)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+            <text x="10" y="14" font-size="7" font-weight="800" fill="#fff" text-anchor="middle">SDZ</text>
+          </g>
+          <g transform="translate(125, 80)">
+            <circle cx="10" cy="10" r="10" fill="var(--a16p8-coral)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+            <text x="10" y="13" font-size="7" font-weight="800" fill="#fff" text-anchor="middle">PIR</text>
+          </g>
+          <g transform="translate(115, 150)">
+            <rect x="0" y="0" width="22" height="12" rx="3" fill="var(--a16p8-gold)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+            <text x="11" y="9" font-size="7" font-weight="800" fill="#000" text-anchor="middle">FOL</text>
+          </g>
+
+          <rect x="15" y="215" width="140" height="34" rx="6" fill="var(--a16p8-card)" stroke="var(--a16p8-coral)" stroke-width="1"/>
+          <text x="85" y="228" font-size="9" font-weight="700" fill="var(--a16p8-coral)" text-anchor="middle">Alta Permeabilidade Fetal</text>
+          <text x="85" y="241" font-size="8" fill="var(--a16p8-sub)" text-anchor="middle">Trata Infecção Fetal Instalada</text>
+        </g>
+      </g>
+
+      <!-- TIMELINE & GESTATIONAL AGE THRESHOLD BAR (LOWER SECTION OF CANVAS) -->
+      <g transform="translate(10, 290)">
+        <rect x="0" y="0" width="520" height="190" rx="10" fill="var(--a16p8-card-hi)" stroke="var(--a16p8-border)" stroke-width="1"/>
+
+        <text x="15" y="22" font-size="12" font-weight="700" fill="var(--a16p8-ink)">LINHA DO TEMPO GESTACIONAL E CONDUTA</text>
+        <text x="505" y="22" font-size="10" fill="var(--a16p8-sub)" text-anchor="end">Idade Gestacional (Semanas)</text>
+
+        <!-- Axis Line -->
+        <line x1="30" y1="75" x2="490" y2="75" stroke="var(--a16p8-sub)" stroke-width="3"/>
+
+        <!-- Segment <16 sem -->
+        <rect x="30" y="65" width="180" height="20" rx="4" fill="var(--a16p8-teal-bg)" stroke="var(--a16p8-teal)" stroke-width="1.5"/>
+        <text x="120" y="79" font-size="10" font-weight="800" fill="var(--a16p8-teal)" text-anchor="middle">&lt; 16 SEMANAS (1º TRIMESTRE)</text>
+
+        <!-- Segment ≥16 sem -->
+        <rect x="230" y="65" width="260" height="20" rx="4" fill="var(--a16p8-coral-bg)" stroke="var(--a16p8-coral)" stroke-width="1.5"/>
+        <text x="360" y="79" font-size="10" font-weight="800" fill="var(--a16p8-coral)" text-anchor="middle">≥ 16 SEMANAS (2º E 3º TRIMESTRES)</text>
+
+        <!-- DIVISOR DE ÁGUAS: 16 SEMANAS MARKER -->
+        <g id="a16p8-marker-16w" class="a16-inline-svg a16p8-root" transform="translate(210, 35)" data-target="pcr">
+          <line x1="10" y1="0" x2="10" y2="135" stroke="var(--a16p8-gold)" stroke-width="2.5" class="a16-inline-svg a16p8-root"/>
+          <circle cx="10" cy="40" r="14" fill="var(--a16p8-gold)" stroke="var(--a16p8-ink)" stroke-width="2" filter="url(#a16p8-glow-coral)"/>
+          <text x="10" y="44" font-size="10" font-weight="900" fill="#000" text-anchor="middle">16w</text>
+
+          <rect x="-35" y="-12" width="90" height="20" rx="4" fill="var(--a16p8-gold)" stroke="var(--a16p8-ink)" stroke-width="1"/>
+          <text x="10" y="2" font-size="9" font-weight="800" fill="#000" text-anchor="middle">CORTE 16 sem</text>
+        </g>
+
+        <!-- DETAILS BELOW TIMELINE: <16W SIDE -->
+        <g transform="translate(30, 95)">
+          <rect x="0" y="0" width="170" height="80" rx="6" fill="var(--a16p8-card)" stroke="var(--a16p8-teal)" stroke-width="1"/>
+          <text x="10" y="16" font-size="10" font-weight="700" fill="var(--a16p8-teal)">• Avidez IgG tem valor</text>
+          <text x="10" y="30" font-size="9" fill="var(--a16p8-sub)">Alta (&gt;60%): Infecção antiga</text>
+          <text x="10" y="43" font-size="9" fill="var(--a16p8-sub)">Baixa (&lt;50%): Tratar já</text>
+          <text x="10" y="60" font-size="10" font-weight="700" fill="var(--a16p8-teal)">• Drogas: ESPIRAMICINA</text>
+          <text x="10" y="72" font-size="8.5" fill="var(--a16p8-red)">(Proibido Sulfa/Pirim no 1ºT)</text>
+        </g>
+
+        <!-- DETAILS BELOW TIMELINE: ≥16W SIDE -->
+        <g transform="translate(240, 95)">
+          <rect x="0" y="0" width="250" height="80" rx="6" fill="var(--a16p8-card)" stroke="var(--a16p8-coral)" stroke-width="1"/>
+          <text x="10" y="16" font-size="10" font-weight="700" fill="var(--a16p8-gold)">• Investigar Feto: AMNIOCENTESE</text>
+          <text x="10" y="30" font-size="9" fill="var(--a16p8-sub)">Realizar PCR para T. gondii no LA</text>
+          <text x="10" y="45" font-size="9" font-weight="700" fill="var(--a16p8-coral)">• PCR (+): Esquema Tríplice Fetal</text>
+          <text x="20" y="58" font-size="8.5" fill="var(--a16p8-sub)">Sulfa + Pirimetamina + Ac. Folínico</text>
+          <text x="10" y="71" font-size="9" fill="var(--a16p8-green)">• PCR (-): Manter Espiramicina</text>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- RIGHT: DYNAMIC DECISION & READING PANEL -->
+  <g transform="translate(620, 125)">
+    <rect x="0" y="0" width="355" height="570" class="a16-inline-svg a16p8-root"/>
+
+    <!-- PANEL HEADER -->
+    <g transform="translate(20, 20)">
+      <text x="0" y="15" class="a16-inline-svg a16p8-root" id="a16p8-info-title">PAINEL DE DECISÃO CLÍNICA</text>
+      <text x="0" y="32" font-size="11" fill="var(--a16p8-sub)" id="a16p8-info-subtitle">Selecione uma modalidade acima para analisar</text>
+      <line x1="0" y1="42" x2="315" y2="42" stroke="var(--a16p8-border)" stroke-width="1"/>
+    </g>
+
+    <!-- CONTENT SECTION 1: CONDUTA & DIRETA -->
+    <g transform="translate(20, 75)" id="a16p8-box-conduta">
+      <rect x="0" y="0" width="315" height="85" rx="8" fill="var(--a16p8-card-hi)" stroke="var(--a16p8-teal)" stroke-width="1.5" id="a16p8-box-conduta-bg"/>
+      <text x="12" y="20" class="a16-inline-svg a16p8-root" id="a16p8-txt-conduta-tag" fill="var(--a16p8-teal)">DIAGNÓSTICO &amp; CONDUTA IMEDIATA</text>
+      <text x="12" y="40" font-size="13" font-weight="800" fill="var(--a16p8-ink)" id="a16p8-txt-conduta-main">Espiramicina 1g 8/8h V.O.</text>
+      <text x="12" y="58" font-size="11" fill="var(--a16p8-sub)" id="a16p8-txt-conduta-sub">Iniciar imediatamente no 1º Trimestre ao suspeitar/confirmar infecção aguda materna (&lt;16 sem).</text>
+      <text x="12" y="74" font-size="10" font-weight="700" fill="var(--a16p8-teal)" id="a16p8-txt-conduta-foot">Objetivo: Reduzir taxa de transmissão vertical pela placenta.</text>
+    </g>
+
+    <!-- CONTENT SECTION 2: MECHANISM & TARGET -->
+    <g transform="translate(20, 170)" id="a16p8-box-mecanismo">
+      <rect x="0" y="0" width="315" height="110" rx="8" fill="var(--a16p8-card-hi)" stroke="var(--a16p8-border)" stroke-width="1"/>
+      <text x="12" y="20" class="a16-inline-svg a16p8-root" fill="var(--a16p8-gold)">RACIONAL FARMACOLÓGICO E ALVO</text>
+      
+      <text x="12" y="38" font-size="11" font-weight="700" fill="var(--a16p8-ink)">• Barreira Placentária vs Feto:</text>
+      <text x="12" y="54" font-size="10.5" fill="var(--a16p8-sub)" id="a16p8-txt-mec-1">A Espiramicina concentram-se na placenta (4x mais que no soro), criando uma barreira de proteção.</text>
+      
+      <text x="12" y="75" font-size="11" font-weight="700" fill="var(--a16p8-ink)">• Passagem Fetal:</text>
+      <text x="12" y="91" font-size="10.5" fill="var(--a16p8-sub)" id="a16p8-txt-mec-2">Possui baixa travessia placentária. Não trata eficazmente o feto se este já estiver infectado.</text>
+    </g>
+
+    <!-- CONTENT SECTION 3: PROVA & ARMADILHAS (CRITICAL REASONING) -->
+    <g transform="translate(20, 290)" id="a16p8-box-armadilha">
+      <rect x="0" y="0" width="315" height="125" rx="8" fill="var(--a16p8-red-bg)" stroke="var(--a16p8-red)" stroke-width="1.5"/>
+      <text x="12" y="20" class="a16-inline-svg a16p8-root" fill="var(--a16p8-red)">PONTO CRÍTICO DE PROVA DE RESIDÊNCIA</text>
+      
+      <g transform="translate(12, 32)">
+        <path d="M 0 0 L 10 16 L -10 16 Z" fill="var(--a16p8-red)"/>
+        <text x="0" y="13" font-size="10" font-weight="900" fill="#fff" text-anchor="middle">!</text>
+      </g>
+      <text x="30" y="42" font-size="11" font-weight="800" fill="var(--a16p8-red)" id="a16p8-txt-warn-title">NUNCA dar Sulfa + Pirimetamina no 1ºT!</text>
+
+      <text x="12" y="62" font-size="10.5" fill="var(--a16p8-ink)" id="a16p8-txt-warn-body1">1. Pirimetamina é antagonista do ácido fólico e teratogênica no 1º Trimestre (&lt;16 semanas).</text>
+      <text x="12" y="80" font-size="10.5" fill="var(--a16p8-ink)" id="a16p8-txt-warn-body2">2. Teste de Avidez de IgG SÓ tem valor diagnóstico se realizado com &lt; 16 semanas de gestação.</text>
+      <text x="12" y="98" font-size="10.5" fill="var(--a16p8-ink)" id="a16p8-txt-warn-body3">3. Se &ge; 16 semanas ou Avidez Baixa/Indeterminada &rarr; Indicar Amniocentese (PCR no LA).</text>
+      <text x="12" y="114" font-size="9.5" font-weight="700" fill="var(--a16p8-gold)" id="a16p8-txt-warn-body4">O Ácido Folínico (não fólico!) previne mielossupressão materna/fetal.</text>
+    </g>
+
+    <!-- CONTENT SECTION 4: INTERACTIVE CASE SIMULATION / VALUES -->
+    <g transform="translate(20, 425)" id="a16p8-box-simulador">
+      <rect x="0" y="0" width="315" height="130" rx="8" fill="var(--a16p8-card-hi)" stroke="var(--a16p8-gold)" stroke-width="1.5"/>
+      <text x="12" y="20" class="a16-inline-svg a16p8-root" fill="var(--a16p8-gold)">INTERPRETAÇÃO DE AVIDEZ DE IgG</text>
+
+      <!-- Gauge Graphic representation -->
+      <g transform="translate(15, 32)">
+        <!-- Low Avidity Zone -->
+        <rect x="0" y="0" width="85" height="16" rx="3" fill="var(--a16p8-red-bg)" stroke="var(--a16p8-red)" stroke-width="1"/>
+        <text x="42.5" y="11" font-size="9" font-weight="700" fill="var(--a16p8-red)" text-anchor="middle">&lt; 50% BAIXA</text>
+
+        <!-- Indeterminate Zone -->
+        <rect x="92" y="0" width="85" height="16" rx="3" fill="var(--a16p8-gold-bg)" stroke="var(--a16p8-gold)" stroke-width="1"/>
+        <text x="134.5" y="11" font-size="9" font-weight="700" fill="var(--a16p8-gold)" text-anchor="middle">50-60% DÚVIDA</text>
+
+        <!-- High Avidity Zone -->
+        <rect x="184" y="0" width="100" height="16" rx="3" fill="var(--a16p8-green-bg)" stroke="var(--a16p8-green)" stroke-width="1"/>
+        <text x="234" y="11" font-size="9" font-weight="700" fill="var(--a16p8-green)" text-anchor="middle">&gt; 60% ALTA AVIDEZ</text>
+      </g>
+
+      <!-- Explanatory case text inside simulator box -->
+      <g transform="translate(12, 60)">
+        <text x="0" y="12" font-size="10.5" font-weight="700" fill="var(--a16p8-green)" id="a16p8-txt-sim-1">• Alta Avidez (&gt;60%) com &lt;16 sem:</text>
+        <text x="0" y="25" font-size="10" fill="var(--a16p8-sub)" id="a16p8-txt-sim-2">Infecção ocorrida há &gt;4 meses (antes da concepção). Exclui infecção aguda no 1ºT. Alta do pré-natal de alto risco!</text>
+
+        <text x="0" y="44" font-size="10.5" font-weight="700" fill="var(--a16p8-red)" id="a16p8-txt-sim-3">• Baixa Avidez (&lt;50%) com &lt;16 sem:</text>
+        <text x="0" y="57" font-size="10" fill="var(--a16p8-sub)" id="a16p8-txt-sim-4">Possível infecção recente (&lt;4 meses). Manter Espiramicina e programar PCR no LA com &ge;16 sem.</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- INTERACTIVE EMBEDDED ENGINE SCRIPT -->
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function() {
+      const svg = document.getElementById('a16p8-svg');
+      if (!svg) return;
+
+      // Data State Store
+      const state = {
+        mode: 'materno', // materno | fetal | avidez | pcr | casos
+        activeTarget: null
+      };
+
+      // Elements
+      const tabs = {
+        materno: document.getElementById('a16p8-tab-materno'),
+        fetal: document.getElementById('a16p8-tab-fetal'),
+        avidez: document.getElementById('a16p8-tab-avidez'),
+        pcr: document.getElementById('a16p8-tab-pcr'),
+        casos: document.getElementById('a16p8-tab-casos')
+      };
+
+      const groupEspiramicina = document.getElementById('a16p8-group-espiramicina');
+      const groupTriplice = document.getElementById('a16p8-group-triplice');
+      const stageTitle = document.getElementById('a16p8-stage-title');
+      const stageSub = document.getElementById('a16p8-stage-sub');
+
+      // Info Card Elements
+      const infoTitle = document.getElementById('a16p8-info-title');
+      const infoSubtitle = document.getElementById('a16p8-info-subtitle');
+      const boxCondutaBg = document.getElementById('a16p8-box-conduta-bg');
+      const txtCondutaTag = document.getElementById('a16p8-txt-conduta-tag');
+      const txtCondutaMain = document.getElementById('a16p8-txt-conduta-main');
+      const txtCondutaSub = document.getElementById('a16p8-txt-conduta-sub');
+      const txtCondutaFoot = document.getElementById('a16p8-txt-conduta-foot');
+      const txtMec1 = document.getElementById('a16p8-txt-mec-1');
+      const txtMec2 = document.getElementById('a16p8-txt-mec-2');
+      const txtWarnTitle = document.getElementById('a16p8-txt-warn-title');
+      const txtWarnBody1 = document.getElementById('a16p8-txt-warn-body1');
+      const txtWarnBody2 = document.getElementById('a16p8-txt-warn-body2');
+      const txtWarnBody3 = document.getElementById('a16p8-txt-warn-body3');
+
+      // Modes Configuration
+      const modeConfigs = {
+        materno: {
+          title: "1. ALVO MATERNO: BARREIRA PLACENTÁRIA (ESPIRAMICINA)",
+          sub: "Foco: Prevenir a transmissão da mãe para a placenta (<16 semanas)",
+          infoTitle: "ALVO MATERNO (ESPIRAMICINA)",
+          infoSub: "Esquema profilático de transmissão vertical no 1º trimestre",
+          condutaTag: "CONDUTA IMEDIATA (<16 SEMANAS)",
+          condutaColor: "var(--a16p8-teal)",
+          condutaMain: "Espiramicina 1g V.O. de 8/8 horas",
+          condutaSub: "Prescrever imediatamente ao identificar IgM+ / IgG+ recente ou soroconversão no 1ºT.",
+          condutaFoot: "Acumula-se na placenta (4x conc.). Não atravessa barreira em nível terapêutico fetal.",
+          mec1: "Concentra-se massivamente no tecido placentário, matando taquizoítos na placenta.",
+          mec2: "Fraca travessia fetal: inofensiva ao feto, mas NÃO trata infecção fetal já estabelecida.",
+          warnTitle: "ATENÇÃO: Não adiar o início da Espiramicina!",
+          warn1: "1. Iniciar Espiramicina IMEDIATAMENTE enquanto aguarda confirmação laboratorial / avidez.",
+          warn2: "2. Quanto mais precoce a infecção, MENOR a taxa de transmissão, mas MAIOR a gravidade fetal.",
+          warn3: "3. NUNCA prescrever Sulfa+Pirimetamina antes de 16 semanas (Risco Teratogênico).",
+          highlightEspiramicina: true,
+          highlightTriplice: false
+        },
+        fetal: {
+          title: "2. ALVO FETAL: TRÁTAMENTO DO FETO (SULFA + PIRIMETAMINA)",
+          sub: "Foco: Tratar infecção fetal estabelecida (≥16 semanas / PCR +)",
+          infoTitle: "ALVO FETAL (ESQUEMA TRÍPLICE)",
+          infoSub: "Tratamento direto de taquizoítos nos tecidos fetais e SNC",
+          condutaTag: "ESQUEMA FETAL (≥16 SEMANAS / PCR LA+)",
+          condutaColor: "var(--a16p8-coral)",
+          condutaMain: "Sulfadiazina + Pirimetamina + Ác. Folínico",
+          condutaSub: "Sulfadiazina 1.5g 12/12h + Pirimetamina 25mg/dia + Ácido Folínico 15mg/dia V.O.",
+          condutaFoot: "Atravessa eficientemente a placenta, alcançando SNC e olho fetal.",
+          mec1: "Sulfadiazina + Pirimetamina bloqueiam sinergicamente a síntese de ácido fólico do parasita.",
+          mec2: "Ácido Folínico (Leucovorina) é OBRIGATÓRIO para prevenir toxicidade medular materna/fetal.",
+          warnTitle: "CONTRAINDICAÇÃO ABSOLUTA NO 1º TRIMESTRE!",
+          warn1: "1. Pirimetamina é antagonista de folato: altamente TERATOGÊNICA no 1º Trimestre.",
+          warn2: "2. Iniciar esquema fetal APENAS a partir de 16 semanas se PCR no LA for POSITIVO.",
+          warn3: "3. Se PCR no LA for NEGATIVO: suspender esquema fetal e manter Espiramicina até o parto.",
+          highlightEspiramicina: false,
+          highlightTriplice: true
+        },
+        avidez: {
+          title: "3. TESTE DE AVIDEZ DE IgG (&lt;16 SEMANAS)",
+          sub: "Ferramenta decisiva para datar a infecção quando realizada no 1º Trimestre",
+          infoTitle: "AVIDEZ DE IgG (JANELA &lt;16 SEMANAS)",
+          infoSub: "Mede a força de ligação do anticorpo IgG ao antígeno do T. gondii",
+          condutaTag: "INTERPRETAÇÃO DIAGNÓSTICA",
+          condutaColor: "var(--a16p8-gold)",
+          condutaMain: "Avidez Alta (&gt;60%) = Infecção Antiga (&gt;4 meses)",
+          condutaSub: "Se realizada &lt;16 sem e Alta (&gt;60%): exclui infecção no 1ºT. Pode suspender Espiramicina!",
+          condutaFoot: "Avidez Baixa (&lt;50%) ou Indeterminada: Mantém Espiramicina + Investigação Fetal (PCR).",
+          mec1: "Anticorpos IgG recém-produzidos têm baixa avidez; amadurecem e ganham alta avidez após 4 meses.",
+          mec2: "Se coletada com ≥16 semanas: Alta avidez NÃO exclui infecção no início da gestação!",
+          warnTitle: "ARMADILHA CLÍNICA DE PROVA:",
+          warn1: "1. Avidez de IgG &gt;60% SÓ tem valor para afastar infecção aguda se coletada com &lt; 16 semanas.",
+          warn2: "2. Se a paciente chega no 2º/3º trimestre (ex: 20 sem) com IgM+: Avidez NÃO resolve mais.",
+          warn3: "3. Nesses casos (&ge;16w), a conduta direta é realizar Amniocentese para PCR no LA.",
+          highlightEspiramicina: true,
+          highlightTriplice: false
+        },
+        pcr: {
+          title: "4. AMNIOCENTESE &amp; PCR NO LÍQUIDO AMNIÓTICO (≥16 SEMANAS)",
+          sub: "O divisor de águas definitivo para confirmar ou afastar infecção fetal",
+          infoTitle: "DIAGNÓSTICO FETAL (PCR NO LA)",
+          infoSub: "Padrão-ouro para confirmação de infecção fetal por Toxoplasma",
+          condutaTag: "MOMENTO IDEAL: &ge;16 SEMANAS",
+          condutaColor: "var(--a16p8-green)",
+          condutaMain: "Amniocentese com PCR (Gene B1 / RE)",
+          condutaSub: "Indicada se infecção materna confirmada/suspeita. Realizar &ge;16 sem e &ge;4 sem pós-infecção.",
+          condutaFoot: "Sensibilidade &gt;90% e Especificidade próxima a 100%.",
+          mec1: "Pesquisa DNA do T. gondii no líquido amniótico excretado pela urina fetal.",
+          mec2: "PCR Positive (+): Confirma infecção fetal &rarr; Migrar para Esquema Tríplice Fetal.",
+          warnTitle: "REGRAS DA AMNIOCENTESE:",
+          warn1: "1. Não realizar antes de 16 semanas (risco de perdas gestacionais e falso-negativo).",
+          warn2: "2. Respeitar intervalo mínimo de 4 a 8 semanas após a infecção aguda materna.",
+          warn3: "3. Se PCR (-): Manter Espiramicina até o parto e acompanhar ultrassonografia fetal mensal.",
+          highlightEspiramicina: true,
+          highlightTriplice: true
+        },
+        casos: {
+          title: "5. SIMULAÇÃO E CASOS CLÍNICOS DE PROVA",
+          sub: "Aplicação prática dos conceitos de Avidez e Alvos Terapêuticos",
+          infoTitle: "CASOS GUIA DE RESIDÊNCIA",
+          infoSub: "Analise a conduta correta para cada perfil de paciente",
+          condutaTag: "CASO 1 vs CASO 2",
+          condutaColor: "var(--a16p8-red)",
+          condutaMain: "Caso 1: IG 10sem, IgM+, IgG+, Avidez 75%",
+          condutaSub: "Conduta: Infecção pré-concepcional (&gt;4m). Exclui infecção gestacional. Suspend Espiramicina!",
+          condutaFoot: "Caso 2: IG 20sem, IgM+, IgG+, sem sorologia prévia &rarr; Indicar PCR no LA imediato!",
+          mec1: "Caso 1 ilustra o poder da Alta Avidez no 1º Trimestre para tranquilizar a gestante.",
+          mec2: "Caso 2 ilustra a gestante tardia: Avidez não serve mais &rarr; Vai direto para Amniocentese PCR.",
+          warnTitle: "RESUMO ANCORA PARA A PROVA:",
+          warn1: "• Alvo Materno = Espiramicina (Placenta, 1ºT, Previne transmissão).",
+          warn2: "• Alvo Fetal = Sulfa + Pirimetamina + Ac. Folínico (Feto, &ge;16w / PCR+).",
+          warn3: "• Divisor 16w = Limite da Avidez IgG e Início seguro da Amniocentese (PCR).",
+          highlightEspiramicina: true,
+          highlightTriplice: true
+        }
+      };
+
+      function setMode(modeKey) {
+        state.mode = modeKey;
+        const config = modeConfigs[modeKey];
+        if (!config) return;
+
+        // Update Nav Tabs Active State
+        Object.keys(tabs).forEach(k => {
+          if (tabs[k]) {
+            tabs[k].setAttribute('data-active', k === modeKey ? 'true' : 'false');
+          }
+        });
+
+        // Update Stage Titles
+        if (stageTitle) stageTitle.innerHTML = config.title;
+        if (stageSub) stageSub.innerHTML = config.sub;
+
+        // Update Visual Highlights
+        if (groupEspiramicina) {
+          groupEspiramicina.style.opacity = config.highlightEspiramicina ? '1' : '0.2';
+        }
+        if (groupTriplice) {
+          groupTriplice.style.opacity = config.highlightTriplice ? '1' : '0.2';
+        }
+
+        // Update Info Box
+        if (infoTitle) infoTitle.textContent = config.infoTitle;
+        if (infoSubtitle) infoSubtitle.textContent = config.infoSub;
+        if (boxCondutaBg) boxCondutaBg.style.stroke = config.condutaColor;
+        if (txtCondutaTag) {
+          txtCondutaTag.textContent = config.condutaTag;
+          txtCondutaTag.style.fill = config.condutaColor;
+        }
+        if (txtCondutaMain) txtCondutaMain.textContent = config.condutaMain;
+        if (txtCondutaSub) txtCondutaSub.textContent = config.condutaSub;
+        if (txtCondutaFoot) txtCondutaFoot.textContent = config.condutaFoot;
+
+        if (txtMec1) txtMec1.textContent = config.mec1;
+        if (txtMec2) txtMec2.textContent = config.mec2;
+
+        if (txtWarnTitle) txtWarnTitle.textContent = config.warnTitle;
+        if (txtWarnBody1) txtWarnBody1.textContent = config.warn1;
+        if (txtWarnBody2) txtWarnBody2.textContent = config.warn2;
+        if (txtWarnBody3) txtWarnBody3.textContent = config.warn3;
+      }
+
+      // Attach Event Listeners to Tabs
+      Object.keys(tabs).forEach(k => {
+        if (tabs[k]) {
+          tabs[k].addEventListener('click', function() {
+            setMode(k);
+          });
+        }
+      });
+
+      // Hotspots Interactive Target
+      const zoneMaternal = document.getElementById('a16p8-zone-maternal');
+      const zonePlacenta = document.getElementById('a16p8-zone-placenta');
+      const zoneFetus = document.getElementById('a16p8-zone-fetus');
+      const marker16w = document.getElementById('a16p8-marker-16w');
+
+      if (zoneMaternal) {
+        zoneMaternal.addEventListener('click', () => setMode('materno'));
+      }
+      if (zonePlacenta) {
+        zonePlacenta.addEventListener('click', () => setMode('materno'));
+      }
+      if (zoneFetus) {
+        zoneFetus.addEventListener('click', () => setMode('fetal'));
+      }
+      if (marker16w) {
+        marker16w.addEventListener('click', () => setMode('pcr'));
+      }
+
+      // Initialize default mode
+      setMode('materno');
+    })();
+    /*]]>*/
+  </script>
+</svg>

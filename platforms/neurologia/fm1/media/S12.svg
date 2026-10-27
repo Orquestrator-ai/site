@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="fm1p12-svg" class="fm1p12-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="100%" height="100%" data-scene="all">
+  <defs>
+    <style>
+      /* --- SCOPED CSS DESIGN SYSTEM (BAUER COMPLIANT) --- */
+      .fm1p12-root {
+        /* Color Palette Local Fallbacks (Dark Theme Default) */
+        --fm1p12-bg: var(--bg-1, #0f172a);
+        --fm1p12-card-bg: var(--bg-2, #1e293b);
+        --fm1p12-card-border: var(--ink-20, #334155);
+        --fm1p12-text-main: var(--ink-100, #f8fafc);
+        --fm1p12-text-muted: var(--ink-70, #94a3b8);
+        --fm1p12-text-sub: var(--ink-50, #64748b);
+
+        /* Semantic Colors (Cascading with mandatory #hex fallback) */
+        --fm1p12-indigo: var(--kw-indigo, #6366f1);
+        --fm1p12-indigo-bg: rgba(99, 102, 241, 0.12);
+        --fm1p12-teal: var(--kw-teal, #14b8a6);
+        --fm1p12-teal-bg: rgba(20, 184, 166, 0.12);
+        --fm1p12-amber: var(--kw-amber, #f59e0b);
+        --fm1p12-amber-bg: rgba(245, 158, 11, 0.12);
+        --fm1p12-green: var(--kw-green, #10b981);
+        --fm1p12-green-bg: rgba(16, 185, 129, 0.12);
+
+        /* Warning & Clinical Alert Colors */
+        --fm1p12-red: var(--kw-red, #ef4444);
+        --fm1p12-red-bg: rgba(239, 68, 68, 0.15);
+        --fm1p12-orange: var(--kw-orange, #f97316);
+
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        user-select: none;
+      }
+
+      /* Light Theme Override */
+      [data-theme="light"] .fm1p12-root {
+        --fm1p12-bg: var(--bg-1, #f8fafc);
+        --fm1p12-card-bg: var(--bg-2, #ffffff);
+        --fm1p12-card-border: var(--ink-20, #e2e8f0);
+        --fm1p12-text-main: var(--ink-100, #0f172a);
+        --fm1p12-text-muted: var(--ink-70, #475569);
+        --fm1p12-text-sub: var(--ink-50, #64748b);
+
+        --fm1p12-indigo-bg: rgba(99, 102, 241, 0.08);
+        --fm1p12-teal-bg: rgba(20, 184, 166, 0.08);
+        --fm1p12-amber-bg: rgba(245, 158, 11, 0.08);
+        --fm1p12-green-bg: rgba(16, 185, 129, 0.08);
+        --fm1p12-red-bg: rgba(239, 68, 68, 0.08);
+      }
+
+      /* Base Containers */
+      .fm1p12-bg-rect { fill: var(--fm1p12-bg); }
+      .fm1p12-panel-bg { fill: var(--fm1p12-card-bg); stroke: var(--fm1p12-card-border); stroke-width: 1.5; rx: 12px; }
+      
+      /* Typography */
+      .fm1p12-title { fill: var(--fm1p12-text-main); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+      .fm1p12-subtitle { fill: var(--fm1p12-text-muted); font-size: 12px; font-weight: 500; }
+      .fm1p12-section-label { fill: var(--fm1p12-text-muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+      
+      /* Floor Cards & Interactive Elements */
+      .fm1p12-floor-card {
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+      }
+      .fm1p12-floor-card:hover { filter: brightness(1.05); }
+      .fm1p12-floor-card:focus-visible { outline: 2px solid var(--fm1p12-indigo); }
+      
+      .fm1p12-card-rect {
+        stroke-width: 1.5;
+        rx: 10px;
+        transition: stroke-width 0.2s ease, stroke 0.2s ease, fill 0.2s ease;
+      }
+      
+      /* Floor Colors & Specifics */
+      .fm1p12-f1-rect { fill: var(--fm1p12-indigo-bg); stroke: var(--fm1p12-indigo); }
+      .fm1p12-f2-rect { fill: var(--fm1p12-teal-bg); stroke: var(--fm1p12-teal); }
+      .fm1p12-f3-rect { fill: var(--fm1p12-amber-bg); stroke: var(--fm1p12-amber); }
+      .fm1p12-f4-rect { fill: var(--fm1p12-green-bg); stroke: var(--fm1p12-green); }
+
+      /* Tab Controls */
+      .fm1p12-tab-btn { cursor: pointer; }
+      .fm1p12-tab-rect { fill: var(--fm1p12-card-bg); stroke: var(--fm1p12-card-border); stroke-width: 1.5; rx: 6px; }
+      .fm1p12-tab-text { fill: var(--fm1p12-text-muted); font-size: 11px; font-weight: 700; text-anchor: middle; }
+      .fm1p12-tab-btn:hover .fm1p12-tab-rect { stroke: var(--fm1p12-indigo); }
+
+      /* Active States per scene */
+      [data-scene="f1"] .fm1p12-floor-card:not(.fm1p12-card-f1),
+      [data-scene="f2"] .fm1p12-floor-card:not(.fm1p12-card-f2),
+      [data-scene="f3"] .fm1p12-floor-card:not(.fm1p12-card-f3),
+      [data-scene="f4"] .fm1p12-floor-card:not(.fm1p12-card-f4) {
+        opacity: 0.35;
+      }
+
+      [data-scene="f1"] .fm1p12-card-f1 .fm1p12-card-rect { stroke-width: 3px; }
+      [data-scene="f2"] .fm1p12-card-f2 .fm1p12-card-rect { stroke-width: 3px; }
+      [data-scene="f3"] .fm1p12-card-f3 .fm1p12-card-rect { stroke-width: 3px; }
+      [data-scene="f4"] .fm1p12-card-f4 .fm1p12-card-rect { stroke-width: 3px; }
+
+      [data-scene="all"] #fm1p12-tab-all .fm1p12-tab-rect { fill: var(--fm1p12-indigo); stroke: var(--fm1p12-indigo); }
+      [data-scene="all"] #fm1p12-tab-all .fm1p12-tab-text { fill: #ffffff; }
+      [data-scene="f1"] #fm1p12-tab-f1 .fm1p12-tab-rect { fill: var(--fm1p12-indigo); stroke: var(--fm1p12-indigo); }
+      [data-scene="f1"] #fm1p12-tab-f1 .fm1p12-tab-text { fill: #ffffff; }
+      [data-scene="f2"] #fm1p12-tab-f2 .fm1p12-tab-rect { fill: var(--fm1p12-teal); stroke: var(--fm1p12-teal); }
+      [data-scene="f2"] #fm1p12-tab-f2 .fm1p12-tab-text { fill: #ffffff; }
+      [data-scene="f3"] #fm1p12-tab-f3 .fm1p12-tab-rect { fill: var(--fm1p12-amber); stroke: var(--fm1p12-amber); }
+      [data-scene="f3"] #fm1p12-tab-f3 .fm1p12-tab-text { fill: #ffffff; }
+      [data-scene="f4"] #fm1p12-tab-f4 .fm1p12-tab-rect { fill: var(--fm1p12-green); stroke: var(--fm1p12-green); }
+      [data-scene="f4"] #fm1p12-tab-f4 .fm1p12-tab-text { fill: #ffffff; }
+
+      /* Dynamic Inspector Panels */
+      .fm1p12-inspect-group { display: none; }
+      [data-scene="all"] #fm1p12-panel-all { display: block; }
+      [data-scene="f1"] #fm1p12-panel-f1 { display: block; }
+      [data-scene="f2"] #fm1p12-panel-f2 { display: block; }
+      [data-scene="f3"] #fm1p12-panel-f3 { display: block; }
+      [data-scene="f4"] #fm1p12-panel-f4 { display: block; }
+
+      /* Table Styles */
+      .fm1p12-th { fill: var(--fm1p12-text-sub); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+      .fm1p12-td { fill: var(--fm1p12-text-main); font-size: 11px; font-weight: 600; }
+      .fm1p12-td-sub { fill: var(--fm1p12-text-muted); font-size: 10px; }
+
+      /* Status Badges & Highlights */
+      .fm1p12-badge-red { fill: var(--fm1p12-red); font-size: 10px; font-weight: 800; }
+      .fm1p12-badge-green { fill: var(--fm1p12-green); font-size: 10px; font-weight: 800; }
+      .fm1p12-badge-amber { fill: var(--fm1p12-amber); font-size: 10px; font-weight: 800; }
+
+      /* Tooltip Styles */
+      #fm1p12-tooltip {
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+      }
+      #fm1p12-tooltip.fm1p12-visible { opacity: 1; }
+      .fm1p12-tt-bg { fill: #0f172a; stroke: var(--fm1p12-indigo); stroke-width: 1.5; rx: 6px; }
+      .fm1p12-tt-title { fill: #ffffff; font-size: 11px; font-weight: 800; }
+      .fm1p12-tt-body { fill: #94a3b8; font-size: 10px; font-weight: 500; }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect class="fm1p12-bg-rect" width="1200" height="850" rx="16" />
+
+  <!-- HEADER + LEGENDA DE INTERPRETAÇÃO -->
+  <g transform="translate(30, 24)">
+    <text class="fm1p12-title" x="0" y="20">MATRIZ TOPOGRÁFICA DOS 4 ANDARES DA FRAQUEZA</text>
+    <text class="fm1p12-subtitle" x="0" y="40">Síntese Fisiopatológica e Diagnóstica: 1º NMS → 2º NMS → Placa Motora → Músculo (Objeto Hidratado FM1)</text>
+    
+    <!-- LEGENDA DE INTERPRETAÇÃO NO TOPO -->
+    <rect class="fm1p12-panel-bg" x="600" y="-5" width="540" height="52" rx="8" />
+    <text class="fm1p12-section-label" x="612" y="12" fill="var(--fm1p12-amber)">LEGENDA DE INTERPRETAÇÃO CLÍNICA:</text>
+    <text class="fm1p12-subtitle" x="612" y="28">• A fraqueza muscular é o sintoma comum a todos os andares.</text>
+    <text class="fm1p12-subtitle" x="612" y="41">• O padrão do exame físico (reflexo, tônus, Babinski) dita a TOPOGRAFIA e o exame complementar.</text>
+  </g>
+
+  <!-- CONTROLES DE NAVEGAÇÃO / TABS -->
+  <g transform="translate(30, 88)">
+    <text class="fm1p12-section-label" x="0" y="16">Filtrar por Andar Topográfico:</text>
+    
+    <g id="fm1p12-tab-all" class="fm1p12-tab-btn" role="button" aria-label="Ver Matriz Completa" tabindex="0" onclick="fm1p12SetScene('all')" onkeydown="if(event.key==='Enter')fm1p12SetScene('all')">
+      <rect class="fm1p12-tab-rect" x="180" y="0" width="110" height="26" />
+      <text class="fm1p12-tab-text" x="235" y="17">VER TODOS (4)</text>
+    </g>
+
+    <g id="fm1p12-tab-f1" class="fm1p12-tab-btn" role="button" aria-label="Filtrar 1º NMS" tabindex="0" onclick="fm1p12SetScene('f1')" onkeydown="if(event.key==='Enter')fm1p12SetScene('f1')">
+      <rect class="fm1p12-tab-rect" x="300" y="0" width="95" height="26" />
+      <text class="fm1p12-tab-text" x="347" y="17">1º NMS</text>
+    </g>
+
+    <g id="fm1p12-tab-f2" class="fm1p12-tab-btn" role="button" aria-label="Filtrar 2º NMS" tabindex="0" onclick="fm1p12SetScene('f2')" onkeydown="if(event.key==='Enter')fm1p12SetScene('f2')">
+      <rect class="fm1p12-tab-rect" x="405" y="0" width="95" height="26" />
+      <text class="fm1p12-tab-text" x="452" y="17">2º NMS</text>
+    </g>
+
+    <g id="fm1p12-tab-f3" class="fm1p12-tab-btn" role="button" aria-label="Filtrar Placa Motora" tabindex="0" onclick="fm1p12SetScene('f3')" onkeydown="if(event.key==='Enter')fm1p12SetScene('f3')">
+      <rect class="fm1p12-tab-rect" x="510" y="0" width="105" height="26" />
+      <text class="fm1p12-tab-text" x="562" y="17">PLACA MOTORA</text>
+    </g>
+
+    <g id="fm1p12-tab-f4" class="fm1p12-tab-btn" role="button" aria-label="Filtrar Músculo" tabindex="0" onclick="fm1p12SetScene('f4')" onkeydown="if(event.key==='Enter')fm1p12SetScene('f4')">
+      <rect class="fm1p12-tab-rect" x="625" y="0" width="95" height="26" />
+      <text class="fm1p12-tab-text" x="672" y="17">MÚSCULO</text>
+    </g>
+  </g>
+
+  <!-- COLUNA DA ESQUERDA: CARDS DOS 4 ANDARES TOPOGRÁFICOS -->
+  <g transform="translate(30, 130)">
+
+    <!-- CONECTOR DA CADEIA VERTICAL -->
+    <line x1="30" y1="60" x2="30" y2="640" stroke="var(--fm1p12-card-border)" stroke-width="4" stroke-dasharray="6,6" />
+
+    <!-- 1º ANDAR: 1º NMS -->
+    <g class="fm1p12-floor-card fm1p12-card-f1" role="button" aria-label="Detalhar 1º NMS" tabindex="0" onclick="fm1p12SetScene('f1')" onkeydown="if(event.key==='Enter')fm1p12SetScene('f1')" onmouseenter="fm1p12ShowTT(event, '1º NMS (Motor Superior)', 'Córtex → Cápsula Interna → Tronco → Pirâmide. Síndrome Espástica.')" onmouseleave="fm1p12HideTT()">
+      <rect class="fm1p12-card-rect fm1p12-f1-rect" x="0" y="0" width="690" height="150" />
+      
+      <!-- Icone Anatomico: Brain / Cortex -->
+      <g transform="translate(20, 20)">
+        <circle cx="30" cy="30" r="24" fill="rgba(99, 102, 241, 0.2)" stroke="var(--fm1p12-indigo)" stroke-width="2" />
+        <path d="M20 28 Q 25 18 35 25 T 42 35 T 25 40 Z" fill="none" stroke="var(--fm1p12-indigo)" stroke-width="2" />
+        <text x="30" y="68" fill="var(--fm1p12-indigo)" font-size="10" font-weight="800" text-anchor="middle">CÓRTEX/VIA</text>
+      </g>
+
+      <!-- Titulo & Topografia -->
+      <text x="90" y="32" fill="var(--fm1p12-indigo)" font-size="15" font-weight="800">1º ANDAR · NEURÔNIO MOTOR SUPERIOR (1º NMS)</text>
+      <text class="fm1p12-subtitle" x="90" y="50">Topografia: Córtex motor, Coroa Radiada, Cápsula Interna, Tronco Encefálico, Medula Spinal</text>
+
+      <!-- Parametros Chave -->
+      <g transform="translate(90, 65)">
+        <!-- Reflexo -->
+        <rect x="0" y="0" width="130" height="36" rx="6" fill="var(--fm1p12-red-bg)" stroke="var(--fm1p12-red)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="8" y="14">REFLEXOS OTE</text>
+        <text class="fm1p12-badge-red" x="8" y="28">HIPERREFLEXIA (3-4+)</text>
+
+        <!-- Tonus -->
+        <rect x="140" y="0" width="140" height="36" rx="6" fill="var(--fm1p12-red-bg)" stroke="var(--fm1p12-red)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="148" y="14">TÔNUS MUSCULAR</text>
+        <text class="fm1p12-badge-red" x="148" y="28">ESPÁSTICO (Canivete)</text>
+
+        <!-- Babinski -->
+        <rect x="290" y="0" width="130" height="36" rx="6" fill="var(--fm1p12-red-bg)" stroke="var(--fm1p12-red)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="298" y="14">SINAL DE BABINSKI</text>
+        <text class="fm1p12-badge-red" x="298" y="28">PRESENT E (Cutâneo+)</text>
+
+        <!-- Atrofia -->
+        <rect x="430" y="0" width="140" height="36" rx="6" fill="var(--fm1p12-green-bg)" stroke="var(--fm1p12-green)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="438" y="14">ATROFIA MUSCULAR</text>
+        <text class="fm1p12-badge-green" x="438" y="28">LEVE (Por desuso)</text>
+      </g>
+
+      <!-- Rodape do Card -->
+      <text class="fm1p12-td-sub" x="90" y="124" fill="var(--fm1p12-text-sub)">Exemplos Etiológicos: AVE isquêmico/hemorrágico, TRM, Tumores do SNC, Esclerose Múltipla.</text>
+      <text x="665" y="80" fill="var(--fm1p12-indigo)" font-size="18" font-weight="800" text-anchor="end">➔</text>
+    </g>
+
+    <!-- 2º ANDAR: 2º NMS -->
+    <g class="fm1p12-floor-card fm1p12-card-f2" transform="translate(0, 165)" role="button" aria-label="Detalhar 2º NMS" tabindex="0" onclick="fm1p12SetScene('f2')" onkeydown="if(event.key==='Enter')fm1p12SetScene('f2')" onmouseenter="fm1p12ShowTT(event, '2º NMS (Motor Inferior)', 'Corno Anterior → Nervo Periférico. Síndrome Flácida com Atrofia e Fasciculações.')" onmouseleave="fm1p12HideTT()">
+      <rect class="fm1p12-card-rect fm1p12-f2-rect" x="0" y="0" width="690" height="150" />
+      
+      <!-- Icone Anatomico: Spinal Cord / Nerve -->
+      <g transform="translate(20, 20)">
+        <circle cx="30" cy="30" r="24" fill="rgba(20, 184, 166, 0.2)" stroke="var(--fm1p12-teal)" stroke-width="2" />
+        <path d="M18 30 L 42 30 M30 18 L 30 42" stroke="var(--fm1p12-teal)" stroke-width="3" stroke-linecap="round" />
+        <text x="30" y="68" fill="var(--fm1p12-teal)" font-size="10" font-weight="800" text-anchor="middle">CORNO/NERVO</text>
+      </g>
+
+      <!-- Titulo & Topografia -->
+      <text x="90" y="32" fill="var(--fm1p12-teal)" font-size="15" font-weight="800">2º ANDAR · NEURÔNIO MOTOR INFERIOR (2º NMS)</text>
+      <text class="fm1p12-subtitle" x="90" y="50">Topografia: Corno Anterior da Medula, Raízes Nervosas, Plexos, Nervos Periféricos</text>
+
+      <!-- Parametros Chave -->
+      <g transform="translate(90, 65)">
+        <!-- Reflexo -->
+        <rect x="0" y="0" width="130" height="36" rx="6" fill="var(--fm1p12-red-bg)" stroke="var(--fm1p12-red)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="8" y="14">REFLEXOS OTE</text>
+        <text class="fm1p12-badge-red" x="8" y="28">ABOLIDOS / HIPOFLEX</text>
+
+        <!-- Tonus -->
+        <rect x="140" y="0" width="140" height="36" rx="6" fill="var(--fm1p12-amber-bg)" stroke="var(--fm1p12-amber)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="148" y="14">TÔNUS MUSCULAR</text>
+        <text class="fm1p12-badge-amber" x="148" y="28">FLÁCIDO (Hipotonia)</text>
+
+        <!-- Babinski -->
+        <rect x="290" y="0" width="130" height="36" rx="6" fill="var(--fm1p12-green-bg)" stroke="var(--fm1p12-green)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="298" y="14">SINAL DE BABINSKI</text>
+        <text class="fm1p12-badge-green" x="298" y="28">AUSENTE (Flexor)</text>
+
+        <!-- Atrofia + Fasciculacao -->
+        <rect x="430" y="0" width="140" height="36" rx="6" fill="var(--fm1p12-red-bg)" stroke="var(--fm1p12-red)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="438" y="14">ATROFIA / FASCICUL.</text>
+        <text class="fm1p12-badge-red" x="438" y="28">GRAVE + FASCICULAÇ.</text>
+      </g>
+
+      <!-- Rodape do Card -->
+      <text class="fm1p12-td-sub" x="90" y="124" fill="var(--fm1p12-text-sub)">Exemplos Etiológicos: Polineuropatias, Síndrome de Guillain-Barré (GBS), Radiculopatias, ELA (2º+1º).</text>
+      <text x="665" y="80" fill="var(--fm1p12-teal)" font-size="18" font-weight="800" text-anchor="end">➔</text>
+    </g>
+
+    <!-- 3º ANDAR: PLACA MOTORA -->
+    <g class="fm1p12-floor-card fm1p12-card-f3" transform="translate(0, 330)" role="button" aria-label="Detalhar Placa Motora" tabindex="0" onclick="fm1p12SetScene('f3')" onkeydown="if(event.key==='Enter')fm1p12SetScene('f3')" onmouseenter="fm1p12ShowTT(event, '3º Andar (Placa Motora)', 'Fenda Sináptica / Receptores ACh. Fraqueza Flutuante com Fatigabilidade.')" onmouseleave="fm1p12HideTT()">
+      <rect class="fm1p12-card-rect fm1p12-f3-rect" x="0" y="0" width="690" height="150" />
+      
+      <!-- Icone Anatomico: Synapse / Receptor ACh -->
+      <g transform="translate(20, 20)">
+        <circle cx="30" cy="30" r="24" fill="rgba(245, 158, 11, 0.2)" stroke="var(--fm1p12-amber)" stroke-width="2" />
+        <circle cx="24" cy="25" r="4" fill="var(--fm1p12-amber)" />
+        <circle cx="36" cy="25" r="4" fill="var(--fm1p12-amber)" />
+        <path d="M20 38 Q 30 32 40 38" fill="none" stroke="var(--fm1p12-amber)" stroke-width="2.5" />
+        <text x="30" y="68" fill="var(--fm1p12-amber)" font-size="10" font-weight="800" text-anchor="middle">FENDA / ACh</text>
+      </g>
+
+      <!-- Titulo & Topografia -->
+      <text x="90" y="32" fill="var(--fm1p12-amber)" font-size="15" font-weight="800">3º ANDAR · JUNÇÃO NEUROMUSCULAR (PLACA MOTORA)</text>
+      <text class="fm1p12-subtitle" x="90" y="50">Topografia: Membrana Pré-sináptica, Fenda Sináptica (Acetilcolina), Receptor Pós-sináptico (AChR/MuSK)</text>
+
+      <!-- Parametros Chave -->
+      <g transform="translate(90, 65)">
+        <!-- Padrao de Forca -->
+        <rect x="0" y="0" width="140" height="36" rx="6" fill="var(--fm1p12-amber-bg)" stroke="var(--fm1p12-amber)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="8" y="14">PADRÃO DE FRAQUEZA</text>
+        <text class="fm1p12-badge-amber" x="8" y="28">FLUTUANTE / FATIGÁVEL</text>
+
+        <!-- Reflexo -->
+        <rect x="150" y="0" width="130" height="36" rx="6" fill="var(--fm1p12-green-bg)" stroke="var(--fm1p12-green)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="158" y="14">REFLEXOS OTE</text>
+        <text class="fm1p12-badge-green" x="158" y="28">PRESERVADOS (2+)</text>
+
+        <!-- Tonus -->
+        <rect x="290" y="0" width="130" height="36" rx="6" fill="var(--fm1p12-green-bg)" stroke="var(--fm1p12-green)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="298" y="14">TÔNUS MUSCULAR</text>
+        <text class="fm1p12-badge-green" x="298" y="28">NORMAL</text>
+
+        <!-- Atrofia -->
+        <rect x="430" y="0" width="140" height="36" rx="6" fill="var(--fm1p12-green-bg)" stroke="var(--fm1p12-green)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="438" y="14">ATROFIA / FASCICUL.</text>
+        <text class="fm1p12-badge-green" x="438" y="28">AUSENTES</text>
+      </g>
+
+      <!-- Rodape do Card -->
+      <text class="fm1p12-td-sub" x="90" y="124" fill="var(--fm1p12-text-sub)">Exemplos Etiológicos: Miastenia Gravis (Anti-AChR+), Botulismo (pré-sináptico), Síndrome de Eaton-Lambert.</text>
+      <text x="665" y="80" fill="var(--fm1p12-amber)" font-size="18" font-weight="800" text-anchor="end">➔</text>
+    </g>
+
+    <!-- 4º ANDAR: MÚSCULO -->
+    <g class="fm1p12-floor-card fm1p12-card-f4" transform="translate(0, 495)" role="button" aria-label="Detalhar Músculo" tabindex="0" onclick="fm1p12SetScene('f4')" onkeydown="if(event.key==='Enter')fm1p12SetScene('f4')" onmouseenter="fm1p12ShowTT(event, '4º Andar (Músculo)', 'Unidade Contrátil / Miofibrilas. Fraqueza Proximal Simétrica + CPK Elevada.')" onmouseleave="fm1p12HideTT()">
+      <rect class="fm1p12-card-rect fm1p12-f4-rect" x="0" y="0" width="690" height="150" />
+      
+      <!-- Icone Anatomico: Muscle Fiber -->
+      <g transform="translate(20, 20)">
+        <circle cx="30" cy="30" r="24" fill="rgba(16, 185, 129, 0.2)" stroke="var(--fm1p12-green)" stroke-width="2" />
+        <path d="M18 24 C 25 18, 35 18, 42 24 C 35 30, 25 30, 18 24 Z M18 36 C 25 30, 35 30, 42 36 C 35 42, 25 42, 18 36 Z" fill="var(--fm1p12-green)" opacity="0.6" />
+        <text x="30" y="68" fill="var(--fm1p12-green)" font-size="10" font-weight="800" text-anchor="middle">MÚSCULO</text>
+      </g>
+
+      <!-- Titulo & Topografia -->
+      <text x="90" y="32" fill="var(--fm1p12-green)" font-size="15" font-weight="800">4º ANDAR · MÚSCULO ESQUELÉTICO (MIOPATIA)</text>
+      <text class="fm1p12-subtitle" x="90" y="50">Topografia: Sarcolema, Miofibrilas (Actina/Miosina), Retículo Sarcoplasmático, Matriz Intersticial</text>
+
+      <!-- Parametros Chave -->
+      <g transform="translate(90, 65)">
+        <!-- Distribuição -->
+        <rect x="0" y="0" width="140" height="36" rx="6" fill="var(--fm1p12-red-bg)" stroke="var(--fm1p12-red)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="8" y="14">DISTRIBUIÇÃO DA FORÇA</text>
+        <text class="fm1p12-badge-red" x="8" y="28">PROXIMAL E SIMÉTRICA</text>
+
+        <!-- Biomarcador CPK -->
+        <rect x="150" y="0" width="130" height="36" rx="6" fill="var(--fm1p12-red-bg)" stroke="var(--fm1p12-red)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="158" y="14">BIOMARCADOR SERICO</text>
+        <text class="fm1p12-badge-red" x="158" y="28">CPK MUITO ELEVADA</text>
+
+        <!-- Reflexo -->
+        <rect x="290" y="0" width="130" height="36" rx="6" fill="var(--fm1p12-green-bg)" stroke="var(--fm1p12-green)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="298" y="14">REFLEXOS OTE</text>
+        <text class="fm1p12-badge-green" x="298" y="28">PRESERVADOS (Fase 1)</text>
+
+        <!-- Babinski -->
+        <rect x="430" y="0" width="140" height="36" rx="6" fill="var(--fm1p12-green-bg)" stroke="var(--fm1p12-green)" stroke-width="1" />
+        <text class="fm1p12-td-sub" x="438" y="14">BABINSKI / FASCIC.</text>
+        <text class="fm1p12-badge-green" x="438" y="28">AUSENTES</text>
+      </g>
+
+      <!-- Rodape do Card -->
+      <text class="fm1p12-td-sub" x="90" y="124" fill="var(--fm1p12-text-sub)">Exemplos Etiológicos: Dermatomiosite (DM), Polimiosite (PM), Miosite por Anti-Jo-1, Miopatias Tóxicas/Estatina.</text>
+      <text x="665" y="80" fill="var(--fm1p12-green)" font-size="18" font-weight="800" text-anchor="end">➔</text>
+    </g>
+  </g>
+
+  <!-- COLUNA DA DIREITA: PAINEL DE INSPEÇÃO DINÂMICA E ANÁLISE COMPARATIVA -->
+  <g transform="translate(745, 130)">
+    <rect class="fm1p12-panel-bg" x="0" y="0" width="425" height="645" />
+
+    <!-- ===== CONTEÚDO SCENE = ALL ===== -->
+    <g id="fm1p12-panel-all" class="fm1p12-inspect-group" transform="translate(20, 20)">
+      <text class="fm1p12-title" x="0" y="20" font-size="16">MATRIZ COMPARATIVA DE EXAME</text>
+      <text class="fm1p12-subtitle" x="0" y="38">Cruze os parâmetros clínicos para topografar a fraqueza em segundos:</text>
+
+      <!-- TABELA MATRIZ REDUZIDA -->
+      <g transform="translate(0, 55)">
+        <rect x="0" y="0" width="385" height="24" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-card-border)" stroke-width="1" rx="4" />
+        <text class="fm1p12-th" x="10" y="16">ANDAR</text>
+        <text class="fm1p12-th" x="90" y="16">REFLEXO</text>
+        <text class="fm1p12-th" x="175" y="16">TÔNUS</text>
+        <text class="fm1p12-th" x="250" y="16">BABINSKI</text>
+        <text class="fm1p12-th" x="325" y="16">ATROFIA</text>
+
+        <!-- Linha 1: 1º NMS -->
+        <g transform="translate(0, 30)">
+          <rect x="0" y="0" width="385" height="28" fill="var(--fm1p12-indigo-bg)" rx="4" />
+          <text class="fm1p12-td" x="10" y="18" fill="var(--fm1p12-indigo)">1º NMS</text>
+          <text class="fm1p12-badge-red" x="90" y="18">3-4+ (Hiper)</text>
+          <text class="fm1p12-td" x="175" y="18">Espástico</text>
+          <text class="fm1p12-badge-red" x="250" y="18">(+) Presente</text>
+          <text class="fm1p12-td" x="325" y="18">Leve</text>
+        </g>
+
+        <!-- Linha 2: 2º NMS -->
+        <g transform="translate(0, 62)">
+          <rect x="0" y="0" width="385" height="28" fill="var(--fm1p12-teal-bg)" rx="4" />
+          <text class="fm1p12-td" x="10" y="18" fill="var(--fm1p12-teal)">2º NMS</text>
+          <text class="fm1p12-badge-red" x="90" y="18">0-1+ (Hipo)</text>
+          <text class="fm1p12-td" x="175" y="18">Flácido</text>
+          <text class="fm1p12-td" x="250" y="18">Ausente</text>
+          <text class="fm1p12-badge-red" x="325" y="18">Grave/Fasc.</text>
+        </g>
+
+        <!-- Linha 3: Placa -->
+        <g transform="translate(0, 94)">
+          <rect x="0" y="0" width="385" height="28" fill="var(--fm1p12-amber-bg)" rx="4" />
+          <text class="fm1p12-td" x="10" y="18" fill="var(--fm1p12-amber)">Placa</text>
+          <text class="fm1p12-badge-green" x="90" y="18">2+ Normal</text>
+          <text class="fm1p12-td" x="175" y="18">Normal</text>
+          <text class="fm1p12-td" x="250" y="18">Ausente</text>
+          <text class="fm1p12-td" x="325" y="18">Ausente</text>
+        </g>
+
+        <!-- Linha 4: Musculo -->
+        <g transform="translate(0, 126)">
+          <rect x="0" y="0" width="385" height="28" fill="var(--fm1p12-green-bg)" rx="4" />
+          <text class="fm1p12-td" x="10" y="18" fill="var(--fm1p12-green)">Músculo</text>
+          <text class="fm1p12-badge-green" x="90" y="18">2+ Normal</text>
+          <text class="fm1p12-td" x="175" y="18">Normal</text>
+          <text class="fm1p12-td" x="250" y="18">Ausente</text>
+
+          <text class="fm1p12-td" x="325" y="18">Tardia</text>
+        </g>
+      </g>
+
+      <!-- CHIP DO FUNIL DIAGNÓSTICO STE -->
+      <g transform="translate(0, 235)">
+        <rect x="0" y="0" width="385" height="135" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-card-border)" stroke-width="1.5" />
+        <text class="fm1p12-section-label" x="14" y="22" fill="var(--fm1p12-amber)">FUNIL DIAGNÓSTICO STE (3 ETAPAS)</text>
+        
+        <text class="fm1p12-td" x="14" y="45" fill="var(--fm1p12-indigo)">1. SINDRÔMICO:</text>
+        <text class="fm1p12-subtitle" x="110" y="45">Confirmar se a queixa é fraqueza motora verdadeira.</text>
+
+        <text class="fm1p12-td" x="14" y="75" fill="var(--fm1p12-teal)">2. TOPOGRÁFICO:</text>
+        <text class="fm1p12-subtitle" x="110" y="75">Localizar em qual dos 4 andares o elo foi quebrado.</text>
+
+        <text class="fm1p12-td" x="14" y="105" fill="var(--fm1p12-green)">3. ETIOLÓGICO:</text>
+        <text class="fm1p12-subtitle" x="110" y="105">Solicitar o exame específico (CPK, ENMG, RM, Autoac).</text>
+      </g>
+
+      <!-- SEÇÃO DON'T CONFUSE / PEGADINHAS DE PROVA -->
+      <g transform="translate(0, 390)">
+        <rect x="0" y="0" width="385" height="195" rx="8" fill="var(--fm1p12-red-bg)" stroke="var(--fm1p12-red)" stroke-width="1.5" />
+        <text class="fm1p12-section-label" x="14" y="22" fill="var(--fm1p12-red)">⚠ PEGADINHAS E ALERTAS DE PROVA (NÃO CONFUNDA):</text>
+        
+        <text class="fm1p12-td" x="14" y="46" fill="var(--fm1p12-text-main)">1. PARKINSON ≠ FRAQUEZA:</text>
+        <text class="fm1p12-subtitle" x="14" y="62">Rigidez em roda denteada + bradicinesia. A força muscular está preservada.</text>
+
+        <text class="fm1p12-td" x="14" y="90" fill="var(--fm1p12-text-main)">2. FASCICULAÇÃO ISOLADA:</text>
+        <text class="fm1p12-subtitle" x="14" y="106">Sem fraqueza ou atrofia é BENIGNA (ansiedade/café). NÃO diagnostica ELA isoladamente.</text>
+
+        <text class="fm1p12-td" x="14" y="134" fill="var(--fm1p12-text-main)">3. AVE AGUDO (FASE DE CHOQUE NEURAL):</text>
+        <text class="fm1p12-subtitle" x="14" y="150">Nas primeiras horas/dias do AVE, o 1º NMS pode apresentar hipotonia e arreflexia (falso 2º NMS) antes de organizar a hiperreflexia espástica.</text>
+      </g>
+    </g>
+
+    <!-- ===== CONTEÚDO SCENE = F1 (1º NMS) ===== -->
+    <g id="fm1p12-panel-f1" class="fm1p12-inspect-group" transform="translate(20, 20)">
+      <text class="fm1p12-title" x="0" y="20" fill="var(--fm1p12-indigo)">DETALHAMENTO: 1º NMS</text>
+      <text class="fm1p12-subtitle" x="0" y="38">Síndrome Piramidal / Motor Superior</text>
+
+      <rect x="0" y="55" width="385" height="150" rx="8" fill="var(--fm1p12-indigo-bg)" stroke="var(--fm1p12-indigo)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="78" fill="var(--fm1p12-indigo)">FISIOPATOLOGIA & ANATOMIA</text>
+      <text class="fm1p12-subtitle" x="14" y="98">• Lesão da via corticoespinal (córtex motora até medula).</text>
+      <text class="fm1p12-subtitle" x="14" y="118">• Perda da inibição descendente → Arco reflexo desinibido.</text>
+      <text class="fm1p12-subtitle" x="14" y="138">• RESULTADO: Hiperreflexia, Espasticidade, Babinski (+).</text>
+      <text class="fm1p12-subtitle" x="14" y="158">• Decussação ocorre no tronco (bulbo piramidal).</text>
+
+      <rect x="0" y="220" width="385" height="180" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-card-border)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="242" fill="var(--fm1p12-indigo)">EXAMES COMPLEMENTARES DE ELEIÇÃO</text>
+      <text class="fm1p12-td" x="14" y="266">1. Ressonância Magnética (RM) de Encéfalo/Coluna</text>
+      <text class="fm1p12-subtitle" x="24" y="282">Identifica isquemia, hemorragia, desmielinização ou compressão.</text>
+      <text class="fm1p12-td" x="14" y="306">2. Tomografia Computadorizada (TC) de Crânio</text>
+      <text class="fm1p12-subtitle" x="24" y="322">Primeira escolha na suspeita de AVE agudo hemorrágico/isquêmico.</text>
+      <text class="fm1p12-td" x="14" y="346">3. Punção Liquórica (LCR)</text>
+      <text class="fm1p12-subtitle" x="24" y="362">Pesquisa de bandas oligoclonais na Esclerose Múltipla.</text>
+
+      <rect x="0" y="415" width="385" height="185" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-indigo)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="437" fill="var(--fm1p12-indigo)">PRINCIPAIS DIAGNÓSTICOS DIFERENCIAIS</text>
+      <text class="fm1p12-td" x="14" y="460">• Acidente Vascular Encefálico (AVE Isquêmico / Hemorrágico)</text>
+      <text class="fm1p12-td" x="14" y="485">• Traumatismo Raquimedular (TRM / Mielopatia Compressiva)</text>
+      <text class="fm1p12-td" x="14" y="510">• Esclerose Múltipla / Neurmielite Óptica (NMO)</text>
+      <text class="fm1p12-td" x="14" y="535">• Tumores Primários ou Metastáticos do SNC</text>
+      <text class="fm1p12-td" x="14" y="560">• Esclerose Lateral Amiotrófica (ELA - componente 1º NMS)</text>
+    </g>
+
+    <!-- ===== CONTEÚDO SCENE = F2 (2º NMS) ===== -->
+    <g id="fm1p12-panel-f2" class="fm1p12-inspect-group" transform="translate(20, 20)">
+      <text class="fm1p12-title" x="0" y="20" fill="var(--fm1p12-teal)">DETALHAMENTO: 2º NMS</text>
+      <text class="fm1p12-subtitle" x="0" y="38">Síndrome Neurogena / Motor Inferior</text>
+
+      <rect x="0" y="55" width="385" height="150" rx="8" fill="var(--fm1p12-teal-bg)" stroke="var(--fm1p12-teal)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="78" fill="var(--fm1p12-teal)">FISIOPATOLOGIA & ANATOMIA</text>
+      <text class="fm1p12-subtitle" x="14" y="98">• Lesão do corpo celular no corno anterior ou axonopatia.</text>
+      <text class="fm1p12-subtitle" x="14" y="118">• Interrupção da via final comum → Perda trófica muscular.</text>
+      <text class="fm1p12-subtitle" x="14" y="138">• RESULTADO: Arreflexia, Hipotonia flácida, Atrofia intensa.</text>
+      <text class="fm1p12-subtitle" x="14" y="158">• Fasciculações: denervação ativa do motoneurônio.</text>
+
+      <rect x="0" y="220" width="385" height="180" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-card-border)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="242" fill="var(--fm1p12-teal)">EXAMES COMPLEMENTARES DE ELEIÇÃO</text>
+      <text class="fm1p12-td" x="14" y="266">1. Eletroneuromiografia (ENMG) com Velocidade</text>
+      <text class="fm1p12-subtitle" x="24" y="282">Padrão neurogênico: potenciais de fasciculação e denervação.</text>
+      <text class="fm1p12-td" x="14" y="306">2. LCR (Dissociação Proteína-Citológica)</text>
+      <text class="fm1p12-subtitle" x="24" y="322">Proteína elevada com poucas células na Síndrome de Guillain-Barré.</text>
+      <text class="fm1p12-td" x="14" y="346">3. Painel Genético / Biópsia de Nervo</text>
+      <text class="fm1p12-subtitle" x="24" y="362">Investigação de neuropatias hereditárias (Charcot-Marie-Tooth).</text>
+
+      <rect x="0" y="415" width="385" height="185" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-teal)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="437" fill="var(--fm1p12-teal)">PRINCIPAIS DIAGNÓSTICOS DIFERENCIAIS</text>
+      <text class="fm1p12-td" x="14" y="460">• Síndrome de Guillain-Barré (Polyradiculoneuropatia Aguda)</text>
+      <text class="fm1p12-td" x="14" y="485">• Polineuropatia Diabética / Alcoólica / Tóxica</text>
+      <text class="fm1p12-td" x="14" y="510">• Radiculopatias Compressivas (Hérnia de Disco Cervical/Lombar)</text>
+      <text class="fm1p12-td" x="14" y="535">• Poliomielite / Atrofia Muscular Espinhal (AME)</text>
+      <text class="fm1p12-td" x="14" y="560">• Esclerose Lateral Amiotrófica (ELA - componente 2º NMS)</text>
+    </g>
+
+    <!-- ===== CONTEÚDO SCENE = F3 (PLACA MOTORA) ===== -->
+    <g id="fm1p12-panel-f3" class="fm1p12-inspect-group" transform="translate(20, 20)">
+      <text class="fm1p12-title" x="0" y="20" fill="var(--fm1p12-amber)">DETALHAMENTO: PLACA MOTORA</text>
+      <text class="fm1p12-subtitle" x="0" y="38">Junção Neuromuscular / Fenda Sináptica</text>
+
+      <rect x="0" y="55" width="385" height="150" rx="8" fill="var(--fm1p12-amber-bg)" stroke="var(--fm1p12-amber)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="78" fill="var(--fm1p12-amber)">FISIOPATOLOGIA & ANATOMIA</text>
+      <text class="fm1p12-subtitle" x="14" y="98">• Bloqueio da transmissão química por anticorpos ou toxina.</text>
+      <text class="fm1p12-subtitle" x="14" y="118">• Anti-AChR destrói receptores pós-sinápticos.</text>
+      <text class="fm1p12-subtitle" x="14" y="138">• RESULTADO: Fraqueza flutuante, ptose palpebral, diplopia.</text>
+      <text class="fm1p12-subtitle" x="14" y="158">• Reflexos OTE e tônus permanecem NORM AIS.</text>
+
+      <rect x="0" y="220" width="385" height="180" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-card-border)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="242" fill="var(--fm1p12-amber)">EXAMES COMPLEMENTARES DE ELEIÇÃO</text>
+      <text class="fm1p12-td" x="14" y="266">1. Dosagem de Anticorpos Séracos</text>
+      <text class="fm1p12-subtitle" x="24" y="282">Anti-AChR (85% de sensibilidade) e Anti-MuSK.</text>
+      <text class="fm1p12-td" x="14" y="306">2. ENMG com Estimulação Elétrica Repetitiva</text>
+      <text class="fm1p12-subtitle" x="24" y="322">Demonstra decremento progressivo do potencial de ação (>10%).</text>
+      <text class="fm1p12-td" x="14" y="346">3. TC de Tórax (Rastreio de Timoma)</text>
+      <text class="fm1p12-subtitle" x="24" y="362">Obrigatório na Miastenia Gravis para avaliar hiperplasia/timoma.</text>
+
+      <rect x="0" y="415" width="385" height="185" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-amber)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="437" fill="var(--fm1p12-amber)">PRINCIPAIS DIAGNÓSTICOS DIFERENCIAIS</text>
+      <text class="fm1p12-td" x="14" y="460">• Miastenia Gravis (Autoimune pós-sináptica)</text>
+      <text class="fm1p12-td" x="14" y="485">• Síndrome Miastênica de Eaton-Lambert (Pré-sináptica/Paraneoplásica)</text>
+      <text class="fm1p12-td" x="14" y="510">• Botulismo (Bloqueio de liberação pré-sináptica de ACh)</text>
+      <text class="fm1p12-td" x="14" y="535">• Intoxicação por Organofosforados / Anticolinesterásicos</text>
+      <text class="fm1p12-td" x="14" y="560">• Síndromes Miastênicas Congênitas</text>
+    </g>
+
+    <!-- ===== CONTEÚDO SCENE = F4 (MÚSCULO) ===== -->
+    <g id="fm1p12-panel-f4" class="fm1p12-inspect-group" transform="translate(20, 20)">
+      <text class="fm1p12-title" x="0" y="20" fill="var(--fm1p12-green)">DETALHAMENTO: MÚSCULO</text>
+      <text class="fm1p12-subtitle" x="0" y="38">Miopatia Inflamatória / Esquelética</text>
+
+      <rect x="0" y="55" width="385" height="150" rx="8" fill="var(--fm1p12-green-bg)" stroke="var(--fm1p12-green)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="78" fill="var(--fm1p12-green)">FISIOPATOLOGIA & ANATOMIA</text>
+      <text class="fm1p12-subtitle" x="14" y="98">• Lesão primária da fibra muscular / sarcolema / miofibrilas.</text>
+      <text class="fm1p12-subtitle" x="14" y="118">• Necrose inflamatória e extravasamento de enzimas musculares.</text>
+      <text class="fm1p12-subtitle" x="14" y="138">• RESULTADO: Fraqueza PROXIMAL E SIMÉTRICA (cinturas).</text>
+      <text class="fm1p12-subtitle" x="14" y="158">• Dificuldade para subir escadas ou pentear cabelos.</text>
+
+      <rect x="0" y="220" width="385" height="180" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-card-border)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="242" fill="var(--fm1p12-green)">EXAMES COMPLEMENTARES DE ELEIÇÃO</text>
+      <text class="fm1p12-td" x="14" y="266">1. Dosagem Enzimática Séraca (CPK / Aldolase)</text>
+      <text class="fm1p12-subtitle" x="24" y="282">CPK marcadamente elevada (milhares de U/L nas miosites ativas).</text>
+      <text class="fm1p12-td" x="14" y="306">2. Autoanticorpos Específicos (Anti-Jo-1, Anti-Mi-2)</text>
+      <text class="fm1p12-subtitle" x="24" y="322">Sinaliza Síndrome Antisintetase ou Dermatomiosite pura.</text>
+      <text class="fm1p12-td" x="14" y="346">3. Biópsia Muscular Guiada por RM</text>
+      <text class="fm1p12-subtitle" x="24" y="362">Padrão-ouro: inﬁltrado perivascular (DM) ou endomisial (PM).</text>
+
+      <rect x="0" y="415" width="385" height="185" rx="8" fill="var(--fm1p12-card-bg)" stroke="var(--fm1p12-green)" stroke-width="1.5" />
+      <text class="fm1p12-section-label" x="14" y="437" fill="var(--fm1p12-green)">PRINCIPAIS DIAGNÓSTICOS DIFERENCIAIS</text>
+      <text class="fm1p12-td" x="14" y="460">• Dermatomiosite (DM - Pápulas de Gottron + Sinal do Xale)</text>
+      <text class="fm1p12-td" x="14" y="485">• Polimiosite (PM) / Miosite por Corpúsculos de Inclusão</text>
+      <text class="fm1p12-td" x="14" y="510">• Síndrome Antisintetase (Anti-Jo-1 + Mãos de Mecânico + DPI)</text>
+      <text class="fm1p12-td" x="14" y="535">• Miopatia Induzida por Estatinas / Corticoides / Álcool</text>
+      <text class="fm1p12-td" x="14" y="560">• Distrofias Musculares Hereditárias (Duchenne/Becker)</text>
+    </g>
+  </g>
+
+  <!-- RODAPÉ DA FIGURA: FECHAMENTO DE MATRIZ DE CONCEITO -->
+  <g transform="translate(30, 790)">
+    <rect class="fm1p12-panel-bg" x="0" y="0" width="1140" height="42" rx="8" />
+    <text class="fm1p12-td" x="16" y="25" fill="var(--fm1p12-indigo)">MEMÓRIA DE TRILHA FM1:</text>
+    <text class="fm1p12-subtitle" x="180" y="25">Esta matriz topográfica (1º NMS → 2º NMS → Placa → Músculo) hidrata e fundamenta o raciocínio das estações clínicas FM2 a FM5.</text>
+  </g>
+
+  <!-- TOOLTIP INTERATIVO SEGUINDO O MOUSE -->
+  <g id="fm1p12-tooltip" transform="translate(0,0)">
+    <rect class="fm1p12-tt-bg" x="0" y="0" width="220" height="44" />
+    <text id="fm1p12-tt-title" class="fm1p12-tt-title" x="10" y="18">Título</text>
+    <text id="fm1p12-tt-body" class="fm1p12-tt-body" x="10" y="32">Descrição do item</text>
+  </g>
+
+  <!-- SCRIPT INLINE DE INTERATIVIDADE PURA DO SVG -->
+  <script><![CDATA[
+    (function() {
+      var svg = document.getElementById('fm1p12-svg');
+      var tt = document.getElementById('fm1p12-tooltip');
+      var ttTitle = document.getElementById('fm1p12-tt-title');
+      var ttBody = document.getElementById('fm1p12-tt-body');
+
+      window.fm1p12SetScene = function(scene) {
+        if (svg) {
+          svg.setAttribute('data-scene', scene);
+        }
+      };
+
+      window.fm1p12ShowTT = function(evt, title, body) {
+        if (!tt || !svg) return;
+        ttTitle.textContent = title;
+        ttBody.textContent = body;
+        
+        var ctm = svg.getScreenCTM();
+        if (ctm) {
+          var pt = svg.createSVGPoint();
+          pt.x = evt.clientX;
+          pt.y = evt.clientY;
+          var loc = pt.matrixTransform(ctm.inverse());
+          
+          var x = loc.x + 12;
+          var y = loc.y + 12;
+          if (x + 230 > 1180) x = loc.x - 230;
+          if (y + 50 > 830) y = loc.y - 50;
+
+          tt.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+          tt.setAttribute('class', 'fm1p12-visible');
+        }
+      };
+
+      window.fm1p12HideTT = function() {
+        if (tt) {
+          tt.setAttribute('class', '');
+        }
+      };
+    })();
+  ]]></script>
+</svg>

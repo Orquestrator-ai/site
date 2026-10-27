@@ -1,0 +1,504 @@
+<svg id="p12-svg-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" data-active="cortical">
+  <defs>
+    <!-- Gradiente para o infarto cortical -->
+    <radialGradient id="p12-grad-cortical" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff5a5f" stop-opacity="0.65" />
+      <stop offset="75%" stop-color="#ff5a5f" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ff5a5f" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* Estilos escopados */
+    #p12-svg-root {
+      font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      user-select: none;
+      background-color: var(--bg-1, #0f172a);
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Variáveis locais do tema com fallbacks coerentes */
+    #p12-svg-root {
+      --p12-color-bg: var(--bg-1, #0f172a);
+      --p12-color-panel: var(--bg-2, rgba(30, 41, 59, 0.75));
+      --p12-color-border: var(--border-color, rgba(255, 255, 255, 0.1));
+      --p12-color-text-primary: var(--ink-100, #f8fafc);
+      --p12-color-text-secondary: var(--ink-70, #94a3b8);
+      --p12-color-cyan: var(--kw-cyan, #00d4ff);
+      --p12-color-coral: var(--kw-red, #ff5a5f);
+      --p12-color-amber: var(--kw-yellow, #ffb703);
+      --p12-color-brain-fill: var(--bg-3, rgba(255, 255, 255, 0.03));
+      --p12-color-brain-stroke: var(--ink-30, rgba(255, 255, 255, 0.15));
+    }
+    
+    /* Suporte a tema claro standalone */
+    @media (prefers-color-scheme: light) {
+      #p12-svg-root {
+        --p12-color-bg: #f8fafc;
+        --p12-color-panel: rgba(255, 255, 255, 0.9);
+        --p12-color-border: rgba(15, 23, 42, 0.08);
+        --p12-color-text-primary: #0f172a;
+        --p12-color-text-secondary: #64748b;
+        --p12-color-brain-fill: rgba(15, 23, 42, 0.03);
+        --p12-color-brain-stroke: rgba(15, 23, 42, 0.12);
+      }
+    }
+    
+    /* Elementos Anatômicos */
+    #p12-svg-root .p12-brain-base {
+      fill: var(--p12-color-brain-fill);
+      stroke: var(--p12-color-brain-stroke);
+      stroke-width: 2.5;
+      transition: all 0.3s ease;
+    }
+    
+    #p12-svg-root .p12-ventricle {
+      fill: rgba(0, 212, 255, 0.04);
+      stroke: rgba(0, 212, 255, 0.2);
+      stroke-width: 1.5;
+    }
+    
+    #p12-svg-root .p12-ganglion {
+      fill: rgba(255, 255, 255, 0.01);
+      stroke: var(--p12-color-brain-stroke);
+      stroke-width: 1;
+      stroke-dasharray: 2, 3;
+    }
+    
+    /* Vasos */
+    #p12-svg-root .p12-vessel {
+      fill: none;
+      stroke: var(--p12-color-cyan);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.3s ease;
+    }
+    
+    #p12-svg-root .p12-vessel-large {
+      stroke-width: 3.5;
+    }
+    
+    #p12-svg-root .p12-vessel-branch {
+      stroke-width: 2;
+    }
+    
+    #p12-svg-root .p12-vessel-perf {
+      stroke-width: 1.2;
+    }
+    
+    /* Patologias */
+    #p12-svg-root .p12-infarct-cortical {
+      fill: url(#p12-grad-cortical);
+      stroke: var(--p12-color-coral);
+      stroke-width: 1.5;
+      stroke-dasharray: 4, 3;
+      transition: opacity 0.3s ease;
+    }
+    
+    #p12-svg-root .p12-infarct-lacunar {
+      fill: var(--p12-color-amber);
+      fill-opacity: 0.85;
+      stroke: var(--p12-color-bg);
+      stroke-width: 1;
+      transition: transform 0.2s ease, fill-opacity 0.2s ease;
+    }
+    
+    #p12-svg-root .p12-infarct-lacunar:hover {
+      transform: scale(1.2);
+      fill-opacity: 1;
+    }
+    
+    /* UI do Painel */
+    #p12-svg-root .p12-panel {
+      fill: var(--p12-color-panel);
+      stroke: var(--p12-color-border);
+      stroke-width: 1.5;
+      backdrop-filter: blur(8px);
+    }
+    
+    #p12-svg-root .p12-btn {
+      cursor: pointer;
+      outline: none;
+    }
+    
+    #p12-svg-root .p12-btn-rect {
+      fill: rgba(255, 255, 255, 0.02);
+      stroke: var(--p12-color-border);
+      stroke-width: 1.5;
+      transition: all 0.2s ease;
+    }
+    
+    #p12-svg-root .p12-btn:hover .p12-btn-rect {
+      fill: rgba(255, 255, 255, 0.05);
+      stroke: var(--p12-color-text-secondary);
+    }
+    
+    #p12-svg-root .p12-btn-text {
+      fill: var(--p12-color-text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      transition: fill 0.2s ease;
+    }
+    
+    #p12-svg-root .p12-btn:hover .p12-btn-text {
+      fill: var(--p12-color-text-primary);
+    }
+    
+    /* Estado Ativo do Botão Cortical */
+    #p12-svg-root[data-active="cortical"] #p12-btn-cortical .p12-btn-rect {
+      fill: rgba(255, 90, 95, 0.08);
+      stroke: var(--p12-color-coral);
+    }
+    #p12-svg-root[data-active="cortical"] #p12-btn-cortical .p12-btn-text {
+      fill: var(--p12-color-coral);
+    }
+    
+    /* Estado Ativo do Botão Subcortical */
+    #p12-svg-root[data-active="subcortical"] #p12-btn-subcortical .p12-btn-rect {
+      fill: rgba(255, 183, 3, 0.08);
+      stroke: var(--p12-color-amber);
+    }
+    #p12-svg-root[data-active="subcortical"] #p12-btn-subcortical .p12-btn-text {
+      fill: var(--p12-color-amber);
+    }
+    
+    /* Callouts / Linhas de Chamada */
+    #p12-svg-root .p12-callout-line {
+      fill: none;
+      stroke: var(--p12-color-text-secondary);
+      stroke-width: 0.8;
+      stroke-dasharray: 2, 2;
+      opacity: 0.6;
+    }
+    
+    #p12-svg-root .p12-callout-dot {
+      fill: var(--p12-color-text-secondary);
+      opacity: 0.8;
+    }
+    
+    #p12-svg-root .p12-callout-text {
+      font-size: 10px;
+      font-weight: 600;
+      fill: var(--p12-color-text-secondary);
+    }
+    
+    /* Gráficos */
+    #p12-svg-root .p12-axis {
+      stroke: var(--p12-color-border);
+      stroke-width: 1.5;
+    }
+    
+    #p12-svg-root .p12-graph-line-cortical {
+      fill: none;
+      stroke: var(--p12-color-coral);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    
+    #p12-svg-root .p12-graph-line-subcortical {
+      fill: none;
+      stroke: var(--p12-color-amber);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    
+    /* Animações e Destaques */
+    #p12-svg-root[data-active="cortical"] #p12-brain-subcortical-highlight {
+      opacity: 0.12;
+    }
+    #p12-svg-root[data-active="cortical"] #p12-brain-cortical-highlight {
+      opacity: 1;
+    }
+    #p12-svg-root[data-active="subcortical"] #p12-brain-cortical-highlight {
+      opacity: 0.12;
+    }
+    #p12-svg-root[data-active="subcortical"] #p12-brain-subcortical-highlight {
+      opacity: 1;
+    }
+    
+    /* Legenda e Textos Gerais */
+    #p12-svg-root .p12-title {
+      font-size: 20px;
+      font-weight: 800;
+      fill: var(--p12-color-text-primary);
+      letter-spacing: -0.5px;
+    }
+    
+    #p12-svg-root .p12-subtitle {
+      font-size: 12px;
+      font-weight: 500;
+      fill: var(--p12-color-text-secondary);
+    }
+    
+    #p12-svg-root .p12-legend-rect {
+      fill: var(--p12-color-panel);
+      stroke: var(--p12-color-border);
+      stroke-width: 1;
+    }
+    
+    #p12-svg-root .p12-legend-text {
+      font-size: 11px;
+      fill: var(--p12-color-text-primary);
+      font-weight: 500;
+    }
+  </style>
+
+  <!-- Cabeçalho Informativo -->
+  <g id="p12-header">
+    <text class="p12-title" x="30" y="38">DEMÊNCIA VASCULAR: CORTICAL VS. SUBCORTICAL</text>
+    <text class="p12-subtitle" x="30" y="58">A topografia e o calibre do vaso acometido definem a fisiopatologia e o padrão de declínio clínico</text>
+  </g>
+
+  <!-- Grupo Principal do Desenho Anatômico (Esquerda) -->
+  <g id="p12-anatomy-region" transform="translate(0, 10)">
+    <!-- Ventrículos e Hemisférios (Fundo Estático Sempre Visível) -->
+    <g id="p12-brain-base-group">
+      <!-- Cérebro Contorno Coronal -->
+      <path class="p12-brain-base" d="M 250,130 C 215,130 185,110 155,130 C 125,150 105,180 105,220 C 105,270 125,300 95,310 C 75,317 75,350 95,360 C 115,370 135,365 155,375 C 185,390 215,380 250,380 C 285,380 315,390 345,375 C 365,365 385,370 405,360 C 425,350 425,317 405,310 C 375,300 395,270 395,220 C 395,180 375,150 345,130 C 315,110 285,130 250,130 Z" />
+      
+      <!-- Ventrículos Laterais -->
+      <path class="p12-ventricle" d="M 235,200 C 215,200 200,220 200,240 C 200,260 215,280 235,280 C 230,255 230,225 235,200 Z" />
+      <path class="p12-ventricle" d="M 265,200 C 285,200 300,220 300,240 C 300,260 285,280 265,280 C 270,255 270,225 265,200 Z" />
+      
+      <!-- Gânglios da Base (Representação Esquemática) -->
+      <ellipse class="p12-ganglion" cx="190" cy="250" rx="18" ry="22" />
+      <ellipse class="p12-ganglion" cx="310" cy="250" rx="18" ry="22" />
+    </g>
+
+    <!-- Destaque 1: Território Cortical (Esquerdo) -->
+    <g id="p12-brain-cortical-highlight">
+      <!-- Área de Infarto Cortical Extenso (ACM) -->
+      <path class="p12-infarct-cortical" d="M 115,180 C 130,155 165,160 175,185 C 185,210 170,250 145,260 C 120,270 102,245 108,215 C 110,195 105,195 115,180 Z" />
+      
+      <!-- Vasos Grandes Corticais (Ciano) -->
+      <!-- ACM Esquerda Normal até Oclusão -->
+      <path class="p12-vessel p12-vessel-large" d="M 220,380 C 190,380 170,365 155,345" />
+      <path class="p12-vessel p12-vessel-large" d="M 155,345 C 145,330 140,310 138,280" />
+      
+      <!-- Ramos Pós-Oclusão (Esmaecidos/Isquêmicos) -->
+      <path class="p12-vessel p12-vessel-branch" d="M 138,280 C 135,250 130,220 145,190" stroke-dasharray="3, 2" opacity="0.5" />
+      <path class="p12-vessel p12-vessel-branch" d="M 145,190 L 165,175" stroke-dasharray="3, 2" opacity="0.5" />
+      <path class="p12-vessel p12-vessel-branch" d="M 138,280 L 115,290" stroke-dasharray="3, 2" opacity="0.5" />
+      
+      <!-- Ponto de Oclusão (Trombo Agudo) -->
+      <g transform="translate(138, 280)">
+        <circle cx="0" cy="0" r="6" fill="#ff5a5f" />
+        <!-- Símbolo de bloqueio (X) -->
+        <line x1="-3" y1="-3" x2="3" y2="3" stroke="#ffffff" stroke-width="2" />
+        <line x1="3" y1="-3" x2="-3" y2="3" stroke="#ffffff" stroke-width="2" />
+      </g>
+
+      <!-- Callouts do Lado Esquerdo -->
+      <!-- Callout: Infarto Cortical -->
+      <line class="p12-callout-line" x1="145" y1="210" x2="65" y2="210" />
+      <circle class="p12-callout-dot" cx="145" cy="210" r="2.5" />
+      <text class="p12-callout-text" x="60" y="213" text-anchor="end">Infarto Cortical Extenso</text>
+      
+      <!-- Callout: Oclusão ACM -->
+      <line class="p12-callout-line" x1="138" y1="280" x2="65" y2="280" />
+      <circle class="p12-callout-dot" cx="138" cy="280" r="2.5" />
+      <text class="p12-callout-text" x="60" y="283" text-anchor="end">Oclusão de Grande Vaso (ACM)</text>
+
+      <!-- Callout: Declínio em Degraus -->
+      <line class="p12-callout-line" x1="110" y1="340" x2="65" y2="340" />
+      <circle class="p12-callout-dot" cx="110" cy="340" r="2.5" />
+      <text class="p12-callout-text" x="60" y="343" text-anchor="end" fill="#ff5a5f">Deterioração Abrupta</text>
+    </g>
+
+    <!-- Destaque 2: Território Subcortical (Direito) -->
+    <g id="p12-brain-subcortical-highlight">
+      <!-- Ramos Perfurantes (Lenticuloestriadas) normais na base -->
+      <path class="p12-vessel p12-vessel-large" d="M 280,380 C 310,380 330,365 345,345" />
+      <path class="p12-vessel p12-vessel-branch" d="M 345,345 C 360,330 375,310 380,270" />
+      
+      <!-- Artérias Lenticuloestriadas (Pequenos Vasos Perfurantes) -->
+      <!-- Vaso 1 com microoclusão -->
+      <path class="p12-vessel p12-vessel-perf" d="M 295,378 C 295,350 300,310 295,290" />
+      <circle cx="295" cy="290" r="2" fill="#ffb703" />
+      
+      <!-- Vaso 2 com microoclusão -->
+      <path class="p12-vessel p12-vessel-perf" d="M 310,375 C 315,340 310,300 305,270" />
+      <circle cx="305" cy="270" r="2" fill="#ffb703" />
+      
+      <!-- Vaso 3 com microoclusão -->
+      <path class="p12-vessel p12-vessel-perf" d="M 325,370 C 330,335 320,290 315,250" />
+      <circle cx="315" cy="250" r="2" fill="#ffb703" />
+
+      <!-- Infartos Lacunares Periventriculares (Subcorticais) -->
+      <circle class="p12-infarct-lacunar" cx="295" cy="285" r="5" />
+      <circle class="p12-infarct-lacunar" cx="312" cy="245" r="4.5" />
+      <circle class="p12-infarct-lacunar" cx="275" cy="225" r="4.5" />
+      <circle class="p12-infarct-lacunar" cx="320" cy="210" r="4" />
+      <circle class="p12-infarct-lacunar" cx="282" cy="260" r="5.5" />
+
+      <!-- Callouts do Lado Direito -->
+      <!-- Callout: Lacunas Periventriculares -->
+      <line class="p12-callout-line" x1="282" y1="260" x2="435" y2="260" />
+      <circle class="p12-callout-dot" cx="282" cy="260" r="2.5" />
+      <text class="p12-callout-text" x="440" y="263" text-anchor="start">Lacunas Subcorticais</text>
+      
+      <!-- Callout: Vasos Perfurantes -->
+      <line class="p12-callout-line" x1="310" y1="330" x2="435" y2="330" />
+      <circle class="p12-callout-dot" cx="310" cy="330" r="2.5" />
+      <text class="p12-callout-text" x="440" y="333" text-anchor="start">Artérias Lenticuloestriadas (Perfurantes)</text>
+
+      <!-- Callout: Declínio Arrastado -->
+      <line class="p12-callout-line" x1="320" y1="210" x2="435" y2="210" />
+      <circle class="p12-callout-dot" cx="320" cy="210" r="2.5" />
+      <text class="p12-callout-text" x="440" y="213" text-anchor="start" fill="#ffb703">Progressão Insidiosa</text>
+    </g>
+
+    <!-- Hotspots Invisíveis para Interação Direta no Modelo Anatômico -->
+    <g class="p12-hotspot" id="p12-hotspot-cortical" role="button" aria-label="Ver Território Cortical" tabindex="0">
+      <rect class="p12-hotspot-overlay" x="70" y="110" width="180" height="280" rx="10" />
+    </g>
+    <g class="p12-hotspot" id="p12-hotspot-subcortical" role="button" aria-label="Ver Território Subcortical" tabindex="0">
+      <rect class="p12-hotspot-overlay" x="250" y="110" width="180" height="280" rx="10" />
+    </g>
+  </g>
+
+  <!-- PAINEL INTERATIVO (Direita) -->
+  <g id="p12-interactive-panel">
+    <!-- Fundo do Painel -->
+    <rect class="p12-panel" x="480" y="80" width="295" height="350" rx="12" />
+
+    <!-- Botões Segmentados Superiores -->
+    <g id="p12-btn-cortical" class="p12-btn" role="button" aria-label="Mostrar Território Cortical" tabindex="0">
+      <rect class="p12-btn-rect" x="495" y="95" width="125" height="32" rx="6" />
+      <text class="p12-btn-text" x="557.5" y="115" text-anchor="middle">Cortical (ACM)</text>
+    </g>
+    
+    <g id="p12-btn-subcortical" class="p12-btn" role="button" aria-label="Mostrar Território Subcortical" tabindex="0">
+      <rect class="p12-btn-rect" x="650" y="95" width="125" height="32" rx="6" />
+      <text class="p12-btn-text" x="712.5" y="115" text-anchor="middle">Subcortical</text>
+    </g>
+
+    <!-- CONTEÚDO 1: CORTICAL -->
+    <g id="p12-panel-content-cortical">
+      <text class="p12-title" x="495" y="160" font-size="16" fill="var(--p12-color-coral)">Disfunção Cortical</text>
+      
+      <text class="p12-callout-text" x="495" y="185" font-size="9" fill="var(--p12-color-text-secondary)" text-transform="uppercase">Fisiopatologia</text>
+      <text class="p12-text-primary" x="495" y="202" font-size="13" font-weight="600" fill="var(--p12-color-text-primary)">Oclusão de Grandes Vasos (ACM)</text>
+      
+      <text class="p12-callout-text" x="495" y="225" font-size="9" fill="var(--p12-color-text-secondary)" text-transform="uppercase">Padrão de Lesão</text>
+      <text class="p12-text-primary" x="495" y="242" font-size="13" font-weight="500" fill="var(--p12-color-text-primary)">Infartos extensos cortico-subcorticais</text>
+      
+      <text class="p12-callout-text" x="495" y="265" font-size="9" fill="var(--p12-color-text-secondary)" text-transform="uppercase">Curso Clínico</text>
+      <text class="p12-text-primary" x="495" y="282" font-size="14" font-weight="700" fill="var(--p12-color-coral)">Declínio em Degraus (Stepwise)</text>
+      <text class="p12-text-secondary" x="495" y="300" font-size="11.5" fill="var(--p12-color-text-secondary)">Deterioração cognitiva abrupta após cada evento</text>
+      <text class="p12-text-secondary" x="495" y="315" font-size="11.5" fill="var(--p12-color-text-secondary)">isquêmico focal, intercalada por estabilização.</text>
+
+      <!-- Gráfico Cortical (Degraus) -->
+      <g id="p12-graph-cortical" transform="translate(0, -10)">
+        <path class="p12-axis" d="M 505,420 L 755,420" />
+        <path class="p12-axis" d="M 505,420 L 505,355" />
+        <text x="755" y="432" font-size="8" fill="var(--p12-color-text-secondary)" text-anchor="end">Tempo</text>
+        <text x="500" y="350" font-size="8" fill="var(--p12-color-text-secondary)" text-anchor="start">Cognição</text>
+        
+        <!-- Linha em Degrau -->
+        <path class="p12-graph-line-cortical" d="M 512,362 L 555,362 L 555,385 L 615,385 L 615,405 L 675,405 L 675,417 L 745,417" />
+        
+        <!-- Sinais de Alerta nos Degraus -->
+        <circle cx="555" cy="362" r="3" fill="var(--p12-color-coral)" />
+        <circle cx="615" cy="385" r="3" fill="var(--p12-color-coral)" />
+        <circle cx="675" cy="405" r="3" fill="var(--p12-color-coral)" />
+        <text x="560" y="375" font-size="7.5" fill="var(--p12-color-coral)" font-weight="750">AVC Focal</text>
+        <text x="620" y="398" font-size="7.5" fill="var(--p12-color-coral)" font-weight="750">AVC Focal</text>
+      </g>
+    </g>
+
+    <!-- CONTEÚDO 2: SUBCORTICAL -->
+    <g id="p12-panel-content-subcortical" style="display: none;">
+      <text class="p12-title" x="495" y="160" font-size="16" fill="var(--p12-color-amber)">Disfunção Subcortical</text>
+      
+      <text class="p12-callout-text" x="495" y="185" font-size="9" fill="var(--p12-color-text-secondary)" text-transform="uppercase">Fisiopatologia</text>
+      <text class="p12-text-primary" x="495" y="202" font-size="13" font-weight="600" fill="var(--p12-color-text-primary)">Doença de Pequenos Vasos (Perfurantes)</text>
+      
+      <text class="p12-callout-text" x="495" y="225" font-size="9" fill="var(--p12-color-text-secondary)" text-transform="uppercase">Padrão de Lesão</text>
+      <text class="p12-text-primary" x="495" y="242" font-size="13" font-weight="500" fill="var(--p12-color-text-primary)">Múltiplos infartos lacunares / Leucoaraiose</text>
+      
+      <text class="p12-callout-text" x="495" y="265" font-size="9" fill="var(--p12-color-text-secondary)" text-transform="uppercase">Curso Clínico</text>
+      <text class="p12-text-primary" x="495" y="282" font-size="14" font-weight="700" fill="var(--p12-color-amber)">Declínio Gradual e Arrastado</text>
+      <text class="p12-text-secondary" x="495" y="300" font-size="11.5" fill="var(--p12-color-text-secondary)">Perda cognitiva lenta, insidiosa e progressiva.</text>
+      <text class="p12-text-secondary" x="495" y="315" font-size="11.5" fill="var(--p12-color-text-secondary)">Marcado por disfunção executiva e psicomotora.</text>
+
+      <!-- Gráfico Subcortical (Arrastado) -->
+      <g id="p12-graph-subcortical" transform="translate(0, -10)">
+        <path class="p12-axis" d="M 505,420 L 755,420" />
+        <path class="p12-axis" d="M 505,420 L 505,355" />
+        <text x="755" y="432" font-size="8" fill="var(--p12-color-text-secondary)" text-anchor="end">Tempo</text>
+        <text x="500" y="350" font-size="8" fill="var(--p12-color-text-secondary)" text-anchor="start">Cognição</text>
+        
+        <!-- Linha Suave/Contínua -->
+        <path class="p12-graph-line-subcortical" d="M 512,360 C 560,370 630,395 745,417" />
+        
+        <text x="570" y="380" font-size="7.5" fill="var(--p12-color-amber)" font-weight="750">Isquemia Crônica Cumulativa</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- LEGENDA DE INTERPRETAÇÃO (Rodapé) -->
+  <g id="p12-footer-legend" transform="translate(30, 445)">
+    <rect class="p12-legend-rect" x="0" y="0" width="740" height="35" rx="6" />
+    <text class="p12-legend-text" x="15" y="21">
+      <tspan fill="var(--p12-color-text-primary)">Legenda:</tspan>
+      <tspan fill="var(--p12-color-coral)" font-weight="bold"> Grande vaso </tspan>
+      <tspan fill="var(--p12-color-text-primary)">frita uma região cortical inteira (declínio em degraus);</tspan>
+      <tspan fill="var(--p12-color-amber)" font-weight="bold"> pequenos vasos lacunares </tspan>
+      <tspan fill="var(--p12-color-text-primary)">pegam o periventricular (declínio arrastado). A topografia decide o padrão clínico.</tspan>
+    </text>
+  </g>
+
+  <!-- Script de Interação -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      const svg = document.getElementById('p12-svg-root');
+      
+      const btnCortical = document.getElementById('p12-btn-cortical');
+      const btnSubcortical = document.getElementById('p12-btn-subcortical');
+      
+      const panelCortical = document.getElementById('p12-panel-content-cortical');
+      const panelSubcortical = document.getElementById('p12-panel-content-subcortical');
+      
+      function setMode(mode) {
+        svg.setAttribute('data-active', mode);
+        
+        if (mode === 'cortical') {
+          panelCortical.style.display = 'block';
+          panelSubcortical.style.display = 'none';
+        } else {
+          panelCortical.style.display = 'none';
+          panelSubcortical.style.display = 'block';
+        }
+      }
+      
+      // Eventos de Clique
+      btnCortical.addEventListener('click', function() { setMode('cortical'); });
+      btnSubcortical.addEventListener('click', function() { setMode('subcortical'); });
+      
+      document.getElementById('p12-hotspot-cortical').addEventListener('click', function() { setMode('cortical'); });
+      document.getElementById('p12-hotspot-subcortical').addEventListener('click', function() { setMode('subcortical'); });
+      
+      // Teclado para Acessibilidade
+      const interactiveElements = [
+        btnCortical,
+        btnSubcortical,
+        document.getElementById('p12-hotspot-cortical'),
+        document.getElementById('p12-hotspot-subcortical')
+      ];
+      
+      interactiveElements.forEach(el => {
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            el.click();
+          }
+        });
+      });
+    })();
+    ]]>
+  </script>
+</svg>

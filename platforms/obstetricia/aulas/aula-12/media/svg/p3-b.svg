@@ -1,0 +1,525 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 620" class="a12p3b-root" id="a12p3b-svg" data-svg-tokenized="true" data-active-anchor="sinfise" role="img" aria-label="Referencial Osteo-Anatômico da Pelve Feminina: Corte Sagital Mediano com Âncoras Interativas">
+  <defs>
+    <style type="text/css">
+      .a12p3b-root {
+        --a12p3b-tinta: var(--a12-tinta, #F7F1F5);
+        --a12p3b-bg: var(--a12-bg, #161017);
+        --a12p3b-panel-bg: var(--a12-panel-bg, #221A23);
+        --a12p3b-card-bg: var(--a12-card-bg, #2C222E);
+        --a12p3b-border: var(--a12-border, #3A2B3C);
+        --a12p3b-osso: var(--a12-osso, #DCC7B4);
+        --a12p3b-osso-fill: var(--a12-osso-fill, rgba(220, 199, 180, 0.15));
+        --a12p3b-fantasma: var(--a12-viscera-fantasma, rgba(169, 147, 164, 0.35));
+        --a12p3b-sinfise: var(--a12-ancora-anterior, #F07A83);
+        --a12p3b-promontorio: var(--a12-ancora-posterior, #D6A552);
+        --a12p3b-espinhas: var(--a12-ancora-lateral, #4DB9B0);
+        --a12p3b-guia: var(--a12-linha-guia, #B9AEB6);
+        --a12p3b-subtext: var(--a12-subtext, #C7B8C5);
+        --a12p3b-normal: var(--a12-normal, #4ADE80);
+        --a12p3b-alerta: var(--a12-alerta, #F87171);
+        --a12p3b-regra: var(--a12-regra, #FBBF24);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a12p3b-bg);
+        color: var(--a12p3b-tinta);
+        user-select: none;
+      }
+
+      /* Suporte a Tema Claro via atribuição de data-theme="light" no ancestral ou prefers-color-scheme */
+      .a12p3b-root[data-theme="light"],
+      :root[data-theme="light"] .a12p3b-root {
+        --a12p3b-tinta: #1C121B;
+        --a12p3b-bg: #FAF7F9;
+        --a12p3b-panel-bg: #EFE6EC;
+        --a12p3b-card-bg: #E2D7E0;
+        --a12p3b-border: #D3C4D1;
+        --a12p3b-osso: #8C6A53;
+        --a12p3b-osso-fill: rgba(140, 106, 83, 0.12);
+        --a12p3b-fantasma: rgba(100, 75, 96, 0.45);
+        --a12p3b-sinfise: #D93847;
+        --a12p3b-promontorio: #B87A14;
+        --a12p3b-espinhas: #1B8A81;
+        --a12p3b-guia: #6B5D68;
+        --a12p3b-subtext: #5A4A58;
+        --a12p3b-normal: #15803D;
+        --a12p3b-alerta: #B91C1C;
+        --a12p3b-regra: #B45309;
+      }
+
+      @media (prefers-color-scheme: light) {
+        .a12p3b-root:not([data-theme="dark"]) {
+          --a12p3b-tinta: #1C121B;
+          --a12p3b-bg: #FAF7F9;
+          --a12p3b-panel-bg: #EFE6EC;
+          --a12p3b-card-bg: #E2D7E0;
+          --a12p3b-border: #D3C4D1;
+          --a12p3b-osso: #8C6A53;
+          --a12p3b-osso-fill: rgba(140, 106, 83, 0.12);
+          --a12p3b-fantasma: rgba(100, 75, 96, 0.45);
+          --a12p3b-sinfise: #D93847;
+          --a12p3b-promontorio: #B87A14;
+          --a12p3b-espinhas: #1B8A81;
+          --a12p3b-guia: #6B5D68;
+          --a12p3b-subtext: #5A4A58;
+          --a12p3b-normal: #15803D;
+          --a12p3b-alerta: #B91C1C;
+          --a12p3b-regra: #B45309;
+        }
+      }
+
+      /* Interatividade & Guias Ativas */
+      .a12p3b-guide-group {
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+        pointer-events: none;
+      }
+
+      .a12p3b-card-group {
+        display: none;
+      }
+
+      .a12p3b-ancora-target {
+        cursor: pointer;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .a12p3b-ancora-target:hover,
+      .a12p3b-ancora-target:focus {
+        filter: brightness(1.25);
+        outline: none;
+      }
+
+      .a12p3b-ancora-ring {
+        transition: stroke-width 0.2s ease, opacity 0.2s ease;
+        opacity: 0.4;
+      }
+
+      .a12p3b-ancora-target:hover .a12p3b-ancora-ring,
+      .a12p3b-ancora-target:focus .a12p3b-ancora-ring {
+        opacity: 0.9;
+        stroke-width: 3px;
+      }
+
+      /* Visibilidade reativa conforme data-active-anchor */
+      .a12p3b-root[data-active-anchor="sinfise"] #a12p3b-guides-sinfise,
+      .a12p3b-root[data-active-anchor="promontorio"] #a12p3b-guides-promontorio,
+      .a12p3b-root[data-active-anchor="espinhas"] #a12p3b-guides-espinhas {
+        opacity: 1;
+      }
+
+      .a12p3b-root[data-active-anchor="sinfise"] #a12p3b-card-sinfise,
+      .a12p3b-root[data-active-anchor="promontorio"] #a12p3b-card-promontorio,
+      .a12p3b-root[data-active-anchor="espinhas"] #a12p3b-card-espinhas {
+        display: block;
+      }
+
+      .a12p3b-root[data-active-anchor="sinfise"] #a12p3b-btn-sinfise .a12p3b-ancora-ring { stroke-width: 3.5px; opacity: 1; }
+      .a12p3b-root[data-active-anchor="promontorio"] #a12p3b-btn-promontorio .a12p3b-ancora-ring { stroke-width: 3.5px; opacity: 1; }
+      .a12p3b-root[data-active-anchor="espinhas"] #a12p3b-btn-espinhas .a12p3b-ancora-ring { stroke-width: 3.5px; opacity: 1; }
+
+      .a12p3b-badge {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+    </style>
+  </defs>
+
+  <!-- CABEÇALHO DA ILUSTRAÇÃO -->
+  <g id="a12p3b-header" transform="translate(25, 20)">
+    <text x="0" y="20" font-size="18" font-weight="800" fill="var(--a12p3b-tinta)" letter-spacing="0.3">REFERENCIAL OSTEO-ANATÔMICO DA PELVE FEMININA</text>
+    <text x="0" y="42" font-size="12" font-weight="500" fill="var(--a12p3b-subtext)">Três pontos fixos orientam os planos pélvicos. Toque em uma âncora para revelar seu sistema de coordenadas.</text>
+  </g>
+
+  <!-- ÁREA DA PRANCHA ANATÔMICA (ESQUERDA) -->
+  <g id="a12p3b-prancha" transform="translate(25, 80)">
+    <!-- Fundo do Palco -->
+    <rect x="0" y="0" width="510" height="505" rx="12" fill="var(--a12p3b-panel-bg)" stroke="var(--a12p3b-border)" stroke-width="1.5"/>
+
+    <!-- DECLARAÇÃO DE ORIENTAÇÃO DENTRO DA FIGURA -->
+    <g id="a12p3b-orientacao" transform="translate(16, 16)">
+      <rect x="0" y="0" width="478" height="28" rx="6" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-border)" stroke-width="1"/>
+      <text x="12" y="18" font-size="11" font-weight="600" fill="var(--a12p3b-tinta)">
+        Corte sagital mediano, de perfil · <tspan fill="var(--a12p3b-sinfise)">Anterior (frente da paciente) à esquerda</tspan>
+      </text>
+    </g>
+
+    <!-- Indicadores de Eixo Básico -->
+    <text x="25" y="70" font-size="10" font-weight="700" fill="var(--a12p3b-subtext)" letter-spacing="1">ANTERIOR</text>
+    <text x="440" y="70" font-size="10" font-weight="700" fill="var(--a12p3b-subtext)" letter-spacing="1">POSTERIOR</text>
+    <text x="25" y="485" font-size="10" font-weight="700" fill="var(--a12p3b-subtext)" letter-spacing="1">INFERIOR</text>
+    <text x="440" y="485" font-size="10" font-weight="700" fill="var(--a12p3b-subtext)" letter-spacing="1">SUPERIOR</text>
+
+    <!-- VÍSCERAS FANTASMA (BAIXA OPACIDADE / CONTORNO) -->
+    <g id="a12p3b-visceras-fantasma" opacity="0.75">
+      <!-- Bexiga (Anterior-Inferior) -->
+      <path d="M 155 410 Q 180 390, 210 405 Q 230 435, 195 445 Q 165 448, 155 410 Z" fill="var(--a12p3b-fantasma)" stroke="var(--a12p3b-subtext)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="180" y="425" font-size="10" fill="var(--a12p3b-subtext)" opacity="0.6">bexiga</text>
+
+      <!-- Útero e Vagina (Central) -->
+      <path d="M 215 390 Q 230 320, 270 310 Q 300 325, 270 355 Q 240 375, 235 400 L 225 455 L 205 450 Z" fill="var(--a12p3b-fantasma)" stroke="var(--a12p3b-subtext)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="245" y="340" font-size="10" fill="var(--a12p3b-subtext)" opacity="0.6">útero</text>
+
+      <!-- Reto (Posterior) -->
+      <path d="M 390 260 Q 345 320, 365 400 L 375 460 L 350 465 Q 330 395, 365 255 Z" fill="var(--a12p3b-fantasma)" stroke="var(--a12p3b-subtext)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="360" y="350" font-size="10" fill="var(--a12p3b-subtext)" opacity="0.6">reto</text>
+    </g>
+
+    <!-- BASE ÓSSEA (ESTRUTURA EM PRIMEIRA PLANO) -->
+    <g id="a12p3b-base-ossea">
+      <!-- Coluna Sacral e Cóccix (Posterior) -->
+      <!-- Curva sacral de S1 a S5 e cóccix -->
+      <path d="M 395 130 
+               C 425 160, 445 220, 435 290 
+               C 430 330, 415 380, 385 430 
+               L 375 445 L 368 440 
+               C 395 390, 410 340, 412 290 
+               C 418 230, 400 180, 375 145 Z" 
+            fill="var(--a12p3b-osso-fill)" stroke="var(--a12p3b-osso)" stroke-width="2.5" stroke-linejoin="round"/>
+
+      <!-- Vértebras Sacrais (Segmentações anatômicas) -->
+      <line x1="390" y1="180" x2="415" y2="195" stroke="var(--a12p3b-osso)" stroke-width="1" stroke-dasharray="2,2"/>
+      <line x1="405" y1="235" x2="428" y2="245" stroke="var(--a12p3b-osso)" stroke-width="1" stroke-dasharray="2,2"/>
+      <line x1="412" y1="290" x2="434" y2="295" stroke="var(--a12p3b-osso)" stroke-width="1" stroke-dasharray="2,2"/>
+      <line x1="400" y1="350" x2="422" y2="350" stroke="var(--a12p3b-osso)" stroke-width="1" stroke-dasharray="2,2"/>
+
+      <!-- Osso Púbico e Sínfise (Anterior-Inferior) -->
+      <!-- Corpos púbicos e ramo ramo superior/inferior -->
+      <path d="M 115 375 
+               C 135 370, 155 385, 155 410 
+               C 155 435, 140 465, 125 475 
+               C 110 470, 105 450, 110 430 
+               C 112 410, 105 385, 115 375 Z" 
+            fill="var(--a12p3b-osso-fill)" stroke="var(--a12p3b-osso)" stroke-width="2.5" stroke-linejoin="round"/>
+
+      <!-- Cartilagem Interpúbica (Disco da Sínfise Púbica) -->
+      <path d="M 140 395 C 148 400, 152 420, 146 440 C 138 442, 134 425, 136 400 Z" fill="var(--a12p3b-sinfise)" opacity="0.35" stroke="var(--a12p3b-sinfise)" stroke-width="1.5"/>
+
+      <!-- Contorno Ilíaco Superior e Ísquio Posterior -->
+      <path d="M 375 145 C 320 160, 240 200, 200 240 C 180 260, 140 320, 120 375" fill="none" stroke="var(--a12p3b-osso)" stroke-width="1.5" stroke-dasharray="4,3"/>
+      
+      <!-- Tuberosidade Isquiática (Inferior) -->
+      <path d="M 285 470 C 310 480, 340 470, 360 445" fill="none" stroke="var(--a12p3b-osso)" stroke-width="2" stroke-linejoin="round"/>
+    </g>
+
+    <!-- SISTEMAS DE COORDENADAS (GUIAS DINÂMICAS REVELADAS) -->
+    
+    <!-- 1. Guias da Sínfise Púbica -->
+    <g id="a12p3b-guides-sinfise" class="a12p3b-guide-group">
+      <!-- Linha da Conjugata Obstétrica (Promontório -> Sínfise posterior) -->
+      <line x1="400" y1="185" x2="145" y2="415" stroke="var(--a12p3b-sinfise)" stroke-width="2.5" stroke-dasharray="6,4"/>
+      <!-- Linha Limite Anterior Vertical -->
+      <line x1="145" y1="115" x2="145" y2="475" stroke="var(--a12p3b-sinfise)" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+      <!-- Plano Inferior Púbico (Borda Inferior) -->
+      <line x1="80" y1="440" x2="460" y2="440" stroke="var(--a12p3b-sinfise)" stroke-width="1.5" stroke-dasharray="4,4"/>
+      
+      <!-- Rótulo de Medida/Eixo -->
+      <g transform="translate(230, 275)">
+        <rect x="-10" y="-14" width="175" height="24" rx="4" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-sinfise)" stroke-width="1"/>
+        <text x="77" y="2" font-size="11" font-weight="700" fill="var(--a12p3b-sinfise)" text-anchor="middle">Conjugata Obstétrica (~11 cm)</text>
+      </g>
+      <g transform="translate(210, 455)">
+        <text x="0" y="0" font-size="10" font-weight="700" fill="var(--a12p3b-sinfise)">Plano da Borda Inferior (Toque Vaginal)</text>
+      </g>
+    </g>
+
+    <!-- 2. Guias do Promontório Sacral -->
+    <g id="a12p3b-guides-promontorio" class="a12p3b-guide-group">
+      <!-- Plano do Estreito Superior (Promontório -> Sínfise superior) -->
+      <line x1="400" y1="185" x2="135" y2="390" stroke="var(--a12p3b-promontorio)" stroke-width="2.5"/>
+      <!-- Nível Superior Horizontal do Promontório -->
+      <line x1="60" y1="185" x2="470" y2="185" stroke="var(--a12p3b-promontorio)" stroke-width="1" stroke-dasharray="4,4"/>
+      <!-- Vetor de Entrada Pélvica (Perpendicular ao Estreito Superior) -->
+      <line x1="270" y1="285" x2="335" y2="150" stroke="var(--a12p3b-promontorio)" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <polygon points="335,150 327,158 338,162" fill="var(--a12p3b-promontorio)"/>
+
+      <!-- Rótulo de Medida/Eixo -->
+      <g transform="translate(220, 172)">
+        <rect x="-10" y="-14" width="190" height="24" rx="4" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-promontorio)" stroke-width="1"/>
+        <text x="85" y="2" font-size="11" font-weight="700" fill="var(--a12p3b-promontorio)" text-anchor="middle">Estreito Superior / Conjugata Vera</text>
+      </g>
+      <g transform="translate(345, 145)">
+        <text x="0" y="0" font-size="10" font-weight="700" fill="var(--a12p3b-promontorio)">Eixo de Entrada Pélvica</text>
+      </g>
+    </g>
+
+    <!-- 3. Guias das Espinhas Isquiáticas -->
+    <g id="a12p3b-guides-espinhas" class="a12p3b-guide-group">
+      <!-- Plano do Estreito Médio / Plano 0 de De Lee -->
+      <line x1="80" y1="370" x2="460" y2="370" stroke="var(--a12p3b-espinhas)" stroke-width="2.5" stroke-dasharray="5,3"/>
+      <!-- Linha Vertical do Diâmetro Interespinhoso (Projeção Lateral) -->
+      <line x1="310" y1="120" x2="310" y2="470" stroke="var(--a12p3b-espinhas)" stroke-width="1" stroke-dasharray="3,3"/>
+      
+      <!-- Marcadores de Nível De Lee (-2, -1, 0, +1, +2) -->
+      <g transform="translate(50, 310)" font-size="9" font-weight="700" fill="var(--a12p3b-espinhas)">
+        <text x="0" y="0">-2 cm</text>
+        <text x="0" y="30">-1 cm</text>
+        <text x="0" y="60" font-size="11" fill="var(--a12p3b-espinhas)">0 (Espinhas)</text>
+        <text x="0" y="90">+1 cm</text>
+        <text x="0" y="120">+2 cm</text>
+      </g>
+
+      <!-- Rótulo de Medida/Eixo -->
+      <g transform="translate(130, 355)">
+        <rect x="-6" y="-14" width="220" height="24" rx="4" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-espinhas)" stroke-width="1"/>
+        <text x="104" y="2" font-size="11" font-weight="700" fill="var(--a12p3b-espinhas)" text-anchor="middle">Plano 0 de De Lee / Estreito Médio (~10 cm)</text>
+      </g>
+    </g>
+
+
+    <!-- ANCORAS INTERATIVAS (MARCADORES SELECIONÁVEIS) -->
+
+    <!-- Grupo 1: Sínfise Púbica (Anterior) -->
+    <g id="a12p3b-ancora-sinfise">
+      <g id="a12p3b-btn-sinfise" class="a12p3b-ancora-target" role="button" tabindex="0" aria-label="Âncora Sínfise Púbica (Anterior)">
+        <!-- Hit-area transparente (>= 24px, 40px diameter) -->
+        <circle cx="145" cy="415" r="22" fill="transparent"/>
+        <!-- Anel externo reativo -->
+        <circle cx="145" cy="415" r="14" fill="none" stroke="var(--a12p3b-sinfise)" stroke-width="2" class="a12p3b-ancora-ring"/>
+        <!-- Ponto central de ancoragem -->
+        <circle cx="145" cy="415" r="6" fill="var(--a12p3b-sinfise)"/>
+      </g>
+      <!-- Linha líder e Rótulo Fixo -->
+      <line x1="145" y1="415" x2="90" y2="350" stroke="var(--a12p3b-sinfise)" stroke-width="1.5"/>
+      <rect x="15" y="325" width="130" height="28" rx="4" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-sinfise)" stroke-width="1.5"/>
+      <text x="80" y="343" font-size="11" font-weight="800" fill="var(--a12p3b-sinfise)" text-anchor="middle">SÍNFISE PÚBICA</text>
+    </g>
+
+    <!-- Grupo 2: Promontório Sacral (Posterior) -->
+    <g id="a12p3b-ancora-promontorio">
+      <g id="a12p3b-btn-promontorio" class="a12p3b-ancora-target" role="button" tabindex="0" aria-label="Âncora Promontório Sacral (Posterior)">
+        <!-- Hit-area transparente -->
+        <circle cx="400" cy="185" r="22" fill="transparent"/>
+        <!-- Anel externo reativo -->
+        <circle cx="400" cy="185" r="14" fill="none" stroke="var(--a12p3b-promontorio)" stroke-width="2" class="a12p3b-ancora-ring"/>
+        <!-- Ponto central de ancoragem (Losango) -->
+        <polygon points="400,178 407,185 400,192 393,185" fill="var(--a12p3b-promontorio)"/>
+      </g>
+      <!-- Linha líder e Rótulo Fixo -->
+      <line x1="400" y1="185" x2="435" y2="120" stroke="var(--a12p3b-promontorio)" stroke-width="1.5"/>
+      <rect x="360" y="95" width="135" height="28" rx="4" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-promontorio)" stroke-width="1.5"/>
+      <text x="427" y="113" font-size="11" font-weight="800" fill="var(--a12p3b-promontorio)" text-anchor="middle">PROMONTÓRIO</text>
+    </g>
+
+    <!-- Grupo 3: Espinha Isquiática (Lateral / Nível Médio) -->
+    <g id="a12p3b-ancora-espinhas">
+      <g id="a12p3b-btn-espinhas" class="a12p3b-ancora-target" role="button" tabindex="0" aria-label="Âncora Espinhas Isquiáticas (Lateral)">
+        <!-- Hit-area transparente -->
+        <circle cx="310" cy="370" r="22" fill="transparent"/>
+        <!-- Anel externo reativo com estilo pontilhado (indica projeção lateral) -->
+        <circle cx="310" cy="370" r="14" fill="none" stroke="var(--a12p3b-espinhas)" stroke-width="2" stroke-dasharray="3,2" class="a12p3b-ancora-ring"/>
+        <!-- Cruz / Alvo central -->
+        <circle cx="310" cy="370" r="5" fill="var(--a12p3b-espinhas)"/>
+      </g>
+      <!-- Linha líder e Rótulo Fixo -->
+      <line x1="310" y1="370" x2="370" y2="425" stroke="var(--a12p3b-espinhas)" stroke-width="1.5"/>
+      <rect x="340" y="425" width="150" height="28" rx="4" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-espinhas)" stroke-width="1.5"/>
+      <text x="415" y="443" font-size="11" font-weight="800" fill="var(--a12p3b-espinhas)" text-anchor="middle">ESPINHA ISQUIÁTICA</text>
+    </g>
+  </g>
+
+  <!-- PAINEL LATERAL DE LEITURA E INTERPRETAÇÃO CLÍNICA (DIREITA) -->
+  <g id="a12p3b-painel-leitura" transform="translate(555, 80)">
+    <!-- Fundo do Painel -->
+    <rect x="0" y="0" width="340" height="505" rx="12" fill="var(--a12p3b-panel-bg)" stroke="var(--a12p3b-border)" stroke-width="1.5"/>
+
+    <!-- Título do Painel -->
+    <g transform="translate(20, 25)">
+      <text x="0" y="0" font-size="13" font-weight="800" fill="var(--a12p3b-tinta)" letter-spacing="0.5">SISTEMA DE COORDENADAS</text>
+      <text x="0" y="18" font-size="11" font-weight="500" fill="var(--a12p3b-subtext)">Análise da Âncora Selecionada</text>
+    </g>
+
+    <!-- CARD 1: SÍNFISE PÚBICA (ATIVO QUANDO SINFISE) -->
+    <g id="a12p3b-card-sinfise" class="a12p3b-card-group" transform="translate(20, 60)">
+      <!-- Top Badge -->
+      <rect x="0" y="0" width="300" height="32" rx="6" fill="rgba(240, 122, 131, 0.15)" stroke="var(--a12p3b-sinfise)" stroke-width="1"/>
+      <text x="12" y="20" font-size="12" font-weight="800" fill="var(--a12p3b-sinfise)">ÂNCORA ANTERIOR · SÍNFISE PÚBICA</text>
+
+      <!-- Bloco de Valores & Regra de Cor -->
+      <g transform="translate(0, 48)">
+        <rect x="0" y="0" width="300" height="75" rx="6" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-border)" stroke-width="1"/>
+        
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--a12p3b-subtext)">DIÂMETRO ÚTIL (CONJUGATA OBSTÉTRICA):</text>
+        <text x="12" y="44" font-size="16" font-weight="800" fill="var(--a12p3b-normal)">~11,0 cm</text>
+        <text x="115" y="44" font-size="11" font-weight="600" fill="var(--a12p3b-normal)">(Faixa Normal Fisiológica)</text>
+
+        <text x="12" y="64" font-size="10" font-weight="600" fill="var(--a12p3b-regra)">Limite Anatômico Anterior Invariável</text>
+      </g>
+
+      <!-- Descrição Anatômica -->
+      <g transform="translate(0, 140)">
+        <text x="0" y="0" font-size="11" font-weight="700" fill="var(--a12p3b-tinta)">Caracterização Estrutural:</text>
+        <text x="0" y="18" font-size="11" fill="var(--a12p3b-subtext)">
+          <tspan x="0" dy="0">Articulação fibrocartilaginosa entre os ossos</tspan>
+          <tspan x="0" dy="16">púbicos. Fica posicionada na região antero-</tspan>
+          <tspan x="0" dy="16">inferior do anel pélvico.</tspan>
+        </text>
+      </g>
+
+      <!-- Aplicação Clínica / Exame -->
+      <g transform="translate(0, 220)">
+        <rect x="0" y="0" width="300" height="195" rx="6" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-border)" stroke-width="1"/>
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--a12p3b-sinfise)">INTERPRETAÇÃO CLÍNICA &amp; EXAME:</text>
+        
+        <text x="12" y="45" font-size="11" fill="var(--a12p3b-tinta)">
+          <tspan x="12" dy="0" font-weight="700" fill="var(--a12p3b-regra)">• Borda Superior:</tspan>
+          <tspan x="20" dy="16">Limite anterior da Conjugata Anatômica</tspan>
+          <tspan x="20" dy="14">(~11,5 cm) e Obstétrica (~11,0 cm).</tspan>
+
+          <tspan x="12" dy="24" font-weight="700" fill="var(--a12p3b-regra)">• Borda Inferior:</tspan>
+          <tspan x="20" dy="16">Ponto de apoio no Toque Vaginal para a</tspan>
+          <tspan x="20" dy="14">medida da Conjugata Diagonalis (≥11.5cm).</tspan>
+
+          <tspan x="12" dy="24" font-weight="700" fill="var(--a12p3b-regra)">• Efeito na Estática Pélvica:</tspan>
+          <tspan x="20" dy="16">Ângulo do Arco Subpúbico (&gt;90° na pelve</tspan>
+          <tspan x="20" dy="14">ginecoide funcional).</tspan>
+        </text>
+      </g>
+    </g>
+
+    <!-- CARD 2: PROMONTÓRIO SACRAL (ATIVO QUANDO PROMONTORIO) -->
+    <g id="a12p3b-card-promontorio" class="a12p3b-card-group" transform="translate(20, 60)">
+      <!-- Top Badge -->
+      <rect x="0" y="0" width="300" height="32" rx="6" fill="rgba(214, 165, 82, 0.15)" stroke="var(--a12p3b-promontorio)" stroke-width="1"/>
+      <text x="12" y="20" font-size="12" font-weight="800" fill="var(--a12p3b-promontorio)">ÂNCORA POSTERIOR · PROMONTÓRIO SACRAL</text>
+
+      <!-- Bloco de Valores & Regra de Cor -->
+      <g transform="translate(0, 48)">
+        <rect x="0" y="0" width="300" height="75" rx="6" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-border)" stroke-width="1"/>
+        
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--a12p3b-subtext)">CONJUGATA DIAGONALIS (TOQUE):</text>
+        <text x="12" y="44" font-size="16" font-weight="800" fill="var(--a12p3b-normal)">&gt; 11,5 cm</text>
+        <text x="115" y="44" font-size="11" font-weight="600" fill="var(--a12p3b-alerta)">(Promontório Não Atingível)</text>
+
+        <text x="12" y="64" font-size="10" font-weight="600" fill="var(--a12p3b-alerta)">Se Atingível: Suspeita de Estreitamento Pélvico</text>
+      </g>
+
+      <!-- Descrição Anatômica -->
+      <g transform="translate(0, 140)">
+        <text x="0" y="0" font-size="11" font-weight="700" fill="var(--a12p3b-tinta)">Caracterização Estrutural:</text>
+        <text x="0" y="18" font-size="11" fill="var(--a12p3b-subtext)">
+          <tspan x="0" dy="0">Projeção anterior da borda superior da primeira</tspan>
+          <tspan x="0" dy="16">vértebra sacral (S1). Constitui o limite posterior</tspan>
+          <tspan x="0" dy="16">do Estreito Superior Pélvico.</tspan>
+        </text>
+      </g>
+
+      <!-- Aplicação Clínica / Exame -->
+      <g transform="translate(0, 220)">
+        <rect x="0" y="0" width="300" height="195" rx="6" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-border)" stroke-width="1"/>
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--a12p3b-promontorio)">INTERPRETAÇÃO CLÍNICA &amp; EXAME:</text>
+        
+        <text x="12" y="45" font-size="11" fill="var(--a12p3b-tinta)">
+          <tspan x="12" dy="0" font-weight="700" fill="var(--a12p3b-regra)">• Pelvimetria Clínica:</tspan>
+          <tspan x="20" dy="16">Na pelve normal, o promontório NÃO é</tspan>
+          <tspan x="20" dy="14">palpável ao toque vaginal de rotina.</tspan>
+
+          <tspan x="12" dy="24" font-weight="700" fill="var(--a12p3b-alerta)">• Sinal de Alerta (Promontório Atingível):</tspan>
+          <tspan x="20" dy="16">Indica redução do diâmetro anteroposterior</tspan>
+          <tspan x="20" dy="14">do estreito superior (&lt; 11 cm obstétrica).</tspan>
+
+          <tspan x="12" dy="24" font-weight="700" fill="var(--a12p3b-regra)">• Entrada do Canal de Parto:</tspan>
+          <tspan x="20" dy="16">Determina o ângulo de inclinação pélvica</tspan>
+          <tspan x="20" dy="14">(~55° com a horizontal).</tspan>
+        </text>
+      </g>
+    </g>
+
+    <!-- CARD 3: ESPINHAS ISQUIÁTICAS (ATIVO QUANDO ESPINHAS) -->
+    <g id="a12p3b-card-espinhas" class="a12p3b-card-group" transform="translate(20, 60)">
+      <!-- Top Badge -->
+      <rect x="0" y="0" width="300" height="32" rx="6" fill="rgba(77, 185, 176, 0.15)" stroke="var(--a12p3b-espinhas)" stroke-width="1"/>
+      <text x="12" y="20" font-size="12" font-weight="800" fill="var(--a12p3b-espinhas)">ÂNCORA LATERAL · ESPINHAS ISQUIÁTICAS</text>
+
+      <!-- Bloco de Valores & Regra de Cor -->
+      <g transform="translate(0, 48)">
+        <rect x="0" y="0" width="300" height="75" rx="6" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-border)" stroke-width="1"/>
+        
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--a12p3b-subtext)">DIÂMETRO INTERESPINHOSO (ESTREITO MÉDIO):</text>
+        <text x="12" y="44" font-size="16" font-weight="800" fill="var(--a12p3b-normal)">~10,0 cm</text>
+        <text x="115" y="44" font-size="11" font-weight="600" fill="var(--a12p3b-normal)">(Menor Diâmetro da Pelve)</text>
+
+        <text x="12" y="64" font-size="10" font-weight="600" fill="var(--a12p3b-regra)">Plano 0 de De Lee · Marco Zero Obstétrico</text>
+      </g>
+
+      <!-- Descrição Anatômica -->
+      <g transform="translate(0, 140)">
+        <text x="0" y="0" font-size="11" font-weight="700" fill="var(--a12p3b-tinta)">Caracterização Estrutural:</text>
+        <text x="0" y="18" font-size="11" fill="var(--a12p3b-subtext)">
+          <tspan x="0" dy="0">Projeções ósseas salientes nas paredes laterais do</tspan>
+          <tspan x="0" dy="16">ísquio. No corte mediano, sua posição é projetada</tspan>
+          <tspan x="0" dy="16">no nível médio do canal pélvico.</tspan>
+        </text>
+      </g>
+
+      <!-- Aplicação Clínica / Exame -->
+      <g transform="translate(0, 220)">
+        <rect x="0" y="0" width="300" height="195" rx="6" fill="var(--a12p3b-card-bg)" stroke="var(--a12p3b-border)" stroke-width="1"/>
+        <text x="12" y="22" font-size="11" font-weight="700" fill="var(--a12p3b-espinhas)">INTERPRETAÇÃO CLÍNICA &amp; EXAME:</text>
+        
+        <text x="12" y="45" font-size="11" fill="var(--a12p3b-tinta)">
+          <tspan x="12" dy="0" font-weight="700" fill="var(--a12p3b-regra)">• Altura Fetal (Planos de De Lee):</tspan>
+          <tspan x="20" dy="16">O nível das espinhas define o Plano 0.</tspan>
+          <tspan x="20" dy="14">Acima é negativo (-1 a -5), abaixo é positivo.</tspan>
+
+          <tspan x="12" dy="24" font-weight="700" fill="var(--a12p3b-regra)">• Avaliação de Prolapsos (POP-Q):</tspan>
+          <tspan x="20" dy="16">Linha de referência para medir descida de</tspan>
+          <tspan x="20" dy="14">cúpula, parede anterior (Ba) e posterior (Bp).</tspan>
+
+          <tspan x="12" dy="24" font-weight="700" fill="var(--a12p3b-regra)">• Anestesia Pobre (Bloqueio Pudendo):</tspan>
+          <tspan x="20" dy="16">Referência anatômica para infiltração do</tspan>
+          <tspan x="20" dy="14">nervos pudendos no parto vaginal.</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- LEGENDA DE CONFLUÊNCIA DE CONCEITOS E INSTRUÇÃO (RODAPÉ) -->
+  <g id="a12p3b-legenda" transform="translate(25, 595)">
+    <text x="0" y="0" font-size="11" font-weight="600" fill="var(--a12p3b-subtext)">
+      <tspan fill="var(--a12p3b-normal)">✓ Conclusão Anatômica:</tspan> O anel pélvico é delimitado pelo Triângulo de Referência: Sínfise (Anterior), Promontório (Posterior) e Espinhas (Plano Médio de Descida).
+    </text>
+  </g>
+
+  <!-- MOTOR JS EMBUTIDO SELF-CONTAINED (INTERATIVIDADE REAL E DETERMINÍSTICA) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('a12p3b-svg');
+      if (!root) return;
+
+      var btnSinfise = document.getElementById('a12p3b-btn-sinfise');
+      var btnPromontorio = document.getElementById('a12p3b-btn-promontorio');
+      var btnEspinhas = document.getElementById('a12p3b-btn-espinhas');
+
+      function setActiveAnchor(anchorKey) {
+        root.setAttribute('data-active-anchor', anchorKey);
+        
+        if (btnSinfise) btnSinfise.setAttribute('aria-pressed', anchorKey === 'sinfise' ? 'true' : 'false');
+        if (btnPromontorio) btnPromontorio.setAttribute('aria-pressed', anchorKey === 'promontorio' ? 'true' : 'false');
+        if (btnEspinhas) btnEspinhas.setAttribute('aria-pressed', anchorKey === 'espinhas' ? 'true' : 'false');
+      }
+
+      function attachHandler(el, key) {
+        if (!el) return;
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          setActiveAnchor(key);
+        });
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ' || e.keyCode === 13 || e.keyCode === 32) {
+            e.preventDefault();
+            setActiveAnchor(key);
+          }
+        });
+      }
+
+      attachHandler(btnSinfise, 'sinfise');
+      attachHandler(btnPromontorio, 'promontorio');
+      attachHandler(btnEspinhas, 'espinhas');
+    })();
+    ]]>
+  </script>
+</svg>

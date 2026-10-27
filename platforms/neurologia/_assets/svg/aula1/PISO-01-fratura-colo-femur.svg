@@ -1,0 +1,473 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 800 600" 
+     width="100%" 
+     height="100%" 
+     id="femur-svg-container" 
+     class="femur-root femur-state-intact"
+     role="img"
+     aria-label="Esquema anteroposterior do fêmur proximal com traço de fratura no colo femoral, destacando cabeça, colo e trocânteres.">
+
+  <defs>
+    <style>
+      /* Base Scoped CSS */
+      .femur-root {
+        --bg-color: var(--bg-1, #0f172a);
+        --card-bg: var(--bg-2, #1e293b);
+        --bone-fill: var(--bone-color-custom, #e2e8f0);
+        --bone-stroke: var(--bone-stroke-custom, #475569);
+        --pelvis-fill: var(--bg-3, #334155);
+        --pelvis-stroke: var(--border-color, #475569);
+        
+        --color-red: var(--kw-red, #f43f5e);
+        --color-amber: var(--kw-yellow, #f59e0b);
+        --color-green: var(--kw-green, #10b981);
+        
+        --text-primary: var(--ink-100, #f8fafc);
+        --text-secondary: var(--ink-70, #94a3b8);
+        --border-subtle: var(--border-color, #334155);
+        
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      @media (prefers-color-scheme: light) {
+        .femur-root {
+          --bg-color: var(--bg-1, #f8fafc);
+          --card-bg: var(--bg-2, #ffffff);
+          --bone-fill: var(--bone-color-custom, #cbd5e1);
+          --bone-stroke: var(--bone-stroke-custom, #64748b);
+          --pelvis-fill: var(--bg-3, #f1f5f9);
+          --pelvis-stroke: var(--border-color, #cbd5e1);
+          
+          --color-red: var(--kw-red, #e11d48);
+          --color-amber: var(--kw-yellow, #d97706);
+          --color-green: var(--kw-green, #059669);
+          
+          --text-primary: var(--ink-100, #0f172a);
+          --text-secondary: var(--ink-70, #64748b);
+          --border-subtle: var(--border-color, #e2e8f0);
+        }
+      }
+
+      /* Transitions and animations */
+      .femur-transible {
+        transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      .femur-fade {
+        transition: opacity 0.4s ease;
+      }
+
+      /* Buttons */
+      .femur-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .femur-btn rect {
+        fill: var(--card-bg);
+        stroke: var(--border-subtle);
+        stroke-width: 1.5;
+        transition: all 0.2s ease;
+      }
+      .femur-btn text {
+        fill: var(--text-secondary);
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+      .femur-btn:hover rect {
+        stroke: var(--text-secondary);
+      }
+      .femur-btn.active rect {
+        fill: var(--color-red);
+        stroke: var(--color-red);
+      }
+      .femur-btn.active text {
+        fill: #ffffff;
+      }
+      .femur-btn:focus {
+        outline: none;
+      }
+      .femur-btn:focus rect {
+        stroke: var(--color-amber);
+        stroke-width: 2.5;
+      }
+
+      /* Hotspots */
+      .femur-hotspot {
+        cursor: pointer;
+        outline: none;
+      }
+      .femur-hotspot circle.core {
+        fill: var(--color-amber);
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        transition: transform 0.2s ease, fill 0.2s ease;
+      }
+      .femur-hotspot circle.pulse {
+        fill: var(--color-amber);
+        fill-opacity: 0.25;
+        transform-origin: center;
+        animation: pulse-ring 2.5s infinite;
+      }
+      .femur-hotspot:hover circle.core,
+      .femur-hotspot:focus circle.core,
+      .femur-hotspot.active circle.core {
+        fill: var(--color-red);
+        transform: scale(1.25);
+        transform-origin: center;
+      }
+      .femur-hotspot:hover circle.pulse,
+      .femur-hotspot:focus circle.pulse,
+      .femur-hotspot.active circle.pulse {
+        fill: var(--color-red);
+      }
+
+      @keyframes pulse-ring {
+        0% { transform: scale(0.9); opacity: 0.8; }
+        100% { transform: scale(2.2); opacity: 0; }
+      }
+
+      /* Specific state styling */
+      .femur-state-intact .fracture-glow {
+        opacity: 0;
+      }
+      .femur-state-fractured .fracture-glow {
+        opacity: 1;
+      }
+      .femur-state-intact .bleeding-effect {
+        opacity: 0;
+      }
+      .femur-state-fractured .bleeding-effect {
+        opacity: 0.85;
+      }
+
+      /* Warning box styles */
+      .panel-warning-card {
+        transition: fill 0.3s ease, stroke 0.3s ease;
+      }
+      .panel-warning-txt {
+        transition: fill 0.3s ease;
+      }
+
+      /* Colors for status panel */
+      .red-bg { fill: var(--color-red); fill-opacity: 0.1; stroke: var(--color-red); stroke-width: 1.5; }
+      .red-fg { fill: var(--color-red); }
+      .amber-bg { fill: var(--color-amber); fill-opacity: 0.1; stroke: var(--color-amber); stroke-width: 1.5; }
+      .amber-fg { fill: var(--color-amber); }
+      .green-bg { fill: var(--color-green); fill-opacity: 0.1; stroke: var(--color-green); stroke-width: 1.5; }
+      .green-fg { fill: var(--color-green); }
+
+      /* a11y focus outline */
+      .femur-hotspot:focus circle.core {
+        stroke: var(--text-primary);
+        stroke-width: 2.5;
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND INNER CARD -->
+  <rect width="790" height="590" x="5" y="5" rx="16" fill="var(--bg-color)" stroke="var(--border-subtle)" stroke-width="2"/>
+
+  <!-- TITLE BLOCK -->
+  <g id="femur-header" transform="translate(30, 20)">
+    <text y="22" font-size="18" font-weight="700" fill="var(--text-primary)" letter-spacing="0.5">ANATOMIA DA FRATURA DE COLO DE FÊMUR (P1)</text>
+    <text y="40" font-size="12" font-weight="500" fill="var(--text-secondary)">Caso Clínico: Dona Helena, 82 anos • Elo Queda → Fratura na Cascata de Fragilidade</text>
+  </g>
+
+  <!-- TAB STATE SWITCHER -->
+  <g id="femur-switcher" transform="translate(30, 80)">
+    <g id="btn-state-intact" class="femur-btn active" role="button" tabindex="0" aria-label="Visualizar Fêmur Íntegro" onclick="setFemurState(false)" onkeydown="if(event.key===' '||event.key==='Enter'){setFemurState(false); event.preventDefault();}">
+      <rect width="120" height="32" rx="6" />
+      <text x="60" y="20" text-anchor="middle">Osso Íntegro</text>
+    </g>
+    <g id="btn-state-fractured" class="femur-btn" transform="translate(130, 0)" role="button" tabindex="0" aria-label="Visualizar Fêmur Fraturado" onclick="setFemurState(true)" onkeydown="if(event.key===' '||event.key==='Enter'){setFemurState(true); event.preventDefault();}">
+      <rect width="120" height="32" rx="6" />
+      <text x="60" y="20" text-anchor="middle">Fraturado</text>
+    </g>
+  </g>
+
+  <!-- LATERALITY EXPLICIT LABEL -->
+  <g id="femur-laterality" transform="translate(30, 505)">
+    <rect width="210" height="20" rx="4" fill="rgba(255,255,255,0.04)" stroke="var(--border-subtle)" stroke-width="1"/>
+    <text x="10" y="14" font-size="10" font-weight="700" fill="var(--color-amber)" letter-spacing="1">FÊMUR DIREITO (VISÃO ANTERIOR)</text>
+  </g>
+
+  <!-- ANATOMICAL GRAPHIC STAGE -->
+  <g id="femur-stage" transform="translate(40, 70)">
+    <!-- Pelvis background (Static acetabulum) -->
+    <path d="M 80,80 C 130,70 260,105 275,135 C 285,155 285,185 278,210 C 270,235 245,250 215,250 C 190,250 170,235 165,210 C 155,180 130,140 100,120 C 90,95 85,85 80,80 Z" 
+          fill="var(--pelvis-fill)" stroke="var(--pelvis-stroke)" stroke-width="2.5" />
+    <path d="M 195,175 C 225,165 260,175 270,195 C 280,215 272,240 250,250 C 228,260 205,250 195,230 C 185,210 188,185 195,175 Z" 
+          fill="rgba(15, 23, 42, 0.25)" stroke="var(--pelvis-stroke)" stroke-dasharray="2,2" stroke-width="1.5" />
+
+    <!-- Joint Capsule (Intracapsular boundary) -->
+    <path d="M 140,185 C 160,145 280,140 300,190 C 310,215 305,260 280,275 C 255,290 190,285 170,265 C 150,245 135,215 140,185 Z" 
+          fill="none" stroke="var(--color-green)" stroke-dasharray="4,4" stroke-width="2" opacity="0.5" />
+    <text x="290" y="150" font-size="9" font-weight="600" fill="var(--color-green)" opacity="0.8">Cápsula Articular</text>
+
+    <!-- PROXIMAL BONE FRAGMENT (Femoral Head - Static in acetabulum) -->
+    <g id="femur-proximal-fragment">
+      <path d="M 170,205 C 190,195 210,190 230,185 C 255,180 275,195 275,220 C 275,245 255,260 235,260 C 225,260 218,258 210,260 L 190,262 L 174,250 L 182,238 L 168,225 L 175,215 Z" 
+            fill="var(--bone-fill)" stroke="var(--bone-stroke)" stroke-width="3" />
+      
+      <!-- Static blood vessels segments (Head side) -->
+      <!-- Superior Retinacular Artery -->
+      <path d="M 192,204 C 205,200 220,192 235,188" fill="none" stroke="var(--color-red)" stroke-width="2" />
+      <!-- Inferior Retinacular Artery -->
+      <path d="M 221,273 C 228,272 238,271 250,270" fill="none" stroke="var(--color-red)" stroke-width="2" />
+    </g>
+
+    <!-- DISTAL BONE FRAGMENT (Colo, Trochanters, Shaft - Dynamic) -->
+    <g id="femur-distal-fragment" class="femur-transible">
+      <path d="M 170,205 L 175,215 L 168,225 L 182,238 L 174,250 L 190,262 L 210,260 C 220,275 225,290 230,300 L 245,310 L 230,325 C 220,355 215,405 215,480 L 155,480 C 155,405 150,355 150,300 C 145,270 135,240 125,215 C 120,195 135,185 145,190 C 155,195 165,198 170,205 Z" 
+            fill="var(--bone-fill)" stroke="var(--bone-stroke)" stroke-width="3" />
+      
+      <!-- Dynamic blood vessels segments (Shaft side) -->
+      <!-- Superior Retinacular Artery -->
+      <path d="M 155,203 C 165,204 175,204 185,204" fill="none" stroke="var(--color-red)" stroke-width="2" />
+      <!-- Inferior Retinacular Artery -->
+      <path d="M 235,310 C 230,300 225,290 220,280" fill="none" stroke="var(--color-red)" stroke-width="2" />
+
+      <!-- Bleeding droplets near torn ends (only visible in fractured state) -->
+      <g id="femur-bleeding-group" class="bleeding-effect femur-fade" opacity="0">
+        <circle cx="187" cy="207" r="3" fill="var(--color-red)" />
+        <circle cx="218" cy="277" r="3" fill="var(--color-red)" />
+        <path d="M 187,207 C 187,212 189,215 187,217" fill="none" stroke="var(--color-red)" stroke-width="1.5" />
+        <path d="M 218,277 C 218,282 220,285 218,287" fill="none" stroke="var(--color-red)" stroke-width="1.5" />
+      </g>
+    </g>
+
+    <!-- Static glowing fracture line (Behind to glow, only visible in fractured state) -->
+    <path id="femur-fracture-glow" class="fracture-glow femur-fade" 
+          d="M 170,205 L 175,215 L 168,225 L 182,238 L 174,250 L 190,262 L 210,260" 
+          fill="none" stroke="var(--color-red)" stroke-width="6" stroke-linecap="round" opacity="0" filter="url(#glow-filter)" />
+
+    <!-- INTERACTIVE HOTSPOTS -->
+    <!-- Hotspot 1: Colo do Fêmur (Sítio da Fratura) -->
+    <g id="hotspot-colo" class="femur-hotspot" role="button" tabindex="0" aria-label="Informações sobre o Colo do Fêmur" onclick="updatePanel('colo')" onkeydown="if(event.key===' '||event.key==='Enter'){updatePanel('colo'); event.preventDefault();}">
+      <circle cx="190" cy="235" r="16" class="pulse" />
+      <circle cx="190" cy="235" r="8" class="core" />
+    </g>
+
+    <!-- Hotspot 2: Cabeça Femoral (Risco de Necrose) -->
+    <g id="hotspot-cabeca" class="femur-hotspot" role="button" tabindex="0" aria-label="Informações sobre a Cabeça Femoral" onclick="updatePanel('cabeca')" onkeydown="if(event.key===' '||event.key==='Enter'){updatePanel('cabeca'); event.preventDefault();}">
+      <circle cx="245" cy="210" r="16" class="pulse" />
+      <circle cx="245" cy="210" r="8" class="core" />
+    </g>
+
+    <!-- Hotspot 3: Acetábulo (Articulação) -->
+    <g id="hotspot-acetabulo" class="femur-hotspot" role="button" tabindex="0" aria-label="Informações sobre o Acetábulo" onclick="updatePanel('acetabulo')" onkeydown="if(event.key===' '||event.key==='Enter'){updatePanel('acetabulo'); event.preventDefault();}">
+      <circle cx="272" cy="175" r="16" class="pulse" />
+      <circle cx="272" cy="175" r="8" class="core" />
+    </g>
+
+    <!-- Hotspot 4: Grande Trocanter (Braço de alavanca) -->
+    <g id="hotspot-trocanter" class="femur-hotspot" role="button" tabindex="0" aria-label="Informações sobre o Grande Trocanter" onclick="updatePanel('trocanter')" onkeydown="if(event.key===' '||event.key==='Enter'){updatePanel('trocanter'); event.preventDefault();}">
+      <circle cx="140" cy="210" r="16" class="pulse" />
+      <circle cx="140" cy="210" r="8" class="core" />
+    </g>
+
+    <!-- Hotspot 5: Diáfise Femoral -->
+    <g id="hotspot-diafise" class="femur-hotspot" role="button" tabindex="0" aria-label="Informações sobre a Diáfise Femoral" onclick="updatePanel('diafise')" onkeydown="if(event.key===' '||event.key==='Enter'){updatePanel('diafise'); event.preventDefault();}">
+      <circle cx="185" cy="420" r="16" class="pulse" />
+      <circle cx="185" cy="420" r="8" class="core" />
+    </g>
+  </g>
+
+  <!-- CLINICAL INFO PANEL (Right Column) -->
+  <g id="femur-panel" transform="translate(450, 80)">
+    <!-- Panel Background Card -->
+    <rect width="310" height="440" rx="12" fill="var(--card-bg)" stroke="var(--border-subtle)" stroke-width="1.5"/>
+    
+    <!-- Title -->
+    <text id="panel-title" x="20" y="35" font-size="16" font-weight="700" fill="var(--text-primary)">Fêmur Proximal &amp; Quadril</text>
+    <text id="panel-subtitle" x="20" y="55" font-size="11" font-weight="600" fill="var(--color-amber)">Caso Clínico: Dona Helena, 82 anos</text>
+    
+    <!-- Divider -->
+    <line x1="20" y1="68" x2="290" y2="68" stroke="var(--border-subtle)" stroke-width="1" />
+
+    <!-- Text wrap target -->
+    <text id="panel-text" x="20" y="90" font-size="13" fill="var(--text-secondary)" font-weight="400">
+      <!-- Will be populated dynamically by JS -->
+    </text>
+
+    <!-- Warning / Clinical Status Card -->
+    <g transform="translate(20, 360)">
+      <rect id="panel-warning-box" width="270" height="60" rx="8" class="panel-warning-card red-bg" />
+      <!-- Wrap text inside warning box -->
+      <text id="panel-warning-text" x="12" y="24" font-size="11" font-weight="600" class="panel-warning-txt red-fg">
+        <!-- Will be populated dynamically by JS -->
+      </text>
+    </g>
+  </g>
+
+  <!-- INTERPRETATION LEGEND (Bottom Column) -->
+  <g id="femur-legend" transform="translate(30, 532)">
+    <rect width="740" height="48" rx="8" fill="var(--card-bg)" stroke="var(--border-subtle)" stroke-width="1.5"/>
+    <text x="15" y="20" font-size="11" font-weight="700" fill="var(--text-primary)">CONCLUSÃO DIDÁTICA:</text>
+    <text x="15" y="36" font-size="10.5" font-weight="400" fill="var(--text-secondary)">Fratura do colo do fêmur — o segundo dominó da cascata: a queda no idoso frágil quebra aqui, e a internação para operar abre a porta do TEP e da sepse.</text>
+  </g>
+
+  <!-- GLOW FILTER DEFS -->
+  <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="3" result="blur" />
+    <feComponentTransfer in="blur" result="glow">
+      <feFuncA type="linear" slope="2" />
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode in="glow" />
+      <feMergeNode in="SourceGraphic" />
+    </feMerge>
+  </filter>
+
+  <!-- INTERACTIVE JS ENGINE -->
+  <script type="text/javascript">
+    //<![CDATA[
+    const hotspotData = {
+      default: {
+        title: "Fêmur Proximal & Quadril",
+        subtitle: "Caso Clínico: Dona Helena, 82 anos",
+        text: "Idosa trazida ao pronto-socorro após queda da própria altura. Apresenta dor intensa na região inguinal direita, encurtamento e rotação externa do membro inferior afetado (posição de impotência funcional). A fratura de colo de fêmur é um elo crítico na cascata de fragilidade do idoso.",
+        warning: "Mortalidade em 1 ano: ~20-30% por complicações secundárias à imobilização.",
+        warningClass: "red"
+      },
+      colo: {
+        title: "Colo do Fêmur",
+        subtitle: "Fratura Intracapsular (Sítio Crítico)",
+        text: "Fratura localizada na zona de transição de forças. A osteoporose causa perda de trabéculas ósseas no colo (triângulo de Ward), tornando-o altamente suscetível a fraturas sob traumas mínimos. Exige cirurgia para mobilização precoce.",
+        warning: "Classificação de Garden: Grau III ou IV nas fraturas desviadas.",
+        warningClass: "amber"
+      },
+      cabeca: {
+        title: "Cabeça Femoral",
+        subtitle: "Suprimento Arterial & Risco de Necrose",
+        text: "A circulação da cabeça femoral é de tipo terminal e retrógrada, vinda das artérias retinaculares (ACFM). O desvio da fratura cisalha esses vasos, causando isquemia e necrose avascular da cabeça femoral.",
+        warning: "ALERTA: Necrose Avascular ocorre em até 30% dos desvios.",
+        warningClass: "red"
+      },
+      acetabulo: {
+        title: "Acetábulo & Articulação",
+        subtitle: "Articulação Coxofemoral",
+        text: "Cavidade profunda da pelve que abriga a cabeça femoral. A cartilagem articular necessita de movimento e carga para nutrição. A imobilidade pós-fratura gera dor crônica e rigidez articular acelerada.",
+        warning: "Articulação coxofemoral estável, sem luxação primária associada.",
+        warningClass: "green"
+      },
+      trocanter: {
+        title: "Grande Trocanter",
+        subtitle: "Braço de Alavanca & Glúteo Médio",
+        text: "Sítio de inserção dos glúteos médio e mínimo, responsáveis pela estabilização da pelve (sinal de Trendelenburg). O trauma direto lateral na queda atinge o trocanter maior, transferindo a energia ao colo femoral.",
+        warning: "Força de tração muscular desvia o fragmento diafisário proximalmente.",
+        warningClass: "amber"
+      },
+      diafise: {
+        title: "Diáfise Femoral",
+        subtitle: "Eixo Cortical de Carga",
+        text: "Osso cortical extremamente denso que suporta a carga corporal. Permanece intacto na fratura do colo, mas serve de ancoragem para hastes de fixação ou hastes longas de artroplastia se houver má qualidade óssea.",
+        warning: "Normal. Alinhamento axial comprometido pelo desvio no estado fraturado.",
+        warningClass: "green"
+      }
+    };
+
+    function wrapText(text, elementId, x, width, fontSize, lineHeight) {
+      const el = document.getElementById(elementId);
+      el.innerHTML = ''; // clear existing
+      const words = text.split(' ');
+      let line = '';
+      let lineCount = 0;
+      
+      for (let i = 0; i < words.length; i++) {
+        let testLine = line + words[i] + ' ';
+        if (testLine.length * (fontSize * 0.53) > width && i > 0) {
+          let tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+          tspan.setAttribute('x', x);
+          tspan.setAttribute('dy', lineCount === 0 ? '0' : lineHeight + 'px');
+          tspan.textContent = line.trim();
+          el.appendChild(tspan);
+          line = words[i] + ' ';
+          lineCount++;
+        } else {
+          line = testLine;
+        }
+      }
+      let tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+      tspan.setAttribute('x', x);
+      tspan.setAttribute('dy', lineCount === 0 ? '0' : lineHeight + 'px');
+      tspan.textContent = line.trim();
+      el.appendChild(tspan);
+    }
+
+    function updatePanel(id) {
+      const data = hotspotData[id] || hotspotData['default'];
+      
+      document.getElementById('panel-title').textContent = data.title;
+      document.getElementById('panel-subtitle').textContent = data.subtitle;
+      
+      // Wrap body text
+      wrapText(data.text, 'panel-text', 20, 270, 13, 17);
+      
+      // Wrap warning text
+      wrapText(data.warning, 'panel-warning-text', 12, 245, 11, 15);
+      
+      // Update warning box styling
+      const warningBox = document.getElementById('panel-warning-box');
+      const warningText = document.getElementById('panel-warning-text');
+      
+      warningBox.setAttribute('class', 'panel-warning-card ' + data.warningClass + '-bg');
+      warningText.setAttribute('class', 'panel-warning-txt ' + data.warningClass + '-fg');
+      
+      // Highlight active hotspot
+      const hotspots = ['colo', 'cabeca', 'acetabulo', 'trocanter', 'diafise'];
+      hotspots.forEach(hId => {
+        const el = document.getElementById('hotspot-' + hId);
+        if (el) {
+          if (hId === id) {
+            el.classList.add('active');
+          } else {
+            el.classList.remove('active');
+          }
+        }
+      });
+    }
+
+    function setFemurState(isFractured) {
+      const root = document.getElementById('femur-svg-container');
+      const btnIntact = document.getElementById('btn-state-intact');
+      const btnFractured = document.getElementById('btn-state-fractured');
+      const distalFragment = document.getElementById('femur-distal-fragment');
+      
+      if (isFractured) {
+        root.classList.remove('femur-state-intact');
+        root.classList.add('femur-state-fractured');
+        
+        btnFractured.classList.add('active');
+        btnIntact.classList.remove('active');
+        
+        // Typical displacement: Shortening (upward displacement) and external rotation (left/outward shift)
+        distalFragment.setAttribute('transform', 'translate(-12, -18) rotate(-4)');
+        
+        updatePanel('colo');
+      } else {
+        root.classList.remove('femur-state-fractured');
+        root.classList.add('femur-state-intact');
+        
+        btnIntact.classList.add('active');
+        btnFractured.classList.remove('active');
+        
+        distalFragment.setAttribute('transform', 'translate(0, 0) rotate(0)');
+        
+        updatePanel('default');
+      }
+    }
+
+    // Initialize with default state
+    window.addEventListener('DOMContentLoaded', () => {
+      updatePanel('default');
+    });
+    // Fallback if DOMContentLoaded already fired
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      updatePanel('default');
+    }
+    //]]>
+  </script>
+</svg>

@@ -1,0 +1,586 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1164" width="1600" height="1164" role="img" aria-labelledby="ip9Ttl ip9Dsc" class="ip9-scope" data-svg-tokenized="true" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', Inter, 'Segoe UI', system-ui, sans-serif">
+  <title id="ip9Ttl">A síndrome de fragilidade: o idoso-porcelana e os cinco critérios FRAIL</title>
+  <desc id="ip9Dsc">Figura-síntese em dois painéis sobre a síndrome de fragilidade no idoso. No painel macro, uma figura de porcelana representa o idoso frágil: o corpo pálido e craquelado, com uma fissura em destaque no quadril, que quebra ao menor impacto porque a reserva fisiológica está mínima. Abaixo dela, a via causal em três elos: sarcopenia, ou perda de massa muscular, leva à perda de força, que leva à queda. No painel de zoom, dois cortes transversais de músculo comparam o músculo preservado, com fibras numerosas e de grande calibre, e o músculo sarcopênico, com menos fibras, mais finas e mais espaçadas. Sobreposto, um grid interativo mostra os cinco critérios de FRAIL: Fatigue, ou fadiga; Resistance, dificuldade de subir um lance de escada; Ambulation, dificuldade de caminhar um quarteirão; Illness, cinco ou mais doenças; e Loss, perda de peso de cinco por cento ou mais. Cada critério é clicável e soma na contagem, que classifica o idoso: zero é robusto, um a dois é pré-frágil, e três ou mais é frágil. Um alerta em âmbar fixa a pegadinha: o gasto calórico do critério de atividade física é medido por semana, não por dia.</desc>
+  <defs>
+    <radialGradient id="ip9Bg" cx="22%" cy="4%" r="145%">
+      <stop offset="0%" stop-color="var(--bg-elevated, #0e1626)"/>
+      <stop offset="100%" stop-color="var(--bg-base, #0b1220)"/>
+    </radialGradient>
+    <linearGradient id="ip9Porc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--ip9-porc, #eaf2f8)"/>
+      <stop offset="100%" stop-color="var(--ip9-porc-sh, #c6d6e4)"/>
+    </linearGradient>
+    <radialGradient id="ip9Good" cx="42%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="var(--good-40, #6ee7b7)"/>
+      <stop offset="100%" stop-color="var(--good, #34d399)"/>
+    </radialGradient>
+    <radialGradient id="ip9Bad" cx="42%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="var(--err-40, #fda4b4)"/>
+      <stop offset="100%" stop-color="var(--err, #fb7185)"/>
+    </radialGradient>
+    <filter id="ip9Soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="var(--ip9-shadow, #04070e)" flood-opacity="0.55"/>
+    </filter>
+    <marker id="ip9Arr" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="var(--err, #fb7185)"/>
+    </marker>
+  </defs>
+
+  <style>
+    .ip9-scope{
+      --bg-base:var(--bg-1,#0b1220);--bg-elevated:#0e1626;
+      --panel:var(--bg-2,#121c2e);--panel-2:var(--bg-3,#16223a);--panel-strong:#0e1830;
+      --stroke:var(--border-color,rgba(255,255,255,0.10));
+      --ink-0:var(--ink-100,#f2f6fc);--ink-1:#c7d2e0;--ink-2:var(--ink-70,#8c9bb0);--ink-3:#4a5a70;
+      --cyan:var(--kw-cyan,#22d3ee);--cyan-40:#67e8f9;--indigo:#818cf8;
+      --good:var(--kw-green,#34d399);--good-40:#6ee7b7;--warn:var(--kw-yellow,#f59e0b);--warn-40:#fbbf77;--err:var(--kw-red,#fb7185);--err-40:#fda4b4;
+      --f-fat:#22d3ee;--f-res:#38bdf8;--f-amb:#60a5fa;--f-ill:#818cf8;--f-loss:#a78bfa;
+      --ip9-porc:#eaf2f8;--ip9-porc-sh:#c6d6e4;--ip9-crack:#8fa6bb;--ip9-shadow:#04070e;
+    }
+    @media (prefers-color-scheme: light){
+      .ip9-scope{
+        --bg-base:var(--bg-1,#f5f1ea);--bg-elevated:#fbf8f2;
+        --panel:var(--bg-2,#ffffff);--panel-2:var(--bg-3,#f1ece3);--panel-strong:#fbf8f2;
+        --stroke:var(--border-color,rgba(20,30,50,0.12));
+        --ink-0:var(--ink-100,#10202f);--ink-1:#35485c;--ink-2:var(--ink-70,#5e7186);--ink-3:#9db0c4;
+        --cyan:var(--kw-cyan,#0e9cc0);--cyan-40:#0e7d9c;--indigo:#5b63d6;
+        --good:var(--kw-green,#0e9e6e);--good-40:#0b7d57;--warn:var(--kw-yellow,#c77a08);--warn-40:#9a5e07;--err:var(--kw-red,#e11d66);--err-40:#b81452;
+        --f-fat:#0e9cc0;--f-res:#0f7bc4;--f-amb:#2563eb;--f-ill:#5b63d6;--f-loss:#7c5cff;
+        --ip9-porc:#e6eef6;--ip9-porc-sh:#aebfd0;--ip9-crack:#7288a0;--ip9-shadow:#c9cdd6;
+      }
+    }
+    .ip9-scope.is-light{
+      --bg-base:#f5f1ea;--bg-elevated:#fbf8f2;--panel:#ffffff;--panel-2:#f1ece3;--panel-strong:#fbf8f2;
+      --stroke:rgba(20,30,50,0.12);
+      --ink-0:#10202f;--ink-1:#35485c;--ink-2:#5e7186;--ink-3:#9db0c4;
+      --cyan:#0e9cc0;--cyan-40:#0e7d9c;--indigo:#5b63d6;
+      --good:#0e9e6e;--good-40:#0b7d57;--warn:#c77a08;--warn-40:#9a5e07;--err:#e11d66;--err-40:#b81452;
+      --f-fat:#0e9cc0;--f-res:#0f7bc4;--f-amb:#2563eb;--f-ill:#5b63d6;--f-loss:#7c5cff;
+      --ip9-porc:#e6eef6;--ip9-porc-sh:#aebfd0;--ip9-crack:#7288a0;--ip9-shadow:#c9cdd6;
+    }
+    .ip9-scope.is-dark{
+      --bg-base:#0b1220;--bg-elevated:#0e1626;--panel:#121c2e;--panel-2:#16223a;--panel-strong:#0e1830;
+      --stroke:rgba(255,255,255,0.10);
+      --ink-0:#f2f6fc;--ink-1:#c7d2e0;--ink-2:#8c9bb0;--ink-3:#4a5a70;
+      --cyan:#22d3ee;--cyan-40:#67e8f9;--indigo:#818cf8;
+      --good:#34d399;--good-40:#6ee7b7;--warn:#f59e0b;--warn-40:#fbbf77;--err:#fb7185;--err-40:#fda4b4;
+      --f-fat:#22d3ee;--f-res:#38bdf8;--f-amb:#60a5fa;--f-ill:#818cf8;--f-loss:#a78bfa;
+      --ip9-porc:#eaf2f8;--ip9-porc-sh:#c6d6e4;--ip9-crack:#8fa6bb;--ip9-shadow:#04070e;
+    }
+    .ip9-eyebrow{fill:var(--cyan-40,#67e8f9);font-size:19px;font-weight:700;letter-spacing:4px;text-transform:uppercase}
+    .ip9-h1{fill:var(--ink-0,#f2f6fc);font-size:46px;font-weight:800;letter-spacing:-0.8px}
+    .ip9-sub{fill:var(--ink-2,#8c9bb0);font-size:20px;font-weight:500}
+    .ip9-card{fill:var(--panel,#121c2e);stroke:var(--stroke,rgba(255,255,255,0.10));stroke-width:1.4}
+    .ip9-paneyebrow{fill:var(--ink-2,#8c9bb0);font-size:14px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+    .ip9-panhead{fill:var(--ink-1,#c7d2e0);font-size:22px;font-weight:700}
+    .ip9-pannote{fill:var(--ink-2,#8c9bb0);font-size:15px;font-weight:500}
+    .ip9-legend{fill:var(--ink-1,#c7d2e0);font-size:16px;font-weight:600}
+    .ip9-nodelt{fill:var(--ink-0,#f2f6fc);font-size:15px;font-weight:700;text-anchor:middle}
+    .ip9-nodesm{fill:var(--ink-2,#8c9bb0);font-size:12px;font-weight:600;text-anchor:middle}
+    .ip9-critL{font-size:34px;font-weight:800;text-anchor:middle}
+    .ip9-critword{fill:var(--ink-0,#f2f6fc);font-size:14px;font-weight:800;text-anchor:middle}
+    .ip9-critdesc{fill:var(--ink-2,#8c9bb0);font-size:11.5px;font-weight:600;text-anchor:middle}
+    .ip9-zonelbl{font-size:14px;font-weight:800;text-anchor:middle}
+    .ip9-readnum{font-size:40px;font-weight:800;text-anchor:end}
+    .ip9-readlbl{font-size:16px;font-weight:700;text-anchor:end}
+    .ip9-foothead{fill:var(--cyan-40,#67e8f9);font-size:15px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    .ip9-footline{fill:var(--ink-1,#c7d2e0);font-size:17px;font-weight:600}
+    .ip9-hs,.ip9-crit{cursor:pointer;outline:none}
+    .ip9-hs .ip9-halo{opacity:0;transition:opacity .18s ease}
+    .ip9-hs:hover .ip9-halo,.ip9-hs:focus-visible .ip9-halo,.ip9-hs[data-active="1"] .ip9-halo{opacity:1}
+    .ip9-cellbox{transition:stroke .18s ease, fill .18s ease}
+    .ip9-crit:hover .ip9-cellbox,.ip9-crit:focus-visible .ip9-cellbox{stroke:var(--cyan,#22d3ee)}
+    .ip9-crit .ip9-check{opacity:0;transition:opacity .18s ease}
+    .ip9-crit[data-on="1"] .ip9-check{opacity:1}
+    .ip9-crit[data-on="1"] .ip9-cellbox{stroke:var(--err,#fb7185);stroke-width:2.6;fill:var(--err,#fb7185);fill-opacity:0.12}
+    .ip9-zone{transition:opacity .2s ease}
+    .ip9-zone:not(.ip9-zone-active){opacity:0.28}
+    .ip9-pointer{transition:transform .25s ease}
+    @media (prefers-reduced-motion: reduce){
+      .ip9-hs .ip9-halo,.ip9-cellbox,.ip9-crit .ip9-check,.ip9-zone,.ip9-pointer{transition:none}
+    }
+  </style>
+
+  <rect x="0" y="0" width="1600" height="1164" fill="url(#ip9Bg)"/>
+
+  <g class="ip9-root">
+  <text x="64" y="90" class="ip9-eyebrow">Conceito-mãe &#183; a síndrome de fragilidade</text>
+  <text x="64" y="142" class="ip9-h1">O idoso-porcelana</text>
+  <text x="64" y="180" class="ip9-sub">Menos músculo, menos força, menos reserva &#8212; quebra ao menor impacto. Some os cinco critérios FRAIL e veja a classificação mudar.</text>
+
+  <g transform="translate(1150,60)">
+    <rect x="0" y="0" width="18" height="18" rx="5" fill="var(--good,#34d399)"/>
+    <text x="28" y="14" class="ip9-legend">0 critério &#183; robusto</text>
+    <rect x="0" y="30" width="18" height="18" rx="5" fill="var(--warn,#f59e0b)"/>
+    <text x="28" y="44" class="ip9-legend">1&#8211;2 &#183; pré-frágil</text>
+    <rect x="0" y="60" width="18" height="18" rx="5" fill="var(--err,#fb7185)"/>
+    <text x="28" y="74" class="ip9-legend">&#8805;3 &#183; frágil</text>
+    <text x="0" y="104" class="ip9-legend" fill="var(--cyan-40,#67e8f9)">Clique nos critérios &#8594; a classificação se move.</text>
+  </g>
+
+  <g>
+    <rect x="48" y="206" width="604" height="800" rx="28" class="ip9-card" filter="url(#ip9Soft)"/>
+    <text x="80" y="250" class="ip9-paneyebrow">Painel macro &#183; a metáfora</text>
+    <text x="80" y="282" class="ip9-panhead">O corpo que quebra ao menor toque</text>
+
+    <g transform="translate(348,250)" filter="url(#ip9Soft)">
+      <ellipse cx="0" cy="516" rx="94" ry="20" fill="var(--ip9-porc-sh,#c6d6e4)"/>
+      <ellipse cx="0" cy="509" rx="94" ry="18" fill="url(#ip9Porc)"/>
+
+      <path d="M-58 152 C -64 152 -70 158 -70 170 C -74 300 -92 432 -92 502 C -92 510 -84 514 -72 514 L72 514 C 84 514 92 510 92 502 C 92 432 74 300 70 170 C 70 158 64 152 58 152 C 40 140 -40 140 -58 152 Z" fill="url(#ip9Porc)"/>
+      <path d="M-16 152 L-14 122 Q0 114 14 122 L16 152 Z" fill="url(#ip9Porc)"/>
+      <ellipse cx="-2" cy="92" rx="42" ry="46" fill="url(#ip9Porc)"/>
+      <path d="M-44 84 Q-40 44 -2 42 Q36 44 40 84 Q28 62 -2 60 Q-32 62 -44 84 Z" fill="var(--ip9-porc-sh,#c6d6e4)"/>
+      <path d="M-22 92 q7 5 14 0" fill="none" stroke="var(--ip9-crack,#8fa6bb)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M8 92 q7 5 14 0" fill="none" stroke="var(--ip9-crack,#8fa6bb)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-10 112 q8 5 16 0" fill="none" stroke="var(--ip9-crack,#8fa6bb)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-2 100 q-4 6 -6 9 q3 3 6 2" fill="none" stroke="var(--ip9-crack,#8fa6bb)" stroke-width="1.6" stroke-linecap="round"/>
+
+      <path d="M-60 172 C -80 214 -82 274 -76 322" fill="none" stroke="url(#ip9Porc)" stroke-width="19" stroke-linecap="round"/>
+      <path d="M60 172 C 80 212 82 268 76 306" fill="none" stroke="url(#ip9Porc)" stroke-width="19" stroke-linecap="round"/>
+      <circle cx="-78" cy="326" r="12" fill="url(#ip9Porc)"/>
+      <circle cx="78" cy="310" r="12" fill="url(#ip9Porc)"/>
+
+      <path d="M-96 322 q-16 -4 -16 9 q0 9 12 9" fill="none" stroke="var(--cyan,#22d3ee)" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+      <line x1="-100" y1="338" x2="-98" y2="520" stroke="var(--cyan,#22d3ee)" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+
+      <g stroke="var(--ip9-crack,#8fa6bb)" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-34 210 l16 26 l-9 22 l19 20"/>
+        <path d="M26 250 l-11 30 l17 18 l-8 22"/>
+        <path d="M-52 356 l25 20 l-7 30 l14 16"/>
+        <path d="M-6 300 l12 24 l-8 24"/>
+        <path d="M50 400 l-18 26 l11 30"/>
+        <path d="M-70 440 l22 14 l-6 28"/>
+      </g>
+
+      <g>
+        <path d="M46 336 l-20 26 l13 22 l-17 28" fill="none" stroke="var(--err,#fb7185)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M60 356 l18 -8 l6 18 l-19 5 z" fill="var(--panel,#121c2e)" stroke="var(--err,#fb7185)" stroke-width="1.6"/>
+        <g stroke="var(--err,#fb7185)" stroke-width="2.4" stroke-linecap="round">
+          <line x1="86" y1="330" x2="98" y2="322"/>
+          <line x1="90" y1="352" x2="104" y2="350"/>
+          <line x1="86" y1="374" x2="98" y2="382"/>
+        </g>
+      </g>
+    </g>
+
+    <g class="ip9-hs" data-hs-tone="cyan" data-hs-label="P"
+       data-hs-hint="O idoso-porcelana &#183; reserva mínima"
+       data-hs-text="A reserva fisiológica caiu tanto que um estresse mínimo &#8212; uma virose, uma internação, uma queda &#8212; já fratura o sistema inteiro. A fissura no quadril é o ponto que cede primeiro. Frágil ao menor impacto: é a porcelana.">
+      <rect class="ip9-halo" x="228" y="300" width="240" height="470" rx="24" fill="none" stroke="var(--cyan,#22d3ee)" stroke-width="2.6"/>
+      <rect x="228" y="300" width="240" height="470" rx="24" fill="transparent"/>
+    </g>
+
+    <text x="350" y="800" text-anchor="middle" class="ip9-pannote" fill="var(--ink-1,#c7d2e0)" font-weight="700">Reserva mínima &#8212; a via que leva à queda:</text>
+
+    <g class="ip9-hs" data-hs-tone="cyan" data-hs-label="1" transform="translate(80,822)"
+       data-hs-hint="Sarcopenia &#183; a base biológica"
+       data-hs-text="Sarcopenia: perda de massa e de qualidade muscular com o envelhecimento. Menos fibra, menor secção transversa. É o chão biológico sobre o qual a fragilidade se assenta &#8212; detalhe no zoom ao lado.">
+      <rect class="ip9-halo" x="-6" y="-6" width="162" height="126" rx="18" fill="none" stroke="var(--cyan,#22d3ee)" stroke-width="2.4"/>
+      <rect x="0" y="0" width="150" height="114" rx="14" fill="var(--panel-2,#16223a)" stroke="var(--stroke,rgba(255,255,255,0.10))" stroke-width="1.3"/>
+      <g transform="translate(75,40)">
+        <ellipse cx="0" cy="0" rx="26" ry="15" fill="none" stroke="var(--f-loss,#a78bfa)" stroke-width="2.4"/>
+        <line x1="-16" y1="0" x2="16" y2="0" stroke="var(--f-loss,#a78bfa)" stroke-width="2.4"/>
+        <line x1="-8" y1="-9" x2="-8" y2="9" stroke="var(--f-loss,#a78bfa)" stroke-width="1.6"/>
+        <line x1="8" y1="-9" x2="8" y2="9" stroke="var(--f-loss,#a78bfa)" stroke-width="1.6"/>
+      </g>
+      <text x="75" y="82" class="ip9-nodelt">Sarcopenia</text>
+      <text x="75" y="100" class="ip9-nodesm">&#8595; massa muscular</text>
+    </g>
+    <line x1="238" y1="879" x2="262" y2="879" stroke="var(--err,#fb7185)" stroke-width="3" marker-end="url(#ip9Arr)"/>
+
+    <g class="ip9-hs" data-hs-tone="warn" data-hs-label="2" transform="translate(262,822)"
+       data-hs-hint="Perda de força e potência"
+       data-hs-text="Menos músculo é menos força de preensão e menos potência de membros inferiores. Menos força é menos estabilidade e menos capacidade de se recuperar de um tropeço.">
+      <rect class="ip9-halo" x="-6" y="-6" width="162" height="126" rx="18" fill="none" stroke="var(--warn,#f59e0b)" stroke-width="2.4"/>
+      <rect x="0" y="0" width="150" height="114" rx="14" fill="var(--panel-2,#16223a)" stroke="var(--stroke,rgba(255,255,255,0.10))" stroke-width="1.3"/>
+      <g transform="translate(75,42)" fill="none" stroke="var(--warn,#f59e0b)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-22 6 L-8 6 Q-2 6 -2 -2 L-2 -12 Q-2 -18 4 -18 Q10 -18 10 -12 L10 4 Q10 12 18 12 L22 12"/>
+        <path d="M-22 6 L-22 14"/>
+      </g>
+      <text x="75" y="82" class="ip9-nodelt">&#8595; Força</text>
+      <text x="75" y="100" class="ip9-nodesm">preensão e potência</text>
+    </g>
+    <line x1="420" y1="879" x2="444" y2="879" stroke="var(--err,#fb7185)" stroke-width="3" marker-end="url(#ip9Arr)"/>
+
+    <g class="ip9-hs" data-hs-tone="err" data-hs-label="3" transform="translate(444,822)"
+       data-hs-hint="Queda &#183; a cascata se abre"
+       data-hs-text="Sem força e sem reserva, o desequilíbrio vira queda. E a queda no idoso frágil abre a cascata: fratura, internação, imobilidade e complicações. É onde a fragilidade cobra o preço.">
+      <rect class="ip9-halo" x="-6" y="-6" width="162" height="126" rx="18" fill="none" stroke="var(--err,#fb7185)" stroke-width="2.4"/>
+      <rect x="0" y="0" width="150" height="114" rx="14" fill="var(--err,#fb7185)" fill-opacity="0.10" stroke="var(--err,#fb7185)" stroke-width="1.5"/>
+      <g transform="translate(75,40)" fill="none" stroke="var(--err,#fb7185)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6" cy="-14" r="6" fill="var(--err,#fb7185)" stroke="none"/>
+        <path d="M-16 14 L2 -2 L14 4 M2 -2 L6 12 M14 4 L24 2"/>
+        <line x1="-22" y1="18" x2="26" y2="18"/>
+      </g>
+      <text x="75" y="82" class="ip9-nodelt" fill="var(--err-40,#fda4b4)">Queda</text>
+      <text x="75" y="100" class="ip9-nodesm">abre a cascata</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="676" y="206" width="876" height="352" rx="28" class="ip9-card" filter="url(#ip9Soft)"/>
+    <text x="708" y="250" class="ip9-paneyebrow">Painel zoom &#183; o músculo</text>
+    <text x="708" y="282" class="ip9-panhead">Preservado &#215; sarcopênico</text>
+
+    <g class="ip9-hs" data-hs-tone="good" data-hs-label="+"
+       data-hs-hint="Músculo preservado"
+       data-hs-text="Corte transversal de músculo preservado: fibras numerosas, de grande secção transversa, densamente agrupadas. Muita massa significa muita força e reserva para absorver um estresse.">
+      <rect class="ip9-halo" x="792" y="304" width="216" height="216" rx="108" fill="none" stroke="var(--good,#34d399)" stroke-width="2.6"/>
+      <circle cx="900" cy="412" r="96" fill="var(--panel-2,#16223a)" stroke="var(--good,#34d399)" stroke-width="2.2"/>
+      <g fill="url(#ip9Good)" stroke="var(--good,#34d399)" stroke-width="1.4">
+        <circle cx="874" cy="368" r="17"/><circle cx="912" cy="360" r="18"/><circle cx="878" cy="406" r="18"/>
+        <circle cx="916" cy="400" r="17"/><circle cx="852" cy="392" r="15"/><circle cx="944" cy="382" r="15"/>
+        <circle cx="864" cy="444" r="16"/><circle cx="902" cy="440" r="17"/><circle cx="938" cy="428" r="16"/>
+        <circle cx="884" cy="336" r="13"/><circle cx="930" cy="432" r="14"/><circle cx="850" cy="424" r="13"/>
+        <circle cx="942" cy="410" r="13"/><circle cx="878" cy="470" r="13"/><circle cx="912" cy="466" r="13"/>
+      </g>
+      <text x="900" y="536" text-anchor="middle" class="ip9-critword" fill="var(--good,#34d399)">músculo preservado</text>
+    </g>
+
+    <line x1="1010" y1="412" x2="1092" y2="412" stroke="var(--err,#fb7185)" stroke-width="3.2" marker-end="url(#ip9Arr)"/>
+    <text x="1052" y="398" text-anchor="middle" class="ip9-critdesc" fill="var(--err-40,#fda4b4)" font-weight="800">sarcopenia</text>
+
+    <g class="ip9-hs" data-hs-tone="err" data-hs-label="-"
+       data-hs-hint="Músculo sarcopênico"
+       data-hs-text="Corte transversal de músculo sarcopênico: menos fibras, de menor calibre, com mais espaço entre elas. Menos massa significa menos força &#8212; é o substrato da fragilidade e da perda de peso.">
+      <rect class="ip9-halo" x="1192" y="304" width="216" height="216" rx="108" fill="none" stroke="var(--err,#fb7185)" stroke-width="2.6"/>
+      <circle cx="1300" cy="412" r="96" fill="var(--panel-2,#16223a)" stroke="var(--err,#fb7185)" stroke-width="2.2"/>
+      <g fill="url(#ip9Bad)" stroke="var(--err,#fb7185)" stroke-width="1.4">
+        <circle cx="1274" cy="378" r="12"/><circle cx="1318" cy="370" r="11"/><circle cx="1288" cy="418" r="12"/>
+        <circle cx="1330" cy="410" r="10"/><circle cx="1264" cy="416" r="9"/><circle cx="1306" cy="450" r="11"/>
+        <circle cx="1338" cy="446" r="9"/><circle cx="1282" cy="452" r="8"/>
+      </g>
+      <text x="1300" y="536" text-anchor="middle" class="ip9-critword" fill="var(--err-40,#fda4b4)">músculo sarcopênico</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="676" y="582" width="876" height="424" rx="28" class="ip9-card" filter="url(#ip9Soft)"/>
+    <text x="708" y="622" class="ip9-paneyebrow">Painel interativo &#183; o escore</text>
+    <text x="708" y="654" class="ip9-panhead">Some os cinco critérios FRAIL</text>
+    <text id="ip9ReadNum" x="1520" y="646" class="ip9-readnum" fill="var(--good,#34d399)">0 / 5</text>
+    <text id="ip9ReadLbl" x="1520" y="672" class="ip9-readlbl" fill="var(--good,#34d399)">robusto</text>
+
+    <g class="ip9-crit" data-crit="F" data-on="0" role="button" tabindex="0" aria-pressed="false" transform="translate(700,682)"
+       data-hs-tone="fat"
+       data-hs-hint="F &#183; Fatigue (fadiga)"
+       data-hs-text="Fadiga autorreferida: sentir-se cansado a maior parte do tempo, na maioria dos dias. É o critério subjetivo de energia. Clique para marcar como presente.">
+      <rect class="ip9-cellbox" x="0" y="0" width="148" height="150" rx="16" fill="var(--panel-2,#16223a)" stroke="var(--stroke,rgba(255,255,255,0.10))" stroke-width="1.6"/>
+      <text x="74" y="52" class="ip9-critL" fill="var(--f-fat,#22d3ee)">F</text>
+      <g transform="translate(74,72)" fill="none" stroke="var(--f-fat,#22d3ee)" stroke-width="2.4" stroke-linecap="round">
+        <rect x="-16" y="-8" width="30" height="16" rx="3"/>
+        <rect x="14" y="-3" width="4" height="6" fill="var(--f-fat,#22d3ee)" stroke="none"/>
+        <rect x="-13" y="-5" width="7" height="10" rx="1.5" fill="var(--f-fat,#22d3ee)" stroke="none"/>
+      </g>
+      <text x="74" y="112" class="ip9-critword">Fatigue</text>
+      <text x="74" y="132" class="ip9-critdesc">fadiga na maioria</text>
+      <text x="74" y="146" class="ip9-critdesc">dos dias</text>
+      <g class="ip9-check" transform="translate(126,22)">
+        <circle cx="0" cy="0" r="13" fill="var(--err,#fb7185)"/>
+        <path d="M-6 0 L-2 5 L7 -6" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <g class="ip9-crit" data-crit="R" data-on="0" role="button" tabindex="0" aria-pressed="false" transform="translate(870,682)"
+       data-hs-tone="res"
+       data-hs-hint="R &#183; Resistance (resistência)"
+       data-hs-text="Resistência: dificuldade ou incapacidade de subir sozinho um lance de escada. Mede força e potência de membros inferiores. Clique para marcar como presente.">
+      <rect class="ip9-cellbox" x="0" y="0" width="148" height="150" rx="16" fill="var(--panel-2,#16223a)" stroke="var(--stroke,rgba(255,255,255,0.10))" stroke-width="1.6"/>
+      <text x="74" y="52" class="ip9-critL" fill="var(--f-res,#38bdf8)">R</text>
+      <g transform="translate(56,62)" fill="none" stroke="var(--f-res,#38bdf8)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 22 L0 14 L10 14 L10 6 L20 6 L20 -2 L32 -2"/>
+      </g>
+      <text x="74" y="112" class="ip9-critword">Resistance</text>
+      <text x="74" y="132" class="ip9-critdesc">1 lance de</text>
+      <text x="74" y="146" class="ip9-critdesc">escada</text>
+      <g class="ip9-check" transform="translate(126,22)">
+        <circle cx="0" cy="0" r="13" fill="var(--err,#fb7185)"/>
+        <path d="M-6 0 L-2 5 L7 -6" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <g class="ip9-crit" data-crit="A" data-on="0" role="button" tabindex="0" aria-pressed="false" transform="translate(1040,682)"
+       data-hs-tone="amb"
+       data-hs-hint="A &#183; Ambulation (deambulação)"
+       data-hs-text="Deambulação: dificuldade de caminhar um quarteirão, cerca de cem metros. É a marcha lentificada da fragilidade. Clique para marcar como presente.">
+      <rect class="ip9-cellbox" x="0" y="0" width="148" height="150" rx="16" fill="var(--panel-2,#16223a)" stroke="var(--stroke,rgba(255,255,255,0.10))" stroke-width="1.6"/>
+      <text x="74" y="52" class="ip9-critL" fill="var(--f-amb,#60a5fa)">A</text>
+      <g transform="translate(74,72)" fill="none" stroke="var(--f-amb,#60a5fa)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="0" cy="-16" r="4.5" fill="var(--f-amb,#60a5fa)" stroke="none"/>
+        <path d="M0 -10 L0 4 M0 4 L-9 16 M0 4 L9 14 M0 -6 L-9 -2 M0 -6 L10 -8"/>
+      </g>
+      <text x="74" y="112" class="ip9-critword">Ambulation</text>
+      <text x="74" y="132" class="ip9-critdesc">caminhar um</text>
+      <text x="74" y="146" class="ip9-critdesc">quarteirão</text>
+      <g class="ip9-check" transform="translate(126,22)">
+        <circle cx="0" cy="0" r="13" fill="var(--err,#fb7185)"/>
+        <path d="M-6 0 L-2 5 L7 -6" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <g class="ip9-crit" data-crit="I" data-on="0" role="button" tabindex="0" aria-pressed="false" transform="translate(1210,682)"
+       data-hs-tone="ill"
+       data-hs-hint="I &#183; Illness (doenças)"
+       data-hs-text="Doenças: cinco ou mais comorbidades. É a carga de doença que consome a reserva do idoso. Clique para marcar como presente.">
+      <rect class="ip9-cellbox" x="0" y="0" width="148" height="150" rx="16" fill="var(--panel-2,#16223a)" stroke="var(--stroke,rgba(255,255,255,0.10))" stroke-width="1.6"/>
+      <text x="74" y="52" class="ip9-critL" fill="var(--f-ill,#818cf8)">I</text>
+      <g transform="translate(74,78)">
+        <path d="M-4 -14 L4 -14 L4 -4 L14 -4 L14 4 L4 4 L4 14 L-4 14 L-4 4 L-14 4 L-14 -4 L-4 -4 Z" fill="var(--f-ill,#818cf8)"/>
+      </g>
+      <text x="74" y="112" class="ip9-critword">Illness</text>
+      <text x="74" y="132" class="ip9-critdesc">5 ou mais</text>
+      <text x="74" y="146" class="ip9-critdesc">doenças</text>
+      <g class="ip9-check" transform="translate(126,22)">
+        <circle cx="0" cy="0" r="13" fill="var(--err,#fb7185)"/>
+        <path d="M-6 0 L-2 5 L7 -6" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <g class="ip9-crit" data-crit="L" data-on="0" role="button" tabindex="0" aria-pressed="false" transform="translate(1380,682)"
+       data-hs-tone="loss"
+       data-hs-hint="L &#183; Loss of weight (perda de peso)"
+       data-hs-text="Perda de peso: cinco por cento ou mais do peso corporal, tipicamente no último ano, de forma não intencional. Sinaliza sarcopenia e catabolismo. Clique para marcar como presente.">
+      <rect class="ip9-cellbox" x="0" y="0" width="148" height="150" rx="16" fill="var(--panel-2,#16223a)" stroke="var(--stroke,rgba(255,255,255,0.10))" stroke-width="1.6"/>
+      <text x="74" y="52" class="ip9-critL" fill="var(--f-loss,#a78bfa)">L</text>
+      <g transform="translate(74,78)" fill="none" stroke="var(--f-loss,#a78bfa)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 -14 L0 12 M-9 3 L0 14 L9 3"/>
+      </g>
+      <text x="74" y="112" class="ip9-critword">Loss</text>
+      <text x="74" y="132" class="ip9-critdesc">perda de peso</text>
+      <text x="74" y="146" class="ip9-critdesc">&#8805; 5%</text>
+      <g class="ip9-check" transform="translate(126,22)">
+        <circle cx="0" cy="0" r="13" fill="var(--err,#fb7185)"/>
+        <path d="M-6 0 L-2 5 L7 -6" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <g transform="translate(0,0)">
+      <g class="ip9-pointer" id="ip9Pointer" transform="translate(798,0)">
+        <path d="M-9 846 L9 846 L0 858 Z" fill="var(--good,#34d399)"/>
+      </g>
+      <g class="ip9-zone ip9-zone-active" id="ip9ZoneR" data-zone="R">
+        <rect x="700" y="862" width="196" height="52" rx="12" fill="var(--good,#34d399)" fill-opacity="0.16" stroke="var(--good,#34d399)" stroke-width="1.6"/>
+        <text x="798" y="884" class="ip9-zonelbl" fill="var(--good,#34d399)">0</text>
+        <text x="798" y="904" class="ip9-critdesc" fill="var(--good,#34d399)">robusto</text>
+      </g>
+      <g class="ip9-zone" id="ip9ZoneP" data-zone="P">
+        <rect x="902" y="862" width="268" height="52" rx="12" fill="var(--warn,#f59e0b)" fill-opacity="0.16" stroke="var(--warn,#f59e0b)" stroke-width="1.6"/>
+        <text x="1036" y="884" class="ip9-zonelbl" fill="var(--warn,#f59e0b)">1 &#8211; 2</text>
+        <text x="1036" y="904" class="ip9-critdesc" fill="var(--warn,#f59e0b)">pré-frágil</text>
+      </g>
+      <g class="ip9-zone" id="ip9ZoneF" data-zone="F">
+        <rect x="1176" y="862" width="352" height="52" rx="12" fill="var(--err,#fb7185)" fill-opacity="0.16" stroke="var(--err,#fb7185)" stroke-width="1.6"/>
+        <text x="1352" y="884" class="ip9-zonelbl" fill="var(--err,#fb7185)">&#8805; 3</text>
+        <text x="1352" y="904" class="ip9-critdesc" fill="var(--err,#fb7185)">frágil</text>
+      </g>
+    </g>
+
+    <rect x="700" y="930" width="828" height="56" rx="12" fill="var(--warn,#f59e0b)" fill-opacity="0.13"/>
+    <rect x="700" y="930" width="828" height="56" rx="12" fill="none" stroke="var(--warn,#f59e0b)" stroke-width="1.3"/>
+    <text x="722" y="954" font-size="14.5" font-weight="800" fill="var(--warn,#f59e0b)">&#9888; Pegadinha: no critério de atividade física da fragilidade, o gasto calórico é</text>
+    <text x="722" y="974" font-size="14.5" font-weight="800" fill="var(--warn,#f59e0b)">SEMANAL, não diário &#8212; trocar semanal por diário derruba a questão.</text>
+  </g>
+
+  <g>
+    <rect x="48" y="1030" width="1504" height="120" rx="22" fill="var(--panel-strong,#0e1830)" stroke="var(--cyan,#22d3ee)" stroke-width="1.5" filter="url(#ip9Soft)"/>
+    <text x="80" y="1066" class="ip9-foothead">A fragilidade num quadro</text>
+    <text x="80" y="1096" class="ip9-footline">Sarcopenia &#8594; perda de força &#8594; queda. FRAIL mede em cinco perguntas: &#8805;3 = frágil, 1&#8211;2 = pré-frágil, 0 = robusto.</text>
+    <text x="80" y="1126" class="ip9-pannote">O idoso-porcelana tem reserva mínima &#8212; identificar cedo é agir antes da primeira fratura.</text>
+  </g>
+  </g>
+
+  <script type="application/ecmascript">
+  <![CDATA[
+  function ip9Init(svg){
+    "use strict";
+    if(!svg || (svg.tagName && svg.tagName.toLowerCase() !== 'svg')) return;
+    if(svg.getAttribute('data-ip9-wired') === '1') return;
+    svg.setAttribute('data-ip9-wired','1');
+
+    var doc = svg.ownerDocument || document;
+    var win = doc.defaultView || window;
+
+    var TONE = {
+      cyan:'#22d3ee', good:'#34d399', warn:'#f59e0b', err:'#fb7185',
+      fat:'#22d3ee', res:'#38bdf8', amb:'#60a5fa', ill:'#818cf8', loss:'#a78bfa'
+    };
+
+    function esc(s){
+      return String(s).replace(/[&<>"']/g, function(c){
+        if(c === '&') return '&amp;';
+        if(c === '<') return '&lt;';
+        if(c === '>') return '&gt;';
+        if(c === '"') return '&quot;';
+        return '&#39;';
+      });
+    }
+
+    var tip = doc.createElement('div');
+    tip.setAttribute('role','status');
+    tip.setAttribute('aria-live','polite');
+    tip.style.cssText = [
+      'position:fixed','z-index:2147483000','max-width:360px','pointer-events:none',
+      'opacity:0','transform:translateY(6px)','transition:opacity .14s ease, transform .14s ease',
+      'background:linear-gradient(180deg, rgba(18,28,46,.985), rgba(8,14,26,.985))',
+      'border:1px solid rgba(103,232,249,0.30)','border-radius:14px','padding:14px 16px',
+      'box-shadow:0 22px 58px -14px rgba(0,0,0,.82)',
+      'backdrop-filter:blur(16px)','-webkit-backdrop-filter:blur(16px)',
+      'color:#c7d2e0','font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Segoe UI",system-ui,sans-serif',
+      'left:0','top:0'
+    ].join(';');
+    (doc.body || doc.documentElement).appendChild(tip);
+
+    var active = null;
+
+    function setTip(label, hint, text, hex){
+      tip.innerHTML =
+        '<span style="display:inline-flex;align-items:center;gap:9px;margin-bottom:8px">' +
+          '<span style="min-width:24px;height:24px;padding:0 7px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;color:#0b1220;background:' + hex + '">' + esc(label) + '</span>' +
+          '<span style="font-size:13.5px;font-weight:700;color:#f2f6fc">' + esc(hint) + '</span>' +
+        '</span>' +
+        '<p style="font-size:13px;line-height:1.56;color:#c7d2e0;margin:0">' + esc(text) + '</p>';
+    }
+
+    function placeTip(ev, g){
+      var pad = 14;
+      var tw = tip.offsetWidth || 340;
+      var th = tip.offsetHeight || 150;
+      var x, y;
+      if(ev && typeof ev.clientX === 'number'){
+        x = ev.clientX + 18; y = ev.clientY + 18;
+      } else {
+        var r = g.getBoundingClientRect();
+        x = r.left + r.width/2 - tw/2; y = r.top - th - 12;
+        if(y < pad) y = r.bottom + 12;
+      }
+      x = Math.max(pad, Math.min(x, win.innerWidth - tw - pad));
+      y = Math.max(pad, Math.min(y, win.innerHeight - th - pad));
+      tip.style.left = x + 'px';
+      tip.style.top = y + 'px';
+    }
+
+    function showTip(ev, g, data){
+      active = g;
+      g.setAttribute('data-active','1');
+      setTip(data.label, data.hint, data.text, data.hex);
+      placeTip(ev, g);
+      tip.style.opacity = '1';
+      tip.style.transform = 'translateY(0)';
+    }
+
+    function hideTip(g){
+      if(g){ g.removeAttribute('data-active'); }
+      if(!g || active === g){
+        tip.style.opacity = '0';
+        tip.style.transform = 'translateY(6px)';
+        active = null;
+      }
+    }
+
+    function dataOf(g){
+      return {
+        label: g.getAttribute('data-hs-label') || g.getAttribute('data-crit') || '',
+        hint:  g.getAttribute('data-hs-hint') || '',
+        text:  g.getAttribute('data-hs-text') || '',
+        hex:   TONE[g.getAttribute('data-hs-tone')] || TONE.cyan
+      };
+    }
+
+    var pureShapes = Array.prototype.slice.call(svg.querySelectorAll('.ip9-hs'));
+    pureShapes.forEach(function(g){
+      var data = dataOf(g);
+      g.setAttribute('tabindex','0');
+      g.setAttribute('role','button');
+      g.setAttribute('aria-label', data.hint + '. ' + data.text);
+      g.addEventListener('mouseenter', function(ev){ showTip(ev, g, data); });
+      g.addEventListener('mousemove', function(ev){ if(active === g) placeTip(ev, g); });
+      g.addEventListener('mouseleave', function(){ hideTip(g); });
+      g.addEventListener('focus', function(){ showTip(null, g, data); });
+      g.addEventListener('blur', function(){ hideTip(g); });
+      g.addEventListener('click', function(ev){ ev.stopPropagation(); if(active === g){ hideTip(g); } else { showTip(ev, g, data); } });
+      g.addEventListener('keydown', function(ev){
+        if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); if(active === g){ hideTip(g); } else { showTip(null, g, data); } }
+        if(ev.key === 'Escape'){ hideTip(g); if(g.blur) g.blur(); }
+      });
+      g.addEventListener('touchstart', function(ev){ ev.stopPropagation(); if(active === g){ hideTip(g); } else { showTip(null, g, data); } }, {passive:true});
+    });
+
+    var readNum = svg.querySelector('#ip9ReadNum');
+    var readLbl = svg.querySelector('#ip9ReadLbl');
+    var pointer = svg.querySelector('#ip9Pointer');
+    var zones = Array.prototype.slice.call(svg.querySelectorAll('.ip9-zone'));
+    var crits = Array.prototype.slice.call(svg.querySelectorAll('.ip9-crit'));
+    var ZONEX = { R:798, P:1036, F:1352 };
+    var ZONECOL = { R:TONE.good, P:TONE.warn, F:TONE.err };
+
+    var live = doc.createElement('div');
+    live.setAttribute('aria-live','polite');
+    live.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap';
+    (doc.body || doc.documentElement).appendChild(live);
+
+    function recompute(){
+      var on = 0;
+      crits.forEach(function(c){ if(c.getAttribute('data-on') === '1') on++; });
+      var zone, cls;
+      if(on === 0){ zone='R'; cls='robusto'; }
+      else if(on <= 2){ zone='P'; cls='pré-frágil'; }
+      else { zone='F'; cls='frágil'; }
+      if(readNum){ readNum.textContent = on + ' / 5'; readNum.setAttribute('fill', ZONECOL[zone]); }
+      if(readLbl){ readLbl.textContent = cls; readLbl.setAttribute('fill', ZONECOL[zone]); }
+      if(pointer){
+        pointer.setAttribute('transform', 'translate(' + ZONEX[zone] + ',0)');
+        var tri = pointer.querySelector('path');
+        if(tri){ tri.setAttribute('fill', ZONECOL[zone]); }
+      }
+      zones.forEach(function(z){ z.classList.toggle('ip9-zone-active', z.getAttribute('data-zone') === zone); });
+      live.textContent = 'FRAIL ' + on + ' de 5: ' + cls;
+    }
+
+    crits.forEach(function(g){
+      var data = dataOf(g);
+      g.setAttribute('aria-label', data.hint + '. ' + data.text);
+      function toggle(){
+        var now = g.getAttribute('data-on') === '1' ? '0' : '1';
+        g.setAttribute('data-on', now);
+        g.setAttribute('aria-pressed', now === '1' ? 'true' : 'false');
+        recompute();
+      }
+      g.addEventListener('mouseenter', function(ev){ showTip(ev, g, data); });
+      g.addEventListener('mousemove', function(ev){ if(active === g) placeTip(ev, g); });
+      g.addEventListener('mouseleave', function(){ hideTip(g); });
+      g.addEventListener('focus', function(){ showTip(null, g, data); });
+      g.addEventListener('blur', function(){ hideTip(g); });
+      g.addEventListener('click', function(ev){ ev.stopPropagation(); toggle(); });
+      g.addEventListener('keydown', function(ev){
+        if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); toggle(); }
+        if(ev.key === 'Escape'){ hideTip(g); if(g.blur) g.blur(); }
+      });
+      g.addEventListener('touchstart', function(ev){ ev.stopPropagation(); ev.preventDefault(); toggle(); showTip(null, g, data); }, {passive:false});
+    });
+
+    doc.addEventListener('click', function(){ if(active){ hideTip(active); } });
+    win.addEventListener('scroll', function(){ if(active){ tip.style.opacity = '0'; } }, {passive:true});
+
+    recompute();
+  }
+
+  (function(){
+    "use strict";
+    var me = (typeof document !== 'undefined') ? document.currentScript : null;
+    var s = me ? (me.ownerSVGElement || me.parentNode) : null;
+    while(s && s.tagName && s.tagName.toLowerCase() !== 'svg'){ s = s.parentNode; }
+    if(s){ ip9Init(s); return; }
+    function scan(){
+      var list = document.querySelectorAll('svg[aria-labelledby="ip9Ttl ip9Dsc"]:not([data-ip9-wired="1"])');
+      for(var i=0;i<list.length;i++){ ip9Init(list[i]); }
+    }
+    if(document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', scan);
+    }
+    if(typeof Promise !== 'undefined'){ Promise.resolve().then(scan); }
+    else { setTimeout(scan, 0); }
+  })();
+  ]]>
+  </script>
+</svg>

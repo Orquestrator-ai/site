@@ -1,0 +1,511 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="100%" height="100%" class="a12p4h-root" id="a12p4h-svg-root" aria-label="Anel Pélvico: Montagem Funcional e Transmissão de Carga">
+  <defs>
+    <!-- Gradientes e Filtros de Iluminação Médica -->
+    <linearGradient id="a12p4h-grad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--bg-1, var(--a12p4h-bg1, #1a0a16))"/>
+      <stop offset="100%" stop-color="var(--bg-2, var(--a12p4h-bg2, #10040e))"/>
+    </linearGradient>
+
+    <linearGradient id="a12p4h-grad-sacrum" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p4h-sacrum-light, #e88ab4)"/>
+      <stop offset="100%" stop-color="var(--a12p4h-sacrum-dark, #b04e78)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p4h-grad-hip-r" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p4h-hip-light, #d96b99)"/>
+      <stop offset="100%" stop-color="var(--a12p4h-hip-dark, #9c3b65)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p4h-grad-hip-l" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p4h-hip-light, #d96b99)"/>
+      <stop offset="100%" stop-color="var(--a12p4h-hip-dark, #9c3b65)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p4h-grad-symphysis" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--a12p4h-symph-1, #f59e0b)"/>
+      <stop offset="50%" stop-color="var(--a12p4h-symph-2, #fbbf24)"/>
+      <stop offset="100%" stop-color="var(--a12p4h-symph-1, #f59e0b)"/>
+    </linearGradient>
+
+    <linearGradient id="a12p4h-grad-load" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--a12p4h-load-bright, #ff4d4d)"/>
+      <stop offset="100%" stop-color="var(--a12p4h-load-dark, #dc2626)"/>
+    </linearGradient>
+
+    <!-- Marker Setas de Carga -->
+    <marker id="a12p4h-arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12p4h-kw-red, #ef4444)"/>
+    </marker>
+    <marker id="a12p4h-arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--a12p4h-kw-green, #10b981)"/>
+    </marker>
+
+    <!-- Glow Effect para Vetores e Trava -->
+    <filter id="a12p4h-glow-load" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p4h-glow-symph" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    /* Escopo estrito e indirecao de tokens para compatibilidade Dual-Theme */
+    .a12p4h-root {
+      --a12p4h-bg-main: #160814;
+      --a12p4h-card-bg: rgba(42, 18, 38, 0.88);
+      --a12p4h-card-border: #5c2345;
+      --a12p4h-text-main: #f5e6f0;
+      --a12p4h-text-muted: #c4a5bb;
+      --a12p4h-text-title: #ffffff;
+      --a12p4h-sacrum-light: #e88ab4;
+      --a12p4h-sacrum-dark: #b04e78;
+      --a12p4h-hip-light: #d96b99;
+      --a12p4h-hip-dark: #9c3b65;
+      --a12p4h-symph-1: #f59e0b;
+      --a12p4h-symph-2: #fbbf24;
+      --a12p4h-kw-green: #10b981;
+      --a12p4h-kw-red: #ef4444;
+      --a12p4h-kw-amber: #f59e0b;
+      --a12p4h-kw-blue: #38bdf8;
+      --a12p4h-btn-bg: #2d1428;
+      --a12p4h-btn-border: #6b2853;
+      --a12p4h-btn-active: #852860;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    [data-theme="light"] .a12p4h-root {
+      --a12p4h-bg-main: #fcf4f8;
+      --a12p4h-card-bg: #ffffff;
+      --a12p4h-card-border: #e2c2d6;
+      --a12p4h-text-main: #2b1024;
+      --a12p4h-text-muted: #6e4a63;
+      --a12p4h-text-title: #1a0415;
+      --a12p4h-sacrum-light: #b84a77;
+      --a12p4h-sacrum-dark: #8c2b53;
+      --a12p4h-hip-light: #a83d69;
+      --a12p4h-hip-dark: #782046;
+      --a12p4h-symph-1: #d97706;
+      --a12p4h-symph-2: #f59e0b;
+      --a12p4h-kw-green: #059669;
+      --a12p4h-kw-red: #dc2626;
+      --a12p4h-kw-amber: #d97706;
+      --a12p4h-kw-blue: #0284c7;
+      --a12p4h-btn-bg: #f3e5ee;
+      --a12p4h-btn-border: #d4a8c5;
+      --a12p4h-btn-active: #9d386c;
+    }
+
+    /* Regras de Apresentacao e Interatividade */
+    .a12p4h-bg-rect { fill: var(--bg-1, var(--a12p4h-bg-main, #160814)); }
+    .a12p4h-card { fill: var(--bg-2, var(--a12p4h-card-bg, rgba(42, 18, 38, 0.88))); stroke: var(--ink-20, var(--a12p4h-card-border, #5c2345)); stroke-width: 1.5; rx: 12; }
+    .a12p4h-title-text { fill: var(--ink-100, var(--a12p4h-text-title, #ffffff)); font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+    .a12p4h-subtitle-text { fill: var(--ink-70, var(--a12p4h-text-muted, #c4a5bb)); font-size: 12.5px; font-weight: 400; }
+    .a12p4h-body-text { fill: var(--ink-90, var(--a12p4h-text-main, #f5e6f0)); font-size: 13px; line-height: 1.45; }
+    .a12p4h-muted-text { fill: var(--ink-60, var(--a12p4h-text-muted, #c4a5bb)); font-size: 11.5px; }
+    
+    /* Estados Transicionaveis dos Grupos de Animação/Tempo */
+    .a12p4h-tempo-grp { transition: opacity 0.4s ease, transform 0.4s ease; }
+    .a12p4h-hidden { opacity: 0; pointer-events: none; }
+    .a12p4h-visible { opacity: 1; pointer-events: auto; }
+    .a12p4h-dimmed { opacity: 0.25; }
+
+    /* Botoes da Linha do Tempo */
+    .a12p4h-btn-rect { fill: var(--a12p4h-btn-bg, #2d1428); stroke: var(--a12p4h-btn-border, #6b2853); stroke-width: 1.5; rx: 8; cursor: pointer; transition: all 0.25s ease; }
+    .a12p4h-btn-rect:hover { stroke: var(--a12p4h-kw-amber, #f59e0b); }
+    .a12p4h-btn-text { fill: var(--ink-80, var(--a12p4h-text-main, #f5e6f0)); font-size: 11.5px; font-weight: 600; text-anchor: middle; pointer-events: none; }
+    .a12p4h-btn-sub { fill: var(--ink-60, var(--a12p4h-text-muted, #c4a5bb)); font-size: 9.5px; font-weight: 400; text-anchor: middle; pointer-events: none; }
+    
+    .a12p4h-active .a12p4h-btn-rect { fill: var(--a12p4h-btn-active, #852860); stroke: var(--a12p4h-kw-amber, #f59e0b); stroke-width: 2; }
+    .a12p4h-active .a12p4h-btn-text { fill: #ffffff; font-weight: 700; }
+    .a12p4h-active .a12p4h-btn-sub { fill: #fde68a; }
+
+    /* Hotspots Anatomicos Destaque ao Passar o Mouse */
+    .a12p4h-hotspot { cursor: pointer; transition: filter 0.2s ease, opacity 0.2s ease; }
+    .a12p4h-hotspot:hover { filter: drop-shadow(0 0 6px var(--a12p4h-kw-amber, #f59e0b)); }
+
+    /* Emblemas de Destaque */
+    .a12p4h-tag-green { fill: rgba(16, 185, 129, 0.15); stroke: var(--a12p4h-kw-green, #10b981); stroke-width: 1; rx: 4; }
+    .a12p4h-tag-red { fill: rgba(239, 68, 68, 0.15); stroke: var(--a12p4h-kw-red, #ef4444); stroke-width: 1; rx: 4; }
+    .a12p4h-tag-amber { fill: rgba(245, 158, 11, 0.15); stroke: var(--a12p4h-kw-amber, #f59e0b); stroke-width: 1; rx: 4; }
+    .a12p4h-tag-blue { fill: rgba(56, 189, 248, 0.15); stroke: var(--a12p4h-kw-blue, #38bdf8); stroke-width: 1; rx: 4; }
+
+    /* Animação Pulsante para Vetores de Carga e Trava */
+    @keyframes a12p4h-pulse {
+      0% { stroke-dashoffset: 24; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .a12p4h-pulse-line { stroke-dasharray: 8, 4; animation: a12p4h-pulse 1.2s linear infinite; }
+  </style>
+
+  <!-- Fundo Principal -->
+  <rect width="960" height="680" class="a12p4h-bg-rect" />
+
+  <!-- ==================== CABECALHO DA ILUSTRACAO ==================== -->
+  <g transform="translate(30, 24)">
+    <text x="0" y="20" class="a12p4h-title-text">ANEL PÉLVICO: MONTAGEM FUNCIONAL E TRANSMISSÃO DE CARGA</text>
+    <text x="0" y="42" class="a12p4h-subtitle-text">Estudo anatômico da arquitetura óssea, travamento articular e rota axial de força no esqueleto axial-apendicular</text>
+  </g>
+
+  <!-- ==================== PALCO DE DESENHO ANATOMICO (ESQUERDA) ==================== -->
+  <g id="a12p4h-stage-group" transform="translate(30, 85)">
+    <!-- Moldura/Fundo do Palco -->
+    <rect width="530" height="490" class="a12p4h-card" />
+
+    <!-- Grade de Foco / Eixos de Simetria Anatômica -->
+    <line x1="265" y1="20" x2="265" y2="470" stroke="var(--ink-20, var(--a12p4h-card-border, #5c2345))" stroke-width="1" stroke-dasharray="4,4" opacity="0.4" />
+    <line x1="40" y1="360" x2="490" y2="360" stroke="var(--ink-20, var(--a12p4h-card-border, #5c2345))" stroke-width="1" stroke-dasharray="4,4" opacity="0.3" />
+    <text x="265" y="482" font-size="9" fill="var(--ink-60, var(--a12p4h-text-muted, #c4a5bb))" text-anchor="middle">EIXO DE SIMETRIA MEDIAL</text>
+
+    <!-- TEMPO 1: PAREDE POSTERIOR (SACRO E COCCIX) -->
+    <g id="a12p4h-layer-t1" class="a12p4h-tempo-grp a12p4h-visible">
+      <!-- Coluna Lumbar L5 -->
+      <path d="M 235 60 C 235 52, 295 52, 295 60 L 295 90 C 295 98, 235 98, 235 90 Z" fill="url(#a12p4h-grad-sacrum)" stroke="#8c2b53" stroke-width="1.5" />
+      <ellipse cx="265" cy="60" rx="30" ry="8" fill="#f5c2d7" opacity="0.6" />
+      <text x="265" y="78" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">L5</text>
+
+      <!-- Disco L5-S1 -->
+      <ellipse cx="265" cy="94" rx="28" ry="6" fill="#38bdf8" opacity="0.8" />
+
+      <!-- Sacro -->
+      <g class="a12p4h-hotspot" id="a12p4h-target-sacrum">
+        <path d="M 220 102 C 240 98, 290 98, 310 102 C 335 110, 350 145, 335 190 C 320 230, 290 270, 275 295 C 270 302, 260 302, 255 295 C 240 270, 210 230, 195 190 C 180 145, 195 110, 220 102 Z" fill="url(#a12p4h-grad-sacrum)" stroke="#6b1d40" stroke-width="2" />
+
+        <!-- Crista Sacral Mediana e Forames Sacrais -->
+        <path d="M 265 115 L 265 280" stroke="#7a2046" stroke-width="3" stroke-dasharray="6,4" />
+        
+        <!-- Forames D/E -->
+        <circle cx="240" cy="140" r="5" fill="#160814" opacity="0.7"/>
+        <circle cx="290" cy="140" r="5" fill="#160814" opacity="0.7"/>
+        <circle cx="243" cy="175" r="4.5" fill="#160814" opacity="0.7"/>
+        <circle cx="287" cy="175" r="4.5" fill="#160814" opacity="0.7"/>
+        <circle cx="247" cy="210" r="4" fill="#160814" opacity="0.7"/>
+        <circle cx="283" cy="210" r="4" fill="#160814" opacity="0.7"/>
+        <circle cx="251" cy="245" r="3.5" fill="#160814" opacity="0.7"/>
+        <circle cx="279" cy="245" r="3.5" fill="#160814" opacity="0.7"/>
+        
+        <text x="265" y="150" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">SACRO</text>
+        <text x="265" y="165" font-size="9.5" fill="#fde68a" text-anchor="middle">(Peca 1 · Osso Esqueleto Axial)</text>
+      </g>
+
+      <!-- Articulacao Sacrococcigea -->
+      <ellipse cx="265" cy="300" rx="10" ry="3.5" fill="#10b981" />
+
+      <!-- Coccix -->
+      <g class="a12p4h-hotspot" id="a12p4h-target-coccyx">
+        <path d="M 255 304 C 260 302, 270 302, 275 304 L 271 335 C 268 343, 262 343, 259 335 Z" fill="url(#a12p4h-grad-sacrum)" stroke="#52132f" stroke-width="1.5" />
+        <line x1="257" y1="314" x2="273" y2="314" stroke="#52132f" stroke-width="1" />
+        <line x1="259" y1="324" x2="271" y2="324" stroke="#52132f" stroke-width="1" />
+        <text x="265" y="322" font-size="8.5" font-weight="700" fill="#ffffff" text-anchor="middle">CÓCCIX</text>
+      </g>
+    </g>
+
+    <!-- TEMPO 2: PAREDES LATERAIS (2 OSSOS DO QUADRIL) -->
+    <g id="a12p4h-layer-t2" class="a12p4h-tempo-grp a12p4h-visible">
+      <!-- Osso do Quadril Direito -->
+      <g class="a12p4h-hotspot" id="a12p4h-target-hip-r">
+        <path d="M 215 108 C 180 85, 120 75, 80 110 C 50 135, 45 185, 60 230 C 75 270, 105 310, 135 340 C 150 355, 175 385, 195 400 C 205 408, 215 395, 210 380 C 195 340, 185 290, 185 240 C 185 185, 200 135, 215 108 Z" fill="url(#a12p4h-grad-hip-r)" stroke="#6b1d40" stroke-width="2" />
+        <circle cx="120" cy="320" r="28" fill="#160814" stroke="#e88ab4" stroke-width="2" />
+        <path d="M 105 310 C 120 298, 140 310, 135 332 C 125 342, 108 335, 105 310 Z" fill="#2d1428" />
+        <text x="120" y="324" font-size="8" font-weight="700" fill="#38bdf8" text-anchor="middle">ACETÁBULO D</text>
+        <ellipse cx="165" cy="385" rx="18" ry="14" fill="#160814" stroke="#8c2b53" stroke-width="1.5" transform="rotate(-15, 165, 385)" />
+        <text x="115" y="160" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">OSSO DO QUADRIL D</text>
+        <text x="115" y="174" font-size="9" fill="#fde68a" text-anchor="middle">(Ílio + Ísquio + Púbis)</text>
+      </g>
+
+      <!-- Osso do Quadril Esquerdo -->
+      <g class="a12p4h-hotspot" id="a12p4h-target-hip-l">
+        <path d="M 315 108 C 350 85, 410 75, 450 110 C 480 135, 485 185, 470 230 C 455 270, 425 310, 395 340 C 380 355, 355 385, 335 400 C 325 408, 315 395, 320 380 C 335 340, 345 290, 345 240 C 345 185, 330 135, 315 108 Z" fill="url(#a12p4h-grad-hip-l)" stroke="#6b1d40" stroke-width="2" />
+        <circle cx="410" cy="320" r="28" fill="#160814" stroke="#e88ab4" stroke-width="2" />
+        <path d="M 395 310 C 410 298, 430 310, 425 332 C 415 342, 398 335, 395 310 Z" fill="#2d1428" />
+        <text x="410" y="324" font-size="8" font-weight="700" fill="#38bdf8" text-anchor="middle">ACETÁBULO E</text>
+        <ellipse cx="365" cy="385" rx="18" ry="14" fill="#160814" stroke="#8c2b53" stroke-width="1.5" transform="rotate(15, 365, 385)" />
+        <text x="415" y="160" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">OSSO DO QUADRIL E</text>
+        <text x="415" y="174" font-size="9" fill="#fde68a" text-anchor="middle">(Peca 3 e Peca 4)</text>
+      </g>
+
+      <!-- Articulacoes Sacroiliacas D e E -->
+      <g id="a12p4h-target-si-joints" class="a12p4h-hotspot">
+        <path d="M 212 110 C 205 140, 205 180, 216 215" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" />
+        <path d="M 318 110 C 325 140, 325 180, 314 215" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" />
+      </g>
+    </g>
+
+    <!-- TEMPO 3: FECHAMENTO ANTERIOR E TRAVA (SINFSISE PUBICA) -->
+    <g id="a12p4h-layer-t3" class="a12p4h-tempo-grp a12p4h-visible">
+      <path d="M 205 385 C 225 410, 245 422, 258 424 L 258 450 C 240 448, 220 435, 195 408 Z" fill="url(#a12p4h-grad-hip-r)" stroke="#6b1d40" />
+      <path d="M 325 385 C 305 410, 285 422, 272 424 L 272 450 C 290 448, 310 435, 335 408 Z" fill="url(#a12p4h-grad-hip-l)" stroke="#6b1d40" />
+
+      <!-- Sinfise Pubica -->
+      <g class="a12p4h-hotspot" id="a12p4h-target-symphysis">
+        <rect x="257" y="415" width="16" height="38" rx="4" fill="url(#a12p4h-grad-symphysis)" stroke="#f59e0b" stroke-width="2" filter="url(#a12p4h-glow-symph)" />
+        <line x1="265" y1="417" x2="265" y2="451" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3,2" />
+      </g>
+
+      <!-- Indicadores de Trava de Tensao -->
+      <g id="a12p4h-symph-lock-indicator" opacity="0.9">
+        <path d="M 230 434 L 252 434" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#a12p4h-arrow-green)" />
+        <path d="M 300 434 L 278 434" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#a12p4h-arrow-green)" />
+        <rect x="212" y="456" width="106" height="18" class="a12p4h-tag-amber" />
+        <text x="265" y="469" font-size="9.5" font-weight="800" fill="#fde68a" text-anchor="middle">TRAVA DE TENSÃO</text>
+      </g>
+    </g>
+
+    <!-- TEMPO 4: VETORES DE TRANSMISSAO DE CARGA -->
+    <g id="a12p4h-layer-t4" class="a12p4h-tempo-grp a12p4h-visible">
+      <!-- 1. Vetor Coluna Axial -->
+      <path d="M 265 40 L 265 95" stroke="#ef4444" stroke-width="6" fill="none" marker-end="url(#a12p4h-arrow-red)" filter="url(#a12p4h-glow-load)" class="a12p4h-pulse-line" />
+
+      <!-- 2. Divisao de Carga no Sacro -->
+      <path d="M 265 115 Q 240 130, 215 155" stroke="#ef4444" stroke-width="5" fill="none" marker-end="url(#a12p4h-arrow-red)" filter="url(#a12p4h-glow-load)" class="a12p4h-pulse-line" />
+      <path d="M 265 115 Q 290 130, 315 155" stroke="#ef4444" stroke-width="5" fill="none" marker-end="url(#a12p4h-arrow-red)" filter="url(#a12p4h-glow-load)" class="a12p4h-pulse-line" />
+
+      <!-- 3. Travessia Sacroiliaca -> Acetabulo -->
+      <path d="M 210 165 C 170 200, 140 250, 125 300" stroke="#ef4444" stroke-width="4.5" fill="none" marker-end="url(#a12p4h-arrow-red)" filter="url(#a12p4h-glow-load)" class="a12p4h-pulse-line" />
+      <path d="M 320 165 C 360 200, 390 250, 405 300" stroke="#ef4444" stroke-width="4.5" fill="none" marker-end="url(#a12p4h-arrow-red)" filter="url(#a12p4h-glow-load)" class="a12p4h-pulse-line" />
+
+      <!-- 4. Descarga Femoral -->
+      <path d="M 120 340 L 105 390" stroke="#ef4444" stroke-width="5" fill="none" marker-end="url(#a12p4h-arrow-red)" filter="url(#a12p4h-glow-load)" />
+      <path d="M 410 340 L 425 390" stroke="#ef4444" stroke-width="5" fill="none" marker-end="url(#a12p4h-arrow-red)" filter="url(#a12p4h-glow-load)" />
+
+      <!-- Rotulos Ativos do Tempo 4 -->
+      <g id="a12p4h-labels-t4">
+        <rect x="290" y="48" width="92" height="20" class="a12p4h-tag-red" />
+        <text x="336" y="62" font-size="9" font-weight="700" fill="#fca5a5" text-anchor="middle">1. Carga Axial L5</text>
+
+        <rect x="22" y="165" width="114" height="20" class="a12p4h-tag-green" />
+        <text x="79" y="179" font-size="9" font-weight="700" fill="#6ee7b7" text-anchor="middle">2. Ponte Sacroilíaca</text>
+        <polyline points="136,175 190,175 208,175" fill="none" stroke="#10b981" stroke-width="1" stroke-dasharray="2,2" />
+
+        <rect x="18" y="270" width="118" height="20" class="a12p4h-tag-red" />
+        <text x="77" y="284" font-size="9" font-weight="700" fill="#fca5a5" text-anchor="middle">3. Transmissão Ilíaca</text>
+
+        <rect x="420" y="395" width="102" height="20" class="a12p4h-tag-red" />
+        <text x="471" y="409" font-size="9" font-weight="700" fill="#fca5a5" text-anchor="middle">4. Carga nos Fêmures</text>
+      </g>
+    </g>
+
+    <!-- Overlay Transparente de Toque -->
+    <rect id="a12p4h-hs-sacrum" x="200" y="100" width="130" height="180" fill="none" pointer-events="all" class="a12p4h-hotspot" />
+    <rect id="a12p4h-hs-hip-r" x="50" y="80" width="150" height="300" fill="none" pointer-events="all" class="a12p4h-hotspot" />
+    <rect id="a12p4h-hs-hip-l" x="330" y="80" width="150" height="300" fill="none" pointer-events="all" class="a12p4h-hotspot" />
+    <rect id="a12p4h-hs-symph" x="240" y="400" width="50" height="60" fill="none" pointer-events="all" class="a12p4h-hotspot" />
+  </g>
+
+  <!-- ==================== PAINEL DE LEITURA E INTERPRETACAO (DIREITA) ==================== -->
+  <g id="a12p4h-panel-group" transform="translate(580, 85)">
+    <!-- Card Principal do Painel -->
+    <rect width="350" height="490" class="a12p4h-card" />
+
+    <!-- Cabecalho do Painel -->
+    <rect x="15" y="15" width="320" height="32" class="a12p4h-tag-amber" />
+    <text x="175" y="36" font-size="12" font-weight="800" fill="#fde68a" text-anchor="middle" letter-spacing="0.5">PAINEL DE INTERPRETAÇÃO CLÍNICA</text>
+
+    <!-- Conteudo do Painel -->
+    <g id="a12p4h-panel-content" transform="translate(20, 65)">
+      <!-- Sintese da Equacao Ossea -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="310" height="52" fill="rgba(255,255,255,0.03)" stroke="var(--ink-20, var(--a12p4h-card-border, #5c2345))" rx="8" />
+        <text x="12" y="20" font-size="11" font-weight="700" fill="var(--a12p4h-kw-amber, #f59e0b)">RÓTULO DE SÍNTESE:</text>
+        <text x="12" y="38" font-size="14" font-weight="800" fill="#ffffff">3 Tipos de Osso = 4 Peças Físicas</text>
+      </g>
+
+      <!-- Contagem Anatomica -->
+      <g transform="translate(0, 64)">
+        <text x="0" y="14" font-size="11" font-weight="700" fill="var(--ink-70, var(--a12p4h-text-muted, #c4a5bb))">PEÇAS ÓSSEAS INTEGRANTES:</text>
+        
+        <circle cx="10" cy="32" r="4" fill="#e88ab4" />
+        <text x="22" y="36" class="a12p4h-body-text"><tspan font-weight="700">1x Sacro</tspan> (Esqueleto Axial)</text>
+        
+        <circle cx="10" cy="52" r="4" fill="#e88ab4" />
+        <text x="22" y="56" class="a12p4h-body-text"><tspan font-weight="700">1x Cóccix</tspan> (Esqueleto Axial)</text>
+        
+        <circle cx="10" cy="72" r="4" fill="#d96b99" />
+        <text x="22" y="76" class="a12p4h-body-text"><tspan font-weight="700">2x Ossos do Quadril</tspan> (Direito e Esquerdo)</text>
+      </g>
+
+      <!-- Tres Articulacoes -->
+      <g transform="translate(0, 155)">
+        <text x="0" y="14" font-size="11" font-weight="700" fill="var(--ink-70, var(--a12p4h-text-muted, #c4a5bb))">TRÊS ARTICULAÇÕES ANATÔMICAS:</text>
+
+        <rect x="0" y="24" width="310" height="26" fill="rgba(16, 185, 129, 0.1)" rx="4" />
+        <text x="10" y="41" font-size="11.5" font-weight="700" fill="#6ee7b7">• 2x Articulações Sacroilíacas (D/E)</text>
+
+        <rect x="0" y="56" width="310" height="26" fill="rgba(245, 158, 11, 0.1)" rx="4" />
+        <text x="10" y="73" font-size="11.5" font-weight="700" fill="#fde68a">• 1x Sínfise Púbica (Anterior)</text>
+
+        <rect x="0" y="88" width="310" height="26" fill="rgba(232, 138, 180, 0.1)" rx="4" />
+        <text x="10" y="105" font-size="11.5" font-weight="700" fill="#f5c2d7">• 1x Articulação Sacrococcígea</text>
+      </g>
+
+      <!-- Caixa de Leitura em SVG puro -->
+      <g transform="translate(0, 280)">
+        <rect x="0" y="0" width="310" height="125" id="a12p4h-info-box" class="a12p4h-tag-red" />
+        <text x="12" y="20" font-size="11" font-weight="800" fill="#fca5a5" id="a12p4h-info-title">POR QUE A SÍNFISE NÃO CONDUZ CARGA?</text>
+        
+        <text x="12" y="40" font-size="11" fill="#f5e6f0" id="a12p4h-info-line1">A carga peso da coluna desce por</text>
+        <text x="12" y="56" font-size="11" font-weight="700" fill="#ef4444" id="a12p4h-info-line2">L5 → Sacro → Sacroilíacas → Quadris → Fêmures.</text>
+        <text x="12" y="76" font-size="11" fill="#f5e6f0" id="a12p4h-info-line3">A Sínfise Púbica atua como tirante de tensão,</text>
+        <text x="12" y="92" font-size="11" font-weight="700" fill="#fde68a" id="a12p4h-info-line4">impedindo a abertura anterior do anel.</text>
+        <text x="12" y="108" font-size="10" fill="#c4a5bb" id="a12p4h-info-line5">(Não transmite força gravitacional axial).</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== CONTROLES DE TEMPO / PASSOS DE MONTAGEM ==================== -->
+  <g id="a12p4h-controls-group" transform="translate(30, 595)">
+    <!-- Barra de Instrucao Neutra -->
+    <text x="0" y="-8" font-size="11" font-weight="600" fill="var(--ink-70, var(--a12p4h-text-muted, #c4a5bb))">
+      Clique nos botões de tempo abaixo ou toque nas estruturas para alternar a montagem e a rota de carga:
+    </text>
+
+    <!-- Botao Tempo 1 -->
+    <g id="a12p4h-btn-step-1" class="a12p4h-btn a12p4h-active" transform="translate(0, 0)">
+      <rect width="122" height="44" class="a12p4h-btn-rect" />
+      <text x="61" y="18" class="a12p4h-btn-text">TEMPO 1</text>
+      <text x="61" y="32" class="a12p4h-btn-sub">Parede Posterior</text>
+    </g>
+
+    <!-- Botao Tempo 2 -->
+    <g id="a12p4h-btn-step-2" class="a12p4h-btn" transform="translate(132, 0)">
+      <rect width="122" height="44" class="a12p4h-btn-rect" />
+      <text x="61" y="18" class="a12p4h-btn-text">TEMPO 2</text>
+      <text x="61" y="32" class="a12p4h-btn-sub">Paredes Laterais</text>
+    </g>
+
+    <!-- Botao Tempo 3 -->
+    <g id="a12p4h-btn-step-3" class="a12p4h-btn" transform="translate(264, 0)">
+      <rect width="122" height="44" class="a12p4h-btn-rect" />
+      <text x="61" y="18" class="a12p4h-btn-text">TEMPO 3</text>
+      <text x="61" y="32" class="a12p4h-btn-sub">Fechamento &amp; Trava</text>
+    </g>
+
+    <!-- Botao Tempo 4 -->
+    <g id="a12p4h-btn-step-4" class="a12p4h-btn" transform="translate(396, 0)">
+      <rect width="134" height="44" class="a12p4h-btn-rect" />
+      <text x="67" y="18" class="a12p4h-btn-text">ROTA DE CARGA</text>
+      <text x="67" y="32" class="a12p4h-btn-sub">Transmissão Axial</text>
+    </g>
+  </g>
+
+  <!-- ==================== LOGICA INTERATIVA SELF-CONTAINED JS ==================== -->
+  <script>//<![CDATA[
+    (function() {
+      'use strict';
+
+      var currentStep = 4;
+
+      var layerT1 = document.getElementById('a12p4h-layer-t1');
+      var layerT2 = document.getElementById('a12p4h-layer-t2');
+      var layerT3 = document.getElementById('a12p4h-layer-t3');
+      var layerT4 = document.getElementById('a12p4h-layer-t4');
+
+      var btn1 = document.getElementById('a12p4h-btn-step-1');
+      var btn2 = document.getElementById('a12p4h-btn-step-2');
+      var btn3 = document.getElementById('a12p4h-btn-step-3');
+      var btn4 = document.getElementById('a12p4h-btn-step-4');
+
+      var infoTitle = document.getElementById('a12p4h-info-title');
+      var line1 = document.getElementById('a12p4h-info-line1');
+      var line2 = document.getElementById('a12p4h-info-line2');
+      var line3 = document.getElementById('a12p4h-info-line3');
+      var line4 = document.getElementById('a12p4h-info-line4');
+      var line5 = document.getElementById('a12p4h-info-line5');
+
+      var stepData = {
+        1: {
+          title: "TEMPO 1: A PAREDE POSTERIOR",
+          l1: "O Sacro e Cóccix formam o pilar rígido posterior.",
+          l2: "Suportam diretamente a coluna L5.",
+          l3: "Pertencem ao esqueleto axial.",
+          l4: "Ponto de ancoragem superior da carga corporal.",
+          l5: "(Base de sustentação posterior do tronco)."
+        },
+        2: {
+          title: "TEMPO 2: AS PAREDES LATERAIS",
+          l1: "2 Ossos do Quadril fecham as laterais.",
+          l2: "Articulam-se nas Sacroilíacas (D/E).",
+          l3: "Cada quadril une Ílio, Ísquio e Púbis.",
+          l4: "Transferem o peso para as cavidades acetabulares.",
+          l5: "(Estrutura apendicular de transmissão)."
+        },
+        3: {
+          title: "TEMPO 3: O FECHAMENTO ANTERIOR",
+          l1: "A Sínfise Púbica une os ramos púbicos na frente.",
+          l2: "Funciona como tirante de tensão anterior.",
+          l3: "Impede o afastamento dos ossos ilíacos.",
+          l4: "Maneja forças de tração durante o apoio de carga.",
+          l5: "(Trava mecânica sem vetor de peso axial)."
+        },
+        4: {
+          title: "ROTA DE CARGA: TRANSMISSÃO AXIAL",
+          l1: "A carga peso da coluna desce por",
+          l2: "L5 → Sacro → Sacroilíacas → Quadris → Fêmures.",
+          l3: "A Sínfise Púbica atua como tirante de tensão,",
+          l4: "impedindo a abertura anterior do anel.",
+          l5: "(Não transmite força gravitacional axial)."
+        }
+      };
+
+      function setStep(step) {
+        currentStep = step;
+
+        if (btn1) btn1.setAttribute('class', 'a12p4h-btn' + (step === 1 ? ' a12p4h-active' : ''));
+        if (btn2) btn2.setAttribute('class', 'a12p4h-btn' + (step === 2 ? ' a12p4h-active' : ''));
+        if (btn3) btn3.setAttribute('class', 'a12p4h-btn' + (step === 3 ? ' a12p4h-active' : ''));
+        if (btn4) btn4.setAttribute('class', 'a12p4h-btn' + (step === 4 ? ' a12p4h-active' : ''));
+
+        if (step === 1) {
+          if (layerT1) layerT1.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible');
+          if (layerT2) layerT2.setAttribute('class', 'a12p4h-tempo-grp a12p4h-hidden');
+          if (layerT3) layerT3.setAttribute('class', 'a12p4h-tempo-grp a12p4h-hidden');
+          if (layerT4) layerT4.setAttribute('class', 'a12p4h-tempo-grp a12p4h-hidden');
+        } else if (step === 2) {
+          if (layerT1) layerT1.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible');
+          if (layerT2) layerT2.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible');
+          if (layerT3) layerT3.setAttribute('class', 'a12p4h-tempo-grp a12p4h-hidden');
+          if (layerT4) layerT4.setAttribute('class', 'a12p4h-tempo-grp a12p4h-hidden');
+        } else if (step === 3) {
+          if (layerT1) layerT1.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible');
+          if (layerT2) layerT2.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible');
+          if (layerT3) layerT3.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible');
+          if (layerT4) layerT4.setAttribute('class', 'a12p4h-tempo-grp a12p4h-hidden');
+        } else if (step === 4) {
+          if (layerT1) layerT1.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible a12p4h-dimmed');
+          if (layerT2) layerT2.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible a12p4h-dimmed');
+          if (layerT3) layerT3.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible a12p4h-dimmed');
+          if (layerT4) layerT4.setAttribute('class', 'a12p4h-tempo-grp a12p4h-visible');
+        }
+
+        var data = stepData[step];
+        if (data) {
+          if (infoTitle) infoTitle.textContent = data.title;
+          if (line1) line1.textContent = data.l1;
+          if (line2) line2.textContent = data.l2;
+          if (line3) line3.textContent = data.l3;
+          if (line4) line4.textContent = data.l4;
+          if (line5) line5.textContent = data.l5;
+        }
+      }
+
+      if (btn1) btn1.addEventListener('click', function() { setStep(1); });
+      if (btn2) btn2.addEventListener('click', function() { setStep(2); });
+      if (btn3) btn3.addEventListener('click', function() { setStep(3); });
+      if (btn4) btn4.addEventListener('click', function() { setStep(4); });
+
+      var hsSacrum = document.getElementById('a12p4h-hs-sacrum');
+      var hsHipR = document.getElementById('a12p4h-hs-hip-r');
+      var hsHipL = document.getElementById('a12p4h-hs-hip-l');
+      var hsSymph = document.getElementById('a12p4h-hs-symph');
+
+      if (hsSacrum) hsSacrum.addEventListener('click', function() { setStep(1); });
+      if (hsHipR) hsHipR.addEventListener('click', function() { setStep(2); });
+      if (hsHipL) hsHipL.addEventListener('click', function() { setStep(2); });
+      if (hsSymph) hsSymph.addEventListener('click', function() { setStep(3); });
+
+      setStep(4);
+    })();
+  //]]></script>
+</svg>

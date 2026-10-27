@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Cefaleia (cf1). Contexto que muda o jogo — neoplasia, imunossupressão, focal, TCE, papiledema e espirro.">
+<title>Contexto que muda o jogo · cf1 · Neurologia</title>
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="cf1-cara">
+/* cf1 — identidade e componentes; a moldura vem do chassi compartilhado.
+   Ajuste 02-08: --ink-mute apontava para --ink-60 (o tom de NOTA/carimbo da casa)
+   e virou a cor de parágrafos de abertura, legendas e respostas — a página inteira
+   ficou cinza e ilegível. Agora --ink-mute aponta para --ink-legenda (texto que se LÊ,
+   nos dois temas). Os poucos usos que SÃO mesmo metadado/carimbo recebem --ink-60
+   direto. Os cards ganham borda visível e inset-highlight (voltam a ser objetos);
+   os alarmes de coral ganham halo próprio (saltam do fundo). */
+:root {
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+  --violet: #a78bfa;
+  --teal: var(--ciano);
+  --gold: var(--amber);
+  --green: var(--verde);
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --r: var(--radius-sm);
+  --r-lg: var(--radius);
+  --font: var(--font-sans);
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  /* membrana do card: borda que se vê + Highlight interno de glass + sombra da casa. */
+  --card-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.035);
+  /* halo dos alarmes: coral suave вокруг do card, sem virar neon. */
+  --alarm-glow: 0 0 30px -12px color-mix(in srgb, var(--coral) 50%, transparent);
+}
+body[data-theme="light"] { --violet: #7c3aed; }
+/* Guarda local: resolve os apelidos da aula no mesmo elemento que recebe os tokens
+   do tema manual, impedindo que card e texto herdem esquemas diferentes. */
+body[data-theme="light"], body[data-theme="dark"] {
+  --card: var(--bg-2);
+  --card-solid: var(--bg-3);
+  --ink: var(--ink-100);
+  --ink-mute: var(--ink-legenda);
+}
+.page__eyebrow { color: var(--ink-60); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 .5rem; }
+/* Openers */
+.opener {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg);
+  background: var(--card); padding: 1.15rem 1.2rem 1.25rem; margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .opener, .exec-card, .fig, .quiz, .op-summary, .why-matters, .trap, .dont-confuse, .case-card, .gap-box, .hero-figure, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge { background: var(--card-solid); }
+}
+.opener__eyebrow { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); margin-bottom: .35rem; }
+.opener h1, #page-title {
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem); line-height: 1.25; margin: 0 0 .55rem; font-weight: 700;
+}
+.opener__lead, .opener__mnemonic, .opener__bust, .opener__case { margin: 0; color: var(--ink-mute); font-size: 1.02rem; }
+.opener--question { border-left: 4px solid var(--indigo); }
+.opener--case { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 8%, var(--card)); }
+.opener--trap { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.opener--checklist { border-left: 4px solid var(--teal); }
+.opener--mnemonic {
+  border-left: 4px solid var(--gold);
+  background: color-mix(in srgb, var(--gold) 7%, var(--card));
+}
+.opener--mnemonic .opener__mnemonic { font-family: Georgia, "Times New Roman", serif; font-size: 1.18rem; color: var(--ink); }
+.opener--vs { border-left: 4px solid var(--teal); }
+.opener--bust { border-left: 4px solid var(--coral); }
+.strike-wrong { text-decoration: line-through; color: var(--ink-60); }
+.chipset { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.1rem; }
+.chip--topic, .chip, .chip--ok, .chip--no, .chip--series {
+  display: inline-flex; align-items: center; border-radius: 999px; padding: .28rem .7rem;
+  font-size: .78rem; border: 1px solid var(--border); background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+  color: var(--ink); cursor: default;
+}
+.chip--topic { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 35%, var(--border)); }
+.chip--ok { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+.chip--no { color: var(--coral); border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.chip--series { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 35%, var(--border)); cursor: not-allowed; }
+button.chip { cursor: pointer; min-height: 36px; }
+/* Prosa usa a tipografia editorial do chassi. */
+.no-indent { text-indent: 0 !important; }
+.prose-list { margin: 0 0 1em 1.1rem; padding: 0; }
+.prose-list li { margin: .3rem 0; }
+.topic-h { font-size: 1.12rem; margin: 1.35rem 0 .55rem; color: var(--ink); }
+.term { color: var(--indigo); font-weight: 650; }
+[data-theme="light"] .term { color: var(--indigo); }
+.hl-good { color: var(--green); font-weight: 650; }
+.hl-bad { color: var(--coral); font-weight: 650; }
+.hl-warn { color: var(--gold); font-weight: 650; }
+/* Cards */
+.exec-card, .trap, .dont-confuse, .op-summary, .why-matters, .continuity, .gap-box, .hero-figure, .case-card, .flip-deck, .ctx-grid, .alarm-mini, .flow-raias, .mantra-row, .tabelao, .series-bridge {
+  border: 1px solid var(--border-strong); border-radius: var(--r); background: var(--card);
+  padding: 1rem 1.05rem; margin: 1.1rem 0; box-shadow: var(--card-shadow);
+}
+.exec-card__title, .trap__title, .op-summary__title, .why-matters__title, .flip-deck__title, .ctx-grid__title, .alarm-mini__title, .flow-raias__title, .mantra-row__title, .tabelao__title, .series-bridge__title {
+  margin: 0 0 .65rem; font-size: 1rem; color: var(--teal);
+}
+/* Fecho: corpo em tom legenda (lê confortável nos dois temas); strong segue ink-100 pelo chassi. */
+.op-summary .prosa { color: var(--ink-legenda); }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.checklist label { display: flex; gap: .55rem; align-items: flex-start; cursor: pointer; min-height: 44px; }
+.checklist input { width: 18px; height: 18px; margin-top: .2rem; accent-color: var(--indigo); }
+/* split grave × simples (P1) */
+.split-board { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media (max-width: 560px) { .split-board { grid-template-columns: 1fr; } }
+.split-board__bad, .split-board__good {
+  border-radius: 10px; padding: .8rem .85rem; border: 1px solid var(--border);
+}
+.split-board__bad { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); background: color-mix(in srgb, var(--coral) 10%, var(--card)); box-shadow: var(--alarm-glow); }
+.split-board__good { border-color: color-mix(in srgb, var(--green) 45%, var(--border)); background: color-mix(in srgb, var(--green) 6%, var(--card)); }
+.split-board h4 { margin: 0 0 .4rem; font-size: .9rem; }
+.split-board__bad h4 { color: var(--coral); }
+.split-board__good h4 { color: var(--green); }
+.split-board ul { margin: .2rem 0 0; padding-left: 1.1rem; }
+.split-board li { margin: .25rem 0; font-size: .92rem; }
+/* funil-PS toggle (P1/P8) */
+.funil-toggle { display: flex; gap: .5rem; flex-wrap: wrap; margin: .6rem 0 .2rem; }
+.funil-btn {
+  min-height: 44px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .45rem 1rem; cursor: pointer; font: inherit;
+}
+.funil-btn[aria-pressed="true"] { border-color: var(--indigo); color: var(--indigo); background: color-mix(in srgb, var(--indigo) 12%, var(--card-solid)); }
+.funil-btn.funil-btn--alarm[aria-pressed="true"] { border-color: var(--coral); color: var(--coral); background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); }
+.funil-out { font-size: .94rem; color: var(--ink-mute); margin: .5rem 0 0; text-indent: 0; }
+/* flip-cards (P2) */
+.flip-deck { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .flip-deck { grid-template-columns: 1fr; } }
+.flip-card { perspective: 1000px; min-height: 120px; cursor: pointer; }
+.flip-card__inner { position: relative; width: 100%; min-height: 120px; transition: transform .5s; transform-style: preserve-3d; }
+.flip-card[aria-pressed="true"] .flip-card__inner { transform: rotateY(180deg); }
+.flip-card__face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 10px; border: 1px solid var(--border-strong); padding: .8rem .85rem; display: flex; flex-direction: column; gap: .25rem; background: var(--card-solid); }
+.flip-card__face--front { color: var(--ink); }
+.flip-card__face--front .ff-tag { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); }
+.flip-card__face--back { transform: rotateY(180deg); color: var(--ink-mute); font-size: .9rem; }
+.flip-card--primary .flip-card__face--front { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.flip-card--secondary .flip-card__face--front { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.flip-card:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 10px; }
+/* board comparativo (P2) */
+.cmp-board { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 560px) { .cmp-board { grid-template-columns: 1fr; } }
+.cmp-col { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.cmp-col--p { border-color: color-mix(in srgb, var(--indigo) 40%, var(--border)); }
+.cmp-col--s { border-color: color-mix(in srgb, var(--coral) 40%, var(--border)); }
+.cmp-col h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.cmp-col--p h4 { color: var(--indigo); }
+.cmp-col--s h4 { color: var(--coral); }
+.cmp-col .chip { margin: .2rem .2rem .2rem 0; }
+/* timeline crises (P3) — texto simples no DOM reforça o SVG */
+.reopen-banner { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card)); border-radius: 0 10px 10px 0; padding: .65rem .85rem; margin: .8rem 0; box-shadow: var(--alarm-glow); }
+.reopen-banner b { color: var(--coral); }
+/* mini-tabela 3 alarmes (P4) */
+.alarm-mini { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.alarm-mini__table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.alarm-mini__table th, .alarm-mini__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.alarm-mini__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); }
+.nuance {
+  border-left: 3px solid var(--gold); padding: .7rem .9rem; margin: 1rem 0;
+  background: color-mix(in srgb, var(--gold) 8%, transparent); border-radius: 0 10px 10px 0;
+}
+.nuance__tag { display: inline-block; font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); font-weight: 700; margin-bottom: .25rem; }
+/* curva trovoada toggle (P4) */
+.curve-toggle { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .55rem; }
+.curve-btn {
+  min-height: 40px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card-solid); color: var(--ink); padding: .4rem .85rem; cursor: pointer; font: inherit;
+}
+.curve-btn.is-active { border-color: var(--coral); color: var(--coral); }
+.curve-btn.is-active[data-curve="prog"] { border-color: var(--amber); color: var(--amber); }
+.curve-out { font-size: .94rem; color: var(--ink-mute); margin: .4rem 0 0; text-indent: 0; }
+/* herói (P5) */
+.hero-figure { border-left: 4px solid var(--violet); }
+.hero-figure__cap { font-size: .82rem; color: var(--ink-legenda); margin: .5rem 0 0; }
+/* cards sistêmicos (P6) */
+.sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .8rem 0; }
+@media (max-width: 560px) { .sys-grid { grid-template-columns: 1fr; } }
+.sys-card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; }
+.sys-card--men { border-color: color-mix(in srgb, var(--coral) 45%, var(--border)); }
+.sys-card--sys { border-color: color-mix(in srgb, var(--amber) 45%, var(--border)); }
+.sys-card h4 { margin: 0 0 .3rem; font-size: .9rem; }
+.sys-card--men h4 { color: var(--coral); }
+.sys-card--sys h4 { color: var(--amber); }
+.trap { border-left: 4px solid var(--coral); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.trap--despertar { border-left-color: var(--gold); box-shadow: var(--card-shadow); }
+.trap__pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .6rem 0; }
+@media (max-width: 560px) { .trap__pair { grid-template-columns: 1fr; } }
+.trap__phrase { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem .8rem; font-size: .92rem; }
+.trap__phrase--no { border-color: color-mix(in srgb, var(--ink-60) 40%, var(--border)); color: var(--ink-60); }
+.trap__phrase--yes { border-color: color-mix(in srgb, var(--coral) 50%, var(--border)); background: color-mix(in srgb, var(--coral) 8%, var(--card)); }
+.trap__phrase b { color: var(--coral); }
+/* context grid (P7) */
+.ctx-grid { }
+.ctx-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin: .5rem 0; }
+@media (max-width: 640px) { .ctx-cards { grid-template-columns: 1fr; } }
+.ctx-item { border: 1px solid var(--border-strong); border-radius: 10px; padding: .75rem .8rem; cursor: pointer; background: var(--card-solid); }
+.ctx-item[aria-expanded="true"] { border-color: var(--violet); }
+.ctx-item__ctx { font-size: .78rem; color: var(--violet); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.ctx-item__q { font-size: .95rem; font-weight: 600; margin: .2rem 0; }
+.ctx-item__a { font-size: .9rem; color: var(--ink-mute); display: none; margin-top: .3rem; }
+.ctx-item[aria-expanded="true"] .ctx-item__a { display: block; }
+.ctx-item:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+/* checklist porta (P8) */
+.checklist--porta .checklist__hint { font-size: .82rem; color: var(--ink-mute); margin-top: .4rem; }
+/* fluxo 4 raias (P9) */
+.flow-raias { }
+.rai { border: 1px solid var(--border-strong); border-radius: 10px; padding: .7rem .85rem; margin: .5rem 0; cursor: pointer; background: var(--card-solid); }
+.rai[aria-pressed="true"] { border-color: var(--indigo); box-shadow: 0 0 0 1px color-mix(in srgb, var(--indigo) 45%, transparent); }
+.rai__top { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.rai__sus { font-weight: 700; color: var(--coral); }
+.rai__arr { color: var(--teal); font-weight: 700; }
+.rai__ex { font-weight: 700; color: var(--indigo); }
+.rai__why { font-size: .9rem; color: var(--ink-mute); margin-top: .35rem; display: none; }
+.rai[aria-pressed="true"] .rai__why { display: block; }
+.rai:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+/* tabelão P10 */
+.tabelao { }
+.tabelao__filters { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .7rem; }
+.filter-btn { min-height: 36px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-solid); color: var(--ink); padding: .3rem .8rem; cursor: pointer; font: inherit; font-size: .82rem; }
+.filter-btn.is-active { border-color: var(--indigo); color: var(--indigo); }
+.tabelao__cards { display: none; flex-direction: column; gap: .5rem; }
+@media (max-width: 640px) { .tabelao__cards { display: flex; } .tabelao__table-wrap { display: none; } }
+.tabelao__card { border: 1px solid var(--border-strong); border-radius: 10px; padding: .6rem .75rem; border-left: 4px solid var(--coral); box-shadow: var(--alarm-glow); }
+.tabelao__card .tc-alarm { font-weight: 700; color: var(--coral); }
+.tabelao__card .tc-row { font-size: .88rem; color: var(--ink-mute); margin-top: .2rem; }
+.tabelao__table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabelao__table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 560px; }
+.tabelao__table th, .tabelao__table td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.tabelao__table th { background: color-mix(in srgb, var(--coral) 12%, var(--card-solid)); color: var(--coral); position: sticky; top: 0; }
+.tabelao__table td.alarme-cell { font-weight: 650; color: var(--coral); }
+/* mantras (P10) */
+.mantra-row { border-left: 4px solid var(--gold); }
+.mantra-row ol { margin: .2rem 0 0; padding-left: 1.3rem; }
+.mantra-row li { margin: .4rem 0; font-weight: 600; }
+.mantra-row li .m-gold { color: var(--gold); }
+/* series bridge chips */
+.series-bridge { border-left: 4px solid var(--violet); background: color-mix(in srgb, var(--violet) 6%, var(--card)); }
+.series-bridge .chip-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+.dont-confuse__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+.dont-confuse__grid--2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .dont-confuse__grid { grid-template-columns: 1fr; } }
+.dont-confuse__grid > div { border: 1px solid var(--border-strong); border-radius: 10px; padding: .65rem; }
+.dont-confuse__warn { border-color: color-mix(in srgb, var(--gold) 50%, var(--border)) !important; }
+.dont-confuse h4 { margin: 0 0 .35rem; font-size: .9rem; }
+.gap-box { border-left: 4px solid var(--coral); background: color-mix(in srgb, var(--coral) 11%, var(--card)); box-shadow: var(--card-shadow), var(--alarm-glow); }
+.gap-box h4 { margin: 0 0 .4rem; color: var(--coral); }
+/* Figures */
+.fig { margin: 1.25rem 0; border: 1px solid var(--border-strong); border-radius: var(--r-lg); overflow: hidden; background: var(--card); box-shadow: var(--card-shadow); }
+.fig__frame { width: 100%; display: block; background: var(--bg-1); }
+.fig__frame img {
+  display: block; width: 100%; height: auto; max-width: 100%;
+  object-fit: contain; background: #0a0f18;
+}
+[data-theme="light"] .fig__frame img { background: #e8eef5; }
+.fig__frame--svg { padding: .35rem; }
+.cf1-inline-svg { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; }
+.fig__cap {
+  padding: .7rem .95rem .85rem; font-size: .78rem; color: var(--ink-legenda); line-height: 1.45;
+  border-top: 1px solid var(--border);
+}
+.fig__label {
+  display: inline-block; font-family: var(--mono); font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--gold); margin-right: .4rem;
+}
+.fig__attr { display: block; margin-top: .4rem; padding-top: .35rem; border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent); font-size: .74rem; color: var(--ink-fonte); }
+/* Quiz */
+.quiz {
+  border: 1px solid var(--border-strong); border-radius: var(--r-lg); padding: 1.1rem 1rem 1.25rem;
+  background: var(--card); margin: 1.5rem 0 1rem; box-shadow: var(--card-shadow);
+}
+.quiz h2 { margin: 0 0 .85rem; font-size: 1.1rem; }
+.quiz__questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.quiz__stem { margin: 0 0 .55rem; font-weight: 600; text-indent: 0; }
+.quiz__alternatives { display: grid; gap: .4rem; }
+.quiz__alt {
+  text-align: left; border: 1px solid var(--border-strong); border-radius: 10px;
+  background: var(--card-solid); color: var(--ink); padding: .7rem .8rem; cursor: pointer;
+  min-height: 44px; font: inherit;
+}
+.quiz__alt:hover { border-color: color-mix(in srgb, var(--indigo) 45%, var(--border)); }
+.quiz__alt:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.quiz__alt[aria-checked="true"] { border-color: var(--indigo); }
+.quiz__alt.is-correct { border-color: var(--green); background: color-mix(in srgb, var(--green) 12%, var(--card-solid)); }
+.quiz__alt.is-wrong { border-color: var(--coral); background: color-mix(in srgb, var(--coral) 10%, var(--card-solid)); }
+.quiz__feedback { margin-top: .55rem; padding: .7rem .75rem; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--bg-2); }
+.quiz__feedback[hidden] { display: none; }
+.quiz__verdict { margin: 0 0 .35rem; font-weight: 700; }
+.quiz__verdict.is-ok { color: var(--green); }
+.quiz__verdict.is-bad { color: var(--coral); }
+.quiz__justification, .quiz__distractor { margin: .25rem 0 0; font-size: .92rem; text-indent: 0; }
+.quiz__distractor { color: var(--ink-mute); }
+.page-nav__btn.is-disabled { opacity: .4; pointer-events: none; }
+.page-nav__pos { font-family: var(--mono); font-size: .85rem; color: var(--ink-60); }
+.continuity { border-left: 3px solid var(--teal); }
+</style>
+</head>
+<body data-theme="dark" data-page-id="p7" data-layout="cf1-p07" data-source-ids="054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,112,113">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <div class="site-header__brand">
+      <span class="site-header__logo">NN</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Cefaleia: abordagem</span>
+        <span class="site-header__subtitle">Neurologia · Cefaleia</span>
+      </span>
+    </div>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress" id="progress">7/10</span>
+    <div class="site-header__actions">
+      <button type="button" class="icon-btn" id="home-btn" aria-label="Página inicial" title="Início" onclick="location.href='index.html'">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" data-theme-btn aria-label="Alternar tema" aria-pressed="false" title="Tema">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-label="Menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">Cefaleia: abordagem sindrômica</p>
+    <ul class="menu-panel__list">
+<li class="menu-panel__item"><a class="menu-panel__link" href="index.html"><span class="menu-panel__index">01</span><span>A cefaleia que não se erra</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>A dor é a doença</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>Crises que se parecem</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Idade, súbito e trovoada</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Progressão e o crânio</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Acordou por causa da dor</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link is-current" href="p7.html"><span class="menu-panel__index">07</span><span>Contexto que muda o jogo</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Anamnese e fundo de olho</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p9.html"><span class="menu-panel__index">09</span><span>O exame pela suspeita</span></a></li>
+<li class="menu-panel__item"><a class="menu-panel__link" href="p10.html"><span class="menu-panel__index">10</span><span>Tabelão e mantras</span></a></li>
+    </ul>
+  </nav>
+</div>
+<main id="main">
+  <div class="coluna">
+    <article class="page" data-page="p7" data-layout="cf1-p07" data-source-ids="054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,112,113">
+      <p class="page__eyebrow">Página 7 · E3</p>
+      <section class="opener opener--case" data-opener="E3">
+        <span class="opener__eyebrow">Caso clínico em abertura</span>
+        <h1 id="page-title">Contexto que muda o jogo</h1>
+        <p class="opener__case no-indent">Mulher com câncer de mama tratado; abre cefaleia nova há 10 dias. Em paralelo, no corredor, homem com AIDS e cefaleia. No outro box, TCE há 2 semanas e dor que piora.</p>
+      </section>
+      <div class="chipset"><span class="chip--topic">P07</span><span class="chip--topic">E3</span><span class="chip--no">onco · imuno</span><span class="chip--no">focal · TCE · espirro</span></div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose prosa">
+          <h4 class="topic-h">Neoplasia</h4>
+          <p>Paciente com <strong class="hl-bad">câncer de mama</strong> que abre <strong class="term">cefaleia nova</strong>: pensar em <strong class="hl-bad">metástase cerebral</strong>.</p>
+
+          <h4 class="topic-h">Imunossupressão (nuance HIV)</h4>
+          <p><strong class="term">Imunossupressão</strong> é sinal de alarme no contexto de cefaleia. Pessoas que vivem com <strong class="term">HIV</strong> <strong class="term">nem sempre</strong> estão imunossuprimidas — a <strong class="term">maioria não está</strong>. O raciocínio de alarme ancora em <strong class="term">imunossupressão</strong>, não no rótulo HIV isolado. Pacientes com <strong class="hl-bad">AIDS</strong> podem ter <strong class="hl-bad">abscessos cerebrais</strong> — exemplo clássico: <strong class="hl-bad">neurotoxoplasmose</strong>. Imunossuprimido com cefaleia nova → <strong class="term">investigar o crânio</strong>.</p>
+
+          <h4 class="topic-h">Focal e sítio</h4>
+          <p><strong class="hl-bad">Sinal neurológico focal</strong> associado à cefaleia é alarme. Focal = tradução clínica de um <strong class="term">foco de lesão encefálica</strong>. Ex.: foco no <strong class="term">occipital esquerdo</strong> → déficit visual à <strong class="term">direita</strong>. Ex.: foco na <strong class="term">cápsula interna esquerda</strong> → <strong class="term">hemiparesia facio-braquio-crural</strong>. Cefaleia + focal → algo no encéfalo; investigar.</p>
+
+          <h4 class="topic-h">TCE: agudo ou “babando”</h4>
+          <p><strong class="term">TCE recente</strong> com cefaleia é alarme. A preocupação clássica é <strong class="hl-bad">sangramento agudo</strong> — e deve ser assim. Nem todo sangramento pós-TCE é agudo: pode sangrar <strong class="term">pouco a pouco</strong> (“babando”) ao longo dos dias e formar um <strong class="hl-bad">grande hematoma</strong> tardio. Cefaleia + TCE recente → considerar hematoma (agudo <strong>ou</strong> de instalação lenta); pode precisar <strong class="term">drenar</strong>.</p>
+
+          <h4 class="topic-h">Papiledema e HIC</h4>
+          <p><strong class="hl-bad">Papiledema</strong> (edema de papila óptica <strong class="term">bilateral</strong>) integra o conjunto principal de sinais de alarme. Em geral, é secundário a <strong class="hl-bad">hipertensão intracraniana</strong>. Cefaleia + HIC (papiledema) → investigar sem dúvida.</p>
+
+          <h4 class="topic-h">Espirro / aneurisma</h4>
+          <p>Alarme adicional rápido: cefaleia que surge quando o paciente <strong class="term">espirra</strong> — suspeita de <strong class="hl-bad">aneurisma</strong> que “explodiu”. Na triagem, esses sinais concentram as decisões de maior risco em <strong class="term">prova e prática</strong>, embora <strong class="term">não</strong> esgotem todas as red flags possíveis.</p>
+        </div>
+      </section>
+
+      <aside class="ctx-grid" aria-label="Grid contexto e medo diagnóstico">
+        <h3 class="ctx-grid__title">Contexto → medo diagnóstico (toque para expandir)</h3>
+        <div class="ctx-cards">
+          <div class="ctx-item" role="button" tabindex="0" aria-expanded="false">
+            <div class="ctx-item__ctx">Neoplasia</div>
+            <div class="ctx-item__q">Câncer de mama + cefaleia nova</div>
+            <div class="ctx-item__a">Pensar em <strong class="hl-bad">metástase cerebral</strong>; investigar crânio.</div>
+          </div>
+          <div class="ctx-item" role="button" tabindex="0" aria-expanded="false">
+            <div class="ctx-item__ctx">Imuno / AIDS</div>
+            <div class="ctx-item__q">Imunossuprimido com cefaleia nova</div>
+            <div class="ctx-item__a"><strong class="hl-bad">Abscesso cerebral</strong> (ex.: neurotoxoplasmose). HIV ≠ sempre imuno.</div>
+          </div>
+          <div class="ctx-item" role="button" tabindex="0" aria-expanded="false">
+            <div class="ctx-item__ctx">Focal</div>
+            <div class="ctx-item__q">Cefaleia + sinal neurológico focal</div>
+            <div class="ctx-item__a">Foco de lesão: occipital E → visual D; cápsula E → hemiparesia FBC. Investigar imagem.</div>
+          </div>
+          <div class="ctx-item" role="button" tabindex="0" aria-expanded="false">
+            <div class="ctx-item__ctx">TCE</div>
+            <div class="ctx-item__q">TCE recente + cefaleia que piora</div>
+            <div class="ctx-item__a">Hematoma agudo <strong>ou</strong> “babando” dias → grande hematoma tardio; pode drenar.</div>
+          </div>
+          <div class="ctx-item" role="button" tabindex="0" aria-expanded="false">
+            <div class="ctx-item__ctx">Papiledema</div>
+            <div class="ctx-item__q">Edema de papila bilateral + cefaleia</div>
+            <div class="ctx-item__a"><strong class="hl-bad">Hipertensão intracraniana</strong>; investigar sem dúvida.</div>
+          </div>
+          <div class="ctx-item" role="button" tabindex="0" aria-expanded="false">
+            <div class="ctx-item__ctx">Espirro</div>
+            <div class="ctx-item__q">Cefaleia ao espirrar</div>
+            <div class="ctx-item__a">Suspeita de <strong class="hl-bad">aneurisma</strong> roto (pico súbito no esforço).</div>
+          </div>
+        </div>
+      </aside>
+
+      <figure class="fig fig--real">
+        <div class="fig__frame">
+          <img src="media/B07-papiledema-bilateral-frontiers-fig1-direta.webp" alt="Grade de quatro fotografias de fundo de olho. Acima, olho direito e esquerdo com papiledema bilateral, discos elevados e de bordas apagadas, congestão venosa e hemorragias peripapilares. Abaixo, os mesmos olhos após tratamento, com melhora parcial." loading="lazy" decoding="async" width="1535" height="1625">
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Imagem real</span> Fundoscopia bilateral: papiledema com elevação do disco, bordas apagadas e hemorragias peripapilares — sinal de HIC. Diante desse achado, a cefaleia não é tratada como primária até investigar hipertensão intracraniana.
+          <span class="fig__attr">Jiang L, Jiang X, Li A, Liu M, Zhang Z, Tong Y. Figure 1 from “Atypical bilateral papilledema during the puerperium: a case report”. <em>Frontiers in Medicine</em>. 2025;12:1636933. https://doi.org/10.3389/fmed.2025.1636933. CC BY 4.0.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="fig fig--svg">
+        <div class="fig__frame fig__frame--svg">
+          <svg class="cf1-inline-svg cf1p7-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" id="cf1p7-svg" role="group" aria-labelledby="cf1p7-title cf1p7-desc">
+  <title id="cf1p7-title">Déficit focal e localização contralateral</title>
+  <desc id="cf1p7-desc">O mapa relaciona lesão occipital esquerda a alteração do campo visual direito e lesão da cápsula interna esquerda a hemiparesia facio-braquio-crural direita.</desc>
+  <defs>
+    <filter id="cf1p7-glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="cf1p7-glow-teal" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <marker id="cf1p7-arrow-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--cf1p7-deficit-stroke, #00b0ff)" />
+    </marker>
+    <marker id="cf1p7-arrow-coral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--cf1p7-lesion-stroke, #ff1744)" />
+    </marker>
+    <marker id="cf1p7-arrow-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--cf1p7-alert-stroke, #ffb300)" />
+    </marker>
+  </defs>
+
+  <style>
+    #cf1p7-svg.cf1p7-root {
+      --cf1p7-bg: var(--bg-1, #0d1322);
+      --cf1p7-panel-bg: var(--bg-2, #161f36);
+      --cf1p7-panel-border: var(--ink-20, #2a3654);
+      --cf1p7-text-main: var(--ink-90, #f1f5f9);
+      --cf1p7-text-sub: var(--ink-70, #94a3b8);
+      --cf1p7-text-muted: var(--ink-50, #64748b);
+
+      --cf1p7-brain-base: var(--kw-indigo-bg, #1e293b);
+      --cf1p7-brain-stroke: var(--kw-indigo-border, #475569);
+      --cf1p7-brain-highlight: #334155;
+
+      --cf1p7-lesion-fill: var(--kw-coral-fill, #ff5252);
+      --cf1p7-lesion-stroke: var(--kw-coral-stroke, #ff1744);
+      --cf1p7-lesion-bg: rgba(255, 82, 82, 0.15);
+
+      --cf1p7-deficit-fill: var(--kw-teal-fill, #00e5ff);
+      --cf1p7-deficit-stroke: var(--kw-teal-stroke, #00b0ff);
+      --cf1p7-deficit-bg: rgba(0, 229, 255, 0.12);
+
+      --cf1p7-alert-fill: var(--kw-gold-fill, #ffd54f);
+      --cf1p7-alert-stroke: var(--kw-gold-stroke, #ffb300);
+      --cf1p7-alert-bg: rgba(255, 213, 79, 0.12);
+
+      --cf1p7-normal-fill: var(--kw-green-fill, #4caf50);
+      --cf1p7-normal-stroke: var(--kw-green-stroke, #2e7d32);
+
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--cf1p7-bg, #0d1322);
+      border-radius: 12px;
+      user-select: none;
+    }
+
+    [data-theme="light"] #cf1p7-svg.cf1p7-root {
+      --cf1p7-bg: #f8fafc;
+      --cf1p7-panel-bg: #ffffff;
+      --cf1p7-panel-border: #cbd5e1;
+      --cf1p7-text-main: #0f172a;
+      --cf1p7-text-sub: #334155;
+      --cf1p7-text-muted: #64748b;
+
+      --cf1p7-brain-base: #e2e8f0;
+      --cf1p7-brain-stroke: #94a3b8;
+      --cf1p7-brain-highlight: #cbd5e1;
+
+      --cf1p7-lesion-fill: #d32f2f;
+      --cf1p7-lesion-stroke: #c62828;
+      --cf1p7-lesion-bg: #ffebee;
+
+      --cf1p7-deficit-fill: #00838f;
+      --cf1p7-deficit-stroke: #006064;
+      --cf1p7-deficit-bg: #e0f7fa;
+
+      --cf1p7-alert-fill: #b58105;
+      --cf1p7-alert-stroke: #8d6202;
+      --cf1p7-alert-bg: #fff8e1;
+
+      --cf1p7-normal-fill: #2e7d32;
+      --cf1p7-normal-stroke: #1b5e20;
+    }
+
+    #cf1p7-svg .cf1p7-bg-rect { fill: var(--cf1p7-bg, #0d1322); }
+    #cf1p7-svg .cf1p7-title-text { fill: var(--cf1p7-text-main, #f1f5f9); font-size: 19px; font-weight: 700; letter-spacing: 0.3px; }
+    #cf1p7-svg .cf1p7-subtitle-text { fill: var(--cf1p7-text-sub, #94a3b8); font-size: 12px; font-weight: 400; }
+
+    #cf1p7-svg .cf1p7-btn { cursor: pointer; transition: all 0.2s ease; }
+    #cf1p7-svg .cf1p7-btn-bg { fill: var(--cf1p7-panel-bg, #161f36); stroke: var(--cf1p7-panel-border, #2a3654); stroke-width: 1.5px; rx: 8px; }
+    #cf1p7-svg .cf1p7-btn-text { fill: var(--cf1p7-text-sub, #94a3b8); font-size: 12px; font-weight: 600; text-anchor: middle; }
+
+    #cf1p7-svg .cf1p7-btn:hover .cf1p7-btn-bg { stroke: var(--cf1p7-deficit-stroke, #00b0ff); fill: var(--cf1p7-brain-base, #1e293b); }
+    #cf1p7-svg .cf1p7-btn:hover .cf1p7-btn-text { fill: var(--cf1p7-text-main, #f1f5f9); }
+
+    #cf1p7-svg .cf1p7-btn.cf1p7-active-occipital .cf1p7-btn-bg { fill: var(--cf1p7-lesion-bg, rgba(255,82,82,0.15)); stroke: var(--cf1p7-lesion-stroke, #ff1744); stroke-width: 2px; }
+    #cf1p7-svg .cf1p7-btn.cf1p7-active-occipital .cf1p7-btn-text { fill: var(--cf1p7-lesion-fill, #ff5252); font-weight: 700; }
+
+    #cf1p7-svg .cf1p7-btn.cf1p7-active-capsula .cf1p7-btn-bg { fill: var(--cf1p7-deficit-bg, rgba(0,229,255,0.12)); stroke: var(--cf1p7-deficit-stroke, #00b0ff); stroke-width: 2px; }
+    #cf1p7-svg .cf1p7-btn.cf1p7-active-capsula .cf1p7-btn-text { fill: var(--cf1p7-deficit-fill, #00e5ff); font-weight: 700; }
+
+    #cf1p7-svg .cf1p7-btn.cf1p7-active-all .cf1p7-btn-bg { fill: var(--cf1p7-alert-bg, rgba(255,213,79,0.12)); stroke: var(--cf1p7-alert-stroke, #ffb300); stroke-width: 2px; }
+    #cf1p7-svg .cf1p7-btn.cf1p7-active-all .cf1p7-btn-text { fill: var(--cf1p7-alert-fill, #ffd54f); font-weight: 700; }
+
+    #cf1p7-svg .cf1p7-panel-card { fill: var(--cf1p7-panel-bg, #161f36); stroke: var(--cf1p7-panel-border, #2a3654); stroke-width: 1.5px; rx: 10px; }
+    #cf1p7-svg .cf1p7-panel-header-bg { fill: var(--cf1p7-brain-base, #1e293b); rx: 8px; }
+    #cf1p7-svg .cf1p7-panel-title { fill: var(--cf1p7-text-main, #f1f5f9); font-size: 14px; font-weight: 700; }
+    #cf1p7-svg .cf1p7-panel-badge { font-size: 10px; font-weight: 700; text-anchor: middle; }
+
+    #cf1p7-svg .cf1p7-card-box { fill: var(--cf1p7-bg, #0d1322); stroke: var(--cf1p7-panel-border, #2a3654); stroke-width: 1px; rx: 6px; }
+    #cf1p7-svg .cf1p7-card-label { fill: var(--cf1p7-text-muted, #64748b); font-size: 10px; font-weight: 700; letter-spacing: 0.5px; }
+    #cf1p7-svg .cf1p7-card-val { fill: var(--cf1p7-text-main, #f1f5f9); font-size: 12px; font-weight: 600; }
+    #cf1p7-svg .cf1p7-card-desc { fill: var(--cf1p7-text-sub, #94a3b8); font-size: 11px; line-height: 1.4; }
+
+    #cf1p7-svg .cf1p7-brain-outline { fill: var(--cf1p7-brain-base, #1e293b); stroke: var(--cf1p7-brain-stroke, #475569); stroke-width: 2px; }
+    #cf1p7-svg .cf1p7-brain-sulcus { stroke: var(--cf1p7-brain-stroke, #475569); stroke-width: 1.2px; fill: none; stroke-linecap: round; }
+    #cf1p7-svg .cf1p7-hemisphere-divider { stroke: var(--cf1p7-brain-stroke, #475569); stroke-width: 1.5px; stroke-dasharray: 4,4; }
+
+    #cf1p7-svg .cf1p7-tract-optic { stroke: var(--cf1p7-lesion-fill, #ff5252); stroke-width: 2.5px; fill: none; stroke-linecap: round; transition: opacity 0.3s, stroke-width 0.3s; }
+    #cf1p7-svg .cf1p7-tract-motor { stroke: var(--cf1p7-deficit-fill, #00e5ff); stroke-width: 2.5px; fill: none; stroke-linecap: round; transition: opacity 0.3s, stroke-width 0.3s; }
+    #cf1p7-svg .cf1p7-tract-dim { opacity: 0.25; stroke-width: 1.5px; }
+    #cf1p7-svg .cf1p7-tract-active { opacity: 1; stroke-width: 3.5px; }
+
+    #cf1p7-svg .cf1p7-hotspot-zone { cursor: pointer; }
+    #cf1p7-svg .cf1p7-lesion-target { fill: var(--cf1p7-lesion-fill, #ff5252); stroke: var(--cf1p7-lesion-stroke, #ff1744); stroke-width: 2px; filter: url(#cf1p7-glow-coral); transition: transform 0.2s; }
+    #cf1p7-svg .cf1p7-capsula-target { fill: var(--cf1p7-deficit-fill, #00e5ff); stroke: var(--cf1p7-deficit-stroke, #00b0ff); stroke-width: 2px; filter: url(#cf1p7-glow-teal); transition: transform 0.2s; }
+    #cf1p7-svg .cf1p7-hotspot-zone:hover .cf1p7-lesion-target,
+    #cf1p7-svg .cf1p7-hotspot-zone:hover .cf1p7-capsula-target { transform: scale(1.25); }
+
+    #cf1p7-svg .cf1p7-tag-bg { fill: var(--cf1p7-panel-bg, #161f36); stroke: var(--cf1p7-panel-border, #2a3654); stroke-width: 1px; rx: 4px; }
+    #cf1p7-svg .cf1p7-tag-text { fill: var(--cf1p7-text-main, #f1f5f9); font-size: 10px; font-weight: 600; text-anchor: middle; }
+
+    #cf1p7-svg .cf1p7-tooltip { pointer-events: none; transition: opacity 0.15s ease-in-out; }
+    #cf1p7-svg .cf1p7-tt-bg { fill: #0f172a; stroke: var(--cf1p7-deficit-stroke, #00b0ff); stroke-width: 1.5px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); }
+    #cf1p7-svg .cf1p7-tt-text { fill: #f8fafc; font-size: 11px; font-weight: 600; text-anchor: middle; }
+
+    #cf1p7-svg .cf1p7-btn:focus-visible .cf1p7-btn-bg,
+    #cf1p7-svg .cf1p7-hotspot-zone:focus-visible circle {
+      stroke: var(--cf1p7-alert-fill, #ffd54f) !important;
+      stroke-width: 3px !important;
+      outline: none;
+    }
+  </style>
+
+  <rect width="1000" height="680" class="cf1p7-bg-rect" rx="12" />
+
+  <g class="cf1p7-header-group" transform="translate(30, 32)">
+    <text x="0" y="0" class="cf1p7-title-text">MAPA DE TRADUÇÃO FOCAL: SÍTIO ENCEFÁLICO → DÉFICIT CONTRALATERAL</text>
+    <text x="0" y="20" class="cf1p7-subtitle-text">
+      Cefaleia com déficit focal indica lesão estrutural parenquimatosa. A decussação das vias motora (piramidal) e óptica projeta o déficit no lado OPOSTO ao foco.
+    </text>
+  </g>
+
+  <g class="cf1p7-controls-group" transform="translate(30, 72)">
+    <g class="cf1p7-btn cf1p7-active-occipital" id="cf1p7-btn-occ" role="button" tabindex="0" aria-label="Ver Exemplo 1: Occipital Esquerdo para Campo Visual Direito">
+      <rect x="0" y="0" width="280" height="36" class="cf1p7-btn-bg" />
+      <text x="140" y="22" class="cf1p7-btn-text">Exemplo 1: Occipital E → Visão D</text>
+    </g>
+
+    <g class="cf1p7-btn" id="cf1p7-btn-cap" role="button" tabindex="0" aria-label="Ver Exemplo 2: Cápsula Interna Esquerda para Hemiparesia Fácio-Bráquio-Crural Direita">
+      <rect x="295" y="0" width="290" height="36" class="cf1p7-btn-bg" />
+      <text x="440" y="22" class="cf1p7-btn-text">Exemplo 2: Cápsula E → Hemiparesia D</text>
+    </g>
+
+    <g class="cf1p7-btn" id="cf1p7-btn-all" role="button" tabindex="0" aria-label="Ver Visão Geral dos Dois Focos e Cruzamento das Vias">
+      <rect x="600" y="0" width="370" height="36" class="cf1p7-btn-bg" />
+      <text x="785" y="22" class="cf1p7-btn-text">Visão Geral: Tradução de Sítio e Cruzamento</text>
+    </g>
+  </g>
+
+  <g class="cf1p7-main-area" transform="translate(30, 125)">
+
+    <g class="cf1p7-anatomy-group">
+
+      <rect x="0" y="0" width="550" height="520" class="cf1p7-panel-card" />
+
+      <g transform="translate(20, 25)">
+        <rect x="30" y="0" width="180" height="24" class="cf1p7-tag-bg" style="stroke: var(--cf1p7-lesion-stroke, #ff1744);" />
+        <text x="120" y="16" class="cf1p7-tag-text" style="fill: var(--cf1p7-lesion-fill, #ff5252);">HEMISFÉRIO ESQUERDO (SÍTIO)</text>
+
+        <rect x="270" y="0" width="180" height="24" class="cf1p7-tag-bg" style="stroke: var(--cf1p7-deficit-stroke, #00b0ff);" />
+        <text x="360" y="16" class="cf1p7-tag-text" style="fill: var(--cf1p7-deficit-fill, #00e5ff);">HEMISFÉRIO / CORPO DIREITO (DÉFICIT)</text>
+      </g>
+
+      <line x1="275" y1="60" x2="275" y2="490" class="cf1p7-hemisphere-divider" />
+
+      <g transform="translate(75, 65)">
+        <path d="M 200,40 C 130,40 60,70 50,140 C 40,210 60,260 100,290 C 140,320 180,330 200,330 Z" class="cf1p7-brain-outline" />
+
+        <path d="M 200,40 C 270,40 340,70 350,140 C 360,210 340,260 300,290 C 260,320 220,330 200,330 Z" class="cf1p7-brain-outline" />
+
+        <path d="M 80,130 C 110,140 140,135 170,140" class="cf1p7-brain-sulcus" />
+        <path d="M 65,190 C 100,195 130,190 160,210" class="cf1p7-brain-sulcus" />
+        <path d="M 110,270 C 140,265 170,275 190,290" class="cf1p7-brain-sulcus" />
+
+        <path d="M 320,130 C 290,140 260,135 230,140" class="cf1p7-brain-sulcus" />
+        <path d="M 335,190 C 300,195 270,190 240,210" class="cf1p7-brain-sulcus" />
+        <path d="M 290,270 C 260,265 230,275 210,290" class="cf1p7-brain-sulcus" />
+
+        <path d="M 180,330 L 180,410 C 180,425 220,425 220,410 L 220,330 Z" class="cf1p7-brain-outline" />
+        <text x="200" y="375" font-size="9" fill="var(--cf1p7-text-muted, #64748b)" text-anchor="middle" font-weight="700">TRONCO / BULBO</text>
+
+        <g id="cf1p7-pathway-optic">
+          <path d="M 150,295 C 135,260 145,200 160,165 L 185,130" class="cf1p7-tract-optic cf1p7-tract-active" id="cf1p7-optic-line-1" />
+          <path d="M 185,130 C 190,110 195,90 170,40" class="cf1p7-tract-optic cf1p7-tract-active" id="cf1p7-optic-line-2" />
+          <path d="M 185,130 C 205,110 215,90 230,40" class="cf1p7-tract-optic cf1p7-tract-active" id="cf1p7-optic-line-3" stroke-dasharray="4,3" marker-end="url(#cf1p7-arrow-coral)" />
+        </g>
+
+        <g id="cf1p7-pathway-motor">
+          <path d="M 130,120 L 145,150 L 190,340 L 190,395" class="cf1p7-tract-motor cf1p7-tract-dim" id="cf1p7-motor-line-1" />
+          <path d="M 190,395 C 190,410 225,410 225,430 L 225,455" class="cf1p7-tract-motor cf1p7-tract-dim" id="cf1p7-motor-line-2" marker-end="url(#cf1p7-arrow-teal)" />
+        </g>
+
+        <g class="cf1p7-hotspot-zone" id="cf1p7-hs-occ" role="button" tabindex="0" aria-label="Foco de Lesão 1: Occipital Esquerdo">
+          <circle cx="150" cy="295" r="16" class="cf1p7-lesion-target" id="cf1p7-node-occ" />
+          <circle cx="150" cy="295" r="6" fill="#ffffff" />
+          <text x="150" y="325" font-size="10" font-weight="700" fill="var(--cf1p7-lesion-fill, #ff5252)" text-anchor="middle">1. Occipital E</text>
+        </g>
+
+        <g class="cf1p7-hotspot-zone" id="cf1p7-hs-cap" role="button" tabindex="0" aria-label="Foco de Lesão 2: Cápsula Interna Esquerda">
+          <circle cx="145" cy="150" r="14" class="cf1p7-capsula-target" id="cf1p7-node-cap" />
+          <circle cx="145" cy="150" r="5" fill="#ffffff" />
+          <text x="95" y="154" font-size="10" font-weight="700" fill="var(--cf1p7-deficit-fill, #00e5ff)" text-anchor="end">2. Cápsula Interna E</text>
+        </g>
+
+        <g id="cf1p7-decussation-node" transform="translate(160, 395)">
+          <rect x="0" y="0" width="80" height="22" rx="4" fill="var(--cf1p7-panel-bg, #161f36)" stroke="var(--cf1p7-alert-stroke, #ffb300)" stroke-width="1.2" />
+          <text x="40" y="14" font-size="9" font-weight="700" fill="var(--cf1p7-alert-fill, #ffd54f)" text-anchor="middle">DECUSSAÇÃO</text>
+        </g>
+      </g>
+
+      <g transform="translate(30, 410)" id="cf1p7-visual-deficit-box">
+        <rect x="0" y="0" width="220" height="90" rx="8" class="cf1p7-card-box" id="cf1p7-box-vis" />
+        <text x="15" y="20" class="cf1p7-card-label" style="fill: var(--cf1p7-lesion-fill, #ff5252);">DÉFICIT VISUAL RESULTANTE</text>
+
+        <g transform="translate(30, 30)">
+          <circle cx="20" cy="20" r="18" fill="var(--cf1p7-brain-base, #1e293b)" stroke="var(--cf1p7-brain-stroke, #475569)" stroke-width="1.5" />
+          <path d="M 20,2 A 18,18 0 0,0 20,38 Z" fill="var(--cf1p7-normal-fill, #4caf50)" opacity="0.4" />
+          <path d="M 20,2 A 18,18 0 0,1 20,38 Z" fill="var(--cf1p7-lesion-fill, #ff5252)" opacity="0.85" />
+          <text x="20" y="48" font-size="9" font-weight="600" fill="var(--cf1p7-text-sub, #94a3b8)" text-anchor="middle">Campo OE</text>
+        </g>
+
+        <g transform="translate(100, 30)">
+          <circle cx="20" cy="20" r="18" fill="var(--cf1p7-brain-base, #1e293b)" stroke="var(--cf1p7-brain-stroke, #475569)" stroke-width="1.5" />
+          <path d="M 20,2 A 18,18 0 0,0 20,38 Z" fill="var(--cf1p7-normal-fill, #4caf50)" opacity="0.4" />
+          <path d="M 20,2 A 18,18 0 0,1 20,38 Z" fill="var(--cf1p7-lesion-fill, #ff5252)" opacity="0.85" />
+          <text x="20" y="48" font-size="9" font-weight="600" fill="var(--cf1p7-text-sub, #94a3b8)" text-anchor="middle">Campo OD</text>
+        </g>
+
+        <text x="160" y="42" font-size="10" font-weight="700" fill="var(--cf1p7-text-main, #f1f5f9)">HEMIANOPSIA</text>
+        <text x="160" y="56" font-size="10" font-weight="700" fill="var(--cf1p7-lesion-fill, #ff5252)">HOMÔNIMA D</text>
+      </g>
+
+      <g transform="translate(280, 410)" id="cf1p7-motor-deficit-box">
+        <rect x="0" y="0" width="245" height="90" rx="8" class="cf1p7-card-box" id="cf1p7-box-mot" />
+        <text x="15" y="20" class="cf1p7-card-label" style="fill: var(--cf1p7-deficit-fill, #00e5ff);">DÉFICIT MOTOR RESULTANTE</text>
+
+        <g transform="translate(20, 28)">
+          <circle cx="20" cy="10" r="8" fill="var(--cf1p7-deficit-fill, #00e5ff)" opacity="0.85" />
+          <path d="M 20,18 L 20,40 M 20,24 L 32,35 M 20,40 L 28,58" stroke="var(--cf1p7-deficit-fill, #00e5ff)" stroke-width="3.5" stroke-linecap="round" />
+          <path d="M 20,24 L 8,35 M 20,40 L 12,58" stroke="var(--cf1p7-normal-fill, #4caf50)" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+        </g>
+
+        <g transform="translate(65, 30)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="var(--cf1p7-deficit-fill, #00e5ff)">HEMIPARESIA D</text>
+          <text x="0" y="26" font-size="10" font-weight="600" fill="var(--cf1p7-text-main, #f1f5f9)">Fácio-Bráquio-Crural</text>
+          <text x="0" y="42" font-size="9" font-weight="500" fill="var(--cf1p7-text-sub, #94a3b8)">Face + Braço + Perna (Direita)</text>
+        </g>
+      </g>
+
+    </g>
+
+    <g class="cf1p7-panel-group" transform="translate(570, 0)">
+
+      <rect x="0" y="0" width="370" height="520" class="cf1p7-panel-card" />
+
+      <g transform="translate(15, 15)">
+        <rect x="0" y="0" width="340" height="36" class="cf1p7-panel-header-bg" />
+        <text x="15" y="23" class="cf1p7-panel-title" id="cf1p7-panel-head-title">SÍTIO → DÉFICIT (TRADUÇÃO)</text>
+        <rect x="235" y="7" width="90" height="22" rx="11" id="cf1p7-badge-bg" fill="var(--cf1p7-lesion-bg, rgba(255,82,82,0.15))" stroke="var(--cf1p7-lesion-stroke, #ff1744)" />
+        <text x="280" y="21" class="cf1p7-panel-badge" id="cf1p7-badge-text" fill="var(--cf1p7-lesion-fill, #ff5252)">EXEMPLO 1</text>
+      </g>
+
+      <g transform="translate(15, 65)">
+        <rect x="0" y="0" width="340" height="95" class="cf1p7-card-box" />
+        <text x="12" y="18" class="cf1p7-card-label">SÍTIO ANATÔMICO AFETADO (ENCÉFALO E)</text>
+
+        <text x="12" y="38" class="cf1p7-card-val" id="cf1p7-txt-sitio-title" style="fill: var(--cf1p7-lesion-fill, #ff5252);">
+          Córtex Occipital Esquerdo (V1)
+        </text>
+
+        <text x="12" y="56" class="cf1p7-card-desc" id="cf1p7-txt-sitio-desc-1">
+          • Foco de lesão estrutural na região posterior do hemisfério E.
+        </text>
+        <text x="12" y="72" class="cf1p7-card-desc" id="cf1p7-txt-sitio-desc-2">
+          • Recebe feixe de radiações ópticas do campo visual oposto.
+        </text>
+        <text x="12" y="86" class="cf1p7-card-desc" id="cf1p7-txt-sitio-desc-3" font-weight="600" style="fill: var(--cf1p7-text-main, #f1f5f9);">
+          Anatomia: Córtex Calcarino / Polo Occipital E.
+        </text>
+      </g>
+
+      <g transform="translate(15, 170)">
+        <rect x="0" y="0" width="340" height="95" class="cf1p7-card-box" />
+        <text x="12" y="18" class="cf1p7-card-label">DÉFICIT NEUROLÓGICO CONTRALATERAL (D)</text>
+
+        <text x="12" y="38" class="cf1p7-card-val" id="cf1p7-txt-deficit-title" style="fill: var(--cf1p7-deficit-fill, #00e5ff);">
+          Hemianopsia Homônima Direita
+        </text>
+
+        <text x="12" y="56" class="cf1p7-card-desc" id="cf1p7-txt-deficit-desc-1">
+          • Perda completa da visão no campo visual direito em ambos os olhos.
+        </text>
+        <text x="12" y="72" class="cf1p7-card-desc" id="cf1p7-txt-deficit-desc-2">
+          • Tradução clínica: alteração visual hemianópica D = lesão occipital E.
+        </text>
+        <text x="12" y="86" class="cf1p7-card-desc" id="cf1p7-txt-deficit-desc-3" font-weight="600" style="fill: var(--cf1p7-text-main, #f1f5f9);">
+          Manifestação: Campo Visual Hemianópico D alterado.
+        </text>
+      </g>
+
+      <g transform="translate(15, 275)">
+        <rect x="0" y="0" width="340" height="95" class="cf1p7-card-box" />
+        <text x="12" y="18" class="cf1p7-card-label">MECANISMO FISIOPATOLÓGICO DE CRUZAMENTO</text>
+
+        <text x="12" y="38" class="cf1p7-card-val" id="cf1p7-txt-via-title" style="fill: var(--cf1p7-alert-fill, #ffd54f);">
+          Cruzamento das Fibras Retinianas Nasais
+        </text>
+
+        <text x="12" y="56" class="cf1p7-card-desc" id="cf1p7-txt-via-desc-1">
+          • As fibras da retina nasal direita decussam no quiasma óptico.
+        </text>
+        <text x="12" y="72" class="cf1p7-card-desc" id="cf1p7-txt-via-desc-2">
+          • Projetam-se ao trato óptico E e córtex occipital esquerdo.
+        </text>
+        <text x="12" y="86" class="cf1p7-card-desc" id="cf1p7-txt-via-desc-3" font-weight="600" style="fill: var(--cf1p7-text-main, #f1f5f9);">
+          Princípio: Sítio Parenquimatoso E → Déficit Manifestado à D.
+        </text>
+      </g>
+
+      <g transform="translate(15, 380)">
+        <rect x="0" y="0" width="340" height="125" class="cf1p7-card-box" style="stroke: var(--cf1p7-alert-stroke, #ffb300); stroke-width: 1.5px;" />
+        <text x="12" y="18" class="cf1p7-card-label" style="fill: var(--cf1p7-alert-fill, #ffd54f);">REGRA OURO &amp; CONDUTA DE INVESTIGAÇÃO</text>
+
+        <g transform="translate(12, 28)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="var(--cf1p7-alert-fill, #ffd54f)">
+            CEFALEIA + DÉFICIT FOCAL = INVESTIGAR IMAGEM!
+          </text>
+          <text x="0" y="28" font-size="11" fill="var(--cf1p7-text-sub, #94a3b8)">
+            • Conduta obrigatória: Solicitar TC de Crânio ou RM imediata.
+          </text>
+          <text x="0" y="44" font-size="11" fill="var(--cf1p7-text-sub, #94a3b8)">
+            • Sítio anatômico focal guia a suspeita etiomórfica.
+          </text>
+
+          <line x1="0" y1="54" x2="316" y2="54" stroke="var(--cf1p7-panel-border, #2a3654)" stroke-dasharray="3,3" />
+
+          <text x="0" y="68" font-size="10" font-weight="700" fill="var(--cf1p7-lesion-fill, #ff5252)">
+            NUANCE CLÍNICA: NÃO CONFUNDIR COM PAPILEDEMA!
+          </text>
+          <text x="0" y="82" font-size="10" fill="var(--cf1p7-text-muted, #64748b)">
+            Papiledema indica Hipertensão Intracraniana (sinal de pressão), enquanto o focal aponta a localização exata do foco parenquimatoso.
+          </text>
+        </g>
+      </g>
+
+    </g>
+
+  </g>
+
+  <g id="cf1p7-tooltip" class="cf1p7-tooltip" style="opacity: 0;">
+    <rect id="cf1p7-tt-bg" class="cf1p7-tt-bg" x="0" y="0" width="180" height="28" rx="6" />
+    <text id="cf1p7-tt-text" class="cf1p7-tt-text" x="90" y="18">Clique para interagir</text>
+  </g>
+
+  <script>
+    /*<![CDATA[*/
+    (function() {
+      var svg = document.getElementById('cf1p7-svg');
+      if (!svg) return;
+
+      var btnOcc = document.getElementById('cf1p7-btn-occ');
+      var btnCap = document.getElementById('cf1p7-btn-cap');
+      var btnAll = document.getElementById('cf1p7-btn-all');
+
+      var hsOcc = document.getElementById('cf1p7-hs-occ');
+      var hsCap = document.getElementById('cf1p7-hs-cap');
+
+      var opticLine1 = document.getElementById('cf1p7-optic-line-1');
+      var opticLine2 = document.getElementById('cf1p7-optic-line-2');
+      var opticLine3 = document.getElementById('cf1p7-optic-line-3');
+
+      var motorLine1 = document.getElementById('cf1p7-motor-line-1');
+      var motorLine2 = document.getElementById('cf1p7-motor-line-2');
+
+      var boxVis = document.getElementById('cf1p7-box-vis');
+      var boxMot = document.getElementById('cf1p7-box-mot');
+
+      var panelTitle = document.getElementById('cf1p7-panel-head-title');
+      var badgeText = document.getElementById('cf1p7-badge-text');
+      var badgeBg = document.getElementById('cf1p7-badge-bg');
+
+      var sitioTitle = document.getElementById('cf1p7-txt-sitio-title');
+      var sitioDesc1 = document.getElementById('cf1p7-txt-sitio-desc-1');
+      var sitioDesc2 = document.getElementById('cf1p7-txt-sitio-desc-2');
+      var sitioDesc3 = document.getElementById('cf1p7-txt-sitio-desc-3');
+
+      var deficitTitle = document.getElementById('cf1p7-txt-deficit-title');
+      var deficitDesc1 = document.getElementById('cf1p7-txt-deficit-desc-1');
+      var deficitDesc2 = document.getElementById('cf1p7-txt-deficit-desc-2');
+      var deficitDesc3 = document.getElementById('cf1p7-txt-deficit-desc-3');
+
+      var viaTitle = document.getElementById('cf1p7-txt-via-title');
+      var viaDesc1 = document.getElementById('cf1p7-txt-via-desc-1');
+      var viaDesc2 = document.getElementById('cf1p7-txt-via-desc-2');
+      var viaDesc3 = document.getElementById('cf1p7-txt-via-desc-3');
+
+      var tooltip = document.getElementById('cf1p7-tooltip');
+      var ttBg = document.getElementById('cf1p7-tt-bg');
+      var ttText = document.getElementById('cf1p7-tt-text');
+
+      var currentScene = 1;
+
+      var scenes = {
+        1: {
+          headTitle: 'EXEMPLO 1: OCCIPITAL E → VISÃO D',
+          badgeText: 'EXEMPLO 1',
+          badgeFill: 'var(--cf1p7-lesion-fill, #ff5252)',
+          badgeBg: 'var(--cf1p7-lesion-bg, rgba(255,82,82,0.15))',
+          badgeStroke: 'var(--cf1p7-lesion-stroke, #ff1744)',
+
+          sitioTitle: 'Córtex Occipital Esquerdo (V1)',
+          sitioColor: 'var(--cf1p7-lesion-fill, #ff5252)',
+          sitioD1: '• Foco de lesão estrutural na região posterior do hemisfério E.',
+          sitioD2: '• Recebe feixe de radiações ópticas do campo visual oposto.',
+          sitioD3: 'Anatomia: Córtex Calcarino / Polo Occipital E.',
+
+          deficitTitle: 'Hemianopsia Homônima Direita',
+          deficitColor: 'var(--cf1p7-lesion-fill, #ff5252)',
+          deficitD1: '• Perda completa da visão no campo visual direito em ambos os olhos.',
+          deficitD2: '• Tradução clínica: alteração visual hemianópica D = lesão occipital E.',
+          deficitD3: 'Manifestação: Campo Visual Hemianópico D alterado.',
+
+          viaTitle: 'Cruzamento das Fibras Retinianas Nasais',
+          viaColor: 'var(--cf1p7-alert-fill, #ffd54f)',
+          viaD1: '• As fibras da retina nasal direita decussam no quiasma óptico.',
+          viaD2: '• Projetam-se ao trato óptico E e córtex occipital esquerdo.',
+          viaD3: 'Princípio: Sítio Parenquimatoso E → Déficit Manifestado à D.'
+        },
+        2: {
+          headTitle: 'EXEMPLO 2: CÁPSULA E → PARESIA D',
+          badgeText: 'EXEMPLO 2',
+          badgeFill: 'var(--cf1p7-deficit-fill, #00e5ff)',
+          badgeBg: 'var(--cf1p7-deficit-bg, rgba(0,229,255,0.12))',
+          badgeStroke: 'var(--cf1p7-deficit-stroke, #00b0ff)',
+
+          sitioTitle: 'Cápsula Interna Esquerda (Perna Posterior)',
+          sitioColor: 'var(--cf1p7-deficit-fill, #00e5ff)',
+          sitioD1: '• Foco lesional subcortical denso no hemisfério esquerdo.',
+          sitioD2: '• Agrupa 100% dos tratos corticoespinal e corticonuclear.',
+          sitioD3: 'Anatomia: Perna posterior da Cápsula Interna E.',
+
+          deficitTitle: 'Hemiparesia Fácio-Bráquio-Crural Direita',
+          deficitColor: 'var(--cf1p7-deficit-fill, #00e5ff)',
+          deficitD1: '• Déficit motor proporcional na face, braço e perna do lado direito.',
+          deficitD2: '• Tradução focal direta: paresia à D indica sítio motor à E.',
+          deficitD3: 'Manifestação: Paresia Proporcionada FBC Direita.',
+
+          viaTitle: 'Decussação Piramidal no Bulbo (Tronco)',
+          viaColor: 'var(--cf1p7-alert-fill, #ffd54f)',
+          viaD1: '• Trato corticoespinal desce da cápsula E e cruza na pirâmide bulbar.',
+          viaD2: '• Inerva os neurônios motores da medula espinal à direita.',
+          viaD3: 'Princípio: Decussação motora na transição bulbo-espinal.'
+        },
+        0: {
+          headTitle: 'VISÃO GERAL: REGRA DE TRADUÇÃO FOCAL',
+          badgeText: 'INTEGRADO',
+          badgeFill: 'var(--cf1p7-alert-fill, #ffd54f)',
+          badgeBg: 'var(--cf1p7-alert-bg, rgba(255,213,79,0.12))',
+          badgeStroke: 'var(--cf1p7-alert-stroke, #ffb300)',
+
+          sitioTitle: 'Sítio Estrutural Esquerdo (Occipital ou Cápsula)',
+          sitioColor: 'var(--cf1p7-alert-fill, #ffd54f)',
+          sitioD1: '• Lesões focais no hemisfério E afetam tratos condutores primários.',
+          sitioD2: '• Cefaleia associada exige investigação neuroimagem imediata.',
+          sitioD3: 'Anatomia: Córtex ou Vias de Condução Hemisféricas E.',
+
+          deficitTitle: 'Déficits Contralaterais (Campo D / Motor D)',
+          deficitColor: 'var(--cf1p7-alert-fill, #ffd54f)',
+          deficitD1: '• Exemplo 1: Occipital E acende Hemianopsia Homônima Direita.',
+          deficitD2: '• Exemplo 2: Cápsula E acende Hemiparesia FBC Direita.',
+          deficitD3: 'Manifestação: Tradução determinística Sítio E → Achado D.',
+
+          viaTitle: 'Anatomia de Cruzamento (Quiasma + Bulbo)',
+          viaColor: 'var(--cf1p7-alert-fill, #ffd54f)',
+          viaD1: '• Via Óptica decussa no Quiasma; Via Motora decussa no Bulbo.',
+          viaD2: '• O achado localizador "aponta o dedo" para o local da lesão.',
+          viaD3: 'Princípio: Cefaleia + Focal = Investigar Imagem Urgente!'
+        }
+      };
+
+      function setScene(sceneId) {
+        currentScene = sceneId;
+
+        btnOcc.classList.remove('cf1p7-active-occipital');
+        btnCap.classList.remove('cf1p7-active-capsula');
+        btnAll.classList.remove('cf1p7-active-all');
+
+        if (sceneId === 1) btnOcc.classList.add('cf1p7-active-occipital');
+        else if (sceneId === 2) btnCap.classList.add('cf1p7-active-capsula');
+        else btnAll.classList.add('cf1p7-active-all');
+
+        if (sceneId === 1) {
+          opticLine1.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-active';
+          opticLine2.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-active';
+          opticLine3.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-active';
+
+          motorLine1.className.baseVal = 'cf1p7-tract-motor cf1p7-tract-dim';
+          motorLine2.className.baseVal = 'cf1p7-tract-motor cf1p7-tract-dim';
+
+          boxVis.style.stroke = 'var(--cf1p7-lesion-stroke, #ff1744)';
+          boxVis.style.strokeWidth = '2px';
+          boxMot.style.stroke = 'var(--cf1p7-panel-border, #2a3654)';
+          boxMot.style.strokeWidth = '1px';
+        } else if (sceneId === 2) {
+          opticLine1.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-dim';
+          opticLine2.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-dim';
+          opticLine3.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-dim';
+
+          motorLine1.className.baseVal = 'cf1p7-tract-motor cf1p7-tract-active';
+          motorLine2.className.baseVal = 'cf1p7-tract-motor cf1p7-tract-active';
+
+          boxVis.style.stroke = 'var(--cf1p7-panel-border, #2a3654)';
+          boxVis.style.strokeWidth = '1px';
+          boxMot.style.stroke = 'var(--cf1p7-deficit-stroke, #00b0ff)';
+          boxMot.style.strokeWidth = '2px';
+        } else {
+          opticLine1.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-active';
+          opticLine2.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-active';
+          opticLine3.className.baseVal = 'cf1p7-tract-optic cf1p7-tract-active';
+
+          motorLine1.className.baseVal = 'cf1p7-tract-motor cf1p7-tract-active';
+          motorLine2.className.baseVal = 'cf1p7-tract-motor cf1p7-tract-active';
+
+          boxVis.style.stroke = 'var(--cf1p7-lesion-stroke, #ff1744)';
+          boxVis.style.strokeWidth = '1.5px';
+          boxMot.style.stroke = 'var(--cf1p7-deficit-stroke, #00b0ff)';
+          boxMot.style.strokeWidth = '1.5px';
+        }
+
+        var data = scenes[sceneId];
+        panelTitle.textContent = data.headTitle;
+        badgeText.textContent = data.badgeText;
+        badgeText.style.fill = data.badgeFill;
+        badgeBg.style.fill = data.badgeBg;
+        badgeBg.style.stroke = data.badgeStroke;
+
+        sitioTitle.textContent = data.sitioTitle;
+        sitioTitle.style.fill = data.sitioColor;
+        sitioDesc1.textContent = data.sitioD1;
+        sitioDesc2.textContent = data.sitioD2;
+        sitioDesc3.textContent = data.sitioD3;
+
+        deficitTitle.textContent = data.deficitTitle;
+        deficitTitle.style.fill = data.deficitColor;
+        deficitDesc1.textContent = data.deficitD1;
+        deficitDesc2.textContent = data.deficitD2;
+        deficitDesc3.textContent = data.deficitD3;
+
+        viaTitle.textContent = data.viaTitle;
+        viaTitle.style.fill = data.viaColor;
+        viaDesc1.textContent = data.viaD1;
+        viaDesc2.textContent = data.viaD2;
+        viaDesc3.textContent = data.viaD3;
+      }
+
+      btnOcc.addEventListener('click', function() { setScene(1); });
+      btnCap.addEventListener('click', function() { setScene(2); });
+      btnAll.addEventListener('click', function() { setScene(0); });
+
+      hsOcc.addEventListener('click', function() { setScene(1); });
+      hsCap.addEventListener('click', function() { setScene(2); });
+
+      function addKeyHandler(el, action) {
+        el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            action();
+          }
+        });
+      }
+
+      addKeyHandler(btnOcc, function() { setScene(1); });
+      addKeyHandler(btnCap, function() { setScene(2); });
+      addKeyHandler(btnAll, function() { setScene(0); });
+      addKeyHandler(hsOcc, function() { setScene(1); });
+      addKeyHandler(hsCap, function() { setScene(2); });
+
+      function showTooltip(evt, text) {
+        ttText.textContent = text;
+        var len = text.length * 7.5;
+        var width = Math.max(len, 140);
+        ttBg.setAttribute('width', width);
+        ttText.setAttribute('x', width / 2);
+
+        var pt = svg.createSVGPoint();
+        pt.x = evt.clientX;
+        pt.y = evt.clientY;
+        var ctm = svg.getScreenCTM();
+        if (ctm) {
+          var loc = pt.matrixTransform(ctm.inverse());
+          tooltip.setAttribute('transform', 'translate(' + (loc.x - width / 2) + ', ' + (loc.y - 42) + ')');
+          tooltip.style.opacity = '1';
+        }
+      }
+
+      function hideTooltip() {
+        tooltip.style.opacity = '0';
+      }
+
+      btnOcc.addEventListener('mousemove', function(e) { showTooltip(e, 'Ver Occipital E → Visão D'); });
+      btnOcc.addEventListener('mouseleave', hideTooltip);
+
+      btnCap.addEventListener('mousemove', function(e) { showTooltip(e, 'Ver Cápsula E → Paresia D'); });
+      btnCap.addEventListener('mouseleave', hideTooltip);
+
+      btnAll.addEventListener('mousemove', function(e) { showTooltip(e, 'Ver Integração dos 2 Focos'); });
+      btnAll.addEventListener('mouseleave', hideTooltip);
+
+      hsOcc.addEventListener('mousemove', function(e) { showTooltip(e, 'Sítio 1: Occipital Esquerdo'); });
+      hsOcc.addEventListener('mouseleave', hideTooltip);
+
+      hsCap.addEventListener('mousemove', function(e) { showTooltip(e, 'Sítio 2: Cápsula Interna Esquerda'); });
+      hsCap.addEventListener('mouseleave', hideTooltip);
+
+      setScene(1);
+    })();
+    /*]]>*/
+  </script>
+</svg>
+        </div>
+        <figcaption class="fig__cap"><span class="fig__label">Ilustração</span> Mapa focal: occipital E → déficit visual D; cápsula interna E → hemiparesia facio-braquio-crural. Toque nos exemplos para ver a tradução de sítio.</figcaption>
+      </figure>
+
+      <aside class="op-summary" aria-label="Resumo operacional">
+        <h2 class="op-summary__title">Resumo operacional</h2>
+        <div class="prose prosa"><p class="no-indent">Contexto (onco/imune/TCE/focal/FO/espirro) transforma cefaleia em <strong class="hl-bad">secundária até prova em contrário</strong>.</p></div>
+      </aside>
+
+      <aside class="why-matters">
+        <h2 class="why-matters__title">Por que importa</h2>
+        <div class="prose prosa"><p>O mesmo “tenho dor de cabeça” muda de prioridade com o cartão de contexto.</p></div>
+      </aside>
+
+      <aside class="continuity"><div class="prose prosa"><p class="no-indent">Sem esses alarmes, o fecho é anamnese completa + exame (incluindo FO em tese) e o diagnóstico <strong>clínico</strong> da primária.</p></div></aside>
+
+<section class="quiz" data-quiz-id="cf1-cefaleia-p07" aria-labelledby="quiz-p07-title">
+  <h2 id="quiz-p07-title">Quiz — fixação</h2>
+  <ol class="quiz__questions">
+<li class="quiz__question" data-q="1">
+  <p class="quiz__stem" id="quiz-p07-q1-label">Por que “HIV no enunciado” não fecha automaticamente o alarme de imunossupressão?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p07-q1-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Porque HIV nunca se associa a infecção do SNC</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Porque PVHIV nem sempre está imunossuprimido — o alarme ancora em imunossupressão/AIDS</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Porque só importa a idade</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Porque cefaleia em HIV é sempre tensional</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> o discriminador é <strong class="term">imunossupressão real</strong>, não o rótulo sorológico isolado.</p>
+    <p class="quiz__distractor">(A) falso (neurotoxo/abscesso existem no imunossuprimido). (C)(D) deslocam o eixo. Cai por textos que escrevem “HIV” como sinônimo de imunossupressão.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="2">
+  <p class="quiz__stem" id="quiz-p07-q2-label">Lesão no occipital esquerdo tende a gerar:</p>
+  <div role="radiogroup" aria-labelledby="quiz-p07-q2-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Hemiparesia facio-braquio-crural esquerda</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Déficit visual à direita</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Só cefaleia sem localização</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Babinski bilateral isolado como único achado obrigatório</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> focal = <strong class="term">tradução de sítio</strong>; occipital E → campo visual D.</p>
+    <p class="quiz__distractor">(A) é o padrão da <strong>cápsula interna</strong> (cápsula E → hemiparesia facio-braquio-crural). (C) esvazia o conceito de focal. (D) não corresponde à tradução occipital. Cai por misturar vias ópticas com via piramidal.</p>
+  </div>
+</li>
+<li class="quiz__question" data-q="3">
+  <p class="quiz__stem" id="quiz-p07-q3-label">TCE recente com cefaleia: além do sangramento agudo, o que deve ser lembrado?</p>
+  <div role="radiogroup" aria-labelledby="quiz-p07-q3-label" class="quiz__alternatives">
+    <button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">A — Que hematoma tardio não existe</button><button type="button" class="quiz__alt" role="radio" data-correct="true" aria-checked="false">B — Sangramento lento (“babando”) ao longo dos dias com hematoma montado — pode drenar</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">C — Que sempre é enxaqueca pós-trauma</button><button type="button" class="quiz__alt" role="radio" data-correct="false" aria-checked="false">D — Que o exame é desnecessário</button>
+  </div>
+  <div class="quiz__feedback" aria-live="polite" hidden>
+    <p class="quiz__verdict"></p>
+    <p class="quiz__justification"><strong>Gabarito B.</strong> o tempo do hematoma <strong class="term">não</strong> é só o minuto do trauma.</p>
+    <p class="quiz__distractor">(A)(C)(D) fecham cedo demais. Cai por só treinar “TC imediata” e esquecer o hematoma <strong>subagudo/crônico</strong>.</p>
+  </div>
+</li>
+  </ol>
+</section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="page-nav__btn" href="p6.html" rel="prev">← Anterior</a><span class="page-nav__pos">7/10</span><a class="page-nav__btn" href="p8.html" rel="next">Próxima →</a></nav>
+    </article>
+  </div>
+</main>
+<script src="../_assets/app.js" defer></script>
+<script src="cf1.js" defer></script>
+</body>
+</html>

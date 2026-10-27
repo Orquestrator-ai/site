@@ -1,0 +1,716 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" class="p2-grid-svg theme-dark" id="p2-grid-root">
+  <defs>
+    <!-- Filtro de desfoque para efeito de brilho de fundo -->
+    <filter id="p2-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="50" />
+    </filter>
+    
+    <!-- Gradientes de Cores para Ícones -->
+    <linearGradient id="p2-grad-amnesia" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+    <linearGradient id="p2-grad-afasia" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="p2-grad-apraxia" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="p2-grad-agnosia" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#be185d" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Estilos Gerais Escopados à Raiz do SVG */
+    .p2-grid-svg {
+      --bg-page: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #334155;
+      --border-color: #334155;
+      --border-active: #6366f1;
+      
+      --text-main: #f8fafc;
+      --text-mute: #94a3b8;
+      --text-title: #f8fafc;
+      
+      --color-success: #22c55e;
+      --color-danger: #ef4444;
+      --color-warning: #f97316;
+      --color-info: #06b6d4;
+      
+      --icon-bg-opacity: 0.12;
+      --card-shadow: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+      
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Sobrescrita de Tema Claro */
+    .p2-grid-svg.theme-light {
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --border-color: #cbd5e1;
+      --border-active: #4f46e5;
+      
+      --text-main: #1e293b;
+      --text-mute: #64748b;
+      --text-title: #0f172a;
+      
+      --color-success: #16a34a;
+      --color-danger: #dc2626;
+      --color-warning: #ea580c;
+      --color-info: #0284c7;
+      
+      --icon-bg-opacity: 0.08;
+      --card-shadow: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.05));
+    }
+
+    /* Suporte automático ao prefer-color-scheme */
+    @media (prefers-color-scheme: light) {
+      .p2-grid-svg:not(.theme-dark) {
+        --bg-page: #f8fafc;
+        --bg-card: #ffffff;
+        --bg-card-hover: #f1f5f9;
+        --border-color: #cbd5e1;
+        --border-active: #4f46e5;
+        
+        --text-main: #1e293b;
+        --text-mute: #64748b;
+        --text-title: #0f172a;
+        
+        --color-success: #16a34a;
+        --color-danger: #dc2626;
+        --color-warning: #ea580c;
+        --color-info: #0284c7;
+        
+        --icon-bg-opacity: 0.08;
+        --card-shadow: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.05));
+      }
+    }
+
+    /* Grid e Estrutura Principal */
+    .p2-bg-rect {
+      fill: var(--bg-page);
+      transition: fill 0.3s ease;
+    }
+    
+    .p2-card {
+      fill: var(--bg-card);
+      stroke: var(--border-color);
+      stroke-width: 1.5;
+      rx: 12px;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    
+    .card-group {
+      cursor: pointer;
+      outline: none;
+    }
+    
+    .card-group:hover .p2-card {
+      fill: var(--bg-card-hover);
+      stroke: var(--text-mute);
+    }
+    
+    .card-group.selected .p2-card {
+      stroke: var(--border-active);
+      stroke-width: 2.5;
+      fill: var(--bg-card-hover);
+      filter: var(--card-shadow);
+    }
+
+    .card-group:focus-visible {
+      outline: none;
+    }
+    
+    .card-group:focus-visible .p2-card {
+      stroke: var(--border-active);
+      stroke-width: 3;
+      stroke-dasharray: 4 2;
+    }
+
+    /* Textos */
+    .p2-title {
+      fill: var(--text-title);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    
+    .p2-subtitle {
+      fill: var(--text-mute);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    
+    .p2-card-title {
+      fill: var(--text-title);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    
+    .p2-card-desc {
+      fill: var(--text-mute);
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .p2-card-status-text {
+      fill: var(--text-mute);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .card-group.selected .p2-card-status-text {
+      fill: var(--border-active);
+    }
+    
+    .p2-card-status-bg {
+      fill: rgba(148, 163, 184, 0.1);
+      stroke: var(--border-color);
+      stroke-width: 1;
+      rx: 6px;
+    }
+    
+    .card-group.selected .p2-card-status-bg {
+      fill: rgba(99, 102, 241, 0.15);
+      stroke: var(--border-active);
+    }
+
+    /* Painel de Detalhes */
+    .detail-panel-bg {
+      fill: var(--bg-card);
+      stroke: var(--border-color);
+      stroke-width: 1.5;
+      rx: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .detail-title {
+      fill: var(--text-title);
+      font-size: 20px;
+      font-weight: 800;
+    }
+    
+    .detail-concept {
+      fill: var(--color-info);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .detail-section-header {
+      fill: var(--text-mute);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .detail-text {
+      fill: var(--text-main);
+      font-size: 13px;
+      line-height: 18px;
+    }
+    
+    .detail-bold {
+      font-weight: 700;
+    }
+
+    /* Alternador de Tema */
+    .theme-toggle-bg {
+      fill: var(--bg-card);
+      stroke: var(--border-color);
+      stroke-width: 1.5;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .theme-toggle-thumb {
+      fill: var(--text-title);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      cx: 875;
+    }
+    
+    .theme-light .theme-toggle-thumb {
+      cx: 915;
+    }
+    
+    .theme-light .theme-toggle-bg {
+      fill: #e2e8f0;
+      stroke: #cbd5e1;
+    }
+
+    /* Rodapé / Legenda */
+    .p2-footer-bg {
+      fill: rgba(148, 163, 184, 0.04);
+      stroke: var(--border-color);
+      stroke-width: 1;
+      rx: 8px;
+    }
+    
+    .p2-footer-title {
+      fill: var(--text-title);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .p2-footer-text {
+      fill: var(--text-main);
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    /* Classes auxiliares */
+    .p2-divider {
+      stroke: var(--border-color);
+      stroke-width: 1;
+    }
+  </style>
+
+  <script>
+    //<![CDATA[
+    function selectDomain(domainId) {
+      // Atualiza seleção visual dos cards
+      const cardIds = ['amnesia', 'afasia', 'apraxia', 'agnosia'];
+      for (let i = 0; i < cardIds.length; i++) {
+        const id = cardIds[i];
+        const card = document.getElementById('card-' + id);
+        if (card) {
+          if (id === domainId) {
+            card.classList.add('selected');
+          } else {
+            card.classList.remove('selected');
+          }
+        }
+      }
+
+      // Atualiza o painel de detalhes correspondente
+      const panels = document.getElementsByClassName('detail-group');
+      for (let i = 0; i < panels.length; i++) {
+        const panel = panels[i];
+        if (panel.id === 'panel-' + domainId) {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      }
+    }
+
+    function toggleTheme() {
+      const svg = document.getElementById('p2-grid-root');
+      if (svg.classList.contains('theme-light')) {
+        svg.classList.remove('theme-light');
+        svg.classList.add('theme-dark');
+      } else if (svg.classList.contains('theme-dark')) {
+        svg.classList.remove('theme-dark');
+        svg.classList.add('theme-light');
+      } else {
+        const isDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        if (isDark) {
+          svg.classList.add('theme-light');
+        } else {
+          svg.classList.add('theme-dark');
+        }
+      }
+    }
+    //]]>
+  </script>
+
+  <!-- Fundo da Ilustração -->
+  <rect width="960" height="620" class="p2-bg-rect" rx="16" />
+  
+  <!-- Brilhos Decorativos de Fundo (Glows Clínicos) -->
+  <circle cx="150" cy="200" r="120" fill="var(--color-info)" opacity="0.04" filter="url(#p2-blur)" />
+  <circle cx="750" cy="300" r="160" fill="var(--border-active)" opacity="0.03" filter="url(#p2-blur)" />
+
+  <!-- ==================== TOPO / CABEÇALHO ==================== -->
+  <g id="p2-header" transform="translate(30, 20)">
+    <!-- Título Principal -->
+    <text class="p2-title" x="0" y="25">GRADE DOS QUATRO DOMÍNIOS COGNITIVOS (P2)</text>
+    <!-- Subtítulo Didático -->
+    <text class="p2-subtitle" x="0" y="46">A demência não se resume à perda de memória: cada domínio cognitivo pode declinar isoladamente.</text>
+    
+    <!-- Botão de Alternar Tema (Acessível & Funcional) -->
+    <g id="theme-toggle" onclick="toggleTheme()" onkeydown="if(event.key==='Enter'||event.key===' '){toggleTheme(); event.preventDefault();}" role="button" aria-label="Alternar Tema Claro/Escuro" tabindex="0" transform="translate(830, 5)">
+      <text class="p2-card-desc" x="-42" y="16" text-anchor="end" font-weight="700">TEMA:</text>
+      <!-- Fundo do Switch -->
+      <rect class="theme-toggle-bg" x="-30" y="2" width="70" height="20" rx="10" />
+      <!-- Círculo do Switch -->
+      <circle class="theme-toggle-thumb" cy="12" r="7" />
+    </g>
+  </g>
+
+  <!-- Linha Divisória Superior -->
+  <line x1="30" y1="90" x2="930" y2="90" class="p2-divider" />
+
+  <!-- ==================== GRID 2X2 (ESQUERDA) ==================== -->
+  
+  <!-- CARD 1: AMNÉSIA -->
+  <g id="card-amnesia" class="card-group selected" onclick="selectDomain('amnesia')" onkeydown="if(event.key==='Enter'||event.key===' '){selectDomain('amnesia'); event.preventDefault();}" role="button" aria-label="Analisar Amnésia" tabindex="0">
+    <rect class="p2-card" x="30" y="110" width="230" height="185" />
+    <!-- Container do Ícone -->
+    <circle cx="145" cy="165" r="28" fill="var(--color-info)" fill-opacity="var(--icon-bg-opacity)" stroke="var(--color-info)" stroke-width="1.2" stroke-dasharray="2 2" />
+    
+    <!-- Ícone de Amnésia (Cabeça com fragmentos esvaindo) -->
+    <g transform="translate(145, 165)" stroke="var(--color-info)" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Silhueta da cabeça humana -->
+      <path d="M -12, 14 C -12, 11 -14, 8 -14, 5 C -14, -2 -11, -5 -12, -7 C -10, -13 -4, -16 2, -16 C 9, -16 13, -11 13, -3 C 13, 5 8, 11 2, 11 L 2, 15 L -4, 15 L -6, 12 Z" fill="none" stroke-width="1.8" />
+      <!-- Linhas internas sinápticas -->
+      <path d="M -7, -4 L -1, -7 L 4, -3" fill="none" stroke-width="1.2" />
+      <path d="M -1, -7 L -2, 3 L 3, 5" fill="none" stroke-width="1.2" />
+      <circle cx="-7" cy="-4" r="1.5" fill="var(--color-info)" stroke="none" />
+      <circle cx="-1" cy="-7" r="1.5" fill="var(--color-info)" stroke="none" />
+      <circle cx="4" cy="-3" r="1.5" fill="var(--color-info)" stroke="none" />
+      <circle cx="-2" cy="3" r="1.5" fill="var(--color-info)" stroke="none" />
+      <circle cx="3" cy="5" r="1.5" fill="var(--color-info)" stroke="none" />
+      <!-- Blocos de memória se esvaindo (Amarelo/Laranja de alerta) -->
+      <rect x="7" y="-14" width="4" height="4" rx="1" fill="var(--color-warning)" stroke="none" />
+      <rect x="15" y="-8" width="3" height="3" rx="0.8" fill="var(--color-warning)" stroke="none" />
+      <rect x="21" y="-17" width="2" height="2" rx="0.5" fill="var(--color-warning)" stroke="none" />
+    </g>
+    
+    <!-- Textos do Card -->
+    <text class="p2-card-title" x="145" y="222" text-anchor="middle">1. AMNÉSIA</text>
+    <text class="p2-card-desc" x="145" y="240" text-anchor="middle">Déficit de Memória</text>
+    
+    <!-- Indicador de Seleção / Estado -->
+    <rect class="p2-card-status-bg" x="70" y="255" width="150" height="22" />
+    <text class="p2-card-status-text" x="145" y="270" text-anchor="middle">FOCO DA ANÁLISE</text>
+  </g>
+
+  <!-- CARD 2: AFASIA -->
+  <g id="card-afasia" class="card-group" onclick="selectDomain('afasia')" onkeydown="if(event.key==='Enter'||event.key===' '){selectDomain('afasia'); event.preventDefault();}" role="button" aria-label="Analisar Afasia" tabindex="0">
+    <rect class="p2-card" x="280" y="110" width="230" height="185" />
+    <!-- Container do Ícone -->
+    <circle cx="395" cy="165" r="28" fill="var(--color-info)" fill-opacity="var(--icon-bg-opacity)" stroke="var(--color-info)" stroke-width="1.2" stroke-dasharray="2 2" />
+    
+    <!-- Ícone de Afasia (Balão de diálogo rompido) -->
+    <g transform="translate(395, 165)" stroke="var(--color-info)" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Balão de fala -->
+      <path d="M -13, -4 C -13, -11 -6, -13 1, -13 C 8, -13 14, -9 14, -3 C 14, 3 9, 7 2, 7 L -3, 12 L -3, 7 L -5, 7 C -9, 7 -13, 2 -13, -4 Z" fill="none" stroke-width="1.8" />
+      <!-- Linhas de texto interno -->
+      <line x1="-7" y1="-5" x2="6" y2="-5" stroke-width="1.2" />
+      <line x1="-7" y1="-1" x2="3" y2="-1" stroke-width="1.2" />
+      <line x1="-7" y1="3" x2="5" y2="3" stroke-width="1.2" />
+      <!-- Traço diagonal vermelho de obstrução/afasia -->
+      <line x1="-12" y1="-11" x2="12" y2="10" stroke="var(--color-danger)" stroke-width="2.5" />
+    </g>
+    
+    <!-- Textos do Card -->
+    <text class="p2-card-title" x="395" y="222" text-anchor="middle">2. AFASIA</text>
+    <text class="p2-card-desc" x="395" y="240" text-anchor="middle">Déficit de Linguagem</text>
+    
+    <!-- Indicador de Seleção / Estado -->
+    <rect class="p2-card-status-bg" x="320" y="255" width="150" height="22" />
+    <text class="p2-card-status-text" x="395" y="270" text-anchor="middle">FOCO DA ANÁLISE</text>
+  </g>
+
+  <!-- CARD 3: APRAXIA -->
+  <g id="card-apraxia" class="card-group" onclick="selectDomain('apraxia')" onkeydown="if(event.key==='Enter'||event.key===' '){selectDomain('apraxia'); event.preventDefault();}" role="button" aria-label="Analisar Apraxia" tabindex="0">
+    <rect class="p2-card" x="30" y="315" width="230" height="185" />
+    <!-- Container do Ícone -->
+    <circle cx="145" cy="370" r="28" fill="var(--color-info)" fill-opacity="var(--icon-bg-opacity)" stroke="var(--color-info)" stroke-width="1.2" stroke-dasharray="2 2" />
+    
+    <!-- Ícone de Apraxia (Violino + Agulha e Linha falhando) -->
+    <g transform="translate(145, 370)" stroke="var(--color-info)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- Corpo Simétrico do Violino (Fundo sutil) -->
+      <path d="M 0,-18 C -4,-18 -8,-15 -8,-10 C -8,-6 -5,-4 -4,-2 C -7,0 -8,6 -4,10 C -1,13 1,13 4,10 C 8,6 7,0 4,-2 C 5,-4 8,-6 8,-10 C 8,-15 4,-18 0,-18 Z" stroke-width="1" opacity="0.6" />
+      <line x1="0" y1="-18" x2="0" y2="10" stroke-width="1.2" opacity="0.6" />
+      <!-- Arco cruzado desalinhado -->
+      <line x1="-12" y1="8" x2="12" y2="-12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+      
+      <!-- Agulha de costura (Foco principal do erro de planejamento motor) -->
+      <line x1="-12" y1="-12" x2="12" y2="12" stroke="var(--text-title)" stroke-width="1.8" />
+      <!-- Olho da Agulha (Representado por elipse preta/branca para dar vazado) -->
+      <ellipse cx="-8.5" cy="-8.5" rx="0.8" ry="1.8" transform="rotate(45 -8.5 -8.5)" fill="var(--bg-card)" stroke="none" />
+      <!-- Linha Vermelha de Costura (Laranja/Vermelha dando a volta e errando o buraco) -->
+      <path d="M 12, 12 C 4, 4 0, -2 -4, -6 C -6,-8 -8,-9 -9,-9 C -10,-9 -10.5,-10 -10.5,-11 C -10.5,-12.5 -7,-12.5 -7,-10 C -7,-8 -11,-4 -14,-2" stroke="var(--color-danger)" stroke-width="1.5" />
+    </g>
+    
+    <!-- Textos do Card -->
+    <text class="p2-card-title" x="145" y="427" text-anchor="middle">3. APRAXIA</text>
+    <text class="p2-card-desc" x="145" y="445" text-anchor="middle">Déficit de Gesto Motor</text>
+    
+    <!-- Indicador de Seleção / Estado -->
+    <rect class="p2-card-status-bg" x="70" y="460" width="150" height="22" />
+    <text class="p2-card-status-text" x="145" y="475" text-anchor="middle">FOCO DA ANÁLISE</text>
+  </g>
+
+  <!-- CARD 4: AGNOSIA -->
+  <g id="card-agnosia" class="card-group" onclick="selectDomain('agnosia')" onkeydown="if(event.key==='Enter'||event.key===' '){selectDomain('agnosia'); event.preventDefault();}" role="button" aria-label="Analisar Agnosia" tabindex="0">
+    <rect class="p2-card" x="280" y="315" width="230" height="185" />
+    <!-- Container do Ícone -->
+    <circle cx="395" cy="370" r="28" fill="var(--color-info)" fill-opacity="var(--icon-bg-opacity)" stroke="var(--color-info)" stroke-width="1.2" stroke-dasharray="2 2" />
+    
+    <!-- Ícone de Agnosia (Silhueta com traços faciais pontilhados e interrogação) -->
+    <g transform="translate(395, 370)" stroke="var(--color-info)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- Silhueta da cabeça de frente -->
+      <path d="M -11, 14 C -11, 9 -14, 5 -14, 0 C -14, -8 -8, -13 0, -13 C 8, -13 14, -8 14, 0 C 14, 5 11, 9 11, 14 Z" stroke-width="1.8" />
+      <path d="M 5, 17 L -5, 17" stroke-width="1.8" />
+      <!-- Traços faciais pontilhados (O que não é processado/reconhecido) -->
+      <path d="M -6, -3 Q -4, -5 -2, -3" stroke-width="1" stroke-dasharray="1.5 1.5" />
+      <path d="M 2, -3 Q 4, -5 6, -3" stroke-width="1" stroke-dasharray="1.5 1.5" />
+      <path d="M -4, 5 Q 0, 8 4, 5" stroke-width="1" stroke-dasharray="1.5 1.5" />
+      <path d="M 0, -1 L 0, 2 L -1.5, 2" stroke-width="1" stroke-dasharray="1.5 1.5" />
+      <!-- Interrogação Vermelha de Agnosia no centro -->
+      <path d="M -2, -1.5 C -2, -3 2, -3.5 2, -1.5 C 2, -0.2 0, 0.5 0, 1.5" stroke="var(--color-danger)" stroke-width="2" />
+      <circle cx="0" cy="4" r="1.2" fill="var(--color-danger)" stroke="none" />
+    </g>
+    
+    <!-- Textos do Card -->
+    <text class="p2-card-title" x="395" y="427" text-anchor="middle">4. AGNOSIA</text>
+    <text class="p2-card-desc" x="395" y="445" text-anchor="middle">Déficit de Reconhecimento</text>
+    
+    <!-- Indicador de Seleção / Estado -->
+    <rect class="p2-card-status-bg" x="320" y="460" width="150" height="22" />
+    <text class="p2-card-status-text" x="395" y="475" text-anchor="middle">FOCO DA ANÁLISE</text>
+  </g>
+
+  <!-- ==================== PAINEL DE DETALHES (DIREITA) ==================== -->
+  <g id="p2-detail-panel" transform="translate(540, 110)">
+    <!-- Fundo do Painel -->
+    <rect class="detail-panel-bg" x="0" y="0" width="390" height="390" />
+    
+    <!-- ==================== GRUPO: AMNÉSIA ==================== -->
+    <g id="panel-amnesia" class="detail-group" style="display: block;">
+      <!-- Cabeçalho do Domínio -->
+      <text class="detail-title" x="25" y="35">Amnésia</text>
+      <text class="detail-concept" x="25" y="55">Déficit de Memória (Evocação / Retenção)</text>
+      <line x1="25" y1="70" x2="365" y2="70" class="p2-divider" />
+      
+      <!-- Caso Clínico Clínico Ancorado -->
+      <text class="detail-section-header" x="25" y="92">Caso Clínico Ancorado</text>
+      <text class="detail-text" x="25" y="112">
+        <tspan font-weight="700">Dona Maria, 76 anos.</tspan> Esquece compromissos recentes e
+      </text>
+      <text class="detail-text" x="25" y="130">repete perguntas minutos após fazê-las. Contudo, seu</text>
+      <text class="detail-text" x="25" y="148">planejamento motor está preservado (costura perfeitamente),</text>
+      <text class="detail-text" x="25" y="166">
+        sua fala é fluida e reconhece seus familiares de imediato.
+      </text>
+      
+      <!-- Teste Clínico Didático -->
+      <text class="detail-section-header" x="25" y="200">Teste Clínico Virtual</text>
+      <text class="detail-text" x="25" y="220">
+        <tspan font-weight="700">Evocação Tardia de 3 Palavras:</tspan> Após 5 min com distração,
+      </text>
+      <text class="detail-text" x="25" y="238">
+        o paciente falha em recordar as palavras, mesmo com pistas.
+      </text>
+      
+      <!-- Linha Divisória de Perfil -->
+      <line x1="25" y1="262" x2="365" y2="262" class="p2-divider" />
+      
+      <!-- Perfil de Déficits do Caso Clínico (Scoreboard 2x2) -->
+      <text class="detail-section-header" x="25" y="282">Perfil Cognitivo Clínico</text>
+      
+      <!-- Pill 1: Memória (Afetada) -->
+      <rect x="25" y="295" width="165" height="28" rx="6" fill="rgba(239, 68, 68, 0.08)" stroke="var(--color-danger)" stroke-width="1.2" />
+      <path d="M 33,306 L 39,312 M 39,306 L 33,312" stroke="var(--color-danger)" stroke-width="1.8" stroke-linecap="round" />
+      <text x="48" y="312" fill="var(--color-danger)" font-size="10.5" font-weight="700" letter-spacing="0.5">MEMÓRIA: AFETADA</text>
+      
+      <!-- Pill 2: Linguagem (Ok) -->
+      <rect x="200" y="295" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 207,310 L 210,313 L 216,307" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="223" y="312" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">LINGUAGEM: OK</text>
+      
+      <!-- Pill 3: Praxia (Ok) -->
+      <rect x="25" y="335" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 32,350 L 35,353 L 41,347" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="48" y="352" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">PRAXIA: PRESERVADA</text>
+      
+      <!-- Pill 4: Agnosia (Ok) -->
+      <rect x="200" y="335" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 207,350 L 210,353 L 216,347" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="223" y="352" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">AGNOSIA: PRESERVADA</text>
+    </g>
+
+    <!-- ==================== GRUPO: AFASIA ==================== -->
+    <g id="panel-afasia" class="detail-group" style="display: none;">
+      <!-- Cabeçalho do Domínio -->
+      <text class="detail-title" x="25" y="35">Afasia</text>
+      <text class="detail-concept" x="25" y="55">Déficit de Linguagem (Expressão / Compreensão)</text>
+      <line x1="25" y1="70" x2="365" y2="70" class="p2-divider" />
+      
+      <!-- Caso Clínico Clínico Ancorado -->
+      <text class="detail-section-header" x="25" y="92">Caso Clínico Ancorado</text>
+      <text class="detail-text" x="25" y="112">
+        <tspan font-weight="700">Seu José, 68 anos.</tspan> Apresenta fala hesitante, com trocas de
+      </text>
+      <text class="detail-text" x="25" y="130">sílabas e incapacidade de nomear objetos comuns (aponta</text>
+      <text class="detail-text" x="25" y="148">para o relógio e diz "coisa de ver hora"). No entanto, usa as</text>
+      <text class="detail-text" x="25" y="166">
+        chaves sem erro motor e recorda-se perfeitamente de fatos.
+      </text>
+      
+      <!-- Teste Clínico Didático -->
+      <text class="detail-section-header" x="25" y="200">Teste Clínico Virtual</text>
+      <text class="detail-text" x="25" y="220">
+        <tspan font-weight="700">Teste de Nomeação de Boston:</tspan> Apresentação visual de
+      </text>
+      <text class="detail-text" x="25" y="238">
+        figuras comuns; paciente descreve função, mas erra o nome.
+      </text>
+      
+      <!-- Linha Divisória de Perfil -->
+      <line x1="25" y1="262" x2="365" y2="262" class="p2-divider" />
+      
+      <!-- Perfil de Déficits do Caso Clínico -->
+      <text class="detail-section-header" x="25" y="282">Perfil Cognitivo Clínico</text>
+      
+      <!-- Pill 1: Memória (Ok) -->
+      <rect x="25" y="295" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 32,310 L 35,313 L 41,307" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="48" y="312" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">MEMÓRIA: PRESERVADA</text>
+      
+      <!-- Pill 2: Linguagem (Afetada) -->
+      <rect x="200" y="295" width="165" height="28" rx="6" fill="rgba(239, 68, 68, 0.08)" stroke="var(--color-danger)" stroke-width="1.2" />
+      <path d="M 208,306 L 214,312 M 214,306 L 208,312" stroke="var(--color-danger)" stroke-width="1.8" stroke-linecap="round" />
+      <text x="223" y="312" fill="var(--color-danger)" font-size="10.5" font-weight="700" letter-spacing="0.5">LINGUAGEM: AFETADA</text>
+      
+      <!-- Pill 3: Praxia (Ok) -->
+      <rect x="25" y="335" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 32,350 L 35,353 L 41,347" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="48" y="352" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">PRAXIA: PRESERVADA</text>
+      
+      <!-- Pill 4: Agnosia (Ok) -->
+      <rect x="200" y="335" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 207,350 L 210,353 L 216,347" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="223" y="352" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">AGNOSIA: PRESERVADA</text>
+    </g>
+
+    <!-- ==================== GRUPO: APRAXIA ==================== -->
+    <g id="panel-apraxia" class="detail-group" style="display: none;">
+      <!-- Cabeçalho do Domínio -->
+      <text class="detail-title" x="25" y="35">Apraxia</text>
+      <text class="detail-concept" x="25" y="55">Déficit de Gesto Aprendido (Planejamento Motor)</text>
+      <line x1="25" y1="70" x2="365" y2="70" class="p2-divider" />
+      
+      <!-- Caso Clínico Clínico Ancorado -->
+      <text class="detail-section-header" x="25" y="92">Caso Clínico Ancorado</text>
+      <text class="detail-text" x="25" y="112">
+        <tspan font-weight="700">Dona Ester, 72 anos, ex-violinista.</tspan> Com força muscular e
+      </text>
+      <text class="detail-text" x="25" y="130">sensibilidade normais, não consegue enfiar a linha na agulha</text>
+      <text class="detail-text" x="25" y="148">ou posicionar o arco do violino (perda do planejamento motor</text>
+      <text class="detail-text" x="25" y="166">
+        aprendido), mas lembra da música e conversa sobre ela.
+      </text>
+      
+      <!-- Teste Clínico Didático -->
+      <text class="detail-section-header" x="25" y="200">Teste Clínico Virtual</text>
+      <text class="detail-text" x="25" y="220">
+        <tspan font-weight="700">Pantomima de Uso de Objeto:</tspan> Pede-se para simular escovar
+      </text>
+      <text class="detail-text" x="25" y="238">
+        dentes. Paciente usa o próprio dedo como escova (transposição).
+      </text>
+      
+      <!-- Linha Divisória de Perfil -->
+      <line x1="25" y1="262" x2="365" y2="262" class="p2-divider" />
+      
+      <!-- Perfil de Déficits do Caso Clínico -->
+      <text class="detail-section-header" x="25" y="282">Perfil Cognitivo Clínico</text>
+      
+      <!-- Pill 1: Memória (Ok) -->
+      <rect x="25" y="295" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 32,310 L 35,313 L 41,307" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="48" y="312" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">MEMÓRIA: PRESERVADA</text>
+      
+      <!-- Pill 2: Linguagem (Ok) -->
+      <rect x="200" y="295" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 207,310 L 210,313 L 216,307" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="223" y="312" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">LINGUAGEM: OK</text>
+      
+      <!-- Pill 3: Praxia (Afetada) -->
+      <rect x="25" y="335" width="165" height="28" rx="6" fill="rgba(239, 68, 68, 0.08)" stroke="var(--color-danger)" stroke-width="1.2" />
+      <path d="M 33,346 L 39,352 M 39,346 L 33,352" stroke="var(--color-danger)" stroke-width="1.8" stroke-linecap="round" />
+      <text x="48" y="352" fill="var(--color-danger)" font-size="10.5" font-weight="700" letter-spacing="0.5">PRAXIA: AFETADA</text>
+      
+      <!-- Pill 4: Agnosia (Ok) -->
+      <rect x="200" y="335" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 207,350 L 210,353 L 216,347" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="223" y="352" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">AGNOSIA: PRESERVADA</text>
+    </g>
+
+    <!-- ==================== GRUPO: AGNOSIA ==================== -->
+    <g id="panel-agnosia" class="detail-group" style="display: none;">
+      <!-- Cabeçalho do Domínio -->
+      <text class="detail-title" x="25" y="35">Agnosia</text>
+      <text class="detail-concept" x="25" y="55">Déficit de Reconhecimento Sensorial</text>
+      <line x1="25" y1="70" x2="365" y2="70" class="p2-divider" />
+      
+      <!-- Caso Clínico Clínico Ancorado -->
+      <text class="detail-section-header" x="25" y="92">Caso Clínico Ancorado</text>
+      <text class="detail-text" x="25" y="112">
+        <tspan font-weight="700">Seu Roberto, 80 anos.</tspan> Descreve características físicas de
+      </text>
+      <text class="detail-text" x="25" y="130">um molho de chaves ("metal, dentes, anel"), mas não sabe</text>
+      <text class="detail-text" x="25" y="148">o que é até pegá-lo nas mãos (quando identifica por tato).</text>
+      <text class="detail-text" x="25" y="166">
+        Espera que o telefone toque para saber que objeto é aquele.
+      </text>
+      
+      <!-- Teste Clínico Didático -->
+      <text class="detail-section-header" x="25" y="200">Teste Clínico Virtual</text>
+      <text class="detail-text" x="25" y="220">
+        <tspan font-weight="700">Reconhecimento Visual de Objetos:</tspan> Apresenta-se um objeto;
+      </text>
+      <text class="detail-text" x="25" y="238">
+        o paciente falha em nomear apenas olhando, mas reconhece tocando.
+      </text>
+      
+      <!-- Linha Divisória de Perfil -->
+      <line x1="25" y1="262" x2="365" y2="262" class="p2-divider" />
+      
+      <!-- Perfil de Déficits do Caso Clínico -->
+      <text class="detail-section-header" x="25" y="282">Perfil Cognitivo Clínico</text>
+      
+      <!-- Pill 1: Memória (Ok) -->
+      <rect x="25" y="295" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 32,310 L 35,313 L 41,307" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="48" y="312" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">MEMÓRIA: PRESERVADA</text>
+      
+      <!-- Pill 2: Linguagem (Ok) -->
+      <rect x="200" y="295" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 207,310 L 210,313 L 216,307" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="223" y="312" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">LINGUAGEM: OK</text>
+      
+      <!-- Pill 3: Praxia (Ok) -->
+      <rect x="25" y="335" width="165" height="28" rx="6" fill="rgba(34, 197, 94, 0.08)" stroke="var(--color-success)" stroke-width="1" />
+      <path d="M 32,350 L 35,353 L 41,347" stroke="var(--color-success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="48" y="352" fill="var(--color-success)" font-size="10.5" font-weight="600" letter-spacing="0.5">PRAXIA: PRESERVADA</text>
+      
+      <!-- Pill 4: Agnosia (Afetada) -->
+      <rect x="200" y="335" width="165" height="28" rx="6" fill="rgba(239, 68, 68, 0.08)" stroke="var(--color-danger)" stroke-width="1.2" />
+      <path d="M 208,346 L 214,352 M 214,346 L 208,352" stroke="var(--color-danger)" stroke-width="1.8" stroke-linecap="round" />
+      <text x="223" y="352" fill="var(--color-danger)" font-size="10.5" font-weight="700" letter-spacing="0.5">AGNOSIA: AFETADA</text>
+    </g>
+  </g>
+
+  <!-- Linha Divisória Inferior -->
+  <line x1="30" y1="520" x2="930" y2="520" class="p2-divider" />
+
+  <!-- ==================== RODAPÉ / NOTA EXPLICATIVA / LEGENDA ==================== -->
+  <g id="p2-footer" transform="translate(30, 535)">
+    <rect class="p2-footer-bg" width="900" height="60" />
+    <text class="p2-footer-title" x="20" y="24">Conclusão Didática (Legenda de Interpretação)</text>
+    <text class="p2-footer-text" x="20" y="44">
+      Quatro domínios, quatro déficits: amnésia (memória), afasia (linguagem), apraxia (gestos aprendidos) e agnosia (reconhecimento).
+      <tspan font-weight="700" fill="var(--color-warning)">A demência pode se iniciar por qualquer um deles</tspan> — inclusive com a função de memória completamente intacta no início do quadro.
+    </text>
+  </g>
+</svg>

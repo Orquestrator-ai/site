@@ -1,0 +1,258 @@
+/* aula-06.css — componentes-Executor da Aula 6 (bônus): TEV no ciclo gravídico-puerperal
+   + transtornos de humor puerperais. ADITIVO e element-scoped: prefixo .a6- para nunca colidir
+   com base.css / components.css nem regredir Aulas 1–5. Herda os tokens da casa (rosa-vinho).
+   Só declara tokens NOVOS (--a6-*) — nunca redefine os canônicos. Carrega só nas páginas da Aula 6. */
+
+:root {
+  --a6-vein:  #7cc4ff;              /* esquema vascular / veia (azul frio, não sangue) */
+  --a6-vein-dim: rgba(124, 196, 255, 0.14);
+  --a6-amber-bonus: var(--kw-amber);
+}
+:root[data-theme="light"] {
+  --a6-vein: #1f74c4;
+  --a6-vein-dim: rgba(31, 116, 196, 0.12);
+}
+
+/* ============================================================
+   BLINDAGEM contra vazamento de <style> dos SVG-piso
+   O piso IL-01 traz um seletor NÃO-namespeado `svg { background-color; font-family }`
+   no <style> interno; como o <style> de SVG inline aplica ao documento inteiro (o base.css
+   só ESCONDE o nó com display:none, não desliga a folha), essa regra vazaria para os ícones
+   de UI (header/menu/home), o crack-field e a navegação — pintando uma caixa escura atrás
+   dos ícones (pior no tema claro). Reafirmo o esperado com maior especificidade
+   (.classe svg vence o `svg` bare). As figuras (.fig__frame svg) NÃO entram aqui — mantêm o
+   canvas próprio da ilustração. Ledger: defeito upstream do ilustrador (seletor bare).
+   ============================================================ */
+.site-header svg, .icon-btn svg, .menu-panel svg, .page-nav svg,
+.crack-field svg, .site-footer svg, .a6-regua svg, .a6-lens svg {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+.site-header svg, .icon-btn svg, .menu-panel svg, .page-nav svg { color: inherit !important; }
+
+/* ============ Trilha bônus (marcador âmbar sóbrio) ============ */
+.a6-bonus { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono);
+  font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--kw-amber); border: 1px solid var(--kw-amber); background: var(--kw-amber-dim);
+  border-radius: var(--r-pill); padding: 3px 11px; }
+.a6-bonus::before { content: "★"; font-size: 0.85em; }
+
+/* ============ Palavras-chave próprias da aula ============ */
+.a6-vein { color: var(--a6-vein); font-weight: 700; }
+
+/* ============ Números-chave em linha (doses, cortes, janelas) ============ */
+.a6-numline { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-4) 0 var(--sp-5); padding: 0; list-style: none; }
+.a6-numline li { display: inline-flex; align-items: baseline; gap: 6px; margin: 0; padding: 6px 12px;
+  border: 1px solid var(--border-mid); border-radius: var(--r-pill); background: var(--bg-1); font-size: var(--fs-sm); }
+.a6-numline .n { font-family: var(--font-mono); font-weight: 700; color: var(--rose-hi); }
+.a6-numline .l { color: var(--ink-70); }
+.a6-numline li.red  .n { color: var(--kw-red); }
+.a6-numline li.amber .n { color: var(--kw-amber); }
+.a6-numline li.green .n { color: var(--kw-green); }
+
+/* ============ E2 opener — dado impactante (18–20×) — P2 ============ */
+.opener--stat { text-align: center; padding: var(--sp-7) var(--sp-5);
+  background: radial-gradient(120% 120% at 50% 0%, var(--kw-red-dim), transparent 72%);
+  border: 1px solid var(--kw-red); border-radius: var(--r-lg); }
+.opener--stat .a6-stat__big { font-family: var(--font-mono); font-weight: 800; font-size: var(--fs-display);
+  color: var(--kw-red); line-height: 1; letter-spacing: -0.02em; }
+.opener--stat .a6-stat__cap { font-family: var(--font-serif); font-size: var(--fs-lg); color: var(--ink-90);
+  max-width: 46ch; margin: var(--sp-3) auto 0; }
+
+/* ============ Régua transversal "Linha do Tempo do Puerpério" ============ */
+.a6-regua { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--glow-rose); }
+.a6-regua__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); }
+.a6-regua__title { margin: 0; color: var(--rose); font-size: var(--fs-md); font-weight: 700; font-family: var(--font-serif); }
+.a6-regua__meta { font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono); }
+.a6-regua__track { list-style: none; margin: 0; padding: var(--sp-5); display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-3); position: relative; }
+.a6-regua__track::before { content: ""; position: absolute; left: var(--sp-5); right: var(--sp-5); top: calc(var(--sp-5) + 10px);
+  height: 2px; background: var(--border-mid); z-index: 0; }
+.a6-regua__mk { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+.a6-regua__dot { width: 20px; height: 20px; border-radius: 50%; background: var(--bg-1); border: 2px solid var(--border-strong);
+  transition: transform var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast); }
+.a6-regua__mk .a6-regua__t { font-weight: 700; font-size: var(--fs-sm); color: var(--ink-70); }
+.a6-regua__mk .a6-regua__d { font-size: var(--fs-xs); color: var(--ink-50); text-indent: 0; }
+.a6-regua__mk.visited .a6-regua__dot { background: var(--rose-soft); border-color: var(--rose); }
+.a6-regua__mk.visited .a6-regua__t { color: var(--ink-90); }
+.a6-regua__mk.is-active .a6-regua__dot { background: var(--rose); border-color: var(--rose-hi); transform: scale(1.35); box-shadow: 0 0 0 4px var(--rose-soft); }
+.a6-regua__mk.is-active .a6-regua__t { color: var(--rose-hi); }
+.a6-regua__mk.tone-red.is-active .a6-regua__dot,  .a6-regua__mk.tone-red.visited .a6-regua__dot { background: var(--kw-red); border-color: var(--kw-red); }
+.a6-regua__mk.tone-amber.is-active .a6-regua__dot,.a6-regua__mk.tone-amber.visited .a6-regua__dot { background: var(--kw-amber); border-color: var(--kw-amber); }
+.a6-regua__mk.tone-green.is-active .a6-regua__dot,.a6-regua__mk.tone-green.visited .a6-regua__dot { background: var(--kw-green); border-color: var(--kw-green); }
+@media (max-width: 640px) {
+  .a6-regua__track { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .a6-regua__track::before { left: calc(var(--sp-5) + 9px); right: auto; top: var(--sp-5); bottom: var(--sp-5); width: 2px; height: auto; }
+  .a6-regua__mk { flex-direction: row; text-align: left; gap: var(--sp-3); }
+  .a6-regua__mk .a6-regua__t { min-width: 84px; }
+}
+
+/* ============ Card "olho-de-banca" (lente GO ≠ clínica geral) — P4/P5/P10 ============ */
+.a6-lens { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-4); align-items: center;
+  border: 1px solid var(--rose); border-left: 4px solid var(--rose); border-radius: var(--r-md);
+  background: var(--bg-glass-strong); padding: var(--sp-4) var(--sp-5); margin: var(--sp-5) 0; }
+.a6-lens__eye { font-size: 1.8rem; line-height: 1; display: grid; place-items: center; width: 46px; height: 46px;
+  border-radius: 50%; background: var(--wine-soft); border: 1px solid var(--rose); }
+.a6-lens__b .a6-lens__k { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--rose); display: block; margin-bottom: 2px; }
+.a6-lens__b p { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; text-indent: 0; }
+
+/* ============ Carimbo riscado (forma + texto, a11y) — "D-dímero NÃO" — P4/P9 ============ */
+.a6-stamp { display: inline-flex; align-items: center; gap: var(--sp-3); margin: var(--sp-4) 0; padding: var(--sp-3) var(--sp-5);
+  border: 2px solid var(--kw-amber); border-radius: var(--r-md); background: var(--kw-amber-dim); position: relative; }
+.a6-stamp__no { font-family: var(--font-mono); font-weight: 800; font-size: var(--fs-xl); color: var(--kw-amber);
+  text-decoration: line-through; text-decoration-thickness: 3px; }
+.a6-stamp__txt { font-size: var(--fs-sm); color: var(--ink-90); text-indent: 0; }
+.a6-stamp__txt b { color: var(--kw-amber); }
+.a6-stamp::after { content: "✕"; position: absolute; right: var(--sp-3); top: 50%; transform: translateY(-50%);
+  color: var(--kw-amber); font-weight: 800; opacity: 0.5; }
+
+/* ============ Calculadora de dose profilática por peso — P7 ============ */
+.a6-calc { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg);
+  background: var(--bg-glass); overflow: hidden; box-shadow: var(--glow-rose); }
+.a6-calc__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid);
+  display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; }
+.a6-calc__head h4 { margin: 0; color: var(--rose); font-size: var(--fs-lg); }
+.a6-calc__head .a6-calc__formula { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--ink-70); }
+.a6-calc__body { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--sp-4); padding: var(--sp-5); align-items: end; }
+.a6-calc__field { display: flex; flex-direction: column; gap: var(--sp-2); }
+.a6-calc__field label { font-size: var(--fs-sm); color: var(--ink-90); font-weight: 600; }
+.a6-calc__field input { font-family: var(--font-mono); font-size: var(--fs-xl); text-align: center;
+  padding: var(--sp-3); border-radius: var(--r-md); border: 1px solid var(--border-mid); background: var(--bg-1); color: var(--ink-100); width: 100%; }
+.a6-calc__field input:focus-visible { border-color: var(--rose); }
+.a6-calc__field .a6-calc__unit { font-size: var(--fs-xs); color: var(--ink-50); font-family: var(--font-mono); }
+.a6-calc__out { border-radius: var(--r-md); border: 1px solid var(--border-mid); background: var(--bg-1);
+  padding: var(--sp-4); text-align: center; transition: border-color var(--dur-fast), background var(--dur-fast); }
+.a6-calc__val { font-family: var(--font-mono); font-size: var(--fs-3xl); font-weight: 800; color: var(--ink-100); line-height: 1; }
+.a6-calc__band { font-size: var(--fs-sm); font-weight: 700; margin-top: var(--sp-2); color: var(--ink-70); }
+.a6-calc__out.is-green  { border-color: var(--kw-green); background: var(--kw-green-dim); }
+.a6-calc__out.is-green  .a6-calc__val, .a6-calc__out.is-green .a6-calc__band { color: var(--kw-green); }
+.a6-calc__out.is-amber  { border-color: var(--kw-amber); background: var(--kw-amber-dim); }
+.a6-calc__out.is-amber  .a6-calc__val, .a6-calc__out.is-amber .a6-calc__band { color: var(--kw-amber); }
+.a6-calc__scale { list-style: none; margin: 0; padding: 0 var(--sp-5) var(--sp-5); display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-2); }
+.a6-calc__scale li { font-size: var(--fs-xs); text-align: center; padding: var(--sp-2) 4px; border-radius: var(--r-sm);
+  border: 1px solid var(--border-soft); background: var(--bg-1); color: var(--ink-70); transition: border-color var(--dur-fast), background var(--dur-fast); }
+.a6-calc__scale li .s-dose { display: block; font-family: var(--font-mono); font-weight: 700; color: var(--ink-90); }
+.a6-calc__scale li.on { border-color: var(--rose); background: var(--wine-soft); }
+.a6-calc__scale li.on .s-dose { color: var(--rose-hi); }
+.a6-calc__note { padding: 0 var(--sp-5) var(--sp-5); font-size: var(--fs-xs); color: var(--ink-70); text-indent: 0; text-align: justify; margin: 0; }
+.a6-calc__note b { color: var(--rose-hi); }
+@media (max-width: 620px) { .a6-calc__body { grid-template-columns: 1fr; } .a6-calc__scale { grid-template-columns: 1fr 1fr; } }
+
+/* ============ Mini-EPDS interativa (dois caminhos de alerta) — P12 ============ */
+.a6-epds { margin: var(--sp-6) 0; border: 1px solid var(--rose); border-radius: var(--r-lg); background: var(--bg-glass); overflow: hidden; }
+.a6-epds__head { padding: var(--sp-4) var(--sp-5); background: var(--wine-soft); border-bottom: 1px solid var(--border-mid); }
+.a6-epds__head h4 { margin: 0 0 4px; color: var(--rose); font-size: var(--fs-lg); }
+.a6-epds__head p { margin: 0; font-size: var(--fs-xs); color: var(--ink-70); text-indent: 0; text-align: left; }
+.a6-epds__rows { list-style: none; margin: 0; padding: var(--sp-4) var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-3); }
+.a6-epds__q { display: grid; grid-template-columns: 1fr auto; gap: var(--sp-2) var(--sp-3); align-items: center;
+  padding: var(--sp-3); border: 1px solid var(--border-soft); border-radius: var(--r-sm); background: var(--bg-1); }
+.a6-epds__q.sentinel { border: 1px solid var(--kw-red); background: var(--kw-red-dim); }
+.a6-epds__qt { font-size: var(--fs-sm); color: var(--ink-90); text-indent: 0; }
+.a6-epds__qt .s-tag { display: inline-block; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--kw-red);
+  border: 1px solid var(--kw-red); border-radius: var(--r-pill); padding: 0 8px; margin-left: 6px; }
+.a6-epds__opts { display: inline-flex; gap: 4px; }
+.a6-epds__opts button { width: 34px; height: 34px; border-radius: var(--r-sm); border: 1px solid var(--border-mid);
+  background: var(--bg-2); color: var(--ink-70); font-family: var(--font-mono); font-weight: 700; transition: all var(--dur-fast); }
+.a6-epds__opts button:hover { border-color: var(--rose); color: var(--ink-100); }
+.a6-epds__opts button[aria-pressed="true"] { background: var(--rose); border-color: var(--rose-hi); color: var(--kw-white); }
+.a6-epds__q.sentinel .a6-epds__opts button[aria-pressed="true"]:not([data-v="0"]) { background: var(--kw-red); border-color: var(--kw-red); }
+.a6-epds__result { padding: var(--sp-4) var(--sp-5); border-top: 1px solid var(--border-mid); display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3) var(--sp-4); align-items: center; }
+.a6-epds__score { text-align: center; }
+.a6-epds__score .n { font-family: var(--font-mono); font-size: var(--fs-3xl); font-weight: 800; color: var(--ink-100); line-height: 1; display: block; }
+.a6-epds__score .l { font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono); }
+.a6-epds__flags { display: flex; flex-direction: column; gap: var(--sp-2); }
+.a6-epds__flag { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-sm); padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-sm); border: 1px solid var(--border-mid); background: var(--bg-1); color: var(--ink-70); }
+.a6-epds__flag .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); flex-shrink: 0; }
+.a6-epds__flag.on { color: var(--ink-100); }
+.a6-epds__flag.path-score.on { border-color: var(--kw-amber); background: var(--kw-amber-dim); }
+.a6-epds__flag.path-score.on .dot { background: var(--kw-amber); }
+.a6-epds__flag.path-sent.on { border-color: var(--kw-red); background: var(--kw-red-dim); }
+.a6-epds__flag.path-sent.on .dot { background: var(--kw-red); }
+@media (max-width: 560px) { .a6-epds__q { grid-template-columns: 1fr; } .a6-epds__opts { justify-content: flex-start; } .a6-epds__result { grid-template-columns: 1fr; text-align: center; } }
+
+/* ============ Quadro comparativo 3 entidades (grid mobile / table desktop) — P13 ============ */
+.a6-compare { margin: var(--sp-6) 0; }
+.a6-compare table.a6-ctable { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.a6-compare caption { text-align: left; font-weight: 700; color: var(--rose); padding: var(--sp-3) 0; font-family: var(--font-serif); font-size: var(--fs-md); }
+.a6-compare th, .a6-compare td { padding: var(--sp-3) var(--sp-4); text-align: left; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+.a6-compare thead th { background: var(--wine-soft); color: var(--ink-100); position: sticky; top: 0; }
+.a6-compare thead th.c-blues { color: var(--kw-green); }
+.a6-compare thead th.c-dep  { color: var(--rose-hi); }
+.a6-compare thead th.c-psic { color: var(--kw-red); }
+.a6-compare tbody th { background: var(--bg-1); color: var(--rose-hi); font-weight: 600; white-space: nowrap; }
+.a6-compare td.hl-red { color: var(--kw-red); font-weight: 600; }
+.a6-compare td.hl-green { color: var(--kw-green); font-weight: 600; }
+.a6-compare .a6-ctable { display: none; }
+@media (min-width: 721px) {
+  .a6-compare .a6-ctable { display: table; border: 1px solid var(--border-mid); border-radius: var(--r-md); overflow: hidden; }
+  .a6-compare .a6-cgrid { display: none; }
+}
+/* Grid (mobile): 3 cartões-entidade empilhados */
+.a6-cgrid { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); }
+.a6-cent { border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-glass); overflow: hidden; }
+.a6-cent__h { padding: var(--sp-3) var(--sp-4); font-weight: 700; font-family: var(--font-serif); }
+.a6-cent.blues .a6-cent__h { background: var(--kw-green-dim); color: var(--kw-green); border-bottom: 1px solid var(--kw-green); }
+.a6-cent.dep   .a6-cent__h { background: var(--wine-soft); color: var(--rose-hi); border-bottom: 1px solid var(--rose); }
+.a6-cent.psic  .a6-cent__h { background: var(--kw-red-dim); color: var(--kw-red); border-bottom: 1px solid var(--kw-red); }
+.a6-cent dl { margin: 0; padding: var(--sp-3) var(--sp-4); display: grid; grid-template-columns: max-content 1fr; gap: var(--sp-2) var(--sp-3); }
+.a6-cent dt { font-size: var(--fs-xs); color: var(--ink-70); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; }
+.a6-cent dd { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); }
+
+/* ============ Split imagem-real + esquema (P3) ============ */
+.a6-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin: var(--sp-6) 0; align-items: start; }
+.a6-split > figure { margin: 0; }
+@media (max-width: 720px) { .a6-split { grid-template-columns: 1fr; } }
+
+/* ============ Escada textual de reforço (P6/P11) ============ */
+.a6-escada { display: flex; flex-direction: column; gap: var(--sp-2); margin: var(--sp-5) 0; }
+.a6-escada__cap { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--rose); margin-bottom: var(--sp-1); }
+.a6-escada__step { display: grid; grid-template-columns: 40px 1fr; gap: var(--sp-3); align-items: stretch;
+  padding: var(--sp-4); border-radius: var(--r-md); border: 1px solid var(--border-mid); background: var(--bg-glass); }
+.a6-escada__step.lv1 { border-left: 4px solid var(--kw-green); margin-right: 0; }
+.a6-escada__step.lv2 { border-left: 4px solid var(--kw-amber); margin-right: 5%; }
+.a6-escada__step.lv3 { border-left: 4px solid var(--kw-red); background: var(--kw-red-dim); margin-right: 10%; }
+.a6-escada__n { font-family: var(--font-mono); font-weight: 800; font-size: var(--fs-xl); color: var(--rose); display: grid; place-items: center; border-right: 1px solid var(--border-soft); }
+.a6-escada__step.lv3 .a6-escada__n { color: var(--kw-red); }
+.a6-escada__b h5 { margin: 0 0 4px; font-size: var(--fs-md); }
+.a6-escada__b p { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); text-align: justify; text-indent: 0; }
+@media (max-width: 560px) { .a6-escada__step { margin-right: 0 !important; } }
+
+/* ============ Painel "5 armadilhas da GO" (P9) ============ */
+.a6-traps { display: grid; grid-template-columns: 1fr; gap: var(--sp-2); margin: var(--sp-5) 0; }
+.a6-trap-row { display: grid; grid-template-columns: 150px 1fr 1fr; gap: var(--sp-3); align-items: center;
+  padding: var(--sp-3) var(--sp-4); border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-glass); }
+.a6-trap-row .a6-trap__name { font-weight: 700; color: var(--ink-100); font-size: var(--fs-sm); }
+.a6-trap-row .a6-trap__wrong { font-size: var(--fs-sm); color: var(--ink-50); text-decoration: line-through; text-decoration-color: var(--kw-amber); }
+.a6-trap-row .a6-trap__right { font-size: var(--fs-sm); color: var(--kw-green); font-weight: 600; }
+.a6-trap-row .a6-trap__right::before { content: "→ "; color: var(--rose); }
+@media (max-width: 640px) { .a6-trap-row { grid-template-columns: 1fr; gap: 4px; } }
+
+/* ============ Caso clínico em abertura — dados estruturados (P8) ============ */
+.a6-case-dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--sp-2) var(--sp-4); margin: var(--sp-3) 0 0; }
+.a6-case-dl dt { font-weight: 700; color: var(--rose-hi); font-size: var(--fs-sm); }
+.a6-case-dl dd { margin: 0; font-size: var(--fs-sm); color: var(--ink-90); }
+@media (max-width: 520px) { .a6-case-dl { grid-template-columns: 1fr; gap: 2px var(--sp-4); } .a6-case-dl dd { margin-bottom: var(--sp-2); } }
+
+/* ============ Fórmula / regra preservada (caixa de dose) ============ */
+.a6-formula { border: 1px solid var(--kw-green); background: var(--kw-green-dim); border-left: 4px solid var(--kw-green);
+  border-radius: var(--r-md); padding: var(--sp-4) var(--sp-5); margin: var(--sp-5) 0; }
+.a6-formula .a6-lbl { color: var(--kw-green); }
+.a6-formula p { margin: 0; text-align: justify; text-indent: 0; color: var(--ink-90); }
+.a6-lbl { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 700; margin-bottom: var(--sp-2); display: flex; align-items: center; gap: var(--sp-2); }
+
+/* ============ Nota de licença (share-alike / modelo animal) ============ */
+.a6-attr { font-size: var(--fs-xs); color: var(--ink-70); text-indent: 0; text-align: left; }
+.a6-attr a { color: var(--ink-70); }
+.a6-note-sa { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-xs); font-family: var(--font-mono);
+  color: var(--ink-70); border: 1px solid var(--border-mid); border-radius: var(--r-pill); padding: 1px 9px; margin-top: 4px; background: var(--bg-1); }
+
+/* ============ Contenção de altura das imagens reais (algumas são retrato alto) ============ */
+.reading figure.real .real__frame { display: flex; justify-content: center; background: var(--bg-2); }
+.reading figure.real .real__frame img { max-height: 540px; width: auto; max-width: 100%; object-fit: contain; }
+
+/* ============ Sensibilidade — nota de tom do eixo humor ============ */
+.a6-tone { border: 1px dashed var(--border-mid); border-radius: var(--r-md); background: var(--bg-1);
+  padding: var(--sp-3) var(--sp-4); margin: var(--sp-4) 0; font-size: var(--fs-sm); color: var(--ink-70); font-style: italic; }
+.a6-tone strong { color: var(--ink-90); font-style: normal; }

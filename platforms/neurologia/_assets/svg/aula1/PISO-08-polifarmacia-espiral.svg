@@ -1,0 +1,421 @@
+<svg id="p8-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" role="img" aria-label="Espiral crescente da polifarmácia: quatro especialistas somam remédios, interação gera efeito adverso e nova prescrição, ciclo quebrado pela desprescrição.">
+  <style>
+    #p8-root {
+      --bg-color: var(--bg-1, #121212);
+      --panel-bg: var(--bg-2, #1e1e24);
+      --text-primary: var(--ink-100, #ffffff);
+      --text-muted: var(--ink-70, #a0a0b0);
+      --color-coral: var(--kw-red, #ff6b6b);
+      --color-green: var(--kw-green, #51cf66);
+      --color-amber: var(--kw-yellow, #fcc419);
+      --color-cyan: var(--kw-blue, #22b8cf);
+      --border-color: var(--border-1, #3a3a4a);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      user-select: none;
+    }
+    @media (prefers-color-scheme: light) {
+      #p8-root {
+        --bg-color: var(--bg-1, #f8f9fa);
+        --panel-bg: var(--bg-2, #ffffff);
+        --text-primary: var(--ink-100, #212529);
+        --text-muted: var(--ink-70, #495057);
+        --color-coral: var(--kw-red, #e03131);
+        --color-green: var(--kw-green, #2b8a3e);
+        --color-amber: var(--kw-yellow, #f59f00);
+        --color-cyan: var(--kw-blue, #0b7285);
+        --border-color: var(--border-1, #dee2e6);
+      }
+    }
+    #p8-root .p8-bg { fill: var(--bg-color); }
+    #p8-root .p8-card { fill: var(--panel-bg); stroke: var(--border-color); stroke-width: 1.5; }
+    #p8-root .p8-segment { fill: none; stroke: var(--color-coral); transition: stroke-width 0.25s ease, opacity 0.25s ease, stroke 0.25s ease; cursor: pointer; }
+    #p8-root .p8-indicator { transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.25s ease; cursor: pointer; }
+    #p8-root .p8-indicator circle { transition: fill 0.25s ease, stroke 0.25s ease; }
+    #p8-root .p8-indicator text { transition: fill 0.25s ease; }
+    #p8-root .p8-trigger:focus { outline: none; }
+    #p8-root .p8-trigger:focus circle { stroke-width: 3; stroke: var(--color-cyan); }
+    
+    #p8-segment-1 { opacity: 0.5; }
+    #p8-segment-2 { opacity: 0.7; }
+    #p8-segment-3 { opacity: 0.85; }
+    #p8-segment-4 { opacity: 1.0; }
+
+    #p8-root[data-active-step="step1"] #p8-segment-1 { opacity: 1.0; stroke-width: 20; }
+    #p8-root[data-active-step="step1"] .p8-segment:not(#p8-segment-1) { opacity: 0.15; }
+    #p8-root[data-active-step="step1"] #p8-indicator-1 { transform: scale(1.12); }
+    #p8-root[data-active-step="step1"] #p8-indicator-1 circle { fill: var(--color-coral); }
+    #p8-root[data-active-step="step1"] #p8-indicator-1 .p8-ind-num { fill: var(--bg-color); }
+    #p8-root[data-active-step="step1"] .p8-indicator:not(#p8-indicator-1) { opacity: 0.25; }
+
+    #p8-root[data-active-step="step2"] #p8-segment-2 { opacity: 1.0; stroke-width: 26; }
+    #p8-root[data-active-step="step2"] .p8-segment:not(#p8-segment-2) { opacity: 0.15; }
+    #p8-root[data-active-step="step2"] #p8-indicator-2 { transform: scale(1.12); }
+    #p8-root[data-active-step="step2"] #p8-indicator-2 circle { fill: var(--color-coral); }
+    #p8-root[data-active-step="step2"] #p8-indicator-2 .p8-ind-num { fill: var(--bg-color); }
+    #p8-root[data-active-step="step2"] .p8-indicator:not(#p8-indicator-2) { opacity: 0.25; }
+
+    #p8-root[data-active-step="step3"] #p8-segment-3 { opacity: 1.0; stroke-width: 32; }
+    #p8-root[data-active-step="step3"] .p8-segment:not(#p8-segment-3) { opacity: 0.15; }
+    #p8-root[data-active-step="step3"] #p8-indicator-3 { transform: scale(1.12); }
+    #p8-root[data-active-step="step3"] #p8-indicator-3 circle { fill: var(--color-coral); }
+    #p8-root[data-active-step="step3"] #p8-indicator-3 .p8-ind-num { fill: var(--bg-color); }
+    #p8-root[data-active-step="step3"] .p8-indicator:not(#p8-indicator-3) { opacity: 0.25; }
+
+    #p8-root[data-active-step="step4"] #p8-segment-4 { opacity: 1.0; stroke-width: 38; }
+    #p8-root[data-active-step="step4"] .p8-segment:not(#p8-segment-4) { opacity: 0.15; }
+    #p8-root[data-active-step="step4"] #p8-indicator-4 { transform: scale(1.12); }
+    #p8-root[data-active-step="step4"] #p8-indicator-4 circle { fill: var(--color-coral); }
+    #p8-root[data-active-step="step4"] #p8-indicator-4 .p8-ind-num { fill: var(--bg-color); }
+    #p8-root[data-active-step="step4"] .p8-indicator:not(#p8-indicator-4) { opacity: 0.25; }
+
+    #p8-reverse-path { opacity: 0; transition: opacity 0.4s ease; stroke-dasharray: 10, 8; }
+    
+    #p8-root[data-active-step="success"] .p8-segment { stroke: var(--color-green); opacity: 0.2; }
+    #p8-root[data-active-step="success"] .p8-indicator { opacity: 0.25; }
+    #p8-root[data-active-step="success"] #p8-reverse-path { opacity: 1; animation: p8-dash-scroll 2.5s linear infinite; }
+    
+    @keyframes p8-dash-scroll {
+      to {
+        stroke-dashoffset: -100;
+      }
+    }
+
+    #p8-scissors { opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; transform-origin: 240px 280px; }
+    #p8-root[data-active-step="success"] #p8-scissors { opacity: 1; transform: rotate(-30deg); }
+
+    @keyframes p8-pulse-danger {
+      0% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 6px var(--color-coral)); }
+      100% { transform: scale(1); opacity: 0.9; }
+    }
+    #p8-danger-node { transform-origin: 240px 135px; animation: p8-pulse-danger 2s infinite ease-in-out; cursor: pointer; }
+    #p8-root[data-active-step="success"] #p8-danger-node { display: none; }
+    
+    #p8-success-node { opacity: 0; transition: opacity 0.3s ease; }
+    #p8-root[data-active-step="success"] #p8-success-node { opacity: 1; }
+
+    #p8-btn-break { cursor: pointer; transition: transform 0.2s ease, filter 0.2s ease; }
+    #p8-btn-break:hover { transform: scale(1.02); filter: drop-shadow(0 4px 10px rgba(81,207,98,0.25)); }
+    #p8-btn-rect { fill: var(--color-green); transition: fill 0.3s ease; }
+    #p8-btn-text-reset { display: none; }
+    #p8-root[data-active-step="success"] #p8-btn-text-break { display: none; }
+    #p8-root[data-active-step="success"] #p8-btn-text-reset { display: block; }
+    #p8-root[data-active-step="success"] #p8-btn-rect { fill: var(--color-coral); }
+    #p8-root[data-active-step="success"] #p8-btn-break:hover { filter: drop-shadow(0 4px 10px rgba(255,107,107,0.25)); }
+  </style>
+
+  <!-- Background -->
+  <rect class="p8-bg" width="100%" height="100%" />
+
+  <!-- Top Title Area -->
+  <text x="40" y="45" font-size="20" font-weight="bold" fill="var(--text-primary)" letter-spacing="-0.5">A Cascata de Prescrição na Polifarmácia</text>
+  <text x="40" y="68" font-size="12" fill="var(--color-amber)" font-weight="bold" letter-spacing="0.2">ALERTA IATROGÊNICO: Cada novo remédio trata o efeito adverso do anterior e inicia o próximo.</text>
+  <text x="40" y="85" font-size="11" fill="var(--text-muted)">A bola de neve da polifarmácia só é interrompida ao retirar a medicação causal, e não ao adicionar novas drogas.</text>
+
+  <!-- Structural Grid lines (Cyan/Muted) -->
+  <g opacity="0.15">
+    <circle cx="240" cy="320" r="40" fill="none" stroke="var(--color-cyan)" stroke-dasharray="2 4" stroke-width="1" />
+    <circle cx="240" cy="320" r="80" fill="none" stroke="var(--color-cyan)" stroke-dasharray="2 4" stroke-width="1" />
+    <circle cx="240" cy="320" r="120" fill="none" stroke="var(--color-cyan)" stroke-dasharray="2 4" stroke-width="1" />
+    <circle cx="240" cy="320" r="160" fill="none" stroke="var(--color-cyan)" stroke-dasharray="2 4" stroke-width="1" />
+    <line x1="240" y1="140" x2="240" y2="500" stroke="var(--color-cyan)" stroke-dasharray="2 4" stroke-width="1" />
+    <line x1="60" y1="320" x2="420" y2="320" stroke="var(--color-cyan)" stroke-dasharray="2 4" stroke-width="1" />
+  </g>
+
+  <!-- Spiral Cascade Path (Red-Coral) -->
+  <g>
+    <!-- Segment 1: Cardio (Inner) -->
+    <path id="p8-segment-1" class="p8-segment p8-trigger" data-step="1" d="M 240 280 C 290 280, 290 360, 240 360" stroke-width="14" stroke-linecap="round" role="img" aria-label="1. Cardiologista: Anlodipino" />
+    
+    <!-- Segment 2: Vascular -->
+    <path id="p8-segment-2" class="p8-segment p8-trigger" data-step="2" d="M 240 360 C 160 360, 160 240, 240 240" stroke-width="20" stroke-linecap="round" role="img" aria-label="2. Cirurgião Vascular: Furosemida" />
+    
+    <!-- Segment 3: Orto -->
+    <path id="p8-segment-3" class="p8-segment p8-trigger" data-step="3" d="M 240 240 C 360 240, 360 400, 240 400" stroke-width="26" stroke-linecap="round" role="img" aria-label="3. Ortopedista: Cetoprofeno" />
+    
+    <!-- Segment 4: Gastro (Outer) -->
+    <path id="p8-segment-4" class="p8-segment p8-trigger" data-step="4" d="M 240 400 C 80 400, 80 160, 240 160" stroke-width="32" stroke-linecap="round" role="img" aria-label="4. Gastroenterologista: Omeprazol" />
+
+    <!-- Green Reverse Path (Dotted desprescrição flow) -->
+    <path id="p8-reverse-path" d="M 240 160 C 80 160, 80 400, 240 400 C 360 400, 360 240, 240 240 C 160 240, 160 360, 240 360 C 290 360, 290 280, 240 280" fill="none" stroke="var(--color-green)" stroke-width="6" stroke-linecap="round" />
+  </g>
+
+  <!-- Interactive Stations / Indicators (Alternating Sides) -->
+  <g>
+    <!-- Station 1 (Right) -->
+    <g id="p8-indicator-1" class="p8-indicator p8-trigger" data-step="1" tabindex="0" role="button" aria-label="Cardiologista: Anlodipino">
+      <circle cx="310" cy="320" r="16" fill="var(--panel-bg)" stroke="var(--color-coral)" stroke-width="2" />
+      <text x="310" y="325" font-size="13" font-weight="bold" fill="var(--color-coral)" text-anchor="middle" class="p8-ind-num">1</text>
+      <text x="310" y="348" font-size="9" fill="var(--text-muted)" text-anchor="middle" font-weight="bold">CARDIO</text>
+      <text x="310" y="360" font-size="10" fill="var(--color-coral)" text-anchor="middle" font-weight="bold">Anlodipino</text>
+    </g>
+
+    <!-- Station 2 (Left) -->
+    <g id="p8-indicator-2" class="p8-indicator p8-trigger" data-step="2" tabindex="0" role="button" aria-label="Cirurgião Vascular: Furosemida">
+      <circle cx="140" cy="300" r="16" fill="var(--panel-bg)" stroke="var(--color-coral)" stroke-width="2" />
+      <text x="140" y="305" font-size="13" font-weight="bold" fill="var(--color-coral)" text-anchor="middle" class="p8-ind-num">2</text>
+      <text x="140" y="328" font-size="9" fill="var(--text-muted)" text-anchor="middle" font-weight="bold">VASCULAR</text>
+      <text x="140" y="340" font-size="10" fill="var(--color-coral)" text-anchor="middle" font-weight="bold">Furosemida</text>
+    </g>
+
+    <!-- Station 3 (Right) -->
+    <g id="p8-indicator-3" class="p8-indicator p8-trigger" data-step="3" tabindex="0" role="button" aria-label="Ortopedista: Cetoprofeno">
+      <circle cx="365" cy="320" r="16" fill="var(--panel-bg)" stroke="var(--color-coral)" stroke-width="2" />
+      <text x="365" y="325" font-size="13" font-weight="bold" fill="var(--color-coral)" text-anchor="middle" class="p8-ind-num">3</text>
+      <text x="365" y="348" font-size="9" fill="var(--text-muted)" text-anchor="middle" font-weight="bold">ORTO</text>
+      <text x="365" y="360" font-size="10" fill="var(--color-coral)" text-anchor="middle" font-weight="bold">Cetoprofeno</text>
+    </g>
+
+    <!-- Station 4 (Left) -->
+    <g id="p8-indicator-4" class="p8-indicator p8-trigger" data-step="4" tabindex="0" role="button" aria-label="Gastroenterologista: Omeprazol">
+      <circle cx="75" cy="280" r="16" fill="var(--panel-bg)" stroke="var(--color-coral)" stroke-width="2" />
+      <text x="75" y="285" font-size="13" font-weight="bold" fill="var(--color-coral)" text-anchor="middle" class="p8-ind-num">4</text>
+      <text x="75" y="308" font-size="9" fill="var(--text-muted)" text-anchor="middle" font-weight="bold">GASTRO</text>
+      <text x="75" y="320" font-size="10" fill="var(--color-coral)" text-anchor="middle" font-weight="bold">Omeprazol</text>
+    </g>
+  </g>
+
+  <!-- Danger Endpoint Node -->
+  <g id="p8-danger-node" class="p8-trigger" data-step="4" tabindex="0" role="button" aria-label="Desfecho Crítico: Queda e Risco de Morte">
+    <path d="M 240 120 L 255 146 L 225 146 Z" fill="var(--color-coral)" stroke="var(--bg-color)" stroke-width="2" />
+    <text x="240" y="141" font-size="13" font-weight="bold" fill="var(--bg-color)" text-anchor="middle">!</text>
+    <text x="240" y="110" font-size="10" fill="var(--color-coral)" text-anchor="middle" font-weight="bold">QUEDAS / FRATURA</text>
+  </g>
+
+  <!-- Scissors Icon at Root (Resolving point) -->
+  <g id="p8-scissors" stroke="var(--color-green)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="230" cy="275" r="4" stroke-width="2" />
+    <circle cx="250" cy="275" r="4" stroke-width="2" />
+    <line x1="234" y1="277" x2="246" y2="290" stroke-width="2" />
+    <line x1="246" y1="277" x2="234" y2="290" stroke-width="2" />
+    <text x="240" y="260" font-size="9" font-weight="bold" fill="var(--color-green)" text-anchor="middle">REVERSÃO DA RAIZ</text>
+  </g>
+
+  <!-- Success Indicator Node -->
+  <g id="p8-success-node">
+    <circle cx="240" cy="320" r="22" fill="var(--color-green)" stroke="var(--bg-color)" stroke-width="2" />
+    <path d="M 232 320 L 237 325 L 249 313" fill="none" stroke="var(--bg-color)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="240" y="290" font-size="10" fill="var(--color-green)" text-anchor="middle" font-weight="bold">SISTEMA SEGURO</text>
+  </g>
+
+  <!-- Right Reading Panel (Card) -->
+  <g transform="translate(470, 110)">
+    <rect class="p8-card" width="300" height="450" rx="12" />
+    
+    <!-- Default Text Container -->
+    <g id="p8-panel-default" class="p8-panel-content">
+      <text x="20" y="40" font-size="17" font-weight="bold" fill="var(--color-cyan)">CASCATA DE PRESCRIÇÃO</text>
+      
+      <text x="20" y="80" font-size="13" font-weight="bold" fill="var(--text-primary)">Como a Polifarmácia se instala:</text>
+      <text x="20" y="105" font-size="12" fill="var(--text-muted)">A iatrogenia ocorre quando o efeito colateral</text>
+      <text x="20" y="125" font-size="12" fill="var(--text-muted)">de um fármaco é mal interpretado como uma</text>
+      <text x="20" y="145" font-size="12" fill="var(--text-muted)">nova condição médica, gerando prescrição.</text>
+      
+      <text x="20" y="195" font-size="13" font-weight="bold" fill="var(--text-primary)">Instrução de Interação:</text>
+      <text x="20" y="220" font-size="12" fill="var(--text-muted)">• Passe o mouse (ou toque) nos números</text>
+      <text x="20" y="240" font-size="12" fill="var(--text-muted)">  1 a 4 da espiral para ver cada etapa.</text>
+      <text x="20" y="260" font-size="12" fill="var(--text-muted)">• Observe como cada nova droga gera um</text>
+      <text x="20" y="280" font-size="12" fill="var(--text-muted)">  efeito adverso tratado pelo próximo médico.</text>
+      
+      <text x="20" y="330" font-size="13" font-weight="bold" fill="var(--color-amber)">Ruptura Necessária:</text>
+      <text x="20" y="355" font-size="12" fill="var(--text-muted)">Clique no botão "DESPRESCREVER" abaixo</text>
+      <text x="20" y="375" font-size="12" fill="var(--text-muted)">para simular o diagnóstico correto e quebrar</text>
+      <text x="20" y="395" font-size="12" fill="var(--text-muted)">esta progressão de riscos perigosos.</text>
+    </g>
+
+    <!-- Panel Step 1 -->
+    <g id="p8-panel-step1" class="p8-panel-content">
+      <text x="20" y="40" font-size="17" font-weight="bold" fill="var(--color-coral)">1. CARDIOLOGISTA</text>
+      
+      <text x="20" y="80" font-size="13" font-weight="bold" fill="var(--text-primary)">Prescrição Inicial:</text>
+      <text x="20" y="105" font-size="12" fill="var(--text-muted)">Anlodipino 10mg / dia</text>
+      <text x="20" y="125" font-size="12" fill="var(--text-muted)">Indicação: Controle de Hipertensão Arterial</text>
+      
+      <text x="20" y="175" font-size="13" font-weight="bold" fill="var(--color-coral)">Efeito Adverso Gerado:</text>
+      <text x="20" y="200" font-size="12" font-weight="bold" fill="var(--color-coral)">Edema Maleolar bilateral (inchaço local)</text>
+      
+      <text x="20" y="245" font-size="13" font-weight="bold" fill="var(--color-cyan)">Mecanismo Fisiopatológico:</text>
+      <text x="20" y="270" font-size="12" fill="var(--text-muted)">Bloqueador de canais de cálcio relaxa a</text>
+      <text x="20" y="290" font-size="12" fill="var(--text-muted)">musculatura lisa das arteríolas pré-capilares,</text>
+      <text x="20" y="310" font-size="12" fill="var(--text-muted)">mas não das pós-capilares. O gradiente de</text>
+      <text x="20" y="330" font-size="12" fill="var(--text-muted)">pressão hidrostática capilar aumenta, forçando</text>
+      <text x="20" y="350" font-size="12" fill="var(--text-muted)">a saída de plasma para o espaço intersticial.</text>
+      
+      <text x="20" y="400" font-size="11" fill="var(--color-amber)" font-weight="bold">ERRO: Diagnosticar insuficiência vascular local.</text>
+    </g>
+
+    <!-- Panel Step 2 -->
+    <g id="p8-panel-step2" class="p8-panel-content">
+      <text x="20" y="40" font-size="17" font-weight="bold" fill="var(--color-coral)">2. CIRURGIÃO VASCULAR</text>
+      
+      <text x="20" y="80" font-size="13" font-weight="bold" fill="var(--text-primary)">Prescrição Adicionada:</text>
+      <text x="20" y="105" font-size="12" fill="var(--text-muted)">Furosemida 40mg / dia</text>
+      <text x="20" y="125" font-size="12" fill="var(--text-muted)">Indicação Incorreta: Tratar edema ("retenção")</text>
+      
+      <text x="20" y="175" font-size="13" font-weight="bold" fill="var(--color-coral)">Efeito Adverso Gerado:</text>
+      <text x="20" y="200" font-size="12" font-weight="bold" fill="var(--color-coral)">Depleção de Potássio e Cãibras intensas</text>
+      
+      <text x="20" y="245" font-size="13" font-weight="bold" fill="var(--color-cyan)">Mecanismo Fisiopatológico:</text>
+      <text x="20" y="270" font-size="12" fill="var(--text-muted)">Diurético de alça bloqueia o cotransportador</text>
+      <text x="20" y="290" font-size="12" fill="var(--text-muted)">Na-K-2Cl no ramo ascendente de Henle.</text>
+      <text x="20" y="310" font-size="12" fill="var(--text-muted)">Isso induz perda maciça de água, sódio</text>
+      <text x="20" y="330" font-size="12" fill="var(--text-muted)">e potássio. A hipopotassemia instabiliza o</text>
+      <text x="20" y="350" font-size="12" fill="var(--text-muted)">limiar dos miócitos, gerando espasmos musculares.</text>
+      
+      <text x="20" y="400" font-size="11" fill="var(--color-amber)" font-weight="bold">ERRO: Tentar "secar" um edema de vasodilatação.</text>
+    </g>
+
+    <!-- Panel Step 3 -->
+    <g id="p8-panel-step3" class="p8-panel-content">
+      <text x="20" y="40" font-size="17" font-weight="bold" fill="var(--color-coral)">3. ORTOPEDISTA</text>
+      
+      <text x="20" y="80" font-size="13" font-weight="bold" fill="var(--text-primary)">Prescrição Adicionada:</text>
+      <text x="20" y="105" font-size="12" fill="var(--text-muted)">Cetoprofeno 100mg / dia (AINE)</text>
+      <text x="20" y="125" font-size="12" fill="var(--text-muted)">Indicação: Tratar dor e cãibras nos membros</text>
+      
+      <text x="20" y="175" font-size="13" font-weight="bold" fill="var(--color-coral)">Efeito Adverso Gerado:</text>
+      <text x="20" y="200" font-size="12" font-weight="bold" fill="var(--color-coral)">Gastrite, Lesão de Mucosa e Elevação da PA</text>
+      
+      <text x="20" y="245" font-size="13" font-weight="bold" fill="var(--color-cyan)">Mecanismo Fisiopatológico:</text>
+      <text x="20" y="270" font-size="12" fill="var(--text-muted)">O anti-inflamatório inibe a COX-1, reduzindo</text>
+      <text x="20" y="290" font-size="12" fill="var(--text-muted)">a síntese de prostaglandinas protetoras</text>
+      <text x="20" y="310" font-size="12" fill="var(--text-muted)">da barreira gástrica. Adicionalmente, a inibição</text>
+      <text x="20" y="330" font-size="12" fill="var(--text-muted)">da COX-2 renal retém sódio e água, anulando</text>
+      <text x="20" y="350" font-size="12" fill="var(--text-muted)">totalmente o efeito hipotensor do Anlodipino.</text>
+    </g>
+
+    <!-- Panel Step 4 -->
+    <g id="p8-panel-step4" class="p8-panel-content">
+      <text x="20" y="40" font-size="17" font-weight="bold" fill="var(--color-coral)">4. GASTROENTEROLOGISTA</text>
+      
+      <text x="20" y="80" font-size="13" font-weight="bold" fill="var(--text-primary)">Prescrição Adicionada:</text>
+      <text x="20" y="105" font-size="12" fill="var(--text-muted)">Omeprazol 20mg / dia (IBP)</text>
+      <text x="20" y="125" font-size="12" fill="var(--text-muted)">Indicação: Tratar azia/queimação secundária</text>
+      
+      <text x="20" y="175" font-size="13" font-weight="bold" fill="var(--color-coral)">Desfecho Crítico da Polifarmácia:</text>
+      <text x="20" y="200" font-size="12" font-weight="bold" fill="var(--color-coral)">Má absorção de B12, Tontura e Quedas</text>
+      
+      <text x="20" y="245" font-size="13" font-weight="bold" fill="var(--color-cyan)">Mecanismo Fisiopatológico:</text>
+      <text x="20" y="270" font-size="12" fill="var(--text-muted)">A hipocloridria induzida por IBP crônico</text>
+      <text x="20" y="290" font-size="12" fill="var(--text-muted)">impede a clivagem alimentar de Cobalamina (B12),</text>
+      <text x="20" y="310" font-size="12" fill="var(--text-muted)">gerando neuropatia. A hipotensão postural somada</text>
+      <text x="20" y="330" font-size="12" fill="var(--text-muted)">ao desgaste neurológico eleva drasticamente</text>
+      <text x="20" y="350" font-size="12" fill="var(--text-muted)">o risco de fratura grave por queda no idoso.</text>
+    </g>
+
+    <!-- Panel Step Success -->
+    <g id="p8-panel-success" class="p8-panel-content">
+      <text x="20" y="40" font-size="17" font-weight="bold" fill="var(--color-green)">DESPRESCRIÇÃO CONSCIENTE</text>
+      
+      <text x="20" y="80" font-size="13" font-weight="bold" fill="var(--color-green)">Conduta Recomendada:</text>
+      <text x="20" y="105" font-size="12" fill="var(--text-primary)" font-weight="bold">1. Interrupção na Origem:</text>
+      <text x="20" y="125" font-size="12" fill="var(--text-muted)">Reconhecer que o edema é efeito adverso</text>
+      <text x="20" y="145" font-size="12" fill="var(--text-muted)">do Anlodipino. Substituir por IECA ou ARA-II.</text>
+      
+      <text x="20" y="185" font-size="12" fill="var(--text-primary)" font-weight="bold">2. Desmoronamento da Cascata:</text>
+      <text x="20" y="205" font-size="12" fill="var(--text-muted)">• O edema desaparece rapidamente.</text>
+      <text x="20" y="225" font-size="12" fill="var(--text-muted)">• Furosemida é suspensa (potássio normaliza).</text>
+      <text x="20" y="245" font-size="12" fill="var(--text-muted)">• Cãibras acabam, permitindo tirar o Cetoprofeno.</text>
+      <text x="20" y="265" font-size="12" fill="var(--text-muted)">• Mucosa gástrica cicatriza, tirando o Omeprazol.</text>
+      
+      <text x="20" y="305" font-size="13" font-weight="bold" fill="var(--color-cyan)">Resultado da Intervenção:</text>
+      <text x="20" y="330" font-size="12" fill="var(--text-muted)">O idoso é restaurado ao estado original.</text>
+      <text x="20" y="350" font-size="12" fill="var(--text-muted)">De 4 substâncias acumulando riscos graves,</text>
+      <text x="20" y="370" font-size="12" fill="var(--text-muted)">retorna-se a apenas 1 fármaco correto.</text>
+      
+      <text x="20" y="410" font-size="11" fill="var(--color-green)" font-weight="bold">CONCLUSÃO: Desprescrever salva mais que acrescentar.</text>
+    </g>
+  </g>
+
+  <!-- Interactive Action Button (Quebrar o ciclo / Desprescrever) -->
+  <g id="p8-btn-break" transform="translate(80, 480)" tabindex="0" role="button" aria-label="Quebrar o ciclo e aplicar a desprescrição consciente">
+    <rect id="p8-btn-rect" width="320" height="46" rx="23" />
+    <text id="p8-btn-text-break" x="160" y="28" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">QUEBRAR O CICLO (DESPRESCREVER)</text>
+    <text id="p8-btn-text-reset" x="160" y="28" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">REINICIAR SIMULAÇÃO</text>
+  </g>
+
+  <!-- Interactive Script -->
+  <script>
+    <![CDATA[
+    (function() {
+      function init() {
+        const root = document.getElementById("p8-root");
+        if (!root) return;
+        if (root.hasAttribute("data-js-initialized")) return;
+        root.setAttribute("data-js-initialized", "true");
+
+        const steps = root.querySelectorAll(".p8-trigger");
+        const button = root.getElementById("p8-btn-break");
+        
+        function setStep(stepVal) {
+          root.setAttribute("data-active-step", stepVal);
+          
+          const panels = root.querySelectorAll(".p8-panel-content");
+          panels.forEach(p => {
+            if (p.id === "p8-panel-" + stepVal) {
+              p.style.opacity = "1";
+              p.style.visibility = "visible";
+              p.style.transform = "translateY(0)";
+            } else {
+              p.style.opacity = "0";
+              p.style.visibility = "hidden";
+              p.style.transform = "translateY(10px)";
+            }
+          });
+        }
+
+        // Initialize state
+        setStep("default");
+
+        steps.forEach(el => {
+          const stepNum = el.getAttribute("data-step");
+          
+          el.addEventListener("mouseenter", () => {
+            if (root.getAttribute("data-active-step") !== "success") {
+              setStep("step" + stepNum);
+            }
+          });
+
+          el.addEventListener("mouseleave", () => {
+            if (root.getAttribute("data-active-step") !== "success") {
+              setStep("default");
+            }
+          });
+
+          el.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setStep("step" + stepNum);
+            }
+          });
+        });
+
+        if (button) {
+          button.addEventListener("click", () => {
+            const current = root.getAttribute("data-active-step");
+            if (current === "success") {
+              setStep("default");
+            } else {
+              setStep("success");
+            }
+          });
+
+          button.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              button.click();
+            }
+          });
+        }
+      }
+
+      try {
+        init();
+      } catch(e) { console.error(e); }
+      document.addEventListener("DOMContentLoaded", () => {
+        try { init(); } catch(e) {}
+      });
+    })();
+    ]]>
+  </script>
+</svg>

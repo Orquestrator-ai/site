@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%" id="a12p10h-root" class="a12p10h-root">
+  <defs>
+    <style type="text/css">
+      /* <![CDATA[ */
+      /* Namespace: a12p10h- */
+      .a12p10h-root {
+        --a12p10h-bg: #14050e;
+        --a12p10h-card-bg: #220b18;
+        --a12p10h-card-border: #441832;
+        --a12p10h-card-header: #2e0e22;
+        --a12p10h-text-main: #f8f9fa;
+        --a12p10h-text-sub: #d0b8c8;
+        --a12p10h-text-muted: #9e7a90;
+        
+        --a12p10h-bone-fill: #2c1022;
+        --a12p10h-bone-stroke: #6b2850;
+        --a12p10h-bone-inner: #421834;
+        --a12p10h-bone-highlight: #e05297;
+
+        --a12p10h-spine-color: #00f5d4;
+        --a12p10h-tuber-color: #ff9f1c;
+        --a12p10h-ligament-spino: #ff0054;
+        --a12p10h-ligament-tubero: #9d4edd;
+        --a12p10h-nerve-color: #ffe600;
+        --a12p10h-plane-zero: #3a86ff;
+        
+        --a12p10h-green-normal: #2ec4b6;
+        --a12p10h-yellow-warn: #ffb703;
+        --a12p10h-red-alert: #ff0054;
+        
+        --a12p10h-btn-bg: #341227;
+        --a12p10h-btn-active: #ff0054;
+        --a12p10h-btn-text: #ffffff;
+        
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--a12p10h-bg, #14050e);
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      [data-theme="light"] .a12p10h-root,
+      .a12p10h-root[data-theme="light"] {
+        --a12p10h-bg: #fcf6f9;
+        --a12p10h-card-bg: #ffffff;
+        --a12p10h-card-border: #e2c4d5;
+        --a12p10h-card-header: #f4e8f0;
+        --a12p10h-text-main: #2b091e;
+        --a12p10h-text-sub: #5c2747;
+        --a12p10h-text-muted: #8c5b78;
+
+        --a12p10h-bone-fill: #f3e6ed;
+        --a12p10h-bone-stroke: #a85f88;
+        --a12p10h-bone-inner: #e6d0de;
+        --a12p10h-bone-highlight: #702652;
+
+        --a12p10h-spine-color: #008f7a;
+        --a12p10h-tuber-color: #d97706;
+        --a12p10h-ligament-spino: #d00000;
+        --a12p10h-ligament-tubero: #7b2cbf;
+        --a12p10h-nerve-color: #b58900;
+        --a12p10h-plane-zero: #023e8a;
+
+        --a12p10h-green-normal: #0f9f90;
+        --a12p10h-yellow-warn: #b58900;
+        --a12p10h-red-alert: #d00000;
+
+        --a12p10h-btn-bg: #eedbe6;
+        --a12p10h-btn-active: #b8003c;
+        --a12p10h-btn-text: #2b091e;
+      }
+
+      .a12p10h-title {
+        fill: var(--a12p10h-text-main, #f8f9fa);
+        font-size: 19px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+      .a12p10h-subtitle {
+        fill: var(--a12p10h-spine-color, #00f5d4);
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .a12p10h-legend-text {
+        fill: var(--a12p10h-text-sub, #d0b8c8);
+        font-size: 11px;
+      }
+
+      .a12p10h-card {
+        fill: var(--a12p10h-card-bg, #220b18);
+        stroke: var(--a12p10h-card-border, #441832);
+        stroke-width: 1.5;
+        rx: 10px;
+      }
+      .a12p10h-card-head {
+        fill: var(--a12p10h-card-header, #2e0e22);
+        rx: 8px;
+      }
+
+      /* Anatomical paths */
+      .a12p10h-bone {
+        fill: var(--a12p10h-bone-fill, #2c1022);
+        stroke: var(--a12p10h-bone-stroke, #6b2850);
+        stroke-width: 2;
+        transition: all 0.3s ease;
+      }
+      .a12p10h-bone-shadow {
+        fill: var(--a12p10h-bone-inner, #421834);
+        opacity: 0.6;
+      }
+      .a12p10h-spine-highlight {
+        fill: var(--a12p10h-spine-color, #00f5d4);
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        filter: drop-shadow(0px 0px 6px var(--a12p10h-spine-color, #00f5d4));
+        transition: all 0.3s ease;
+      }
+      .a12p10h-tuber-highlight {
+        fill: var(--a12p10h-tuber-color, #ff9f1c);
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        filter: drop-shadow(0px 0px 6px var(--a12p10h-tuber-color, #ff9f1c));
+        transition: all 0.3s ease;
+      }
+      .a12p10h-ligament-sp {
+        stroke: var(--a12p10h-ligament-spino, #ff0054);
+        stroke-width: 3.5;
+        stroke-dasharray: 6 3;
+        fill: none;
+      }
+      .a12p10h-ligament-tb {
+        stroke: var(--a12p10h-ligament-tubero, #9d4edd);
+        stroke-width: 4;
+        fill: none;
+      }
+      .a12p10h-nerve {
+        stroke: var(--a12p10h-nerve-color, #ffe600);
+        stroke-width: 2.5;
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      .a12p10h-callout-line {
+        stroke-width: 1.5;
+        stroke-dasharray: 4 3;
+      }
+
+      /* Buttons & Tabs */
+      .a12p10h-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .a12p10h-btn rect {
+        fill: var(--a12p10h-btn-bg, #341227);
+        stroke: var(--a12p10h-card-border, #441832);
+        stroke-width: 1.5;
+        rx: 6px;
+      }
+      .a12p10h-btn text {
+        fill: var(--a12p10h-text-main, #f8f9fa);
+        font-size: 11px;
+        font-weight: 600;
+        text-anchor: middle;
+      }
+      .a12p10h-btn:hover rect {
+        stroke: var(--a12p10h-spine-color, #00f5d4);
+        filter: brightness(1.2);
+      }
+      .a12p10h-btn.active rect {
+        fill: var(--a12p10h-btn-active, #ff0054);
+        stroke: #ffffff;
+      }
+      .a12p10h-btn.active text {
+        fill: #ffffff;
+        font-weight: 700;
+      }
+
+      /* Hotspots */
+      .a12p10h-hotspot {
+        cursor: pointer;
+      }
+      .a12p10h-hotspot-circle {
+        fill-opacity: 0.25;
+        stroke-width: 2;
+        transition: all 0.25s ease;
+      }
+      .a12p10h-hotspot:hover .a12p10h-hotspot-circle {
+        fill-opacity: 0.55;
+        r: 18;
+      }
+
+      /* Tooltip */
+      .a12p10h-tooltip {
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      .a12p10h-tooltip rect {
+        fill: #0c0208;
+        stroke: var(--a12p10h-spine-color, #00f5d4);
+        stroke-width: 1.5;
+        rx: 5px;
+      }
+      .a12p10h-tooltip text {
+        fill: #ffffff;
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .a12p10h-badge {
+        rx: 4px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      /* Visibility toggles */
+      .a12p10h-view-group {
+        transition: opacity 0.3s ease;
+      }
+      .a12p10h-hidden {
+        opacity: 0.15;
+        pointer-events: none;
+      }
+      /* ]]> */
+    </style>
+    
+    <filter id="a12p10h-glow-spine" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="a12p10h-glow-tuber" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <marker id="a12p10h-arrow-spine" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--a12p10h-spine-color, #00f5d4)" />
+    </marker>
+    <marker id="a12p10h-arrow-tuber" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--a12p10h-tuber-color, #ff9f1c)" />
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND BASE -->
+  <rect x="0" y="0" width="1000" height="700" fill="var(--a12p10h-bg, #14050e)" rx="12" />
+
+  <!-- HEADER CONTRACT -->
+  <g transform="translate(25, 20)">
+    <text x="0" y="20" class="a12p10h-title">ASSOALHO PÉLVICO &amp; DIÂMETROS OBSTÉTRICOS</text>
+    <text x="0" y="38" class="a12p10h-subtitle">Diferenciação Anatômico-Clínica: Espinha Isquiática vs. Tuberosidade Isquiática (P10)</text>
+    
+    <!-- LEGENDA DE INTERPRETAÇÃO -->
+    <rect x="0" y="46" width="950" height="24" rx="4" fill="var(--a12p10h-card-bg, #220b18)" stroke="var(--a12p10h-card-border, #441832)" stroke-width="1"/>
+    <text x="12" y="62" class="a12p10h-legend-text">
+      <tspan font-weight="700" fill="var(--a12p10h-green-normal, #2ec4b6)">CONCLUSÃO PRÁTICA:</tspan>
+      A <tspan fill="var(--a12p10h-spine-color, #00f5d4)" font-weight="700">espinha (bico interno, 10,5 cm)</tspan> marca o <tspan font-weight="700">Estreito Médio</tspan> e o <tspan font-weight="700">Plano 0 de De Lee</tspan>; a <tspan fill="var(--a12p10h-tuber-color, #ff9f1c)" font-weight="700">tuberosidade (bloco rombo, 11,0 cm)</tspan> marca a <tspan font-weight="700">saída pélvica (Estreito Inferior)</tspan>.
+    </text>
+  </g>
+
+  <!-- LEFT PANEL: ANATOMICAL STAGE -->
+  <g transform="translate(25, 98)">
+    <rect x="0" y="0" width="530" height="520" class="a12p10h-card" />
+    <path d="M 0 0 L 530 0 L 530 32 L 0 32 Z" class="a12p10h-card-head" />
+    <text x="15" y="21" fill="var(--a12p10h-text-main, #f8f9fa)" font-size="12" font-weight="700">VISÃO ANATÔMICA MEDIAL / CORONAL DA HEMIPELVE</text>
+    <text x="430" y="21" fill="var(--a12p10h-text-muted, #9e7a90)" font-size="10" font-weight="600">INTERATIVO (TOQUE)</text>
+
+    <!-- PELVIC BONY STRUCTURE (Realistic Vector Anatomy) -->
+    <g id="a12p10h-pelvis-bone" class="a12p10h-view-group">
+      <!-- Sacrum &amp; Coccyx -->
+      <path d="M 120 70 Q 150 90 160 140 Q 165 180 155 230 Q 148 260 135 285 L 125 280 Q 138 255 143 228 Q 150 180 145 140 Q 135 100 110 80 Z" fill="var(--a12p10h-bone-shadow, #421834)" stroke="var(--a12p10h-bone-stroke, #6b2850)" stroke-width="1.5" />
+      <text x="95" y="150" fill="var(--a12p10h-text-muted, #9e7a90)" font-size="10" font-weight="600">Sacro</text>
+
+      <!-- Ilium Wing -->
+      <path d="M 160 75 C 220 50 320 60 370 100 C 400 130 380 170 340 185 C 290 200 220 180 175 145 C 160 120 155 90 160 75 Z" class="a12p10h-bone" />
+      <path d="M 190 90 C 240 75 310 82 350 110 C 370 130 355 155 320 165 C 275 178 215 160 185 135 Z" class="a12p10h-bone-shadow" />
+
+      <!-- Ischium &amp; Pubis Main Body -->
+      <path d="M 230 190 C 270 210 330 230 320 280 C 310 320 270 330 250 370 C 240 390 230 430 200 450 C 170 470 130 450 120 420 C 110 385 140 345 170 340 C 195 335 220 350 225 385 C 230 410 200 425 180 410 C 170 400 175 385 190 380 C 200 378 205 388 198 395 Z" class="a12p10h-bone" />
+               
+      <!-- Acetabulum &amp; Obturator Foramen Contour -->
+      <path d="M 240 220 Q 300 240 270 300 Q 230 340 200 300 Q 210 250 240 220 Z" fill="var(--a12p10h-bg, #14050e)" stroke="var(--a12p10h-bone-stroke, #6b2850)" stroke-width="1.5" />
+      <text x="225" y="275" fill="var(--a12p10h-text-muted, #9e7a90)" font-size="9" font-weight="600">Forame Obturado</text>
+
+      <!-- OPPOSITE PELVIC CONTOUR (FOR 3D DIAMETER LINES) -->
+      <path d="M 390 200 Q 430 250 420 340 Q 410 400 370 440" fill="none" stroke="var(--a12p10h-bone-stroke, #6b2850)" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6" />
+      
+      <!-- LIGAMENTS -->
+      <!-- Sacrospinous Ligament (Sacro -> Espinha Isquiática) -->
+      <path id="a12p10h-path-lig-sp" d="M 140 250 L 255 340" class="a12p10h-ligament-sp" />
+      
+      <!-- Sacrotuberous Ligament (Sacro -> Tuberosidade Isquiática) -->
+      <path id="a12p10h-path-lig-tb" d="M 145 220 L 160 440" class="a12p10h-ligament-tb" />
+
+      <!-- PUDENDAL NERVE &amp; VESSELS (Passing behind spine) -->
+      <g id="a12p10h-pudendal-nerve-group">
+        <path d="M 170 270 Q 240 320 252 342 Q 258 355 245 370 Q 220 380 200 395" class="a12p10h-nerve" />
+        <path d="M 175 265 Q 242 315 254 338 Q 260 352 248 367" stroke="#ff4d6d" stroke-width="1.5" fill="none" />
+      </g>
+
+      <!-- SPECIFIC LANDMARKS: ESPINHA &amp; TUBEROSIDADE -->
+      <!-- 1. Espinha Isquiática (Bico Pointed Projection) -->
+      <path id="a12p10h-shape-spine" d="M 240 325 L 268 340 L 245 355 Z" class="a12p10h-spine-highlight" filter="url(#a12p10h-glow-spine)" />
+      
+      <!-- 2. Tuberosidade Isquiática (Bloco Rombo Rugoso) -->
+      <path id="a12p10h-shape-tuber" d="M 130 425 C 120 455 160 475 195 455 C 215 440 190 420 160 422 Z" class="a12p10h-tuber-highlight" filter="url(#a12p10h-glow-tuber)" />
+    </g>
+
+    <!-- OBSTETRIC DIAMETERS &amp; PLANES OVERLAYS -->
+    <!-- Estreito Médio Line (Diâmetro Biespinha: 10.5 cm) -->
+    <g id="a12p10h-line-biespinha" class="a12p10h-view-group">
+      <line x1="268" y1="340" x2="420" y2="340" stroke="var(--a12p10h-spine-color, #00f5d4)" stroke-width="2.5" stroke-dasharray="6 3" marker-start="url(#a12p10h-arrow-spine)" marker-end="url(#a12p10h-arrow-spine)" />
+      
+      <!-- De Lee Plane 0 Horizontal Guide Line -->
+      <line x1="40" y1="340" x2="480" y2="340" stroke="var(--a12p10h-plane-zero, #3a86ff)" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.8" />
+      <rect x="42" y="325" width="105" height="18" rx="3" fill="var(--a12p10h-plane-zero, #3a86ff)" />
+      <text x="94" y="338" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">PLANO 0 DE DE LEE</text>
+
+      <rect x="310" y="323" width="95" height="22" rx="4" fill="#000000" stroke="var(--a12p10h-spine-color, #00f5d4)" stroke-width="1.5" />
+      <text x="357" y="338" fill="var(--a12p10h-spine-color, #00f5d4)" font-size="11" font-weight="800" text-anchor="middle">10,5 cm (Biespinha)</text>
+    </g>
+
+    <!-- Estreito Inferior Line (Diâmetro Bituberoso: 11.0 cm) -->
+    <g id="a12p10h-line-bituberoso" class="a12p10h-view-group">
+      <line x1="160" y1="450" x2="370" y2="440" stroke="var(--a12p10h-tuber-color, #ff9f1c)" stroke-width="2.5" stroke-dasharray="6 3" marker-start="url(#a12p10h-arrow-tuber)" marker-end="url(#a12p10h-arrow-tuber)" />
+      
+      <rect x="230" y="445" width="105" height="22" rx="4" fill="#000000" stroke="var(--a12p10h-tuber-color, #ff9f1c)" stroke-width="1.5" />
+      <text x="282" y="460" fill="var(--a12p10h-tuber-color, #ff9f1c)" font-size="11" font-weight="800" text-anchor="middle">11,0 cm (Bituberoso)</text>
+    </g>
+
+    <!-- SIMULATOR FETAL PRESENTATION MARKER (Interactive De Lee Descent) -->
+    <g id="a12p10h-fetal-head" transform="translate(340, 340)" class="a12p10h-view-group">
+      <circle r="22" fill="#ff4d6d" fill-opacity="0.25" stroke="#ff4d6d" stroke-width="2" stroke-dasharray="4 2" />
+      <circle r="4" fill="#ffffff" />
+      <line x1="-15" y1="0" x2="15" y2="0" stroke="#ffffff" stroke-width="1" />
+      <line x1="0" y1="-15" x2="0" y2="15" stroke="#ffffff" stroke-width="1" />
+      <rect x="25" y="-10" width="85" height="20" rx="4" fill="#11030c" stroke="#ff4d6d" stroke-width="1" />
+      <text id="a12p10h-fetal-label" x="67" y="4" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">Apresentação: 0 cm</text>
+    </g>
+
+    <!-- CALLOUT LABELS (NEVER CROSSING SHAPES) -->
+    <!-- Spine Callout -->
+    <g transform="translate(360, 260)">
+      <line x1="-92" y1="80" x2="-20" y2="0" stroke="var(--a12p10h-spine-color, #00f5d4)" class="a12p10h-callout-line" />
+      <circle cx="-92" cy="80" r="3" fill="var(--a12p10h-spine-color, #00f5d4)" />
+      <rect x="-18" y="-14" width="155" height="42" rx="6" fill="var(--a12p10h-card-bg, #220b18)" stroke="var(--a12p10h-spine-color, #00f5d4)" stroke-width="1.5" />
+      <text x="-8" y="2" fill="var(--a12p10h-spine-color, #00f5d4)" font-size="11" font-weight="800">ESPINHA ISQUIÁTICA</text>
+      <text x="-8" y="18" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="10">Bico discreto · Interno (Meio)</text>
+    </g>
+
+    <!-- Tuberosity Callout -->
+    <g transform="translate(40, 470)">
+      <line x1="105" y1="-25" x2="40" y2="0" stroke="var(--a12p10h-tuber-color, #ff9f1c)" class="a12p10h-callout-line" />
+      <circle cx="105" cy="-25" r="3" fill="var(--a12p10h-tuber-color, #ff9f1c)" />
+      <rect x="-35" y="-14" width="165" height="42" rx="6" fill="var(--a12p10h-card-bg, #220b18)" stroke="var(--a12p10h-tuber-color, #ff9f1c)" stroke-width="1.5" />
+      <text x="-25" y="2" fill="var(--a12p10h-tuber-color, #ff9f1c)" font-size="11" font-weight="800">TUBEROSIDADE ISQUIÁTICA</text>
+      <text x="-25" y="18" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="10">Bloco rombo · Externo (Saída)</text>
+    </g>
+
+    <!-- Pudendal / Ligament Callout -->
+    <g id="a12p10h-label-pudendal" transform="translate(45, 230)">
+      <line x1="208" y1="110" x2="90" y2="0" stroke="var(--a12p10h-nerve-color, #ffe600)" class="a12p10h-callout-line" />
+      <circle cx="208" cy="110" r="3" fill="var(--a12p10h-nerve-color, #ffe600)" />
+      <rect x="-80" y="-14" width="170" height="42" rx="6" fill="var(--a12p10h-card-bg, #220b18)" stroke="var(--a12p10h-nerve-color, #ffe600)" stroke-width="1.5" />
+      <text x="-70" y="2" fill="var(--a12p10h-nerve-color, #ffe600)" font-size="11" font-weight="800">NERVO PUDENDO &amp; LIG.</text>
+      <text x="-70" y="18" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="10">Guia p/ Bloqueio Anestésico</text>
+    </g>
+
+    <!-- INTERACTIVE TOUCH HOTSPOTS (Min 24px x 24px) -->
+    <!-- Hotspot Spine -->
+    <g class="a12p10h-hotspot" onclick="a12p10h_selectScene('spine')">
+      <circle cx="268" cy="340" r="22" class="a12p10h-hotspot-circle" fill="var(--a12p10h-spine-color, #00f5d4)" stroke="#ffffff" />
+      <circle cx="268" cy="340" r="4" fill="#ffffff" />
+    </g>
+
+    <!-- Hotspot Tuberosity -->
+    <g class="a12p10h-hotspot" onclick="a12p10h_selectScene('tuber')">
+      <circle cx="160" cy="445" r="22" class="a12p10h-hotspot-circle" fill="var(--a12p10h-tuber-color, #ff9f1c)" stroke="#ffffff" />
+      <circle cx="160" cy="445" r="4" fill="#ffffff" />
+    </g>
+
+    <!-- Hotspot Pudendal Nerve -->
+    <g class="a12p10h-hotspot" onclick="a12p10h_selectScene('pudendal')">
+      <circle cx="253" cy="350" r="16" class="a12p10h-hotspot-circle" fill="var(--a12p10h-nerve-color, #ffe600)" stroke="#ffffff" />
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: CLINICAL &amp; ANALYTICAL READING CARD -->
+  <g transform="translate(575, 98)">
+    <rect x="0" y="0" width="400" height="520" class="a12p10h-card" />
+    <path d="M 0 0 L 400 0 L 400 36 L 0 36 Z" class="a12p10h-card-head" />
+    
+    <text id="a12p10h-panel-title" x="15" y="24" fill="var(--a12p10h-spine-color, #00f5d4)" font-size="13" font-weight="800">ESPINHA ISQUIÁTICA (ESTREITO MÉDIO)</text>
+    
+    <!-- STATUS BADGE -->
+    <rect id="a12p10h-panel-badge-bg" x="290" y="8" width="95" height="20" rx="4" fill="var(--a12p10h-green-normal, #2ec4b6)" />
+    <text id="a12p10h-panel-badge-text" x="337" y="22" fill="#ffffff" class="a12p10h-badge" text-anchor="middle">10,5 cm · NORMAL</text>
+
+    <!-- COMPARISON MATRIX SUMMARY -->
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="370" height="68" rx="6" fill="var(--a12p10h-card-header, #2e0e22)" stroke="var(--a12p10h-card-border, #441832)" />
+      
+      <text x="12" y="18" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="10" font-weight="700">PARÂMETRO</text>
+      <text x="110" y="18" fill="var(--a12p10h-spine-color, #00f5d4)" font-size="10" font-weight="800">ESPINHA ISQUIÁTICA</text>
+      <text x="240" y="18" fill="var(--a12p10h-tuber-color, #ff9f1c)" font-size="10" font-weight="800">TUBEROSIDADE</text>
+
+      <line x1="10" y1="24" x2="360" y2="24" stroke="var(--a12p10h-card-border, #441832)" stroke-width="1" />
+
+      <text x="12" y="38" fill="var(--a12p10h-text-muted, #9e7a90)" font-size="10">Forma &amp; Toque:</text>
+      <text x="110" y="38" fill="var(--a12p10h-text-main, #f8f9fa)" font-size="10" font-weight="600">Bico fino (Interno)</text>
+      <text x="240" y="38" fill="var(--a12p10h-text-main, #f8f9fa)" font-size="10" font-weight="600">Bloco rombo (Externo)</text>
+
+      <text x="12" y="56" fill="var(--a12p10h-text-muted, #9e7a90)" font-size="10">Plano Pélvico:</text>
+      <text x="110" y="56" fill="var(--a12p10h-spine-color, #00f5d4)" font-size="10" font-weight="800">Estreito Médio (10,5 cm)</text>
+      <text x="240" y="56" fill="var(--a12p10h-tuber-color, #ff9f1c)" font-size="10" font-weight="800">Estreito Inf. (11,0 cm)</text>
+    </g>
+
+    <!-- 4 ANCHORED VIGNETTES / CLINICAL FUNCTIONS OF THE SPINE -->
+    <g transform="translate(15, 128)">
+      <text x="0" y="12" fill="var(--a12p10h-text-main, #f8f9fa)" font-size="11" font-weight="700">4 FUNÇÕES ESSENCIAIS DA ESPINHA ISQUIÁTICA:</text>
+      
+      <!-- Vignette 1: Zero da Descida -->
+      <g transform="translate(0, 22)">
+        <rect x="0" y="0" width="180" height="65" rx="6" fill="var(--a12p10h-card-header, #2e0e22)" stroke="var(--a12p10h-spine-color, #00f5d4)" stroke-width="1" />
+        <circle cx="16" cy="16" r="10" fill="var(--a12p10h-spine-color, #00f5d4)" />
+        <text x="16" y="20" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">1</text>
+        <text x="32" y="18" fill="var(--a12p10h-spine-color, #00f5d4)" font-size="10" font-weight="800">ZERO DA DESCIDA</text>
+        <text x="8" y="36" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="9.5">
+          Linha biespinha = <tspan fill="#ffffff" font-weight="700">Plano 0</tspan>
+        </text>
+        <text x="8" y="49" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="9.5">de De Lee (estação fetal).</text>
+      </g>
+
+      <!-- Vignette 2: Extremo Biespinhal -->
+      <g transform="translate(190, 22)">
+        <rect x="0" y="0" width="180" height="65" rx="6" fill="var(--a12p10h-card-header, #2e0e22)" stroke="var(--a12p10h-warn-yellow, #ffb703)" stroke-width="1" />
+        <circle cx="16" cy="16" r="10" fill="var(--a12p10h-warn-yellow, #ffb703)" />
+        <text x="16" y="20" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">2</text>
+        <text x="32" y="18" fill="var(--a12p10h-warn-yellow, #ffb703)" font-size="10" font-weight="800">BIESPINHAL (10,5 cm)</text>
+        <text x="8" y="36" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="9.5">Diâmetro mais estreito</text>
+        <text x="8" y="49" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="9.5">do trajeto (Estreito Médio).</text>
+      </g>
+
+      <!-- Vignette 3: Bloqueio do Pudendo -->
+      <g transform="translate(0, 94)">
+        <rect x="0" y="0" width="180" height="65" rx="6" fill="var(--a12p10h-card-header, #2e0e22)" stroke="var(--a12p10h-nerve-color, #ffe600)" stroke-width="1" />
+        <circle cx="16" cy="16" r="10" fill="var(--a12p10h-nerve-color, #ffe600)" />
+        <text x="16" y="20" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">3</text>
+        <text x="32" y="18" fill="var(--a12p10h-nerve-color, #ffe600)" font-size="10" font-weight="800">BLOQUEIO PUDENDO</text>
+        <text x="8" y="36" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="9.5">Palpação vaginal guia</text>
+        <text x="8" y="49" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="9.5">anestesia retroespinal.</text>
+      </g>
+
+      <!-- Vignette 4: Proeminência = Plano Médio -->
+      <g transform="translate(190, 94)">
+        <rect x="0" y="0" width="180" height="65" rx="6" fill="var(--a12p10h-card-header, #2e0e22)" stroke="var(--a12p10h-green-normal, #2ec4b6)" stroke-width="1" />
+        <circle cx="16" cy="16" r="10" fill="var(--a12p10h-green-normal, #2ec4b6)" />
+        <text x="16" y="20" fill="#000000" font-size="11" font-weight="900" text-anchor="middle">4</text>
+        <text x="32" y="18" fill="var(--a12p10h-green-normal, #2ec4b6)" font-size="10" font-weight="800">PLANO MÉDIO PÉLVICO</text>
+        <text x="8" y="36" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="9.5">Marco topográfico da</text>
+        <text x="8" y="49" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="9.5">curvatura do canal do parto.</text>
+      </g>
+    </g>
+
+    <!-- INTERACTIVE DE LEE STATION SIMULATOR CONTROLS -->
+    <g transform="translate(15, 298)">
+      <rect x="0" y="0" width="370" height="110" rx="8" fill="var(--a12p10h-card-header, #2e0e22)" stroke="var(--a12p10h-card-border, #441832)" />
+      
+      <text x="12" y="18" fill="var(--a12p10h-text-main, #f8f9fa)" font-size="11" font-weight="700">SIMULADOR INTERATIVO DE DESCIDA (DE LEE)</text>
+      <text x="12" y="33" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="10">Toque nos botões para mover a apresentação fetal:</text>
+
+      <!-- Stepper buttons (-2, -1, 0, +1, +2) -->
+      <g transform="translate(12, 45)">
+        <g class="a12p10h-btn" onclick="a12p10h_setDeLee(-2)">
+          <rect x="0" y="0" width="60" height="28" />
+          <text x="30" y="18">-2 cm</text>
+        </g>
+        <g class="a12p10h-btn" onclick="a12p10h_setDeLee(-1)">
+          <rect x="68" y="0" width="60" height="28" />
+          <text x="98" y="18">-1 cm</text>
+        </g>
+        <g id="a12p10h-btn-delee-0" class="a12p10h-btn active" onclick="a12p10h_setDeLee(0)">
+          <rect x="136" y="0" width="70" height="28" />
+          <text x="171" y="18">0 (Spine)</text>
+        </g>
+        <g class="a12p10h-btn" onclick="a12p10h_setDeLee(1)">
+          <rect x="214" y="0" width="60" height="28" />
+          <text x="244" y="18">+1 cm</text>
+        </g>
+        <g class="a12p10h-btn" onclick="a12p10h_setDeLee(2)">
+          <rect x="282" y="0" width="60" height="28" />
+          <text x="312" y="18">+2 cm</text>
+        </g>
+      </g>
+
+      <text id="a12p10h-delee-desc" x="12" y="94" fill="var(--a12p10h-spine-color, #00f5d4)" font-size="10" font-weight="700">
+        Estação 0: Vértice fetal no nível exato das Espinhas Isquiáticas (Insinuação).
+      </text>
+    </g>
+
+    <!-- DETAILED TEXT DYNAMIC EXPLANATION AREA -->
+    <g transform="translate(15, 418)">
+      <rect x="0" y="0" width="370" height="88" rx="6" fill="#10030c" stroke="var(--a12p10h-card-border, #441832)" />
+      <text id="a12p10h-detail-body" x="12" y="20" fill="var(--a12p10h-text-sub, #d0b8c8)" font-size="10.5">
+        <tspan x="12" dy="0" fill="var(--a12p10h-spine-color, #00f5d4)" font-weight="700">DICA DE PROVA RESIDÊNCIA:</tspan>
+        <tspan x="12" dy="16">Ao toque vaginal, a <tspan fill="#ffffff" font-weight="700">espinha isquiática</tspan> é o ponto anatômico de</tspan>
+        <tspan x="12" dy="14">referência central. O ligamento sacroespinhal situa-se medial e</tspan>
+        <tspan x="12" dy="14">posteriormente, formando o teto para o bloqueio do pudendo.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- BOTTOM BAR: GOLDEN MNEMONIC RULE &amp; MODE CONTROLS -->
+  <g transform="translate(25, 630)">
+    <!-- GOLDEN RULE CONTAINER -->
+    <rect x="0" y="0" width="950" height="52" rx="8" fill="var(--a12p10h-card-bg, #220b18)" stroke="var(--a12p10h-card-border, #441832)" stroke-width="1.5" />
+    
+    <!-- GOLDEN RULE TEXT -->
+    <g transform="translate(15, 16)">
+      <rect x="0" y="-4" width="220" height="26" rx="4" fill="var(--a12p10h-btn-active, #ff0054)" />
+      <text x="110" y="13" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle">REGRA OURO DE PROVA:</text>
+      
+      <text x="235" y="14" fill="var(--a12p10h-text-main, #f8f9fa)" font-size="12" font-weight="800">
+        "ESPINHA É MEIO <tspan fill="var(--a12p10h-spine-color, #00f5d4)">(10,5 cm)</tspan>  ·  TUBEROSIDADE É SAÍDA <tspan fill="var(--a12p10h-tuber-color, #ff9f1c)">(11,0 cm)"</tspan>
+      </text>
+    </g>
+
+    <!-- INTERACTIVE SCENE &amp; THEME TOGGLE BUTTONS -->
+    <g transform="translate(620, 12)">
+      <g id="a12p10h-btn-mode-spine" class="a12p10h-btn active" onclick="a12p10h_selectScene('spine')">
+        <rect x="0" y="0" width="95" height="28" />
+        <text x="47" y="18">1. Espinha</text>
+      </g>
+      <g id="a12p10h-btn-mode-tuber" class="a12p10h-btn" onclick="a12p10h_selectScene('tuber')">
+        <rect x="102" y="0" width="105" height="28" />
+        <text x="154" y="18">2. Tuberosidade</text>
+      </g>
+      <g id="a12p10h-btn-mode-pudendal" class="a12p10h-btn" onclick="a12p10h_selectScene('pudendal')">
+        <rect x="214" y="0" width="105" height="28" />
+        <text x="266" y="18">3. Blq. Pudendo</text>
+      </g>
+      
+      <!-- Theme Toggle -->
+      <g class="a12p10h-btn" onclick="a12p10h_toggleTheme()">
+        <rect x="325" y="0" width="0" height="28" style="display:none;"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- SELF-CONTAINED JAVASCRIPT ENGINE -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var activeScene = 'spine';
+      var deLeeStation = 0;
+      var isLight = false;
+
+      window.a12p10h_selectScene = function(scene) {
+        activeScene = scene;
+        
+        // Update Buttons
+        var btnSpine = document.getElementById('a12p10h-btn-mode-spine');
+        var btnTuber = document.getElementById('a12p10h-btn-mode-tuber');
+        var btnPudendal = document.getElementById('a12p10h-btn-mode-pudendal');
+
+        if (btnSpine) btnSpine.classList.remove('active');
+        if (btnTuber) btnTuber.classList.remove('active');
+        if (btnPudendal) btnPudendal.classList.remove('active');
+
+        if (scene === 'spine' && btnSpine) btnSpine.classList.add('active');
+        if (scene === 'tuber' && btnTuber) btnTuber.classList.add('active');
+        if (scene === 'pudendal' && btnPudendal) btnPudendal.classList.add('active');
+
+        // Update Anatomical Overlays & Lines
+        var lineSpine = document.getElementById('a12p10h-line-biespinha');
+        var lineTuber = document.getElementById('a12p10h-line-bituberoso');
+        var groupPudendal = document.getElementById('a12p10h-label-pudendal');
+        
+        if (lineSpine) lineSpine.className.baseVal = (scene === 'spine' || scene === 'all') ? 'a12p10h-view-group' : 'a12p10h-view-group a12p10h-hidden';
+        if (lineTuber) lineTuber.className.baseVal = (scene === 'tuber' || scene === 'all') ? 'a12p10h-view-group' : 'a12p10h-view-group a12p10h-hidden';
+        if (groupPudendal) groupPudendal.style.opacity = (scene === 'pudendal') ? '1' : '0.4';
+
+        // Panel Title & Badge
+        var pTitle = document.getElementById('a12p10h-panel-title');
+        var pBadgeBg = document.getElementById('a12p10h-panel-badge-bg');
+        var pBadgeText = document.getElementById('a12p10h-panel-badge-text');
+        var pBody = document.getElementById('a12p10h-detail-body');
+
+        if (scene === 'spine') {
+          if (pTitle) { pTitle.textContent = 'ESPINHA ISQUIÁTICA (ESTREITO MÉDIO)'; pTitle.setAttribute('fill', 'var(--a12p10h-spine-color, #00f5d4)'); }
+          if (pBadgeBg) pBadgeBg.setAttribute('fill', 'var(--a12p10h-green-normal, #2ec4b6)');
+          if (pBadgeText) pBadgeText.textContent = '10,5 cm · NORMAL';
+          if (pBody) {
+            pBody.innerHTML = '<tspan x="12" dy="0" fill="var(--a12p10h-spine-color, #00f5d4)" font-weight="700">DICA DE PROVA RESIDÊNCIA:</tspan>' +
+                              '<tspan x="12" dy="16">Ao toque vaginal, a <tspan fill="#ffffff" font-weight="700">espinha isquiática</tspan> é o ponto de referência central.</tspan>' +
+                              '<tspan x="12" dy="14">Bico pontiagudo medido no diâmetro biespinha (10,5 cm).</tspan>' +
+                              '<tspan x="12" dy="14">Marca o Plano 0 de De Lee e o Estreito Médio pélvico.</tspan>';
+          }
+        } else if (scene === 'tuber') {
+          if (pTitle) { pTitle.textContent = 'TUBEROSIDADE ISQUIÁTICA (SAÍDA)'; pTitle.setAttribute('fill', 'var(--a12p10h-tuber-color, #ff9f1c)'); }
+          if (pBadgeBg) pBadgeBg.setAttribute('fill', 'var(--a12p10h-tuber-color, #ff9f1c)');
+          if (pBadgeText) pBadgeText.textContent = '11,0 cm · SAÍDA';
+          if (pBody) {
+            pBody.innerHTML = '<tspan x="12" dy="0" fill="var(--a12p10h-tuber-color, #ff9f1c)" font-weight="700">ANATOMIA DA TUBEROSIDADE:</tspan>' +
+                              '<tspan x="12" dy="16">Bloco rombo espesso, palpado externamente nas nádegas.</tspan>' +
+                              '<tspan x="12" dy="14">Mede o diâmetro bituberoso (11,0 cm) no Estreito Inferior.</tspan>' +
+                              '<tspan x="12" dy="14">Ponto de apoio do corpo ao sentar &amp; limite inferior do parto.</tspan>';
+          }
+        } else if (scene === 'pudendal') {
+          if (pTitle) { pTitle.textContent = 'BLOQUEIO DO NERVO PUDENDO'; pTitle.setAttribute('fill', 'var(--a12p10h-nerve-color, #ffe600)'); }
+          if (pBadgeBg) pBadgeBg.setAttribute('fill', 'var(--a12p10h-warn-yellow, #ffb703)');
+          if (pBadgeText) pBadgeText.textContent = 'ANESTESIA LOCAL';
+          if (pBody) {
+            pBody.innerHTML = '<tspan x="12" dy="0" fill="var(--a12p10h-nerve-color, #ffe600)" font-weight="700">TÉCNICA DE BLOQUEIO DO PUDENDO:</tspan>' +
+                              '<tspan x="12" dy="16">1. Palpar a espinha isquiática por via transvaginal.</tspan>' +
+                              '<tspan x="12" dy="14">2. Perfurar o ligamento sacroespinhal medial/posterior à espinha.</tspan>' +
+                              '<tspan x="12" dy="14">3. Injetar anestésico no forame isquiático menor.</tspan>';
+          }
+        }
+      };
+
+      window.a12p10h_setDeLee = function(st) {
+        deLeeStation = st;
+        var fetalGroup = document.getElementById('a12p10h-fetal-head');
+        var fetalLabel = document.getElementById('a12p10h-fetal-label');
+        var deLeeDesc = document.getElementById('a12p10h-delee-desc');
+
+        // Y base for 0 cm is 340. Each cm corresponds to ~20px shift
+        var yPos = 340 + (st * 20);
+        if (fetalGroup) {
+          fetalGroup.setAttribute('transform', 'translate(340, ' + yPos + ')');
+        }
+
+        var labelStr = (st > 0 ? '+' + st : st) + ' cm';
+        if (st === 0) labelStr = '0 cm (Espinha)';
+        if (fetalLabel) fetalLabel.textContent = 'Apresentação: ' + labelStr;
+
+        if (deLeeDesc) {
+          if (st < 0) {
+            deLeeDesc.textContent = 'Estação ' + st + ' cm: Apresentação alta (acima das Espinhas Isquiáticas).';
+            deLeeDesc.setAttribute('fill', 'var(--a12p10h-warn-yellow, #ffb703)');
+          } else if (st === 0) {
+            deLeeDesc.textContent = 'Estação 0: Vértice fetal no nível exato das Espinhas Isquiáticas (Insinuação).';
+            deLeeDesc.setAttribute('fill', 'var(--a12p10h-spine-color, #00f5d4)');
+          } else {
+            deLeeDesc.textContent = 'Estação +' + st + ' cm: Apresentação desceu (aproximando-se do Estreito Inferior).';
+            deLeeDesc.setAttribute('fill', 'var(--a12p10h-green-normal, #2ec4b6)');
+          }
+        }
+      };
+
+      window.a12p10h_toggleTheme = function() {
+        var root = document.getElementById('a12p10h-root');
+        isLight = !isLight;
+        if (root) {
+          if (isLight) {
+            root.setAttribute('data-theme', 'light');
+          } else {
+            root.removeAttribute('data-theme');
+          }
+        }
+      };
+    })();
+    ]]>
+  </script>
+</svg>

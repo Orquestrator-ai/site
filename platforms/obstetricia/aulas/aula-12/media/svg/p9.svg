@@ -1,0 +1,445 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 630" class="a12p9-root" id="a12p9-svg" data-scene="1" data-svg-tokenized="true" role="img" aria-label="Assoalho Pélvico: Três Aros e um Gargalo - Mecanismo do Parto">
+  <title>Assoalho Pélvico: Três Aros e um Gargalo</title>
+  <desc role="img">Ilustração vetorial interativa demonstrando a pelve menor com seus três estreitos anatômicos (Superior 13cm, Médio 10,5cm e Inferior 11cm), demonstrando que o estreito médio é o verdadeiro gargalo durante a descida do polo cefálico fetal.</desc>
+
+  <style>/*<![CDATA[*/
+    .a12p9-root {
+      --a12p9-bg: var(--a12-bg, #0F172A);
+      --a12p9-tinta: var(--a12-tinta, var(--a12p9-tinta-fallback, #F7F1F5));
+      --a12p9-tinta-sub: var(--a12-tinta-sub, #94A3B8);
+      --a12p9-panel-bg: var(--a12-panel-bg, #1E293B);
+      --a12p9-panel-border: var(--a12-panel-border, #334155);
+      --a12p9-osso: var(--a12-osso, var(--a12p9-osso-fallback, #DCC7B4));
+      --a12p9-osso-dark: #8C7563;
+      --a12p9-superior: var(--a12-estreito-superior, var(--a12p9-superior-fallback, #6FA8D6));
+      --a12p9-medio: var(--a12-estreito-medio, var(--a12p9-medio-fallback, #E56C7B));
+      --a12p9-inferior: var(--a12-estreito-inferior, var(--a12p9-inferior-fallback, #8C76C5));
+      --a12p9-cabeca: var(--a12-petroleo-claro, var(--a12p9-cabeca-fallback, #4CB7B0));
+      --a12p9-gargalo: var(--a12-ouro, var(--a12p9-gargalo-fallback, #F3BE5B));
+      --a12p9-card-bg: #0F172A;
+      --a12p9-highlight: #38BDF8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    [data-theme="light"] .a12p9-root {
+      --a12p9-bg: #F8FAFC;
+      --a12p9-tinta: #0F172A;
+      --a12p9-tinta-sub: #475569;
+      --a12p9-panel-bg: #FFFFFF;
+      --a12p9-panel-border: #CBD5E1;
+      --a12p9-osso: #8C6A53;
+      --a12p9-osso-dark: #5C4334;
+      --a12p9-superior: #1D4ED8;
+      --a12p9-medio: #DC2626;
+      --a12p9-inferior: #6D28D9;
+      --a12p9-cabeca: #0F766E;
+      --a12p9-gargalo: #B45309;
+      --a12p9-card-bg: #F1F5F9;
+      --a12p9-highlight: #0284C7;
+    }
+
+    /* Core Styles */
+    .a12p9-bg-rect { fill: var(--a12p9-bg); transition: fill 0.3s ease; }
+    .a12p9-title { fill: var(--a12p9-tinta); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+    .a12p9-subtitle { fill: var(--a12p9-tinta-sub); font-size: 13px; font-weight: 500; }
+
+    /* Bones */
+    .a12p9-bone-outline { fill: none; stroke: var(--a12p9-osso); stroke-width: 2.5; stroke-dasharray: 6 4; opacity: 0.6; }
+    .a12p9-bone-solid { fill: none; stroke: var(--a12p9-osso); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .a12p9-bone-fill { fill: var(--a12p9-osso); opacity: 0.15; }
+
+    /* Rings / Planes */
+    .a12p9-ring-sup { fill: var(--a12p9-superior); fill-opacity: 0.1; stroke: var(--a12p9-superior); stroke-width: 3; cursor: pointer; transition: all 0.3s ease; }
+    .a12p9-ring-med { fill: var(--a12p9-medio); fill-opacity: 0.12; stroke: var(--a12p9-medio); stroke-width: 3.5; cursor: pointer; transition: all 0.3s ease; }
+    .a12p9-ring-inf { fill: var(--a12p9-inferior); fill-opacity: 0.1; stroke: var(--a12p9-inferior); stroke-width: 3; cursor: pointer; transition: all 0.3s ease; }
+
+    .a12p9-ring-sup:hover, .a12p9-ring-med:hover, .a12p9-ring-inf:hover { fill-opacity: 0.25; stroke-width: 4.5; }
+
+    /* Active Ring Highlight */
+    .a12p9-root[data-scene="1"] .a12p9-ring-sup { fill-opacity: 0.3; stroke-width: 4.5; filter: drop-shadow(0 0 8px var(--a12p9-superior)); }
+    .a12p9-root[data-scene="2"] .a12p9-ring-med { fill-opacity: 0.35; stroke-width: 5; filter: drop-shadow(0 0 10px var(--a12p9-medio)); }
+    .a12p9-root[data-scene="3"] .a12p9-ring-inf { fill-opacity: 0.3; stroke-width: 4.5; filter: drop-shadow(0 0 8px var(--a12p9-inferior)); }
+
+    /* Spine Anchors */
+    .a12p9-spine { fill: var(--a12p9-gargalo); stroke: var(--a12p9-medio); stroke-width: 2; }
+    .a12p9-spine-pulse { fill: none; stroke: var(--a12p9-gargalo); stroke-width: 2; opacity: 0.8; }
+    .a12p9-root[data-scene="2"] .a12p9-spine-pulse { animation: a12p9-pulse 1.8s infinite; }
+
+    @keyframes a12p9-pulse {
+      0% { r: 6px; opacity: 0.9; }
+      100% { r: 18px; opacity: 0; }
+    }
+
+    /* Head Mechanics */
+    .a12p9-head-group { transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .a12p9-head-shape { fill: var(--a12p9-cabeca); fill-opacity: 0.85; stroke: #FFFFFF; stroke-width: 2.5; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+    .a12p9-suture { stroke: #FFFFFF; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 3 3; }
+    .a12p9-fontanelle { fill: #FFFFFF; }
+
+    /* Positions of head per scene */
+    .a12p9-root[data-scene="1"] .a12p9-head-group { transform: translate(280px, 150px) rotate(0deg); }
+    .a12p9-root[data-scene="2"] .a12p9-head-group { transform: translate(280px, 310px) rotate(45deg) scale(0.92, 0.95); }
+    .a12p9-root[data-scene="3"] .a12p9-head-group { transform: translate(280px, 470px) rotate(90deg); }
+
+    /* Labels & Badges */
+    .a12p9-label-bg { fill: var(--a12p9-panel-bg); stroke: var(--a12p9-panel-border); stroke-width: 1.5; rx: 6px; }
+    .a12p9-label-text { fill: var(--a12p9-tinta); font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .a12p9-num-badge { font-size: 14px; font-weight: 800; }
+
+    .a12p9-gargalo-badge { fill: var(--a12p9-gargalo); stroke: var(--a12p9-medio); stroke-width: 2; rx: 12px; }
+    .a12p9-gargalo-text { fill: #0F172A; font-size: 11px; font-weight: 900; letter-spacing: 0.05em; text-anchor: middle; dominant-baseline: middle; }
+
+    /* Buttons */
+    .a12p9-btn { cursor: pointer; transition: all 0.2s ease; }
+    .a12p9-btn-bg { fill: var(--a12p9-panel-bg); stroke: var(--a12p9-panel-border); stroke-width: 1.5; rx: 8px; }
+    .a12p9-btn-text { fill: var(--a12p9-tinta-sub); font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .a12p9-btn:hover .a12p9-btn-bg { stroke: var(--a12p9-highlight); fill: var(--a12p9-card-bg); }
+    .a12p9-btn:focus-visible { outline: 2px solid var(--a12p9-highlight); }
+
+    .a12p9-root[data-scene="1"] #a12p9-btn-1 .a12p9-btn-bg { fill: var(--a12p9-superior); stroke: var(--a12p9-superior); }
+    .a12p9-root[data-scene="1"] #a12p9-btn-1 .a12p9-btn-text { fill: #FFFFFF; }
+
+    .a12p9-root[data-scene="2"] #a12p9-btn-2 .a12p9-btn-bg { fill: var(--a12p9-medio); stroke: var(--a12p9-medio); }
+    .a12p9-root[data-scene="2"] #a12p9-btn-2 .a12p9-btn-text { fill: #FFFFFF; }
+
+    .a12p9-root[data-scene="3"] #a12p9-btn-3 .a12p9-btn-bg { fill: var(--a12p9-inferior); stroke: var(--a12p9-inferior); }
+    .a12p9-root[data-scene="3"] #a12p9-btn-3 .a12p9-btn-text { fill: #FFFFFF; }
+
+    /* Right Reading Panel */
+    .a12p9-panel { fill: var(--a12p9-panel-bg); stroke: var(--a12p9-panel-border); stroke-width: 1.5; rx: 14px; }
+    .a12p9-card { fill: var(--a12p9-card-bg); stroke: var(--a12p9-panel-border); stroke-width: 1; rx: 10px; }
+    
+    .a12p9-p-title { fill: var(--a12p9-tinta); font-size: 16px; font-weight: 800; }
+    .a12p9-p-metric { font-size: 34px; font-weight: 900; dominant-baseline: middle; }
+    .a12p9-p-desc { fill: var(--a12p9-tinta-sub); font-size: 12.5px; font-weight: 400; line-height: 1.45; }
+    .a12p9-p-bold { font-weight: 700; fill: var(--a12p9-tinta); }
+
+    /* Panel Content Visibility */
+    .a12p9-panel-content { display: none; }
+    .a12p9-root[data-scene="1"] #a12p9-content-1 { display: block; }
+    .a12p9-root[data-scene="2"] #a12p9-content-2 { display: block; }
+    .a12p9-root[data-scene="3"] #a12p9-content-3 { display: block; }
+
+    /* Bar chart */
+    .a12p9-bar-bg { fill: var(--a12p9-panel-border); rx: 4px; }
+    .a12p9-bar-fill-sup { fill: var(--a12p9-superior); rx: 4px; }
+    .a12p9-bar-fill-med { fill: var(--a12p9-medio); rx: 4px; }
+    .a12p9-bar-fill-inf { fill: var(--a12p9-inferior); rx: 4px; }
+
+    /* Key takeaway box */
+    .a12p9-takeaway-box { fill: var(--a12p9-card-bg); stroke: var(--a12p9-gargalo); stroke-width: 1.5; rx: 10px; }
+    .a12p9-takeaway-header { fill: var(--a12p9-gargalo); font-size: 11px; font-weight: 800; letter-spacing: 0.06em; }
+    .a12p9-takeaway-text { fill: var(--a12p9-tinta); font-size: 12px; font-weight: 500; }
+  /*]]>*/</style>
+
+  <!-- Background -->
+  <rect width="960" height="630" class="a12p9-bg-rect" rx="16" />
+
+  <!-- Header -->
+  <g transform="translate(30, 36)">
+    <text class="a12p9-title">ASSOALHO PÉLVICO: TRÊS AROS E UM GARGALO</text>
+    <text y="22" class="a12p9-subtitle">Progressão do polo cefálico fetal através das três provas geométricas da pelve menor</text>
+  </g>
+
+  <!-- LEFT REGION: 3D Pelvis Channel and Head Descent (x: 30 to 560, y: 75 to 550) -->
+  <g id="a12p9-stage" transform="translate(0, 0)">
+    <!-- Pelvic Canal Background Grid / Vertical Track -->
+    <path d="M 280, 150 L 280, 470" stroke="var(--a12p9-panel-border)" stroke-width="3" stroke-dasharray="4 4" />
+
+    <!-- 1. ESTREITO SUPERIOR (Plane 1, y = 150) -->
+    <g id="a12p9-plane-superior">
+      <!-- Outer Pelvic Rim Silhouette Top -->
+      <path d="M 120, 130 C 180, 80 380, 80 440, 130 C 470, 160 460, 190 410, 195 C 330, 205 230, 205 150, 195 C 100, 190 90, 160 120, 130 Z" class="a12p9-bone-fill" />
+      <path d="M 120, 130 C 180, 80 380, 80 440, 130" class="a12p9-bone-solid" />
+      
+      <!-- Superior Ring Ellipse (13 cm Transverse) -->
+      <ellipse cx="280" cy="150" rx="140" ry="42" class="a12p9-ring-sup" id="a12p9-ring-1" role="button" tabindex="0" aria-label="Estreito Superior 13 cm" />
+      
+      <!-- Dimension Line 13 cm -->
+      <line x1="140" y1="150" x2="420" y2="150" stroke="var(--a12p9-superior)" stroke-width="2" stroke-dasharray="3 3" />
+      <circle cx="140" cy="150" r="3.5" fill="var(--a12p9-superior)" />
+      <circle cx="420" cy="150" r="3.5" fill="var(--a12p9-superior)" />
+
+      <!-- Label Entrada -->
+      <rect x="360" y="112" width="135" height="26" class="a12p9-label-bg" />
+      <text x="427.5" y="125" class="a12p9-label-text">ENTRADA: <tspan class="a12p9-num-badge" fill="var(--a12p9-superior)">13,0 cm</tspan></text>
+    </g>
+
+    <!-- 2. ESTREITO MÉDIO (Plane 2, y = 310) - GARGALO -->
+    <g id="a12p9-plane-medio">
+      <!-- Mid Pelvic Walls with Prominent Ischial Spines (Ancora 3) -->
+      <!-- Left Ischial Spine -->
+      <path d="M 130, 260 L 165, 305 L 175, 310 L 160, 320 L 140, 360" class="a12p9-bone-solid" />
+      <!-- Right Ischial Spine -->
+      <path d="M 430, 260 L 395, 305 L 385, 310 L 400, 320 L 420, 360" class="a12p9-bone-solid" />
+
+      <!-- Medium Ring Ellipse (10.5 cm Bispinous) -->
+      <ellipse cx="280" cy="310" rx="105" ry="34" class="a12p9-ring-med" id="a12p9-ring-2" role="button" tabindex="0" aria-label="Estreito Médio 10,5 cm Gargalo" />
+
+      <!-- Biespinhal Dimension Line 10.5 cm -->
+      <line x1="175" y1="310" x2="385" y2="310" stroke="var(--a12p9-medio)" stroke-width="2.5" />
+      
+      <!-- Ischial Spines Pulse and Nodes (Identity Anchor 3) -->
+      <circle cx="175" cy="310" r="8" class="a12p9-spine-pulse" />
+      <circle cx="175" cy="310" r="5" class="a12p9-spine" />
+      <circle cx="385" cy="310" r="8" class="a12p9-spine-pulse" />
+      <circle cx="385" cy="310" r="5" class="a12p9-spine" />
+
+      <!-- Gargalo Alert Badge -->
+      <g transform="translate(280, 274)">
+        <rect x="-95" y="-13" width="190" height="26" class="a12p9-gargalo-badge" />
+        <text x="0" y="1" class="a12p9-gargalo-text">MEIO / GARGALO: 10,5 cm</text>
+      </g>
+    </g>
+
+    <!-- 3. ESTREITO INFERIOR (Plane 3, y = 470) - 2 TRIANGULOS -->
+    <g id="a12p9-plane-inferior">
+      <!-- Inferior Outline: Pubic Arch Top, Ischial Tuberosities, Coccyx Bottom -->
+      <!-- Common Base Bituberous Line 11 cm: (170, 470) to (390, 470) -->
+      <!-- Anterior Triangle (Urogenital): Apex Pubic Symphysis at (280, 418) -->
+      <!-- Posterior Triangle (Anal): Apex Coccyx at (280, 522) -->
+      
+      <!-- Two Triangles Fill and Outline -->
+      <polygon points="280,418 390,470 170,470" fill="var(--a12p9-inferior)" fill-opacity="0.12" stroke="var(--a12p9-inferior)" stroke-width="2" stroke-dasharray="4 3" />
+      <polygon points="280,522 390,470 170,470" fill="var(--a12p9-inferior)" fill-opacity="0.08" stroke="var(--a12p9-inferior)" stroke-width="2" stroke-dasharray="4 3" />
+
+      <!-- Inferior Ring Diamond/Boundaries -->
+      <path d="M 280, 418 L 390, 470 L 280, 522 L 170, 470 Z" class="a12p9-ring-inf" id="a12p9-ring-3" role="button" tabindex="0" aria-label="Estreito Inferior 11 cm Saída" />
+
+      <!-- Common Base Line (Diâmetro Bituberoso 11 cm) -->
+      <line x1="170" y1="470" x2="390" y2="470" stroke="var(--a12p9-inferior)" stroke-width="3" />
+      <circle cx="170" cy="470" r="4.5" fill="var(--a12p9-inferior)" />
+      <circle cx="390" cy="470" r="4.5" fill="var(--a12p9-inferior)" />
+
+      <!-- Triangle Apex Nodes -->
+      <circle cx="280" cy="418" r="3.5" fill="var(--a12p9-osso)" />
+      <circle cx="280" cy="522" r="3.5" fill="var(--a12p9-osso)" />
+
+      <!-- Label Saída -->
+      <rect x="360" y="490" width="135" height="26" class="a12p9-label-bg" />
+      <text x="427.5" y="503" class="a12p9-label-text">SAÍDA: <tspan class="a12p9-num-badge" fill="var(--a12p9-inferior)">11,0 cm</tspan></text>
+      <text x="427.5" y="524" font-size="10px" fill="var(--a12p9-tinta-sub)" text-anchor="middle">(Dois Triângulos)</text>
+    </g>
+
+    <!-- FETAL HEAD (POLO CEFÁLICO) -->
+    <!-- Positioned dynamically by CSS / JS using transform on .a12p9-head-group -->
+    <g class="a12p9-head-group" id="a12p9-fetal-head">
+      <!-- Head Contour (Biparietal 9.5cm scaled in proportion) -->
+      <ellipse cx="0" cy="0" rx="46" ry="34" class="a12p9-head-shape" />
+      <!-- Sagittal Suture -->
+      <line x1="-38" y1="0" x2="38" y2="0" class="a12p9-suture" />
+      <!-- Anterior Fontanelle (Bregma - Diamond) -->
+      <polygon points="18,-6 24,0 18,6 12,0" class="a12p9-fontanelle" />
+      <!-- Posterior Fontanelle (Lambda - Triangle) -->
+      <polygon points="-22,-5 -16,0 -22,5" class="a12p9-fontanelle" />
+      <!-- Center Indicator Node -->
+      <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+    </g>
+
+    <!-- STEP NAVIGATION BUTTONS (x: 40 to 520, y: 565) -->
+    <g transform="translate(40, 565)">
+      <!-- Button 1: Entrada -->
+      <g class="a12p9-btn" id="a12p9-btn-1" role="button" tabindex="0" aria-label="Ver Passo 1: Entrada 13 cm">
+        <rect x="0" y="0" width="150" height="38" class="a12p9-btn-bg" />
+        <text x="75" y="19" class="a12p9-btn-text">1. Entrada (13,0 cm)</text>
+      </g>
+      <!-- Button 2: Médio / Gargalo -->
+      <g class="a12p9-btn" id="a12p9-btn-2" transform="translate(162, 0)" role="button" tabindex="0" aria-label="Ver Passo 2: Médio Gargalo 10,5 cm">
+        <rect x="0" y="0" width="160" height="38" class="a12p9-btn-bg" />
+        <text x="80" y="19" class="a12p9-btn-text">2. Médio (10,5 cm) ⚠️</text>
+      </g>
+      <!-- Button 3: Saída -->
+      <g class="a12p9-btn" id="a12p9-btn-3" transform="translate(334, 0)" role="button" tabindex="0" aria-label="Ver Passo 3: Saída 11 cm">
+        <rect x="0" y="0" width="150" height="38" class="a12p9-btn-bg" />
+        <text x="75" y="19" class="a12p9-btn-text">3. Saída (11,0 cm)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT REGION: CLINICAL READING PANEL (x: 580 to 930, y: 75 to 595) -->
+  <g transform="translate(580, 75)">
+    <!-- Main Panel Box -->
+    <rect width="350" height="525" class="a12p9-panel" />
+
+    <!-- DYNAMIC SCENE CONTENT -->
+
+    <!-- SCENE 1 CONTENT: ESTREITO SUPERIOR -->
+    <g class="a12p9-panel-content" id="a12p9-content-1">
+      <!-- Header -->
+      <text x="24" y="38" class="a12p9-p-title" fill="var(--a12p9-superior)">1. ESTREITO SUPERIOR (ENTRADA)</text>
+      <text x="24" y="58" font-size="12px" fill="var(--a12p9-tinta-sub)">Plano de Insinuação do Polo Cefálico</text>
+
+      <!-- Metric Box -->
+      <g transform="translate(24, 75)">
+        <rect width="302" height="70" class="a12p9-card" stroke="var(--a12p9-superior)" stroke-width="1.5" />
+        <text x="20" y="38" class="a12p9-p-metric" fill="var(--a12p9-superior)">13,0 cm</text>
+        <text x="150" y="30" font-size="12px" font-weight="700" fill="var(--a12p9-tinta)">Diâmetro Transverso</text>
+        <text x="150" y="48" font-size="11px" fill="var(--a12p9-tinta-sub)">Maior espaço de entrada</text>
+      </g>
+
+      <!-- Description -->
+      <g transform="translate(24, 162)">
+        <text y="0" class="a12p9-p-desc"><tspan class="a12p9-p-bold">Orientação Fetal:</tspan> Transversa ou Oblíqua.</text>
+        <text y="22" class="a12p9-p-desc">A cabeça fetal insinua-se aproveitando a</text>
+        <text y="40" class="a12p9-p-desc">maior dimensão da entrada pélvica (13 cm).</text>
+        <text y="65" class="a12p9-p-desc"><tspan class="a12p9-p-bold">Resistência:</tspan> Mínima nesta fase. O polo</text>
+        <text y="83" class="a12p9-p-desc">cefálico (biparietal ~9,5 cm) passa com folga.</text>
+      </g>
+    </g>
+
+    <!-- SCENE 2 CONTENT: ESTREITO MÉDIO (GARGALO) -->
+    <g class="a12p9-panel-content" id="a12p9-content-2">
+      <!-- Header -->
+      <text x="24" y="38" class="a12p9-p-title" fill="var(--a12p9-medio)">2. ESTREITO MÉDIO (GARGALO)</text>
+      <text x="24" y="58" font-size="12px" fill="var(--a12p9-tinta-sub)">Plano das Espinhas Isquiáticas</text>
+
+      <!-- Metric Box -->
+      <g transform="translate(24, 75)">
+        <rect width="302" height="70" class="a12p9-card" stroke="var(--a12p9-medio)" stroke-width="2" />
+        <text x="20" y="38" class="a12p9-p-metric" fill="var(--a12p9-medio)">10,5 cm</text>
+        <text x="150" y="28" font-size="12px" font-weight="800" fill="var(--a12p9-gargalo)">MENOR DIÂMETRO!</text>
+        <text x="150" y="46" font-size="11px" fill="var(--a12p9-tinta-sub)">Diâmetro Biespinhal</text>
+      </g>
+
+      <!-- Description -->
+      <g transform="translate(24, 162)">
+        <text y="0" class="a12p9-p-desc"><tspan class="a12p9-p-bold">Orientação Fetal:</tspan> Flexão + Rotação Interna.</text>
+        <text y="22" class="a12p9-p-desc">Ao encontrar as espinhas isquiáticas, a cabeça</text>
+        <text y="40" class="a12p9-p-desc">é forçada a rodar para alinhar o occipício.</text>
+        <text y="65" class="a12p9-p-desc"><tspan class="a12p9-p-bold">Resistência Crítica:</tspan> Com apenas 10,5 cm,</text>
+        <text y="83" class="a12p9-p-desc">é o ponto de maior parada de progressão!</text>
+      </g>
+    </g>
+
+    <!-- SCENE 3 CONTENT: ESTREITO INFERIOR -->
+    <g class="a12p9-panel-content" id="a12p9-content-3">
+      <!-- Header -->
+      <text x="24" y="38" class="a12p9-p-title" fill="var(--a12p9-inferior)">3. ESTREITO INFERIOR (SAÍDA)</text>
+      <text x="24" y="58" font-size="12px" fill="var(--a12p9-tinta-sub)">Plano Osteofibroso de Desprendimento</text>
+
+      <!-- Metric Box -->
+      <g transform="translate(24, 75)">
+        <rect width="302" height="70" class="a12p9-card" stroke="var(--a12p9-inferior)" stroke-width="1.5" />
+        <text x="20" y="38" class="a12p9-p-metric" fill="var(--a12p9-inferior)">11,0 cm</text>
+        <text x="150" y="28" font-size="12px" font-weight="700" fill="var(--a12p9-tinta)">Diâmetro Bituberoso</text>
+        <text x="150" y="46" font-size="11px" fill="var(--a12p9-tinta-sub)">Base dos 2 Triângulos</text>
+      </g>
+
+      <!-- Description -->
+      <g transform="translate(24, 162)">
+        <text y="0" class="a12p9-p-desc"><tspan class="a12p9-p-bold">Geometria:</tspan> Dois Triângulos com base comum.</text>
+        <text y="22" class="a12p9-p-desc">Triângulo Urogenital (anterior) + Anal (posterior).</text>
+        <text y="44" class="a12p9-p-desc"><tspan class="a12p9-p-bold">Orientação Fetal:</tspan> Antero-Posterior (AP).</text>
+        <text y="66" class="a12p9-p-desc">O polo cefálico emerge sob o arco púbico,</text>
+        <text y="84" class="a12p9-p-desc">aproveitando a deflexão do cóccix no parto.</text>
+      </g>
+    </g>
+
+    <!-- STATIC COMPARISON BAR CHART (x: 24, y: 265) -->
+    <g transform="translate(24, 265)">
+      <text x="0" y="14" font-size="12px" font-weight="800" fill="var(--a12p9-tinta)">COMPARATIVO DE DIÂMETROS (GARGALO)</text>
+      
+      <!-- Bar 1: Superior (13 cm) -->
+      <g transform="translate(0, 26)">
+        <text x="0" y="14" font-size="11px" font-weight="600" fill="var(--a12p9-tinta-sub)">Superior</text>
+        <rect x="65" y="4" width="190" height="12" class="a12p9-bar-bg" />
+        <rect x="65" y="4" width="190" height="12" class="a12p9-bar-fill-sup" />
+        <text x="262" y="14" font-size="11px" font-weight="700" fill="var(--a12p9-superior)">13,0 cm</text>
+      </g>
+
+      <!-- Bar 2: Médio (10.5 cm) -->
+      <g transform="translate(0, 50)">
+        <text x="0" y="14" font-size="11px" font-weight="800" fill="var(--a12p9-medio)">Médio ⚠️</text>
+        <rect x="65" y="4" width="190" height="12" class="a12p9-bar-bg" />
+        <rect x="65" y="4" width="153" height="12" class="a12p9-bar-fill-med" />
+        <text x="262" y="14" font-size="11px" font-weight="900" fill="var(--a12p9-medio)">10,5 cm</text>
+      </g>
+
+      <!-- Bar 3: Inferior (11 cm) -->
+      <g transform="translate(0, 74)">
+        <text x="0" y="14" font-size="11px" font-weight="600" fill="var(--a12p9-tinta-sub)">Inferior</text>
+        <rect x="65" y="4" width="190" height="12" class="a12p9-bar-bg" />
+        <rect x="65" y="4" width="160" height="12" class="a12p9-bar-fill-inf" />
+        <text x="262" y="14" font-size="11px" font-weight="700" fill="var(--a12p9-inferior)">11,0 cm</text>
+      </g>
+    </g>
+
+    <!-- FIXED KEY TAKEAWAY BOX (Contrato Bauer Item 4) (x: 20, y: 385) -->
+    <g transform="translate(20, 385)">
+      <rect width="310" height="120" class="a12p9-takeaway-box" />
+      <text x="16" y="24" class="a12p9-takeaway-header">REGRA DE OURO DA OBSTETRÍCIA</text>
+      <text x="16" y="46" class="a12p9-takeaway-text">1. A entrada (13 cm) NÃO é o trecho crítico.</text>
+      <text x="16" y="66" class="a12p9-takeaway-text">2. O <tspan font-weight="800" fill="var(--a12p9-medio)">Estreito Médio (10,5 cm)</tspan> é o verdadeiro</text>
+      <text x="31" y="84" class="a12p9-takeaway-text"><tspan font-weight="800" fill="var(--a12p9-gargalo)">GARGALO ANATÔMICO</tspan> da pelve.</text>
+      <text x="16" y="104" class="a12p9-takeaway-text">3. Exige rotação e flexão máxima da cabeça.</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE JS ENGINE -->
+  <script><![CDATA[
+    (function() {
+      var root = document.getElementById('a12p9-svg');
+      if (!root) return;
+
+      function setScene(sceneNum) {
+        if (sceneNum < 1) sceneNum = 1;
+        if (sceneNum > 3) sceneNum = 3;
+        root.setAttribute('data-scene', sceneNum.toString());
+      }
+
+      // Button Click Listeners
+      var btn1 = document.getElementById('a12p9-btn-1');
+      var btn2 = document.getElementById('a12p9-btn-2');
+      var btn3 = document.getElementById('a12p9-btn-3');
+
+      if (btn1) btn1.addEventListener('click', function() { setScene(1); });
+      if (btn2) btn2.addEventListener('click', function() { setScene(2); });
+      if (btn3) btn3.addEventListener('click', function() { setScene(3); });
+
+      // Ring Click Listeners
+      var r1 = document.getElementById('a12p9-ring-1');
+      var r2 = document.getElementById('a12p9-ring-2');
+      var r3 = document.getElementById('a12p9-ring-3');
+
+      if (r1) r1.addEventListener('click', function() { setScene(1); });
+      if (r2) r2.addEventListener('click', function() { setScene(2); });
+      if (r3) r3.addEventListener('click', function() { setScene(3); });
+
+      // Keyboard Navigation
+      root.addEventListener('keydown', function(e) {
+        var current = parseInt(root.getAttribute('data-scene') || '1', 10);
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          setScene(current + 1);
+          e.preventDefault();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          setScene(current - 1);
+          e.preventDefault();
+        } else if (e.key === '1') {
+          setScene(1);
+        } else if (e.key === '2') {
+          setScene(2);
+        } else if (e.key === '3') {
+          setScene(3);
+        }
+      });
+
+      // Keydown support for individual buttons
+      function addKeyHandler(elem, scene) {
+        if (!elem) return;
+        elem.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            setScene(scene);
+            e.preventDefault();
+          }
+        });
+      }
+
+      addKeyHandler(btn1, 1);
+      addKeyHandler(btn2, 2);
+      addKeyHandler(btn3, 3);
+      addKeyHandler(r1, 1);
+      addKeyHandler(r2, 2);
+      addKeyHandler(r3, 3);
+    })();
+  ]]></script>
+</svg>

@@ -1,0 +1,190 @@
+/* Aula 07 — Câncer de Tireoide: tokens, orbs, grid, componentes específicos */
+
+    [data-aula="07-ca-tireoide"]{
+      --thy-violet:#A78BFA; --thy-violet-dim:rgba(167,139,250,.16);
+      --thy-amber:#FBBF24; --thy-coral:#FB7185;
+      --thy-green:#34D399; --thy-red:#F87171;
+      --thy-ink:#F4F7FB; --thy-muted:#B8C0CC;
+    }
+
+    /* ---- (2A) GRADIENT ORB — halo que respira ---- */
+    .page-orb{position:fixed;left:60%;top:-22vh;width:70vh;height:70vh;border-radius:50%;
+      background:radial-gradient(circle,rgba(167,139,250,0.55) 0%,transparent 68%);
+      opacity:.12;filter:blur(90px);pointer-events:none;mix-blend-mode:screen;
+      animation:orbBreath 16s ease-in-out infinite;z-index:0;will-change:transform,opacity}
+    .page-orb--gold{left:4%;top:38vh;width:52vh;height:52vh;
+      background:radial-gradient(circle,rgba(251,191,36,0.5) 0%,transparent 70%);
+      opacity:.09;animation-duration:20s;animation-delay:-6s}
+    /* ondulação orgânica (opacidade sutil da tireoide preservada) */
+    @keyframes orbBreath{
+      0%{transform:translate(0,0) scale(1);opacity:.09}
+      20%{transform:translate(-2vw,8px) scale(1.03);opacity:.12}
+      40%{transform:translate(-1vw,18px) scale(1.06);opacity:.16}
+      60%{transform:translate(2vw,13px) scale(1.05);opacity:.15}
+      80%{transform:translate(1.4vw,5px) scale(1.02);opacity:.11}
+      100%{transform:translate(0,0) scale(1);opacity:.09}}
+    /* No tema claro o orb fica bem discreto, só um sopro de cor */
+    :root[data-theme="light"] .page-orb{mix-blend-mode:multiply;opacity:.07}
+    :root[data-theme="light"] .page-orb--gold{opacity:.06}
+    @media (prefers-reduced-motion: reduce){.page-orb{animation:none}}
+
+    /* ---- (2B) DOT GRID agora é GLOBAL (base.css body::before, pontinhos) — aula-07 herda. ---- */
+    .aula07-grid::after{ display:none; }
+
+    /* Conteúdo SEMPRE acima do orb/grid e legível nos 2 temas */
+    body > .site-header,body > .progress-bar,body > .menu-overlay,
+    body > main,body > .banner-mantra-fixed{position:relative;z-index:2}
+    body > .site-header{z-index:20}
+    body > .menu-overlay{z-index:100}
+
+    /* livestrip variante tireoide/cabeça-pescoço (cor violeta da aula) */
+    .livestrip--thyroid .livestrip__trace{stroke:var(--thy-violet);
+      filter:drop-shadow(0 0 5px rgba(167,139,250,0.55));stroke-dasharray:30 760;
+      animation:livestrip-thy 3.4s ease-in-out infinite}
+    .livestrip--thyroid .livestrip__label::before{background:var(--thy-violet);box-shadow:0 0 8px var(--thy-violet)}
+    @keyframes livestrip-thy{0%{stroke-dashoffset:790}100%{stroke-dashoffset:0}}
+    @media (prefers-reduced-motion: reduce){.livestrip--thyroid .livestrip__trace{animation:none;stroke-dasharray:none}}
+
+    /* dash métricas usam acento violeta da aula */
+    [data-aula="07-ca-tireoide"] .dash__metric--violet .dash__metric-num{color:var(--thy-violet)}
+    [data-aula="07-ca-tireoide"] .dash__metric--amber .dash__metric-num{color:var(--thy-amber)}
+
+    /* ---- (3A) STEP-THROUGH ---- */
+    .stepper{margin:var(--sp-5) 0}
+    .stepper__frame{border:1px solid var(--border-soft);border-radius:var(--r-lg);
+      background:var(--bg-glass);padding:var(--sp-3);overflow:hidden}
+    .stepper__stage svg{width:100%;height:auto;display:block}
+    .stepper [data-step]{opacity:.4;transition:opacity .42s var(--ease-out)}
+    .stepper [data-step].is-on{opacity:1}
+    @media (prefers-reduced-motion: reduce){.stepper [data-step]{transition:none}}
+    .stepper__live{margin:var(--sp-3) 0 0;min-height:1.4em;font-size:var(--fs-sm);
+      color:var(--ink-90);font-weight:600}
+    .stepper__controls{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-3)}
+    .step-btn{appearance:none;border:1px solid var(--border-mid);border-radius:var(--r-pill);
+      background:var(--bg-elevated);color:var(--ink-100);padding:.5em 1.1em;font-weight:600;
+      font-size:var(--fs-sm);cursor:pointer;transition:border-color .2s,background .2s}
+    .step-btn:hover{border-color:var(--thy-violet)}
+    .step-btn:focus-visible{outline:2px solid var(--thy-violet);outline-offset:2px}
+    .step-btn:disabled{opacity:.4;cursor:not-allowed}
+    .step-btn--primary{background:var(--thy-violet-dim);border-color:var(--thy-violet)}
+
+    /* ---- (3B) SLIDER ARRASTÁVEL ---- */
+    .dslider{margin:var(--sp-5) 0}
+    .dslider__frame{border:1px solid var(--border-soft);border-radius:var(--r-lg);
+      background:var(--bg-glass);padding:var(--sp-3)}
+    .dslider svg{width:100%;height:auto;display:block;touch-action:none}
+    .dslider [role="slider"]{cursor:grab;transition:transform .28s var(--ease-out)}
+    .dslider [role="slider"]:active{cursor:grabbing}
+    .dslider [role="slider"]:focus-visible{outline:none}
+    .dslider [role="slider"]:focus-visible circle{stroke:var(--thy-amber);stroke-width:3.5}
+    @media (prefers-reduced-motion: reduce){.dslider [role="slider"]{transition:none}}
+    .dslider__cards{margin-top:var(--sp-3);position:relative}
+    .dslider__card{display:none;border:1px solid var(--border-mid);border-radius:var(--r-md);
+      background:var(--bg-elevated);padding:var(--sp-3) var(--sp-4);font-size:var(--fs-sm);
+      line-height:var(--lh-base);color:var(--ink-90)}
+    .dslider__card.is-on{display:block;animation:cardIn .3s var(--ease-out)}
+    @keyframes cardIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    @media (prefers-reduced-motion: reduce){.dslider__card.is-on{animation:none}}
+    .dslider__card h4{margin:0 0 .3em;font-size:var(--fs-md);color:var(--ink-100)}
+    .dslider__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+    /* ---- (3C) CALCULADORA ---- */
+    .calc{border:1px solid var(--border-soft);border-radius:var(--r-lg);background:var(--bg-glass);
+      padding:var(--sp-4);margin:var(--sp-5) 0;display:grid;gap:var(--sp-3)}
+    .calc__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--sp-3)}
+    .calc label{display:flex;flex-direction:column;gap:.35em;font-size:var(--fs-sm);
+      color:var(--ink-90);font-weight:600}
+    .calc label.chk{flex-direction:row;align-items:center;gap:.55em;font-weight:500}
+    .calc select{appearance:none;background:var(--bg-elevated);color:var(--ink-100);
+      border:1px solid var(--border-mid);border-radius:var(--r-sm);padding:.55em .7em;font:inherit;
+      font-size:var(--fs-sm)}
+    .calc select:focus-visible,.calc input:focus-visible{outline:2px solid var(--thy-violet);outline-offset:2px}
+    .calc input[type=checkbox]{width:18px;height:18px;accent-color:var(--thy-violet)}
+    .calc__out{border-radius:var(--r-md);padding:var(--sp-3) var(--sp-4);border:1px solid var(--border-mid);
+      background:var(--bg-elevated);display:grid;gap:.4em}
+    .calc__out .cc-out__verdict{font-size:var(--fs-md);font-weight:700;color:var(--ink-100)}
+    .calc__out .cc-out__verdict b{color:var(--thy-amber)}
+    .calc__out .cc-out__nota{font-size:var(--fs-sm);color:var(--ink-70);line-height:var(--lh-snug)}
+    .calc__out[data-tone="err"]{border-color:rgba(248,113,113,.5);background:rgba(248,113,113,.08)}
+    .calc__out[data-tone="err"] .cc-out__verdict{color:var(--thy-red)}
+    .calc__out[data-tone="ok"]{border-color:rgba(52,211,153,.5);background:rgba(52,211,153,.08)}
+    .calc__out[data-tone="ok"] .cc-out__verdict{color:var(--thy-green)}
+    .calc__out[data-tone="accent"]{border-color:rgba(167,139,250,.5);background:rgba(167,139,250,.08)}
+    .calc__out[data-tone="accent"] .cc-out__verdict{color:var(--thy-violet)}
+    .calc__legend{font-size:var(--fs-sm);color:var(--ink-70);line-height:var(--lh-snug)}
+    .calc fieldset{border:1px solid var(--border-soft);border-radius:var(--r-md);padding:var(--sp-3);margin:0;display:grid;gap:.5em}
+    .calc legend{font-size:var(--fs-sm);font-weight:700;color:var(--ink-100);padding:0 .4em}
+    .mt-fixed ul{margin:0;padding:0;list-style:none;display:grid;gap:.5em}
+    .mt-fixed li{display:flex;align-items:center;gap:.6em;font-size:var(--fs-sm);color:var(--ink-90)}
+    .mt-fixed li::before{content:"";width:18px;height:18px;border-radius:5px;flex:0 0 auto;
+      background:rgba(52,211,153,.18);border:1.5px solid var(--thy-green);
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2334D399' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12l4 4 10-10'/></svg>");
+      background-size:14px;background-position:center;background-repeat:no-repeat}
+
+    /* ---- (3D) TABELA DINÂMICA — cards Bethesda / NEM ---- */
+    .dyn{margin:var(--sp-5) 0;display:grid;gap:var(--sp-3)}
+    .dyn__pair{border:1px solid var(--border-soft);border-radius:var(--r-lg);padding:var(--sp-3);
+      background:var(--bg-glass);display:grid;gap:var(--sp-2)}
+    .dyn__pair-label{font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;
+      color:var(--ink-50);font-weight:700}
+    .dyn__cards{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2)}
+    @media (max-width:560px){.dyn__cards{grid-template-columns:1fr}}
+    .dyn-card{text-align:left;border:1px solid var(--border-mid);border-radius:var(--r-md);
+      background:var(--bg-elevated);padding:var(--sp-3);cursor:pointer;color:var(--ink-100);
+      display:grid;gap:.4em;transition:border-color .2s}
+    .dyn-card:hover{border-color:var(--thy-violet)}
+    .dyn-card:focus-visible{outline:2px solid var(--thy-violet);outline-offset:2px}
+    .dyn-card__head{display:flex;align-items:center;gap:.6em}
+    .dyn-card__n{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;
+      border-radius:8px;font-weight:800;font-size:var(--fs-sm);color:#0B1220;background:var(--c,#8F9BAD)}
+    .dyn-card__name{font-weight:700;font-size:var(--fs-sm)}
+    .dyn-card__flag{font-size:var(--fs-xs);color:var(--thy-amber);font-weight:600}
+    .dyn-card__flag.rich{color:var(--thy-red)}
+    .dyn-card__body{font-size:var(--fs-sm);color:var(--ink-80);line-height:var(--lh-base);
+      border-top:1px dashed var(--border-soft);padding-top:.5em}
+    .dyn-card__body ul{margin:.2em 0 0;padding-left:1.1em;display:grid;gap:.25em}
+    .dyn-card[aria-expanded="true"]{border-color:var(--thy-violet);background:var(--bg-elevated-2)}
+    .dyn-card .dyn-card__chev{margin-left:auto;color:var(--ink-50);transition:transform .2s}
+    .dyn-card[aria-expanded="true"] .dyn-card__chev{transform:rotate(180deg)}
+
+    /* ---- (3E) TI-RADS score builder ---- */
+    .tirads{border:1px solid var(--border-soft);border-radius:var(--r-lg);background:var(--bg-glass);
+      padding:var(--sp-4);margin:var(--sp-5) 0;display:grid;gap:var(--sp-3)}
+    .tirads__shortcut{margin:0;padding:.7em 1em;border-radius:var(--r-md);text-align:center;
+      border:1px solid var(--border-mid);background:var(--bg-elevated);color:var(--ink-100);font-size:var(--fs-sm)}
+    .tirads__shortcut.is-hot{border-color:var(--thy-red);background:rgba(248,113,113,.1);
+      box-shadow:0 0 0 1px rgba(248,113,113,.4);animation:hotPulse 1.4s ease-in-out 3}
+    @keyframes hotPulse{50%{box-shadow:0 0 0 4px rgba(248,113,113,.25)}}
+    @media (prefers-reduced-motion: reduce){.tirads__shortcut.is-hot{animation:none}}
+    .tirads__cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--sp-2)}
+    .tirads__cats label{display:flex;flex-direction:column;gap:.35em;font-size:var(--fs-xs);
+      color:var(--ink-90);font-weight:600}
+    .tirads__cats select{appearance:none;background:var(--bg-elevated);color:var(--ink-100);
+      border:1px solid var(--border-mid);border-radius:var(--r-sm);padding:.5em .6em;font:inherit;font-size:var(--fs-xs)}
+    .tirads__cats select:focus-visible{outline:2px solid var(--thy-violet);outline-offset:2px}
+    .tirads__rail{width:100%;height:auto}
+    .tirads__live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    #p4-marker{transition:transform .4s var(--ease-out)}
+    @media (prefers-reduced-motion: reduce){#p4-marker{transition:none}}
+
+    /* ---- comparativa P7 (revelação) ---- */
+    table.cmp7{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:var(--sp-4) 0}
+    table.cmp7 th,table.cmp7 td{border:1px solid var(--border-soft);padding:.6em .7em;text-align:left;vertical-align:top}
+    table.cmp7 thead th{background:var(--bg-elevated);color:var(--ink-100);position:sticky;top:0}
+    table.cmp7 tbody th{background:var(--bg-glass);color:var(--ink-90);font-weight:700}
+    table.cmp7 td b{color:var(--thy-violet)}
+
+    /* nota lateral discreta */
+    .sidenote{border-left:3px solid var(--thy-violet);background:var(--thy-violet-dim);
+      border-radius:0 var(--r-md) var(--r-md) 0;padding:var(--sp-3) var(--sp-4);margin:var(--sp-4) 0;
+      font-size:var(--fs-sm);color:var(--ink-80);line-height:var(--lh-base)}
+    .sidenote__label{display:block;font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;
+      color:var(--thy-violet);font-weight:700;margin-bottom:.3em}
+
+    /* prancha-síntese P14 (grade de histologias) */
+    .synth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--sp-2);margin:var(--sp-3) 0}
+    .synth-grid figure{margin:0;border:1px solid var(--border-soft);border-radius:var(--r-md);overflow:hidden;background:var(--bg-elevated)}
+    .synth-grid img{width:100%;height:120px;object-fit:cover;display:block}
+    .synth-grid figcaption{font-size:var(--fs-xs);color:var(--ink-70);padding:.45em .6em;line-height:1.3}
+    .synth-grid figcaption b{color:var(--ink-100)}
+  

@@ -1,0 +1,630 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" class="a16-inline-svg a16p7-root" id="a16p7-svg" data-trimestre="1" data-soro="sus" aria-label="Ilustração interativa do paradoxo da toxoplasmose na gestação e condutas sorológicas">
+  <defs>
+    <style>
+      .a16p7-root {
+        --a16p7-bg: #0f172a;
+        --a16p7-card-bg: #1e293b;
+        --a16p7-card-border: #334155;
+        --a16p7-text: #f8fafc;
+        --a16p7-text-muted: #94a3b8;
+        --a16p7-coral: #ff6b6b;
+        --a16p7-coral-bg: rgba(255, 107, 107, 0.15);
+        --a16p7-teal: #2dd4bf;
+        --a16p7-teal-bg: rgba(45, 212, 191, 0.15);
+        --a16p7-green: #4ade80;
+        --a16p7-green-bg: rgba(74, 222, 128, 0.15);
+        --a16p7-red: #f87171;
+        --a16p7-red-bg: rgba(248, 113, 113, 0.15);
+        --a16p7-yellow: #fbbf24;
+        --a16p7-yellow-bg: rgba(251, 191, 36, 0.15);
+        --a16p7-accent: #38bdf8;
+        --a16p7-accent-bg: rgba(56, 189, 248, 0.15);
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      :root[data-theme="light"] .a16p7-root,
+      .a16p7-root[data-theme="light"] {
+        --a16p7-bg: #ffffff;
+        --a16p7-card-bg: #f8fafc;
+        --a16p7-card-border: #e2e8f0;
+        --a16p7-text: #0f172a;
+        --a16p7-text-muted: #475569;
+        --a16p7-coral: #e11d48;
+        --a16p7-coral-bg: #ffe4e6;
+        --a16p7-teal: #0d9488;
+        --a16p7-teal-bg: #ccfbf1;
+        --a16p7-green: #16a34a;
+        --a16p7-green-bg: #dcfce7;
+        --a16p7-red: #dc2626;
+        --a16p7-red-bg: #fee2e2;
+        --a16p7-yellow: #d97706;
+        --a16p7-yellow-bg: #fef3c7;
+        --a16p7-accent: #0284c7;
+        --a16p7-accent-bg: #e0f2fe;
+      }
+
+      /* Base styles scoped to #a16p7-svg */
+      #a16p7-svg .a16p7-bg-rect { fill: var(--a16p7-bg, #0f172a); }
+      #a16p7-svg .a16p7-card { fill: var(--a16p7-card-bg, #1e293b); stroke: var(--a16p7-card-border, #334155); stroke-width: 1.5px; rx: 12px; }
+      #a16p7-svg .a16p7-title { font-size: 20px; font-weight: 700; fill: var(--a16p7-text, #f8fafc); letter-spacing: -0.02em; }
+      #a16p7-svg .a16p7-subtitle { font-size: 13px; fill: var(--a16p7-text-muted, #94a3b8); }
+      #a16p7-svg .a16p7-label { font-size: 12px; font-weight: 600; fill: var(--a16p7-text, #f8fafc); }
+      #a16p7-svg .a16p7-muted { font-size: 11px; fill: var(--a16p7-text-muted, #94a3b8); }
+      #a16p7-svg .a16p7-btn-text { font-size: 12px; font-weight: 600; fill: var(--a16p7-text, #f8fafc); text-anchor: middle; pointer-events: none; }
+      #a16p7-svg .a16p7-btn-sub { font-size: 10px; fill: var(--a16p7-text-muted, #94a3b8); text-anchor: middle; pointer-events: none; }
+      
+      /* Interactive tabs &amp; buttons */
+      #a16p7-svg .a16p7-btn {
+        fill: var(--a16p7-card-bg, #1e293b);
+        stroke: var(--a16p7-card-border, #334155);
+        stroke-width: 1.5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        rx: 8px;
+      }
+      #a16p7-svg .a16p7-btn:hover,
+      #a16p7-svg .a16p7-btn:focus {
+        stroke: var(--a16p7-accent, #38bdf8);
+        outline: none;
+      }
+
+      /* Active State Styling for Trimester Tabs */
+      #a16p7-svg[data-trimestre="1"] #a16p7-tab-t1,
+      #a16p7-svg[data-trimestre="2"] #a16p7-tab-t2,
+      #a16p7-svg[data-trimestre="3"] #a16p7-tab-t3 {
+        fill: var(--a16p7-accent-bg, rgba(56, 189, 248, 0.15));
+        stroke: var(--a16p7-accent, #38bdf8);
+        stroke-width: 2px;
+      }
+
+      #a16p7-svg[data-trimestre="1"] #a16p7-tab-t1-text,
+      #a16p7-svg[data-trimestre="2"] #a16p7-tab-t2-text,
+      #a16p7-svg[data-trimestre="3"] #a16p7-tab-t3-text {
+        fill: var(--a16p7-accent, #38bdf8);
+        font-weight: 700;
+      }
+
+      /* Active State Styling for Serology Buttons */
+      #a16p7-svg[data-soro="sus"] #a16p7-btn-soro-sus {
+        fill: var(--a16p7-green-bg, rgba(74, 222, 128, 0.15));
+        stroke: var(--a16p7-green, #4ade80);
+        stroke-width: 2px;
+      }
+      #a16p7-svg[data-soro="sus"] #a16p7-btn-soro-sus-text { fill: var(--a16p7-green, #4ade80); font-weight: 700; }
+
+      #a16p7-svg[data-soro="imu"] #a16p7-btn-soro-imu {
+        fill: var(--a16p7-teal-bg, rgba(45, 212, 191, 0.15));
+        stroke: var(--a16p7-teal, #2dd4bf);
+        stroke-width: 2px;
+      }
+      #a16p7-svg[data-soro="imu"] #a16p7-btn-soro-imu-text { fill: var(--a16p7-teal, #2dd4bf); font-weight: 700; }
+
+      #a16p7-svg[data-soro="agu"] #a16p7-btn-soro-agu {
+        fill: var(--a16p7-red-bg, rgba(248, 113, 113, 0.15));
+        stroke: var(--a16p7-red, #f87171);
+        stroke-width: 2px;
+      }
+      #a16p7-svg[data-soro="agu"] #a16p7-btn-soro-agu-text { fill: var(--a16p7-red, #f87171); font-weight: 700; }
+
+      #a16p7-svg[data-soro="duv"] #a16p7-btn-soro-duv {
+        fill: var(--a16p7-yellow-bg, rgba(251, 191, 36, 0.15));
+        stroke: var(--a16p7-yellow, #fbbf24);
+        stroke-width: 2px;
+      }
+      #a16p7-svg[data-soro="duv"] #a16p7-btn-soro-duv-text { fill: var(--a16p7-yellow, #fbbf24); font-weight: 700; }
+
+      /* Conditional Display for Trimester Details */
+      #a16p7-svg[data-trimestre="1"] .a16p7-t1-content { display: block; }
+      #a16p7-svg:not([data-trimestre="1"]) .a16p7-t1-content { display: none; }
+
+      #a16p7-svg[data-trimestre="2"] .a16p7-t2-content { display: block; }
+      #a16p7-svg:not([data-trimestre="2"]) .a16p7-t2-content { display: none; }
+
+      #a16p7-svg[data-trimestre="3"] .a16p7-t3-content { display: block; }
+      #a16p7-svg:not([data-trimestre="3"]) .a16p7-t3-content { display: none; }
+
+      /* Conditional Display for Serology Details */
+      #a16p7-svg[data-soro="sus"] .a16p7-soro-sus-content { display: block; }
+      #a16p7-svg:not([data-soro="sus"]) .a16p7-soro-sus-content { display: none; }
+
+      #a16p7-svg[data-soro="imu"] .a16p7-soro-imu-content { display: block; }
+      #a16p7-svg:not([data-soro="imu"]) .a16p7-soro-imu-content { display: none; }
+
+      #a16p7-svg[data-soro="agu"] .a16p7-soro-agu-content { display: block; }
+      #a16p7-svg:not([data-soro="agu"]) .a16p7-soro-agu-content { display: none; }
+
+      #a16p7-svg[data-soro="duv"] .a16p7-soro-duv-content { display: block; }
+      #a16p7-svg:not([data-soro="duv"]) .a16p7-soro-duv-content { display: none; }
+
+      /* Graph Data Point Pulse Indicators */
+      #a16p7-svg .a16p7-point-pulse { display: none; }
+      #a16p7-svg[data-trimestre="1"] .a16p7-pulse-t1 { display: block; }
+      #a16p7-svg[data-trimestre="2"] .a16p7-pulse-t2 { display: block; }
+      #a16p7-svg[data-trimestre="3"] .a16p7-pulse-t3 { display: block; }
+
+      /* Grid and Axis Line Styles */
+      #a16p7-svg .a16p7-grid-line { stroke: var(--a16p7-card-border, #334155); stroke-dasharray: 4,4; stroke-width: 1px; }
+      #a16p7-svg .a16p7-axis-line { stroke: var(--a16p7-text-muted, #94a3b8); stroke-width: 1.5px; }
+
+      /* Badge Styles */
+      #a16p7-svg .a16p7-badge { rx: 6px; }
+      #a16p7-svg .a16p7-badge-coral { fill: var(--a16p7-coral-bg, rgba(255, 107, 107, 0.15)); stroke: var(--a16p7-coral, #ff6b6b); stroke-width: 1px; }
+      #a16p7-svg .a16p7-badge-teal { fill: var(--a16p7-teal-bg, rgba(45, 212, 191, 0.15)); stroke: var(--a16p7-teal, #2dd4bf); stroke-width: 1px; }
+      #a16p7-svg .a16p7-badge-green { fill: var(--a16p7-green-bg, rgba(74, 222, 128, 0.15)); stroke: var(--a16p7-green, #4ade80); stroke-width: 1px; }
+      #a16p7-svg .a16p7-badge-red { fill: var(--a16p7-red-bg, rgba(248, 113, 113, 0.15)); stroke: var(--a16p7-red, #f87171); stroke-width: 1px; }
+      #a16p7-svg .a16p7-badge-yellow { fill: var(--a16p7-yellow-bg, rgba(251, 191, 36, 0.15)); stroke: var(--a16p7-yellow, #fbbf24); stroke-width: 1px; }
+
+      /* Curve Area Gradients */
+      #a16p7-svg .a16p7-coral-path { fill: none; stroke: var(--a16p7-coral, #ff6b6b); stroke-width: 3.5px; stroke-linecap: round; }
+      #a16p7-svg .a16p7-teal-path { fill: none; stroke: var(--a16p7-teal, #2dd4bf); stroke-width: 3.5px; stroke-linecap: round; }
+    </style>
+
+    <linearGradient id="a16p7-grad-coral" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a16p7-coral, #ff6b6b)" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="var(--a16p7-coral, #ff6b6b)" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <linearGradient id="a16p7-grad-teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--a16p7-teal, #2dd4bf)" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="var(--a16p7-teal, #2dd4bf)" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Rect -->
+  <rect class="a16-inline-svg a16p7-root" width="1000" height="700" rx="16"/>
+
+  <!-- HEADER AREA -->
+  <g transform="translate(25, 20)">
+    <text class="a16-inline-svg a16p7-root" x="0" y="22">TOXOPLASMOSE NA GESTAÇÃO: O PARADOXO TRIMESTRAL</text>
+    <text class="a16-inline-svg a16p7-root" x="0" y="42">Transmissão vertical aumenta com a idade gestacional, mas a gravidade das sequelas fetais diminui (1ºT vs 2ºT vs 3ºT)</text>
+  </g>
+
+  <!-- LEFT PANEL 1: PARADOX GRAPH -->
+  <g transform="translate(25, 75)">
+    <rect class="a16-inline-svg a16p7-root" width="540" height="375"/>
+    
+    <!-- Graph Header -->
+    <text class="a16-inline-svg a16p7-root" x="20" y="30">CURVAS OPOSITORAS DE RISCO FETO-MATERNO</text>
+    <text class="a16-inline-svg a16p7-root" x="20" y="46">Toque nos trimestres para alternar a análise detalhada do binômio</text>
+
+    <!-- Legend Pills -->
+    <g transform="translate(260, 18)">
+      <rect width="12" height="12" rx="3" fill="var(--a16p7-coral, #ff6b6b)"/>
+      <text class="a16-inline-svg a16p7-root" x="18" y="10" font-weight="600" fill="var(--a16p7-coral, #ff6b6b)">Transmissão (↑)</text>
+
+      <rect x="140" width="12" height="12" rx="3" fill="var(--a16p7-teal, #2dd4bf)"/>
+      <text class="a16-inline-svg a16p7-root" x="158" y="10" font-weight="600" fill="var(--a16p7-teal, #2dd4bf)">Gravidade (↓)</text>
+    </g>
+
+    <!-- Graph Axis &amp; Grid -->
+    <!-- Y Axis Lines -->
+    <line class="a16-inline-svg a16p7-root" x1="65" y1="75" x2="500" y2="75"/>
+    <text class="a16-inline-svg a16p7-root" x="55" y="79" text-anchor="end">100%</text>
+
+    <line class="a16-inline-svg a16p7-root" x1="65" y1="130" x2="500" y2="130"/>
+    <text class="a16-inline-svg a16p7-root" x="55" y="134" text-anchor="end">75%</text>
+
+    <line class="a16-inline-svg a16p7-root" x1="65" y1="185" x2="500" y2="185"/>
+    <text class="a16-inline-svg a16p7-root" x="55" y="189" text-anchor="end">50%</text>
+
+    <line class="a16-inline-svg a16p7-root" x1="65" y1="240" x2="500" y2="240"/>
+    <text class="a16-inline-svg a16p7-root" x="55" y="244" text-anchor="end">25%</text>
+
+    <line class="a16-inline-svg a16p7-root" x1="65" y1="295" x2="500" y2="295"/>
+    <text class="a16-inline-svg a16p7-root" x="55" y="299" text-anchor="end">0%</text>
+
+    <!-- Main Axis Borders -->
+    <line class="a16-inline-svg a16p7-root" x1="65" y1="75" x2="65" y2="295"/>
+    <line class="a16-inline-svg a16p7-root" x1="65" y1="295" x2="500" y2="295"/>
+
+    <!-- Shaded Areas -->
+    <path d="M 130 251 C 200 235, 230 205, 282 196 C 340 185, 380 145, 435 130 L 435 295 L 130 295 Z" fill="url(#a16p7-grad-coral)"/>
+    <path d="M 130 108 C 200 150, 230 215, 282 229 C 340 250, 380 270, 435 273 L 435 295 L 130 295 Z" fill="url(#a16p7-grad-teal)"/>
+
+    <!-- Plot Lines -->
+    <!-- Transmission Curve (Coral): 1T=20% (y=251), 2T=45% (y=196), 3T=75% (y=130) -->
+    <path class="a16-inline-svg a16p7-root" d="M 130 251 C 200 235, 230 205, 282 196 C 340 185, 380 145, 435 130"/>
+    
+    <!-- Gravity Curve (Teal): 1T=85% (y=108), 2T=30% (y=229), 3T=10% (y=273) -->
+    <path class="a16-inline-svg a16p7-root" d="M 130 108 C 200 150, 230 215, 282 229 C 340 250, 380 270, 435 273"/>
+
+    <!-- Intersection Point Highlight (2º Trimestre area) -->
+    <line class="a16-inline-svg a16p7-root" x1="282" y1="75" x2="282" y2="295"/>
+    <circle cx="282" cy="212" r="5" fill="var(--a16p7-yellow, #fbbf24)"/>
+    <text class="a16-inline-svg a16p7-root" x="290" y="215" font-size="10px" fill="var(--a16p7-yellow, #fbbf24)" font-weight="700">Ponto de Cruzamento</text>
+
+    <!-- Data Points for 1T, 2T, 3T -->
+    <!-- 1T Points -->
+    <circle cx="130" cy="251" r="5" fill="var(--a16p7-coral, #ff6b6b)"/>
+    <circle cx="130" cy="108" r="5" fill="var(--a16p7-teal, #2dd4bf)"/>
+
+    <!-- 2T Points -->
+    <circle cx="282" cy="196" r="5" fill="var(--a16p7-coral, #ff6b6b)"/>
+    <circle cx="282" cy="229" r="5" fill="var(--a16p7-teal, #2dd4bf)"/>
+
+    <!-- 3T Points -->
+    <circle cx="435" cy="130" r="5" fill="var(--a16p7-coral, #ff6b6b)"/>
+    <circle cx="435" cy="273" r="5" fill="var(--a16p7-teal, #2dd4bf)"/>
+
+    <!-- Active Pulse Rings -->
+    <!-- 1T Active Pulse -->
+    <g class="a16-inline-svg a16p7-root">
+      <circle cx="130" cy="251" r="10" fill="none" stroke="var(--a16p7-coral, #ff6b6b)" stroke-width="2.5px" stroke-dasharray="2,2"/>
+      <circle cx="130" cy="108" r="10" fill="none" stroke="var(--a16p7-teal, #2dd4bf)" stroke-width="2.5px" stroke-dasharray="2,2"/>
+      <line x1="130" y1="75" x2="130" y2="295" stroke="var(--a16p7-accent, #38bdf8)" stroke-width="1.5px" stroke-dasharray="3,3"/>
+    </g>
+
+    <!-- 2T Active Pulse -->
+    <g class="a16-inline-svg a16p7-root">
+      <circle cx="282" cy="196" r="10" fill="none" stroke="var(--a16p7-coral, #ff6b6b)" stroke-width="2.5px" stroke-dasharray="2,2"/>
+      <circle cx="282" cy="229" r="10" fill="none" stroke="var(--a16p7-teal, #2dd4bf)" stroke-width="2.5px" stroke-dasharray="2,2"/>
+      <line x1="282" y1="75" x2="282" y2="295" stroke="var(--a16p7-accent, #38bdf8)" stroke-width="1.5px" stroke-dasharray="3,3"/>
+    </g>
+
+    <!-- 3T Active Pulse -->
+    <g class="a16-inline-svg a16p7-root">
+      <circle cx="435" cy="130" r="10" fill="none" stroke="var(--a16p7-coral, #ff6b6b)" stroke-width="2.5px" stroke-dasharray="2,2"/>
+      <circle cx="435" cy="273" r="10" fill="none" stroke="var(--a16p7-teal, #2dd4bf)" stroke-width="2.5px" stroke-dasharray="2,2"/>
+      <line x1="435" y1="75" x2="435" y2="295" stroke="var(--a16p7-accent, #38bdf8)" stroke-width="1.5px" stroke-dasharray="3,3"/>
+    </g>
+
+    <!-- Trimester Interactive Selector Buttons (Tabs) -->
+    <g transform="translate(35, 315)">
+      <!-- Tab 1T -->
+      <g id="a16p7-tab-t1" class="a16-inline-svg a16p7-root" role="button" tabindex="0" aria-label="Selecionar 1º Trimestre" onclick="setTrimestre(1)" onkeydown="if(event.key==='Enter'||event.key===' ')setTrimestre(1)">
+        <rect width="145" height="42" rx="8"/>
+        <text id="a16p7-tab-t1-text" class="a16-inline-svg a16p7-root" x="72.5" y="21">1º TRIMESTRE</text>
+        <text class="a16-inline-svg a16p7-root" x="72.5" y="34">1 a 13 semanas</text>
+      </g>
+
+      <!-- Tab 2T -->
+      <g id="a16p7-tab-t2" class="a16-inline-svg a16p7-root" transform="translate(162, 0)" role="button" tabindex="0" aria-label="Selecionar 2º Trimestre" onclick="setTrimestre(2)" onkeydown="if(event.key==='Enter'||event.key===' ')setTrimestre(2)">
+        <rect width="145" height="42" rx="8"/>
+        <text id="a16p7-tab-t2-text" class="a16-inline-svg a16p7-root" x="72.5" y="21">2º TRIMESTRE</text>
+        <text class="a16-inline-svg a16p7-root" x="72.5" y="34">14 a 27 semanas</text>
+      </g>
+
+      <!-- Tab 3T -->
+      <g id="a16p7-tab-t3" class="a16-inline-svg a16p7-root" transform="translate(324, 0)" role="button" tabindex="0" aria-label="Selecionar 3º Trimestre" onclick="setTrimestre(3)" onkeydown="if(event.key==='Enter'||event.key===' ')setTrimestre(3)">
+        <rect width="145" height="42" rx="8"/>
+        <text id="a16p7-tab-t3-text" class="a16-inline-svg a16p7-root" x="72.5" y="21">3º TRIMESTRE</text>
+        <text class="a16-inline-svg a16p7-root" x="72.5" y="34">28 a 40 semanas</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- LEFT PANEL 2: PLACENTAL BARRIER &amp; FETAL IMPACT SCHEMATIC -->
+  <g transform="translate(25, 465)">
+    <rect class="a16-inline-svg a16p7-root" width="540" height="215"/>
+    <text class="a16-inline-svg a16p7-root" x="20" y="25">BARREIRA PLACENTÁRIA &amp; ANATOMIA PATOLÓGICA</text>
+    <text class="a16-inline-svg a16p7-root" x="20" y="41">Fisiopatologia do fluxo placentário e vulnerabilidade fetal por idade gestacional</text>
+
+    <!-- 3 Columns Schematic for 1T, 2T, 3T -->
+    <g transform="translate(15, 52)">
+      <!-- 1T Schematic Box -->
+      <g transform="translate(0, 0)">
+        <rect width="160" height="142" rx="8" fill="var(--a16p7-card-bg, #1e293b)" stroke="var(--a16p7-card-border, #334155)"/>
+        
+        <!-- Header -->
+        <rect width="160" height="24" rx="8" fill="var(--a16p7-red-bg, rgba(248,113,113,0.15))"/>
+        <text class="a16-inline-svg a16p7-root" x="80" y="16" text-anchor="middle" fill="var(--a16p7-red, #f87171)" font-size="11px">1º TRIMESTRE: RAREFAÇÃO</text>
+
+        <!-- Placenta representation: Thick barrier -->
+        <g transform="translate(15, 34)">
+          <rect width="130" height="24" rx="4" fill="#334155" stroke="var(--a16p7-card-border, #475569)"/>
+          <text class="a16-inline-svg a16p7-root" x="65" y="16" text-anchor="middle" font-size="10px" font-weight="600">Placenta Espessa (Barreira ↑)</text>
+        </g>
+
+        <!-- Parasite flow arrow -->
+        <path d="M 80 62 L 80 74" stroke="var(--a16p7-coral, #ff6b6b)" stroke-width="2" stroke-dasharray="2,2"/>
+        <polygon points="80,78 76,72 84,72" fill="var(--a16p7-coral, #ff6b6b)"/>
+
+        <!-- Fetal Impact Box -->
+        <g transform="translate(10, 80)">
+          <rect width="140" height="52" rx="6" fill="rgba(248, 113, 113, 0.1)" stroke="var(--a16p7-red, #f87171)" stroke-width="1px"/>
+          <text class="a16-inline-svg a16p7-root" x="70" y="18" text-anchor="middle" font-size="10px" fill="var(--a16p7-red, #f87171)">GRAVIDADE MÁXIMA</text>
+          <text class="a16-inline-svg a16p7-root" x="70" y="32" text-anchor="middle" font-size="9.5px">• Abortamento espontâneo</text>
+          <text class="a16-inline-svg a16p7-root" x="70" y="44" text-anchor="middle" font-size="9.5px">• Tríade Clássica de Sabin</text>
+        </g>
+      </g>
+
+      <!-- 2T Schematic Box -->
+      <g transform="translate(173, 0)">
+        <rect width="160" height="142" rx="8" fill="var(--a16p7-card-bg, #1e293b)" stroke="var(--a16p7-card-border, #334155)"/>
+        
+        <!-- Header -->
+        <rect width="160" height="24" rx="8" fill="var(--a16p7-yellow-bg, rgba(251,191,36,0.15))"/>
+        <text class="a16-inline-svg a16p7-root" x="80" y="16" text-anchor="middle" fill="var(--a16p7-yellow, #fbbf24)" font-size="11px">2º TRIMESTRE: DESTRUIÇÃO</text>
+
+        <!-- Placenta representation: Intermediate barrier -->
+        <g transform="translate(15, 34)">
+          <rect width="130" height="24" rx="4" fill="#334155" stroke="var(--a16p7-card-border, #475569)"/>
+          <text class="a16-inline-svg a16p7-root" x="65" y="16" text-anchor="middle" font-size="10px" font-weight="600">Vascularização Intermediária</text>
+        </g>
+
+        <!-- Parasite flow arrow -->
+        <path d="M 80 62 L 80 74" stroke="var(--a16p7-coral, #ff6b6b)" stroke-width="2.5"/>
+        <polygon points="80,78 75,71 85,71" fill="var(--a16p7-coral, #ff6b6b)"/>
+
+        <!-- Fetal Impact Box -->
+        <g transform="translate(10, 80)">
+          <rect width="140" height="52" rx="6" fill="rgba(251, 191, 36, 0.1)" stroke="var(--a16p7-yellow, #fbbf24)" stroke-width="1px"/>
+          <text class="a16-inline-svg a16p7-root" x="70" y="18" text-anchor="middle" font-size="10px" fill="var(--a16p7-yellow, #fbbf24)">RISCO INTERMEDIÁRIO</text>
+          <text class="a16-inline-svg a16p7-root" x="70" y="32" text-anchor="middle" font-size="9.5px">• Lesões neurológicas/visuais</text>
+          <text class="a16-inline-svg a16p7-root" x="70" y="44" text-anchor="middle" font-size="9.5px">• Janela de Amniocentese (≥16w)</text>
+        </g>
+      </g>
+
+      <!-- 3T Schematic Box -->
+      <g transform="translate(346, 0)">
+        <rect width="160" height="142" rx="8" fill="var(--a16p7-card-bg, #1e293b)" stroke="var(--a16p7-card-border, #334155)"/>
+        
+        <!-- Header -->
+        <rect width="160" height="24" rx="8" fill="var(--a16p7-teal-bg, rgba(45,212,191,0.15))"/>
+        <text class="a16-inline-svg a16p7-root" x="80" y="16" text-anchor="middle" fill="var(--a16p7-teal, #2dd4bf)" font-size="11px">3º TRIMESTRE: SUBCLÍNICA</text>
+
+        <!-- Placenta representation: Thin, vascular barrier -->
+        <g transform="translate(15, 34)">
+          <rect width="130" height="24" rx="4" fill="#334155" stroke="var(--a16p7-card-border, #475569)"/>
+          <text class="a16-inline-svg a16p7-root" x="65" y="16" text-anchor="middle" font-size="10px" font-weight="600">Placenta Fina / Vasa (Passagem ↑)</text>
+        </g>
+
+        <!-- Parasite flow arrow -->
+        <path d="M 80 62 L 80 74" stroke="var(--a16p7-coral, #ff6b6b)" stroke-width="4"/>
+        <polygon points="80,79 73,70 87,70" fill="var(--a16p7-coral, #ff6b6b)"/>
+
+        <!-- Fetal Impact Box -->
+        <g transform="translate(10, 80)">
+          <rect width="140" height="52" rx="6" fill="rgba(45, 212, 191, 0.1)" stroke="var(--a16p7-teal, #2dd4bf)" stroke-width="1px"/>
+          <text class="a16-inline-svg a16p7-root" x="70" y="18" text-anchor="middle" font-size="10px" fill="var(--a16p7-teal, #2dd4bf)">GRAVIDADE LEVE / SUBCLÍNICA</text>
+          <text class="a16-inline-svg a16p7-root" x="70" y="32" text-anchor="middle" font-size="9.5px">• RN Assintomático (80-90%)</text>
+          <text class="a16-inline-svg a16p7-root" x="70" y="44" text-anchor="middle" font-size="9.5px">• Coriorretinite tardia na infância</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL 3: TRIMESTER CLINICAL DETAIL CARD -->
+  <g transform="translate(580, 75)">
+    <rect class="a16-inline-svg a16p7-root" width="395" height="225"/>
+    <text class="a16-inline-svg a16p7-root" x="20" y="26">PAINEL DO TRIMESTRE SELECIONADO</text>
+    
+    <!-- 1T Content -->
+    <g class="a16-inline-svg a16p7-root" transform="translate(20, 42)">
+      <!-- Risk Badges -->
+      <g transform="translate(0, 0)">
+        <rect class="a16-inline-svg a16p7-root" width="170" height="42"/>
+        <text class="a16-inline-svg a16p7-root" x="12" y="16" font-size="10px">Transmissão Vertical (1ºT):</text>
+        <text class="a16-inline-svg a16p7-root" x="12" y="33" fill="var(--a16p7-coral, #ff6b6b)" font-size="14px">15% a 25% (BAIXA)</text>
+      </g>
+
+      <g transform="translate(185, 0)">
+        <rect class="a16-inline-svg a16p7-root" width="170" height="42"/>
+        <text class="a16-inline-svg a16p7-root" x="12" y="16" font-size="10px">Gravidade Sequelas (1ºT):</text>
+        <text class="a16-inline-svg a16p7-root" x="12" y="33" fill="var(--a16p7-red, #f87171)" font-size="14px">75% a 90% (ALTÍSSIMA)</text>
+      </g>
+
+      <!-- Description text -->
+      <text class="a16-inline-svg a16p7-root" x="0" y="65" font-size="12px" fill="var(--a16p7-accent, #38bdf8)">Impacto Fetal &amp; Achados Clínicos:</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="83" font-size="11.5px">• Embriogênese inicial vulnerável a danos irreversíveis no SNC.</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="99" font-size="11.5px">• Tríade Clássica de Sabin: Hidrocefalia + Calcificações intracranianas</text>
+      <text class="a16-inline-svg a16p7-root" x="10" y="113" font-size="11.5px">difusas + Coriorretinite (com ou sem retardo mental).</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="129" font-size="11.5px">• Alto risco de morte fetal intrauterina e abortamento espontâneo.</text>
+
+      <!-- Prova Alert Pill -->
+      <g transform="translate(0, 142)">
+        <rect width="355" height="28" rx="6" fill="var(--a16p7-red-bg, rgba(248, 113, 113, 0.15))" stroke="var(--a16p7-red, #f87171)" stroke-width="1px"/>
+        <text class="a16-inline-svg a16p7-root" x="10" y="18" font-size="10.5px" fill="var(--a16p7-red, #f87171)">📌 PROVA: Transmite POUCO, mas se infectar, DESTRÓI o embrião!</text>
+      </g>
+    </g>
+
+    <!-- 2T Content -->
+    <g class="a16-inline-svg a16p7-root" transform="translate(20, 42)">
+      <!-- Risk Badges -->
+      <g transform="translate(0, 0)">
+        <rect class="a16-inline-svg a16p7-root" width="170" height="42"/>
+        <text class="a16-inline-svg a16p7-root" x="12" y="16" font-size="10px">Transmissão Vertical (2ºT):</text>
+        <text class="a16-inline-svg a16p7-root" x="12" y="33" fill="var(--a16p7-coral, #ff6b6b)" font-size="14px">30% a 50% (MÉDIA)</text>
+      </g>
+
+      <g transform="translate(185, 0)">
+        <rect class="a16-inline-svg a16p7-root" width="170" height="42"/>
+        <text class="a16-inline-svg a16p7-root" x="12" y="16" font-size="10px">Gravidade Sequelas (2ºT):</text>
+        <text class="a16-inline-svg a16p7-root" x="12" y="33" fill="var(--a16p7-yellow, #fbbf24)" font-size="14px">20% a 30% (MODERADA)</text>
+      </g>
+
+      <!-- Description text -->
+      <text class="a16-inline-svg a16p7-root" x="0" y="65" font-size="12px" fill="var(--a16p7-accent, #38bdf8)">Impacto Fetal &amp; Conduta Diagnóstica:</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="83" font-size="11.5px">• Zona de transição das curvas: risco equilibrado de transmissão e dano.</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="99" font-size="11.5px">• Janela ideal para confirmação feto-placentária por **Amniocentese**</text>
+      <text class="a16-inline-svg a16p7-root" x="10" y="113" font-size="11.5px">(com PCR para T. gondii no líquido amniótico) a partir de 16-18 sem.</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="129" font-size="11.5px">• Se PCR positiva → substituir Espiramicina por **Esquema Triplo** (Sulfadiazina + Pirimetamina + Ácido Folínico).</text>
+
+      <!-- Prova Alert Pill -->
+      <g transform="translate(0, 142)">
+        <rect width="355" height="28" rx="6" fill="var(--a16p7-yellow-bg, rgba(251, 191, 36, 0.15))" stroke="var(--a16p7-yellow, #fbbf24)" stroke-width="1px"/>
+        <text class="a16-inline-svg a16p7-root" x="10" y="18" font-size="10.5px" fill="var(--a16p7-yellow, #fbbf24)">📌 PROVA: Amniocentese + PCR do líq. amniótico indicada ≥16-18 sem!</text>
+      </g>
+    </g>
+
+    <!-- 3T Content -->
+    <g class="a16-inline-svg a16p7-root" transform="translate(20, 42)">
+      <!-- Risk Badges -->
+      <g transform="translate(0, 0)">
+        <rect class="a16-inline-svg a16p7-root" width="170" height="42"/>
+        <text class="a16-inline-svg a16p7-root" x="12" y="16" font-size="10px">Transmissão Vertical (3ºT):</text>
+        <text class="a16-inline-svg a16p7-root" x="12" y="33" fill="var(--a16p7-coral, #ff6b6b)" font-size="14px">65% a 80% (ALTÍSSIMA)</text>
+      </g>
+
+      <g transform="translate(185, 0)">
+        <rect class="a16-inline-svg a16p7-root" width="170" height="42"/>
+        <text class="a16-inline-svg a16p7-root" x="12" y="16" font-size="10px">Gravidade Sequelas (3ºT):</text>
+        <text class="a16-inline-svg a16p7-root" x="12" y="33" fill="var(--a16p7-teal, #2dd4bf)" font-size="14px">5% a 10% (LEVE / SUBCLÍNICA)</text>
+      </g>
+
+      <!-- Description text -->
+      <text class="a16-inline-svg a16p7-root" x="0" y="65" font-size="12px" fill="var(--a16p7-accent, #38bdf8)">Impacto Fetal &amp; Acompanhamento Neonatal:</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="83" font-size="11.5px">• Placenta fina e vascularizada facilita a passagem massiva de parasitas.</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="99" font-size="11.5px">• Maioria dos recém-nascidos nasce **assintomática** (80-90%).</text>
+      <text class="a16-inline-svg a16p7-root" x="0" y="115" font-size="11.5px">• Atenção: Sem tratamento, desenvolvem **coriorretinite tardia** e</text>
+      <text class="a16-inline-svg a16p7-root" x="10" y="129" font-size="11.5px">perda auditiva/neurológica na infância ou adolescência.</text>
+
+      <!-- Prova Alert Pill -->
+      <g transform="translate(0, 142)">
+        <rect width="355" height="28" rx="6" fill="var(--a16p7-teal-bg, rgba(45, 212, 191, 0.15))" stroke="var(--a16p7-teal, #2dd4bf)" stroke-width="1px"/>
+        <text class="a16-inline-svg a16p7-root" x="10" y="18" font-size="10.5px" fill="var(--a16p7-teal, #2dd4bf)">📌 PROVA: Transmite MUITO, mas o RN nasce assintomático na maioria!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL 4: SEROLOGY DIAGNOSTIC MATRIX -->
+  <g transform="translate(580, 315)">
+    <rect class="a16-inline-svg a16p7-root" width="395" height="365"/>
+    <text class="a16-inline-svg a16p7-root" x="20" y="26">MATRIZ DE CONDUTA SOROLÓGICA (IgG / IgM)</text>
+    <text class="a16-inline-svg a16p7-root" x="20" y="42">Selecione o resultado sorológico da gestante para ver a conduta exata</text>
+
+    <!-- 2x2 Grid Sorology Buttons -->
+    <g transform="translate(20, 52)">
+      <!-- Button IgG- IgM- (Suscetível) -->
+      <g id="a16p7-btn-soro-sus" class="a16-inline-svg a16p7-root" role="button" tabindex="0" aria-label="IgG negativo e IgM negativo" onclick="setSoro('sus')" onkeydown="if(event.key==='Enter'||event.key===' ')setSoro('sus')">
+        <rect width="170" height="40" rx="8"/>
+        <text id="a16p7-btn-soro-sus-text" class="a16-inline-svg a16p7-root" x="85" y="20">IgG −  /  IgM −</text>
+        <text class="a16-inline-svg a16p7-root" x="85" y="32">Suscetível (Sem Imunidade)</text>
+      </g>
+
+      <!-- Button IgG+ IgM- (Imune) -->
+      <g id="a16p7-btn-soro-imu" class="a16-inline-svg a16p7-root" transform="translate(185, 0)" role="button" tabindex="0" aria-label="IgG positivo e IgM negativo" onclick="setSoro('imu')" onkeydown="if(event.key==='Enter'||event.key===' ')setSoro('imu')">
+        <rect width="170" height="40" rx="8"/>
+        <text id="a16p7-btn-soro-imu-text" class="a16-inline-svg a16p7-root" x="85" y="20">IgG +  /  IgM −</text>
+        <text class="a16-inline-svg a16p7-root" x="85" y="32">Imune (Infecção Antiga)</text>
+      </g>
+
+      <!-- Button IgG- IgM+ (Aguda Recente) -->
+      <g id="a16p7-btn-soro-agu" class="a16-inline-svg a16p7-root" transform="translate(0, 48)" role="button" tabindex="0" aria-label="IgG negativo e IgM positivo" onclick="setSoro('agu')" onkeydown="if(event.key==='Enter'||event.key===' ')setSoro('agu')">
+        <rect width="170" height="40" rx="8"/>
+        <text id="a16p7-btn-soro-agu-text" class="a16-inline-svg a16p7-root" x="85" y="20">IgG −  /  IgM +</text>
+        <text class="a16-inline-svg a16p7-root" x="85" y="32">Infecção Aguda Recente</text>
+      </g>
+
+      <!-- Button IgG+ IgM+ (Dúvida: Avidez) -->
+      <g id="a16p7-btn-soro-duv" class="a16-inline-svg a16p7-root" transform="translate(185, 48)" role="button" tabindex="0" aria-label="IgG positivo e IgM positivo" onclick="setSoro('duv')" onkeydown="if(event.key==='Enter'||event.key===' ')setSoro('duv')">
+        <rect width="170" height="40" rx="8"/>
+        <text id="a16p7-btn-soro-duv-text" class="a16-inline-svg a16p7-root" x="85" y="20">IgG +  /  IgM +</text>
+        <text class="a16-inline-svg a16p7-root" x="85" y="32">Dúvida (Pedir Avidez)</text>
+      </g>
+    </g>
+
+    <!-- Dynamic Serology Output Container -->
+    <g transform="translate(20, 155)">
+      <!-- Suscetível Content -->
+      <g class="a16-inline-svg a16p7-root">
+        <rect width="355" height="190" rx="8" fill="var(--a16p7-green-bg, rgba(74, 222, 128, 0.1))" stroke="var(--a16p7-green, #4ade80)" stroke-width="1.5px"/>
+        <text class="a16-inline-svg a16p7-root" x="15" y="24" fill="var(--a16p7-green, #4ade80)" font-size="13px">DIAGNÓSTICO: SUSCETÍVEL À INFECÇÃO</text>
+        
+        <text class="a16-inline-svg a16p7-root" x="15" y="48" font-size="11.5px" fill="var(--a16p7-text, #f8fafc)">Conduta Obrigatória de Pré-Natal:</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="66" font-size="11px">1. Orientações Profiláticas Primárias:</text>
+        <text class="a16-inline-svg a16p7-root" x="25" y="80" font-size="11px">• Evitar carne crua/malpassada e embutidos.</text>
+        <text class="a16-inline-svg a16p7-root" x="25" y="94" font-size="11px">• Higienizar bem frutas, legumes e utensílios de cozinha.</text>
+        <text class="a16-inline-svg a16p7-root" x="25" y="108" font-size="11px">• Evitar contato com fezes de felinos jovens / jardinagem.</text>
+
+        <text class="a16-inline-svg a16p7-root" x="15" y="126" font-size="11px">2. Repetição de Sorologia: Repetir a cada 1 a 3 meses (mensal no MS Brasil / trimestral em faixas de menor risco) até o parto.</text>
+
+        <g transform="translate(12, 142)">
+          <rect width="331" height="36" rx="6" fill="var(--a16p7-card-bg, #1e293b)" stroke="var(--a16p7-green, #4ade80)" stroke-width="1px"/>
+          <text class="a16-inline-svg a16p7-root" x="10" y="16" font-size="10px" fill="var(--a16p7-green, #4ade80)">💡 REGRA DE PROVA:</text>
+          <text class="a16-inline-svg a16p7-root" x="10" y="28" font-size="10px">Gestante IgG- IgM- NÃO ganha medicação, ganha prevenção + sorologia seriada!</text>
+        </g>
+      </g>
+
+      <!-- Imune Content -->
+      <g class="a16-inline-svg a16p7-root">
+        <rect width="355" height="190" rx="8" fill="var(--a16p7-teal-bg, rgba(45, 212, 191, 0.1))" stroke="var(--a16p7-teal, #2dd4bf)" stroke-width="1.5px"/>
+        <text class="a16-inline-svg a16p7-root" x="15" y="24" fill="var(--a16p7-teal, #2dd4bf)" font-size="13px">DIAGNÓSTICO: IMUNIDADE PRÉVIA (Infecção Antiga)</text>
+        
+        <text class="a16-inline-svg a16p7-root" x="15" y="48" font-size="11.5px" fill="var(--a16p7-text, #f8fafc)">Conduta de Pré-Natal:</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="66" font-size="11px">• Infecção adquirida há mais de 6 meses antes da concepção.</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="82" font-size="11px">• Gestante imunoprotegida. Sem risco de transmissão vertical em pacientes imunocompetentes.</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="98" font-size="11px">• Alta do rastreamento de toxoplasmose no pré-natal.</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="114" font-size="11px">• NÃO necessita repetir sorologia e NÃO necessita de tratamento.</text>
+
+        <g transform="translate(12, 134)">
+          <rect width="331" height="42" rx="6" fill="var(--a16p7-card-bg, #1e293b)" stroke="var(--a16p7-teal, #2dd4bf)" stroke-width="1px"/>
+          <text class="a16-inline-svg a16p7-root" x="10" y="16" font-size="10px" fill="var(--a16p7-teal, #2dd4bf)">💡 PEGADINHA CLÁSSICA DE PROVA:</text>
+          <text class="a16-inline-svg a16p7-root" x="10" y="30" font-size="10px">IgG+ IgM- no 1º trimestre tranquiliza a paciente. Fim de investigação!</text>
+        </g>
+      </g>
+
+      <!-- Aguda Recente Content -->
+      <g class="a16-inline-svg a16p7-root">
+        <rect width="355" height="190" rx="8" fill="var(--a16p7-red-bg, rgba(248, 113, 113, 0.1))" stroke="var(--a16p7-red, #f87171)" stroke-width="1.5px"/>
+        <text class="a16-inline-svg a16p7-root" x="15" y="24" fill="var(--a16p7-red, #f87171)" font-size="13px">DIAGNÓSTICO: PROVÁVEL INFECÇÃO AGUDA RECENTE</text>
+        
+        <text class="a16-inline-svg a16p7-root" x="15" y="46" font-size="11.5px" fill="var(--a16p7-text, #f8fafc)">Conduta Imediata (NÃO PERDER TEMPO):</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="64" font-size="11px">1. Iniciar Espiramicina (1g de 8/8h = 3g/dia) IMEDIATAMENTE.</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="80" font-size="11px">2. A Espiramicina se concentra na placenta e reduz em 50% o risco de transmissão vertical, sem toxicidade fetal.</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="96" font-size="11px">3. Coletar nova amostra para confirmar soroconversão de IgG em 2-3 semanas (descartar IgM falso-positivo).</text>
+
+        <g transform="translate(12, 112)">
+          <rect width="331" height="64" rx="6" fill="var(--a16p7-card-bg, #1e293b)" stroke="var(--a16p7-red, #f87171)" stroke-width="1px"/>
+          <text class="a16-inline-svg a16p7-root" x="10" y="16" font-size="10px" fill="var(--a16p7-red, #f87171)">🚨 ERRO CRÍTICO EM CONCURSOS / PROVA:</text>
+          <text class="a16-inline-svg a16p7-root" x="10" y="30" font-size="10px">Jamais espere 3 semanas para tratar! A Espiramicina DEVE ser</text>
+          <text class="a16-inline-svg a16p7-root" x="10" y="42" font-size="10px">prescrita no PRIMEIRO atendimento na presença de IgM positivo!</text>
+          <text class="a16-inline-svg a16p7-root" x="10" y="54" font-size="10px">A Espiramicina NÃO atravessa placenta para tratar feto (é profilaxia de barreira).</text>
+        </g>
+      </g>
+
+      <!-- Dúvida: Avidez Content -->
+      <g class="a16-inline-svg a16p7-root">
+        <rect width="355" height="190" rx="8" fill="var(--a16p7-yellow-bg, rgba(251, 191, 36, 0.1))" stroke="var(--a16p7-yellow, #fbbf24)" stroke-width="1.5px"/>
+        <text class="a16-inline-svg a16p7-root" x="15" y="24" fill="var(--a16p7-yellow, #fbbf24)" font-size="13px">DIAGNÓSTICO: DÚVIDA (Aguda vs IgM Residual)</text>
+        
+        <text class="a16-inline-svg a16p7-root" x="15" y="46" font-size="11.5px" fill="var(--a16p7-text, #f8fafc)">Conduta pelo Tempo de Gestação:</text>
+        <text class="a16-inline-svg a16p7-root" x="15" y="64" font-size="11px">• Se &lt; 16 semanas: Iniciar Espiramicina + Pedir TESTE DE AVIDEZ DE IgG.</text>
+        <text class="a16-inline-svg a16p7-root" x="25" y="78" font-size="10.5px">- ALTA AVIDEZ (&gt;60%): Infecção antiga (&gt;4 meses) → Suspender medicação!</text>
+        <text class="a16-inline-svg a16p7-root" x="25" y="92" font-size="10.5px">- BAIXA AVIDEZ (&lt;30%): Infecção recente → Manter Espiramicina + PCR feto.</text>
+
+        <text class="a16-inline-svg a16p7-root" x="15" y="108" font-size="11px">• Se &gt; 16 semanas: Avidez NÃO confirma mais nada (pode ser baixa por meses). Tratar como infecção aguda!</text>
+
+        <g transform="translate(12, 122)">
+          <rect width="331" height="56" rx="6" fill="var(--a16p7-card-bg, #1e293b)" stroke="var(--a16p7-yellow, #fbbf24)" stroke-width="1px"/>
+          <text class="a16-inline-svg a16p7-root" x="10" y="15" font-size="10px" fill="var(--a16p7-yellow, #fbbf24)">⚠️ SEGREDO DE PROVA (TESTE DE AVIDEZ):</text>
+          <text class="a16-inline-svg a16p7-root" x="10" y="28" font-size="10px">O Teste de Avidez de IgG só tem valor diagnóstico conclusivo se</text>
+          <text class="a16-inline-svg a16p7-root" x="10" y="40" font-size="10px">realizado ANTES de 16 semanas de gestação! Alta Avidez em &lt;16w exclui</text>
+          <text class="a16-inline-svg a16p7-root" x="10" y="50" font-size="10px">infecção na gestação e tranquiliza a paciente.</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- EMBEDDED INTERACTIVE JAVASCRIPT ENGINE -->
+  <script>
+    /* <![CDATA[ */
+    function setTrimestre(t) {
+      var root = document.getElementById('a16p7-svg');
+      if (!root) return;
+      root.setAttribute('data-trimestre', t);
+      
+      for (var i = 1; i <= 3; i++) {
+        var tab = document.getElementById('a16p7-tab-t' + i);
+        if (tab) {
+          tab.setAttribute('aria-selected', i === t ? 'true' : 'false');
+        }
+      }
+    }
+
+    function setSoro(s) {
+      var root = document.getElementById('a16p7-svg');
+      if (!root) return;
+      root.setAttribute('data-soro', s);
+      
+      var types = ['sus', 'imu', 'agu', 'duv'];
+      for (var i = 0; i < types.length; i++) {
+        var btn = document.getElementById('a16p7-btn-soro-' + types[i]);
+        if (btn) {
+          btn.setAttribute('aria-selected', types[i] === s ? 'true' : 'false');
+        }
+      }
+    }
+    /* ]]> */
+  </script>
+</svg>

@@ -1,0 +1,496 @@
+/* aula-10.css — componentes-Executor da Aula 10 (Ginecologia · BÔNUS): síndrome pré-menstrual e
+   síndrome disfórica pré-menstrual. ADITIVO e element-scoped: prefixo .a10- para nunca colidir com
+   base.css / components.css nem regredir as Aulas 1–9. Herda os tokens da casa (rosa-vinho) — NÃO
+   reskin; só declara tokens NOVOS (--a10-*). Carrega só nas páginas da Aula 10.
+
+   Natureza BÔNUS: chrome âmbar (rótulo/borda/status), padrão da Aula 6. O âmbar de CHROME é sempre
+   marcado por ★ e borda tracejada; o âmbar SEMÂNTICO (alarme/pegadinha) é sempre barra sólida à
+   esquerda — assim os dois nunca se confundem (regra §4.3 do plano).
+   Interação-âncora = o CLASSIFICADOR BOOLEANO (P5): grade etiquetada + 8 portões + veredito textual
+   com o critério que faltou. */
+
+:root {
+  --a10-bonus: var(--kw-amber);
+  --a10-bonus-dim: var(--kw-amber-dim);
+  --a10-rule: var(--border-mid);
+  --a10-cell: var(--bg-2);
+
+  /* Tinta da PRANCHA (ilha de papel) — ver bloco "Cueing FORA dos pixels" e ".is-plate".
+     A prancha da figura real pinta o fundo com var(--kw-white), token que INVERTE por tema
+     (#ffffff no escuro · #221019 no claro). A mobília desenhada por cima dela (rótulos A/B,
+     calha de cue, eixo, chamada de zoom) não pode herdar a tinta da PÁGINA: no tema escuro
+     ficava clara sobre prancha branca e no claro escura sobre prancha escura. Estes tokens
+     acompanham a PRANCHA, não a página — e por isso são o espelho dos tokens da casa. */
+  --a10-plate-ink:      #221019;   /* = --ink-100 do claro */
+  --a10-plate-ink-soft: #6a5560;   /* = --ink-70  do claro */
+  --a10-plate-rose:     #b02a5f;   /* = --rose-hi do claro */
+  --a10-plate-green:    #0f7a56;   /* verde da casa, um passo mais fundo p/ AA sobre branco */
+  --a10-plate-amber:    #8a6108;   /* âmbar da casa, um passo mais fundo p/ AA sobre branco */
+
+  /* Acento sobre TINTA da própria família — ver ".a10-rot__block", ".a10-rot__hard" e
+     ".a10-tl__row.is-on". O vermelho e o âmbar da casa são calibrados para a superfície NEUTRA da
+     página. Quando o mesmo acento cai sobre uma tinta *-dim, o fundo sobe em direção ao texto e o
+     contraste desaba abaixo de AA — medido: vermelho sobre --kw-red-dim 4,49 (escuro) e 4,13
+     (claro); vermelho sobre --kw-green-dim 4,37 e 4,12; âmbar sobre --kw-amber-dim 3,40 (claro).
+     Estes tokens são o MESMO acento um passo adiante (mais claro no escuro, mais fundo no claro) e
+     valem SÓ nos componentes exclusivos desta aula — a paleta das Aulas 1–9 fica intocada. */
+  --a10-on-tint-red:    #ff7686;   /* = --kw-red do escuro, um passo mais claro */
+  --a10-on-tint-amber:  var(--kw-amber);  /* no escuro o âmbar já passa sobre a tinta (7,28) */
+}
+
+:root[data-theme="light"] {
+  --a10-plate-ink:      #faf4f8;
+  --a10-plate-ink-soft: #b3a2ad;
+  --a10-plate-rose:     #ff87ab;
+  --a10-plate-green:    #37d6a0;
+  --a10-plate-amber:    #ffc24a;
+
+  --a10-on-tint-red:    #b02436;   /* = --kw-red do claro, um passo mais fundo */
+  --a10-on-tint-amber:  #8a6108;   /* mesmo âmbar aprofundado da prancha */
+}
+
+/* ============ Chrome de BÔNUS (rótulo/selo/status) ============ */
+.a10-bonus {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: var(--r-pill);
+  color: var(--a10-bonus); border: 1px dashed var(--a10-bonus); background: var(--a10-bonus-dim);
+}
+.a10-bonus::before { content: "★"; font-size: 0.85em; }
+
+.a10-modmark {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: var(--r-pill);
+  color: var(--rose-hi); border: 1px solid var(--border-mid); background: var(--rose-soft);
+}
+
+/* Selo de escopo — só P1 (âmbar de chrome) e P9 (verde semântico de fecho) */
+.a10-selo {
+  display: grid; grid-template-columns: auto 1fr; gap: var(--sp-4); align-items: start;
+  margin: var(--sp-5) 0; padding: var(--sp-4) var(--sp-5);
+  border: 1px dashed var(--a10-bonus); border-radius: var(--r-lg);
+  background: var(--a10-bonus-dim);
+}
+.a10-selo__mk { font-size: 1.5rem; line-height: 1; color: var(--a10-bonus); }
+.a10-selo__t {
+  display: block; font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--a10-bonus); margin-bottom: var(--sp-2);
+}
+.a10-selo p { text-indent: 0; text-align: justify; color: var(--ink-90); margin: 0; }
+.a10-selo.is-fecho { border-style: solid; border-color: var(--kw-green); background: var(--kw-green-dim); }
+.a10-selo.is-fecho .a10-selo__mk, .a10-selo.is-fecho .a10-selo__t { color: var(--kw-green); }
+
+/* ============ P1 — abertura E2 (dado impactante): três camadas em números ============ */
+.a10-opener--stat { background: var(--bg-glass); border: 1px solid var(--border-mid); padding: var(--sp-5); }
+.a10-stat__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+.a10-stat__cell {
+  padding: var(--sp-4) var(--sp-3); border-radius: var(--r-md);
+  border: 1px solid var(--border-mid); background: var(--bg-1); text-align: center;
+}
+.a10-stat__n {
+  display: block; font-family: var(--font-mono); font-weight: 800; font-size: var(--fs-2xl);
+  line-height: var(--lh-tight); color: var(--rose-hi);
+}
+.a10-stat__k {
+  display: block; margin-top: var(--sp-2); font-size: var(--fs-sm); color: var(--ink-90);
+}
+.a10-stat__cell.is-3 .a10-stat__n { color: var(--kw-amber); }
+.a10-opener--stat .a10-stat__lead { text-indent: 0; text-align: justify; font-size: var(--fs-lg); color: var(--ink-90); }
+@media (max-width: 620px) { .a10-stat__grid { grid-template-columns: 1fr; } }
+
+/* ============ Olho de banca (campo exclusivo de P1) ============ */
+.a10-eye { border-left: 4px solid var(--kw-amber); background: var(--kw-amber-dim); }
+.a10-eye .card__label { color: var(--kw-amber); }
+
+/* ============ Link-back à Linha do Ciclo (objeto persistente da Aula 9) ============ */
+.a10-back {
+  display: flex; gap: var(--sp-3); align-items: baseline; flex-wrap: wrap;
+  margin: var(--sp-5) 0; padding: var(--sp-4) var(--sp-5);
+  border: 1px solid var(--border-mid); border-left: 4px solid var(--rose);
+  border-radius: var(--r-md); background: var(--bg-glass);
+}
+.a10-back__lbl {
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--rose); flex-shrink: 0;
+}
+.a10-back p { text-indent: 0; text-align: left; margin: 0; color: var(--ink-90); font-size: var(--fs-sm); }
+.a10-back a { color: var(--rose-hi); font-weight: 600; }
+
+/* ============ Base comum dos componentes interativos ============ */
+.a10-comp {
+  margin: var(--sp-6) 0; padding: var(--sp-5);
+  border: 1px solid var(--border-mid); border-radius: var(--r-lg);
+  background: var(--bg-glass); box-shadow: var(--shadow-md);
+}
+.a10-comp__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-2); }
+.a10-comp__head h4 { color: var(--ink-100); font-size: var(--fs-lg); }
+.a10-comp__hint { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--rose); }
+.a10-comp__sub { font-size: var(--fs-sm); color: var(--ink-70); margin-bottom: var(--sp-4); text-indent: 0; text-align: left; }
+
+.a10-chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3); margin: 0;
+  border: 1px solid var(--border-mid); border-radius: var(--r-pill);
+  background: var(--bg-1); color: var(--ink-90); font-size: var(--fs-sm);
+  text-align: left; line-height: var(--lh-snug);
+  transition: border-color var(--dur-fast), background var(--dur-fast), color var(--dur-fast);
+}
+.a10-chip::before {
+  content: "○"; font-family: var(--font-mono); color: var(--ink-50); flex-shrink: 0;
+}
+.a10-chip:hover { border-color: var(--rose); background: var(--bg-2); }
+.a10-chip[aria-pressed="true"] { border-color: var(--rose); background: var(--rose-soft); color: var(--ink-100); }
+.a10-chip[aria-pressed="true"]::before { content: "●"; color: var(--rose); }
+.a10-chip:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+
+.a10-set { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.a10-set__t {
+  display: block; font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--ink-70); margin-bottom: var(--sp-2);
+}
+
+/* Veredito textual — comum às três máquinas de critério */
+.a10-out {
+  margin-top: var(--sp-4); padding: var(--sp-4);
+  border: 1px solid var(--border-mid); border-left: 4px solid var(--ink-30);
+  border-radius: var(--r-md); background: var(--bg-1);
+  color: var(--ink-90); font-size: var(--fs-sm); line-height: var(--lh-base);
+}
+.a10-out.is-ok   { border-left-color: var(--kw-green); background: var(--kw-green-dim); color: var(--ink-100); }
+.a10-out.is-prov { border-left-color: var(--kw-amber); background: var(--kw-amber-dim); color: var(--ink-100); }
+.a10-out.is-no   { border-left-color: var(--ink-30); }
+
+.a10-reset {
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em;
+  padding: var(--sp-2) var(--sp-3); border: 1px solid var(--border-mid); border-radius: var(--r-pill);
+  background: var(--bg-1); color: var(--ink-70);
+}
+.a10-reset:hover { border-color: var(--rose); color: var(--rose); }
+.a10-reset:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+
+/* ============ P3 — checklist: duas colunas unidas pelo conector "E" ============ */
+.a10-check__grid {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: var(--sp-3); align-items: start;
+}
+.a10-check__col {
+  padding: var(--sp-4); border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-1);
+}
+.a10-check__e {
+  align-self: center; display: grid; place-items: center;
+  font-family: var(--font-serif); font-weight: 800; font-size: var(--fs-2xl);
+  color: var(--kw-amber); background: var(--kw-amber-dim);
+  border: 2px solid var(--kw-amber); border-radius: var(--r-pill);
+  width: 54px; height: 54px;
+}
+.a10-check__e small { display: block; font-family: var(--font-mono); font-size: 0.5em; letter-spacing: 0.05em; }
+.a10-check__tempo {
+  margin-top: var(--sp-4); padding: var(--sp-4);
+  border: 1px dashed var(--border-strong); border-radius: var(--r-md); background: var(--bg-1);
+}
+.a10-check__flow { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; }
+.a10-check__arrow { color: var(--ink-50); font-family: var(--font-mono); }
+@media (max-width: 720px) {
+  .a10-check__grid { grid-template-columns: 1fr; }
+  .a10-check__e { width: auto; height: auto; padding: var(--sp-2) var(--sp-5); border-radius: var(--r-md); justify-self: center; }
+}
+
+/* ============ P4 — máquina de critério: caixa major + contador + portões em série ============ */
+.a10-maq__boxes { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.a10-maq__box { padding: var(--sp-4); border-radius: var(--r-md); background: var(--bg-1); border: 1px solid var(--border-mid); }
+.a10-maq__box.is-major { border: 2px solid var(--kw-amber); background: var(--kw-amber-dim); }
+.a10-maq__box.is-major .a10-set__t { color: var(--kw-amber); }
+.a10-maq__counter {
+  display: flex; align-items: center; justify-content: center; gap: var(--sp-3);
+  margin: var(--sp-4) 0; padding: var(--sp-3);
+  border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-2);
+}
+.a10-maq__counter .lbl { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-70); }
+.a10-maq__count { font-family: var(--font-mono); font-weight: 800; font-size: var(--fs-xl); color: var(--ink-70); }
+.a10-maq__count[data-ok="true"] { color: var(--kw-green); }
+.a10-maq__gates { display: grid; gap: var(--sp-2); }
+.a10-maq__gate, .a10-clf__gate {
+  display: flex; align-items: center; gap: var(--sp-3); width: 100%;
+  padding: var(--sp-3) var(--sp-4); text-align: left;
+  border: 1px solid var(--border-mid); border-radius: var(--r-md);
+  background: var(--bg-1); color: var(--ink-90); font-size: var(--fs-sm); line-height: var(--lh-snug);
+  transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+.a10-maq__gate::before, .a10-clf__gate::before {
+  content: "☐"; font-family: var(--font-mono); font-size: 1.1em; color: var(--ink-50); flex-shrink: 0;
+}
+.a10-maq__gate[aria-pressed="true"], .a10-clf__gate[aria-pressed="true"] {
+  border-color: var(--kw-green); background: var(--kw-green-dim); color: var(--ink-100);
+}
+.a10-maq__gate[aria-pressed="true"]::before, .a10-clf__gate[aria-pressed="true"]::before { content: "☑"; color: var(--kw-green); }
+.a10-maq__gate:hover, .a10-clf__gate:hover { border-color: var(--rose); }
+.a10-maq__gate:focus-visible, .a10-clf__gate:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.a10-maq__gate.is-doc { border-left: 4px solid var(--kw-amber); }
+@media (max-width: 720px) { .a10-maq__boxes { grid-template-columns: 1fr; } }
+
+/* ============ P5 — classificador booleano (interação-âncora) ============ */
+.a10-clf__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+.a10-clf__pane { padding: var(--sp-4); border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-1); }
+.a10-clf__sym { position: relative; }
+.a10-clf__tags {
+  display: inline-flex; gap: 4px; margin-left: var(--sp-1); flex-shrink: 0;
+}
+/* A etiqueta é um SELO: nome de natureza dentro de uma pílula. Sem trava, ela entra na partilha de
+   espaço do chip, encolhe e o hyphens:auto da casa parte a palavra DENTRO da pílula ("afeti-vo",
+   "somáti-co") — 25 das 28 etiquetas a 320 px, 5 a 1440. Quem cede espaço é o rótulo do sintoma,
+   que é prosa e pode quebrar em mais linhas; o selo, não. */
+.a10-clf__tag {
+  font-family: var(--font-mono); font-size: 0.68em; letter-spacing: 0.04em;
+  padding: 1px 5px; border-radius: var(--r-pill); border: 1px solid currentColor; opacity: 0.85;
+  white-space: nowrap; flex-shrink: 0; -webkit-hyphens: none; hyphens: none;
+}
+.a10-clf__tag.t-afetivo  { color: var(--rose-hi); }
+.a10-clf__tag.t-somatico { color: var(--kw-green); }
+.a10-clf__tag.t-major    { color: var(--kw-amber); }
+.a10-clf__tag.t-outro    { color: var(--ink-50); }
+.a10-clf__gates { display: grid; gap: var(--sp-2); }
+.a10-clf__out {
+  margin-top: var(--sp-4); padding: var(--sp-4);
+  border: 1px solid var(--border-mid); border-left: 4px solid var(--ink-30);
+  border-radius: var(--r-md); background: var(--bg-1);
+}
+.a10-clf__verdict {
+  display: block; font-family: var(--font-serif); font-weight: 700; font-size: var(--fs-lg);
+  color: var(--ink-100); margin-bottom: var(--sp-2);
+}
+.a10-clf__why { text-indent: 0; text-align: justify; font-size: var(--fs-sm); color: var(--ink-90); margin: 0; }
+.a10-clf__out.is-no   { border-left-color: var(--ink-30); }
+.a10-clf__out.is-spm  { border-left-color: var(--kw-green); background: var(--kw-green-dim); }
+.a10-clf__out.is-prov { border-left-color: var(--kw-amber); background: var(--kw-amber-dim); }
+.a10-clf__out.is-dis  { border-left-color: var(--kw-red);   background: var(--kw-red-dim); }
+@media (max-width: 820px) { .a10-clf__grid { grid-template-columns: 1fr; } }
+
+/* ============ Tabelas: mesa-mestra (P5) · medida→alvo (P6) · colecionador (P9) ============
+   Desktop: table. Mobile: grid empilhada com rótulo de coluna via data-lbl. */
+.a10-table { width: 100%; border-collapse: collapse; margin: var(--sp-5) 0; font-size: var(--fs-sm); }
+.a10-table caption {
+  caption-side: top; text-align: left; padding-bottom: var(--sp-3);
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--rose);
+}
+.a10-table th, .a10-table td {
+  padding: var(--sp-3) var(--sp-4); border: 1px solid var(--a10-rule);
+  text-align: left; vertical-align: top; line-height: var(--lh-snug);
+}
+.a10-table thead th { background: var(--a10-cell); color: var(--ink-100); font-weight: 700; }
+.a10-table tbody th { background: var(--bg-1); color: var(--ink-100); font-weight: 600; width: 22%; }
+.a10-table td { background: var(--bg-1); color: var(--ink-90); }
+.a10-table .is-spm { border-top: 3px solid var(--kw-green); }
+.a10-table .is-dis { border-top: 3px solid var(--kw-red); }
+.a10-table tr.is-common td { background: var(--kw-red-dim); }
+.a10-table .col-banca { color: var(--ink-70); }
+.a10-table .col-certo { color: var(--ink-100); }
+@media (max-width: 760px) {
+  .a10-table, .a10-table thead, .a10-table tbody, .a10-table tr, .a10-table th, .a10-table td { display: block; width: auto; }
+  .a10-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .a10-table tr { margin-bottom: var(--sp-3); border: 1px solid var(--a10-rule); border-radius: var(--r-md); overflow: hidden; }
+  .a10-table th, .a10-table td { border: 0; border-bottom: 1px solid var(--border-soft); width: auto !important; }
+  .a10-table td::before {
+    content: attr(data-lbl); display: block; margin-bottom: var(--sp-1);
+    font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--rose);
+  }
+}
+
+/* ============ P7 — roteador de três escadas paralelas ============ */
+.a10-rot__pre {
+  margin-bottom: var(--sp-4); padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--kw-green); border-radius: var(--r-md); background: var(--kw-green-dim);
+  color: var(--ink-100); font-size: var(--fs-sm);
+}
+.a10-rot__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); align-items: start; }
+.a10-rot__col { border: 1px solid var(--border-mid); border-radius: var(--r-md); background: var(--bg-1); overflow: hidden; }
+.a10-rot__col > summary {
+  padding: var(--sp-3) var(--sp-4); cursor: pointer; list-style: none;
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-100); background: var(--bg-2); border-bottom: 1px solid var(--border-mid);
+}
+.a10-rot__col > summary::-webkit-details-marker { display: none; }
+.a10-rot__col > summary:focus-visible { outline: 2px solid var(--rose); outline-offset: -2px; }
+.a10-rot__col[data-alvo="edema"]    > summary { border-bottom-color: var(--kw-green); }
+.a10-rot__col[data-alvo="cefaleia"] > summary { border-bottom-color: var(--kw-amber); }
+.a10-rot__col[data-alvo="mastalgia"]> summary { border-bottom-color: var(--rose); }
+.a10-rot__body { padding: var(--sp-3) var(--sp-4) var(--sp-4); }
+.a10-rot__step {
+  padding: var(--sp-3) 0; border-top: 1px solid var(--border-soft); font-size: var(--fs-sm); color: var(--ink-90);
+}
+.a10-rot__step:first-child { border-top: 0; }
+.a10-rot__n {
+  display: inline-grid; place-items: center; width: 20px; height: 20px; margin-right: var(--sp-2);
+  border-radius: var(--r-pill); background: var(--bg-2); border: 1px solid var(--border-mid);
+  font-family: var(--font-mono); font-size: 0.72em; color: var(--rose);
+}
+.a10-rot__why { display: block; margin-top: var(--sp-1); color: var(--ink-70); font-size: var(--fs-xs); }
+.a10-rot__pre-cond {
+  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--kw-amber);
+  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--sp-2);
+}
+/* Selo de bloqueio: legível por FORMA (⊘ + borda) + TEXTO, nunca só por cor */
+.a10-rot__block {
+  display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: start;
+  margin-top: var(--sp-3); padding: var(--sp-3) var(--sp-4);
+  border: 2px solid var(--kw-red); border-radius: var(--r-md); background: var(--kw-red-dim);
+}
+.a10-rot__block .mk { font-size: 1.3rem; line-height: 1; color: var(--a10-on-tint-red); }
+.a10-rot__block p { text-indent: 0; text-align: left; margin: 0; font-size: var(--fs-sm); color: var(--ink-100); }
+/* O termo em vermelho cai DENTRO do campo vermelho do selo: sem o passo de acento, fica sub-AA. */
+.a10-rot__block .kw-red { color: var(--a10-on-tint-red); }
+.a10-rot__hard {
+  margin-top: var(--sp-3); padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--kw-amber); border-left: 4px solid var(--kw-amber); border-radius: var(--r-md);
+  background: var(--kw-amber-dim); font-size: var(--fs-sm); color: var(--ink-100);
+}
+/* idem: âmbar sobre campo âmbar (a borda fica no --kw-amber, que vive sobre a superfície neutra) */
+.a10-rot__hard .kw-amber { color: var(--a10-on-tint-amber); }
+@media (max-width: 860px) { .a10-rot__grid { grid-template-columns: 1fr; } }
+
+/* Scaffold opt-in (<details>) — prova × rede e nota de fronteira */
+.a10-det {
+  margin: var(--sp-4) 0; border: 1px solid var(--border-mid); border-radius: var(--r-md);
+  background: var(--bg-1); overflow: hidden;
+}
+.a10-det > summary {
+  padding: var(--sp-3) var(--sp-4); cursor: pointer;
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--rose); background: var(--bg-2);
+}
+.a10-det > summary:focus-visible { outline: 2px solid var(--rose); outline-offset: -2px; }
+.a10-det__body { padding: var(--sp-4); font-size: var(--fs-sm); color: var(--ink-90); }
+.a10-det__body p { text-indent: 0; text-align: justify; }
+.a10-det__body p + p { margin-top: var(--sp-3); }
+.a10-det__body dt { font-weight: 700; color: var(--ink-100); margin-top: var(--sp-2); }
+.a10-det__body dd { margin: 0 0 var(--sp-2) 0; color: var(--ink-90); }
+
+/* ============ P8 — timeline tripla de esquemas de dose ============ */
+.a10-tl__rows { display: grid; gap: var(--sp-3); }
+.a10-tl__row {
+  padding: var(--sp-3) var(--sp-4); border: 1px solid var(--border-mid); border-radius: var(--r-md);
+  background: var(--bg-1); transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+.a10-tl__row.is-on { border-color: var(--kw-green); background: var(--kw-green-dim); }
+.a10-tl__row:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.a10-tl__name {
+  display: block; font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--ink-100); margin-bottom: var(--sp-2);
+}
+.a10-tl__bar { display: grid; grid-template-columns: repeat(28, 1fr); gap: 2px; align-items: end; position: relative; }
+.a10-tl__d { height: 22px; border-radius: 2px; background: var(--bg-2); border: 1px solid var(--border-soft); }
+.a10-tl__d.on { background: var(--kw-green); border-color: var(--kw-green); }
+.a10-tl__d.d1 { position: relative; }
+/* Linha vermelha do 1º dia do fluxo — lê como LINHA, não como cor de fundo.
+   Linha e rótulo usam o MESMO vermelho: a faixa ativa (.is-on) pinta o fundo de verde e, sobre essa
+   tinta, o --kw-red cru cai para 4,37 (escuro) / 4,12 (claro). O passo de acento vale nos dois
+   estados para que a linha e o rótulo nunca destoem entre si. */
+.a10-tl__bar::after {
+  content: ""; position: absolute; right: -3px; top: -4px; bottom: -4px;
+  width: 2px; background: var(--a10-on-tint-red);
+}
+.a10-tl__scale {
+  display: flex; justify-content: space-between; margin-top: var(--sp-2);
+  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70);
+}
+.a10-tl__flow { color: var(--a10-on-tint-red); }
+.a10-tl__out {
+  margin-top: var(--sp-4); padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--border-mid); border-left: 4px solid var(--kw-green);
+  border-radius: var(--r-md); background: var(--bg-1);
+  font-size: var(--fs-sm); color: var(--ink-90);
+}
+
+/* ============ P6 — par de imagens reais (tabela vegetal × animal) ============ */
+.a10-realpair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.a10-realpair figure, .a10-realpair .a10-realpair__cell { margin: 0; min-width: 0; }
+.a10-realpair img { width: 100%; height: auto; display: block; background: var(--kw-white); border-radius: var(--r-sm); }
+.a10-realpair__lbl {
+  display: block; margin-top: var(--sp-2); font-family: var(--font-mono); font-size: var(--fs-xs);
+  color: var(--a10-plate-ink-soft);
+}
+.a10-realpair__lbl b { color: var(--a10-plate-rose); }
+@media (max-width: 700px) { .a10-realpair { grid-template-columns: 1fr; } }
+
+/* Conjunto de imagens reais EMPILHADAS — para peças estreitas (forest plot ~700 px de largura),
+   que perderiam legibilidade em duas colunas dentro da coluna de leitura. */
+.a10-realstack { display: grid; gap: var(--sp-4); }
+.a10-realstack img { width: 100%; height: auto; display: block; background: var(--kw-white); border-radius: var(--r-sm); }
+.a10-realstack__lbl {
+  display: block; margin-top: var(--sp-2); font-family: var(--font-mono); font-size: var(--fs-xs);
+  color: var(--a10-plate-ink-soft);
+}
+.a10-realstack__lbl b { color: var(--a10-plate-rose); }
+
+/* Tradução de rótulos de figura licenciada — SEMPRE ao lado/abaixo, NUNCA sobreposta na arte
+   (adulterar figura sob licença aberta é violação; a fidelidade do documento é o valor da peça). */
+.a10-trad { width: 100%; border-collapse: collapse; margin: var(--sp-3) 0 var(--sp-2); font-size: var(--fs-xs); }
+.a10-trad caption {
+  caption-side: top; text-align: left; padding-bottom: var(--sp-2);
+  font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-70);
+}
+.a10-trad th, .a10-trad td {
+  padding: var(--sp-2) var(--sp-3); border: 1px solid var(--border-soft);
+  text-align: left; vertical-align: top; line-height: var(--lh-snug);
+}
+.a10-trad th { background: var(--bg-2); color: var(--ink-70); font-weight: 600; font-style: italic; width: 34%; }
+.a10-trad td { background: var(--bg-1); color: var(--ink-90); }
+@media (max-width: 620px) {
+  .a10-trad th, .a10-trad td { display: block; width: auto; }
+  .a10-trad th { border-bottom: 0; }
+}
+
+/* ============ Cueing FORA dos pixels (P4) ============
+   A figura licenciada NUNCA é tocada: nada de seta, círculo ou texto queimado no arquivo — é a
+   fidelidade do documento que o torna prova. O colchete vive numa calha ao lado, e as posições
+   são medidas na própria imagem (eixos dos painéis em 26,5% · 49,3% · 72,7% da altura; quatro
+   linhas de ~23% cada), então o marcador cai sobre a linha certa e não vira falso-localizante. */
+.a10-cue { display: grid; grid-template-columns: 1fr; gap: var(--sp-3); }
+.a10-cue > a { display: block; }
+.a10-cue__rail { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.a10-cue__mk {
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 2px var(--sp-3); border: 1px solid currentColor; border-radius: var(--r-pill);
+}
+.a10-cue__t { font-family: var(--font-mono); font-size: var(--fs-xs); line-height: var(--lh-snug); }
+.a10-cue__t b { font-weight: 700; }
+.a10-cue__mk--r2 { color: var(--a10-plate-green); }
+.a10-cue__mk--r3 { color: var(--a10-plate-amber); }
+.a10-cue__axis {
+  display: block; margin-top: var(--sp-2); text-align: center;
+  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--a10-plate-ink-soft);
+}
+.a10-cue__axis b { color: var(--a10-plate-rose); }
+.a10-cue__zoom {
+  display: block; margin-top: var(--sp-2); text-align: right;
+  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--a10-plate-rose);
+}
+@media (min-width: 761px) {
+  /* calha à esquerda: o colchete abraça verticalmente a linha de painéis correspondente */
+  .a10-cue { grid-template-columns: 156px 1fr; align-items: stretch; }
+  .a10-cue__rail { display: block; position: relative; }
+  .a10-cue__mk {
+    position: absolute; left: 0; right: 6px; padding: 0 var(--sp-2);
+    border: 0; border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor; border-bottom: 2px solid currentColor;
+    border-radius: var(--r-sm) 0 0 var(--r-sm);
+  }
+  .a10-cue__t { text-align: right; }
+  .a10-cue__mk--r2 { top: 26.5%; height: 22.8%; }
+  .a10-cue__mk--r3 { top: 49.3%; height: 23.4%; }
+}
+
+/* Imagem real sobre fundo branco neutro (gráficos/tabelas publicadas não invertem no escuro) */
+figure.real .real__frame.is-plate { background: var(--kw-white); padding: var(--sp-3); }
+figure.real .real__frame.is-plate img { background: var(--kw-white); }
+
+/* ============ Ajustes finos herdados ============ */
+.a10-comp .a10-set + .a10-set { margin-top: var(--sp-3); }
+.a10-comp ul, .a10-comp ol { margin: 0; }
+.a10-nowrap { white-space: nowrap; }

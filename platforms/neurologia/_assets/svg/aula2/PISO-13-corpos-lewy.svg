@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" id="p13-lewy-svg" class="state-init" width="100%" height="100%" aria-label="Comparação esquemática entre um neurônio com corpos de Lewy intracelulares e um neurônio normal.">
+  <!-- ALERTA: Excedeu 80 linhas devido à densidade didática, CSS de dois temas e JS de acessibilidade embutidos. -->
+  <defs>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--c-normal)" />
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--c-structure)" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--c-pathology)" />
+    </marker>
+  </defs>
+  <style>
+    #p13-lewy-svg {
+      --bg-svg: var(--bg-1, #0f172a);
+      --bg-panel: var(--bg-2, #1e293b);
+      --ink-primary: var(--ink-100, #f8fafc);
+      --ink-secondary: var(--ink-70, #94a3b8);
+      --ink-muted: var(--ink-40, #64748b);
+      --c-normal: var(--kw-green, #10b981);
+      --c-pathology: var(--kw-red, #f43f5e);
+      --c-structure: var(--kw-cyan, #06b6d4);
+      --c-amber: var(--kw-amber, #f59e0b);
+      --c-border: var(--border-color, #334155);
+    }
+    @media (prefers-color-scheme: light) {
+      #p13-lewy-svg {
+        --bg-svg: var(--bg-1, #ffffff);
+        --bg-panel: var(--bg-2, #f8fafc);
+        --ink-primary: var(--ink-100, #0f172a);
+        --ink-secondary: var(--ink-70, #475569);
+        --ink-muted: var(--ink-40, #94a3b8);
+        --c-normal: var(--kw-green, #059669);
+        --c-pathology: var(--kw-red, #dc2626);
+        --c-structure: var(--kw-cyan, #0891b2);
+        --c-amber: var(--kw-amber, #d97706);
+        --c-border: var(--border-color, #e2e8f0);
+      }
+    }
+    #p13-lewy-svg .group-normal, #p13-lewy-svg .group-lewy, #p13-lewy-svg .btn-select, #p13-lewy-svg .btn-text {
+      transition: opacity 0.3s ease, fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+    }
+    #p13-lewy-svg .btn-select:hover {
+      filter: brightness(1.1);
+    }
+    #p13-lewy-svg .btn-select:focus, #p13-lewy-svg .interactive-node:focus {
+      outline: 2px solid var(--c-amber);
+      outline-offset: 2px;
+    }
+    #p13-lewy-svg.state-init .pane-normal, #p13-lewy-svg.state-init .pane-lewy { display: none; }
+    #p13-lewy-svg.state-init .pane-init { display: block; }
+    #p13-lewy-svg.state-normal .pane-init, #p13-lewy-svg.state-normal .pane-lewy { display: none; }
+    #p13-lewy-svg.state-normal .pane-normal { display: block; }
+    #p13-lewy-svg.state-normal .group-lewy { opacity: 0.3; filter: grayscale(60%); }
+    #p13-lewy-svg.state-normal .normal-btn { fill: var(--c-normal); }
+    #p13-lewy-svg.state-normal .normal-btn + .btn-text { fill: var(--bg-svg); }
+    #p13-lewy-svg.state-lewy .pane-init, #p13-lewy-svg.state-lewy .pane-normal { display: none; }
+    #p13-lewy-svg.state-lewy .pane-lewy { display: block; }
+    #p13-lewy-svg.state-lewy .group-normal { opacity: 0.3; filter: grayscale(60%); }
+    #p13-lewy-svg.state-lewy .lewy-btn { fill: var(--c-structure); }
+    #p13-lewy-svg.state-lewy .lewy-btn + .btn-text { fill: var(--bg-svg); }
+  </style>
+
+  <!-- Fundo Principal -->
+  <rect width="800" height="500" rx="12" fill="var(--bg-svg)" stroke="var(--c-border)" stroke-width="2" />
+
+  <!-- Título e Subtítulo -->
+  <g transform="translate(40, 45)">
+    <text font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="var(--ink-primary)">CORPOS DE LEWY INTRANEURONAIS</text>
+    <text y="22" font-family="system-ui, sans-serif" font-size="12" fill="var(--ink-secondary)">Histopatologia comparada e correlação clínica para provas</text>
+  </g>
+
+  <!-- Área do Neurônio Normal (Esquerda) -->
+  <g id="node-normal" class="group-normal interactive-node" cursor="pointer" role="button" tabindex="0" aria-label="Visualizar neurônio normal">
+    <rect x="50" y="90" width="220" height="290" fill="transparent" />
+    <text x="160" y="115" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="var(--c-normal)" text-anchor="middle">Neurônio Fisiológico</text>
+    <!-- Soma do Neurônio Normal -->
+    <path d="M 145,225 C 135,215 120,205 110,180 C 120,195 135,205 150,220 C 155,210 160,190 170,160 C 175,190 180,210 185,220 C 200,205 215,195 230,180 C 220,205 205,215 195,225 C 205,240 215,250 235,260 C 215,260 205,255 195,250 C 195,270 205,290 220,310 C 205,295 190,285 180,275 C 175,290 170,320 165,350 L 160,350 C 162,320 165,290 165,275 C 150,285 135,295 120,310 C 135,290 145,270 145,250 C 135,255 125,260 105,260 C 125,250 135,240 145,235 Z" fill="var(--c-normal)" fill-opacity="0.08" stroke="var(--c-normal)" stroke-width="2.5" stroke-linejoin="round" />
+    <!-- Núcleo centralizado -->
+    <circle cx="160" cy="250" r="18" fill="var(--bg-panel)" stroke="var(--c-normal)" stroke-width="2" />
+    <circle cx="160" cy="250" r="5" fill="var(--c-normal)" />
+    <!-- Seta e Rótulo Núcleo -->
+    <path d="M 90,150 L 142,238" stroke="var(--c-normal)" stroke-width="1.5" stroke-dasharray="2,2" marker-end="url(#arrow-green)" />
+    <text x="85" y="135" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--c-normal)">Núcleo Central</text>
+    <text x="85" y="147" font-family="system-ui, sans-serif" font-size="9" fill="var(--ink-secondary)">Posicionamento fisiológico</text>
+  </g>
+
+  <!-- Área do Neurônio com Lewy (Direita/Meio) -->
+  <g id="node-lewy" class="group-lewy interactive-node" cursor="pointer" role="button" tabindex="0" aria-label="Visualizar patologia de Lewy">
+    <rect x="280" y="90" width="220" height="290" fill="transparent" />
+    <text x="390" y="115" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="var(--c-structure)" text-anchor="middle">Patologia de Lewy</text>
+    <!-- Soma do Neurônio Patológico -->
+    <path d="M 375,225 C 365,215 350,205 340,180 C 350,195 365,205 380,220 C 385,210 390,190 400,160 C 405,190 410,210 415,220 C 430,205 445,195 460,180 C 450,205 435,215 425,225 C 435,240 445,250 465,260 C 445,260 435,255 425,250 C 425,270 435,290 450,310 C 435,295 420,285 410,275 C 405,290 400,320 395,350 L 390,350 C 392,320 395,290 395,275 C 380,285 365,295 350,310 C 365,290 375,270 375,250 C 365,255 355,260 335,260 C 355,250 365,240 375,235 Z" fill="var(--c-structure)" fill-opacity="0.08" stroke="var(--c-structure)" stroke-width="2.5" stroke-linejoin="round" />
+    <!-- Núcleo deslocado excentricamente -->
+    <circle cx="415" cy="220" r="18" fill="var(--bg-panel)" stroke="var(--c-structure)" stroke-width="2" />
+    <circle cx="415" cy="220" r="5" fill="var(--c-structure)" />
+    <!-- Corpo de Lewy (Inclusão citoplasmática) -->
+    <circle cx="365" cy="265" r="22" fill="var(--bg-panel)" fill-opacity="0.8" stroke="var(--c-pathology)" stroke-width="1.5" stroke-dasharray="3,3" />
+    <circle cx="365" cy="265" r="14" fill="var(--c-pathology)" fill-opacity="0.25" stroke="var(--c-pathology)" stroke-width="2" />
+    <circle cx="365" cy="265" r="7" fill="var(--c-pathology)" />
+    <!-- Seta e Rótulo Núcleo Deslocado -->
+    <path d="M 460,150 L 428,202" stroke="var(--c-structure)" stroke-width="1.5" stroke-dasharray="2,2" marker-end="url(#arrow-cyan)" />
+    <text x="465" y="135" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--c-structure)">Núcleo Deslocado</text>
+    <text x="465" y="147" font-family="system-ui, sans-serif" font-size="9" fill="var(--ink-secondary)">Rechaçado pela inclusão</text>
+    <!-- Seta e Rótulo Corpo de Lewy -->
+    <path d="M 305,335 L 348,280" stroke="var(--c-pathology)" stroke-width="1.5" marker-end="url(#arrow-red)" />
+    <text x="300" y="340" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--c-pathology)" text-anchor="end">Corpo de Lewy</text>
+    <text x="300" y="352" font-family="system-ui, sans-serif" font-size="9" fill="var(--ink-secondary)" text-anchor="end">Inclusão intracelular (citoplasmática)</text>
+  </g>
+
+  <!-- Botões de Seleção Rápida -->
+  <g id="controls" transform="translate(0, 0)">
+    <g class="btn-group" cursor="pointer" role="button" tabindex="0">
+      <rect class="btn-select normal-btn" x="70" y="390" width="180" height="35" rx="6" fill="var(--bg-panel)" stroke="var(--c-normal)" stroke-width="1.5" />
+      <text class="btn-text" x="160" y="412" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="var(--c-normal)" text-anchor="middle" pointer-events="none">Ver Neurônio Normal</text>
+    </g>
+    <g class="btn-group" cursor="pointer" role="button" tabindex="0">
+      <rect class="btn-select lewy-btn" x="290" y="390" width="180" height="35" rx="6" fill="var(--bg-panel)" stroke="var(--c-structure)" stroke-width="1.5" />
+      <text class="btn-text" x="380" y="412" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="var(--c-structure)" text-anchor="middle" pointer-events="none">Ver Patologia de Lewy</text>
+    </g>
+  </g>
+
+  <!-- Painel de Leitura Lateral -->
+  <g transform="translate(520, 90)">
+    <rect width="240" height="335" rx="8" fill="var(--bg-panel)" stroke="var(--c-border)" stroke-width="1" />
+    
+    <!-- Painel Estado Inicial -->
+    <g class="pane-init">
+      <text x="20" y="35" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="var(--ink-primary)">ESTUDO COMPARATIVO</text>
+      <line x1="20" y1="48" x2="220" y2="48" stroke="var(--c-border)" stroke-width="1" />
+      <text x="20" y="80" font-family="system-ui, sans-serif" font-size="12" fill="var(--ink-secondary)">
+        <tspan x="20" dy="0">Clique diretamente nos</tspan>
+        <tspan x="20" dy="18">neurônios ou nos botões</tspan>
+        <tspan x="20" dy="18">para analisar a diferença</tspan>
+        <tspan x="20" dy="18">histológica e a correlação</tspan>
+        <tspan x="20" dy="18">clínica para provas.</tspan>
+      </text>
+      <text x="120" y="270" font-family="system-ui, sans-serif" font-size="11" fill="var(--c-amber)" font-weight="bold" text-anchor="middle">▲ Selecione uma opção</text>
+    </g>
+
+    <!-- Painel Neurônio Normal -->
+    <g class="pane-normal" display="none">
+      <text x="20" y="35" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="var(--c-normal)">ESTADO FISIOLÓGICO</text>
+      <line x1="20" y1="48" x2="220" y2="48" stroke="var(--c-normal)" stroke-opacity="0.3" stroke-width="1" />
+      <text x="20" y="75" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--ink-primary)">Morfologia Celular:</text>
+      <text x="20" y="95" font-family="system-ui, sans-serif" font-size="11" fill="var(--ink-secondary)">
+        <tspan x="20" dy="0">✓ Citoplasma homogêneo</tspan>
+        <tspan x="20" dy="18">✓ Citoesqueleto funcional</tspan>
+        <tspan x="20" dy="18">✓ Sem agregados insolúveis</tspan>
+      </text>
+      <rect x="20" y="165" width="200" height="50" rx="4" fill="var(--c-normal)" fill-opacity="0.08" stroke="var(--c-normal)" stroke-opacity="0.2" />
+      <text x="30" y="185" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--c-normal)">Status: Normal</text>
+      <text x="30" y="200" font-family="system-ui, sans-serif" font-size="9" fill="var(--ink-secondary)">Estruturas internas preservadas.</text>
+    </g>
+
+    <!-- Painel Lewy -->
+    <g class="pane-lewy" display="none">
+      <text x="20" y="35" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="var(--c-pathology)">ESTADO PATOLÓGICO</text>
+      <line x1="20" y1="48" x2="220" y2="48" stroke="var(--c-pathology)" stroke-opacity="0.3" stroke-width="1" />
+      
+      <text x="20" y="70" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--c-pathology)">Alterações Histológicas:</text>
+      <text x="20" y="88" font-family="system-ui, sans-serif" font-size="11" fill="var(--ink-secondary)">
+        <tspan x="20" dy="0">✗ Corpos de Lewy intracelulares</tspan>
+        <tspan x="20" dy="16">✗ Núcleo excentricamente deslocado</tspan>
+        <tspan x="20" dy="16">✗ Agregados insolúveis de α-sinucleína</tspan>
+      </text>
+
+      <!-- Caixa de Destaque Clínico em Âmbar -->
+      <rect x="20" y="138" width="200" height="110" rx="4" fill="var(--c-amber)" fill-opacity="0.08" stroke="var(--c-amber)" stroke-opacity="0.3" />
+      <text x="30" y="154" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--c-amber)">Palavras-chave Clínicas:</text>
+      <text x="30" y="174" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold" fill="var(--ink-primary)">
+        <tspan x="30" dy="0">• Alucinação Visual Precoce</tspan>
+        <tspan x="30" dy="18">• Parkinsonismo Simétrico</tspan>
+        <tspan x="30" dy="18">• Flutuação Cognitiva</tspan>
+      </text>
+
+      <!-- Destaque Alzheimer -->
+      <text x="20" y="270" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="var(--c-pathology)">Diferencial Crítico de Prova:</text>
+      <text x="20" y="284" font-family="system-ui, sans-serif" font-size="9" fill="var(--ink-secondary)">
+        <tspan x="20" dy="0">Alucinação visual precoce fala contra</tspan>
+        <tspan x="20" dy="13">Alzheimer (onde o sintoma é tardio).</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Caixa de Legenda Obrigatória no Rodapé -->
+  <g transform="translate(40, 435)">
+    <rect width="720" height="50" rx="6" fill="var(--bg-panel)" stroke="var(--c-border)" stroke-width="1" />
+    <text x="15" y="20" font-family="system-ui, sans-serif" font-size="11" fill="var(--ink-secondary)">
+      <tspan font-weight="bold" fill="var(--ink-primary)">Legenda:</tspan>
+      <tspan> Corpos de Lewy são inclusões intraneuronais (</tspan>
+      <tspan font-weight="bold" fill="var(--c-pathology)">dentro do neurônio</tspan>
+      <tspan>). Correlação clínica: alucinação visual precoce +</tspan>
+      <tspan x="15" dy="16">parkinsonismo + flutuação — diferencial em que alucinação precoce fala fortemente contra a Doença de Alzheimer.</tspan>
+    </text>
+  </g>
+
+  <!-- Script de Interatividade e Máquina de Estados -->
+  <script>
+    //<![CDATA[
+    (function() {
+      const init = () => {
+        const svg = document.getElementById('p13-lewy-svg');
+        if (!svg || svg.dataset.initBound) return;
+        svg.dataset.initBound = "true";
+
+        const btnNormal = svg.querySelector('.normal-btn');
+        const btnLewy = svg.querySelector('.lewy-btn');
+        const nodeNormal = svg.querySelector('#node-normal');
+        const nodeLewy = svg.querySelector('#node-lewy');
+
+        const setNormal = () => svg.setAttribute('class', 'state-normal');
+        const setLewy = () => svg.setAttribute('class', 'state-lewy');
+
+        btnNormal.parentNode.addEventListener('click', setNormal);
+        btnLewy.parentNode.addEventListener('click', setLewy);
+        nodeNormal.addEventListener('click', setNormal);
+        nodeLewy.addEventListener('click', setLewy);
+
+        [btnNormal.parentNode, btnLewy.parentNode, nodeNormal, nodeLewy].forEach(el => {
+          el.addEventListener('keydown', (e) => {
+            if (e.key === ' ' || e.key === 'Enter') {
+              e.preventDefault();
+              if (el === btnNormal.parentNode || el === nodeNormal) setNormal();
+              else setLewy();
+            }
+          });
+        });
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+    //]]>
+  </script>
+</svg>

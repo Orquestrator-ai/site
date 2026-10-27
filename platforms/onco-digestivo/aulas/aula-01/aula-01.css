@@ -1,0 +1,93 @@
+/* aula-01.css — interatividade dos SVGs autorais da Aula 1 (esôfago).
+   Espelha o padrão scoped de aula-extra-07.css. Só estados visuais; o JS muda atributos/classes.
+   ZERO hex — herda tokens do repo. prefers-reduced-motion desliga transições e animações.
+   Extraído do <style> inline para passar o GATE-DRIFT (0 <style> nas aulas) e alinhar com as aulas gold. */
+
+.figure-svg .eso-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* alvos clicáveis */
+.il-eso2 .eso2-third,
+.il-eso3 .eso3-factor,
+.il-eso4 .eso4-stop,
+.il-eso6 .eso6-layer,
+.il-eso7 .eso7-step,
+.il-eso8 .eso8-step,
+.il-eso9 .eso9-stage,
+.il-eso10 .eso10-struct { cursor: pointer; }
+
+/* foco de teclado visível */
+.figure-svg [tabindex]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+
+/* transições suaves (desligadas em reduced-motion) */
+.il-eso2 .eso2-mech,
+.il-eso2 .eso2-acidwash { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso3 .eso3-factor,
+.il-eso3 .eso3-outcome { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso4 .eso4-stop,
+.il-eso4 .eso4-cursor { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso4 .eso4-cursor { transition: opacity var(--dur-mid) var(--ease-out), x var(--dur-mid) var(--ease-lux); }
+.il-eso6 .eso6-invasion { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso7 .eso7-step { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso7 .eso7-tumor { transition: d var(--dur-mid) var(--ease-lux), opacity var(--dur-mid) var(--ease-out); }
+.il-eso8 .eso8-step,
+.il-eso8 .eso8-link,
+.il-eso8 .eso8-mini { transition: opacity var(--dur-mid) var(--ease-out), fill var(--dur-mid) var(--ease-out); }
+.il-eso9 .eso9-stage { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso10 .eso10-spot { transition: opacity var(--dur-mid) var(--ease-out); }
+
+/* realces de estado ativo */
+.il-eso2 .eso2-third[aria-pressed="true"] rect:first-of-type { stroke-width: 2.6; }
+.il-eso3 .eso3-factor.is-dim { opacity: 0.32; }
+.il-eso3 .eso3-outcome { opacity: 0.55; }
+.il-eso3 .eso3-outcome.is-on { opacity: 1; }
+.il-eso3 .eso3-outcome.is-on rect { stroke-width: 2.6; }
+.il-eso4 .eso4-stop.is-on { filter: drop-shadow(0 0 5px var(--coral-glow, var(--coral-50))); }
+.il-eso6 .eso6-layer[aria-pressed="true"] rect { stroke: var(--coral-60); stroke-width: 2.4; }
+.il-eso7 .eso7-step[aria-pressed="true"] { font-weight: 700; }
+.il-eso7 .eso7-tumor.is-break { filter: drop-shadow(0 0 6px var(--coral-50)); }
+.il-eso8 .eso8-step[aria-pressed="true"] rect { stroke: var(--warn-amber); stroke-width: 2.4; }
+.il-eso10 .eso10-struct[aria-pressed="true"] { filter: drop-shadow(0 0 5px var(--amber-glow, var(--warn-amber))); }
+
+/* controle externo de step (p9) */
+.eso-ctl { display: flex; gap: var(--sp-2); justify-content: center; margin-top: var(--sp-3); flex-wrap: wrap; }
+.eso-ctl__btn {
+  appearance: none; border: 1px solid var(--border-mid); background: var(--bg-elevated-2);
+  color: var(--ink-90); font: 600 var(--fs-sm)/1 inherit; padding: 0.5rem 0.9rem;
+  border-radius: var(--r-md, 10px); cursor: pointer; transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.eso-ctl__btn:hover:not(:disabled) { border-color: var(--teal-60); }
+.eso-ctl__btn:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+.eso-ctl__btn:disabled { opacity: 0.4; cursor: default; }
+
+/* step-ctl genérico (eso5/eso11 step-through) */
+.step-ctl { display: flex; gap: var(--sp-2); justify-content: center; align-items: center; margin-top: var(--sp-3); flex-wrap: wrap; }
+.step-ctl button {
+  appearance: none; border: 1px solid var(--border-mid); background: var(--bg-elevated-2);
+  color: var(--ink-90); font: 600 var(--fs-sm)/1 inherit; padding: 0.5rem 0.9rem;
+  border-radius: var(--r-md, 10px); cursor: pointer; transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.step-ctl button:hover:not(:disabled) { border-color: var(--teal-60); }
+.step-ctl button:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+.step-ctl button:disabled { opacity: 0.4; cursor: default; }
+.step-ctl [data-step-count] { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-50); }
+
+/* transições dos SVGs embutidos eso1/eso5/eso11/eso12 (suaves; desligadas em reduced-motion) */
+.il-eso1 .eso1-link,
+.il-eso1 .eso1-target { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso1 .eso1-clue { cursor: pointer; }
+.il-eso1 .eso1-clue[aria-pressed="true"] rect { stroke-width: 2.8; }
+.il-eso5 .eso5-gate,
+.il-eso5 .eso5-bad,
+.il-eso5 .eso5-lumen-path { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso11 .eso11-node,
+.il-eso11 .eso11-edge { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso12 .eso12-trap { cursor: pointer; }
+.il-eso12 .eso12-wrong,
+.il-eso12 .eso12-right { transition: opacity var(--dur-mid) var(--ease-out); }
+.il-eso12 .eso12-trap[aria-pressed="true"] > rect:first-of-type { stroke-width: 2.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .il-eso1 *, .il-eso2 *, .il-eso3 *, .il-eso4 *, .il-eso5 *, .il-eso6 *,
+  .il-eso7 *, .il-eso8 *, .il-eso9 *, .il-eso10 *, .il-eso11 *, .il-eso12 *,
+  .eso-ctl__btn, .step-ctl button { transition: none !important; animation: none !important; }
+}

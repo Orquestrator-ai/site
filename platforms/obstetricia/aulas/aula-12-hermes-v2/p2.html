@@ -1,0 +1,725 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CHASSI DA PLATAFORMA GO — copie VERBATIM e troque SÓ o que está em {{ }}.
+
+     ⛔ NÃO invente header, footer, menu, CSS nem JS. NÃO crie arquivo .css novo.
+     ⛔ NÃO mexa nos caminhos ../../assets/ — eles apontam para o chassi compartilhado
+        (tokens.css, base.css, components.css) que dá a identidade da plataforma inteira.
+
+     O QUE É SEU: o conteúdo dentro de <main id="main"><div class="reading"> … </div></main>.
+     Ali dentro você decide a cara da página — paleta interna, ritmo, componentes,
+     como monta o card, que interação inventa. O resto é contrato.
+
+     Placeholders:
+       p2        p1, p2, … p22          (index.html é p1)
+       2       1, 2, … 22
+       22          22
+       A casa em três etapas  título curto desta página
+       A pelve é a transição entre abdome e membros inferiores e executa três tarefas ao mesmo tempo — e se constrói como uma casa: paredes, chão, mobília.      uma frase, para o <meta description>
+       <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2" aria-current="page"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li>     os 22 <li> do menu — repita o padrão de menu-panel__item
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<!doctype html>
+<html lang="pt-BR" data-page="p2">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#171219">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="A pelve é a transição entre abdome e membros inferiores e executa três tarefas ao mesmo tempo — e se constrói como uma casa: paredes, chão, mobília.">
+  <title>A casa em três etapas · Anatomia da pelve feminina (parte 1) — GO Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/img/icon.svg" type="image/svg+xml">
+  <style id="critical-nav-fouc">#home-btn{display:grid;place-items:center;width:40px;height:40px;color:#ecdde6;border-bottom:0}#home-btn svg{display:block;width:20px;height:20px}</style>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/aula-12.css">
+</head>
+<body data-page-id="p2" data-a12-page="p02">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="page-orb" aria-hidden="true"></div><div class="page-orb page-orb--rose" aria-hidden="true"></div>
+  <header class="site-header" id="site-header"><div class="site-header__row">
+    <a class="site-header__brand" href="../../index.html"><span class="site-header__logo">GO</span><span class="site-header__titles"><span class="site-header__title">Anatomia da pelve feminina (parte 1)</span><span class="site-header__subtitle">Ginecologia e Obstetrícia · Aula 12</span></span></a>
+    <span class="site-header__spacer"></span><span class="site-header__progress" id="progress">2/22</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub do módulo" title="Hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" aria-pressed="false" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header>
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"><nav class="menu-panel" aria-label="Páginas da aula"><p class="menu-panel__title">Aula 12 — Anatomia da pelve feminina (parte 1)</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2" aria-current="page"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li></ul><p class="menu-panel__title">Módulo</p><ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="../../index.html"><span class="menu-panel__index">⌂</span><span>Voltar ao hub do módulo</span></a></li></ul></nav></div>
+  <main id="main"><div class="reading">
+
+  <!-- ▼▼▼ AQUI DENTRO É SEU. O conteúdo da página, com a peça SVG da tabela
+       copiada byte a byte, o quiz, e a didática que você decidir. ▼▼▼ -->
+
+  <article class="page is-active" data-page="p2" data-layout="a12-p02" data-item-range="018–032"><p class="page__eyebrow">Página 2 · Parte A · Paredes</p>
+<header class="a12-checklist-stage" data-opener="E5">
+<div class="a12-checklist-stage__goal">
+<span class="a12-checklist-stage__eyebrow">Meta</span>
+<h2 id="p02-title">A casa sobe em três etapas: parede, chão, mobília</h2>
+<p class="no-indent">Ao final desta página você vai conseguir dizer: onde a pelve fica dentro de uma pessoa · quais são as três tarefas que ela executa ao mesmo tempo · e em que ordem as peças precisam ser montadas para que isso se entenda.</p>
+</div>
+<ol class="a12-checklist-stage__steps">
+<li>Localizar a pelve no corpo</li>
+<li>Encadear recebe → estabiliza → transmite</li>
+<li>Instalar a bússola: paredes → chão → mobília</li>
+</ol>
+</header>
+<div class="chipset"><span class="a12-modmark">Obstetrícia</span><span class="chip--topic">Parte A · Paredes</span><span class="chip--topic">Itens 018–032</span><span class="chip--topic">Meta + checklist</span></div>
+<div class="a12-topic" data-topic="1">
+<div class="a12-topic__kicker">Tópico 1</div>
+<h4 class="topic-h">Onde a pelve fica dentro de uma pessoa</h4>
+<div class="prose">
+<p style="text-align: justify;"> A pelve é a <strong class="term">porção final do tronco</strong>. Ela ocupa a <strong class="term">transição entre o abdome e os membros inferiores</strong> — tudo o que está acima dela é abdome, tudo o que está abaixo já é coxa. Guarde isso antes de qualquer nome de osso, porque é a única frase da página que dispensa referência: a pelve é a junta entre o que carrega e o que anda.</p>
+</div></div>
+<div class="a12-topic" data-topic="2">
+<div class="a12-topic__kicker">Tópico 2</div>
+<h4 class="topic-h">Tarefa 1: receber, estabilizar, transmitir</h4>
+<div class="prose">
+<p style="text-align: justify;"> A primeira tarefa começa com a pelve <strong class="term">recebendo</strong> todo o peso e toda a pressão que vêm da parte superior do corpo. O segundo tempo é <strong class="term">estabilizar</strong> essa carga — segurá-la sem que a estrutura se deforme. E o terceiro é <strong class="term">transmiti-la aos membros inferiores</strong>, que é onde ela finalmente sai. Três tempos, e não uma frase só: <strong class="term">recebe → estabiliza → transmite</strong>. Separar os três importa porque cada um exige uma coisa diferente da estrutura — receber exige superfície, estabilizar exige rigidez, transmitir exige continuidade. É a exigência de continuidade que vai explicar, adiante, por que a parede precisa formar um círculo fechado e não apenas um conjunto de peças vizinhas.</p>
+</div></div>
+<div class="a12-topic" data-topic="3">
+<div class="a12-topic__kicker">Tópico 3</div>
+<h4 class="topic-h">Tarefas 2 e 3: abrigar e gestar</h4>
+<div class="prose">
+<p style="text-align: justify;"> A segunda tarefa é <strong class="term">abrigar</strong>: dentro da pelve estão contidas estruturas fundamentais — <strong class="term">órgãos, vísceras, nervos e vasos</strong>. A terceira é <strong class="term">gestar</strong>: é nesse espaço que a <strong class="term">gestação se desenvolve</strong>. Repare no conflito embutido, porque ele é a chave de tudo o que vem: a mesma estrutura tem de ser <strong class="term">rígida o bastante</strong> para transmitir o peso de um corpo inteiro e <strong class="term">complacente o bastante</strong> para deixar passar um feto a termo. Nenhuma peça isolada resolve as três tarefas ao mesmo tempo. Por isso a pelve precisa ser <strong class="term">muito bem estruturada e muito bem organizada</strong> — e é essa organização que se monta peça por peça, cada uma resolvendo uma parte do conflito.</p>
+</div></div>
+<div class="a12-topic" data-topic="4">
+<div class="a12-topic__kicker">Tópico 4</div>
+<h4 class="topic-h">A casa — a metáfora que responde "onde eu estou"</h4>
+<div class="prose">
+<p style="text-align: justify;"> A pelve se constrói como se constrói uma <strong class="term">casa</strong>. Essa é a bússola, e ela vale do começo ao fim: em qualquer ponto, a pergunta <em>onde eu estou</em> se responde apontando para uma das três etapas.</p>
+<p style="text-align: justify;"> <strong class="term">Primeiro sobem as PAREDES</strong> — a pelve óssea, as estruturas ósseas. <strong class="term">Depois entra o CHÃO</strong> — o assoalho e o períneo. <strong class="term">Por último vem a MOBÍLIA</strong> — o preenchimento: vísceras, nervos, vasos arteriais, vasos venosos e vasos linfáticos. E a sequência da casa <strong class="term">é</strong> a sequência do estudo: primeiro a parede, depois o chão, depois a mobília. Nada entra fora de ordem, e essa não é uma preferência estética. É estrutural: o chão se prende <strong class="term">na</strong> parede, e a mobília se apoia <strong class="term">no</strong> chão. Quem tenta guardar a posição de um órgão sem ter a parede montada está tentando pendurar um quadro no ar.</p>
+</div></div>
+<div class="a12-topic" data-topic="5">
+<div class="a12-topic__kicker">Tópico 5</div>
+<h4 class="topic-h">O que esta parte da casa entrega, e o que fica para a mobília</h4>
+<div class="prose">
+<p style="text-align: justify;"> A construção que começa aqui entrega <strong class="term">paredes</strong>, <strong class="term">chão</strong> e <strong class="term">as cordas que penduram</strong>. Vísceras, nervos, vasos e linfáticos — a mobília inteira — são o assunto da continuação. Isso fica declarado agora, e não no fim, por um motivo prático: quem procura a mobília numa casa que ainda está na fase de alvenaria conclui que não entendeu, quando na verdade só chegou antes da hora.</p>
+</div></div>
+<aside class="a12-fronteira" aria-label="Fronteira declarada">
+<h3>Fronteira declarada</h3>
+<p style="text-align: justify;">Esta construção <strong class="term">não entrega</strong>: vísceras pélvicas, artérias e veias, nervos, cadeias linfáticas, nem o cruzamento entre ureter e artéria uterina. Tudo isso é mobília e é assunto da continuação. O que se monta aqui é o <strong class="term">continente</strong>; o conteúdo vem depois.</p>
+</aside>
+<figure class="a12-fig">
+<figcaption>Onde isso está dentro de uma pessoa — silhueta de corpo inteiro com a pelve na transição entre abdome e membros inferiores.</figcaption>
+<!--
+ABORDAGENS VISUAIS AVALIADAS:
+1. Diagrama de vetores flutuantes com pelve isolada em 3D: alta complexidade geométrica, porém desconectada do corpo inteiro do paciente.
+2. Silhueta dupla de corpo inteiro (frente e perfil) com percurso de carga contínuo e anel pélvico saturado: conecta instantaneamente o tronco aos membros e evidencia a bifurcação de forças. [ESCOLHIDA]
+3. Diagrama esquemático em blocos funcionais (caixa supra-pélvica e sub-pélvica): excessivamente abstrato, perde o reconhecimento anatômico direto.
+JUSTIFICATIVA: A abordagem 2 (Silhueta Dupla Frente/Perfil) revela sem necessidade de texto prévio como a pelve recebe a massa superior e a divide 50/50 nos fêmures.
+-->
+<svg class="a12-inline-svg a12p02-root" id="a12p2-svg-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="100%" height="100%" data-svg-tokenized="true" data-step="all" aria-labelledby="a12p2-title a12p2-desc">
+  <title id="a12p2-title">Anatomia Funcional da Pelve: Biomecânica de Transferência de Carga</title>
+  <desc id="a12p2-desc">Ilustração funcional de silhuetas corporais em vista anterior e perfil, destacando a pelve na transição tronco-membros e a bifurcação da carga mecânica axial.</desc>
+  <style>
+    /*<![CDATA[*/
+    .a12p2-root {
+      --a12p2-tinta: #F6F1F4;
+      --a12p2-bg: #141018;
+      --a12p2-card: #1E1828;
+      --a12p2-card-border: #342A40;
+      --a12p2-corpo: #8F8390;
+      --a12p2-pelve: #F06A78;
+      --a12p2-carga: #F3BE5B;
+      --a12p2-construida: #55B889;
+      --a12p2-linha: #A79AA4;
+      --a12p2-dim: rgba(255, 255, 255, 0.12);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--a12-bg, var(--a12p2-bg, #141018));
+      color: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+      box-sizing: border-box;
+    }
+
+    [data-theme="light"] .a12p2-root {
+      --a12p2-tinta: #1F1A24;
+      --a12p2-bg: #FAFAF9;
+      --a12p2-card: #F0EBF2;
+      --a12p2-card-border: #D8CFDD;
+      --a12p2-corpo: #6B5E6D;
+      --a12p2-pelve: #D94354;
+      --a12p2-carga: #D99B26;
+      --a12p2-construida: #2E8B5E;
+      --a12p2-linha: #7E707D;
+      --a12p2-dim: rgba(0, 0, 0, 0.08);
+    }
+
+    @media (prefers-color-scheme: light) {
+      .a12p2-root:not([data-theme="dark"]) {
+        --a12p2-tinta: #1F1A24;
+        --a12p2-bg: #FAFAF9;
+        --a12p2-card: #F0EBF2;
+        --a12p2-card-border: #D8CFDD;
+        --a12p2-corpo: #6B5E6D;
+        --a12p2-pelve: #D94354;
+        --a12p2-carga: #D99B26;
+        --a12p2-construida: #2E8B5E;
+        --a12p2-linha: #7E707D;
+        --a12p2-dim: rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    .a12p2-bg-rect {
+      fill: var(--a12-bg, var(--a12p2-bg, #141018));
+    }
+    .a12p2-header-title {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-header-legend {
+      font-size: 12px;
+      font-weight: 400;
+      fill: var(--a12-linha, var(--a12p2-linha, #A79AA4));
+    }
+    .a12p2-silhouette {
+      fill: none;
+      stroke: var(--a12-corpo, var(--a12p2-corpo, #8F8390));
+      stroke-width: 1.6;
+      stroke-dasharray: 4 3;
+      opacity: 0.65;
+    }
+    .a12p2-silhouette-fill {
+      fill: var(--a12-corpo, var(--a12p2-corpo, #8F8390));
+      opacity: 0.05;
+    }
+    .a12p2-pelvis-highlight {
+      fill: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      fill-opacity: 0.22;
+      stroke: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      stroke-width: 2.2;
+      transition: all 0.3s ease;
+    }
+    .a12p2-pelvis-core {
+      fill: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      fill-opacity: 0.85;
+    }
+    .a12p2-spine-path {
+      fill: none;
+      stroke: var(--a12-corpo, var(--a12p2-corpo, #8F8390));
+      stroke-width: 2;
+      stroke-dasharray: 2 2;
+    }
+    .a12p2-femur-path {
+      fill: none;
+      stroke: var(--a12-corpo, var(--a12p2-corpo, #8F8390));
+      stroke-width: 2;
+      stroke-dasharray: 2 2;
+    }
+    
+    /* Dynamic Vector Streams */
+    .a12p2-vector-1 {
+      fill: none;
+      stroke: var(--a12-carga, var(--a12p2-carga, #F3BE5B));
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: opacity 0.35s ease, stroke-width 0.35s ease;
+    }
+    .a12p2-vector-2 {
+      fill: none;
+      stroke: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: opacity 0.35s ease, stroke-width 0.35s ease;
+    }
+    .a12p2-vector-3 {
+      fill: none;
+      stroke: var(--a12-construida, var(--a12p2-construida, #55B889));
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: opacity 0.35s ease, stroke-width 0.35s ease;
+    }
+    .a12p2-arrow-1 {
+      fill: var(--a12-carga, var(--a12p2-carga, #F3BE5B));
+      transition: opacity 0.35s ease;
+    }
+    .a12p2-arrow-2 {
+      fill: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      transition: opacity 0.35s ease;
+    }
+    .a12p2-arrow-3 {
+      fill: var(--a12-construida, var(--a12p2-construida, #55B889));
+      transition: opacity 0.35s ease;
+    }
+
+    /* Labels & Guides */
+    .a12p2-guide-line {
+      stroke: var(--a12-linha, var(--a12p2-linha, #A79AA4));
+      stroke-width: 1.2;
+      stroke-dasharray: 3 3;
+      opacity: 0.7;
+    }
+    .a12p2-guide-node {
+      fill: var(--a12-linha, var(--a12p2-linha, #A79AA4));
+    }
+    .a12p2-label-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-label-desc {
+      font-size: 11px;
+      fill: var(--a12-linha, var(--a12p2-linha, #A79AA4));
+    }
+    .a12p2-verb-tag {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .a12p2-tag-v1 { fill: var(--a12-carga, var(--a12p2-carga, #F3BE5B)); }
+    .a12p2-tag-v2 { fill: var(--a12-pelve, var(--a12p2-pelve, #F06A78)); }
+    .a12p2-tag-v3 { fill: var(--a12-construida, var(--a12p2-construida, #55B889)); }
+
+    /* Interactive Side Panel */
+    .a12p2-panel-bg {
+      fill: var(--a12-card, var(--a12p2-card, #1E1828));
+      stroke: var(--a12-card-border, var(--a12p2-card-border, #342A40));
+      stroke-width: 1.2;
+      rx: 10px;
+    }
+    .a12p2-panel-heading {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-btn {
+      cursor: pointer;
+      outline: none;
+    }
+    .a12p2-btn-box {
+      fill: var(--a12-bg, var(--a12p2-bg, #141018));
+      stroke: var(--a12-card-border, var(--a12p2-card-border, #342A40));
+      stroke-width: 1.2;
+      rx: 6px;
+      transition: all 0.2s ease;
+    }
+    .a12p2-btn:hover .a12p2-btn-box,
+    .a12p2-btn:focus .a12p2-btn-box {
+      stroke: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-btn[aria-pressed="true"] .a12p2-btn-box {
+      stroke-width: 2px;
+    }
+    .a12p2-btn-b1[aria-pressed="true"] .a12p2-btn-box {
+      stroke: var(--a12-carga, var(--a12p2-carga, #F3BE5B));
+      fill: rgba(243, 190, 91, 0.14);
+    }
+    .a12p2-btn-b2[aria-pressed="true"] .a12p2-btn-box {
+      stroke: var(--a12-pelve, var(--a12p2-pelve, #F06A78));
+      fill: rgba(240, 106, 120, 0.14);
+    }
+    .a12p2-btn-b3[aria-pressed="true"] .a12p2-btn-box {
+      stroke: var(--a12-construida, var(--a12p2-construida, #55B889));
+      fill: rgba(85, 184, 137, 0.14);
+    }
+    .a12p2-btn-ball[aria-pressed="true"] .a12p2-btn-box {
+      stroke: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+      fill: var(--a12-card-border, var(--a12p2-card-border, #342A40));
+    }
+    .a12p2-btn-lbl {
+      font-size: 11.5px;
+      font-weight: 700;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    .a12p2-info-box {
+      fill: var(--a12-bg, var(--a12p2-bg, #141018));
+      stroke: var(--a12-card-border, var(--a12p2-card-border, #342A40));
+      stroke-width: 1;
+      rx: 8px;
+    }
+    .a12p2-info-title {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    .a12p2-info-text {
+      font-size: 11px;
+      fill: var(--a12-tinta, var(--a12p2-tinta, #F6F1F4));
+    }
+    
+    /* Metrics section */
+    .a12p2-metric-track {
+      fill: var(--a12-bg, var(--a12p2-bg, #141018));
+      rx: 3px;
+    }
+    .a12p2-metric-bar {
+      rx: 3px;
+      transition: width 0.4s ease;
+    }
+
+    /* State visibility rules */
+    .a12p2-root[data-step="1"] .a12p2-vector-2,
+    .a12p2-root[data-step="1"] .a12p2-vector-3,
+    .a12p2-root[data-step="1"] .a12p2-arrow-2,
+    .a12p2-root[data-step="1"] .a12p2-arrow-3 {
+      opacity: 0.12;
+    }
+    .a12p2-root[data-step="1"] .a12p2-info-s2,
+    .a12p2-root[data-step="1"] .a12p2-info-s3,
+    .a12p2-root[data-step="1"] .a12p2-info-sall {
+      display: none;
+    }
+
+    .a12p2-root[data-step="2"] .a12p2-vector-1 { opacity: 0.35; }
+    .a12p2-root[data-step="2"] .a12p2-vector-3,
+    .a12p2-root[data-step="2"] .a12p2-arrow-3 { opacity: 0.12; }
+    .a12p2-root[data-step="2"] .a12p2-info-s1,
+    .a12p2-root[data-step="2"] .a12p2-info-s3,
+    .a12p2-root[data-step="2"] .a12p2-info-sall {
+      display: none;
+    }
+
+    .a12p2-root[data-step="3"] .a12p2-vector-1,
+    .a12p2-root[data-step="3"] .a12p2-vector-2 { opacity: 0.35; }
+    .a12p2-root[data-step="3"] .a12p2-info-s1,
+    .a12p2-root[data-step="3"] .a12p2-info-s2,
+    .a12p2-root[data-step="3"] .a12p2-info-sall {
+      display: none;
+    }
+
+    .a12p2-root[data-step="all"] .a12p2-info-s1,
+    .a12p2-root[data-step="all"] .a12p2-info-s2,
+    .a12p2-root[data-step="all"] .a12p2-info-s3 {
+      display: none;
+    }
+    /*]]>*/
+  </style>
+
+  <!-- Markers -->
+  <defs>
+    <marker id="a12p2-m1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" class="a12p2-arrow-1"/>
+    </marker>
+    <marker id="a12p2-m2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" class="a12p2-arrow-2"/>
+    </marker>
+    <marker id="a12p2-m3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" class="a12p2-arrow-3"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect class="a12p2-bg-rect" width="960" height="640"/>
+
+  <!-- Top Title &amp; Interpretation Banner -->
+  <g transform="translate(30, 32)">
+    <text class="a12p2-header-title" x="0" y="0">ANATOMIA FUNCIONAL DA PELVE: BIOMECÂNICA DE TRANSFERÊNCIA DE CARGA</text>
+    <text class="a12p2-header-legend" x="0" y="20">A pelve atua como ponte osteoarticular central: recebe a carga axial do tronco (100%), estabiliza no anel pélvico e transmite 50%/50% aos membros inferiores.</text>
+  </g>
+
+  <!-- Graphic Stage: Dual Silhouettes &amp; Vectors -->
+  <!-- Silhueta 1: VISTA ANTERIOR (FRENTE) Center X=200 -->
+  <g id="a12p2-stage-anterior" transform="translate(60, 75)">
+    <!-- View Subtitle -->
+    <text class="a12p2-label-desc" x="140" y="25" text-anchor="middle" font-weight="700">VISTA ANTERIOR (FRENTE)</text>
+    
+    <!-- Full Body Silhouette Path (Anterior) -->
+    <path class="a12p2-silhouette-fill" d="M 140 40 C 122 40 115 52 115 68 C 115 84 124 94 130 96 L 130 105 L 120 110 C 95 118 80 135 75 160 L 70 240 C 68 250 64 270 60 300 L 56 340 L 68 340 L 74 280 L 80 230 C 82 245 84 275 84 310 L 86 350 C 90 350 96 340 100 310 L 105 260 L 105 310 L 110 430 L 105 500 L 112 550 L 130 550 L 135 480 L 135 340 L 140 330 L 145 340 L 145 480 L 150 550 L 168 550 L 175 500 L 170 430 L 175 310 L 175 260 L 180 310 C 184 340 190 350 194 350 L 196 310 C 196 275 198 245 200 230 L 206 280 L 212 340 L 224 340 L 220 300 C 216 270 212 250 210 240 L 205 160 C 200 135 185 118 160 110 L 150 105 L 150 96 C 156 94 165 84 165 68 C 165 52 158 40 140 40 Z"/>
+    <path class="a12p2-silhouette" d="M 140 40 C 122 40 115 52 115 68 C 115 84 124 94 130 96 L 130 105 L 120 110 C 95 118 80 135 75 160 L 70 240 C 68 250 64 270 60 300 L 56 340 L 68 340 L 74 280 L 80 230 L 84 310 L 86 350 L 100 310 L 105 260 L 105 310 L 110 430 L 105 500 L 112 550 L 130 550 L 135 480 L 135 330 L 140 320 L 145 330 L 145 480 L 150 550 L 168 550 L 175 500 L 170 430 L 175 310 L 175 260 L 180 310 L 194 350 L 196 310 L 200 230 L 206 280 L 212 340 L 224 340 L 220 300 C 216 270 212 250 210 240 L 205 160 C 200 135 185 118 160 110 L 150 105 L 150 96 C 156 94 165 84 165 68 C 165 52 158 40 140 40 Z"/>
+
+    <!-- Spine Trajectory (Anterior center line) -->
+    <path class="a12p2-spine-path" d="M 140 105 L 140 270"/>
+
+    <!-- Femur Shaft Pathways -->
+    <path class="a12p2-femur-path" d="M 115 310 L 122 430 L 120 540"/>
+    <path class="a12p2-femur-path" d="M 165 310 L 158 430 L 160 540"/>
+
+    <!-- Pelvis Highlighted Structure (Anterior) -->
+    <g id="a12p2-pelvis-anterior">
+      <!-- Iliac Wings &amp; Pelvic Ring -->
+      <path class="a12p2-pelvis-highlight" d="M 140 268 C 122 268 102 265 96 275 C 90 286 92 305 106 315 C 114 320 120 325 125 325 C 130 325 136 322 140 320 C 144 322 150 325 155 325 C 160 325 166 320 174 315 C 188 305 190 286 184 275 C 178 265 158 268 140 268 Z"/>
+      <!-- Sacrum Central Core -->
+      <path class="a12p2-pelvis-core" d="M 132 268 L 148 268 L 144 300 L 136 300 Z" opacity="0.9"/>
+      <!-- Acetabular Sockets D/E -->
+      <circle cx="112" cy="310" r="9" class="a12p2-pelvis-highlight"/>
+      <circle cx="168" cy="310" r="9" class="a12p2-pelvis-highlight"/>
+    </g>
+
+    <!-- Dynamic Force Vectors (Anterior View) -->
+    <!-- Tempo 1: Recebe (Spine to S1) -->
+    <path class="a12p2-vector-1" d="M 140 140 L 140 265" marker-end="url(#a12p2-m1)"/>
+    
+    <!-- Tempo 2: Estabiliza (Sacroiliac &amp; Pelvic Ring Arc) -->
+    <path class="a12p2-vector-2" d="M 140 270 Q 125 278 114 302" marker-end="url(#a12p2-m2)"/>
+    <path class="a12p2-vector-2" d="M 140 270 Q 155 278 166 302" marker-end="url(#a12p2-m2)"/>
+
+    <!-- Tempo 3: Transmite (Femoral Shafts) -->
+    <path class="a12p2-vector-3" d="M 112 314 L 122 430" marker-end="url(#a12p2-m3)"/>
+    <path class="a12p2-vector-3" d="M 168 314 L 158 430" marker-end="url(#a12p2-m3)"/>
+  </g>
+
+  <!-- Silhueta 2: VISTA SAGITAL (PERFIL) Center X=410 -->
+  <g id="a12p2-stage-sagittal" transform="translate(320, 75)">
+    <!-- View Subtitle -->
+    <text class="a12p2-label-desc" x="90" y="25" text-anchor="middle" font-weight="700">VISTA SAGITAL (PERFIL)</text>
+    
+    <!-- Full Body Silhouette Path (Sagittal) -->
+    <path class="a12p2-silhouette-fill" d="M 85 40 C 70 40 60 52 60 68 C 60 82 70 94 75 96 L 75 105 C 65 115 50 135 48 160 C 45 190 52 230 55 260 C 58 275 62 285 70 310 L 75 350 L 70 430 L 65 500 L 65 550 L 95 550 L 90 500 L 95 430 L 105 350 C 115 315 120 290 115 270 C 110 245 95 230 92 210 C 88 185 95 160 98 140 C 100 125 95 110 88 105 L 88 96 C 94 94 100 82 100 68 C 100 52 95 40 85 40 Z"/>
+    <path class="a12p2-silhouette" d="M 85 40 C 70 40 60 52 60 68 C 60 82 70 94 75 96 L 75 105 C 65 115 50 135 48 160 C 45 190 52 230 55 260 C 58 275 62 285 70 310 L 75 350 L 70 430 L 65 500 L 65 550 L 95 550 L 90 500 L 95 430 L 105 350 C 115 315 120 290 115 270 C 110 245 95 230 92 210 C 88 185 95 160 98 140 C 100 125 95 110 88 105 L 88 96 C 94 94 100 82 100 68 C 100 52 95 40 85 40 Z"/>
+
+    <!-- Spine Curvature (Sagittal - Cervical/Thoracic/Lumbar/Sacral) -->
+    <path class="a12p2-spine-path" d="M 80 105 C 75 125 82 155 78 190 C 74 225 82 250 82 270"/>
+
+    <!-- Femur Shaft Pathway (Sagittal) -->
+    <path class="a12p2-femur-path" d="M 82 310 L 85 430 L 80 540"/>
+
+    <!-- Pelvis Highlighted Structure (Sagittal) -->
+    <g id="a12p2-pelvis-sagittal">
+      <path class="a12p2-pelvis-highlight" d="M 82 265 C 65 268 56 280 62 295 C 68 310 82 325 95 320 C 105 315 112 298 104 280 C 98 268 90 265 82 265 Z"/>
+      <path class="a12p2-pelvis-core" d="M 78 268 C 72 275 75 290 82 298 C 88 290 88 278 78 268 Z" opacity="0.9"/>
+      <circle cx="84" cy="310" r="9" class="a12p2-pelvis-highlight"/>
+    </g>
+
+    <!-- Dynamic Force Vectors (Sagittal View) -->
+    <!-- Tempo 1: Recebe (Lumbar lordosis vector) -->
+    <path class="a12p2-vector-1" d="M 76 150 C 72 185 82 230 82 263" marker-end="url(#a12p2-m1)"/>
+
+    <!-- Tempo 2: Estabiliza (Promontory &amp; Sacral tilt ring) -->
+    <path class="a12p2-vector-2" d="M 82 266 Q 90 282 84 302" marker-end="url(#a12p2-m2)"/>
+
+    <!-- Tempo 3: Transmite (Femoral line of weight-bearing) -->
+    <path class="a12p2-vector-3" d="M 84 314 L 86 430" marker-end="url(#a12p2-m3)"/>
+  </g>
+
+  <!-- ANATOMICAL MARGIN LABELS &amp; ACTION VERBS (Outer Margins &amp; Guides) -->
+  <!-- Left Outer Margin Labels -->
+  <g id="a12p2-margin-labels-left" transform="translate(25, 140)">
+    <!-- Label 1: abdome (Above) -->
+    <g transform="translate(0, 75)">
+      <line class="a12p2-guide-line" x1="68" y1="0" x2="175" y2="0"/>
+      <circle class="a12p2-guide-node" cx="175" cy="0" r="3"/>
+      <text class="a12p2-label-title" x="0" y="-4">ABDOME</text>
+      <text class="a12p2-label-desc" x="0" y="11">Cavidade superior / tronco</text>
+      <text class="a12p2-verb-tag a12p2-tag-v1" x="0" y="27">RECEBE</text>
+    </g>
+
+    <!-- Label 2: pelve (Middle) -->
+    <g transform="translate(0, 205)">
+      <line class="a12p2-guide-line" x1="58" y1="0" x2="171" y2="0"/>
+      <circle class="a12p2-guide-node" cx="171" cy="0" r="3"/>
+      <text class="a12p2-label-title" x="0" y="-4">PELVE</text>
+      <text class="a12p2-label-desc" x="0" y="11">Cinto osteoarticular central</text>
+      <text class="a12p2-verb-tag a12p2-tag-v2" x="0" y="27">ESTABILIZA</text>
+    </g>
+
+    <!-- Label 3: membros inferiores (Below) -->
+    <g transform="translate(0, 335)">
+      <line class="a12p2-guide-line" x1="135" y1="0" x2="197" y2="0"/>
+      <circle class="a12p2-guide-node" cx="197" cy="0" r="3"/>
+      <text class="a12p2-label-title" x="0" y="-4">MEMBROS INFERIORES</text>
+      <text class="a12p2-label-desc" x="0" y="11">Segmentos locomotores / base</text>
+      <text class="a12p2-verb-tag a12p2-tag-v3" x="0" y="27">TRANSMITE</text>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE RIGHT PANEL / READING CONSOLE (X=545 to 930) -->
+  <g id="a12p2-console" transform="translate(545, 90)">
+    <!-- Panel Background -->
+    <rect class="a12p2-panel-bg" width="385" height="520"/>
+
+    <!-- Panel Header -->
+    <text class="a12p2-panel-heading" x="20" y="32">PAINEL BIOMECÂNICO DE CARGA</text>
+
+    <!-- Step Buttons (Accessible touch targets: height 44px) -->
+    <g id="a12p2-step-buttons" transform="translate(20, 48)">
+      <!-- Button 1: Recebe -->
+      <g class="a12p2-btn a12p2-btn-b1" id="a12p2-btn-step1" role="button" tabindex="0" aria-pressed="false" aria-label="Tempo 1: Recebe carga axial">
+        <rect class="a12p2-btn-box" width="166" height="44" x="0" y="0"/>
+        <circle class="a12p2-btn-indicator" cx="16" cy="22" r="5" fill="var(--a12-carga, var(--a12p2-carga, #F3BE5B))"/>
+        <text class="a12p2-btn-lbl" x="30" y="20">1. RECEBE</text>
+        <text class="a12p2-label-desc" x="30" y="33">Carga axial (100%)</text>
+      </g>
+
+      <!-- Button 2: Estabiliza -->
+      <g class="a12p2-btn a12p2-btn-b2" id="a12p2-btn-step2" role="button" tabindex="0" aria-pressed="false" aria-label="Tempo 2: Estabiliza no anel pélvico">
+        <rect class="a12p2-btn-box" width="166" height="44" x="178" y="0"/>
+        <circle class="a12p2-btn-indicator" cx="194" cy="22" r="5" fill="var(--a12-pelve, var(--a12p2-pelve, #F06A78))"/>
+        <text class="a12p2-btn-lbl" x="208" y="20">2. ESTABILIZA</text>
+        <text class="a12p2-label-desc" x="208" y="33">Anel pélvico sacroilíaco</text>
+      </g>
+
+      <!-- Button 3: Transmite -->
+      <g class="a12p2-btn a12p2-btn-b3" id="a12p2-btn-step3" role="button" tabindex="0" aria-pressed="false" aria-label="Tempo 3: Transmite aos fêmures">
+        <rect class="a12p2-btn-box" width="166" height="44" x="0" y="52"/>
+        <circle class="a12p2-btn-indicator" cx="16" cy="74" r="5" fill="var(--a12-construida, var(--a12p2-construida, #55B889))"/>
+        <text class="a12p2-btn-lbl" x="30" y="72">3. TRANSMITE</text>
+        <text class="a12p2-label-desc" x="30" y="85">Bifurcação 50% / 50%</text>
+      </g>
+
+      <!-- Button All: Visão Completa -->
+      <g class="a12p2-btn a12p2-btn-ball" id="a12p2-btn-stepall" role="button" tabindex="0" aria-pressed="true" aria-label="Visão Completa do fluxo de carga">
+        <rect class="a12p2-btn-box" width="166" height="44" x="178" y="52"/>
+        <circle class="a12p2-btn-indicator" cx="194" cy="74" r="5" fill="var(--a12-tinta, var(--a12p2-tinta, #F6F1F4))"/>
+        <text class="a12p2-btn-lbl" x="208" y="72">FLUXO COMPLETO</text>
+        <text class="a12p2-label-desc" x="208" y="85">Percurso contínuo</text>
+      </g>
+    </g>
+
+    <!-- Reading Box / Clinical Interpretation Card -->
+    <g transform="translate(20, 160)">
+      <rect class="a12p2-info-box" width="345" height="185"/>
+
+      <!-- Dynamic Content for Step 1 -->
+      <g class="a12p2-info-s1" transform="translate(16, 24)">
+        <text class="a12p2-info-title" fill="var(--a12-carga, var(--a12p2-carga, #F3BE5B))" x="0" y="0">TEMPO 1 — TRONCO → COLUNA LOMBAR (RECEBE)</text>
+        <text class="a12p2-info-text" x="0" y="24">O peso corporal da supraestrutura (cabeça, tórax,</text>
+        <text class="a12p2-info-text" x="0" y="40">abdome e membros superiores) canaliza-se como um</text>
+        <text class="a12p2-info-text" x="0" y="56">vetor de força axial gravitacional contínuo.</text>
+        <text class="a12p2-info-text" x="0" y="84" font-weight="700">Ponto de Entrada:</text>
+        <text class="a12p2-info-text" x="110" y="84">Promontório Sacro / L5-S1</text>
+        <text class="a12p2-info-text" x="0" y="104" font-weight="700">Magnitude relativa:</text>
+        <text class="a12p2-info-text" x="110" y="104">100% da carga supra-pélvica</text>
+      </g>
+
+      <!-- Dynamic Content for Step 2 -->
+      <g class="a12p2-info-s2" transform="translate(16, 24)">
+        <text class="a12p2-info-title" fill="var(--a12-pelve, var(--a12p2-pelve, #F06A78))" x="0" y="0">TEMPO 2 — SACRO → ANEL PÉLVICO (ESTABILIZA)</text>
+        <text class="a12p2-info-text" x="0" y="24">Ao atingir o sacro, a força vetorial axial abre-se</text>
+        <text class="a12p2-info-text" x="0" y="40">lateralmente através das articulações sacroilíacas</text>
+        <text class="a12p2-info-text" x="0" y="56">e arcos íleopectíneos do cinto osteoarticular.</text>
+        <text class="a12p2-info-text" x="0" y="84" font-weight="700">Função Mecânica:</text>
+        <text class="a12p2-info-text" x="110" y="84">Amortecimento e estabilização</text>
+        <text class="a12p2-info-text" x="0" y="104" font-weight="700">Mecanismo:</text>
+        <text class="a12p2-info-text" x="110" y="104">Arquitetura de abóbada/arco pélvico</text>
+      </g>
+
+      <!-- Dynamic Content for Step 3 -->
+      <g class="a12p2-info-s3" transform="translate(16, 24)">
+        <text class="a12p2-info-title" fill="var(--a12-construida, var(--a12p2-construida, #55B889))" x="0" y="0">TEMPO 3 — ACETÁBULOS → FÊMURES (TRANSMITE)</text>
+        <text class="a12p2-info-text" x="0" y="24">A carga estabilizada é descarregada através das</text>
+        <text class="a12p2-info-text" x="0" y="40">cavidades acetabulares para as cabeças femorais,</text>
+        <text class="a12p2-info-text" x="0" y="56">bifurcando-se perfeitamente para a marcha.</text>
+        <text class="a12p2-info-text" x="0" y="84" font-weight="700">Destino do Vetor:</text>
+        <text class="a12p2-info-text" x="110" y="84">Membros Inferiores D / E</text>
+        <text class="a12p2-info-text" x="0" y="104" font-weight="700">Divisão Bilateral:</text>
+        <text class="a12p2-info-text" x="110" y="104">Simétrica (50% Direita / 50% Esquerda)</text>
+      </g>
+
+      <!-- Dynamic Content for Step ALL -->
+      <g class="a12p2-info-sall" transform="translate(16, 24)">
+        <text class="a12p2-info-title" fill="var(--a12-tinta, var(--a12p2-tinta, #F6F1F4))" x="0" y="0">BIOMECÂNICA DE TRANSFERÊNCIA INTEGRADA</text>
+        <text class="a12p2-info-text" x="0" y="24">A pelve funciona como uma verdadeira rota de força</text>
+        <text class="a12p2-info-text" x="0" y="40">ininterrupta: transforma a compressão vertical em</text>
+        <text class="a12p2-info-text" x="0" y="56">empuxo diagonal estabilizado e divisão bilateral.</text>
+        <text class="a12p2-info-text" x="0" y="84" font-weight="700">Conclusão Clínica:</text>
+        <text class="a12p2-info-text" x="110" y="84">Sem a higidez do anel pélvico,</text>
+        <text class="a12p2-info-text" x="0" y="104" font-weight="400">a transmissão de carga do tronco para a marcha fica descompensada.</text>
+      </g>
+    </g>
+
+    <!-- Load Distribution Metrics Chart -->
+    <g id="a12p2-metrics-section" transform="translate(20, 360)">
+      <text class="a12p2-label-title" x="0" y="0">DISTRIBUIÇÃO QUANTITATIVA DA CARGA</text>
+
+      <!-- Metric 1: Tronco / Coluna (100%) -->
+      <g transform="translate(0, 16)">
+        <text class="a12p2-label-desc" x="0" y="12">Tronco / Coluna (Axial)</text>
+        <text class="a12p2-label-desc" x="345" y="12" text-anchor="end" font-weight="700" fill="var(--a12-carga, var(--a12p2-carga, #F3BE5B))">100%</text>
+        <rect class="a12p2-metric-track" x="0" y="18" width="345" height="10"/>
+        <rect class="a12p2-metric-bar" x="0" y="18" width="345" height="10" fill="var(--a12-carga, var(--a12p2-carga, #F3BE5B))"/>
+      </g>
+
+      <!-- Metric 2: Anel Pélvico (Estabilização Arcada) -->
+      <g transform="translate(0, 52)">
+        <text class="a12p2-label-desc" x="0" y="12">Anel Pélvico (Dissipação de Força)</text>
+        <text class="a12p2-label-desc" x="345" y="12" text-anchor="end" font-weight="700" fill="var(--a12-pelve, var(--a12p2-pelve, #F06A78))">100% Estabilizada</text>
+        <rect class="a12p2-metric-track" x="0" y="18" width="345" height="10"/>
+        <rect class="a12p2-metric-bar" x="0" y="18" width="345" height="10" fill="var(--a12-pelve, var(--a12p2-pelve, #F06A78))"/>
+      </g>
+
+      <!-- Metric 3: Membros Inferiores (50% D / 50% E) -->
+      <g transform="translate(0, 88)">
+        <text class="a12p2-label-desc" x="0" y="12">Membros Inf. Direito / Esquerdo</text>
+        <text class="a12p2-label-desc" x="345" y="12" text-anchor="end" font-weight="700" fill="var(--a12-construida, var(--a12p2-construida, #55B889))">50% + 50%</text>
+        <rect class="a12p2-metric-track" x="0" y="18" width="345" height="10"/>
+        <rect class="a12p2-metric-bar" x="0" y="18" width="172.5" height="10" fill="var(--a12-construida, var(--a12p2-construida, #55B889))"/>
+        <rect class="a12p2-metric-bar" x="172.5" y="18" width="172.5" height="10" fill="var(--a12-construida, var(--a12p2-construida, #55B889))" opacity="0.8"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Embedded Self-Contained Interactivity Script -->
+  <script>
+    <![CDATA[
+    (function() {
+      var root = document.getElementById('a12p2-svg-root');
+      if (!root || root.getAttribute('data-a12p2-bound') === 'true') return;
+      root.setAttribute('data-a12p2-bound', 'true');
+
+      var btnStep1 = document.getElementById('a12p2-btn-step1');
+      var btnStep2 = document.getElementById('a12p2-btn-step2');
+      var btnStep3 = document.getElementById('a12p2-btn-step3');
+      var btnStepAll = document.getElementById('a12p2-btn-stepall');
+
+      var buttons = [
+        { el: btnStep1, step: '1' },
+        { el: btnStep2, step: '2' },
+        { el: btnStep3, step: '3' },
+        { el: btnStepAll, step: 'all' }
+      ];
+
+      function setStep(targetStep) {
+        root.setAttribute('data-step', targetStep);
+        buttons.forEach(function(item) {
+          if (!item.el) return;
+          var isActive = (item.step === targetStep);
+          item.el.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      }
+
+      buttons.forEach(function(item) {
+        if (!item.el) return;
+        item.el.addEventListener('click', function() {
+          setStep(item.step);
+        });
+        item.el.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setStep(item.step);
+          }
+        });
+      });
+    })();
+    ]]>
+  </script>
+</svg>
+
+</figure>
+<section class="quiz" data-quiz-id="a12-p02" aria-labelledby="quiz-p02-title">
+<h2 id="quiz-p02-title">Quiz — fixação</h2>
+<ol class="quiz__questions" style="list-style:none;padding:0;margin:0">
+<li class="quiz__q" data-q="1"><p class="quiz__stem">A pelve executa três tarefas simultâneas. Qual delas explica a exigência de que a parede óssea forme uma estrutura <strong class="term">contínua</strong>, e não apenas um conjunto de peças vizinhas?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>abrigar órgãos, vísceras, nervos e vasos.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>transmitir aos membros inferiores a carga recebida da parte superior do corpo.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>permitir que a gestação se desenvolva no seu interior.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>delimitar a transição entre o abdome e os membros inferiores.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why">Transmitir carga é uma exigência de <strong class="term">continuidade mecânica</strong>: para que a força atravesse a estrutura de cima até os fêmures, tem de haver caminho ininterrupto de osso. Peças apenas vizinhas se afastariam sob compressão e a carga se perderia em deslocamento em vez de seguir adiante — é exatamente por isso que a parede precisa <strong class="term">fechar</strong> um anel.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">exige continência e volume, não continuidade: uma estrutura em forma de tigela, mesmo aberta na frente, ainda abrigaria vísceras.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">exige o oposto da rigidez — precisa de espaço e de alguma complacência; é a tarefa que <strong class="term">conflita</strong> com a transmissão de carga, e não a que a explica.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">é descrição de posição, não de função; localizar não impõe nenhuma exigência estrutural.</span></li><li class="is-wrong"><b>Por que cair na (A):</b> <span class="why">"abrigar" evoca a imagem de uma caixa fechada, e o aluno traduz "fechada" como "contínua". Só que abrigar pede <strong class="term">parede</strong>, e transmitir pede <strong class="term">circuito</strong> — e é a segunda exigência, mais rara, que decide a forma em anel.</span></li></ul></div></li>
+<li class="quiz__q" data-q="2"><p class="quiz__stem">A ordem parede → chão → mobília é apresentada como a ordem obrigatória de montagem. Qual afirmação justifica essa ordem por razão <strong class="term">estrutural</strong>, e não por conveniência didática?</p><div class="quiz__alts" role="radiogroup"><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">A</span><span>porque a mobília é o conteúdo mais cobrado em prova e deve vir por último.</span></button><button type="button" class="quiz__alt" data-correct="true" role="radio" aria-checked="false"><span class="letter">B</span><span>porque o chão se prende na parede, e a mobília se apoia no chão.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">C</span><span>porque a parede é a única das três etapas que é óssea.</span></button><button type="button" class="quiz__alt" data-correct="false" role="radio" aria-checked="false"><span class="letter">D</span><span>porque as vísceras só se desenvolvem depois da formação do esqueleto.</span></button></div><div class="quiz__fb" aria-live="polite" hidden><p class="quiz__verdict"></p><ul class="quiz__expl"><li class="is-correct"><b>Gabarito B.</b> <span class="why">A ordem é uma <strong class="term">cadeia de dependência de fixação</strong>: cada etapa precisa da anterior para ter onde se ancorar. Sem parede, o chão não tem onde se inserir; sem chão, os órgãos não têm sobre o que se apoiar. É por isso que trocar a ordem não é só menos elegante — é impossível de sustentar mentalmente, e é uma das razões pelas quais nomes de órgãos aprendidos antes da moldura óssea não grudam.</span></li><li class="is-wrong"><b>(A)</b> <span class="why">inverte o critério: prioridade de prova é argumento de estudo, não de estrutura, e nada garante que a mobília seja o mais cobrado.</span></li><li class="is-wrong"><b>(C)</b> <span class="why">é verdadeira como fato isolado e irrelevante como justificativa — ser óssea não explica por que a parede tem de <strong class="term">vir antes</strong>.</span></li><li class="is-wrong"><b>(D)</b> <span class="why">é uma afirmação embriológica que não sustenta a ordem de estudo e, além disso, não é assim que o desenvolvimento acontece.</span></li><li class="is-wrong"><b>Por que cair na (C):</b> <span class="why">o enunciado pede razão estrutural, e "é a parte óssea" soa estrutural. A pegadinha é confundir <strong class="term">composição</strong> com <strong class="term">dependência</strong>: o que ordena a montagem não é do que cada etapa é feita, é <strong class="term">em que cada etapa se prende</strong>.</span></li></ul></div></li>
+</ol></section>
+<section class="a12-resumo" aria-label="Resumo operacional">
+<h3>Resumo operacional</h3>
+<p style="text-align: justify;">A pelve é a transição entre abdome e membros inferiores e executa três tarefas ao mesmo tempo: <strong class="term">recebe → estabiliza → transmite</strong> a carga · <strong class="term">abriga</strong> órgãos, vísceras, nervos e vasos · <strong class="term">gesta</strong>. As duas primeiras pedem rigidez e continuidade; a terceira pede passagem — e é desse conflito que nasce a forma. A construção segue a ordem da casa: <strong class="term">paredes → chão → mobília</strong>, e nada entra fora de ordem porque cada etapa se prende na anterior.</p>
+</section>
+</article>
+  
+
+  <!-- ▲▲▲ FIM DO SEU CONTEÚDO ▲▲▲ -->
+
+  </div></main>
+  <footer class="site-footer"><div class="container"><span>Anatomia da pelve feminina (parte 1) · Aula 12 — conteúdo educacional para residência.</span><span>2 / 22</span></div></footer>
+  <script src="../../assets/js/pwa-bootstrap.js" defer></script>
+  <script src="../../assets/js/app-a12.js" defer></script>
+  <script src="../../assets/js/quiz-a12.js" defer></script>
+  <script src="../../assets/js/aula-12.js" defer></script>
+</body>
+</html>
+
+<!-- Padrão de UM item do menu, para montar <li class="menu-panel__item"><a class="menu-panel__link" href="index.html" data-page-id="p1"><span class="menu-panel__index">01</span><span>Quatro decisões clínicas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2" aria-current="page"><span class="menu-panel__index">02</span><span>A casa em três etapas</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html" data-page-id="p3"><span class="menu-panel__index">03</span><span>Três pontos do dedo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html" data-page-id="p4"><span class="menu-panel__index">04</span><span>Três nomes, quatro peças</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html" data-page-id="p5"><span class="menu-panel__index">05</span><span>As duas pontas do sacro</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html" data-page-id="p6"><span class="menu-panel__index">06</span><span>O T do acetábulo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html" data-page-id="p7"><span class="menu-panel__index">07</span><span>A maior janela do osso</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html" data-page-id="p8"><span class="menu-panel__index">08</span><span>A linha que corta a pelve</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p9.html" data-page-id="p9"><span class="menu-panel__index">09</span><span>Três aros empilhados</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p10.html" data-page-id="p10"><span class="menu-panel__index">10</span><span>Espinha e tuberosidade</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p11.html" data-page-id="p11"><span class="menu-panel__index">11</span><span>Conjugatas e Smellie</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p12.html" data-page-id="p12"><span class="menu-panel__index">12</span><span>Insinuação e o zero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p13.html" data-page-id="p13"><span class="menu-panel__index">13</span><span>Medir não decide o parto</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p14.html" data-page-id="p14"><span class="menu-panel__index">14</span><span>Tire o chão e o útero cai</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p15.html" data-page-id="p15"><span class="menu-panel__index">15</span><span>Cada nome é um endereço</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p16.html" data-page-id="p16"><span class="menu-panel__index">16</span><span>O que o Kegel fortalece</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p17.html" data-page-id="p17"><span class="menu-panel__index">17</span><span>Dois andares do períneo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p18.html" data-page-id="p18"><span class="menu-panel__index">18</span><span>Vire e olhe por baixo</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p19.html" data-page-id="p19"><span class="menu-panel__index">19</span><span>A linha oblíqua</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p20.html" data-page-id="p20"><span class="menu-panel__index">20</span><span>Três cordas para o útero</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p21.html" data-page-id="p21"><span class="menu-panel__index">21</span><span>Cólica sem menstruação</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p22.html" data-page-id="p22"><span class="menu-panel__index">22</span><span>Reconstrua a pelve</span></a></li> (22 deles):
+<li class="menu-panel__item"><a class="menu-panel__link" href="p2.html" data-page-id="p2"><span class="menu-panel__index">02</span><span>Título curto</span></a></li>
+     O primeiro aponta para index.html com data-page-id="p1".
+-->

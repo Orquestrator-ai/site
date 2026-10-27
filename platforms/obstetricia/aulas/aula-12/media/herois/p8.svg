@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="a12p8h-root" width="100%" height="100%" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Divisão Anatômica da Pelve: A Linha Terminal e as Duas Pelves">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="a12p8h-bg-grad" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="var(--a12p8h-grad-start, #2a0c23)"/>
+      <stop offset="60%" stop-color="var(--a12p8h-grad-mid, #180614)"/>
+      <stop offset="100%" stop-color="var(--a12p8h-grad-end, #0d030b)"/>
+    </radialGradient>
+
+    <!-- Linear Gradient for Linea Terminalis Glow -->
+    <linearGradient id="a12p8h-linea-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe066"/>
+      <stop offset="50%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#ff4757"/>
+    </linearGradient>
+
+    <!-- Gradient for Greater Pelvis (Falsa) -->
+    <linearGradient id="a12p8h-greater-pelvis-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff477e" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ff5252" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- Gradient for Lesser Pelvis (Verdadeira / Canal de Parto) -->
+    <linearGradient id="a12p8h-lesser-pelvis-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f5d4" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <!-- Bone Texture Fill Gradients -->
+    <linearGradient id="a12p8h-bone-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8edeb"/>
+      <stop offset="40%" stop-color="#e8d8d8"/>
+      <stop offset="80%" stop-color="#d8b4b8"/>
+      <stop offset="100%" stop-color="#b5838d"/>
+    </linearGradient>
+
+    <linearGradient id="a12p8h-bone-dark-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#805b65"/>
+      <stop offset="70%" stop-color="#4a2833"/>
+      <stop offset="100%" stop-color="#2b111a"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="a12p8h-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="a12p8h-intense-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="3" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow for Card Panels -->
+    <filter id="a12p8h-card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="a12p8h-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffb703"/>
+    </marker>
+
+    <marker id="a12p8h-arrow-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00f5d4"/>
+    </marker>
+  </defs>
+
+  <style>
+    /* <![CDATA[ */
+    /* Scope all styles to .a12p8h-root to avoid leaks */
+    .a12p8h-root {
+      --a12p8h-bg: var(--bg-main, #180614);
+      --a12p8h-card-bg: rgba(36, 12, 30, 0.82);
+      --a12p8h-card-border: rgba(255, 101, 132, 0.25);
+      --a12p8h-text-title: #ffffff;
+      --a12p8h-text-body: #e2cad8;
+      --a12p8h-text-muted: #a38297;
+      --a12p8h-accent-gold: #ffb703;
+      --a12p8h-accent-pink: #ff477e;
+      --a12p8h-accent-teal: #00f5d4;
+      --a12p8h-bone-stroke: #e8c5ce;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      user-select: none;
+    }
+
+    /* Light Theme Support */
+    [data-theme="light"] .a12p8h-root {
+      --a12p8h-bg: #fcf4f7;
+      --a12p8h-card-bg: rgba(255, 255, 255, 0.92);
+      --a12p8h-card-border: rgba(180, 40, 80, 0.2);
+      --a12p8h-text-title: #2b081e;
+      --a12p8h-text-body: #4a2039;
+      --a12p8h-text-muted: #7a5069;
+      --a12p8h-accent-gold: #d97706;
+      --a12p8h-accent-pink: #d91854;
+      --a12p8h-accent-teal: #0d9488;
+      --a12p8h-bone-stroke: #5a2e3d;
+    }
+
+    /* UI Base Elements */
+    .a12p8h-bg-rect {
+      fill: url(#a12p8h-bg-grad);
+      transition: fill 0.3s ease;
+    }
+
+    .a12p8h-title-text {
+      fill: var(--a12p8h-text-title, #ffffff);
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .a12p8h-subtitle-text {
+      fill: var(--a12p8h-text-muted, #a38297);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    /* Navigation Tabs */
+    .a12p8h-tab-btn {
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .a12p8h-tab-bg {
+      fill: rgba(60, 20, 50, 0.5);
+      stroke: var(--a12p8h-card-border, rgba(255, 101, 132, 0.25));
+      stroke-width: 1.5px;
+      rx: 8px;
+    }
+
+    .a12p8h-tab-text {
+      fill: var(--a12p8h-text-muted, #a38297);
+      font-size: 13px;
+      font-weight: 600;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+    .a12p8h-tab-btn:hover .a12p8h-tab-bg {
+      fill: rgba(120, 30, 80, 0.4);
+      stroke: var(--a12p8h-accent-pink, #ff477e);
+    }
+
+    .a12p8h-tab-btn:hover .a12p8h-tab-text {
+      fill: var(--a12p8h-text-title, #ffffff);
+    }
+
+    .a12p8h-tab-btn.a12p8h-active .a12p8h-tab-bg {
+      fill: var(--a12p8h-accent-pink, #ff477e);
+      stroke: #ffffff;
+      stroke-width: 2px;
+    }
+
+    .a12p8h-tab-btn.a12p8h-active .a12p8h-tab-text {
+      fill: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Interactive Hotspots and Bone Group */
+    .a12p8h-bone-path {
+      fill: url(#a12p8h-bone-grad);
+      stroke: var(--a12p8h-bone-stroke, #e8c5ce);
+      stroke-width: 1.5px;
+      transition: all 0.3s ease;
+    }
+
+    .a12p8h-bone-shadow-path {
+      fill: url(#a12p8h-bone-dark-grad);
+      opacity: 0.85;
+    }
+
+    .a12p8h-linea-terminalis-path {
+      fill: none;
+      stroke: url(#a12p8h-linea-grad);
+      stroke-width: 5px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: url(#a12p8h-intense-glow);
+      transition: all 0.3s ease;
+    }
+
+    .a12p8h-linea-terminalis-dash {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 2px;
+      stroke-dasharray: 6 4;
+      stroke-linecap: round;
+    }
+
+    .a12p8h-region-greater {
+      fill: url(#a12p8h-greater-pelvis-grad);
+      stroke: var(--a12p8h-accent-pink, #ff477e);
+      stroke-width: 1.5px;
+      stroke-dasharray: 4 4;
+      transition: all 0.3s ease;
+    }
+
+    .a12p8h-region-lesser {
+      fill: url(#a12p8h-lesser-pelvis-grad);
+      stroke: var(--a12p8h-accent-teal, #00f5d4);
+      stroke-width: 1.5px;
+      stroke-dasharray: 4 4;
+      transition: all 0.3s ease;
+    }
+
+    .a12p8h-hotspot {
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .a12p8h-hotspot-circle {
+      fill: #ffb703;
+      stroke: #ffffff;
+      stroke-width: 2.5px;
+      filter: url(#a12p8h-glow);
+      transition: all 0.2s ease;
+    }
+
+    .a12p8h-hotspot-inner {
+      fill: #180614;
+    }
+
+    .a12p8h-hotspot:hover {
+      transform: scale(1.25);
+    }
+
+    .a12p8h-hotspot:hover .a12p8h-hotspot-circle {
+      fill: #ffffff;
+      stroke: #ff477e;
+      stroke-width: 3px;
+    }
+
+    .a12p8h-hotspot.a12p8h-active .a12p8h-hotspot-circle {
+      fill: #00f5d4;
+      stroke: #ffffff;
+      stroke-width: 3px;
+      filter: url(#a12p8h-intense-glow);
+    }
+
+    /* Cards and Panels */
+    .a12p8h-panel-rect {
+      fill: var(--a12p8h-card-bg, rgba(36, 12, 30, 0.82));
+      stroke: var(--a12p8h-card-border, rgba(255, 101, 132, 0.25));
+      stroke-width: 1.5px;
+      rx: 14px;
+      filter: url(#a12p8h-card-shadow);
+    }
+
+    .a12p8h-card-header-bg {
+      fill: rgba(255, 71, 126, 0.12);
+    }
+
+    .a12p8h-card-title {
+      fill: var(--a12p8h-accent-gold, #ffb703);
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .a12p8h-card-subtitle {
+      fill: var(--a12p8h-text-title, #ffffff);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .a12p8h-card-text {
+      fill: var(--a12p8h-text-body, #e2cad8);
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .a12p8h-badge-gold {
+      fill: rgba(255, 183, 3, 0.15);
+      stroke: #ffb703;
+      stroke-width: 1px;
+      rx: 4px;
+    }
+
+    .a12p8h-badge-gold-text {
+      fill: var(--a12p8h-accent-gold, #ffb703);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .a12p8h-badge-pink {
+      fill: rgba(255, 71, 126, 0.15);
+      stroke: #ff477e;
+      stroke-width: 1px;
+      rx: 4px;
+    }
+
+    .a12p8h-badge-pink-text {
+      fill: var(--a12p8h-accent-pink, #ff477e);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .a12p8h-badge-teal {
+      fill: rgba(0, 245, 212, 0.15);
+      stroke: #00f5d4;
+      stroke-width: 1px;
+      rx: 4px;
+    }
+
+    .a12p8h-badge-teal-text {
+      fill: var(--a12p8h-accent-teal, #00f5d4);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* Anatomical Leader Lines and Labels */
+    .a12p8h-leader-line {
+      fill: none;
+      stroke: var(--a12p8h-text-muted, #a38297);
+      stroke-width: 1.2px;
+      stroke-dasharray: 3 3;
+    }
+
+    .a12p8h-leader-node {
+      fill: var(--a12p8h-text-title, #ffffff);
+    }
+
+    .a12p8h-label-box {
+      fill: rgba(20, 5, 16, 0.85);
+      stroke: var(--a12p8h-card-border, rgba(255, 101, 132, 0.3));
+      stroke-width: 1px;
+      rx: 6px;
+    }
+
+    .a12p8h-label-text {
+      fill: var(--a12p8h-text-title, #ffffff);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Utility Display Classes */
+    .a12p8h-hidden {
+      display: none !important;
+    }
+
+    .a12p8h-fade-in {
+      animation: a12p8h-fadeInKey 0.4s ease forwards;
+    }
+
+    @keyframes a12p8h-fadeInKey {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* ]]> */
+  </style>
+
+  <!-- Background -->
+  <rect class="a12p8h-bg-rect" width="1200" height="800" x="0" y="0"/>
+
+  <!-- ==================== HEADER SECTION ==================== -->
+  <g transform="translate(40, 45)">
+    <!-- Main Title -->
+    <text class="a12p8h-title-text" x="0" y="0">DIVISÃO ANATÔMICA DA PELVE: A LINHA TERMINAL E AS DUAS PELVES</text>
+    <!-- Subtitle / Didactic Key -->
+    <text class="a12p8h-subtitle-text" x="0" y="24">A fronteira tridimensional contínua (Promontório para Sínfise Púbica) que separa a Pelve Maior da Pelve Menor e limita o Canal de Parto.</text>
+  </g>
+
+  <!-- ==================== CONTROL TABS ==================== -->
+  <g id="a12p8h-tab-group" transform="translate(40, 88)">
+    <!-- Tab 1: Sagittal Profile -->
+    <g class="a12p8h-tab-btn a12p8h-active" id="a12p8h-tab-sagittal" role="button" tabindex="0" aria-label="Ver Perfil Sagital 3D">
+      <rect class="a12p8h-tab-bg" x="0" y="0" width="210" height="38"/>
+      <text class="a12p8h-tab-text" x="105" y="19">1. Perfil Sagital 3D (Níveis)</text>
+    </g>
+    <!-- Tab 2: Superior Inlet View -->
+    <g class="a12p8h-tab-btn" id="a12p8h-tab-superior" role="button" tabindex="0" aria-label="Ver Estreito Superior">
+      <rect class="a12p8h-tab-bg" x="222" y="0" width="220" height="38"/>
+      <text class="a12p8h-tab-text" x="332" y="19">2. Estreito Superior (Anel Fechado)</text>
+    </g>
+    <!-- Tab 3: Compartment Comparison -->
+    <g class="a12p8h-tab-btn" id="a12p8h-tab-compartments" role="button" tabindex="0" aria-label="Comparar Compartimentos">
+      <rect class="a12p8h-tab-bg" x="454" y="0" width="230" height="38"/>
+      <text class="a12p8h-tab-text" x="569" y="19">3. Pelve Maior vs. Pelve Menor</text>
+    </g>
+  </g>
+
+  <!-- ==================== MAIN ILLUSTRATION STAGE ==================== -->
+  <g id="a12p8h-stage" transform="translate(40, 145)">
+
+    <!-- CONTAINER VIEW 1: SAGITTAL / OBLIQUE 3D VIEW -->
+    <g id="a12p8h-view-sagittal" class="a12p8h-fade-in">
+      <!-- Background Stage Frame -->
+      <rect class="a12p8h-panel-rect" x="0" y="0" width="690" height="595" style="fill: rgba(22, 6, 18, 0.4);"/>
+
+      <!-- Greater Pelvis (Pelve Maior / Falsa) Shaded Area -->
+      <path class="a12p8h-region-greater" d="M 170 120 C 230 60, 390 50, 480 80 C 510 160, 480 280, 470 330 C 370 365, 230 330, 170 325 Z"/>
+      
+      <!-- Lesser Pelvis (Pelve Menor / Verdadeira e Canal de Parto) Shaded Area -->
+      <path class="a12p8h-region-lesser" d="M 170 325 C 230 330, 370 365, 470 330 C 465 420, 430 500, 360 540 C 280 550, 210 490, 185 450 C 160 380, 165 340, 170 325 Z"/>
+
+      <!-- Pelvic Bone Anatomical Structures (Antero-Posterior / Sagittal Right Oblique) -->
+      <!-- Lumbar Vertebra L5 and Sacrum -->
+      <g id="a12p8h-sacrum-bone">
+        <!-- Vertebral Body L5 -->
+        <path class="a12p8h-bone-shadow-path" d="M 130 110 L 195 125 L 188 175 L 122 160 Z"/>
+        <path class="a12p8h-bone-path" d="M 130 110 Q 160 100, 195 125 L 188 175 Q 155 160, 122 160 Z"/>
+        <!-- Intervertebral Disc L5-S1 -->
+        <path fill="#e63946" opacity="0.6" d="M 122 160 L 188 175 L 184 190 L 118 175 Z"/>
+        <!-- Sacrum S1-S5 Body Curve -->
+        <path class="a12p8h-bone-shadow-path" d="M 118 175 L 184 190 C 210 240, 225 320, 210 400 C 195 440, 170 470, 155 490 L 140 475 C 155 450, 180 410, 185 340 C 185 270, 175 220, 150 195 Z"/>
+        <path class="a12p8h-bone-path" d="M 118 175 Q 150 178, 184 190 C 215 250, 230 330, 210 410 C 190 450, 165 480, 150 495 C 145 470, 175 420, 180 340 C 180 270, 165 210, 118 175 Z"/>
+        <!-- Coccyx -->
+        <path class="a12p8h-bone-path" d="M 150 495 Q 145 520, 160 535 Q 150 540, 142 510 Z"/>
+      </g>
+
+      <!-- Iliac Bone and Pubic Bone (Right Hemipelvis) -->
+      <g id="a12p8h-ilium-pubis-bone">
+        <!-- Iliac Crest and Fossa (Pelve Maior wall) -->
+        <path class="a12p8h-bone-shadow-path" d="M 220 80 C 310 40, 420 55, 490 100 C 530 160, 520 230, 475 330 C 400 370, 280 330, 220 260 Z"/>
+        <path class="a12p8h-bone-path" d="M 220 80 C 320 35, 430 50, 495 95 C 535 155, 525 235, 470 330 C 380 360, 290 320, 220 250 C 200 180, 205 120, 220 80 Z"/>
+        <!-- Ischial Spine and Tuberosity -->
+        <path class="a12p8h-bone-shadow-path" d="M 210 410 C 250 430, 280 470, 270 530 C 250 560, 210 550, 195 510 Z"/>
+        <path class="a12p8h-bone-path" d="M 210 410 C 255 425, 285 465, 275 535 C 245 570, 205 555, 190 510 C 185 460, 195 430, 210 410 Z"/>
+        <!-- Pubic Body and Pubic Symphysis (Anterior) -->
+        <path class="a12p8h-bone-shadow-path" d="M 470 330 L 485 345 L 460 450 L 435 440 Z"/>
+        <path class="a12p8h-bone-path" d="M 470 330 C 490 340, 500 370, 475 445 C 445 460, 425 430, 435 410 C 455 380, 460 350, 470 330 Z"/>
+        <!-- Pubic Symphysis Fibrocartilage Disc -->
+        <path fill="#00f5d4" opacity="0.8" d="M 475 445 C 480 460, 475 480, 460 490 C 450 480, 450 460, 455 445 Z"/>
+      </g>
+
+      <!-- ================= LINEA TERMINALIS (3D Glowing Ring) ================= -->
+      <!-- Posterior part (behind sacrum gradient) -->
+      <path class="a12p8h-linea-terminalis-path" style="opacity:0.4; stroke-dasharray: 4 4;" d="M 184 190 C 220 220, 270 270, 310 300"/>
+      <!-- Main visible 3D contour from Promontory along Arcuate Line to Symphysis -->
+      <path id="a12p8h-linea-main-sagittal" class="a12p8h-linea-terminalis-path" d="M 184 190 C 240 230, 340 310, 400 335 C 440 345, 460 340, 470 330"/>
+      <path class="a12p8h-linea-terminalis-dash" d="M 184 190 C 240 230, 340 310, 400 335 C 440 345, 460 340, 470 330"/>
+
+      <!-- ANATOMICAL AXIS AND ANGLE OF INCLINATION -->
+      <!-- Horizontal Reference Line -->
+      <line x1="120" y1="330" x2="540" y2="330" stroke="#a38297" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <text x="548" y="334" fill="#a38297" font-size="11" font-weight="600">Plano Horizontal</text>
+
+      <!-- Plane of Pelvic Inlet (Linea Terminalis Axis Line Extended) -->
+      <line x1="140" y1="160" x2="510" y2="360" stroke="#ffb703" stroke-width="1.5" stroke-dasharray="2 2"/>
+
+      <!-- Angle Arc (~55 deg) -->
+      <path d="M 430 330 A 60 60 0 0 1 415 318" fill="none" stroke="#ffb703" stroke-width="2"/>
+      <text x="440" y="315" fill="#ffb703" font-size="12" font-weight="700">55° a 60°</text>
+      <text x="440" y="328" fill="#e2cad8" font-size="10">Inclinação Obstétrica</text>
+
+      <!-- LABELS FOR REGIONS (Pelve Maior vs Pelve Menor) -->
+      <!-- Greater Pelvis Label -->
+      <g transform="translate(300, 160)">
+        <rect class="a12p8h-label-box" x="-10" y="-18" width="180" height="42" style="stroke: #ff477e;"/>
+        <text class="a12p8h-label-text" x="0" y="-2" fill="#ff477e">PELVE MAIOR (FALSA)</text>
+        <text x="0" y="14" fill="#e2cad8" font-size="10.5">Acima da Linha Terminal (Visceral)</text>
+      </g>
+
+      <!-- Lesser Pelvis Label -->
+      <g transform="translate(260, 440)">
+        <rect class="a12p8h-label-box" x="-10" y="-18" width="200" height="45" style="stroke: #00f5d4;"/>
+        <text class="a12p8h-label-text" x="0" y="-2" fill="#00f5d4">PELVE MENOR (VERDADEIRA)</text>
+        <text x="0" y="14" fill="#e2cad8" font-size="10.5">Abaixo da Linha (Canal de Parto)</text>
+      </g>
+
+      <!-- LEADER LINES AND INTERACTIVE HOTSPOTS ON LANDMARKS -->
+      <!-- 1. Promontory Hotspot -->
+      <g class="a12p8h-hotspot" id="a12p8h-hs-promontory" transform="translate(184, 190)" role="button" tabindex="0" aria-label="Promontório Sacral">
+        <circle class="a12p8h-hotspot-circle" r="11"/>
+        <circle class="a12p8h-hotspot-inner" r="4"/>
+      </g>
+      <!-- Leader 1 -->
+      <polyline class="a12p8h-leader-line" points="184,190 120,230 40,230"/>
+      <g transform="translate(35, 218)">
+        <rect class="a12p8h-label-box" x="0" y="0" width="130" height="26"/>
+        <text class="a12p8h-label-text" x="65" y="17" text-anchor="middle">1. Promontório (S1)</text>
+      </g>
+
+      <!-- 2. Arcuate Line Hotspot -->
+      <g class="a12p8h-hotspot" id="a12p8h-hs-arcuate" transform="translate(320, 290)" role="button" tabindex="0" aria-label="Linha Arqueada do Ílio">
+        <circle class="a12p8h-hotspot-circle" r="11"/>
+        <circle class="a12p8h-hotspot-inner" r="4"/>
+      </g>
+      <!-- Leader 2 -->
+      <polyline class="a12p8h-leader-line" points="320,290 320,220 370,220"/>
+      <g transform="translate(375, 208)">
+        <rect class="a12p8h-label-box" x="0" y="0" width="145" height="26"/>
+        <text class="a12p8h-label-text" x="72" y="17" text-anchor="middle">2. Linha Arqueada (Ílio)</text>
+      </g>
+
+      <!-- 3. Pecten Pubis / Pectineal Line Hotspot -->
+      <g class="a12p8h-hotspot" id="a12p8h-hs-pecten" transform="translate(425, 332)" role="button" tabindex="0" aria-label="Pecten do Púbis">
+        <circle class="a12p8h-hotspot-circle" r="11"/>
+        <circle class="a12p8h-hotspot-inner" r="4"/>
+      </g>
+      <!-- Leader 3 -->
+      <polyline class="a12p8h-leader-line" points="425,332 500,270 540,270"/>
+      <g transform="translate(545, 258)">
+        <rect class="a12p8h-label-box" x="0" y="0" width="135" height="26"/>
+        <text class="a12p8h-label-text" x="67" y="17" text-anchor="middle">3. Pecten do Púbis</text>
+      </g>
+
+      <!-- 4. Pubic Symphysis Hotspot -->
+      <g class="a12p8h-hotspot" id="a12p8h-hs-symphysis" transform="translate(470, 330)" role="button" tabindex="0" aria-label="Sínfise Púbica">
+        <circle class="a12p8h-hotspot-circle" r="11"/>
+        <circle class="a12p8h-hotspot-inner" r="4"/>
+      </g>
+      <!-- Leader 4 -->
+      <polyline class="a12p8h-leader-line" points="470,330 560,370 560,410"/>
+      <g transform="translate(480, 415)">
+        <rect class="a12p8h-label-box" x="0" y="0" width="160" height="26"/>
+        <text class="a12p8h-label-text" x="80" y="17" text-anchor="middle">4. Borda Sup. da Sínfise</text>
+      </g>
+    </g>
+
+    <!-- CONTAINER VIEW 2: SUPERIOR INLET VIEW (ESTREITO SUPERIOR - ANEL FECHADO) -->
+    <g id="a12p8h-view-superior" class="a12p8h-hidden">
+      <!-- Background Stage Frame -->
+      <rect class="a12p8h-panel-rect" x="0" y="0" width="690" height="595" style="fill: rgba(22, 6, 18, 0.4);"/>
+
+      <!-- Pelvic Brim Bone Contour (Top-Down Superior View) -->
+      <!-- Outer Pelvic Ring (Iliac Wings and Pubic Ring) -->
+      <path class="a12p8h-bone-path" d="M 345 110 C 270 108, 190 135, 140 190 C 80 250, 90 350, 130 420 C 180 500, 270 535, 345 538 C 420 535, 510 500, 560 420 C 600 350, 610 250, 550 190 C 500 135, 420 108, 345 110 Z"/>
+      <path class="a12p8h-bone-shadow-path" d="M 345 125 C 290 125, 210 150, 170 200 C 130 250, 140 330, 175 390 C 215 460, 290 490, 345 492 C 400 490, 475 460, 515 390 C 550 330, 560 250, 520 200 C 480 150, 400 125, 345 125 Z"/>
+
+      <!-- Sacral Promontory (Posterior - Top) -->
+      <path class="a12p8h-bone-path" d="M 300 120 Q 345 145, 390 120 C 430 115, 470 130, 480 150 Q 345 175, 210 150 C 220 130, 260 115, 300 120 Z"/>
+      <text x="345" y="140" fill="#2b111a" font-size="11" font-weight="700" text-anchor="middle">Promontório Sacral (Posterior)</text>
+
+      <!-- Pubic Symphysis (Anterior - Bottom) -->
+      <path fill="#00f5d4" opacity="0.85" d="M 335 490 L 355 490 L 355 515 L 335 515 Z"/>
+      <text x="345" y="530" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Sínfise Púbica (Anterior)</text>
+
+      <!-- ================= CLOSED LINEA TERMINALIS RING ================= -->
+      <!-- Complete Closed Heart/Oval Shaped Brim Contour -->
+      <path id="a12p8h-linea-ring-superior" class="a12p8h-linea-terminalis-path" d="M 345 160 C 260 162, 195 230, 195 315 C 195 400, 270 475, 345 480 C 420 475, 495 400, 495 315 C 495 230, 430 162, 345 160 Z"/>
+      <path class="a12p8h-linea-terminalis-dash" d="M 345 160 C 260 162, 195 230, 195 315 C 195 400, 270 475, 345 480 C 420 475, 495 400, 495 315 C 495 230, 430 162, 345 160 Z"/>
+
+      <!-- Translucent Shading inside the Pelvic Inlet (Birth Canal Entry) -->
+      <path fill="url(#a12p8h-lesser-pelvis-grad)" d="M 345 160 C 260 162, 195 230, 195 315 C 195 400, 270 475, 345 480 C 420 475, 495 400, 495 315 C 495 230, 430 162, 345 160 Z"/>
+
+      <!-- OBSTETRIC DIAMETERS OVERLAY -->
+      <!-- 1. Transverse Diameter (Diâmetro Transverso: ~13 cm) -->
+      <g id="a12p8h-dia-transverse">
+        <line x1="195" y1="315" x2="495" y2="315" stroke="#ffb703" stroke-width="2.5" marker-start="url(#a12p8h-arrow)" marker-end="url(#a12p8h-arrow)"/>
+        <rect class="a12p8h-label-box" x="260" y="295" width="170" height="24" style="stroke: #ffb703;"/>
+        <text x="345" y="311" fill="#ffb703" font-size="12" font-weight="700" text-anchor="middle">Diâmetro Transverso: ~13 cm</text>
+      </g>
+
+      <!-- 2. Anteroposterior / Conjugata Vera (Diâmetro AP: ~11 cm) -->
+      <g id="a12p8h-dia-ap">
+        <line x1="345" y1="160" x2="345" y2="480" stroke="#00f5d4" stroke-width="2.5" stroke-dasharray="6 3" marker-start="url(#a12p8h-arrow-teal)" marker-end="url(#a12p8h-arrow-teal)"/>
+        <rect class="a12p8h-label-box" x="245" y="360" width="200" height="24" style="stroke: #00f5d4;"/>
+        <text x="345" y="376" fill="#00f5d4" font-size="12" font-weight="700" text-anchor="middle">Conjugata Vera (AP): ~11 cm</text>
+      </g>
+
+      <!-- Oblique Diameters (Dashed diagonals) -->
+      <line x1="240" y1="200" x2="450" y2="440" stroke="#a38297" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <text x="460" y="455" fill="#a38297" font-size="11">Diâmetro Oblíquo: ~12 cm</text>
+
+      <!-- HOTSPOTS IN SUPERIOR VIEW -->
+      <g class="a12p8h-hotspot" id="a12p8h-hs-sup-prom" transform="translate(345, 160)" role="button" tabindex="0" aria-label="Promontório Superior">
+        <circle class="a12p8h-hotspot-circle" r="10"/>
+        <circle class="a12p8h-hotspot-inner" r="4"/>
+      </g>
+
+      <g class="a12p8h-hotspot" id="a12p8h-hs-sup-arcuate-left" transform="translate(195, 315)" role="button" tabindex="0" aria-label="Linha Arqueada Esquerda">
+        <circle class="a12p8h-hotspot-circle" r="10"/>
+        <circle class="a12p8h-hotspot-inner" r="4"/>
+      </g>
+
+      <g class="a12p8h-hotspot" id="a12p8h-hs-sup-arcuate-right" transform="translate(495, 315)" role="button" tabindex="0" aria-label="Linha Arqueada Direita">
+        <circle class="a12p8h-hotspot-circle" r="10"/>
+        <circle class="a12p8h-hotspot-inner" r="4"/>
+      </g>
+
+      <g class="a12p8h-hotspot" id="a12p8h-hs-sup-symphysis" transform="translate(345, 480)" role="button" tabindex="0" aria-label="Sínfise Púbica Superior">
+        <circle class="a12p8h-hotspot-circle" r="10"/>
+        <circle class="a12p8h-hotspot-inner" r="4"/>
+      </g>
+    </g>
+
+    <!-- CONTAINER VIEW 3: COMPARTMENT COMPARISON -->
+    <g id="a12p8h-view-compartments" class="a12p8h-hidden">
+      <!-- Background Stage Frame -->
+      <rect class="a12p8h-panel-rect" x="0" y="0" width="690" height="595" style="fill: rgba(22, 6, 18, 0.4);"/>
+
+      <!-- Greater Pelvis Card Column (Left - 325px wide) -->
+      <g transform="translate(20, 25)">
+        <rect class="a12p8h-panel-rect" x="0" y="0" width="315" height="545" style="fill: rgba(40, 15, 32, 0.9); stroke: #ff477e;"/>
+        <rect class="a12p8h-badge-pink" x="15" y="20" width="150" height="24"/>
+        <text class="a12p8h-badge-pink-text" x="25" y="36">PELVE MAIOR (FALSA)</text>
+
+        <text x="15" y="75" fill="#ffffff" font-size="16" font-weight="700">Características Anatômicas</text>
+
+        <text class="a12p8h-card-text" x="15" y="105">
+          <tspan x="15" dy="0" font-weight="700" fill="#ffb703">• Localização:</tspan>
+          <tspan x="15" dy="20">Superior à Linha Terminal (Linha Inominada).</tspan>
+
+          <tspan x="15" dy="32" font-weight="700" fill="#ffb703">• Limites Ósseos:</tspan>
+          <tspan x="15" dy="20">Posterior: Vértebra L5 e Asa do Sacro.</tspan>
+          <tspan x="15" dy="18">Lateral: Fossas Ilíacas (Asas do Ílio).</tspan>
+          <tspan x="15" dy="18">Anterior: Parede abdominal anterior.</tspan>
+
+          <tspan x="15" dy="32" font-weight="700" fill="#ffb703">• Conteúdo Visceral:</tspan>
+          <tspan x="15" dy="20">Alças do Íleo, Ceco, Colo Sigmóide e</tspan>
+          <tspan x="15" dy="18">órgãos abdominais inferiores.</tspan>
+
+          <tspan x="15" dy="32" font-weight="700" fill="#ffb703">• Função Clínica:</tspan>
+          <tspan x="15" dy="20">Suporte das vísceras abdominais e direciona</tspan>
+          <tspan x="15" dy="18">o fundo uterino gravídico durante a gestação.</tspan>
+          <tspan x="15" dy="18">NÃO delimita o trajeto do parto.</tspan>
+        </text>
+
+        <!-- Visual Icon Box Greater Pelvis -->
+        <rect x="15" y="415" width="285" height="105" rx="8" fill="rgba(255, 71, 126, 0.12)" stroke="#ff477e" stroke-dasharray="3 3"/>
+        <text x="157" y="445" fill="#ff477e" font-size="13" font-weight="700" text-anchor="middle">Sem Relevância Obstétrica Direta</text>
+        <text x="157" y="470" fill="#e2cad8" font-size="12" text-anchor="middle">Funciona como uma bacia abdominal superior</text>
+        <text x="157" y="490" fill="#e2cad8" font-size="11" text-anchor="middle">(Não oferece resistência óssea ao feto)</text>
+      </g>
+
+      <!-- Lesser Pelvis Card Column (Right - 325px wide) -->
+      <g transform="translate(355, 25)">
+        <rect class="a12p8h-panel-rect" x="0" y="0" width="315" height="545" style="fill: rgba(12, 35, 38, 0.9); stroke: #00f5d4;"/>
+        <rect class="a12p8h-badge-teal" x="15" y="20" width="180" height="24"/>
+        <text class="a12p8h-badge-teal-text" x="25" y="36">PELVE MENOR (VERDADEIRA)</text>
+
+        <text x="15" y="75" fill="#ffffff" font-size="16" font-weight="700">Canal de Parto Obstétrico</text>
+
+        <text class="a12p8h-card-text" x="15" y="105">
+          <tspan x="15" dy="0" font-weight="700" fill="#00f5d4">• Localização:</tspan>
+          <tspan x="15" dy="20">Inferior à Linha Terminal até o Diafragma Pélvico.</tspan>
+
+          <tspan x="15" dy="32" font-weight="700" fill="#00f5d4">• Limites Ósseos:</tspan>
+          <tspan x="15" dy="20">Posterior: Superfície anterior do Sacro e Cóccix.</tspan>
+          <tspan x="15" dy="18">Lateral: Íscio, Corpo do Ílio e Membrana Obturadora.</tspan>
+          <tspan x="15" dy="18">Anterior: Pubis e Sínfise Púbica.</tspan>
+
+          <tspan x="15" dy="32" font-weight="700" fill="#00f5d4">• Conteúdo Pélvico:</tspan>
+          <tspan x="15" dy="20">Bexiga Urinária, Útero, Vagina, Reto e</tspan>
+          <tspan x="15" dy="18">vasos/nervos pélvicos profundos.</tspan>
+
+          <tspan x="15" dy="32" font-weight="700" fill="#00f5d4">• Função Obstétrica Fundamental:</tspan>
+          <tspan x="15" dy="20">Constitui o anel ósseo incompressível do</tspan>
+          <tspan x="15" dy="18">CANAL DE PARTO. Determina os diâmetros e</tspan>
+          <tspan x="15" dy="18">mecanismos de insinuação da cabeça fetal.</tspan>
+        </text>
+
+        <!-- Visual Icon Box Lesser Pelvis -->
+        <rect x="15" y="415" width="285" height="105" rx="8" fill="rgba(0, 245, 212, 0.12)" stroke="#00f5d4"/>
+        <text x="157" y="445" fill="#00f5d4" font-size="13" font-weight="700" text-anchor="middle">ANEL OBSTÉTRICO CRÍTICO</text>
+        <text x="157" y="470" fill="#e2cad8" font-size="12" text-anchor="middle">Entrada = Estreito Superior (Linha Terminal)</text>
+        <text x="157" y="490" fill="#ffb703" font-size="11" font-weight="700" text-anchor="middle">Diâmetro AP Mínimo Útil: Conjugata Obstétrica</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ==================== SIDE READING PANEL (PAINEL DE LEITURA BAUER) ==================== -->
+  <g transform="translate(755, 145)">
+    <!-- Card Outer Panel -->
+    <rect class="a12p8h-panel-rect" x="0" y="0" width="405" height="595"/>
+
+    <!-- Header Box inside Panel -->
+    <rect class="a12p8h-card-header-bg" x="0" y="0" width="405" height="70" rx="14"/>
+    <text class="a12p8h-card-title" x="24" y="30">PAINEL DE ANÁLISE ANATÔMICA</text>
+    <text id="a12p8h-panel-head-title" class="a12p8h-card-subtitle" x="24" y="54">Linha Terminal (Linha Inominada)</text>
+
+    <!-- Dynamic Content Area -->
+    <g transform="translate(24, 90)">
+      <!-- Badge Category -->
+      <g id="a12p8h-panel-badge-group">
+        <rect class="a12p8h-badge-gold" x="0" y="0" width="230" height="22"/>
+        <text id="a12p8h-panel-badge-text" class="a12p8h-badge-gold-text" x="10" y="15">FRONTEIRA 3D CONTINUA (4 PONTOS)</text>
+      </g>
+
+      <!-- Main Description Paragraph -->
+      <text id="a12p8h-panel-desc" class="a12p8h-card-text" x="0" y="45">
+        <tspan x="0" dy="0">A <tspan font-weight="700" fill="#ffb703">Linha Terminal</tspan> é a crista óssea oblíqua e</tspan>
+        <tspan x="0" dy="20">contínua formada bilateralmente. Ela conecta o</tspan>
+        <tspan x="0" dy="20">promontório sacral à sínfise púbica, estabelecendo o</tspan>
+        <tspan x="0" dy="20">limite exato entre a cavidade abdominal e o canal de parto.</tspan>
+      </text>
+
+      <!-- Diagnostic Metrics Box -->
+      <g id="a12p8h-panel-metrics" transform="translate(0, 140)">
+        <rect x="0" y="0" width="357" height="125" rx="10" fill="rgba(40, 10, 30, 0.6)" stroke="var(--a12p8h-card-border, rgba(255, 101, 132, 0.25))"/>
+        <text x="15" y="24" fill="#ffffff" font-size="13" font-weight="700">VALORES E MEDIDAS ANATÔMICAS</text>
+
+        <text x="15" y="52" fill="#e2cad8" font-size="12">• Inclinação com o plano horizontal:</text>
+        <text x="260" y="52" fill="#ffb703" font-size="13" font-weight="700">55° a 60°</text>
+
+        <text x="15" y="76" fill="#e2cad8" font-size="12">• Diâmetro Transverso Máximo:</text>
+        <text x="260" y="76" fill="#ffb703" font-size="13" font-weight="700">~13,0 cm</text>
+
+        <text x="15" y="100" fill="#e2cad8" font-size="12">• Conjugata Vera (Ântero-Posterior):</text>
+        <text x="260" y="100" fill="#00f5d4" font-size="13" font-weight="700">~11,0 cm</text>
+      </g>
+
+      <!-- Anatomical Trajectory Steps (4 Anchors) -->
+      <g id="a12p8h-panel-trajectory" transform="translate(0, 285)">
+        <text x="0" y="0" fill="#ffffff" font-size="14" font-weight="700">Trajeto Anatômico da Linha (Posterior para Anterior):</text>
+
+        <!-- Step 1 -->
+        <circle cx="10" cy="22" r="8" fill="#ffb703"/>
+        <text x="10" y="26" fill="#180614" font-size="10" font-weight="800" text-anchor="middle">1</text>
+        <text x="26" y="26" fill="#e2cad8" font-size="12"><tspan font-weight="700" fill="#ffffff">Promontório Sacral</tspan> e Margem Anterior da Asa do Sacro.</text>
+
+        <!-- Step 2 -->
+        <circle cx="10" cy="48" r="8" fill="#ffb703"/>
+        <text x="10" y="52" fill="#180614" font-size="10" font-weight="800" text-anchor="middle">2</text>
+        <text x="26" y="52" fill="#e2cad8" font-size="12"><tspan font-weight="700" fill="#ffffff">Linha Arqueada</tspan> (superfície medial do corpo do ílio).</text>
+
+        <!-- Step 3 -->
+        <circle cx="10" cy="74" r="8" fill="#ffb703"/>
+        <text x="10" y="78" fill="#180614" font-size="10" font-weight="800" text-anchor="middle">3</text>
+        <text x="26" y="78" fill="#e2cad8" font-size="12"><tspan font-weight="700" fill="#ffffff">Pecten do Púbis</tspan> (Linha Pectínea no ramo superior).</text>
+
+        <!-- Step 4 -->
+        <circle cx="10" cy="100" r="8" fill="#ffb703"/>
+        <text x="10" y="104" fill="#180614" font-size="10" font-weight="800" text-anchor="middle">4</text>
+        <text x="26" y="104" fill="#e2cad8" font-size="12"><tspan font-weight="700" fill="#ffffff">Crista Púbica</tspan> até a borda superior da Sínfise Púbica.</text>
+      </g>
+
+      <!-- Didactic Summary Note Box -->
+      <g transform="translate(0, 410)">
+        <rect x="0" y="0" width="357" height="75" rx="8" fill="rgba(0, 245, 212, 0.08)" stroke="#00f5d4" stroke-width="1.2"/>
+        <text x="12" y="22" fill="#00f5d4" font-size="12" font-weight="700">LEGENDA DE INTERPRETAÇÃO OBSTÉTRICA</text>
+        <text x="12" y="42" fill="#e2cad8" font-size="11.5">
+          <tspan x="12" dy="0">Ao interagir com o modelo, observe como a linha inominada</tspan>
+          <tspan x="12" dy="16">funciona como o gargalo ósseo rígido por onde a apresentação</tspan>
+          <tspan x="12" dy="16">fetal precisa insinuar-se para entrar na Pelve Menor.</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== INLINE INTERACTIVE JAVASCRIPT ENGINE ==================== -->
+  <script><![CDATA[
+    (function() {
+      'use strict';
+
+      // State Dictionary
+      var state = {
+        activeView: 'sagittal', // 'sagittal', 'superior', 'compartments'
+        activeHotspot: null
+      };
+
+      // Landmark Data for Dynamic Reading Panel Updates
+      var landmarkData = {
+        promontory: {
+          title: "1. Promontório Sacral (S1)",
+          badge: "POSTERIOR · ÂNCORA SACRAL",
+          badgeColor: "gold",
+          desc: "Projeção anterior da 1ª vértebra sacral (S1). Marca a extremidade posterior da Linha Terminal e a margem posterior do Estreito Superior da pelve."
+        },
+        arcuate: {
+          title: "2. Linha Arqueada do Ílio",
+          badge: "LATERAL · CORPO DO ÍLIO",
+          badgeColor: "pink",
+          desc: "Crista suave contínua na face interna do ílio que se estende obliquamente para baixo e para frente, conectando o sacro ao púbis."
+        },
+        pecten: {
+          title: "3. Pecten do Púbis (Linha Pectínea)",
+          badge: "ANTERO-LATERAL · RAMO PÚBICO",
+          badgeColor: "pink",
+          desc: "Crista agulhada no ramo superior do púbis. Dá inserção ao ligamento pectíneo (de Cooper) e forma a porção anterior da linha inominada."
+        },
+        symphysis: {
+          title: "4. Borda Superior da Sínfise Púbica",
+          badge: "ANTERIOR · CONVERGÊNCIA MEDIAL",
+          badgeColor: "teal",
+          desc: "Ponto de encontro anterior mediano de ambos os ossos púbicos. A borda superior da sínfise fecha o anel tridimensional do estreito superior."
+        }
+      };
+
+      // Element References
+      var tabSagittal = document.getElementById('a12p8h-tab-sagittal');
+      var tabSuperior = document.getElementById('a12p8h-tab-superior');
+      var tabCompartments = document.getElementById('a12p8h-tab-compartments');
+
+      var viewSagittal = document.getElementById('a12p8h-view-sagittal');
+      var viewSuperior = document.getElementById('a12p8h-view-superior');
+      var viewCompartments = document.getElementById('a12p8h-view-compartments');
+
+      var panelHeadTitle = document.getElementById('a12p8h-panel-head-title');
+      var panelBadgeText = document.getElementById('a12p8h-panel-badge-text');
+      var panelDesc = document.getElementById('a12p8h-panel-desc');
+
+      // Helper: Switch Active Tab and Visible View
+      function switchView(viewName) {
+        state.activeView = viewName;
+
+        // Reset Tabs styling
+        tabSagittal.classList.remove('a12p8h-active');
+        tabSuperior.classList.remove('a12p8h-active');
+        tabCompartments.classList.remove('a12p8h-active');
+
+        // Hide all views
+        viewSagittal.classList.add('a12p8h-hidden');
+        viewSuperior.classList.add('a12p8h-hidden');
+        viewCompartments.classList.add('a12p8h-hidden');
+
+        if (viewName === 'sagittal') {
+          tabSagittal.classList.add('a12p8h-active');
+          viewSagittal.classList.remove('a12p8h-hidden');
+          updatePanelDefault("Perfil Sagital 3D (Visão de Níveis)", "FRONTEIRA 3D CONTINUA", "No perfil sagital, percebe-se claramente a inclinação de 55° a 60° da Linha Terminal. O plano que ela define separa a cavidade abdominal (Pelve Maior) da cavidade pélvica obstétrica (Pelve Menor).");
+        } else if (viewName === 'superior') {
+          tabSuperior.classList.add('a12p8h-active');
+          viewSuperior.classList.remove('a12p8h-hidden');
+          updatePanelDefault("Estreito Superior (Anel Fechado)", "VISÃO SUPERIOR DO ANEL", "Na visão superior, a Linha Terminal desenha um anel fechado incompressível. Os diâmetros transverso (~13cm) e anteroposterior (~11cm) definem o espaço disponível para o feto.");
+        } else if (viewName === 'compartments') {
+          tabCompartments.classList.add('a12p8h-active');
+          viewCompartments.classList.remove('a12p8h-hidden');
+          updatePanelDefault("Comparativo de Compartimentos", "ANÁLISE COMPARATIVA", "A Pelve Maior suporta vísceras abdominais e não oferece resistência. A Pelve Menor forma o canal de parto rígido e contém os órgãos pélvicos urogenitais.");
+        }
+      }
+
+      function updatePanelDefault(title, badge, text) {
+        if (panelHeadTitle) panelHeadTitle.textContent = title;
+        if (panelBadgeText) panelBadgeText.textContent = badge;
+        if (panelDesc) {
+          panelDesc.innerHTML = '<tspan x="0" dy="0">' + text + '</tspan>';
+        }
+      }
+
+      function updatePanelLandmark(key) {
+        var data = landmarkData[key];
+        if (!data) return;
+
+        if (panelHeadTitle) panelHeadTitle.textContent = data.title;
+        if (panelBadgeText) panelBadgeText.textContent = data.badge;
+        if (panelDesc) {
+          panelDesc.innerHTML = '<tspan x="0" dy="0" font-weight="700" fill="#ffb703">' + data.title + '</tspan>' +
+                                '<tspan x="0" dy="22">' + data.desc + '</tspan>';
+        }
+      }
+
+      // Event Listeners for Tabs
+      if (tabSagittal) {
+        tabSagittal.addEventListener('click', function() { switchView('sagittal'); });
+        tabSagittal.addEventListener('keydown', function(e) { if(e.key==='Enter'||e.key===' ') switchView('sagittal'); });
+      }
+      if (tabSuperior) {
+        tabSuperior.addEventListener('click', function() { switchView('superior'); });
+        tabSuperior.addEventListener('keydown', function(e) { if(e.key==='Enter'||e.key===' ') switchView('superior'); });
+      }
+      if (tabCompartments) {
+        tabCompartments.addEventListener('click', function() { switchView('compartments'); });
+        tabCompartments.addEventListener('keydown', function(e) { if(e.key==='Enter'||e.key===' ') switchView('compartments'); });
+      }
+
+      // Bind Hotspots
+      var hsPromontory = document.getElementById('a12p8h-hs-promontory');
+      var hsArcuate = document.getElementById('a12p8h-hs-arcuate');
+      var hsPecten = document.getElementById('a12p8h-hs-pecten');
+      var hsSymphysis = document.getElementById('a12p8h-hs-symphysis');
+
+      var hsSupProm = document.getElementById('a12p8h-hs-sup-prom');
+      var hsSupArcLeft = document.getElementById('a12p8h-hs-sup-arcuate-left');
+      var hsSupArcRight = document.getElementById('a12p8h-hs-sup-arcuate-right');
+      var hsSupSymph = document.getElementById('a12p8h-hs-sup-symphysis');
+
+      function bindLandmark(el, key) {
+        if (!el) return;
+        el.addEventListener('click', function() { updatePanelLandmark(key); });
+        el.addEventListener('mouseover', function() { updatePanelLandmark(key); });
+      }
+
+      bindLandmark(hsPromontory, 'promontory');
+      bindLandmark(hsArcuate, 'arcuate');
+      bindLandmark(hsPecten, 'pecten');
+      bindLandmark(hsSymphysis, 'symphysis');
+
+      bindLandmark(hsSupProm, 'promontory');
+      bindLandmark(hsSupArcLeft, 'arcuate');
+      bindLandmark(hsSupArcRight, 'arcuate');
+      bindLandmark(hsSupSymph, 'symphysis');
+
+    })();
+  ]]></script>
+</svg>

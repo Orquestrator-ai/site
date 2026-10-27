@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22D3EE">
+<title>Vírus, primeiro dia e a chance quase irrisória — Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">Crise Febril</span>
+        <span class="site-header__subtitle">Neurologia · Aula 10</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">2/8</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+
+<style>
+.a10-layout{--a10-indigo:#818CF8;--a10-cyan:#38BDF8;--a10-coral:#F87171;--a10-gold:#FBBF24;--a10-teal:#2DD4BF;--a10-green:#4ADE80;--a10-amber:#F59E0B;--a10-ink:var(--ink,#F4F7FB);--a10-muted:var(--muted,#94A3B8);--a10-card:var(--card-bg,rgba(17,26,43,0.72));--a10-card2:var(--card-bg2,rgba(21,32,51,0.65));--a10-border:var(--border,rgba(148,163,184,0.14));max-width:820px;margin:0 auto;padding:0 20px}
+[data-theme="light"] .a10-layout{--a10-ink:#0F172A;--a10-muted:#64748B;--a10-card:rgba(255,255,255,0.82);--a10-card2:rgba(241,245,249,0.78);--a10-border:rgba(15,23,42,0.10)}
+.a10-layout .a10-title-block{margin:32px 0 18px}
+.a10-layout .a10-title-block .a10-kicker{font-size:.74rem;font-weight:700;letter-spacing:2px;color:var(--a10-cyan);text-transform:uppercase;margin-bottom:6px}
+.a10-layout .a10-title-block h1{font-size:2rem;font-weight:800;letter-spacing:-0.5px;color:var(--a10-ink);margin:0 0 8px;line-height:1.18}
+.a10-layout .a10-title-block .a10-lead{font-size:.92rem;color:var(--a10-muted);font-weight:500;line-height:1.5}
+.a10-layout .a10-prose{text-align:justify;text-indent:1.5em;hyphens:auto;color:var(--a10-ink);line-height:1.72;font-size:.95rem}
+.a10-layout .a10-prose p{margin:0 0 12px}
+.a10-layout .a10-prose h3{text-indent:0;font-size:1.12rem;font-weight:700;color:var(--a10-indigo);margin:24px 0 8px}
+.a10-layout .a10-prose strong{color:var(--a10-coral)}
+.a10-layout .a10-prose .a10-num{color:var(--a10-gold);font-weight:700}
+.a10-layout .a10-svg-wrap{margin:24px 0;border-radius:16px;overflow:hidden;background:var(--a10-card);border:1px solid var(--a10-border)}
+.a10-layout .a10-svg-wrap svg{display:block;width:100%;height:auto}
+.a10-layout .a10-img-wrap{margin:24px 0;border-radius:16px;overflow:hidden;background:var(--a10-card);border:1px solid var(--a10-border)}
+.a10-layout .a10-img-wrap img{display:block;width:100%;height:auto}
+.a10-layout .a10-img-wrap .a10-caption{padding:10px 16px;font-size:.78rem;color:var(--a10-muted);line-height:1.5;border-top:1px solid var(--a10-border)}
+.a10-layout .a10-dual{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.a10-layout .a10-dual .a10-dual-card{background:var(--a10-card);border:1px solid var(--a10-border);border-radius:14px;padding:18px 20px;position:relative}
+.a10-layout .a10-dual .a10-dual-card.pop{border-color:var(--a10-teal)}
+.a10-layout .a10-dual .a10-dual-card.post{border-color:var(--a10-amber);background:linear-gradient(160deg,rgba(245,158,11,0.08),var(--a10-card))}
+.a10-layout .a10-dual .a10-dual-label{font-size:.72rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:6px}
+.a10-layout .a10-dual .a10-dual-card.pop .a10-dual-label{color:var(--a10-teal)}
+.a10-layout .a10-dual .a10-dual-card.post .a10-dual-label{color:var(--a10-amber)}
+.a10-layout .a10-dual .a10-dual-num{font-size:1.9rem;font-weight:900;letter-spacing:-1px;line-height:1;margin:6px 0 4px}
+.a10-layout .a10-dual .a10-dual-card.pop .a10-dual-num{color:var(--a10-teal)}
+.a10-layout .a10-dual .a10-dual-card.post .a10-dual-num{color:var(--a10-amber)}
+.a10-layout .a10-dual .a10-dual-desc{font-size:.82rem;color:var(--a10-muted);line-height:1.5;text-indent:0}
+.a10-layout .a10-benigna{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:4px 12px;border-radius:14px;background:rgba(74,222,128,0.14);border:1px solid var(--a10-green);color:var(--a10-green);font-size:.72rem;font-weight:800;letter-spacing:0.5px;text-transform:uppercase}
+.a10-layout .a10-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.a10-layout .a10-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:600;background:var(--a10-card2);border:1px solid var(--a10-border);color:var(--a10-ink)}
+.a10-layout .a10-chip.coral{border-color:var(--a10-coral);color:var(--a10-coral)}
+.a10-layout .a10-chip.gold{border-color:var(--a10-gold);color:var(--a10-gold)}
+.a10-layout .a10-chip.teal{border-color:var(--a10-teal);color:var(--a10-teal)}
+.a10-layout .a10-chip.amber{border-color:var(--a10-amber);color:var(--a10-amber)}
+.a10-layout .a10-nuance{background:linear-gradient(135deg,rgba(251,191,36,0.10),var(--a10-card));border:1px solid var(--a10-gold);border-left:4px solid var(--a10-gold);border-radius:12px;padding:16px 20px;margin:18px 0}
+.a10-layout .a10-nuance .a10-nuance-label{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:800;color:var(--a10-gold);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px}
+.a10-layout .a10-nuance p{margin:0;font-size:.88rem;color:var(--a10-ink);text-indent:0;line-height:1.6}
+.a10-layout .a10-nuance .a10-nuance-id{font-size:.72rem;color:var(--a10-muted);font-weight:600;margin-top:6px}
+.a10-layout .a10-resumo{background:var(--a10-card);border:1px solid var(--a10-teal);border-radius:12px;padding:16px 20px;margin:18px 0}
+.a10-layout .a10-resumo .a10-res-label{font-size:.74rem;font-weight:700;color:var(--a10-teal);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.a10-layout .a10-resumo p{margin:0;font-size:.9rem;color:var(--a10-ink);text-indent:0;line-height:1.6}
+.a10-layout .a10-revisao{background:var(--a10-card2);border-radius:12px;padding:16px 20px;margin:18px 0;border-left:3px solid var(--a10-indigo)}
+.a10-layout .a10-revisao .a10-rev-label{font-size:.72rem;font-weight:700;color:var(--a10-indigo);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+.a10-layout .a10-revisao ol{margin:0;padding-left:20px}
+.a10-layout .a10-revisao li{font-size:.88rem;color:var(--a10-ink);line-height:1.6;margin-bottom:6px}
+.a10-layout .a10-quiz{margin:30px 0}
+.a10-layout .a10-quiz h3{font-size:1.08rem;font-weight:700;color:var(--a10-gold);margin:0 0 16px}
+.a10-layout .a10-q-block{background:var(--a10-card);border:1px solid var(--a10-border);border-radius:14px;padding:20px;margin-bottom:16px}
+.a10-layout .a10-q-block .a10-q-enun{font-weight:700;color:var(--a10-ink);margin-bottom:12px;font-size:.92rem;line-height:1.5}
+.a10-layout .a10-q-block .a10-q-opts{display:flex;flex-direction:column;gap:8px}
+.a10-layout .a10-q-block .a10-q-opt{padding:11px 14px;border-radius:10px;background:var(--a10-card2);border:1px solid var(--a10-border);cursor:pointer;font-size:.88rem;color:var(--a10-ink);transition:all .2s;min-height:44px;display:flex;align-items:center;text-align:left;font-family:inherit}
+.a10-layout .a10-q-block .a10-q-opt:hover{border-color:var(--a10-indigo)}
+.a10-layout .a10-q-block .a10-q-opt.chosen{border-color:var(--a10-indigo);background:rgba(129,140,248,0.12)}
+.a10-layout .a10-q-block .a10-q-opt.correct{border-color:var(--a10-green);background:rgba(74,222,128,0.15)}
+.a10-layout .a10-q-block .a10-q-opt.wrong{border-color:var(--a10-coral);background:rgba(248,113,113,0.12)}
+.a10-layout .a10-q-feedback{margin-top:12px;padding:14px 16px;border-radius:10px;font-size:.84rem;line-height:1.6;display:none}
+.a10-layout .a10-q-feedback.show{display:block}
+.a10-layout .a10-q-feedback.correct-fb{background:rgba(74,222,128,0.10);border:1px solid var(--a10-green);color:var(--a10-ink)}
+.a10-layout .a10-q-feedback.wrong-fb{background:rgba(248,113,113,0.10);border:1px solid var(--a10-coral);color:var(--a10-ink)}
+@media (max-width:600px){.a10-layout .a10-title-block h1{font-size:1.5rem}.a10-layout .a10-dual{grid-template-columns:1fr}.a10-layout .a10-dual .a10-dual-num{font-size:1.6rem}}
+</style>
+
+<div class="a10-layout" data-layout="a10-p02">
+  <div class="a10-title-block">
+    <p class="a10-kicker">Dado impactante</p>
+    <h1>Vírus, primeiro dia e a chance quase irrisória</h1>
+    <p class="a10-lead">Depois de uma crise febril, a chance de se tornar epiléptica no futuro é só um pouquinho maior que a da população geral — quase irrisória. O número ancora a benignidade antes da história natural.</p>
+  </div>
+
+  <div class="a10-prose" data-source-ids="013 014 015 016 017 018 019 020 021 022 023">
+    <h3>O cenário típico</h3>
+    <p>Criança com <strong>infecção de via aérea superior (IVAS)</strong>. Estatisticamente, um grande motivo é a <strong>infecção viral</strong>. O mecanismo fino pelo qual o vírus se destaca como gatilho <strong>não está plenamente esclarecido</strong> — o fato clínico permanece: vírus é grande causador.</p>
+    <p>Com <strong>temperatura axilar muito elevada</strong>, o risco sobe: <strong>quanto mais elevada a temperatura, maior o risco</strong>. A crise surge <strong>geralmente no primeiro dia</strong> de febre.</p>
+
+    <h3>Poucas vezes na vida</h3>
+    <p>A crise febril <strong>não gosta de voltar</strong>: o padrão é <span class="a10-num">1 ou 2 crises na vida</span>. Não é doença que "acompanha a infância inteira" como rotina.</p>
+
+    <h3>Benignidade e a pergunta da família</h3>
+    <p>Pergunta clássica de família e de prova: qual a chance de se tornar <strong>epiléptica no futuro</strong>? A chance é <strong>apenas um pouquinho maior</strong> do que a da população geral — <strong>quase irrisória</strong>. Esse "pouquinho a mais" situa-se, na ordem de grandeza da fonte, <strong>abaixo de 1%</strong> de incremento relativo em relação à população geral.</p>
+    <p>No núcleo do ensino: crise febril é <strong>doença benigna</strong>. O trabalho clínico e de prova gira em torno de <strong>reconhecer a benignidade sem</strong> deixar de triar o que foge do padrão.</p>
+  </div>
+
+  <div class="a10-dual" role="region" aria-label="Comparação de risco: população geral versus pós-crise febril">
+    <div class="a10-dual-card pop">
+      <div class="a10-dual-label">População geral</div>
+      <div class="a10-dual-num">linha de base</div>
+      <div class="a10-dual-desc">risco de epilepsia da criança comum, sem crise febril prévia.</div>
+    </div>
+    <div class="a10-dual-card post">
+      <div class="a10-dual-label">Pós-crise febril</div>
+      <div class="a10-dual-num">+ &lt;1%</div>
+      <div class="a10-dual-desc">acréscimo relativo na ordem da fonte — <strong>quase irrisório</strong>.</div>
+      <span class="a10-benigna">✓ Benigna</span>
+    </div>
+  </div>
+
+  <div class="a10-chips">
+    <span class="a10-chip coral">quanto maior T, maior risco</span>
+    <span class="a10-chip teal">IVAS viral</span>
+    <span class="a10-chip gold">crise no D1</span>
+    <span class="a10-chip amber">1–2× na vida</span>
+  </div>
+
+  <div class="a10-nuance" role="region" aria-label="Caixa nuances divergência 021 102">
+    <div class="a10-nuance-label">⚠ Caixa-nuança · divergência de fonte</div>
+    <p>O canon da fonte ensina incremento <strong>&lt;1%</strong> e benignidade. Na literatura refletida no BR, o risco <strong>absoluto</strong> de epilepsia após CF <strong>simples</strong> costuma ser citado em torno de <strong>~1–2,5%</strong>; o risco sobe com <strong>complexa</strong>, <strong>história familiar de epilepsia</strong> e <strong>atraso de desenvolvimento</strong>. Mantém-se o canon didático da fonte (benignidade + ordem &lt;1%); a nuance absoluta fica visível para prova/precisão.</p>
+    <div class="a10-nuance-id">laudo [021] / [102] · DIVERGÊNCIA</div>
+  </div>
+
+  <div class="a10-svg-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 540" role="img" aria-labelledby="a10p2-title a10p2-desc" class="a10-inline-svg a10p2-root">
+      <title id="a10p2-title">História natural: IVAS → D1 → crise → 1–2× na vida</title>
+      <desc id="a10p2-desc">Linha do tempo da crise febril simples: infecção viral de vias aéreas superiores, febre muito alta no primeiro dia, crise no pico térmico, recuperação e padrão de 1 a 2 crises na vida. Timing D1 e baixa recorrência são o núcleo didático.</desc>
+      <defs>
+        <linearGradient id="a10p2-bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="var(--a10p2-bg0, #0B1220)"/>
+          <stop offset="100%" stop-color="var(--a10p2-bg1, #07111F)"/>
+        </linearGradient>
+        <linearGradient id="a10p2-axis" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="var(--a10p2-cyan, #22D3EE)" stop-opacity="0.35"/>
+          <stop offset="35%" stop-color="var(--a10p2-cyan, #22D3EE)"/>
+          <stop offset="55%" stop-color="var(--a10p2-coral, #F87171)"/>
+          <stop offset="78%" stop-color="var(--a10p2-ok, #34D399)"/>
+          <stop offset="100%" stop-color="var(--a10p2-ok, #34D399)" stop-opacity="0.55"/>
+        </linearGradient>
+        <linearGradient id="a10p2-tempCurve" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="var(--a10p2-cyan, #22D3EE)" stop-opacity="0.55"/>
+          <stop offset="40%" stop-color="var(--a10p2-coral, #F87171)"/>
+          <stop offset="58%" stop-color="var(--a10p2-coralHot, #EF4444)"/>
+          <stop offset="100%" stop-color="var(--a10p2-ok, #34D399)"/>
+        </linearGradient>
+        <linearGradient id="a10p2-fillPeak" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--a10p2-coral, #F87171)" stop-opacity="0.28"/>
+          <stop offset="100%" stop-color="var(--a10p2-coral, #F87171)" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="a10p2-glowCoral" cx="48%" cy="42%" r="42%">
+          <stop offset="0%" stop-color="var(--a10p2-coral, #F87171)" stop-opacity="0.16"/>
+          <stop offset="100%" stop-color="var(--a10p2-bg0, #0B1220)" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="a10p2-glowOk" cx="78%" cy="55%" r="38%">
+          <stop offset="0%" stop-color="var(--a10p2-ok, #34D399)" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="var(--a10p2-bg0, #0B1220)" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="a10p2-nodeCyan" cx="40%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="var(--a10p2-cyanHi, #67E8F9)"/>
+          <stop offset="100%" stop-color="var(--a10p2-cyan, #22D3EE)"/>
+        </radialGradient>
+        <radialGradient id="a10p2-nodeCoral" cx="40%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="var(--a10p2-coral, #F87171)"/>
+          <stop offset="100%" stop-color="var(--a10p2-coralDim, #B91C1C)"/>
+        </radialGradient>
+        <radialGradient id="a10p2-nodeOk" cx="40%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="var(--a10p2-ok, #34D399)"/>
+          <stop offset="100%" stop-color="var(--a10p2-okDim, #047857)"/>
+        </radialGradient>
+        <radialGradient id="a10p2-nodeGold" cx="40%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="var(--a10p2-gold, #FBBF24)"/>
+          <stop offset="100%" stop-color="var(--a10p2-goldDim, #B45309)"/>
+        </radialGradient>
+        <filter id="a10p2-soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.1" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="a10p2-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="g"/>
+          <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <marker id="a10p2-arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--a10p2-cyan, #22D3EE)"/>
+        </marker>
+        <style>
+          .a10p2-root {
+            --a10p2-bg0: #0B1220;
+            --a10p2-bg1: #07111F;
+            --a10p2-card: #111A2B;
+            --a10p2-card2: #152033;
+            --a10p2-border: rgba(148,163,184,0.18);
+            --a10p2-ink: #F4F7FB;
+            --a10p2-muted: #94A3B8;
+            --a10p2-soft: #B8C0CC;
+            --a10p2-cyan: #22D3EE;
+            --a10p2-cyanHi: #67E8F9;
+            --a10p2-teal: #2DD4BF;
+            --a10p2-coral: #F87171;
+            --a10p2-coralHot: #EF4444;
+            --a10p2-coralDim: #B91C1C;
+            --a10p2-ok: #34D399;
+            --a10p2-okDim: #047857;
+            --a10p2-gold: #FBBF24;
+            --a10p2-goldDim: #B45309;
+            --a10p2-indigo: #818CF8;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+          }
+          [data-theme="light"] .a10p2-root {
+            --a10p2-bg0: #F8F6F2;
+            --a10p2-bg1: #EEF2F7;
+            --a10p2-card: #FFFFFF;
+            --a10p2-card2: #F1F5F9;
+            --a10p2-border: rgba(15,23,42,0.10);
+            --a10p2-ink: #0F172A;
+            --a10p2-muted: #64748B;
+            --a10p2-soft: #475569;
+            --a10p2-cyan: #0891B2;
+            --a10p2-cyanHi: #06B6D4;
+            --a10p2-teal: #0D9488;
+            --a10p2-coral: #DC2626;
+            --a10p2-coralHot: #B91C1C;
+            --a10p2-coralDim: #991B1B;
+            --a10p2-ok: #059669;
+            --a10p2-okDim: #065F46;
+            --a10p2-gold: #D97706;
+            --a10p2-goldDim: #92400E;
+            --a10p2-indigo: #4F46E5;
+          }
+          .a10p2-root .a10p2-hs {
+            cursor: pointer;
+          }
+          .a10p2-root .a10p2-hs:focus {
+            outline: none;
+          }
+          .a10p2-root .a10p2-hs:focus .a10p2-hs-ring {
+            opacity: 1;
+          }
+          .a10p2-root .a10p2-hs.is-on .a10p2-hs-ring {
+            opacity: 1;
+          }
+          .a10p2-root .a10p2-hs.is-on .a10p2-node-core {
+            filter: url(#a10p2-glow);
+          }
+          .a10p2-root .a10p2-card-panel {
+            opacity: 0.42;
+            transition: opacity 0.28s ease;
+          }
+          .a10p2-root .a10p2-card-panel.is-on {
+            opacity: 1;
+          }
+          .a10p2-root .a10p2-curve-peak {
+            opacity: 0.55;
+            transition: opacity 0.28s ease;
+          }
+          .a10p2-root[data-step="d1"] .a10p2-curve-peak,
+          .a10p2-root[data-step="crise"] .a10p2-curve-peak {
+            opacity: 1;
+          }
+          .a10p2-root .a10p2-tip {
+            pointer-events: none;
+          }
+          .a10p2-root .a10p2-pulse {
+            transform-origin: center;
+            transform-box: fill-box;
+          }
+          .a10p2-root[data-step="crise"] .a10p2-pulse {
+            animation: a10p2-pulse 1.35s ease-out infinite;
+          }
+          @keyframes a10p2-pulse {
+            0% { opacity: 0.75; transform: scale(0.9); }
+            100% { opacity: 0; transform: scale(1.55); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .a10p2-root .a10p2-card-panel,
+            .a10p2-root .a10p2-curve-peak {
+              transition: none;
+            }
+            .a10p2-root[data-step="crise"] .a10p2-pulse {
+              animation: none !important;
+              opacity: 0.4;
+            }
+          }
+        </style>
+      </defs>
+
+      <rect width="860" height="540" rx="20" fill="url(#a10p2-bg)"/>
+      <rect width="860" height="540" rx="20" fill="url(#a10p2-glowCoral)" pointer-events="none"/>
+      <rect width="860" height="540" rx="20" fill="url(#a10p2-glowOk)" pointer-events="none"/>
+
+      <text x="36" y="38" fill="var(--a10p2-cyan, #22D3EE)" font-size="12" font-weight="700" letter-spacing="2.2">NEUROLOGIA PEDIÁTRICA · CRISE FEBRIL</text>
+      <text x="36" y="68" fill="var(--a10p2-ink, #F4F7FB)" font-size="22" font-weight="700" letter-spacing="-0.35">História natural em um fio</text>
+      <text x="36" y="92" fill="var(--a10p2-muted, #94A3B8)" font-size="13.5" font-weight="500">IVAS → febre no D1 → crise → recuperação · 1–2× na vida, não dezenas.</text>
+
+        <g class="a10p2-hs" id="a10p2-hs-life" tabindex="0" role="button" aria-label="Padrão de vida: 1 a 2 crises, não dezenas">
+        <rect class="a10p2-hs-ring" x="628" y="28" width="198" height="52" rx="14" fill="none" stroke="var(--a10p2-gold, #FBBF24)" stroke-width="2" opacity="0"/>
+        <rect x="634" y="34" width="186" height="40" rx="12" fill="var(--a10p2-card, #111A2B)" stroke="var(--a10p2-gold, #FBBF24)" stroke-width="1.6"/>
+        <circle cx="656" cy="54" r="8" fill="url(#a10p2-nodeGold)"/>
+        <text x="742" y="50" text-anchor="middle" fill="var(--a10p2-gold, #FBBF24)" font-size="14" font-weight="700">1–2× na vida</text>
+        <text x="742" y="66" text-anchor="middle" fill="var(--a10p2-muted, #94A3B8)" font-size="10.5" font-weight="500">não dezenas</text>
+      </g>
+
+        <g id="a10p2-panel-curve">
+        <rect x="28" y="112" width="804" height="168" rx="18" fill="var(--a10p2-card, #111A2B)" stroke="var(--a10p2-border, rgba(148,163,184,0.18))" stroke-width="1.6"/>
+        <text x="48" y="138" fill="var(--a10p2-soft, #B8C0CC)" font-size="11" font-weight="700" letter-spacing="1.6">CURVA TÉRMICA · DIAS DE FEBRE</text>
+        <text x="48" y="158" fill="var(--a10p2-muted, #94A3B8)" font-size="12" font-weight="500">Pico e crise no 1º dia — não no 5º–7º</text>
+
+            <line x1="64" y1="248" x2="800" y2="248" stroke="var(--a10p2-border, rgba(148,163,184,0.18))" stroke-width="1"/>
+        <line x1="64" y1="188" x2="800" y2="188" stroke="var(--a10p2-border, rgba(148,163,184,0.10))" stroke-width="1" stroke-dasharray="3 5"/>
+        <text x="52" y="192" text-anchor="end" fill="var(--a10p2-muted, #94A3B8)" font-size="10" font-weight="600">T↑</text>
+        <text x="52" y="252" text-anchor="end" fill="var(--a10p2-muted, #94A3B8)" font-size="10" font-weight="600">base</text>
+
+            <path class="a10p2-curve-peak" d="M120 246
+          C170 244 200 220 240 190
+          C280 158 320 148 360 152
+          C400 156 430 170 460 200
+          C500 236 560 244 640 246
+          L640 248 L120 248 Z"
+          fill="url(#a10p2-fillPeak)"/>
+
+            <path d="M120 246
+          C170 244 200 220 240 190
+          C280 158 320 148 360 152
+          C400 156 430 170 460 200
+          C500 236 560 244 640 246
+          C700 247 760 246 800 246"
+          fill="none" stroke="url(#a10p2-tempCurve)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <g id="a10p2-peak-mark">
+          <line x1="348" y1="148" x2="348" y2="248" stroke="var(--a10p2-coral, #F87171)" stroke-width="1.4" stroke-dasharray="3 4" opacity="0.7"/>
+          <circle cx="348" cy="150" r="7" fill="url(#a10p2-nodeCoral)" filter="url(#a10p2-glow)"/>
+          <text x="348" y="136" text-anchor="middle" fill="var(--a10p2-coral, #F87171)" font-size="12" font-weight="700">D1 · pico</text>
+        </g>
+
+            <text x="140" y="268" text-anchor="middle" fill="var(--a10p2-cyan, #22D3EE)" font-size="11" font-weight="600">IVAS</text>
+        <text x="348" y="268" text-anchor="middle" fill="var(--a10p2-coral, #F87171)" font-size="11" font-weight="700">D1</text>
+        <text x="460" y="268" text-anchor="middle" fill="var(--a10p2-coralHot, #EF4444)" font-size="11" font-weight="600">crise</text>
+        <text x="640" y="268" text-anchor="middle" fill="var(--a10p2-ok, #34D399)" font-size="11" font-weight="600">queda</text>
+        <text x="760" y="268" text-anchor="middle" fill="var(--a10p2-muted, #94A3B8)" font-size="10.5" font-weight="500">D5–7 sem crise</text>
+      </g>
+
+        <g id="a10p2-timeline">
+        <rect x="28" y="300" width="804" height="150" rx="18" fill="var(--a10p2-card, #111A2B)" stroke="var(--a10p2-border, rgba(148,163,184,0.18))" stroke-width="1.6"/>
+        <text x="48" y="326" fill="var(--a10p2-soft, #B8C0CC)" font-size="11" font-weight="700" letter-spacing="1.6">ARCO · PASSO A PASSO</text>
+
+            <line x1="88" y1="388" x2="772" y2="388" stroke="url(#a10p2-axis)" stroke-width="4" stroke-linecap="round" marker-end="url(#a10p2-arrowCyan)"/>
+
+            <g class="a10p2-hs" id="a10p2-hs-ivas" tabindex="0" role="button" aria-label="IVAS viral: gatilho da história natural" transform="translate(110,348)">
+          <rect class="a10p2-hs-ring" x="-28" y="-18" width="96" height="96" rx="16" fill="none" stroke="var(--a10p2-cyan, #22D3EE)" stroke-width="2" opacity="0"/>
+          <circle class="a10p2-node-core" cx="20" cy="40" r="22" fill="url(#a10p2-nodeCyan)" stroke="var(--a10p2-cyanHi, #67E8F9)" stroke-width="1.5"/>
+                <circle cx="14" cy="36" r="3.2" fill="var(--a10p2-bg0, #0B1220)" opacity="0.55"/>
+          <circle cx="26" cy="36" r="3.2" fill="var(--a10p2-bg0, #0B1220)" opacity="0.55"/>
+          <circle cx="20" cy="46" r="3.2" fill="var(--a10p2-bg0, #0B1220)" opacity="0.55"/>
+          <path d="M20 28 L20 24 M12 32 L9 29 M28 32 L31 29" fill="none" stroke="var(--a10p2-bg0, #0B1220)" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
+          <text x="20" y="78" text-anchor="middle" fill="var(--a10p2-cyan, #22D3EE)" font-size="12.5" font-weight="700">IVAS</text>
+          <text x="20" y="94" text-anchor="middle" fill="var(--a10p2-muted, #94A3B8)" font-size="10.5" font-weight="500">viral</text>
+        </g>
+
+            <g class="a10p2-hs" id="a10p2-hs-d1" tabindex="0" role="button" aria-label="Dia 1: febre muito alta, janela da crise" transform="translate(300,348)">
+          <rect class="a10p2-hs-ring" x="-28" y="-18" width="96" height="96" rx="16" fill="none" stroke="var(--a10p2-coral, #F87171)" stroke-width="2" opacity="0"/>
+          <circle class="a10p2-node-core" cx="20" cy="40" r="22" fill="url(#a10p2-nodeCoral)" stroke="var(--a10p2-coral, #F87171)" stroke-width="1.5"/>
+                <rect x="16" y="28" width="8" height="18" rx="4" fill="var(--a10p2-bg0, #0B1220)" opacity="0.35"/>
+          <rect x="17.5" y="34" width="5" height="10" rx="2.5" fill="var(--a10p2-ink, #F4F7FB)" opacity="0.9"/>
+          <circle cx="20" cy="50" r="6" fill="var(--a10p2-ink, #F4F7FB)" opacity="0.95"/>
+          <text x="20" y="78" text-anchor="middle" fill="var(--a10p2-coral, #F87171)" font-size="12.5" font-weight="700">D1</text>
+          <text x="20" y="94" text-anchor="middle" fill="var(--a10p2-muted, #94A3B8)" font-size="10.5" font-weight="500">febre alta</text>
+        </g>
+
+            <g class="a10p2-hs" id="a10p2-hs-crise" tabindex="0" role="button" aria-label="Crise febril no pico térmico do primeiro dia" transform="translate(490,348)">
+          <rect class="a10p2-hs-ring" x="-28" y="-18" width="96" height="96" rx="16" fill="none" stroke="var(--a10p2-coralHot, #EF4444)" stroke-width="2" opacity="0"/>
+          <circle class="a10p2-pulse" cx="20" cy="40" r="28" fill="none" stroke="var(--a10p2-coral, #F87171)" stroke-width="2" opacity="0"/>
+          <circle class="a10p2-node-core" cx="20" cy="40" r="22" fill="url(#a10p2-nodeCoral)" stroke="var(--a10p2-coralHot, #EF4444)" stroke-width="1.6" filter="url(#a10p2-glow)"/>
+                <path d="M24 28 L16 42 L22 42 L18 54 L30 38 L23 38 Z" fill="var(--a10p2-gold, #FBBF24)" opacity="0.95"/>
+          <text x="20" y="78" text-anchor="middle" fill="var(--a10p2-coral, #F87171)" font-size="12.5" font-weight="700">Crise</text>
+          <text x="20" y="94" text-anchor="middle" fill="var(--a10p2-muted, #94A3B8)" font-size="10.5" font-weight="500">no pico</text>
+        </g>
+
+            <g class="a10p2-hs" id="a10p2-hs-recup" tabindex="0" role="button" aria-label="Recuperação: curso benigno" transform="translate(680,348)">
+          <rect class="a10p2-hs-ring" x="-28" y="-18" width="96" height="96" rx="16" fill="none" stroke="var(--a10p2-ok, #34D399)" stroke-width="2" opacity="0"/>
+          <circle class="a10p2-node-core" cx="20" cy="40" r="22" fill="url(#a10p2-nodeOk)" stroke="var(--a10p2-ok, #34D399)" stroke-width="1.5"/>
+                <path d="M10 40 L17 47 L31 32" fill="none" stroke="var(--a10p2-ink, #F4F7FB)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="20" y="78" text-anchor="middle" fill="var(--a10p2-ok, #34D399)" font-size="12.5" font-weight="700">Recupera</text>
+          <text x="20" y="94" text-anchor="middle" fill="var(--a10p2-muted, #94A3B8)" font-size="10.5" font-weight="500">benigna</text>
+        </g>
+      </g>
+
+        <g id="a10p2-cards" transform="translate(28,464)">
+        <g class="a10p2-card-panel is-on" id="a10p2-card-ivas">
+          <rect width="192" height="58" rx="12" fill="var(--a10p2-card2, #152033)" stroke="var(--a10p2-cyan, #22D3EE)" stroke-width="1.3"/>
+          <text x="14" y="24" fill="var(--a10p2-cyan, #22D3EE)" font-size="12" font-weight="700">Gatilho viral</text>
+          <text x="14" y="42" fill="var(--a10p2-soft, #B8C0CC)" font-size="11.5" font-weight="500">IVAS · mecanismo fino aberto</text>
+        </g>
+        <g class="a10p2-card-panel" id="a10p2-card-d1" transform="translate(204,0)">
+          <rect width="192" height="58" rx="12" fill="var(--a10p2-card2, #152033)" stroke="var(--a10p2-coral, #F87171)" stroke-width="1.3"/>
+          <text x="14" y="24" fill="var(--a10p2-coral, #F87171)" font-size="12" font-weight="700">Timing = D1</text>
+          <text x="14" y="42" fill="var(--a10p2-soft, #B8C0CC)" font-size="11.5" font-weight="500">não no 5º–7º dia</text>
+        </g>
+        <g class="a10p2-card-panel" id="a10p2-card-crise" transform="translate(408,0)">
+          <rect width="192" height="58" rx="12" fill="var(--a10p2-card2, #152033)" stroke="var(--a10p2-coralHot, #EF4444)" stroke-width="1.3"/>
+          <text x="14" y="24" fill="var(--a10p2-coral, #F87171)" font-size="12" font-weight="700">T maior → risco ↑</text>
+          <text x="14" y="42" fill="var(--a10p2-soft, #B8C0CC)" font-size="11.5" font-weight="500">febre não protege</text>
+        </g>
+        <g class="a10p2-card-panel" id="a10p2-card-recup" transform="translate(612,0)">
+          <rect width="192" height="58" rx="12" fill="var(--a10p2-card2, #152033)" stroke="var(--a10p2-ok, #34D399)" stroke-width="1.3"/>
+          <text x="14" y="24" fill="var(--a10p2-ok, #34D399)" font-size="12" font-weight="700">Curso benigno</text>
+          <text x="14" y="42" fill="var(--a10p2-soft, #B8C0CC)" font-size="11.5" font-weight="500">1–2× · não assombra</text>
+        </g>
+      </g>
+
+        <g id="a10p2-tip" class="a10p2-tip" opacity="0" aria-hidden="true">
+        <rect id="a10p2-tip-bg" x="0" y="0" width="280" height="58" rx="10" fill="var(--a10p2-card2, #152033)" stroke="var(--a10p2-gold, #FBBF24)" stroke-width="1.4"/>
+        <text id="a10p2-tip-t1" x="14" y="23" fill="var(--a10p2-ink, #F4F7FB)" font-size="13" font-weight="700">Título</text>
+        <text id="a10p2-tip-t2" x="14" y="43" fill="var(--a10p2-muted, #94A3B8)" font-size="12" font-weight="500">Descrição</text>
+      </g>
+
+      <text id="a10p2-live" aria-live="polite" x="-9999" y="-9999" font-size="1" fill="var(--a10p2-bg0, #0B1220)">História natural em repouso. Explore os marcos da timeline.</text>
+
+      <script type="text/javascript"><![CDATA[
+(function(){
+  var root = document.currentScript && document.currentScript.ownerSVGElement
+    ? document.currentScript.ownerSVGElement
+    : null;
+  if(!root){
+    var nodes = document.getElementsByClassName('a10p2-root');
+    root = nodes && nodes.length ? nodes[nodes.length-1] : null;
+  }
+  if(!root) return;
+
+  function Q(sel){ return root.querySelector(sel); }
+  function QA(sel){ return root.querySelectorAll(sel); }
+
+  var tip = Q('#a10p2-tip');
+  var liveEl = Q('#a10p2-live');
+  var step = 'ivas';
+
+  var tips = {
+    ivas:  ['IVAS viral', 'Gatilho grande da história natural — infecção de vias aéreas.', 'var(--a10p2-cyan, #22D3EE)'],
+    d1:    ['Dia 1 de febre', 'Crise geralmente no 1º dia — não no 5º–7º.', 'var(--a10p2-coral, #F87171)'],
+    crise: ['Crise no pico', 'Quanto maior a temperatura, maior o risco — febre não protege.', 'var(--a10p2-coralHot, #EF4444)'],
+    recup: ['Recuperação', 'Doença benigna: o arco acalma após o pico febril.', 'var(--a10p2-ok, #34D399)'],
+    life:  ['1–2× na vida', 'Padrão usual: uma ou duas crises — não dezenas até os 12 anos.', 'var(--a10p2-gold, #FBBF24)']
+  };
+
+  var cardMap = {
+    ivas:  '#a10p2-card-ivas',
+    d1:    '#a10p2-card-d1',
+    crise: '#a10p2-card-crise',
+    recup: '#a10p2-card-recup',
+    life:  '#a10p2-card-recup'
+  };
+
+  var hsMap = {
+    ivas:  '#a10p2-hs-ivas',
+    d1:    '#a10p2-hs-d1',
+    crise: '#a10p2-hs-crise',
+    recup: '#a10p2-hs-recup',
+    life:  '#a10p2-hs-life'
+  };
+
+  function setStep(key){
+    step = key || 'ivas';
+    root.setAttribute('data-step', step);
+    var cards = QA('.a10p2-card-panel');
+    for(var i=0;i<cards.length;i++) cards[i].classList.remove('is-on');
+    var hsAll = QA('.a10p2-hs');
+    for(var j=0;j<hsAll.length;j++) hsAll[j].classList.remove('is-on');
+    var csel = cardMap[step];
+    var hsel = hsMap[step];
+    var c = csel ? Q(csel) : null;
+    var h = hsel ? Q(hsel) : null;
+    if(c) c.classList.add('is-on');
+    if(h) h.classList.add('is-on');
+    if(step === 'life'){
+      var all = QA('.a10p2-card-panel');
+      for(var k=0;k<all.length;k++) all[k].classList.add('is-on');
+    }
+  }
+
+  function clientToSvg(cx, cy){
+    var pt = root.createSVGPoint();
+    pt.x = cx; pt.y = cy;
+    var m = root.getScreenCTM();
+    if(!m) return {x:cx, y:cy};
+    var p = pt.matrixTransform(m.inverse());
+    return {x:p.x, y:p.y};
+  }
+
+  function showTip(cx, cy, t1, t2, stroke){
+    if(!tip) return;
+    var t1el = Q('#a10p2-tip-t1');
+    var t2el = Q('#a10p2-tip-t2');
+    var bg = Q('#a10p2-tip-bg');
+    if(t1el) t1el.textContent = t1;
+    if(t2el) t2el.textContent = t2;
+    if(bg) bg.setAttribute('stroke', stroke || 'var(--a10p2-gold, #FBBF24)');
+    var p = clientToSvg(cx, cy);
+    var w = 280, h = 58, off = 14;
+    var x = p.x + off, y = p.y + off;
+    if(x + w > 848) x = p.x - w - off;
+    if(y + h > 528) y = p.y - h - off;
+    if(x < 8) x = 8;
+    if(y < 8) y = 8;
+    tip.setAttribute('transform','translate('+x.toFixed(1)+','+y.toFixed(1)+')');
+    tip.setAttribute('opacity','1');
+    tip.setAttribute('aria-hidden','false');
+  }
+
+  function hideTip(){
+    if(!tip) return;
+    tip.setAttribute('opacity','0');
+    tip.setAttribute('aria-hidden','true');
+  }
+
+  function bindHs(id, key){
+    var el = Q(id);
+    if(!el) return;
+    var data = tips[key];
+    function go(ev){
+      setStep(key);
+      var cx = (ev && ev.clientX != null) ? ev.clientX : el.getBoundingClientRect().left + 40;
+      var cy = (ev && ev.clientY != null) ? ev.clientY : el.getBoundingClientRect().top + 20;
+      showTip(cx, cy, data[0], data[1], data[2]);
+      if(liveEl) liveEl.textContent = data[0] + '. ' + data[1];
+    }
+    el.addEventListener('mouseenter', go);
+    el.addEventListener('mousemove', function(ev){
+      if(tip && tip.getAttribute('opacity') === '1') go(ev);
+    });
+    el.addEventListener('mouseleave', function(){
+      hideTip();
+    });
+    el.addEventListener('focus', function(){
+      var b = el.getBoundingClientRect();
+      go({clientX: b.left + b.width/2, clientY: b.top + b.height/2});
+    });
+    el.addEventListener('blur', hideTip);
+    el.addEventListener('click', function(ev){ ev.stopPropagation(); go(ev); });
+    el.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter' || ev.key===' ' || ev.key==='Spacebar'){
+        ev.preventDefault();
+        go(ev);
+      }
+    });
+    el.addEventListener('touchstart', function(ev){
+      var t = ev.touches && ev.touches[0];
+      if(t){
+        setStep(key);
+        showTip(t.clientX, t.clientY, data[0], data[1], data[2]);
+        if(liveEl) liveEl.textContent = data[0] + '. ' + data[1];
+      } else go(ev);
+    }, {passive:true});
+  }
+
+  bindHs('#a10p2-hs-ivas','ivas');
+  bindHs('#a10p2-hs-d1','d1');
+  bindHs('#a10p2-hs-crise','crise');
+  bindHs('#a10p2-hs-recup','recup');
+  bindHs('#a10p2-hs-life','life');
+
+  root.addEventListener('click', function(ev){
+    var t = ev.target;
+    var hs = root.querySelectorAll('.a10p2-hs');
+    for(var i=0;i<hs.length;i++){
+      if(hs[i].contains(t)) return;
+    }
+    hideTip();
+  });
+
+  setStep('ivas');
+})();
+  ]]></script>
+    </svg>
+  </div>
+
+  <div class="a10-img-wrap">
+    <img src="media/B02-reserva-digital-clinic.jpg" alt="Criança com termômetro digital em ambiente clínico; a leitura no display indica febre; face do menor não identificável." loading="lazy" decoding="async">
+    <div class="a10-caption">Termometria digital em criança febril — observação no serviço. <em>Child checks temperature with digital thermometer from above</em> · via Wikimedia Commons · <strong>CC BY 2.0</strong> · Fonte: commons.wikimedia.org/wiki/File:Child_checks_temperature_with_digital_thermometer_from_above.jpg · Âncora da história natural (IVAS + febre no D1).</div>
+  </div>
+
+  <div class="a10-resumo">
+    <div class="a10-res-label">📌 Resumo operacional</div>
+    <p><strong>IVAS viral</strong> · <span class="a10-num">D1</span> · <strong>T↑↑</strong> · <span class="a10-num">1–2× na vida</span> · benigna · risco futuro ~pop. (+ irrisório).</p>
+  </div>
+
+  <div class="a10-revisao">
+    <div class="a10-rev-label">🧩 Revisão ativa · metacognição</div>
+    <ol>
+      <li>Por que "vírus" importa mesmo sem mecanismo molecular fechado?</li>
+      <li>O que você diz aos pais sobre recorrência e epilepsia futura?</li>
+      <li>Onde a benignidade <strong>não</strong> autoriza relaxar a triagem?</li>
+    </ol>
+  </div>
+
+  <div class="a10-quiz" id="quiz-p2">
+    <h3>🧠 Quiz</h3>
+    <div class="a10-q-block" data-q="0">
+      <div class="a10-q-enun">Q1. Sobre a história natural da crise febril, assinale a correta:</div>
+      <div class="a10-q-opts">
+        <button class="a10-q-opt" data-opt="A">A) Costuma ocorrer no 5º–7º dia de febre, quando a temperatura já caiu.</button>
+        <button class="a10-q-opt" data-opt="B">B) Geralmente no primeiro dia de febre; vírus (IVAS) é grande gatilho; padrão 1–2 crises na vida.</button>
+        <button class="a10-q-opt" data-opt="C">C) Recorre dezenas de vezes até os 12 anos na maioria.</button>
+        <button class="a10-q-opt" data-opt="D">D) Temperatura alta protege: quanto maior T, menor risco.</button>
+      </div>
+      <div class="a10-q-feedback" aria-live="polite"></div>
+    </div>
+    <div class="a10-q-block" data-q="1">
+      <div class="a10-q-enun">Q2. Após crise febril <strong>típica</strong>, o risco de epilepsia futura:</div>
+      <div class="a10-q-opts">
+        <button class="a10-q-opt" data-opt="A">A) É igual ao de quem já tem epilepsia genética.</button>
+        <button class="a10-q-opt" data-opt="B">B) Exige AED contínuo em todos.</button>
+        <button class="a10-q-opt" data-opt="C">C) É só levemente maior que o da população geral (ordem didática: incremento &lt;1%); doença benigna no núcleo.</button>
+        <button class="a10-q-opt" data-opt="D">D) É &gt;50% se houve IVAS.</button>
+      </div>
+      <div class="a10-q-feedback" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+var answers = {
+  '0': { correct:'B', fb:'<strong>Gabarito: B.</strong> D1 + vírus + 1–2× na vida.<br><br><strong>A:</strong> inverte o timing. <em>Por que cair:</em> confunde com "febre arrastada + ATB" (cenário de dúvida da próxima).<br><strong>C:</strong> infla a recorrência. <em>Por que cair:</em> trata a CF como doença crônica da infância.<br><strong>D:</strong> inverte a relação T–risco. <em>Por que cair:</em> associa "febre alta = proteção".' },
+  '1': { correct:'C', fb:'<strong>Gabarito: C.</strong> Benignidade + incremento pequeno (ordem &lt;1% da fonte).<br><br><strong>A:</strong> equipara à epilepsia de base. <em>Por que cair:</em> confunde provocada com etiologia epiléptica.<br><strong>B:</strong> puxa profilaxia sem indicação. <em>Por que cair:</em> "tratar igual epilepsia".<br><strong>D:</strong> inventa risco catastrófico. <em>Por que cair:</em> assusta com a IVAS. Ver caixa-nuança se a banca cobrar % absolutos.' }
+};
+var STORE = 'p3-febril:a10:p02:quiz:v1';
+var saved = null;
+try { var r = localStorage.getItem(STORE); if(r) saved = JSON.parse(r); } catch(e){}
+
+document.querySelectorAll('.a10-q-block').forEach(function(block){
+  var qIdx = block.getAttribute('data-q');
+  var ans = answers[qIdx];
+  if(!ans) return;
+  var fb = block.querySelector('.a10-q-feedback');
+  var opts = block.querySelectorAll('.a10-q-opt');
+
+  function showFB(correct, chosen){
+    opts.forEach(function(o){
+      o.classList.remove('chosen','correct','wrong');
+      if(o.getAttribute('data-opt') === correct) o.classList.add('correct');
+      if(o.getAttribute('data-opt') === chosen && chosen !== correct) o.classList.add('wrong');
+      if(o.getAttribute('data-opt') === chosen) o.classList.add('chosen');
+      o.disabled = true;
+    });
+    fb.className = 'a10-q-feedback show ' + (chosen === correct ? 'correct-fb' : 'wrong-fb');
+    fb.innerHTML = ans.fb;
+  }
+
+  if(saved && saved[qIdx] !== undefined){
+    showFB(ans.correct, saved[qIdx]);
+  }
+
+  opts.forEach(function(opt){
+    opt.addEventListener('click', function(){
+      if(opt.disabled) return;
+      var chosen = opt.getAttribute('data-opt');
+      showFB(ans.correct, chosen);
+      var state = saved ? JSON.parse(JSON.stringify(saved)) : {};
+      state[qIdx] = chosen;
+      try { localStorage.setItem(STORE, JSON.stringify(state)); } catch(e){}
+    });
+  });
+});
+})();
+</script>
+
+  <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="index.html"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Crise febril ≠ epilepsia: 6 a 60 meses</span></a><a class="next" href="p3.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Simples × complexa: um critério basta</span></a></nav>
+</main>
+<footer class="rodape">Crise Febril · texto soberano verbatim · plataforma standalone.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="../_assets/quiz.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Páginas desta aula">
+    <p class="menu-panel__title">Aula 10 · 8 páginas</p>
+    <ul class="menu-panel__list">
+      <li><a href="index.html">1 · Crise febril ≠ epilepsia: 6 a 60 meses</a></li>
+      <li><a href="p2.html">2 · Vírus, primeiro dia e a chance quase irrisória</a></li>
+      <li><a href="p3.html">3 · Simples × complexa: um critério basta</a></li>
+      <li><a href="p4.html">4 · Diagnóstico clínico — e o custo da atipia</a></li>
+      <li><a href="p5.html">5 · Porta: o medo que manda é meningite</a></li>
+      <li><a href="p6.html">6 · Quando puncionar — e o antibiótico que mascara</a></li>
+      <li><a href="p7.html">7 · Suporte, &gt;5 min, 6 horas e o que NÃO profilaxiar</a></li>
+      <li><a href="p8.html">8 · Prova: o que eleva o risco de epilepsia futura</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){
+    var p=ov.querySelector('.menu-panel');
+    if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha();
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

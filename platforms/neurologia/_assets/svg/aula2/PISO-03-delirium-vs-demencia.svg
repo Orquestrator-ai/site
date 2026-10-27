@@ -1,0 +1,436 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%" class="db-svg-root" id="db-interactive-svg">
+  <style>
+    .db-svg-root {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      .db-svg-root {
+        --bg-canvas: #ffffff;
+        --color-text-primary: #1f2328;
+        --color-text-secondary: #57606a;
+        --color-border: #d0d7de;
+        --color-grid: rgba(0, 139, 179, 0.12);
+        --color-cyan: #008bb3;
+        --color-coral: #d93838;
+        --color-amber: #b26a00;
+        --color-green: #2e7d32;
+        --panel-bg: rgba(246, 248, 250, 0.95);
+        --panel-shadow: rgba(0, 0, 0, 0.05);
+        --panel-border: #d0d7de;
+        --graph-bg: #fdfdfd;
+      }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      .db-svg-root {
+        --bg-canvas: #0c1017;
+        --color-text-primary: #f0f6fc;
+        --color-text-secondary: #8b949e;
+        --color-border: #30363d;
+        --color-grid: rgba(0, 210, 255, 0.08);
+        --color-cyan: #58a6ff;
+        --color-coral: #ff7b72;
+        --color-amber: #f0883e;
+        --color-green: #3fb950;
+        --panel-bg: rgba(22, 27, 34, 0.92);
+        --panel-shadow: rgba(0, 0, 0, 0.3);
+        --panel-border: #30363d;
+        --graph-bg: #0d1117;
+      }
+    }
+    
+    .db-svg-root {
+      background-color: var(--bg-canvas);
+      transition: background-color 0.3s ease;
+    }
+    
+    .db-title {
+      font-size: 20px;
+      font-weight: 700;
+      fill: var(--color-text-primary);
+    }
+    
+    .db-subtitle {
+      font-size: 13px;
+      fill: var(--color-text-secondary);
+    }
+    
+    .db-panel-bg {
+      fill: var(--panel-bg);
+      stroke: var(--panel-border);
+      filter: drop-shadow(0 4px 12px var(--panel-shadow));
+    }
+    
+    .db-hotspot {
+      transition: transform 0.2s ease;
+    }
+    
+    .db-hotspot:hover {
+      transform: scale(1.15);
+    }
+    
+    @keyframes pulse-hotspot {
+      0% { r: 6; opacity: 0.8; }
+      50% { r: 15; opacity: 0.2; }
+      100% { r: 6; opacity: 0.8; }
+    }
+    
+    .pulse-circle {
+      animation: pulse-hotspot 2s infinite ease-in-out;
+    }
+    
+    .db-grab { cursor: grab; }
+    .db-grab:active { cursor: grabbing; }
+    .db-pointer { cursor: pointer; }
+    
+    .axis-line {
+      stroke: var(--color-cyan);
+      stroke-width: 1.5;
+      fill: none;
+    }
+    
+    .grid-line {
+      stroke: var(--color-grid);
+      stroke-width: 0.75;
+      fill: none;
+    }
+  </style>
+
+  <defs>
+    <pattern id="grid-pattern" width="50" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 40" fill="none" stroke="var(--color-grid)" stroke-width="0.75" />
+    </pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="black" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Cabeçalho com Título e Legenda de Interpretação -->
+  <text class="db-title" x="30" y="40">CURSO TEMPORAL: DELIRIUM × DEMÊNCIA</text>
+  <text class="db-subtitle" x="30" y="62">Demência desce devagar e sem oscilar; delirium cai de repente e flutua. O eixo do tempo, não a intensidade dos sintomas, separa os dois.</text>
+
+  <!-- Âncora do Caso Clínico -->
+  <g transform="translate(30, 80)">
+    <rect x="0" y="0" width="900" height="22" rx="4" fill="rgba(0, 210, 255, 0.05)" stroke="var(--color-cyan)" stroke-opacity="0.2" stroke-width="0.75" />
+    <text x="10" y="15" font-size="11" fill="var(--color-text-secondary)">
+      <tspan font-weight="bold" fill="var(--color-cyan)">ÂNCORA CLÍNICA:</tspan> Idoso de 79 anos com infecção urinária evolui com rebaixamento agudo e oscilante em 24h (Delirium) vs idosa com perda cognitiva progressiva há 18 meses (Demência).
+    </text>
+  </g>
+
+  <!-- ÁREA DO GRÁFICO -->
+  <!-- Fundo do gráfico -->
+  <rect x="100" y="120" width="500" height="340" rx="4" fill="var(--graph-bg)" stroke="var(--color-border)" stroke-width="1" />
+  <rect x="100" y="120" width="500" height="340" fill="url(#grid-pattern)" rx="4" />
+
+  <!-- Faixa Saudável (Normalidade no basal) -->
+  <rect x="100" y="120" width="95" height="40" fill="var(--color-green)" opacity="0.1" rx="4" />
+  <text x="110" y="142" font-size="9" fill="var(--color-green)" font-weight="bold" opacity="0.8">Cognição Basal Preservada</text>
+
+  <!-- Linhas Verticais de Demarcação Temporal -->
+  <line x1="200" y1="120" x2="200" y2="460" stroke="var(--color-text-secondary)" stroke-width="0.75" stroke-dasharray="2,3" opacity="0.4" />
+  <line x1="400" y1="120" x2="400" y2="460" stroke="var(--color-text-secondary)" stroke-width="0.75" stroke-dasharray="2,3" opacity="0.4" />
+  <line x1="530" y1="120" x2="530" y2="460" stroke="var(--color-text-secondary)" stroke-width="0.75" stroke-dasharray="2,3" opacity="0.4" />
+
+  <!-- Eixos do Gráfico -->
+  <line x1="100" y1="120" x2="100" y2="460" class="axis-line" />
+  <line x1="100" y1="460" x2="600" y2="460" class="axis-line" />
+
+  <!-- Setas dos Eixos -->
+  <polygon points="100,112 96,122 104,122" fill="var(--color-cyan)" />
+  <polygon points="608,460 598,456 598,464" fill="var(--color-cyan)" />
+
+  <!-- Rótulos dos Eixos -->
+  <text x="80" y="290" transform="rotate(-90 80 290)" text-anchor="middle" font-size="11" font-weight="600" fill="var(--color-text-secondary)">Atenção e Nível Cognitivo</text>
+  <text x="350" y="478" text-anchor="middle" font-size="11" font-weight="600" fill="var(--color-text-secondary)">Linha do Tempo (Evolução Clínica)</text>
+
+  <!-- Rótulos de Gravidade (Eixo Y) -->
+  <text x="90" y="130" text-anchor="end" font-size="10" fill="var(--color-text-secondary)">Basal</text>
+  <text x="90" y="290" text-anchor="end" font-size="10" fill="var(--color-text-secondary)">Moderado</text>
+  <text x="90" y="450" text-anchor="end" font-size="10" fill="var(--color-text-secondary)">Grave</text>
+
+  <!-- Rótulos de Tempo (Eixo X) -->
+  <text x="100" y="473" text-anchor="middle" font-size="10" fill="var(--color-text-secondary)">Pré-gatilho</text>
+  <text x="200" y="473" text-anchor="middle" font-size="10" fill="var(--color-amber)" font-weight="bold">Dia 0 (Gatilho)</text>
+  <text x="300" y="473" text-anchor="middle" font-size="10" fill="var(--color-text-secondary)">Dias 1-3</text>
+  <text x="400" y="473" text-anchor="middle" font-size="10" fill="var(--color-text-secondary)">Semana 1</text>
+  <text x="500" y="473" text-anchor="middle" font-size="10" fill="var(--color-text-secondary)">Mês 1</text>
+  <text x="600" y="473" text-anchor="middle" font-size="10" fill="var(--color-text-secondary)">Meses/Ano</text>
+
+  <!-- CURVAS DE TRAJETÓRIA -->
+  <!-- Demência: Linha principal e brilho de fundo -->
+  <path d="M 100 155 L 200 185 L 300 220 L 400 255 L 500 290 L 600 330" stroke="var(--color-coral)" stroke-width="8" opacity="0.15" fill="none" stroke-linecap="round" />
+  <path d="M 100 155 L 200 185 L 300 220 L 400 255 L 500 290 L 600 330" stroke="var(--color-coral)" stroke-width="3.5" fill="none" stroke-linecap="round" />
+
+  <!-- Delirium: Linha principal e brilho de fundo -->
+  <path d="M 100 140 L 195 140 L 205 390 L 240 260 L 280 410 L 330 240 L 380 390 L 430 210 L 480 300 L 530 150 L 600 140" stroke="var(--color-amber)" stroke-width="8" opacity="0.15" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 100 140 L 195 140 L 205 390 L 240 260 L 280 410 L 330 240 L 380 390 L 430 210 L 480 300 L 530 150 L 600 140" stroke="var(--color-amber)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Hotspot do Gatilho Agudo (Dia 0) -->
+  <g id="hotspot-trigger" class="db-hotspot db-pointer" role="button" aria-label="Gatilho do delirium">
+    <circle class="pulse-circle" cx="200" cy="140" r="10" fill="var(--color-amber)" opacity="0.6" />
+    <circle cx="200" cy="140" r="6" fill="var(--color-amber)" stroke="#ffffff" stroke-width="2" />
+  </g>
+
+  <!-- Cursor de Tempo (Vertical pontilhado móvel) -->
+  <line id="cursor-line" x1="100" y1="120" x2="100" y2="460" stroke="var(--color-text-secondary)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.75" />
+
+  <!-- Pontos de interseção móveis sobre as curvas -->
+  <circle id="point-demencia" cx="100" cy="155" r="7" fill="var(--bg-canvas)" stroke="var(--color-coral)" stroke-width="3" />
+  <circle id="point-delirium" cx="100" cy="140" r="7" fill="var(--bg-canvas)" stroke="var(--color-amber)" stroke-width="3" />
+
+  <!-- PAINEL DE LEITURA LATERAL (EXPLICATIVO) -->
+  <g transform="translate(640, 120)">
+    <rect class="db-panel-bg" x="0" y="0" width="290" height="340" rx="8" />
+    
+    <!-- Título do Painel -->
+    <text id="phase-title" x="20" y="30" font-size="13" font-weight="700" fill="var(--color-cyan)">FASE 1: NÍVEL BASAL E ESTADO HABITUAL</text>
+    <line x1="20" y1="42" x2="270" y2="42" stroke="var(--color-border)" stroke-width="1" />
+
+    <!-- Seção Delirium -->
+    <g transform="translate(20, 58)">
+      <text x="0" y="0" font-size="10" font-weight="600" fill="var(--color-text-secondary)" letter-spacing="0.5">DELIRIUM (AGUDO E FLUTUANTE)</text>
+      <text id="del-status" x="0" y="16" font-size="13" font-weight="700" fill="var(--color-amber)">Cognição Preservada (100%)</text>
+      <text font-size="11.5" fill="var(--color-text-primary)">
+        <tspan id="del-desc-l1" x="0" y="34">Paciente ativo e atento.</tspan>
+        <tspan id="del-desc-l2" x="0" y="48">Nenhum sinal de confusão ou déficit.</tspan>
+      </text>
+    </g>
+
+    <!-- Seção Demência -->
+    <g transform="translate(20, 142)">
+      <text x="0" y="0" font-size="10" font-weight="600" fill="var(--color-text-secondary)" letter-spacing="0.5">DEMÊNCIA (GRADUAL E CONTÍNUA)</text>
+      <text id="dem-status" x="0" y="16" font-size="13" font-weight="700" fill="var(--color-coral)">Déficit Leve e Progressivo</text>
+      <text font-size="11.5" fill="var(--color-text-primary)">
+        <tspan id="dem-desc-l1" x="0" y="34">Ligeiro declínio de memória em meses.</tspan>
+        <tspan id="dem-desc-l2" x="0" y="48">Atenção e nível de alerta normais.</tspan>
+      </text>
+    </g>
+
+    <!-- Caixa de Lição Clínica -->
+    <g transform="translate(15, 230)">
+      <rect x="0" y="0" width="260" height="95" rx="6" fill="rgba(0, 210, 255, 0.04)" stroke="var(--color-cyan)" stroke-width="0.75" stroke-dasharray="3,3" />
+      <text x="12" y="18" font-size="9" font-weight="700" fill="var(--color-cyan)" letter-spacing="0.5">CONCEITO DO DIAGNÓSTICO DIFERENCIAL</text>
+      <text font-size="11" fill="var(--color-text-primary)">
+        <tspan id="lesson-l1" x="12" y="36">No basal, a demência já mostra perda lenta</tspan>
+        <tspan id="lesson-l2" x="12" y="50">e contínua, enquanto o delirium ainda não</tspan>
+        <tspan id="lesson-l3" x="12" y="64">ocorreu. A atenção de ambos está preservada.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- CONTROLES (SLIDER INTERATIVO) -->
+  <g transform="translate(0, 490)">
+    <!-- Trilho do Slider -->
+    <rect id="slider-track" class="db-pointer" x="100" y="-3" width="500" height="6" rx="3" fill="var(--color-border)" />
+    <!-- Preenchimento do trilho -->
+    <rect id="slider-fill" x="100" y="-3" width="0" height="6" rx="3" fill="var(--color-cyan)" pointer-events="none" />
+    <!-- Handle (botão de arrastar) -->
+    <circle id="slider-handle" class="db-grab" cx="100" cy="0" r="10" fill="var(--color-cyan)" stroke="#ffffff" stroke-width="2" filter="url(#shadow)" tabindex="0" role="button" aria-label="Deslizar tempo" />
+  </g>
+
+  <!-- Legenda do Gráfico -->
+  <g class="db-legend" transform="translate(100, 514)" font-size="11" fill="var(--color-text-secondary)">
+    <circle cx="5" cy="0" r="4.5" fill="var(--color-coral)" />
+    <text x="15" y="4">Demência (gradual/contínuo)</text>
+    
+    <circle cx="210" cy="0" r="4.5" fill="var(--color-amber)" />
+    <text x="220" y="4">Delirium (súbito/flutuante)</text>
+    
+    <line x1="410" y1="0" x2="430" y2="0" stroke="var(--color-text-secondary)" stroke-dasharray="3,3" stroke-width="1.5" />
+    <text x="438" y="4">Cursor temporal (arraste o slider)</text>
+  </g>
+
+  <!-- Nota de Rodapé -->
+  <text x="30" y="533" font-size="9" fill="var(--color-text-secondary)" opacity="0.8">* Toque no gatilho ou arraste o slider. Atenção prejudicada sugere delirium; perda puramente cognitiva crônica sugere demência.</text>
+
+  <!-- INTERATIVIDADE JS CDATA (Self-contained e robusto) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      const svg = document.getElementById('db-interactive-svg');
+      const handle = document.getElementById('slider-handle');
+      const track = document.getElementById('slider-track');
+      const fill = document.getElementById('slider-fill');
+      const cursor = document.getElementById('cursor-line');
+      const ptDem = document.getElementById('point-demencia');
+      const ptDel = document.getElementById('point-delirium');
+      const trigger = document.getElementById('hotspot-trigger');
+
+      const demPoints = [
+        {x: 100, y: 155}, {x: 200, y: 185}, {x: 300, y: 220},
+        {x: 400, y: 255}, {x: 500, y: 290}, {x: 600, y: 330}
+      ];
+
+      const delPoints = [
+        {x: 100, y: 140}, {x: 195, y: 140}, {x: 205, y: 390},
+        {x: 240, y: 260}, {x: 280, y: 410}, {x: 330, y: 240},
+        {x: 380, y: 390}, {x: 430, y: 210}, {x: 480, y: 300},
+        {x: 530, y: 150}, {x: 600, y: 140}
+      ];
+
+      const phases = [
+        {
+          minX: 100, maxX: 195,
+          title: "FASE 1: NÍVEL BASAL DO PACIENTE",
+          delStatus: "Cognição Preservada (100%)",
+          delL1: "Paciente ativo, alerta e atento.",
+          delL2: "Nenhum sinal de confusão mental.",
+          demStatus: "Declínio Leve Progressivo",
+          demL1: "Perda gradual de memória recente.",
+          demL2: "Nível de alerta e atenção normais.",
+          lessonL1: "No basal, a demência já apresenta declínio",
+          lessonL2: "insidioso há meses. O delirium ainda não",
+          lessonL3: "ocorreu. A atenção de ambos está normal."
+        },
+        {
+          minX: 195, maxX: 225,
+          title: "FASE 2: GATILHO E QUEDA AGUDA",
+          delStatus: "Delirium Agudo Instalado",
+          delL1: "Queda súbita da atenção (horas/dias).",
+          delL2: "Déficit grave de foco e desorientação.",
+          demStatus: "Evolução Lenta Inalterada",
+          demL1: "Demência prossegue seu curso estável.",
+          demL2: "Sem mudanças agudas ou súbitas.",
+          lessonL1: "O delirium surge de forma abrupta, comumente",
+          lessonL2: "por fator orgânico (infecção, dor, drogas).",
+          lessonL3: "A demência não apresenta quedas súbitas."
+        },
+        {
+          minX: 225, maxX: 400,
+          title: "FASE 3: OSCILAÇÃO E FLUTUAÇÃO",
+          delStatus: "Flutuação Ativa e Severa",
+          delL1: "Momentos de agitação/letargia mistos.",
+          delL2: "Presença de 'intervalos lúcidos' no dia.",
+          demStatus: "Declínio Estável Linear",
+          demL1: "Comprometimento progressivo e constante.",
+          demL2: "Sem oscilação horária ou diurna.",
+          lessonL1: "A flutuação horária da atenção é a marca",
+          lessonL2: "registrada do delirium. A demência declina",
+          lessonL3: "sem apresentar estas oscilações severas."
+        },
+        {
+          minX: 400, maxX: 530,
+          title: "FASE 4: TRATAMENTO E CONVALESCENÇA",
+          delStatus: "Recuperação do Basal",
+          delL1: "Atenção melhora após tratar a causa de",
+          delL2: "base (ex: cura de infecção urinária).",
+          demStatus: "Déficit Irreversível",
+          demL1: "O declínio cortical continua progredindo.",
+          demL2: "Não há retorno ao basal ou melhora.",
+          lessonL1: "O delirium é uma condição aguda reversível na",
+          lessonL2: "maioria dos casos. O declínio cognitivo da",
+          lessonL3: "demência é permanente, crônico e progressivo."
+        },
+        {
+          minX: 530, maxX: 600,
+          title: "FASE 5: AVALIAÇÃO A LONGO PRAZO",
+          delStatus: "Resolução Completa (100%)",
+          delL1: "Paciente recuperou sua atenção basal.",
+          delL2: "Estado cognitivo de base reestabelecido.",
+          demStatus: "Declínio Avançado Consolidado",
+          demL1: "Perda funcional e de autonomia severas.",
+          demL2: "Paciente requer assistência continuada.",
+          lessonL1: "O tempo é o melhor diferencial diagnóstico:",
+          lessonL2: "o delirium é transitório e resolvido, enquanto",
+          lessonL3: "a demência progride irreversivelmente."
+        }
+      ];
+
+      function getY(x, points) {
+        if (x <= points[0].x) return points[0].y;
+        if (x >= points[points.length - 1].x) return points[points.length - 1].y;
+        for (let i = 0; i < points.length - 1; i++) {
+          const p1 = points[i];
+          const p2 = points[i+1];
+          if (x >= p1.x && x <= p2.x) {
+            const t = (x - p1.x) / (p2.x - p1.x);
+            return p1.y + t * (p2.y - p1.y);
+          }
+        }
+        return points[0].y;
+      }
+
+      function update(x) {
+        x = Math.max(100, Math.min(600, x));
+        handle.setAttribute('cx', x);
+        fill.setAttribute('width', x - 100);
+        cursor.setAttribute('x1', x);
+        cursor.setAttribute('x2', x);
+
+        const yDem = getY(x, demPoints);
+        const yDel = getY(x, delPoints);
+        ptDem.setAttribute('cx', x);
+        ptDem.setAttribute('cy', yDem);
+        ptDel.setAttribute('cx', x);
+        ptDel.setAttribute('cy', yDel);
+
+        const phase = phases.find(p => x >= p.minX && x < p.maxX) || phases[phases.length - 1];
+        document.getElementById('phase-title').textContent = phase.title;
+        document.getElementById('del-status').textContent = phase.delStatus;
+        document.getElementById('del-desc-l1').textContent = phase.delL1;
+        document.getElementById('del-desc-l2').textContent = phase.delL2;
+        document.getElementById('dem-status').textContent = phase.demStatus;
+        document.getElementById('dem-desc-l1').textContent = phase.demL1;
+        document.getElementById('dem-desc-l2').textContent = phase.demL2;
+        document.getElementById('lesson-l1').textContent = phase.lessonL1;
+        document.getElementById('lesson-l2').textContent = phase.lessonL2;
+        document.getElementById('lesson-l3').textContent = phase.lessonL3;
+      }
+
+      let dragging = false;
+
+      function onMove(e) {
+        if (!dragging) return;
+        const rect = svg.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const x = (clientX - rect.left) * (960 / rect.width);
+        update(x);
+      }
+
+      function startDrag(e) {
+        dragging = true;
+        if (e.type === 'touchstart') e.preventDefault();
+      }
+
+      function stopDrag() {
+        dragging = false;
+      }
+
+      handle.addEventListener('mousedown', startDrag);
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', stopDrag);
+
+      handle.addEventListener('touchstart', startDrag, {passive: false});
+      window.addEventListener('touchmove', onMove, {passive: true});
+      window.addEventListener('touchend', stopDrag);
+
+      track.addEventListener('click', function(e) {
+        const rect = svg.getBoundingClientRect();
+        const x = (e.clientX - rect.left) * (960 / rect.width);
+        update(x);
+      });
+
+      handle.addEventListener('keydown', function(e) {
+        let x = parseFloat(handle.getAttribute('cx'));
+        if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+          update(x + 10);
+          e.preventDefault();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+          update(x - 10);
+          e.preventDefault();
+        }
+      });
+
+      trigger.addEventListener('click', function() {
+        update(200);
+      });
+
+      // Inicializa em x=100
+      update(100);
+    })();
+    ]]>
+  </script>
+</svg>

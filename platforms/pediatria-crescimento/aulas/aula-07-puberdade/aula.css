@@ -1,0 +1,411 @@
+/* aula.css — Aula 07 "Puberdade fisiológica e distúrbios puberais" (Pediatria Bauer · NÚCLEO)
+   Camada por-aula: NÃO toca tokens/base/components globais.
+   Cobre: wrappers de SVG inline (S-* + 2 figuras-herói self-contained), nota-banca +
+   nota-valor, tabelas responsivas (.cmp, grid no mobile — sem scroll horizontal), recall,
+   synth-cases, membrana .lesson-card, e a DECLARAÇÃO dos tokens que os SVGs desta aula
+   consomem via var(--token,#fallback) — para seguirem o tema (claro + escuro) em vez de
+   travar no fallback. Marcador data-svg-tokenized preservado nas peças.
+   EIXO CROMÁTICO PRÓPRIO DA PUBERDADE: gonadal/HHG = teal/sky · adrenal/HHA = índigo ·
+   crescimento/estirão = verde · pegadinha/diferencial = âmbar. Sexos por par de tons da
+   casa (sky × teal-vel07), nunca rosa/azul de gênero. */
+
+/* =========================================================================
+   TOKENS DOS SVGs — declarados aqui (valores DARK, espelhando o fallback inline
+   de cada SVG) para que a ilustração siga a paleta da aula. Globais ausentes do
+   tokens.css (good/green/indigo/violet/warn/amber/teal-70/ink-40-60-80) + tokens
+   namespeados da aula (--pub-*, --pubElenco-*, --vel07-*).
+   ========================================================================= */
+:root {
+  /* --- sombra dos drop-shadow dos SVGs (tint escuro nos dois temas) --- */
+  --ax-shadow: #000000;
+
+  /* --- tinta auxiliar dos SVGs (níveis que faltam no tokens.css global) --- */
+  --ink-40: #6f86a0;
+  --ink-60: #93a2b3;
+  --ink-80: #c4d0dd;
+
+  /* --- acento estrutural teal que os SVGs pedem por nome --- */
+  --teal-70: #8fd0fa;
+  --teal-dim: rgba(98,189,243,0.07);
+  --teal-dim-2: rgba(98,189,243,0.20);
+
+  /* --- verde (crescimento/estirão) — escala "good"/"green" pedida pelos SVGs --- */
+  --good: #34d399;
+  --good-40: #4ade80;
+  --good-50: #22c55e;
+  --good-soft: rgba(52,211,153,0.14);
+  --good-dim: rgba(34,197,94,0.07);
+  --good-dim-2: rgba(34,197,94,0.20);
+  --good-dim-3: rgba(34,197,94,0.30);
+  --green-40: #86efac;
+  --green-50: #4ade80;
+  --green-55: #34d399;
+  --green-60: #22c55e;
+  --green-70: #15803d;
+
+  /* --- índigo/violeta (adrenal/HHA) --- */
+  --indigo-40: #a5b4fc;
+  --indigo-50: #818cf8;
+  --indigo-60: #6366f1;
+  --indigo-70: #4f46e5;
+  --violet-30: #d8d0fb;
+  --violet-60: #9b8cf0;
+  --violet-mix: #6d5bd4;
+
+  /* --- âmbar (pegadinha/diferencial) --- */
+  --amber-55: #f59e0b;
+  --warn-40: #fbbf24;
+  --warn-50: #f59e0b;
+  --warn-dim: rgba(245,158,11,0.07);
+  --warn-dim-2: rgba(245,158,11,0.20);
+  --warn-dim-3: rgba(245,158,11,0.30);
+
+  /* === eixo puberdade — gonadal/HHG (teal/sky) === */
+  --pub-ax: #070824;
+  --pub-ax-000: #000000;
+  --pub-ax-04101c: #04101c;
+  --pub-sky-40: #8fd0f7;  --pub-sky-60: #3a9fdd;
+  --pub-teal-40: #2f8aa8; --pub-teal-60: #3aa6c9;
+  --pubEixos-ax-000: #000000;
+
+  /* === eixo puberdade — adrenal/HHA (índigo) === */
+  --pub-indigo-30: #b6bcf0;
+  --pub-indigo-40: #9aa2e8;
+  --pub-indigo-60: #6a6fe0;
+  --pub-indigo-70: #4b53c7;
+  --pub-indigo-dim1: #30356a;
+  --pub-indigo-dim2: #43498a;
+  --pub-indigo-fill: rgba(124,132,245,0.14);
+  --pub-medulla: #2b2540;
+  --pub-medulla-d: #1b1730;
+  --pub-capsule: #cfd3f0;
+
+  /* === eixo puberdade — crescimento/estirão (verde) === */
+  --pub-grow-30: #2c7a4f;
+  --pub-grow-40: #3fae6c;
+  --pub-grow-60: #5fd089;
+  --pub-grow-80: #9bf0bd;
+  --pub-grow-dim: rgba(95,208,137,0.14);
+
+  /* === eixo puberdade — pegadinha/atenção (âmbar) === */
+  --pub-warn-60: #e0a32a;
+
+  /* === elenco (cards Blair/Serena/Dan — par de tons da casa, sem gênero) === */
+  --pubElenco-c1: #62bdf3; --pubElenco-c1-hi: #a6dbfb;  /* sky */
+  --pubElenco-c2: #8b7ff0; --pubElenco-c2-hi: #b3a9f7;  /* índigo */
+  --pubElenco-c3: #f2b541; --pubElenco-c3-hi: #f6cd6f;  /* âmbar — Dan/expectativa */
+
+  /* === herói H2 — curva dupla de velocidade (♀ sky × ♂ teal, sem rosa/azul) === */
+  --vel07-ax-04101c: #04101c;
+  --vel07-fem-40: #7dd3fc;  --vel07-fem-60: #38bdf8;   /* feminino = sky */
+  --vel07-masc-40: #5eead4; --vel07-masc-60: #2dd4bf;  /* masculino = teal */
+  --vel07-grow-60: #4ade80; --vel07-warn-60: #f59e0b;
+}
+
+/* === Tema light: superfícies/tinta dos SVGs acompanham o "céu claro" ===
+   Sobrepõe estruturais/tinta para legibilidade; os hues semânticos (sky/teal/
+   índigo/verde/âmbar) leem bem nos dois temas. */
+:root[data-theme="light"] {
+  --ax-shadow: rgba(15,40,60,0.45);
+  --ink-40: #6b7c8e;
+  --ink-60: #44586c;
+  --ink-80: #1f3346;
+
+  --teal-dim: rgba(35,137,209,0.06);
+  --teal-dim-2: rgba(35,137,209,0.18);
+
+  --good-soft: rgba(34,197,94,0.12);
+  --good-dim: rgba(34,197,94,0.08);
+  --good-dim-2: rgba(34,197,94,0.16);
+  --good-dim-3: rgba(34,197,94,0.26);
+  --green-70: #15803d;
+
+  --pub-ax: #eaf2fb;
+  --pub-ax-000: #ffffff;
+  --pub-ax-04101c: #0f2438;
+  --pub-medulla: #e6e2f7;
+  --pub-medulla-d: #d6d0ee;
+  --pub-indigo-dim1: #d9dcf5;
+  --pub-indigo-dim2: #c5c9ee;
+  --pub-indigo-fill: rgba(99,102,241,0.10);
+  --pub-capsule: #4148c0;
+  --pubEixos-ax-000: #ffffff;
+
+  --pub-grow-dim: rgba(34,197,94,0.10);
+
+  --vel07-ax-04101c: #0f2438;
+}
+
+/* ===== Wrapper de SVG inline (piso e herói): frame de luxo da casa ===== */
+.figure-svg__embed { margin: var(--sp-6) 0; overflow: hidden; }
+.figure-svg__embed .figure-svg__frame { position: relative; overflow: hidden; border-radius: var(--r-md); }
+.figure-svg__embed svg { display: block; width: 100%; height: auto; }
+.figure-svg__embed figcaption { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.figure-svg__embed figcaption strong { color: var(--ink-100); }
+.figure-svg__embed .figure-svg__hint {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--teal-60); margin-top: var(--sp-2);
+}
+
+/* herói self-contained: o stage só dá o palco; a interação vive no <script> do SVG */
+.hero-stage { position: relative; width: 100%; }
+.hero-stage svg { display: block; width: 100%; height: auto; }
+
+/* ===== nota-banca — blindagem discreta: secundária, recuada, escudo ===== */
+.nota-banca {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--info-blue-dim);
+  border-left: 2px solid var(--info-blue);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-banca__shield { flex-shrink: 0; width: 18px; height: 18px; color: var(--info-blue); margin-top: 2px; }
+.nota-banca__body { flex: 1; }
+.nota-banca__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--info-blue); margin-right: var(--sp-2); }
+.nota-banca p { margin: 0; font-size: var(--fs-sm); }
+.nota-banca strong { color: var(--ink-90); }
+
+/* ===== nota-valor — número de prova: ícone "+", acento da casa ===== */
+.nota-valor {
+  display: flex; gap: var(--sp-3);
+  margin: var(--sp-4) 0 var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--teal-05);
+  border-left: 2px solid var(--teal-50);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-70);
+}
+.nota-valor__plus { flex-shrink: 0; width: 18px; height: 18px; color: var(--teal-60); margin-top: 2px; }
+.nota-valor__body { flex: 1; }
+.nota-valor__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-60); margin-right: var(--sp-2); }
+.nota-valor p { margin: 0; font-size: var(--fs-sm); }
+.nota-valor strong { color: var(--ink-90); }
+
+/* ===== identidade por página: ponto do page-tag conforme o eixo da aula =====
+   hhg = sky (gonadal), hha = índigo (adrenal), grow = verde (crescimento),
+   trap = âmbar (pegadinha/diferencial), caso = sky, meta = teal. */
+.page-tag--hhg .page-tag__dot     { background: var(--teal-60); box-shadow: 0 0 8px var(--teal-60); }
+.page-tag--hha .page-tag__dot     { background: var(--indigo-50); box-shadow: 0 0 8px var(--indigo-50); }
+.page-tag--grow .page-tag__dot    { background: var(--ok-green); box-shadow: 0 0 8px var(--ok-green); }
+.page-tag--trap .page-tag__dot    { background: var(--warn-amber); box-shadow: 0 0 8px var(--warn-amber); }
+.page-tag--caso .page-tag__dot    { background: var(--teal-60); box-shadow: 0 0 8px var(--teal-60); }
+.page-tag--meta .page-tag__dot    { background: var(--teal-60); box-shadow: 0 0 8px var(--teal-60); }
+
+/* ===== lista de achados (clínica em bullets limpos) ===== */
+.find-list { list-style: none; margin: var(--sp-4) 0; padding: 0; display: grid; gap: var(--sp-2); }
+.find-list li {
+  position: relative; padding: var(--sp-3) var(--sp-4) var(--sp-3) var(--sp-6);
+  background: var(--bg-glass); border: 1px solid var(--border-soft);
+  border-radius: var(--r-sm); font-size: var(--fs-sm); color: var(--ink-90); line-height: var(--lh-snug);
+}
+.find-list li::before {
+  content: ""; position: absolute; left: var(--sp-4); top: 1.15em;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--teal-60);
+}
+
+/* ===== tabelas responsivas (.cmp) — grid no mobile, sem scroll horizontal ===== */
+.cmp { width: 100%; border-collapse: collapse; margin: var(--sp-5) 0; font-size: var(--fs-sm); background: var(--bg-elevated); border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--border-soft); }
+.cmp caption { caption-side: top; text-align: left; padding: var(--sp-3) var(--sp-4); background: var(--bg-elevated-2); font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-90); border-bottom: 1px solid var(--border-soft); }
+.cmp th, .cmp td { padding: var(--sp-3) var(--sp-4); text-align: left; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+.cmp thead th { background: var(--bg-elevated-2); color: var(--teal-60); font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; }
+.cmp tbody th { font-family: var(--font-mono); color: var(--teal-60); white-space: nowrap; }
+.cmp tbody tr:last-child td, .cmp tbody tr:last-child th { border-bottom: 0; }
+.cmp strong { color: var(--ink-100); }
+.cmp .row-canon { background: var(--hl-good-bg, rgba(95,223,160,0.10)); }
+.cmp .cell-good { color: var(--ok-green); font-weight: 600; }
+.cmp .cell-warn { color: var(--warn-amber); font-weight: 600; }
+.cmp .cell-bad  { color: var(--err-red); font-weight: 600; }
+.cmp .cell-hha  { color: var(--indigo-50); font-weight: 600; }
+
+@media (max-width: 640px) {
+  .cmp, .cmp thead, .cmp tbody, .cmp tr, .cmp th, .cmp td { display: block; width: 100%; }
+  .cmp thead { position: absolute; clip: rect(0 0 0 0); height: 1px; width: 1px; overflow: hidden; }
+  .cmp tbody tr { border: 1px solid var(--border-soft); border-radius: var(--r-sm); margin-bottom: var(--sp-3); padding: var(--sp-2) var(--sp-3); background: var(--bg-elevated-2); }
+  .cmp tbody td, .cmp tbody th { border-bottom: 1px solid var(--border-soft); padding: var(--sp-2) 0 var(--sp-2) 42%; position: relative; text-align: left; white-space: normal; }
+  .cmp tbody tr td:last-child, .cmp tbody tr th:last-child { border-bottom: 0; }
+  .cmp tbody td::before, .cmp tbody th::before {
+    content: attr(data-label); position: absolute; left: 0; top: var(--sp-2); width: 38%;
+    font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal-60);
+  }
+}
+
+/* ===== recall metacognitivo — perguntas de auto-teste, sem gabarito ===== */
+.recall { margin: var(--sp-5) 0; padding: var(--sp-5); border: 1px dashed var(--border-mid); border-radius: var(--r-md); background: var(--bg-glass); }
+.recall__label { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--warn-amber); margin: 0 0 var(--sp-3); }
+.recall ol { margin: 0; padding-left: var(--sp-5); display: grid; gap: var(--sp-3); }
+.recall li { font-family: var(--font-serif); font-style: italic; color: var(--ink-90); line-height: var(--lh-snug); }
+
+/* ===== caso-síntese (P13) — pacientes em cards ===== */
+.synth-cases { display: grid; gap: var(--sp-3); margin: var(--sp-5) 0; }
+.synth-case { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: start; padding: var(--sp-4); background: var(--bg-elevated); border: 1px solid var(--border-soft); border-left: 3px solid var(--teal-60); border-radius: var(--r-md); }
+.synth-case__n { font-family: var(--font-mono); font-weight: 700; color: var(--teal-60); font-size: var(--fs-lg); }
+.synth-case__body { font-size: var(--fs-sm); color: var(--ink-90); line-height: var(--lh-snug); }
+.synth-case__body strong { color: var(--ink-100); }
+
+/* =========================================================================
+   CONTENÇÃO DE LUXO (padrão-ouro aula-04 #/p5) — prosa corrida vive dentro de
+   uma MEMBRANA de vidro fosco (flush à coluna de conteúdo), tópico a tópico
+   separado por divisor tracejado teal. A medida de leitura (--measure) do
+   chassi é preservada DENTRO da membrana; só a contenção e a simetria flush
+   mudam. Disciplina de cor: teal = estrutura/divisor.
+   ========================================================================= */
+.lesson-card {
+  position: relative;
+  background: var(--bg-glass);
+  backdrop-filter: saturate(130%) blur(12px);
+  -webkit-backdrop-filter: saturate(130%) blur(12px);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.05);
+  padding: var(--sp-6) var(--sp-6) var(--sp-5);
+  margin: var(--sp-5) 0;
+}
+.lesson-card > .prose { margin: 0; }
+.lesson-card > .prose > :first-child { margin-top: 0; }
+.lesson-card > .prose > :last-child { margin-bottom: 0; }
+
+/* CLB — texto até a borda do card (preencher > measure rígido, repertório §3).
+   A prosa corrida do chassi capa em --measure (74ch) e alinha à esquerda; DENTRO
+   da membrana lesson-card (que ocupa a coluna inteira) isso deixava um buraco
+   assimétrico à direita no desktop. Aqui a prosa preenche a largura do card e
+   justifica até as DUAS margens internas — simetria flush dentro do card. Override
+   escopado a esta aula (não toca components.css). Mobile já cai pra left no chassi. */
+.lesson-card .prose > p,
+.lesson-card .prose > ul,
+.lesson-card .prose > ol,
+.lesson-card .prose > h3.topic-h { max-width: none; }
+.lesson-card .prose > p:not([class]) { text-align: justify; }
+.lesson-card .prose > h3.topic-h {
+  position: relative;
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px dashed var(--teal-40);
+}
+.lesson-card .prose > h3.topic-h:first-child {
+  margin-top: 0; padding-top: 0; border-top: 0;
+}
+:root[data-theme="light"] .lesson-card .prose > h3.topic-h { border-top-color: rgba(35,137,209,0.30); }
+:root[data-theme="light"] .lesson-card {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.6);
+  border-color: var(--border-mid);
+}
+@media (max-width: 640px) {
+  .lesson-card { padding: var(--sp-5) var(--sp-4); }
+}
+
+/* =========================================================================
+   COMPONENTES DO EXECUTOR (repertório §2.9) — card-cluster, fork-flow e
+   mirror-flow construídos em HTML/CSS/JS, NÃO consumidos como SVG-ilustrador.
+   São organização de informação em caixas/texto/interação ("montado", não
+   "desenhado") → domínio do Executor. Identidade da casa: tokens da aula,
+   efeitos sutis (o fundo já tem grid/orbs). Tudo flush à coluna (CLB).
+   ========================================================================= */
+
+/* --- card-cluster: elenco Blair/Serena/Dan (substitui S-elenco) --- */
+.cast { margin: var(--sp-6) 0; }
+.cast__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
+.cast__card {
+  position: relative; display: flex; flex-direction: column; gap: var(--sp-2);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  background: var(--bg-elevated); border: 1px solid var(--border-soft);
+  border-top: 3px solid var(--cast-c, var(--teal-60));
+  border-radius: var(--r-md);
+  transition: transform var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid) var(--ease-out), border-color var(--dur-mid) var(--ease-out);
+  cursor: default;
+}
+.cast__card:hover, .cast__card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.28), 0 0 0 1px var(--cast-c, var(--teal-60));
+}
+.cast__card--c1 { --cast-c: var(--pubElenco-c1); }
+.cast__card--c2 { --cast-c: var(--pubElenco-c2); }
+.cast__card--c3 { --cast-c: var(--pubElenco-c3); opacity: 0.62; }
+.cast__card--c3:hover, .cast__card--c3:focus-within { opacity: 1; }
+.cast__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; font-family: var(--font-mono); font-weight: 700;
+  color: var(--bg-base); background: var(--cast-c, var(--teal-60));
+}
+.cast__name { font-weight: 700; color: var(--ink-100); font-size: var(--fs-md); }
+.cast__age { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-60); margin-left: var(--sp-2); }
+.cast__queixa { font-size: var(--fs-sm); color: var(--ink-80); line-height: var(--lh-snug); margin: 0; }
+.cast__card--c3 .cast__queixa { font-style: italic; }
+.cast__tag { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--cast-c, var(--teal-60)); }
+.cast__cap { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.cast__cap strong { color: var(--ink-100); }
+@media (max-width: 640px) { .cast__grid { grid-template-columns: 1fr; } }
+
+/* --- fork-flow: bifurcação da pergunta (substitui S-bifurcacao) --- */
+.fork { margin: var(--sp-6) 0; }
+.fork__diagram { display: grid; gap: var(--sp-3); justify-items: center; }
+.fork__node {
+  padding: var(--sp-3) var(--sp-5); border-radius: var(--r-md);
+  background: var(--teal-05); border: 1px solid var(--teal-30);
+  font-weight: 700; color: var(--ink-100); text-align: center;
+}
+.fork__stem { width: 2px; height: var(--sp-5); background: var(--border-mid); }
+.fork__branches { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); width: 100%; }
+.fork__branch {
+  display: grid; gap: var(--sp-2); justify-items: center; padding: var(--sp-4);
+  border-radius: var(--r-md); border: 1px dashed var(--border-mid); background: var(--bg-glass);
+}
+.fork__branch-label { font-weight: 600; color: var(--ink-90); text-align: center; }
+.fork__q { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-2xl); color: var(--warn-amber); line-height: 1; }
+.fork__cap { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.fork__cap strong { color: var(--ink-100); }
+@media (max-width: 480px) { .fork__branches { grid-template-columns: 1fr; } }
+
+/* --- mirror-flow: dois motores espelhados (substitui S-eixos) --- */
+.motors { margin: var(--sp-6) 0; }
+.motors__pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+.motors__col {
+  display: grid; gap: var(--sp-3); padding: var(--sp-5) var(--sp-4);
+  border-radius: var(--r-md); background: var(--bg-elevated); border: 1px solid var(--border-soft);
+  border-top: 3px solid var(--motor-c, var(--teal-60));
+}
+.motors__col--hhg { --motor-c: var(--teal-60); }
+.motors__col--hha { --motor-c: var(--indigo-50); }
+.motors__title { font-weight: 700; color: var(--ink-100); display: flex; align-items: center; gap: var(--sp-2); }
+.motors__title small { font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 400; color: var(--motor-c); text-transform: uppercase; letter-spacing: 0.06em; }
+.motors__chain { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-1); }
+.motors__chain li { font-size: var(--fs-sm); color: var(--ink-90); display: flex; gap: var(--sp-2); align-items: baseline; }
+.motors__chain li::before { content: "↓"; color: var(--motor-c); font-weight: 700; }
+.motors__chain li:first-child::before { content: "•"; }
+.motors__col[data-start="true"] { box-shadow: 0 0 0 1px var(--teal-40), 0 8px 24px rgba(0,0,0,0.22); }
+.motors__start-flag { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal-60); }
+.motors__converge {
+  margin-top: var(--sp-3); text-align: center; padding: var(--sp-3);
+  border-radius: var(--r-md); background: var(--teal-05); border: 1px solid var(--teal-20);
+  font-weight: 700; color: var(--ink-100); letter-spacing: 0.04em;
+}
+.motors__converge span { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--teal-60); display: block; margin-bottom: var(--sp-1); }
+.motors__cap { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.motors__cap strong { color: var(--ink-100); }
+@media (max-width: 560px) { .motors__pair { grid-template-columns: 1fr; } }
+
+/* ===== HEADER FLUTUANTE — alvo de toque a 320px (igual aula-06) ===== */
+.site-header__row .icon-btn { flex-shrink: 0; }
+@media (max-width: 400px) {
+  .site-header__progress { display: none; }
+  .site-header__subtitle { display: none; }
+  .site-header__row { gap: var(--sp-3); }
+}
+
+/* CONTRASTE DOS TERMOS-CHAVE no tema claro — .term sobre fundo claro precisa ler
+   limpo (keywords da prova). Escurece o teal SÓ no tema claro desta aula. */
+:root[data-theme="light"] .prose .term { color: #1a6ca0; }
+
+/* QUIZ — quebra de texto a 320px (CLB anti-overflow, escopado a esta aula).
+   .quiz__alt é flex (letra + texto); o span de texto, sem min-width:0, não
+   encolhe abaixo do conteúdo e, na alternativa mais longa da P3, empurra a
+   coluna além de 320px (scrollWidth fantasma). min-width:0 + overflow-wrap no
+   filho de texto devolve a quebra normal de bloco. Não toca components.css
+   (vale p/ todas as aulas); guarda de apresentação só desta aula. */
+.quiz__alt { min-width: 0; }
+.quiz__alt > span:last-child { min-width: 0; overflow-wrap: anywhere; }

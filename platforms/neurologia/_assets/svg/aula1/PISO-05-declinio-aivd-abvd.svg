@@ -1,0 +1,778 @@
+<svg id="bauer-piso05-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 820" width="100%" height="100%">
+  <style>
+    #bauer-piso05-svg {
+      --bg-1: #121214;
+      --bg-2: #1a1a1e;
+      --ink-100: #f1f1f3;
+      --ink-70: #c4c4cc;
+      --ink-50: #8d8d99;
+      --ink-20: #29292e;
+      --accent-cyan: #00d4ff;
+      --kw-green: #04d361;
+      --kw-amber: #ffb800;
+      --kw-red: #ff334b;
+      
+      --bg: var(--bg-1);
+      --card-bg: var(--bg-2);
+      --text-primary: var(--ink-100);
+      --text-secondary: var(--ink-70);
+      --text-muted: var(--ink-50);
+      --stroke: var(--ink-20);
+      --c-cyan: var(--accent-cyan);
+      --c-green: var(--kw-green);
+      --c-amber: var(--kw-amber);
+      --c-red: var(--kw-red);
+    }
+
+    @media (prefers-color-scheme: light) {
+      #bauer-piso05-svg {
+        --bg-1: #ffffff;
+        --bg-2: #f5f5f7;
+        --ink-100: #1c1c1e;
+        --ink-70: #48484a;
+        --ink-50: #8e8e93;
+        --ink-20: #e5e5ea;
+        --accent-cyan: #007aff;
+        --kw-green: #34c759;
+        --kw-amber: #ff9500;
+        --kw-red: #ff3b30;
+      }
+    }
+
+    #bauer-piso05-svg .bp05-step-group {
+      outline: none;
+      cursor: pointer;
+    }
+
+    #bauer-piso05-svg .bp05-step-group:hover .bp05-step-card {
+      fill: rgba(0, 122, 255, 0.08);
+      stroke: var(--c-cyan) !important;
+      stroke-width: 4px;
+    }
+
+    #bauer-piso05-svg .bp05-btn {
+      transition: opacity 0.2s;
+    }
+
+    #bauer-piso05-svg .bp05-btn:hover {
+      opacity: 0.8;
+    }
+
+    #bauer-piso05-svg .bp05-tick {
+      transition: fill 0.3s;
+    }
+  </style>
+
+  <defs>
+    <!-- Slider Track Gradient: Green to Amber to Red -->
+    <linearGradient id="bp05-slider-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--c-green)"/>
+      <stop offset="45%" stop-color="var(--c-amber)"/>
+      <stop offset="100%" stop-color="var(--c-red)"/>
+    </linearGradient>
+
+    <!-- Marker for Y-axis arrow -->
+    <marker id="bp05-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="var(--bg)" rx="16"/>
+
+  <!-- Header Section -->
+  <g id="bp05-header" transform="translate(400, 45)">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="var(--text-primary)" text-anchor="middle" letter-spacing="0.5">GRADIENTE DE PERDA FUNCIONAL NO IDOSO</text>
+    <text x="0" y="22" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="var(--c-cyan)" text-anchor="middle" letter-spacing="1">AIVD (LAWTON) DESPENCAM ANTES DAS ABVD (KATZ)</text>
+  </g>
+
+  <!-- Simulation Slider -->
+  <g id="bp05-slider-group">
+    <!-- Slider Label -->
+    <text id="bp05-slider-status" x="400" y="92" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="var(--text-primary)" text-anchor="middle">Simulação: Envelhecimento Saudável</text>
+
+    <!-- Track Background -->
+    <rect x="160" y="111" width="480" height="8" rx="4" fill="var(--stroke)"/>
+    
+    <!-- Active Track -->
+    <rect id="bp05-slider-active-track" x="170" y="111" width="0" height="8" rx="4" fill="url(#bp05-slider-grad)"/>
+    
+    <!-- Clickable hitbox for the track -->
+    <rect id="bp05-slider-hitbox" x="150" y="90" width="500" height="50" fill="transparent" style="cursor: pointer;"/>
+    
+    <!-- Ticks -->
+    <circle class="bp05-tick" cx="170" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    <circle class="bp05-tick" cx="227.5" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    <circle class="bp05-tick" cx="285" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    <circle class="bp05-tick" cx="342.5" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    <circle class="bp05-tick" cx="400" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    <circle class="bp05-tick" cx="457.5" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    <circle class="bp05-tick" cx="515" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    <circle class="bp05-tick" cx="572.5" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    <circle class="bp05-tick" cx="630" cy="115" r="4" fill="var(--c-green)" style="pointer-events: none;"/>
+    
+    <!-- Tick Labels -->
+    <text x="170" y="137" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="var(--text-muted)" text-anchor="middle">Saudável</text>
+    <text x="300" y="137" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="var(--c-amber)" text-anchor="middle">Queda das AIVD</text>
+    <text x="500" y="137" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="var(--c-red)" text-anchor="middle">Queda das ABVD</text>
+    <text x="630" y="137" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="var(--text-muted)" text-anchor="middle">Dependência</text>
+
+    <!-- Handle -->
+    <circle id="bp05-slider-handle" cx="170" cy="115" r="10" fill="var(--c-cyan)" stroke="var(--bg)" stroke-width="2.5" role="slider" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8" aria-label="Linha do tempo de declínio funcional" tabindex="0" style="cursor: grab; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.25));"/>
+  </g>
+
+  <!-- Interactive Graphic Area -->
+  <g id="bp05-graphic-area" transform="translate(0, 10)">
+    <!-- AIVD Region Container -->
+    <g id="bp05-region-aivd">
+      <rect x="40" y="170" width="350" height="235" rx="12" fill="rgba(0, 212, 255, 0.03)" stroke="var(--stroke)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <!-- Header Bracket -->
+      <path d="M 50,195 L 50,185 L 380,185 L 380,195" fill="none" stroke="var(--c-cyan)" stroke-width="1.5"/>
+      <text x="215" y="202" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="var(--c-cyan)" text-anchor="middle" letter-spacing="0.5">ATIVIDADES INSTRUMENTAIS (AIVD) — LAWTON-BRODY</text>
+    </g>
+
+    <!-- ABVD Region Container -->
+    <g id="bp05-region-abvd">
+      <rect x="320" y="415" width="340" height="235" rx="12" fill="rgba(4, 211, 97, 0.03)" stroke="var(--stroke)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <!-- Footer Bracket -->
+      <path d="M 330,640 L 330,650 L 650,650 L 650,640" fill="none" stroke="var(--c-green)" stroke-width="1.5"/>
+      <text x="490" y="662" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" fill="var(--c-green)" text-anchor="middle" letter-spacing="0.5">ATIVIDADES BÁSICAS (ABVD) — ESCALA DE KATZ</text>
+    </g>
+
+    <!-- Staircase Base Line (in background) -->
+    <path id="bp05-stairs-line" d="M 50,260 L 120,260 L 120,315 L 190,315 L 190,370 L 260,370 L 260,425 L 330,425 L 330,480 L 400,480 L 400,535 L 470,535 L 470,590 L 540,590 L 540,645 L 650,645" fill="none" stroke="var(--stroke)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+
+    <!-- Threshold Line of Decline (Slides horizontally) -->
+    <line id="bp05-decline-line" x1="40" y1="180" x2="40" y2="630" stroke="var(--c-green)" stroke-width="2" stroke-dasharray="4 4" opacity="0.8" style="transition: all 0.3s ease-in-out;"/>
+
+    <!-- Step 1: Dinheiro -->
+    <g class="bp05-step-group" id="bp05-step-1" transform="translate(50, 210)" role="button" aria-label="AIVD 1: Gestão Financeira" tabindex="0">
+      <rect class="bp05-step-card" id="bp05-step-card-1" x="0" y="0" width="110" height="50" rx="8" fill="var(--card-bg)" stroke="var(--c-green)" stroke-width="3" style="transition: all 0.3s;"/>
+      <text class="bp05-step-num" id="bp05-step-num-1" x="10" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="var(--text-muted)">AIVD 1</text>
+      <text class="bp05-step-name" id="bp05-step-name-1" x="10" y="36" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)">Dinheiro</text>
+      <g class="bp05-step-icon" id="bp05-step-icon-1" stroke="var(--text-secondary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;">
+        <circle cx="85" cy="25" r="7"/>
+        <path d="M85,21 L85,29 M82,23 L88,23"/>
+      </g>
+    </g>
+
+    <!-- Step 2: Compras -->
+    <g class="bp05-step-group" id="bp05-step-2" transform="translate(120, 265)" role="button" aria-label="AIVD 2: Fazer Compras" tabindex="0">
+      <rect class="bp05-step-card" id="bp05-step-card-2" x="0" y="0" width="110" height="50" rx="8" fill="var(--card-bg)" stroke="var(--c-green)" stroke-width="3" style="transition: all 0.3s;"/>
+      <text class="bp05-step-num" id="bp05-step-num-2" x="10" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="var(--text-muted)">AIVD 2</text>
+      <text class="bp05-step-name" id="bp05-step-name-2" x="10" y="36" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)">Compras</text>
+      <g class="bp05-step-icon" id="bp05-step-icon-2" stroke="var(--text-secondary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;">
+        <path d="M78,21 L92,21 L94,33 A2,2 0 0,1 92,35 L78,35 A2,2 0 0,1 76,33 Z"/>
+        <path d="M81,21 A4,4 0 0,1 89,21"/>
+      </g>
+    </g>
+
+    <!-- Step 3: Cozinhar -->
+    <g class="bp05-step-group" id="bp05-step-3" transform="translate(190, 320)" role="button" aria-label="AIVD 3: Preparar Refeições" tabindex="0">
+      <rect class="bp05-step-card" id="bp05-step-card-3" x="0" y="0" width="110" height="50" rx="8" fill="var(--card-bg)" stroke="var(--c-green)" stroke-width="3" style="transition: all 0.3s;"/>
+      <text class="bp05-step-num" id="bp05-step-num-3" x="10" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="var(--text-muted)">AIVD 3</text>
+      <text class="bp05-step-name" id="bp05-step-name-3" x="10" y="36" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)">Cozinhar</text>
+      <g class="bp05-step-icon" id="bp05-step-icon-3" stroke="var(--text-secondary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;">
+        <path d="M76,27 L88,27 A3,3 0 0,1 91,30 L91,32 A3,3 0 0,1 88,35 L76,35 A3,3 0 0,1 73,32 L73,30 A3,3 0 0,1 76,27 Z"/>
+        <path d="M91,29 L97,29"/>
+      </g>
+    </g>
+
+    <!-- Step 4: Telefone -->
+    <g class="bp05-step-group" id="bp05-step-4" transform="translate(260, 375)" role="button" aria-label="AIVD 4: Usar o Telefone" tabindex="0">
+      <rect class="bp05-step-card" id="bp05-step-card-4" x="0" y="0" width="110" height="50" rx="8" fill="var(--card-bg)" stroke="var(--c-green)" stroke-width="3" style="transition: all 0.3s;"/>
+      <text class="bp05-step-num" id="bp05-step-num-4" x="10" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="var(--text-muted)">AIVD 4</text>
+      <text class="bp05-step-name" id="bp05-step-name-4" x="10" y="36" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)">Telefone</text>
+      <g class="bp05-step-icon" id="bp05-step-icon-4" stroke="var(--text-secondary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;">
+        <rect x="79" y="17" width="12" height="20" rx="2"/>
+        <line x1="79" y1="31" x2="91" y2="31"/>
+      </g>
+    </g>
+
+    <!-- Step 5: Vestir-se -->
+    <g class="bp05-step-group" id="bp05-step-5" transform="translate(330, 430)" role="button" aria-label="ABVD 1: Vestir-se" tabindex="0">
+      <rect class="bp05-step-card" id="bp05-step-card-5" x="0" y="0" width="110" height="50" rx="8" fill="var(--card-bg)" stroke="var(--c-green)" stroke-width="3" style="transition: all 0.3s;"/>
+      <text class="bp05-step-num" id="bp05-step-num-5" x="10" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="var(--text-muted)">ABVD 1</text>
+      <text class="bp05-step-name" id="bp05-step-name-5" x="10" y="36" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)">Vestir-se</text>
+      <g class="bp05-step-icon" id="bp05-step-icon-5" stroke="var(--text-secondary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;">
+        <path d="M75,20 L80,17 L85,20 L90,17 L95,20 L95,25 L91,25 L91,33 L79,33 L79,25 L75,25 Z"/>
+      </g>
+    </g>
+
+    <!-- Step 6: Banhar-se -->
+    <g class="bp05-step-group" id="bp05-step-6" transform="translate(400, 485)" role="button" aria-label="ABVD 2: Banhar-se" tabindex="0">
+      <rect class="bp05-step-card" id="bp05-step-card-6" x="0" y="0" width="110" height="50" rx="8" fill="var(--card-bg)" stroke="var(--c-green)" stroke-width="3" style="transition: all 0.3s;"/>
+      <text class="bp05-step-num" id="bp05-step-num-6" x="10" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="var(--text-muted)">ABVD 2</text>
+      <text class="bp05-step-name" id="bp05-step-name-6" x="10" y="36" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)">Banhar-se</text>
+      <g class="bp05-step-icon" id="bp05-step-icon-6" stroke="var(--text-secondary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;">
+        <path d="M75,33 L75,21 A4,4 0 0,1 79,17 L87,17 M87,17 L90,21 M85,21 L93,21"/>
+      </g>
+    </g>
+
+    <!-- Step 7: Continência -->
+    <g class="bp05-step-group" id="bp05-step-7" transform="translate(470, 540)" role="button" aria-label="ABVD 3: Continência" tabindex="0">
+      <rect class="bp05-step-card" id="bp05-step-card-7" x="0" y="0" width="110" height="50" rx="8" fill="var(--card-bg)" stroke="var(--c-green)" stroke-width="3" style="transition: all 0.3s;"/>
+      <text class="bp05-step-num" id="bp05-step-num-7" x="10" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="var(--text-muted)">ABVD 3</text>
+      <text class="bp05-step-name" id="bp05-step-name-7" x="10" y="36" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)">Continência</text>
+      <g class="bp05-step-icon" id="bp05-step-icon-7" stroke="var(--text-secondary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;">
+        <path d="M85,17 C85,17 91,23 91,27 A6,6 0 0,1 79,27 C79,23 85,17 85,17 Z"/>
+      </g>
+    </g>
+
+    <!-- Step 8: Alimentar-se -->
+    <g class="bp05-step-group" id="bp05-step-8" transform="translate(540, 595)" role="button" aria-label="ABVD 4: Alimentar-se" tabindex="0">
+      <rect class="bp05-step-card" id="bp05-step-card-8" x="0" y="0" width="110" height="50" rx="8" fill="var(--card-bg)" stroke="var(--c-green)" stroke-width="3" style="transition: all 0.3s;"/>
+      <text class="bp05-step-num" id="bp05-step-num-8" x="10" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="var(--text-muted)">ABVD 4</text>
+      <text class="bp05-step-name" id="bp05-step-name-8" x="10" y="36" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)">Alimentar</text>
+      <g class="bp05-step-icon" id="bp05-step-icon-8" stroke="var(--text-secondary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;">
+        <path d="M76,17 L76,23 C76,25 78,27 80,27 L80,33"/>
+        <path d="M73,17 L73,21 M81,17 L81,21 M77,17 L77,21"/>
+        <path d="M91,17 C88,17 87,20 87,23 C87,26 88,27 91,27 L91,33"/>
+      </g>
+    </g>
+
+    <!-- Reading/Interpretation Panel (Top Right) -->
+    <g id="bp05-panel" transform="translate(450, 170)">
+      <!-- Panel Border & Background -->
+      <rect id="bp05-panel-bg" x="0" y="0" width="310" height="230" rx="12" fill="var(--card-bg)" stroke="var(--stroke)" stroke-width="2" style="transition: stroke 0.3s;"/>
+      
+      <!-- Panel Title -->
+      <text id="bp05-panel-title" x="20" y="32" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="var(--text-primary)">Envelhecimento Saudável</text>
+      
+      <!-- Panel Subtitle -->
+      <text id="bp05-panel-scale" x="20" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="var(--c-cyan)">Estágio 0/8 • Caso Clínico</text>
+      
+      <!-- Divider -->
+      <line x1="20" y1="65" x2="290" y2="65" stroke="var(--stroke)" stroke-width="1"/>
+      
+      <!-- Scores Area -->
+      <g id="bp05-panel-scores">
+        <!-- Lawton Score Badge -->
+        <rect id="bp05-badge-lawton-bg" x="20" y="77" width="125" height="24" rx="4" fill="rgba(52, 199, 89, 0.1)"/>
+        <text id="bp05-badge-lawton-lbl" x="28" y="93" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--c-green)">Lawton (AIVD): 8/8</text>
+        
+        <!-- Katz Score Badge -->
+        <rect id="bp05-badge-katz-bg" x="155" y="77" width="115" height="24" rx="4" fill="rgba(52, 199, 89, 0.1)"/>
+        <text id="bp05-badge-katz-lbl" x="163" y="93" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="var(--c-green)">Katz (ABVD): 6/6</text>
+      </g>
+      
+      <!-- Content Lines -->
+      <text id="bp05-panel-line1" x="20" y="125" font-family="system-ui, sans-serif" font-size="11" fill="var(--text-secondary)">Dona Maria, 76 anos: Vive totalmente só,</text>
+      <text id="bp05-panel-line2" x="20" y="143" font-family="system-ui, sans-serif" font-size="11" fill="var(--text-secondary)">cozinha, faz compras no mercado municipal,</text>
+      <text id="bp05-panel-line3" x="20" y="161" font-family="system-ui, sans-serif" font-size="11" fill="var(--text-secondary)">gerencia sua aposentadoria e usa o</text>
+      <text id="bp05-panel-line4" x="20" y="179" font-family="system-ui, sans-serif" font-size="11" fill="var(--text-secondary)">WhatsApp diariamente para falar com a família.</text>
+      
+      <!-- Recommendation -->
+      <text id="bp05-panel-rec" x="20" y="208" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--c-green)">Conduta: Estimular estilo de vida ativo.</text>
+
+      <!-- Back to Case Button -->
+      <g id="bp05-btn-back" class="bp05-btn" style="cursor: pointer; display: none;">
+        <rect x="180" y="193" width="110" height="24" rx="4" fill="var(--c-cyan)"/>
+        <text x="235" y="209" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Voltar ao Caso</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Interpretation Legend (Bottom) -->
+  <g id="bp05-legend-container" transform="translate(400, 755)">
+    <rect x="-360" y="-35" width="720" height="68" rx="8" fill="var(--card-bg)" stroke="var(--stroke)" stroke-width="1.5"/>
+    <text x="0" y="-18" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="var(--text-primary)" text-anchor="middle">LEGENDA DE INTERPRETAÇÃO CLÍNICA</text>
+    <text x="0" y="2" font-family="system-ui, sans-serif" font-size="11" fill="var(--text-secondary)" text-anchor="middle">As atividades instrumentais (Lawton) são as primeiras a cair porque são as mais complexas; o autocuidado (Katz) resiste mais.</text>
+    <text x="0" y="20" font-family="system-ui, sans-serif" font-size="11" fill="var(--text-secondary)" text-anchor="middle">A perda funcional segue uma ordem hierárquica clara que permite estadiar o grau de declínio funcional do idoso.</text>
+  </g>
+
+  <!-- Interaction Logic Script -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      const tickX = [170, 227.5, 285, 342.5, 400, 457.5, 515, 572.5, 630];
+      const states = [
+        {
+          title: "Envelhecimento Saudável",
+          scale: "Estágio 0/8 • Caso Clínico",
+          lawton: "8/8",
+          katz: "6/6",
+          lColor: "var(--c-green)",
+          kColor: "var(--c-green)",
+          lBg: "rgba(52, 199, 89, 0.1)",
+          kBg: "rgba(52, 199, 89, 0.1)",
+          lines: [
+            "Dona Maria, 76 anos: Vive totalmente só,",
+            "cozinha, faz compras no mercado municipal,",
+            "gerencia sua aposentadoria e usa o",
+            "WhatsApp diariamente para falar com a família."
+          ],
+          rec: "Conduta: Estimular estilo de vida ativo e preventivo."
+        },
+        {
+          title: "Perda Funcional Inicial (AIVD 1)",
+          scale: "Estágio 1/8 • Caso Clínico",
+          lawton: "6/8",
+          katz: "6/6",
+          lColor: "var(--c-amber)",
+          kColor: "var(--c-green)",
+          lBg: "rgba(255, 149, 0, 0.1)",
+          kBg: "rgba(52, 199, 89, 0.1)",
+          lines: [
+            "Sr. José, 80 anos: Esqueceu de pagar a conta",
+            "de luz duas vezes e errou o troco na padaria.",
+            "A filha assumiu a administração das contas.",
+            "As outras atividades instrumentais seguem preservadas."
+          ],
+          rec: "Conduta: Investigar déficit cognitivo leve (DCL)."
+        },
+        {
+          title: "Declínio Instrumental (AIVD 2)",
+          scale: "Estágio 2/8 • Caso Clínico",
+          lawton: "4/8",
+          katz: "6/6",
+          lColor: "var(--c-amber)",
+          kColor: "var(--c-green)",
+          lBg: "rgba(255, 149, 0, 0.1)",
+          kBg: "rgba(52, 199, 89, 0.1)",
+          lines: [
+            "Dona Alzira, 82 anos: Fica confusa no mercado",
+            "e não consegue carregar sacolas. Necessita",
+            "de auxílio direto para realizar compras,",
+            "embora realize tarefas menores em casa."
+          ],
+          rec: "Conduta: Reabilitação cognitiva e supervisão."
+        },
+        {
+          title: "Declínio Instrumental (AIVD 3)",
+          scale: "Estágio 3/8 • Caso Clínico",
+          lawton: "2/8",
+          katz: "6/6",
+          lColor: "var(--c-amber)",
+          kColor: "var(--c-green)",
+          lBg: "rgba(255, 149, 0, 0.1)",
+          kBg: "rgba(52, 199, 89, 0.1)",
+          lines: [
+            "Sr. Antônio, 85 anos: Esqueceu a panela no",
+            "fogo, queimando o alimento e gerando risco",
+            "de incêndio. Foi proibido de cozinhar",
+            "pela família. Mantém autocuidado básico."
+          ],
+          rec: "Conduta: Adaptação ambiental para segurança física."
+        },
+        {
+          title: "Perda Total de AIVDs (AIVD 4)",
+          scale: "Estágio 4/8 • Caso Clínico",
+          lawton: "0/8",
+          katz: "6/6",
+          lColor: "var(--c-red)",
+          kColor: "var(--c-green)",
+          lBg: "rgba(255, 59, 48, 0.1)",
+          kBg: "rgba(52, 199, 89, 0.1)",
+          lines: [
+            "Dona Clarice, 88 anos: Perda instrumental",
+            "completa. Não consegue discar ou usar o",
+            "telefone. Dependência total de terceiros para",
+            "todas as atividades de integração social."
+          ],
+          rec: "Conduta: Apoio permanente de cuidador para AIVDs."
+        },
+        {
+          title: "Início da Perda de ABVDs (ABVD 1)",
+          scale: "Estágio 5/8 • Caso Clínico",
+          lawton: "0/8",
+          katz: "5/6",
+          lColor: "var(--c-red)",
+          kColor: "var(--c-red)",
+          lBg: "rgba(255, 59, 48, 0.1)",
+          kBg: "rgba(255, 59, 48, 0.1)",
+          lines: [
+            "Sr. Geraldo, 90 anos: Veste casaco ao avesso",
+            "e erra os botões da camisa. Passou a exigir",
+            "ajuda física direta para se vestir pela manhã.",
+            "Primeiro degrau de autocuidado comprometido."
+          ],
+          rec: "Conduta: Auxílio diário nas ABVDs de vestir."
+        },
+        {
+          title: "Declínio Básico Moderado (ABVD 2)",
+          scale: "Estágio 6/8 • Caso Clínico",
+          lawton: "0/8",
+          katz: "4/6",
+          lColor: "var(--c-red)",
+          kColor: "var(--c-red)",
+          lBg: "rgba(255, 59, 48, 0.1)",
+          kBg: "rgba(255, 59, 48, 0.1)",
+          lines: [
+            "Dona Rita, 92 anos: Apresenta forte",
+            "instabilidade de marcha. Exige ajuda física",
+            "direta para entrar no box, ensaboar-se",
+            "e secar-se com segurança no chuveiro."
+          ],
+          rec: "Conduta: Instalar barras de apoio e supervisão de banho."
+        },
+        {
+          title: "Declínio Básico Avançado (ABVD 3)",
+          scale: "Estágio 7/8 • Caso Clínico",
+          lawton: "0/8",
+          katz: "2/6",
+          lColor: "var(--c-red)",
+          kColor: "var(--c-red)",
+          lBg: "rgba(255, 59, 48, 0.1)",
+          kBg: "rgba(255, 59, 48, 0.1)",
+          lines: [
+            "Sr. Manoel, 94 anos: Apresenta incontinência",
+            "urinária estabelecida com perda do controle",
+            "esfincteriano. Necessita do uso de fraldas",
+            "descartáveis e auxílio constante para higiene."
+          ],
+          rec: "Conduta: Cuidados de pele (prevenção de dermatite)."
+        },
+        {
+          title: "Dependência Funcional Total (ABVD 4)",
+          scale: "Estágio 8/8 • Caso Clínico",
+          lawton: "0/8",
+          katz: "0/6",
+          lColor: "var(--c-red)",
+          kColor: "var(--c-red)",
+          lBg: "rgba(255, 59, 48, 0.1)",
+          kBg: "rgba(255, 59, 48, 0.1)",
+          lines: [
+            "Dona Francisca, 96 anos: Restrita ao leito.",
+            "Não consegue mais levar o alimento à boca.",
+            "Dependência funcional total (Katz 0/6) para",
+            "todas as funções de sobrevivência elementar."
+          ],
+          rec: "Conduta: Nutrição assistida, conforto e paliativos."
+        }
+      ];
+
+      const steps = [
+        {
+          id: 1,
+          title: "Gestão Financeira (AIVD 1)",
+          scale: "Escala de Lawton-Brody",
+          lines: [
+            "Capacidade de cuidar das próprias finanças, pagar",
+            "contas em dia, ir ao banco e gerenciar recursos.",
+            "Requer alto funcionamento executivo, memória,",
+            "atenção e cálculo. Primeira perda na demência."
+          ],
+          rec: "Impacto: Perda precoce da autonomia financeira."
+        },
+        {
+          id: 2,
+          title: "Fazer Compras (AIVD 2)",
+          scale: "Escala de Lawton-Brody",
+          lines: [
+            "Planejar compras, escolher itens adequados,",
+            "realizar o pagamento e transportar sacolas.",
+            "Envolve funções cognitivas complexas,",
+            "mobilidade física e força muscular."
+          ],
+          rec: "Impacto: Necessidade de ajuda externa instrumental."
+        },
+        {
+          id: 3,
+          title: "Preparar Refeições (AIVD 3)",
+          scale: "Escala de Lawton-Brody",
+          lines: [
+            "Planejar, cozinhar e servir uma refeição.",
+            "Exige sequenciamento lógico de passos,",
+            "manuseio seguro de fogo, gás e cortantes.",
+            "Sua perda eleva o risco de acidentes domésticos."
+          ],
+          rec: "Impacto: Risco de queimaduras e incêndios."
+        },
+        {
+          id: 4,
+          title: "Usar o Telefone (AIVD 4)",
+          scale: "Escala de Lawton-Brody",
+          lines: [
+            "Buscar contatos, discar números, receber",
+            "chamadas e manter comunicação compreensível.",
+            "A perda reflete declínio da socialização,",
+            "da destreza manual e da cognição imediata."
+          ],
+          rec: "Impacto: Isolamento social e perda de rede de apoio."
+        },
+        {
+          id: 5,
+          title: "Vestir-se (ABVD 1)",
+          scale: "Escala de Katz",
+          lines: [
+            "Escolher roupas apropriadas, abotoar,",
+            "fechar zíperes, vestir e calçar sapatos.",
+            "Exige planejamento motor (praxia), flexibilidade,",
+            "equilíbrio e coordenação fina e grossa."
+          ],
+          rec: "Impacto: Início da perda de independência básica."
+        },
+        {
+          id: 6,
+          title: "Banhar-se (ABVD 2)",
+          scale: "Escala de Katz",
+          lines: [
+            "Lavar-se por completo, entrar e sair da",
+            "banheira/box de forma segura.",
+            "Exige equilíbrio dinâmico, força e flexibilidade.",
+            "A perda está ligada a quedas no banheiro."
+          ],
+          rec: "Impacto: Necessidade de supervisão ou auxílio físico."
+        },
+        {
+          id: 7,
+          title: "Continência (ABVD 3)",
+          scale: "Escala de Katz",
+          lines: [
+            "Controle esfincteriano voluntário da micção e",
+            "evacuação. A perda impõe o uso de fraldas.",
+            "Indica comprometimento neurológico central",
+            "avançado ou grave limitação de mobilidade."
+          ],
+          rec: "Impacto: Dermatites, infecção urinária e isolamento."
+        },
+        {
+          id: 8,
+          title: "Alimentar-se (ABVD 4)",
+          scale: "Escala de Katz",
+          lines: [
+            "Capacidade de levar o alimento do prato à boca.",
+            "Não envolve preparar a comida, apenas o ato",
+            "físico de comer. É a função biológica mais",
+            "resistente. Sua perda marca a dependência total."
+          ],
+          rec: "Impacto: Estágio terminal de declínio funcional."
+        }
+      ];
+
+      let currentState = 0;
+      let selectedStep = null;
+
+      const svg = document.getElementById('bauer-piso05-svg');
+      const handle = document.getElementById('bp05-slider-handle');
+      const sliderTrack = document.getElementById('bp05-slider-hitbox');
+
+      function getClosestState(x) {
+        let closest = 0;
+        let minDist = Infinity;
+        for (let i = 0; i < tickX.length; i++) {
+          let dist = Math.abs(x - tickX[i]);
+          if (dist < minDist) {
+            minDist = dist;
+            closest = i;
+          }
+        }
+        return closest;
+      }
+
+      function updateToState(state) {
+        currentState = state;
+        selectedStep = null;
+        renderState();
+      }
+
+      function selectStep(id) {
+        selectedStep = id;
+        renderState();
+      }
+
+      function clearStepSelection() {
+        selectedStep = null;
+        renderState();
+      }
+
+      function renderState() {
+        const handleX = tickX[currentState];
+        handle.setAttribute('cx', handleX);
+        
+        const trackWidth = handleX - 170;
+        document.getElementById('bp05-slider-active-track').setAttribute('width', trackWidth);
+        handle.setAttribute('aria-valuenow', currentState);
+        
+        const activeStateData = states[currentState];
+        document.getElementById('bp05-slider-status').textContent = 
+          `Simulação: ${activeStateData.title}`;
+        
+        const declineLine = document.getElementById('bp05-decline-line');
+        const linePositions = [40, 115, 185, 255, 325, 395, 465, 535, 655];
+        const lineX = linePositions[currentState];
+        const lineColor = currentState === 0 ? "var(--c-green)" : (currentState <= 4 ? "var(--c-amber)" : "var(--c-red)");
+        declineLine.setAttribute('x1', lineX);
+        declineLine.setAttribute('x2', lineX);
+        declineLine.setAttribute('stroke', lineColor);
+        
+        for (let id = 1; id <= 8; id++) {
+          const cardEl = document.getElementById(`bp05-step-card-${id}`);
+          const textName = document.getElementById(`bp05-step-name-${id}`);
+          const textNum = document.getElementById(`bp05-step-num-${id}`);
+          const iconGroup = document.getElementById(`bp05-step-icon-${id}`);
+          const groupEl = document.getElementById(`bp05-step-${id}`);
+          
+          const isLost = id <= currentState;
+          const isSelected = id === selectedStep;
+          
+          let strokeColor;
+          let cardBg = "var(--card-bg)";
+          let opacity = "1.0";
+          
+          if (isLost) {
+            strokeColor = id <= 4 ? "var(--c-amber)" : "var(--c-red)";
+            opacity = "0.55";
+          } else {
+            strokeColor = "var(--c-green)";
+            opacity = "1.0";
+          }
+          
+          if (isSelected) {
+            strokeColor = "var(--c-cyan)";
+            cardBg = "rgba(0, 122, 255, 0.08)";
+            opacity = "1.0";
+          }
+          
+          cardEl.setAttribute('stroke', strokeColor);
+          cardEl.setAttribute('fill', cardBg);
+          groupEl.style.opacity = opacity;
+          
+          if (isSelected) {
+            textName.setAttribute('fill', "var(--c-cyan)");
+            textNum.setAttribute('fill', "var(--c-cyan)");
+            if (iconGroup) iconGroup.setAttribute('stroke', "var(--c-cyan)");
+          } else {
+            textName.setAttribute('fill', "var(--text-primary)");
+            textNum.setAttribute('fill', isLost ? strokeColor : "var(--text-muted)");
+            if (iconGroup) iconGroup.setAttribute('stroke', isLost ? strokeColor : "var(--text-secondary)");
+          }
+        }
+        
+        const panelTitle = document.getElementById('bp05-panel-title');
+        const panelScale = document.getElementById('bp05-panel-scale');
+        const panelLine1 = document.getElementById('bp05-panel-line1');
+        const panelLine2 = document.getElementById('bp05-panel-line2');
+        const panelLine3 = document.getElementById('bp05-panel-line3');
+        const panelLine4 = document.getElementById('bp05-panel-line4');
+        const panelRec = document.getElementById('bp05-panel-rec');
+        const panelScores = document.getElementById('bp05-panel-scores');
+        const btnBack = document.getElementById('bp05-btn-back');
+        const panelBg = document.getElementById('bp05-panel-bg');
+        
+        if (selectedStep !== null) {
+          const stepData = steps[selectedStep - 1];
+          panelTitle.textContent = stepData.title;
+          panelScale.textContent = `${stepData.scale} • Detalhe da Tarefa`;
+          panelScale.setAttribute('fill', "var(--c-cyan)");
+          
+          panelLine1.textContent = stepData.lines[0];
+          panelLine2.textContent = stepData.lines[1];
+          panelLine3.textContent = stepData.lines[2];
+          panelLine4.textContent = stepData.lines[3];
+          
+          panelRec.textContent = stepData.rec;
+          panelRec.setAttribute('fill', "var(--c-cyan)");
+          
+          panelScores.style.display = 'none';
+          btnBack.style.display = 'block';
+          panelBg.setAttribute('stroke', 'var(--c-cyan)');
+        } else {
+          const stageData = states[currentState];
+          panelTitle.textContent = stageData.title;
+          panelScale.textContent = stageData.scale;
+          panelScale.setAttribute('fill', currentState === 0 ? "var(--c-green)" : (currentState <= 4 ? "var(--c-amber)" : "var(--c-red)"));
+          
+          panelLine1.textContent = stageData.lines[0];
+          panelLine2.textContent = stageData.lines[1];
+          panelLine3.textContent = stageData.lines[2];
+          panelLine4.textContent = stageData.lines[3];
+          
+          panelRec.textContent = stageData.rec;
+          panelRec.setAttribute('fill', currentState === 0 ? "var(--c-green)" : (currentState <= 4 ? "var(--c-amber)" : "var(--c-red)"));
+          
+          document.getElementById('bp05-badge-lawton-lbl').textContent = `Lawton (AIVD): ${stageData.lawton}`;
+          document.getElementById('bp05-badge-lawton-lbl').setAttribute('fill', stageData.lColor);
+          document.getElementById('bp05-badge-lawton-bg').setAttribute('fill', stageData.lBg);
+          
+          document.getElementById('bp05-badge-katz-lbl').textContent = `Katz (ABVD): ${stageData.katz}`;
+          document.getElementById('bp05-badge-katz-lbl').setAttribute('fill', stageData.kColor);
+          document.getElementById('bp05-badge-katz-bg').setAttribute('fill', stageData.kBg);
+          
+          panelScores.style.display = 'block';
+          btnBack.style.display = 'none';
+          panelBg.setAttribute('stroke', currentState === 0 ? 'var(--stroke)' : (currentState <= 4 ? 'var(--c-amber)' : 'var(--c-red)'));
+        }
+      }
+
+      let isDragging = false;
+      
+      function getLocalX(evt) {
+        const rect = svg.getBoundingClientRect();
+        const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
+        return (clientX - rect.left) * (800 / rect.width);
+      }
+
+      function handleInteraction(evt) {
+        const x = getLocalX(evt);
+        const constrainedX = Math.max(170, Math.min(630, x));
+        const state = getClosestState(constrainedX);
+        updateToState(state);
+      }
+
+      sliderTrack.addEventListener('mousedown', function(evt) {
+        isDragging = true;
+        handleInteraction(evt);
+      });
+
+      window.addEventListener('mousemove', function(evt) {
+        if (isDragging) {
+          handleInteraction(evt);
+        }
+      });
+
+      window.addEventListener('mouseup', function() {
+        isDragging = false;
+      });
+
+      sliderTrack.addEventListener('touchstart', function(evt) {
+        isDragging = true;
+        handleInteraction(evt);
+        evt.preventDefault();
+      }, {passive: false});
+
+      window.addEventListener('touchmove', function(evt) {
+        if (isDragging) {
+          handleInteraction(evt);
+          evt.preventDefault();
+        }
+      }, {passive: false});
+
+      window.addEventListener('touchend', function() {
+        isDragging = false;
+      });
+
+      for (let id = 1; id <= 8; id++) {
+        const groupEl = document.getElementById(`bp05-step-${id}`);
+        groupEl.addEventListener('click', function() {
+          selectStep(id);
+        });
+        groupEl.addEventListener('keydown', function(evt) {
+          if (evt.key === 'Enter' || evt.key === ' ') {
+            evt.preventDefault();
+            selectStep(id);
+          }
+        });
+      }
+
+      document.getElementById('bp05-btn-back').addEventListener('click', function(evt) {
+        evt.stopPropagation();
+        clearStepSelection();
+      });
+
+      handle.addEventListener('keydown', function(evt) {
+        if (evt.key === 'ArrowRight' || evt.key === 'ArrowUp') {
+          evt.preventDefault();
+          if (currentState < 8) updateToState(currentState + 1);
+        } else if (evt.key === 'ArrowLeft' || evt.key === 'ArrowDown') {
+          evt.preventDefault();
+          if (currentState > 0) updateToState(currentState - 1);
+        }
+      });
+
+      renderState();
+    })();
+    ]]>
+  </script>
+</svg>

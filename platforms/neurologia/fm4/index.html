@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="ELA (fm4). Jairo, 58 anos: do “estresse” ao pé que arrasta — exame misto de 1º e 2º, negativos e exames normais.">
+<title>Jairo: do “estresse” ao pé que arrasta · ELA · Neurologia</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../_assets/style.css">
+<style id="fm4-cara">
+/* ══ fm4 · ELA ═
+   Paleta neuromuscular (série fm): --indigo = 1º NMS (piramidal) ·
+   --ciano = 2º NMS (corno anterior) · --coral = progressão/perda ·
+   --verde = preservado (sensitivo, mente) · --amber = pegadinha /
+   fasciculação / isca “estresse”. Tudo via token; nada de hex solto. */
+.reading{width:100%;margin:0 auto;padding:0 0 3.5rem}
+.page__eyebrow{color:var(--ink-60);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+
+/* aberturas — uma classe por estratégia, variante própria por página */
+.opener{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1.15rem 1.2rem 1.25rem;margin:0 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.opener__eyebrow{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--indigo);margin-bottom:.35rem}
+.opener h1,#page-title{font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.25;margin:0 0 .55rem}
+.opener__lead{margin:0;color:var(--ink-80);font-size:1.02rem;line-height:1.5}
+.opener__lead .no-indent{margin:0}
+.opener--case{border-left:4px solid var(--indigo)}
+.opener--case .opener__eyebrow{color:var(--indigo)}
+.opener--question{border-left:4px solid var(--ciano)}
+.opener--question .opener__eyebrow{color:var(--ciano)}
+.opener--vs{border-left:4px solid var(--coral)}
+.opener--vs .opener__eyebrow{color:var(--coral)}
+.opener--trap{border-left:4px solid var(--amber)}
+.opener--trap .opener__eyebrow{color:var(--amber)}
+.opener--stat{border-left:4px solid var(--coral)}
+.opener--stat .opener__eyebrow{color:var(--coral)}
+.opener--stat .stat__big{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:800;color:var(--coral);line-height:1;margin:.2rem 0 .4rem;letter-spacing:-.02em}
+.opener--finding{border-left:4px solid var(--amber)}
+.opener--finding .opener__eyebrow{color:var(--amber)}
+.opener--checklist{border-left:4px solid var(--verde)}
+.opener--checklist .opener__eyebrow{color:var(--verde)}
+.opener--mnemonic{border-left:4px solid var(--amber)}
+.opener--mnemonic .opener__eyebrow{color:var(--amber)}
+.opener--mnemonic .mnem{font-weight:800;color:var(--ink-100);font-size:1.08rem;line-height:1.5}
+
+/* chips */
+.chipset{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.1rem}
+.chip,.chip--topic,.chip--ok,.chip--no,.chip--gold,.chip--series,.chip--1,.chip--2{display:inline-flex;align-items:center;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;border:1px solid var(--border);background:var(--bg-3);color:var(--ink-100)}
+.chip--topic{color:var(--ink-60)}
+.chip--ok{color:var(--verde);border-color:color-mix(in srgb,var(--verde) 45%,var(--border))}
+.chip--no{color:var(--coral);border-color:color-mix(in srgb,var(--coral) 45%,var(--border))}
+.chip--gold{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--border))}
+.chip--series{color:var(--indigo);border-color:color-mix(in srgb,var(--indigo) 45%,var(--border))}
+.chip--1{color:var(--indigo);border-color:color-mix(in srgb,var(--indigo) 45%,var(--border))}
+.chip--2{color:var(--ciano);border-color:color-mix(in srgb,var(--ciano) 45%,var(--border))}
+button.chip{cursor:pointer;min-height:36px}
+
+/* prosa soberana */
+.prose p{text-align:justify;text-indent:1.4em;hyphens:auto;margin:0 0 1em}
+.prose p.no-indent,.no-indent,.prose .no-indent{text-indent:0}
+.prose ul,.prose-list{margin:0 0 1em 1.1rem;padding:0}
+.prose ul li,.prose-list li{margin:.3rem 0}
+.prose strong,.term{color:var(--ink-100)}
+.topic-h{font-size:1.12rem;margin:1.35rem 0 .55rem;color:var(--ink-100)}
+.hl-1{color:var(--indigo);font-weight:700}.hl-2{color:var(--ciano);font-weight:700}
+.hl-good{color:var(--verde);font-weight:700}.hl-bad{color:var(--coral);font-weight:700}.hl-warn{color:var(--amber);font-weight:700}
+
+/* cards de conteúdo — organização em caixas translúcidas */
+.exec-card,.trap,.dont-confuse,.case-card,.nuance,.continuity,.board,.cmp{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);padding:1rem 1.05rem;margin:1.1rem 0;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.exec-card__title,.trap__title,.case-card__title,.board__title{margin:0 0 .65rem;font-size:1rem;color:var(--ink-100)}
+.exec-card__title{color:var(--ciano)}
+.case-card__title{color:var(--indigo)}
+.nuance{border-left:4px solid var(--amber);background:color-mix(in srgb,var(--amber) 8%,var(--bg-3))}
+.nuance__tag{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);font-weight:800;margin-bottom:.35rem}
+.continuity{border-left:3px solid var(--indigo)}
+.trap{border-left:4px solid var(--amber)}
+.trap__grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:.55rem 0 0}
+.trap__col{border:1px solid var(--border);border-radius:10px;padding:.65rem;background:var(--bg-3)}
+.trap__col h4{margin:0 0 .35rem;font-size:.84rem}
+.trap__col--vida h4{color:var(--ink-60)}
+.trap__col--prova h4{color:var(--amber)}
+.trap__reveal{margin-top:.6rem}
+
+/* case-card com linhas de timeline expansíveis */
+.case-rows{display:grid;gap:.5rem;margin-top:.55rem}
+.case-row{border:1px solid var(--border);border-radius:10px;background:var(--bg-3);overflow:hidden}
+.case-row__head{display:flex;gap:.6rem;align-items:center;width:100%;text-align:left;background:transparent;border:0;color:var(--ink-100);font:inherit;padding:.65rem .8rem;cursor:pointer;min-height:44px}
+.case-row__head:hover{background:var(--bg-4)}
+.case-row__eixo{font-weight:700;color:var(--indigo);min-width:9rem;text-align:left;flex-shrink:0}
+.case-row__det{padding:.6rem .8rem .8rem;border-top:1px solid var(--border);font-size:.9rem;line-height:1.5;color:var(--ink-80)}
+.case-row__det[hidden]{display:none}
+
+/* grid 1º vs 2º no exame */
+.nms-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:.7rem 0}
+.nms-cell{border:1px solid var(--border);border-radius:10px;padding:.7rem .8rem;background:var(--bg-3)}
+.nms-cell--1{border-color:color-mix(in srgb,var(--indigo) 42%,var(--border))}
+.nms-cell--2{border-color:color-mix(in srgb,var(--ciano) 42%,var(--border))}
+.nms-cell h4{margin:0 0 .35rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.nms-cell--1 h4{color:var(--indigo)}
+.nms-cell--2 h4{color:var(--ciano)}
+.nms-cell ul{margin:.2rem 0 0 1rem;padding:0}
+.nms-cell li{font-size:.9rem;margin:.2rem 0}
+
+/* tabela simples / andares da força */
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.75rem 0}
+.comparison,.topo{width:100%;border-collapse:collapse;font-size:.92rem;min-width:300px}
+.comparison th,.comparison td,.topo th,.topo td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:top}
+.comparison th,.topo th{background:var(--bg-3);color:var(--ink-100)}
+.topo__row--hit{background:color-mix(in srgb,var(--indigo) 14%,var(--bg-3))}
+.topo__row--hit td{border-color:color-mix(in srgb,var(--indigo) 40%,var(--border))}
+.topo__1{color:var(--indigo);font-weight:700}
+.topo__2{color:var(--ciano);font-weight:700}
+.topo__off{color:var(--ink-40)}
+
+/* comparison ELA × GBS */
+.cmp__grid{display:grid;grid-template-columns:auto 1fr 1fr;gap:0 .5rem;margin-top:.6rem;font-size:.92rem}
+.cmp__head{font-weight:800;color:var(--ink-100);padding:.5rem .5rem .35rem;border-bottom:1px solid var(--border)}
+.cmp__head--ela{color:var(--indigo)}
+.cmp__head--gbs{color:var(--ciano)}
+.cmp__row{display:contents}
+.cmp__row>div{padding:.5rem;border-bottom:1px solid var(--border)}
+.cmp__row.is-hl>div{background:color-mix(in srgb,var(--amber) 12%,var(--bg-3))}
+.cmp__lab{color:var(--ink-60);font-weight:700}
+.cmp__btns{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+
+/* details / scaffold */
+details.scaffold{border:1px solid var(--border);border-radius:10px;background:var(--bg-3);padding:0 1rem;margin:.8rem 0}
+details.scaffold>summary{cursor:pointer;padding:.7rem 0;font-weight:700;color:var(--ink-100);min-height:44px;display:flex;align-items:center}
+details.scaffold[open]>summary{border-bottom:1px solid var(--border)}
+
+/* figura / svg inline */
+.fig{margin:1.25rem 0}
+.fig__label{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ciano);margin-bottom:.3rem;font-weight:800}
+.fig__svg-frame{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-1);box-shadow:var(--shadow)}
+.fm4-inline-svg{display:block;width:100%;height:auto;border-radius:var(--radius-sm)}
+.hero-figure{margin:1.5rem 0;border:1px solid var(--border-strong);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.hero-figure__cap{padding:.7rem .9rem .9rem;font-size:.8rem;color:var(--ink-60);line-height:1.45;border-top:1px solid var(--border)}
+.hero-figure__tag{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);font-weight:800;margin-right:.4rem}
+
+/* board mantra */
+.board__build{min-height:44px;border-radius:999px;border:1px solid var(--indigo);background:var(--bg-3);color:var(--ink-100);padding:.5rem 1.1rem;cursor:pointer;font:inherit;font-weight:700}
+.board__build:hover{background:var(--bg-4)}
+.board__answer[hidden]{display:none}
+.board.is-built .board__pieces{opacity:1}
+.board__pieces{display:flex;flex-wrap:wrap;gap:.4rem;margin:.6rem 0;opacity:.55;transition:opacity .3s}
+
+/* quiz */
+.quiz{border:1px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1rem 1.25rem;background:var(--bg-2);margin:1.5rem 0 1rem;box-shadow:var(--shadow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.quiz h2{margin:0 0 .85rem;font-size:1.1rem;color:var(--ink-100)}
+.quiz__questions{list-style:none;margin:0;padding:0;display:grid;gap:1.15rem}
+.quiz__stem{margin:0 0 .55rem;font-weight:600;color:var(--ink-100);line-height:1.45}
+.quiz__alternatives{display:grid;gap:.4rem}
+.quiz__alt{text-align:left;border:1px solid var(--border);border-radius:10px;background:var(--bg-3);color:var(--ink-100);padding:.7rem .8rem;cursor:pointer;min-height:44px;font:inherit;line-height:1.4}
+.quiz__alt:hover,.quiz__alt[aria-checked="true"]{border-color:var(--ciano)}
+.quiz__alt.is-correct{border-color:var(--verde);background:color-mix(in srgb,var(--verde) 14%,var(--bg-3))}
+.quiz__alt.is-wrong{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 12%,var(--bg-3))}
+.quiz__feedback{margin-top:.6rem;padding:.75rem .8rem;border-radius:10px;border:1px solid var(--border);background:var(--bg-3)}
+.quiz__feedback[hidden]{display:none}
+.quiz__verdict{margin:0 0 .4rem;font-weight:800}
+.quiz__verdict.is-ok{color:var(--verde)}
+.quiz__verdict.is-bad{color:var(--coral)}
+.quiz__justification,.quiz__distractor{margin:.3rem 0 0;font-size:.92rem;line-height:1.5;color:var(--ink-80)}
+
+/* page-nav override leve para seguir chassi */
+.page-nav{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.page-nav a{display:inline-flex;flex-direction:column;min-height:44px;padding:.5rem .9rem;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-3);text-decoration:none;color:var(--ink-100)}
+.page-nav a:hover{background:var(--bg-4)}
+.page-nav .nav-dir{font-size:.72rem;color:var(--ink-60)}
+.page-nav .nav-ttl{font-size:.86rem}
+
+@media(max-width:680px){.prose p{text-align:start;hyphens:none;text-indent:0}}
+@media(max-width:640px){.trap__grid,.nms-grid{grid-template-columns:1fr}.cmp__grid{grid-template-columns:1fr}.cmp__head{display:none}.cmp__row>div{border:1px solid var(--border);border-radius:8px;margin-top:.4rem}}
+@media(max-width:560px){.case-row__eixo{min-width:0;display:block;margin-bottom:.2rem}}
+</style>
+</head>
+<body data-theme="dark" data-page-id="p1" data-layout="fm4-p01" data-source-ids="001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="orbs" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__row">
+    <a class="site-header__brand" href="../index.html">
+      <span class="site-header__logo" aria-hidden="true">NE</span>
+      <span class="site-header__titles">
+        <span class="site-header__title">ELA: esclerose lateral amiotrófica</span>
+        <span class="site-header__subtitle">Neurologia · esclerose lateral amiotrófica</span>
+      </span>
+    </a>
+    <span class="site-header__spacer"></span>
+    <span class="site-header__progress">1/8</span>
+    <div class="site-header__actions">
+      <a class="icon-btn" id="home-btn" href="../index.html" aria-label="Voltar ao hub" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></a>
+      <button class="icon-btn" id="theme-toggle" data-theme-btn type="button" aria-pressed="false" aria-label="Alternar tema" title="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu de páginas" title="Páginas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="coluna" id="conteudo">
+  <div class="reading">
+    <article class="page" data-page="p1" data-layout="fm4-p01" data-source-ids="001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018">
+      <p class="page__eyebrow">Página 1 · Caso clínico</p>
+
+      <section class="opener opener--case" data-opener="E3">
+        <span class="opener__eyebrow">Caso clínico</span>
+        <h1 id="page-title">Jairo: do “estresse” ao pé que arrasta</h1>
+        <p class="opener__lead no-indent">Homem de 58 anos, cãibras na perna direita atribuídas a “estresse emocional” — e, meses depois, um pé que não levanta mais. Antes de nomear a doença, convém topografar.</p>
+      </section>
+
+      <div class="chipset">
+        <span class="chip--1">1º NMS</span>
+        <span class="chip--2">2º NMS</span>
+        <span class="chip--gold">estresse = isca</span>
+      </div>
+
+      <section class="content-block" aria-labelledby="page-title">
+        <div class="prose">
+          <h2 class="topic-h">Timeline: do “estresse” à fraqueza</h2>
+          <p><strong>Jairo, 58 anos.</strong> Há <strong class="term">seis meses</strong> iniciou <strong class="term">cãibras</strong> e <strong class="term">tremores musculares</strong> na <strong class="term">perna direita</strong>. Na época, o quadro foi <strong class="term">atribuído a estresse emocional</strong> — isca de porta, <strong>não</strong> a causa.</p>
+          <p>Alguns meses depois, <strong class="term">ainda sem melhora</strong>. Percebeu que está <strong class="term">arrastando o pé direito</strong> ao caminhar. A <strong class="term">perna esquerda</strong> também passou a ter cãibras e tremores musculares.</p>
+
+          <h2 class="topic-h">Exame: 1º e 2º no mesmo corpo</h2>
+          <ul class="prose-list">
+            <li><strong class="hl-2">Miofasciculações</strong> nos <strong>quatro membros</strong>.</li>
+            <li><strong class="hl-1">Hiperreflexia generalizada</strong>.</li>
+            <li>Sinal de <strong class="hl-1">Babinski bilateral</strong>.</li>
+            <li><strong class="hl-1">Espasticidade</strong> muscular.</li>
+            <li><strong class="hl-2">Nítida atrofia muscular</strong>, especialmente no <strong>membro inferior direito</strong>.</li>
+          </ul>
+          <p class="no-indent">Chip mental: de um lado, fasciculação e atrofia (<span class="chip--2">2º</span>); do outro, hiperreflexia, Babinski e espasticidade (<span class="chip--1">1º</span>). <strong>No mesmo paciente.</strong></p>
+
+          <h2 class="topic-h">Negativos e exames que fecham a porta</h2>
+          <ul class="prose-list">
+            <li><strong>Sem</strong> distúrbios de <strong>sensibilidade</strong>.</li>
+            <li><strong>Sem</strong> alterações <strong>oculares</strong>.</li>
+            <li><strong>Sem</strong> incontinência <strong>urinária</strong>.</li>
+            <li><strong>LCR normal</strong>.</li>
+            <li><strong>TC e ressonância</strong> de <strong>crânio</strong> e de <strong>coluna cervical</strong> <strong>normais</strong>.</li>
+          </ul>
+          <p class="no-indent">Ou seja: o que sobra é <strong class="term">motor</strong> — e a imagem estrutural óbvia (crânio/coluna) e o liquor <strong>não</strong> explicam o quadro.</p>
+
+          <h2 class="topic-h">Método</h2>
+          <p>Ir <strong class="term">devagar</strong>, marcando os <strong>pontos passo a passo</strong>, antes de nomear a doença. A pergunta de porta permanece aberta: qual a <strong class="term">hipótese diagnóstica mais provável</strong>?</p>
+        </div>
+      </section>
+
+      <aside class="exec-card" aria-label="Grade 1º vs 2º no exame de Jairo">
+        <h3 class="exec-card__title">No mesmo corpo, dois andares gritam</h3>
+        <div class="nms-grid">
+          <div class="nms-cell nms-cell--1">
+            <h4>1º neurônio</h4>
+            <ul><li>Hiperreflexia</li><li>Babinski bilateral</li><li>Espasticidade</li></ul>
+          </div>
+          <div class="nms-cell nms-cell--2">
+            <h4>2º neurônio</h4>
+            <ul><li>Miofasciculações (4M)</li><li>Atrofia (esp. MID)</li><li>Cãibras</li></ul>
+          </div>
+        </div>
+        <p class="no-indent" style="margin-top:.6rem"><span class="chip--gold">estresse = isca, não causa</span> — a atribuição emocional atrasa a leitura topográfica; os negativos já empurram para doença puramente motora.</p>
+      </aside>
+
+      <!-- FIGURA REAL — R1 pé caído -->
+      <div class="figura-ancorada">
+        <figure class="figura-ancorada__media">
+          <img src="media/B01-foot-drop-clinical.jpg" alt="Foto clínica em visão superior dos pés de adulto: pé direito caído por paralisia do tibial anterior; pé esquerdo eleva com dorsiflexão preservada." loading="lazy" decoding="async">
+          <figcaption class="figura-ancorada__legenda"><b>Pé caído (drop-foot)</b> — pé direito falha a dorsiflexão; o esquerdo eleva. A mesma moldura ensina o achado e o lado são.</figcaption>
+          <p class="figura-ancorada__fonte">By Pagemaker787, via Wikimedia Commons · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Foot_drop.jpg" rel="noopener">fonte</a></p>
+        </figure>
+        <div class="figura-ancorada__ancora">
+          <h4>Porta do caso</h4>
+          <p>O pé que arrasta não é “cansaço vago”: é <strong>fraqueza</strong> do tibial anterior. A foto mostra o lado doente parado enquanto o são se levanta — o achado que abre Jairo e que, lido como déficit de força, ancora o eixo motor antes de qualquer nome de doença.</p>
+        </div>
+      </div>
+
+      <!-- Figura: progressão clínica -->
+      <figure class="fig">
+        <span class="fig__label">Progressão clínica — Jairo</span>
+        <div class="fig__svg-frame">
+          <svg class="fm4-inline-svg fm4p1-root" viewBox="0 0 960 640" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" data-node="1" data-filter="all">
+  <title>Caso Jairo: timeline de cãibras ao pé caído com exame misto</title>
+  <desc>Três marcos lastreados — há 6 meses com cãibras no MI direito e isca de estresse; meses depois com pé direito que arrasta e cãibras no MI esquerdo; no exame, fasciculações, atrofia, hiperreflexia, Babinski bilateral e espasticidade no mesmo corpo, com sensitivo/olhos/esfíncteres e LCR/imagem normais.</desc>
+
+  <defs>
+    <style type="text/css">
+      <![CDATA[
+      .fm4p1-root {
+        --fm4p1-bg: var(--bg-1, #0b1329);
+        --fm4p1-panel-bg: var(--bg-2, #131c38);
+        --fm4p1-card-bg: var(--bg-3, #1c274c);
+        --fm4p1-border: var(--ink-20, #2a3761);
+        --fm4p1-border-focus: var(--kw-teal, #00d2b4);
+        --fm4p1-text-main: var(--ink-90, #f1f5f9);
+        --fm4p1-text-sub: var(--ink-70, #94a3b8);
+        --fm4p1-text-muted: var(--ink-50, #64748b);
+        --fm4p1-teal: var(--kw-teal, #00d2b4);
+        --fm4p1-teal-glow: rgba(0, 210, 180, 0.25);
+        --fm4p1-coral: var(--kw-red, #ff5252);
+        --fm4p1-coral-glow: rgba(255, 82, 82, 0.25);
+        --fm4p1-gold: var(--kw-gold, #ffd166);
+        --fm4p1-gold-glow: rgba(255, 209, 102, 0.25);
+        --fm4p1-leg-skin: var(--bg-3, #1e294b);
+        --fm4p1-leg-stroke: var(--ink-40, #475569);
+        --fm4p1-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: var(--fm4p1-font-family);
+        background-color: var(--fm4p1-bg);
+        border-radius: 12px;
+        user-select: none;
+      }
+
+      [data-theme="light"] .fm4p1-root {
+        --fm4p1-bg: var(--bg-1, #f8fafc);
+        --fm4p1-panel-bg: var(--bg-2, #ffffff);
+        --fm4p1-card-bg: var(--bg-3, #f1f5f9);
+        --fm4p1-border: var(--ink-20, #cbd5e1);
+        --fm4p1-border-focus: var(--kw-teal, #00897b);
+        --fm4p1-text-main: var(--ink-90, #0f172a);
+        --fm4p1-text-sub: var(--ink-70, #475569);
+        --fm4p1-text-muted: var(--ink-50, #94a3b8);
+        --fm4p1-teal: var(--kw-teal, #00897b);
+        --fm4p1-teal-glow: rgba(0, 137, 123, 0.2);
+        --fm4p1-coral: var(--kw-red, #d32f2f);
+        --fm4p1-coral-glow: rgba(211, 47, 47, 0.2);
+        --fm4p1-gold: var(--kw-gold, #b58105);
+        --fm4p1-gold-glow: rgba(181, 129, 5, 0.2);
+        --fm4p1-leg-skin: var(--bg-3, #e2e8f0);
+        --fm4p1-leg-stroke: var(--ink-40, #94a3b8);
+      }
+
+      .fm4p1-root text {
+        font-family: var(--fm4p1-font-family);
+      }
+
+      /* Dynamic Highlights based on data-node */
+      .fm4p1-root[data-node="1"] .fm4p1-n1-only { opacity: 1; filter: drop-shadow(0 0 6px var(--fm4p1-gold-glow)); }
+      .fm4p1-root[data-node="1"] .fm4p1-n2-only, .fm4p1-root[data-node="1"] .fm4p1-n3-only { opacity: 0.25; }
+
+      .fm4p1-root[data-node="2"] .fm4p1-n2-only { opacity: 1; filter: drop-shadow(0 0 6px var(--fm4p1-coral-glow)); }
+      .fm4p1-root[data-node="2"] .fm4p1-n1-only { opacity: 0.5; }
+      .fm4p1-root[data-node="2"] .fm4p1-n3-only { opacity: 0.25; }
+
+      .fm4p1-root[data-node="3"] .fm4p1-n3-only { opacity: 1; filter: drop-shadow(0 0 6px var(--fm4p1-teal-glow)); }
+      .fm4p1-root[data-node="3"] .fm4p1-n1-only, .fm4p1-root[data-node="3"] .fm4p1-n2-only { opacity: 0.65; }
+
+      /* Dynamic Highlights based on data-filter */
+      .fm4p1-root[data-filter="n1"] .fm4p1-chip-n1 { filter: brightness(1.2) drop-shadow(0 0 4px var(--fm4p1-coral-glow)); opacity: 1; }
+      .fm4p1-root[data-filter="n1"] .fm4p1-chip-n2, .fm4p1-root[data-filter="n1"] .fm4p1-chip-stress { opacity: 0.3; }
+
+      .fm4p1-root[data-filter="n2"] .fm4p1-chip-n2 { filter: brightness(1.2) drop-shadow(0 0 4px var(--fm4p1-teal-glow)); opacity: 1; }
+      .fm4p1-root[data-filter="n2"] .fm4p1-chip-n1, .fm4p1-root[data-filter="n2"] .fm4p1-chip-stress { opacity: 0.3; }
+
+      .fm4p1-root[data-filter="stress"] .fm4p1-chip-stress { filter: brightness(1.2) drop-shadow(0 0 4px var(--fm4p1-gold-glow)); opacity: 1; }
+      .fm4p1-root[data-filter="stress"] .fm4p1-chip-n1, .fm4p1-root[data-filter="stress"] .fm4p1-chip-n2 { opacity: 0.3; }
+
+      /* Buttons and Nodes styling */
+      .fm4p1-btn {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .fm4p1-btn:hover {
+        filter: brightness(1.15);
+      }
+
+      .fm4p1-node-circle {
+        cursor: pointer;
+        transition: transform 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+      }
+      .fm4p1-node-circle:hover {
+        transform: scale(1.15);
+      }
+
+      /* Pulse animation for active node */
+      @keyframes fm4p1-pulse {
+        0% { r: 16px; opacity: 0.8; }
+        50% { r: 22px; opacity: 0.2; }
+        100% { r: 16px; opacity: 0.8; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .fm4p1-pulse-ring { animation: none !important; }
+      }
+      .fm4p1-pulse-ring {
+        animation: fm4p1-pulse 2s infinite ease-in-out;
+        pointer-events: none;
+      }
+      ]]>
+    </style>
+
+    <linearGradient id="fm4p1-grad-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--fm4p1-teal, #00d2b4)" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="var(--fm4p1-teal, #00d2b4)" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="fm4p1-grad-coral" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--fm4p1-coral, #ff5252)" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="var(--fm4p1-coral, #ff5252)" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <filter id="fm4p1-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND BASE -->
+  <rect width="960" height="640" fill="var(--fm4p1-bg, #0b1329)" rx="12"/>
+
+  <!-- HEADER AREA -->
+  <g transform="translate(20, 20)">
+    <!-- Category Badge -->
+    <rect x="0" y="0" width="230" height="22" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1"/>
+    <text x="10" y="15" fill="var(--fm4p1-teal, #00d2b4)" font-size="10" font-weight="700" letter-spacing="0.5">PROVA &amp; RESIDÊNCIA · NEUROLOGIA</text>
+
+    <!-- Main Title -->
+    <text x="0" y="44" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="20" font-weight="800" letter-spacing="-0.3">TIMELINE COLAPSADA DE MEMBROS INFERIORES</text>
+
+    <!-- Subtitle / Legend -->
+    <text x="390" y="44" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="12" font-weight="500">Coexistência de 1º (Piramidal) + 2º (Denervativo) Neurônio Motor no Mesmo Paciente</text>
+  </g>
+
+  <!-- LEFT COLUMN: ANATOMICAL & NEURAL DIAGRAM -->
+  <g transform="translate(20, 75)">
+    <!-- Container Box -->
+    <rect width="500" height="545" rx="10" fill="var(--fm4p1-panel-bg, #131c38)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1.5"/>
+
+    <!-- Section Header: Spinal Cord Synapse & Motor Pathways -->
+    <g transform="translate(15, 15)">
+      <rect width="470" height="90" rx="8" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1"/>
+      <text x="12" y="20" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="12" font-weight="700">DOIS ANDARES MOTORES NO MESMO CORPO</text>
+      
+      <!-- Corticospinal Tract Representation -->
+      <g transform="translate(20, 30)">
+        <!-- 1st Motor Neuron Pathway -->
+        <path d="M 10 10 Q 70 5, 120 25 T 200 25" fill="none" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="3" stroke-dasharray="4,2"/>
+        <circle cx="10" cy="10" r="4" fill="var(--fm4p1-coral, #ff5252)"/>
+        <text x="10" y="45" fill="var(--fm4p1-coral, #ff5252)" font-size="10" font-weight="700">1º NM (Córtex Motor)</text>
+        <text x="10" y="55" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="9">Babinski · Espasticidade</text>
+
+        <!-- Spinal Cord Synapse (Anterior Horn) -->
+        <g transform="translate(210, 10)">
+          <rect x="0" y="0" width="75" height="35" rx="6" fill="var(--fm4p1-panel-bg, #131c38)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1"/>
+          <text x="37" y="15" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="9" font-weight="700" text-anchor="middle">Corno Ant.</text>
+          <text x="37" y="27" fill="var(--fm4p1-gold, #ffd166)" font-size="8" font-weight="600" text-anchor="middle">Corno ant.</text>
+        </g>
+
+        <!-- 2nd Motor Neuron Pathway -->
+        <path d="M 285 25 Q 340 40, 410 20" fill="none" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="3"/>
+        <circle cx="410" cy="20" r="4" fill="var(--fm4p1-teal, #00d2b4)"/>
+        <text x="330" y="45" fill="var(--fm4p1-teal, #00d2b4)" font-size="10" font-weight="700">2º NM (Corno anterior)</text>
+        <text x="330" y="55" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="9">Atrofia · Fasciculação</text>
+      </g>
+    </g>
+
+    <!-- GROUND FLOOR LINE -->
+    <line x1="40" y1="515" x2="460" y2="515" stroke="var(--fm4p1-border, #2a3761)" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="455" y="530" fill="var(--fm4p1-text-muted, #64748b)" font-size="10" text-anchor="end">Solo / Arraste do Pé</text>
+
+    <!-- LEGS VECTOR DRAWING -->
+    <g transform="translate(50, 115)">
+      
+      <!-- MI DIREITO (RIGHT LOWER LIMB - AFFECTED ATROPHY + DROP FOOT) -->
+      <g id="fm4p1-leg-right" class="fm4p1-n2-only">
+        <!-- Thigh Right -->
+        <path d="M 120 100 Q 115 150, 110 220 Q 140 225, 160 220 Q 165 150, 160 100 Z" fill="var(--fm4p1-leg-skin, #1e294b)" stroke="var(--fm4p1-leg-stroke, #475569)" stroke-width="2"/>
+        
+        <!-- Knee Right -->
+        <circle cx="135" cy="225" r="14" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1.5"/>
+        <!-- Reflex Arc Marker on Knee -->
+        <path d="M 120 225 L 100 220" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="2"/>
+        <text x="95" y="215" fill="var(--fm4p1-coral, #ff5252)" font-size="9" font-weight="700" text-anchor="end">Hiperreflexia (1º NM)</text>
+
+        <!-- Leg Right (ATROPHIED CONTOUR - Thin calf) -->
+        <path d="M 110 235 Q 118 290, 122 340 L 148 340 Q 152 290, 160 235 Z" fill="var(--fm4p1-leg-skin, #1e294b)" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="2.5" stroke-dasharray="none"/>
+        <!-- Atrophy sulcus lines -->
+        <path d="M 130 260 L 132 320 M 138 270 L 140 310" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="1" stroke-opacity="0.6"/>
+        
+        <!-- Foot Right (FOOT DROP / ARRASTE - Plantarflexed attitude dragging toe) -->
+        <g transform="translate(115, 340)">
+          <!-- Ankle angled down -->
+          <path d="M 7 0 L 5 25 Q 15 45, 45 55 Q 50 48, 30 35 L 30 0 Z" fill="var(--fm4p1-coral, #ff5252)" fill-opacity="0.25" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="2.5"/>
+          
+          <!-- Dragging Friction Ripples on Floor -->
+          <path d="M 45 57 C 55 60, 65 55, 75 58" fill="none" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="2" stroke-dasharray="3,2"/>
+          <text x="65" y="72" fill="var(--fm4p1-coral, #ff5252)" font-size="10" font-weight="800">ARRASTE DO PÉ D</text>
+          
+          <!-- Babinski Sign Inset on Foot Sole -->
+          <g transform="translate(-75, 10)">
+            <rect x="0" y="0" width="105" height="42" rx="6" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="1.5"/>
+            <text x="8" y="14" fill="var(--fm4p1-coral, #ff5252)" font-size="9" font-weight="800">BABINSKI D (+)</text>
+            <text x="8" y="26" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="8">Extensão do Hálux</text>
+            <text x="8" y="36" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="8">+ Leque dos Artelhos</text>
+            <!-- Upward curved arrow for Babinski -->
+            <path d="M 90 35 Q 98 25, 92 10" fill="none" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="2"/>
+            <polygon points="92,8 88,14 96,14" fill="var(--fm4p1-coral, #ff5252)"/>
+          </g>
+        </g>
+
+        <!-- Atrophy Label Badge -->
+        <g transform="translate(165, 270)">
+          <line x1="-15" y1="20" x2="10" y2="20" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="1.5"/>
+          <rect x="10" y="5" width="115" height="30" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="1"/>
+          <text x="18" y="18" fill="var(--fm4p1-teal, #00d2b4)" font-size="9" font-weight="800">ATROFIA MI D (2º NM)</text>
+          <text x="18" y="28" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="8">Perda de massa distal</text>
+        </g>
+      </g>
+
+      <!-- MI ESQUERDO (LEFT LOWER LIMB - INITIAL CRAMPS & FASCICULATIONS) -->
+      <g id="fm4p1-leg-left" class="fm4p1-n3-only">
+        <!-- Thigh Left -->
+        <path d="M 270 100 Q 265 150, 260 220 Q 290 225, 310 220 Q 315 150, 310 100 Z" fill="var(--fm4p1-leg-skin, #1e294b)" stroke="var(--fm4p1-leg-stroke, #475569)" stroke-width="2"/>
+        
+        <!-- Knee Left -->
+        <circle cx="285" cy="225" r="14" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1.5"/>
+
+        <!-- Leg Left (NORMAL CONTOUR with Fasciculation ripples) -->
+        <path d="M 260 235 Q 245 285, 255 340 L 285 340 Q 295 285, 310 235 Z" fill="var(--fm4p1-leg-skin, #1e294b)" stroke="var(--fm4p1-leg-stroke, #475569)" stroke-width="2"/>
+        
+        <!-- Fasciculation Waves (Wavy electric lines) -->
+        <path d="M 252 270 Q 257 273, 252 276 T 252 282" fill="none" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="2"/>
+        <path d="M 288 290 Q 293 293, 288 296 T 288 302" fill="none" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="2"/>
+
+        <!-- Foot Left (Normal Plantigrade Position) -->
+        <path d="M 255 340 L 245 385 Q 265 395, 290 385 L 285 340 Z" fill="var(--fm4p1-leg-skin, #1e294b)" stroke="var(--fm4p1-leg-stroke, #475569)" stroke-width="2"/>
+
+        <!-- Left Leg Badges -->
+        <g transform="translate(315, 260)">
+          <line x1="-15" y1="20" x2="10" y2="20" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="1.5"/>
+          <rect x="10" y="5" width="115" height="42" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1"/>
+          <text x="18" y="18" fill="var(--fm4p1-teal, #00d2b4)" font-size="9" font-weight="800">MI E: CÃIBRA &amp; TREMOR</text>
+          <text x="18" y="28" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="8">Fasciculações visíveis</text>
+          <text x="18" y="38" fill="var(--fm4p1-coral, #ff5252)" font-size="8" font-weight="700">+ Espasticidade E</text>
+        </g>
+      </g>
+
+      <!-- ISCA ESTRESSE BADGE / TRIGGER HIGHLIGHT -->
+      <g id="fm4p1-badge-stress" class="fm4p1-n1-only" transform="translate(130, 20)">
+        <rect x="0" y="0" width="165" height="36" rx="6" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-gold, #ffd166)" stroke-width="1.5"/>
+        <text x="10" y="15" fill="var(--fm4p1-gold, #ffd166)" font-size="9" font-weight="800">A ISCA: "ESTRESSE / SOBRECARGA"</text>
+        <text x="10" y="27" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="8">Isca no início — não é a causa</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: TIMELINE CONTROLLER & CLINICAL INTERPRETATION PANEL -->
+  <g transform="translate(535, 75)">
+    <!-- Container Box -->
+    <rect width="405" height="545" rx="10" fill="var(--fm4p1-panel-bg, #131c38)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1.5"/>
+
+    <!-- 1. TIMELINE CONTROLLER SECTION -->
+    <g transform="translate(15, 15)">
+      <text x="0" y="12" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="11" font-weight="800" letter-spacing="0.5">EVOLUÇÃO TEMPORAL (CLIQUE NOS NÓS)</text>
+
+      <!-- Horizontal Line connecting timeline nodes -->
+      <line x1="45" y1="50" x2="330" y2="50" stroke="var(--fm4p1-border, #2a3761)" stroke-width="4"/>
+      <line x1="45" y1="50" x2="185" y2="50" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="4" id="fm4p1-progress-line"/>
+
+      <!-- Temporal Node 1 (Há 6 meses — literal da fonte) -->
+      <g id="fm4p1-node-1" class="fm4p1-btn" transform="translate(45, 50)" data-node-id="1">
+        <circle cx="0" cy="0" r="18" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-gold, #ffd166)" stroke-width="3" class="fm4p1-node-circle"/>
+        <text x="0" y="4" fill="var(--fm4p1-gold, #ffd166)" font-size="11" font-weight="800" text-anchor="middle">1</text>
+        <text x="0" y="32" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="9" font-weight="700" text-anchor="middle">Há 6 meses</text>
+        <text x="0" y="44" fill="var(--fm4p1-gold, #ffd166)" font-size="9" font-weight="600" text-anchor="middle">Cãibra MI D</text>
+      </g>
+
+      <!-- Temporal Node 2 (Meses depois — literal da fonte) -->
+      <g id="fm4p1-node-2" class="fm4p1-btn" transform="translate(185, 50)" data-node-id="2">
+        <circle cx="0" cy="0" r="18" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="3" class="fm4p1-node-circle"/>
+        <text x="0" y="4" fill="var(--fm4p1-coral, #ff5252)" font-size="11" font-weight="800" text-anchor="middle">2</text>
+        <text x="0" y="32" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="9" font-weight="700" text-anchor="middle">Meses depois</text>
+        <text x="0" y="44" fill="var(--fm4p1-coral, #ff5252)" font-size="9" font-weight="600" text-anchor="middle">Pé arrasta + MI E</text>
+      </g>
+
+      <!-- Temporal Node 3 (Exame motor — eixo da case-card, sem inventar mês) -->
+      <g id="fm4p1-node-3" class="fm4p1-btn" transform="translate(330, 50)" data-node-id="3">
+        <circle cx="0" cy="0" r="18" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="3" class="fm4p1-node-circle"/>
+        <text x="0" y="4" fill="var(--fm4p1-teal, #00d2b4)" font-size="11" font-weight="800" text-anchor="middle">3</text>
+        <text x="0" y="32" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="9" font-weight="700" text-anchor="middle">No exame</text>
+        <text x="0" y="44" fill="var(--fm4p1-teal, #00d2b4)" font-size="9" font-weight="600" text-anchor="middle">1º + 2º mistos</text>
+      </g>
+    </g>
+
+    <!-- 2. NEURON FILTER BUTTONS (INTERACTIVE MATRIX) -->
+    <g transform="translate(15, 130)">
+      <text x="0" y="12" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="11" font-weight="800" letter-spacing="0.5">FILTRAR ACHADOS NO CORPO</text>
+      
+      <!-- Filter Button: ALL -->
+      <g id="fm4p1-btn-all" class="fm4p1-btn" transform="translate(0, 22)" data-filter-id="all">
+        <rect width="80" height="26" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1.5" id="fm4p1-rect-all"/>
+        <text x="40" y="17" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="10" font-weight="700" text-anchor="middle">Todos</text>
+      </g>
+
+      <!-- Filter Button: 1º NM -->
+      <g id="fm4p1-btn-n1" class="fm4p1-btn" transform="translate(88, 22)" data-filter-id="n1">
+        <rect width="105" height="26" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="1.5" id="fm4p1-rect-n1"/>
+        <text x="52" y="17" fill="var(--fm4p1-coral, #ff5252)" font-size="10" font-weight="700" text-anchor="middle">Chips 1º NM</text>
+      </g>
+
+      <!-- Filter Button: 2º NM -->
+      <g id="fm4p1-btn-n2" class="fm4p1-btn" transform="translate(200, 22)" data-filter-id="n2">
+        <rect width="105" height="26" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="1.5" id="fm4p1-rect-n2"/>
+        <text x="52" y="17" fill="var(--fm4p1-teal, #00d2b4)" font-size="10" font-weight="700" text-anchor="middle">Chips 2º NM</text>
+      </g>
+
+      <!-- Filter Button: STRESS ISCA -->
+      <g id="fm4p1-btn-stress" class="fm4p1-btn" transform="translate(312, 22)" data-filter-id="stress">
+        <rect width="63" height="26" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-gold, #ffd166)" stroke-width="1.5" id="fm4p1-rect-stress"/>
+        <text x="31" y="17" fill="var(--fm4p1-gold, #ffd166)" font-size="10" font-weight="700" text-anchor="middle">A Isca</text>
+      </g>
+    </g>
+
+    <!-- 3. DYNAMIC INTERPRETATION CARD -->
+    <g transform="translate(15, 195)">
+      <rect width="375" height="335" rx="8" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1" id="fm4p1-detail-box"/>
+
+      <!-- Panel Content Header -->
+      <g transform="translate(15, 15)">
+        <text id="fm4p1-panel-title" x="0" y="14" fill="var(--fm4p1-gold, #ffd166)" font-size="12" font-weight="800">HÁ 6 MESES: CÃIBRAS E A ISCA DO ESTRESSE</text>
+        <line x1="0" y1="24" x2="345" y2="24" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1"/>
+      </g>
+
+      <!-- Findings List & Badges Area -->
+      <g transform="translate(15, 55)" id="fm4p1-panel-body">
+        <!-- Text line 1 -->
+        <text id="fm4p1-txt-line1" x="0" y="12" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="11" font-weight="600">• Cãibras e tremores musculares na perna direita.</text>
+        <text id="fm4p1-txt-line2" x="0" y="28" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="10">• Atribuídos a estresse emocional — isca, não causa.</text>
+        
+        <!-- Chips Section inside Detail Card -->
+        <g transform="translate(0, 42)">
+          <rect width="345" height="105" rx="6" fill="var(--fm4p1-panel-bg, #131c38)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1"/>
+          
+          <text x="10" y="16" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="10" font-weight="700">CHIPS PRESENTES NESTE ESTÁGIO:</text>
+          
+          <!-- 1st Motor Neuron Chip -->
+          <g transform="translate(10, 26)" class="fm4p1-chip-n1">
+            <rect width="155" height="32" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-coral, #ff5252)" stroke-width="1"/>
+            <text x="8" y="14" fill="var(--fm4p1-coral, #ff5252)" font-size="9" font-weight="800">1º NEURÔNIO MOTOR</text>
+            <text x="8" y="25" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="8" id="fm4p1-chip-n1-txt">Ainda sem o pacote do 1º</text>
+          </g>
+
+          <!-- 2nd Motor Neuron Chip -->
+          <g transform="translate(175, 26)" class="fm4p1-chip-n2">
+            <rect width="160" height="32" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-teal, #00d2b4)" stroke-width="1"/>
+            <text x="8" y="14" fill="var(--fm4p1-teal, #00d2b4)" font-size="9" font-weight="800">2º NEURÔNIO MOTOR</text>
+            <text x="8" y="25" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="8" id="fm4p1-chip-n2-txt">Cãibras + tremores MI D</text>
+          </g>
+
+          <!-- Stress Bait Chip -->
+          <g transform="translate(10, 64)" class="fm4p1-chip-stress">
+            <rect width="325" height="30" rx="4" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-gold, #ffd166)" stroke-width="1"/>
+            <text x="8" y="14" fill="var(--fm4p1-gold, #ffd166)" font-size="9" font-weight="800">A ISCA DIAGNÓSTICA (ATENÇÃO!)</text>
+            <text x="8" y="24" fill="var(--fm4p1-text-sub, #94a3b8)" font-size="8" id="fm4p1-chip-stress-txt">Estresse = isca de porta, NÃO a causa!</text>
+          </g>
+        </g>
+
+        <!-- Clinical Takeaway for Exam (Residência) -->
+        <g transform="translate(0, 160)">
+          <rect width="345" height="105" rx="6" fill="var(--fm4p1-card-bg, #1c274c)" stroke="var(--fm4p1-border, #2a3761)" stroke-width="1" id="fm4p1-takeaway-box"/>
+          <text x="10" y="16" fill="var(--fm4p1-gold, #ffd166)" font-size="10" font-weight="800">LEVE PARA A PROVA:</text>
+          <text id="fm4p1-takeaway-t1" x="10" y="34" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="10" font-weight="600">• Não compre a isca do estresse emocional.</text>
+          <text id="fm4p1-takeaway-t2" x="10" y="50" fill="var(--fm4p1-text-main, #f1f5f9)" font-size="10" font-weight="600">• Cãibras e tremores abrem o eixo motor.</text>
+          <text id="fm4p1-takeaway-t3" x="10" y="66" fill="var(--fm4p1-teal, #00d2b4)" font-size="9" font-weight="700">• Timeline literal: há seis meses (início).</text>
+          <text id="fm4p1-takeaway-t4" x="10" y="82" fill="var(--fm4p1-coral, #ff5252)" font-size="9" font-weight="700">• Chip: “estresse = isca, não causa”.</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- INTERACTIVE INLINE SCRIPT (SELF-CONTAINED ENGINE) -->
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      // Namespace check to avoid re-binding
+      var root = document.querySelector('.fm4p1-root');
+      if (!root || root.hasAttribute('data-fm4p1-bound')) return;
+      root.setAttribute('data-fm4p1-bound', 'true');
+
+      // State definitions
+      var stateData = {
+        1: {
+          title: "HÁ 6 MESES: CÃIBRAS E A ISCA DO ESTRESSE",
+          titleColor: "var(--fm4p1-gold, #ffd166)",
+          line1: "• Cãibras e tremores musculares na perna direita.",
+          line2: "• Atribuídos a estresse emocional — isca, não causa.",
+          n1Txt: "Ainda sem o pacote do 1º no relato",
+          n2Txt: "Cãibras + tremores no MI D",
+          stressTxt: "Estresse = isca de porta, não a causa!",
+          t1: "• Não compre a isca do estresse emocional.",
+          t2: "• Cãibras e tremores abrem o eixo motor.",
+          t3: "• Timeline literal: há seis meses (início).",
+          t4: "• Chip: “estresse = isca, não causa”.",
+          progressW: 0
+        },
+        2: {
+          title: "MESES DEPOIS: PÉ ARRASTA + MI E",
+          titleColor: "var(--fm4p1-coral, #ff5252)",
+          line1: "• Ainda sem melhora: arrasta o pé direito ao caminhar.",
+          line2: "• A perna esquerda também passou a ter cãibras e tremores.",
+          n1Txt: "Exame virá com o pacote do 1º",
+          n2Txt: "Pé caído D · cãibras também no MI E",
+          stressTxt: "Estresse não explica pé que arrasta.",
+          t1: "• Marco literal: “alguns meses depois”.",
+          t2: "• Pé que arrasta = fraqueza — não “cansaço”.",
+          t3: "• Bilateralização dos tremores/cãibras no MI E.",
+          t4: "• Próximo passo: examinar 1º e 2º no mesmo corpo.",
+          progressW: 140
+        },
+        3: {
+          title: "NO EXAME: 1º + 2º NO MESMO CORPO",
+          titleColor: "var(--fm4p1-teal, #00d2b4)",
+          line1: "• Fasciculações nos 4 membros · atrofia nítida (esp. MI D).",
+          line2: "• Hiperreflexia generalizada · Babinski bilateral · espasticidade.",
+          n1Txt: "Hiperreflexia · Babinski · espasticidade",
+          n2Txt: "Fasciculações 4M · atrofia (esp. MI D)",
+          stressTxt: "Quadro motor objetivo — a isca cai.",
+          t1: "• 2º: fasciculação e atrofia no mesmo corpo.",
+          t2: "• 1º: Babinski, hiperreflexia e espasticidade.",
+          t3: "• Negativos: sensitivo, olhos e esfíncteres OK.",
+          t4: "• LCR e TC/RM crânio-coluna normais — só motor.",
+          progressW: 285
+        }
+      };
+
+      function setNode(nodeId) {
+        root.setAttribute('data-node', nodeId);
+        var d = stateData[nodeId];
+        if (!d) return;
+
+        // Update titles & text lines
+        var pTitle = document.getElementById('fm4p1-panel-title');
+        if (pTitle) {
+          pTitle.textContent = d.title;
+          pTitle.setAttribute('fill', d.titleColor);
+        }
+
+        var t1 = document.getElementById('fm4p1-txt-line1');
+        var t2 = document.getElementById('fm4p1-txt-line2');
+        if (t1) t1.textContent = d.line1;
+        if (t2) t2.textContent = d.line2;
+
+        var cn1 = document.getElementById('fm4p1-chip-n1-txt');
+        var cn2 = document.getElementById('fm4p1-chip-n2-txt');
+        var cst = document.getElementById('fm4p1-chip-stress-txt');
+        if (cn1) cn1.textContent = d.n1Txt;
+        if (cn2) cn2.textContent = d.n2Txt;
+        if (cst) cst.textContent = d.stressTxt;
+
+        var tk1 = document.getElementById('fm4p1-takeaway-t1');
+        var tk2 = document.getElementById('fm4p1-takeaway-t2');
+        var tk3 = document.getElementById('fm4p1-takeaway-t3');
+        var tk4 = document.getElementById('fm4p1-takeaway-t4');
+        if (tk1) tk1.textContent = d.t1;
+        if (tk2) tk2.textContent = d.t2;
+        if (tk3) tk3.textContent = d.t3;
+        if (tk4) tk4.textContent = d.t4;
+
+        // Update progress bar
+        var pLine = document.getElementById('fm4p1-progress-line');
+        if (pLine) {
+          pLine.setAttribute('x2', 45 + d.progressW);
+        }
+      }
+
+      function setFilter(filterId) {
+        root.setAttribute('data-filter', filterId);
+      }
+
+      // Attach temporal node listeners
+      [1, 2, 3].forEach(function(id) {
+        var btn = document.getElementById('fm4p1-node-' + id);
+        if (btn) {
+          btn.addEventListener('click', function() { setNode(id); });
+        }
+      });
+
+      // Attach filter listeners
+      var filters = ['all', 'n1', 'n2', 'stress'];
+      filters.forEach(function(fId) {
+        var btn = document.getElementById('fm4p1-btn-' + fId);
+        if (btn) {
+          btn.addEventListener('click', function() { setFilter(fId); });
+        }
+      });
+
+    })();
+    ]]>
+  </script>
+</svg>
+
+        </div>
+        <p class="figura-ancorada__fonte" style="margin:.5rem .9rem .7rem">Timeline do membro inferior: cãibra à direita → arraste do pé → bilateralização, com chips laterais de 1º e 2º no mesmo corpo.</p>
+      </figure>
+
+      <aside class="exec-card" aria-label="Caso clínico — timeline por eixo">
+        <h3 class="case-card__title">Caso Jairo — linha do tempo</h3>
+        <div class="case-rows">
+          <div class="case-row">
+            <button class="case-row__head case-row__toggle" type="button" aria-expanded="false" aria-controls="jairo-r1">
+              <span class="case-row__eixo">6 meses (início)</span><span>Cãibras + “tremores” no MID · isca: “estresse emocional”</span>
+            </button>
+            <div class="case-row__det" id="jairo-r1" hidden>Atribuição emocional é isca de porta, não etiologia. Cãibras e tremores musculares no mesmo contexto de desnervação entram depois no saco do 2º neurônio.</div>
+          </div>
+          <div class="case-row">
+            <button class="case-row__head case-row__toggle" type="button" aria-expanded="false" aria-controls="jairo-r2">
+              <span class="case-row__eixo">Meses depois</span><span>Arrasta o pé direito · cãibras/tremores também no MIE</span>
+            </button>
+            <div class="case-row__det" id="jairo-r2" hidden>A bilateralização não instala 1º — apenas estende o 2º. O arraste é o sinal que vira “fraqueza” no raciocínio motor.</div>
+          </div>
+          <div class="case-row">
+            <button class="case-row__head case-row__toggle" type="button" aria-expanded="false" aria-controls="jairo-r3">
+              <span class="case-row__eixo">Exame motor</span><span>Fascic 4M · hiperreflexia · Babinski bi · espasticidade · atrofia nítida (MID)</span>
+            </button>
+            <div class="case-row__det" id="jairo-r3" hidden>Fasciculação e atrofia falam 2º; hiperreflexia, Babinski e espasticidade falam 1º. A mistura no mesmo corpo é o discriminador — um neurônio sozinho não explica os dois.</div>
+          </div>
+          <div class="case-row">
+            <button class="case-row__head case-row__toggle" type="button" aria-expanded="false" aria-controls="jairo-r4">
+              <span class="case-row__eixo">Negativos</span><span>Sensibilidade normal · sem alteração ocular · sem incontinência urinária</span>
+            </button>
+            <div class="case-row__det" id="jairo-r4" hidden>O que não está alterado fecha o recorte “só motor” e tira o peso de mímico sensitivo ou esfincteriano.</div>
+          </div>
+          <div class="case-row">
+            <button class="case-row__head case-row__toggle" type="button" aria-expanded="false" aria-controls="jairo-r5">
+              <span class="case-row__eixo">Exames</span><span>LCR normal · TC/RM crânio e coluna cervical normais</span>
+            </button>
+            <div class="case-row__det" id="jairo-r5" hidden>Liquor e imagem normais afastam mímico estrutural óbvio de crânio/coluna — sem absolver o “estresse”.</div>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="continuity">
+        <div class="prose"><p class="no-indent"><strong>Por que importa na prática:</strong> a isca emocional e o pé “só arrastando” atrasam a leitura topográfica; os negativos (sensitivo/olho/esfíncter) e a imagem/liquor normais já empurram para doença <strong>puramente motora</strong>, não para “estresse” nem para mímico estrutural óbvio.</p>
+<p class="no-indent"><strong>Resumo operacional:</strong> Jairo = cãibras → pé caído + exame <strong>misto 1º+2º</strong> + <strong>mais nada</strong> + exames de imagem/LCR normais.</p>
+<p class="no-indent">Atrofia e Babinski no mesmo corpo — um neurônio sozinho não basta.</p></div>
+      </aside>
+
+      <!-- QUIZ P1 -->
+      <section class="quiz" data-quiz-id="fm4-ela-p01" aria-labelledby="quiz-p01-title">
+        <h2 id="quiz-p01-title">Quiz — fixação</h2>
+        <ol class="quiz__questions">
+          <li class="quiz__question" data-q="1">
+            <p class="quiz__stem">Jairo, 58 a, 6 meses de cãibras no MID atribuídas a “estresse”, agora arrasta o pé, fasciculações nos 4M, hiperreflexia, Babinski bilateral, espasticidade e atrofia no MID. Sensibilidade, olhos e esfíncteres normais; LCR e RM crânio/coluna normais. O achado que <strong>mais</strong> empurra para topografia <strong>mista 1º+2º</strong> (e não só 2º) é:</p>
+            <div role="radiogroup" aria-label="Q1" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Fasciculações nos quatro membros</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="false" aria-checked="false">B — Atrofia nítida no MID</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="true" aria-checked="false">C — Babinski bilateral</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Cãibras no MIE</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito C.</strong> Fasciculação e atrofia falam <strong>2º</strong>; Babinski (com hiperreflexia/espasticidade) grita <strong>1º</strong>. A mistura no mesmo corpo é o discriminador.</p>
+              <p class="quiz__distractor">(A) e (B) são 2º — necessários, mas sozinhos não “pegam” o 1º. (D) bilateraliza o 2º, não instala piramidal. Cai em A/B porque a banca ama fasciculação/atrofia e o olho gruda no 2º — esquece que o 1º também está gritando.</p>
+            </div>
+          </li>
+          <li class="quiz__question" data-q="2">
+            <p class="quiz__stem">No caso, a melhor leitura dos <strong>negativos</strong> (sensibilidade, olhos, esfíncteres normais + LCR/imagem normais) é:</p>
+            <div role="radiogroup" aria-label="Q2" class="quiz__alternatives">
+              <button type="button" class="quiz__alt" role="radio" data-l="A" data-correct="false" aria-checked="false">A — Excluem doença neurológica</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="B" data-correct="true" aria-checked="false">B — Definem quadro puramente motor e afastam mímicos estruturais óbvios de crânio/coluna</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="C" data-correct="false" aria-checked="false">C — Provam que o estresse emocional era a causa</button>
+              <button type="button" class="quiz__alt" role="radio" data-l="D" data-correct="false" aria-checked="false">D — Indicam polineuropatia sensitivo-motora clássica</button>
+            </div>
+            <div class="quiz__feedback" aria-live="polite" hidden>
+              <p class="quiz__verdict"></p>
+              <p class="quiz__justification"><strong>Gabarito B.</strong> O que <strong>não</strong> está alterado fecha o recorte “só motor” e tira o peso de lesão estrutural óbvia — sem absolver o “estresse”.</p>
+              <p class="quiz__distractor">(A) absurdidade — o exame motor está devastado. (C) a isca não vira etiologia. (D) sensitivo preservado <strong>corta</strong> neuropatia sensitivo-motora clássica. Cai em D porque “fraqueza + perna” puxa reflexo de neuropatia; a sensibilidade normal é o freio.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <nav class="page-nav" aria-label="Navegação entre páginas"><a class="prev" href="index.html" aria-disabled="true"><span class="nav-dir">◂ Anterior</span><span class="nav-ttl">Início</span></a><a class="next" href="p2.html"><span class="nav-dir">Próximo ▸</span><span class="nav-ttl">Um neurônio sozinho não basta</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="rodape">ELA: esclerose lateral amiotrófica.</footer>
+<script src="../_assets/app.js" defer></script>
+<script src="fm4.js" defer></script>
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-panel" aria-label="Navegação entre páginas">
+    <p class="menu-panel__title">ELA · 8 páginas</p>
+    <ul class="menu-panel__list"><li class="menu-panel__item"><a class="menu-panel__link" href="index.html" aria-current="page"><span class="menu-panel__index">01</span><span>Jairo: do “estresse” ao pé que arrasta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p2.html"><span class="menu-panel__index">02</span><span>Um neurônio sozinho não basta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p3.html"><span class="menu-panel__index">03</span><span>ELA: a neurodegenerativa dos dois neurônios</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p4.html"><span class="menu-panel__index">04</span><span>Fasciculação: inespecífica na vida, ímã na prova</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p5.html"><span class="menu-panel__index">05</span><span>Três anos, o motor e a mente intacta</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p6.html"><span class="menu-panel__index">06</span><span>Clínica manda · não é GBS · DFT</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p7.html"><span class="menu-panel__index">07</span><span>Suporte no chão; riluzole e edaravone compram meses</span></a></li><li class="menu-panel__item"><a class="menu-panel__link" href="p8.html"><span class="menu-panel__index">08</span><span>Mantra + vignette 72 a: tenar, clonos, bulbar</span></a></li></ul>
+  </nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle'), ov=document.getElementById('menu-overlay');
+  if(!btn||!ov) return;
+  function fecha(){ ov.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function abre(){ ov.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  btn.addEventListener('click',function(){ ov.getAttribute('aria-hidden')==='false'?fecha():abre(); });
+  document.addEventListener('click',function(e){
+    var p=ov.querySelector('.menu-panel');
+    if(ov.getAttribute('aria-hidden')==='false'&&p&&!p.contains(e.target)&&!btn.contains(e.target)) fecha();
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') fecha(); });
+})();
+</script>
+</body>
+</html>

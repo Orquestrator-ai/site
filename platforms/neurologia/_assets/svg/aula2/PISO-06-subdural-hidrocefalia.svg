@@ -1,0 +1,412 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" id="piso06-svg" width="100%" height="100%" data-active="none" role="img" aria-label="Comparacao anatomica esquematica entre hematoma subdural cronico crescentico e hidrocefalia com ventriculos dilatados, causas reversiveis de demencia.">
+  <defs>
+    <!-- Estilos do SVG escopados para evitar vazamento (leak) -->
+    <style>
+      #piso06-svg {
+        --p6-bg-main: var(--bg-1, #0f172a);
+        --p6-bg-panel: var(--bg-2, #1e293b);
+        --p6-parenchyma: var(--bg-3, #334155);
+        --p6-pathology: var(--kw-red, #ff6b6b);
+        --p6-skull: var(--ink-30, #64748b);
+        --p6-text-primary: var(--ink-90, #f8fafc);
+        --p6-text-muted: var(--ink-60, #94a3b8);
+        --p6-border: var(--ink-20, #475569);
+        --p6-accent: var(--kw-amber, #fbbf24);
+        --p6-green: var(--kw-green, #34d399);
+        
+        background-color: var(--p6-bg-main);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        user-select: none;
+      }
+
+      @media (prefers-color-scheme: light) {
+        #piso06-svg {
+          --p6-bg-main: var(--bg-1, #f8fafc);
+          --p6-bg-panel: var(--bg-2, #f1f5f9);
+          --p6-parenchyma: var(--bg-3, #cbd5e1);
+          --p6-pathology: var(--kw-red, #dc2626);
+          --p6-skull: var(--ink-30, #94a3b8);
+          --p6-text-primary: var(--ink-90, #0f172a);
+          --p6-text-muted: var(--ink-60, #475569);
+          --p6-border: var(--ink-20, #cbd5e1);
+          --p6-accent: var(--kw-amber, #d97706);
+          --p6-green: var(--kw-green, #059669);
+        }
+      }
+
+      /* Transições e estados interativos */
+      #piso06-svg .brain-card {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+      }
+      #piso06-svg .brain-card:hover {
+        opacity: 1 !important;
+        transform: translateY(-2px);
+      }
+      #piso06-svg .brain-card:focus-visible {
+        outline: 2px solid var(--p6-accent);
+        outline-offset: 4px;
+      }
+
+      /* Destaque condicional com base no data-active do root */
+      #piso06-svg[data-active="subdural"] #card-hydro {
+        opacity: 0.35;
+      }
+      #piso06-svg[data-active="subdural"] #card-subdural {
+        opacity: 1;
+      }
+      #piso06-svg[data-active="subdural"] #card-subdural .highlight-ring {
+        stroke: var(--p6-accent);
+        stroke-width: 2;
+        stroke-dasharray: 4, 2;
+      }
+
+      #piso06-svg[data-active="hydro"] #card-subdural {
+        opacity: 0.35;
+      }
+      #piso06-svg[data-active="hydro"] #card-hydro {
+        opacity: 1;
+      }
+      #piso06-svg[data-active="hydro"] #card-hydro .highlight-ring {
+        stroke: var(--p6-accent);
+        stroke-width: 2;
+        stroke-dasharray: 4, 2;
+      }
+
+      /* Painéis de texto dinâmicos */
+      #piso06-svg .panel-content {
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+        pointer-events: none;
+      }
+      #piso06-svg[data-active="none"] #panel-default,
+      #piso06-svg[data-active="subdural"] #panel-subdural,
+      #piso06-svg[data-active="hydro"] #panel-hydro {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Indicadores piscantes (micro-animação de descoberta) */
+      @keyframes p6-pulse {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; }
+        100% { opacity: 0.4; }
+      }
+      #piso06-svg .pulse-element {
+        animation: p6-pulse 2.5s infinite ease-in-out;
+      }
+
+      #piso06-svg .hs-indicator {
+        fill: var(--p6-accent);
+        transition: r 0.2s ease;
+      }
+      #piso06-svg .brain-card:hover .hs-indicator {
+        r: 8px;
+      }
+    </style>
+
+    <!-- Marcadores de ponta de seta -->
+    <marker id="arrow-coral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--p6-pathology)" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--p6-accent)" />
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--p6-text-muted)" />
+    </marker>
+  </defs>
+
+  <!-- Fundo clicável para resetar seleção -->
+  <rect id="bg-click" width="100%" height="100%" fill="transparent" />
+
+  <!-- Cabeçalho (Contrato de Layout Bauer #1) -->
+  <g transform="translate(0, 0)">
+    <text x="400" y="35" text-anchor="middle" font-size="20" font-weight="bold" fill="var(--p6-text-primary)">
+      CAUSAS ESTRUTURAIS REVERSÍVEIS DE DEMÊNCIA
+    </text>
+    <text x="400" y="55" text-anchor="middle" font-size="12" fill="var(--p6-text-muted)">
+      Duas etiologias expansivas identificáveis por neuroimagem: Compressão Externa (Subdural) vs. Dilatação Interna (Hidrocefalia)
+    </text>
+  </g>
+
+  <!-- LADO ESQUERDO: Hematoma Subdural Crônico (card-subdural) -->
+  <g id="card-subdural" class="brain-card" tabindex="0" role="button" aria-label="Análise de Hematoma Subdural Crônico. Mostra coleção crescêntica comprimindo o parênquima cerebral por fora e desviando a linha média.">
+    <!-- Feedback de seleção -->
+    <rect x="35" y="75" width="350" height="285" rx="12" fill="transparent" stroke="var(--p6-border)" stroke-width="1" class="highlight-ring" />
+    
+    <!-- Título do hemisfério/caso -->
+    <text x="210" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--p6-text-primary)">
+      1. Hematoma Subdural Crônico
+    </text>
+    <text x="210" y="116" text-anchor="middle" font-size="11" fill="var(--p6-text-muted)">
+      Causa compressiva externa (Espaço Subdural)
+    </text>
+
+    <g transform="translate(0, 10)">
+      <!-- Linhas de Orientação Radiológica (Preflight de lateralidade anatômica) -->
+      <text x="210" y="130" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--p6-text-muted)">A</text>
+      <text x="210" y="325" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--p6-text-muted)">P</text>
+      <text x="110" y="225" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--p6-text-muted)">R</text>
+      <text x="310" y="225" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--p6-text-muted)">L</text>
+
+      <!-- Couro Cabeludo / Margem Externa -->
+      <ellipse cx="210" cy="220" rx="86" ry="96" fill="none" stroke="var(--p6-border)" stroke-width="1" stroke-dasharray="2,2" />
+      
+      <!-- Calota Craniana -->
+      <ellipse cx="210" cy="220" rx="80" ry="90" fill="none" stroke="var(--p6-skull)" stroke-width="6" />
+
+      <!-- Parênquima Cerebral (Desviado para a Esquerda da imagem / Direita do paciente) -->
+      <!-- Hemisfério Esquerdo do Paciente (Direita da imagem - Normal/Compensado) -->
+      <path d="M 213,136 C 240,136 284,160 284,220 C 284,280 240,304 213,304 C 223,260 223,180 213,136 Z" 
+            fill="var(--p6-parenchyma)" stroke="var(--p6-border)" stroke-width="1.5" />
+      
+      <!-- Hemisfério Direito do Paciente (Esquerda da imagem - Comprimido) -->
+      <path d="M 211,136 C 221,180 221,260 211,304 C 185,304 154,280 154,220 C 154,166 185,136 211,136 Z" 
+            fill="var(--p6-parenchyma)" stroke="var(--p6-border)" stroke-width="1.5" />
+
+      <!-- Fissura Inter-hemisférica / Linha Média (Desviada em arco para a direita da imagem) -->
+      <path d="M 210,133 C 222,175 222,265 210,307" fill="none" stroke="var(--p6-accent)" stroke-width="2.5" stroke-dasharray="3,2" />
+
+      <!-- Hematoma Subdural Crônico (Coleção crescêntica) -->
+      <!-- Localizado no espaço subdural direito (lado esquerdo do leitor) -->
+      <path d="M 183,137 C 145,155 133,185 133,220 C 133,255 145,285 183,303 C 160,275 148,250 148,220 C 148,190 160,165 183,137 Z" 
+            fill="var(--p6-pathology)" stroke="var(--p6-pathology)" stroke-width="1" />
+
+      <!-- Ventrículos Laterais Colabados / Comprimidos -->
+      <!-- Ventrículo Lateral Ipsilateral (Comprimido) -->
+      <path d="M 198,215 C 200,217 200,223 198,225 C 197,223 197,217 198,215 Z" fill="var(--p6-text-muted)" opacity="0.5" />
+      <!-- Ventrículo Lateral Contralateral (Deslocado) -->
+      <path d="M 226,200 C 238,210 238,230 226,240 C 230,225 230,215 226,200 Z" fill="var(--p6-border)" />
+
+      <!-- Setas e Indicações Fisiopatológicas -->
+      <!-- Seta de Efeito de Massa / Compressão do hematoma -->
+      <path d="M 143,220 L 170,220" fill="none" stroke="var(--p6-pathology)" stroke-width="2" marker-end="url(#arrow-coral)" />
+      <!-- Seta de Desvio da Linha Média -->
+      <path d="M 210,220 L 235,220" fill="none" stroke="var(--p6-accent)" stroke-width="2" marker-end="url(#arrow-amber)" />
+
+      <!-- Rótulos da Imagem (Densidade de Informação Bauer #2 e #3) -->
+      <text x="125" y="170" text-anchor="end" font-size="10" font-weight="bold" fill="var(--p6-pathology)">Coleção crescêntica</text>
+      <text x="125" y="182" text-anchor="end" font-size="9" fill="var(--p6-text-muted)">(Sangramento venoso)</text>
+      <line x1="128" y1="175" x2="148" y2="190" stroke="var(--p6-pathology)" stroke-width="1" />
+
+      <text x="295" y="170" text-anchor="start" font-size="10" font-weight="bold" fill="var(--p6-accent)">Desvio de Linha Média</text>
+      <text x="295" y="182" text-anchor="start" font-size="9" fill="var(--p6-text-muted)">(Efeito de massa local)</text>
+      <line x1="292" y1="175" x2="225" y2="200" stroke="var(--p6-accent)" stroke-width="1" />
+    </g>
+
+    <!-- Badge pulsante indicando interatividade -->
+    <g transform="translate(210, 325)" class="pulse-element">
+      <rect x="-55" y="0" width="110" height="18" rx="9" fill="var(--p6-bg-panel)" stroke="var(--p6-accent)" stroke-width="1" />
+      <circle cx="-42" cy="9" r="4" class="hs-indicator" />
+      <text x="8" y="13" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--p6-accent)">ANALISAR CAUSA</text>
+    </g>
+  </g>
+
+  <!-- LADO DIREITO: Hidrocefalia (card-hydro) -->
+  <g id="card-hydro" class="brain-card" tabindex="0" role="button" aria-label="Análise de Hidrocefalia. Mostra os ventrículos laterais maciçamente dilatados comprimindo o parênquima cerebral de dentro para fora de forma simétrica.">
+    <!-- Feedback de seleção -->
+    <rect x="415" y="75" width="350" height="285" rx="12" fill="transparent" stroke="var(--p6-border)" stroke-width="1" class="highlight-ring" />
+
+    <!-- Título do hemisfério/caso -->
+    <text x="590" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--p6-text-primary)">
+      2. Hidrocefalia (ex: HPN)
+    </text>
+    <text x="590" y="116" text-anchor="middle" font-size="11" fill="var(--p6-text-muted)">
+      Dilatação interna progressiva (Ventriculomegalia)
+    </text>
+
+    <g transform="translate(0, 10)">
+      <!-- Linhas de Orientação Radiológica -->
+      <text x="590" y="130" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--p6-text-muted)">A</text>
+      <text x="590" y="325" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--p6-text-muted)">P</text>
+      <text x="490" y="225" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--p6-text-muted)">R</text>
+      <text x="690" y="225" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--p6-text-muted)">L</text>
+
+      <!-- Couro Cabeludo / Margem Externa -->
+      <ellipse cx="590" cy="220" rx="86" ry="96" fill="none" stroke="var(--p6-border)" stroke-width="1" stroke-dasharray="2,2" />
+
+      <!-- Calota Craniana -->
+      <ellipse cx="590" cy="220" rx="80" ry="90" fill="none" stroke="var(--p6-skull)" stroke-width="6" />
+
+      <!-- Parênquima Cerebral (Normal e simétrico na periferia, mas comprimido pelo centro) -->
+      <!-- Hemisfério Esquerdo -->
+      <path d="M 588,132 C 625,132 664,160 664,220 C 664,280 625,308 588,308 C 588,270 588,170 588,132 Z" 
+            fill="var(--p6-parenchyma)" stroke="var(--p6-border)" stroke-width="1.5" />
+      
+      <!-- Hemisfério Direito -->
+      <path d="M 592,132 C 592,170 592,270 592,308 C 555,308 516,280 516,220 C 516,160 555,132 592,132 Z" 
+            fill="var(--p6-parenchyma)" stroke="var(--p6-border)" stroke-width="1.5" />
+
+      <!-- Fissura Inter-hemisférica (Alinhada / Sem desvio de linha média) -->
+      <line x1="590" y1="132" x2="590" y2="308" stroke="var(--p6-border)" stroke-width="1.5" stroke-dasharray="4,4" />
+
+      <!-- Ventrículos Laterais Maciçamente Dilatados (Em borboleta gigante) -->
+      <!-- Ventrículo Lateral Direito (Esquerda do leitor) -->
+      <path d="M 585,170 C 550,185 530,205 530,220 C 530,235 550,255 585,270 C 565,240 565,200 585,170 Z" 
+            fill="var(--p6-pathology)" stroke="var(--p6-pathology)" stroke-width="1" />
+      
+      <!-- Ventrículo Lateral Esquerdo (Direita do leitor) -->
+      <path d="M 595,170 C 615,200 615,240 595,270 C 630,255 650,235 650,220 C 650,205 630,185 595,170 Z" 
+            fill="var(--p6-pathology)" stroke="var(--p6-pathology)" stroke-width="1" />
+
+      <!-- Cornos Temporais Posteriores Dilatados adicionais (Fidelidade médica) -->
+      <ellipse cx="560" cy="275" rx="8" ry="12" fill="var(--p6-pathology)" transform="rotate(-15, 560, 275)" />
+      <ellipse cx="620" cy="275" rx="8" ry="12" fill="var(--p6-pathology)" transform="rotate(15, 620, 275)" />
+
+      <!-- Setas de Pressão Centrífuga (Distensão das fibras internas) -->
+      <path d="M 555,220 L 530,220" fill="none" stroke="var(--p6-pathology)" stroke-width="2" marker-end="url(#arrow-coral)" />
+      <path d="M 625,220 L 650,220" fill="none" stroke="var(--p6-pathology)" stroke-width="2" marker-end="url(#arrow-coral)" />
+
+      <!-- Rótulos da Imagem -->
+      <text x="672" y="170" text-anchor="start" font-size="10" font-weight="bold" fill="var(--p6-pathology)">Ventriculomegalia</text>
+      <text x="672" y="182" text-anchor="start" font-size="9" fill="var(--p6-text-muted)">(Acúmulo interno de LCR)</text>
+      <line x1="668" y1="175" x2="628" y2="195" stroke="var(--p6-pathology)" stroke-width="1" />
+
+      <text x="508" y="170" text-anchor="end" font-size="10" font-weight="bold" fill="var(--p6-accent)">Córtex Preservado</text>
+      <text x="508" y="182" text-anchor="end" font-size="9" fill="var(--p6-text-muted)">(Sem atrofia primária)</text>
+      <line x1="512" y1="175" x2="542" y2="195" stroke="var(--p6-accent)" stroke-width="1" />
+    </g>
+
+    <!-- Badge pulsante indicando interatividade -->
+    <g transform="translate(590, 325)" class="pulse-element">
+      <rect x="-55" y="0" width="110" height="18" rx="9" fill="var(--p6-bg-panel)" stroke="var(--p6-accent)" stroke-width="1" />
+      <circle cx="-42" cy="9" r="4" class="hs-indicator" />
+      <text x="8" y="13" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--p6-accent)">ANALISAR CAUSA</text>
+    </g>
+  </g>
+
+  <!-- PAINEL DE LEITURA INTERATIVO (Contrato de Layout Bauer #4) -->
+  <g transform="translate(30, 375)">
+    <!-- Base do Painel -->
+    <rect width="740" height="110" rx="8" fill="var(--p6-bg-panel)" stroke="var(--p6-border)" stroke-width="1.5" />
+    
+    <!-- ESTADO 1: Inicial / Sem seleção (Default) -->
+    <g id="panel-default" class="panel-content">
+      <text x="370" y="38" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--p6-accent)">
+        CLIQUE EM UM DOS CÉREBROS PARA INVESTIGAR
+      </text>
+      <text x="370" y="60" text-anchor="middle" font-size="12" fill="var(--p6-text-primary)">
+        O diagnóstico diferencial das demências reversíveis exige exclusão de causas cirúrgicas estruturais.
+      </text>
+      <text x="370" y="80" text-anchor="middle" font-size="11" fill="var(--p6-text-muted)">
+        A clínica de ambas pode mimetizar Alzheimer ou demência vascular, mas a TC ou RM define a reversibilidade.
+      </text>
+    </g>
+
+    <!-- ESTADO 2: Hematoma Subdural Ativo -->
+    <g id="panel-subdural" class="panel-content">
+      <rect x="15" y="12" width="165" height="20" rx="4" fill="var(--p6-pathology)" opacity="0.15" />
+      <text x="22" y="26" font-size="12" font-weight="bold" fill="var(--p6-pathology)">HEMATOMA SUBDURAL</text>
+      
+      <!-- Linha divisória -->
+      <line x1="380" y1="15" x2="380" y2="95" stroke="var(--p6-border)" stroke-width="1" />
+
+      <!-- Coluna Esquerda: Fisiopatologia -->
+      <text x="22" y="46" font-size="11" font-weight="bold" fill="var(--p6-text-primary)">Mecanismo:</text>
+      <text x="22" y="61" font-size="11" fill="var(--p6-text-muted)">Coleção hemática venosa (pontes) de crescimento lento.</text>
+      <text x="22" y="76" font-size="11" fill="var(--p6-text-muted)">Gera força <tspan fill="var(--p6-pathology)">compressiva extrínseca</tspan> com desvio do parênquima.</text>
+
+      <!-- Coluna Direita: Clínica e Conduta -->
+      <text x="400" y="26" font-size="11" font-weight="bold" fill="var(--p6-text-primary)">Manifestação Clínica:</text>
+      <text x="400" y="41" font-size="11" fill="var(--p6-text-muted)">Flutuação cognitiva, cefaleia refratária e déficits focais tardios.</text>
+      
+      <text x="400" y="65" font-size="11" font-weight="bold" fill="var(--p6-green)">Conduta e Resolução:</text>
+      <text x="400" y="80" font-size="11" fill="var(--p6-text-primary)">
+        Cirúrgica: <tspan fill="var(--p6-green)" font-weight="bold">Trepanação e evacuamento</tspan> da coleção líquida.
+      </text>
+    </g>
+
+    <!-- ESTADO 3: Hidrocefalia Ativa -->
+    <g id="panel-hydro" class="panel-content">
+      <rect x="15" y="12" width="165" height="20" rx="4" fill="var(--p6-pathology)" opacity="0.15" />
+      <text x="22" y="26" font-size="12" font-weight="bold" fill="var(--p6-pathology)">HIDROCEFALIA (HPN)</text>
+      
+      <!-- Linha divisória -->
+      <line x1="380" y1="15" x2="380" y2="95" stroke="var(--p6-border)" stroke-width="1" />
+
+      <!-- Coluna Esquerda: Fisiopatologia -->
+      <text x="22" y="46" font-size="11" font-weight="bold" fill="var(--p6-text-primary)">Mecanismo:</text>
+      <text x="22" y="61" font-size="11" fill="var(--p6-text-muted)">Resistência ao fluxo/absorção do líquor nos corpúsculos de Pacchioni.</text>
+      <text x="22" y="76" font-size="11" fill="var(--p6-text-muted)">A <tspan fill="var(--p6-pathology)">pressão interna ventriculomegalia</tspan> estica a coroa radiada.</text>
+
+      <!-- Coluna Direita: Clínica e Conduta -->
+      <text x="400" y="26" font-size="11" font-weight="bold" fill="var(--p6-text-primary)">Manifestação Clínica (Tríade de Hakim-Adams):</text>
+      <text x="400" y="41" font-size="11" fill="var(--p6-text-muted)">
+        <tspan fill="var(--p6-accent)" font-weight="bold">1. Apraxia da marcha</tspan> (ímã), 2. Incontinência urinária, 3. Demência.
+      </text>
+      
+      <text x="400" y="65" font-size="11" font-weight="bold" fill="var(--p6-green)">Conduta e Resolução:</text>
+      <text x="400" y="80" font-size="11" fill="var(--p6-text-primary)">
+        Descompressão: <tspan fill="var(--p6-green)" font-weight="bold">Derivação Ventriculoperitoneal (DVP)</tspan> pós Tap-Test positivo.
+      </text>
+    </g>
+  </g>
+
+  <!-- Legenda de Interpretação (Contrato de Layout Bauer #1) -->
+  <g transform="translate(0, 490)">
+    <text x="400" y="0" text-anchor="middle" font-size="10.5" fill="var(--p6-text-muted)">
+      Conclusão: Enquanto exames laboratoriais avaliam causas metabólicas de demência reversível, a neuroimagem é soberana
+    </text>
+    <text x="400" y="12" text-anchor="middle" font-size="10.5" fill="var(--p6-text-muted)">
+      na diferenciação mecânica dessas duas patologias de tratamento cirúrgico.
+    </text>
+  </g>
+
+  <!-- Script Interativo Robusto Self-Contained (CDATA inline) -->
+  <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+      const init = () => {
+        const svg = document.getElementById('piso06-svg');
+        if (!svg) return;
+        const cardSubdural = document.getElementById('card-subdural');
+        const cardHydro = document.getElementById('card-hydro');
+
+        const setActive = (state) => {
+          svg.setAttribute('data-active', state);
+        };
+
+        if (cardSubdural) {
+          cardSubdural.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setActive('subdural');
+          });
+          cardSubdural.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setActive('subdural');
+            }
+          });
+        }
+
+        if (cardHydro) {
+          cardHydro.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setActive('hydro');
+          });
+          cardHydro.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setActive('hydro');
+            }
+          });
+        }
+
+        // Clicar fora ou no fundo reseta para o estado inicial
+        svg.addEventListener('click', (e) => {
+          if (e.target.id === 'bg-click' || e.target === svg) {
+            setActive('none');
+          }
+        });
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+    //]]>
+  </script>
+</svg>
