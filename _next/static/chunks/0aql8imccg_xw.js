@@ -399,6 +399,13 @@ No matching component was found for:
         uniform vec2 u_resolution;
         uniform float u_time;
         uniform vec2 u_mouse;
+        // A paleta chega de fora (PALETAS, abaixo): o azul do cinema ou o verde da Medicina.
+        uniform vec3 u_night;
+        uniform vec3 u_deep;
+        uniform vec3 u_mid;
+        uniform vec3 u_bright;
+        uniform vec3 u_glow;
+        uniform vec3 u_glowAdd;
 
         vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
         vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -451,12 +458,12 @@ No matching component was found for:
             float infl = exp(-distance(st, mouse) * 1.8);
             uv += (st - mouse) * infl * 0.22;
 
-            // Палитра Superconscious: чёрный → индиго → электрический фиолет → лавандовый глоу
-            vec3 night    = vec3(0.010, 0.016, 0.045); // почти чёрный с фиолетовым подтоном
-            vec3 indigo   = vec3(0.055, 0.110, 0.245);  // глубокий индиго
-            vec3 violet   = vec3(0.180, 0.310, 0.660);  // насыщенный фиолет
-            vec3 electric = vec3(0.290, 0.450, 0.820);  // электрический пурпур
-            vec3 glow     = vec3(0.740, 0.840, 1.000);  // яркий лавандово-белый хотспот
+            // Палитра: ночь → глубина → середина → яркий тон → хотспот (значения — в PALETAS)
+            vec3 night    = u_night;
+            vec3 indigo   = u_deep;
+            vec3 violet   = u_mid;
+            vec3 electric = u_bright;
+            vec3 glow     = u_glow;
 
             vec3 acc = vec3(0.0);
             float wsum = 0.0;
@@ -487,7 +494,7 @@ No matching component was found for:
             // Аддитивный \xabблум\xbb хотспота — пересвет к бело-лавандовому, как в референсе
             vec2 hot = vec2(0.44 + 0.05 * sin(t * 1.1), 0.02 + 0.03 * cos(t));
             float hotGlow = exp(-distance(uv, hot) * 4.5);
-            col += vec3(0.70, 0.82, 1.0) * hotGlow * 0.7;
+            col += u_glowAdd * hotGlow * 0.7;
 
             // Лёгкое повышение насыщенности (без тёплого накала — чтобы синий оставался чистым)
             float luma = dot(col, vec3(0.299, 0.587, 0.114));
@@ -507,4 +514,4 @@ No matching component was found for:
             col = clamp(col, 0.0, 1.0);
             gl_FragColor = vec4(col, 1.0);
         }
-`,dt=1e3/36;function dn({active:e}){let t=(0,A.useRef)(null),{size:n,gl:i,invalidate:r}=hm(),a=(0,A.useRef)(new em(n.width/2,n.height/2)),s=(0,A.useRef)(new em(n.width/2,n.height/2)),o=(0,A.useRef)(0),l=(0,A.useMemo)(()=>({u_resolution:{value:new em(n.width,n.height)},u_time:{value:0},u_mouse:{value:new em(n.width/2,n.height/2)}}),[]);return hg(()=>{let e=t.current;if(!e)return;o.current||(o.current=performance.now());let i=e.uniforms;i.u_time.value=(performance.now()-o.current)/1e3,i.u_resolution.value.set(n.width,n.height),s.current.x+=(a.current.x-s.current.x)*.12,s.current.y+=(a.current.y-s.current.y)*.12,i.u_mouse.value.copy(s.current)}),(0,A.useEffect)(()=>{if(!e)return;let t=0,n=0,i=e=>{t=requestAnimationFrame(i),e-n>=dt&&(n=e,r())};return t=requestAnimationFrame(i),()=>cancelAnimationFrame(t)},[e,r]),(0,A.useEffect)(()=>{let e=i.domElement,t=t=>{let n=e.getBoundingClientRect();a.current.set(t.clientX-n.left,t.clientY-n.top)};return window.addEventListener("pointermove",t,{passive:!0}),()=>window.removeEventListener("pointermove",t)},[i]),(0,w.jsxs)("mesh",{frustumCulled:!1,children:[(0,w.jsx)("planeGeometry",{args:[2,2]}),(0,w.jsx)("shaderMaterial",{ref:t,vertexShader:h7,fragmentShader:de,uniforms:l})]})}e.s(["HeroGradient",0,function({className:e,active:t=!0}){return(0,w.jsx)("div",{className:e,children:(0,w.jsx)(h9,{style:{width:"100%",height:"100%"},gl:{alpha:!0},dpr:1,frameloop:t?"demand":"never",resize:{offsetSize:!0,scroll:!1,debounce:{scroll:0,resize:200}},children:(0,w.jsx)(dn,{active:t})})})}],21708)}]);
+`,dt={azul:{night:[.01,.016,.045],deep:[.055,.11,.245],mid:[.18,.31,.66],bright:[.29,.45,.82],glow:[.74,.84,1],glowAdd:[.7,.82,1]},verde:{night:[.006,.02,.016],deep:[.025,.115,.095],mid:[.07,.33,.255],bright:[.15,.52,.39],glow:[.78,.98,.86],glowAdd:[.7,1,.84]}},dn=e=>new ev(e[0],e[1],e[2]),di=1e3/36;function dr({active:e,paleta:t}){let n=(0,A.useRef)(null),{size:i,gl:r,invalidate:a}=hm(),s=(0,A.useRef)(new em(i.width/2,i.height/2)),o=(0,A.useRef)(new em(i.width/2,i.height/2)),l=(0,A.useRef)(0),u=(0,A.useMemo)(()=>{let e=dt[t];return{u_resolution:{value:new em(i.width,i.height)},u_time:{value:0},u_mouse:{value:new em(i.width/2,i.height/2)},u_night:{value:dn(e.night)},u_deep:{value:dn(e.deep)},u_mid:{value:dn(e.mid)},u_bright:{value:dn(e.bright)},u_glow:{value:dn(e.glow)},u_glowAdd:{value:dn(e.glowAdd)}}},[]);return hg(()=>{let e=n.current;if(!e)return;l.current||(l.current=performance.now());let t=e.uniforms;t.u_time.value=(performance.now()-l.current)/1e3,t.u_resolution.value.set(i.width,i.height),o.current.x+=(s.current.x-o.current.x)*.12,o.current.y+=(s.current.y-o.current.y)*.12,t.u_mouse.value.copy(o.current)}),(0,A.useEffect)(()=>{if(!e)return;let t=0,n=0,i=e=>{t=requestAnimationFrame(i),e-n>=di&&(n=e,a())};return t=requestAnimationFrame(i),()=>cancelAnimationFrame(t)},[e,a]),(0,A.useEffect)(()=>{let e=r.domElement,t=t=>{let n=e.getBoundingClientRect();s.current.set(t.clientX-n.left,t.clientY-n.top)};return window.addEventListener("pointermove",t,{passive:!0}),()=>window.removeEventListener("pointermove",t)},[r]),(0,w.jsxs)("mesh",{frustumCulled:!1,children:[(0,w.jsx)("planeGeometry",{args:[2,2]}),(0,w.jsx)("shaderMaterial",{ref:n,vertexShader:h7,fragmentShader:de,uniforms:u})]})}e.s(["HeroGradient",0,function({className:e,active:t=!0,paleta:n="azul"}){return(0,w.jsx)("div",{className:e,children:(0,w.jsx)(h9,{style:{width:"100%",height:"100%"},gl:{alpha:!0},dpr:1,frameloop:t?"demand":"never",resize:{offsetSize:!0,scroll:!1,debounce:{scroll:0,resize:200}},children:(0,w.jsx)(dr,{active:t,paleta:n})})})}],21708)}]);
