@@ -28,13 +28,6 @@
 .orq-account-site button, .orq-account-site a, .orq-account-site input { -webkit-tap-highlight-color: transparent; }
 .orq-account-site :focus-visible { outline: 3px solid var(--oq-focus); outline-offset: 4px; }
 .orq-account-site [hidden] { display: none !important; }
-.oq-site-header { min-height: 82px; border-bottom: 1px solid var(--oq-line); }
-.oq-header-inner { width: min(1180px, 100%); min-height: inherit; margin: auto; padding: 14px var(--oq-space); display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-.oq-brand { display: inline-flex; align-items: center; min-width: 0; gap: 12px; text-decoration: none; }
-.oq-brand img { flex: none; width: 40px; height: 40px; }
-.oq-brand span { font-family: var(--oq-display); font-size: 26px; line-height: 1.15; }
-.oq-header-link { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; font-size: 14px; text-underline-offset: 4px; }
-.oq-header-link svg { width: 16px; height: 16px; }
 .oq-main { width: min(1180px, 100%); margin: auto; padding: clamp(36px, 7vw, 84px) var(--oq-space) 72px; }
 .oq-account-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 7vw, 90px); align-items: start; }
 .oq-intro h1 { margin: 0; font: 400 clamp(42px, 5vw, 68px)/1.06 var(--oq-display); letter-spacing: -.035em; text-wrap: balance; }
@@ -128,7 +121,7 @@ orq-account-page, orq-admin-page { display: block; min-width: 0; }
 .oq-site-footer > div { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 20px; border-top: 1px solid var(--oq-line); padding-top: 18px; }
 .oq-site-footer a { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 4px; }
 .oq-noscript { max-width: 560px; margin: 24px auto; padding: 20px; border: 1px solid var(--oq-line); border-radius: 12px; background: var(--oq-surface); }
-.oq-skip { position: fixed; z-index: 100; left: 12px; top: 12px; padding: 12px 16px; border-radius: 8px; background: var(--oq-ink); color: var(--oq-paper) !important; transform: translateY(-200%); }
+.oq-skip { position: fixed; z-index: 200; left: 12px; top: 60px; padding: 12px 16px; border-radius: 8px; background: var(--oq-ink); color: var(--oq-paper) !important; transform: translateY(calc(-100% - 64px)); }
 .oq-skip:focus { transform: translateY(0); }
 .oq-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 @media (max-width: 780px) {
@@ -140,11 +133,6 @@ orq-account-page, orq-admin-page { display: block; min-width: 0; }
   .oq-filter { width: min(100%, 360px); }
 }
 @media (max-width: 520px) {
-  .oq-header-inner { gap: 12px; min-height: 74px; }
-  .oq-brand { gap: 8px; }
-  .oq-brand img { width: 33px; height: 33px; }
-  .oq-brand span { font-size: 22px; }
-  .oq-header-link { font-size: 12px; }
   .oq-main { padding-top: 34px; padding-bottom: 48px; }
   .oq-intro > p { font-size: 16px; }
   .oq-panel-title { font-size: 21px; }
