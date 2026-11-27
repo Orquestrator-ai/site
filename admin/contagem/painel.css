@@ -449,3 +449,18 @@ html,body{margin:0}
 .c-retorno { padding:.6rem max(1rem,calc((100vw - 1200px)/2)); background:var(--c-papel); border-bottom:1px solid var(--c-fio); font-size:.875rem; }
 
 #app[data-mudando-site] .c-tela { visibility:hidden; }
+
+#app .c-retorno{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.25rem 1rem}
+#app #abrir-vinculos{padding:.5rem .75rem;border:1px solid var(--c-fio-medio);border-radius:.5rem;min-height:44px;color:var(--c-ind-texto);font-weight:650}
+#app #vinculos{box-sizing:border-box;width:min(32rem,calc(100vw - 2rem));max-height:min(80dvh,46rem);overflow:auto;background:var(--c-papel);color:var(--c-tinta);border:1px solid var(--c-fio-medio);border-radius:1rem;padding:clamp(1rem,4vw,1.7rem);box-shadow:var(--c-sombra);font:400 1rem/1.5 var(--c-sans)}
+#vinculos::backdrop{background:rgba(0,0,0,.48)}
+#vinculos .vinc-cab,#vinculos .vinc-acoes{display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+#vinculos h2{margin:0;font-size:1.45rem}
+#vinculos p{margin:.75rem 0}
+#vinculos-lista{padding:0;list-style:none}
+#vinculos-lista li{border-top:1px solid var(--c-fio-medio);padding:.75rem 0}
+#vinculos-lista strong,#vinculos-lista small{display:block;overflow-wrap:anywhere}
+#vinculos-lista small{color:var(--c-suave);margin:.25rem 0 .5rem}
+#app #vinculos button{border:1px solid var(--c-fio-medio);border-radius:.5rem;padding:.5rem .8rem;min-height:44px;color:var(--c-tinta)}
+#app #vinculos .vinc-revogar{color:var(--c-queda)}
+#app #vinculos button:disabled{opacity:.55}

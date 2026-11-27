@@ -4,18 +4,20 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://apis.google.com; frame-src https://orquestrator-61836.firebaseapp.com https://accounts.google.com; connect-src https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://www.googleapis.com https://firestore.googleapis.com https://orquestrator-contagem.netlify.app; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
 <title>Autorizar este iPhone · Contagem</title><link rel="stylesheet" href="iphone.css"><script type="module" src="login.js"></script></head>
 <body><main>
-<h1>Permitir leitura das estatísticas neste iPhone por até 1 hora</h1>
+<h1 id="titulo">Vincular este iPhone ao Contagem</h1>
+<p id="escopo"></p>
 <section id="entrada" hidden aria-label="Escolher conta">
 <p>Entre com a conta que você usa no painel administrativo do Orquestrator.</p>
 <div class="acoes"><button type="button" data-idp="google">Continuar com Google</button><button type="button" data-idp="github">Continuar com GitHub</button></div>
 </section>
 <form id="pedido" hidden>
 <p>Conta administrativa <strong id="conta"></strong></p>
+<div id="nome-grupo" hidden><label for="nome-aparelho">Nome do iPhone no painel</label><input id="nome-aparelho" type="text" value="Meu iPhone" maxlength="45" autocomplete="off" spellcheck="false"></div>
 <label for="codigo">Código de 6 dígitos mostrado no seu iPhone</label>
 <input name="codigo" id="codigo" type="text" inputmode="numeric" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="6" pattern="[0-9]{6}" required aria-describedby="ajuda erro">
 <p id="ajuda">Consulte o código no app Contagem e digite-o aqui para autorizar esse aparelho.</p>
 <p id="erro" role="alert"></p>
-<div class="acoes"><button id="permitir" type="submit">Permitir por até 1 hora</button><button id="cancelar" type="button">Cancelar</button></div>
+<div class="acoes"><button id="permitir" type="submit">Vincular iPhone</button><button id="cancelar" type="button">Cancelar</button></div>
 </form>
 <p id="estado" role="status" aria-live="polite" aria-atomic="true">Verificando o pedido…</p>
 <a id="voltar" hidden>Voltar ao Contagem</a>
