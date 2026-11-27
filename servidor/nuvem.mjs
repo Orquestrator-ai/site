@@ -1,4 +1,5 @@
 import {createHash} from "node:crypto";
+import {criarFarol,ErroFarol} from "./farol.mjs";
 import {AREAS,pertence} from "./areas.mjs";
 import {abrirBanco} from "./banco.mjs";
 import {classificarOrigem, classificarUA, rotuloOrigem} from "./classificar.mjs";
@@ -34,7 +35,10 @@ const LEITURA_IPHONE = new Set(["sites","visao","tabela","vivo"]);
 const EMITIR_PASSE = "iphone/autorizar";
 const GESTAO_IPHONE = new Set([EMITIR_PASSE,"iphone/dispositivos","iphone/revogar"]);
 const PAREAMENTO_NATIVO = new Set(["iphone/renovar","iphone/desvincular","iphone/migrar"]);
-const ROTAS = new Set([...LEITURA_IPHONE, "anotacao", "exportar", ...GESTAO_IPHONE, ...PAREAMENTO_NATIVO]);
+const FAROL_AVISOS=new Set(["chave","inscrever","remover","testar","estado","recebido"].map(s=>"farol/avisos/"+s));
+const ROTAS_FAROL=new Set(["farol","farol/saude","farol/sonda",...FAROL_AVISOS]);
+const FAROL_POST=new Set([...FAROL_AVISOS].filter(r=>r!=="farol/avisos/chave").concat("farol/sonda"));
+const ROTAS = new Set([...ROTAS_FAROL,...LEITURA_IPHONE, "anotacao", "exportar", ...GESTAO_IPHONE, ...PAREAMENTO_NATIVO]);
 const DIA = 86_400_000;
 
 function inteiro(valor, teto) {
@@ -72,8 +76,14 @@ function periodoValido(url) {
   return periodo;
 }
 
-export function criarServico({store, rotas, administrador = verificarAdministrador, agora = Date.now, namespace, namespaceAnteriorCtg1, iphoneAtivo = true, marcadores = fonteDosMarcadores()}) {
+export function criarServico({store, rotas, administrador = verificarAdministrador, agora = Date.now, namespace, namespaceAnteriorCtg1, iphoneAtivo = true, marcadores = fonteDosMarcadores(), pushFarol, validarSonda}) {
   const registro = criarRegistro(store);
+  let pushConfigurado=pushFarol;
+  async function canalPush(){
+    if(!pushConfigurado)pushConfigurado=(await import("./farol-push.mjs")).criarPushFarol({store,agora,namespace,marcadores});
+    return pushConfigurado;
+  }
+  const farol=criarFarol({store,agora,entregar:async t=>(await canalPush()).entregar(t)});
   const passes = criarPassesIphone({store,agora,namespace});
   async function lerLegadoAtual(passe) {
     try{return await passes.abrir(passe);}
@@ -239,6 +249,47 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
     } finally { banco.fechar(); }
   }
 
+  async function atenderFarol(rota,req,contexto,header,sessao){
+    if(rota==="farol/saude"){
+      const ok=await farol.saude();
+      return Response.json({ok},{status:ok?200:503});
+    }
+    if(rota==="farol"){
+      if(sessao)await dispositivos.validarSessao(header.slice(7));else await permitirFirebase(header,false);
+      return Response.json(await farol.painel());
+    }
+    // Os módulos de OIDC e de push só devolvem mensagens de falha de domínio; não expor resposta de provedores.
+    const viaModulo=async acao=>{
+      try{return await acao();}catch(e){
+        if([400,401,403,404,409,413,429,503].includes(e?.status))
+          throw new Falha(e.status,({400:"Dados de verificação ou avisos inválidos.",401:"Credencial não aceita.",403:"Permissão insuficiente.",
+            404:"Inscrição de avisos não encontrada.",409:"A solicitação não foi concluída.",413:"Relatório muito grande.",
+            429:"Aguarde antes de tentar novamente.",503:"Verificação ou entrega temporariamente indisponível."})[e.status]);
+        throw e;
+      }
+    };
+    if(rota==="farol/sonda"){
+      const validar=validarSonda || (await import("./farol-sintetico.mjs")).validarSondaFarol;
+      const relatorio=await viaModulo(()=>validar(req));
+      const resultado=await farol.aplicar("funcional",relatorio);
+      if(resultado.aplicado){
+        const drenagem=farol.drenar().catch(()=>{console.error("farol: fila de avisos será retomada no próximo ciclo");});
+        if(typeof contexto.waitUntil==="function")contexto.waitUntil(drenagem);else await drenagem;
+      }
+      return Response.json(resultado,{status:202});
+    }
+    const operacao=rota.slice("farol/avisos/".length);
+    if(operacao==="recebido"){
+      const dados=await corpo(req);
+      return Response.json(await viaModulo(async()=>(await canalPush()).recebido(dados)));
+    }
+    await permitirFirebase(header,false);
+    const push=await canalPush();
+    if(operacao==="chave")return Response.json(await viaModulo(()=>push.chavePublica()));
+    const idToken=header.slice(7),uid=uidDoIdVerificado(idToken),dados=await corpo(req);
+    return Response.json(await viaModulo(()=>push[operacao](uid,dados,idToken)));
+  }
+
   return async function atender(req, contexto = {}) {
     const url = new URL(req.url), rota = url.pathname.replace(/^\/api\//, "");
     const origem = req.headers.get("origin");
@@ -252,8 +303,8 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
         if (rota === "evento") headers.set("access-control-allow-credentials","true");
       }
       if (rota !== "evento" && rota !== "saude" && !ROTAS.has(rota)) throw new Falha(404,"rota inexistente");
-      if (GESTAO_IPHONE.has(rota) && origem !== "https://orquestrator.ai") throw new Falha(403,"Origem de autorização inválida.");
-      const metodo = rota === "evento" || rota === "anotacao" || rota === EMITIR_PASSE || rota === "iphone/revogar" || PAREAMENTO_NATIVO.has(rota) ? "POST" : "GET";
+      if ((GESTAO_IPHONE.has(rota) || (FAROL_AVISOS.has(rota) && FAROL_POST.has(rota))) && origem !== "https://orquestrator.ai") throw new Falha(403,"Origem de autorização inválida.");
+      const metodo = FAROL_POST.has(rota) || rota === "evento" || rota === "anotacao" || rota === EMITIR_PASSE || rota === "iphone/revogar" || PAREAMENTO_NATIVO.has(rota) ? "POST" : "GET";
       if (req.method === "OPTIONS") {
         headers.set("access-control-allow-methods",metodo);
         headers.set("access-control-allow-headers",rota === "evento" ? "Content-Type" : "Authorization, Content-Type");
@@ -263,11 +314,12 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
       const token=header.slice(7);
       const legado=/^Bearer ctg1\./i.test(header), duravel=/^Bearer ctg2\./i.test(header), sessao=/^Bearer ctg2s\./i.test(header);
       const leitura = LEITURA_IPHONE.has(rota) && req.method==="GET";
-      if ((legado && !leitura && rota!=="iphone/migrar") || (sessao && !leitura) ||
+      if ((legado && !leitura && rota!=="iphone/migrar") || (sessao && !leitura && !(rota==="farol" && req.method==="GET")) ||
           (duravel && rota!=="iphone/renovar" && rota!=="iphone/desvincular")) throw new Falha(403,"Esta credencial não permite essa operação.");
       if (req.method !== metodo) throw new Falha(405,"método inválido");
       if (!iphoneAtivo && (legado || duravel || sessao || PAREAMENTO_NATIVO.has(rota) || rota===EMITIR_PASSE)) throw new Falha(503,"A autorização do iPhone está desativada.");
-      if (rota === "saude") {
+      if(ROTAS_FAROL.has(rota)) resposta=await atenderFarol(rota,req,contexto,header,sessao);
+      else if (rota === "saude") {
         if (!await verificarArmazenamento()) throw new Falha(503,"O armazenamento está indisponível.");
         resposta = Response.json({ok:true});
       }
@@ -299,7 +351,7 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
         resposta = dado instanceof Response ? dado : Response.json(dado);
       }
     } catch (erro) {
-      const prevista = erro instanceof Falha || erro instanceof FalhaPasse;
+      const prevista = erro instanceof Falha || erro instanceof FalhaPasse || erro instanceof ErroFarol;
       const status = prevista ? erro.status : erro instanceof RangeError ? 422 : 503;
       if (!(prevista || erro instanceof RangeError)) {
         // Só o tipo do erro operacional; sem URL de credenciais, corpo, IP ou user-agent.

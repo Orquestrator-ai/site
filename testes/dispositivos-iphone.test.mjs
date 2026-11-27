@@ -57,9 +57,11 @@ test("pareamento v2 idempotente, sem token geral no telefone ou no armazenamento
   assert.equal((await renovar(a.autorizar(id,c.sec()-121))).status,401);
   const d=a.autorizar(id,c.sec()); const rs=await Promise.all([renovar(d),renovar(d)]);const ss=await Promise.all(rs.map(r=>r.json()));assert.deepEqual(ss[0],ss[1]);assert.match(ss[0].passe,/^ctg2s\./);
   assert.equal((await c.req("sites",ss[0].passe)).status,200);assert.equal((await c.req("exportar?site=1",ss[0].passe)).status,403);
+  assert.equal((await c.req("farol",ss[0].passe)).status,200);
+  assert.equal((await c.req("farol/avisos/chave",ss[0].passe)).status,403);
   c.mudarMs(4*86400000);assert.equal((await c.req("sites",ss[0].passe)).status,401);
   const nova=await(await renovar(a.autorizar(id,c.sec()))).json();assert.equal((await c.req("sites",nova.passe)).status,200);
-  c.setAdmin(false);assert.equal((await c.req("sites",nova.passe)).status,403);assert.equal((await renovar(a.autorizar(id,c.sec()))).status,403);
+  c.setAdmin(false);assert.equal((await c.req("sites",nova.passe)).status,403);assert.equal((await c.req("farol",nova.passe)).status,403);assert.equal((await renovar(a.autorizar(id,c.sec()))).status,403);
   c.setAdmin(true);c.setFirestore(false);assert.equal((await c.req("sites",nova.passe)).status,503);c.setFirestore(true);
   assert.equal((await c.req("iphone/revogar",c.jwt("outro"),{origin:origem,body:{id}})).status,404);
   const rem=await Promise.all([1,2].map(()=>c.req("iphone/revogar",c.jwt("dono"),{origin:origem,body:{id}})));
