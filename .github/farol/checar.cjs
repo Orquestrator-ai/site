@@ -33,9 +33,15 @@ async function fazer(p,d){
   await p.getByText('06/12/2026',{exact:true}).first().waitFor();return;
  }
  if(d.startsWith('encontro.')){
-  const botao=p.getByRole('button',{name:/próximo mês|mês seguinte/i}).first();
-  await botao.waitFor();const antes=await p.locator('main').innerText();await botao.click();
-  await p.waitForFunction(ant=>document.querySelector('main')?.innerText!==ant,antes);return;
+  const grupo=p.getByRole('group',{name:'Escolha o dia'});
+  const meses=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  const titulo=grupo.locator('p[aria-live="polite"]').first();
+  await grupo.getByText(/(?:19|20|21)\d{2}/).first().waitFor();
+  const partes=(await titulo.innerText()).trim().toLocaleLowerCase('pt-BR').split(/\s+/);
+  const mes=meses.indexOf(partes[0]),ano=Number(partes.at(-1));assert.ok(mes>=0 && Number.isInteger(ano));
+  const esperado=meses[(mes+1)%12]+' '+(ano+Number(mes===11));
+  await grupo.getByRole('button',{name:/próximo mês|mês seguinte/i}).first().click();
+  await p.waitForFunction(t=>document.querySelector('[role="group"][aria-label="Escolha o dia"] p[aria-live="polite"]')?.textContent.trim().toLowerCase()===t,esperado);return;
  }
  if(d.startsWith('escala.')){
   await p.locator('a[href="#semana"]:visible').first().click();await p.waitForURL('**/#semana');await p.locator('#semana').waitFor();return;
