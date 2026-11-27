@@ -1,4 +1,5 @@
 import {createHash} from "node:crypto";
+import {AREAS,pertence} from "./areas.mjs";
 import {abrirBanco} from "./banco.mjs";
 import {classificarOrigem, classificarUA, rotuloOrigem} from "./classificar.mjs";
 import {criarConsultas, diaLocalDe, inicioDoDia, NOME_UF, periodoDe} from "./consultas.mjs";
@@ -11,7 +12,7 @@ import {criarRegistro, lerParaAtualizar} from "./registro-nuvem.mjs";
 const IDS_RESERVADOS = ["orquestrator.ai", "orquestrator.app", ...["medpanel", "calculadoragestacional", "encontro", "escala", "hub", "rcog"].map(s => s + ".orquestrator.ai")];
 
 export function listarSites(rotas) {
-  const ids = new Set();
+  const ids = new Set(AREAS.map(a=>a.id));
   return Object.keys(rotas).map(dom => {
     if (!/^(?:[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?\.)*orquestrator\.(?:ai|app)$/.test(dom) || dom.length > 253)
       throw new Error("domínio inválido no catálogo");
@@ -98,7 +99,9 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
   }
   const sites = listarSites(rotas);
   const idPorDominio = new Map(sites.map(({dom,id}) => [dom,id]));
-  const dominioPorId = new Map(sites.map(({dom,id}) => [id,dom]));
+  const areas = AREAS.filter(area => idPorDominio.get(area.dominio) === area.origem);
+  const areaPorId = new Map(areas.map(a=>[a.id,a]));
+  const dominioPorId = new Map([...sites,...areas].map(({dom,id}) => [id,dom]));
   const origensColeta = sites.map(({dom}) => "https://" + dom);
   const autorizados = new Map(), primeiros = new Map();
   const permitidas = Object.fromEntries(Object.entries(rotas).map(([dom, lista]) => [dom, new Set(lista)]));
@@ -159,11 +162,11 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
     await primeiraVisita(site, instante);
   }
 
-  async function anotacoes(banco, site, desde, ate) {
+  async function anotacoes(banco, site, desde, ate, siteNoBanco = site) {
     // Até 30 dias por visão anotável. Os dias sem anotação ficam fora do índice.
     const notas = await store.get("anotacoes/" + site, {type:"json"}) || {};
     for (const [dia, texto] of Object.entries(notas))
-      if (dia >= diaLocalDe(desde) && dia <= diaLocalDe(ate)) banco.anotar(site, dia, texto);
+      if (dia >= diaLocalDe(desde) && dia <= diaLocalDe(ate)) banco.anotar(siteNoBanco, dia, texto);
   }
 
   async function anotar(req) {
@@ -189,17 +192,24 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
     try {
       const incluir = banco.db.prepare("INSERT INTO sites(id, dominio) VALUES (?, ?)");
       for (const {id,dom} of sites) incluir.run(id,dom);
-      const consultas = criarConsultas(banco.db, banco);
+
       if (rota === "sites") {
         const leituras = await Promise.allSettled(sites.map(({id}) => registro.carregar(banco, id, instante-300000, instante)));
         for (const leitura of leituras) if (leitura.status === "rejected") throw leitura.reason;
         const ativos = banco.db.prepare("SELECT site_id,COUNT(DISTINCT visitante) AS total FROM eventos WHERE instante >= ? AND instante < ? GROUP BY site_id").all(instante-300000, instante);
-        return sites.map(({id,dom}) => ({id, dom, ini:dom[0].toUpperCase(), cor:CORES[(id-1) % CORES.length], agora:ativos.find(a=>a.site_id===id)?.total || 0}));
+        const ativosArea=banco.db.prepare("SELECT COUNT(DISTINCT visitante) AS total FROM eventos WHERE site_id=? AND instante>=? AND instante<? AND (caminho=? OR caminho GLOB ?)");
+        const secoes=areas.map(({id,origem,dom,prefixo,ini,cor})=>({id,dom,ini,cor,sitePai:origem,prefixo,
+          agora:ativosArea.get(origem,instante-300000,instante,prefixo,prefixo+"/*").total}));
+        return sites.map(({id,dom}) => ({id, dom, ini:dom[0].toUpperCase(), cor:CORES[(id-1) % CORES.length], agora:ativos.find(a=>a.site_id===id)?.total || 0})).concat(secoes);
       }
       const site = Number(url.searchParams.get("site")), dom = dominioPorId.get(site);
       if (!Number.isInteger(site) || !dom) throw new Falha(404,"site desconhecido");
+      const area=areaPorId.get(site);
+      const siteNoBanco=area?.origem ?? site;
+      const dominioFisico=area?.dominio ?? dom;
+      const consultas=criarConsultas(banco.db,banco,{duracaoDaArea:Boolean(area)});
       const periodo = periodoValido(url), filtro = url.searchParams.get("filtro") || null;
-      if (filtro && !permitidas[dom]?.has(filtro)) throw new Falha(400,"página fora do catálogo público");
+      if (filtro && (!permitidas[dominioFisico]?.has(filtro) || (area && !pertence(filtro,area.prefixo)))) throw new Falha(400,"página fora do catálogo público");
       const metrica = url.searchParams.get("metrica") || "visitantes";
       if (rota === "visao" && !METRICAS.includes(metrica)) throw new Falha(400,"métrica inválida");
       const nome = url.searchParams.get("nome"), abas = Object.hasOwn(TABELAS, nome) ? TABELAS[nome] : [];
@@ -207,12 +217,14 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
       if (rota === "tabela" && !abas.includes(aba)) throw new Falha(400,"tabela inválida");
       const p = periodoDe(periodo, instante), inicio = rota === "vivo" ? Math.min(inicioDoDia(instante), instante - 3600000) :
         rota === "visao" ? p.deA : p.de;
-      await registro.carregar(banco, site, inicio, instante);
-      const args = {site, periodo, filtro, agora:instante, ...OP_ORIGEM};
+      await registro.carregar(banco, siteNoBanco, inicio, instante,area?.prefixo);
+      const args = {site:siteNoBanco, periodo, filtro, agora:instante, ...OP_ORIGEM};
       if (rota === "vivo") return consultas.vivo(args);
       if (rota === "visao") {
-        if (periodo === "7d" || periodo === "30d") await anotacoes(banco, site, p.de, instante);
-        return {...consultas.visao({...args, metrica}), desde: await primeiraVisita(site)};
+        if (periodo === "7d" || periodo === "30d") await anotacoes(banco, site, p.de, instante, siteNoBanco);
+        const inicioPai=await primeiraVisita(siteNoBanco);
+        const desde=area?await registro.inicioDaArea(area,inicioPai,instante):inicioPai;
+        return {...consultas.visao({...args, metrica}), desde};
       }
       if (rota === "tabela") return consultas.tabela({...args,nome,aba});
       if (rota === "exportar") {
@@ -222,7 +234,7 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
             rows.push([n, a, linha.texto || linha.rotulo, linha.sigla || linha.chave || "", linha.v]);
         }
         const csv = rows.map(row => row.map(v => '"' + String(v ?? "").replace(/^([=+@-])/,"'$1").replaceAll('"','""') + '"').join(";")).join("\r\n");
-        return new Response("\uFEFF"+csv+"\r\n", {headers:{"content-type":"text/csv; charset=utf-8","content-disposition":'attachment; filename="contagem-'+dom+'-'+periodo+'.csv"'}});
+        return new Response("\uFEFF"+csv+"\r\n", {headers:{"content-type":"text/csv; charset=utf-8","content-disposition":'attachment; filename="contagem-'+dom.replaceAll("/","-")+'-'+periodo+'.csv"'}});
       }
     } finally { banco.fechar(); }
   }

@@ -43,7 +43,10 @@ const diaLocalDe = t => { const l = local(t); return l.getUTCFullYear() + "-" + 
 const diaParaInstante = dia => { const [a, m, d] = dia.split("-").map(Number); return Date.UTC(a, m - 1, d) - FUSO_MS; };
 export {diaLocalDe};
 
-export function criarConsultas(db, banco = null) {
+export function criarConsultas(db, banco = null, {duracaoDaArea = false} = {}) {
+  // Dentro de uma área, sessões podem sair para outras páginas e voltar. A duração conta apenas
+  // os segundos visíveis registrados nos eventos de fim das páginas dessa área.
+  const fimSessao = duracaoDaArea ? "s.inicio + 1000 * SUM(f.duracao_s)" : "MAX(f.instante)";
   // sessões de um site num intervalo: CTE que marca o início de sessão por LAG do visitante (30 min)
   const SESSOES = `
     WITH pv AS (
@@ -62,7 +65,7 @@ export function criarConsultas(db, banco = null) {
              MIN(pais) AS pais, MIN(uf) AS uf, MIN(cidade) AS cidade, MIN(aparelho) AS aparelho, MIN(navegador) AS navegador, MIN(sistema) AS sistema, MIN(largura) AS largura
       FROM num2 GROUP BY visitante, n
     ), sdur AS (
-      SELECT s.*, COALESCE((SELECT MAX(f.instante) FROM eventos f WHERE f.site_id = @site AND f.tipo = 'fim' AND f.visitante = s.visitante AND f.instante >= s.inicio AND f.instante < s.fim + ${SESSAO_MS} AND f.instante < @ate + ${SESSAO_MS}), s.inicio) AS ultimoFim
+      SELECT s.*, COALESCE((SELECT ${fimSessao} FROM eventos f WHERE f.site_id = @site AND f.tipo = 'fim' AND f.visitante = s.visitante AND f.instante >= s.inicio AND f.instante < s.fim + ${SESSAO_MS} AND f.instante < @ate + ${SESSAO_MS}), s.inicio) AS ultimoFim
       FROM sess s
     )`;
   const q = {

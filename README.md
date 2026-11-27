@@ -7,3 +7,5 @@ Use Node 24 e execute `npm ci` e `node --test testes/*.test.mjs`. O projeto Netl
 O teste de produção em `ferramentas/conferir-producao.mjs` verifica a disponibilidade do armazenamento e a restrição administrativa.
 
 O vínculo do iPhone usa uma chave do aparelho, renovação automática e revogação no painel. A regra vigente do marcador de autorização está em `firebase-contagem/firestore.rules`. Os testes do marcador usam o Firestore Emulator.
+
+O catálogo de leitura inclui os oito domínios e duas áreas do portal, orquestrator.ai/store e orquestrator.ai/medicina. As áreas consultam o histórico do domínio pai por prefixo de página.

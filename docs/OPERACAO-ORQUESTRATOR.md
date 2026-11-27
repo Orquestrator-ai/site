@@ -2,6 +2,12 @@
 
 O painel web fica em `https://orquestrator.ai/admin/contagem/`. O app para iPhone e o painel usam `https://orquestrator-contagem.netlify.app`. O catálogo de domínios e páginas públicas está em `servidor/rotas-publicas.json`. O painel exige a sessão administrativa do projeto Firebase `orquestrator-61836` e a concessão habilitada em `admins/{uid}`. O serviço verifica o token com as regras do próprio Firestore. A verificação fica em cache por até dez segundos.
 
+## Store e Medicina no seletor
+
+O seletor oferece os oito domínios e duas áreas do portal. A propriedade `orquestrator.ai/store` (ID 9) reúne a raiz `/store` e os seus descendentes no domínio `orquestrator.ai`. A propriedade `orquestrator.ai/medicina` (ID 10) faz o mesmo com `/medicina`. O caminho é comparado por segmento: `/storefront/` fica de fora, assim como páginas de outros domínios. As fichas em `/store/…` entram em Store. Conteúdo visitado em outras rotas, como `/platforms/…`, aparece nas métricas do domínio correspondente.
+
+As duas áreas consultam os eventos existentes do domínio principal. Uma visualização na Store continua somando uma única visualização ao portal. Os totais das áreas são recortes sobrepostos ao domínio pai e não devem ser somados ao total dele. Uma pessoa que entrou nas duas áreas nos últimos cinco minutos aparece como ativa em ambas, uma vez em cada área e uma vez no domínio pai. A duração das sessões nas áreas usa os segundos medidos nos eventos de saída de suas páginas. Anotações e exportações identificam a propriedade selecionada. O início do histórico de uma área vem da primeira visualização existente nela, mesmo quando anterior ao período exibido.
+
 ## Fluxo de uma visita
 
 O coletor em `coletor/orquestrator/visitas.js` registra uma visualização depois que o visitante aceita a medição nas preferências do site. A recusa, a falta de escolha, a opção de exclusão local e os sinais GPC/DNT impedem o envio. Apenas rotas do catálogo podem ser medidas. Cada export recebe uma cópia estática do coletor com o seu domínio, as suas rotas e o endereço do serviço. O registro contém a página pública e, quando disponíveis, origem reduzida ao domínio, tipo de dispositivo, navegador, país e estado. A saída da página permite calcular duração e rolagem. O servidor usa o endereço IP e o agente de usuário para derivar um identificador diário por site e persiste apenas o identificador e as categorias.

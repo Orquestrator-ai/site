@@ -44,7 +44,7 @@ test("admin Firebase exclusivo, origens, contrato das propriedades cadastradas e
   assert.equal((await app(req("sites",undefined,{origin:"https://outro.com",authorization:token}))).status,403);
   const pre=await app(req("visao",undefined,{}, "OPTIONS"));
   assert.equal(pre.status,204);assert.match(pre.headers.get("access-control-allow-headers"),/Authorization/);
-  const sites=await (await painel("sites")).json();assert.equal(sites.length,8);assert.equal(sites[7].dom,"rcog.orquestrator.ai");assert.equal(sites[3].dom,"calculadoragestacional.orquestrator.ai");
+  const sites=await (await painel("sites")).json();assert.equal(sites.length,10);assert.equal(sites[7].dom,"rcog.orquestrator.ai");assert.equal(sites[3].dom,"calculadoragestacional.orquestrator.ai");
   const nativo = await app(new Request("https://contagem.test/api/sites",{headers:{Authorization:token}}));
   assert.equal(nativo.status,200);
 });

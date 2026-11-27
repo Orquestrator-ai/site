@@ -36,7 +36,8 @@ export async function expurgarVencidos(store, {data = Date.now(), maxBlocos = 40
     }
   }
   // As pastas existem apenas nos meses com tráfego. Inclui domínios já removidos do catálogo.
-  const sites = new Set((await diretorios(store,"eventos/")).filter(x=>/^eventos\/\d+$/.test(x)));
+  const comEventos = new Set((await diretorios(store,"eventos/")).filter(x=>/^eventos\/\d+$/.test(x)));
+  const sites = new Set(comEventos);
   for await (const pagina of store.list({prefix:"anotacoes/",paginate:true})) {
     for (const blob of pagina.blobs) {
       if (/^anotacoes\/\d+$/.test(blob.key)) sites.add(blob.key.replace("anotacoes/","eventos/"));
@@ -55,6 +56,7 @@ export async function expurgarVencidos(store, {data = Date.now(), maxBlocos = 40
         if (r.modified) notas += entradas.length-vigentes.length;
       }
     }
+    if (!comEventos.has(site)) continue; // propriedades com anotações apenas, inclusive as áreas virtuais
     const dirMeses = (await diretorios(store,site+"/")).sort();
     for (const dir of dirMeses) {
       const mes = dir.slice(site.length + 1);

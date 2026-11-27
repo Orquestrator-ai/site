@@ -1,5 +1,6 @@
 import {randomBytes, randomUUID, createHmac} from "node:crypto";
 import {setTimeout as esperar} from "node:timers/promises";
+import {pertence} from "./areas.mjs";
 import {diaLocalDe} from "./consultas.mjs";
 
 const HORA = 3_600_000;
@@ -105,7 +106,7 @@ export function criarRegistro(store) {
   }
 
   // A lista mensal encontra apenas horas com eventos. Cada leitura é restrita ao site e período pedidos.
-  async function carregar(banco, site, inicio, ate) {
+  async function carregar(banco, site, inicio, ate, prefixo = null) {
     const inicioHora = Math.floor(inicio / HORA) * HORA;
     const primeiro = new Date(inicioHora), ultimo = new Date(ate);
     const meses = [];
@@ -139,9 +140,54 @@ export function criarRegistro(store) {
       for (const eventos of blocos) {
         total += eventos.length;
         if (total > MAX_EVENTOS_POR_CONSULTA) throw new RangeError("intervalo excede a capacidade desta consulta");
-        for (const evento of eventos) banco.inserirEvento(evento);
+        for (const evento of eventos) if (!prefixo || pertence(evento.caminho,prefixo)) banco.inserirEvento(evento);
       }
     }
   }
-  return {identificar, gravar, carregar};
+  // O primeiro acesso da seção pode anteceder o período selecionado. O índice guarda apenas
+  // o instante derivado dos Blobs do domínio pai ou o limite já examinado quando não havia acesso.
+  async function inicioDaArea(area, desdePai, ate) {
+    if (desdePai == null) return null;
+    const chave = "indices/primeira-area/" + area.id;
+    const anterior = await lerParaAtualizar(store,chave);
+    if (anterior?.data?.desde != null) return anterior.data.desde;
+    let inicio = anterior?.data?.verificadoAte ?? Math.floor(desdePai/HORA)*HORA;
+    const fechado = Math.floor((ate-HORA)/HORA)*HORA;
+    let primeiro = null, lidos = 0;
+    async function registrar(valor) {
+      await store.setJSON(chave,valor,anterior ? {onlyIfMatch:anterior.etag} : {onlyIfNew:true});
+    }
+    for (let data = new Date(inicio); data.getTime() <= ate; ) {
+      const mes = data.toISOString().slice(0,7), prefixoMes = "eventos/" + area.origem + "/" + mes + "/";
+      const chaves = (await indice(prefixoMes)).filter(b=>b.key >= chaveHora(area.origem,inicio)).sort((a,b)=>a.key.localeCompare(b.key));
+      for (let i=0;i<chaves.length;) {
+        const primeira = chaves[i].key;
+        const hora = primeira.slice(0,primeira.lastIndexOf("/"));
+        // Não supõe que a ordem de escrita seja a de chegada dentro da mesma hora.
+        const lote = [];
+        while(i<chaves.length && chaves[i].key.startsWith(hora+"/")) lote.push(chaves[i++]);
+        if (lidos>=MAX_BLOCOS_POR_CONSULTA) {
+          const ddhh=hora.slice(prefixoMes.length);
+          const proxima=Date.parse(mes+"-"+ddhh.slice(0,2)+"T"+ddhh.slice(3,5)+":00:00Z");
+          if (proxima>inicio && proxima<fechado) await registrar({verificadoAte:proxima});
+          throw new Error("índice histórico de seção em atualização");
+        }
+        for (let j=0;j<lote.length;j+=12) {
+          const blocos=await Promise.all(lote.slice(j,j+12).map(lerBloco));
+          for (const eventos of blocos) for (const e of eventos) {
+            if(e.tipo==="pv" && e.instante>=inicio && e.instante<ate && pertence(e.caminho,area.prefixo) &&
+                (primeiro===null || e.instante<primeiro)) primeiro=e.instante;
+          }
+        }
+        lidos+=lote.length;
+        if (primeiro!==null) break;
+      }
+      if (primeiro!==null) break;
+      data=new Date(Date.UTC(data.getUTCFullYear(),data.getUTCMonth()+1,1));
+    }
+    if(primeiro!==null && primeiro<fechado) await registrar({desde:primeiro});
+    else if(fechado>inicio) await registrar({verificadoAte:fechado});
+    return primeiro;
+  }
+  return {identificar, gravar, carregar, inicioDaArea};
 }
