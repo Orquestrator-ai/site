@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; manifest-src 'self'; connect-src 'self' https://orquestrator-contagem.netlify.app https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com https://www.googleapis.com; frame-src 'self' https://orquestrator-61836.firebaseapp.com; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contagem de visitas · Administração Orquestrator</title>
+<meta name="description" content="Analytics de site sem cookies: uma página com visitantes, páginas, origens, locais e tempo real, para quem quer os números sem vigiar ninguém.">
+<meta name="robots" content="noindex">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Contagem">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7fb">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d0e1a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icone-180.png">
+<link rel="icon" type="image/png" href="icone-192.png">
+<link rel="stylesheet" href="painel.css">
+<script src="tema.js"></script>
+</head>
+<body>
+<main id="acesso" class="c-acesso">
+  <a href="/admin/">← Painel administrativo</a>
+  <h1>Contagem de visitas</h1>
+  <p role="status">Verificando seu acesso…</p>
+  <a id="entrar-contagem" href="/conta/?returnTo=%2Fadmin%2Fcontagem%2F" hidden>Abrir minha conta</a>
+  <button type="button" hidden>Tentar novamente</button>
+  <noscript>Ative o JavaScript para consultar as visitas.</noscript>
+</main>
+<main id="app" data-estado="1" hidden>
+  <div class="c-retorno"><a href="/admin/">← Painel administrativo</a></div>
+  <header class="c-topo">
+    <div class="c-casca c-topo-in">
+      <span class="c-marca"><span class="c-marca-glifo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 5v14"/><path d="M10 5v14"/><path d="M14 5v14"/><path d="M18 5v14"/><path d="M3.5 16.5L20.5 7.5"/></svg></span><span>Contagem</span></span>
+      <div class="c-site" id="c-site">
+        <button type="button" class="c-site-btn" id="c-site-btn" aria-haspopup="menu" aria-expanded="false"><span class="c-fav" id="c-site-fav"></span><span class="c-site-nome" id="c-site-nome"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="c-menu" role="menu" aria-label="Sites" id="c-site-menu"></div>
+      </div>
+      <button type="button" class="c-vivo-pilula" data-ir="3" title="Ver tempo real"><span class="c-ponto" aria-hidden="true"></span><span class="c-num" data-agora>—</span><span class="c-vp-txt">agora</span></button>
+      <nav class="c-nav" aria-label="Seções">
+        <button type="button" data-nav="geral"><span class="c-nav-longo">Visão geral</span><span class="c-nav-curto">Geral</span></button>
+        <button type="button" data-nav="vivo"><span class="c-nav-longo">Tempo real</span><span class="c-nav-curto"><span class="c-ponto" aria-hidden="true"></span><span data-agora>—</span> ao vivo</span></button>
+      </nav>
+      <span class="c-avatar" id="c-avatar"></span>
+    </div>
+  </header>
+
+  <!-- ── 1 e 2 · visão geral e página em foco ── -->
+  <!-- guia de primeira abertura: 3 passos, some para sempre ao fechar (localStorage.contagem_viu_guia) -->
+  <aside class="c-guia" id="c-guia" role="dialog" aria-labelledby="c-guia-t" hidden>
+    <div class="c-guia-in">
+      <b id="c-guia-t">Três coisas para começar</b>
+      <ol>
+        <li><b>Escolha o site</b> no canto superior esquerdo — cada site tem o seu painel.</li>
+        <li><b>Mude o período</b> no canto direito: hoje, 7 dias, 30 dias ou 12 meses. A linha tracejada é o período anterior.</li>
+        <li><b>Clique numa página</b> da tabela Páginas e o painel inteiro passa a falar só dela. Qualquer <span class="c-explica c-explica-ex" aria-hidden="true">?</span> explica o número ao lado.</li>
+      </ol>
+      <button type="button" class="c-guia-ok" id="c-guia-ok">Entendi</button>
+    </div>
+  </aside>
+  <div class="c-faixa" id="c-faixa" role="status" aria-live="polite" hidden><span id="c-faixa-txt"></span><button type="button" id="c-faixa-x" aria-label="Fechar aviso">×</button></div>
+
+  <section class="c-tela c-tela-geral" aria-labelledby="c-t1">
+    <div class="c-casca">
+      <div class="c-linha-filtro">
+        <h1 class="c-titulo" id="c-t1"><small id="c-periodo-txt"></small></h1>
+        <span class="c-chip" id="c-chip"><span>Página</span><code id="c-chip-txt"></code><button type="button" id="c-chip-x" aria-label="Remover o filtro de página"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></button></span>
+        <button type="button" class="c-limpar" id="c-limpar">Limpar filtro</button>
+        <span class="c-privado"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Coleta sem cookies</span>
+        <span class="c-comparado" id="c-comparado"><i aria-hidden="true"></i>comparado com <span id="c-comparado-txt"></span></span>
+        <div class="c-periodo" id="c-periodo">
+          <button type="button" class="c-periodo-btn" id="c-periodo-btn" aria-haspopup="menu" aria-expanded="false"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4z"/><path d="M4 10h16"/><path d="M9 3v4"/><path d="M15 3v4"/></svg><span id="c-periodo-rot">Últimos 30 dias</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="c-menu" role="menu" aria-label="Período">
+            <button type="button" role="menuitemradio" data-periodo="hoje" aria-checked="false">Hoje<small>H</small></button>
+            <button type="button" role="menuitemradio" data-periodo="7d" aria-checked="false">Últimos 7 dias<small>S</small></button>
+            <button type="button" role="menuitemradio" data-periodo="30d" aria-checked="true">Últimos 30 dias<small>M</small></button>
+            <hr>
+            <button type="button" role="menuitemradio" data-periodo="12m" aria-checked="false">Últimos 12 meses<small>A</small></button>
+          </div>
+        </div>
+      </div>
+
+      <article class="c-cartao c-pagina" id="c-pagina" aria-live="polite">
+        <div>
+          <span class="c-olho">Página em foco</span>
+          <h2 id="c-pag-titulo">Como cuidar da cerâmica artesanal</h2>
+          <code id="c-pag-cam"></code>
+        </div>
+        <div class="c-pag-nums" id="c-pag-nums"></div>
+      </article>
+
+      <div class="c-cartao c-metricas" id="c-metricas" role="group" aria-label="Métricas do período"></div>
+
+      <article class="c-cartao c-graf-card">
+        <div class="c-graf-cab">
+          <h2 id="c-graf-titulo">Visitantes únicos <span>por dia</span></h2>
+          <div class="c-legenda"><span><i></i><span id="c-leg-atual"></span></span><span><i class="is-ant"></i><span id="c-leg-ant"></span></span></div>
+        </div>
+        <div class="c-graf" id="c-graf" tabindex="0" role="img" aria-label="Gráfico de visitantes por dia">
+          <div class="c-dica" id="c-dica" aria-hidden="true"></div>
+        </div>
+        <span class="c-oculto" id="c-graf-voz" aria-live="polite"></span>
+      </article>
+
+      <div class="c-grade">
+        <article class="c-cartao c-tab" data-tabela="paginas">
+          <div class="c-tab-cab"><h3>Páginas</h3><div class="c-abas" role="tablist" aria-label="Páginas"><button type="button" role="tab" data-aba="vistas" aria-selected="true">Mais vistas</button><button type="button" role="tab" data-aba="entrada" aria-selected="false">Entrada</button><button type="button" role="tab" data-aba="saida" aria-selected="false">Saída</button></div></div>
+          <div class="c-tab-col"><span>Página · clique para filtrar</span><span>Visitantes</span></div>
+          <div class="c-linhas" role="list"></div>
+          <div class="c-tab-pe"><span class="c-tab-total"></span><button type="button" class="c-mais">Ver todas</button></div>
+        </article>
+        <article class="c-cartao c-tab" data-tabela="origens">
+          <div class="c-tab-cab"><h3>Origens</h3><div class="c-abas" role="tablist" aria-label="Origens"><button type="button" role="tab" data-aba="origem" aria-selected="true">Origem</button><button type="button" role="tab" data-aba="campanha" aria-selected="false">Campanha</button></div></div>
+          <div class="c-tab-col"><span>Origem</span><span>Visitantes</span></div>
+          <div class="c-linhas" role="list"></div>
+          <div class="c-tab-pe"><span class="c-tab-total"></span><button type="button" class="c-mais">Ver todas</button></div>
+        </article>
+        <article class="c-cartao c-tab" data-tabela="locais">
+          <div class="c-tab-cab"><h3>Locais</h3><div class="c-abas" role="tablist" aria-label="Locais"><button type="button" role="tab" data-aba="estados" aria-selected="true">Estados</button><button type="button" role="tab" data-aba="paises" aria-selected="false">Países</button></div></div>
+          <div class="c-tab-col"><span>Local</span><span>Visitantes</span></div>
+          <div class="c-linhas" role="list"></div>
+          <div class="c-tab-pe"><span class="c-tab-total"></span><button type="button" class="c-mais">Ver todas</button></div>
+        </article>
+        <article class="c-cartao c-tab" data-tabela="aparelhos">
+          <div class="c-tab-cab"><h3>Dispositivos</h3><div class="c-abas" role="tablist" aria-label="Dispositivos"><button type="button" role="tab" data-aba="tipo" aria-selected="true">Tipo</button><button type="button" role="tab" data-aba="navegador" aria-selected="false">Navegador</button><button type="button" role="tab" data-aba="sistema" aria-selected="false">Sistema</button></div></div>
+          <div class="c-tab-col"><span>Dispositivo</span><span>Visitantes</span></div>
+          <div class="c-linhas" role="list"></div>
+          <div class="c-dica-tab" hidden></div>
+          <div class="c-tab-pe"><span class="c-tab-total"></span><button type="button" class="c-mais">Ver todas</button></div>
+        </article>
+      </div>
+
+      <article class="c-cartao c-tab c-metas" data-tabela="metas" id="c-metas">
+        <div class="c-tab-cab"><h3>Metas</h3><div class="c-abas" role="tablist" aria-label="Metas"><button type="button" role="tab" data-aba="conversoes" aria-selected="true">Conversões</button></div></div>
+        <div class="c-tab-col"><span>Meta</span><span>Conversões</span></div>
+        <div class="c-linhas" role="list"></div>
+        <div class="c-tab-pe"><span class="c-tab-total"></span><button type="button" class="c-mais">Ver todas</button></div>
+      </article>
+
+      <footer class="c-rodape">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Contagem de visitas sem cookies.</span>
+        <span class="c-mono">atualizado às <span data-hora></span></span>
+        <span class="c-rodape-acoes"><a href="#" id="c-exportar" download>Exportar CSV</a><a href="como-funciona.html">Como funciona</a></span>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ── 0 · esperando a primeira visita (site cadastrado, sem evento) ── -->
+  <section class="c-tela c-tela-espera" aria-labelledby="c-t0" hidden>
+    <div class="c-casca c-espera">
+      <div class="c-espera-pulso" aria-hidden="true"><i></i></div>
+      <h1 class="c-titulo" id="c-t0">Esperando a primeira visita<small id="c-t0-sub"></small></h1>
+      <p class="c-espera-p">Quando este site receber sua primeira visita, as estatísticas aparecerão aqui automaticamente.</p>
+      <p class="c-espera-nota">Você também pode escolher outro domínio no menu Sites.</p>
+    </div>
+  </section>
+
+  <!-- ── 3 · tempo real ── -->
+  <section class="c-tela c-tela-vivo" aria-labelledby="c-t3">
+    <div class="c-casca">
+      <div class="c-linha-filtro">
+        <h1 class="c-titulo" id="c-t3">Tempo real<small id="c-t3-sub"></small></h1>
+        <span class="c-privado"><span class="c-ponto" aria-hidden="true"></span>ao vivo · atualiza sozinho</span>
+      </div>
+      <article class="c-cartao c-vivo-heroi">
+        <div class="c-contador" role="status" aria-live="polite" aria-atomic="true">
+          <span class="c-contador-ponto" aria-hidden="true"></span>
+          <div><b data-agora id="c-contador"></b><span>visitantes agora · <em id="c-contador-var"></em> em 5 min</span></div>
+        </div>
+        <div class="c-minutos">
+          <span class="c-olho">Visualizações por minuto</span>
+          <div class="c-minutos-barras" id="c-minutos" aria-hidden="true"></div>
+          <div class="c-minutos-eixo"><span>−30 min</span><span>−15 min</span><span>agora</span></div>
+        </div>
+        <div class="c-vivo-nums">
+          <div><b id="c-vv-hora"></b><span>visualizações na última hora</span></div>
+          <div><b id="c-vv-pico"></b><span>pico de hoje</span></div>
+          <div><b id="c-vv-hoje"></b><span>visitantes hoje</span></div>
+        </div>
+      </article>
+
+      <div class="c-vivo-grade">
+        <article class="c-cartao c-mapa-card">
+          <div class="c-mapa-cab"><h3>De onde estão vendo</h3><span class="c-olho" id="c-ufs-n"></span></div>
+          <div class="c-mapa-corpo">
+            <div class="c-mapa" id="c-mapa" role="img" aria-label="Mapa do Brasil com visitantes agora por estado"></div>
+            <ol class="c-ufs" id="c-ufs"></ol>
+          </div>
+          <div class="c-regioes"><span class="c-olho">Por região, agora</span><div class="c-reg-barra" id="c-reg-barra" aria-hidden="true"></div><ul class="c-reg-leg" id="c-reg-leg"></ul></div>
+        </article>
+        <article class="c-cartao c-feed-card">
+          <div class="c-feed-cab"><h3>Visitas chegando</h3><button type="button" class="c-feed-pausa" id="c-feed-pausa" aria-pressed="false"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M8 5v14"/><path d="M16 5v14"/></svg><span>Pausar feed</span></button></div>
+          <ol class="c-feed" id="c-feed" aria-label="Visitas mais recentes" aria-live="off"></ol>
+        </article>
+      </div>
+
+      <div class="c-vivo-tabs">
+        <article class="c-cartao c-tab" data-vivo="paginas">
+          <div class="c-tab-cab"><h3>Páginas agora</h3></div>
+          <div class="c-tab-col"><span>Página</span><span>Agora</span></div>
+          <div class="c-linhas" role="list"></div>
+          <div class="c-tab-pe"><span class="c-tab-total"></span></div>
+        </article>
+        <article class="c-cartao c-tab" data-vivo="origens">
+          <div class="c-tab-cab"><h3>Origens agora</h3></div>
+          <div class="c-tab-col"><span>Origem</span><span>Agora</span></div>
+          <div class="c-linhas" role="list"></div>
+          <div class="c-tab-pe"><span class="c-tab-total"></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="c-aviso-ancora"><div class="c-aviso" id="c-aviso" role="status" hidden><span id="c-aviso-txt"></span><button type="button" id="c-aviso-x" aria-label="Fechar aviso"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></button></div></div>
+</main>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

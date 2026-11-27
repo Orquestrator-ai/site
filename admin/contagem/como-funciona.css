@@ -1,0 +1,27 @@
+/* como-funciona.css — a página de texto do Contagem, sobre os tokens do painel.css */
+#app.c-doc{min-height:100vh}
+#app a.c-marca{text-decoration:none}
+#app .c-voltar{margin-left:auto;font-size:13.5px;color:var(--c-suave);text-decoration:none;border-bottom:1px solid var(--c-fio-medio)}
+#app .c-voltar:hover{color:var(--c-ind-texto);border-color:var(--c-ind)}
+#app .c-texto{max-width:720px;padding-top:36px;padding-bottom:80px;font-size:15px;line-height:1.65;color:var(--c-tinta)}
+#app .c-texto h1{font:650 30px/1.15 var(--c-num);letter-spacing:-.025em;margin:0 0 12px}
+#app .c-texto h2{font:600 20px/1.25 var(--c-sans);letter-spacing:-.01em;margin:44px 0 10px;padding-top:12px;border-top:1px solid var(--c-fio)}
+#app .c-texto h3{font:600 15.5px/1.3 var(--c-sans);margin:22px 0 6px}
+#app .c-texto p{margin:10px 0}
+#app .c-lide{font-size:17px;color:var(--c-suave)}
+#app .c-sumario{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
+#app .c-sumario a{font-size:13px;color:var(--c-ind-texto);text-decoration:none;padding:6px 12px;border-radius:999px;background:var(--c-tingido)}
+#app .c-sumario a:hover{background:var(--c-tingido-forte)}
+#app .c-texto ul,#app .c-texto ol{padding-left:22px;list-style:revert;margin:10px 0}
+#app .c-texto li{margin:5px 0}
+#app .c-texto code{font:500 13px var(--c-mono);background:var(--c-tingido-forte);padding:1px 5px;border-radius:5px;color:var(--c-tinta)}
+#app .c-texto pre{margin:12px 0;padding:14px 16px;border:1px solid var(--c-fio-medio);border-radius:10px;background:var(--c-tingido);white-space:pre-wrap;overflow-wrap:anywhere}
+#app .c-texto pre code{background:none;padding:0;font-size:13px;line-height:1.55}
+#app .c-texto a{color:var(--c-ind-texto)}
+#app .c-defs dt{font-weight:600;margin-top:16px;scroll-margin-top:80px}
+#app .c-defs dd{margin:4px 0 0;color:var(--c-suave)}
+#app .c-defs dd b{color:var(--c-tinta);font-weight:600}
+@container app (max-width: 680px){
+  #app .c-texto{padding-top:22px;font-size:14.5px}
+  #app .c-texto h1{font-size:26px}
+}

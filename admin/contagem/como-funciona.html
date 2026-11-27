@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Como funciona · Contagem</title>
+<link rel="stylesheet" href="painel.css">
+<link rel="stylesheet" href="como-funciona.css">
+<link rel="icon" type="image/png" href="icone-192.png">
+<script src="tema.js"></script>
+</head>
+<body>
+<main id="app" class="c-doc">
+  <header class="c-topo">
+    <div class="c-casca c-topo-in">
+      <a class="c-marca" href="./"><span class="c-marca-glifo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 5v14"/><path d="M10 5v14"/><path d="M14 5v14"/><path d="M18 5v14"/><path d="M3.5 16.5L20.5 7.5"/></svg></span><span>Contagem</span></a>
+      <a class="c-voltar" href="./">← Voltar ao painel</a>
+    </div>
+  </header>
+
+  <article class="c-casca c-texto">
+    <h1>Como funciona</h1>
+    <p class="c-lide">O Contagem mede o uso dos sites sem gravar cookies de rastreamento. Esta página diz exatamente o que é contado, como, e o que cada número do painel quer dizer.</p>
+
+    <nav class="c-sumario" aria-label="Nesta página">
+      <a href="#instalar">Sites</a><a href="#contado">O que é contado</a><a href="#nao-contado">O que não é</a><a href="#numeros">Cada número</a><a href="#metas">Metas</a><a href="#privacidade">Privacidade</a><a href="#perguntas">Perguntas</a>
+    </nav>
+
+    <h2 id="instalar">Sites acompanhados</h2>
+    <p>O menu de sites reúne os domínios acompanhados do Orquestrator. Selecione um domínio para ver os acessos. A contagem começa na data de ativação de cada site.</p>
+
+    <h2 id="contado">O que é contado</h2>
+    <p>Três coisas, e só elas:</p>
+    <ul>
+      <li><b>Página aberta</b>: o caminho público da página e a origem da visita, quando o navegador a informa.</li>
+      <li><b>Saída da página</b>: quantos segundos ficou e até onde rolou, enviados quando a pessoa sai ou troca de aba.</li>
+      <li><b>Meta</b>: um evento com nome, registrado quando acontece uma ação prevista no site, como baixar um aplicativo.</li>
+    </ul>
+    <p>Junto com cada um vão só o tamanho da tela, o tipo de aparelho, o navegador e o sistema (pelo <em>user-agent</em>, que não é guardado) e uma localização aproximada pelo endereço de rede (que também não é guardado).</p>
+
+    <h2 id="nao-contado">O que não é</h2>
+    <ul>
+      <li><b>Nenhum cookie</b>, nenhum <code>localStorage</code> de rastreio, nenhuma impressão digital de navegador.</li>
+      <li><b>Os registros de visita do Contagem não incluem o endereço IP nem o user-agent bruto.</b> Servem só, naquele instante, para montar um código do dia e estimar a região e classificar o aparelho.</li>
+      <li><b>Dados ausentes dos registros de visita</b>: nome, e-mail, conta, o que digitou, para onde clicou dentro da página.</li>
+      <li><b>Robôs</b> (Google, Bing, ferramentas de monitoramento) são reconhecidos e descartados.</li>
+    </ul>
+
+    <h2 id="numeros">Cada número do painel</h2>
+    <dl class="c-defs">
+      <dt id="visitantes">Visitantes únicos</dt><dd>Pessoas distintas <b>por dia</b>, somadas no período. Cada pessoa vira um código que dura 24 horas e não é guardado em lugar nenhum do aparelho dela; amanhã é outro código. Por isso, alguém que volta todo dia conta 30 vezes em 30 dias — é a definição honesta de quem não usa cookie.</dd>
+      <dt id="visualizacoes">Visualizações</dt><dd>Cada página aberta conta uma. Dez páginas de uma pessoa: dez visualizações, um visitante.</dd>
+      <dt id="rejeicao">Taxa de rejeição</dt><dd>Visitas em que a pessoa abriu <b>uma página só</b> e foi embora. Uma visita é a sequência de páginas da mesma pessoa com menos de 30 minutos entre uma e outra. A variação é em <b>pontos percentuais</b> (de 40 % para 45 % são +5 p.p.).</dd>
+      <dt id="duracao">Duração da visita</dt><dd>Da primeira página até a saída, medida pelo aviso que o navegador manda quando a pessoa fecha ou troca de aba. Visitas sem esse aviso (alguns navegadores em alguns casos não mandam) não entram na média — o painel mostra "—" quando não há nenhuma.</dd>
+      <dt id="agora">Agora no site</dt><dd>Pessoas que abriram alguma página nos últimos 5 minutos. O <code>+/−</code> compara com os 5 minutos anteriores.</dd>
+      <dt id="grafico">Gráfico</dt><dd>A linha cheia é o período escolhido; a tracejada, o período anterior do mesmo tamanho (os 30 dias de antes, a semana de antes…). A nota no pico é automática: o maior dia do período, quando é pelo menos 1,5× o dia típico, com a origem ou campanha que mais trouxe gente naquele dia. Você pode anotar qualquer dia clicando nele.</dd>
+      <dt id="paginas">Páginas</dt><dd><b>Mais vistas</b>: visitantes por página. <b>Entrada</b>: a primeira página de cada visita (por onde as pessoas chegam). <b>Saída</b>: a última (por onde vão embora). Clique numa página e o painel inteiro passa a falar só dela.</dd>
+      <dt id="pagina">Página em foco</dt><dd>Entradas e saídas dizem se a página abre ou encerra visitas. Tempo e rolagem vêm do aviso de saída: rolagem de 70 % quer dizer que, em média, as pessoas viram 70 % da altura da página.</dd>
+      <dt id="origens">Origens</dt><dd>De onde a pessoa veio, pelo site anterior que o navegador informa: Google, Instagram, um blog… <b>Direto</b> é quando o navegador não informa nada — link colado, favorito, aplicativo (WhatsApp e Instagram muitas vezes caem aqui). As campanhas aparecem quando o site informa um código autorizado.</dd>
+      <dt id="locais">Locais</dt><dd>País e, no Brasil, estado estimados pela infraestrutura da Netlify, quando disponíveis. O painel apresenta essas informações de forma agregada.</dd>
+      <dt id="aparelhos">Dispositivos</dt><dd>Celular, computador ou tablet, pelo navegador e pelo tamanho da tela. "Largura típica" é a largura de tela mais comum entre os celulares — útil para testar a sua página nela.</dd>
+      <dt id="leitura">Leitura do mês</dt><dd>Uma frase escrita a partir dos números do período por regras fixas (a maior fatia de celular, a origem dominante, a página que mais encerra visitas…). Não é opinião e não é inteligência artificial. Precisa de pelo menos 20 visitas no período.</dd>
+      <dt id="mapa">De onde estão vendo (tempo real)</dt><dd>Visitantes dos últimos 5 minutos por estado. O círculo cresce com a quantidade; o rótulo aparece nos maiores.</dd>
+      <dt id="feed">Visitas chegando</dt><dd>Cada página aberta, na hora, com região aproximada, navegador e origem. Pausar segura a lista para você ler; nada se perde.</dd>
+    </dl>
+
+    <h2 id="metas">Metas</h2>
+    <p>A Contagem pode registrar ações declaradas pelo site, como abrir um produto, iniciar um cadastro ou baixar um aplicativo. A tabela reúne as conversões recebidas no período selecionado.</p>
+
+    <h2 id="privacidade">Privacidade</h2>
+    <ul>
+      <li>O identificador usado nas estatísticas muda diariamente e é específico para cada site.</li>
+    </ul>
+
+    <h2 id="perguntas">Perguntas</h2>
+    <dl class="c-defs">
+      <dt>Os números batem com o Google Analytics?</dt><dd>Não vão bater, e nenhum medidor bate com outro. O GA conta com cookie (uma pessoa por meses), o Contagem conta por dia; bloqueadores pegam um e não o outro; cada um define "visita" de um jeito. Compare tendências, não totais.</dd>
+      <dt>Por que o "Direto" é tão grande?</dt><dd>Porque muita coisa não informa origem: aplicativos (WhatsApp, Instagram, e-mail), links colados, favoritos, e alguns navegadores em modo privado.</dd>
+      <dt>Por que o estado pode aparecer errado?</dt><dd>A estimativa depende da rede. VPNs e redes móveis podem mostrar a região do provedor.</dd>
+      <dt>A duração está em "—".</dt><dd>Nenhuma visita do período mandou o aviso de saída ainda. Costuma aparecer em poucas horas de uso real.</dd>
+    </dl>
+  </article>
+</main>
+</body>
+</html>
