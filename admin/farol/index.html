@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme:light)" content="#f6f7f3"><meta name="theme-color" media="(prefers-color-scheme:dark)" content="#131a16">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Farol"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://apis.google.com; style-src 'self'; font-src 'self'; img-src 'self' data:; manifest-src 'self'; worker-src 'self'; frame-src https://orquestrator-61836.firebaseapp.com https://accounts.google.com; connect-src 'self' https://orquestrator-contagem.netlify.app https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://www.googleapis.com https://firestore.googleapis.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<title>Farol · Status dos sites Orquestrator</title><link rel="icon" href="./icone-192.png"><link rel="apple-touch-icon" href="./icone-180.png"><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./farol.css">
+<script type="module" src="./farol.js"></script></head>
+<body><a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="largura"><a class="marca" href="./"><img src="./icone-180.png" alt="" width="32" height="32">Farol</a><nav aria-label="Administração"><a href="/admin/">Painel administrativo</a><a href="/admin/contagem/">Contagem</a></nav></div></header>
+<main id="conteudo" class="largura">
+<section id="entrada"><h1>Farol dos sites</h1><p id="entrada-estado" role="status">Verificando seu acesso…</p><div id="login" class="acoes" hidden><button type="button" data-idp="google">Continuar com Google</button><button type="button" data-idp="github">Continuar com GitHub</button></div><button type="button" id="entrar-novamente" hidden>Tentar novamente</button><noscript>Ative o JavaScript para consultar a disponibilidade dos sites.</noscript></section>
+<div id="painel" hidden>
+<div class="cabecalho"><h1>Status dos sites</h1><button id="atualizar" type="button">Atualizar</button></div>
+<p id="conexao" role="status" hidden></p>
+<section id="situacao" class="situacao" aria-labelledby="resumo"><div class="luz" aria-hidden="true"></div><div><h2 id="resumo">Consultando o monitor…</h2><p id="ultima"></p></div></section>
+<div class="navegacao"><nav aria-label="Seções do Farol"><a href="#status" id="nav-status" aria-current="page">Status</a><a href="#historico" id="nav-historico">Histórico</a></nav><a href="#avisos">Avisos neste aparelho</a></div>
+<section id="status" aria-label="Status atual"><div id="incidentes-ativos"></div><section aria-labelledby="titulo-sites"><h2 id="titulo-sites">Sites monitorados</h2>
+<div class="legendas" aria-label="Como ler os últimos 90 dias"><span>Últimos 90 dias</span><span><i class="bolinha ok"></i> Operacional</span><span><i class="bolinha deg"></i> Degradado</span><span><i class="bolinha fora"></i> Indisponível</span><span><i class="bolinha sem"></i> Sem dados</span></div><div id="componentes"></div></section></section>
+<section id="historico" aria-labelledby="titulo-historico" hidden><div class="cabecalho"><h2 id="titulo-historico">Histórico</h2><div class="filtros"><label>Componente <select id="filtro"><option value="">Todos os sites</option></select></label><label>Mês <select id="mes-historico"></select></label></div></div>
+<div class="abas" role="group" aria-label="Visualização do histórico"><button id="aba-incidentes" type="button" aria-pressed="true">Incidentes</button><button id="aba-dias" type="button" aria-pressed="false">Disponibilidade</button></div>
+<p id="hist-resumo" class="nota"></p><div id="lista-historico"></div></section>
+<section id="avisos" aria-labelledby="titulo-avisos"><h2 id="titulo-avisos">Avisos neste aparelho</h2><p>Receba uma notificação quando o Farol detectar uma falha ou confirmar a recuperação de um site.</p>
+<p id="push-estado" role="status">Verificando a disponibilidade de notificações…</p>
+<div class="acoes"><button id="assinar" type="button" hidden>Ativar avisos</button><button id="enviar-teste" type="button" hidden>Enviar aviso de teste</button><button id="recebi" type="button" hidden>Recebi o teste</button><button id="cancelar" type="button" hidden>Desativar avisos</button><button id="tentar-push" type="button" hidden>Tentar novamente</button></div></section>
+<p class="fuso">Horários de Brasília.</p>
+</div></main></body></html>
