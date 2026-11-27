@@ -5,3 +5,5 @@ O GitHub Actions abre um Chrome descartável e testa uma jornada pública em cad
 O resultado segue para a API do Farol usando a identidade temporária emitida pelo GitHub para o workflow em main. A função Netlify faz uma checagem complementar de HTTPS e conteúdo a cada cinco minutos. O painel indica a hora de cada camada e acusa medições vencidas. Incidentes confirmados geram avisos, e a recuperação exige que as duas camadas estejam operacionais e recentes.
 
 O agendamento do navegador é de 15 minutos e depende da fila do GitHub. Na execução manual ou em um push, as jornadas e o endpoint são os mesmos. Para testar o navegador localmente: npm ci, definir CHROME_BIN para uma instalação do Chrome e executar node checar.cjs resultado.json. O envio exige a identidade do workflow.
+
+Quando a fila externa atrasa 25 minutos ou mais, o agendador HTTP pode acionar o mesmo código de jornadas num navegador de reserva, em uma função de background na Netlify. O código do runner desta pasta deve ser idêntico a `sonda/checar.cjs` da branch de serviço. A reserva limita o uso diário e não declara uma página fora do ar por falha do próprio navegador.

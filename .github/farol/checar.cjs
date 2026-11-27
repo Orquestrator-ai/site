@@ -59,11 +59,12 @@ async function fazer(p,d){
  const pontos=Number(await cb.getAttribute('data-points'));assert.ok(pontos>0);await cb.check();await p.waitForFunction(n=>Number(document.querySelector('#total').textContent)===n,pontos);
  await p.locator('#clear').click();assert.equal((await total.textContent()).trim(),'0');
 }
-async function executar(b,dominio,descricao){
+async function executar(b,dominio,descricao,observar,opcoesDoRunner={}){
  for(let i=1;i<=2;i++){
-  const inicio=Date.now();let http=null,carregou=false;const contexto=await b.newContext({viewport:{width:1280,height:840},locale:'pt-BR',timezoneId:'America/Sao_Paulo',serviceWorkers:'block',reducedMotion:'reduce'});
+  const inicio=Date.now();let http=null,carregou=false;const perfil={viewport:{width:1280,height:840},locale:'pt-BR',timezoneId:'America/Sao_Paulo',serviceWorkers:'block',reducedMotion:'reduce'};
+  const contexto=b.contextoParaJornada?await b.contextoParaJornada(perfil,{dominio,tentativa:i}):await b.newContext(perfil);
   try{
-   const p=await contexto.newPage();p.setDefaultTimeout(7500);p.setDefaultNavigationTimeout(12000);
+   const p=await contexto.newPage();p.setDefaultTimeout(opcoesDoRunner.acaoMs??7500);p.setDefaultNavigationTimeout(opcoesDoRunner.navegacaoMs??12000);
    await p.route('**/*',route=>{
     const r=route.request(),u=new URL(r.url());
     if(!['GET','HEAD'].includes(r.method())||u.origin!=='https://'+dominio||['image','media','font'].includes(r.resourceType()))return route.abort();
@@ -71,9 +72,11 @@ async function executar(b,dominio,descricao){
    });
    const resp=await p.goto('https://'+dominio+'/',{waitUntil:'domcontentloaded'});http=resp?.status()??null;if(!resp?.ok())throw Error('HTTP');
    carregou=true;
+   if(opcoesDoRunner.esperarCarregamento)await p.waitForLoadState('load',{timeout:opcoesDoRunner.navegacaoMs??12000});
    await fazer(p,dominio);
    return {dominio,descricao,estado:'operacional',tentativas:i,http,latenciaMs:Date.now()-inicio,motivo:'A jornada de teste terminou com o resultado esperado.'};
   }catch(e){
+   if(observar)observar({dominio,tentativa:i,http,carregou,saudavel:contexto.saudavel?.()===true,erro:e});
    if(process.env.FAROL_DIAGNOSTICO==='1')console.error(dominio,i,e.message.split('\n').slice(0,4).join(' '));
    if(i===2)return {dominio,descricao,estado:carregou?'degradado':'indisponivel',tentativas:2,http,latenciaMs:Date.now()-inicio,
     motivo:carregou?'O site abriu, mas a jornada não chegou ao resultado esperado em duas tentativas.':'A página inicial não respondeu corretamente em duas tentativas.'};
@@ -81,10 +84,18 @@ async function executar(b,dominio,descricao){
   await aguardar(1200);
  }
 }
-(async()=>{
+// A mesma lista e as mesmas jornadas são usadas pelo GitHub Actions e pela reserva.
+async function rodarJornadas(b,concorrencia=4,observar,opcoesDoRunner={}) {
+ const resultados=[];
+ for(let i=0;i<alvos.length;i+=concorrencia)
+   resultados.push(...await Promise.all(alvos.slice(i,i+concorrencia).map(([d,t])=>executar(b,d,t,observar,opcoesDoRunner).then(r=>{opcoesDoRunner.concluida?.(r);return r;}))));
+ return resultados;
+}
+module.exports={alvos,rodarJornadas};
+if(require.main===module)(async()=>{
  const b=await chromium.launch({executablePath:process.env.CHROME_BIN||'/usr/bin/google-chrome',headless:true});
  try{
-  const resultados=[];for(let i=0;i<alvos.length;i+=4){resultados.push(...await Promise.all(alvos.slice(i,i+4).map(([d,t])=>executar(b,d,t))));}
+  const resultados=await rodarJornadas(b);
   const rel={id:(process.env.GITHUB_RUN_ID||'local')+':'+(process.env.GITHUB_RUN_ATTEMPT||'1'),em:Date.now(),resultados};
   await fs.writeFile(process.argv[2]||'farol-resultado.json',JSON.stringify(rel,null,2));console.log(resultados.map(x=>x.dominio+' · '+x.estado).join('\n'));
  }finally{await b.close();}
