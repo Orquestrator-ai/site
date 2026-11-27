@@ -39,7 +39,8 @@ jobs:
             echo 'Testes concluídos. A produção é publicada pela CLI vinculada ao projeto do Contagem.' >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          .github/netlify-cli/node_modules/.bin/netlify deploy --prod --no-build --site c7c512f4-9497-49b7-9fe1-29212cb84ff9 --dir publico --functions netlify/functions
+          npm run preparar:navegador
+          .github/netlify-cli/node_modules/.bin/netlify deploy --prod --site c7c512f4-9497-49b7-9fe1-29212cb84ff9
           echo 'enviado=true' >> "$GITHUB_OUTPUT"
       - name: Conferir armazenamento e acesso privado
         if: steps.publicacao.outputs.enviado == 'true'

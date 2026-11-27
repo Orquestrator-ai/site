@@ -1,5 +1,6 @@
 import {createHash, randomUUID} from "node:crypto";
 import {ALVOS_FAROL,sondarSites} from "./farol-http.mjs";
+import {resumoReserva} from "./farol-reserva.mjs";
 import {lerParaAtualizar} from "./registro-nuvem.mjs";
 
 const CHAVE="farol/v1/estado", DIA=86400000, MIN=60000;
@@ -63,17 +64,18 @@ function transicao(estado,linha,dom,consolidado,em,fonte,idRodada){
   estado.transicoes.push(evento);
   if(tipo!=="atualizacao")estado.outbox[id]={evento,tentativas:0,proximaEm:em};
 }
-function registrar(estado,fonte,r,agora){
+function registrar(estado,fonte,r,agora,origem){
   let aplicado=false;
   const limite=diaLocal(agora-89*DIA);
   for(const x of r.resultados){
     const linha=estado.componentes[x.dominio]??=novaLinha(),old=linha.dimensoes[fonte];
+    if(origem==="netlify-reserva" && old?.verificadoEm && old.origem!=="netlify-reserva" && r.em-old.verificadoEm<25*MIN)continue;
     if(old && (old.rodada===r.id || r.em<=old.tentativaEm))continue;
     aplicado=true;
     const ultima=old?.verificadoEm??null, confirmado=x.estado!=="inconclusivo";
     linha.dimensoes[fonte]={
       estado:confirmado?x.estado:(old?.estado??SEM),verificadoEm:confirmado?r.em:ultima,tentativaEm:r.em,
-      rodada:r.id,latenciaMs:x.latenciaMs,http:x.http,motivo:confirmado?x.motivo:(old?.motivo??x.motivo),descricao:x.descricao||old?.descricao||null
+      rodada:r.id,origem,ultimaExternaEm:fonte==="funcional"?(origem==="github"?r.em:(old?.ultimaExternaEm??(old && old.origem!=="netlify-reserva"?old.verificadoEm:null))):null,latenciaMs:x.latenciaMs,http:x.http,motivo:confirmado?x.motivo:(old?.motivo??x.motivo),descricao:x.descricao||old?.descricao||null
     };
     const cons=consolidar(linha,agora);
     const anteriorAberto=linha.aberto && estado.incidentes.find(i=>i.id===linha.aberto);
@@ -109,7 +111,7 @@ function snapshot(db,agora){
       const v=l.dimensoes[fonte],verificadoEm=v?.verificadoEm??null,venceEm=verificadoEm!==null?verificadoEm+VALIDADE[fonte]:null;
       checagens[fonte]={estado:v?.estado||SEM,verificadoEm,venceEm,atrasado:venceEm===null||agora>venceEm,motivo:v?.motivo??null,
         descricao:fonte==="http"?alvo.descricao:(v?.descricao||"Verificação de uso em navegador independente."),
-        http:v?.http??null,latenciaMs:v?.latenciaMs??null};
+        http:v?.http??null,latenciaMs:v?.latenciaMs??null,origem:v?.origem??(v?(fonte==="funcional"?"github":"netlify"):null),ultimaExternaEm:v?.ultimaExternaEm??null};
     }
     const hist=datas.map(d=>resumoDia(l.dias[d]||dadosDia(d)));
     const somar=k=>hist.reduce((a,v)=>a+v[k],0);
@@ -137,9 +139,10 @@ export function criarFarol({store,agora=Date.now,entregar=async()=>{throw new Er
     }
     throw new ErroFarol(503,"Aguarde a sincronização das verificações.");
   }
-  async function aplicar(fonte,relatorio){
+  async function aplicar(fonte,relatorio,{origem=fonte==="funcional"?"github":"netlify",confirmadas=[]}={}){
+    if(origem==="netlify-reserva" && (fonte!=="funcional" || relatorio.resultados?.some(x=>x.estado!=="operacional" && !(x.estado==="degradado" && confirmadas.includes(x.dominio) && x.tentativas===2))))throw new ErroFarol(400,"A reserva exige prova específica para registrar a falha da jornada.");
     const r=normalizarRelatorio(fonte,relatorio,agora());
-    return mudar(estado=>{const gravar=registrar(estado,fonte,r,agora());return {gravar,resultado:{aplicado:gravar}};});
+    return mudar(estado=>{const gravar=registrar(estado,fonte,r,agora(),origem);return {gravar,resultado:{aplicado:gravar}};});
   }
   async function drenar(){
     const lease=randomUUID(), agoraMs=agora();
@@ -184,6 +187,9 @@ export function criarFarol({store,agora=Date.now,entregar=async()=>{throw new Er
     await aplicar("http",{id,em:agora(),resultados});
     return drenar();
   }
-  return {aplicar,drenar,monitorar,painel:async()=>snapshot(await ler(),agora()),
+  return {aplicar,drenar,monitorar,painel:async()=>{
+    const [estado,reserva]=await Promise.all([ler(),store.get("farol/v1/reserva",{type:"json"}).catch(()=>null)]);
+    return {...snapshot(estado,agora()),reserva:resumoReserva(reserva,agora())};
+  },
     saude:async()=>{const t=(await ler()).ultimoHTTP;return Boolean(t && agora()-t<=VALIDADE.http);}};
 }

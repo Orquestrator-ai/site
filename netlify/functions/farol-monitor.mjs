@@ -1,4 +1,5 @@
 import {getStore} from "@netlify/blobs";
+import {solicitarReserva} from "../../servidor/farol-reserva.mjs";
 import {criarFarol} from "../../servidor/farol.mjs";
 
 export default async function monitorar(_req,contexto){
@@ -11,5 +12,6 @@ export default async function monitorar(_req,contexto){
     return push.entregar(t);
   }});
   await farol.monitorar();
+  try{await solicitarReserva(store);}catch{console.error("Farol: reserva de navegador indisponível; monitor HTTP concluído.");}
 }
 export const config={schedule:"*/5 * * * *"};

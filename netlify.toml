@@ -1,6 +1,11 @@
 [build]
 publish = "publico"
+command = "npm run preparar:navegador"
 
 [functions]
 directory = "netlify/functions"
 node_bundler = "esbuild"
+
+[functions."farol-reserva-background"]
+  included_files = ["node_modules/@sparticuz/chromium/bin/**", "node_modules/playwright-core/**"]
+  external_node_modules = ["playwright-core", "@sparticuz/chromium"]

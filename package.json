@@ -5,10 +5,15 @@
   "description": "Serviço de tráfego dos sites Orquestrator, com autorização administrativa do Firebase e dados persistidos no Netlify Blobs.",
   "dependencies": {
     "@netlify/blobs": "11.1.2",
+    "@sparticuz/chromium": "153.0.0",
     "jose": "6.2.18",
+    "playwright-core": "1.63.0",
     "web-push": "4.0.0"
   },
   "engines": {
     "node": ">=22.13"
+  },
+  "scripts": {
+    "preparar:navegador": "node ferramentas/preparar-navegador.mjs"
   }
 }
