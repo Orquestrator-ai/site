@@ -2,6 +2,7 @@ import {createHash} from "node:crypto";
 import {abrirBanco} from "./banco.mjs";
 import {classificarOrigem, classificarUA, rotuloOrigem} from "./classificar.mjs";
 import {criarConsultas, diaLocalDe, inicioDoDia, NOME_UF, periodoDe} from "./consultas.mjs";
+import {criarPassesIphone, FalhaPasse} from "./passe-iphone.mjs";
 import {verificarAdministrador} from "./admin-firebase.mjs";
 import {criarRegistro, lerParaAtualizar} from "./registro-nuvem.mjs";
 
@@ -26,7 +27,9 @@ const TABELAS = {paginas: ["vistas", "entrada", "saida"], origens: ["origem", "c
 const CORES = ["#7340ae", "#a8491c", "#3a7352", "#4e56bf", "#9b3c68", "#006d83", "#786028"];
 const OP_ORIGEM = {rotuloOrigem, corOrigem: () => "#5551a6", inicialOrigem: nome => nome === "direto" ? "→" : nome[0].toUpperCase()};
 const METAS = new Set(["abrir-app", "baixar-app", "instalar-app", "abrir-produto", "cadastro", "contato", "download"]);
-const ROTAS = new Set(["sites", "visao", "tabela", "vivo", "anotacao", "exportar"]);
+const LEITURA_IPHONE = new Set(["sites","visao","tabela","vivo"]);
+const EMITIR_PASSE = "iphone/autorizar";
+const ROTAS = new Set([...LEITURA_IPHONE, "anotacao", "exportar", EMITIR_PASSE]);
 const DIA = 86_400_000;
 
 function inteiro(valor, teto) {
@@ -64,8 +67,9 @@ function periodoValido(url) {
   return periodo;
 }
 
-export function criarServico({store, rotas, administrador = verificarAdministrador, agora = Date.now}) {
+export function criarServico({store, rotas, administrador = verificarAdministrador, agora = Date.now, namespace, iphoneAtivo = true}) {
   const registro = criarRegistro(store);
+  const passes = criarPassesIphone({store,agora,namespace});
   let proximaSonda = 0, sonda;
   function verificarArmazenamento() {
     if (sonda && agora() < proximaSonda) return sonda;
@@ -82,14 +86,14 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
   const autorizados = new Map(), primeiros = new Map();
   const permitidas = Object.fromEntries(Object.entries(rotas).map(([dom, lista]) => [dom, new Set(lista)]));
 
-  async function permitir(req) {
-    const header = req.headers.get("authorization");
+  async function permitirFirebase(header, usarCache) {
     if (!header || header.length > 8192) throw new Falha(401, "Entre com a Conta Orquestrator.");
     const chave = createHash("sha256").update(header).digest("hex");
-    if ((autorizados.get(chave) || 0) > agora()) return;
+    if (usarCache && (autorizados.get(chave) || 0) > agora()) return;
     const status = await administrador(header);
     if (status !== 200) throw new Falha(status, status === 403 ? "O acesso exige uma conta administradora." :
       status === 401 ? "Entre novamente com a Conta Orquestrator." : "A verificação da conta está indisponível.");
+    if (!usarCache) return;
     if (autorizados.size > 32) autorizados.clear();
     // A revogação de uma concessão passa a valer no máximo dez segundos depois.
     autorizados.set(chave, agora() + 10000);
@@ -219,12 +223,18 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
         if (rota === "evento") headers.set("access-control-allow-credentials","true");
       }
       if (rota !== "evento" && rota !== "saude" && !ROTAS.has(rota)) throw new Falha(404,"rota inexistente");
+      if (rota === EMITIR_PASSE && origem !== "https://orquestrator.ai") throw new Falha(403,"Origem de autorização inválida.");
+      const metodo = rota === "evento" || rota === "anotacao" || rota === EMITIR_PASSE ? "POST" : "GET";
       if (req.method === "OPTIONS") {
-        headers.set("access-control-allow-methods",rota === "evento" || rota === "anotacao" ? "POST" : "GET");
+        headers.set("access-control-allow-methods",metodo);
         headers.set("access-control-allow-headers",rota === "evento" ? "Content-Type" : "Authorization, Content-Type");
         headers.set("access-control-max-age","600"); return new Response(null,{status:204,headers});
       }
-      if (req.method !== (rota === "evento" || rota === "anotacao" ? "POST" : "GET")) throw new Falha(405,"método inválido");
+      const header = req.headers.get("authorization") || "";
+      const usandoPasse = /^Bearer ctg1\./i.test(header);
+      if (usandoPasse && (req.method !== "GET" || !LEITURA_IPHONE.has(rota))) throw new Falha(403,"O passe do iPhone permite apenas consultar o tráfego.");
+      if (req.method !== metodo) throw new Falha(405,"método inválido");
+      if ((rota === EMITIR_PASSE || usandoPasse) && !iphoneAtivo) throw new Falha(503,"A autorização do iPhone está desativada.");
       if (rota === "saude") {
         if (!await verificarArmazenamento()) throw new Falha(503,"O armazenamento está indisponível.");
         resposta = Response.json({ok:true});
@@ -233,17 +243,22 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
         await receber(req, contexto, origem);
         resposta = new Response(null,{status:202});
       } else {
-        await permitir(req);
-        const dado = rota === "anotacao" ? await anotar(req) : await consultar(rota,url,agora());
+        const firebase = usandoPasse ? "Bearer " + await passes.abrir(header.slice(7)) : header;
+        await permitirFirebase(firebase,!usandoPasse && rota !== EMITIR_PASSE);
+        let dado;
+        if (rota === EMITIR_PASSE) dado = await passes.emitir(await corpo(req),firebase.slice(7));
+        else if (rota === "anotacao") dado = await anotar(req);
+        else dado = await consultar(rota,url,agora());
         resposta = dado instanceof Response ? dado : Response.json(dado);
       }
     } catch (erro) {
-      const status = erro instanceof Falha ? erro.status : erro instanceof RangeError ? 422 : 503;
-      if (!(erro instanceof Falha || erro instanceof RangeError)) {
+      const prevista = erro instanceof Falha || erro instanceof FalhaPasse;
+      const status = prevista ? erro.status : erro instanceof RangeError ? 422 : 503;
+      if (!(prevista || erro instanceof RangeError)) {
         // Só o tipo do erro operacional; sem URL de credenciais, corpo, IP ou user-agent.
         console.error("contagem: serviço indisponível", erro?.constructor?.name);
       }
-      resposta = Response.json({erro:erro instanceof Falha || erro instanceof RangeError ? erro.message : "O serviço está temporariamente indisponível."},{status});
+      resposta = Response.json({erro:prevista || erro instanceof RangeError ? erro.message : "O serviço está temporariamente indisponível."},{status});
     }
     for (const [k,v] of headers) resposta.headers.set(k,v);
     return resposta;

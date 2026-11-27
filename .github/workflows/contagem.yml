@@ -26,14 +26,21 @@ jobs:
       - name: Instalar a CLI oficial da Netlify
         run: npm ci --prefix .github/netlify-cli --ignore-scripts --no-audit --no-fund
       - name: Publicar no projeto dedicado
+        id: publicacao
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           AWS_LAMBDA_JS_RUNTIME: nodejs24.x
         run: |
           if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
-            echo '::error::Falta autorizar a implantação do projeto orquestrator-contagem pela Netlify neste repositório.'
-            exit 1
+            if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+              echo '::error::Este repositório precisa de autorização de deploy para publicar manualmente pelo GitHub.'
+              exit 1
+            fi
+            echo 'Testes concluídos. A produção é publicada pela CLI vinculada ao projeto do Contagem.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
           fi
           .github/netlify-cli/node_modules/.bin/netlify deploy --prod --no-build --site c7c512f4-9497-49b7-9fe1-29212cb84ff9 --dir publico --functions netlify/functions
+          echo 'enviado=true' >> "$GITHUB_OUTPUT"
       - name: Conferir armazenamento e acesso privado
+        if: steps.publicacao.outputs.enviado == 'true'
         run: node ferramentas/conferir-producao.mjs

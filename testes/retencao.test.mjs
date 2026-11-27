@@ -34,3 +34,11 @@ test("limpeza em lotes reinicia após o limite, inclui site desativado, mantém 
   assert.deepEqual(store.notas.get("anotacoes/88"),{});
   assert.ok(!store.listagens.some(l=>l.prefix==="eventos/1/2024-11/"));
 });
+
+test("a limpeza elimina apenas chaves diárias já fora da janela de verificação de passes",async()=>{
+  const data=Date.parse("2026-11-27T06:13:00Z"), dia=Math.floor(data/86400000), namespace="a".repeat(64);
+  const chave=d=>"auth/iphone-v1/"+d+"/"+namespace;
+  const store=blobsFalsos([chave(dia-2),chave(dia-1),chave(dia)],{});
+  const r=await expurgarVencidos(store,{data});
+  assert.equal(r.chavesIphone,1);assert.deepEqual(store.apagados,[chave(dia-2)]);
+});
