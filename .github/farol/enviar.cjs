@@ -11,12 +11,6 @@ const fs=require('node:fs/promises');
  for(let i=0;;i++){
   const r=await fetch(alvo+'/api/farol/sonda',{method:'POST',headers:{authorization:'Bearer '+value,'content-type':'application/json'},body:JSON.stringify(rel),redirect:'error',signal:AbortSignal.timeout(25000)}).catch(()=>null);
   if(r&&r.ok)break;
-  if(r?.status===403){
-   // Apenas identificadores públicos da execução; a credencial nunca é exibida.
-   const claims=JSON.parse(Buffer.from(value.split('.')[1],'base64url').toString('utf8'));
-   const campos=['repository','repository_id','repository_owner_id','ref','workflow_ref','sub','event_name','run_id','run_attempt'];
-   console.log('Origem desta execução:',JSON.stringify(Object.fromEntries(campos.map(k=>[k,claims[k]]))));
-  }
   if(i>=2||(r&&r.status<500 && r.status!==429))throw Error('O Farol não confirmou o relatório ('+(r?.status||'falha de rede')+').');
   await new Promise(resolve=>setTimeout(resolve,2000*(i+1)));
  }
