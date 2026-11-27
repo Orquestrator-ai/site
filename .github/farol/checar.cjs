@@ -4,7 +4,7 @@ const {setTimeout:aguardar}=require('node:timers/promises');
 const fs=require('node:fs/promises');
 const assert=require('node:assert/strict');
 const alvos=[
- ['orquestrator.ai','Abre a Store e a ficha do Cofre.'],
+ ['orquestrator.ai','Abre uma ficha da Store e confere o acesso à Calculadora na página Medicina.'],
  ['orquestrator.app','Abre a apresentação do Chat a partir do site do aplicativo.'],
  ['calculadoragestacional.orquestrator.ai','Preenche uma DUM de teste e confere a DPP calculada.'],
  ['encontro.orquestrator.ai','Avança o calendário da página de agendamento.'],
@@ -17,7 +17,9 @@ async function fazer(p,d){
  if(d==='orquestrator.ai'){
   await p.locator('a[href="/store/"]:visible').first().click();await p.waitForURL('**/store/');
   await p.locator('a[href="/store/cofre/"]:visible').first().click();await p.waitForURL('**/store/cofre/');
-  await p.getByRole('heading',{name:/cofre/i}).first().waitFor();return;
+  await p.getByRole('heading',{name:/cofre/i}).first().waitFor();
+  const med=await p.goto('https://orquestrator.ai/medicina/',{waitUntil:'domcontentloaded'});assert.ok(med?.ok());
+  await p.locator('a[href="https://calculadoragestacional.orquestrator.ai/"]:visible').first().waitFor();return;
  }
  if(d==='orquestrator.app'){
   await p.locator('a[href="/chat/"]:visible').first().click();await p.waitForURL('**/chat/');
