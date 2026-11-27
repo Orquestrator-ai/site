@@ -1,0 +1,41 @@
+name: Farol · jornadas dos oito sites
+on:
+  schedule:
+    - cron: '4,19,34,49 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/farol.yml'
+      - '.github/farol/**'
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: farol-jornadas
+  cancel-in-progress: false
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/farol
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Preparar navegador de teste
+        working-directory: .github/farol
+        run: |
+          npm ci --no-audit --no-fund --ignore-scripts
+          google-chrome --version
+      - name: Testar jornadas sem conta ou cadastro
+        working-directory: .github/farol
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+        run: node checar.cjs "$RUNNER_TEMP/farol-resultado.json"
+      - name: Entregar resultados com a identidade temporária desta execução
+        working-directory: .github/farol
+        run: node enviar.cjs "$RUNNER_TEMP/farol-resultado.json"
