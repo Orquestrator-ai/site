@@ -69,8 +69,10 @@ export function criarPassesIphone({store, agora=Date.now, namespace}) {
     return bits;
   }
 
-  async function emitir(dados,token) {
-    if (Object.keys(dados).sort().join(",") !== "codigo,key,proof,state" || typeof dados.codigo !== "string" || !/^\d{6}$/.test(dados.codigo))
+  async function emitir(dados,token,parear) {
+    const duravel=dados.versao===2;
+    const campos=duravel?"codigo,deviceKey,key,nome,proof,state,versao":"codigo,key,proof,state";
+    if (Object.keys(dados).sort().join(",") !== campos || typeof dados.codigo !== "string" || !/^\d{6}$/.test(dados.codigo))
       throw codigoInvalido();
     const estado = decodificar(dados.state,32,codigoInvalido);
     const publica = decodificar(dados.key,65,codigoInvalido);
@@ -79,32 +81,39 @@ export function criarPassesIphone({store, agora=Date.now, namespace}) {
     const efemera = createECDH("prime256v1"); efemera.generateKeys();
     let segredo;
     try { segredo = efemera.computeSecret(publica); } catch { throw codigoInvalido(); }
-    const prova = await derivar(dados.codigo,Buffer.concat([estado,publica]),100000,32,"sha256");
+    const sal = duravel ? Buffer.concat([estado,publica,decodificar(dados.deviceKey,65,codigoInvalido)]) : Buffer.concat([estado,publica]);
+    const prova = await derivar(dados.codigo,sal,100000,32,"sha256");
     if (!timingSafeEqual(prova,compromisso)) throw codigoInvalido();
     const emitido = Math.floor(agora()/1000), expiraEm = vencimentoFirebase(token,emitido);
+    const entrega = hkdfSync("sha256",segredo,estado,INFO,32);
+    const entregar = valor => ({state:dados.state,key:efemera.getPublicKey().toString("base64url"),box:cifrar(entrega,valor,dados.state).toString("base64url")});
+    if (duravel) return parear({token,deviceKey:dados.deviceKey,nome:dados.nome,state:dados.state,key:dados.key,entregar});
     const dia = Math.floor(emitido/DIA);
     const chave = await chaveDiaria(dia,true);
     const caixaPasse = cifrar(chave,{emitido,expiraEm,token},aad(dia));
     const passe = "ctg1." + dia.toString(36) + "." + caixaPasse.toString("base64url");
-    const entrega = hkdfSync("sha256",segredo,estado,INFO,32);
-    return {state:dados.state,key:efemera.getPublicKey().toString("base64url"),
-      box:cifrar(entrega,{passe,expiraEm},dados.state).toString("base64url")};
+    return entregar({passe,expiraEm});
   }
 
-  async function abrir(passe) {
+  async function abrirCaixa(passe,historica) {
     if (passe.length > 16*1024) throw passeInvalido();
     const partes = /^ctg1\.([0-9a-z]{1,8})\.([A-Za-z0-9_-]+)$/.exec(passe);
     if (!partes) throw passeInvalido();
     const instante = Math.floor(agora()/1000), hoje = Math.floor(instante/DIA), dia = Number.parseInt(partes[1],36);
-    if (dia.toString(36) !== partes[1] || dia > hoje || dia < hoje-1) throw passeInvalido();
+    if (dia.toString(36) !== partes[1] || dia > hoje || dia < hoje-(historica?2:1)) throw passeInvalido();
     const bytes = decodificar(partes[2],undefined,passeInvalido);
     if (bytes.length < 29) throw passeInvalido();
     const caixa = decifrar(await chaveDiaria(dia,false),bytes,aad(dia));
     if (!Number.isSafeInteger(caixa?.emitido) || !Number.isSafeInteger(caixa.expiraEm) ||
-        caixa.emitido > instante || Math.floor(caixa.emitido/DIA) !== dia || caixa.expiraEm <= instante ||
+        caixa.emitido > instante || Math.floor(caixa.emitido/DIA) !== dia || caixa.expiraEm + (historica?86400:0) <= instante ||
         caixa.expiraEm > caixa.emitido + MAX_SEGUNDOS || typeof caixa.token !== "string") throw passeInvalido();
-    vencimentoFirebase(caixa.token,instante);
+    if(vencimentoFirebase(caixa.token,caixa.emitido)!==caixa.expiraEm) throw passeInvalido();
     return caixa.token;
   }
-  return {emitir,abrir};
+  async function uidHistorica(passe) {
+    // A migração com ticket USB + marcador IAM pode provar somente a UID histórica. O ID vencido nunca sai por este método.
+    const t=await abrirCaixa(passe,true);
+    return JSON.parse(Buffer.from(t.split(".")[1],"base64url").toString("utf8")).sub;
+  }
+  return {emitir,abrir:p=>abrirCaixa(p,false),uidHistorica};
 }

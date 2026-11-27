@@ -12,11 +12,19 @@ O armazenamento fica em Netlify Blobs, região `us-east-2` (Estados Unidos). As 
 
 Os oito coletores consultam `https://orquestrator.ai/assets/contagem/config.json` somente em uma página pública visível, depois do consentimento para medição. A leitura usa CORS, sem credenciais ou referenciador. A configuração precisa trazer `coletaAtiva: true` e `apiBase: "https://orquestrator-contagem.netlify.app"`. Os navegadores reavaliam essa decisão a cada cinco minutos enquanto a página está visível. A configuração desligada, indisponível ou incompatível impede o envio de eventos. Ao ativar, o painel passa a receber as visitas daquele instante em diante. Publique o valor verdadeiro somente depois de validar o serviço e a autorização administrativa.
 
-## Autorizar um iPhone para leitura
+## Vínculo permanente do iPhone
 
-Ao entrar pelo app, o iPhone gera uma chave P-256 temporária e um código aleatório de seis dígitos. O administrador entra em `https://orquestrator.ai/admin/contagem/iphone/`, digita o código mostrado no aparelho e confirma. Na rota `POST /api/iphone/autorizar`, a API verifica a sessão administrativa Firebase e o compromisso criptográfico do código, do estado e da chave pública recebidos. O navegador recebe somente um envelope cifrado para o aparelho. O iPhone retoma a sessão de autorização pelo retorno `br.bauer.contagem://login`. O app dessa versão pode ser assinado por equipe pessoal.
+No pareamento v2, o administrador confirma o código de seis dígitos e autoriza explicitamente o aparelho a continuar lendo as métricas. A chave privada de assinatura P-256 e a concessão `ctg2` de 256 bits ficam no Keychain do iPhone. O serviço guarda a chave pública, o hash da concessão, o nome do dispositivo e o seu registro revogável. O formulário web devolve a concessão cifrada para a chave temporária de entrega do aparelho.
 
-O passe permite apenas `GET /api/sites`, `GET /api/visao`, `GET /api/tabela` e `GET /api/vivo`. Ele expira em até uma hora ou antes, junto com o ID token Firebase que o autorizou. Cada leitura com passe revalida a administração no Firestore. O passe funciona como uma credencial de portador e deve permanecer no armazenamento protegido do aparelho. Perde a validade também em uma nova implantação. As chaves privadas do serviço são aleatórias, criadas por implantação e dia UTC, com escrita condicional em Blobs. A limpeza diária descarta as chaves antigas. Defina `CONTAGEM_IPHONE_DESATIVADO=1` na configuração de funções e publique a configuração caso seja necessário suspender a emissão e a leitura com passe.
+A cada renovação, o app assina um nonce, o horário e o ID do vínculo. O serviço emite um passe `ctg2s` de 15 minutos para os quatro GETs de métricas. Tanto a renovação quanto cada leitura consultam se o dispositivo ainda está ativo e se o administrador conserva a permissão no Firestore. Essa verificação usa o marcador privativo `admins/{uid}/contagemLeituras/{endereço-aleatório-de-256-bits}`, que contém somente a versão inteira `1` e não aceita listagem. O navegador nunca recebe o endereço. A indisponibilidade do Firestore suspende a leitura até o serviço voltar. A gestão de dispositivos exige nova verificação do ID token administrativo do portal.
+
+A concessão v2 sobrevive à expiração do login inicial, ao fechamento do app e à publicação de versões novas do servidor. O dono pode revogá-la no painel ou no aparelho. A falta de permissão administrativa impede as leituras. Se o Keychain perder a chave privada ou a concessão, será necessário autorizar o aparelho novamente. As rotas para gestão são `GET /api/iphone/dispositivos` e `POST /api/iphone/revogar`. O iPhone usa `POST /api/iphone/renovar` e `POST /api/iphone/desvincular`. Para uma suspensão emergencial do acesso móvel configure `CONTAGEM_IPHONE_DESATIVADO=1` nas funções e publique a configuração. Os clientes v1 continuam com seu passe temporário até o vencimento.
+
+### Migração USB de uma autorização v1
+
+Para atualizar o próprio telefone pareado pelo build 2, o operador lê via USB apenas `migracao-pedido.json` do novo app. Esse arquivo contém a chave pública de assinatura e o SHA-256 do passe legado. O arquivo é destinado ao operador e não contém o passe nem a chave privada. A ferramenta `ferramentas/provisionar-migracao-iphone.mjs` vincula um ticket aleatório àquela chave, àquele hash, à UID e ao deploy que emitiu o passe antigo. A saída de uso único deve ser copiada somente ao contêiner do mesmo iPhone, em `Library/Application Support/Contagem/migracao.json`. Uma retransmissão pela mesma chave durante o prazo recupera a mesma concessão. O serviço nunca faz upgrade pela mera apresentação do token antigo.
+
+No modo ordinário, o ticket dura até 20 minutos e o token anterior precisa estar válido. Com autorização IAM explícita do operador para criar o marcador da UID administrativa ativa, o ticket pode durar até 24 horas. Essa rota verifica exclusivamente a identidade histórica do `ctg1` e permite no máximo 24 horas após seu vencimento; o token de leitura vencido continua inválido em todos os GETs. A política do Firestore volta a conferir o marcador em cada acesso. A ponte temporária de leitura aceita apenas a revisão anterior identificada de produção, até o vencimento do próprio passe e no máximo até 27/11/2026 às 02h30 de Brasília.
 
 ## Preparar e testar
 
@@ -24,7 +32,7 @@ Use Node 24 e a raiz do projeto.
 
 ```sh
 npm ci
-node --test testes/admin-firebase.test.mjs testes/nuvem.test.mjs testes/retencao.test.mjs testes/passe-iphone.test.mjs testes/netlify-blobs.test.mjs
+node --test testes/admin-firebase.test.mjs testes/nuvem.test.mjs testes/retencao.test.mjs testes/passe-iphone.test.mjs testes/dispositivos-iphone.test.mjs testes/netlify-blobs.test.mjs
 node --test coletor/orquestrator/testar-coletor.mjs
 ```
 

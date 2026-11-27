@@ -5,3 +5,5 @@ O painel administrativo do Orquestrator e o aplicativo de iPhone consultam o ser
 Use Node 24 e execute `npm ci` e `node --test testes/*.test.mjs`. O projeto Netlify é `orquestrator-contagem` e a configuração está em `netlify.toml`. A branch `contagem/servico` pode ser vinculada diretamente à Netlify. A publicação pelo GitHub Actions usa a credencial de implantação autorizada no repositório. Configure uma das duas formas de publicação para evitar deploys duplicados.
 
 O teste de produção em `ferramentas/conferir-producao.mjs` verifica a disponibilidade do armazenamento e a restrição administrativa.
+
+O vínculo do iPhone usa uma chave do aparelho, renovação automática e revogação no painel. A regra vigente do marcador de autorização está em `firebase-contagem/firestore.rules`. Os testes do marcador usam o Firestore Emulator.

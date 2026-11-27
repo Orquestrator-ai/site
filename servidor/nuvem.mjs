@@ -2,6 +2,8 @@ import {createHash} from "node:crypto";
 import {abrirBanco} from "./banco.mjs";
 import {classificarOrigem, classificarUA, rotuloOrigem} from "./classificar.mjs";
 import {criarConsultas, diaLocalDe, inicioDoDia, NOME_UF, periodoDe} from "./consultas.mjs";
+import {criarDispositivos,uidDoIdVerificado} from "./dispositivos-iphone.mjs";
+import {fonteDosMarcadores} from "./marcador-firebase.mjs";
 import {criarPassesIphone, FalhaPasse} from "./passe-iphone.mjs";
 import {verificarAdministrador} from "./admin-firebase.mjs";
 import {criarRegistro, lerParaAtualizar} from "./registro-nuvem.mjs";
@@ -29,7 +31,9 @@ const OP_ORIGEM = {rotuloOrigem, corOrigem: () => "#5551a6", inicialOrigem: nome
 const METAS = new Set(["abrir-app", "baixar-app", "instalar-app", "abrir-produto", "cadastro", "contato", "download"]);
 const LEITURA_IPHONE = new Set(["sites","visao","tabela","vivo"]);
 const EMITIR_PASSE = "iphone/autorizar";
-const ROTAS = new Set([...LEITURA_IPHONE, "anotacao", "exportar", EMITIR_PASSE]);
+const GESTAO_IPHONE = new Set([EMITIR_PASSE,"iphone/dispositivos","iphone/revogar"]);
+const PAREAMENTO_NATIVO = new Set(["iphone/renovar","iphone/desvincular","iphone/migrar"]);
+const ROTAS = new Set([...LEITURA_IPHONE, "anotacao", "exportar", ...GESTAO_IPHONE, ...PAREAMENTO_NATIVO]);
 const DIA = 86_400_000;
 
 function inteiro(valor, teto) {
@@ -67,9 +71,22 @@ function periodoValido(url) {
   return periodo;
 }
 
-export function criarServico({store, rotas, administrador = verificarAdministrador, agora = Date.now, namespace, iphoneAtivo = true}) {
+export function criarServico({store, rotas, administrador = verificarAdministrador, agora = Date.now, namespace, namespaceAnteriorCtg1, iphoneAtivo = true, marcadores = fonteDosMarcadores()}) {
   const registro = criarRegistro(store);
   const passes = criarPassesIphone({store,agora,namespace});
+  async function lerLegadoAtual(passe) {
+    try{return await passes.abrir(passe);}
+    catch(e){
+      if(!(e instanceof FalhaPasse) || e.status!==401 || !namespaceAnteriorCtg1 || namespace===namespaceAnteriorCtg1 ||
+        agora() >= Date.UTC(2026,10,27,5,30))throw e;
+      return criarPassesIphone({store,agora,namespace:namespaceAnteriorCtg1}).abrir(passe);
+    }
+  }
+  const dispositivos = criarDispositivos({store,agora,marcadores,uidHistorica:(passe,emissor)=>criarPassesIphone({store,agora,namespace:emissor}).uidHistorica(passe),validarLegado:async (passe,emissor)=>{
+    const t=await criarPassesIphone({store,agora,namespace:emissor}).abrir(passe);
+    await permitirFirebase("Bearer "+t,false);
+    return t;
+  }});
   let proximaSonda = 0, sonda;
   function verificarArmazenamento() {
     if (sonda && agora() < proximaSonda) return sonda;
@@ -223,18 +240,21 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
         if (rota === "evento") headers.set("access-control-allow-credentials","true");
       }
       if (rota !== "evento" && rota !== "saude" && !ROTAS.has(rota)) throw new Falha(404,"rota inexistente");
-      if (rota === EMITIR_PASSE && origem !== "https://orquestrator.ai") throw new Falha(403,"Origem de autorização inválida.");
-      const metodo = rota === "evento" || rota === "anotacao" || rota === EMITIR_PASSE ? "POST" : "GET";
+      if (GESTAO_IPHONE.has(rota) && origem !== "https://orquestrator.ai") throw new Falha(403,"Origem de autorização inválida.");
+      const metodo = rota === "evento" || rota === "anotacao" || rota === EMITIR_PASSE || rota === "iphone/revogar" || PAREAMENTO_NATIVO.has(rota) ? "POST" : "GET";
       if (req.method === "OPTIONS") {
         headers.set("access-control-allow-methods",metodo);
         headers.set("access-control-allow-headers",rota === "evento" ? "Content-Type" : "Authorization, Content-Type");
         headers.set("access-control-max-age","600"); return new Response(null,{status:204,headers});
       }
       const header = req.headers.get("authorization") || "";
-      const usandoPasse = /^Bearer ctg1\./i.test(header);
-      if (usandoPasse && (req.method !== "GET" || !LEITURA_IPHONE.has(rota))) throw new Falha(403,"O passe do iPhone permite apenas consultar o tráfego.");
+      const token=header.slice(7);
+      const legado=/^Bearer ctg1\./i.test(header), duravel=/^Bearer ctg2\./i.test(header), sessao=/^Bearer ctg2s\./i.test(header);
+      const leitura = LEITURA_IPHONE.has(rota) && req.method==="GET";
+      if ((legado && !leitura && rota!=="iphone/migrar") || (sessao && !leitura) ||
+          (duravel && rota!=="iphone/renovar" && rota!=="iphone/desvincular")) throw new Falha(403,"Esta credencial não permite essa operação.");
       if (req.method !== metodo) throw new Falha(405,"método inválido");
-      if ((rota === EMITIR_PASSE || usandoPasse) && !iphoneAtivo) throw new Falha(503,"A autorização do iPhone está desativada.");
+      if (!iphoneAtivo && (legado || duravel || sessao || PAREAMENTO_NATIVO.has(rota) || rota===EMITIR_PASSE)) throw new Falha(503,"A autorização do iPhone está desativada.");
       if (rota === "saude") {
         if (!await verificarArmazenamento()) throw new Falha(503,"O armazenamento está indisponível.");
         resposta = Response.json({ok:true});
@@ -243,12 +263,27 @@ export function criarServico({store, rotas, administrador = verificarAdministrad
         await receber(req, contexto, origem);
         resposta = new Response(null,{status:202});
       } else {
-        const firebase = usandoPasse ? "Bearer " + await passes.abrir(header.slice(7)) : header;
-        await permitirFirebase(firebase,!usandoPasse && rota !== EMITIR_PASSE);
         let dado;
-        if (rota === EMITIR_PASSE) dado = await passes.emitir(await corpo(req),firebase.slice(7));
-        else if (rota === "anotacao") dado = await anotar(req);
-        else dado = await consultar(rota,url,agora());
+        if (PAREAMENTO_NATIVO.has(rota)) {
+          if (rota==="iphone/migrar") {
+            if (!legado) throw new Falha(401,"O passe anterior e o ticket são necessários.");
+            dado=await dispositivos.migrar(token,await corpo(req));
+          } else {
+            if (!duravel) throw new Falha(401,"A concessão do aparelho é necessária.");
+            const sair=rota==="iphone/desvincular";
+            dado=await dispositivos.gerirSessao(token,await corpo(req),sair);
+            if (sair)dado=new Response(null,{status:204});
+          }
+        } else {
+          const firebase=legado?"Bearer "+await lerLegadoAtual(token):header;
+          if(sessao)await dispositivos.validarSessao(token);
+          else await permitirFirebase(firebase,!legado && !GESTAO_IPHONE.has(rota));
+          if (rota===EMITIR_PASSE)dado=await passes.emitir(await corpo(req),firebase.slice(7),dispositivos.parear);
+          else if(rota==="iphone/dispositivos")dado=await dispositivos.listar(uidDoIdVerificado(firebase.slice(7)));
+          else if(rota==="iphone/revogar")dado=await dispositivos.revogar((await corpo(req)).id,uidDoIdVerificado(firebase.slice(7)));
+          else if(rota==="anotacao")dado=await anotar(req);
+          else dado=await consultar(rota,url,agora());
+        }
         resposta = dado instanceof Response ? dado : Response.json(dado);
       }
     } catch (erro) {

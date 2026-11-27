@@ -1,0 +1,134 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function supportedIdentity() {
+      return signedIn()
+        && request.auth.token.auth_time is int
+        && request.auth.token.auth_time > 0
+        && request.auth.token.firebase.sign_in_provider in ['google.com', 'github.com'];
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.enabled == true;
+    }
+
+    function allowedSite(site) {
+      return site is string && site in [
+        'orquestrator.ai',
+        'orquestrator.app',
+        'medpanel.orquestrator.ai',
+        'calculadoragestacional.orquestrator.ai',
+        'encontro.orquestrator.ai',
+        'escala.orquestrator.ai',
+        'hub.orquestrator.ai'
+      ];
+    }
+
+    function identityFields(data) {
+      return supportedIdentity()
+        && data.uid == request.auth.uid
+        && data.email is string
+        && data.email == request.auth.token.get('email', '')
+        && data.name is string
+        && data.name.size() <= 160;
+    }
+
+    function validProfile(data) {
+      return data.keys().hasAll([
+          'uid', 'email', 'name', 'createdAt', 'lastSeenAt',
+          'lastAuthTime', 'lastProvider', 'firstSite', 'lastSite'
+        ])
+        && data.keys().hasOnly([
+          'uid', 'email', 'name', 'createdAt', 'lastSeenAt',
+          'lastAuthTime', 'lastProvider', 'firstSite', 'lastSite'
+        ])
+        && identityFields(data)
+        && data.createdAt is timestamp
+        && data.lastSeenAt == request.time
+        && data.lastAuthTime is int
+        && data.lastProvider == request.auth.token.firebase.sign_in_provider
+        && allowedSite(data.firstSite)
+        && allowedSite(data.lastSite);
+    }
+
+    // Somente o operador, via console/IAM, concede ou revoga administração.
+    // O cliente pode verificar apenas sua própria concessão, nunca enumerar administradores.
+    match /admins/{uid} {
+      allow get: if signedIn() && request.auth.uid == uid;
+      allow list, create, update, delete: if false;
+    }
+
+    // O serviço guarda um endereço aleatório de 256 bits por concessão. O documento
+    // contém apenas a versão; ninguém pode enumerar marcadores nem consultar o perfil do dono por eles.
+    match /admins/{uid}/contagemLeituras/{marcador} {
+      function marcadorValido() {
+        return marcador.matches('[A-Za-z0-9_-]{43}');
+      }
+      function donoHabilitado() {
+        return exists(/databases/$(database)/documents/admins/$(uid))
+          && get(/databases/$(database)/documents/admins/$(uid)).data.enabled == true;
+      }
+      allow create: if supportedIdentity() && request.auth.uid == uid && marcadorValido()
+        && donoHabilitado() && request.resource.data.keys().hasOnly(['v'])
+        && request.resource.data.v == 1 && request.resource.data.v is int;
+      allow get: if marcadorValido() && resource.data.v == 1 && donoHabilitado();
+      allow delete: if signedIn() && request.auth.uid == uid && donoHabilitado();
+      allow list, update: if false;
+    }
+
+    match /users/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow list: if isAdmin();
+      allow create: if supportedIdentity()
+        && request.auth.uid == uid
+        && validProfile(request.resource.data)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.lastAuthTime == request.auth.token.auth_time;
+      allow update: if supportedIdentity()
+        && request.auth.uid == uid
+        && validProfile(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.firstSite == resource.data.firstSite
+        && request.resource.data.lastAuthTime >= resource.data.lastAuthTime
+        && request.resource.data.lastAuthTime in [
+          resource.data.lastAuthTime, request.auth.token.auth_time
+        ];
+      allow delete: if false;
+    }
+
+    // Uma sessão autenticada por UID/auth_time, sem contar renovações de token.
+    // São acessos registrados pelo site, não um log completo do serviço Firebase Auth.
+    match /accessSessions/{sessionId} {
+      allow get: if isAdmin() || (
+        supportedIdentity()
+        && sessionId == request.auth.uid + '_' + string(request.auth.token.auth_time)
+      );
+      allow list: if isAdmin();
+      allow create: if supportedIdentity()
+        && request.resource.data.keys().hasAll([
+          'uid', 'authTime', 'provider', 'email', 'name', 'site', 'recordedAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'uid', 'authTime', 'provider', 'email', 'name', 'site', 'recordedAt'
+        ])
+        && identityFields(request.resource.data)
+        && request.resource.data.authTime is int
+        && request.resource.data.authTime == request.auth.token.auth_time
+        && sessionId == request.auth.uid + '_' + string(request.auth.token.auth_time)
+        && request.resource.data.provider == request.auth.token.firebase.sign_in_provider
+        && allowedSite(request.resource.data.site)
+        && request.resource.data.recordedAt == request.time;
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
